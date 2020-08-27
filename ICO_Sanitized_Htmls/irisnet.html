@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <title>
+   IRIS Network
+  </title>
+  <meta content="Interchain Service Infrastructure and Protocol Technology Foundation for a Distributed Business Ecosystem" name="description"/>
+  <meta content="IRIS,COSMOS,Tendermint,ABCI,blockchains,IBC protocl,IRIS HUB,Interoperability,Inter-blockchain Communication,InterBlockchain Communication" name="keywords"/>
+  <style>
+   *{
+        margin: 0;
+        padding: 0;
+        font-family: '-apple-system','BlinkMacSystemFont',"Segoe UI","Arial","SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica",sans-serif;
+      }
+      html, body {
+        overflow: inherit !important;
+      }
+      .center{
+        width: 1200px !important;
+        margin: 0 auto;
+      }
+      a {
+        text-decoration:none;
+
+        color: #7681e3;;
+      }
+  </style>
+  <link as="script" href="/dist/manifest.54e67e9f17df71efc259.js" rel="preload"/>
+  <link as="script" href="/dist/vendor.0ea89b202873c2bb7c4f.js" rel="preload"/>
+  <link as="script" href="/dist/app.ebf03edaad77016098b2.js" rel="preload"/>
+  <link as="style" href="/dist/common.ebf03edaad77016098b2.css" rel="preload"/>
+  <link href="/dist/common.ebf03edaad77016098b2.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div data-server-rendered="true" id="app">
+   <div class="mask_container" data-v-71937054="" id="mask_container">
+    <div class="mask_content" data-v-71937054="">
+     <h2 class="mask_title" data-v-71937054="">
+     </h2>
+     <p class="mask_text_content" data-v-71937054="">
+     </p>
+     <div class="confirm_btn" data-v-71937054="">
+      <span data-v-71937054="">
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="header_container" data-v-77b56da6="">
+    <div class="header_wrap" data-v-77b56da6="">
+     <div class="header_content" data-v-77b56da6="">
+      <div class="irisnet_logo_content" data-v-77b56da6="">
+       <img data-v-77b56da6="" src="/dist/irisnet_logo.png?4386a8f8710c9076ff3bb63fc78ef4e7"/>
+      </div>
+      <div class="nav_content" data-v-77b56da6="">
+       <ul class="nav_link_content" data-v-77b56da6="">
+        <li class="link_content" data-v-77b56da6="">
+         Whitepaper
+        </li>
+        <li class="link_content" data-v-77b56da6="">
+         Collaboration
+        </li>
+        <li class="link_content" data-v-77b56da6="">
+         Community
+        </li>
+       </ul>
+       <div class="link_right_container" data-v-77b56da6="">
+        <ul class="nav_link_content right_content" data-v-77b56da6="">
+         <li class="link_content" data-v-77b56da6="">
+          <div class="link_img_content" data-v-77b56da6="">
+           <a data-v-77b56da6="" href="" target="_blank">
+            Mainnet
+           </a>
+           <span class="blog_img_content" data-v-77b56da6="" style="display:none;">
+            <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVJJREFUeNrsV+0NgjAQBSdgBEZgBDaQEdxAN1BHcAJ0AzaoG+gGsgFsUK/mSAih5fDa6o97SRPKwfF43BdJIhAIBIK/Rkq5SGt9cpibNE2fTB9P8NF8/RbgvNZ2KKIPGzpYBUtmcJBrN0rG/TsvscBREewHjvrBVQTbKzhBfJBaq6KJL078bjzyLy0q7mHdv3W68Vy2jjPnKli3mARNzespKo4ytIlJ0JC7EFXcYiHvo7QdTBKzMiyw1oweZX3hKNRhkgQVWVLRxF5LaYPeFcTjzFHfhhZ2WGh14coMqnh2XJJxksNLmQGSV/MZHVNO+1OCCJuKNx9hxSZoUbFnzXcBOslUxWv00RubfoeZm83YH6PszIkDq/JNbsBjShKL88e2YqJRIci5SKrphGz2C12nnvsi5J8mfGBO+dnBttYOvRf3FWUA8ZVUAoFAIIiMtwADAG18vGH8r819AAAAAElFTkSuQmCC" style="padding-bottom: 0.02rem"/>
+           </span>
+           <!-- -->
+          </div>
+         </li>
+         <li class="link_content" data-v-77b56da6="">
+          <div class="link_img_content" data-v-77b56da6="">
+           <a data-v-77b56da6="" href="https://www.irisnet.org/docs/" target="_blank">
+            Docs
+           </a>
+           <span class="blog_img_content" data-v-77b56da6="" style="display:none;">
+            <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVJJREFUeNrsV+0NgjAQBSdgBEZgBDaQEdxAN1BHcAJ0AzaoG+gGsgFsUK/mSAih5fDa6o97SRPKwfF43BdJIhAIBIK/Rkq5SGt9cpibNE2fTB9P8NF8/RbgvNZ2KKIPGzpYBUtmcJBrN0rG/TsvscBREewHjvrBVQTbKzhBfJBaq6KJL078bjzyLy0q7mHdv3W68Vy2jjPnKli3mARNzespKo4ytIlJ0JC7EFXcYiHvo7QdTBKzMiyw1oweZX3hKNRhkgQVWVLRxF5LaYPeFcTjzFHfhhZ2WGh14coMqnh2XJJxksNLmQGSV/MZHVNO+1OCCJuKNx9hxSZoUbFnzXcBOslUxWv00RubfoeZm83YH6PszIkDq/JNbsBjShKL88e2YqJRIci5SKrphGz2C12nnvsi5J8mfGBO+dnBttYOvRf3FWUA8ZVUAoFAIIiMtwADAG18vGH8r819AAAAAElFTkSuQmCC" style="padding-bottom: 0.02rem"/>
+           </span>
+           <!-- -->
+          </div>
+         </li>
+         <li class="link_content" data-v-77b56da6="">
+          <div class="link_img_content" data-v-77b56da6="">
+           <a data-v-77b56da6="" href="https://forum.irisnet.org/" target="_blank">
+            Forum
+           </a>
+           <span class="blog_img_content" data-v-77b56da6="" style="display:none;">
+            <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVJJREFUeNrsV+0NgjAQBSdgBEZgBDaQEdxAN1BHcAJ0AzaoG+gGsgFsUK/mSAih5fDa6o97SRPKwfF43BdJIhAIBIK/Rkq5SGt9cpibNE2fTB9P8NF8/RbgvNZ2KKIPGzpYBUtmcJBrN0rG/TsvscBREewHjvrBVQTbKzhBfJBaq6KJL078bjzyLy0q7mHdv3W68Vy2jjPnKli3mARNzespKo4ytIlJ0JC7EFXcYiHvo7QdTBKzMiyw1oweZX3hKNRhkgQVWVLRxF5LaYPeFcTjzFHfhhZ2WGh14coMqnh2XJJxksNLmQGSV/MZHVNO+1OCCJuKNx9hxSZoUbFnzXcBOslUxWv00RubfoeZm83YH6PszIkDq/JNbsBjShKL88e2YqJRIci5SKrphGz2C12nnvsi5J8mfGBO+dnBttYOvRf3FWUA8ZVUAoFAIIiMtwADAG18vGH8r819AAAAAElFTkSuQmCC" style="padding-bottom: 0.02rem"/>
+           </span>
+           <!-- -->
+          </div>
+         </li>
+         <li class="link_content" data-v-77b56da6="">
+          <div class="link_img_content" data-v-77b56da6="">
+           <a data-v-77b56da6="" href="https://medium.com/irisnet-blog" target="_blank">
+            Blog
+           </a>
+           <span class="blog_img_content" data-v-77b56da6="" style="display:;">
+            <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVJJREFUeNrsV+0NgjAQBSdgBEZgBDaQEdxAN1BHcAJ0AzaoG+gGsgFsUK/mSAih5fDa6o97SRPKwfF43BdJIhAIBIK/Rkq5SGt9cpibNE2fTB9P8NF8/RbgvNZ2KKIPGzpYBUtmcJBrN0rG/TsvscBREewHjvrBVQTbKzhBfJBaq6KJL078bjzyLy0q7mHdv3W68Vy2jjPnKli3mARNzespKo4ytIlJ0JC7EFXcYiHvo7QdTBKzMiyw1oweZX3hKNRhkgQVWVLRxF5LaYPeFcTjzFHfhhZ2WGh14coMqnh2XJJxksNLmQGSV/MZHVNO+1OCCJuKNx9hxSZoUbFnzXcBOslUxWv00RubfoeZm83YH6PszIkDq/JNbsBjShKL88e2YqJRIci5SKrphGz2C12nnvsi5J8mfGBO+dnBttYOvRf3FWUA8ZVUAoFAIIiMtwADAG18vGH8r819AAAAAElFTkSuQmCC" style="padding-bottom: 0.02rem"/>
+           </span>
+           <!-- -->
+          </div>
+         </li>
+        </ul>
+        <div class="lang_content" data-v-77b56da6="">
+         <div class="english_content" data-v-77b56da6="">
+          <!-- -->
+          <span class="lang_english" data-v-77b56da6="">
+           <a data-v-77b56da6="" href="?lang=CN">
+            ä¸­æ
+           </a>
+          </span>
+          <span class="arrow_img" data-v-77b56da6="" style="padding-left: 0.05rem">
+           <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAWCAYAAADeiIy1AAAAAXNSR0IArs4c6QAAASJJREFUSA3tlcFKw0AURTOxKQoVRASh4MJlNoWiVEF/wR/uuoJ04ye4cyEiQgu1lDaeK0QmdtIhycRVH1zezPTlns70TRpFDSPLshTFPhtvgc+Azy/QNbCDXbUhQPI/R7fAkjJYKJD8T9EdsEMXLCRI/sfoHljvLyw0SP5HSDs7sWGGhdReqDG+5BlXI6xZnxpj3uUp0IMGLcUG32dgr52WALmtfporNpNoR6UtmVfvs+sE/u3o1Ax9NHB9i5BrRmY0hGBD1MYFFiL6AWkA7Iw0QmWX70V1deMXJANgem3coK7mViy5dGNrXnlYOCrMPnF4RIvKTp4HCiDVApuTJmimeajYAskY2BdJO/vQPEQ4QTIGtiI9oTfNWw8aJEZN/0qibw2RSrEqzXpoAAAAAElFTkSuQmCC"/>
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="mobile_nav_content" data-v-77b56da6="">
+       <div class="menu_content" data-v-77b56da6="">
+        <div class="lang_btn" data-v-77b56da6="">
+         <span class="menu_lang" data-v-77b56da6="">
+          <a data-v-77b56da6="" href="?lang=CN">
+           CN
+          </a>
+          <!-- -->
+         </span>
+         <span class="arrow_img" data-v-77b56da6="">
+          <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAEAgMAAADOo5ZjAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMAhoKUGRkfAAAAFElEQVQI12Oo/8ug/4WB+wIDUwMAG4ID/fQK2noAAAAASUVORK5CYII="/>
+         </span>
+        </div>
+        <span class="menu_img" data-v-77b56da6="">
+         <img data-v-77b56da6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAmBAMAAABE2sQuAAAAElBMVEUAAABLTm1LTm1LTm1LTm1LTm02mDyRAAAABXRSTlMA7pGJiAE4ym0AAAAqSURBVCjPY2ASDUUDgQoMqqEYIIQBoRChFKsgNu3B2C0afmA0PIdReAIAccdwAEQindMAAAAASUVORK5CYII="/>
+        </span>
+       </div>
+      </div>
+     </div>
+     <ul class="nav_link_container" data-v-77b56da6="">
+      <li class="nav_link_content" data-v-77b56da6="">
+       <span data-v-77b56da6="">
+        Mainnet
+       </span>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <span data-v-77b56da6="">
+        Testnet
+       </span>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <span data-v-77b56da6="">
+        WhitePaper
+       </span>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <span data-v-77b56da6="">
+        Roadmap
+       </span>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <span data-v-77b56da6="">
+        Collaboration
+       </span>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <span data-v-77b56da6="">
+        Community
+       </span>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <a data-v-77b56da6="" href="https://www.irisnet.org/docs/" target="_blank">
+        Docs
+       </a>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <a data-v-77b56da6="" href="https://forum.irisnet.org/" target="_blank">
+        Forum
+       </a>
+      </li>
+      <li class="nav_link_content" data-v-77b56da6="">
+       <a data-v-77b56da6="" href="https://medium.com/irisnet-blog" target="_blank">
+        Blog
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content_wrap" data-v-9250695e="">
+    <div data-v-9250695e="" style="position: relative;">
+     <!-- -->
+     <div class="swiper-button-prev" data-v-9250695e="">
+     </div>
+     <div class="swiper-button-next" data-v-9250695e="">
+     </div>
+    </div>
+    <section class="sectionTwo" data-v-9250695e="">
+     <div class="first" data-v-9250695e="">
+      <div class="left" data-v-9250695e="">
+       <div class="keyInnovationMsg" data-v-9250695e="">
+        <div class="title" data-v-9250695e="">
+         Key Innovations
+        </div>
+        <ul class="msgList" data-v-9250695e="">
+         <li data-v-9250695e="">
+          <label data-v-9250695e="">
+          </label>
+          Incorporation of a service-oriented infrastructure into Cosmos
+         </li>
+         <li data-v-9250695e="">
+          <label data-v-9250695e="">
+          </label>
+          Integration of business services offered by heterogeneous systems,including public &amp; consortium chains as well as legacy systems
+         </li>
+         <li data-v-9250695e="">
+          <label data-v-9250695e="">
+          </label>
+          Interoperability of those services across an internet of blockchains
+         </li>
+        </ul>
+        <div class="whitePaper" data-v-9250695e="">
+         <button data-v-9250695e="">
+          <span data-v-9250695e="">
+           WHITE PAPER
+          </span>
+          <img alt="" data-v-9250695e="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAgCAYAAAAffCjxAAAAAXNSR0IArs4c6QAAAJVJREFUSA3tlMEJgDAMRQVPggs4QWdwTI8O4BaCaziBF09OUF/AQqiXtHpM4NGqzac8aZsY4wAbhOZLETCD1AH1YTR3sIKUhxn+Cp7cmcGTXuLOtA3b/G9nPYEnSO3Q2rahVkkTLCB1wag+26Y0eUimyp1kQnh0J28n8gYvE0jVHcAUS0AAuQrKT3EKSSMh5fdJan7GGxYRFAFYGA+PAAAAAElFTkSuQmCC"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="right" data-v-9250695e="">
+       <img alt="" data-v-9250695e="" src="/dist/basicInternet.png?68543387c34d1d7421b646f4bebc6a92"/>
+      </div>
+     </div>
+     <div class="secend first" data-v-9250695e="">
+      <div class="right" data-v-9250695e="">
+       <img alt="" data-v-9250695e="" src="/dist/banner-Network design.png?94cd69bdc810db2bbb66d32309b4aab2"/>
+      </div>
+      <div class="left" data-v-9250695e="">
+       <div class="keyInnovationMsg" data-v-9250695e="">
+        <div class="title" data-v-9250695e="">
+         Network Design
+        </div>
+        <ul class="msgList" data-v-9250695e="">
+         <li data-v-9250695e="">
+          <label data-v-9250695e="">
+          </label>
+          Definition of standard ABCI transaction types supporting registration,binding, invocation, query, profiling and governance of IRIS Services(a.k.a. iServices)
+         </li>
+         <li data-v-9250695e="">
+          <label data-v-9250695e="">
+          </label>
+          iService providers act as adaptors of business logic residing in public andconsortium blockchains as well as enterprise legacy systems
+         </li>
+         <li data-v-9250695e="">
+          <label data-v-9250695e="">
+          </label>
+          iServices can be invoked across anextended IBC protocol
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="sectionThree" data-v-9250695e="">
+     <div class="title" data-v-9250695e="">
+      Roadmap
+     </div>
+     <div class="road" data-v-9250695e="">
+      <div class="roadMap" data-v-9250695e="">
+      </div>
+      <img alt="" data-v-9250695e="" src="/dist/rocket.png?14df1e42325b57017de6101b1591e019"/>
+      <div class="HOUYI" data-v-9250695e="">
+       <div data-v-9250695e="">
+        HOUYI
+       </div>
+       <div data-v-9250695e="">
+        BEYOND OCT 2020
+       </div>
+       <div data-v-9250695e="">
+        The fourth stage will focus on further technology innovations to the IRIS network, SDK and mobile client, as well as developer engagement.
+       </div>
+       <div class="markIcon" data-v-9250695e="">
+        <div data-v-9250695e="">
+        </div>
+       </div>
+      </div>
+      <div class="HOUYI" data-v-9250695e="">
+       <div data-v-9250695e="">
+        KUAFU
+       </div>
+       <div data-v-9250695e="">
+        NOV 2019 - SEP 2020
+       </div>
+       <div data-v-9250695e="">
+        In this stage we are aiming to accomplish the connection of IRIS Hub with applications blockchains through IBC. We plan to upgrade IRISnet mobile client to support those applications. The third stage will also focus on incremental upgrades to the IRIS network in order to support our planned advanced IRIS Service features.
+       </div>
+       <div class="markIcon" data-v-9250695e="">
+        <div data-v-9250695e="">
+        </div>
+       </div>
+      </div>
+      <div class="HOUYI" data-v-9250695e="">
+       <div data-v-9250695e="">
+        NÃWA
+       </div>
+       <div data-v-9250695e="">
+        APR 2019 - OCT 2019
+       </div>
+       <div data-v-9250695e="">
+        In this stage we are adding more fundamental modules to support application development especially DeFi applications. The new modules planned to release in this stage including multi-asset management, uniswap, multi-sig account etc. We plan to collaborate with 1-2 ecosystem partners to develop applications using those modules.We also plan to accomplish the test connection with Cosmos Hub through IBC at this stage.
+       </div>
+       <div class="markIcon" data-v-9250695e="">
+        <div data-v-9250695e="">
+        </div>
+       </div>
+      </div>
+      <div class="HOUYI" data-v-9250695e="">
+       <div data-v-9250695e="">
+        PANGU
+       </div>
+       <div data-v-9250695e="">
+        JAN 2018 - MAR 2019
+       </div>
+       <div data-v-9250695e="">
+        The first stage of the IRIS project focused on having the IRIS Hub up and running. Initial version of the mobile client for the IRIS network was released. In this stage we also focused on building the fundamental IRIS Service Layer which was released to IRIS Hub. Which enables service definition, binding, invocation and query.
+       </div>
+       <div class="markIcon" data-v-9250695e="">
+        <div data-v-9250695e="">
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="sectionFour" data-v-9250695e="">
+     <div class="title" data-v-9250695e="">
+      Collaboration
+     </div>
+     <div class="logos" data-v-9250695e="">
+      <div class="logo" data-v-9250695e="">
+       <div class="title" data-v-9250695e="">
+        Core Development Teams
+       </div>
+       <div class="logoIcon" data-v-9250695e="">
+        <a data-v-9250695e="" href="https://www.bianjie.ai/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_bianjiehover.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://tendermint.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_tenderminthover.png"/>
+        </a>
+       </div>
+      </div>
+      <div class="logo" data-v-9250695e="">
+       <div class="title" data-v-9250695e="">
+        Strategic Partners
+       </div>
+       <div class="logoIcon" data-v-9250695e="">
+        <a data-v-9250695e="" href="https://cosmos.network/about" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_InTERCHAIN.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://www.hashkey.com/#/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_HASHKEY.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://www.platon.network/#/index" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_Platonlogo.png"/>
+        </a>
+       </div>
+      </div>
+      <div class="logo" data-v-9250695e="">
+       <div class="title" data-v-9250695e="">
+        Ecosystem Partners
+       </div>
+       <div class="logoIcon" data-v-9250695e="">
+        <a data-v-9250695e="" href="https://www.okex.com/okchain" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_ok_chain.png" style="max-width: 2rem;"/>
+        </a>
+        <a data-v-9250695e="" href="https://www.kava.io" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_kava.png" style="max-width: 2rem;"/>
+        </a>
+        <a data-v-9250695e="" href="https://www.e-money.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_eMoney.png" style="max-width: 2rem;"/>
+        </a>
+        <a data-v-9250695e="" href="https://iov.one/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/IOV.png" style="max-width: 2rem;"/>
+        </a>
+        <a data-v-9250695e="" href="http://iris.fan/#/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_coirfan.png" style="max-width: 2rem;"/>
+        </a>
+       </div>
+      </div>
+      <div class="logo" data-v-9250695e="">
+       <div class="title" data-v-9250695e="">
+        Institutional Supporters
+        <p data-v-9250695e="">
+         ( Listed in no particular order )
+        </p>
+       </div>
+       <div class="logoIcon supporters" data-v-9250695e="">
+        <a data-v-9250695e="" href="http://www.aminocapital.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_AminoCapital.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://www.bibox.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_Bibox.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://www.hbg.com/en-us/capital/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_huobi.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://gbic.io/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_GBIC.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_8decim.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://bihu.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_bihu.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_BKfund.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_byz.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://www.chainpe.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_ChainPE.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://chainpool.io/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_CP.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://coefficient.network/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_COEFFICIENT.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://consensuscapital.ca/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_gongshi.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_dushu.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://genblock.capital/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_genblock.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_HAYEK.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://ink.one/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_INK.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://www.linkvc.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_LINKVCcopy.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://medishares.org/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_MediSHares.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://www.milestonevc.com/index.html" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_jieshi.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://nirvana.capital/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_nirvana-logo-white.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://ngc.fund/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_NGC.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://www.theorigincapital.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_origin.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://satoshi.fund/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_SatoshiFUnd.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://www.svinsight.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_guigu.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_shicuo.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_huixiang.png"/>
+        </a>
+        <a data-v-9250695e="" href="https://u.network/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_Unetwork.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://www.unityvc.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_jiuhe.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_UA.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://waterdrip.io/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_shuidi.png"/>
+        </a>
+        <a data-v-9250695e="" href="javascript:void(0)" style="cursor:auto;" target="">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_yidao.png"/>
+        </a>
+        <a data-v-9250695e="" href="http://snzholding.com/" style="cursor:pointer;" target="_blank">
+         <img data-v-9250695e="" src="../public/irisnet/logos/irisnet_snz.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+   <div class="footer_container" data-v-2ce2631a="">
+    <div class="footer_wrap" data-v-2ce2631a="">
+     <div class="content" data-v-2ce2631a="">
+      <div class="left_content" data-v-2ce2631a="">
+       <div class="community_link_content" data-v-2ce2631a="">
+        <div class="social_community_content" data-v-2ce2631a="">
+         <h4 class="community" data-v-2ce2631a="">
+          Community
+         </h4>
+         <ul class="community_link_list" data-v-2ce2631a="">
+          <div class="mobileBox" data-v-2ce2631a="" style="display:none;">
+           <div class="qrcode" data-v-2ce2631a="">
+            <img alt="" data-v-2ce2631a="" src="/dist/wechat.jpg?4961bc90736f58c6359e5e5f6ad7178e"/>
+            <div class="arrow" data-v-2ce2631a="">
+            </div>
+            <img alt="" class="closeIcon" data-v-2ce2631a="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAYAAADHLIObAAAAAXNSR0IArs4c6QAACvBJREFUeAHVnWuMXVUVxxlgeNhiwaaE1qgDlJaAQG2Q+IwjoRWJMBTE9KNfGvRLCTEWfIQobbRJa8YPkxJFxUdCMBCDOokmQnmlBDAxsYoBjZj4IGrVtrSUlzr+/tdzLjPnrrXP3vuec++dlfxzztl77f96zDln77P3vu3YcUOWubm5VbhwMVg7Dys4P20eOD3uyDwc4PzZedg/Njb2PNdDk7FBWyZxZ2DzCvBBcDlQApsQJXYveAg8QGIPNkE6UhwkbxxMgfvAy6BtkQ3Zks3xkUpGjjMEsRxsBwfAsES25cPynBiG2ganV4Ld4CgYFZEv8mllG8lp9B2Jk3qMbga3gSUZDh+ijd51z4HD4Ch4AchPdT5LwTJwDtC79XSQKi/S4HYwzXv0tdTGreuTxEnwNIiVf6P4FNgJNoIzU51Um6KtOMQlzliRr5OpNlvTxxl1JNOx3qO3D9wI1Hs3KnC+qeCWjViR78PtkHBgAjwZ4fFL6MyA1Y1mLkAmW4VN2a4TxTARoGuvCsMbwMEaD49Rvwuc1Z4nYWbZLnyQLyFRLBvCbA3XYnAzeCXkFXWz4OyGTWfTyZfCJw6uKKbN2UZSGmJoK/iv68rc3N+ouzaFc5C68g3IR08U29ZWfZIBz3pRvpfj0B7j2ODxUeNc+RqSdpKJRT3OoTtxB/XHxwYzbD35CuSzJ4q12cccQnUs3jtRY7ctw05Mrn35Drzxp2JupgOCSEMcr3fW5MCm3CBGpZ1iAIrFEsU+0ZevEIwDb5yov+KiT2KZIMUCvDtTOcgftNN4GniyaB/nMnnVI4HqMfdkuqofdQ2bvp092RFFsgiVCDjUAU0mhQSZHmlvAkLDhkXTOycFjrJiA97QSDmJf8RRvgVYooHsyI8TU5NX1VeMwBu0b6vqm9cQaLDqTcgmfbHAcyK4CAwt+dheBt5qBhsopI2+gCxRbuonh1HSLLIlswG7PVUQ6Nv2NwWRBrdfBQN7JWDrBPAV8B8gUc/75h5HAwXoa77Akt2BZp33g9ZYrLtRMydJExDoW058j/LWk4kNPQn3gKr8MJiASiWNdTNYs0bKkb8GRKUWiSzZVbFRewmJt+D1XepaSybc6ii1gmiJ1sOTBBJNA1qy3SRCUw5YwWtiNPkdR5ufAU9aSSbGTgL3e0Yp32sGHyikjToea3JYuertwSmcApbMBOy4VRCtBf+wCIuy73Bs7M6E62Tw44LbOhym8O2uw4EK2s1YhJRN9TSj0HscspcH4FwH/gk8+TYVfScTjlPATzwjlB8Cl/UEHVlA29UO930LKFA6A1gf7fsWKGZcwPsO8C/gyV1UZCeTtqeC0GtEti/NcH1BEzj2gaooZ68v4nFxQ1WjuL5xAVvmBVzrQSiZ36I+OZm0WQK8rxCqOk/D+ky3FzSDSyufltzQVaT2DkNDMyGvZ7urnXcC16VAU1KefJOK6A0L6C4Fj3pklOv9vC7P295WcGmp15oduqOrjcKzoCpPdRUaOsHAO4HeV558g4raZKLzRmA9aiWvetRLGnK7SwOnNiFU5ZmOAqWrqjXF9c4uQ4MncF8GspNJW33yPQE8+TsVFzXocpcKXu3osGSVZjuutGoo29hlaPgE7ncBDUc8uZOKnjuTMnWKP/caUa6JhgsbdrdLB7e21lhypRJ5k1VDWfJenK7FiBP43w1ecGyr+Ougm0zO9fn6C+DJX6m4IMJ0tgr8ZzrGb1Ii9xiVB7OtJTTE7ntAKJlfo34MrAC/BJ48T8X5CaazVbFjdZh7lMgHDe+eyLaU2BDb7wNHDB/Kors4+XV5YRz/QtmaRLPZ6tiy3s8PKpH7DefuzraU0RD77weaUUmVP9PgvAyT2U2wd7fh5H4NgrWBsyqHqwVtXrPh8zH4rwLaBBorf0LxA7T9XWyDhvSs3JzmJVI/xRiokJBHMfgRcCzC8B/RmaTN7yN0m1axcjM6iVS0JOZhDp/QeUAUiO7E5wI6bVZpO3ZVOomsFuq6O+ywKtsq493zNri/WMOvV9Ena3QGXq1H27pVlw7aE5I4gc1HwNkRtreh/+UIvTZUrD7liJdIS7kNpzqcJOUcTpRE3ZGxcivtvhSr3KCedZO5iVzWoOEgFck4F4WHgbdk+ivqXgWWfIb2g971YeWmk0hrQUh3SOtCEjQG1J34FsfY45S/F1wPvGR+Dp7bnfZtFFu5OTC0T0SCXwP0VeLJY1R0HyPOrwaveMqUf6GNrFU5seN+Ig580gJnzgf6PvbkESqWGEFcQ/mrXiPKb6u2afIa/uCkxUCn0XDmAqCZGk8eoqIniWVCqJsCoWR+vtRt+ojdDwFLOtNoq6wayhqf2IXzQuBtTpIbmkB5Q10C0KlL5mfrOHLqsbsTWKIf73e2qjxj1Da61AC/NlNp9toTrQSeGhsguteC0J15ayxXrB72/KUGkaDQ6uIX/JcAraN48lMqTokNqNSjzSYQSuYtpW6/R+x4i197utwotbYcC/c6ENpxoYX95CSWztP2OvAa8OTTpW4/R8ijlmO1FvKy4UlfGwTgWw9COy1mqT+5nwDVFo66ZH6qARvWqqVytnDJmoJGt6zAp3Xs0KaAH1F/Ur8Blu3huh6E7sybS93UI7xxW1ZEjLJ6QkuSN1FBch44aJEVZfdzbCyJZWLg/CgIJfPjpW7KEc4ZYMlUDw9a48DqEF6iPGlbH/r3AE9+QMV4jwMNFcCt972XzMPUnZBiCv2zgHJQFeXKjoOKRjaawmMNE+TIveDElEBydLHxMeAlc3kKJzy7gCXbXR60tXZ81Gh1jLKYecION7rWH+T7lLeexDI4bCmZ1b06SWNj2mvrs3U3KkfhPwgKu4Els6WTdUcaa9PnnUC92otAXwRJj1SdjZh6bH4Y/AHoxwCPA03ZRQv6s8CS3bUktFoJrLtShKk/D9F79/haoy0r4EPyEEuxAkuUm/qfhygmFLdZDJTpOzmp42k5R63QK8YiVg49si3aKE11Jz3dQ/H/Am3sHPpdFh1MoqJiA97mVeXE7qk9OzSYBJ4Menrfc7PxcgLe4QVN+WSWQRpOB0i3ZJGOcCNi3RKIdzrbdUj1iD/pkGtosSmbfMQaKhZQHS6VoSsHaY90NT4IJoD3uafhzaJPpmIAisUSxT5RzUvWNUQbgLfwpL/ion3M5Tvw7kTFvCEraV4jCDcDDWw90Ut60fTm8hWEOhbFutnLR1/lEG8FIdGwYeTHmfiojw5viFPG184/oFT+BbCiZIbuTA3ak76ASu5BHOUbkI+eKLZ2k1gGiiE95t47s3RQ36nREx0ld1tH+QK8b+fSZ8XUzuPsBYZBdUBeb146plkjTUMN7XGX7cIHaxaHqq4olmY7Fi951XIMa2jkzT12PeREQcyA1VWOtq5lq7BZl0DUOmPlibZ8ieLFCQ3ap+VNpOxDTytyCxeNoqyFlcRZcMtGrMj3/gbbYbfSanFG3+beRIcVlMZuups1V7kRJP9ASm2KtuIQlzcepKpH5OtkWpS+9phflV6DY/rLarVOm5nc/TsB5kPUzf/ns49wLUi0+VXQ/kRtrVsLTgepMtr/fPb8aEioxmmaadck6KiIfJFPcZOy8wMa9jlOaw1I6zdacRuWyLZ8CK+xDDtZMfYJQh3SFNAmBG9ygKrGRDZkSzYH0pE0+o6MTKp66yvA5QXWxLSL0PktOnsLDPy/YRl4IqsJ4Y7R3sKLgTqPEis4LzuX8hcWZcejo/a9q1MqMfT/GOh/KiH46u9wjiEAAAAASUVORK5CYII="/>
+           </div>
+          </div>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://www.coinmarketcap.com/currencies/irisnet/" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/cmc.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://t.me/irisnetwork" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_telegram.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://twitter.com/irisnetwork" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_twitter.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="mailto:contact@irisnet.org" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_mail.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://medium.com/irisnet-blog" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_medium.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_wechat.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://weibo.com/u/6455513027" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_weibo.png"/>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="tech_community_content" data-v-2ce2631a="">
+         <h4 class="community" data-v-2ce2631a="">
+          Developers
+         </h4>
+         <ul class="community_link_list" data-v-2ce2631a="">
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://github.com/irisnet" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_github.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://jq.qq.com/?_wv=1027&amp;k=51eKP77" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_qq.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://riot.im/app/#/room/#iris:matrix.org" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_riot.png"/>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="tech_community_content" data-v-2ce2631a="">
+         <h4 class="community" data-v-2ce2631a="">
+          Validators
+         </h4>
+         <ul class="community_link_list" data-v-2ce2631a="">
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="http://qm.qq.com/cgi-bin/qm/qr?k=95CgDIPMXy5ZLEPF1pvd9GEh7ldWRI32" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_qq.png"/>
+           </a>
+          </li>
+          <li class="community_link_item" data-v-2ce2631a="">
+           <a data-v-2ce2631a="" href="https://riot.im/app/#/room/#irisvalidators:matrix.org" target="_blank">
+            <img data-v-2ce2631a="" src="../public/irisnet/irisnet_riot.png"/>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="footer_link_content" data-v-2ce2631a="">
+       <div class="products_resources_container" data-v-2ce2631a="">
+        <div class="products_link_content" data-v-2ce2631a="">
+         <h4 class="products_title" data-v-2ce2631a="">
+          Products
+         </h4>
+         <div class="link_container" data-v-2ce2631a="">
+          <ul class="link_content" data-v-2ce2631a="">
+           <li class="link_item_content" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="https://www.rainbow.one/" target="_blank">
+             Rainbow Wallet
+            </a>
+           </li>
+           <li class="link_item_content" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="https://www.irisplorer.io" target="_blank">
+             IRISplorer
+            </a>
+           </li>
+           <li class="link_item_content" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="https://www.irisnet.org/docs/light-client/intro.html" target="_blank">
+             Light Client
+            </a>
+           </li>
+           <li class="link_item_content" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href=" https://www.irisnet.org/docs/cli-client/intro.html" target="_blank">
+             CLI Client
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="resources_content" data-v-2ce2631a="">
+         <h4 class="resources_title" data-v-2ce2631a="">
+          Resources
+         </h4>
+         <div class="resources_link_container" data-v-2ce2631a="">
+          <ul class="resources_link_content" data-v-2ce2631a="">
+           <li class="resource_list_item" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="https://medium.com/irisnet-blog/irisnet-faq-8793cf116c37" target="_blank">
+             FAQ
+            </a>
+           </li>
+           <li class="resource_list_item" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="https://medium.com/irisnet-blog" target="_blank">
+             Blog
+            </a>
+           </li>
+           <li class="resource_list_item" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="https://www.irisnet.org/docs/" target="_blank">
+             Docs
+            </a>
+           </li>
+           <li class="resource_list_item" data-v-2ce2631a="">
+            <a data-v-2ce2631a="" href="/community/press-kit" target="_blank">
+             Press Kit
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="newsletter_content" data-v-2ce2631a="">
+        <h4 class="newsletter_title" data-v-2ce2631a="">
+         Newsletter
+        </h4>
+        <input class="email_input" data-v-2ce2631a="" placeholder="Please enter your email address" type="text" value=""/>
+        <p class="hide_error" data-v-2ce2631a="">
+         Please enter a valid email address
+        </p>
+        <button class="submit_btn" data-v-2ce2631a="">
+         Subscribe
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="copyright_wrap" data-v-2ce2631a="">
+     <div class="copyright_container" data-v-2ce2631a="">
+      <div class="copyright_content" data-v-2ce2631a="">
+       <p class="irisnet" data-v-2ce2631a="">
+        IRISnet is named after Greek goddess Iris, said to be the personification of the rainbow and the faithful messenger between heaven and humanity
+       </p>
+       <p class="copyright_text" data-v-2ce2631a="">
+        <span class="copyright" data-v-2ce2631a="">
+         Copyright Â©2019-2020 IRIS Foundation Ltd. All rights reserved.
+        </span>
+        <span class="link_common_style" data-v-2ce2631a="">
+         Privacy
+        </span>
+        <span class="connector" data-v-2ce2631a="">
+         &amp;
+        </span>
+        <span class="link_common_style" data-v-2ce2631a="">
+         Terms
+        </span>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="float_window_container" data-v-57d3e328="">
+    <div class="float_content" data-v-57d3e328="">
+     <a data-v-57d3e328="" href="https://t.me/irisnetwork" target="_blank">
+      <img alt="" data-v-57d3e328="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAwCAYAAABaHInAAAAAAXNSR0IArs4c6QAABE5JREFUaAXtmVmITWEcwF0zk70oU0yTEVnL9kDRlAdjyWheUJKSxpQSylIyJRQPHiwvskQ0eZgiFGXIaLKVJWGKeTBli+wxRsKM33+65zrn8537ne27XfKvX+db/uvZ7ne+263bf8nPM9DZ2VkCtXAb2uA49MrPbA1ZkXgBVMJp+AGqrDG4yK9psh8KW+G5WonSP1+YX6n/mQ0JFzFaBTUwC1Jgkva8LYyCRpJ9NSyDYlMlynxzXhVGMT1JcD7I1ZmuJBumeyuMsjVdChoHe+E9JCGDrCVrckz2faEabiRRicvHU1NsK/MkMBkOwmdXMkGa8mpfBC0G5ZNWEtc5JZH+sBLuGZLSTT9lsFL8cqyC7zol19hGXQ6JjhGsHI5Buytw0GYHivugX7qopbRNRaHSOSPRIhxnOC6GdfAQosojDMtdPtfSl0JNIjr9HbvYR5yloALq4RtEFbkiO6CHk1S6H9Rfi2MX60g0WYBugtagkbPoySJ2gpMQ7e4gL5kwUufYhz4SRRag8+AM6BagDIcSef42QIGTDO0ecALCymrHR+AjEWQBug1MC9AwyTSiPNydBP1+cCmME5fuVLcv3zYGRbAAGiDIw4taIPmIVg14FrT0B8ItiCLyfGb/DkNhJOyE15C0nMLhYPVsMjYE5G0YVe6qPrv6eOsJS6ApqmeD3SvmF+iCMz4GnhnsTdMHPL7RlrfPenhjsowxfwTbAZ7A6Q7jU+BtDN+O6XKPf0aPOjMWjq34rPAEdHWYmwlh14x+aWZ+KrpCoJXE2VKD/WRgF/R21eFpMrcQ4vyYY54R+cnwflsyMAOaMyrxGw9wMcVThdJhfgVI8UnJNSXE7y4RJoBslEQtUs7+ZpA9Cl9hvhaSlt2+Ad0TRB0FslS6EzCD6+iNdftQ28zLenJPQH9h1Rar8Yx9IsiKQ1brknwHuEUe/FXQPZsj5guhDmzJiGzxjXNkJYte+WBshHNQZjJCpxecBVvyAceeFYwpp9jzBJQv5yu2Kkr7vahL1PuK1GlEHCOo7BQ1wPiILoKaabfarBRGUcPISs6kHG3LTV0AK/cmhT0h2BBdQAtjpalU6oXqN/HCKErugu9qIEv9lxRVovOd9TWtMwgwltxmijmY9vkSMxuFaVfx5hwjaeS0sFxeMe2L41+4Yrf9rrONWzHbFftKIovgkl9CIcYf8+J476dvozC/Z6ydJCpJpp6j/DO5FTogqvg+X+LQRmG6K/aFWHMp6rIE5dgBW2hKga8hiuS8MPWKtZG1FNWkZs+Y3JIT4Y85VVfT931xaHTjD/EDvR8ckc+azJ8Lft7RKYDtoH4WMaQV2YHu4+fPyjgB5Y8JkU8wLUwQ9OdAkN2y+2H8JqJLYhdAtsEnRXGIXSlchWxyOIrvWDZkMxoyfwNFcYa9fHHLTrTfrbkkit+8saEw+VfnHbiljU5uny8bZ4QiyuAQyBbAM5htI85f4/MXYCtrwpC10roAAAAASUVORK5CYII="/>
+     </a>
+     <a data-v-57d3e328="" href="https://github.com/irisnet/irishub" target="_blank">
+      <img alt="" data-v-57d3e328="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAwCAYAAABT9ym6AAAAAXNSR0IArs4c6QAABNpJREFUaAXNmluIVVUYxzs53p2a1KK8kROGl+5DUaaWDyo1ghRZCiIigQ9RUhERUZD4IFEPgVLWQw+CoFCUUqLiUCKaFpl4Q0hTvKZJyTRdKB1//9OczXadvfb69szeOz/4c9b61v+77cvaa699KtfkJJ2dnXfh6n5wL7gb3ASaunCR39/ABXAK7O7Czkql8iPt/1dI/h6wDBwB3ZU9GL4OmkuvhqCTwCaQp1zE2WowvvCCCNIM8i4Al1fIJXqrwNDcC8JpBbwAOkBZ8jOBnsqtGJw1gi/Lyj4hzgfoevWoIBwMBz8kOC9btYGAjWnFVHyDGA5nbDsY5eOUrP+WeFOZrjuS4l6bpKSI69FvAFdLEUpTz6i15Nagjit1hUCU7lNwp0u+CvqPk8NyUx4U8irwSRsD40Ar0E14AeQlmqWWAj2jxoITwCezUovB6g7wl88a/aK4A/oDwWJwBiTJ3yiV4DnwTxIB3VHwHOjv+F7u4UuteP7nDIPbxUoRraPqBH4TeBe8A+aAMWCAS0SnqVwHawFQom+Avi5PffTzQJp8nGQnw8fSrLrGhiQaF6Akni6xNPmXwTG10PGb/a2aMuU38eil8Hsy1CdgrIfkmzVOtRAqm4xC01tIbgsRchxvNviaS+63iFc7I3MNRqJMMfLyoFli6azMrgajogZwFoRE06FelkoRYmlS+D2UFOM7qgnRmGggi9JaSgWxIMR8yZjbEM1WzxvIu2L+S2uSV3/ge0bF056ue6TFkNkaAyd3CgvEP3G6zuC4RYVMMBC/MnCKolhiT1Ahgw0ZnDRwiqJYYg9WITcYMmg3cIqiWGI3qZDUN6+u7K4rKkuDX70bhaRRhVgqtpy1ULDujltit6uQ84YIxe81+ZMY5x+KRs6rkF+irr/xkH+o8JEHDRGqhZwxEPWKWbrwxBtI0EcMgU/rjHxjIOrV07KIM7jKRNFi1jIZ7dQSxbrW2grXu32UKT0DmVgDgGVzXFus1bVWHxp/AIu8bMghFwrJfGhJCM7+KCCddUYjVb84Miyggf/eYIUxH9HejtKgMyODoahfAMsaLYphaeBzCtgNrKJPEaMj33S0237Isf6Ovu6fp8E2Z6zW/ZqGdk0GRc4yNrAdCrQdtA9klfV14fDgvpdoT2p+jUj7/ZQouuSOgM+B9oxTBY52SDaCk6AnMq0uEN50be5P8LpCZPQ6a/qilCYf1TlOUOCgL+jOGYjHrj8btViwHgY6uq48Iw5KTYkH3cFY//aar9AvNjNjdlmbepcflRoDwsoEr6fR6SmrYm4GujdcsTxYo9gYj3QdZOi/GDnyNXCmbU19aXXlimmXwQfAfDALZJ7BsNGlqiObVdZjoBVJWCCOAO6NqM3oW8PWdgb+joEs8j3k6pVhjoLBfcA9YsfRPQFsRyQQDT9ZClHsYT6XqWsnDCdi+Bm40XFwjv5eoH8xdAC9xZ1g1+MVfs2iQiCn37T/eTvETyv+D5udu0SCjQYHQEg2ubahPg4tZ6QNXvAtMXiJcBR+IiG9WH0SSCzoK2DvDl9C8R6YQQ6/uoM96nNk9A3lMEiStqzOceI7I7sYa8nqLxOfAP3Aa8D9xrclkyPI+NCyJi66hJ8FeZ9df2oEawBPgs1Af+1Y6Gcnj2CzBLSDteDRZJZNexkipM8BecevoQAAAABJRU5ErkJggg=="/>
+     </a>
+     <a data-v-57d3e328="">
+      <img alt="" data-v-57d3e328="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAwCAYAAABNPhkJAAAAAXNSR0IArs4c6QAABQxJREFUaAXlmtuLVVUcx+eM08VuU45joJbTYGJieSvTRBLTiCg0kqgYUiOInnrQB+kpfLFyyD9AELVyComySQpypAeRBC0bw4dBDAkda8omjcrr9Pke9zmsOWfvta9r70F/8Jm99vrd1m/vc/Zae51paLjOpJS03qGhoWZ8F8LjMBVaYazHLRzPGBynfcDjx1KpdJH2yBeKbIF18D1chiTyD05d8BSMGpFVM7DpsBk02CzlFMF0AUePiMI1ENgIl8Cl/ELwldBYWOEkXwh9kKfsIZmeBfkKSTvA9V0NupC62/Nyq5hkr0HSB1JQEXH7/8NhsfOiSfIKXIk7Okf2Z4k7O+uiq/Mwwe8jeC/cFpLkL/S74FfQR09zcVQ5jWE3nIMnYAbY5DeUM5m3+21GsXUUW4JvIUwOYjDGTMD5u2FOnr6bY3X6od0In3g626HLzJdJm2wrbRkN3dLahOjGG3pbc7KP7wKbg6HTpyETqcx7r0eMVv0KGPZ+fYa62vSz8+urOhiN9UY7XZOrOM24kmHNQxi0mBk57wxz8vS7OWqNXRba+kjv9HRRDm2ea6pDE94dMSLoqfkzo6s8tOZz/lhE/6exO47vbo5nQdPOQ2CTIZSyvQlegg2QSvSw+pwIy1JFyca5nzDfePzEUU/ogcqbFeNspH2FvlSiO9yWKkI658u474ROitHXRR/5BbACHoFx9FVeO7U+GKBPF+Ik7IO9cDjWhSDIIBQh20lafnJzXAKati5AXDmDwyZop/hwwTDrV76wAWuAz2tkHJ+DI2EOEfVaDn8G91urxkCL9bxEGwf3wFj42FFS3cA1UJlyh9ePYq+jxLVhj9KhQmfB6Vqlg3OtHO8YXm1Dg67C/tpOB+cniKlVWhv0wN3gWrTXpps5bN2gaWkOioOOsyu5XjYOgDb/8pReks3jSf6vkmpuO8TxB504km3E1RSyFfIulpTlxc1GNarCXX4GXMg5grbC2gjB92EzBZrhBfgdbKK9trtgIrxjM/R0T1YLVoPOryI4xTX5EIcbYSCC4yRzQNi/avE5bNp64//SYi/Vd7IzH92rONcLepayg2DPgjbow6RUY1B7bqr9dH59ps+jFD3D7NBdng9/QxaiLZom0GIgiuzH6AHQx/RF+ANs8j7KFpgE70EU2VR3VfBawlXQC8Wtw65G/BP9pDKTeH242lc/8WMn9egxP9LlIAxyDw3tVR1LGtXz0wpOF/TelHGydG+vK1jRKVqvZw9Dt84Tykn87gS9y44UmeBbsEZH0dqdXAZf6DyBqNBBOJ/A15XLYGDBykjR2nGYljB7q+d/IqG/C7c+a8F8B+eStfzOmiB7ZfvmaAJfVy49TSGRX67RX+D8A9BSTW3Na2I6jIdxoB2K20HTi/pkvxyKFm0PbQ8cBIMdBf0g0dyseW9CoEOAAp+oKy1MnUpXwBCvdpN6KWjyfxvGWI1DlPhHWUtj5ky0pp9oHSYGD0LaxUc5B3G0B62VVBGirR8tb/MVkk6BPwuo+M18KzWyUewc0CZeXtJppC+mSaVaX7ve07pIjjeKqdAnK4PRW84OcCHaOFjkk7b4Lga2HHozrvrr4isLGQEFL4ZdcD6D4vXrRXNQyrr34SDDPPoZqP5DQL9ILgK9rWk7V7slWr1dAv3gdgr06qodUKFfF9+C1XADSDpYx390tXmN/uVitcM20L9bfXqNlllfFsVOhS1wc732Ouz5H9kTXABng6daAAAAAElFTkSuQmCC"/>
+      <div class="mobileBox" data-v-57d3e328="" style="display:none;">
+       <div class="qrcode" data-v-57d3e328="">
+        <img alt="" data-v-57d3e328="" src="/dist/wechat.jpg?4961bc90736f58c6359e5e5f6ad7178e"/>
+       </div>
+      </div>
+     </a>
+    </div>
+    <div class="float_window_forum_container" data-v-57d3e328="">
+     <a data-v-57d3e328="" href="https://forum.irisnet.org/" target="_blank">
+      <div class="forum_img_content" data-v-57d3e328="">
+       <img data-v-57d3e328="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAA8CAYAAADSfGxZAAAAAXNSR0IArs4c6QAABANJREFUaAXtm01IVFEUxxs1qOxDCCoqUjJoEQR9LwpblUYmKUQRBC0saNHCTbhqU9CuKKJlBUHtapFBRkhYFGkQkS0qzILKVSGo+c30OzlveHPnvZlzdSDvm3fg73v33v+5c87/3XvnvfvGxDxLSyaTZ3FpBpWgxNJ9LtCTBPET3AcXE4nEiASVkD8aQwBJ+jY4oeE7wukhzibE+GwjxEmcbjmSoE2Y7yBvtxGiD4cqm09wiNuiEoJpsYqk+h1KzDbUdu1it9G2Z8f4W7RCLHAsMdtwy7VTYyU919j2Pgf4y4lhM2gEMr3DbDisIVL1rHEV4A4Is6FIJZwrGRQoA10hShSPECISIhwIE6LMUxHCXs5bgMyp1V69Y8c/xPsBPAKXuWMcN+LvNsrp4r/FEhEuUdOaro3GiQiyBzEG/OmQqzxbmN+CwyU01NMQNREk903gupxoTO4jTmmIjnKOcaEXaWIXIbZpiI5ySolb1ry8JkJU5GW5TVimCV97i63py2lOLETq8sVCxEJkzuR4RMQjIh4RmQrEIyJTj3iNiEdE5ohI70dkVuctfYPRAeT2tQ5oHmxkr+Ax+AVk/1O7My57CG9AFdgP5Pmh8MbT2RCwsZuQ01OK8/XgS54O+miv9qLnXLbNroJ8dsbzkSPkXWAwn5PRXmv0MWK0S3FIOrcR4gf8rJ1v6g6BXNbgDyaVlIjRm8NJdpmyDP65HD5BTSoh0lc26xODKzrZ8ZG3yaY9NyuMclY7/UzCeWXw/MUsn1RjWL3f1/rcVogNIZ+wJqTeqw5rX+sRAo5hbWH1AV1YVDGWbKbGFPx9ZvfU3Q0ak766ewE+NbRLf2E2QMM6vx/l+aA7zCGkXjU1bNcI+SxZbM6D3UC2xx8CjbVBEv5O0Ao0F6Af3mmwFTQBWxFwSaqESECUlxvlfuUjdl7HetTu5US+wbvYHqHIjyO2i2VU9XobCzF9adU/FInqSJC85DdU14p9RMhzTCOL6cRMH7pESVeth8DlfWgbuCEiSCJFJwSJ75DETSv2qZHWIxYiJUUshE8IeRyOsk1pkpMR8UlDdJjTq4ldhOjUEB3lfCfur5rY5elzCcT3oFLj4Binnq/LwC0/M48SiINUyk50l9nocPk3sTdrRZA8MzZiGR0yKqrBCrONslgVuABKwWxNbm+vzLYTw3+UsqwJHxFhzGgrbBGxjoNJMBt7jbPqJz2Fjb7AvZHEUTAxQyVe4re0wCH9v+5I5sgMxHiBjyzO0TKSkg3VcaCxTkiLo6WALxuSOwzyifEMTpQ3iKcVIckGMAaCrINKzUtin7wOn5LsQTBqKPGU8kKH05pZ6CQtL3A8MZ4UpQiedCRfCx4A818BPMqcPP4FRdGmSbdS/GEAAAAASUVORK5CYII="/>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+  <script>
+   window.__INITIAL_STATE__={"musicList":[],"lang":"EN","whitePaper":"","roadmap":"","collaboration":"","contact":"","activeIconIndex":"","footerWeChatIcon":false,"newsLetterTitle":"","textContent":"","showMask":false,"confirm":"","flShowFooter":true,"headerHeight":"","messages":{"logo":"irisnet.png","floatWindow":{"title":"FORUM"},"header":{"left":[{"id":0,"title":"Whitepaper","active":false},{"id":1,"title":"Collaboration","active":false},{"id":2,"title":"Community","active":false}],"right":[{"id":0,"title":"Mainnet","href":"","active":false},{"id":1,"title":"Docs","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002F","active":false},{"id":2,"title":"Forum","href":"https:\u002F\u002Fforum.irisnet.org\u002F","active":false},{"id":3,"title":"Blog","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog","active":false}],"mobileNavigation":[{"id":0,"title":"Mainnet","activeIndex":"","active":false},{"id":1,"title":"Testnet","activeIndex":"","active":false},{"id":2,"title":"WhitePaper","activeIndex":0,"active":false},{"id":3,"title":"Roadmap","activeIndex":3,"active":false},{"id":4,"title":"Collaboration","activeIndex":1,"active":false},{"id":5,"title":"Community","activeIndex":2,"active":false}],"mobileLinkHrefNavigation":[{"id":0,"title":"Docs","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002F","activeIndex":""},{"id":1,"title":"Forum","href":"https:\u002F\u002Fforum.irisnet.org\u002F","activeIndex":""},{"id":2,"title":"Blog","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog","activeIndex":""}]},"footer":{"socialCommunityTitle":"Community","validatorCommunityTitle":"Validators","TechCommunityTitle":"Developers","socialCommunity":[{"id":0,"src":"cmc.png","href":"https:\u002F\u002Fwww.coinmarketcap.com\u002Fcurrencies\u002Firisnet\u002F"},{"id":1,"src":"irisnet_telegram.png","href":"https:\u002F\u002Ft.me\u002Firisnetwork"},{"id":2,"src":"irisnet_twitter.png","href":"https:\u002F\u002Ftwitter.com\u002Firisnetwork"},{"id":3,"src":"irisnet_mail.png","href":"mailto:contact@irisnet.org"},{"id":4,"src":"irisnet_medium.png","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog"},{"id":5,"src":"irisnet_wechat.png","txt":"Wechat"},{"id":6,"src":"irisnet_weibo.png","href":"https:\u002F\u002Fweibo.com\u002Fu\u002F6455513027"}],"validatorCommunity":[{"id":0,"src":"irisnet_qq.png","href":"http:\u002F\u002Fqm.qq.com\u002Fcgi-bin\u002Fqm\u002Fqr?k=95CgDIPMXy5ZLEPF1pvd9GEh7ldWRI32"},{"id":1,"src":"irisnet_riot.png","href":"https:\u002F\u002Friot.im\u002Fapp\u002F#\u002Froom\u002F#irisvalidators:matrix.org"}],"techCommunity":[{"id":0,"src":"irisnet_github.png","href":"https:\u002F\u002Fgithub.com\u002Firisnet"},{"id":1,"src":"irisnet_qq.png","txt":"qq","href":"https:\u002F\u002Fjq.qq.com\u002F?_wv=1027&k=51eKP77"},{"id":2,"src":"irisnet_riot.png","txt":"riot","href":"https:\u002F\u002Friot.im\u002Fapp\u002F#\u002Froom\u002F#iris:matrix.org"}],"productList":[{"id":0,"name":"Rainbow Wallet","href":"https:\u002F\u002Fwww.rainbow.one\u002F"},{"id":1,"name":"IRISplorer","href":"https:\u002F\u002Fwww.irisplorer.io"},{"id":2,"name":"Light Client","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Flight-client\u002Fintro.html"},{"id":3,"name":"CLI Client","href":" https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Fcli-client\u002Fintro.html"}],"resourceList":[{"id":0,"name":"FAQ","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-faq-8793cf116c37"},{"id":1,"name":"Blog","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog"},{"id":2,"name":"Docs","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002F"},{"id":3,"name":"Press Kit","href":"\u002Fcommunity\u002Fpress-kit"}],"productsTitle":"Products","resourcesTitle":"Resources","submitBtn":{"title":"Newsletter","subscribe":"Subscribe","success":"Success"},"errEmailAddress":{"error":"Please enter a valid email address"},"irisnetInproduction":"IRISnet is named after Greek goddess Iris, said to be the personification of the rainbow and the faithful messenger between heaven and humanity"},"home":{"bannerHref":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-launches-bug-bounty-ii-join-and-win-the-prize-47845defc9fe","gozExplorer":{"title":"View GoZ competition as well as hands on IBC backed token transfer!","content":"IRISnet Dev Team in Game of Zones GoZ Network State Visualizer & IBC-GoZ Rainbow Wallet","time":" is online","button":{"buttonName":{"explorerName":"View Inter-blockchain world","rainbowName":"Try Inter-blockchain token transfer"},"buttonUrl":{"explorerUrl":"https:\u002F\u002Fibc-goz.irisplorer.io\u002F#\u002F","rainbowUrl":"https:\u002F\u002Fmedium.com\u002F@irisnet\u002Fget-in-line-experience-crosschain-transfers-and-atomic-coinswaps-with-rainbow-goz-61cfc57365f9"}}},"bsn":{"content":{"title":"IRISnet","title1":"Selected into first batch of public blockchains supported by BSN","btn1":"View Details","btnHref1":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-is-selected-into-first-batch-of-public-blockchains-supported-by-bsn-1945aa2e2a0","btn2":"IRIS Explorer","btnHref2":"https:\u002F\u002Fwww.irisplorer.io"}},"frost":{"content":{"title":"BifrÃ¶st","content":"to a New Interchain Era","btn1":"GoZ Network","btn2":"Interchain Wallet","btnHref1":"https:\u002F\u002Fibc-goz.irisplorer.io\u002F#\u002F","btnHref2":"","coming":"Coming Soon"}},"ecosystem":{"content":{"title":"IRISnet Ecosystem","content":"Welcome to jointly promote the sustainable development","btnHref1":"https:\u002F\u002Fwww.rainbow.one\u002F","btn1":"Rainbow Wallet","btnHref2":"https:\u002F\u002Fwww.coinmarketcap.com\u002Fcurrencies\u002Firisnet\u002F","btn2":"CoinMarketCap"}},"sectionOne":{"title":"DeFi App Dev Support is coming","time":"2019.8.29","content":"Multi-asset module available on IRIS Hub V0.15","shareUrl":{"telegramUrl":"https:\u002F\u002Ft.me\u002Firisnetwork","githubUrl":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Firishub","weChatUrl":""},"button":{"buttonName":{"rainbowName":"Rainbow Wallet","explorerName":"IRIS Explorer"},"buttonUrl":{"rainbowUrl":"https:\u002F\u002Fwww.rainbow.one\u002F","explorerUrl":"https:\u002F\u002Fwww.irisplorer.io"}}},"irisnetBianJie":{"commission":"Cosmos Hub Validator","development":" Maintained by the core development team of IRISnet","button":{"buttonName":{"rainbowName":"Delegate ATOM","explorerName":"View Details"},"buttonUrl":{"rainbowUrl":"https:\u002F\u002Fwww.rainbow.one\u002F","explorerUrl":"\u002Firisnet-bianjie"}}},"irisnetVote":{"commission":"Participate in On-Chain Governance","development":"Vote for Proposals","button":{"buttonName":{"voteName":"How to Vote"},"buttonUrl":{"voteUrl":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Frainbow-v2-5-released-with-on-chain-governance-support-237f076b0211"}}},"bianDex":{"commission":"Deposit to Binance DEX","development":"Win 500,000 IRIS Airdrop","button":{"buttonName":{"eventDetail":"More Details","howIsDex":" Why We Connect"},"buttonUrl":{"eventDetail":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-iris-airdrop-on-binance-dex-win-500-000-iris-4e24be10a886","howIsDexUrl":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Fwhy-are-we-connecting-iris-hub-with-binance-dex-5b02bff5753c"}}},"sectionTwo":{"KeyInnovations":{"title":"Key Innovations","list":[{"id":0,"msg":"Incorporation of a service-oriented infrastructure into Cosmos"},{"id":1,"msg":"Integration of business services offered by heterogeneous systems,including public & consortium chains as well as legacy systems"},{"id":2,"msg":"Interoperability of those services across an internet of blockchains"}],"buttonMsg":"WHITE PAPER","WHITEPAPERUrl":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Firisnet\u002Fblob\u002Fmaster\u002FWHITEPAPER.md"},"NetworkDesign":{"title":"Network Design","list":[{"id":0,"msg":"Definition of standard ABCI transaction types supporting registration,binding, invocation, query, profiling and governance of IRIS Services(a.k.a. iServices)"},{"id":1,"msg":"iService providers act as adaptors of business logic residing in public andconsortium blockchains as well as enterprise legacy systems"},{"id":2,"msg":"iServices can be invoked across anextended IBC protocol"}]}},"sectionThree":{"title":"Roadmap","road":[{"id":0,"caption":"HOUYI","time":"BEYOND OCT 2020","msg":"The fourth stage will focus on further technology innovations to the IRIS network, SDK and mobile client, as well as developer engagement."},{"id":1,"caption":"KUAFU","time":"NOV 2019 - SEP 2020","msg":"In this stage we are aiming to accomplish the connection of IRIS Hub with applications blockchains through IBC. We plan to upgrade IRISnet mobile client to support those applications. The third stage will also focus on incremental upgrades to the IRIS network in order to support our planned advanced IRIS Service features."},{"id":2,"caption":"NÃWA","time":"APR 2019 - OCT 2019","msg":"In this stage we are adding more fundamental modules to support application development especially DeFi applications. The new modules planned to release in this stage including multi-asset management, uniswap, multi-sig account etc. We plan to collaborate with 1-2 ecosystem partners to develop applications using those modules.We also plan to accomplish the test connection with Cosmos Hub through IBC at this stage."},{"id":3,"caption":"PANGU","time":"JAN 2018 - MAR 2019","msg":"The first stage of the IRIS project focused on having the IRIS Hub up and running. Initial version of the mobile client for the IRIS network was released. In this stage we also focused on building the fundamental IRIS Service Layer which was released to IRIS Hub. Which enables service definition, binding, invocation and query."}]},"sectionFour":{"Collaboration":"Collaboration","CoreDevelopmentTeams":{"title":"Core Development Teams","logos":[{"id":0,"path":"logos\u002Firisnet_bianjiehover.png","url":"https:\u002F\u002Fwww.bianjie.ai\u002F"},{"id":1,"path":"logos\u002Firisnet_tenderminthover.png","url":"https:\u002F\u002Ftendermint.com\u002F"}]},"StrategicPartners":{"title":"Strategic Partners","logos":[{"id":0,"path":"logos\u002Firisnet_InTERCHAIN.png","url":"https:\u002F\u002Fcosmos.network\u002Fabout"},{"id":1,"path":"logos\u002Firisnet_HASHKEY.png","url":"https:\u002F\u002Fwww.hashkey.com\u002F#\u002F"},{"id":2,"path":"logos\u002Firisnet_Platonlogo.png","url":"https:\u002F\u002Fwww.platon.network\u002F#\u002Findex"}]},"EcosystemPartners":{"title":"Ecosystem Partners","logos":[{"id":0,"path":"logos\u002Firisnet_ok_chain.png","url":"https:\u002F\u002Fwww.okex.com\u002Fokchain"},{"id":1,"path":"logos\u002Firisnet_kava.png","url":"https:\u002F\u002Fwww.kava.io"},{"id":2,"path":"logos\u002Firisnet_eMoney.png","url":"https:\u002F\u002Fwww.e-money.com\u002F"},{"id":3,"path":"logos\u002FIOV.png","url":"https:\u002F\u002Fiov.one\u002F"},{"id":4,"path":"logos\u002Firisnet_coirfan.png","url":"http:\u002F\u002Firis.fan\u002F#\u002F"}]},"Institutional":{"title":{"msg1":"Institutional Supporters","msg2":"( Listed in no particular order )"},"logos":[{"id":0,"path":"logos\u002Firisnet_AminoCapital.png","url":"http:\u002F\u002Fwww.aminocapital.com\u002F"},{"id":1,"path":"logos\u002Firisnet_Bibox.png","url":"https:\u002F\u002Fwww.bibox.com\u002F"},{"id":2,"path":"logos\u002Firisnet_huobi.png","url":"https:\u002F\u002Fwww.hbg.com\u002Fen-us\u002Fcapital\u002F"},{"id":3,"path":"logos\u002Firisnet_GBIC.png","url":"https:\u002F\u002Fgbic.io\u002F"},{"id":4,"path":"logos\u002Firisnet_8decim.png","url":"javascript:void(0)"},{"id":5,"path":"logos\u002Firisnet_bihu.png","url":"https:\u002F\u002Fbihu.com\u002F"},{"id":7,"path":"logos\u002Firisnet_BKfund.png","url":"javascript:void(0)"},{"id":8,"path":"logos\u002Firisnet_byz.png","url":"javascript:void(0)"},{"id":9,"path":"logos\u002Firisnet_ChainPE.png","url":"http:\u002F\u002Fwww.chainpe.com\u002F"},{"id":10,"path":"logos\u002Firisnet_CP.png","url":"https:\u002F\u002Fchainpool.io\u002F"},{"id":11,"path":"logos\u002Firisnet_COEFFICIENT.png","url":"http:\u002F\u002Fcoefficient.network\u002F"},{"id":12,"path":"logos\u002Firisnet_gongshi.png","url":"http:\u002F\u002Fconsensuscapital.ca\u002F"},{"id":13,"path":"logos\u002Firisnet_dushu.png","url":"javascript:void(0)"},{"id":14,"path":"logos\u002Firisnet_genblock.png","url":"https:\u002F\u002Fgenblock.capital\u002F"},{"id":15,"path":"logos\u002Firisnet_HAYEK.png","url":"javascript:void(0)"},{"id":16,"path":"logos\u002Firisnet_INK.png","url":"http:\u002F\u002Fink.one\u002F"},{"id":17,"path":"logos\u002Firisnet_LINKVCcopy.png","url":"http:\u002F\u002Fwww.linkvc.com\u002F"},{"id":18,"path":"logos\u002Firisnet_MediSHares.png","url":"http:\u002F\u002Fmedishares.org\u002F"},{"id":19,"path":"logos\u002Firisnet_jieshi.png","url":"http:\u002F\u002Fwww.milestonevc.com\u002Findex.html"},{"id":20,"path":"logos\u002Firisnet_nirvana-logo-white.png","url":"http:\u002F\u002Fnirvana.capital\u002F"},{"id":21,"path":"logos\u002Firisnet_NGC.png","url":"http:\u002F\u002Fngc.fund\u002F"},{"id":22,"path":"logos\u002Firisnet_origin.png","url":"http:\u002F\u002Fwww.theorigincapital.com\u002F"},{"id":23,"path":"logos\u002Firisnet_SatoshiFUnd.png","url":"https:\u002F\u002Fsatoshi.fund\u002F"},{"id":24,"path":"logos\u002Firisnet_guigu.png","url":"http:\u002F\u002Fwww.svinsight.com\u002F"},{"id":25,"path":"logos\u002Firisnet_shicuo.png","url":"javascript:void(0)"},{"id":26,"path":"logos\u002Firisnet_huixiang.png","url":"javascript:void(0)"},{"id":27,"path":"logos\u002Firisnet_Unetwork.png","url":"https:\u002F\u002Fu.network\u002F"},{"id":28,"path":"logos\u002Firisnet_jiuhe.png","url":"http:\u002F\u002Fwww.unityvc.com\u002F"},{"id":29,"path":"logos\u002Firisnet_UA.png","url":"javascript:void(0)"},{"id":30,"path":"logos\u002Firisnet_shuidi.png","url":"http:\u002F\u002Fwaterdrip.io\u002F"},{"id":31,"path":"logos\u002Firisnet_yidao.png","url":"javascript:void(0)"},{"id":32,"path":"logos\u002Firisnet_snz.png","url":"http:\u002F\u002Fsnzholding.com\u002F"}]}}},"mainnet":{"title":"IRIS Hub","production":"Interchain Service Hub for NextGen Distributed Applications â A BPoS Blockchain That Is Self-evolutionary","wallet":"Rainbow Wallet","walletHref":"https:\u002F\u002Fwww.rainbow.one\u002F","explorer":"IRIS Explorer","explorerHref":"https:\u002F\u002Fwww.irisplorer.io\u002F"},"announcements":{"title":"Announcements","viewMore":"View More","viewMoreHref":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Firis-foundation\u002Fblob\u002Fmaster\u002FREADME.md","betaTitle":"IRISnet Public Token Addresses","betaContent":"Foundation and Dev Team Token Addresses.","readMore":"Read more","readMoreHref":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Firis-foundation\u002Fblob\u002Fmaster\u002Firis-public-token-address.md","betaDate":"Mar 02,2019","announcementList":[{"id":"0","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Fthe-third-implementation-of-the-community-centric-delegation-campaign-the-second-one-year-token-6805de345ba1","date":"Jul 6 2020","title":"The Third Implementation of the Community-centric Delegation Campaign & the Second One-year Token Burn Plan!","content":"The third implementation of community-centric delegation campaign has completed!"},{"id":"1","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Fbsn-integrates-chainlink-oracles-bringing-real-world-data-into-its-irita-powered-network-f87480ee33d","date":"Jun 29, 2020","title":"BSN Integrates Chainlink Oracles, Bringing Real-World Data Into Its IRITA Powered Network","content":"IRISnet supports BSN and works on the integration of Chainlink via consortium IRITA interchain service hub, further contributing to the infrastructure development of BSN."},{"id":"2","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-and-kava-plan-to-integrate-to-enable-greater-defi-services-for-interchain-ecosystem-6e6ae409c69","date":"Jun 5, 2020","title":"IRISnet and Kava Plan to Integrate to Enable Greater DeFi Services for Interchain Ecosystem","content":"IRISnet is pleased to establish a partnership with Kava Labs to bring Kavaâs DeFi services to IRISnetâs internet of blockchains."},{"id":"3","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-and-okchain-collaborate-to-develop-defi-application-as-well-as-interchain-ecosystem-3c28d530525b","date":"Jun 2, 2020","title":"IRISnet and OKChain Collaborate to Develop DeFi Application as well as Interchain Ecosystem","content":"IRISnet and OKChain have collaborated to develop the DeFi application blockchain as well as the interchain ecosystem."}]},"testnet":{"fuxi":{"explorerHref":"https:\u002F\u002Ftestnet.irisplorer.io\u002F#\u002Fhome","title":"FUXI Testnet","production":"The FUXI testnet runs the same software as IRIS mainnet, providing a stable test environment for the developer community (wallets, browsers, iService providers\u002Fconsumers).","testnetLink":"Use FUXI Testnet","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Fget-started\u002Ftestnet.html#fuxi-testnet"},"nyancat":{"explorerHref":"http:\u002F\u002Fnyancat.irisplorer.io\u002F#\u002Fhome","title":"Nyancat Testnet","production":"The Nyancat testnet runs a newer version of irishub, providing a test environment for validators to preview and test the new version before it is ready for deployment to mainnet.","testnetLink":"Use Nyancat Tensent","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Fget-started\u002Ftestnet.html#nyancat-testnet"}},"community":{"title":"Join Tech Community","joinWay":[{"id":"1","src":"irisnet_community_riot.png","name":"Riot room","linkName":"#iris:matrix.org","href":"https:\u002F\u002Friot.im\u002Fapp\u002F#\u002Froom\u002F#iris:matrix.org"},{"id":"2","src":"irisnet_community_qq.png","name":"QQ group","linkName":"795301695","href":"https:\u002F\u002Fjq.qq.com\u002F?_wv=1027&k=51eKP77"}]},"testnetPage":{"title":"FUXI Testnet","section":[{"content":"The previous iterations of the testnets have accomplished their mission. "},{"content":"In February 2019, the IRISnet development team released irishub v0.12.0 and successfully started the new testnet (chain-id : fuxi) with this version. "},{"content":"The FUXI testnet runs the same software as IRIS mainnet, providing a stable test environment for the developer community (wallets, browsers, iService providers\u002Fconsumers)."}],"joinTitle":"IRISplorer (FUXI)","joinHref":"https:\u002F\u002Ftestnet.irisplorer.io\u002F#\u002Fhome","explorerTitle":"IRISplorer (Nyancat)","explorerHref":"https:\u002F\u002Fnyancat.irisplorer.io\u002F#\u002Fhome"},"newsLetter":{"successTitle":"Welcome to The IRISnet Newsletter","failedTitle":"Subscription Failed","successText":"Thank you for your interest in and subscription to our project infomation. Please check your email box and click the button to confirm the subscription and to start receiving our newsletters and other latest updates.","failedText":"Maybe you are already subscribed? If not then please try again or contact us via email contact@irisnet.org.","confirm":"Confirm"},"communityPage":{"pressKitContent":{"title":"Press Kit","downloadTitle":"Get our press kit with all logo assets you might need","downloadBtn":"Resources","downloadHref":"https:\u002F\u002Fwww.irisnet.org\u002Fresources\u002F"},"ColorsContent":{"title":"Colors","colors":[{"color":"#009DDE"},{"color":"#694D9F"},{"color":"#ED3554"},{"color":"#2E3148"}]},"Standard":{"title":"Logo","StandardList":[{"id":1,"imgUrl":"presskit\u002Firisnet_logo_white.png","pngUrl":"presskit\u002FIRISNet rebrand Horizontal-white.png","pngTitle":"png","svgUrl":"presskit\u002FIRISNet rebrand Horizontal-white.svg","svgTitle":"svg"},{"id":3,"imgUrl":"presskit\u002Firisnet_logo_column_white.png","pngUrl":"presskit\u002FIRISnetlogo Vertical-white.png","pngTitle":"png","svgUrl":"presskit\u002FIRISnetlogo Vertical-white.svg","svgTitle":"svg"},{"id":4,"imgUrl":"presskit\u002Firis_logo_white.png","pngUrl":"presskit\u002FIRISnetRoundLogoWithoutText-white.png","pngTitle":"png","svgUrl":"presskit\u002FIRISnetRoundLogoWithoutText-white.svg","svgTitle":"svg"},{"id":5,"imgUrl":"presskit\u002Firis_logo_black.png","pngUrl":"presskit\u002FIRISnetRoundLogoWithoutText-black.png","pngTitle":"png","svgUrl":"presskit\u002FIRISnetRoundLogoWithoutText-black.svg","svgTitle":"svg"},{"id":6,"imgUrl":"presskit\u002Firisnet-rebrand-capital-bg.png","pngUrl":"presskit\u002FIRISnet-Rebrand-Capital-Black.png","pngTitle":"png","svgUrl":"presskit\u002FIRISnet-Rebrand-Capital-Black.svg","svgTitle":"svg"}]},"aboutIrisnet":{"title":"About IRISnet","content":[{"id":0,"item":"IRISnet: Interchain Service Hub for NextGen Distributed Applications -- A BPoS Blockchain that is Self-evolutionary."},{"id":1,"item":"IRISnet (a.k.a IRIS Hub) is designed to be the foundation for the next generation distributed applications. Built with Cosmos-SDK, IRIS Hub enables cross-chain interoperability through a unified service model, while providing a variety of modules to support DeFi applications."},{"id":2,"item":"IRISnet dev teams include Bianjie (\u003Ca href=\"https:\u002F\u002Fwww.bianjie.ai\" target=\"_blank\"\u003Ewww.bianjie.ai\u003C\u002Fa\u003E), a national award-winning blockchain technology team based in Shanghai, and Tendermint (\u003Cspan\u003E\u003Ca href=\"https:\u002F\u002Ftendermint.com\" target=\"_blank\"\u003Ehttps:\u002F\u002Ftendermint.com\u003C\u002Fa\u003E\u003C\u002Fspan\u003E), the world-famous team that created the Tendermint consensus engine and the Cosmos project."}],"readMoreText":"Other Related Information...","readMoreHref":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Firisnet\u002Fblob\u002Fmaster\u002FpressKit.md"},"title":"Community","eventsTitle":"Upcoming Events","events":{"left":[],"right":[]},"eventsBottom":{"left":[],"right":[]},"faq":{"faqTitle":"FAQ","faqImg":"\u002FIRISnet_community_faq.png","faqList":{"title":"FAQ","list":[{"item":"1. What is IRISnet?"},{"item":"2. What's the initial token distribution?"},{"item":"3. What are IRIS token's use cases,and its token economics?"},{"item":"4. What is the relationship between IRISnet and Cosmos?"}],"viewMore":"View More","viewMoreLink":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-faq-8793cf116c37"},"ama":{"title":"Events Review","leftList":[{"img":"irisnet_event_review_biance_11_06_en.png","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-iris-airdrop-on-binance-dex-win-500-000-iris-4e24be10a886","title":"Airdrop on Binance DEX","content":"IRISnet (IRIS) Airdrop on Binance DEX â Win 500,000 IRIS!"},{"img":"irisnet_event_review_11_06_en.png","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Ffollow-retweet-to-help-iris-binance-dex-listing-7c27cc36dfd1","title":"Follow & Retweet to Help IRIS Binance DEX Listing","content":"Follow & Retweet to Help IRIS Binance DEX Listing"}],"rightList":[{"img":"irisnet_event_10_15.png","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Fproject-progress-applications-in-irisnet-cosmos-ecosystem-bihu-ama-review-725b78d8f59d","title":"Bihu AMA Review","content":"Project Progress & Applications in IRISnet & Cosmos Ecosystem |Bihu AMA Review"},{"img":"irisnet_bug_bounty.png","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog\u002Firisnet-launches-bug-bounty-ii-join-and-win-the-prize-47845defc9fe","title":"IRISnet","content":"Opened! IRIS Hub Bug Bounty II Program for new version release"}]}},"resources":{"title":"Resources","ResourceList":[{"img":"IRISnet_wallet.png","name":"Wallets","href":"javascript:void(0);","resourceList":[{"itemName":"Rainbow","os":"(Android, iOS)","href":"https:\u002F\u002Fwww.rainbow.one"},{"itemName":"Math Wallet","os":"(Android, iOS)","href":"http:\u002F\u002Fwww.mathwallet.org\u002Fen\u002F"},{"itemName":"Wetez","os":"(Android, iOS)","href":"https:\u002F\u002Fwww.wetez.io\u002Fpc\u002Fhomepage"},{"itemName":"Cosmostation","os":"(Android, iOS)","href":"https:\u002F\u002Fwww.cosmostation.io\u002F"},{"itemName":" SyncNode","os":"(iOS)","href":"https:\u002F\u002Fwallet.syncnode.ro\u002F"}],"content":"These web and mobile wallets allow you to store & transfer IRIS, delegate IRIS to validators, and some of them also support ATOM. Note that we do not endorse any of the wallets, they are listed for your convenience."},{"img":"IRISnet_staking_tools.png","name":"Staking Tools","href":"javascript:void(0);","resourceList":[{"itemName":"HashKey Hub","href":"https:\u002F\u002Fhub.hashkey.com\u002F#\u002F"},{"itemName":"Math Wallet","href":"https:\u002F\u002Fmathwallet.net\u002Fweb\u002Firisnet"},{"itemName":"01node.com","href":"https:\u002F\u002Firis-delegator.01node.com"},{"itemName":"Cosmostation","href":"https:\u002F\u002Fwallet.cosmostation.io\u002F?network=iris"},{"itemName":"Dokia","href":"https:\u002F\u002Fstaking.dokia.cloud\u002F"},{"itemName":"Union Market","href":"https:\u002F\u002Funion.market\u002Ftoken\u002Firisnet"}],"content":"Those tools, contributed by IRISnet validators and developers, facilitates IRIS token holders to delegate via web wallets and Ledger hardware wallets, etc . Before using these tools, you need to assure their security."},{"img":"IRISnet_community_explorer.png","name":"Explorers","href":"javascript:void(0);","resourceList":[{"itemName":"IRISplorer","href":"https:\u002F\u002Fwww.irisplorer.io\u002F#\u002Fvalidators"},{"itemName":"Mintscan","href":"https:\u002F\u002Firishub.mintscan.io\u002F"},{"itemName":"Big-Dipper","href":"https:\u002F\u002Firis.bigdipper.live\u002F"},{"itemName":"Hubble","href":"https:\u002F\u002Fhubble.figment.network\u002Firis\u002Fchains\u002Firishub"},{"itemName":"LOOK","href":"https:\u002F\u002Flook.ping.pub\u002Fvalidator?chain=irishub"}],"content":"These block explorers allow you to search, view and analyze IRIS Hub dataâlike blocks, transactions, validators, governance including params or proposals, etc."},{"img":"IRISnet_press_kit.png","name":"Press Kit","content":"Get our press kit with all logo assets you might need.","href":"\u002Fcommunity\u002Fpress-kit"},{"img":"IRISnet_doc.png","name":"Docs","content":"Interchain Service Hub for NextGen Distributed Applications â A BPoS Blockchain That Is Self-evolutionary.","href":"javascript:void(0);","resourceList":[{"itemName":"FUXI","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Fget-started\u002FJoin-the-Testnet.html"},{"itemName":"Nyancat","href":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Ftestnets\u002Ftree\u002Fmaster\u002Fnyancat"},{"itemName":"Mainnet","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Fget-started\u002FJoin-the-Mainnet.html"},{"itemName":"Cli Client","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Fcli-client\u002F"},{"itemName":"Light Client","href":"https:\u002F\u002Fwww.irisnet.org\u002Fdocs\u002Flight-client\u002F"}]}]}},"cosmos":{"en":{"header":{"title":"IRISnet-Bianjie ","commission":"commission","product":"Maintained by the core development team of IRISnet","validatorAddress":"Validator Address","address":"cosmosvaloper1ssm0d433seakyak8kcf93yefhknjleeds4y3em","toastHint":"Copied","bondedAtoms":"Bonded ATOMs","votingPower":"Voting Power","commissionRate":"Commission Rate","uptime":"Uptime","guide":"Cosmos Hub Wallets","guideHref":"https:\u002F\u002Fhub.cosmos.network\u002F#cosmos-hub-wallets"},"about":{"title":"About IRISnet-Bianjie","secondTitle":"Core Developer of IRISnet, Open Source Contributor to Cosmos","irisnet":{"title":"Core Development Team of IRISnet","list":[{"item":"Supported by \u003Ca href=\"https:\u002F\u002Fcosmos.network\u002Fabout\" target=\"_blank\" style=\"color:rgba(77, 150, 223, 1)\"\u003EInterchain Foundation (ICF)\u003C\u002Fa\u003E to build IRISnet, a Cosmos Hub that facilitates construction of distributed business applications."},{"item":"\u003Ca href=\"https:\u002F\u002Fwww.irisnet.org\u002F\" target=\"_blank\" style=\"color:rgba(77, 150, 223, 1)\"\u003EIRISnet\u003C\u002Fa\u003E - a BPoS blockchain that is Self-evolutionary."}]},"cosmos":{"title":"Open Source Contributor to Cosmos","list":[{"item":"Genesis validator on Cosmos since March 14th, 2019"},{"item":"Participant of Cosmos testnets from Gaia-1000 to mainnet launch"},{"item":"Technical support team to Cosmos China community since August 2017"}]}},"bianjie":{"title":"Safe Bianjie, Safe Delegation","product":[{"src":"\u002Fdist\u002Fservice_room.png?fa76e51bb7e86a8d5df1fabe89aba8f1","text":"Safe and Reliable Enterprise-class Data Center"},{"src":"\u002Fdist\u002Fnet.png?fd38d1ce17bb03bd662781d4ed5c0e8f","text":"Highly Available Network"},{"src":"\u002Fdist\u002Fnode.png?b1f35c1fb7c004032ce9d1e892bdcdca","text":"Auto Scale Sentry Nodes"},{"src":"\u002Fdist\u002Flock.png?c38f24119ca2890d5495f29298e015f9","text":"HSM for Private Key Protection"},{"src":"\u002Fdist\u002Fhour.png?551f48c46e133958e56918eeab263075","text":"24\u002F7 Professional Monitoring"},{"src":"\u002Fdist\u002Fshield.png?6645671527c21844f3b3f23d34f1e070","text":"DDoS Attack Protection"}]},"cosmosExplorerTitle":"Cosmos Hub Explorers","cosmosExplorer":[{"active":false,"whiteImg":"\u002Fdist\u002Fbig_dipper_white.png?8da8de50639570711ed3c3ed0301dce7","blueImg":"\u002Fdist\u002Fbig-dipper_blue.png?a57202b89184fd9c18beb2f673fe586b","title":"Big Dipper","href":"https:\u002F\u002Fcosmos.bigdipper.live\u002Faccount\u002Fcosmos1ssm0d433seakyak8kcf93yefhknjleed4psy4g"},{"active":false,"whiteImg":"\u002Fdist\u002Fcosmos_white.png?6cccec8cd088a7bf4919d7a388b37946","blueImg":"\u002Fdist\u002Fcosmos_blue.png?b239c81fb834b6c95a263e691bdbe218","title":"Cosmos Overview","href":"https:\u002F\u002Fcosmos-overview.genesislab.net\u002Fcosmosvaloper1ssm0d433seakyak8kcf93yefhknjleeds4y3em"},{"active":false,"whiteImg":"\u002Fdist\u002Fhubble_white.png?fae4d60e680b51b526669ac4f5906e35","blueImg":"\u002Fdist\u002Fhubble_blue.png?c6f4f7d8c40739912bab883dcd7f1e7b","title":"Hubble","href":"https:\u002F\u002Fhubble.figment.network\u002Fcosmos\u002Fchains\u002Fcosmoshub-2\u002Fvalidators\u002F696ABC95186FD65A07050C28AB00C9358A315030"},{"active":false,"whiteImg":"\u002Fdist\u002FMintscan_white.png?5e2da5a9f50f247c7bf5192820e8729d","blueImg":"\u002Fdist\u002FMintscan_blue.png?76445049cd65abed6887c3198468fa02","title":"Mintscan","href":"https:\u002F\u002Fwww.mintscan.io\u002Faccount\u002Fcosmos1ssm0d433seakyak8kcf93yefhknjleed4psy4g"},{"active":false,"whiteImg":"\u002Fdist\u002FStargazer_white.png?e9a45183904842eeb054f25e4fef65d7","blueImg":"\u002Fdist\u002FStargazer_blue.png?fdf19f0992c893042704ec85d6b75589","title":"Stargazer","href":"https:\u002F\u002Fstargazer.certus.one\u002Faccounts\u002Fcosmos1ssm0d433seakyak8kcf93yefhknjleed4psy4g"}]}},"white":"public\u002FwhiteDw.png","whiteHref":"https:\u002F\u002Fgithub.com\u002Firisnet\u002Firisnet\u002Fblob\u002Fmaster\u002FWHITEPAPER.md","next":"what_next.png","head":{"txt":[{"txt":"Whitepaper","href":"#\u002F0\u002F1"},{"txt":"Collaboration","href":"#\u002F0\u002F3"},{"txt":"Contact","href":"#\u002F0\u002F5"}]},"collaboration":{"title":"Collaboration","txt":["Core Development Team","Strategic Partners"],"core":{"title":"Core Development Teams","list":[{"img":"collaboration\u002Fbianjieai.png","pos":0,"title":"BIANJIE.AI","href":"https:\u002F\u002Fwww.bianjie.ai\u002F"},{"img":"collaboration\u002Fnewtendermint.png","pos":-56,"title":"Tendermint","href":"https:\u002F\u002Ftendermint.com"}]},"strategy":{"title":"Strategic Partners","img":"collaboration\u002Fstrategy.png","list":[{"img":"collaboration\u002Finterchain.png","pos":0,"title":"Interchain Foundation","href":"https:\u002F\u002Fcosmos.network\u002Fabout"},{"img":"collaboration\u002Fhashkeygroup.png","pos":-112,"href":"https:\u002F\u002Fwww.hashkey.com\u002F#\u002F"}]},"ecosystem":{"title":"Ecosystem Partners","list":[{"img":"collaboration\u002FPlatonlogo.png","pos":-168,"title":"Hashgard","href":"https:\u002F\u002Fwww.platon.network\u002F#\u002Findex"},{"img":"collaboration\u002Fhashquark.png","pos":-168,"title":"Hashgard","href":"https:\u002F\u002Fwww.hashquark.io\u002F#\u002F"},{"img":"collaboration\u002Fhashgard.png","pos":-168,"title":"Hashgard","href":"https:\u002F\u002Fwww.hashgard.io\u002F#\u002F"}]},"investment":{"title":"Institutional Supporters","subtitle":"( Listed in no particular order )","list":[{"img":"collaboration\u002FAminoCapital.png","pos":0,"title":"Amino Capital","href":"http:\u002F\u002Fwww.aminocapital.com"},{"img":"collaboration\u002Fbibox.png","title":"Bibox","href":"https:\u002F\u002Fwww.bibox.com\u002F"},{"img":"collaboration\u002FhuobiCapital.png","title":"Huobi Capital","href":"https:\u002F\u002Fwww.hbg.com\u002Fen-us\u002Fcapital\u002F"},{"img":"collaboration\u002Fgbic.png","title":"GBIC","href":"https:\u002F\u002Fgbic.io\u002F"},{"img":"collaboration\u002Fbawei.png","pos":-56,"title":"8 Decimal","href":""},{"img":"collaboration\u002Fbihu.png","pos":-112,"title":"BIHU","href":"https:\u002F\u002Fbihu.com\u002F"},{"img":"collaboration\u002Fnewbtts.png","pos":-168,"title":"BA Capital","href":""},{"img":"collaboration\u002FnewBKfund.png","pos":-224,"title":"BKFund","href":""},{"img":"collaboration\u002Fbzt.png","pos":-280,"title":"Byzantium","href":""},{"img":"collaboration\u002FchainPEter.png","pos":-336,"title":"Chain PE","href":"http:\u002F\u002Fwww.chainpe.com"},{"img":"collaboration\u002Fcp.png","pos":-392,"title":"Chain Pool","href":"https:\u002F\u002Fchainpool.io\u002F"},{"img":"collaboration\u002Fcoefficient.png","pos":-448,"title":"Coefficient","href":"http:\u002F\u002Fcoefficient.network"},{"img":"collaboration\u002Fgszb.png","pos":-504,"title":"Consensus","href":"http:\u002F\u002Fconsensuscapital.ca"},{"img":"collaboration\u002Fdsjj.png","pos":-560,"title":"Dushu","href":""},{"img":"collaboration\u002Fgenblock.png","pos":-616,"title":"Genblock","href":"https:\u002F\u002Fgenblock.capital"},{"img":"collaboration\u002Fhayek.png","pos":-672,"title":"Hayak","href":""},{"img":"collaboration\u002Fink.png","pos":-728,"title":"Ink Labs","href":"http:\u002F\u002Fink.one"},{"img":"collaboration\u002Flinkvc.png","pos":-784,"title":"LinkVC","href":"http:\u002F\u002Fwww.linkvc.com"},{"img":"collaboration\u002Fnewmedishares.png","pos":-840,"title":"Medi Shares","href":"http:\u002F\u002Fmedishares.org\u002F"},{"img":"collaboration\u002Fjs.png","pos":-896,"title":"MILESTONE","href":"http:\u002F\u002Fwww.milestonevc.com\u002Findex.html"},{"img":"collaboration\u002Fnirvanacapital.png","pos":-896,"title":"Nirvana Capital","href":"http:\u002F\u002Fnirvana.capital\u002F"},{"img":"collaboration\u002Fngc.png","pos":-952,"title":"NEO GLOBAL","href":"http:\u002F\u002Fngc.fund"},{"img":"collaboration\u002Fy.png","pos":-1008,"title":"Origin Capital","href":"http:\u002F\u002Fwww.theorigincapital.com"},{"img":"collaboration\u002Fsatoshifund.png","pos":-1064,"title":"Satoshi Fund","href":"https:\u002F\u002Fsatoshi.fund"},{"img":"collaboration\u002Fggtm.png","pos":-1120,"title":"SV Insight","href":"http:\u002F\u002Fwww.svinsight.com"},{"img":"collaboration\u002Fsczb.png","pos":-1176,"title":"Timestamp","href":""},{"img":"collaboration\u002Fhxjj.png","pos":-1232,"title":"Transference Fund","href":""},{"img":"collaboration\u002Funetwork.png","pos":-1288,"title":"U Network","href":"https:\u002F\u002Fu.network"},{"img":"collaboration\u002Fjhct.png","pos":-1344,"title":"UNITY VENTURES","href":"http:\u002F\u002Fwww.unityvc.com"},{"img":"collaboration\u002Fua.png","pos":-1400,"title":"Univalues Associates","href":""},{"img":"collaboration\u002Fsdzb.png","pos":-1400,"title":"WATERDRIP CAPITAL","href":"http:\u002F\u002Fwaterdrip.io"},{"img":"collaboration\u002Fydzb.png","pos":-1400,"title":"","href":""}]},"counsel":{"title":"Counsel","img":"collaboration\u002Fcounsel.png","list":[{"img":"collaboration\u002Fey.png","pos":0,"title":"E&Y","href":""},{"img":"collaboration\u002Fking.png","pos":-56,"title":"KWM","href":""}]},"list":[{"img":"collaboration\u002Fbianjie.png","title":"BIANJIE.AI","text":"bianjie.ai","href":"https:\u002F\u002Fbianjie.ai"},{"img":"collaboration\u002Fcosmos.png","title":"COSMOS","text":"cosmos.network","href":"https:\u002F\u002Fcosmos.network"},{"img":"collaboration\u002Ftendermint.png","title":"Tendermint","text":"tendermint.com","href":"https:\u002F\u002Ftendermint.com"},{"img":"collaboration\u002Fhashkeygroup.png","href":"https:\u002F\u002Fwww.hashkey.com\u002F#\u002F"},{"img":"collaboration\u002Fbase.png","title":"Newchainbase","text":"newchainbase.com","href":"http:\u002F\u002Fwww.newchainbase.com"},{"img":"collaboration\u002Fwaterdrip.png","title":"WaterDrip","text":"waterdrip.io","href":"http:\u002F\u002Fwaterdrip.io\u002F"},{"img":"collaboration\u002Fmedishares.png","title":"Medishares","text":"medishares.org","href":"https:\u002F\u002Fmedishares.org"},{"img":"collaboration\u002Ftransference.png","title":"Transference","text":"","href":""},{"img":"collaboration\u002Fbkfund.png","title":"BKFund","text":"","href":""},{"img":"collaboration\u002Ftimestamp.png","title":"Timestamp","text":"","href":""}],"btnTxt":"Collaboration"},"about":{"title":"Key Innovations","imgtxt":" Facilitate construction of \u003Cbr\u003E distributed business applications","txt":["Incorporation of a service-oriented infrastructure into Cosmos","Integration of business services offered by heterogeneous systems, including public & consortium chains as well as legacy systems","Interoperability of those services across an internet of blockchains"],"btnTxt":"WHITE PAPER","checkTxt":"CHECK NETWORK"},"network":{"title":"Network Design","txt":["Definition of standard ABCI transaction types supporting registration, binding, invocation, query, profiling and governance of IRIS Services (a.k.a. iServices)","iService providers act as adaptors of business logic residing in public and consortium blockchains as well as enterprise legacy systems","iServices can be invoked across an internet of blockchains over an extended IBC protocol"],"src":"white.png"},"privacy":{"title":"IRIS Foundation Limited","title1":"Privacy policy","list":[{"title":"Introduction","txtList":["We are IRIS Foundation Limited, a company limited by guarantee and incorporated in Hong Kong (âthe Foundationâ, âweâ or âusâ). ","Your privacy is important to us.  We are committed to protecting the privacy, confidentiality and security of the personal data we hold by complying with the requirements under applicable laws and regulations.  We are equally committed to ensuring that all our employees, service providers and agents uphold these obligations.","This policy explains how we manage personal data within our organization."]},{"title":"How we collect personal data","txtList":["We collect personal data about you in the following ways: ","\u003Cul\u003E\u003Cli\u003Ewhere you register for an account or to receive emails from us\u003C\u002Fli\u003E\u003Cli\u003Ewhen you order products or services from us\u003C\u002Fli\u003E\u003Cli\u003Ewhen you submit a query or request to us\u003C\u002Fli\u003E\u003Cli\u003Ewhen you respond to a survey that we run or fill in forms on one of our websites\u003C\u002Fli\u003E\u003Cli\u003Eby tracking your use of our websites and mobile applications\u003C\u002Fli\u003E\u003Cli\u003Efrom public sources\u003C\u002Fli\u003E\u003Cli\u003Efrom examination of public and private blockchains\u003C\u002Fli\u003E\u003Cli\u003Efrom third parties who are entitled to disclose that information to us\u003C\u002Fli\u003E\u003Cli\u003Ewhen you apply for a job with us\u003C\u002Fli\u003E\u003C\u002Ful\u003E ","In some cases we may be required by law to collect certain types of personal data about you.","Where we collect personal data from you, we will generally do so ourselves.  However, in some cases we may collect personal data from a third party, such as through your representatives, contractors who provide services to us, or third parties who refer you to us because they think you may be interested in our products or services."]},{"title":"Kinds of personal data we collect","txtList":["The kinds of personal data that we collect and hold about you may include: ","\u003Cul\u003E\u003Cli\u003Eidentifying information, such as your real name, nationality, ID type, ID number and other information required by the laws and regulations\u003C\u002Fli\u003E\u003Cli\u003Econtact information, such as your postal address, email address and telephone number personal information\u003C\u002Fli\u003E\u003Cli\u003Esocial media handles and other social media profile information that you make available to us or to the public\u003C\u002Fli\u003E\u003Cli\u003Efinancial information, such as credit card, bank account or other payment details\u003C\u002Fli\u003E\u003Cli\u003Eblockchain identifiers, such as blockchain addresses and public keys\u003C\u002Fli\u003E\u003Cli\u003Eusernames and passwords that you create when registering for an account with us\u003C\u002Fli\u003E\u003Cli\u003Edetails of any products or services that we provide to you\u003C\u002Fli\u003E\u003Cli\u003Einformation about how you use the products and services we provide\u003C\u002Fli\u003E\u003Cli\u003Erecords of our communications with you, including any messages you send us\u003C\u002Fli\u003E\u003C\u002Ful\u003E ","Without this information, we may not be able to provide you with our products or services (or with all of the features and functionality offered by our products or services) or to respond to queries or requests that you submit to us."]},{"title":"Purposes for which we use personal data","txtList":["We use personal data that we collect about you for the following purposes: ","\u003Cul\u003E\u003Cli\u003Eto verify your identity when you are dealing with us\u003C\u002Fli\u003E\u003Cli\u003Eto determine your eligibility for any of our products or services\u003C\u002Fli\u003E\u003Cli\u003Eto determine your compliance with the terms and conditions that apply to any of our products or services and applicable law\u003C\u002Fli\u003E\u003Cli\u003Eto enable us to provide our products and services\u003C\u002Fli\u003E\u003Cli\u003Eto improve our website based on your information and feedback\u003C\u002Fli\u003E\u003Cli\u003Eto answer your queries and requests\u003C\u002Fli\u003E\u003Cli\u003Eto comply with our legal and regulatory obligations\u003C\u002Fli\u003E\u003Cli\u003Eto carry out market analysis and research\u003C\u002Fli\u003E\u003Cli\u003Eto monitor use of our products and services\u003C\u002Fli\u003E\u003Cli\u003Eto assess, maintain, upgrade and improve our products and services\u003C\u002Fli\u003E\u003Cli\u003Eto carry out education and training programs for our staff\u003C\u002Fli\u003E\u003Cli\u003Eto manage and resolve any legal or commercial complaints or issues\u003C\u002Fli\u003E\u003Cli\u003Eto carry out planning and forecasting activities and other internal business processes\u003C\u002Fli\u003E\u003Cli\u003Eto keep you informed about our activities, including by sending out newsletters\u003C\u002Fli\u003E\u003Cli\u003Eto connect you with our users of our products and services\u003C\u002Fli\u003E\u003C\u002Ful\u003E "]},{"title":"Direct marketing","txtList":["We may from time to time use your personal data in order to send you marketing materials about products or services that we think you may be interested in (including in some cases products and services that are provided by a third party).  We may not use your personal data unless we have received your consent.  You can opt-out of receiving marketing communications from us by contacting us at \u003Ca href=\"mailto:contact@irisnet.org\" \u003Econtact@irisnet.org \u003C\u002Fa\u003E. ","We may use your following personal data for the purpose of direct marketing:  ","\u003Cul\u003E\u003Cli\u003Eidentifying information, such as your name and date of birth\u003C\u002Fli\u003E\u003Cli\u003Econtact information, such as your postal address, email address and telephone number\u003C\u002Fli\u003E\u003Cli\u003Eproducts and services portfolio information and demographic data held by us from time to time\u003C\u002Fli\u003E\u003C\u002Ful\u003E ","We may use your personal data to market the following products and\u002For services to you:","\u003Cul\u003E\u003Cli\u003Epurchasing and\u002For trading digital assets\u003C\u002Fli\u003E\u003Cli\u003Eproviding, managing or accessing mobile wallets for holding digital assets; and\u003C\u002Fli\u003E\u003Cli\u003Eother products or services related to digital assets\u003C\u002Fli\u003E\u003C\u002Ful\u003E ","If we use your personal data in any direct marketing communications, you have the right to request that we provide you with the source of that personal data.  There is no fee for requesting this information.Â  We will provide you with the source of the personal data, unless it is impracticable or unreasonable to do so. ","Please indicate your consent to receiving information relating to the above by contacting us at \u003Ca href=\"mailto:contact@irisnet.org\" \u003Econtact@irisnet.org \u003C\u002Fa\u003E . ","We may also use and disclose your information for other purposes in accordance with your requests or instructions."]},{"title":"People to whom we may disclose personal data","txtList":["We may share personal data about you with: ","\u003Cul\u003E\u003Cli\u003Eyour representatives, advisers and others you have authorised to interact with us on your behalf\u003C\u002Fli\u003E\u003Cli\u003Eour staff who need the information to discharge their duties\u003C\u002Fli\u003E\u003Cli\u003Erelated entities within our corporate group\u003C\u002Fli\u003E\u003Cli\u003Eour business partners, agents and service providersp\u003C\u002Fli\u003E\u003Cli\u003Epayment system operators and financial institutions\u003C\u002Fli\u003E\u003Cli\u003Eprospective purchasers of all or part of our business or a related entity\u003C\u002Fli\u003E\u003Cli\u003Eprofessional advisers who we engage to provide advice on our business\u003C\u002Fli\u003E\u003Cli\u003Egovernment authorities who ask us to disclose that information, or to other people as required by law\u003C\u002Fli\u003E\u003C\u002Ful\u003E ","In some cases the people to whom we disclose your personal information may be located overseas.  Further, we may have servers located overseas.  The jurisdictions in which these people and\u002For servers are likely to be located include  the United States, Japan, and Singapore.  There may not be in place data protection laws which are substantially similar to, or serve the same purposes as the applicable data privacy laws in Hong Kong.  This means your personal information may not be protected to the same or similar level in Hong Kong. ","[\u003Cspan\u003EWe will never sell your personal data to any third party.\u003C\u002Fspan\u003E] [\u003Cspan\u003E\u003Cb\u003Eoptional clause\u003C\u002Fb\u003E\u003C\u002Fspan\u003E]"]},{"title":"Cookies \u003Cdiv class='div1'\u003E[optional clause, to be used if cookies are relevant to your business]\u003C\u002Fdiv\u003E ","txtList":["\u003Cspan\u003E[We use cookies to monitor and observe your use of our websites, compile aggregate data about that use, and provide you with a more effective service (which may include customising parts of our websites based on your preferences and past activities on those websites).  \u003Cb\u003E\"Cookies\"\u003C\u002Fb\u003E are small text files created and stored on your hard drive by your internet browser software, in order to hold relevant information about the web page you are currently viewing.  Most internet browsers have a facility that will allow you to disable cookies altogether â please refer to your browserâs help menu to find out how to do this.  While you will still be able to browse our websites with cookies disabled on your internet browser, some website functionality may not be available or may not function correctly.]\u003C\u002Fspan\u003E "]},{"title":"Storage and security of personal data ","txtList":["We generally store the personal data that we collect in electronic databases, some of which may be held on our behalf by third party data storage providers.  Sometimes we also keep hard copy records of this personal data in physical storage facilities.  We use a range of physical and technical security processes and procedures to protect the confidentiality and security of the information that we hold, and we update these from time to time to address new and emerging security threats that you become aware of.","[We also take steps to monitor access to and modification of your information by our staff, and ensure that our staff are aware of and properly trained in their obligations for managing your privacy.] [\u003Cb\u003Eoptional clause\u003C\u002Fb\u003E]"]},{"title":"Google Analytics \u003Cdiv class='div1'\u003E[optional clause, to be used if Google Analytics are used]\u003C\u002Fdiv\u003E","txtList":["\u003Cspan\u003E[Our website uses Google Analytics, a web analytics service provided by Google, Inc. (â\u003Cb\u003EGoogle\u003C\u002Fb\u003Eâ). \u003Cspan\u003E Google Analytics uses cookies to help the website analyse how users use our website.\u003C\u002Fspan\u003E","\u003Cspan\u003EThe information generated by the cookie about your use of our website (including your IP address) will be transmitted to and stored by Google on servers in the United States.  Google will use this information for the purpose of evaluating your use of the website, compiling reports on website activity for website operators and providing other services relating to website activity and internet usage.  Google may also transfer this information to third parties where required to do so by law, or where such third parties process the information on Googleâs behalf.  Google will not associate your IP address with any other data held by Google.\u003C\u002Fspan\u003E ","\u003Cspan\u003EYou may refuse the use of cookies by selecting the appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of our website.  By using our website, you consent to the processing of data about you by Google in the manner and for the purposes set out above.]\u003C\u002Fspan\u003E"]},{"title":"Retention of personal data","txtList":["Your personal data will only be kept as long as required.","We may retain your personal data for a period of at least 12 months.  At our discretion, we may retain personal data for longer than the said period if we consider it necessary or desirable to do so to meet our legal or regulatory obligations.  "]},{"title":"Access and correction ","txtList":["If you want to access any of the personal data that we hold about you or to correct some aspect of it (for example, because you think it is incomplete or incorrect), please contact our privacy compliance team using the contact details set out below.  To protect the integrity and security of the information we hold, we may ask that you follow a defined access procedure, which may include steps to verify your identity.  In certain cases we may charge you an administration fee for providing you with access to the information you have asked for, but we will inform you of this before proceeding.  There may be cases where we are unable to provide the information you request, such as where it would interfere with the privacy of others or result in a breach of confidentiality.  In these cases we will let you know why we cannot comply with your request. ","Even if you do not request access to and\u002For correct your personal data held  by us, if we are satisfied that, having regard to the reasons for which we hold your personal data, that personal data is inaccurate, incomplete, out-of-date, irrelevant or misleading, we may take reasonable steps to correct that information. "]},{"title":"Your consent","txtList":["By using our website, providing personal data and\u002For using any of our products or services, you agree that:","\u003Cul\u003E\u003Cli\u003Eyou consent to this privacy policy, as updated from time to time; and\u003C\u002Fli\u003E\u003Cli\u003Eif you have provided personal data to us relating to any other person, you:\u003Cul\u003E\u003Cli\u003Ehave a right to provide that information;\u003C\u002Fli\u003E\u003Cli\u003Ehave provided a copy of this privacy policy, as updated from time to time, to that person; and\u003C\u002Fli\u003E\u003Cli\u003Eeach such person has agreed to those terms.\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E"]},{"title":"Complaints","txtList":["We try to meet the highest standards in order to protect your privacy.  However, if you are concerned about the way in which we are managing your personal data and think we may have breached any applicable privacy laws, or any other relevant obligation, please contact our privacy compliance team using the contact details set out below.  We will make a record of your complaint and refer it to our internal complaint resolution department for further investigation.  We will deal with the matter as soon as we can, and keep you informed of the progress of our investigation.."]},{"title":"Changes to this policy","txtList":["We may make changes to this policy from time to time, to take into account changes to our standard practices and procedures or where necessary to comply with new laws and regulations.  The latest version of this policy will always be available on our website."]},{"title":"Contact details","txtList":["If you want any further information from us on privacy matters, please contact our privacy compliance team at \u003Ca href=\"mailto:contact@irisnet.org\" \u003Econtact@irisnet.org \u003C\u002Fa\u003E  ."]}]},"terms":{"title":"IRIS Foundation Limited","title1":"Website terms of use","list":[{"title":"Introduction","txtList":["This website (\"our website\") is owned and operated by IRIS Foundation Limited, a company limited by guarantee and incorporated in Hong Kong (âthe Foundationâ, \"we\" or \"us\").  Each reference in these terms of use to âour websiteâ includes all materials that we make available to you on our website.","By using our website, you agree to comply with these terms of use.  Please check this page each time you use our website, as we may update these terms from time to time.","If you carry out any transaction through our website, that transaction may be subject to additional terms and conditions which you will be asked to read and accept at the relevant time.  To the extent of any inconsistency with these terms, the terms of the transaction apply to that transaction and any matters connected with it."]},{"title":"Your obligations","txtList":["You must comply with any instructions we give you about how to use our website and must not do anything that interferes with or adversely affects the normal operation of the website (including the ability of other users to access or use the website).","You are responsible for ensuring the security of the systems and devices that you use to access our website, including through use of appropriate virus-checking and other security software."]},{"title":"Registration","txtList":["You may need to register with us in order to access certain parts of our website.  Further details about registrations are available here.  In this case, we may issue you with a user name and password, or other appropriate log-in details for your account.  You are responsible for keeping your log-in details confidential so that they cannot be used without your permission.  You will be responsible for any use of our website by anyone using your log-in details."]},{"title":"Rights to suspend or terminate access","txtList":["We may suspend, terminate or block your access to all or any part of our website at any time and without prior notice to you."]},{"title":"Intellectual property","txtList":["All of the intellectual property rights in and to our website belong to us and our licensors.  We may update and change the materials available on our website, including by removing materials, at any time in our discretion without notice to you.","You may download or print sections of our website if needed for your own personal use, but otherwise you may not reproduce any part of our website without our express prior consent.  To the extent that our website contains functionality that allows you to access or download specific materials through our website, your use of that functionality and the downloaded materials may be subject to separate terms and conditions which you will be asked to read and accept at the relevant time."]},{"title":"Website links","txtList":["Our website may contain or link to information that has not been devised, verified or tested by us or any of our officers, employees or agents.  These are provided for your information only.  We do not take any responsibility for that information, nor endorse its accuracy or completeness.  ","We do not guarantee that the information, or the provision of the hyperlinks to you, does not infringe third party rights.  If our website contains a link to an external website, we do not endorse, recommend, approve, guarantee or introduce any third parties or the services and\u002For products that those third parties may offer.  We accept no responsibility for them or any of the content available, or for any loss or damage that may arise from your use of them.","You may provide a link to the home page of our website at, on any website you operate, as long as you do not suggest any form of association, approval or endorsement on our part without our express prior permission and you promptly delete the link at our request.","Except as set out in this clause, you may not link to our website."]},{"title":"No financial services activities or advice ","txtList":["The information and any materials contained in this website should not be considered as an offer or solicitation to buy or sell financial instruments, provide financial advice, create a trading platform, facilitate or take deposits or provide any other financial services of any kind in any jurisdiction.","The information contained on this website is not intended to provide and should not be construed as advice of any kind. Â You should obtain appropriate professional advice when necessary. It does not take into account your objectives, financial situation or needs.Â "]},{"title":"Liability","txtList":["While we will use reasonable care and skill in operating our website, we cannot promise that our website will always be available, meet your requirements or completely free of faults, errors or compromise from cybersecurity events.Â ","To the maximum extent permitted by law, except as expressly set out in these terms of use, we exclude:","\u003Cul\u003E\u003Cli\u003Eall conditions, representations, warranties and statutory guarantees, whether express or implied, in relation to our website; and\u003C\u002Fli\u003E\u003Cli\u003Eï§any liability, whether in contract, tort (including negligence), or otherwise, for any indirect or consequential loss, damage or expense incurred by you or any other user in connection with our website.\u003C\u002Fli\u003E\u003C\u002Ful\u003E","To the extent we are unable by law to exclude any implied condition, representation, warranty or statutory guarantee in relation to the provision of goods or services through our website, we limit our liability for a breach to the re-supply of those goods or services, or payment for such re-supply.  This is without limitation to any other exclusions or restrictions of our or othersâ liability in connection with this website."]},{"title":"Privacy","txtList":["We will manage any personal information that we collect through our website in accordance with our \u003Ca class=\"privacy\"\u003E Privacy Policy\u003C\u002Fa\u003E, which you can access here. "]},{"title":"Governing law","txtList":["These terms of use are governed by the laws in force in Hong Kong and are subject to the exclusive jurisdiction of the courts in that place."]},{"title":"Questions?","txtList":["Please contact us \u003Ca href=\"mailto:contact@irisnet.org\" \u003Econtact@irisnet.org \u003C\u002Fa\u003E if you have any questions about our website."]}]},"qr":{"title":" Scan QR code","txt":" to follow our Subscriptions"},"contactList":[{"infotitle":"IRISnet is named after Greek goddess Iris, said to be the "},{"infotitle":"personification of the rainbow and the faithful messenger "},{"infotitle":"between heaven and humanity"}],"appcontact":{"appimg":[{"src":"telegran.png","src_selected":"telegran_selected.png","txt":"Telegram","href":"https:\u002F\u002Ft.me\u002Firisnetworkcn"},{"src":"twitter.png","src_selected":"twitter_selected.png","txt":"Twitter","href":"https:\u002F\u002Ftwitter.com\u002Firisnetwork"},{"src":"github.png","src_selected":"github_selected.png","txt":"Github","href":"https:\u002F\u002Fgithub.com\u002Firisnet"},{"src":"mail.png","src_selected":"mail_selected.png","txt":"Email","href":"mailto:contact@irisnet.org"}],"appimg1":[{"src":"bluemedium.png","src_selected":"redmedium-selected.png","txt":"Medium","href":"https:\u002F\u002Fmedium.com\u002Firisnet-blog"},{"src":"riot.png","src_selected":"riot_selected.png","txt":"Riot","href":"https:\u002F\u002Friot.im\u002Fapp\u002F#\u002Froom\u002F!bmimZgJrUWSmxqQEmG:matrix.org"},{"src":"wechat.png","src_selected":"wechat_selected.png","txt":"Wechat"},{"src":"weibo.png","src_selected":"weibo_selected.png","txt":"Weibo","href":"https:\u002F\u002Fweibo.com\u002Fu\u002F6455513027"}]},"submit":{"Subscribe":"Subscribe","success":"Success"},"errEmail":{"err":"Please enter a valid email address"},"placehooder":{"placehooder":"Please enter your email address"},"mobileLogo":[{"src":"..\u002F..\u002F..\u002Fpublic\u002Fmobile_main_en.png","active":true},{"src":"..\u002F..\u002F..\u002Fpublic\u002Fmobile_bug_bounty_en.png","active":false},{"src":"..\u002F..\u002F..\u002Fpublic\u002Fmobile_irisnet_en.png","active":false}]}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());
+  </script>
+  <script defer="" src="/dist/manifest.54e67e9f17df71efc259.js">
+  </script>
+  <script defer="" src="/dist/vendor.0ea89b202873c2bb7c4f.js">
+  </script>
+  <script defer="" src="/dist/app.ebf03edaad77016098b2.js">
+  </script>
+ </body>
+</html>

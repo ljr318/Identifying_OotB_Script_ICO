@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PM5BFQQ');
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet"/>
+  <link href="https://hacken.io/wp-content/themes/hacken/assets/img/icons/favicon_16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="https://hacken.io/wp-content/themes/hacken/assets/img/icons/favicon_32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" rel="stylesheet"/>
+  <script src="https://hacken.io/wp-content/themes/hacken/assets/js/jquery_v3.3.1.js" type="type/javascript">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|PT+Mono" rel="stylesheet"/>
+  <link href="/wp-content/plugins/elementor/assets/lib/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0" rel="stylesheet"/>
+  <title>
+   Hacken CyberSecurity Ecosystem
+  </title>
+  <style>
+   .wpcf7-submit{
+			display:none;
+		}
+		.recaptcha-btn{
+			display:block;
+		}
+		.grecaptcha-badge {display: none;}
+  </style>
+  <script type="text/javascript">
+   var contactform = [];
+		var checkIfCalled = true;
+		var renderGoogleInvisibleRecaptchaFront = function() {
+			// prevent form submit from enter key
+			jQuery("input[name=_wpcf7]").attr("class","formid");
+				jQuery('.wpcf7-form').on('keyup keypress', "input", function(e) {
+				  var keyCode = e.keyCode || e.which;
+				  if (keyCode === 13) {
+					e.preventDefault();
+					return false;
+				  }
+				});
+
+			jQuery('.wpcf7-submit').each(function(index){
+
+				var checkexclude = 0;
+				var form = jQuery(this).closest('.wpcf7-form');
+				var value = jQuery(form).find(".formid").val();
+				// check form exclude from invisible recaptcha
+								if(checkexclude == 0){
+					// Hide the form orig submit button
+					form.find('.wpcf7-submit').hide();
+
+					// Fetch class and value of orig submit button
+					btnClasses = form.find('.wpcf7-submit').attr('class');
+					btnValue = form.find('.wpcf7-submit').attr('value');
+
+					// Add custom button and recaptcha holder
+
+					form.find('.wpcf7-submit').after('<input type="button" id="wpcf-custom-btn-'+index+'" class="'+btnClasses+' wpcf7-submit recaptcha-btn recaptcha-btn-type-css" value="'+btnValue+'" title="'+btnValue+'" >');
+					form.append('<div class="recaptcha-holder" id="recaptcha-holder-'+index+'"></div>');
+					// Recaptcha rendenr from here
+					var holderId = grecaptcha.render('recaptcha-holder-'+index,{
+								'sitekey':'6Lewpq8UAAAAAG-3t8xHPWMeVOskNJyBimq9quZV',
+								'size': 'invisible',
+								'badge' : 'bottomright', // possible values: bottomright, bottomleft, inline
+								'callback' : function (recaptchaToken) {
+									//console.log(recaptchaToken);
+									var response=jQuery('#recaptcha-holder-'+index).find('.g-recaptcha-response').val();
+									//console.log(response);
+									//Remove old response and store new respone
+									jQuery('#recaptcha-holder-'+index).parent().find(".respose_post").remove();
+									jQuery('#recaptcha-holder-'+index).after('<input type="hidden" name="g-recaptcha-response"  value="'+response+'" class="respose_post">')
+									grecaptcha.reset(holderId);
+
+									if(typeof customCF7Validator !== 'undefined'){
+										if(!customCF7Validator(form)){
+											return;
+										}
+									}
+									// Call default Validator function
+									else if(contactFormDefaultValidator(form)){
+										return;
+									}
+									else{
+										// hide the custom button and show orig submit button again and submit the form
+										jQuery('#wpcf-custom-btn-'+index).hide();
+										form.find('input[type=submit]').show();
+										form.find("input[type=submit]").click();
+										form.find('input[type=submit]').hide();
+										jQuery('#wpcf-custom-btn-'+index).attr('style','');
+									}
+								}
+						},false);
+
+					// action call when click on custom button
+					jQuery('#wpcf-custom-btn-'+index).click(function(event){
+						event.preventDefault();
+						// Call custom validator function
+						if(typeof customCF7Validator == 'function'){
+							if(!customCF7Validator(form)){
+								return false;
+							}
+						}
+						// Call default Validator function
+						else if(contactFormDefaultValidator(form)){
+							return false;
+						}
+						else if(grecaptcha.getResponse(holderId) != ''){
+							grecaptcha.reset(holderId);
+						}
+						else{
+							// execute the recaptcha challenge
+							grecaptcha.execute(holderId);
+						}
+					});
+				}
+			});
+		}
+  </script>
+  <script async="" defer="" src="https://www.google.com/recaptcha/api.js?onload=renderGoogleInvisibleRecaptchaFront&amp;render=explicit">
+  </script>
+  <meta content="Comprehensive Security Solution For Modern Businesses - Protect Your Enterprise on Every Side." name="description"/>
+  <meta content="fDmtz7b4tdLuFuCSkwhRGnzzndWCNrdS1xFOs4y40n0" name="google-site-verification"/>
+  <script class="aioseop-schema" type="application/ld+json">
+   {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hacken.io/#organization","url":"https://hacken.io/","name":"Hacken","sameAs":[]},{"@type":"WebSite","@id":"https://hacken.io/#website","url":"https://hacken.io/","name":"Hacken","publisher":{"@id":"https://hacken.io/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://hacken.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://hacken.io/#webpage","url":"https://hacken.io/","inLanguage":"en-US","name":"Hacken Ecosystem","isPartOf":{"@id":"https://hacken.io/#website"},"image":{"@type":"ImageObject","@id":"https://hacken.io/#primaryimage","url":"https://hacken.io/wp-content/uploads/2019/01/featured_image_main.jpg","width":1200,"height":630},"primaryImageOfPage":{"@id":"https://hacken.io/#primaryimage"},"datePublished":"2019-01-17T12:50:32+00:00","dateModified":"2020-07-31T11:43:14+00:00","about":{"@id":"https://hacken.io/#organization"}}]}
+  </script>
+  <link href="https://hacken.io/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Hacken CyberSecurity Ecosystem" property="og:title"/>
+  <meta content="Comprehensive Security Solution For Modern Businesses - Protect Your Enterprise on Every Side." property="og:description"/>
+  <meta content="https://hacken.io/" property="og:url"/>
+  <meta content="Hacken" property="og:site_name"/>
+  <meta content="https://hacken.io/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" property="og:image"/>
+  <meta content="https://hacken.io/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" property="og:image:secure_url"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Hacken CyberSecurity Ecosystem" name="twitter:title"/>
+  <meta content="Comprehensive Security Solution For Modern Businesses - Protect Your Enterprise on Every Side." name="twitter:description"/>
+  <meta content="https://hacken.io/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" name="twitter:image"/>
+  <script type="text/javascript">
+   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', 'UA-105303639-9', { 'cookieDomain': 'hacken.io' } );
+				// Plugins
+				
+				ga('send', 'pageview');
+  </script>
+  <script async="" src="https://www.google-analytics.com/analytics.js">
+  </script>
+  <link href="//s0.wp.com" rel="dns-prefetch"/>
+  <link href="//use.fontawesome.com" rel="dns-prefetch"/>
+  <link href="//s.w.org" rel="dns-prefetch"/>
+  <link href="https://hacken.io/feed/" rel="alternate" title="Hacken » Feed" type="application/rss+xml"/>
+  <link href="https://hacken.io/comments/feed/" rel="alternate" title="Hacken » Comments Feed" type="application/rss+xml"/>
+  <script type="text/javascript">
+   window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/hacken.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+  </style>
+  <link href="https://hacken.io/wp-includes/css/dist/block-library/style.min.css?ver=5.3" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.6" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/svg-support/css/svgs-attachment.css?ver=5.3" id="bodhi-svgs-attachment-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/wc-gallery/includes/vendors/flexslider/flexslider.css?ver=2.6.1" id="wc-gallery-flexslider-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/wc-gallery/includes/vendors/owlcarousel/assets/owl.carousel.css?ver=2.1.4" id="wc-gallery-owlcarousel-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/wc-gallery/includes/vendors/owlcarousel/assets/owl.theme.default.css?ver=2.1.4" id="wc-gallery-owlcarousel-theme-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1.7" id="ez-icomoon-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=1.7" id="ez-toc-css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="ez-toc-inline-css" type="text/css">
+   div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+  </style>
+  <link href="https://hacken.io/wp-content/themes/hacken/style.css?ver=5.3" id="hacken-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/ajax-search-lite/css/style.basic.css?ver=4.8" id="wpdreams-asl-basic-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/ajax-search-lite/css/style-curvy-black.css?ver=4.8" id="wpdreams-ajaxsearchlite-css" media="all" rel="stylesheet" type="text/css"/>
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" id="font-awesome-official-css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.4.0" id="elementor-icons-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.7.5" id="elementor-animations-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.7.5" id="elementor-frontend-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.7.3" id="elementor-pro-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=2.7.5" id="font-awesome-5-all-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=2.7.5" id="font-awesome-4-shim-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/uploads/elementor/css/global.css?ver=1575285494" id="elementor-global-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/addthis-follow/frontend/build/addthis_wordpress_public.min.css?ver=5.3" id="addthis_all_pages-css" media="all" rel="stylesheet" type="text/css"/>
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css" id="font-awesome-official-v4shim-css" integrity="sha384-zpflLcSaYRmTsnK2LTOdvChgML+Tt/4aE2szcblLVBXd8Jq/HGz6rhZqZ+4TkK75" media="all" rel="stylesheet" type="text/css"/>
+  <style id="font-awesome-official-v4shim-inline-css" type="text/css">
+   @font-face {
+    font-family: "FontAwesome";
+    src: url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.eot"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.woff2") format("woff2"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.woff") format("woff"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.ttf") format("truetype"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.eot"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.woff2") format("woff2"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.woff") format("woff"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.ttf") format("truetype"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-regular-400.eot"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-regular-400.woff2") format("woff2"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-regular-400.woff") format("woff"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-regular-400.ttf") format("truetype"),
+         url("https://use.fontawesome.com/releases/v5.9.0/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+    unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.3" id="google-fonts-1-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://hacken.io/wp-content/plugins/jetpack/css/jetpack.css?ver=7.9.1" id="jetpack_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <script src="https://hacken.io/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-content/plugins/cf7-invisible-recaptcha/js/cf7_invisible_recaptcha.js?ver=1.2.3" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var cssTarget = "img.style-svg";
+var ForceInlineSVGActive = "false";
+/* ]]> */
+  </script>
+  <script src="https://hacken.io/wp-content/plugins/svg-support/js/min/svgs-inline-min.js?ver=1.0.0" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=2.7.5" type="text/javascript">
+  </script>
+  <link href="https://hacken.io/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://hacken.io/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://hacken.io/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress 5.3" name="generator"/>
+  <link href="https://hacken.io/" rel="shortlink"/>
+  <link href="https://hacken.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhacken.io%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://hacken.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhacken.io%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <style type="text/css">
+   img#wpstats{display:none}
+  </style>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+  </style>
+  <meta content="wordpress-plugin" name="onesignal"/>
+  <script async="" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js">
+  </script>
+  <script>
+   window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://hacken.io");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '38b6502a-c192-4cab-882e-bd5d1233cfd9';
+oneSignal_options['autoRegister'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['disable'] = true;
+oneSignal_options['path'] = "https://hacken.io/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.14c30330-c4fb-483f-9c66-942ad147f917";
+oneSignal_options['persistNotification'] = false;
+oneSignal_options['promptOptions'] = { };
+              OneSignal.init(window._oneSignalInitOptions);
+                    });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+  </script>
+  <style type="text/css">
+   <!--
+                    
+            @font-face {
+                font-family: 'aslsicons2';
+                src: url('https://hacken.io/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot');
+                src: url('https://hacken.io/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix') format('embedded-opentype'),
+                     url('https://hacken.io/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2') format('woff2'),
+                     url('https://hacken.io/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff') format('woff'),
+                     url('https://hacken.io/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf') format('truetype'),
+                     url('https://hacken.io/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label {
+                font-size: 0px !important;
+                color: rgba(0, 0, 0, 0);
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label:after {
+                font-size: 11px !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            div[id*='ajaxsearchlite'].wpdreams_asl_container {
+                width: 100%;
+                margin: 0px 0px 0px 0px;
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results div.resdrg span.highlighted {
+                font-weight: bold;
+                color: rgba(217, 49, 43, 1);
+                background-color: rgba(238, 238, 238, 1);
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results .results div.asl_image {
+                width: 70px;
+                height: 70px;
+            }
+            div.asl_r .results {
+                max-height: none;
+            }
+            
+                .asl_w, .asl_w * {font-family:"PT Mono" !important;}
+                .asl_m input[type=search]::placeholder{font-family:"PT Mono" !important;}
+                .asl_m input[type=search]::-webkit-input-placeholder{font-family:"PT Mono" !important;}
+                .asl_m input[type=search]::-moz-placeholder{font-family:"PT Mono" !important;}
+                .asl_m input[type=search]:-ms-input-placeholder{font-family:"PT Mono" !important;}
+                                    -->
+  </style>
+  <script type="text/javascript">
+   if ( typeof _ASL !== "undefined" && _ASL !== null && typeof _ASL.initialize !== "undefined" )
+                    _ASL.initialize();
+  </script>
+  <style id="wp-custom-css" type="text/css">
+   /* widget paytomat*/
+#pt-place-qr {
+	margin:50px auto;
+	border-color:#21CB9E;
+}
+.pt-row {
+	font-size:20px;
+}
+@media screen and (max-width:768px){
+	.pt-row {
+	font-size:4vw;
+}
+}
+#pt-place-qr .pt-paid {
+	background-color:#21CB9E;
+	border:1px solid #21CB9E;
+	border-radius:50px;
+	line-height:34px;
+}
+#pt-place-qr .pt-paid:hover {
+	background-color:#ffffff;
+	color:#21CB9E;
+}
+#pt-place-qr .pt-paid,
+.pt-track {
+	margin-top:15%;
+}
+#pt-place-qr .pt-row > .pt-col-2 p {
+	padding:20px 0;
+}
+  </style>
+ </head>
+ <body class="home page-template page-template-template-page page-template-page-main page-template-template-pagepage-main-php page page-id-124 elementor-default elementor-page elementor-page-124">
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PM5BFQQ" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <style>
+   .header { 
+	top: 80px;
+}
+body.home section.main {
+	padding-top: 80px;
+ }
+ @media screen and (max-width: 580px) {
+   .countdown {
+    flex-direction: column;
+    height: 91px !important;
+   }
+   body.home section.main {
+	padding-top: 110px;
+   }
+   .header { 
+	top: 110px;
+   }
+   .countdown div {
+     margin-right: 0 !important;
+     font-size: 2em;
+   }
+}
+@media screen and (max-width: 480px) {
+	.countdown li { 
+		font-size: 0.6em; 
+	}
+	.countdown div {
+		font-size: 1em !important;
+	}
+	.countdown li span {
+		font-size: 2.5em !important;
+	}
+}
+@media screen and (min-width: 481px) {
+	.countdown li { 
+		font-size: 0.8em;
+	}
+}
+.countdown li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0.5em;
+  text-transform: uppercase;
+}
+.countdown li span {
+  display: block;
+  font-size: 2.5rem;
+}
+.countdown {
+  color: #fff;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #000;
+  justify-content: center;
+  position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+}
+.countdown div {
+  margin-right: 20px;
+  font-size: 2em;
+}
+  </style>
+  <script>
+   const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+let countDown = new Date('Aug 27, 2020 00:00:00').getTime(),
+    x = setInterval(function() {    
+
+      let nowlocal = new Date();
+      var now = new Date(nowlocal.getTime() + nowlocal.getTimezoneOffset() * 60000); 
+          distance = countDown - now;
+      if (distance < 0) {
+        document.getElementById('countdown-days').innerText = '00',
+        document.getElementById('countdown-hours').innerText = '00',
+        document.getElementById('countdown-minutes').innerText = '00',
+        document.getElementById('countdown-seconds').innerText = '00';
+      } else {
+        document.getElementById('countdown-days').innerText = ("0" + Math.floor(distance / (day))).slice(-2),
+        document.getElementById('countdown-hours').innerText = ("0" + Math.floor((distance % (day)) / (hour))).slice(-2),
+        document.getElementById('countdown-minutes').innerText = ("0" + Math.floor((distance % (hour)) / (minute))).slice(-2),
+        document.getElementById('countdown-seconds').innerText = ("0" + Math.floor((distance % (minute)) / second)).slice(-2);
+      }
+
+    }, second)
+  </script>
+  <div class="countdown">
+   <div>
+    Are you ready?
+   </div>
+   <ul>
+    <li>
+     <span id="countdown-days">
+     </span>
+     days
+    </li>
+    <li>
+     <span id="countdown-hours">
+     </span>
+     Hours
+    </li>
+    <li>
+     <span id="countdown-minutes">
+     </span>
+     Minutes
+    </li>
+    <li>
+     <span id="countdown-seconds">
+     </span>
+     Seconds
+    </li>
+   </ul>
+  </div>
+  <header class="header">
+   <div class="container">
+    <a class="logo" href="https://hacken.io/">
+     <svg alt="" data-markup-inline="" fill="#2BE2B3" viewbox="0 0 136 15" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.3 0v5.1H4.7V0H0v15h4.7V9.7h6.6V15H16V0h-4.7zM49.3 0H47v15h17v-4.3H51.7V4.2H64V0H49.3zM131.3 0v6.5L124.7 0H120v15h4.7V8.3l6.6 6.7h4.7V0h-4.7zM83.4 0v5.1h-6.9V0H72v15h4.6V9.7h6.9V15h4.6V9.5h-4.3l4.3-4.4V0h-4.7zM38.2 0H23v15h4.7v-3.2h6.7V15H39V0h-.8zm-3.9 7.3h-6.7v-3h6.7v3zM98.3 0H97v15h16v-4.3h-11.3V9.6H113V5.3h-11.3V4.2H113V0H98.3z">
+      </path>
+     </svg>
+    </a>
+    <nav>
+     <ul class="menu" id="primary-menu">
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-418" id="menu-item-418">
+       <a href="https://hacken.io/services/">
+        Services
+       </a>
+       <ul class="sub-menu">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-425" id="menu-item-425">
+         <a href="/services/#security-assessment">
+          Security Assessment
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-426" id="menu-item-426">
+         <a href="/services/#blockchain-security">
+          Blockchain Security
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-429" id="menu-item-429">
+         <a href="/services/#secure-software-development">
+          Secure Software Development
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-430" id="menu-item-430">
+         <a href="/services/#certified">
+          CERtified
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-292" id="menu-item-292">
+       <a href="https://hacken.io/products/">
+        Products
+       </a>
+       <ul class="sub-menu">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5947" id="menu-item-5947">
+         <a href="https://hacken.ai">
+          HackenAI
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-293" id="menu-item-293">
+         <a href="https://hackenproof.com/" rel="noopener noreferrer" target="_blank">
+          HackenProof
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-327" id="menu-item-327">
+         <a href="https://cer.live/" rel="noopener noreferrer" target="_blank">
+          CER
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4674" id="menu-item-4674">
+       <a href="https://hacken.io/research/">
+        Research
+       </a>
+       <ul class="sub-menu">
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5534" id="menu-item-5534">
+         <a href="https://hacken.io/category/research/hacken-news/">
+          Hacken news
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5535" id="menu-item-5535">
+         <a href="https://hacken.io/category/research/researches-and-investigations/">
+          Researches and investigations
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5536" id="menu-item-5536">
+         <a href="https://hacken.io/category/research/education/">
+          Education
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5533" id="menu-item-5533">
+         <a>
+          <div class="wpdreams_asl_container asl_w asl_m asl_m_1" id="ajaxsearchlite1">
+           <div class="probox">
+            <div class="promagnifier">
+             <div class="innericon">
+              <svg enable-background="new 0 0 512 512" height="512px" version="1.1" viewbox="0 0 512 512" width="512px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+               <path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z" id="magnifier-2-icon">
+               </path>
+              </svg>
+             </div>
+            </div>
+            <div class="prosettings" data-opened="0" style="display:none;">
+             <div class="innericon">
+              <svg enable-background="new 0 0 512 512" height="512px" version="1.1" viewbox="0 0 512 512" width="512px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+               <polygon id="arrow-25-icon" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 " transform="rotate(90 256 256)">
+               </polygon>
+              </svg>
+             </div>
+            </div>
+            <div class="proinput">
+             <form aria-label="Ajax search form" autocomplete="off">
+              <input aria-label="Search input" autocomplete="off" class="orig" name="phrase" placeholder="Search here.." type="search" value=""/>
+              <input aria-label="Autocomplete input, do not use this" autocomplete="off" class="autocomplete" name="phrase" type="text" value=""/>
+              <span class="loading">
+              </span>
+              <input style="width:0; height: 0; visibility: hidden;" type="submit" value="Start search"/>
+             </form>
+            </div>
+            <div class="proloading">
+             <div class="asl_loader">
+              <div class="asl_loader-inner asl_simple-circle">
+              </div>
+             </div>
+            </div>
+            <div class="proclose">
+             <svg enable-background="new 0 0 512 512" height="512px" version="1.1" viewbox="0 0 512 512" width="512px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+              <polygon id="x-mark-icon" points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 ">
+              </polygon>
+             </svg>
+            </div>
+           </div>
+          </div>
+          <div class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1" id="ajaxsearchlitesettings1">
+           <form autocomplete="off" name="options">
+            <fieldset class="asl_sett_scroll">
+             <legend style="display: none;">
+              Generic selectors
+             </legend>
+             <div class="asl_option_inner hiddend">
+              <input id="qtranslate_lang" name="qtranslate_lang" type="hidden" value="0"/>
+             </div>
+             <div class="asl_option">
+              <div class="asl_option_inner">
+               <input id="set_exactonly1" name="set_exactonly" title="Exact matches only" type="checkbox" value="checked"/>
+               <label for="set_exactonly1">
+                Exact matches only
+               </label>
+              </div>
+              <div class="asl_option_label">
+               Exact matches only
+              </div>
+             </div>
+             <div class="asl_option">
+              <div class="asl_option_inner">
+               <input checked="checked" id="set_intitle1" name="set_intitle" title="Search in title" type="checkbox" value="None"/>
+               <label for="set_intitle1">
+                Search in title
+               </label>
+              </div>
+              <div class="asl_option_label">
+               Search in title
+              </div>
+             </div>
+             <div class="asl_option">
+              <div class="asl_option_inner">
+               <input checked="checked" id="set_incontent1" name="set_incontent" title="Search in content" type="checkbox" value="None"/>
+               <label for="set_incontent1">
+                Search in content
+               </label>
+              </div>
+              <div class="asl_option_label">
+               Search in content
+              </div>
+             </div>
+             <div class="asl_option_inner hiddend">
+              <input checked="checked" id="set_inexcerpt1" name="set_inexcerpt" title="Search in excerpt" type="checkbox" value="None"/>
+              <label for="set_inexcerpt1">
+               Search in excerpt
+              </label>
+             </div>
+             <div class="asl_option">
+              <div class="asl_option_inner">
+               <input checked="checked" id="set_inposts1" name="set_inposts" title="Search in posts" type="checkbox" value="None"/>
+               <label for="set_inposts1">
+                Search in posts
+               </label>
+              </div>
+              <div class="asl_option_label">
+               Search in posts
+              </div>
+             </div>
+             <div class="asl_option">
+              <div class="asl_option_inner">
+               <input id="set_inpages1" name="set_inpages" title="Search in pages" type="checkbox" value="None"/>
+               <label for="set_inpages1">
+                Search in pages
+               </label>
+              </div>
+              <div class="asl_option_label">
+               Search in pages
+              </div>
+             </div>
+            </fieldset>
+           </form>
+          </div>
+          <div class="vertical wpdreams_asl_results asl_w asl_r asl_r_1" id="ajaxsearchliteres1">
+           <div class="results">
+            <div class="resdrg">
+            </div>
+           </div>
+          </div>
+          <div id="asl_hidden_data">
+           <svg height="0" style="position:absolute" width="0">
+            <filter id="aslblur">
+             <fegaussianblur in="SourceGraphic" stddeviation="4">
+             </fegaussianblur>
+            </filter>
+           </svg>
+           <svg height="0" style="position:absolute" width="0">
+            <filter id="no_aslblur">
+            </filter>
+           </svg>
+          </div>
+          <div class="asl_init_data wpdreams_asl_data_ct" data-asldata="ew0KICAgICJob21ldXJsIjogImh0dHBzOi8vaGFja2VuLmlvLyIsDQogICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2hhY2tlbi5pby93cC1jb250ZW50L3BsdWdpbnMvYWpheC1zZWFyY2gtbGl0ZS9pbWcvZGVmYXVsdC5qcGciLA0KICAgICJoaWdobGlnaHQiOiAwLA0KICAgICJoaWdobGlnaHR3aG9sZXdvcmRzIjogMSwNCiAgICAic2Nyb2xsVG9SZXN1bHRzIjogMCwNCiAgICAicmVzdWx0YXJlYWNsaWNrYWJsZSI6IDEsDQogICAgImF1dG9jb21wbGV0ZSI6IHsNCiAgICAgICAgImVuYWJsZWQiIDogMSwNCiAgICAgICAgImxhbmciIDogImVuIg0KICAgIH0sDQogICAgInRyaWdnZXJvbnR5cGUiOiAxLA0KICAgICJ0cmlnZ2VyX29uX2NsaWNrIjogMCwNCiAgICAidHJpZ2dlcl9vbl9mYWNldF9jaGFuZ2UiOiAxLA0KICAgICJzZXR0aW5nc2ltYWdlcG9zIjogInJpZ2h0IiwNCiAgICAiaHJlc3VsdGFuaW1hdGlvbiI6ICJmeC1ub25lIiwNCiAgICAidnJlc3VsdGFuaW1hdGlvbiI6ICJmeC1ub25lIiwNCiAgICAiaHJlc3VsdGhpZGVkZXNjIjogIjEiLA0KICAgICJwcmVzY29udGFpbmVyaGVpZ2h0IjogIjQwMHB4IiwNCiAgICAicHNob3dzdWJ0aXRsZSI6ICIwIiwNCiAgICAicHNob3dkZXNjIjogIjEiLA0KICAgICJjbG9zZU9uRG9jQ2xpY2siOiAxLA0KICAgICJpaWZOb0ltYWdlIjogImRlc2NyaXB0aW9uIiwNCiAgICAiaWlSb3dzIjogMiwNCiAgICAiaWl0ZW1zV2lkdGgiOiAyMDAsDQogICAgImlpdGVtc0hlaWdodCI6IDIwMCwNCiAgICAiaWlzaG93T3ZlcmxheSI6IDEsDQogICAgImlpYmx1ck92ZXJsYXkiOiAxLA0KICAgICJpaWhpZGVDb250ZW50IjogMSwNCiAgICAiaWlhbmltYXRpb24iOiAiMSIsDQogICAgImFuYWx5dGljcyI6IDEsDQogICAgImFuYWx5dGljc1N0cmluZyI6ICI/YWpheF9zZWFyY2g9e2FzbF90ZXJtfSIsDQogICAgInJlZGlyZWN0b25jbGljayI6IDEsDQogICAgInJlZGlyZWN0Q2xpY2tUbyI6ICJyZXN1bHRzX3BhZ2UiLA0KICAgICJyZWRpcmVjdENsaWNrTG9jIjogIm5ldyIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAibmV3IiwNCiAgICAicmVkaXJlY3RfdXJsIjogIj9zPXtwaHJhc2V9IiwNCiAgICAib3ZlcnJpZGV3cGRlZmF1bHQiOiAwLA0KICAgICJvdmVycmlkZV9tZXRob2QiOiAicG9zdCINCn0NCg==" id="asl_init_id_1" style="display:none !important;">
+          </div>
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-285" id="menu-item-285">
+       <a href="https://hacken.io/about-us/">
+        About Us
+       </a>
+      </li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-287" id="menu-item-287">
+       <a aria-current="page" href="/#contact-us">
+        Contact Us
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <div class="nav-trigger">
+     <img class="trigger-img" src="https://hacken.io/wp-content/themes/hacken/assets/img/general/burger_menu.svg"/>
+     <img class="close-img" src="https://hacken.io/wp-content/themes/hacken/assets/img/general/close.svg"/>
+    </div>
+   </div>
+  </header>
+  <section class="section section-dark main">
+   <div class="container">
+    <div class="text">
+     <h1>
+      Hacken
+     </h1>
+     <p>
+     </p>
+     <p>
+      <strong>
+       Premier cybersecurity
+       <br/>
+       consulting company with an
+       <br/>
+       essential focus on
+       <br/>
+       cryptocurrency exchanges
+       <br/>
+       and blockchain security
+      </strong>
+     </p>
+    </div>
+    <div class="pic" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/bg.png')">
+    </div>
+    <div class="scroll">
+     <a href="#ecosystem">
+      Scroll
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="section section-dark ecosystem" id="ecosystem">
+   <div class="container">
+    <div class="text">
+     <h2>
+      HACKEN ECOSYSTEM
+     </h2>
+     <p>
+      Hacken is a cybersecurity ecosystem
+      <br/>
+      that ensures the safety of IT companies
+      <br/>
+      and digital environments.
+      <br/>
+      <br/>
+      Simply put, Hacken is the source of
+      <br/>
+      smart solutions for your business and clients
+     </p>
+    </div>
+    <div class="ecosystem-block">
+     <div class="center-logo">
+      <img alt="" src="https://hacken.io/wp-content/themes/hacken/assets/img/content/full-logo.svg"/>
+     </div>
+     <div class="block-items">
+      <div class="block-item">
+       <div class="head">
+        Bug Bounty
+        <br/>
+        platform
+       </div>
+       <div class="title">
+        <a href="https://hackenproof.com/">
+         <img alt="" src="https://hacken.io/wp-content/uploads/2019/01/hackenproof-logo-2.svg"/>
+        </a>
+       </div>
+      </div>
+      <div class="block-item">
+       <div class="head">
+        Objective Rating of Crypto Exchanges
+       </div>
+       <div class="title">
+        <a href="https://cer.live/">
+         <img alt="" src="https://hacken.io/wp-content/uploads/2019/01/cer-logo.svg"/>
+        </a>
+       </div>
+      </div>
+      <div class="block-item">
+       <div class="head">
+        Cybersecurity Services
+       </div>
+       <div class="title">
+        <a href="https://hacken.io/services/">
+         <img alt="" src="https://hacken.io/wp-content/uploads/2019/01/hacken-logo-white.svg"/>
+        </a>
+       </div>
+      </div>
+      <div class="block-item">
+       <div class="head">
+        Personal Cyberguard
+       </div>
+       <div class="title">
+        <a href="https://hacken.ai/">
+         <img alt="" src="https://hacken.io/wp-content/uploads/2020/06/hai_long_logo_bw-01.svg"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-light services">
+   <div class="container">
+    <h2>
+     OUR SERVICES
+    </h2>
+    <div class="services-list">
+     <div class="services-item">
+      <div class="content">
+       <div class="text">
+        <div class="title">
+         Security Assessment
+        </div>
+        <p>
+         Security Assessment aims at evaluating the security level of an information system. Hacken identifies safety risks and vulnerabilities to protect your company and its digital environment.
+        </p>
+       </div>
+       <div class="controls">
+        <a class="btn" href="/services/#security-assessment">
+         Learn More
+        </a>
+       </div>
+      </div>
+      <div class="pic" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/security_assessment.jpg')">
+      </div>
+     </div>
+     <div class="services-item">
+      <div class="content">
+       <div class="text">
+        <div class="title">
+         Blockchain Security
+        </div>
+        <p>
+         A full range of blockchain security services including Ethereum, EOS, TRON smart contract audit, blockchain protocol security, and formal verification. We want to ensure that your blockchain application is properly secured.
+        </p>
+       </div>
+       <div class="controls">
+        <a class="btn" href="/services/#blockchain-security">
+         Learn More
+        </a>
+       </div>
+      </div>
+      <div class="pic" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/blockchain_security.jpg')">
+      </div>
+     </div>
+     <div class="services-item">
+      <div class="content">
+       <div class="text">
+        <div class="title">
+         Secure Software Development
+        </div>
+        <p>
+         Secure Software Development supposes application confidentiality, integrity, and availability at every stage of the development process. We built cybersecurity in to achieve the highest level of protection.
+        </p>
+       </div>
+       <div class="controls">
+        <a class="btn" href="/services/#secure-software-development">
+         Learn More
+        </a>
+       </div>
+      </div>
+      <div class="pic" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/software-development.jpg')">
+      </div>
+     </div>
+     <div class="services-item">
+      <div class="content">
+       <div class="text">
+        <div class="title">
+         CERtified
+        </div>
+        <p>
+         Crypto Exchange Ranks provides 4 types of CERtificates: Solvency, Liquidity, Cybersecurity, and Community. The CERtificates prove that crypto exchanges follow transparency and reliability standards.
+        </p>
+       </div>
+       <div class="controls">
+        <a class="btn" href="/services/#certified">
+         Learn More
+        </a>
+       </div>
+      </div>
+      <div class="pic" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/certified.png')">
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-dark products">
+   <div class="container">
+    <h2>
+     OUR PRODUCTS
+    </h2>
+    <div class="products-content">
+     <ul class="products-tabs">
+      <li class="active" data-tab="tab-0">
+       HackenAI
+      </li>
+      <li class="" data-tab="tab-1">
+       HackenProof
+      </li>
+      <li class="" data-tab="tab-2">
+       CER
+      </li>
+     </ul>
+     <div class="products-list">
+      <div class="products-item active" id="tab-0">
+       <div class="product-logo">
+        <img src="https://hacken.io/wp-content/uploads/2020/06/hai_long_logo_bw-01.svg"/>
+       </div>
+       <div class="product-text">
+        Your personal Cyberguard
+        <br/>
+        Improving your personal
+        <br/>
+        security with a simple,
+        <br/>
+        interactive tool.
+       </div>
+       <div class="product-btn">
+        <a class="btn btn-dark" href="https://hacken.ai">
+         Visit Website
+        </a>
+       </div>
+       <div class="product-img" style="background-image: url('https://hacken.io/wp-content/uploads/2020/06/phone-bg-bw.png')">
+       </div>
+      </div>
+      <div class="products-item" id="tab-1">
+       <div class="product-logo">
+        <img src="https://hacken.io/wp-content/uploads/2019/01/hackenproof-logo-2.svg"/>
+       </div>
+       <div class="product-text">
+        The bug bounty platform
+is a crowdsourced solution
+to uncover
+security issues
+       </div>
+       <div class="product-btn">
+        <a class="btn btn-dark" href="https://hackenproof.com/">
+         Visit Website
+        </a>
+       </div>
+       <div class="product-img" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/hp_new_site_vers2.png')">
+       </div>
+      </div>
+      <div class="products-item" id="tab-2">
+       <div class="product-logo">
+        <img src="https://hacken.io/wp-content/uploads/2019/01/cer-logo.svg"/>
+       </div>
+       <div class="product-text">
+        Crypto Exchange Ranks (CER) is a complex multi-factor scoring platform that ranks crypto exchanges according to wallet balance, trade volume, liquidity, cybersecurity, withdrawal &amp; limits, and public opinion
+       </div>
+       <div class="product-btn">
+        <a class="btn btn-dark" href="https://cer.live/">
+         Visit Website
+        </a>
+       </div>
+       <div class="product-img" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/cer_our_produst.png')">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-dark team">
+   <div class="container">
+    <div class="team-head">
+     <h2>
+      OUR TEAM
+     </h2>
+     <a class="btn btn-white" href="/about-us/#team">
+      Learn More
+     </a>
+    </div>
+    <div class="team-list" style="justify-content:center">
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/team1-1.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         DYMA BUDORIN
+        </h4>
+        <p>
+         Managing Partner
+        </p>
+       </div>
+       <div class="team-item-description">
+        Dmytro was a top-level executive in Ukraine's military defense industry. As a CCA, his other achievements include an eight-year career in Deloitte in accounting, audit and project management
+       </div>
+      </div>
+     </div>
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/matiukhin_main.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         ANDRII MATIUKHIN
+        </h4>
+        <p>
+         Cybersecurity Consulting Partner
+        </p>
+       </div>
+       <div class="team-item-description">
+        Andrii is a highly qualified cybersecurity expert with 14 years of success and experience in the industry. He is a certified expert in several areas and has more than 10 certificates of competence. His role at Hacken is to provide technological leadership in developing, integrating and supporting the ecosystem
+       </div>
+      </div>
+     </div>
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2020/07/jane.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         EVGENIA BROSHEVAN
+        </h4>
+        <p>
+         HackenProof Partner
+        </p>
+       </div>
+       <div class="team-item-description">
+        Unites the efforts of bug hunters, internal security team, as well as sales and product teams to provide security excellence for responsible business.
+       </div>
+      </div>
+     </div>
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2020/07/hackers_community.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         WHITE HACKERS COMMUNITY
+        </h4>
+        <p>
+         3000+ ethical hackers
+        </p>
+       </div>
+       <div class="team-item-description">
+        Hacken brings together a wide community of white hat hackers.
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="team-list mobile-main-team">
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/team1-1.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         DYMA BUDORIN
+        </h4>
+        <p>
+         Managing Partner
+        </p>
+       </div>
+       <div class="team-item-description">
+        Dmytro was a top-level executive in Ukraine's military defense industry. As a CCA, his other achievements include an eight-year career in Deloitte in accounting, audit and project management
+       </div>
+      </div>
+     </div>
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/matiukhin_main.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         ANDRII MATIUKHIN
+        </h4>
+        <p>
+         Cybersecurity Consulting Partner
+        </p>
+       </div>
+       <div class="team-item-description">
+        Andrii is a highly qualified cybersecurity expert with 14 years of success and experience in the industry. He is a certified expert in several areas and has more than 10 certificates of competence. His role at Hacken is to provide technological leadership in developing, integrating and supporting the ecosystem
+       </div>
+      </div>
+     </div>
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2020/07/jane.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         EVGENIA BROSHEVAN
+        </h4>
+        <p>
+         HackenProof Partner
+        </p>
+       </div>
+       <div class="team-item-description">
+        Unites the efforts of bug hunters, internal security team, as well as sales and product teams to provide security excellence for responsible business.
+       </div>
+      </div>
+     </div>
+     <div class="team-item" style="background-image: url('https://hacken.io/wp-content/uploads/2020/07/hackers_community.jpg')">
+      <div class="team-content">
+       <div class="team-item-head">
+        <h4>
+         WHITE HACKERS COMMUNITY
+        </h4>
+        <p>
+         3000+ ethical hackers
+        </p>
+       </div>
+       <div class="team-item-description">
+        Hacken brings together a wide community of white hat hackers.
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-light media-about-us">
+   <div class="container">
+    <h2>
+     MEDIA ABOUT US
+    </h2>
+    <div class="media-list">
+     <div class="media-item">
+      <a class="media-img" href="https://www.entrepreneur.com/article/313547" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/logo5.jpg')">
+      </a>
+      <div class="media-content">
+       <h4>
+        <a href="https://www.entrepreneur.com/article/313547">
+         Entrepreneur
+        </a>
+       </h4>
+       <p>
+        Sick of Passwords? Here's How Blockchain Can Help, and Enhance Cybersecurity, to Boot.
+       </p>
+      </div>
+     </div>
+     <div class="media-item">
+      <a class="media-img" href="https://www.forbes.com/sites/johnkoetsier/2018/12/19/report-top-crypto-exchange-bithumb-faking-up-to-94-of-trading-volume-bithumb-denies-allegations/#94cfdca645dc" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/logo3.jpg')">
+      </a>
+      <div class="media-content">
+       <h4>
+        <a href="https://www.forbes.com/sites/johnkoetsier/2018/12/19/report-top-crypto-exchange-bithumb-faking-up-to-94-of-trading-volume-bithumb-denies-allegations/#94cfdca645dc">
+         Forbes
+        </a>
+       </h4>
+       <p>
+        Report: Top Crypto Exchange Bithumb Faking Up To 94% Of Trading Volume; Bithumb Denies Allegations
+       </p>
+      </div>
+     </div>
+     <div class="media-item">
+      <a class="media-img" href="https://cointelegraph.com/news/report-bithumb-denies-accusations-of-faking-trade-volume" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/logo2.jpg')">
+      </a>
+      <div class="media-content">
+       <h4>
+        <a href="https://cointelegraph.com/news/report-bithumb-denies-accusations-of-faking-trade-volume">
+         Cointelegraph
+        </a>
+       </h4>
+       <p>
+        Report: Bithumb Denies Accusations of Faking Trade Volume
+       </p>
+      </div>
+     </div>
+     <div class="media-item">
+      <a class="media-img" href="https://www.washingtontimes.com/news/2018/oct/25/democratic-fundraiser-had-internal-data-exposed-pr/" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/logo1.jpg')">
+      </a>
+      <div class="media-content">
+       <h4>
+        <a href="https://www.washingtontimes.com/news/2018/oct/25/democratic-fundraiser-had-internal-data-exposed-pr/">
+         The Washington Times
+        </a>
+       </h4>
+       <p>
+        Democratic fundraiser had internal data exposed, probed from abroad, firm warns
+       </p>
+      </div>
+     </div>
+     <div class="media-item">
+      <a class="media-img" href="https://www.zawya.com/mena/en/press-releases/story/Leading_blockchain_cybersecurity_company_will_be_one_of_the_key_speakers_at_Dubais_Future_Blockchain_Summit-ZAWYA20180426122524/" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/logo4.jpg')">
+      </a>
+      <div class="media-content">
+       <h4>
+        <a href="https://www.zawya.com/mena/en/press-releases/story/Leading_blockchain_cybersecurity_company_will_be_one_of_the_key_speakers_at_Dubais_Future_Blockchain_Summit-ZAWYA20180426122524/">
+         Zawya
+        </a>
+       </h4>
+       <p>
+        Leading blockchain cybersecurity company will be one of the key speakers at Dubai's Future Blockchain Summit
+       </p>
+      </div>
+     </div>
+     <div class="media-item">
+      <a class="media-img" href="https://www.forbes.com/sites/youngjoseph/2018/08/11/waves-ceo-decentralized-crypto-exchanges-can-solve-fake-volumes-and-malpractices/#7d97f51377d0" style="background-image: url('https://hacken.io/wp-content/uploads/2019/01/logo3.jpg')">
+      </a>
+      <div class="media-content">
+       <h4>
+        <a href="https://www.forbes.com/sites/youngjoseph/2018/08/11/waves-ceo-decentralized-crypto-exchanges-can-solve-fake-volumes-and-malpractices/#7d97f51377d0">
+         Forbes
+        </a>
+       </h4>
+       <p>
+        Decentralized Crypto Exchanges Can Solve Fake Volumes And Malpractices
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="media-btn-wrap">
+     <a class="btn" href="https://blog.hacken.io/">
+      Read our Blog
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="section section-light our-clients">
+   <div class="container">
+    <h2>
+     OUR CLIENTS
+    </h2>
+    <div class="clients-list">
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2020/06/gateio_h_en.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2020/01/OneLedger1.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2019/01/ironfx.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2019/03/aa-logo-e1551789328393.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2019/01/proximax.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2019/01/vechain-4.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <span>
+       <img src="https://hacken.io/wp-content/uploads/2019/01/ttc.png"/>
+      </span>
+     </div>
+     <div class="client-item">
+      <a href="#client2" target="_blank">
+       <img src="https://hacken.io/wp-content/uploads/2019/01/template-monster.png"/>
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-dark contact-us" id="contact-us" style="background-image: url('https://hacken.io/wp-content/themes/hacken/assets//img/general/form_bg.jpg')">
+   <div class="contact-wr">
+    <h1>
+     Get in touch with us
+    </h1>
+    <!-- <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+            <![endif]-->
+    <style>
+     .hs-richtext {
+  	margin-bottom: 3px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 18px;
+    font-size: 14px;
+    color: #414141;
+  }
+  .legal-consent-container label {
+    display: block !important;
+  }
+  form ul.inputs-list {
+      padding: 0 20px;
+  }
+  .wpcf7-list-item input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+  .legal-consent-container {
+  	font-size: 14px;
+  }
+  .wpcf7-list-item input[type="checkbox"] + span {
+    margin-left: 12px !important;
+    position: relative;
+  }
+  .wpcf7-list-item input[type="checkbox"] + span::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: -29px;
+      font-family: "FontAwesome";
+      color: #FFF;
+      font-size: 15.5px;
+  }
+  .wpcf7-list-item input[type="checkbox"] + span::after {
+      content: "\f096";
+      position: absolute;
+      top: 2px;
+      left: -30px;
+      font-family: "FontAwesome";
+      color: #D6D5D5;
+      -webkit-transition: color 0.3s, -webkit-box-shadow 0.3s;
+      transition: color 0.3s, -webkit-box-shadow 0.3s;
+      -o-transition: color 0.3s, box-shadow 0.3s;
+      -moz-transition: color 0.3s, box-shadow 0.3s, -moz-box-shadow 0.3s;
+      transition: color 0.3s, box-shadow 0.3s;
+      transition: color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
+      font-size: 18.5px;
+      line-height: 0.8;
+  }
+  .wpcf7-list-item input[type="checkbox"]:checked + span::after {
+      content: "\f14a";
+      color: #2be2b3;
+      font-size: 17px;
+  }
+  .hs_submit {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .wpcf7-response-output {
+  	display: none !important;
+    visibility: hidden;
+  }
+  form#footer_contact_form_wpcf7.sent .contact-us-form .submitted-message {
+      display: block !important;
+  } 
+  form#footer_contact_form_wpcf7.sent .contact-us-form .field, form#footer_contact_form_wpcf7.sent .contact-us-form .legal-consent-container, form#footer_contact_form_wpcf7.sent .contact-us-form .hs_submit {
+      display: none !important;
+  }
+  .subtitle {
+  	color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .field {
+  	color: #fff !important;
+  }
+  .wpcf7-radio .wpcf7-list-item {
+  	width: 100%;
+  }
+  .wpcf7-list-item input[type="radio"] {
+  	width: auto;
+  }
+    </style>
+    <div class="wpcf7" dir="ltr" id="wpcf7-f2671-o1" lang="en-US" role="form">
+     <div class="screen-reader-response">
+     </div>
+     <form action="/#wpcf7-f2671-o1" class="wpcf7-form wpcf7-acceptance-as-validation" id="footer_contact_form_wpcf7" method="post" novalidate="novalidate">
+      <div style="display: none;">
+       <input name="_wpcf7" type="hidden" value="2671"/>
+       <input name="_wpcf7_version" type="hidden" value="5.1.6"/>
+       <input name="_wpcf7_locale" type="hidden" value="en_US"/>
+       <input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f2671-o1"/>
+       <input name="_wpcf7_container_post" type="hidden" value="0"/>
+      </div>
+      <div class="contact-us-form">
+       <div class="subtitle">
+        Send us a message and we will respond as soon as possible
+       </div>
+       <div class="field">
+        <div class="input">
+         <span class="wpcf7-form-control-wrap firstname">
+          <input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required hs-input" name="firstname" placeholder="Name" size="40" type="text" value=""/>
+         </span>
+        </div>
+       </div>
+       <div class="field">
+        <div class="input">
+         <span class="wpcf7-form-control-wrap email">
+          <input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email hs-input" name="email" placeholder="Email" size="40" type="email" value=""/>
+         </span>
+        </div>
+       </div>
+       <div class="field">
+        <div class="input">
+         <span class="wpcf7-form-control-wrap phone">
+          <input aria-invalid="false" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel hs-input" name="phone" placeholder="Phone number" size="40" type="tel" value=""/>
+         </span>
+        </div>
+       </div>
+       <div class="field">
+        <div class="input">
+         <span class="wpcf7-form-control-wrap company">
+          <input aria-invalid="false" class="wpcf7-form-control wpcf7-text hs-input" name="company" placeholder="Company" size="40" type="text" value=""/>
+         </span>
+        </div>
+       </div>
+       <div class="field">
+        <div class="input">
+         What are you interested in?
+         <br/>
+         <span class="wpcf7-form-control-wrap what-are-you-interested-in">
+          <span class="wpcf7-form-control wpcf7-radio">
+           <span class="wpcf7-list-item first">
+            <input checked="checked" name="what-are-you-interested-in" type="radio" value="Cybersecurity Consulting"/>
+            <span class="wpcf7-list-item-label">
+             Cybersecurity Consulting
+            </span>
+           </span>
+           <span class="wpcf7-list-item">
+            <input name="what-are-you-interested-in" type="radio" value="Penetration Test"/>
+            <span class="wpcf7-list-item-label">
+             Penetration Test
+            </span>
+           </span>
+           <span class="wpcf7-list-item">
+            <input name="what-are-you-interested-in" type="radio" value="Bug Bounty"/>
+            <span class="wpcf7-list-item-label">
+             Bug Bounty
+            </span>
+           </span>
+           <span class="wpcf7-list-item">
+            <input name="what-are-you-interested-in" type="radio" value="Partnership"/>
+            <span class="wpcf7-list-item-label">
+             Partnership
+            </span>
+           </span>
+           <span class="wpcf7-list-item last">
+            <input name="what-are-you-interested-in" type="radio" value="Other"/>
+            <span class="wpcf7-list-item-label">
+             Other
+            </span>
+           </span>
+          </span>
+         </span>
+        </div>
+       </div>
+       <div class="field">
+        <div class="input">
+         <span class="wpcf7-form-control-wrap message">
+          <textarea aria-invalid="false" class="wpcf7-form-control wpcf7-textarea hs-input" cols="40" name="message" placeholder="Message" rows="10"></textarea>
+         </span>
+        </div>
+       </div>
+       <div class="legal-consent-container">
+        <div class="input">
+         <ul class="inputs-list">
+          <li class="hs-form-booleancheckbox">
+           <span class="wpcf7-form-control-wrap accept-sales">
+            <span class="wpcf7-form-control wpcf7-acceptance optional">
+             <span class="wpcf7-list-item">
+              <label>
+               <input aria-invalid="false" class="hs-input" name="accept-sales" type="checkbox" value="1"/>
+               <span class="wpcf7-list-item-label">
+                I agree to receive exclusive proposals, updates and latest news.
+               </span>
+              </label>
+             </span>
+            </span>
+           </span>
+          </li>
+         </ul>
+        </div>
+        <div class="input">
+         <ul class="inputs-list">
+          <li class="hs-form-booleancheckbox">
+           <span class="wpcf7-form-control-wrap accept-data">
+            <span class="wpcf7-form-control wpcf7-acceptance">
+             <span class="wpcf7-list-item">
+              <label>
+               <input aria-invalid="false" class="hs-input" name="accept-data" type="checkbox" value="1"/>
+               <span class="wpcf7-list-item-label">
+                I agree with
+                <a href="https://cdn2.hubspot.net/hubfs/4230400/Hacken_Ecosystem_Privacy_Policy-1.pdf" target="_blank">
+                 Privacy terms
+                </a>
+                .
+               </span>
+              </label>
+             </span>
+            </span>
+           </span>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <p>
+        <span class="wpcf7-form-control-wrap userhash-wrap" id="wpcf7-5f25d76f3a80a">
+         <input autocomplete="nope" class="wpcf7-form-control wpcf7-text userhash-contactform" id="userhash" name="userhash" size="40" tabindex="-1" type="text" value=""/>
+        </span>
+       </p>
+       <input class="wpcf7-form-control wpcf7-hidden" id="page-title" name="page-title" type="hidden" value=""/>
+       <p>
+        <script>
+         var title = document.getElementsByTagName("title")[0].innerHTML;
+     document.getElementById('page-title').value = title;
+        </script>
+       </p>
+       <div class="hs_submit">
+        <input class="wpcf7-form-control wpcf7-submit hs-button primary large" type="submit" value="SUBMIT"/>
+       </div>
+       <div class="submitted-message" style="display: none;">
+        <p>
+         Thank you!
+        </p>
+        <p>
+         Our manager will contact your shortly
+        </p>
+       </div>
+      </div>
+      <noscript>
+       <div class="wpcf7-response-output wpcf7-spam-blocked">
+        Your browser does not support JavaScript!. Please enable javascript in your browser in order to get form work properly.
+       </div>
+      </noscript>
+      <script type="text/javascript">
+       if(contactform === undefined){
+							var contactform = [];
+						}
+						var innerVal = [2671,'mail_sent_ok','Thank you for your message. It has been sent.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'mail_sent_ng','There was an error trying to send your message. Please try again later.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'validation_error','One or more fields have an error. Please check and try again.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'spam','There was an error trying to send your message. Please try again later.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'accept_terms','You must accept the terms and conditions before sending your message.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_required','The field is required.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_too_long','The field is too long.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_too_short','The field is too short.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_date','The date format is incorrect.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'date_too_early','The date is before the earliest one allowed.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'date_too_late','The date is after the latest one allowed.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'upload_failed','There was an unknown error uploading the file.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'upload_file_type_invalid','You are not allowed to upload files of this type.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'upload_file_too_large','The file is too big.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'upload_failed_php_error','There was an error uploading the file.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_number','The number format is invalid.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'number_too_small','The number is smaller than the minimum allowed.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'number_too_large','The number is larger than the maximum allowed.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'quiz_answer_not_correct','The answer to the quiz is incorrect.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_email','The e-mail address entered is invalid.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_url','The URL is invalid.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'invalid_tel','The telephone number is invalid.'];
+						contactform.push(innerVal);
+						var innerVal = [2671,'gdpr',''];
+						contactform.push(innerVal);
+      </script>
+      <div class="wpcf7-response-output wpcf7-display-none">
+      </div>
+     </form>
+    </div>
+   </div>
+  </section>
+  <footer class="footer">
+   <div class="footer-top">
+    <div class="container">
+     <div class="footer-menu">
+      <div class="menu-block">
+       <h4>
+        Contacts
+       </h4>
+       <ul class="menu-list">
+        <li>
+         <a href="/cdn-cgi/l/email-protection#fd9598918dbd959c9e969893d39492">
+          <span class="__cf_email__" data-cfemail="fd9598918dbd959c9e969893d39492">
+           [email protected]
+          </span>
+         </a>
+        </li>
+       </ul>
+       <ul class="social-list">
+        <li>
+         <a href="https://twitter.com/hackenclub" target="_blank">
+          <svg alt="" data-markup-inline="" viewbox="0 0 16 13" xmlns="http://www.w3.org/2000/svg">
+           <path d="M16 1.5c-.6.3-1.2.4-1.9.5.7-.4 1.2-1.1 1.5-1.8-.6.4-1.4.7-2.1.8-.6-.7-1.5-1-2.4-1-1.8 0-3.3 1.5-3.3 3.3 0 .3 0 .5.1.8C5.3 4 2.8 2.7 1.1.7.8 1.2.7 1.8.6 2.3c0 1.1.6 2.1 1.5 2.7-.5 0-1-.1-1.5-.4 0 .4.1.8.2 1.2.4 1 1.3 1.8 2.4 2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.7 2.3 3.1 2.3-1.2.9-2.6 1.4-4.1 1.4h-.8c1.5 1 3.2 1.5 5 1.5 5.1 0 8.3-3.6 9.1-7.4.1-.7.2-1.3.2-2v-.4c.8-.4 1.4-1 1.8-1.7">
+           </path>
+          </svg>
+         </a>
+        </li>
+        <li>
+         <a href="https://t.me/hackenclub" target="_blank">
+          <svg alt="" data-markup-inline="" viewbox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+           <path d="M5.299 144.645l69.126 25.8 26.756 86.047c1.712 5.511 8.451 7.548 12.924 3.891l38.532-31.412a11.496 11.496 0 0 1 14.013-.391l69.498 50.457c4.785 3.478 11.564.856 12.764-4.926L299.823 29.22c1.31-6.316-4.896-11.585-10.91-9.259L5.218 129.402c-7.001 2.7-6.94 12.612.081 15.243zm91.57 12.066l135.098-83.207c2.428-1.491 4.926 1.792 2.841 3.726L123.313 180.87a23.112 23.112 0 0 0-7.163 13.829l-3.798 28.146c-.503 3.758-5.782 4.131-6.819.494l-14.607-51.325c-1.673-5.854.765-12.107 5.943-15.303z">
+           </path>
+          </svg>
+         </a>
+        </li>
+        <li>
+         <a href="https://medium.com/@hackenclub" target="_blank">
+          <svg version="1.1" viewbox="20 25 145 145" xmlns="http://www.w3.org/2000/svg">
+           <path d="m46.534 65.216c0.16276-1.6081-0.45048-3.1975-1.6513-4.2798l-12.232-14.735v-2.2011h37.979l29.356 64.381 25.809-64.381h36.205v2.2011l-10.458 10.027c-0.90159 0.68725-1.3488 1.8168-1.162 2.9347v73.674c-0.18683 1.118 0.2604 2.2475 1.162 2.9347l10.213 10.027v2.2011h-51.373v-2.2011l10.58-10.272c1.0397-1.0394 1.0397-1.3451 1.0397-2.9347v-59.551l-29.417 74.714h-3.9753l-34.248-74.714v50.074c-0.28555 2.1053 0.41364 4.2248 1.8959 5.7472l13.761 16.691v2.2011h-39.019v-2.2011l13.761-16.691c1.4715-1.5249 2.1299-3.6585 1.7736-5.7472v-57.9z">
+           </path>
+          </svg>
+         </a>
+        </li>
+        <li>
+         <a href="https://www.youtube.com/channel/UCEQ4srOLODIzXWPrkug5bMg" target="_blank">
+          <svg version="1.1" viewbox="0 0 35 25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M33.739 3.974c.72 2.644.72 8.16.72 8.16s0 5.516-.72 8.16a4.282 4.282 0 0 1-3.047 2.998C28.005 24 17.229 24 17.229 24s-10.775 0-13.462-.708A4.282 4.282 0 0 1 .72 20.294C0 17.65 0 12.134 0 12.134s0-5.516.72-8.16A4.281 4.281 0 0 1 3.767.977C6.454.268 17.229.268 17.229.268s10.776 0 13.463.709a4.281 4.281 0 0 1 3.047 2.997zM13.783 17.22l8.953-5.086-8.953-5.085v10.17z">
+           </path>
+          </svg>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="menu-block">
+       <h4>
+        Services
+       </h4>
+       <ul class="menu-list" id="menu-services-menu">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-364" id="menu-item-364">
+         <a href="https://hacken.io/services/#security-assessment">
+          Security Assessment
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-365" id="menu-item-365">
+         <a href="https://hacken.io/services/#blockchain-security">
+          Blockchain Security
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-368" id="menu-item-368">
+         <a href="https://hacken.io/services/#secure-software-development">
+          Secure Software Development
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-366" id="menu-item-366">
+         <a href="https://hacken.io/services/#certified">
+          CERtified
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="menu-block">
+       <h4>
+        Products
+       </h4>
+       <ul class="menu-list" id="menu-products-menu">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5948" id="menu-item-5948">
+         <a href="https://hacken.ai">
+          HackenAI
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-359" id="menu-item-359">
+         <a href="https://hackenproof.com/" rel="noopener noreferrer" target="_blank">
+          HackenProof
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-360" id="menu-item-360">
+         <a href="https://cer.live" rel="noopener noreferrer" target="_blank">
+          CER
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="menu-block">
+       <h4>
+        Research
+       </h4>
+       <ul class="menu-list" id="menu-blog-menu">
+        <li class="none menu-item menu-item-type-custom menu-item-object-custom menu-item-354" id="menu-item-354">
+         <a href="https://blog.hacken.io/" rel="noopener noreferrer" target="_blank">
+          Official Blog
+         </a>
+        </li>
+        <li class="none menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1452" id="menu-item-1452">
+         <a href="https://hacken.io/category/research/">
+          All
+         </a>
+        </li>
+        <li class="none menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1455" id="menu-item-1455">
+         <a href="https://hacken.io/category/research/education/">
+          Education
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1482" id="menu-item-1482">
+         <a href="https://hacken.io/research/">
+          All
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1485" id="menu-item-1485">
+         <a href="https://hacken.io/research/education/">
+          Education
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4670" id="menu-item-4670">
+         <a href="https://hacken.io/research/hacken-news/">
+          Hacken news
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4668" id="menu-item-4668">
+         <a href="https://hacken.io/research/industry-news-and-insights/">
+          Industry news and insights
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4669" id="menu-item-4669">
+         <a href="https://hacken.io/research/researches-and-investigations/">
+          Researches and investigations
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="menu-block">
+       <h4>
+        About Us
+       </h4>
+       <ul class="menu-list" id="menu-about-us">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-351" id="menu-item-351">
+         <a href="/about-us/#contact-us">
+          Contact
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-352" id="menu-item-352">
+         <a href="https://jobs.dou.ua/companies/hacken/" rel="noopener noreferrer" target="_blank">
+          Careers
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <div class="container">
+     <div class="footer-bottom-wrapper">
+      <a href="https://hacken.io/">
+       <img alt="footer-logo" src="https://hacken.io/wp-content/themes/hacken/assets/img/general/logo.svg"/>
+      </a>
+      <ul class="footer-bottom-menu" id="menu-footer-bottom">
+       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-892" id="menu-item-892">
+        <a href="https://cdn2.hubspot.net/hubfs/4230400/Hacken_Ecosystem_Privacy_Policy-1.pdf" rel="noopener noreferrer" target="_blank">
+         Privacy Policy
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-891" id="menu-item-891">
+        <a href="https://cdn2.hubspot.net/hubfs/4230400/Hacken%20Ecosystem%20Terms%20and%20Conditions-1.pdf" rel="noopener noreferrer" target="_blank">
+         Terms and Conditions
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script data-cfasync="false" type="text/javascript">
+   if (window.addthis_product === undefined) { window.addthis_product = "wpf"; } if (window.wp_product_version === undefined) { window.wp_product_version = "wpf-4.2.6"; } if (window.addthis_share === undefined) { window.addthis_share = {"passthrough":{"twitter":{"via":"hacken_io"}}}; } if (window.addthis_config === undefined) { window.addthis_config = {"data_track_clickback":true,"data_ga_property":"UA-105303639-9","data_ga_social":true,"ui_language":"en","ui_atversion":"300"}; } if (window.addthis_plugin_info === undefined) { window.addthis_plugin_info = {"info_status":"enabled","cms_name":"WordPress","plugin_name":"Follow Buttons by AddThis","plugin_version":"4.2.6","plugin_mode":"AddThis","anonymous_profile_id":"wp-5f6eaff182a62c00faf0c8a3348352fc","page_info":{"template":"home","post_type":""},"sharing_enabled_on_post_via_metabox":false}; } 
+                    (function() {
+                      var first_load_interval_id = setInterval(function () {
+                        if (typeof window.addthis !== 'undefined') {
+                          window.clearInterval(first_load_interval_id);
+                          if (typeof window.addthis_layers !== 'undefined' && Object.getOwnPropertyNames(window.addthis_layers).length > 0) {
+                            window.addthis.layers(window.addthis_layers);
+                          }
+                          if (Array.isArray(window.addthis_layers_tools)) {
+                            for (i = 0; i < window.addthis_layers_tools.length; i++) {
+                              window.addthis.layers(window.addthis_layers_tools[i]);
+                            }
+                          }
+                        }
+                     },1000)
+                    }());
+  </script>
+  <script data-cfasync="false" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d4aa6e0c7ea3dff" type="text/javascript">
+  </script>
+  <script data-cfasync="false" type="text/javascript">
+   if (window.addthis_product === undefined) { window.addthis_product = "wprp"; } if (window.wp_product_version === undefined) { window.wp_product_version = "wprp-2.2.6"; } if (window.addthis_share === undefined) { window.addthis_share = {"passthrough":{"twitter":{"via":"hacken_io"}}}; } if (window.addthis_config === undefined) { window.addthis_config = {"data_track_clickback":true,"data_ga_property":"UA-105303639-9","data_ga_social":true,"ui_language":"en","ui_atversion":"300"}; } if (window.addthis_plugin_info === undefined) { window.addthis_plugin_info = {"info_status":"enabled","cms_name":"WordPress","plugin_name":"Related Posts by AddThis","plugin_version":"2.2.6","plugin_mode":"AddThis","anonymous_profile_id":"wp-5f6eaff182a62c00faf0c8a3348352fc","page_info":{"template":"home","post_type":""},"sharing_enabled_on_post_via_metabox":false}; } 
+                    (function() {
+                      var first_load_interval_id = setInterval(function () {
+                        if (typeof window.addthis !== 'undefined') {
+                          window.clearInterval(first_load_interval_id);
+                          if (typeof window.addthis_layers !== 'undefined' && Object.getOwnPropertyNames(window.addthis_layers).length > 0) {
+                            window.addthis.layers(window.addthis_layers);
+                          }
+                          if (Array.isArray(window.addthis_layers_tools)) {
+                            for (i = 0; i < window.addthis_layers_tools.length; i++) {
+                              window.addthis.layers(window.addthis_layers_tools[i]);
+                            }
+                          }
+                        }
+                     },1000)
+                    }());
+  </script>
+  <script data-cfasync="false" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d4aa6e0c7ea3dff" type="text/javascript">
+  </script>
+  <script data-cfasync="false" type="text/javascript">
+   if (window.addthis_product === undefined) { window.addthis_product = "wpp"; } if (window.wp_product_version === undefined) { window.wp_product_version = "wpp-6.2.6"; } if (window.addthis_share === undefined) { window.addthis_share = {"passthrough":{"twitter":{"via":"hacken_io"}}}; } if (window.addthis_config === undefined) { window.addthis_config = {"data_track_clickback":true,"data_ga_property":"UA-105303639-9","data_ga_social":true,"ui_language":"en","ui_atversion":"300"}; } if (window.addthis_plugin_info === undefined) { window.addthis_plugin_info = {"info_status":"enabled","cms_name":"WordPress","plugin_name":"Share Buttons by AddThis","plugin_version":"6.2.6","plugin_mode":"AddThis","anonymous_profile_id":"wp-5f6eaff182a62c00faf0c8a3348352fc","page_info":{"template":"home","post_type":""},"sharing_enabled_on_post_via_metabox":false}; } 
+                    (function() {
+                      var first_load_interval_id = setInterval(function () {
+                        if (typeof window.addthis !== 'undefined') {
+                          window.clearInterval(first_load_interval_id);
+                          if (typeof window.addthis_layers !== 'undefined' && Object.getOwnPropertyNames(window.addthis_layers).length > 0) {
+                            window.addthis.layers(window.addthis_layers);
+                          }
+                          if (Array.isArray(window.addthis_layers_tools)) {
+                            for (i = 0; i < window.addthis_layers_tools.length; i++) {
+                              window.addthis.layers(window.addthis_layers_tools[i]);
+                            }
+                          }
+                        }
+                     },1000)
+                    }());
+  </script>
+  <script data-cfasync="false" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d4aa6e0c7ea3dff" type="text/javascript">
+  </script>
+  <style id="wpcf7-wpcf7-5f25d76f3a80a-inline-inline-css" type="text/css">
+   #wpcf7-5f25d76f3a80a {display:none !important; visibility:hidden !important;}
+  </style>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/hacken.io\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+  </script>
+  <script src="https://hacken.io/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.6" type="text/javascript">
+  </script>
+  <script src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=202031" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var wpcf7_redirect_forms = {"5068":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5067":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5066":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5065":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5064":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/resources.hackenproof.com\/hubfs\/HackenProof\/WEB_APP_REPORT_EXAMPLE.pdf&quot;; \r\n}","thankyou_page_url":""},"5063":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5062":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5061":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5060":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"5059":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"resize();","thankyou_page_url":""},"2671":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"","thankyou_page_url":""},"2667":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/secure-development-thank-you&quot;; \r\n}","thankyou_page_url":""},"2664":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/managed-security-services-thank-you&quot;; \r\n}","thankyou_page_url":""},"2661":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/anti-phishing-bot-standart-thank-you&quot;; \r\n}","thankyou_page_url":""},"2658":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/anti-phishing-bot-premium-thank-you&quot;; \r\n}","thankyou_page_url":""},"2655":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/anti-phishing-bot-free-thank-you&quot;; \r\n}","thankyou_page_url":""},"2652":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/anti-phishing-thank-you&quot;; \r\n}","thankyou_page_url":""},"2649":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/smart-contracts-audit-thank-you&quot;; \r\n}","thankyou_page_url":""},"2646":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/smart-contracts-audit-thank-you&quot;; \r\n}","thankyou_page_url":""},"2642":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/gdpr-ebook-thank-you&quot;; \r\n}","thankyou_page_url":""},"2639":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/gdpr-audit-thank-you&quot;; \r\n}","thankyou_page_url":""},"2635":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/pen-test-thank-you&quot;; \r\n}","thankyou_page_url":""},"2632":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/mobile-application-security-testing-thank-you&quot;; \r\n}","thankyou_page_url":""},"2629":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/testing-services-thank-you&quot;; \r\n}","thankyou_page_url":""},"2626":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/pen-test-thank-you&quot;; \r\n}","thankyou_page_url":""},"2623":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/social-engineering-ebook-thank-you&quot;; \r\n}","thankyou_page_url":""},"2617":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/social-engineering-thank-you&quot;; \r\n}","thankyou_page_url":""},"2611":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/hubfs\/ICO%20and%20Smart%20Contract%20Best%20Practices_CHAPTER3.pdf&quot;; \r\n}","thankyou_page_url":""},"2606":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/hubfs\/Blockchain%20Security%20Assessments_CHAPTER2.pdf&quot;; \r\n}","thankyou_page_url":""},"2594":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"if(window.top !== window.self){\r\nwindow.top.location.href = &quot;https:\/\/hub.hacken.io\/hubfs\/PHISHING_PROTECTION_CHAPTER1.pdf&quot;; \r\n}","thankyou_page_url":""},"1489":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"","thankyou_page_url":""},"1151":{"page_id":"0","external_url":"","use_external_url":"","open_in_new_tab":"","http_build_query":"","http_build_query_selectively":"","http_build_query_selectively_fields":"","delay_redirect":"0","after_sent_script":"var subscribe = document.getElementById(&quot;subscribe-success&quot;);\r\nsubscribe.classList.add(&quot;height-auto&quot;);\r\n\r\nvar formBlock = document.getElementById(&quot;subscribe-form&quot;);\r\nformBlock.classList.add(&quot;height-none&quot;);\r\n\r\n\r\n","thankyou_page_url":""}};
+/* ]]> */
+  </script>
+  <script src="https://hacken.io/wp-content/plugins/wpcf7-redirect/js/wpcf7-redirect-script.js" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-content/themes/hacken/js/navigation.js?ver=5.3" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-content/themes/hacken/js/skip-link-focus-fix.js?ver=5.3" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-content/themes/hacken/assets/js/1.chunk.js?ver=5.3" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-content/themes/hacken/assets/js/app.js?ver=5.3" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var ajaxsearchlite = {"ajaxurl":"https:\/\/hacken.io\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/hacken.io\/wp-admin\/admin-ajax.php","js_scope":"jQuery"};
+var ASL = {"ajaxurl":"https:\/\/hacken.io\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/hacken.io\/wp-admin\/admin-ajax.php","js_scope":"jQuery","detect_ajax":"0","scrollbar":"1","js_retain_popstate":"0","version":"4737","fix_duplicates":"1"};
+/* ]]> */
+  </script>
+  <script src="https://hacken.io/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js?ver=4.8" type="text/javascript">
+  </script>
+  <script src="https://hacken.io/wp-includes/js/wp-embed.min.js?ver=5.3" type="text/javascript">
+  </script>
+  <script async="async" defer="defer" src="https://stats.wp.com/e-202031.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   _stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.9.1',blog:'165364720',post:'124',tz:'0',srv:'hacken.io'} ]);
+	_stq.push([ 'clickTrackerInit', '165364720', '124' ]);
+  </script>
+  <script>
+   jQuery(document).ready(function(){
+	  jQuery('.menu-item-has-children').hover(
+	    function() {
+	      jQuery( this ).siblings().removeClass('active');
+	    }, function() {
+	      jQuery( this ).addClass('active');
+	    }
+	  );
+	});
+
+	jQuery(window).scroll(function() {    
+	    var scroll = jQuery(window).scrollTop();
+	    if (scroll >= 10) {
+	        jQuery(".menu-item-has-children").removeClass("active");
+	    }
+	});
+  </script>
+ </body>
+</html>

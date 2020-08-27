@@ -1,0 +1,1142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width" name="viewport"/>
+  <meta content="226be693-cf04-4368-8dbb-435a11877863/" name="okpay-verification"/>
+  <meta content="zE676EwTu0YSySBCaXmhbGebG10Aa7vl_hqCynOF3Fw" name="google-site-verification"/>
+  <title>
+   Bloomzed
+  </title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link href="images/main/log.ico" rel="shortcut icon" type="image/x-icon"/>
+  <!-- Facebook Pixel Code -->
+  <script>
+   !function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '128631831261198'); 
+fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=128631831261198&amp;ev=PageView
+&amp;noscript=1" width="1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111409664-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111409664-1');
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(57480592, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+  </script>
+  <noscript>
+   <div>
+    <img alt="" src="https://mc.yandex.ru/watch/57480592" style="position:absolute; left:-9999px;"/>
+   </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(64460860, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+  </script>
+  <noscript>
+   <div>
+    <img alt="" src="https://mc.yandex.ru/watch/64460860" style="position:absolute; left:-9999px;"/>
+   </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Global site tag (gtag.js) - Google AdWords: 823224605 -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-823224605">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-823224605');
+  </script>
+  <script src="js/jquery-1.11.3.min.js" type="text/javascript">
+  </script>
+  <script src="js/script.js" type="text/javascript">
+  </script>
+ </head>
+ <body id="page_body">
+  <div id="block_2_text_window">
+   <div id="block_2_text_window_text">
+    <div id="close_block_2_text_window">
+    </div>
+    <div class="block_2_text_window_text_area">
+    </div>
+   </div>
+  </div>
+  <div id="Auth">
+   <div id="auth_window">
+    <div id="auth_window_text" style="padding:20px;">
+     <img id="close_auth_form" src="images/main/close_auth_form.png"/>
+     Авторизация
+     <form action="/tge/lk/" method="POST" style="text-align:center; margin:20px auto;">
+      <label>
+       E-mail
+      </label>
+      <input class="input_text_auth_form" placeholder="E-mail" type="email" v-model="login"/>
+      <br/>
+      <input id="content_lang" type="hidden" value="ru"/>
+      <div v-show="code_send &amp;&amp; !user_isset &amp;&amp; !restore">
+       <label>
+        ФИО
+       </label>
+       <input class="input_text_auth_form" v-model="fio"/>
+       <br/>
+       <label>
+        Придумайте пароль
+       </label>
+       <input class="input_text_auth_form" type="password" v-model="new_pass"/>
+       <br/>
+       <label>
+        Повторите пароль
+       </label>
+       <input class="input_text_auth_form" type="password" v-model="accept_pass"/>
+       <br/>
+      </div>
+      <div v-show="code_send &amp;&amp; !restore">
+       <label>
+        Код подтверждения
+       </label>
+       <input class="input_text_auth_form" placeholder="XXXX" type="password" v-model="code"/>
+       <p style="font-size:12px; margin:0;">
+        Код подтверждения отправлен на указанный email.
+        <br/>
+        Если не найдёте письмо в почте, проверьте Спам
+       </p>
+      </div>
+      <div v-show="need_pass &amp;&amp; !restore">
+       <label>
+        Пароль
+       </label>
+       <input class="input_text_auth_form" placeholder="******" type="password" v-model="pass"/>
+       <br/>
+      </div>
+      <a href="javascript:" style="color:#000;" true="" v-show="!restore &amp;&amp; need_pass">
+       Забыли пароль?
+      </a>
+      <a false="" href="javascript:" style="color:#000;" v-show="restore">
+       Вход\регистрация
+      </a>
+      <input :value="restore ? 'Восстановить' : 'Войти'" class="input_text_auth_form" type="submit"/>
+      <br/>
+     </form>
+    </div>
+   </div>
+  </div>
+  <div id="hidden_menu">
+   <div class="block_1_hidden_block_menu">
+    <img src="images/block_1/menu/logo.png"/>
+    <ul>
+     <a href="pages/about_en.php">
+      <li>
+       About Bloomzed
+      </li>
+     </a>
+     <a class="mail_form_button_1" href="#">
+      <li>
+       Exchange BZT
+      </li>
+     </a>
+     <a href="command/command_en.php">
+      <li>
+       Team
+      </li>
+     </a>
+     <a href="faq/en.php">
+      <li>
+       FAQ
+      </li>
+     </a>
+     <a href="ru">
+      <li>
+       RU
+      </li>
+     </a>
+    </ul>
+   </div>
+  </div>
+  <div class="mail_form_button">
+  </div>
+  <div id="block_3_2_mail_window">
+   <div id="block_3_2_mail_window_text">
+    <p>
+     Be the first to get info
+    </p>
+    <div id="close_mail_form">
+    </div>
+    <div style="background-color:#fff;	max-height:500px;">
+     <!-- Begin Signup Form -->
+     <div id="otvet_mes" style="position:absolute; bottom:0; width:99%; margin-bottom:2px">
+     </div>
+     <input class="form_pole" id="name_mes" placeholder="Name" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="email_mes" placeholder="Email" required="required" type="text"/>
+     <br/>
+     <textarea class="form_pole" id="text_mes" style="min-height:80px; max-height:250px; max-width:90%; min-width:80%;"></textarea>
+     <br/>
+     <input class="form_but" id="but_mes" onclick="yaCounter46948980.reachGoal('message');gtag('event', 'sendmessage', { 'event_category': 'message', 'event_action': 'send', });" type="button" value="Send"/>
+     <style>
+      .form_pole{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:5px; font-family: "Ubuntu Medium";}
+						.form_but{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:15px 15px 25px 15px; font-family: "Ubuntu Medium";}
+     </style>
+     <script>
+      $('#but_mes').click(function(){		              
+					  var name_mes = $('#name_mes').val();
+					  var mail_mes = $('#email_mes').val();
+					  var text_mes = $('#text_mes').val();
+					  $.post('blocks/message_en.php',
+							 {name_mes : name_mes,
+							  mail_mes : mail_mes,
+							  text_mes : text_mes},
+							  function(data){
+								 $('#otvet_mes').html(data);
+								 });				 
+							 });
+     </script>
+     <!--End mc_embed_signup-->
+    </div>
+   </div>
+  </div>
+  <div id="block_3_2_mail_window_1">
+   <div id="block_3_2_mail_window_text_1">
+    <p>
+     Exchange BZT
+    </p>
+    <div id="close_mail_form_1">
+    </div>
+    <div style="background-color:#fff;	max-height:500px;">
+     <!-- Begin Signup Form -->
+     <div id="otvet_mes_f" style="position:relative; bottom:0; width:99%; margin-bottom:2px">
+     </div>
+     <input class="form_pole" id="last_name_mes_f" placeholder="Last name" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="name_mes_f" placeholder="Name" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="mail_mes_f" placeholder="E-mail" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="w_number_mes_f" placeholder="Wallet address" required="required" type="text"/>
+     <br/>
+     <input class="form_but" id="Sending_1" type="button" value="Send"/>
+     <style>
+      .form_pole{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:5px; font-family: Arial;}
+						.form_but{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:15px 15px 25px 15px; font-family: Arial;}
+     </style>
+     <script>
+      $('#Sending_1').click(function(){		              
+					  var last_name_mes_f = $('#last_name_mes_f').val();
+					  var name_mes_f = $('#name_mes_f').val();
+					  var mail_mes_f = $('#mail_mes_f').val();
+					  var w_number_mes_f = $('#w_number_mes_f').val();
+					  $.post('blocks/message_exchange_en.php',
+							 {last_name_mes_f : last_name_mes_f,
+							  name_mes_f : name_mes_f,
+							  mail_mes_f : mail_mes_f,
+							  w_number_mes_f : w_number_mes_f},
+							  function(data){
+								 $('#otvet_mes_f').html(data);
+								 });	
+							 });
+     </script>
+     <!--End mc_embed_signup-->
+    </div>
+   </div>
+  </div>
+  <div id="block_3_2_mail_window_2">
+   <div id="block_3_2_mail_window_text_2">
+    <p>
+     Business: I want to support the initiative
+    </p>
+    <div id="close_mail_form_2">
+    </div>
+    <div style="background-color:#fff;	max-height:500px;">
+     <!-- Begin Signup Form -->
+     <div id="otvet_mes_2" style="position:absolute; bottom:0; width:99%; margin-bottom:2px">
+     </div>
+     <input class="form_pole" id="company_mes_2" placeholder="Company" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="con_mes_2" placeholder="Contact person" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="us_mes_2" placeholder="Sector/industry" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="site_mes_2" placeholder="Services" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="phone_mes_2" placeholder="Phone" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="mail_mes_2" placeholder="E-mail" required="required" type="text"/>
+     <br/>
+     <textarea class="form_pole" id="text_mes_2" style="min-height:80px; max-height:250px; max-width:90%; min-width:80%;"></textarea>
+     <br/>
+     <input class="form_but" id="but_mes_2" type="button" value="Send"/>
+     <style>
+      .form_pole{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:5px; font-family: Arial;}
+						.form_but{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:15px 15px 25px 15px; font-family: Arial;}
+     </style>
+     <script>
+      $('#but_mes_2').click(function(){		              
+					  var company_mes_2 = $('#company_mes_2').val();
+					  var con_mes_2 = $('#con_mes_2').val();
+					  var us_mes_2 = $('#us_mes_2').val();		              
+					  var site_mes_2 = $('#site_mes_2').val();
+					  var phone_mes_2 = $('#phone_mes_2').val();
+					  var mail_mes_2 = $('#mail_mes_2').val();
+					  var text_mes_2 = $('#text_mes_2').val();
+					  $.post('blocks/message_2_en.php',
+							 {company_mes_2 : company_mes_2,
+							  con_mes_2 : con_mes_2,
+							  us_mes_2: us_mes_2,
+							  site_mes_2 : site_mes_2,
+							  phone_mes_2 : phone_mes_2,
+							  mail_mes_2 : mail_mes_2,
+							  text_mes_2 : text_mes_2},
+							  function(data){
+								 $('#otvet_mes_2').html(data);
+								 });				 
+							 });
+     </script>
+     <!--End mc_embed_signup-->
+    </div>
+   </div>
+  </div>
+  <div id="block_3_2_mail_window_3">
+   <div id="block_3_2_mail_window_text_3">
+    <p>
+     Press: I am interested to get details
+    </p>
+    <div id="close_mail_form_3">
+    </div>
+    <div style="background-color:#fff;	max-height:500px;">
+     <!-- Begin Signup Form -->
+     <div id="otvet_mes_3" style="position:absolute; bottom:0; width:99%; margin-bottom:2px">
+     </div>
+     <input class="form_pole" id="name_mes_3" placeholder="Mass-media name " required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="con_mes_3" placeholder="Contact person" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="site_mes_3" placeholder="Site" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="phone_mes_3" placeholder="Phone" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="mail_mes_3" placeholder="E-mail" required="required" type="text"/>
+     <br/>
+     <textarea class="form_pole" id="text_mes_3" style="min-height:80px; max-height:250px; max-width:90%; min-width:80%;"></textarea>
+     <br/>
+     <input class="form_but" id="but_mes_3" type="button" value="Send"/>
+     <style>
+      .form_pole{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:5px; font-family: Arial;}
+						.form_but{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:15px 15px 25px 15px; font-family: Arial;}
+     </style>
+     <script>
+      $('#but_mes_3').click(function(){		              
+					  var name_mes_3 = $('#name_mes_3').val();
+					  var con_mes_3 = $('#con_mes_3').val();
+					  var site_mes_3 = $('#site_mes_3').val();		              
+					  var phone_mes_3 = $('#phone_mes_3').val();
+					  var mail_mes_3 = $('#mail_mes_3').val();
+					  var text_mes_3 = $('#text_mes_3').val();
+					  $.post('blocks/message_3_en.php',
+							 {name_mes_3 : name_mes_3,
+							  con_mes_3 : con_mes_3,
+							  site_mes_3 : site_mes_3,
+							  phone_mes_3 : phone_mes_3,
+							  mail_mes_3 : mail_mes_3,
+							  text_mes_3 : text_mes_3},
+							  function(data){
+								 $('#otvet_mes_3').html(data);
+								 });				 
+							 });
+     </script>
+     <!--End mc_embed_signup-->
+    </div>
+   </div>
+  </div>
+  <div id="block_3_2_buy_window">
+   <div id="block_3_2_buy_window_text">
+    <p>
+     Be the first to get info
+    </p>
+    <div id="close_buy_form">
+    </div>
+    <div style="background-color:#fff;	max-height:500px;">
+     <!-- Begin Signup Form -->
+     <div id="otvet_mes_buy" style="position:absolute; bottom:0; width:99%; margin-bottom:2px">
+     </div>
+     <input class="form_pole" id="buy_name_mes" placeholder="Name" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="buy_email_mes" placeholder="Email" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="number_mes" placeholder="Number of tokens" required="required" type="text"/>
+     <br/>
+     <input class="form_pole" id="method_mes" placeholder="Payment method" required="required" type="text"/>
+     <br/>
+     <textarea class="form_pole" id="buy_text_mes" style="min-height:80px; max-height:250px; max-width:90%; min-width:80%;"></textarea>
+     <br/>
+     <input class="form_but" id="but_mes_buy" onclick="yaCounter46948980.reachGoal('message');gtag('event', 'sendmessage', { 'event_category': 'message', 'event_action': 'send', });" type="button" value="Send"/>
+     <style>
+      .form_pole{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:5px; font-family: "Ubuntu Medium";}
+						.form_but{width:90%; padding:10px; border-radius:5px; border:1px solid #ccc; margin:15px 15px 25px 15px; font-family: "Ubuntu Medium";}
+     </style>
+     <script>
+      $('#but_mes_buy').click(function(){		              
+					  var buy_name_mes = $('#buy_name_mes').val();
+					  var buy_mail_mes = $('#buy_email_mes').val();
+					  var number_mes = $('#number_mes').val();
+					  var method_mes = $('#method_mes').val();
+					  var buy_text_mes = $('#buy_text_mes').val();
+					  $.post('blocks/message_buy_en.php',
+							 {buy_name_mes : buy_name_mes,
+							  buy_mail_mes : buy_mail_mes,
+							  number_mes   : number_mes,
+							  method_mes   : method_mes,
+							  buy_text_mes : buy_text_mes},
+							  function(data){
+								 $('#otvet_mes_buy').html(data);
+								 });				 
+							 });
+     </script>
+     <!--End mc_embed_signup-->
+    </div>
+   </div>
+  </div>
+  <!--Block 1-->
+  <div class="mobile_menu">
+   <ul>
+    <a href="pages/about_en.php">
+     <li>
+      About Bloomzed
+     </li>
+    </a>
+    <a class="mail_form_button_1" href="#">
+     <li>
+      Exchange BZT
+     </li>
+    </a>
+    <a href="command/command_en.php">
+     <li>
+      Team
+     </li>
+    </a>
+    <a href="faq/en.php" target="_blank">
+     <li>
+      FAQ
+     </li>
+    </a>
+   </ul>
+  </div>
+  <div class="block_1_style">
+   <div class="block_1_second_block_menu" id="Auth">
+    <img src="images/block_1/menu/logo.png"/>
+    <ul>
+     <a href="pages/about_en.php">
+      <li>
+       About Bloomzed
+      </li>
+     </a>
+     <a class="mail_form_button_1" href="#">
+      <li>
+       Exchange BZT
+      </li>
+     </a>
+     <a href="command/command_en.php">
+      <li>
+       Team
+      </li>
+     </a>
+     <a href="faq/en.php" target="_blank">
+      <li>
+       FAQ
+      </li>
+     </a>
+     <a href="ru">
+      <li>
+       RU
+      </li>
+     </a>
+    </ul>
+    <div class="mobile_menu_start">
+     <a href="ru">
+      RU
+     </a>
+     <img class="mobile_menu_start_but" src="images/block_1/menu/menu_but.png"/>
+    </div>
+   </div>
+   <div class="block_1_second_block">
+    <!--======================================= Slider =======================================-->
+    <!--======================================= Slider =======================================-->
+    <!--======================================= Slider =======================================-->
+    <a href="#">
+     <div class="block_1_second_block_slide" style="background:url(images/block_1/slide1/attention_en.jpg) center center no-repeat; background-size: 100%; opacity: 1;">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div class="block_1_second_block_ban_text">
+      </div>
+     </div>
+    </a>
+    <a href="#">
+     <div class="block_1_second_block_slide mail_form_button_1" style="background:url(images/block_1/slide2/1.jpg) center no-repeat; background-size: cover; background-color: #998d59;">
+      <br/>
+     </div>
+    </a>
+    <div class="block_1_second_block_ban_text">
+     <div class="mobile_block_block_1_net">
+      <a href="https://www.facebook.com/bloomzedinfo.ru/" target="_blank">
+       <img class="social_net_h" src="../images/block_14/fb.png"/>
+      </a>
+      <a href="https://twitter.com/bloomzedinfo_ru" target="_blank">
+       <img class="social_net_h" src="../images/block_14/tv.png"/>
+      </a>
+      <a href="https://t.me/bloomzed_ru" target="_blank">
+       <img class="social_net_h" src="../images/block_14/tl.png"/>
+      </a>
+      <a href="https://www.youtube.com/channel/UCWpsZxhIH_QkWCua1uTkfFw" target="_blank">
+       <img class="social_net_h" src="../images/block_14/youtube.png"/>
+      </a>
+      <a href="https://medium.com/@bloomzed" target="_blank">
+       <img class="social_net_h" src="../images/block_14/m.png"/>
+      </a>
+      <a href="https://www.instagram.com/bloomzed.ru/" target="_blank">
+       <img class="social_net_h" src="../images/block_14/inst.png"/>
+      </a>
+     </div>
+    </div>
+   </div>
+   <!--=======================================- Slider =======================================-->
+   <!--======================================= Slider =======================================-->
+   <!--======================================= Slider =======================================-->
+   <div class="block_1_second_block_foot">
+    <ul class="slide_navigation">
+     <li class="slide_button" id="slide_but_1">
+     </li>
+     <li class="slide_button" id="slide_but_2">
+     </li>
+     <!-- li class="slide_button" id="slide_but_3"></li-->
+    </ul>
+    <img src="images/block_1/mous_down.png"/>
+   </div>
+  </div>
+  <!--Block 1-->
+  <!--Block 6-->
+  <div class="block_6_style" style="background-color: red;">
+   <div class="block_6_second_block">
+    <div class="block_2_anim_block">
+     <a href="https://www.facebook.com/bloomzedinfo/" target="_blank">
+      <img class="social_net_h" src="images/block_14/fb.png"/>
+     </a>
+     <a href="https://twitter.com/hashtag/bloomzedinfo" target="_blank">
+      <img class="social_net_h" src="images/block_14/tv.png"/>
+     </a>
+     <a href="https://t.me/bloomzed" target="_blank">
+      <img class="social_net_h" src="images/block_14/tl.png"/>
+     </a>
+     <a href="https://www.youtube.com/channel/UCWpsZxhIH_QkWCua1uTkfFw" target="_blank">
+      <img class="social_net_h" src="images/block_14/youtube.png"/>
+     </a>
+     <a href="https://medium.com/@bloomzed" target="_blank">
+      <img class="social_net_h" src="../images/block_14/m.png"/>
+     </a>
+     <a href="https://www.instagram.com/bloomzed/" target="_blank">
+      <img class="social_net_h" src="images/block_14/inst.png"/>
+     </a>
+     <div class="block_2_anim_block_second">
+      <img src="images/main/mail2.png" style="float:right; transform:rotate(-45deg); margin:10px; width:80px;"/>
+     </div>
+    </div>
+    <div class="block_6_second_block_text">
+     <h1 style="color: #ff7676;">
+      Attention, urgent !!!!
+     </h1>
+     <p>
+      To the attention of all Bloomzed Token Holders (BZT), partners and potential investors of the Bloomzed project.
+     </p>
+     <p>
+      In connection with the theft of a significant number of Bloomzed tokens through fraudulent actions from the wallets of large owners, the announced campaigns and new deposits on cryptocurrency exchanges where BZT trades are carried out - are temporarily suspended for the duration of investigation initiated by the shareholders of the Bloomzed project.
+     </p>
+     <p>
+      In this connection, new deposits on the crypto-exchanges at which BZT is traded is temporarily not accepted.
+     </p>
+     <p>
+      We kindly ask partners and potential investors to refrain from making any operations with Bloomzed tokens since now. The company has taken all necessary measures to prevent further actions by intruders related to unauthorized access to owners' wallets. The company’s operations are not affected, as the stolen tokens were not in circulation and have no effect on the development of the project or operations of the company.
+     </p>
+     <p>
+      Please also inform us of any offers of tokens from individuals and companies that purchased Bloomzed tokens after July 05, 2020 to investigate the case and identify members of the criminal group. Please send information to the official address of the company info@bloomzed.com
+     </p>
+     <br/>
+     <p>
+      From August 04, 2020 BZT exchange to new BLCT conditions and application form available by following link:
+     </p>
+     <h1 class="mail_form_button_1" style="cursor: pointer; text-decoration: underline; margin-top: 0px; text-align: center;">
+      Exchange for users of Bloomzed Tokens (BZT) to new Bloomzed Loyalty Club Tickets (BLCT)
+     </h1>
+    </div>
+   </div>
+  </div>
+  <!--Block 6-->
+  <!--Block 4-->
+  <div class="block_4_style" id="bloomzed_crypto_club">
+   <div class="block_7_fon_prev">
+   </div>
+   <!--div class="block_8_fon_next">
+         </div-->
+   <div class="block_4_second_block">
+    <!--div class="block_4_second_block_text" style="margin-left: 0;">
+				<h1>LIMITED CHARITY TOKEN OFFERING</h1>
+                On behalf of the founders of the Bloomzed project, Mr Elchin Suleimanov intends to allocate 2 million BZT tokens, owned by him personally, as a source of donation to the foundations with a high level of global reliablility and reputation.
+<p>
+</p><br>
+	Bloomzed distributes BZT tokens on the partnering crypto-exchanges with a fixed exchange rate of US $5 (fiat money) or the equivalent amount in any cryptocurrency (BTC, ETH, USDT).<br><br> Anyone who wants to join and become part of our movement will be able to buy our BZT token for $5 during the campaign period.<br><br> Funds from the sale of tokens received until  May 31, 2020 in the amount of up to $10 million will be transferred to the foundation.<br><br><br>
+				
+            </div-->
+   </div>
+  </div>
+  <!--Block 4-->
+  <!--Block 10-->
+  <div class="block_10_style">
+   <div>
+    <div class="block_10_second_block">
+     <div class="block_10_second_block_left_block">
+      <h1>
+       WHERE TO GET BLCT TOKEN?
+      </h1>
+      <p>
+       BLCT token can be bought on the following cryptocurrency exchanges:
+      </p>
+      <a href="https://coinsbit.io/" target="_blank">
+       <img class="block_10_second_block_left_block_a" src="images/main/coinsbit.jpg" width="200"/>
+      </a>
+      <a href="https://p2pb2b.io/" target="_blank">
+       <img class="block_10_second_block_left_block_a" src="images/main/ptp.jpg" width="200"/>
+      </a>
+      <a href="https://exrates.me/" target="_blank">
+       <img class="block_10_second_block_left_block_a" src="images/main/extrates.jpg" width="200"/>
+      </a>
+      <a href="https://probit.com/app/exchange/bzt-usdt" target="_blank">
+       <img class="block_10_second_block_left_block_a" src="images/main/pro.jpg" width="200"/>
+      </a>
+      <a href="https://exchange.latoken.com/exchange/BZT-USDT" target="_blank">
+       <img class="block_10_second_block_left_block_a" src="images/main/larok.png" width="200"/>
+      </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <ul>
+       <li>
+        Token Contract Address: 0x6d2c508fc4a588a41713ff59212f85489291d244
+       </li>
+       <li>
+        Token Symbol: BLCT
+       </li>
+       <li>
+        Decimals: 18
+       </li>
+      </ul>
+      <!--img src="images/block_10/logo.png" class="block_10_second_block_left_block_img_mob"><br><br><br><br-->
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--Block 10-->
+  <!--Block 9-->
+  <div class="block_9_style" id="bonus_program">
+   <div class="block_9_second_block" style="color:#fff; padding-bottom:0;">
+    <style>
+    </style>
+    <p class="seventh_block_p1">
+     We invite businesses to support global initiative Bloomzed’s “High5” Covid-19 Relief Movement and to become a partner
+     <b>
+     </b>
+    </p>
+    <br/>
+    <table align="center" cellpadding="0" cellspacing="0" width="100%">
+     <tr>
+      <td>
+       <div class="block7desc" style="background-color:#d6cb9e;">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/play.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          GAMES &amp; ENTERTAINMENT
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          iOS and Android Application,
+	online games,
+          <br/>
+          game stores,
+	in-game currency
+         </p>
+        </div>
+       </div>
+       <div class="block7desc" style="background-color:#a4c388;">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/net.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          SOCIAL NETWORKS
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          Dating applications,
+	professional networks,
+          <br/>
+          social networks
+         </p>
+        </div>
+       </div>
+       <div class="block7desc" style="background-color:#5e988c;">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/sport.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          SPORT &amp; FITNESS
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          Application for sport&amp; fitness,
+	club programs,
+          <br/>
+          diets &amp; nutrition,
+	health &amp; wellness,
+          <br/>
+          online courses &amp; programs
+         </p>
+        </div>
+       </div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <div class="block7desc" style="background-color:#efde84;">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/mus.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          VIDEO &amp; MUSIC
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          Streaming services,
+	internet tv,
+	online cinemas,
+          <br/>
+          music platforms
+         </p>
+        </div>
+       </div>
+       <div class="block7desc" id="block7_midddle_img" style="background-color:#ee7541;">
+        <img class="block7_midddle_img" src="images/high.png"/>
+       </div>
+       <div class="block7desc" style="background-color:#dc5c6b;">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/book.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          EDUCATION &amp; HOBBIES
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          Courses,
+	master-classes,
+	trainings &amp; seminars,
+          <br/>
+          conferences,
+	online libraries
+         </p>
+        </div>
+       </div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <div class="block7desc" style="background-color:#80b7cc;">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/poker.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          GAMES OF CHANCE
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          Casino,
+	poker clubs,
+	slot machines,
+	lo &amp; lottery,
+          <br/>
+          sport betting
+         </p>
+        </div>
+       </div>
+       <div class="block7desc" style="background-color:rgb(185, 116, 75);">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/travel.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          TRAVEL &amp; VACATION
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          Hotels,
+	Tickets,
+	rent-a-cars
+         </p>
+        </div>
+       </div>
+       <div class="block7desc" style="background-color:rgb(93, 184, 157);">
+        <div class="block7desc_img">
+         <img src="images/7blockimg/soft.png"/>
+        </div>
+        <div style="display:inline-block; vertical-align:top">
+         <p>
+          COMMERCIAL SOFTWARE
+         </p>
+         <p style="font-weight:bold; font-size:12px; margin-top:-5px;">
+          video processing applications,
+	data storages,
+          <br/>
+          language applications,
+	antivirus &amp; VPNs,
+          <br/>
+          subscription &amp; premium accounts
+         </p>
+        </div>
+       </div>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <br/>
+    <p class="seventh_block_p1">
+     To join a
+     <b>
+      Bloomzed’s High5 COVID-19
+     </b>
+     relief movement,  your business should agree to accept BZT tokens as partial  or whole payment for your goods or services. This could be your impact in great charity  movement. 
+Please leave your contacts for more information
+    </p>
+    <div class="block_5_second_block_right_block" style="vertical-align:top;">
+     <!--img src="../images/block_5/phone.png" class="block_5_second_block_right_block_img1"><br><br><br><br>
+                <img src="../images/block_5/text.png" class="block_5_second_block_right_block_img2"-->
+    </div>
+    <div>
+     <div class="share_block_but" id="mail_form_button_2">
+      <div class="shares_title">
+       Business: I want to support the initiative
+      </div>
+     </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+   </div>
+  </div>
+  <!--Block 9-->
+  <!--Block 12-->
+  <div class="block_12_style" style="font-family:arial;">
+   <p class="mobile_title">
+    <b>
+     PRESS
+    </b>
+    ABOUT US
+   </p>
+   <div class="running_a_string">
+    <p>
+     <b>
+      PRESS
+     </b>
+     ABOUT US
+    </p>
+   </div>
+   <div class="block_10_second_block">
+    <div class="block_10_second_block_left_block">
+     <a href="https://tr.investing.com/news/cryptocurrency-news/covid19-yardm-hareketi-bloomzed-high-5-1957874" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/inest.png"/>
+     </a>
+     <a href="https://www.fxstreet.com/brokers/press-releases" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/fxstreet.png"/>
+     </a>
+     <a href="https://classifieds.usatoday.com/press/central-asian-young-entrepreneur-tosses-virtual-glove-to-challenge-charity-industry/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/usa.png"/>
+     </a>
+     <a href="https://www.ccn.com/the-bloomzed-project-challenges-the-charity-industry/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/ccn.png" style="background-color:#000;"/>
+     </a>
+     <a href="https://www.newsbtc.com/press-releases/bloomzed-limited-charity-token-offering-the-future-of-digital-charity/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/newsbtc.png" style="background-color:#000;"/>
+     </a>
+     <a href="http://www.futurekorea.co.kr/news/articleView.html?idxno=133279" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/hanwha.png"/>
+     </a>
+     <a href="https://btcmanager.com/cryptocurrency-covid-19-bloomzed-project-founder-allocated-10-million-coronavirus/?q=/cryptocurrency-covid-19-bloomzed-project-founder-allocated-10-million-coronavirus/&amp;" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/manager.jpg"/>
+     </a>
+     <a href="https://coin-turk.com/covid-19-yardim-hareketi-high-5" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/coint.png"/>
+     </a>
+     <a href="https://cryptopys.com/2020/04/30/covid-19-yardim-hareketi-bloomzed-high-5/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/cryptop.png"/>
+     </a>
+     <a href="https://www.marketwatch.com/press-release/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19-2020-05-20?tesla=y" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/marketwatch.png"/>
+     </a>
+     <a href="https://forum.bitcoin.com/post312066.html?hilit=bloomzed#p312066" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/bit.png"/>
+     </a>
+     <a href="http://likecoin.ru/crypto/osnovatel-proekta-bloomzed-vydeliaet-10-mln-na-borby-s-koronavirysom/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/like.png"/>
+     </a>
+     <a href="http://www.newsfreezone.co.kr/news/articleView.html?idxno=232420" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/log_ko.png"/>
+     </a>
+     <a href="https://mulierlife.com/covid-19-aid-movement-bloomzed-high-5/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/life.jpg"/>
+     </a>
+     <a href="http://www.digitaljournal.com/pr/4688666?noredir=1" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/digital.png"/>
+     </a>
+     <a href="https://www.satoshinakamotoblog.com/cryptocurrency-vs-covid-19-bloomzed-project-founder-allocated-10-million-to-fight-against-coronavirus/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/snb.png"/>
+     </a>
+     <a href="https://0xzx.com/202005040808619643.html/amp" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/chin.png"/>
+     </a>
+     <a href="https://bits.media/pr/osnovatel-proekta-bloomzed-vydelyaet-10-mln-na-borbu-s-koronavirusom/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/bits.png"/>
+     </a>
+     <a href="https://www.wrde.com/story/42153324/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/wrde.png"/>
+     </a>
+     <a href="http://www.hrate.ru/cryptonews/osnovatel-proekta-bloomzed-videlyaet-$10-mln-na-borbu-s-koronavirusom" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/hashrate.png"/>
+     </a>
+     <a href="https://www.snntv.com/story/42153324/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/snn.png"/>
+     </a>
+     <a href="https://www.firmenpresse.de/pressinfo1814847.html" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/firmen.png"/>
+     </a>
+     <a href="https://www.dailysecu.com/news/articleView.html?idxno=108530" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/day.png"/>
+     </a>
+     <a href="https://www.wfmj.com/story/42153324/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/21wfmj.png"/>
+     </a>
+     <a href="https://www.techtelegraph.co.uk/bloomzed-limited-charity-token-offering-the-future-of-digital-charity/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/techtel.png"/>
+     </a>
+     <a href="https://ourbitcoinnews.com/bloomzed-limited-charity-token-the-future-of-digital-charity/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/obn.png"/>
+     </a>
+     <a href="https://www.fox34.com/story/42153324/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/fox34.png"/>
+     </a>
+     <a href="https://www.americancryptoassociation.com/2020/05/02/cryptocurrency-covid-19-bloomzed-project-founder-allocated-10-million-coronavirus/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/aca.png"/>
+     </a>
+     <a href="https://m.thisisgame.com/webzine/nboard/4/?n=104280" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/game.png"/>
+     </a>
+     <a href="https://www.wrcbtv.com/story/42153324/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/wrcbtv.png"/>
+     </a>
+     <a href="https://portaldobitcoin.com/token-de-caridade-da-bloomzed-limited-o-futuro-da-caridade-digital/" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/portal.png"/>
+     </a>
+     <a href="https://www.wfxg.com/story/42153324/business-challenge-high5-entrepreneurs-can-help-to-combat-the-consequences-of-covid-19" target="_blank">
+      <img class="partner_images" src="../images/block_12/r_s/fox54.png"/>
+     </a>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <!--img src="images/block_10/logo.png" class="block_10_second_block_left_block_img_mob"><br><br><br><br-->
+     <div class="share_block_but" id="mail_form_button_3" style="margin-bottom:70px; width:80%;">
+      <div class="shares_title">
+       Press: I am interested to get details
+      </div>
+     </div>
+     <p align="left" style="font-weight:lighter;">
+     </p>
+     <p>
+      <b>
+       Attention:
+      </b>
+     </p>
+     <p align="left">
+      Bloomzed officially notifies its partners, clients, participants  of social networks subscribed to our social accounts - anyone interested in our  initiatives - to protect against possible fraudulent actions by third parties  of the following:
+     </p>
+     <p align="left">
+      All official information about any charitable, social  or other promotions initiated by Bloomzed - is indicated on our official  website bloomzed.io, our social networks on official Bloomzed resources.
+     </p>
+     <p align="left">
+      We DO NOT raise funds for private accounts, including  individuals' bank accounts, electronic wallets, crypto wallets, etc.
+     </p>
+     <p align="left">
+      All our initiatives are implemented publicly through  licensed and respected institutions (crypto exchanges, international platforms,  recognized charities and foundations, etc.).
+     </p>
+     <p align="left">
+      Any fundraising attempts using our name, initiative,  logo or otherwise, not listed on our official resources (www.bloomzed.io and
+      <a href="https://www.facebook.com/bloomzedinfo/">
+       Facebook
+      </a>
+      ,
+      <a href="https://twitter.com/hashtag/bloomzedinfo">
+       Twitter
+      </a>
+      ,
+      <a href="https://t.me/bloomzed">
+       Telegram
+      </a>
+      ,
+      <a href="https://www.youtube.com/channel/UCWpsZxhIH_QkWCua1uTkfFw">
+       YouTube
+      </a>
+      ,
+      <a href="https://medium.com/@bloomzed">
+       Medium
+      </a>
+      ,
+      <a href="https://www.instagram.com/bloomzed">
+       Instagram
+      </a>
+      ) and carried out on third  party details (physical and legal) are fraudulent and will be suppressed,  investigated and prosecuted by us.
+  We ask you to refrain from transferring funds,  facilitating or supporting such attempts.
+     </p>
+     <p align="left">
+      Also, we would like to prevent possible attempts of  malicious libel and other actions by persons spreading information in social  networks and other media and Internet resources that defames the business  reputation of Bloomzed and shareholders, employees, partners and other related  parties.
+     </p>
+     <p align="left">
+      In the event that you have a legally justified claim  or an unsatisfied financial claim or other claim, as well as information about  cases of breach of trust, fraud using our name, logo (other identification  features of our company), we strongly recommend that you contact the official  e-mail address of the company
+      <a href="mailto:info@bloomzed.com">
+       info@bloomzed.com
+      </a>
+      with relevant information.  Otherwise, we will be forced to turn to all legal ways known to us to protect  our honor, dignity and business reputation.
+     </p>
+    </div>
+   </div>
+  </div>
+  <!--Block 12-->
+  <!--Block 11-->
+  <div class="block_11_style">
+   <div>
+    <br/>
+    <br/>
+    <div class="block_14_second_block">
+     <div class="block_14_second_block_links">
+      <a href="https://www.facebook.com/bloomzedinfo/" target="_blank">
+       <img class="social_net" src="images/block_14/fb.png"/>
+      </a>
+      <a href="https://twitter.com/hashtag/bloomzedinfo" target="_blank">
+       <img class="social_net" src="images/block_14/tv.png"/>
+      </a>
+      <a href="https://t.me/bloomzed" target="_blank">
+       <img class="social_net" src="images/block_14/tl.png"/>
+      </a>
+      <a href="https://www.youtube.com/channel/UCWpsZxhIH_QkWCua1uTkfFw" target="_blank">
+       <img class="social_net_h" src="images/block_14/youtube.png"/>
+      </a>
+      <a href="https://medium.com/@bloomzed" target="_blank">
+       <img class="social_net" src="../images/block_14/m.png"/>
+      </a>
+      <a href="https://www.instagram.com/bloomzed/" target="_blank">
+       <img class="social_net_h" src="images/block_14/inst.png"/>
+      </a>
+      <p style="color:#fff; font-size:24px;">
+       info@bloomzed.com
+      </p>
+     </div>
+     <img src="images/logo_foot.png" style="width: 180px;"/>
+     <div class="soc_mes_block">
+      <div class="m_app_link">
+       <p style="font-weight:bold; color:#fff; font-size:24px;  margin:0 auto; margin-bottom:0px;">
+        Soon:
+       </p>
+       <br/>
+       <img src="images/block_14/googleplayicon.png"/>
+       <a href="https://itunes.apple.com/ua/app/tumar-wallet/id1110830542?l=ru&amp;mt=8">
+        <img src="images/block_14/iTunes-Icon.png"/>
+       </a>
+       <br/>
+       <p align="center" style="color:#fff;">
+        Bloomzed 2013-2020
+       </p>
+      </div>
+     </div>
+    </div>
+    <!--img class="col-md-7 phone-img" src="../images/block_11/phone.png" alt="Левитирующий телефон"-->
+   </div>
+  </div>
+  <!--Block 11-->
+  <!--Block 14-->
+  <script src="https://unpkg.com/vue@2.4.4/dist/vue.min.js">
+  </script>
+  <script src="/js/common.js?">
+  </script>
+  <script type="text/javascript">
+   $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+    });
+
+	
+$(document).ready(function(){
+	 
+	
+});
+  </script>
+ </body>
+</html>

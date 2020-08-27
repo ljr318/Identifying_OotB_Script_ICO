@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html data-n-head="" data-n-head-ssr="">
+ <head data-n-head="">
+  <title data-n-head="true">
+   The Rouge Project - Voucher And Note Protocol
+  </title>
+  <meta charset="utf-8" data-n-head="true"/>
+  <meta content="width=device-width,initial-scale=1" data-n-head="true" name="viewport"/>
+  <meta content="The Rouge Project - Voucher And Note Protocol" data-hid="description" data-n-head="true" name="description"/>
+  <meta content="#ffffff" data-n-head="true" name="theme-color"/>
+  <meta content="summary_large_image" data-hid="twitter:card" data-n-head="true" name="twitter:card"/>
+  <meta content="@rougetoken" data-n-head="true" name="twitter:site"/>
+  <meta content="https://rouge.network/" data-hid="og:url" data-n-head="true" name="og:url"/>
+  <meta content="The Rouge Project - Voucher And Note Protocol" data-hid="og:title" data-n-head="true" name="og:title"/>
+  <meta content="https://rouge.network/rouge-project-phone.jpg" data-hid="og:image" data-n-head="true" name="og:image"/>
+  <meta content="An open-source software project building a voucher protocol â the Rouge Network â as a suite of smart contracts using the Rouge token on the Ethereum blockchain." data-hid="og:description" data-n-head="true" name="og:description"/>
+  <link data-n-head="true" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,700" rel="stylesheet"/>
+  <link data-n-head="true" href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link data-n-head="true" href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link data-n-head="true" href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link data-n-head="true" href="/manifest.json" rel="manifest"/>
+  <link color="#5bbad5" data-n-head="true" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+  <script data-n-head="true" src="https://www.google.com/recaptcha/api.js?render=explicit">
+  </script>
+  <script async="" data-n-head="true" src="https://www.google-analytics.com/analytics.js">
+  </script>
+  <link as="script" href="/_nuxt/8a2e16ccf1f9f016363b.js" rel="preload"/>
+  <link as="script" href="/_nuxt/3f0c65c5a72b9cdc4ce1.js" rel="preload"/>
+  <link as="style" href="/_nuxt/f96bcea28c9a90db1344.css" rel="preload"/>
+  <link as="script" href="/_nuxt/aebaef0ee3a721830d7e.js" rel="preload"/>
+  <link as="style" href="/_nuxt/be5dcb7e641de813155e.css" rel="preload"/>
+  <link as="script" href="/_nuxt/135d3d0ffb5481d08157.js" rel="preload"/>
+  <link href="/_nuxt/f96bcea28c9a90db1344.css" rel="stylesheet"/>
+  <link href="/_nuxt/be5dcb7e641de813155e.css" rel="stylesheet"/>
+ </head>
+ <body class="landing" data-n-head="class">
+  <div data-server-rendered="true" id="__nuxt">
+   <!-- -->
+   <div id="__layout">
+    <div>
+     <div id="page-wrapper">
+      <header id="header">
+       <h1 id="logo">
+       </h1>
+       <nav id="nav">
+        <ul>
+         <li>
+          <a class="nuxt-link-exact-active nuxt-link-active" href="/">
+           HOME
+          </a>
+         </li>
+         <li>
+          <a href="/docs">
+           DOCS
+          </a>
+         </li>
+         <li>
+          <a href="/about">
+           ABOUT
+          </a>
+         </li>
+         <li>
+          <a href="/solutions">
+           SOLUTIONS
+          </a>
+         </li>
+         <li>
+          <a href="/rge">
+           RGE
+          </a>
+         </li>
+         <li>
+          <a href="https://medium.com/the-rouge-project" target="_blank">
+           BLOG
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </header>
+      <div>
+       <section id="banner">
+        <div class="content wrapper style2">
+         <header class="logo">
+          <h1>
+           <img alt="The Rouge Project - Voucher And Note Protocol" src="/full-logo-1200.png"/>
+          </h1>
+          <p class="icons">
+           <a class="button special" href="/docs/">
+            Get started
+           </a>
+           <a class="button" href="https://github.com/TheRougeProject" target="_blank">
+            Github
+           </a>
+          </p>
+         </header>
+        </div>
+        <a class="goto-next scrolly" href="#examples">
+         Next
+        </a>
+       </section>
+       <section class="wrapper style2 fade" id="examples">
+        <div class="container">
+         <div class="row uniform">
+          <div class="6u 12u$(medium)">
+           <h4>
+            Installing rouge.js
+           </h4>
+           <pre><code>
+npm i web3 rouge.js                # using Npm
+yarn add web3 rouge.js             # using Yarn
+            </code></pre>
+          </div>
+          <div class="6u 12u$(medium)">
+           <h4>
+            ES6 Importing
+           </h4>
+           <pre><code>
+import Web3 from 'web3' // web3.js &gt;= 1.0.0
+import { RougeProtocol } from 'rouge.js'
+
+const rouge = RougeProtocol(web3)
+            </code></pre>
+          </div>
+          <div class="6u 12u$(medium)">
+           <h4>
+            Creating &amp; issuing a campaign
+           </h4>
+           <pre><code>
+const campaignPromise = await rouge.as(web3IssuerAccount).createCampaign({
+  name: '<em>your campaign name</em>',
+  // How many voucher notes to issue
+  issuance: 10,
+  // when the campaign will expire (timestamp)
+  expiration: (new Date().getTime() / 1000) + 3600 * 24 * 10
+})
+            </code></pre>
+          </div>
+          <div class="6u 12u$(medium)">
+           <h4>
+            Distributing voucher notes
+           </h4>
+           <pre><code>
+if (campaign.canDistribute) {
+   // send one voucher to any Ethereum account
+   campaign.distributeNote(<em>receiver_address</em>)
+}
+            </code></pre>
+          </div>
+          <div class="6u 12u$(medium)">
+           <h4>
+            Redeeming voucher notes
+           </h4>
+           <pre><code>
+const campaign = rouge.as(userAccount).campaign$(campaignAddress)
+
+campaign.redeemNote()
+            </code></pre>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="spotlight style1 bottom" id="more" style="background-image:url(/home-images/02.jpg)">
+        <span class="image fit main">
+        </span>
+        <div class="content">
+         <div class="container">
+          <div class="row">
+           <div class="4u 12u$(medium)">
+            <header>
+             <h2>
+              The Rouge protocol
+             </h2>
+             <p>
+              is an open-source blockchain voucher and note protocol
+             </p>
+            </header>
+           </div>
+           <div class="4u 12u$(medium)">
+            <p>
+             built as a suite of smart contracts using a specific token â the Rouge token â
+                on Ethereum compatible blockchains (tested on Ethereum and POA).
+            </p>
+            <p>
+             Rouge is for all types of usage of non-repudiable and
+                unique usage digital vouchers (for example, e-tickets,
+                e-coupons, cashback notes, etc).
+            </p>
+           </div>
+           <div class="4u$ 12u$(medium)">
+            <p>
+             Using the javascript rouge.js package you can easily add non-repudiable and unique usage digital vouchers in
+                a web site or a nativescript mobile ÃApps without learning Solidity.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="wrapper style2 special fade" data-v-27eda4b0="" id="subscribe">
+        <div class="container" data-v-27eda4b0="">
+         <header data-v-27eda4b0="">
+          <h2 data-v-27eda4b0="">
+           Join our official mailing-list
+          </h2>
+         </header>
+         <form class="container 50%" data-v-27eda4b0="" method="post">
+          <div class="row uniform 50%" data-v-27eda4b0="">
+           <div class="8u 12u$(small)" data-v-27eda4b0="">
+            <input data-v-27eda4b0="" id="email" name="email" placeholder="Your Email Address" type="email"/>
+           </div>
+           <div class="4u$ 12u$(small)" data-v-27eda4b0="">
+            <input class="special" data-v-27eda4b0="" type="submit" value="Subscribe Me"/>
+           </div>
+           <div class="12u$" data-v-27eda4b0="">
+            <div class="g-recaptcha" data-v-27eda4b0="" id="recaptcha">
+            </div>
+           </div>
+           <div class="12u$" data-v-27eda4b0="">
+            <p data-v-27eda4b0="">
+            </p>
+           </div>
+          </div>
+         </form>
+        </div>
+       </section>
+      </div>
+      <footer id="footer">
+       <div class="container">
+        <div class="row icons">
+         <p class="3u 4u(medium) 6u(xsmall)">
+          <a class="icon alt fa-twitter" href="https://twitter.com/Rougetoken" target="_blank">
+           <span class="label">
+            Twitter
+           </span>
+          </a>
+         </p>
+         <p class="2u 4u(medium) 6u$(xsmall)">
+          <a class="icon alt fa-git" href="https://github.com/TheRougeProject" target="_blank">
+           <span class="label">
+            Git
+           </span>
+          </a>
+         </p>
+         <p class="2u 4u$(medium) 6u(xsmall)">
+          <a class="icon alt fa-medium" href="https://medium.com/the-rouge-project" target="_blank">
+           <span class="label">
+            Medium
+           </span>
+          </a>
+         </p>
+         <p class="2u 4u(medium) 6u$(xsmall)">
+          <a class="icon alt fa-telegram" href="https://t.me/rougetoken" target="_blank">
+           <span class="label">
+            Telegram
+           </span>
+          </a>
+         </p>
+         <p class="3u 4u$(medium) 6u(xsmall)">
+          <a class="icon alt fa-envelope" href="mailto:hello@rouge.network" target="_blank">
+           <span class="label">
+            Email
+           </span>
+          </a>
+         </p>
+        </div>
+        <ul class="copyright">
+         <li>
+          Â© The Rouge Foundation OÃ. All rights reserved.
+         </li>
+         <li>
+          photography:
+          <a href="https://unsplash.com/" target="_blank">
+           unsplash
+          </a>
+         </li>
+         <li>
+          theme based on
+          <a href="http://html5up.net" target="_blank">
+           html5up
+          </a>
+          /
+          <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">
+           CCA 3.0 BY
+          </a>
+         </li>
+        </ul>
+        <ul class="copyright partners">
+        </ul>
+       </div>
+      </footer>
+     </div>
+     <div id="titleBar">
+      <a class="toggle" href="#navPanel">
+      </a>
+     </div>
+     <div id="navPanel">
+      <nav>
+       <a class="link depth-0 nuxt-link-exact-active nuxt-link-active" href="/">
+        <span class="indent-0">
+        </span>
+        home
+       </a>
+       <a class="link depth-1" href="/docs">
+        Docs
+       </a>
+       <a class="link depth-1" href="/about">
+        About
+       </a>
+       <a class="link depth-1" href="/solutions">
+        Solutions
+       </a>
+       <a class="link depth-1" href="/rge">
+        RGE token
+       </a>
+       <a class="link depth-0" href="https://medium.com/the-rouge-project" target="_blank">
+        Blog
+       </a>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   window.__NUXT__=function(e){return{layout:"default",data:[{}],error:e,state:{counter:0,key:e,recaptcha:0,bounty:e},serverRendered:!0}}(null)
+  </script>
+  <script defer="" src="/_nuxt/8a2e16ccf1f9f016363b.js">
+  </script>
+  <script defer="" src="/_nuxt/3f0c65c5a72b9cdc4ce1.js">
+  </script>
+  <script defer="" src="/_nuxt/aebaef0ee3a721830d7e.js">
+  </script>
+  <script defer="" src="/_nuxt/135d3d0ffb5481d08157.js">
+  </script>
+ </body>
+</html>

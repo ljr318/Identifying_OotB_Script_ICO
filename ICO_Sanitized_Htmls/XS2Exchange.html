@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html ie="edge">
+ <head>
+  <style id="antiClickjack">
+   body { display: none !important; }
+  </style>
+  <script type="text/javascript">
+   if (self === top) {
+                var antiClickjack = document.getElementById("antiClickjack");
+                antiClickjack.parentNode.removeChild(antiClickjack);
+            } else {
+                top.location = self.location;
+            }
+  </script>
+  <script>
+   // IE Polyfills
+            if (!String.prototype.startsWith) {
+                Object.defineProperty(String.prototype, 'startsWith', {
+                    value: function (search, pos) {
+                        pos = !pos || pos < 0 ? 0 : +pos;
+                        return this.substring(pos, pos + search.length) === search;
+                    }
+                });
+            }
+
+            if (typeof Object.assign != 'function') {
+                // Must be writable: true, enumerable: false, configurable: true
+                Object.defineProperty(Object, "assign", {
+                    value: function assign(target, varArgs) { // .length of function is 2
+                        'use strict';
+                        if (target == null) { // TypeError if undefined or null
+                            throw new TypeError('Cannot convert undefined or null to object');
+                        }
+
+                        var to = Object(target);
+
+                        for (var index = 1; index < arguments.length; index++) {
+                            var nextSource = arguments[index];
+
+                            if (nextSource != null) { // Skip over if undefined or null
+                                for (var nextKey in nextSource) {
+                                    // Avoid bugs when hasOwnProperty is shadowed
+                                    if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                                        to[nextKey] = nextSource[nextKey];
+                                    }
+                                }
+                            }
+                        }
+                        return to;
+                    },
+                    writable: true,
+                    configurable: true
+                });
+            }
+  </script>
+  <script>
+   var version = "1.0.7094.35373";
+            var ui_language = "en";
+
+            var language_data;
+            var loaded_languages = [];
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "/translate/full/" + ui_language);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    language_data = JSON.parse(xhr.responseText);
+                }
+            };
+            xhr.send();
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   XS2 Exchange Home
+  </title>
+  <link href="/icons/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="/icons/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/icons/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="/icons/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/icons/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="/icons/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/icons/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="/icons/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/icons/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/icons/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/icons/manifest.json" rel="manifest"/>
+  <style>
+   /* open-sans-300 - latin */
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Open Sans Light'), local('OpenSans-Light'), url('/webfonts/open-sans-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+                url('/webfonts/open-sans-v15-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+            /* open-sans-regular - latin */
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/webfonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+                url('/webfonts/open-sans-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+  </style>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="/icons/ms-icon-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <link async="" charset="UTF-8" href="/css/site-all.min.css?v=oU7BCNCcMH1gHYZYdX9DpjI5g1xk5M3nRkqTYFAXpJE" rel="stylesheet"/>
+ </head>
+ <body style="height: 100%; z-index: -2;">
+  <script>
+   var component = {};
+  </script>
+  <div id="main_app" style="z-index: 0">
+   <navbar :key="app.customer.id">
+   </navbar>
+   <nav class="navbar navbar-expand sticky-top navbar-light bg-white" id="prerender_nav">
+    <a class="nav-link p-0 pr-2 router-link-active" href="/">
+     <div style="height:30px; width:63px">
+     </div>
+    </a>
+    <ul class="d-none d-md-flex navbar-nav mr-auto">
+     <li class="nav-item">
+      <a class="nav-link" href="/exchange/ETH/BTC">
+       <i class="fas fa-exchange-alt">
+       </i>
+       <span>
+        Exchange
+       </span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/news">
+       <i class="far fa-newspaper">
+       </i>
+       <span>
+        News
+       </span>
+      </a>
+     </li>
+    </ul>
+    <ul class="navbar-nav my-0 ml-auto">
+    </ul>
+    <ul class="navbar-nav my-0">
+     <li class="nav-item">
+      <a class="nav-link" href="#">
+       <span>
+        Login
+       </span>
+      </a>
+     </li>
+    </ul>
+    <ul class="navbar-nav">
+     <li class="nav-item dropdown" style="margin-right: -8px; margin-left: -3px;">
+      <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="languageDropdown" role="button">
+       <i class="fas fa-globe-americas">
+       </i>
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="container-fluid body-content" id="main-content">
+    <div id="prerender">
+    </div>
+    <div class="alert alert-danger text-center mb-0" id="reload_warning" role="alert" style="display: none">
+     <span>
+      <t>
+       The website has been updated. Some things might not work until you reload.
+      </t>
+      <a href="#" onclick="location.reload(true); return false;">
+       <t>
+        Click here to reload!
+       </t>
+      </a>
+     </span>
+    </div>
+    <router-view :key="app.customer.id" id="router-content">
+    </router-view>
+   </div>
+   <footer>
+    <div style="background-color:rgba(247, 247, 247, 1);">
+     <div class="d-none d-sm-block" style="height:40px">
+     </div>
+     <div class="d-block d-sm-none" style="height:20px">
+     </div>
+    </div>
+    <div style="background-color: rgba(247, 247, 247, 1);">
+     <div class="d-flex flex-wrap justify-content-center mx-auto" style="max-width: 1200px">
+      <div class="pl-0 offset-1 col-10 col-sm-4 col-md-5 mb-4 mb-sm-0">
+       <h4 style="color:#6290C3;">
+        <t>
+         Follow Us
+        </t>
+       </h4>
+       <h3>
+        <url href="https://t.me/xs2exchange">
+         <i class="mx-1 mx-sm-2 fab fa-telegram-plane">
+         </i>
+        </url>
+        <url href="https://medium.com/@xs2">
+         <i class="mx-1 mx-sm-2 fab fa-medium-m">
+         </i>
+        </url>
+        <url href="https://twitter.com/xs2exchange">
+         <i class="mx-1 mx-sm-2 fab fa-twitter">
+         </i>
+        </url>
+        <url href="https://www.reddit.com/r/xs2exchange">
+         <i class="mx-1 mx-sm-2 fab fa-reddit-alien">
+         </i>
+        </url>
+        <url href="https://www.facebook.com/xs2exchange/">
+         <i class="mx-1 mx-sm-2 fab fa-facebook">
+         </i>
+        </url>
+        <url href="https://www.linkedin.com/company/ecoin-live/">
+         <i class="mx-1 mx-sm-2 fab fa-linkedin-in">
+         </i>
+        </url>
+        <url href="https://github.com/xs2-exchange">
+         <i class="mx-1 mx-sm-2 fab fa-github">
+         </i>
+        </url>
+       </h3>
+      </div>
+      <div class="pl-0 offset-1 offset-sm-0 col-10 col-sm-3 col-md-2 mb-4 mb-sm-0">
+       <h4 style="color:#6290C3;">
+        <t>
+         Links
+        </t>
+       </h4>
+       <p>
+        <url href="/support">
+         <t>
+          Support
+         </t>
+        </url>
+        <br/>
+        <url href="https://xs2exchange.freshdesk.com/support/solutions">
+         <t>
+          FAQs
+         </t>
+        </url>
+        <br/>
+        <url href="/transparency">
+         <t>
+          Transparency
+         </t>
+        </url>
+        <br/>
+        <url href="/fees">
+         <t>
+          Fees
+         </t>
+        </url>
+        <br/>
+        <url href="/listings">
+         <t>
+          Listings
+         </t>
+        </url>
+        <br/>
+        <url href="/coin-editor/coins">
+         <t>
+          Add Coin/Token
+         </t>
+        </url>
+        <br/>
+        <url href="/apidocs">
+         <t>
+          API Docs
+         </t>
+        </url>
+        <br/>
+       </p>
+      </div>
+      <div class="pl-0 offset-1 offset-sm-0 col-10 col-sm-4">
+       <h4 style="color:#6290C3;">
+        XS2 Pty Ltd
+       </h4>
+       <p>
+        <url href="https://abr.business.gov.au/ABN/View?abn=83624253363">
+         ABN 83 624 253 363
+        </url>
+        <br/>
+        <url href="https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchType=OrgAndBusNm&amp;searchText=624253363">
+         ACN 624 253 363
+        </url>
+        <br/>
+        Level 5, 155 Clarence St
+        <br/>
+        Sydney NSW 2000
+        <br/>
+        Australia
+        <br/>
+        <url href="mailto:info@xs2.exchange">
+         info@xs2.exchange
+        </url>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div style="background-color:rgba(247, 247, 247, 1);">
+     <div class="d-none d-sm-block" style="height:40px">
+     </div>
+     <div class="d-block d-sm-none" style="height:20px">
+     </div>
+    </div>
+    <div class="justify-content-center py-4" style="background-color: #6290c3; color: #E7F0F4;">
+     <div class="offset-1 col-10">
+      <div class="card-body text-center p-0">
+       <span style="font-size: 95%;">
+        <t>
+         Cryptocurrency trading is risky and can result in loss of (all) capital. Trading on XS2 is at your own risk.
+        </t>
+        <span v-if="app.customer.language!='en'">
+         Site translations are provided as a convenience only and the English version controls in event of any discrepancy.
+        </span>
+        <br/>
+        BTC ≈ {{ app.coins.BTC ? app.coins.BTC.usd_price : null | fusd }} USD ·
+        <url href="/terms" style="color: #E7F0F4;">
+         <t>
+          Terms of Service
+         </t>
+        </url>
+        ·
+        <url href="/privacy" style="color: #E7F0F4;">
+         <t>
+          Privacy Policy
+         </t>
+        </url>
+       </span>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <navbarbottom>
+   </navbarbottom>
+   <authorisedevice ref="authorisedevice">
+   </authorisedevice>
+  </div>
+  <noscript>
+   Sorry, you need the Javascripts working. en
+  </noscript>
+  <div id="routes">
+   <div data-name="Home" data-route-pattern="/">
+   </div>
+   <div data-name="Signup" data-route-pattern="/signup">
+   </div>
+   <div data-name="Message" data-route-pattern="/message/:message_id">
+   </div>
+   <div data-name="Wallet" data-route-pattern="/wallet/:wallet_id">
+   </div>
+   <div data-name="WalletAdd" data-route-pattern="/wallet-add">
+   </div>
+   <div data-name="Exchange" data-route-pattern="/exchange/:coin_symbol/:base_symbol">
+   </div>
+   <div data-name="News" data-route-pattern="/news">
+   </div>
+   <div data-name="MobileWallets" data-route-pattern="/wallets_mobile">
+   </div>
+   <div data-name="MobileWallet" data-route-pattern="/wallet_mobile/:wallet_id">
+   </div>
+   <div data-name="MobileExchange" data-route-pattern="/exchange_mobile">
+   </div>
+   <div data-name="MobileExchangeMarket" data-route-pattern="/exchange_market_mobile/:coin_symbol/:base_symbol">
+   </div>
+   <div data-name="Send" data-route-pattern="/send/:customer_id/:code">
+   </div>
+   <div data-folder="Info" data-name="Overview" data-route-pattern="/tokens/overview">
+   </div>
+   <div data-folder="Info" data-name="TokenInfo" data-route-pattern="/token/:symbol/:slug">
+   </div>
+   <div data-name="Support" data-route-pattern="/support">
+   </div>
+   <div data-name="Terms" data-route-pattern="/terms">
+   </div>
+   <div data-name="Privacy" data-route-pattern="/privacy">
+   </div>
+   <div data-name="Listings" data-route-pattern="/listings">
+   </div>
+   <div data-name="Transparency" data-route-pattern="/transparency">
+   </div>
+   <div data-name="Fees" data-route-pattern="/fees">
+   </div>
+   <div data-name="APIDocs" data-route-pattern="/apidocs">
+   </div>
+   <div data-folder="Account" data-name="Summary" data-route-pattern="/customer/summary">
+   </div>
+   <div data-folder="Account" data-name="Wallets" data-route-pattern="/customer/wallets">
+   </div>
+   <div data-folder="Account" data-name="Orders" data-route-pattern="/customer/orders">
+   </div>
+   <div data-folder="Account" data-name="Trades" data-route-pattern="/customer/trades">
+   </div>
+   <div data-folder="Account" data-name="Transfers" data-route-pattern="/customer/transfers">
+   </div>
+   <div data-folder="Account" data-name="Referral" data-route-pattern="/customer/referral">
+   </div>
+   <div data-folder="Account" data-name="Tax" data-route-pattern="/customer/tax">
+   </div>
+   <div data-folder="CoinEditor" data-name="Coins" data-route-pattern="/coin-editor/coins">
+   </div>
+   <div data-folder="CoinEditor" data-name="Editor" data-route-pattern="/coin-editor/:coin_id">
+   </div>
+   <div data-folder="CoinEditor" data-name="AddEditor" data-route-pattern="/coin-editor/:coin_id/:shared_linkcode">
+   </div>
+   <div data-folder="CoinEditor" data-name="Preview" data-route-pattern="/coin-preview/:coin_id">
+   </div>
+   <div data-name="Referral" data-route-pattern="/r/:referring_customer_id">
+   </div>
+   <div data-name="RecoverKey" data-route-pattern="/recover-key/:device_id">
+   </div>
+   <div data-folder="Admin" data-name="Index" data-route-pattern="/admin">
+   </div>
+   <div data-name="PageNotFound" data-route-pattern="*">
+   </div>
+  </div>
+  <div class="component" data-name="t">
+   <template>
+    <span>
+     {{ before_link }}
+     <url :href="href" v-if="href">
+      {{ link_text }}
+     </url>
+     {{ after_link }}
+     <span style="display:none;">
+      <slot>
+      </slot>
+     </span>
+    </span>
+   </template>
+   <script>
+    component.t = {
+        data: function () {
+            return {
+                original: ""
+            };
+        },
+        props: ['href'],
+        inheritAttrs: false,
+        mounted: function () { this.update(); },
+        updated: function () { this.update(); },
+        methods: {
+            update: function () {
+                var org = this.$slots.default[0].text || "";
+                if (this.original !== org)
+                {
+                    this.original = org;
+                }
+            }
+        },
+        computed: {
+            parts: function () {
+                var tr = this.t(this.original, this.$attrs);
+
+                var start = tr.indexOf("[");
+                var end = tr.indexOf("]");
+                if (start >= 0 && end >= start) {
+                    return [
+                        tr.substring(0, start),
+                        tr.substring(start + 1, end),
+                        tr.substring(end + 1)
+                    ];
+                }
+
+                return [tr, "", ""];
+            },
+            before_link: function () { return this.parts[0]; },
+            link_text: function () { return this.parts[1]; },
+            after_link: function () { return this.parts[2]; },
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="selectable">
+   <template>
+    <div class="row">
+     <div :style="(supported ? 'cursor:copy;overflow-x: hidden; text-overflow: ellipsis' : 'word-wrap: break-word')" class="col px-0" ref="content">
+      <slot>
+      </slot>
+     </div>
+     <div class="col px-0" style="flex-grow: 0">
+      <i :class="icon" style="cursor:copy" v-if="supported &amp;&amp; icon">
+      </i>
+     </div>
+    </div>
+   </template>
+   <script>
+    component.selectable = {
+        props: ["name", "icon"],
+        computed: {
+            is_full: function () {
+                return typeof document.execCommand === "function"
+                    && typeof document.createRange === "function"
+                    && typeof window.getSelection === "function"
+                    && typeof window.getSelection().removeAllRanges === "function"
+                    && typeof window.getSelection().addRange === "function";
+            },
+            is_basic: function () {
+                return typeof document.execCommand === "function"
+                    && typeof window.getSelection === "function"
+                    && typeof window.getSelection().setBaseAndExtent === "function";
+            },
+            is_ie: function () {
+                return typeof document.execCommand === "function"
+                    && typeof document.body.createTextRange === "function";
+            },
+            supported: function () { return this.is_full || this.is_basic || this.is_ie; }
+        },
+        methods: {
+            copy: function () {
+                if (this.supported) {
+                    var range, selection;
+                    if (this.is_full) {
+                        // Chrome, Mozilla or Opera 10.5+
+                        selection = window.getSelection();
+                        range = document.createRange();
+                        range.selectNodeContents(this.$refs.content);
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                        if (!selection.toString()) {
+                            return; // selection is empty, nothing to copy
+                        }
+                    } else if (this.is_basic) {
+                        // Safari
+                        selection = window.getSelection();
+                        selection.setBaseAndExtent(this.$refs.content, 0, this.$refs.content, 1);
+                        if (!selection.toString()) {
+                            return; // selection is empty, nothing to copy
+                        }
+                    } else if (this.is_ie) {
+                        // IE or Opera <10.5
+                        range = document.body.createTextRange();
+                        range.moveToElementText(this.$refs.content);
+                        range.select();
+                        if (!range.text) {
+                            return; // selection is empty, nothing to copy
+                        }
+                    }
+                    try {
+                        if (document.execCommand("copy")) {
+                            success(t("{name} has been copied to your clipboard", { name: this.name || t("Value") }));
+                        }
+                    } catch (e) { /* Ignore */ }
+                }
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="url">
+   <template>
+    <router-link :to="_href" v-if="internal">
+     <slot>
+     </slot>
+    </router-link>
+    <a href="#" v-else-if="action">
+     <slot>
+     </slot>
+    </a>
+    <a :href="_href" target="_blank" v-bind="$attrs" v-else="">
+     <slot>
+     </slot>
+    </a>
+   </template>
+   <script>
+    var url_pattern = new RegExp(
+        '^(' +
+            'action\\:\\w+?' +
+        '|' +
+            'mailto\\:[-\\w%.~+]+?@[-\\w%.~+]+?' +
+        '|' +
+            'tel\\:[- .+()\\d]+?' +
+        '|' +
+            '(https?\\:\\/\\/)?' + // protocol
+            '((' +
+                'localhost' + // domain name
+            '|' + 
+                '([\\w-]+\\.)+[a-zA-Z]{2,}' + // domain name
+            '|' + 
+                '((\\d{1,3}\\.){3}\\d{1,3})' + // OR ip (v4) address
+            ')' +
+            '(\\:\\d+)?)?' + // port
+            '(\\/[-\\w%.~+@()]*?)*?' + // path
+            '(\\?[-;&\\w%.~+=()/]*?)?'+ // query string
+            '(\\#[-\\w/()]*?)?' +
+        ')$', 'i'); // fragment locater
+
+    component.url = {
+        props: ['href'],
+        computed: {
+            _href: function () {
+                if (!this.href) {
+                    return "#";
+                }
+
+                try {
+                    var parser = document.createElement("a");
+                    parser.href = this.href;
+                    if (parser.protocol !== "" && parser.protocol !== "http:" && parser.protocol !== "https:" && parser.protocol !== "mailto:" && parser.protocol !== "tel:" && parser.protocol !== "action:") {
+                        console.warn("Bad url protocol: " + this.href + " - " + parser.protocol);
+                        return "";
+                    } else if (!url_pattern.test(this.href)) {
+                        console.warn("Bad url pattern: " + this.href);
+                        return "";
+                    } else {
+                        return this.href + (this.internal && this.$route.query.lang ? (this.href.indexOf('?')<0 ? '?' : '&') + 'lang=' + this.$route.query.lang : '');
+                    }
+                }
+                catch (e) {
+                    console.warn("Bad url exception: " + this.href);
+                    return "";
+                }
+            },
+            internal: function () {
+                return this.href && this.href[0] === "/";
+            },
+            action: function () {
+                return this.href && this.href.substr(0, 7) === "action:";
+            }
+        },
+        methods: {
+            goto_action: function () {
+                goto_action(this._href.replace('action:', ''));
+                this.$emit('click');
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="card">
+   <template>
+    <div class="card mb-4">
+     <div class="card-header py-0">
+      <h1>
+       {{ title }}
+       <i class="fas fa-times float-right no-drag" style="line-height:1.2; cursor: pointer" v-if="show_close">
+       </i>
+      </h1>
+     </div>
+     <div class="card-body no-drag smallscroll">
+      <slot>
+      </slot>
+     </div>
+    </div>
+   </template>
+   <script>
+    component.card = {
+        props: ['title', 'show_close'],
+        methods: {
+            close: function() {
+                this.$emit('close');
+            }
+        }
+    }
+   </script>
+  </div>
+  <div class="component" data-name="logo">
+   <template>
+    <img alt="XS2 Exchange Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMzkuOTEgNjYuNzMiPjxkZWZzPjxzdHlsZT4ubHtmaWxsOiM1OTkzZGR9PC9zdHlsZT48Y2xpcFBhdGggaWQ9ImEiPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik04LjU1IDQ1LjkzTDMwLjMzIDU4LjVWMzMuMzZMOC41NSAyMC43OXYyNS4xNHoiLz48L2NsaXBQYXRoPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9IjExLjIiIHkxPSI0Ni4wMyIgeDI9IjQ0LjM5IiB5Mj0iMjAuMzQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM3MjhhZWEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3MjhhZWEiIHN0b3Atb3BhY2l0eT0iMCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iNDkuMTMiIHkxPSI0NS43NyIgeDI9IjE3LjIxIiB5Mj0iMjEuMDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4wMSIgc3RvcC1jb2xvcj0iIzllZGVmNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzllZGVmNiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImQiIHgxPSIzMC4zMyIgeTE9IjMwLjYzIiB4Mj0iMzAuMzMiIHkyPSI4LjEyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOWJkY2Y2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOWJkY2Y2IiBzdG9wLW9wYWNpdHk9IjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMzAuMzMgMzMuMzZMOC41NSAyMC43OSAzMC4zMyA4LjIyIDUyLjEgMjAuNzl6IiBmaWxsPSIjMmE5ZGRkIi8+PHBhdGggZD0iTTUyLjEgNDUuOTNMMzAuMzMgNTguNVYzMy4zNkw1Mi4xIDIwLjc5eiIgZmlsbD0iIzMxODViMyIvPjxwYXRoIGQ9Ik0zMC4zMyA1OC41TDguNTUgNDUuOTNsMjEuNzgtMTIuNTdMNTIuMSA0NS45M3oiIGZpbGw9IiMyZDk4ZDIiLz48cGF0aCBkPSJNOC41NSAyMC43OWwyMS43OCAxMi41N1Y1OC41TDguNTUgNDUuOTN6IiBmaWxsPSIjMmE3Mjk5Ii8+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBkPSJNMzAuMzMgNTguNUw4LjU1IDQ1LjkzbDIxLjc4LTEyLjU3TDUyLjEgNDUuOTN6IiBmaWxsPSIjMjM3ZmIxIi8+PC9nPjxwYXRoIGZpbGw9IiMyZmE5ZWQiIGQ9Ik0zMC4zMyAzMy4zNkw1Mi4xIDIwLjc5IDMwLjMzIDguMjJ2MjUuMTR6Ii8+PHBhdGggZD0iTTguNTUgMjAuNzlsMjEuNzggMTIuNTdWNTguNUw4LjU1IDQ1LjkzeiIgZmlsbD0idXJsKCNiKSIgb3BhY2l0eT0iLjg0Ii8+PHBhdGggZD0iTTUyLjEgNDUuOTNMMzAuMzMgNTguNVYzMy4zNkw1Mi4xIDIwLjc5eiIgZmlsbD0idXJsKCNjKSIvPjxwYXRoIGQ9Ik0zMC4zMyAzMy4zNkw4LjU1IDIwLjc5IDMwLjMzIDguMjIgNTIuMSAyMC43OXoiIGZpbGw9InVybCgjZCkiIG9wYWNpdHk9Ii44NCIvPjxwYXRoIGNsYXNzPSJsIiBkPSJNMTA1LjI2IDI3LjMxQTYuMTEgNi4xMSAwIDAgMCAxMDEgMjUuNWEzLjE1IDMuMTUgMCAwIDAtMi40NS44NiAyLjI2IDIuMjYgMCAwIDAtLjYxIDEuNjQgMS43NSAxLjc1IDAgMCAwIC41NiAxLjRjLjYxLjU3IDEuNDguNzkgMy4xNyAxLjQzbDEuODkuNzJhMTAgMTAgMCAwIDEgMy40NCAxLjg4IDYuMjkgNi4yOSAwIDAgMSAxLjg1IDQuNjggOSA5IDAgMCAxLTIuMjMgNi4yNGMtMi4yMiAyLjM0LTUuNDcgMi41Ni03LjE0IDIuNTZhMTAuNjggMTAuNjggMCAwIDEtNS0xIDE2LjE2IDE2LjE2IDAgMCAxLTMuNy0yLjc2bDMtNC4xNmExNS4xNCAxNS4xNCAwIDAgMCAyLjM0IDEuOTMgNS44IDUuOCAwIDAgMCAzLjE3LjkxIDQgNCAwIDAgMCAyLjY1LS44NyAyLjYyIDIuNjIgMCAwIDAgLjktMiAyLjI0IDIuMjQgMCAwIDAtLjg3LTEuODIgMTIuMjggMTIuMjggMCAwIDAtMi45NC0xLjM5TDk3IDM0Ljk0YTguNDggOC40OCAwIDAgMS0zLjUxLTJBNi4yMSA2LjIxIDAgMCAxIDkyIDI4LjU2YTcuNzYgNy43NiAwIDAgMSAyLjE5LTUuNjcgOC4xMiA4LjEyIDAgMCAxIDYuMjMtMi4zMSAxMi4yIDEyLjIgMCAwIDEgNy40OCAyLjV6Ii8+PHBhdGggZD0iTTEzMC40NiA0Ni4zNWgtMTkuMjdsNy41Ni04LjI0YTYwLjg3IDYwLjg3IDAgMCAwIDQuMTItNS4xMSA4LjYxIDguNjEgMCAwIDAgMS41MS00LjI3IDMuNTQgMy41NCAwIDAgMC0xLTIuNSAzLjQ0IDMuNDQgMCAwIDAtMi4zLS43MSAyLjk0IDIuOTQgMCAwIDAtMi4zLjkgNS4xNCA1LjE0IDAgMCAwLTEuMDYgMy4xaC01LjgyYTEwLjg0IDEwLjg0IDAgMCAxIDIuNjEtNi4zMSA5LjE0IDkuMTQgMCAwIDEgNy0yLjYxQTkgOSAwIDAgMSAxMjggMjNhOC40MyA4LjQzIDAgMCAxIDIuMzQgNiA4Ljk0IDguOTQgMCAwIDEtMS44OCA1LjU1IDMyLjY0IDMyLjY0IDAgMCAxLTQuMDUgNC4zNWwtMi42NCAyLjUzaDguNjl6IiBmaWxsPSIjNTI1MjUyIi8+PHBhdGggY2xhc3M9ImwiIGQ9Ik04OS4xNiAyMC43Nkg4Mi4ybC00Ljg1IDcuMzQtNC44NS03LjM0aC02Ljk2bDguMzMgMTIuNi04LjMzIDEyLjZoNi45Nmw0Ljg1LTcuMzQgNC44NSA3LjM0aDYuOTZsLTguMzMtMTIuNiA4LjMzLTEyLjZ6Ii8+PC9zdmc+"/>
+   </template>
+   <script>
+    component.logo = {
+        props: []
+    };
+   </script>
+  </div>
+  <div class="component" data-name="number">
+   <template>
+    <p class="text-center m-0">
+     <span style="font-size:30px" v-if="prefix">
+      {{ prefix }}
+     </span>
+     <span class="align-top" style="padding-top: 8px; display: inline-block;">
+      {{ pre }}
+     </span>
+     <span style="font-size:30px">
+      {{ main }}
+     </span>
+     <span class="align-top" style="padding-top: 8px; display: inline-block;">
+      {{ post }}
+     </span>
+     <br/>
+     <span style="font-size: 11px; color: #959595;" v-if="usd_value">
+      {{ usd_value | fusd }}
+      <br/>
+     </span>
+     <span class="text-uppercase" style="font-size: 12px; font-weight: 700; color: #959595; letter-spacing: 1px;">
+      {{ heading }}
+     </span>
+    </p>
+   </template>
+   <script>
+    component.number = {
+        props: ['heading', 'value', 'usd_value', 'prefix', 'is_int'],
+        computed:
+        {
+            absv: function () {
+                return as.number(this.value).abs();
+            },
+            pre: function () {
+                if (this.absv.lt("1") && this.absv.gt("0")) { return (as.number(this.value).lt("0") ? "-" : "") + "0" + BigNumber.config().FORMAT.decimalSeparator + new RegExp("0*").exec(fvolume(this.absv).substr(2, 8)); }
+                if (as.number(this.value).lte("-1")) { return "-" }
+            },
+            main: function () {
+                if (this.absv.eq("0")) { return "0"; }
+                if (this.absv.lt("1")) { return fvolume(this.absv).substr(this.pre.length, 3); }
+                if (this.absv.gte("1") && this.absv.lt("1000")) { return new RegExp("[0-9]*").exec(fvolume(this.absv)) + ""; }
+                if (this.absv.gte("1000")) { return fround(this.absv.dp(0, BigNumber.ROUND_FLOOR), 0); }
+            },
+            post: function () {
+                if (this.absv.eq("0")) { return this.is_int ? "" : BigNumber.config().FORMAT.decimalSeparator + "00"; }
+                if (this.absv.gt("0") && this.absv.lt("1")) { return fvolume(this.absv).substr(this.pre.length + this.main.length, 3); }
+                if (this.absv.gte("1") && this.absv.lt("1000")) { return fvolume(this.absv).substr(this.main.length, 3); }
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="popover">
+   <template>
+    <div :data-content="content" data-toggle="popover" style="display: inline-block">
+     <slot>
+     </slot>
+    </div>
+   </template>
+   <script>
+    component.popover = {
+        props: ['content', 'always'],
+        mounted: function() {
+            $(this.$el).popover({ trigger: this.always ? "manual" : "hover", placement: "bottom" });
+            if (this.always) {
+                $(this.$el).popover('show');
+            }
+        },
+        beforeDestroy: function() {
+            $(this.$el).popover('dispose');
+        }
+    }
+   </script>
+  </div>
+  <div class="component" data-name="form_input">
+   <template>
+    <div :class="container_classes">
+     <assign :object="model" :required="!readonly &amp;&amp; !optional">
+     </assign>
+     <event :name="model.event" v-if="model.event &amp;&amp; !readonly">
+     </event>
+     <input :checked="model.checked" :class="input_classes" :id="uuid" :type="model.type" :value="readonly_value" readonly="readonly" ref="input" v-if="model.type === 'checkbox' &amp;&amp; readonly"/>
+     <input :autocomplete="model.autocomplete" :class="input_classes" :id="uuid" :type="model.type" :value="readonly_value" ref="input" v-else-if="model.type === 'checkbox' &amp;&amp; !readonly" v-model="model.checked"/>
+     <label :for="uuid" v-if="title">
+      {{ title }}
+     </label>
+     <label :for="uuid" v-if="$slots.title">
+      <slot name="title">
+      </slot>
+     </label>
+     <div :class="group_classes" v-if="model.type !== 'checkbox'">
+      <div class="input-group-prepend" v-if="prefix">
+       <div class="input-group-text">
+        {{ prefix }}
+       </div>
+      </div>
+      <input :class="input_classes" :id="uuid" :placeholder="placeholder" :type="model.type" :value="readonly_value" readonly="readonly" ref="input" v-if="readonly"/>
+      <input :autocomplete="model.autocomplete" :class="input_classes" :id="uuid" :inputmode="model.inputmode" :min="model.sign ? '0' : undefined" :placeholder="placeholder" :step="model.type === 'number' ? 'any' : undefined" :type="model.type" ref="input" v-else-if="!model.options" v-model="model.string_value"/>
+      <select :autocomplete="model.autocomplete" :class="input_classes" :id="uuid" ref="input" v-else="" v-model="model.string_value">
+       <option v-if="optional" value="">
+        {{ placeholder || t('None selected') }}
+       </option>
+       <option :value="typeof o === 'object' ? o[1] : o" v-for="o in model.options">
+        {{ (typeof o === 'object' ? o[0] : o) || '' }}
+       </option>
+      </select>
+      <div class="input-group-append" v-if="label &amp;&amp; (!labels || labels.length &lt; 2)">
+       <div class="input-group-text">
+        {{ label_name }}
+       </div>
+      </div>
+      <div class="input-group-append" v-else-if="labels &amp;&amp; labels.length &gt;= 2">
+       <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" type="button">
+        {{ label_name }}
+       </button>
+       <div class="dropdown-menu">
+        <a :="" class="dropdown-item" href="#" lbl="==" typeof="" v-for="lbl in labels">
+         {{ typeof lbl === 'object' ? lbl[0] : lbl }}
+        </a>
+       </div>
+      </div>
+      <div class="input-group-append" v-if="buttonicon">
+       <div class="input-group-text">
+        <a href="#" window.jquery="">
+         <i :class="buttonicon">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+     <small class="form-text text-muted" v-if="!suppress_all_hints">
+      <span v-if="model.invalid_message">
+       {{ model.invalid_message }}
+      </span>
+      <slot name="validations" v-else="">
+      </slot>
+      <slot>
+      </slot>
+     </small>
+    </div>
+   </template>
+   <script>
+    component.form_input = {
+        props: {
+            model: { type: Object },
+            optional: { type: Boolean, default: false },
+
+            readonly: { type: Boolean, default: false },
+            size: String,
+            title: String,
+            prefix: String,
+            placeholder: String,
+            autofocus: { type: Boolean, default: false },
+
+            label: null,
+            labels: Array,
+
+            buttonicon: String,
+
+            suppress_all_hints: { type: Boolean, default: false }
+        },
+        data: function () {
+            return { has_hint: false };
+        },
+        computed: {
+            readonly_value: function () {
+                if (!this.model.options || this.model.options.length === 0 || typeof this.model.options[0] !== 'object') { return this.model.string_value; }
+                for (var i in this.model.options) {
+                    if (this.model.options[i][1] === this.model.string_value) {
+                        return this.model.options[i][0];
+                    }
+                }
+                return this.model.string_value;
+            },
+            label_name: function () {
+                if (!this.labels || this.labels.length === 0 || typeof this.labels[0] !== 'object') { return this.label; };
+                for (var i in this.labels) {
+                    if (this.labels[i][1] === this.label) {
+                        return this.labels[i][0];
+                    }
+                }
+                return this.label;
+            },
+
+            container_classes: function () {
+                return this.model.type === "checkbox" ? "form-check" : "form-group";
+            },
+            group_classes: function () {
+                var classes = ["input-group"];
+                if (this.label && (!this.labels || this.labels.length < 2)) { classes.push("blend-input-group-text"); }
+                return classes.join(" ");
+            },
+            input_classes: function () {
+                var classes = [this.model.type === "checkbox" ? "form-check-input" : "form-control"];
+                if (this.model.empty) {
+                    if (this.optional) { classes.push("is-valid"); }
+                }
+                else {
+                    classes.push(this.model.valid ? "is-valid" : "is-invalid");
+                }
+                if (this.size === "large") { classes.push("form-control-lg"); }
+                return classes.join(" ");
+            }
+        },
+        mounted: function () {
+            this.check_html_validity();
+            if (this.autofocus) {
+                this.focus();
+            }
+        },
+        methods: {
+            check_html_validity: function () {
+                var valid = this.$refs.input && typeof this.$refs.input.validity !== "undefined" ? this.$refs.input.validity.valid : null;
+                if (this.model.validity_valid !== valid) {
+                    this.model.validity_valid = valid;
+                }
+
+                var self = this;
+                Vue.nextTick(function () {
+                    self.$emit('input', self.model.value);
+                })
+            },
+            click: function () {
+                this.$emit("click", this.$refs.input);
+            },
+            focus: function () {
+                $(this.$refs.input).focus();
+            },
+            select: function () {
+                $(this.$refs.input).select();
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="validator">
+   <template>
+    <span>
+     <slot>
+     </slot>
+    </span>
+   </template>
+   <script>
+    component.validator = {
+        props: ['model'],
+        mounted: function () {
+            Vue.set(this.model.invalids, this.uuid, true);
+        },
+        beforeDestroy: function () {
+            Vue.delete(this.model.invalids, this.uuid);
+        }
+    }
+   </script>
+  </div>
+  <div class="component" data-name="spinbutton">
+   <template>
+    <button class="btn btn-primary" type="submit" v-bind:disabled="!all_valid || submitting">
+     <slot>
+     </slot>
+    </button>
+   </template>
+   <script>
+    component.spinbutton = {
+        props: {
+            valid: { type: Array, default: function () { return []; } }
+        },
+        data: function () {
+            return {
+                submitting: false,
+            };
+        },
+        computed: {
+            all_valid: function () {
+                var valid = true;
+                this.valid.forEach(function (input) {
+                    if (input === false || input.valid === false) {
+                        valid = false;
+                    }
+                });
+
+                return valid;
+            }
+        },
+        methods: {
+            submit: function () {
+                this.spin();
+                this.$emit("click");
+            },
+            spin: function () {
+                this.submitting = true;
+            },
+            done: function () {
+                this.submitting = false;
+            }
+        }
+    }
+   </script>
+  </div>
+  <div class="component" data-name="scrollcontent">
+   <template>
+    <div :style="'position: relative; overflow:hidden; height: 100%;' + (maxheight ? 'max-height: ' + maxheight + ';' : '')">
+     <div :style="maxheight ? 'max-height: ' + maxheight + ';' : ''" class="scrollcontent at_top at_bottom">
+      <onscroll>
+      </onscroll>
+      <div class="scrolltop">
+       <i class="fas fa-angle-up">
+       </i>
+      </div>
+      <slot>
+      </slot>
+      <div class="scrollbottom">
+       <i class="fas fa-angle-down">
+       </i>
+      </div>
+     </div>
+    </div>
+   </template>
+   <script>
+    component.scrollcontent = {
+        props: ['maxheight']
+    }
+   </script>
+  </div>
+  <div class="component" data-name="scrolltable">
+   <template>
+    <div :style="'position: relative; overflow:hidden; height: 100%;' + (maxheight ? 'max-height: ' + maxheight + ';' : '')">
+     <div :style="maxheight ? 'max-height: ' + maxheight + ';' : ''" class="scrolltable at_top at_bottom">
+      <onscroll>
+      </onscroll>
+      <slot>
+      </slot>
+      <div class="scrollbottom">
+       <i class="fas fa-angle-down">
+       </i>
+      </div>
+     </div>
+    </div>
+   </template>
+   <script>
+    component.scrolltable = {
+        props: ['maxheight']
+    }
+   </script>
+  </div>
+  <div class="component" data-name="modal">
+   <template>
+    <div class="modal fade" role="dialog" tabindex="-1">
+     <div class="modal-dialog" role="document">
+      <form class="modal-content" v-on:submit.prevent="$emit('submit')">
+       <div class="modal-header">
+        <h5 class="modal-title">
+         {{ title }}
+        </h5>
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+         <span aria-hidden="true">
+          ×
+         </span>
+        </button>
+       </div>
+       <div class="modal-body">
+        <slot v-if="showing">
+        </slot>
+       </div>
+       <div class="modal-footer" v-if="expanded_buttons.length || $slots.footer">
+        <slot name="footer" v-if="showing">
+        </slot>
+        <template v-for="button in expanded_buttons">
+         <button :class="'btn btn-' + (button.class || 'primary')" type="submit" v-if="button.event === 'submit'">
+          <t>
+           {{ button.text }}
+          </t>
+         </button>
+         <button :class="'btn btn-' + (button.class || 'primary')" :data-dismiss="button.close === false ? undefined : 'modal'" type="button" v-else="">
+          <t>
+           {{ button.text }}
+          </t>
+         </button>
+        </template>
+       </div>
+      </form>
+     </div>
+    </div>
+   </template>
+   <script>
+    component.modal = {
+        data: function () {
+            return {
+                showing: false  
+            }
+        },
+        props: ['title', 'buttons'],
+        mounted: function() {
+            var self = this;
+            $(this.$el).on('show.bs.modal', function (e) {
+                $('.modal.show').not(self.$el).each(function () {
+                    this.__vue__.close();
+                });
+                self.showing = true;
+                self.$emit('show');
+            });
+            $(this.$el).on('hidden.bs.modal', function (e) {
+                self.$emit('closed');
+                self.showing = false;
+            });
+        },
+        beforeDestroy: function () {
+            this.close();
+        },
+        methods: {
+            show: function () {
+                $(this.$el).modal('show');
+            },
+            close: function () {
+                $(this.$el).modal('hide');
+            }
+        },
+        computed: {
+            expanded_buttons: function () {
+                if (!this.buttons || !this.buttons.length) { return []; };
+                return this.buttons.map(function (b) {
+                    if (b === 'submit') return { class: 'primary', text: 'Ok', event: 'submit' };
+                    if (b === 'ok') return { class: 'primary', text: 'Ok', event: 'ok' };
+                    if (b === 'yes') return { class: 'primary', text: 'Yes', event: 'yes' };
+                    if (b === 'no') return { class: 'secondary', text: 'No', event: 'no' };
+                    if (b === 'cancel') return { class: 'secondary', text: 'Cancel', event: 'cancel' };
+                    return b;
+                })
+            }
+        }
+    }
+   </script>
+  </div>
+  <div class="component" data-name="tile">
+   <template>
+    <div class="tile card" v-if="!no_card">
+     <transition name="fade">
+      <div class="drag" style="z-index:6; position: absolute; top: 0; bottom: 0; left:0; right:0; background:rgba(235, 235, 235, .5); border:solid #ddd 1px; margin: -2px;" v-if="editing">
+       <span style="float: right; margin: 10px; margin-right: 15px; font-size: 16pt; cursor:pointer;">
+        <i class="fas fa-times">
+        </i>
+       </span>
+       <div class="text-center" style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);">
+        <form class="text-left no-drag" style="max-width: 360px; margin-left: auto; margin-right: auto;" v-on:submit.prevent="">
+         <slot name="settings">
+         </slot>
+        </form>
+       </div>
+      </div>
+     </transition>
+     <div class="drag" style="z-index:5; position: absolute; top: 0; bottom: 0; left:0; right:0;" v-if="login_required &amp;&amp; !app.is_logged_in">
+      <transition name="fade">
+       <div style="position: absolute; top: 0; bottom: 0; left:0; right:0; background:rgba(198, 198, 198, .85);" v-if="show_login_info">
+        <div class="text-center" style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%); width: 100%;">
+         <h3>
+          <t>
+           You are not logged in
+          </t>
+         </h3>
+         <p>
+          <button class="btn btn-primary btn-lg mt-3" type="button">
+           <t>
+            Register
+           </t>
+          </button>
+          <button class="btn btn-primary btn-lg mt-3" type="button">
+           <t>
+            Login
+           </t>
+          </button>
+         </p>
+        </div>
+       </div>
+      </transition>
+     </div>
+     <h5>
+      {{ title }}
+     </h5>
+     <div :style="styles" class="tile-body no-drag">
+      <slot>
+      </slot>
+     </div>
+    </div>
+    <div :style="styles" class="tile" v-else="">
+     <div :style="styles" class="tile-body no-title">
+      <transition name="fade">
+       <div class="drag" style="z-index:6; position: absolute; top: 0; bottom: 0; left:0; right:0; background:rgba(235, 235, 235, .5); border:solid #ddd 1px; margin: -2px;" v-if="editing">
+        <span style="float: right; margin: 10px; margin-right: 15px; font-size: 16pt; cursor:pointer;">
+         <i class="fas fa-times">
+         </i>
+        </span>
+        <div class="text-center" style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);">
+         <form class="text-left no-drag" style="max-width: 360px; margin-left: auto; margin-right: auto;" v-on:submit.prevent="">
+          <slot name="settings">
+          </slot>
+         </form>
+        </div>
+       </div>
+      </transition>
+      <div class="drag" style="z-index:5; position: absolute; top: 0; bottom: 0; left:0; right:0;" v-if="login_required &amp;&amp; !app.is_logged_in">
+       <transition name="fade">
+        <div style="position: absolute; top: 0; bottom: 0; left:0; right:0; background:rgba(198, 198, 198, .85);" v-if="show_login_info">
+         <div class="text-center" style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%); width: 100%;">
+          <h3>
+           <t>
+            You are not logged in
+           </t>
+          </h3>
+          <p>
+           <button class="btn btn-primary btn-lg mt-3" type="button">
+            <t>
+             Register
+            </t>
+           </button>
+           <button class="btn btn-primary btn-lg mt-3" type="button">
+            <t>
+             Login
+            </t>
+           </button>
+          </p>
+         </div>
+        </div>
+       </transition>
+      </div>
+      <slot>
+      </slot>
+     </div>
+    </div>
+   </template>
+   <script>
+    component.tile = {
+        data: function () {
+            return {
+                show_login_info: false
+            };
+        },
+        props: ['item', 'title', 'editing', 'no_card', 'transparent', 'no_padding', 'display_flex', 'login_required', 'size'],
+        computed: {
+            styles: function () {
+                return ''
+                    + (this.display_flex ? 'display: flex; height: 100%;' : '')
+                    + (this.no_padding ? 'padding:0;' : '')
+                    + (!this.transparent ? 'background:#FFF;' : '')
+            }
+        },
+        methods: {
+            remove: function() {
+                this.$emit('remove');
+            },
+            register: function () {
+                goto_action('signup')
+            },
+            login: function () {
+                goto_action('login')
+            }
+        }
+    }
+   </script>
+  </div>
+  <div class="component" data-name="fluidlayout">
+   <template>
+    <widthof v-model="width">
+     <div style="position: fixed; top: 0px; left: 50%; transform: translate(-50%); z-index: 1800; background: rgb(98, 203, 146); padding: 7px;" v-if="editing">
+      <h4 style="margin: 0">
+       <span class="mr-3" style="margin: 0; cursor:pointer">
+        <i class="far fa-save">
+        </i>
+        <t>
+         Save
+        </t>
+       </span>
+       <span style="margin: 0; cursor:pointer">
+        <i class="fas fa-times">
+        </i>
+        <t>
+         Cancel
+        </t>
+       </span>
+      </h4>
+     </div>
+     <grid-layout :col-num="12" :id="name + '_fluidlayout'" :is-draggable="editing" :is-resizable="editing" :layout="layout" :margin="[20, 20]" :row-height="30" :style="first_render ? 'transition: none;' : ''" :use-css-transforms="false" :vertical-compact="true">
+      <grid-item :h="item.h" :i="item.i" :key="item.i" :min-h="window.component[item.c].minH" :min-w="Math.floor((window.component[item.c].minW || 0) / tile_width) + 1" :style="(first_render ? 'transition: none;' : '')" :w="item.w" :x="item.x" :y="item.y" drag-allow-from=".drag" drag-ignore-from=".no-drag" v-for="item in layout">
+       <tile :display_flex="window.component[item.c].display_flex" :editing="editing" :item="item" :login_required="window.component[item.c].login_required" :no_card="window.component[item.c].no_card" :no_padding="window.component[item.c].no_padding" :size="item.w * tile_width" :title="item.title || t(window.component[item.c].title)" :transparent="window.component[item.c].transparent" style="height: 100%;">
+        <component :base_symbol="info.base_symbol" :is="item.c" :label="info.label" :settings="item.settings" :size="item.w * tile_width" :symbol="info.coin_symbol" :wallet="info.wallet">
+        </component>
+        <template slot="settings">
+         <form_input :key="setting.id" :model="item.models[setting.id]" :optional="typeof setting.default === 'undefined'" :placeholder="t(setting.placeholder)" :title="t(setting.name)" v-for="setting in window.component[item.c].settings_info || []" v-model="item.settings[setting.id]">
+         </form_input>
+        </template>
+       </tile>
+      </grid-item>
+     </grid-layout>
+     <div class="text-center mt-4" v-if="!layout.length">
+      <t>
+       You've removed all panels, use the layout menu in the bottom right corner to create your custom layout.
+      </t>
+      <a href="#">
+       <t>
+        Click here to Reset the layout.
+       </t>
+      </a>
+     </div>
+     <div style="position: fixed;right: 20px;bottom: 20px; z-index:10">
+      <nav class="navbar navbar-expand bg-light p-0">
+       <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+         <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+          <i class="far fa-edit" style="font-size: 30px; opacity: 0.5">
+          </i>
+         </a>
+         <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right" style="top: initial; bottom: 100%; max-height: calc(100vh - 180px); overflow: auto">
+          <a class="dropdown-item" href="#">
+           <t>
+            Import Layout
+           </t>
+          </a>
+          <a class="dropdown-item" href="#">
+           <t>
+            Export Layout
+           </t>
+          </a>
+          <a class="dropdown-item" href="#">
+           <t>
+            Reset Layout
+           </t>
+          </a>
+          <div class="dropdown-divider">
+          </div>
+          <template v-for="component in components">
+           <a class="dropdown-item" href="#" v-if="component">
+            <t>
+             Add {{ window.component[component].component_name }}
+            </t>
+           </a>
+           <div class="dropdown-divider" v-else="">
+           </div>
+          </template>
+          <div class="dropdown-divider">
+          </div>
+          <a class="dropdown-item" href="#">
+           <t>
+            Edit Layout
+           </t>
+          </a>
+         </div>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <modal :buttons="[{ text: t('Copy'), close: false, class: 'secondary', event: 'copy' }, 'ok']" ref="export" t-title="Export Layout">
+      <selectable ref="layouttext" t-name="Layout">
+       {{ clean_layout }}
+      </selectable>
+     </modal>
+     <modal :buttons="['cancel', 'ok']" ref="import" t-title="Enter Layout Definition">
+      <textarea ref="new_layout" style="width: 100%; height: 200px;"></textarea>
+     </modal>
+    </widthof>
+   </template>
+   <script>
+    component.fluidlayout = {
+        props: [
+            'name',
+            'components',
+            'default_layout',
+            'info'
+        ],
+        data: function () {
+            return {
+                layout: this.parse_layout(localStorage.getItem(this.name + 'Layout')),
+                first_render: true,
+                editing: false,
+                width: $("body")[0].offsetWidth
+            }
+        },
+        mounted: function () {
+            var self = this;
+            sleep(500).then(function(){ self.first_render = false; });
+        },
+        computed:
+        {
+            tile_width: function () {
+                return this.width / 12;
+            },
+            max_i: function () {
+                var m = 0;
+                this.layout.forEach(function (item) { m = item.i > m ? item.i : m; });
+                return m;
+            },
+            max_y: function () {
+                var m = 0;
+                this.layout.forEach(function (item) { m = item.y + item.h > m ? item.y + item.h : m; });
+                return m;
+            },
+            clean_layout: function () {
+                return JSON.stringify(this.layout.map(function (d) { var k = JSON.parse(JSON.stringify(d)); delete k.models; delete k.moved; delete k.title; return k }));
+            }
+        },
+        methods:
+        {
+            parse_layout: function (string_layout) {
+                var layout = JSON.parse(string_layout || this.default_layout);
+
+                var self = this;
+                layout.forEach(function (item) {
+                    item.title = '';
+                    item.models = {};
+                    if (component[item.c].settings_info) {
+                        component[item.c].settings_info.forEach(function (setting) {
+                            if (typeof item.settings[setting.id] === 'undefined') {
+                                item.settings[setting.id] = setting.default;
+                            }
+                            item.models[setting.id] = self.settingModel(setting, item.settings[setting.id]);
+                        });
+                    }
+                });
+
+                return layout;
+            },
+            load: function () {
+                this.layout = this.parse_layout(localStorage.getItem(this.name + 'Layout'));
+            },
+            save: function () {
+                localStorage.setItem(this.name + 'Layout', this.clean_layout);
+            },
+            reset_layout: function () {
+                this.layout = this.parse_layout();
+                this.save();
+            },
+            add_component: function (name) {
+                var self = this;
+
+                var new_item = {
+                    "x": 0,
+                    "y": this.max_y,
+                    "w": 6,
+                    "h": 8,
+                    "i": this.max_i + 1,
+                    "c": name,
+                    "title": '',
+                    "settings": {},
+                    "models": {}
+                }
+                if (component[name].settings_info) {
+                    component[name].settings_info.forEach(function (setting) {
+                        new_item.settings[setting.id] = setting.default;
+                        new_item.models[setting.id] = self.settingModel(setting, new_item.settings[setting.id]);
+                    });
+                }
+                this.layout.push(new_item);
+                if (!this.editing) {
+                    this.save();
+                }
+            },
+            set_editing: function () {
+                this.editing = true;
+            },
+            finish_editing: function () {
+                this.editing = false;
+                this.save();
+            },
+            cancel_editing: function () {
+                this.editing = false;
+                this.load();
+            },
+            remove_card: function (id) {
+                for (var i = 0; i < this.layout.length; i++) {
+                    if (this.layout[i].i === id) {
+                        this.layout.splice(i, 1);
+                        break;
+                    }
+                }
+            },
+            remove_all: function () {
+                this.layout = [];
+                this.removing = false;
+            },
+            export_layout: function () {
+                this.$refs.export.show();
+            },
+            import_layout: function () {
+                this.$refs.import.show();
+            },
+            import_layout_event: function () {
+                if (this.$refs.new_layout.value) {
+                    this.layout = this.parse_layout(this.$refs.new_layout.value);
+                    this.save();
+                }
+            },
+            settingModel: function(setting, value) {
+                var inputType = window["Input" + setting.type];
+                if (typeof value === 'undefined') {
+                    value = setting.default;
+                }
+                if (typeof inputType === "function") {
+                    return inputType(setting.options).setValue(value);
+                }
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="xskey">
+   <template>
+    <li class="nav-item" key="disconnected" v-if="!app.connected">
+     <popover always="true" t-content="Not connected to the server. Attempting to reconnect...">
+      <url class="nav-link" href="/customer/summary">
+       <i class="fas fa-plug" style="color:tomato">
+       </i>
+      </url>
+     </popover>
+    </li>
+    <li class="nav-item" v-else-if="app.current_device &amp;&amp; !app.customer.is_restricted">
+     <popover key="installed" t-content="XSKey installed" v-if="app.current_device.is_authorised">
+      <url class="nav-link" href="/customer/summary">
+       <i class="fas fa-key" style="color:#6290C3">
+       </i>
+      </url>
+     </popover>
+     <popover key="notinstalled" t-content="No XSKey, you cannot trade, deposit or withdraw. Click to add your XSKey" v-else="">
+      <a class="nav-link" href="#" onclick="window.main.$refs['authorisedevice'].show(); return false;">
+       <i class="fas fa-key" style="color:#ffbbbb">
+       </i>
+      </a>
+     </popover>
+    </li>
+    <li class="nav-item" v-else-if="app.current_device &amp;&amp; app.customer.is_restricted">
+     <popover key="restricted" t-content="Account restricted, you cannot trade, deposit or withdraw.">
+      <url class="nav-link" href="/customer/summary" style="position:relative;">
+       <i :style="app.current_device.is_authorised ? 'color:#6290C3' : 'color:#ffbbbb'" class="fas fa-key">
+       </i>
+       <i class="fas fa-ban" style="color: tomato; position: absolute; left: 7px; top: 9px;">
+       </i>
+      </url>
+     </popover>
+    </li>
+    <li v-else="">
+    </li>
+   </template>
+   <script>
+    component.xskey = {
+        props: []
+    }
+   </script>
+  </div>
+  <div class="component" data-name="navbar">
+   <template>
+    <nav class="navbar navbar-expand sticky-top navbar-light bg-white" v-if="app.show_navbars">
+     <url class="nav-link p-0 pr-2" href="/">
+      <logo height="30">
+      </logo>
+     </url>
+     <ul class="d-none d-md-flex navbar-nav mr-auto">
+      <li class="nav-item" v-if="app.is_logged_in">
+       <url :href="'/wallet/' + url_wallet_id" class="nav-link">
+        <i class="fas fa-coins">
+        </i>
+        <t>
+         Wallets
+        </t>
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="/exchange/ETH/BTC">
+        <i class="fas fa-exchange-alt">
+        </i>
+        <t>
+         Exchange
+        </t>
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="/news">
+        <i class="far fa-newspaper">
+        </i>
+        <t>
+         News
+        </t>
+       </url>
+      </li>
+      <li class="nav-item" v-if="false">
+       <url class="nav-link" href="/tokens/overview">
+        <i class="fas fa-flask">
+        </i>
+        <t>
+         Info
+        </t>
+       </url>
+      </li>
+     </ul>
+     <ul class="navbar-nav my-0 ml-auto">
+     </ul>
+     <ul class="d-none d-md-flex navbar-nav my-0 ml-auto" v-if="app.is_logged_in">
+      <li class="nav-item">
+       <url :href="'/wallet/' + url_wallet_id" class="nav-link">
+        {{ wallet_total_btc | fshort_volume }} BTC
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="/customer/summary">
+        <i class="fas fa-user">
+        </i>
+        <t>
+         Account
+        </t>
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="action:logout">
+        <i class="fas fa-sign-out-alt">
+        </i>
+        <t>
+         Logout
+        </t>
+       </url>
+      </li>
+     </ul>
+     <ul class="d-flex d-md-none navbar-nav my-0 ml-auto" v-if="app.is_logged_in">
+      <li class="nav-item">
+       <url :href="'/wallet_mobile/' + url_wallet_id" class="nav-link">
+        {{ wallet_total_btc | fshort_volume }} BTC
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="/customer/summary">
+        <i class="fas fa-user">
+        </i>
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="action:logout">
+        <i class="fas fa-sign-out-alt">
+        </i>
+       </url>
+      </li>
+     </ul>
+     <ul class="navbar-nav my-0" v-if="!app.is_logged_in">
+      <li class="nav-item">
+       <url class="nav-link" href="action:login">
+        <t>
+         Login
+        </t>
+       </url>
+      </li>
+     </ul>
+     <ul class="navbar-nav">
+      <xskey>
+      </xskey>
+      <li class="nav-item dropdown" style="margin-right: -8px; margin-left: -3px;" v-if="app.customer.language">
+       <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="languageDropdown" role="button">
+        <i class="fas fa-globe-americas">
+        </i>
+       </a>
+       <div aria-labelledby="languageDropdown" class="dropdown-menu dropdown-menu-right pull-right" style="position: absolute; max-height: 400px; overflow-y: auto;">
+        <span :key="language.code" class="dropdown-item" style="cursor: pointer" v-for="language in app.languages">
+         {{ language.name }} ({{ language.name_local }})
+        </span>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </template>
+   <script>
+    component.navbar = {
+        mounted: function () {
+            $('#prerender_nav').remove();
+        },
+        computed: {
+            url_wallet_id: function () {
+                for (var id in app.wallets) {
+                    if (app.wallets[id].coin === 'BTC') { return id; }
+                }
+                return Object.keys(app.wallets)[0] || 0;
+            },
+            wallet_total_btc: function () {
+                var sum = as.number("0");
+                for (var id in app.wallets) {
+                    sum = sum.plus(app.wallets[id].balance.times(app.coin_btc(app.wallets[id].coin)));
+                }
+                return sum;
+            }
+        },
+        methods: {
+            change_language: function (code) {
+                xs2_api.SetLanguage(code);
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="navbarbottom">
+   <template>
+    <nav class="navbar sticky-bottom navbar-expand navbar-light bg-white d-flex d-md-none" style="box-shadow: 0 0 0 1px rgba(102, 136, 153, 0.1);" v-if="app.show_navbars">
+     <ul class="navbar-nav mx-auto">
+      <li class="nav-item" v-if="app.is_logged_in">
+       <url :href="'/wallets_mobile'" class="nav-link">
+        <i class="fas fa-coins">
+        </i>
+        <t>
+         Wallets
+        </t>
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="/exchange_mobile">
+        <i class="fas fa-exchange-alt">
+        </i>
+        <t>
+         Exchange
+        </t>
+       </url>
+      </li>
+      <li class="nav-item">
+       <url class="nav-link" href="/news">
+        <i class="far fa-newspaper">
+        </i>
+        <t>
+         News
+        </t>
+       </url>
+      </li>
+      <li class="nav-item" v-if="false">
+       <url class="nav-link" href="/tokens/overview">
+        <i class="fas fa-flask">
+        </i>
+        <t>
+         Info
+        </t>
+       </url>
+      </li>
+     </ul>
+    </nav>
+   </template>
+   <script>
+    component.navbarbottom = {
+        computed: {
+            url_wallet_id: function () {
+                for (var id in app.wallets) {
+                    if (app.wallets[id].coin === 'BTC') { return id; }
+                }
+                return Object.keys(app.wallets)[0] || 0;
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="watch">
+   <script>
+    component.watch = {
+        props: ['vm', 'call', 'default'],
+        mounted: function () {
+            this.$emit('change', this.vm, []);
+            this.make_api_call();
+        },
+        watch: {
+            vm: function (new_data, old_data) {
+                this.$emit('change', new_data, old_data);
+                this.make_api_call();
+            }
+        },
+        methods: {
+            clear: function () {
+                if (typeof this.default !== 'undefined') {
+                    this.$emit('input', this.default);
+                }
+            },
+            make_api_call: function () {
+                if (this.call) {
+                    this.clear();
+
+                    var self = this;
+                    xs2_api[this.call](self.vm)
+                        .data(function (data) {
+                            self.$emit('input', data);
+                        });
+                }
+            }
+        },
+        beforeDestroy: function () {
+            this.clear();
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="event">
+   <script>
+    component.event = {
+        props: ['name'],
+        mounted: function () {
+            var self = this;
+            self.trigger = function () {
+                self.$emit.apply(self, ["trigger"].concat(Array.prototype.slice.call(arguments)));
+            };
+            if (this.name) {
+                app.$on(this.name, this.trigger);
+            }
+        },
+        watch: {
+            name: function (oldname, newname) {
+                if (oldname) { app.$off(oldname, this.trigger); }
+                if (newname) { app.$on(newname, this.trigger); }
+            }
+        },
+        beforeDestroy: function () {
+            if (this.name) {
+                app.$off(this.name, this.trigger);
+            }
+        }
+    };
+   </script>
+   ;
+  </div>
+  <div class="component" data-name="subscription">
+   <script>
+    component.subscription = {
+        props: ['channel', 'symbol', 'label', 'interval'],
+        data: function () {
+            return {
+                current: null
+            };
+        },
+        computed: {
+            name: function () {
+                if (this.channel.toUpperCase() === "SITESTATISTICS") { return "SITESTATISTICS"; }
+                if (this.channel.toUpperCase() === "NEWS") { return this.symbol ? "NEWS_$" + this.symbol : "NEWS"; }
+                if (this.channel.toUpperCase() === "ORDERBOOK" && this.label) { return "ORDERBOOK_" + this.label; }
+                if (this.channel.toUpperCase() === "TRADES" && this.label) { return "TRADES_" + this.label; }
+                if (this.channel.toUpperCase() === "CHART" && this.label && this.interval) { return "CHART_" + this.label + "_" + this.interval; }
+                if (this.channel.toUpperCase() === "MY_OPENORDERS" && this.label) { return "MY_OPENORDERS_" + this.label; }
+                return null;
+            }
+        },
+        mounted: function () {
+            this.subscribe();
+        },
+        watch: {
+            name: function () {
+                if (this.name !== this.current) {
+                    this.unsubscribe();
+                    this.subscribe();
+                }
+            }
+        },
+        beforeDestroy: function () {
+            this.unsubscribe();
+        },
+        methods: {
+            subscribe: function () {
+                if (this.name) { this.current = this.name; app.subscribe(this.current); }
+            },
+            unsubscribe: function() {
+                if (this.current) { app.unsubscribe(this.current); this.current = null; }
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="widthof">
+   <template>
+    <div>
+     <slot>
+     </slot>
+    </div>
+   </template>
+   <script>
+    component.widthof = {
+        mounted: function () {
+            var self = this;
+            this.handler = function () {
+                self.$emit("input", $(self.$el).width());
+            };
+            self.handler();
+            $(window).on("resize", self.handler);
+        },
+        beforeDestroy: function () {
+            $(window).off("resize", self.handler);
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="onscroll">
+   <script>
+    component.onscroll = {
+        data: function () {
+            return {
+                el: null
+            }
+        },
+        mounted: function () {
+            this.el = this.$el.parentElement;
+            var self = this;
+            this.handler = function () {
+                self.$emit("scroll", self.el);
+                self.adjust_classes();
+            };
+            $(this.el).on("scroll", self.handler);
+
+            this.timer = setInterval(self.handler, 250);
+        },
+        beforeDestroy: function () {
+            $(this.el).off("scroll", self.handler);
+            if (this.timer) {
+                clearInterval(this.timer);
+            }
+        },
+        methods: {
+            adjust_classes: function () {
+                $(this.el).toggleClass('at_top', this.el.scrollTop < 1);
+                $(this.el).toggleClass('at_bottom', this.el.scrollHeight - this.el.scrollTop - this.el.offsetHeight < 1);
+                $(this.el).toggleClass('not_at_top', this.el.scrollTop >= 1);
+                $(this.el).toggleClass('not_at_bottom', this.el.scrollHeight - this.el.scrollTop - this.el.offsetHeight >= 1);
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="assign">
+   <script>
+    component.assign = {
+        props: ['object'],
+        inheritAttrs: false,
+        mounted: function () {
+            Object.assign(this.object, this.$attrs);
+        },
+        watch: {
+            '$attrs': function () {
+                Object.assign(this.object, this.$attrs);
+            }
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="bufferedcall">
+   <script>
+    component.bufferedcall = {
+        props: ['delay', 'watching'],
+        data: function() {
+            return { timer: null };
+        },
+        mounted: function () {
+            this.$emit('call');
+        },
+        watch: {
+            watching: function () {
+                this.trigger();
+            }
+        },
+        methods: {
+            trigger: function () {
+                if (this.timer) { clearTimeout(this.timer); }
+                var self = this;
+                this.timer = setTimeout(function () {
+                    self.timer = null;
+                    self.$emit('call');
+                }, this.delay);
+            }
+        },
+        beforeDestroy: function () {
+            if (this.timer) { clearTimeout(this.timer); }
+            this.timer = null;
+        }
+    };
+   </script>
+  </div>
+  <div class="component" data-name="authorisedevice">
+   <template>
+    <modal :buttons="buttons" ref="modal" t-title="Device Authorisation">
+     <div v-if="app.is_authorised">
+      <p>
+       <t>
+        This device is already authorised.
+       </t>
+      </p>
+     </div>
+     <div v-else-if="first_authorisation">
+      <p>
+       <t>
+        Add your XSKey to allow trading, deposits and withdrawals from this browser.
+       </t>
+       <t>
+        For your security, don't do this on a shared computer!
+       </t>
+      </p>
+      <p>
+       <i class="fas fa-exclamation-triangle" style="color:orange;">
+       </i>
+       <t>
+        If you are browsing in Privacy or Incognity Mode, you won't be able to store your XSKey on this browser.
+       </t>
+      </p>
+      <p>
+       <i class="fas fa-exclamation-triangle" style="color:orange;">
+       </i>
+       <t>
+        If you are using a proxy-service to speed up browsing or save bandwidth you won't be able to store your XSKey on this browser.
+       </t>
+       <br/>
+       <t>
+        Examples are Opera Turbo Mode, Data Compression Proxy, Google Data Saver, Network Bandwidth Saver or SkyZIP.
+       </t>
+      </p>
+     </div>
+     <div v-else-if="additional_authorisation">
+      <p>
+       <t>
+        Use a device that already has your XSKey to enable trading, deposits and withdrawals in this browser.
+       </t>
+      </p>
+      <p>
+       <i class="fas fa-exclamation-triangle" style="color:orange;">
+       </i>
+       <t>
+        If you are browsing in Privacy or Incognity Mode, you won't be able to store your XSKey on this browser.
+       </t>
+      </p>
+      <p>
+       <i class="fas fa-exclamation-triangle" style="color:orange;">
+       </i>
+       <t>
+        If you are using a proxy-service to speed up browsing or save bandwidth you won't be able to store your XSKey on this browser.
+       </t>
+       <br/>
+       <t>
+        Examples are Opera Turbo Mode, Data Compression Proxy, Google Data Saver, Network Bandwidth Saver or SkyZIP.
+       </t>
+      </p>
+      <p>
+       <t :device_name="app.current_device.name || app.current_device.brand">
+        Go to XS2 on one of these browsers or apps, open your Account and click the Add XSKey button for this device called "{device_name}"
+       </t>
+       :
+      </p>
+      <div class="d-flex flex-wrap">
+       <div class="device mr-4" v-for="device in app.customer.devices" v-if="device.is_authorised">
+        <p>
+         <strong>
+          {{ device.name }} {{ device.brand }} - {{ device.os }}
+         </strong>
+        </p>
+        <img :src="'/img/device/' + device.img" style="width:180px; height:180px"/>
+       </div>
+      </div>
+      <p>
+       <t>
+        If you've lost access to {{ app.customer.authorised_count &gt; 1 ? 'all these devices' : 'that device' }}, you can request to reset your XSKey for this device.
+       </t>
+      </p>
+     </div>
+     <div v-else-if="app.current_device &amp;&amp; app.current_device.state === 'W'">
+      <p>
+       <t :recovery_wait_expires_at="current_device.recovery_wait_expires_at | fdatetime">
+        Sorry, you'll have to wait until {recovery_wait_expires_at} before you can trade, deposit and withdraw from this browser.
+       </t>
+      </p>
+     </div>
+     <div v-else-if="app.is_private_mode">
+      <p>
+       <t>
+        In order to allow trading, deposits and withdrawals from this browser, you will need to add your XSKey.
+       </t>
+      </p>
+      <p>
+       <i class="fas fa-exclamation-triangle" style="color:red;">
+       </i>
+       <t>
+        You are currently browsing in Private Mode, preventing you from storing your XSKey on this browser.
+       </t>
+      </p>
+     </div>
+     <div v-else-if="app.is_proxy_browser">
+      <p>
+       <t>
+        In order to allow trading, deposits and withdrawals from this browser, you will need to add your XSKey.
+       </t>
+      </p>
+      <p>
+       <i class="fas fa-exclamation-triangle" style="color:red;">
+       </i>
+       <t :brand="current_device.brand">
+        You are currently using {brand} which interferes with the secure generation of your XSKey, preventing you from storing your XSKey on this browser.
+       </t>
+      </p>
+     </div>
+    </modal>
+   </template>
+   <script>
+    component.authorisedevice = {
+        computed: {
+            first_authorisation: function () { return !app.is_authorised && !app.is_private_mode && !app.is_proxy_browser && !app.customer.authorised_count; },
+            additional_authorisation: function () { return !app.is_authorised && !this.first_authorisation && app.current_device && app.current_device.state !== 'W'; },
+            buttons: function () {
+                if (this.first_authorisation) { return [{ text: t("Add XSKey"), close: false, event: "authorise" }]; }
+                if (this.additional_authorisation) { return [{ text: t("Reset my XSKey"), close: false, event: "reset" }]; }
+                return ['ok'];
+            }
+        },
+        methods: {
+            show: function () {
+                if (app.is_logged_in && app.current_device) {
+                    this.$refs.modal.show();
+                }
+            },
+            authorise: function () {
+                xs2_api.AuthoriseDevice(app.current_device_id)
+                    .close(this.$refs.modal);
+            },
+            reset: function () {
+                xs2_api.RecoverXSKey()
+                    .close(this.$refs.modal);
+            }
+        }
+    };
+   </script>
+  </div>
+  <script>
+   function on_ready() {
+        start_app();
+    }
+  </script>
+  <script>
+   (function () {
+                if (!window.localStorage) {
+                    return;
+                } else {
+                    window.localStorage.setItem("test", "Test");
+                    if (window.localStorage.getItem("test") != "Test") {
+                        return;
+                    }
+                }
+
+                if (!window.localStorage.getItem("dkey")) {
+                    var _buf = new Uint8Array(32);
+                    (window.crypto || window.msCrypto).getRandomValues(_buf);
+                    window.localStorage.setItem("dkey", btoa(_buf));
+                }
+
+                var cached_version = window.localStorage.getItem("version");
+                if (cached_version !== version) {
+                    var keep_keys = ['dkey', 'referring_customer_id', 'WalletLayout', 'ExchangeLayout'];
+                    var temp_storage = {};
+                    Object.keys(window.localStorage).forEach(function (key) {
+                        if (key.startsWith('tradingview.') || key.startsWith('tv') || keep_keys.indexOf(key) >= 0) {
+                            temp_storage[key] = window.localStorage.getItem(key);
+                        }
+                    });
+
+                    window.localStorage.clear();
+                    window.localStorage.setItem("version", version);
+             
+                    Object.keys(temp_storage).forEach(function (key) { window.localStorage.setItem(key, temp_storage[key]) })
+                }
+            }) ();
+  </script>
+  <script defer="" src="/js/site-all.min.js?v=xdgqNY3yFIm2ANPb1tKm2NsGv9AVme7z0nXR1ZLQoMA">
+  </script>
+ </body>
+</html>

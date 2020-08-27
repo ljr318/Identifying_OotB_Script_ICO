@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script>
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"aa3c0c125a","applicationID":"154142324","transactionName":"cwwKFRdbVF4BE0xdDl0GOxdXG1FcAAQb","queueTime":0,"applicationTime":138,"agent":""}
+  </script>
+  <script>
+   (window.NREUM||(NREUM={})).loader_config={licenseKey:"aa3c0c125a",applicationID:"154142324"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);
+  </script>
+  <title>
+   Syntera — First Sharing Coin (SSC) | Syntera Blockchain Platform
+  </title>
+  <link href="https://syntera.io/" rel="canonical"/>
+  <meta content="Syntera — First Sharing Coin (SSC) | Syntera Blockchain Platform Sharing Economy" property="og:title"/>
+  <meta content="Syntera — blockchain platform based on sharing economy. Token sale Syntera (SSC). Hurry up to buy tokens from the start of token sale as their price will grow every day. Join now! More than 60000 people signed up and joined the platform." property="og:description"/>
+  <meta content="https://syntera.io/" property="og:canonical"/>
+  <meta content="https://syntera.io/assets/logo-3.png" property="og:image"/>
+  <meta content="https://syntera.io/assets/logo-3.png" name="image"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta content="K_6ZN1Ks095aJcEyHLss6ExRgzPfnSgc2CajiFRCoac" name="google-site-verification"/>
+  <meta name="current_user_id" value=""/>
+  <meta name="utm_source"/>
+  <meta name="utm_medium"/>
+  <meta name="utm_campaign"/>
+  <meta name="utm_content"/>
+  <meta name="utm_term"/>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="0daFd6CnRqHUlSAH6dcU07P1pfUZPg4oZGPAsXT/hNj/M/ECUL2PtyCRKC5h/jt8McK+BdF+bNKj+0iFMyoD8g==" name="csrf-token"/>
+  <link href="https://syntera.io/assets/landing_page-d96a34fd52bd17d48d5e0eaa8b5c0441acfe3f3a1b612089fd40d02169b609bd.css" media="all" rel="stylesheet"/>
+  <script src="https://syntera.io/assets/landing_page-d06125d635a670b3dec6541df4e51b5be11384111f9ced9d8ffb1bc11172b7a0.js">
+  </script>
+  <link href="https://syntera.io/assets/favicon-bcdc1b16a28942d900177c817ac2000ad1fbcc6a6a15df09e575c4ae2004177a.ico" rel="shortcut icon" type="image/x-icon"/>
+ </head>
+ <body class="home_v2" index="">
+  <div id="sbbhscc" style="display:none">
+  </div>
+  <script type="text/javascript">
+   var sbbvscc='';
+            var sbbgscc='';
+            function genPid() {return String.fromCharCode(68)+String.fromCharCode(116) ; };
+  </script>
+  <div id="sbbfrcc" style="position: absolute; top: -10px; left: 30px; font-size:1px">
+  </div>
+  <script type="text/javascript">
+   (function(XHR){var open=XHR.prototype.open;var send=XHR.prototype.send;var parser=document.createElement('a');XHR.prototype.open=function(method, url, async, user, pass){if(typeof async=='undefined'){async=true;}parser.href=url;if(parser.host==''){parser.href=parser.href;}this.ajax_hostname=parser.hostname;open.call(this, method, url, async, user, pass);};XHR.prototype.send=function(data){if(location.hostname==this.ajax_hostname)this.setRequestHeader("X-MOD-SBB-CTYPE", "xhr");send.call(this, data);}})(XMLHttpRequest);if(typeof(fetch)!="undefined"){var nsbbfetch=fetch;fetch=function(url, init){if(typeof(url)==="object" && typeof(url.url)==="string"){url=url.url;}function sbbSd(url, domain){var parser=document.createElement('a');parser.href=url;if(parser.host==''){parser.href=parser.href;}return parser.hostname==location.hostname;}if(sbbSd(url, document.domain)){init=typeof init !=='undefined' ? init :{};if(typeof(init.headers)==="undefined"){init.headers={};}init.headers['X-MOD-SBB-CTYPE']='fetch';}return nsbbfetch(url, init);};}function sbbgc(check_name){var start=document.cookie.indexOf(check_name+"=");var oVal='';var len=start+check_name.length+1;if((!start)&&(document.cookie.substring(0,check_name.length)!=check_name)){oVal='';}else if(start==-1){oVal='';}else{var end=document.cookie.indexOf(';',len);if(end==-1)end=document.cookie.length;var oVal=document.cookie.substring(len,end);};return oVal;}function addmg(inm,ext){var primgobj=document.createElement('IMG');primgobj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+"/sbbi/?sbbpg="+inm+(ext?"&"+ext:"");var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(primgobj);};function addprid(prid){var oldVal=sbbgc("PRLST");if((oldVal.indexOf(prid)==-1)&&(oldVal.split('/').length<5)){if(oldVal!=''){oldVal+='/';}document.cookie='PRLST='+oldVal+escape(prid)+';path=/;';}}var sbbeccf=function(){this.sp3="jass";this.sf1=function(vd){return sf2(vd)+32;};var sf2=function(avd){return avd*12;};this.sf4=function(yavd){return yavd+2;};var strrp=function(str, key, value){if(str.indexOf('&'+key+'=')> -1 || str.indexOf(key+'=')==0){var idx=str.indexOf('&'+key+'=');if(idx==-1)idx=str.indexOf(key+'=');var end=str.indexOf('&', idx+1);var newstr;if(end !=-1)newstr=str.substr(0, idx)+str.substr(end+(idx ? 0 : 1))+'&'+key+'='+value;else newstr=str.substr(0, idx)+'&'+key+'='+value;return newstr;}else return str+'&'+key+'='+value;};var strgt=function(name, text){if(typeof text !='string')return "";var nameEQ=name+"=";var ca=text.split(/[;&]/);for(var i=0;i < ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1, c.length);if(c.indexOf(nameEQ)==0)return c.substring(nameEQ.length, c.length);}return "";};this.sfecgs={sbbgh:function(){var domain=document.location.host;if(domain.indexOf('www.')==0)domain=domain.replace('www.', '');return domain;}, f:function(name, value){var fv="";if(window.globalStorage){var host=this.sbbgh();try{if(typeof(value)!="undefined")globalStorage[host][name]=value;else{fv=globalStorage[host][name];if(typeof(fv.toString)!="undefined")fv=fv.toString();}}catch(e){}}return fv;}, name:"sbbrf"};this.sfecls={f:function(name, value){var fv="";try{if(window.localStorage){if(typeof(value)!="undefined")localStorage.setItem(name, value);else{fv=localStorage.getItem(name);if(typeof(fv.toString)!="undefined")fv=fv.toString();}}}catch(e){}return fv;}, name:"sbbrf"};this.sbbcv=function(invl){try{var invalArr=invl.split("-");if(invalArr.length>1){if(invalArr[0]=="A"||invalArr[0]=="D"){invl=invalArr[1];}else invl="";}if(invl==null||typeof(invl)=="undefined"||invl=="falseImgUT"||invl=="undefined"||invl=="null"||invl!=encodeURI(invl))invl="";if(typeof(invl).toLowerCase()=="string")if(invl.length>20)if(invl.substr(0,2)!="h4")invl="";}catch(ex){invl="";}return invl;};this.sbbsv=function(fv){for(var elm in this){if(this[elm].name=="sbbrf"){this[elm].f("altutgv2",fv);}}document.cookie="UTGv2="+fv+';expires=Tue, 31 Dec 2030 00:00:00 UTC;path=/;';};this.sbbgv=function(){var valArr=Array();var currVal="";for(var elm in this){if(this[elm].name=="sbbrf"){currVal=this[elm].f("altutgv2");currVal=this.sbbcv(currVal);if(currVal!="")valArr[currVal]=(typeof(valArr[currVal])!="undefined"?valArr[currVal]+1:1);}}var lb=0;var fv="";for(var val in valArr){if(valArr[val]>lb){fv=val;lb=valArr[val]}}if(fv=="")fv=sbbgc("UTGv2");fv=this.sbbcv(fv);if(fv!="")this.sbbsv(fv);else this.sbbsv("D-h4631ddedff98f3490d82285f0788363a663");return fv;};};function m2vr(m1,m2){var i=0;var rc="";var est="ghijklmnopqrstuvwyz";var rnum;var rpl;var charm1=m1.charAt(i);var charm2=m2.charAt(i);while(charm1!=""||charm2!=""){rnum=Math.floor(Math.random()* est.length);rpl=est.substring(rnum,rnum+1);rc+=(charm1==""?rpl:charm1)+(charm2==""?rpl:charm2);i++;charm1=m1.charAt(i);charm2=m2.charAt(i);}return rc;}function sbbls(prid){try{var eut=sbbgc("UTGv2");window.sbbeccfi=new sbbeccf();window.sbbgs=sbbeccfi.sbbgv();if(eut!=sbbgs && sbbgs!="" && typeof(sbbfcr)=="undefined"){addmg('utMedia',"vii="+m2vr("d7946df5904cd0641498b36e925c7d62",sbbgs));}var sbbiframeObj=document.createElement('IFRAME');var dfx=new Date();sbbiframeObj.id='SBBCrossIframe';sbbiframeObj.title='SBBCrossIframe';sbbiframeObj.tabindex='-1';sbbiframeObj.lang='en';sbbiframeObj.style.visibility='hidden';sbbiframeObj.setAttribute('aria-hidden', 'true');sbbiframeObj.style.border='0px';if(document.all){sbbiframeObj.style.position='absolute';sbbiframeObj.style.top='-1px';sbbiframeObj.style.height='1px';sbbiframeObj.style.width='28px';}else{sbbiframeObj.style.height='1px';sbbiframeObj.style.width='0px';}sbbiframeObj.scrolling="NO";sbbiframeObj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+'/sbbi/?sbbpg=sbbShell&gprid='+prid + '&sbbgs='+sbbgs+'&ddl='+(Math.round(dfx.getTime()/1000)-1596474976)+'';var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(sbbiframeObj);}catch(ex){;}}try{var y=unescape(sbbvscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));document.getElementById('sbbhscc').innerHTML=y;var x=unescape(sbbgscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));}catch(e){x='function genPid(){return "jser";}';}try{if(window.gprid==undefined)document.write('<'+'script type="text/javascri'+'pt">'+x+"var gprid=genPid();addprid(gprid);sbbls(gprid);<"+"/script>");}catch(e){addprid("dwer");}
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122099296-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-122099296-1');
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+   (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter49534696 = new Ya.Metrika2({
+                    id:49534696,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+  </script>
+  <noscript>
+   <div>
+    <img alt="" src="https://mc.yandex.ru/watch/49534696" style="position:absolute; left:-9999px;"/>
+   </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <div class="loader-image">
+  </div>
+  <script>
+   $('#link5544').on('click', function(){
+    $('.menu ul ul').css({display: 'block'});
+  });
+  document.addEventListener('touchmove', function (event) {
+    if (event.scale !== 1) { event.preventDefault(); }
+  }, false);
+  </script>
+  <div class="menu" id="top_top">
+   <div class="menu-wrap">
+    <div class="container">
+     <div class="arrang justify-content-space">
+      <div class="landing-logo-wrap">
+       <a href="https://syntera.io/">
+        <img alt="Logo" class="logo-landing-page" id="logo" src="https://syntera.io/assets/home_v2/logo-3087715f7633a87c3f6d8c45842429930b92d265237d56e4dfed97abb661625b.png"/>
+       </a>
+       <div class="menu-lang-wrap">
+        <div class="mobile dropdown dropdown-custom lang-change" tabindex="0">
+         <span class="current">
+          EN
+         </span>
+         <div class="list">
+          <ul class="lang-list">
+           <li>
+            <a data-locale="cn" href="javascript:">
+             CN
+            </a>
+           </li>
+           <li>
+            <a data-locale="en" href="javascript:">
+             EN
+            </a>
+           </li>
+           <li>
+            <a data-locale="hi" href="javascript:">
+             HI
+            </a>
+           </li>
+           <li>
+            <a data-locale="kor" href="javascript:">
+             KOR
+            </a>
+           </li>
+           <li>
+            <a data-locale="ru" href="javascript:">
+             RU
+            </a>
+           </li>
+           <li>
+            <a data-locale="vn" href="javascript:">
+             VN
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <img alt="Menu" id="menu" src="https://syntera.io/assets/home_v2/menu-133026094522042ee7415dca577885ecd534ae6e0efee4a74ceeda2bef7628d9.png"/>
+       </div>
+      </div>
+      <div class="landing-menu-wrap">
+       <ul>
+        <li class="menu1">
+         <a href="#" id="link232">
+          <span>
+           Home
+          </span>
+         </a>
+        </li>
+        <li class="menu1">
+         <a href="#" id="link2">
+          <span>
+           about
+          </span>
+         </a>
+        </li>
+        <li class="menu1">
+         <a href="#" id="link3">
+          <span>
+           Ecosystem
+          </span>
+         </a>
+        </li>
+        <li class="menu1" style="display: none;">
+         <a href="#" id="link4">
+          <span>
+           team
+          </span>
+         </a>
+        </li>
+        <li class="menu1">
+         <a href="#" id="link7">
+          <span>
+           Roadmap
+          </span>
+         </a>
+        </li>
+        <li class="menu1">
+         <a href="/articles">
+         </a>
+         <a href="/articles">
+          <span>
+           News
+          </span>
+         </a>
+        </li>
+        <li class="menu1" id="login-mobile">
+         <span>
+          Login
+         </span>
+        </li>
+        <li class="menu1" id="register-mobile">
+         <span>
+          Register
+         </span>
+        </li>
+        <li class="menu1-acc">
+         <a href="#" id="link5544">
+          <span>
+           info
+          </span>
+         </a>
+         <ul>
+          <li class="menu1">
+           <a href="/about" id="link8">
+            <span>
+             about
+            </span>
+           </a>
+          </li>
+          <li class="menu1">
+           <a href="/white-paper" id="link9" target="_blank">
+            <span>
+             Whitepaper
+            </span>
+           </a>
+          </li>
+          <li class="menu1">
+           <a href="/documents" target="_blank">
+            <span>
+             documents
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="menu1">
+         <a href="https://github.com/Blockchain-development" id="link10" target="_blank">
+          <span>
+           GITHUB
+          </span>
+         </a>
+        </li>
+        <li class="menu1">
+         <a href="#" id="link11">
+          <span>
+           Login
+          </span>
+         </a>
+        </li>
+        <li class="menu1">
+         <a href="#" id="link12">
+          <span>
+           Register
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="menu-right-wrap">
+       <div class="desktop dropdown dropdown-custom lang-change" tabindex="0">
+        <span class="current">
+         EN
+        </span>
+        <div class="list">
+         <ul class="lang-list">
+          <li>
+           <a data-locale="cn" href="javascript:">
+            CN
+           </a>
+          </li>
+          <li>
+           <a data-locale="en" href="javascript:">
+            EN
+           </a>
+          </li>
+          <li>
+           <a data-locale="hi" href="javascript:">
+            HI
+           </a>
+          </li>
+          <li>
+           <a data-locale="kor" href="javascript:">
+            KOR
+           </a>
+          </li>
+          <li>
+           <a data-locale="ru" href="javascript:">
+            RU
+           </a>
+          </li>
+          <li>
+           <a data-locale="vn" href="javascript:">
+            VN
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="session-wrap">
+        <div class="button1">
+         Login
+        </div>
+        <div class="button2">
+         Register
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   var menu_flag = true;
+$('#menu').click(function(){
+  if(menu_flag){
+    $('#top_top').removeClass('open')
+    $('#top_top').addClass('open')
+    $('.menu .landing-menu-wrap > ul').css({'display' : 'flex'})
+    var menu = function(){
+      $('.menu .landing-menu-wrap > ul').css({'opacity' : '1'})
+    }
+    setTimeout(menu,100)
+    menu_flag = false;
+  }
+  else{
+    $('#top_top').removeClass('open')
+    $('.menu .landing-menu-wrap > ul').css({'opacity' : '0'})
+    var menu = function(){
+      $('.menu .landing-menu-wrap > ul').css({'display' : 'none'})
+    }
+    setTimeout(menu,300)
+    menu_flag = true;
+  }
+})
+  </script>
+  <div class="form_big_block">
+   <button aria-label="Close" class="close close-form" data-dismiss="modal" type="button">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </button>
+   <h3 class="form_title">
+    REGISTER
+   </h3>
+   <div class="render-registration-form">
+    <form accept-charset="UTF-8" action="/users" class="simple_form new_registration" data-remote="true" id="new_registration_" method="post" novalidate="novalidate">
+     <input name="utf8" type="hidden" value="✓"/>
+     <div class="form-group string required registration_referral">
+      <input class="form-control string required input_big" id="registration_referral" name="registration[referral]" placeholder="Enter a sponsor's name" type="text"/>
+     </div>
+     <p class="first_p">
+      If you do not have a sponsor name, key in
+      <a class="sponsor" href="#">
+       supportsyntera
+      </a>
+     </p>
+     <div class="form-group string required registration_username">
+      <input class="form-control string required input_big user" id="registration_username" name="registration[username]" placeholder="Enter Username" type="text"/>
+     </div>
+     <div class="form-group email required registration_email">
+      <input class="form-control string email required input_big" id="registration_email" name="registration[email]" placeholder="Enter E-mail" type="email"/>
+     </div>
+     <div class="form-group string required registration_password">
+      <input class="form-control string required input_big" id="registration_password" name="registration[password]" placeholder="Password" style="-webkit-text-security: disc;" type="text"/>
+     </div>
+     <div class="form-group string required registration_password_confirmation">
+      <input class="form-control string required input_big" id="registration_password_confirmation" name="registration[password_confirmation]" placeholder="Confirm password" style="-webkit-text-security: disc;" type="text"/>
+     </div>
+     <div class="label_chec_1">
+      <div class="form-group boolean optional registration_terms_of_service">
+       <div class="checkbox">
+        <input name="registration[terms_of_service]" type="hidden" value="0"/>
+        <label class="boolean optional" for="registration_terms_of_service">
+         <input class="boolean optional check" id="registration_terms_of_service" name="registration[terms_of_service]" type="checkbox" value="1"/>
+         <p>
+          I have read and agreed to the
+          <a href="/documents/T&amp;C.pdf" target="_blank">
+           Terms and Conditions
+          </a>
+          &amp;
+          <a href="/documents/Privacy_Policy.pdf" target="_blank">
+           Privacy Policy
+          </a>
+          .
+         </p>
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="label_chec_2">
+      <div class="form-group boolean optional registration_not_a_citizen">
+       <div class="checkbox">
+        <input name="registration[not_a_citizen]" type="hidden" value="0"/>
+        <label class="boolean optional" for="registration_not_a_citizen">
+         <input class="boolean optional check" id="registration_not_a_citizen" name="registration[not_a_citizen]" type="checkbox" value="1"/>
+         <p>
+          I am not a
+          <a href="/documents/Risk warning for the USA.pdf" target="_blank">
+           citizen of the US
+          </a>
+          .
+         </p>
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="has-error">
+     </div>
+     <div class="recaptcha_tags_wrap">
+      <script async="" defer="" src="https://www.google.com/recaptcha/api.js">
+      </script>
+      <div class="g-recaptcha" data-sitekey="6Lebt04UAAAAADx4QUHOtSDLa3CBHBx5hg-emBGW">
+      </div>
+      <noscript>
+       <div>
+        <div style="width: 302px; height: 422px; position: relative;">
+         <div style="width: 302px; height: 422px; position: absolute;">
+          <iframe frameborder="0" scrolling="no" src="https://www.google.com/recaptcha/api/fallback?k=6Lebt04UAAAAADx4QUHOtSDLa3CBHBx5hg-emBGW" style="width: 302px; height:422px; border-style: none;">
+          </iframe>
+         </div>
+        </div>
+        <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+         <textarea class="g-recaptcha-response" id="g-recaptcha-response" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+        </div>
+       </div>
+      </noscript>
+     </div>
+     <input class="but_2" data-disable-with="Continue" name="commit" type="submit" value="Continue"/>
+     <p class="bott_p">
+      Are you new to Syntera?
+      <a class="btn-login" href="javascript:void()">
+       Login
+      </a>
+     </p>
+    </form>
+   </div>
+  </div>
+  <div class="form_small_block">
+   <button aria-label="Close" class="close close-form" data-dismiss="modal" type="button">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </button>
+   <h3 class="form_title">
+    LOG IN
+   </h3>
+   <div class="session-render">
+    <form accept-charset="UTF-8" action="/sign-in" class="simple_form new_login" id="new_login_" method="post" novalidate="novalidate">
+     <input name="utf8" type="hidden" value="✓"/>
+     <input name="authenticity_token" type="hidden" value="SERzI7Aiz5KC7xAnvmwies8WRp09ucKQpkv1FxODBLlZ6d9cKK4kPdxVETJzuBuT4D6eNr5QR2/vPnPy7SehhA=="/>
+     <div class="form-group email required login_email">
+      <input class="form-control string email required input_small" id="login_email" name="login[email]" placeholder="Enter E-mail" type="email"/>
+     </div>
+     <div class="form-group password required login_password">
+      <input class="form-control password required input_small" id="login_password" name="login[password]" placeholder="Password" type="password"/>
+     </div>
+     <div class="action">
+      <input class="but_1" data-disable-with="SIGN IN" name="commit" type="submit" value="SIGN IN"/>
+     </div>
+     <p class="btn-forgot-pw forgot_p">
+      Forgot password?
+      <a href="#">
+       Click here!
+      </a>
+     </p>
+     <p class="btn-resend-confirmation-email">
+      <a href="/confirmations/new">
+       Resend confirmation email
+      </a>
+     </p>
+     <p class="bott_p">
+      Are you new to Syntera?
+      <a class="btn-register" href="javascript:void()">
+       Register here
+      </a>
+     </p>
+    </form>
+   </div>
+  </div>
+  <div class="forgot-password-form">
+   <button aria-label="Close" class="close close-form" data-dismiss="modal" type="button">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </button>
+   <h3 class="form_title">
+    FORGOT PASSWORD
+   </h3>
+   <div class="forgot-pw-render">
+    <div class="home-v2-forgot-password-container">
+     <form accept-charset="UTF-8" action="/passwords/create_v2" class="simple_form new_forgot_password" data-remote="true" id="new_forgot_password_" method="post" novalidate="novalidate">
+      <input name="utf8" type="hidden" value="✓"/>
+      <div class="form-group email required forgot_password_email">
+       <input class="form-control string email required input_small" id="forgot_password_email" name="forgot_password[email]" placeholder="Enter your email" type="email"/>
+      </div>
+      <div class="action">
+       <input class="but_3" data-disable-with="Continue" name="commit" type="submit" value="Continue"/>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+  <div id="main">
+   <div id="home-v2-index-container">
+    <div class="container1">
+     <div class="preloader">
+      <div class="preloader-ring">
+      </div>
+     </div>
+     <script id="shader-fs" type="x-shader/x-fragment">
+      #ifdef GL_ES
+      precision highp float;
+      #endif
+      void main(void) {
+       gl_FragColor = vec4(0.2, 0.3, 0.4, 1.0);
+      }
+     </script>
+     <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 vertexPosition;
+
+      uniform mat4 modelViewMatrix;
+      uniform mat4 perspectiveMatrix;
+
+      void main(void) {
+      gl_Position = perspectiveMatrix * modelViewMatrix * vec4(  vertexPosition, 1.0);
+      }
+     </script>
+     <script type="text/javascript">
+      $(function(){
+      $(window).scroll(function() {
+      var top = $(document).scrollTop();
+
+      if(top > 9516){
+        $(".icon12-1")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+        setTimeout(function(){
+          $(".icon12-2")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+            setTimeout(function(){
+            $(".icon12-3")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+              setTimeout(function(){
+              $(".icon12-4")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+                setTimeout(function(){
+                  $(".icon12-5")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+                },300);
+              },300);
+            },300);
+        },500);
+      }
+      if(top > 10050){
+        $(".icon12-6")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+        setTimeout(function(){
+          $(".icon12-7")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+            setTimeout(function(){
+            $(".icon12-8")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+              setTimeout(function(){
+              $(".icon12-9")[0].style =" box-shadow: 0px 0px 1px #fff; opacity:1";
+              },300);
+            },300);
+        },300);
+      }
+      if(top > 2798) {
+        $(".block6-nav1 span").css({margin: '0'});
+      }
+      if (top > 800) $("#webgl-output canvas").css({opacity: '0'});
+      else $("#webgl-output canvas").css({opacity: '1'});
+      if (top > 11300) {
+        $(".link span").css({color: 'black'});
+        $(".link span a").css({color: 'black'});
+      } else  {
+        $(".link span").css({color: '#fff'});
+        $(".link span a").css({color: '#fff'});
+      }
+        });
+      });
+     </script>
+     <div id="sections">
+      <div class="section section-about" data-section="2" id="about">
+       <div class="int-canvas-wrap int-canvas-wrap--brain">
+        <canvas class="int-canvas int-canvas--brain" style="position:fixed; margin:0 auto; left:0; right:0">
+        </canvas>
+       </div>
+      </div>
+      <div class="section section-versus" data-section="4" id="versus">
+       <div class="int-canvas-wrap int-canvas-wrap--cup">
+        <canvas class="int-canvas int-canvas--cup">
+        </canvas>
+       </div>
+      </div>
+     </div>
+     <div class="block1-nav">
+      <img alt="Logo1" id="logo1" src="https://syntera.io/assets/home_v2/logo1-d347ff818dc2d9d7d6378f27f048059c7db91f3651a2d90af684eece6443e317.png"/>
+      <div class="text1-1">
+       blockchain platform based on sharing economy
+      </div>
+      <div class="text1-2">
+       DOWNLOAD WALLET FOR
+      </div>
+      <div class="button1-nav">
+       <a href="https://itunes.apple.com/us/app/white-wallet-app/id1441531782?l=ru&amp;ls=1&amp;mt=8" target="_blank">
+        <div class="button1-2">
+         <div class="button1-1-icon1">
+         </div>
+         IOS
+        </div>
+       </a>
+       <a href="https://play.google.com/store/apps/details?id=com.whitewallet" target="_blank">
+        <div class="button1-2">
+         <div class="button1-1-icon2">
+         </div>
+         ANDROID
+        </div>
+       </a>
+      </div>
+     </div>
+     <div class="icon-nav">
+      <div class="icon-line">
+      </div>
+      <div class="icon-block">
+       <a href="https://goo.gl/QSwrja" target="_blank">
+        <img alt="Icon facebook" class="icon" src="https://syntera.io/assets/home_v2/icon_facebook-1c08042a0d366b1b129fb34e0ceb99ccd07562eb5869d52ce2164d68b27f1d53.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://goo.gl/9Hn93f" target="_blank">
+        <img alt="Icon twiter" class="icon" src="https://syntera.io/assets/home_v2/icon_twiter-218069d53beb8b0a3c736141faf96f2189f21d799ecdc6133212847458e60112.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://goo.gl/etDgRL" target="_blank">
+        <img alt="Icon instagram" class="icon" src="https://syntera.io/assets/home_v2/icon_instagram-3bd08f1ad97d59475de5a4db26fb12592fc608987f45647775f397a30b620b8c.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://goo.gl/AWFhoX" target="_blank">
+        <img alt="Icon youtube" class="icon" src="https://syntera.io/assets/home_v2/icon_youtube-1daa9ed70dd57661269b9ce82a4cab87e1a5dedac47fe0c1bcce883e75adc90c.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://bitcointalk.org/index.php?topic=3112079.0" target="_blank">
+        <img alt="Icon bitcoin" class="icon" src="https://syntera.io/assets/home_v2/icon_bitcoin-4422b277cc0a971781023d45feef5d377b149fa865b5683ca123091b6e1cce29.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://t.me/syntera" target="_blank">
+        <img alt="Icon telegram2" class="icon" src="https://syntera.io/assets/home_v2/icon_telegram2-29e7f9d07c87afb98d1d7c609449c86f012ffeab14deddc14a184c80fffe56b9.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://medium.com/@syntera" target="_blank">
+        <img alt="Icon media" class="icon" src="https://syntera.io/assets/home_v2/icon_media-abe8296d97317630c789793ad5c269ac93259d7c51ff0683d285b31ef4668e25.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://goo.gl/1Tr1s2" target="_blank">
+        <img alt="Icon vk" class="icon" src="https://syntera.io/assets/home_v2/icon_vk-910232345fc897503724a5c92c729cb0f484b3e784d26d543e465f67282aace5.svg"/>
+       </a>
+      </div>
+      <div class="icon-block">
+       <a href="https://goo.gl/oqWouv" target="_blank">
+        <img alt="Icon in" class="icon" src="https://syntera.io/assets/home_v2/icon_in-fec0861062e1d8b8fb3a8077d389c256ab098eb490c748573eaa746bb269fea1.svg"/>
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="container2" id="about">
+     <div class="line2" id="scroll2">
+     </div>
+     <div class="container">
+      <div class="arrang">
+       <div class="youtube-wrap">
+        <iframe allowfullscreen="" frameborder="0" id="video" src="https://www.youtube.com/embed/4Yz-9GcLos0?rel=0&amp;showinfo=0">
+        </iframe>
+       </div>
+      </div>
+     </div>
+     <div class="block2-nav">
+      <div class="text2-1">
+       Sharing economy is gaining momentum
+      </div>
+      <div class="text2-2">
+       <span>
+        Global uberization (deriving from Uber) spreads around the world and finds application in many diverse areas - from taxi services to renting umbrellas.The volume of the market on the basis of such an economy will exceed $ 300 billion by 2025.
+       </span>
+      </div>
+     </div>
+     <div class="line3">
+     </div>
+     <div id="particles-js">
+     </div>
+    </div>
+    <div class="container3">
+     <div id="particles1-js">
+     </div>
+     <div class="text3-1">
+      Capitalization of the leading companies
+     </div>
+     <div class="block3-nav">
+      <div class="block3">
+       <img alt="Icon3 1" src="https://syntera.io/assets/home_v2/icon3-1-8a2946b19e1d3ca5f3d6aa10fd78d851a8f492d2211b9accb25a53178f3b5cea.png"/>
+       <div class="text3-nav">
+        <div class="text3-2">
+         <div>
+          <span>
+           Uber
+          </span>
+          (80 billion)
+         </div>
+        </div>
+        <div class="text3-3">
+         <span>
+          The world leader in the market of passenger transportations
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="block3">
+       <img alt="Icon3 2" src="https://syntera.io/assets/home_v2/icon3-2-fcecb1d2a22e3cd84cfed43772ca3f0cec66320852b8dea2928bd57d20adadb9.png"/>
+       <div class="text3-nav">
+        <div class="text3-2">
+         <div>
+          <span>
+           AIRBNB
+          </span>
+          (31 billion)
+         </div>
+        </div>
+        <div class="text3-3">
+         <span>
+          The company doubles its revenue annually
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="block3">
+       <img alt="Icon3 3" src="https://syntera.io/assets/home_v2/icon3-3-f4f6ebb474fcbfa190bc8c3a3158c8254a4adbc818baca0a5ef5cb5567567728.png"/>
+       <div class="text3-nav">
+        <div class="text3-2">
+         <div>
+          <span>
+           BLABLACAR
+          </span>
+          (2 billion)
+         </div>
+        </div>
+        <div class="text3-3">
+         <span>
+          5 million people travel monthly
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="text3-4">
+      <span>
+       THE VOLUME OF THE MARKET ON THE BASIS OF SUCH AN ECONOMY
+       <br/>
+       WILL EXCEED $ 300 BILLION BY 2025.
+      </span>
+     </div>
+    </div>
+    <div class="container4">
+     <img alt="Cirlce" class="circle1" src="https://syntera.io/assets/home_v2/cirlce-2cae91a9728bb2f40669bc6fc79c1407a72ca7e0cfc6458f42300fa9a766b0cf.png"/>
+     <img alt="Cirlce" class="circle1" src="https://syntera.io/assets/home_v2/cirlce-2cae91a9728bb2f40669bc6fc79c1407a72ca7e0cfc6458f42300fa9a766b0cf.png"/>
+     <div class="block4-nav">
+      <div class="block4">
+       <div class="text4-1">
+        Problem
+       </div>
+       <div class="text4-2">
+        <span>
+         The main problem in the development of sharing economy is trust between the participants, because they need to cooperate or pool resources with strangers.
+        </span>
+       </div>
+      </div>
+      <div class="block4">
+       <div class="text4-1">
+        Our Solution
+       </div>
+       <div class="text4-2">
+        <span>
+         Syntera ecosystem combines the sharing economy and blockchain.
+            We form trust between the participants, using smart contracts for interaction.
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="text4-3">
+      <span>
+       Sharing Economy - Powered by the Blockchain!
+      </span>
+     </div>
+     <div class="block2-nav" id="scroll3">
+      <a class="scroll_blocks nav-a" href="#scroll3">
+      </a>
+      <div class="text2-1">
+       Ecosystem
+      </div>
+     </div>
+     <div class="line2">
+     </div>
+    </div>
+    <div class="container5 s">
+     <div id="particles3-js">
+     </div>
+     <div class="block5-nav">
+      <div class="text5-1">
+       <p>
+        The system is based on a Syntera Sharing Coin (SSC)
+       </p>
+       <p>
+        SSC is not only a means of payment for new Sharing economy, but also a means of trust based on smart contracts.
+       </p>
+      </div>
+      <div class="text5-2">
+       FINANCIAL SERVICES
+      </div>
+      <div class="text5-3">
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Marketplace
+        </span>
+       </span>
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Smart Delegated Proof-of-Stake (SDPOS)
+        </span>
+       </span>
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Smart Hedge Fund
+        </span>
+       </span>
+      </div>
+      <div class="text5-2">
+       SERVICE FOR COMMUNITY
+      </div>
+      <div class="text5-3">
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         P2P-Exchange
+        </span>
+       </span>
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Consensus-Platform
+        </span>
+       </span>
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Community Charity
+        </span>
+       </span>
+      </div>
+     </div>
+     <div id="video1-sr">
+      <img alt="01" src="https://syntera.io/assets/01-24097b052f82a14e42f9f899972f06cd3e4f6a29cefa84d173921e57892722e4.gif"/>
+     </div>
+    </div>
+    <div id="particles5-js">
+    </div>
+    <h2 class="ter_title_main">
+     TEROBOT 1.0
+    </h2>
+    <p class="ter_title_small">
+     hybrid analytics system
+    </p>
+    <div class="terabot_wrapp">
+     <div class="terabot_text">
+      <span class="mob_d">
+       TEROBOT 1.0 will compare the performance of different Hedge Funds and allocate Terofund proportionally to their returns
+      </span>
+      <a class="terabot_but" href="https://tero.fund/" target="_blank">
+       TRY NOW
+      </a>
+     </div>
+     <div class="terabot_video">
+      <img alt="04" src="https://syntera.io/assets/04-e859b6159284f8b293d04017a8635bda528c879f46044db57031d6dcbb303b1e.gif"/>
+     </div>
+    </div>
+    <div id="particles6-js">
+    </div>
+    <div class="block8-nav">
+     <div class="text8-1">
+      - P2P Exchange
+     </div>
+     <div class="text8-2">
+      Syntera peer-to-peer platform allows users to buy or sell cryptocurrencies directly with each other. This is the fastest mechanism by wich a participant can exchange cryptocurrencies for fiat money and vice-versa
+     </div>
+     <div class="row8">
+      <div class="col8">
+       <img alt="Icon8 1" src="https://syntera.io/assets/home_v2/icon8-1-f29e23458bd232ed77f2971f88a55db35ca37d53c48f375c232c66de11ff0f7c.png"/>
+       <span>
+        Buy/Sell cryptocurrency and fiat money
+       </span>
+      </div>
+      <div class="col8">
+       <img alt="Icon8 2" src="https://syntera.io/assets/home_v2/icon8-2-ab5b266c1360be26481a94069a7ec8d0ac6b033df6bfdc21866751333cf4b53c.png"/>
+       <span>
+        Arbitrage and transaction security
+       </span>
+      </div>
+      <div class="col8">
+       <img alt="Icon8 3" src="https://syntera.io/assets/home_v2/icon8-3-cbcc7195e949df91d847fdb34de5563fad0d8112647f23d9cb0ae50f94961f82.png"/>
+       <span>
+        Accessibility and convenience from any device
+       </span>
+      </div>
+     </div>
+     <a class="button8" href="http://paypeer.online/" target="_blank">
+      DEMO VERSION 1.0
+     </a>
+    </div>
+    <div class="container8">
+     <div class="block8-nav1">
+      <img alt="Phone" id="phone" src="https://syntera.io/assets/home_v2/phone-66973657b3496137039a8d9e2912de0552c4a777c9be28359134b38e2d3cc2cc.png"/>
+      <div class="text5-1">
+       Multi currency wallet
+      </div>
+      <div class="text5-2">
+       features
+      </div>
+      <div class="text5-3">
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Multi currency wallet
+        </span>
+       </span>
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         SDPOS and smart contract
+        </span>
+       </span>
+       <span>
+        <img alt="Line" src="https://syntera.io/assets/home_v2/line-ab157c27f58fbe9d660077592dd2f56b1d192ac7a9ad60b21deaffcd9cc02892.png"/>
+        <span>
+         Secured Network
+        </span>
+       </span>
+      </div>
+     </div>
+     <div class="text1-2">
+      DOWNLOAD WALLET FOR
+     </div>
+     <div class="button1-nav">
+      <a href="https://itunes.apple.com/us/app/white-wallet-app/id1441531782?l=ru&amp;ls=1&amp;mt=8" target="_blank">
+       <div class="button1-2">
+        <div class="button1-1-icon1">
+        </div>
+        IOS
+       </div>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.whitewallet" target="_blank">
+       <div class="button1-2">
+        <div class="button1-1-icon2">
+        </div>
+        ANDROID
+       </div>
+      </a>
+     </div>
+    </div>
+    <div class="container7">
+     <div class="text6-1">
+      Consensus-Platform
+     </div>
+     <div class="text6-2">
+      decentralized collective governance
+     </div>
+     <div class="block7-nav">
+      <img alt="Object7" id="map3" src="https://syntera.io/assets/home_v2/object7-59f0d4c9fc5984a59e724d3a1f9e977fc48255b872434a5b4e2bc9281b388fab.png"/>
+      <span>
+       Syntera is a decentralized independent ecosystem managed by Smartholders.
+      </span>
+      <span>
+       - up to 7% Airdrop monthly
+       <br/>
+       - the right to vote on the allocation of budgets
+      </span>
+      <a class="button7" href="http://consensus.world/" target="_blank">
+       coming soon
+      </a>
+     </div>
+    </div>
+    <div class="container6">
+     <div id="particles4-js">
+     </div>
+     <div class="text6-1">
+      marketplace syntera
+     </div>
+     <div class="text6-2">
+      implementing the Sharing Economy model
+     </div>
+     <div class="flex-row1">
+      <div id="video2-sr">
+       <img alt="03" src="https://syntera.io/assets/03-c9a1822ebee94d271db177510d6b7e7888f6630014bc6b0aedc89c7d91cf07ae.gif"/>
+      </div>
+      <div class="block6-nav1">
+       <div class="block6-nav1-align">
+        <div class="title6">
+         4 main services offered by Marketplace
+        </div>
+        <span class="span_block">
+         <img alt="Sqrt1" src="https://syntera.io/assets/home_v2/sqrt1-f2c17b632d9a9477680bc1abee2fc34dc962c9f44dffd6d8c3229e1b35697caf.png"/>
+         <span>
+          Collaborative Purchasing of Goods and Services
+         </span>
+        </span>
+        <span class="span_block">
+         <img alt="Sqrt2" src="https://syntera.io/assets/home_v2/sqrt2-1e08b234a9813ea9baa37747d5c6ee95dc71d878df96ca3da195dd1fc342c05a.png"/>
+         <span>
+          Collaborative Offering of Goods and Services
+         </span>
+        </span>
+        <span class="span_block">
+         <img alt="Sqrt3" src="https://syntera.io/assets/home_v2/sqrt3-bbc99453c9de3a421ae4e7356b26949318e500d2ac3f2a719873ad2fb477c35e.png"/>
+         <span>
+          Co-Ownership
+         </span>
+        </span>
+        <span class="span_block">
+         <img alt="Sqrt4" src="https://syntera.io/assets/home_v2/sqrt4-728f3ccd219b4414474761e60b8616b5b16706b8b71ebf9b5b236a1e9c878955.png"/>
+         <span>
+          Rent out unused resources
+         </span>
+        </span>
+        <a class="btn-learn-more" href="http://shareum.place/" target="_blank">
+         coming soon
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="container8" id="container8">
+      <div class="block2-nav" id="scroll4">
+       <a class="scroll_blocks nav-a" href="#scroll4">
+       </a>
+       <div class="text2-1">
+        team
+       </div>
+       <div class="text2-2">
+        The project is managed by the board of directors, the CEO of the project will elect by voting
+        <br/>
+        with the participation of the community on the Consensus platform
+       </div>
+      </div>
+      <div class="line2">
+      </div>
+     </div>
+     <div class="container10">
+      <div id="particles8-js">
+      </div>
+      <!-- <div class="block2-nav" id="scroll5">
+      <a class="scroll_blocks nav-a" href="#scroll5" ></a>
+      <div class="text2-1">media</div>
+    </div> -->
+      <!-- <div class="line2"></div> -->
+      <!-- <div class="block10-nav">
+      <div class="block10 1">
+        <div class="line10"></div>
+        <div class="line10-1"></div>
+        <a tartget="_blank" href="https://blockonomi.com/sharing-economy-approach-investments/">
+          <img src="https://syntera.io/assets/home_v2/block-b4d8a66457d75bc1d4e002bf79cc80e5977df81e1ea30862aefe79e55116b79b.png" alt="Block" />
+</a>      </div>
+      <div class="block10 2">
+        <div class="line10"></div>
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://thebitcoinnews.com/a-sharing-economy-approach-to-investments/">
+          <img src="https://syntera.io/assets/home_v2/bit8-980d2081290a778c371ba65d6be6d379d2b10c2c795a3767a84278dcf132bba5.png" alt="Bit8" />
+</a>      </div>
+      <div class="block10 3">
+        <div class="line10"></div>
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://coinstelegram.com/2018/03/23/secret-party-of-crypto-investors-held-in-singapore/">
+          <img src="https://syntera.io/assets/home_v2/bit10-0ac7aa153203f5a4ddcbb9591dad5940516770003464247c5ac9a87f9ec595a5.png" alt="Bit10" />
+</a>      </div>
+      <div class="block10 4">
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://coinspot.io/investors/strategiya-shering-ekonomiki-v-investirovanii/">
+          <img src="https://syntera.io/assets/home_v2/bit6-1a937bd9f58d2e1af2854d5a663ad0323fc6ea805b67019f7a4219eb2057fbe5.png" alt="Bit6" />
+</a>      </div>
+      <div class="block10 5">
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://traderviet.com/threads/tranh-nhau-mua-token-syntera-so-token-duoc-ban-het-sach-chi-trong-gio-dau-tien.13168/">
+          <img src="https://syntera.io/assets/home_v2/bit4-4f8477bd1d46d09676ca887178d8d97e29cd62710e00419589789ffdd22ef602.png" alt="Bit4" />
+</a>      </div>
+      <div class="block10 6">
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://www.newsbtc.com/press-releases/unfeigned-interest-sharing-economy-platform-syntera-accomplished-private-sale-first-hour/">
+          <img src="https://syntera.io/assets/home_v2/bit2-4f76f78fac3e011ee4c0e5e512ce585c819ac03417f37c8729e8a93cc1215b8c.png" alt="Bit2" />
+</a>      </div>
+      <div class="block10 7">
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://portaldobitcoin.com/festa-secreta-cripto-investidores-em-singapura/">
+          <img src="https://syntera.io/assets/home_v2/bit5-42d5e73a47dc6d62fda1536cd6742db8f5211e3ca163b8ddff9c095ab33b5a9e.png" alt="Bit5" />
+</a>      </div>
+      <div class="block10 8">
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://koinbulteni.com/kripto-para-milyonerleri-singapurda-gizlice-bulustular-11326.html">
+          <img src="https://syntera.io/assets/home_v2/bit11-bb5f5bf268eb82f102a6e1017a361a0e6a8bce5d8de9618fa7baedad54ca6407.png" alt="Bit11" />
+</a>      </div>
+      <div class="block10 9">
+        <div class="line10-1"></div>
+        <a target="_blank" href="https://www.criptomoedasfacil.com/syntera-conclui-a-etapa-de-venda-privada-do-seu-token-em-apenas-uma-hora/">
+          <img src="https://syntera.io/assets/home_v2/bit-ddbfd47adfc6ac93be22364129c861531fe1f07734136db56f0e584906ceb053.png" alt="Bit" />
+</a>      </div>
+      <div class="block10 10">
+        <div class="line10-1 line10-2"></div>
+        <a target="_blank" href="http://bitcoinist.com/hurry-buy-tokens-syntera-accomplished-private-sale-first-hour/">
+          <img src="https://syntera.io/assets/home_v2/bit9-e7fda2f557192790ed98dc38420f99858709fd8dc5fa304b1c2be74d0d670c53.png" alt="Bit9" />
+</a>      </div>
+      <div class="block10 11">
+        <a target="_blank" href="https://siamblockchain.com/2018/04/04/syntera-shared-economy-ico/">
+          <img src="https://syntera.io/assets/home_v2/bit3-997ed04877fe78e0b73260f1e8e449068254e9b609214288afbb9bd6cf7ae581.png" alt="Bit3" />
+</a>      </div>
+      <div class="block10 12">
+        <a target="_blank" href="https://arbolet.net/clanek/5483-syntera-dokoncila-soukromy-predprodej-v-prvni-hodine">
+          <img src="https://syntera.io/assets/home_v2/bit7-10681b9ccb4ce622c915cf0a3aefc52f19e11337287a444f220a4697d6b4475d.png" alt="Bit7" />
+</a>      </div>
+    </div> -->
+      <div class="block2-nav" id="scroll6">
+       <a class="scroll_blocks nav-a" href="#scroll6">
+       </a>
+       <div class="text2-1">
+        News
+       </div>
+      </div>
+      <div class="line2">
+      </div>
+     </div>
+     <div class="container11">
+      <div class="iframe">
+       <div class="home-v2-slide-articles-container">
+        <div class="shadow_left">
+        </div>
+        <div class="swiper-container">
+         <div class="swiper-wrapper">
+          <div class="slk2 slid swiper-slide">
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/209" target="_blank">
+            <img alt="Photo 2020 02 23 16.39.55" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/209/thumb/photo_2020-02-23_16.39.55.jpeg?1582450883"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/209" target="_blank">
+             P2PB2B exchange  provides trade opportunity for Syntera token.
+            </a>
+           </div>
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/208" target="_blank">
+            <img alt="775 ibm" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/208/thumb/775_IBM.jpg?1581135580"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/208" target="_blank">
+             IBM will create the largest Asian blockchain center in Thailand
+            </a>
+           </div>
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/206" target="_blank">
+            <img alt="775 syntera" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/206/thumb/775-Syntera.jpg?1581136378"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/206" target="_blank">
+             Syntera on the exchange
+            </a>
+           </div>
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/205" target="_blank">
+            <img alt="775 it" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/205/thumb/775_IT.jpg?1556877830"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/205" target="_blank">
+             Blockchain in e-commerce - perspectives and realities
+            </a>
+           </div>
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/204" target="_blank">
+            <img alt="775 lagard" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/204/thumb/775-Lagard.jpg?1556184842"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/204" target="_blank">
+             The Head of IMF on the prospects of digital currencies
+            </a>
+           </div>
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/202" target="_blank">
+            <img alt="775 wu" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/202/thumb/775-WU.jpg?1555054299"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/202" target="_blank">
+             Western Union is planning to work with cryptocurrencies
+            </a>
+           </div>
+          </div>
+          <div class="slid swiper-slide">
+           <a href="/articles/201" target="_blank">
+            <img alt="775 nasdaq" src="https://synergycoin.s3.amazonaws.com/production/articles/covers/000/000/201/thumb/775-Nasdaq.jpg?1554892229"/>
+           </a>
+           <div class="slid-text">
+            <a href="/articles/201" target="_blank">
+             Adena Friedman: Cryptocurrency can become the world currency of the future
+            </a>
+           </div>
+          </div>
+          <div class="slk2 slid swiper-slide">
+          </div>
+         </div>
+         <div class="shadow_right">
+         </div>
+         <div class="swiper-pagination">
+         </div>
+         <div class="swiper-button-next">
+         </div>
+         <div class="swiper-button-prev">
+         </div>
+        </div>
+        <script>
+         if($(window).width() > 680){
+  var swiper = new Swiper('.home-v2-slide-articles-container .swiper-container', {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    slidesPerGroup: 1,
+    loop: false,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+} else {
+  var swiper = new Swiper('.home-v2-slide-articles-container .swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    slidesPerGroup: 1,
+    loop: false,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
+        </script>
+       </div>
+      </div>
+      <div class="button8">
+       <a href="/articles">
+        more news
+       </a>
+      </div>
+      <div class="block2-nav" id="scroll7">
+       <a class="scroll_blocks nav-a" href="#scroll7">
+       </a>
+       <div class="text2-1">
+        ROAD MAP
+       </div>
+      </div>
+      <div class="line2">
+      </div>
+     </div>
+     <div class="container12">
+      <div id="particles9-js">
+      </div>
+      <div class="home-v2-roadmap-container">
+       <div class="block12-nav">
+        <div class="block12-1-nav">
+         <div class="block12-1">
+          <div class="block12-1-line">
+          </div>
+          <div class="text12-1">
+           2017
+          </div>
+          <div class="text12-2">
+           <span>
+            <p>
+             CRYPTO CONSULTING COMPANY LAUNCH
+            </p>
+            <p>
+             PUBLIC TRADING HOUSE FOR EXTERNAL INVESTORS
+            </p>
+            <p>
+             SYNERGY MINING CLUB BASED ON SHARING ECONOMY CONCEPT START
+            </p>
+            <p>
+             CONSTRUCTION OF A MINING FARM IN CHINA
+            </p>
+            <p>
+             INTRODUCTION OF A WORLDWIDE RETAILER OF MINING EQUIPMENT
+            </p>
+           </span>
+           <div class="block12-1-line2">
+           </div>
+           <div class="block12-1-line block12-1-line1">
+            <img alt="Ellipse" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+           </div>
+          </div>
+         </div>
+         <div class="block12-1 block12-1-2">
+          <div class="block12-1-line">
+          </div>
+          <div class="text12-1">
+           2018
+          </div>
+          <div class="text12-2">
+           <span>
+            <p>
+             LAUNCH OF THE TOKEN SALE WEBSITE
+            </p>
+            <p>
+             MARKETING CAMPAIGN
+            </p>
+            <p>
+             PRIVATE INVESTOR SALE
+            </p>
+            <p>
+             TOKEN SALE LAUNCH
+            </p>
+           </span>
+           <div class="block12-1-line2 block12-1-line2-2">
+           </div>
+           <div class="block12-1-line block12-1-line1">
+            <img alt="Ellipse" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+           </div>
+          </div>
+         </div>
+         <div class="block12-1 block12-1-3">
+          <div class="block12-1-line">
+          </div>
+          <div class="text12-1">
+           2019
+          </div>
+          <div class="text12-2">
+           <span>
+            <p>
+             SSC BLOCKCHAIN START
+            </p>
+            <p>
+             P2P EXCHANGE LAUNCH
+            </p>
+            <p>
+             EXTERNAL EXCHANGE LISTING
+            </p>
+            <p>
+             COINMARKETCAP LISTING
+            </p>
+            <p>
+             SDPOS LAUNCH
+            </p>
+           </span>
+           <div class="block12-1-line2 block12-1-line2-3">
+           </div>
+           <div class="block12-1-line block12-1-line1">
+            <img alt="Ellipse" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="block12-2-nav">
+         <div class="block12-1">
+          <div class="block12-1-line">
+          </div>
+          <div class="text12-1">
+           2017
+          </div>
+          <div class="text12-2">
+           <span>
+            <p>
+             IDEA OF SYNTERA SHARING COIN
+            </p>
+            <p>
+             MARKET RESEARCH
+            </p>
+            <p>
+             OWN BLOCKCHAIN ARCHITECTURE
+            </p>
+            <p>
+             INVESTORS RELATION
+            </p>
+            <p>
+             TERO HEDGE FUND PARTNERSHIP
+            </p>
+           </span>
+           <div class="block12-1-line2 block12-1-line2-6">
+           </div>
+           <div class="block12-1-line block12-1-line1">
+            <img alt="Ellipse" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+           </div>
+          </div>
+         </div>
+         <div class="block12-1 block12-1-2">
+          <div class="block12-1-line">
+          </div>
+          <div class="text12-1">
+           2018
+          </div>
+          <div class="text12-2">
+           <span>
+            <p>
+             TERO FUND SMART HEDGE FUND START
+            </p>
+            <p>
+             MULTICURRENCY WALLET LAUNCH
+            </p>
+           </span>
+           <div class="block12-1-line2 block12-1-line2-7">
+           </div>
+           <div class="block12-1-line block12-1-line1">
+            <img alt="Ellipse" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+           </div>
+          </div>
+         </div>
+         <div class="block12-1 block12-1-3">
+          <div class="block12-1-line">
+          </div>
+          <div class="text12-1">
+           2020
+          </div>
+          <div class="text12-2">
+           <span>
+            <p>
+             DECENTRALISED MARKETPLACE
+            </p>
+           </span>
+           <div class="block12-1-line2 block12-1-line2-7">
+           </div>
+           <div class="block12-1-line block12-1-line1">
+            <img alt="Ellipse" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+           </div>
+          </div>
+         </div>
+        </div>
+        <img alt="Ellipse" class="icon12 icon12-1" id="glow1" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+        <div class="line12 line12-1">
+        </div>
+        <img alt="Ellipse" class="icon12 icon12-2" id="glow2" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+        <div class="line12 line12-2">
+        </div>
+        <img alt="Ellipse" class="icon12 icon12-3" id="glow3" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+        <div class="line12 line12-3">
+        </div>
+        <img alt="Ellipse" class="icon12 icon12-4" id="glow4" src="https://syntera.io/assets/home_v2/Ellipse-815daa47b5418942754f050f1c020d07390f50665ca2e741100ebd4c08b62788.svg"/>
+        <div class="line12 line12-4">
+        </div>
+        <img alt="Ellipse( glow)" class="icon12 icon12-5" id="glow5" src="https://syntera.io/assets/home_v2/Ellipse(-glow)-dbe32be50e233a54cceb4dd9ca180783d5f54823abc7cc9734beb403ba1c4f8d.svg"/>
+        <div class="line12 line12-5">
+        </div>
+        <img alt="Ellipse( glow)" class="icon12 icon12-6" id="glow6" src="https://syntera.io/assets/home_v2/Ellipse(-glow)-dbe32be50e233a54cceb4dd9ca180783d5f54823abc7cc9734beb403ba1c4f8d.svg"/>
+       </div>
+      </div>
+     </div>
+    </div>
+    <script>
+     window.addEventListener('load', function () {
+      var el = document.querySelector('.preloader');
+      el.style.opacity = 1;
+
+      (function fade() {
+        if ((el.style.opacity -= 0.15) < 0) {
+          window.scrollTo(0, 0);
+          el.style.display = "none";
+          controls.redraw();
+          controls.rend();
+          controls.start();
+        } else {
+          requestAnimationFrame(fade);
+        }
+      })();
+    });
+    </script>
+   </div>
+  </div>
+  <div class="container13">
+   <div id="particles10-js" style=" z-index: 0;">
+   </div>
+   <img alt="Logo2" id="logo2" src="https://syntera.io/assets/home_v2/logo2-b38e0b1f71ed2ea6ef1e8f25d512c33cae2d982c1d6ac2cf2c72f0fb9d04cbb2.png"/>
+   <div class="text13-1">
+    JOIN SHARING ECONOMY AT AN EARLY STAGE
+   </div>
+   <div class="subscribe-form-render" id="form'">
+    <div class="home-v2-subscribe-form-container">
+     <form accept-charset="UTF-8" action="/subscribes" class="simple_form new_subscribe_form" data-remote="true" id="new_subscribe_form" method="post" novalidate="novalidate">
+      <input name="utf8" type="hidden" value="✓"/>
+      <div class="form-wrap">
+       <div class="form">
+        <div class="form-group email optional subscribe_form_email">
+         <input class="form-control string email optional input_sub" id="subscribe_form_email" name="subscribe_form[email]" onblur="this.placeholder = 'Enter your email'" onfocus="this.placeholder = ''" placeholder="Enter your email" type="email"/>
+        </div>
+        <input class="button_sub" data-disable-with="Subscribe" name="commit" type="submit" value="Subscribe"/>
+       </div>
+      </div>
+     </form>
+    </div>
+   </div>
+   <div class="icon-nav" style="z-index: 2;">
+    <div class="icon-line">
+    </div>
+    <div class="icon-block">
+     <a href="https://www.facebook.com/SynteraCoin" target="_blank">
+      <img alt="Icon facebook1" class="icon" src="https://syntera.io/assets/home_v2/icon_facebook1-b6ab9bfecc84a27b1026f29e7abd664a982dbcd891ab38e62134e483135316ae.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://twitter.com/syntera_io" target="_blank">
+      <img alt="Icon twiter1" class="icon" src="https://syntera.io/assets/home_v2/icon_twiter1-26d7c65c7f20e2b70fe92289c718008ea7d7c967425d9a6dfe4fdfa2543ef980.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://www.instagram.com/syntera_io" target="_blank">
+      <img alt="Icon instagram1" class="icon" src="https://syntera.io/assets/home_v2/icon_instagram1-77c5985b02500c08a1bf4e4922ef7794ffdce4fbbc3cbb1096f34cadf0a169b3.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://www.youtube.com/channel/UC7CTibFPEAd-7VEhS__aWCg" target="_blank">
+      <img alt="Icon youtube1" class="icon" src="https://syntera.io/assets/home_v2/icon_youtube1-4fc8e68584c50879ac94ff245fcebd7a816e49e12b4c2938d66ad1c31b0f5c7d.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://bitcointalk.org/index.php?topic=3112079.0" target="_blank">
+      <img alt="Icon bitcoin1" class="icon" src="https://syntera.io/assets/home_v2/icon_bitcoin1-1ac2383bf88a0953061d9a2a6ee9d85583625f956f85f9e1a125b8d714c5dfa2.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://t.me/syntera" target="_blank">
+      <img alt="Icon telegram1" class="icon" src="https://syntera.io/assets/home_v2/icon_telegram1-602b34439426fac94061f11ca3e0d8861db77e19ef11ff538a6ea4f6f0b863d0.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://medium.com/@syntera" target="_blank">
+      <img alt="Icon media1" class="icon" src="https://syntera.io/assets/home_v2/icon_media1-d71a66d3c3340d2bce187e76bb538f31728bca1ff12d5544b4579c316d8b0838.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://vk.com/syntera" target="_blank">
+      <img alt="Icon vk1" class="icon" src="https://syntera.io/assets/home_v2/icon_vk1-17abda3be572e259daca23b6f97d48597839dce1e9443b0af6fb4dbd3faaf088.svg"/>
+     </a>
+    </div>
+    <div class="icon-block">
+     <a href="https://www.linkedin.com/company/syntera-io" target="_blank">
+      <img alt="Icon in1" class="icon" src="https://syntera.io/assets/home_v2/icon_in1-73edb81fa39e4e86e2ef4b6c760924135889638622dcc992f2d8973ce6aaee9b.svg"/>
+     </a>
+    </div>
+    <div class="menu-fix">
+     <div class="link link0" id="link2322">
+      <span>
+       01
+      </span>
+      <div class="circle">
+      </div>
+      <div class="circle-1">
+       <div class="circle_glow">
+       </div>
+      </div>
+      <span>
+       <a href="#top_top" style="color: #fff">
+        Home
+       </a>
+      </span>
+     </div>
+     <div class="link link1" id="link22">
+      <span>
+       02
+      </span>
+      <div class="circle">
+      </div>
+      <div class="circle-1">
+       <div class="circle_glow">
+       </div>
+      </div>
+      <span>
+       about
+      </span>
+     </div>
+     <div class="link link2" id="link33">
+      <span>
+       03
+      </span>
+      <div class="circle">
+      </div>
+      <div class="circle-1">
+       <div class="circle_glow">
+       </div>
+      </div>
+      <span>
+       Ecosystem
+      </span>
+     </div>
+     <div class="link link4" id="link55">
+      <span>
+       04
+      </span>
+      <div class="circle">
+      </div>
+      <div class="circle-1">
+       <div class="circle_glow">
+       </div>
+      </div>
+      <span>
+       media
+      </span>
+     </div>
+     <div class="link link5" id="link66">
+      <span>
+       05
+      </span>
+      <div class="circle">
+      </div>
+      <div class="circle-1">
+       <div class="circle_glow">
+       </div>
+      </div>
+      <span>
+       News
+      </span>
+     </div>
+     <div class="link link6" id="link77">
+      <span>
+       06
+      </span>
+      <div class="circle">
+      </div>
+      <div class="circle-1">
+       <div class="circle_glow">
+       </div>
+      </div>
+      <span>
+       Roadmap
+      </span>
+     </div>
+     <div class="line">
+     </div>
+    </div>
+   </div>
+   <div class="line2">
+   </div>
+   <div class="footer">
+    <div class="footer-nav">
+     <span>
+      Copyright @ 2020 Syntera
+     </span>
+     <span>
+      Blockchain Development LP
+     </span>
+     <span>
+      REPUBLIC OF IRELAND
+     </span>
+    </div>
+    <img alt="Logo3" id="logo3" src="https://syntera.io/assets/home_v2/logo3-7083379b9a61304d23f2a2a2bd54f306a14b2af898ab752b8ba9eeba7810a3cd.png"/>
+   </div>
+  </div>
+  <input id="last_pos" type="hidden" value="0"/>
+  <input id="last_pos1" type="hidden" value="0"/>
+  <script>
+   $('.play').click(function(){
+        $('.frame').css({'opacity' : '0', 'z-index': '-5'})
+        var $video = $('#video'),
+          src = $video.attr('src');
+        $video.attr('src', src + '&autoplay=1');
+      })
+
+      var menu_flag = true;
+      var flag = true;
+      $('.input').click(function(){
+
+        if(flag){
+          $('.field').css({'height' : '80px'})
+          flag = false;
+        }
+        else{
+          $('.field').css({'height' : '0'})
+          flag = true;
+        }
+      })
+
+      var height1 = $('#scroll2').offset().top;
+      var height2 = $('#scroll3').offset().top;
+      var height3 = $('#scroll4').offset().top;
+      // var height4 = $('#scroll5').offset().top;
+      var height5 = $('#scroll6').offset().top;
+      var height6 = $('#scroll7').offset().top;
+
+      var block2 = $('.block2-nav').offset().top;
+
+      function closeMenuMobile() {
+        $('#top_top').removeClass('open');
+        $('.menu .landing-menu-wrap > ul').css({'opacity' : '0', 'display' : 'none'})
+      }
+
+      $('#link232').click(function(){
+        event.preventDefault();
+        if($('#top_top').hasClass('open')) {
+          closeMenuMobile();
+          $('html,body').animate({scrollTop : 0}, 600);
+        }
+      })
+
+      $('#link2').click(function(){
+        event.preventDefault()
+        if($('#top_top').hasClass('open')) {
+          closeMenuMobile();
+          $('html,body').animate({scrollTop : height1 + 150}, 600);
+          hideBTN();
+        } else {
+          $('html,body').animate({scrollTop : height1 + 50}, 600);
+          hideBTN();
+        }
+      })
+
+      $('#link22').click(function(){
+        event.preventDefault()
+        $('html,body').animate({scrollTop : height1 + 175}, 600);
+      })
+
+      $('#link3').click(function(){
+        event.preventDefault()
+        if($('#top_top').hasClass('open')) {
+          closeMenuMobile();
+          $('html,body').animate({scrollTop : height2 - 100}, 900);
+          setTimeout(function(){
+            $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link22 .circle-1').css({'opacity' : '1'});
+          }, 3000);
+        } else {
+          $('html,body').animate({scrollTop : height2 }, 900);
+          setTimeout(function(){
+            $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link22 .circle-1').css({'opacity' : '1'});
+          }, 3000);
+        }
+      })
+
+      $('#link33').click(function(){
+        event.preventDefault()
+        $('html,body').animate({scrollTop : height2+175}, 900);
+              setTimeout(function(){
+        $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+        $('#link22 .circle-1').css({'opacity' : '1'});
+        }, 3000);
+      })
+
+      // $('#link5').click(function(){
+      //   event.preventDefault()
+      //   if($('#top_top').hasClass('open')) {
+      //     closeMenuMobile();
+      //     $('html,body').animate({scrollTop : height4 - 230}, 900);
+      //     hideBTN();
+      //   } else {
+      //     $('html,body').animate({scrollTop : height4}, 900);
+      //     hideBTN();
+      //   }
+      // })
+
+      // $('#link55').click(function(){
+      //   event.preventDefault()
+      //   $('html,body').animate({scrollTop : height4}, 900);
+      //     setTimeout(function(){
+      //   $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+      //   $('#link22 .circle-1').css({'opacity' : '1'});
+      //   $('#link33 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+      //   $('#link33 .circle-1').css({'opacity' : '1'});
+      //   $('#link44 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+      //   $('#link44 .circle-1').css({'opacity' : '1'});
+      //   }, 3000);
+      // })
+
+      $('#link6').click(function(){
+        event.preventDefault()
+        $('html,body').animate({scrollTop : height5}, 1000);
+        setTimeout(function(){
+          $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link22 .circle-1').css({'opacity' : '1'});
+          $('#link33 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link33 .circle-1').css({'opacity' : '1'});
+          $('#link44 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link44 .circle-1').css({'opacity' : '1'});
+        }, 3000);
+      })
+      $('#link66').click(function(){
+        event.preventDefault()
+        $('html,body').animate({scrollTop : height5}, 1000);
+        setTimeout(function(){
+          $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link22 .circle-1').css({'opacity' : '1'});
+          $('#link33 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link33 .circle-1').css({'opacity' : '1'});
+          $('#link44 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link44 .circle-1').css({'opacity' : '1'});
+          $('#link55 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+          $('#link55 .circle-1').css({'opacity' : '1'});
+        }, 3000);
+      })
+
+      $('#link7').click(function(){
+        event.preventDefault()
+        if($('#top_top').hasClass('open')) {
+          closeMenuMobile();
+          $('html,body').animate({scrollTop : height6 - 220}, 1000);
+          setTimeout(function(){
+            $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link22 .circle-1').css({'opacity' : '1'});
+            $('#link33 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link33 .circle-1').css({'opacity' : '1'});
+            $('#link44 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link44 .circle-1').css({'opacity' : '1'});
+            $('#link55 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link55 .circle-1').css({'opacity' : '1'});
+            $('#link66 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link66 .circle-1').css({'opacity' : '1'});
+          }, 3000);
+        } else {
+          $('html,body').animate({scrollTop : height6}, 1200);
+          setTimeout(function(){
+            $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link22 .circle-1').css({'opacity' : '1'});
+            $('#link33 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link33 .circle-1').css({'opacity' : '1'});
+            $('#link44 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link44 .circle-1').css({'opacity' : '1'});
+            $('#link55 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link55 .circle-1').css({'opacity' : '1'});
+            $('#link66 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+            $('#link66 .circle-1').css({'opacity' : '1'});
+          }, 3000);
+        }
+      })
+      $('#link77').click(function(){
+        event.preventDefault()
+        $('html,body').animate({scrollTop : height6}, 1200);
+        setTimeout(function(){
+        $('#link22 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+        $('#link22 .circle-1').css({'opacity' : '1'});
+        $('#link33 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+        $('#link33 .circle-1').css({'opacity' : '1'});
+        $('#link44 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+        $('#link44 .circle-1').css({'opacity' : '1'});
+        $('#link55 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+        $('#link55 .circle-1').css({'opacity' : '1'});
+        $('#link66 span').css({'transform' : 'translate(0,0)','opacity' : '1'});
+        $('#link66 .circle-1').css({'opacity' : '1'});
+        }, 3000);
+      })
+      function hideBTN(){
+          if($(window).scrollTop() < height1 - 300){
+              $('.link span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+              $('.link div:nth-child(3)').css({'opacity' : '0'})
+              $('.link:nth-child(1) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0px,0)'})
+              $('.link:nth-child(1) div:nth-child(3)').css({'opacity' : '1'})
+            }
+
+            if(($(window).scrollTop() >= height1 - 300) && ($(window).scrollTop() < height2 - 300)){
+
+              $('.link:nth-child(2) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+              $('.link:nth-child(2) div:nth-child(3)').css({'opacity' : '1'})
+
+              $('.link:nth-child(3) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+              $('.link:nth-child(3) div:nth-child(3)').css({'opacity' : '0'})
+            }
+
+            if(($(window).scrollTop() >= block2) && ($(window).width() > 813)){
+
+              $('.block4-nav').css({'width' : '590px','opacity' : '1'})
+              $('.circle1:nth-child(1)').css({'transform' : 'translate(-170px,0)','opacity' : '1'})
+              $('.circle1:nth-child(2)').css({'transform' : 'translate(170px,0)','opacity' : '1'})
+            }
+
+            if(($(window).scrollTop() >= height2 - 300) && ($(window).scrollTop() < height3 - 300)){
+              $('.link:nth-child(3) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+              $('.link:nth-child(3) div:nth-child(3)').css({'opacity' : '1'})
+
+              $('.link:nth-child(4) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+              $('.link:nth-child(4) div:nth-child(3)').css({'opacity' : '0'})
+              animate1_flag = true;
+
+            }
+
+            if($(window).scrollTop() >= height2 + 500){
+              animate2_flag = true;
+            }
+
+            if($(window).scrollTop() >= height2 + 1000){
+              animate3_flag = true;
+            }
+
+            // if(($(window).scrollTop() >= height4 - 300) && ($(window).scrollTop() < height5 - 300)){
+            //   $('.link:nth-child(5) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+            //   $('.link:nth-child(5) div:nth-child(3)').css({'opacity' : '1'})
+
+            //   $('.link:nth-child(6) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+            //   $('.link:nth-child(6) div:nth-child(3)').css({'opacity' : '0'})
+
+            //   $('.link:nth-child(4) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+            //   $('.link:nth-child(4) div:nth-child(3)').css({'opacity' : '1'})
+            // }
+
+            if(($(window).scrollTop() >= height5 - 300) && ($(window).scrollTop() < height6 - 300)){
+              $('.link:nth-child(6) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+              $('.link:nth-child(6) div:nth-child(3)').css({'opacity' : '1'})
+            }
+            if(($(window).scrollTop() > height6 + 500) && ($(window).width() > 813)){
+              $('.block12-1-nav').css({'opacity' : '1','transform' : 'translate(0,0)'})
+              $('.block12-2-nav').css({'opacity' : '1','transform' : 'translate(0,0)'})
+              var anim1 = function(){
+                $('.icon12-1').css({'opacity' : '1'})
+              }
+              setTimeout(anim1,150)
+              var anim2 = function(){
+                $('.icon12-2').css({'opacity' : '1'})
+              }
+              setTimeout(anim2,300)
+              var anim3 = function(){
+                $('.icon12-3').css({'opacity' : '1'})
+              }
+              setTimeout(anim3,450)
+              var anim4 = function(){
+                $('.icon12-4').css({'opacity' : '1'})
+              }
+              setTimeout(anim4,600)
+              var anim5 = function(){
+                $('.icon12-5').css({'opacity' : '1'})
+              }
+              setTimeout(anim5,750)
+              var anim6 = function(){
+                $('.icon12-6').css({'opacity' : '1'})
+              }
+              setTimeout(anim6,900)
+              var anim7 = function(){
+                $('.icon12-7').css({'opacity' : '1'})
+              }
+              setTimeout(anim7,1050)
+              var anim8 = function(){
+                $('.icon12-8').css({'opacity' : '1'})
+              }
+              setTimeout(anim8,1200)
+            }
+
+            var height7 = $('.container7').offset().top;
+
+            if($(window).scrollTop() > height7 - 300){
+              $('#map3').css({'transform' : 'translate(0,-130px)'})
+            }
+
+            var height8 = $('.block8-nav').offset().top;
+
+            if($(window).scrollTop() > height8 - 300){
+              $('.row8').css({'opacity' : '1'})
+            }
+
+            if($(window).scrollTop() > height8){
+              $('#phone').css({'transform' : 'translate(500px,0)'})
+            }
+
+            var height10 = $('.container10').offset().top;
+
+            if($(window).scrollTop() > height10 - 700){
+              $('.block10-nav').css({'opacity' : '1'})
+            }
+
+      }
+      $(window).scroll(function(){
+        if($(window).scrollTop() < height1 - 300){
+          $('.link span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+          $('.link div:nth-child(3)').css({'opacity' : '0'})
+          $('.link:nth-child(1) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0px,0)'})
+          $('.link:nth-child(1) div:nth-child(3)').css({'opacity' : '1'})
+        }
+
+        if(($(window).scrollTop() >= height1 - 300) && ($(window).scrollTop() < height2 - 300)){
+
+          $('.link:nth-child(2) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          $('.link:nth-child(2) div:nth-child(3)').css({'opacity' : '1'})
+
+          $('.link:nth-child(3) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+          $('.link:nth-child(3) div:nth-child(3)').css({'opacity' : '0'})
+        }
+
+        if(($(window).scrollTop() >= block2) && ($(window).width() > 813)){
+
+          $('.block4-nav').css({'width' : '590px','opacity' : '1'})
+          $('.circle1:nth-child(1)').css({'transform' : 'translate(-170px,0)','opacity' : '1'})
+          $('.circle1:nth-child(2)').css({'transform' : 'translate(170px,0)','opacity' : '1'})
+        }
+
+        // if(($(window).scrollTop() >= height2 - 300) && ($(window).scrollTop() < height4 - 300)){
+        //   $('.link:nth-child(3) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+        //   $('.link:nth-child(3) div:nth-child(3)').css({'opacity' : '1'})
+
+        //   $('.link:nth-child(4) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+        //   $('.link:nth-child(4) div:nth-child(3)').css({'opacity' : '0'})
+        //   animate1_flag = true;
+        // }
+
+        if($(window).scrollTop() >= height2 + 500){
+          animate2_flag = true;
+        }
+
+        if($(window).scrollTop() >= height2 + 1000){
+          animate3_flag = true;
+        }
+        //---- change ------
+        // if(($(window).scrollTop() >= height4 - 300) && ($(window).scrollTop() < height5 - 300)){
+
+        //   $('.block9-nav').css({'transform' : 'translate(0,0)', 'opacity' : '1'})
+
+        //   $('.link:nth-child(4) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+        //   $('.link:nth-child(4) div:nth-child(3)').css({'opacity' : '1'})
+
+        //   $('.link:nth-child(5) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+        //   $('.link:nth-child(5) div:nth-child(3)').css({'opacity' : '0'})
+        // }
+
+        if(($(window).scrollTop() >= height5 - 300) && ($(window).scrollTop() < height6 - 300)){
+          $('.link:nth-child(5) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          $('.link:nth-child(5) div:nth-child(3)').css({'opacity' : '1'})
+
+          $('.link:nth-child(6) span:nth-child(4)').css({'opacity' : '0','transform' : 'translate(-30px,0)'})
+          $('.link:nth-child(6) div:nth-child(3)').css({'opacity' : '0'})
+
+          $('.link:nth-child(4) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          $('.link:nth-child(4) div:nth-child(3)').css({'opacity' : '1'})
+        }
+
+        if(($(window).scrollTop() >= height6 - 300) ){
+          $('.link:nth-child(6) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          $('.link:nth-child(6) div:nth-child(3)').css({'opacity' : '1'})
+        }
+
+        if(($(window).scrollTop() > height5 + 200) && ($(window).width() > 813)){
+          $('.block12-1-nav').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          $('.block12-2-nav').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          var anim1 = function(){
+            $('.icon12-1').css({'opacity' : '1'})
+          }
+          setTimeout(anim1,150)
+          var anim2 = function(){
+            $('.icon12-2').css({'opacity' : '1'})
+          }
+          setTimeout(anim2,300)
+          var anim3 = function(){
+            $('.icon12-3').css({'opacity' : '1'})
+          }
+          setTimeout(anim3,450)
+          var anim4 = function(){
+            $('.icon12-4').css({'opacity' : '1'})
+          }
+          setTimeout(anim4,600)
+          var anim5 = function(){
+            $('.icon12-5').css({'opacity' : '1'})
+          }
+          setTimeout(anim5,750)
+          var anim6 = function(){
+            $('.icon12-6').css({'opacity' : '1'})
+          }
+          setTimeout(anim6,900)
+          var anim7 = function(){
+            $('.icon12-7').css({'opacity' : '1'})
+          }
+          setTimeout(anim7,1050)
+          var anim8 = function(){
+            $('.icon12-8').css({'opacity' : '1'})
+          }
+          setTimeout(anim8,1200)
+        }
+
+        if($(window).scrollTop() >= height6 - 300){
+          $('.link:nth-child(7) span:nth-child(4)').css({'opacity' : '1','transform' : 'translate(0,0)'})
+          $('.link:nth-child(7) div:nth-child(3)').css({'opacity' : '1'})
+        }
+
+        var height7 = $('.container7').offset().top;
+
+        if($(window).scrollTop() > height7 - 300){
+          $('#map3').css({'transform' : 'translate(0,-130px)'})
+        }
+
+        var height8 = $('.block8-nav').offset().top;
+
+        if($(window).scrollTop() > height8 - 300){
+          $('.row8').css({'opacity' : '1'})
+        }
+
+        if($(window).scrollTop() > height8){
+          $('#phone').css({'transform' : 'translate(500px,0)'})
+        }
+
+        var height10 = $('.container10').offset().top;
+
+        if($(window).scrollTop() > height10 - 300){
+          $('.block10-nav').css({'opacity' : '1'})
+        }
+
+      })
+    var doc_w =$(window).width();
+    if(doc_w < 980){
+    $('.block9-nav').css({'width' : 'calc( 100vw * '+$('.block9-nav')[0].children.length +')'}) ;
+    }
+
+    if($(window).width() < 813){
+      $('#particles-js').css({'display' : 'none'})
+    }
+  </script>
+  <script>
+   $(document).on('click', '.lang-change a', function() {
+        let locale = $(this).attr('data-locale')
+
+        Cookies.remove('locale')
+        Cookies.set('locale', locale)
+
+        location.reload()
+      })
+  </script>
+  <script async="" charset="utf-8" defer="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547fbac53c57091a" type="text/javascript">
+  </script>
+  <!-- BEGIN JIVOSITE CODE {literal} -->
+  <script>
+   (function(){ var widget_id = 'CGUQCm8qEH';var d=document;var w=window;function l(){
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}} })();
+  </script>
+  <!-- {/literal} END JIVOSITE CODE -->
+  <script>
+   //<![CDATA[
+
+//]]>
+  </script>
+  <script src="https://syntera.io/assets/home/template-ea8daf472c1cb0b7ab23e076d8b91fe5fc6209e80dc46f072bb98756309864e3.js">
+  </script>
+  <script src="https://syntera.io/assets/js.cookie-046177baa4447e12faf63ad472771220d48c1b6ce01f468b60271f1c50d64ac0.js">
+  </script>
+  <script src="https://syntera.io/assets/custom_select-db9ac081164ce6e3647c44cb0404849615a90069c10b54bf2af92ffae1ede099.js">
+  </script>
+  <script src="https://syntera.io/assets/particles.min-e0ae2aa652e536e204c2faf317ffb9a33c4772453941eb75c439ff4d469ed912.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index-702ba50148cf9847ca587e58d0654ffd845b9ba64b3a604c787bbd4546e3b5ec.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index1-210795c458fe61f3e86e61a00342517ed1bc1aa6fc06402bdb0ddcaed3153b92.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index2-a1cb564a50b1029ba5dbf6ad8701a5e4cb6236c898d7ae0439a871daa31bba57.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index3-dc61f486e580b62a37b33a996a59f79f3aa67caa0f431aa8eb1fb7d6b4a94d74.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index4-f428fba3c2f8d6b609c0ecef009ed34f5ad59f1649bf35a68263dbd2e2c4fb7e.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index5-56b2935793edf38d8ddc838c55853920ad5425460fe986c2b834c6efd8a20788.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index6-c0e65ddc8f24d9a3b96f5a561cad2f3c0f65435420ff3fe7b0506564beabacfc.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index7-37d3600b3e13ecfdcb675ad9d3ba3514f772f95f0e04f253b819e541d6e32de9.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index8-7f808d241de477af90b804dde31c0b72cf646f8ffb7cfaabe113d062404194e3.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index9-1d2dfdd428d1f0e6d44dc70c72cbe6d5cdc6534e7f5476a7add2a884acc3d0b2.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/index11-f54c50cb855dd5444bf63cf93289dbb205bec2f481e89eb7b0427276047a00c9.js">
+  </script>
+  <script src="https://syntera.io/assets/particles/ex-1a5a6d0b7f50e64dd83f6e9cde33062a3e24395d4f17399c24384a2e354880df.js">
+  </script>
+ </body>
+</html>

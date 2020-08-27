@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>
+   Sunxcoin | Home
+  </title>
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-select.min.css" rel="stylesheet"/>
+  <!-- External Css -->
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="assets/css/themify-icons.css" rel="stylesheet"/>
+  <link href="assets/css/owl.carousel.css" rel="stylesheet"/>
+  <link href="assets/css/magnific-popup.css" rel="stylesheet"/>
+  <link href="assets/css/owl.carousel.css" rel="stylesheet"/>
+  <link href="assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+  <link href="assets/css/plyr.css" rel="stylesheet"/>
+  <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  <!-- Custom Css -->
+  <link href="css/main.css" rel="stylesheet" type="text/css"/>
+  <!--Subscription-->
+  <script type="text/javascript">
+   $(document).ready(function() {
+	$('#submit').click(function() {
+		// Fade in the progress bar
+		$('#formProgress').hide();
+$('#formProgress').html('Pls wait...');
+		$('#formProgress').fadeIn();
+		// Disable the submit button
+		//$('#submit').attr("disabled", "disabled");
+		// Clear and hide any error messages
+		$('.formError').html('');
+		// Set temaprary variables for the script
+		var isFocus=0;
+		var isError=0;
+		// Get the data from the form
+		var email=$('#email').val();
+		 // Validate the data
+               if(email=='') {
+			$('#erroremail').html('<div class="">Please enter email</div>');
+			$('#email').focus();
+			 isFocus=1;
+			 isError=1;
+		   }
+		// Terminate the script if an error is found
+ 		if(isError==1) {
+			$('#formProgress').html('');
+			$('#formProgress').hide();
+			// Activate the submit button
+ 			$('#submit').attr("disabled", "");
+			 return false;
+		}
+		$.ajaxSetup ({
+			cache: false
+		});
+ var dataString = 'email='+ email; 
+		$.ajax({   
+			type: "POST",
+			url: "php/submit-form-ajax.php",
+			data: dataString,
+			success: function(msg) {
+				//alert(msg);
+				// Check to see if the mail was successfully sent
+				if(msg=='OK') {
+$('#formProgress').html('<div class="alert alert-success" role="alert" > Your subscription was successful</div>');
+                             //window.location.replace("../login/?registersuccessful=yes");
+					// Clear the subject field and message textbox
+					$#email').val('');
+					$('#password').val('');
+				} else {
+					$('#formProgress').html('');
+					alert('There was an error');
+				}
+				// Activate the submit button
+				$('#submit').attr("disabled", "");
+			},
+			error: function(ob,errStr) {
+				$('#formProgress').html('');
+				alert('There was an error. Check your internet connection and try again');
+				// Activate the submit button
+				$('#contactForm #submit').attr("disabled", "");
+			}
+		});
+		return false;
+	});
+});
+  </script>
+  <!-- Fonts -->
+  <!-- Favicon -->
+  <link href="images/favicon.png" rel="icon"/>
+  <link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="images/icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="images/icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  <style>
+   .register-text{color:#f87a46 !important;
+}    
+@media (min-width: 768px) { 
+.trackico{width:664px; height:253px;
+}
+}
+@media (max-width: 768px) {
+.trackico{width:100%; height:253px;
+}
+}
+  </style>
+ </head>
+ <body>
+  <div id="preloader">
+   <div class="status">
+   </div>
+  </div>
+  <!-- Header -->
+  <header>
+   <nav class="navbar navbar-default crypto-header">
+    <div class="container">
+     <div class="navbar-header">
+      <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+       <span class="sr-only">
+        Toggle navigation
+       </span>
+       <span class="icon-bar">
+       </span>
+       <span class="icon-bar">
+       </span>
+       <span class="icon-bar">
+       </span>
+      </button>
+      <a class="navbar-brand" href="/" id="navbar-brand">
+       <img alt="" class="img-responsive" src="images/logo2.png"/>
+      </a>
+     </div>
+     <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right navbar-button">
+       <li class="login-button">
+        <a href="/">
+         AFFILIATE
+        </a>
+       </li>
+      </ul>
+      <ul class="nav navbar-nav crypto-navbar navbar-right">
+       <li>
+        <a href="#wrapper">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="#about">
+         About
+        </a>
+       </li>
+       <li>
+        <a href="#faq">
+         FAQ
+        </a>
+       </li>
+       <li>
+        <a href="#buytoken">
+         Distribution
+        </a>
+       </li>
+       <li>
+        <a href="https://drive.google.com/file/d/0B-NgPXqF9nE_cUlDemUxU3Z5YndtdmlzUWtvemU3T2k0TXFr/view?usp=drivesdk">
+         Whitepaper
+        </a>
+       </li>
+       <li>
+        <a href="#roadmap">
+         Road Map
+        </a>
+       </li>
+       <li>
+        <a href="#team">
+         Team
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <!-- Header End -->
+  <!-- Banner -->
+  <div class="banner-wrapper" id="banner">
+   <div class="cpico-banner">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6">
+       <div class="defautl-slider-content">
+        <h2>
+         What Is
+         <span class="secondery-text">
+          SunX (XNS)?
+         </span>
+        </h2>
+        <h6>
+         Sunx is crypto/Fiat exchange ecosystem, with a mission to empower investors financially, given returns of up to 3-10% interest with our advance algorithm &amp; app usage.
+        </h6>
+        <div class="buttons">
+         <a class="button whitepaper" href="https://drive.google.com/file/d/0B-NgPXqF9nE_cUlDemUxU3Z5YndtdmlzUWtvemU3T2k0TXFr/view?usp=drivesdk">
+          <span>
+           whitepaper
+          </span>
+         </a>
+         <a class="button chat" href="https://t.me/joinchat/FjEq906J8MBu7IwKuWrimw">
+          <i class="fa fa-paper-plane">
+          </i>
+          Chat
+         </a>
+        </div>
+        <div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="banner-footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-12">
+       <div class="banner-social-link">
+        <h6>
+         Also join us:
+        </h6>
+        <ul>
+         <li>
+          <a href="https://m.facebook.com/OfficialSunx/">
+           <i class="fa fa-facebook">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/SunXchang/">
+           <i class="fa fa-twitter">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="https://medium.com/sunxcoin">
+           <i class="fa fa-medium">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="https://old.reddit.com/r/SUNX/">
+           <i class="fa fa-reddit">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="https://www.instagram.com/p/BhmN36jAC9m">
+           <i class="fa fa-instagram">
+           </i>
+          </a>
+         </li>
+         <!--<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
+         <li>
+          <a href="https://bitcointalk.org/index.php?topic=4073397.msg38016565#msg38016565">
+           <i class="fa fa-bitcoin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="partners">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-12">
+        <div class="partner-slider" id="partner-slider">
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-1.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-2.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-1.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-2.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-1.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-2.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-2.png"/>
+         </div>
+         <div class="partner-logo">
+          <img alt="" src="images/logo/banner/partner-logo-1.png"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Banner End -->
+  <!-- Cripto Rate -->
+  <div class="cpico-main-section cripto-rate-slider-block">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <div class="cripto-rate-slider" id="cripto-rate-slider">
+       <div class="cripto-rate">
+        <p class="company-name">
+         BTC/PLN
+        </p>
+        <p class="old-rate">
+         56839.69
+        </p>
+        <p class="new-rate">
+         55300.10
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         BCH/RUB
+        </p>
+        <p class="old-rate">
+         147223.01
+        </p>
+        <p class="new-rate">
+         146500
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         BCH/BTC
+        </p>
+        <p class="old-rate">
+         0.156954145
+        </p>
+        <p class="new-rate">
+         0.648
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         BCH/USD
+        </p>
+        <p class="old-rate">
+         2415
+        </p>
+        <p class="new-rate">
+         2301.23
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         DASH/USD
+        </p>
+        <p class="old-rate">
+         56839.69
+        </p>
+        <p class="new-rate">
+         55300.10
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         BTC/PLN
+        </p>
+        <p class="old-rate">
+         1170
+        </p>
+        <p class="new-rate">
+         1159.10
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         ETH/BTC
+        </p>
+        <p class="old-rate">
+         0.06431412
+        </p>
+        <p class="new-rate">
+         0.06431500
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         DASH/BTC
+        </p>
+        <p class="old-rate">
+         0.07573379
+        </p>
+        <p class="new-rate">
+         0.07573459
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         ETH/USD
+        </p>
+        <p class="old-rate">
+         569.69
+        </p>
+        <p class="new-rate">
+         550.10
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         DASH/RUB
+        </p>
+        <p class="old-rate">
+         839.69
+        </p>
+        <p class="new-rate">
+         800.10
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         BCH/USD
+        </p>
+        <p class="old-rate">
+         2415
+        </p>
+        <p class="new-rate">
+         2301.23
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         DASH/USD
+        </p>
+        <p class="old-rate">
+         56839.69
+        </p>
+        <p class="new-rate">
+         55300.10
+        </p>
+       </div>
+       <div class="cripto-rate">
+        <p class="company-name">
+         BTC/PLN
+        </p>
+        <p class="old-rate">
+         1170
+        </p>
+        <p class="new-rate">
+         1159.10
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Cripto Rate End -->
+  <!-- Featured Area -->
+  <div class="featured-bg-1" id="about">
+   <!-- Featured Content -->
+   <div class="cpch-main-section section-padding-top">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+       <div class="section-heading-with-logo text-center">
+        <img alt="Section Logo" class="img-responsive" src="images/section-logo.jpg"/>
+        <!--<h4>A Digital marketplace for tokens</h4>
+                <h6>Lorem Ipsum Dolor Amit</h6>-->
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-8">
+       <div class="left-content">
+        <div class="featured-content" id="whitepaper2">
+         <h3>
+          <span class="secondery-text">
+           SUNX (XNS)
+          </span>
+          Goal
+         </h3>
+         <p>
+          SUNX (XNS) goal is to make sure every individual can make quick transactions in the comfort of his or her hood to achieve our sustainable vision is by solving the following issues. Low return on investment; SUNX (XNS) will create effective trading, investment, crytocurrency/Fiat exchange program with a mission to empower people financially by given returns up to 20% invest via our advance algorithm and application usage
+         </p>
+         <div class="download">
+          <h6>
+           Documents:
+          </h6>
+          <div class="buttons">
+           <a class="button" href="https://drive.google.com/file/d/0B-NgPXqF9nE_cUlDemUxU3Z5YndtdmlzUWtvemU3T2k0TXFr/view?usp=drivesdk">
+            <span>
+             White Paper
+             <i class="fa fa-cloud-download">
+             </i>
+            </span>
+           </a>
+           <!--<a href="#" class="button button-gradient">Onepaper <i class="fa fa-cloud-download"></i></a>
+                      <a href="#" class="button"><span>Legal Opinion <i class="fa fa-cloud-download"></i></span></a>-->
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="right-content right-content-sm">
+        <div class="featured-video-block">
+         <div class="featured-video-area">
+          <div class="featured-video featured-video-1">
+           <div class="video-icon">
+            <a class="featured-video-play" href="https://m.youtube.com/channel/UCNxk6sXlj6TNCQXVitPmv3Q">
+             <i class="fa fa-youtube-play">
+             </i>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Featured Area2 -->
+   <div class="featured-bg-1" id="buytoken">
+    <!-- Featured Content -->
+    <div class="cpch-main-section section-padding-top">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-8 col-md-offset-2">
+        <div class="section-heading-with-logo text-center">
+         <img alt="banner" class="center" src="images/banner.jpg"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <style>
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+   </style>
+   <!-- Featured Content End2 -->
+   <!-- Featured Content End -->
+   <!-- Featured Box -->
+   <div class="cpch-main-section section-padding">
+    <div class="container">
+     <div class="row">
+      <div class="margin-balance">
+       <div class="col-md-3 col-sm-6">
+        <div class="featured-box text-center">
+         <div class="icon">
+          <img alt="" class="img-responsive" src="images/feature/icon-1.png"/>
+         </div>
+         <div class="content" style="height:230px;">
+          <h5>
+           Open Source
+          </h5>
+          <p>
+           Special offers and bonus investments plans have been opened to prospective investors. Invest now and get bonus and higest returns on your investments.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-6">
+        <div class="featured-box text-center">
+         <div class="icon">
+          <img alt="" class="img-responsive" src="images/feature/icon-2.png"/>
+         </div>
+         <div class="content">
+          <h5>
+           High Security
+          </h5>
+          <p>
+           At Sunxcoin, security is our top priority. We have taken a multitude of steps to help ensure your data is safe and secure. Our security team works perpetually to combat the latest in cyber threats in a proactive manner.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-6">
+        <div class="featured-box text-center">
+         <div class="icon">
+          <img alt="" class="img-responsive" src="images/feature/icon-3.png"/>
+         </div>
+         <div class="content">
+          <h5>
+           Blockchain
+          </h5>
+          <p>
+           Blockchain is the world's leading software platform for digital assets. Offering the largest production block chain platform in the world, we are using new technology to build a radically better financial system.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-6">
+        <div class="featured-box text-center">
+         <div class="icon">
+          <img alt="" class="img-responsive" src="images/feature/icon-4.png"/>
+         </div>
+         <div class="content">
+          <h5>
+           Fast Transactions
+          </h5>
+          <p>
+           Obviously, the fastest crypto coin would be your preference, especially when youâre using it for making payments to other parties. We ensure you have the best and reliable transaction speed on our platform.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Featured Box End -->
+  </div>
+  <!-- Featured Area -->
+  <!-- Achivement RoadMap-->
+  <div class="achivement-bg" id="roadmap">
+   <!-- Timeline -->
+   <div class="section-padding" id="timeline">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+       <div class="section-heading squire-shape text-center">
+        <h3>
+         Our Roadmap
+        </h3>
+        <p>
+         Welcome to Sunxcoin! Explore the amazing Cryptocurrencies high investments returns world with Sunxcoin.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-12">
+       <div class="timiline-wrapper text-center" id="timiline-wrapper">
+        <div class="timeline-steps" id="timeline-steps">
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2017
+           </h6>
+           <p>
+            SUNX Establishment.(Planning of XNS)
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2017
+           </h6>
+           <p>
+            May Ideal of SUNX into the blockchain
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2017
+           </h6>
+           <p>
+            August Research work started
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2018
+           </h6>
+           <p>
+            June Pre-ICO and ICO Campaign. Alpha-beta of SUNX App
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2018
+           </h6>
+           <p>
+            july-August: SunX ICO
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2018
+           </h6>
+           <p>
+            August-october: SUNX official App launch
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2018
+           </h6>
+           <p>
+            August-September: Exchange listing
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2018
+           </h6>
+           <p>
+            November-December: Platform launch
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2019
+           </h6>
+           <p>
+            Q1 launch partnership and massive marketing
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2019
+           </h6>
+           <p>
+            Q2 Updates and Upgrade of SUNX Application
+           </p>
+          </div>
+         </div>
+         <div class="timeline-step">
+          <div class="timeline-step-inner">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <h6>
+            2019-2020
+           </h6>
+           <p>
+            Expanding to over 100 country's using SUNX App to buy and sell cryptocurrency with their local currency
+           </p>
+          </div>
+         </div>
+         <!--<div class="timeline-step">
+                    <div class="timeline-step-inner">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <h6>May 2019</h6>
+                      <p>There are many variations of passages</p>
+                    </div>
+                  </div>-->
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Timeline End -->
+  </div>
+  <!-- Achivement End -->
+  <!-- Featured Content -->
+  <div class="featured-content-block section-padding-bottom section-padding-top" id="app-wrapper">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-6">
+      <div class="featured-content">
+       <h3>
+        Mobile Cryptobank
+       </h3>
+       <p>
+        Everything you need in your smartphone: payments, transfers, currency exchange, instant loans. Our goal - replace your bank
+       </p>
+       <ul>
+        <li>
+         No limits on transaction volume.
+        </li>
+        <li>
+         ApplePay, SamsungPay, AndroidPay, QR code
+        </li>
+        <li>
+         Contactless payments options
+        </li>
+        <li>
+         Integration with third-party payment wallets or services
+        </li>
+        <li>
+         Instant payments in ï¬at money
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="featured-image-block hidden-sm hidden-xs">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <div class="featured-thumb">
+       <img alt="" class="img-responsive" src="images/feature/featured-thumb.png"/>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Featured Content End -->
+  <!-- Team And Advisory -->
+  <div class="team-bg" id="team">
+   <!-- Team -->
+   <div class="team section-padding-top section-padding-bottom">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+       <div class="section-heading icon-style text-center section-padding-top">
+        <h3>
+         The Leadership Team
+        </h3>
+        <p>
+         The SUNX Team combines an industry expertise &amp; proven record in finance, development &amp; marketing.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-12">
+       <div class="team-members text-center">
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/ongjunhao.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Ongjunhao
+           </a>
+          </h6>
+          <p>
+           Blockchain Advisor
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/ongjunhao/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/florence-osas-pius.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Florence Pius
+           </a>
+          </h6>
+          <p>
+           Co-Founder
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/florence-osas-pius-284117162/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="0.jpeg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Bogdan Fiedur
+           </a>
+          </h6>
+          <p>
+           Blockchain Advisor
+          </p>
+          <p>
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/bogdanfiedur">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/par.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Partha- Gorai
+           </a>
+          </h6>
+          <p>
+           Asst developer
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/partha-gorai-1b9040118">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/baq.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Baishakhi Mukherjee
+           </a>
+          </h6>
+          <p>
+           Project coordinator
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/tanmoy-majumdar-69673121">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/frank-basco.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Frank Basco
+           </a>
+          </h6>
+          <p>
+           Senior Community Manager
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/frank-basco-7047a8161/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/louver-asuncion.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Louver Asuncion
+           </a>
+          </h6>
+          <p>
+           Marketing Strategies
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/louver09/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/marites-cabanilla.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Marites Cabanilla
+           </a>
+          </h6>
+          <p>
+           Event Director
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/marites-cabanilla-477a2726/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/rassel-apostol.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Rassel Apostol
+           </a>
+          </h6>
+          <p>
+           Blockchain Researcher
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/rassel-apostol-332922156/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/sanjeev-nanda.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Sanjeev Nanda
+           </a>
+          </h6>
+          <p>
+           Regional Marketer
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/sanjeev-nanda-b88ba056/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/gellie-anne-martin.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Gellie Anne Martin
+           </a>
+          </h6>
+          <p>
+           Social Marketing
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/gellie-anne-martin-0589a0165/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/amira-khan.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Amira Khan
+           </a>
+          </h6>
+          <p>
+           Security Advisor
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/amira-khan-64a230133">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/sergey-kosse.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Sergey kosse
+           </a>
+          </h6>
+          <p>
+           ICO Advisor
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/sergey-kosse-aa761b82">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="member">
+         <div class="member-thumb">
+          <img alt="Members Thumb" class="img-responsive" src="images/team/sxv1.jpg"/>
+         </div>
+         <div class="body">
+          <h6>
+           <a href="#">
+            Sumit Pradhan
+           </a>
+          </h6>
+          <p>
+           Project Advisor
+          </p>
+          <div class="social-link">
+           <a href="https://www.linkedin.com/in/sumitpradhan/">
+            <i class="fa fa-linkedin">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Team End -->
+  <!-- Team And Advisory End -->
+  <!-- FAQs -->
+  <div class="frequiently-ask-question section-padding-top" id="faq">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-6 col-md-offset-3">
+      <div class="section-heading text-center">
+       <h3>
+        F.A.Q
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-md-12">
+      <div class="icot-accordion">
+       <div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist">
+        <div class="panel panel-default">
+         <div class="panel-heading" id="headingOne" role="tab">
+          <h4 class="panel-title">
+           <a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button">
+            WHAT IS SUNTIME (SUNX)?
+           </a>
+          </h4>
+         </div>
+         <div aria-labelledby="headingOne" class="panel-collapse collapse in" id="collapseOne" role="tabpanel">
+          <div class="panel-body">
+           SUNX (SUNX) is a smart blockchain Exchange platform designed to create wealth (Investment, Trading, Stocking, Company Dividend and affiliate Program) with a low transactions charges and as well a smooth and immediate transaction with more than 100 countries to benefit from SUNX visions and mission. Every investor is entitled to 3-10% of every gain accrued monthly from the transactions charges if a trade is carried out using the SUNX app.
+          </div>
+         </div>
+        </div>
+        <div class="panel panel-default">
+         <div class="panel-heading" id="headingTwo" role="tab">
+          <h4 class="panel-title">
+           <a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button">
+            WHAT IS FINANCIAL INVESTMENT?
+           </a>
+          </h4>
+         </div>
+         <div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
+          <div class="panel-body">
+           Financial investment is the allocation of money in expectation of some financial gains. These gains in financial market perspective are called returns and can either be capital gain or investment income, for example, the purchase of bonds and stocks. Bonds purchase is issuing debt with an agreement to pay interest for the use of money, while stocks are simple shares of individual companies sold out to raise additional financing for operation. In relation to digital currency is a way funds are raised, for a new cryptocurrency Project and also financial returns for investment both in short or long run.
+          </div>
+         </div>
+        </div>
+        <div class="panel panel-default">
+         <div class="panel-heading" id="headingThree" role="tab">
+          <h4 class="panel-title">
+           <a aria-controls="collapseThree" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button">
+            HOW WILL SUNX (SUNX) SOLVE THIS PROBLEM?
+           </a>
+          </h4>
+         </div>
+         <div aria-labelledby="headingThree" class="panel-collapse collapse" id="collapseThree" role="tabpanel">
+          <div class="panel-body">
+           (SUNX) will develop the app for Trading. In which investors can buy and sell top cryptocurrency almost instantly such as Bitcoin (BTC), Ethereum (ETH), and Bitcoin Cash (BCH) etc. SUNX will have two sets of exchange in buying and selling cryptocurrency. Investors will be able to Buy and sell cryptocurrency from SUNX app which will be almost instantly. SUNX will also have peer to peer exchange which Trading will be done with an individual on the SUNX platform.
+          </div>
+         </div>
+        </div>
+        <div class="panel panel-default">
+         <div class="panel-heading" id="headingFour" role="tab">
+          <h4 class="panel-title">
+           <a aria-controls="collapseFour" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button">
+            HOW SUNX (SUNX) WORKS?
+           </a>
+          </h4>
+         </div>
+         <div aria-labelledby="headingFour" class="panel-collapse collapse" id="collapseFour" role="tabpanel">
+          <div class="panel-body">
+           SUNX (SUNX) will initialize the top coin in the crypto market Trade i.e. you buy bitcoin, Ethereum or bitcoin cash with fiat money (USD, EUP, GDP among others currency) and sell your BTC, ETH, and BCH to your local bank accounts almost instant (within 30 minutes). Since the main objective of SUNX (SUNX) is to be a reputable and a trustworthy exchange platform, where smooth and a faster exchange transactions will be done for organization and individuals to relate to our protocol, Development of SUNX Exchange for trading Bitcoin, Ethereum and bitcoin cash (More token will be added in the future) to cash in your local currency. Which will be almost instant. A trader has the options to trade with the Peer to Peer Exchange or SUNX direct.
+          </div>
+         </div>
+        </div>
+        <div class="panel panel-default">
+         <div class="panel-heading" id="headingFive" role="tab">
+          <h4 class="panel-title">
+           <a aria-controls="collapseFive" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" role="button">
+            WHY YOU NEED TO INVEST WITH SUNX (SUNX)?
+           </a>
+          </h4>
+         </div>
+         <div aria-labelledby="headingFive" class="panel-collapse collapse" id="collapseFive" role="tabpanel">
+          <div class="panel-body">
+           Every investor is entitled to share from 20% of every profit accrued monthly from the transactions charges if a trade is carried out using the 
+SUNX app. 
+Monthly percentage (%) bonuses are only entitled to SUNX holders of 100 SUNX or above.
+Transaction Breakdown Volume Monthly
+*SUNX Trade Volume 1: $10,000,000
+$1,000,000 from company profits, $200,000 will be shared with the SUNX Investors.
+*SUNX Trade Volume 2: $100,000,000
+$10,000,000 from company profits, $2,000,000 will be shared with the SUNX Investors 
+*SUNX Trade Volume 3: $1,000,000,000
+$100,000,000 from company profits, $20,000,000 will be shared with the SUNX Investors.
+          </div>
+         </div>
+        </div>
+        <div class="panel panel-default">
+         <div class="panel-heading" id="headingSix" role="tab">
+          <h4 class="panel-title">
+           <a aria-controls="collapseSix" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseSix" role="button">
+            HOW SUNX (SUNX) MONTHLY PERCENTAGE (%) INCURRED WILL BE DISTRIBUTED?
+           </a>
+          </h4>
+         </div>
+         <div aria-labelledby="headingSix" class="panel-collapse collapse" id="collapseSix" role="tabpanel">
+          <div class="panel-body">
+           The Table below will be distributed by our Artificial intelligence Financial Calculator Bot. Doing all the task automatically.
+(Please note all shares are put in a pool and distributed)
+Stage1: 100-10,000 = 3% Shares 
+Stage2: 10,001-100,000 =5% Shares 
+Stage3:100,100-500,000=7% Shares 
+Stage4: 500,100 and above =10% Shares. 
+Monthly percentage (%) is paid out BTC, ETH, and BCH. (Trading Fee profits shared)
+SUNX isn't only an application more than just an exchange.
+Which Keeps the value positive and continue to increase in value, SUNX investors can get SUNX coin from affiliate marketing without doing much work other than your affiliate marketing.
+SUNX is promising and will continue to gain profits monthly and every percentage (%) accrued will be reading on SUNX app dashboard. (SUNX) will be exchanged or converted to Bitcoin, The FIAT currency will be supported also whereby investors can buy directly from a there bank account and can also withdraw directly to their bank account other top crypto coins will be traded as well. The team will ensure that SUNX App is user-friendly. SUNX app is not only one of the larger crypto to crypto exchanges offering a large number of trading pairs into Bitcoin, - including all the major crypto.  SUNX app is not just an app but also a crypto coin which can be traded and with monthly % earnings of about 20% for every investor having 100 SUNX above.
+The exchange will a very high turnover cryptocurrencies â that erode confidence in the cryptocurrency ecosystem as a whole. Apart from that, the system will have a very good security with two factor authenticator enabled which will be globally accepted and traded. Withdrawals are completely easy, faster, and safe and subject only to the transaction fee specified in the Blockchain of the particular cryptocurrency.
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Cleints -->
+  <div class="cpch-main-section section-padding">
+   <div class="container">
+    <div class="row">
+     <div class="margin-balance">
+      <div class="col-md-12">
+       <div class="section-heading text-center">
+        <h3>
+         All top ratings - High assessments - Low risks - Positive responses
+        </h3>
+        <p>
+        </p>
+        <div class="clients-logo">
+         <a class="client-logo" href="https://icochannels.com/published/details/sunx-481.html">
+         </a>
+        </div>
+        <div class="clients-logo">
+         <a class="client-logo" href="https://foundico.com/ico/sunx.html">
+          <img alt="" class="img-responsive" src="images/team/found.jpg" style="padding:30px;"/>
+         </a>
+        </div>
+        <div class="clients-logo">
+         <a class="client-logo" href="https://www.coingecko.com/en/ico/sunx">
+          <img alt="" class="img-responsive" src="images/team/cnt.jpg" style="padding:30px;"/>
+         </a>
+        </div>
+        <div class="clients-logo">
+         <a class="client-logo" href="https://aksjebloggen.com/bitcoin/">
+          <img alt="" class="img-responsive" src="https://sunxcoin.com/ab.png" style="padding:30px;"/>
+         </a>
+        </div>
+        <div class="clients-logo">
+         <a class="client-logo" href="https://coinlauncher.io/sunx-ico">
+          <img alt="" class="img-responsive" src="images/team/cl.jpg" style="padding:30px;"/>
+         </a>
+        </div>
+       </div>
+       <p>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Cleints End -->
+  <!-- Footer -->
+  <footer class="footer-bg white-text">
+   <div class="footer-widget-wrapper text-center footer-padding">
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-12">
+       <div class="footer-widget">
+        <div class="logo">
+         <a href="#">
+          <img alt="" class="img-responsive" src="images/section-logo.png"/>
+         </a>
+        </div>
+        <p class="contact">
+        </p>
+        <h5 class="white-text">
+         Get In Touch
+        </h5>
+        <p class="office-time white-text">
+         Any question? Reach out to us and we'll get back to you shortly.
+        </p>
+        <h5>
+         <a class="register-text" href="/cdn-cgi/l/email-protection#e1929491918e9395a192948f99828e888fcf828e8c">
+          Mail:
+          <span class="__cf_email__" data-cfemail="ef9c9a9f9f809d9baf9c9a81978c808681c18c8082">
+           [email protected]
+          </span>
+         </a>
+        </h5>
+        <div class="newsletter" id="contactForm">
+         <h6>
+          Subscribe to our Newsletter
+         </h6>
+         <form action="" class="ico-subscription">
+          <div class="contactForm" id="contactForm">
+           <span class="formProgress" id="formProgress">
+           </span>
+           <p class="formError" id="erroremail">
+           </p>
+           <div class="form-group">
+            <input class="form-control" id="email" name="email" placeholder="Your email address" type="email"/>
+           </div>
+           <button class="button" id="submit2">
+            subscribe
+           </button>
+           <p class="newsletter-error">
+            0 - An email address must contain a single @
+           </p>
+           <p class="newsletter-success">
+            Thank you for subscribing!
+           </p>
+          </div>
+          <div class="join">
+           <h5>
+            Join us in the Community
+           </h5>
+           <!--<a href="#" class="button"><i class="fa fa-paper-plane"></i></a>-->
+          </div>
+          <div class="social-link">
+           <ul>
+            <li>
+             <a class="facebook" href="https://m.facebook.com/OfficialSunx/">
+              <i class="fa fa-facebook">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a class="twitter" href="https://twitter.com/SunXchang/">
+              <i class="fa fa-twitter">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a class="youtube" href="https://m.youtube.com/channel/UCNxk6sXlj6TNCQXVitPmv3Q">
+              <i class="fa fa-youtube-play">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a class="reddit" href="https://old.reddit.com/r/SUNX">
+              <i class="fa fa-reddit-alien">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a class="medium" href="https://medium.com/sunxcoin">
+              <i class="fa fa-medium">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a class="instagram" href="https://www.instagram.com/p/BhmN36jAC9m">
+              <i class="fa fa-instagram">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a class="bitcoin" href="https://bitcointalk.org/index.php?topic=4073397.msg38016565#msg38016565
+ http://t.me/sunxapp">
+              <i class="fa fa-bitcoin">
+              </i>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-copyright">
+     <div class="container">
+      <div class="row">
+       <div class="col-sm-6">
+        <p class="copyright-text">
+         Copyrights 2018.
+         <a href="#">
+          SUNXCOIN
+         </a>
+         All Rights Reserved
+        </p>
+        <p class="copyright-text">
+         <a href="http://brinfotech.net/" target="_blank">
+         </a>
+        </p>
+       </div>
+       <div class="col-sm-6">
+        <div class="footer-nav">
+         <ul>
+          <li>
+           <a href="#">
+            Terms of Use
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Privacy Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Go Top -->
+    <div class="go-top">
+     <a href="#">
+      <span class="ti-arrow-up">
+      </span>
+     </a>
+    </div>
+    <!-- Go Top End -->
+    <!-- jQuery & JS -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+    </script>
+    <script src="js/jquery-1.4.1.min.js" type="text/javascript">
+    </script>
+    <script src="js/jquery.form.js" type="text/javascript">
+    </script>
+    <script src="js/email_subscription.js" type="text/javascript">
+    </script>
+    <script src="assets/js/jquery.min.js">
+    </script>
+    <script src="assets/js/jquery-migrate-3.0.1.min.js">
+    </script>
+    <script src="assets/js/jquery-ui.min.js">
+    </script>
+    <script src="assets/js/bootstrap.min.js">
+    </script>
+    <script src="assets/js/owl.carousel.min.js">
+    </script>
+    <script src="assets/js/jquery.ajaxchimp.min.js">
+    </script>
+    <script src="assets/js/Chart.min.js">
+    </script>
+    <script src="assets/js/chart.bundle.js">
+    </script>
+    <script src="assets/js/utils.js">
+    </script>
+    <script src="assets/js/perfect-scrollbar.min.js">
+    </script>
+    <script src="assets/js/owl.carousel.min.js">
+    </script>
+    <script src="assets/js/jquery.countdown.min.js">
+    </script>
+    <script src="assets/js/visible.js">
+    </script>
+    <script src="assets/js/plyr.js">
+    </script>
+    <script src="assets/js/bootstrap-select.min.js">
+    </script>
+    <script src="assets/js/jquery.nav.js">
+    </script>
+    <script src="assets/js/loadingoverlay_progress.min.js">
+    </script>
+    <script src="assets/js/jquery.magnific-popup.min.js">
+    </script>
+    <script src="js/custom.js">
+    </script>
+    <script src="js/particles.js">
+    </script>
+    <script src="js/app.js">
+    </script>
+    <!--Start of Tawk.to Script-->
+    <!--End of Tawk.to Script-->
+   </div>
+  </footer>
+ </body>
+</html>

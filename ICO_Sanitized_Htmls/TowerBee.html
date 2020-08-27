@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="author"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <meta name="description"/>
+  <title>
+   TowerBee
+  </title>
+  <link href="bounty-front/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="bounty-front/css/vendor.bundle.css" rel="stylesheet"/>
+  <link href="bounty-front/css/style.css" rel="stylesheet"/>
+  <link href="bounty-front/css/theme-java.css" id="layoutstyle" rel="stylesheet"/>
+  <script src="bounty-front/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+  <!--PageScrolling-->
+  <link href="bounty-front/css/window.css" media="screen" rel="stylesheet" type="text/css"/>
+  <script>
+   $(window).scroll(function () {
+
+            // selectors
+            var $window = $(window),
+                $body = $('body'),
+                $panel = $('.panel');
+
+            // Change 33% earlier than scroll position so colour is there when you arrive.
+            var scroll = $window.scrollTop() + ($window.height() / 3);
+
+            $panel.each(function () {
+                var $this = $(this);
+
+                // if position is within range of this panel.
+                // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+                // Remember we set the scroll to 33% earlier in scroll var.
+                if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+
+                    // Remove all classes on body with color-
+                    $body.removeClass(function (index, css) {
+                        return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
+                    });
+
+                    // Add class of currently active div
+                    $body.addClass('color-' + $(this).data('color'));
+                }
+            });
+
+        }).scroll();
+  </script>
+  <!--PageScrolling End-->
+  <script async="async" src="//platform-api.sharethis.com/js/sharethis.js#property=5abf986ace89f00013641dfc&amp;product=inline-share-buttons" type="text/javascript">
+  </script>
+ </head>
+ <body class="page theme-dark io-azure" data-offset="80" data-spy="scroll" data-target="#mainnav">
+  <form action="./" id="form1" method="post" name="form1" onsubmit="javascript:return WebForm_OnSubmit();">
+   <div>
+    <input id="__EVENTTARGET" name="__EVENTTARGET" type="hidden" value=""/>
+    <input id="__EVENTARGUMENT" name="__EVENTARGUMENT" type="hidden" value=""/>
+    <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUKLTU5OTYyNzY1Ng9kFgICAw9kFgICAw8PFgIeBFRleHRlZGRkuSjAIvXAZRNhY9FEmOASb2fvWET9PExJ/o+71AJTa4I="/>
+   </div>
+   <script type="text/javascript">
+    //<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+   </script>
+   <script src="/WebResource.axd?d=6zMYrhQrS0OHIC7aTVdku6ClXdp5PcsiveZtPfAnqJD8toRkdJRERiixr6R88-2OepWOh6-P9TpVQdBJE2Ft788zreFTxSctmllUr9j7BG81&amp;t=637103058297649313" type="text/javascript">
+   </script>
+   <script src="/ScriptResource.axd?d=oLXIhdHSkT2zL9I0jTvwTWpOrapQii2SjMt-3WKzIuoBMnp4qUwI9GWwQmTfkrr_iUlq6pBx-Z-uphiDgE-7O_JeTwbXU0xpAni-cadhFjNQZd7ZkkM01K2mu8EXBhC2-Kljjqtps2u8cZMpkwAegb_RvxJ8CFgEfcVpqCBMfgA1&amp;t=5f65bdf4" type="text/javascript">
+   </script>
+   <script src="/ScriptResource.axd?d=enICThptKSP9_vEv_ZVh1ku_gv2gFHELT8znFoMWjdVptaSjy8foDyYWmve9R1Sq1ychxfNZYAkNWiDVNhHJxZGmEqbFaL7XpLbK-XVWZDQVT8tIhRUZ-JlapKTo0BLMK2omqFuPPcbkI_TqpcJFrBc1T2uhDLXbQdYhjIsVmJZyJfXAh7FHLbl8XqdOsxqJ0&amp;t=ffffffffecf19baa" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    //<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+   </script>
+   <script src="/ScriptResource.axd?d=GO-GtZIzKXVpdIsI61AHs1oJbxu4ULq8_7zeJk03Q8lwsfeYjbrbjYJT6cheeI8w2BdQOWQ-rgbvxn06J0GLaM-xMU-nunr6PKJZnDgcF-aNzWSkxjZjzOL2f_iCiVxZTKnLlrf5mr9t0sFFctvEXMT5EBZy7HOo-nzdWJ-OX2o9zYIfcsfnu78930vkfAWh0&amp;t=ffffffffecf19baa" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    //<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+   </script>
+   <div>
+    <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="90059987"/>
+    <input id="__EVENTVALIDATION" name="__EVENTVALIDATION" type="hidden" value="/wEdAAMHFX/UaaErQPOYxFEZmSkeReJyGzlGLh/VS2nYBWC88r0yjcqNWBvkkQ/TW4tYCkatP+ebJwiQ/wfxOVzV6ucYCqsdeGTUiOdDWWKwudFy+g=="/>
+   </div>
+   <header class="site-header is-sticky" id="aboutus">
+    <div class="navbar navbar-expand-lg is-transparent" id="mainnav">
+     <nav class="container">
+      <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="index.aspx">
+       <img alt="logo" class="logo logo-light" src="bounty-front/images/header/logo.png"/>
+      </a>
+      <button class="navbar-toggler" data-target="#navbarToggle" data-toggle="collapse" type="button">
+       <span class="navbar-toggler-icon">
+        <span class="ti ti-align-justify">
+        </span>
+       </span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
+       <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".9">
+        <li class="nav-item">
+         <a class="nav-link menu-link" href="#aboutus">
+          ABOUT
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link menu-link" href="#tokenSale">
+          TOKEN
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link menu-link" href="#roadmap">
+          Roadmap
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link menu-link" href="#team">
+          Team
+         </a>
+        </li>
+        <li class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          White Paper
+         </a>
+         <ul class="dropdown-menu">
+          <li>
+           <a href="bounty-front/images/pdf/Whitepaper-V2.pdf" target="_blank">
+            Version 2
+           </a>
+          </li>
+          <li>
+           <a href="bounty-front/images/pdf/TowerBee ICO Whitepaper-V1.pdf" target="_blank">
+            Version 1
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+       <ul class="navbar-nav navbar-btns animated remove-animation" data-animate="fadeInDown" data-delay="1.15">
+        <li class="nav-item blue-bg ml-6">
+         <a class="nav-link btn-sm btn-outline menu-link" href="https://t.me/towerbee" style="color: #fff; line-height:12px;" target="_blank">
+          <i class="fa fa-paper-plane">
+          </i>
+          TELEGRAM
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div class="banner banner-full d-flex" id="header">
+     <div class="container slider-heading">
+      <h1 class="animated" data-animate="fadeInUp" data-delay=".1">
+       DISRUPTING THE $ 120 BILLION SaaS (SOFTWARE AS A SERVICE) INDUSTRY
+      </h1>
+      <h2 class="black-text font-w-700 animated mt-20" data-animate="fadeInUp" data-delay=".1">
+       <span style="color: #009fe7;">
+        12 SERVICES
+       </span>
+       ALREADY LIVE |
+       <span style="color: #009fe7;">
+        3+ SERVICES
+       </span>
+       IN PIPELINE
+      </h2>
+      <h3 class="text-center font-22 black-text font-w-800">
+       CROWDSALE IS OVER.
+       <span style="color:red;">
+        212,512,985
+       </span>
+       TBE TOKENS SOLD. THANK YOU ALL.
+      </h3>
+      <h3 class="text-center font-22 font-w-700" style="color: #009fe7; font-style:italic;">
+       Combining the powers of SaaS and blockchain
+      </h3>
+      <h3 class="text-center font-40 black-text font-w-800" style="margin-top:40px; text-align: left !important; margin-left: 190px; ">
+       Use
+       <span style="color:red;">
+        T
+       </span>
+       <span style="color:#009fe7">
+        B
+       </span>
+       <span style="color:#fec51a;">
+        E
+       </span>
+       tokens to buy
+       <span id="spin">
+       </span>
+      </h3>
+      <h3 class="text-center font-30 black-text font-w-800" style="margin-top:40px;">
+       <span style="color:red;">
+        T
+       </span>
+       <span style="color:#009fe7">
+        B
+       </span>
+       <span style="color:#fec51a;">
+        E
+       </span>
+       TOKEN TRADING ON
+      </h3>
+      <div class="col-md-4 text-center mt-20">
+       <a href="https://idex.market/eth/tbe" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/IDEX.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-4 text-center mt-20">
+       <a href="https://token.store/trade/TBE" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/token_store.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-4 text-center mt-20">
+       <a href="https://towerx.co/TBEETH/" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/TowerX.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-4 text-center mt-20">
+       <a href="https://forkdelta.app/#!/trade/0xb3c61539af156438951ea6cd48756d22a48fce62-ETH" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/ForkDelta.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-4 text-center mt-20">
+       <img src="bounty-front/images/coming-soon.png" style="display:inline-block;"/>
+      </div>
+      <div class="clearfix">
+      </div>
+      <h3 class="text-center font-30 black-text font-w-800 mt-40">
+       <span style="color:red;">
+        T
+       </span>
+       <span style="color:#009fe7">
+        B
+       </span>
+       <span style="color:#fec51a;">
+        E
+       </span>
+       LISTED ON
+      </h3>
+      <div class="col-md-3 text-center mt-20">
+       <a href="https://www.coingecko.com/en/coins/towerbee" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/coingecko.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-3 text-center mt-20">
+       <a href="https://coincodex.com/crypto/towerbee/" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/coincodex.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-3 text-center mt-20">
+       <a href="https://www.worldcoinindex.com/coin/towerbee" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/worldcoinindex.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-3 text-center mt-20">
+       <a href="https://blockfolio.com/coin/TBE" target="_blank">
+        <img class="img-thumbnail" src="bounty-front/images/blockfolio.png" style="display:inline-block;"/>
+       </a>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6 mt-30">
+       <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js">
+       </script>
+       <coingecko-coin-ticker-widget coin-id="towerbee" currency="usd" locale="en">
+       </coingecko-coin-ticker-widget>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="clearfix">
+      </div>
+      <h3 class="text-center font-30 black-text font-w-800" style="margin-top:40px;">
+       BUY SERVICES USING
+       <span style="color:red;">
+        T
+       </span>
+       <span style="color:#009fe7">
+        B
+       </span>
+       <span style="color:#fec51a;">
+        E
+       </span>
+      </h3>
+      <div class="col-md-12 mtb-50">
+       <div class="row">
+        <div class="col-md-3 col-sm-3 service-center">
+         <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+          <div class="service-icon">
+           <a href="https://towerbee.com/Business-Email/Business-Email.aspx" target="_blank">
+            <img class="img-style" src="bounty-front/images/icon/Bus_Email.png"/>
+           </a>
+          </div>
+          <div class="service-content">
+           <h4 style="margin-top:10px; margin-bottom:10px;">
+            <a href="https://towerbee.com/Business-Email/Business-Email.aspx" target="_blank">
+             Business Email
+            </a>
+           </h4>
+          </div>
+          <a class="btn-system btn-small" href="https://towerbee.com/Business-Email/Business-Email.aspx" style="background: #be1e2d; padding:7px 20px;" target="_blank">
+           BUY
+          </a>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-3 service-center">
+         <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+          <div class="service-icon">
+           <a href="https://towerbee.com/CRM-Module/CRM-Module.aspx" target="_blank">
+            <img class="img-style" src="bounty-front/images/icon/CRM_Module.png"/>
+           </a>
+          </div>
+          <div class="service-content">
+           <h4 style="margin-top:10px; margin-bottom:10px;">
+            <a href="https://towerbee.com/CRM-Module/CRM-Module.aspx" target="_blank">
+             CRM
+            </a>
+           </h4>
+          </div>
+          <div class="clearfix">
+          </div>
+          <a class="btn-system btn-small" href="https://towerbee.com/CRM-Module/CRM-Module.aspx" style="background: #6f3198; padding:7px 20px;" target="_blank">
+           BUY
+          </a>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-3 service-center">
+         <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+          <div class="service-icon">
+           <a href="https://towerbee.com/HR-Module/HR-Module.aspx" target="_blank">
+            <img class="img-style" src="bounty-front/images/icon/HR_Module.png"/>
+           </a>
+          </div>
+          <div class="service-content">
+           <h4 style="margin-top:10px; margin-bottom:10px;">
+            <a href="https://towerbee.com/HR-Module/HR-Module.aspx" target="_blank">
+             HR Module
+            </a>
+           </h4>
+          </div>
+          <a class="btn-system btn-small" href="https://towerbee.com/HR-Module/HR-Module.aspx" style="background: #3498db; padding:7px 20px;" target="_blank">
+           BUY
+          </a>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-3 service-center">
+         <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+          <div class="service-icon">
+           <a href="https://towerbee.com/Email-Marketing/Email-Marketing.aspx" target="_blank">
+            <img class="img-style" src="bounty-front/images/icon/Mark_Email.png"/>
+           </a>
+          </div>
+          <div class="service-content">
+           <h4 style="margin-top:10px; margin-bottom:10px;">
+            <a href="https://towerbee.com/Email-Marketing/Email-Marketing.aspx" target="_blank">
+             Email Marketing
+            </a>
+           </h4>
+          </div>
+          <a class="btn-system btn-small" href="https://towerbee.com/Email-Marketing/Email-Marketing.aspx" style="background: #63a460; padding:7px 20px;" target="_blank">
+           BUY
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="clearfix">
+      </div>
+      <h3 class="text-center font-30 black-text font-w-800">
+       <span style="color:red;">
+        T
+       </span>
+       <span style="color:#009fe7">
+        B
+       </span>
+       <span style="color:#fec51a;">
+        E
+       </span>
+       ALSO ACCEPTED ON
+      </h3>
+      <div class="col-md-12 mtb-50">
+       <div class="row">
+        <div class="col-md-3 col-sm-3 text-center">
+         <a href="https://www.caseforest.com/" target="_blank">
+          <img class="img-responsive" src="bounty-front/images/caseforest-logo.jpg"/>
+         </a>
+        </div>
+        <div class="col-md-3 col-sm-3 text-center">
+         <a href="https://www.freecasestudysolutions.com/" target="_blank">
+          <img class="img-responsive" src="bounty-front/images/freecasestudy-logo.jpg"/>
+         </a>
+        </div>
+        <div class="col-md-6 col-sm-6 text-center">
+         <img class="img-responsive" src="bounty-front/images/msg-logo.jpg"/>
+        </div>
+       </div>
+      </div>
+      <div class="box-content">
+       <div class="row">
+        <div class="col-md-4 animated fadeInUp" data-animate="fadeInUp" data-delay=".0" style="visibility: visible; animation-delay: 0s;">
+         <div class="table-responsive red p-10">
+          <h2>
+           TOWERBEE TOKEN
+          </h2>
+          <table class="table table-bordered">
+           <tbody>
+            <tr>
+             <th scope="row">
+              Total Supply
+             </th>
+             <td>
+              <strong>
+               448,000,000
+              </strong>
+             </td>
+            </tr>
+            <tr>
+             <th scope="row">
+              Circulating Supply
+             </th>
+             <td>
+              <strong>
+               278,000,000
+              </strong>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </div>
+        <div class="col-md-4 animated fadeInUp" data-animate="fadeInUp" data-delay=".0" style="visibility: visible; animation-delay: 0s;">
+         <div class="table-responsive yellow p-10">
+          <h3>
+           Pre - ICO is over
+          </h3>
+          <table class="table table-bordered border-black">
+           <tbody>
+            <tr>
+             <th scope="row">
+              Pre - ICO Date
+             </th>
+             <th>
+              05 May 2018 - 04 June 2018
+             </th>
+            </tr>
+            <tr>
+             <th colspan="2" scope="row">
+              1 ETH = 8,000 TowerBee (+30% bonus)
+             </th>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </div>
+        <div class="col-md-4 animated fadeInUp" data-animate="fadeInUp" data-delay=".0" style="visibility: visible; animation-delay: 0s;">
+         <div class="table-responsive darkblue p-10">
+          <h2>
+           ICO is over
+          </h2>
+          <table class="table table-bordered">
+           <tbody>
+            <tr>
+             <th scope="row">
+              ICO Date
+             </th>
+             <td>
+              24 Aug 2018 - 22 Sep 2018
+             </td>
+            </tr>
+            <tr>
+             <th class="text-center" colspan="2" scope="row">
+              1 ETH = 8000 TBE tokens
+             </th>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-bg section-gradiant banner-full d-flex mt-30" style="background: url(bounty-front/images/bg/bg-1.jpg) no-repeat center top; background-size: cover;">
+      <div class="particles2-container particles2-js" id="particles2-js">
+      </div>
+      <div class="container ptb-70">
+       <div class="banner-content">
+        <div class="row mobile-center">
+         <div class="col-md-12 col-sm-12">
+          <div class="header-txt">
+           <h1 class="animated" data-animate="fadeInUp" data-delay=".1">
+            WHAT ARE WE MAKING ?
+           </h1>
+           <h2 class="animated" data-animate="fadeInUp" data-delay=".1">
+            CRYPTO CURRENCY PAYMENT GATEWAY
+           </h2>
+           <ul class="mt-30 star animated" data-animate="fadeInUp" data-delay=".1">
+            <li>
+             * Accept 500+ Crypto Currencies With Single API
+            </li>
+            <li>
+             * Lowest Transaction Fee Of 0.01%
+            </li>
+            <li>
+             * 50% Discount On Transaction Fees When Paid Using Towerbee Token
+            </li>
+            <li>
+             * Transaction Fee Reduced To 0.005% When TowerBee (TBE) Token Is Used
+            </li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-md-12 col-sm-12">
+          <h2 class="section-title animated text-center mt-40 font-w-600" data-animate="fadeInUp" data-delay=".1">
+           How It Works?
+          </h2>
+          <div class="col-md-6 col-sm-6 mt-20">
+           <div class="countdown-box text-center animated font-w-700" data-animate="fadeInUp" data-delay=".3" style="width: 100%;">
+            <p class="animated wite-text text-left text-justify" data-animate="fadeInUp" data-delay=".2">
+             When buyer pays using TowerBee (TBE) token, the 50% discount is automatically applied on the transaction fee.
+            </p>
+           </div>
+          </div>
+          <div class="col-md-6 col-sm-6 mt-20">
+           <div class="countdown-box text-center animated font-w-700" data-animate="fadeInUp" data-delay=".3" style="width: 100%;">
+            <p class="animated wite-text text-left text-justify" data-animate="fadeInUp" data-delay=".2">
+             When Buyer pays using any of other 500+ cryptos, the 50% discount will be applied if the seller has TowerBee (TBE) token in his account.
+            </p>
+           </div>
+          </div>
+          <div class="clearfix">
+          </div>
+          <ul class="btns animated animated mt-40" data-animate="fadeInUp" data-delay=".1">
+           <li>
+            <a class="btn menu-link" href="#DISTRIBURION">
+             TOKEN DISTRIBUTION
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+     <div class="panel color-white" data-color="white">
+      <div class="particles3-container particles3-js" id="particles3-js">
+      </div>
+      <div class="section pink-title">
+       <div class="container mt-40">
+        <h2 class="wite-text animated" data-animate="fadeInUp" data-delay=".1">
+         OUR EXISTING SaaS PRODUCTS
+        </h2>
+        <div class="col-md-12 mtb-50">
+         <div class="row">
+          <div class="col-md-3 col-sm-3 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/CRM-Module/CRM-Module.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/CRM_Module.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/CRM-Module/CRM-Module.aspx" target="_blank">
+               CRM
+              </a>
+             </h4>
+            </div>
+            <div class="clearfix">
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/CRM-Module/CRM-Module.aspx" style="background: #6f3198;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/HR-Module/HR-Module.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/HR_Module.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/HR-Module/HR-Module.aspx" target="_blank">
+               HR Module
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/HR-Module/HR-Module.aspx" style="background: #3498db;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/Business-Email/Business-Email.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/Bus_Email.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/Business-Email/Business-Email.aspx" target="_blank">
+               Business Email
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/Business-Email/Business-Email.aspx" style="background: #be1e2d;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/Email-Marketing/Email-Marketing.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/Mark_Email.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/Email-Marketing/Email-Marketing.aspx" target="_blank">
+               Email Marketing
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/Email-Marketing/Email-Marketing.aspx" style="background: #63a460;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 mt-30 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/Contact-Management/Contact-Management.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/Contact_Mgmt.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/Contact-Management/Contact-Management.aspx" target="_blank">
+               Contact Manager
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/Contact-Management/Contact-Management.aspx" style="background: #8e44ad;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 mt-30 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/Team-Calendar/Team-Calendar.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/Team_Calendar.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/Team-Calendar/Team-Calendar.aspx" target="_blank">
+               Team Calendar
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/Team-Calendar/Team-Calendar.aspx" style="background: #ff7d01;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 mt-30 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/File-Manager/File-Manager.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/File_Manager.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/File-Manager/File-Manager.aspx" target="_blank">
+               File Manager
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/File-Manager/File-Manager.aspx" style="background: #ccbeb0;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 col-sm-3 mt-30 service-center">
+           <div class="service-box animated" data-animate="fadeInUp" data-delay=".1">
+            <div class="service-icon">
+             <a href="https://towerbee.com/Text-Audio-Video-Chat/Text-Audio-Video-Chat.aspx" target="_blank">
+              <img class="img-style" src="bounty-front/images/icon/chat_text_Video.png"/>
+             </a>
+            </div>
+            <div class="service-content">
+             <h4>
+              <a href="https://towerbee.com/Text-Audio-Video-Chat/Text-Audio-Video-Chat.aspx" target="_blank">
+               Text, AV Chat
+              </a>
+             </h4>
+            </div>
+            <a class="btn-system btn-small" href="https://towerbee.com/Text-Audio-Video-Chat/Text-Audio-Video-Chat.aspx" style="background: #2ab1e0;" target="_blank">
+             Learn More
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="panel" data-color="white">
+      <div class="particles4-container particles4-js" id="particles4-js">
+      </div>
+      <div class="section">
+       <div class="container pink-title mt-40">
+        <h1 class="section-title text-center font-24 font-w-700 black-text animated" data-animate="fadeInUp" data-delay=".1">
+         WHAT ARE WE MAKING?
+        </h1>
+        <h2 class="wite-text animated" data-animate="fadeInUp" data-delay=".1">
+         OUR UPCOMING SaaS PRODUCTS
+        </h2>
+        <div class="col-md-12 col-sm-12 ptb-40">
+         <div class="row">
+          <div class="col-md-6 col-sm-6">
+           <div class="upcoming-pro text-left">
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               PROJECT MANAGEMENT
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               INVENTORY MANAGEMENT
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               SURVEY WITH LOGIC
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               PERFORMANCE MANAGEMENT
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               BILLING &amp; ACCOUNTING
+              </h4>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+           <div class="upcoming-pro text-left">
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               HELP DESK
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               RECRUITMENT &amp; ONBOARDING
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               CRYPTO CURRENCY PAYMENT GATEWAY
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               SUPPLY CHAIN MANAGEMENT
+              </h4>
+             </div>
+            </div>
+            <div class="col-sm-12">
+             <div class="event-single-info">
+              <h4 class="animated" data-animate="fadeInUp" data-delay=".1">
+               EXPENSE &amp; INVOICE
+              </h4>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-bg token-section section-gradiant" id="tokenSale">
+      <div class="particles5-container particles5-js" id="particles5-js">
+      </div>
+      <div class="container ptb-180">
+       <div class="row text-center">
+        <div class="col-md-12">
+         <div class="section-head-s2">
+          <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">
+           Tokens
+          </h6>
+          <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">
+           TowerBee Token Statistics
+          </h2>
+          <p class="animated wite-text" data-animate="fadeInUp" data-delay=".2">
+           TowerBee (TBE) token is ERC20 token built on Ethereum blockchain. TowerBee (TBE) can be stored in all ERC20 compatible wallets like MyEtherWallet, Mist, MetaMask etc. Make sure you have the private key of the wallet to enable you to view the TowerBee (TBE) token stored in your wallet.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="row align-items-center">
+        <div class="col-lg-12">
+         <div class="row event-info">
+          <div class="col-sm-4">
+           <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+            <h6>
+             Total initial supply of TowerBee tokens
+            </h6>
+            <p>
+             500,000,000
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-4">
+           <div class="event-single-info animated" data-animate="fadeInUp" data-delay=".1">
+            <h6>
+             Existing total supply of TBE tokens
+            </h6>
+            <p>
+             448,000,000
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-4">
+           <div class="event-single-info animated" data-animate="fadeInUp" data-delay=".2">
+            <h6>
+             TBE token contract address
+            </h6>
+            <p>
+             <a href="https://etherscan.io/token/0xb3c61539af156438951ea6cd48756d22a48fce62" style="color:#fff;" target="_blank">
+              0xb3c61539af156438951ea6cd48756d22a48fce62
+             </a>
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-4">
+           <div class="event-single-info animated" data-animate="fadeInUp" data-delay=".3">
+            <h6>
+             Tokens Burnt
+            </h6>
+            <p>
+             52,000,000
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-4">
+           <div class="event-single-info animated" data-animate="fadeInUp" data-delay=".4">
+            <h6>
+             Current circulating supply
+            </h6>
+           </div>
+          </div>
+          <div class="col-sm-4">
+           <div class="event-single-info animated" data-animate="fadeInUp" data-delay=".5">
+            <h6>
+             Old contract address of TBE token
+            </h6>
+            <p>
+             <a href="https://etherscan.io/token/0xf18b97b312ef48c5d2b5c21c739d499b7c65cf96" style="color:#fff;" target="_blank">
+              0xf18b97b312EF48C5d2b5C21c739d499B7c65Cf96
+             </a>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-bg token-section section-gradiant" id="token">
+      <div class="particles6-container particles6-js" id="particles6-js">
+      </div>
+      <div class="container ptb-180">
+       <div class="row text-center">
+        <div class="col-lg-12">
+         <div class="section-head-s2">
+          <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">
+           Where TOWERBEE tokens can be used?
+          </h2>
+         </div>
+        </div>
+       </div>
+       <div class="row align-items-center">
+        <div class="col-lg-12">
+         <div class="row event-info">
+          <ul class="decimal">
+           <li class="animated" data-animate="fadeInUp" data-delay="0">
+            Pay for sevices on Towerbee.com platform. Get upto 50% discount when paid using TowerBee token.
+            <ol>
+             <li class="animated" data-animate="fadeInUp" data-delay="0">
+              01 Sep 2018 - 28 Feb 2019: 25% discount
+             </li>
+             <li class="animated" data-animate="fadeInUp" data-delay="0">
+              01 Mar 2019 - 31 Aug 2019: 35% discount
+             </li>
+             <li class="animated" data-animate="fadeInUp" data-delay="0">
+              01 Sep 2019 - 01 Mar 2020: 50% discount
+             </li>
+            </ol>
+           </li>
+           <li class="animated" data-animate="fadeInUp" data-delay="0">
+            Pay for transaction fees for using crypto currency payment gateway. Get 50% discount on fees by paying using TowerBee token.
+           </li>
+           <li class="animated" data-animate="fadeInUp" data-delay="0">
+            Trade TowerBee token on exhanges. We are in talks with exhanges to list TowerBee token.
+           </li>
+          </ul>
+          <div class="col-md-12 text-center mt-50">
+           <ul class="btns animated">
+            <li class="animated" data-animate="fadeInUp" data-delay="0">
+             <a class="btn menu-link" href="#DISTRIBURION">
+              TOKEN DISTRIBUTION
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-bg token-section section-gradiant" id="DISTRIBURION">
+      <div class="particles7-container particles7-js" id="particles7-js">
+      </div>
+      <div class="container ptb-180">
+       <div class="row text-center">
+        <div class="col-md-6">
+         <div class="single-chart light res-m-btm">
+          <h3 class="sub-heading">
+           Initial Token Distribution
+          </h3>
+          <div class="animated" data-animate="fadeInUp" data-delay=".0">
+           <img alt="Token-Distribution-Pie" src="bounty-front/images/Token-Distribution-Pienew.png"/>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6">
+         <div class="single-chart light">
+          <h3 class="sub-heading">
+           Sale Proceed Allocation
+          </h3>
+          <div class="animated" data-animate="fadeInUp" data-delay=".1">
+           <img alt="Funds-Usage-Pie" src="bounty-front/images/Funds-Usage-Pie2.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-pad section-bg-alt section-pro-alt roadmap-section" id="roadmap">
+      <div class="container">
+       <div class="row text-center">
+        <div class="col-lg-6 offset-lg-3">
+         <div class="section-head-s2">
+          <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">
+           Roadmap
+          </h6>
+          <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">
+           The Timeline
+          </h2>
+          <p class="animated" data-animate="fadeInUp" data-delay=".2">
+           With help from our teams, contributors and investors these are the milestones we are looking forward to achieve.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="roadmap-list-alt text-center timeline-carousel animated" data-animate="fadeInUp" data-delay=".0">
+        <div class="single-roadmap-alt sra-done gradiant-ctob">
+         <h6>
+          March 2016
+         </h6>
+         <p>
+          First line of code is written
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-btoa">
+         <h6>
+          August 2016
+         </h6>
+         <p>
+          HR module is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctob">
+         <h6>
+          October 2016
+         </h6>
+         <p>
+          Contact Manager, File manager &amp; Team Calendar is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-btoa">
+         <h6>
+          December 2016
+         </h6>
+         <p>
+          Business Email is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctob">
+         <h6>
+          February 2017
+         </h6>
+         <p>
+          Email Marketing is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-btoa">
+         <h6>
+          May 2017
+         </h6>
+         <p>
+          Integrated AV Chat is launched for all modules
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctob">
+         <h6>
+          October 2017
+         </h6>
+         <p>
+          CRM is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctob">
+         <h6>
+          January 2018
+         </h6>
+         <p>
+          All in One module is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctoa">
+         <h6>
+          April 2018
+         </h6>
+         <p>
+          Crypto Currency accepted as form of payment on Towerbee.com
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          May 2018
+         </h6>
+         <p>
+          Pre ICO is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctoa">
+         <h6>
+          August 2018
+         </h6>
+         <p>
+          ICO is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          September 2018
+         </h6>
+         <p>
+          TowerX is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-ctoa">
+         <h6>
+          April 2019
+         </h6>
+         <p>
+          ETH futures launched on TowerX
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          June 2019
+         </h6>
+         <p>
+          Project Management Module to be launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt gradiant-atoc">
+         <h6>
+          September 2019
+         </h6>
+         <p>
+          Cryptocurrrency Payment Gateway launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          December 2019
+         </h6>
+         <p>
+          Multi-Module is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          February 2020
+         </h6>
+         <p>
+          First Breakup of Multi-Module is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          April 2020
+         </h6>
+         <p>
+          Second Breakup of Multi-Module is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt sra-done gradiant-atoc">
+         <h6>
+          June 2020
+         </h6>
+         <p>
+          Third Breakup of Multi-Module is launched
+         </p>
+        </div>
+        <div class="single-roadmap-alt gradiant-atoc">
+         <h6>
+          July 2020 onwards
+         </h6>
+         <p>
+          Improvement in existing modules + new modules as per demand
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-pad section-bg team-section section-gradiant section-fix bg-fixed" id="team">
+      <div class="particles8-container particles8-js" id="particles8-js">
+      </div>
+      <div class="container">
+       <div class="row text-center">
+        <div class="col-lg-7 offset-lg-3">
+         <div class="section-head-s2">
+          <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">
+           Our Team
+          </h6>
+          <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">
+           The Core Team
+          </h2>
+          <p class="animated wite-text" data-animate="fadeInUp" data-delay=".2">
+           Our team is a growing group of high-calibre professionals from a variety of disciplines including Blockchain, IT, Sales, Editorial, Finance, Strategy and Marketing.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-6 col-lg-4 offset-lg-2 offset-xl-0 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".2">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-a-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Chandran
+            <br/>
+            Kumar
+           </h5>
+           <span class="team-title">
+            CEO at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/chandran-kr/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".3">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-b-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Anil
+            <br/>
+            Kumar
+           </h5>
+           <span class="team-title">
+            Technical Support Analyst at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/jrweb2print/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 offset-lg-2 offset-xl-0 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".4">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-c-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Vinay
+            <br/>
+            Kumar
+           </h5>
+           <span class="team-title">
+            Lead Blockchain Architect at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/vinay-kumar-ab8ba3102/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-d-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Ishwar
+            <br/>
+            Shukla
+           </h5>
+           <span class="team-title">
+            Sr. Software Engineer
+            <br/>
+            at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/ishwar-shukla-24090a34/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-e-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Abhinandan
+            <br/>
+            Singh
+           </h5>
+           <span class="team-title">
+            Software Engineer
+            <br/>
+            at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/abhinandan506/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-f-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Monty
+            <br/>
+            Gangania
+           </h5>
+           <span class="team-title">
+            Sr. Web Designer
+            <br/>
+            at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/monty-gangania/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-k-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Prateek
+            <br/>
+            Kr
+           </h5>
+           <span class="team-title">
+            Business Technology Analyst at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/prateek-kr-625656b8/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-l-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Rohit
+            <br/>
+            Mishra
+           </h5>
+           <span class="team-title">
+            Business Analyst at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/rohit-mishra-996719132/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-m-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Sidharth
+            <br/>
+            Jamuar
+           </h5>
+           <span class="team-title">
+            Project Engineer at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/sidharth-jamuar-6b4674112/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-n-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Prateek
+            <br/>
+            Ramsinghani
+           </h5>
+           <span class="team-title">
+            Business Operations Associate at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/prateek-ramsinghani-9b768980/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-o-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Utkarsh
+            <br/>
+            Prabhu
+           </h5>
+           <span class="team-title">
+            Business Analyst at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/utkarsh-prabhu-8b9767108/" target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-q-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Aakash
+            <br/>
+            Gupta
+           </h5>
+           <span class="team-title">
+            Business Technology Analyst at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/aakash-gupta-81a9b5112/  " target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 d-inline-flex justify-content-center">
+         <div class="team-member animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="team-photo">
+           <img alt="team" src="bounty-front/images/team-r-sq.jpg"/>
+          </div>
+          <div class="team-info">
+           <h5 class="team-name">
+            Prateek
+            <br/>
+            Goel
+           </h5>
+           <span class="team-title">
+            Intern at TowerBee
+           </span>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/goelprateek5/ " target="_blank">
+              <em class="fa fa-linkedin">
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+         <div class="gaps size-2x">
+         </div>
+         <h3 class="sub-heading">
+          The Advisory board
+         </h3>
+         <div class="gaps size-2x">
+         </div>
+        </div>
+       </div>
+       <div class="row justify-content-center">
+        <div class="row">
+         <div class="col-md-6 col-lg-4 offset-lg-2 offset-xl-0 col-xl-3 d-inline-flex justify-content-center">
+          <div class="team-member animated" data-animate="fadeInUp" data-delay=".1">
+           <div class="team-photo">
+            <img alt="team" src="bounty-front/images/team-g-sq.jpg"/>
+           </div>
+           <div class="team-info">
+            <h5 class="team-name">
+             Chandan
+             <br/>
+             Kumar
+            </h5>
+            <span class="team-title">
+             Board Advisor
+            </span>
+            <ul class="team-social">
+             <li>
+              <a href="https://www.linkedin.com/in/chandan-kumar-b581a535/" target="_blank">
+               <em class="fa fa-linkedin">
+               </em>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-6 col-lg-4 offset-lg-2 offset-xl-0 col-xl-3 d-inline-flex justify-content-center">
+          <div class="team-member animated" data-animate="fadeInUp" data-delay=".2">
+           <div class="team-photo">
+            <img alt="team" src="bounty-front/images/team-h-sq.jpg"/>
+           </div>
+           <div class="team-info">
+            <h5 class="team-name">
+             Nutan
+             <br/>
+             Kumari
+            </h5>
+            <span class="team-title">
+             Board Advisor
+            </span>
+            <ul class="team-social">
+             <li>
+              <a href="https://www.linkedin.com/in/nutan-kumari-35aa5b18/" target="_blank">
+               <em class="fa fa-linkedin">
+               </em>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-6 col-lg-4 offset-lg-2 offset-xl-0 col-xl-3 d-inline-flex justify-content-center">
+          <div class="team-member animated" data-animate="fadeInUp" data-delay=".3">
+           <div class="team-photo">
+            <img alt="team" src="bounty-front/images/team-i-sq.jpg"/>
+           </div>
+           <div class="team-info">
+            <h5 class="team-name">
+             Poulami Samaddar, PhD
+             <br/>
+            </h5>
+            <span class="team-title">
+             Board Advisor
+            </span>
+            <ul class="team-social">
+             <li>
+              <a href="https://www.linkedin.com/in/poulami-samaddar-02a25411a/" target="_blank">
+               <em class="fa fa-linkedin">
+               </em>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-6 col-lg-4 offset-lg-2 offset-xl-0 col-xl-3 d-inline-flex justify-content-center">
+          <div class="team-member animated" data-animate="fadeInUp" data-delay=".3">
+           <div class="team-photo">
+            <img alt="team" src="bounty-front/images/team-j-sq.jpg"/>
+           </div>
+           <div class="team-info">
+            <h5 class="team-name">
+             Sanjay
+             <br/>
+             Kumar
+            </h5>
+            <span class="team-title">
+             Board Advisor
+            </span>
+            <ul class="team-social">
+             <li>
+              <a href="https://www.linkedin.com/in/sanjay-kumar-b101a047/" target="_blank">
+               <em class="fa fa-linkedin">
+               </em>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section section-pad section-bg section-pro contact-section" id="contact">
+      <div class="container">
+       <div class="row text-center">
+        <div class="col-lg-6 offset-lg-3">
+         <div class="section-head-s2">
+          <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">
+           Contact
+          </h6>
+          <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">
+           Get In Touch
+          </h2>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-lg-4 offset-lg-1">
+         <div class="gaps">
+         </div>
+         <p class="animated" data-animate="fadeInUp" data-delay="0">
+          Any question? Reach out to us and we’ll get back to you shortly.
+         </p>
+         <ul class="contact-info-alt">
+          <li class="animated" data-animate="fadeInUp" data-delay=".15">
+           <em class="fa fa-envelope">
+           </em>
+           <span>
+            <a class="__cf_email__" data-cfemail="6b181e1b1b04191f2b3f041c0e19290e0e450204" href="/cdn-cgi/l/email-protection">
+             [email protected]
+            </a>
+           </span>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".2">
+           <em class="fa fa-paper-plane">
+           </em>
+           <span>
+            <a href="https://t.me/towerbee" target="_blank">
+             Join us on Telegram
+            </a>
+           </span>
+          </li>
+         </ul>
+        </div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+        </script>
+        <script type="text/javascript">
+         //<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', [], [], [], 90, '');
+//]]>
+        </script>
+        <div class="col-lg-5">
+         <div class="form-message text-left" id="contact-form">
+          <div class="form-results">
+          </div>
+          <div class="input-field animated" data-animate="fadeInUp" data-delay=".3">
+           <span id="Emailmessages">
+           </span>
+           <span class="more" id="reqEmail" style="color:Red;position:relative;display:none;">
+            Enter Name
+           </span>
+           <label class="input-title">
+           </label>
+          </div>
+          <div class="input-field animated" data-animate="fadeInUp" data-delay=".4">
+           <span class="more" id="RequiredFieldValidator1" style="color:Red;position:relative;display:none;">
+            Enter emailId
+           </span>
+           <span class="more" id="RegEmail" style="color:Red;display:none;">
+            Enter Valid emailID
+           </span>
+           <label class="input-title">
+           </label>
+          </div>
+          <div class="input-field animated" data-animate="fadeInUp" data-delay=".5">
+           <label class="input-title">
+           </label>
+          </div>
+          <div class="input-field animated" data-animate="fadeInUp" data-delay=".6">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="mask-ov-right mask-ov-s6">
+      </div>
+     </div>
+     <div class="section section-pad section-bg-dark" id="partners">
+      <div class="container">
+       <div class="row text-center">
+        <div class="col-md-6 offset-md-3">
+         <div class="section-head">
+          <h6 class="section-title-sm animated" data-animate="fadeInUp" data-delay=".0">
+           As seen in
+          </h6>
+         </div>
+        </div>
+       </div>
+       <div class="partner-list">
+        <div class="row text-center">
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://www.digitaljournal.com/pr/3719428" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-1.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://www.wnd.com/markets/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-2.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://finance.azcentral.com/azcentral/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-3.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.reviewjournal.com/reviewjournal/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-4.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://markets.financialcontent.com/stocks/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-5.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="row text-center">
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.post-gazette.com/postgazette/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-6.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://finance.jsonline.com/jsonline/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-7.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://stocks.newsok.com/newsok/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-8.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://markets.wallstreetoasis.com/wallstreetoasis/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-9.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://thenumbers.marketplace.org/publicradio/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-10.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="row text-center">
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://www.crn.com/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-11.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://finance.dailyherald.com/dailyherald/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-12.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.buffalonews.com/buffnews/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-13.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.pe.com/pe/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-14.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://finance.minyanville.com/minyanville/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-15.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="row text-center">
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://finance.travelweekly.com/northstar.travelweekly/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-16.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://finance.virtual-strategy.com/virtualstrategy/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-17.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.ask.com/ask/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-18.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://stocks.moneyshow.com/intershow.moneyshow/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-19.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://iw-us-500.industryweek.com/industryweek/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-20.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="row text-center">
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.siliconinvestor.com/siliconinvestor/news/read/36055568/" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-21.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://markets.financialcontent.com/stocks/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-22.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://markets.financialcontent.com/stocks/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-23.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="http://markets.housingwire.com/housingwire/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-24.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="col-sm col-6">
+          <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://markets.financialcontent.com/stocks/news/read/36055568" target="_blank">
+            <img alt="partner" src="bounty-front/images/partner-sm-25.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <script src="https://www.google.com/recaptcha/api.js">
+     </script>
+     <div class="section footer-scetion footer-particle section-pad-sm section-bg-dark">
+      <div class="container">
+       <div class="row">
+        <div class="col-sm-6 col-xl-4 res-l-bttm">
+         <a class="footer-brand animated" data-animate="fadeInUp" data-delay="0" href="#.">
+          <img alt="logo" class="logo logo-light" src="bounty-front/images/header/logo.png"/>
+         </a>
+         <ul class="social">
+          <li class="animated" data-animate="fadeInUp" data-delay=".1">
+           <a href="https://www.facebook.com/silverbeegroup" target="_blank" title="facebook">
+            <em class="fa fa-facebook">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".2">
+           <a href="https://twitter.com/towerbee" target="_blank">
+            <em class="fa fa-twitter" title="twitter">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".4">
+           <a href="https://www.reddit.com/r/TowerBee" target="_blank">
+            <em class="fa fa-reddit" title="Reddit">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".4">
+           <a href="https://t.me/towerbee" target="_blank">
+            <em class="fa fa-telegram" title="telegram">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".4">
+           <a href="https://www.linkedin.com/company/towerbee" target="_blank">
+            <em class="fa fa-linkedin" title="linkedin">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".4">
+           <a href="https://plus.google.com/u/0/103624190889478836190" target="_blank">
+            <em class="fa fa fa-google-plus" title="plus.google">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay=".4">
+           <a href="https://medium.com/towerbee" target="_blank">
+            <em class="fa fa-medium" title="medium">
+            </em>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-sm-6 col-xl-4 res-l-bttm">
+         <div class="footer-subscription">
+          <h6 class="animated" data-animate="fadeInUp" data-delay=".6">
+           Subscribe to our newsletter
+          </h6>
+          <div class="subscription-form animated" data-animate="fadeInUp" data-delay=".7" id="subscribe-form">
+           <span id="footer_lblemessage">
+           </span>
+           <input class="input-round required email" id="footer_youremail" name="footer$youremail" placeholder="Enter you email" type="text"/>
+           <span class="more" id="footer_RequiredFieldValidator1" style="color:Red;position:relative;display:none;">
+            Enter emailId
+           </span>
+           <span class="more" id="footer_RegEmail" style="color:Red;display:none;">
+            Enter Valid emailID
+           </span>
+           <input class="d-none" name="form-anti-honeypot" type="text" value=""/>
+           <input class="btn btn-plane" id="footer_btnSendSubscribe" name="footer$btnSendSubscribe" onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("footer$btnSendSubscribe", "", true, "Uid1", "", false, false))' type="submit" value="Subscribe"/>
+           <div class="subscribe-results">
+            <div class="g-recaptcha" data-sitekey="6LfnHF4UAAAAAINi8AHb24W4BUXFwUQwegF1CqKh">
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="col-xl-4">
+         <ul class="link-widget animated" data-animate="fadeInUp" data-delay=".8">
+          <li>
+           <a class="menu-link" href="#tokenSale">
+            Tokens
+           </a>
+          </li>
+          <li>
+           <div class="dropdown">
+            <button class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" style="background: none; border: none; color: #7ab9ff; margin: 0px; padding: 0px;" type="button">
+             Whitepaper
+            </button>
+            <ul class="dropdown-menu" style="opacity:9; width: 150px; padding:0px;">
+             <li style="width:100%;">
+              <a href="bounty-front/images/pdf/Whitepaper-V2.pdf" style="font-size:14px; color:#000; border-bottom: solid #dfdfdf 1px; padding: 0px 10px;" target="_blank">
+               Version 2
+              </a>
+             </li>
+             <li style="width:100%;">
+              <a href="bounty-front/images/pdf/TowerBee ICO Whitepaper-V1.pdf" style="font-size:14px; color:#000; padding: 0px 10px;" target="_blank">
+               Version 1
+              </a>
+             </li>
+            </ul>
+           </div>
+          </li>
+          <li>
+           <a class="menu-link" href="index.aspx#contact">
+            Contact
+           </a>
+          </li>
+          <li>
+           <a class="menu-link" href="index.aspx#roadmap">
+            Roadmap
+           </a>
+          </li>
+          <li>
+           <a class="menu-link" href="index.aspx#team">
+            Teams
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="gaps size-2x">
+       </div>
+       <div class="row">
+        <div class="col-md-4">
+         <span class="copyright-text animated" data-animate="fadeInUp" data-delay=".9">
+          Copyright @ 2018-2019, TowerBee
+         </span>
+        </div>
+        <div class="col-md-4">
+         <span class="copyright-text animated text-center" data-animate="fadeInUp" data-delay=".9">
+          Company incorporated in Estonia
+         </span>
+        </div>
+        <div class="col-md-4 text-right mobile-left">
+         <ul class="footer-links animated" data-animate="fadeInUp" data-delay="1">
+          <li>
+           <a href="Privacy-Policy.aspx">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a href="Terms-Conditions.aspx">
+            Terms &amp; Conditions
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <script type="text/javascript">
+      //<![CDATA[
+var Page_Validators =  new Array(document.getElementById("reqEmail"), document.getElementById("RequiredFieldValidator1"), document.getElementById("RegEmail"), document.getElementById("footer_RequiredFieldValidator1"), document.getElementById("footer_RegEmail"));
+//]]>
+     </script>
+     <script type="text/javascript">
+      //<![CDATA[
+var reqEmail = document.all ? document.all["reqEmail"] : document.getElementById("reqEmail");
+reqEmail.controltovalidate = "name";
+reqEmail.errormessage = "Enter Name";
+reqEmail.display = "Dynamic";
+reqEmail.validationGroup = "Uid";
+reqEmail.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+reqEmail.initialvalue = "";
+var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+RequiredFieldValidator1.controltovalidate = "emailid";
+RequiredFieldValidator1.errormessage = "Enter emailId";
+RequiredFieldValidator1.display = "Dynamic";
+RequiredFieldValidator1.validationGroup = "Uid";
+RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator1.initialvalue = "";
+var RegEmail = document.all ? document.all["RegEmail"] : document.getElementById("RegEmail");
+RegEmail.controltovalidate = "emailid";
+RegEmail.errormessage = "Enter Valid emailID";
+RegEmail.display = "Dynamic";
+RegEmail.validationGroup = "Uid";
+RegEmail.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+RegEmail.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+var footer_RequiredFieldValidator1 = document.all ? document.all["footer_RequiredFieldValidator1"] : document.getElementById("footer_RequiredFieldValidator1");
+footer_RequiredFieldValidator1.controltovalidate = "footer_youremail";
+footer_RequiredFieldValidator1.errormessage = "Enter emailId";
+footer_RequiredFieldValidator1.display = "Dynamic";
+footer_RequiredFieldValidator1.validationGroup = "Uid1";
+footer_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+footer_RequiredFieldValidator1.initialvalue = "";
+var footer_RegEmail = document.all ? document.all["footer_RegEmail"] : document.getElementById("footer_RegEmail");
+footer_RegEmail.controltovalidate = "footer_youremail";
+footer_RegEmail.errormessage = "Enter Valid emailID";
+footer_RegEmail.display = "Dynamic";
+footer_RegEmail.validationGroup = "Uid1";
+footer_RegEmail.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+footer_RegEmail.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+//]]>
+     </script>
+     <script type="text/javascript">
+      //<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('reqEmail').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('reqEmail'));
+}
+
+document.getElementById('RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidator1'));
+}
+
+document.getElementById('RegEmail').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RegEmail'));
+}
+
+document.getElementById('footer_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('footer_RequiredFieldValidator1'));
+}
+
+document.getElementById('footer_RegEmail').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('footer_RegEmail'));
+}
+//]]>
+     </script>
+     <script src="bounty-front/js/jquery.bundle.js">
+     </script>
+     <script src="bounty-front/js/script.js">
+     </script>
+    </div>
+   </header>
+  </form>
+ </body>
+</html>

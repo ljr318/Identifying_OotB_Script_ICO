@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <link href="/images/faviconsAndPWA/blockium/favicon.ico?v=Gvk004z5Yjvv" rel="shortcut icon"/>
+  <meta content="default-src * gap://ready data:; img-src * 'self' data:; style-src * 'unsafe-inline'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; " http-equiv="Content-Security-Policy"/>
+  <meta content="notranslate" name="google"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="http://www.blockium.io/images/thumb.png" property="og:image"/>
+  <meta content="https://www.blockium.io/images/thumb.png" property="og:image:secure_url"/>
+  <meta content="Blockium - Trading Tournaments" property="og:title"/>
+  <meta content="Create your portfolio • Compete against others • Win cash prizes!" property="og:description"/>
+  <meta content="https://www.blockium.io/Home/Welcome" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="2019-04-20T00:00:00Z" property="og:updated_time"/>
+  <meta content="1815785975101133" property="fb:app_id"/>
+  <meta content="Blockium" property="og:site_name"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport"/>
+  <meta content="Blockium - Trading Tournaments" name="description"/>
+  <meta content="Blockium" name="author"/>
+  <title>
+   Blockium - Trading Platform
+  </title>
+  <link href="/images/faviconsAndPWA/blockium/apple-touch-icon.png?v=Gvk004z5Yjv" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/images/faviconsAndPWA/blockium/favicon-32x32.png?v=Gvk004z5Yjvv" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/images/faviconsAndPWA/blockium/favicon-194x194.png?v=Gvk004z5Yjv" rel="icon" sizes="194x194" type="image/png"/>
+  <link href="/images/faviconsAndPWA/blockium/android-chrome-192x192.png?v=Gvk004z5Yjv" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/images/faviconsAndPWA/blockium/favicon-16x16.png?v=Gvk004z5Yjvv" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/configs/manifest-blockium.webmanifest?v=Gvk004z5Yjv" rel="manifest"/>
+  <meta content="/configs/browserconfig-blockium.xml?v=Gvk004z5Yjv" name="msapplication-config"/>
+  <link color="#2A2778" href="/images/faviconsAndPWA/blockium/safari-pinned-tab.svg?v=Gvk004z5Yjv" rel="mask-icon"/>
+  <meta content="Blockium" name="apple-mobile-web-app-title"/>
+  <meta content="Blockium" name="application-name"/>
+  <meta content="#2A2778" name="theme-color"/>
+  <script type="text/javascript">
+   "use strict";
+    function invertDictionary(dictionary) {
+        var newDictionary = {};
+        for (var prop in dictionary) {
+            if (dictionary.hasOwnProperty(prop)) {
+                newDictionary[dictionary[prop]] = prop;
+            }
+        }
+        return newDictionary;
+    }
+    var PopupType = { Information: 1, Warning: 2, Poll: 3, Question: 4, Error: 5, Custom: 6, Authentication: 7,
+        Confirmation: 8, ContestStarted: 9, ContestFinished: 10, ContestCanceled: 11, FriendsInvitationSystemUpdate: 12,
+        ContestPostponed: 13, AssetDisabled: 14, AssetEnabled: 15, ContestFilledStartsSoon: 16, DailyBonusGiven: 17,
+        MultiQuestionPoll: 18, Html: 19, Rate: 20, DividendsDivisionSystemUpdate: 21 };
+    var NotificationType = {"Uninitialized":0,"Information":1,"Warning":2,"Poll":3,"Question":4,"ContestStarted":9,"ContestFinished":10,"ContestCanceled":11,"FriendsInvitationSystemUpdate":12,"ContestPostponed":13,"AssetDisabled":14,"AssetEnabled":15,"ContestFilledStartsSoon":16,"DailyBonusGiven":17,"MultiQuestionPoll":18,"Html":19,"Rate":20,"DividendsDivisionSystemUpdate":21};
+    var Currency = {"Uninitialized":0,"Dollar":1,"Euro":2,"CanadianDollar":3,"BritishPound":4,"Yen":5,"SwissFranc":6,"AustralianDollar":7,"Bitcoin":8,"Ethereum":9,"IranianRial":10,"IndianRupee":11,"BrazilianReal":12,"SouthKoreanWon":13,"RussianRuble":14,"IsraeliNewShekel":15,"SwedishKrona":16,"SouthAfricanRand":17,"TurkishLira":18,"MexicanPeso":19,"BlockiumToken":20,"Tether":21,"BlockiumDemo":22,"BinanceCoin":23,"LiteCoin":24,"DogeCoin":25,"TomoChain":26,"Dai":27,"HuobiToken":28,"Placeholder1":29,"Placeholder2":30};
+    var invertedCurrency = invertDictionary(Currency);
+    var AuthenticationPopupToDisplay = {"Uninitialized":0,"Login":1,"Signup":2,"EmailNotConfirmed":3,"EmailConfirmed":4,"EmailAlreadyConfirmed":5,"EmailAlreadyConfirmedLoggedOn":6,"PasswordReset":7,"FirstSocialLogin":8,"FirstSocialSignup":9,"EmailChangeConfirmed":10,"EmailChangeConfirmedLoggedOn":11,"ForcedPasswordChange":12};
+    var DateTimeAccuracy = {"Uninitialized":0,"OnlyDate":1,"IncludeTime":2,"IncludeTimeWithoutSeconds":3};
+    var MainSiteTheme = {"Undefined":0,"OldStocker":1,"NewStocker":2,"OldFixedStocker":4};
+    var ClientSideEventType = {"Uninitialized":0,"AppDownload":1,"TabChanged":2,"PopoverOpened":3,"ContestGraphXAxisScaleChanged":4,"ContestGraphTimeScaleChanged":5,"LobbyFilterApplied":6,"PortfolioMgmtSearchOpened":7,"PortfolioMgmtSearchClosed":8,"PortfolioMgmtSearchClearButtonClicked":9,"PortfolioMgmtSearchPerformed":10,"PortfolioMgmtRandomClicked":11,"OriantationChanged":12,"PageNotActiveOrClosed":13,"PopupNotActive":14,"PopupClosed":15,"PopupClosedManually":16,"SocialInviteClicked":17,"UsersContestTableDetailsRowClosed":18,"UsersContestTableDetailsRowOpened":19,"UserRedirected":20,"PortfolioManagementAssetChosen":21,"PortfolioManagementAssetRemovedBySwipe":22,"PortfolioManagementAssetRemovedByButton":23,"PortfolioManagementPreviousPortfolioChosen":24,"PortfolioManagementPreviousPortfolioAssetChosen":25,"PortfolioManagementFinishClickedWithoutChange":26,"PortfolioManagementConfirmationOpened":27,"PortfolioManagementConfirmationExited":28,"PortfolioMgmtSectorCleared":29,"PortfolioMgmtSectorMenuOpened":30,"PortfolioMgmtSectorChosen":31,"PortfolioMgmtSectorMenuClosedWithoutChange":32,"PortfolioManagementAssetsScrolled":33,"SwiperSlideChanged":34,"PortfolioShuffleClicked":35,"PortfolioShuffleCanceled":36,"PortfolioShuffleConfirmed":37,"PortfolioMgmtLiveUpdateOpened":38,"PortfolioStopTradingClicked":39,"PortfolioStopTradingCanceled":40,"PortfolioStopTradingConfirmed":41,"Lead":42,"ViewContent":43,"CompleteRegistration":44,"PortfolioResumeTradingClicked":45,"PortfolioResumeTradingCanceled":46,"PortfolioResumeTradingConfirmed":47,"DepositClicked":48,"WithdrawalClicked":49,"RandomWatchClicked":50,"LiveNowClicked":51,"CreateCompetitionPortfolioBuildingOpened":52,"PurchaseClicked":53,"InnerStorePurchaseConfirmationOpened":54,"InnerStorePurchaseConfirmationExited":55};
+    var invertedClientSideEventType = invertDictionary(ClientSideEventType);
+    var SignalrGroup = {"Undefined":0,"Ticker":1,"Users":2,"Configurations":3,"Lobby":4,"CompetitionStatus":5,"CompetitionsUsers":6,"Notifications":7,"CompetitionJoinedUsers":8,"Asset":9,"AssetOwners":10,"Competitions":11};
+    var UserDevices = {"Unknown":0,"AndroidCordova":1,"IOSCordova":2,"WindowsCordova":4,"DesktopWeb":8,"MobileWeb":16};
+    var SignalrGroupsNames = {"1":"Ticker","2":"Users","3":"Configurations","4":"Lobby","5":"CompetitionStatus","6":"CompetitionsUsers","7":"Notifications","8":"CompetitionJoinedUsers","9":"Asset","10":"AssetOwners","11":"Competitions"};
+    var SignalrGroupsMainClientFunctionNames = {"1":"updateTicker","2":"updateUsers","3":"updateConfigurations","4":"updateLobby","5":"refreshCompetitionProfile","6":"updateCompetitionsUsers","7":"updateNotifications","8":"updateCompetitionJoinedUsers","9":"updateAsset","10":"updateAssetOwners","11":"updateCompetitions"};
+    var SignalrGroupsMainParameterNames = {"4":"lobbycompsguids","5":"statuscompid","8":"joinedcompid","9":"assetid","6":"compids","10":"assetsids","11":"info"};
+    var SignalrConnectionState = {
+        Connecting: 0,
+        Connected: 1,
+        Disconnected: 2
+    };
+    var initialTickerData = [{"Guid":"248964","Symbol":"H-BTC","CurrentPrice":11232.18,"PreviousClosingPrice":11689.12},{"Guid":"699806","Symbol":"H-DASH","CurrentPrice":85.5810,"PreviousClosingPrice":92.2299},{"Guid":"660257","Symbol":"H-EOS","CurrentPrice":3.00676,"PreviousClosingPrice":3.23874},{"Guid":"123318","Symbol":"H-ETC","CurrentPrice":7.27415,"PreviousClosingPrice":7.76482},{"Guid":"032075","Symbol":"H-LTC","CurrentPrice":57.6913,"PreviousClosingPrice":60.4036},{"Guid":"999806","Symbol":"H-NEO","CurrentPrice":12.46434,"PreviousClosingPrice":13.14854},{"Guid":"573318","Symbol":"H-TRX","CurrentPrice":0.0193817,"PreviousClosingPrice":0.0202780},{"Guid":"848964","Symbol":"H-XMR","CurrentPrice":86.8531,"PreviousClosingPrice":88.3672},{"Guid":"230257","Symbol":"H-XRP","CurrentPrice":0.296621,"PreviousClosingPrice":0.282186}];
+
+    var globalVariables = {
+        screenXs: "480px",
+        screenSm: "768px",
+        screenMd: "992px",
+        screenLg: "1200px",
+        screenLargeWidth: 1200,
+    };
+    (function() {
+        var secondaryGlobalVariables = {
+            pageUnloadCallbacks: [],
+            delayedCssClassTime: 1000,
+            pageLoadingTime: 50,
+            pageWindowLoadTimeout: 1000,
+            pageFullyLoaded:0,
+            pageLoadedEventName: "pageLoadedEvent",
+            pageLoadedEventTriggered:0,
+            pageWindowLoadTimeoutExpired:0,
+            genericJavascriptErrorMessage: "There was a problem performing the requested action.<br/><span class='sk-small-text'>If the problem persists, please report your problem via the <a href='/Home/ContactUs?type=1' class='sk-link external'>contact us</a> form.</span>",
+            contactUsGenericJavascriptErrorMessage: "There was a problem performing the requested action.<br/><span class='sk-small-text'>If the problem persists, please report your problem to our email: support@fokoyagroup.com.</span>",
+            elementChangeFadeOutMilliseconds: 500,
+            elementChangeFadeInMilliseconds: 500,
+            elementChangeFadeOutWaitingMilliseconds: 200,
+            popupChangeFadeOutMilliseconds: 0,
+            popupChangeFadeInMilliseconds: 0,
+            popupChangeFadeOutWaitingMilliseconds: 0,
+            tickerChangeFadeOutMilliseconds: 100,
+            tickerChangeFadeInMilliseconds: 700,
+            isMobileDevice:0,
+                weakAuthentication:1,
+                        currTheme: 4,
+            subthemes: {"SignupCombineFirstAndLastName":"{}","14-8-2018-NewPopupsDesign":"{\u0022body\u0022: { \u0022classesToAdd\u0022 : [\u0022skg-subtheme-14-8-2018-PopupsDesign\u0022]}}","18-5-2018-WelcomeDesign":"{\u0022body\u0022: { \u0022classesToAdd\u0022 : [\u0022sk-subtheme-18-5-2018-WelcomeDesign\u0022]}}"},
+            cssPrefix: 'sk',
+            defaultAssetsSectionsContestPortfolioSize: -1,
+            tickerShadowsAnimationTimeInMilliseconds: 1000,
+            showAjaxRequestLoadingAnimation:1,
+            notificationsCallbackFunc: undefined,
+            pageUnloaded:0,
+            performPageUnloadLogic:1,
+            performPageUnloadLogicRevertDelayMilliseconds:500,
+            i18nLocizeProjectId: "",
+            i18nLocizeAPIId: "",
+                        i18nGlobalTemplates: {
+                brand: "Blockium",
+                domain: "www.blockium.io",
+            },
+            i18nTranslationsModifications: {"en":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"it":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"de":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"es":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"fr":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"nl":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"pl":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"ru":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"sv":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"ko":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}},"ja":{"desktop.header":{"usermenu_feedback":"DISCORD"},"mobile.usermenu":{"feedback":"Discord"}}},
+            useMessagePackSignalrTransport:0,
+                signalRLogging:1,
+            signalrUrl: "https://smtp.blockium.io",
+            signalrRootPath: "/rt",
+            signalrConnection: undefined,
+            signalrFirstConnectedEventName: "signalrfirstconnected",
+            authenticationPopupsOptions: { animate: false },
+            registrationClosePeriodBeforeStartMinutes: 1,
+            lobbyDisplayLimit: -1,
+            unlockedLobbyCompetitionCount: 70,
+                createCompetitionEnabled:1,
+                createCompetitionCurrencies: [1,2,3,6,7,8],
+            createCompetitionPagePrizesCalculationDefaultParticipants: 20,
+            competitionInviteError: "",
+            competitionInviteSuccessCompetitionGuid: "",
+            loadingAnimationsOpened: 0,
+            followAssetButtonCls: 'Following',
+            unfollowAssetButtonHtml: '<i class="material-icons md-18">&#xE14C;</i>&nbsp;{{UNFOLLOW}}',
+            followingAssetButtonHtml: '<i class="material-icons md-18">&#xE876;</i>&nbsp;{{FOLLOWING}}',
+            followAssetButtonHtml: '<i class="material-icons md-18">&#xE145;</i>&nbsp;{{FOLLOW}}',
+            followAssetButtonDangerCls: "btn-danger",
+            followAssetButtonSuccessCls: "btn-success",
+            followAssetButtonPrimaryCls: "btn-success-transparent",
+            assetProfileOwnersTableBodyHeight: "353px",
+            competitionProfileCompetitionSummaryTableBodyHeight: (!window.matchMedia ? "291px" : (window.matchMedia('(min-width: ' + globalVariables.screenLg + ')').matches ? "291px" : "291px")),
+            competitionProfileCompetitionUsersTableBodyHeight: (!window.matchMedia ? "291px" : (window.matchMedia('(min-width: ' + globalVariables.screenLg + ')').matches ? "291px" : "291px")),
+            marginFromTicker: 30,
+            countdownsAnimateSecondsBeforeFinish: 30,
+            forcePhoneErrorMessage: "You haven&#x27;t filled your phone yet! Please fill your phone in the settings page to be able to enter the contest. Hurry up!",
+            minimumMyContestsTablesHeight: 190,
+            rightSidebarBoxShadowWidth: 4,
+            intradayBonusPopupTitle: "HOURLY BONUS",
+            minimalCashoutBalance: 10000000,
+                        horizontalListCustomScrollbarClass: "sk-horizontal-list-with-custom-scrollbar",
+            horizontalListCustomScrollbarRightClass: "sk-horizontal-list-with-custom-scrollbar-right",
+            horizontalListCustomScrollbarLeftClass: "sk-horizontal-list-with-custom-scrollbar-left",
+            horizontalListCustomScrollbarLeftButtonBlockClass: "sk-horizontal-list-with-custom-scrollbar-left-button-block",
+            horizontalListCustomScrollbarRightButtonBlockClass: "sk-horizontal-list-with-custom-scrollbar-right-button-block",
+            verticalListCustomScrollbarClass: "sk-vertical-list-with-custom-scrollbar",
+            verticalListCustomScrollbarDownClass: "sk-vertical-list-with-custom-scrollbar-down",
+            verticalListCustomScrollbarUpClass: "sk-vertical-list-with-custom-scrollbar-up",
+            verticalListCustomScrollbarUpButtonBlockClass: "sk-vertical-list-with-custom-scrollbar-up-button-block",
+            verticalListCustomScrollbarDownButtonBlockClass: "sk-vertical-list-with-custom-scrollbar-down-button-block",
+            customBodyScrollbarCallbacks: {},
+            assetsList:0,
+            assetsListIndex:0,
+            assetsLoadedEventName: "assetsLoaded",
+                        profilePictureChangedEventName: "profilePictureChanged",
+            assetsGraphsDataList:0,
+            assetsGraphsDataListIndex:0,
+            assetsGraphsDataLoadedEventName: "assetsGraphsDataLoaded",
+            bodyCustomScrollbarLoaded:0,
+            bodyCustomScrollbarLoadedEventName: "bodyScrollbarLoaded",
+                        supportedUserProfilePicExtensions: ("svg,png,jpeg,jpg").split(","),
+            supportedUserProfilePicMaxSizeKBs: 1800,
+            defaultMilisecondsToReloadFinishedUninitializedCompetitionProfilePage: 10000,
+            countriesNamesList: { "AF": "Afghanistan", "AX": "Aland Islands", "AL": "Albania", "DZ": "Algeria", "AS": "American Samoa", "AD": "Andorra", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica", "AG": "Antigua and Barbuda", "AR": "Argentina", "AM": "Armenia", "AW": "Aruba", "AU": "Australia", "AT": "Austria", "AZ": "Azerbaijan", "BS": "Bahamas", "BH": "Bahrain", "BD": "Bangladesh", "BB": "Barbados", "BY": "Belarus", "BE": "Belgium", "BZ": "Belize", "BJ": "Benin", "BM": "Bermuda", "BT": "Bhutan", "BO": "Bolivia", "AN": "Netherlands Antilles", "BA": "Bosnia and Herzegovina", "BW": "Botswana", "BR": "Brazil", "IO": "British Indian Ocean Territory", "VG": "British Virgin Islands", "BN": "Brunei", "BG": "Bulgaria", "BF": "Burkina Faso", "BI": "Burundi", "KH": "Cambodia", "CM": "Cameroon", "CA": "Canada", "CV": "Cape Verde", "KY": "Cayman Islands", "CF": "Central African Republic", "TD": "Chad", "CL": "Chile", "CN": "China", "CX": "Christmas Island", "CC": "Cocos Islands", "CO": "Colombia", "KM": "Comoros", "CK": "Cook Islands", "CR": "Costa Rica", "HR": "Croatia", "CU": "Cuba", "CW": "Curacao", "CY": "Cyprus", "CZ": "Czech Republic", "CD": "Democratic Republic of the Congo", "DK": "Denmark", "DJ": "Djibouti", "DM": "Dominica", "DO": "Dominican Republic", "TL": "East Timor", "EC": "Ecuador", "EG": "Egypt", "SV": "El Salvador", "GQ": "Equatorial Guinea", "ER": "Eritrea", "EE": "Estonia", "ET": "Ethiopia", "FK": "Falkland Islands", "FO": "Faroe Islands", "FJ": "Fiji", "FI": "Finland", "FR": "France", "GF": "French Guiana", "PF": "French Polynesia", "TF": "French Southern Territories", "GA": "Gabon", "GM": "Gambia", "GE": "Georgia", "DE": "Germany", "GH": "Ghana", "GI": "Gibraltar", "GR": "Greece", "GL": "Greenland", "GD": "Grenada", "GP": "Guadeloupe", "GU": "Guam", "GT": "Guatemala", "GG": "Guernsey", "GN": "Guinea", "GW": "Guinea-Bissau", "GY": "Guyana", "HT": "Haiti", "HN": "Honduras", "HK": "Hong Kong", "HU": "Hungary", "IS": "Iceland", "IN": "India", "ID": "Indonesia", "IR": "Iran", "IQ": "Iraq", "IE": "Ireland", "IM": "Isle of Man", "IL": "Israel", "IT": "Italy", "CI": "Ivory Coast", "JM": "Jamaica", "JP": "Japan", "JE": "Jersey", "JO": "Jordan", "KZ": "Kazakhstan", "KE": "Kenya", "KI": "Kiribati", "XK": "Kosovo", "KW": "Kuwait", "KG": "Kyrgyzstan", "LA": "Laos", "LV": "Latvia", "LB": "Lebanon", "LS": "Lesotho", "LR": "Liberia", "LY": "Libya", "LI": "Liechtenstein", "LT": "Lithuania", "LU": "Luxembourg", "MO": "Macao", "MK": "Macedonia", "MG": "Madagascar", "MW": "Malawi", "MY": "Malaysia", "MV": "Maldives", "ML": "Mali", "MT": "Malta", "MH": "Marshall Islands", "MQ": "Martinique", "MR": "Mauritania", "MU": "Mauritius", "YT": "Mayotte", "MX": "Mexico", "FM": "Micronesia", "MD": "Moldova", "MC": "Monaco", "MN": "Mongolia", "ME": "Montenegro", "MS": "Montserrat", "MA": "Morocco", "MZ": "Mozambique", "MM": "Myanmar", "NA": "Namibia", "NR": "Nauru", "NP": "Nepal", "NL": "Netherlands", "NC": "New Caledonia", "NZ": "New Zealand", "NI": "Nicaragua", "NE": "Niger", "NG": "Nigeria", "NU": "Niue", "NF": "Norfolk Island", "KP": "North Korea", "MP": "Northern Mariana Islands", "NO": "Norway", "OM": "Oman", "PK": "Pakistan", "PW": "Palau", "PS": "Palestinian Territory", "PA": "Panama", "PG": "Papua New Guinea", "PY": "Paraguay", "PE": "Peru", "PH": "Philippines", "PN": "Pitcairn", "PL": "Poland", "PT": "Portugal", "PR": "Puerto Rico", "QA": "Qatar", "CG": "Republic of the Congo", "RE": "Reunion", "RO": "Romania", "RU": "Russia", "RW": "Rwanda", "BL": "Saint Barthelemy", "SH": "Saint Helena", "KN": "Saint Kitts and Nevis", "LC": "Saint Lucia", "MF": "Saint Martin", "PM": "Saint Pierre and Miquelon", "VC": "Saint Vincent and the Grenadines", "WS": "Samoa", "SM": "San Marino", "ST": "Sao Tome and Principe", "SA": "Saudi Arabia", "SN": "Senegal", "RS": "Serbia", "SC": "Seychelles", "SL": "Sierra Leone", "SG": "Singapore", "SX": "Sint Maarten", "SK": "Slovakia", "SI": "Slovenia", "SB": "Solomon Islands", "SO": "Somalia", "ZA": "South Africa", "GS": "South Georgia and the South Sandwich Islands", "KR": "South Korea", "SS": "South Sudan", "ES": "Spain", "LK": "Sri Lanka", "SD": "Sudan", "SR": "Suriname", "SJ": "Svalbard and Jan Mayen", "SZ": "Swaziland", "SE": "Sweden", "CH": "Switzerland", "SY": "Syria", "TW": "Taiwan", "TJ": "Tajikistan", "TZ": "Tanzania", "TH": "Thailand", "TG": "Togo", "TK": "Tokelau", "TO": "Tonga", "TT": "Trinidad and Tobago", "TN": "Tunisia", "TR": "Turkey", "TM": "Turkmenistan", "TC": "Turks and Caicos Islands", "TV": "Tuvalu", "VI": "U.S. Virgin Islands", "UG": "Uganda", "UA": "Ukraine", "AE": "United Arab Emirates", "GB": "United Kingdom", "US": "United States", "UY": "Uruguay", "UZ": "Uzbekistan", "VU": "Vanuatu", "VA": "Vatican", "VE": "Venezuela", "VN": "Vietnam", "WF": "Wallis and Futuna", "EH": "Western Sahara", "YE": "Yemen", "ZM": "Zambia", "ZW": "Zimbabwe" },
+            countriesPhonesCodesList: { "AD": "376", "AE": "971", "AF": "93", "AG": "1-268", "AI": "1-264", "AL": "355", "AM": "374", "AO": "244", "AQ": "672", "AR": "54", "AS": "1-684", "AT": "43", "AU": "61", "AW": "297", "AX": "358-18", "AZ": "994", "BA": "387", "BB": "1-246", "BD": "880", "BE": "32", "BF": "226", "BG": "359", "BH": "973", "BI": "257", "BJ": "229", "BL": "590", "BM": "1-441", "BN": "673", "BO": "591", "AN": "599", "BR": "55", "BS": "1-242", "BT": "975", "BW": "267", "BY": "375", "BZ": "501", "CA": "1", "CC": "61", "CD": "243", "CF": "236", "CG": "242", "CH": "41", "CI": "225", "CK": "682", "CL": "56", "CM": "237", "CN": "86", "CO": "57", "CR": "506", "CU": "53", "CV": "238", "CW": "599", "CX": "61", "CY": "357", "CZ": "420", "DE": "49", "DJ": "253", "DK": "45", "DM": "1-767", "DO": "1-809", "DZ": "213", "EC": "593", "EE": "372", "EG": "20", "EH": "212", "ER": "291", "ES": "34", "ET": "251", "FI": "358", "FJ": "679", "FK": "500", "FM": "691", "FO": "298", "FR": "33", "GA": "241", "GB": "44", "GD": "1-473", "GE": "995", "GF": "594", "GG": "44-1481", "GH": "233", "GI": "350", "GL": "299", "GM": "220", "GN": "224", "GP": "590", "GQ": "240", "GR": "30", "GS": "500", "GT": "502", "GU": "1-671", "GW": "245", "GY": "592", "HK": "852", "HN": "504", "HR": "385", "HT": "509", "HU": "36", "ID": "62", "IE": "353", "IL": "972", "IM": "44-1624", "IN": "91", "IO": "246", "IQ": "964", "IR": "98", "IS": "354", "IT": "39", "JE": "44-1534", "JM": "1-876", "JO": "962", "JP": "81", "KE": "254", "KG": "996", "KH": "855", "KI": "686", "KM": "269", "KN": "1-869", "KP": "850", "KR": "82", "KW": "965", "KY": "1-345", "KZ": "7", "LA": "856", "LB": "961", "LC": "1-758", "LI": "423", "LK": "94", "LR": "231", "LS": "266", "LT": "370", "LU": "352", "LV": "371", "LY": "218", "MA": "212", "MC": "377", "MD": "373", "ME": "382", "MF": "590", "MG": "261", "MH": "692", "MK": "389", "ML": "223", "MM": "95", "MN": "976", "MO": "853", "MP": "1-670", "MQ": "596", "MR": "222", "MS": "1-664", "MT": "356", "MU": "230", "MV": "960", "MW": "265", "MX": "52", "MY": "60", "MZ": "258", "NA": "264", "NC": "687", "NE": "227", "NF": "672", "NG": "234", "NI": "505", "NL": "31", "NO": "47", "NP": "977", "NR": "674", "NU": "683", "NZ": "64", "OM": "968", "PA": "507", "PE": "51", "PF": "689", "PG": "675", "PH": "63", "PK": "92", "PL": "48", "PM": "508", "PN": "870", "PR": "1-787", "PS": "970", "PT": "351", "PW": "680", "PY": "595", "QA": "974", "RE": "262", "RO": "40", "RS": "381", "RU": "7", "RW": "250", "SA": "966", "SB": "677", "SC": "248", "SD": "249", "SE": "46", "SG": "65", "SH": "290", "SI": "386", "SJ": "47", "SK": "421", "SL": "232", "SM": "378", "SN": "221", "SO": "252", "SR": "597", "SS": "211", "ST": "239", "SV": "503", "SX": "599", "SY": "963", "SZ": "268", "TC": "1-649", "TD": "235", "TF": "262", "TG": "228", "TH": "66", "TJ": "992", "TK": "690", "TL": "670", "TM": "993", "TN": "216", "TO": "676", "TR": "90", "TT": "1-868", "TV": "688", "TW": "886", "TZ": "255", "UA": "380", "UG": "256", "US": "1", "UY": "598", "UZ": "998", "VA": "379", "VC": "1-784", "VE": "58", "VG": "1-284", "VI": "1-340", "VN": "84", "VU": "678", "WF": "681", "WS": "685", "XK": "383", "YE": "967", "YT": "262", "ZA": "27", "ZM": "260", "ZW": "263" },
+            defaultCountryDropdownId: "CN",
+            assetsMoneySymbolHtml: function (currency) {
+                var currencySymbol = globalVariables.currencySymbols[currency];
+
+                if (!currencySymbol) {
+                    currencySymbol = '';
+                }
+
+                return "<span class='sk-money-icon-real sk-money-icon-real-white'>" + currencySymbol + "</span>";
+            },
+            maxAmountOfCompetitorsToDisplayGraphLineForInContestGraph: 5,
+            faqQuestionImagesWindowWidthMinimumPossibleForLogicChange: 780,
+            investorCardMinimumPaddingForCompetitorsNickname: 4,
+            contestLiveGraphContainerMarginFromButtomForRightBlock: 64,
+            contestLiveGraphContainerMarginFromButtomForLeftBlock: 50,
+            contestLiveGraphContainerMarginFromButtomForYAxistTitleAndCounter: -10,
+            routeToPrivacyInformationAboutPortfoliosDisplay: "/Home/Terms#portfolio-display",
+                            enableSegment:1,
+            segmentWriteKey: "locked-zPGAH5XEkrNa3sJgFe1Q78xcoI2HwNYD",
+            segmentLoadedEventName: "segmentLoaded",
+            segmentLoaded:0,
+                intercomEnabled:1,
+            systemId: "blockium",
+            brandName: "Blockium",
+            feedbackSystemUrl: "https://discord.gg/xjFPz9b",
+            recaptchaSiteKey: "6Le-GxoUAAAAAJd4w5zABGHQWND_6_DnKeDlyuug",
+            recaptchaResponseFormVariableName: 'g-recaptcha-response',
+            screenMinWidth: globalVariables.screenMd,
+            notificationsStatusUpdateInterval: 2000,
+            notificationDropdownTopAndBottomPadding: 15,
+            mainSiteNotificationsRowsCountOnOnePage: 20,
+            recaptchaScriptLoadedEventName: "recaptchaScriptLoaded",
+            recaptchaScriptIsLoaded:0,
+                                                                                                                                                assetInfoCandleBarBackgroundColor: "rgba(19,23,34, 1)",
+                                    extensionsMimeTypes: {".323":"text/h323",".3g2":"video/3gpp2",".3gp":"video/3gpp",".3gp2":"video/3gpp2",".3gpp":"video/3gpp",".7z":"application/x-7z-compressed",".aa":"audio/audible",".AAC":"audio/aac",".aaf":"application/octet-stream",".aax":"audio/vnd.audible.aax",".ac3":"audio/ac3",".aca":"application/octet-stream",".accda":"application/msaccess.addin",".accdb":"application/msaccess",".accdc":"application/msaccess.cab",".accde":"application/msaccess",".accdr":"application/msaccess.runtime",".accdt":"application/msaccess",".accdw":"application/msaccess.webapplication",".accft":"application/msaccess.ftemplate",".acx":"application/internet-property-stream",".AddIn":"text/xml",".ade":"application/msaccess",".adobebridge":"application/x-bridge-url",".adp":"application/msaccess",".ADT":"audio/vnd.dlna.adts",".ADTS":"audio/aac",".afm":"application/octet-stream",".ai":"application/postscript",".aif":"audio/aiff",".aifc":"audio/aiff",".aiff":"audio/aiff",".air":"application/vnd.adobe.air-application-installer-package+zip",".amc":"application/mpeg",".application":"application/x-ms-application",".art":"image/x-jg",".asa":"application/xml",".asax":"application/xml",".ascx":"application/xml",".asd":"application/octet-stream",".asf":"video/x-ms-asf",".ashx":"application/xml",".asi":"application/octet-stream",".asm":"text/plain",".asmx":"application/xml",".aspx":"application/xml",".asr":"video/x-ms-asf",".asx":"video/x-ms-asf",".atom":"application/atom+xml",".au":"audio/basic",".avi":"video/x-msvideo",".axs":"application/olescript",".bas":"text/plain",".bcpio":"application/x-bcpio",".bin":"application/octet-stream",".bmp":"image/bmp",".c":"text/plain",".cab":"application/octet-stream",".caf":"audio/x-caf",".calx":"application/vnd.ms-office.calx",".cat":"application/vnd.ms-pki.seccat",".cc":"text/plain",".cd":"text/plain",".cdda":"audio/aiff",".cdf":"application/x-cdf",".cer":"application/x-x509-ca-cert",".cfg":"text/plain",".chm":"application/octet-stream",".class":"application/x-java-applet",".clp":"application/x-msclip",".cmd":"text/plain",".cmx":"image/x-cmx",".cnf":"text/plain",".cod":"image/cis-cod",".config":"application/xml",".contact":"text/x-ms-contact",".coverage":"application/xml",".cpio":"application/x-cpio",".cpp":"text/plain",".crd":"application/x-mscardfile",".crl":"application/pkix-crl",".crt":"application/x-x509-ca-cert",".cs":"text/plain",".csdproj":"text/plain",".csh":"application/x-csh",".csproj":"text/plain",".css":"text/css",".csv":"text/csv",".cur":"application/octet-stream",".cxx":"text/plain",".dat":"application/octet-stream",".datasource":"application/xml",".dbproj":"text/plain",".dcr":"application/x-director",".def":"text/plain",".deploy":"application/octet-stream",".der":"application/x-x509-ca-cert",".dgml":"application/xml",".dib":"image/bmp",".dif":"video/x-dv",".dir":"application/x-director",".disco":"text/xml",".divx":"video/divx",".dll":"application/x-msdownload",".dll.config":"text/xml",".dlm":"text/dlm",".doc":"application/msword",".docm":"application/vnd.ms-word.document.macroEnabled.12",".docx":"application/vnd.openxmlformats-officedocument.wordprocessingml.document",".dot":"application/msword",".dotm":"application/vnd.ms-word.template.macroEnabled.12",".dotx":"application/vnd.openxmlformats-officedocument.wordprocessingml.template",".dsp":"application/octet-stream",".dsw":"text/plain",".dtd":"text/xml",".dtsConfig":"text/xml",".dv":"video/x-dv",".dvi":"application/x-dvi",".dwf":"drawing/x-dwf",".dwp":"application/octet-stream",".dxr":"application/x-director",".eml":"message/rfc822",".emz":"application/octet-stream",".eot":"application/vnd.ms-fontobject",".eps":"application/postscript",".etl":"application/etl",".etx":"text/x-setext",".evy":"application/envoy",".exe":"application/octet-stream",".exe.config":"text/xml",".fdf":"application/vnd.fdf",".fif":"application/fractals",".filters":"application/xml",".fla":"application/octet-stream",".flr":"x-world/x-vrml",".flv":"video/x-flv",".fsscript":"application/fsharp-script",".fsx":"application/fsharp-script",".generictest":"application/xml",".gif":"image/gif",".group":"text/x-ms-group",".gsm":"audio/x-gsm",".gtar":"application/x-gtar",".gz":"application/x-gzip",".h":"text/plain",".hdf":"application/x-hdf",".hdml":"text/x-hdml",".hhc":"application/x-oleobject",".hhk":"application/octet-stream",".hhp":"application/octet-stream",".hlp":"application/winhlp",".hpp":"text/plain",".hqx":"application/mac-binhex40",".hta":"application/hta",".htc":"text/x-component",".htm":"text/html",".html":"text/html",".htt":"text/webviewhtml",".hxa":"application/xml",".hxc":"application/xml",".hxd":"application/octet-stream",".hxe":"application/xml",".hxf":"application/xml",".hxh":"application/octet-stream",".hxi":"application/octet-stream",".hxk":"application/xml",".hxq":"application/octet-stream",".hxr":"application/octet-stream",".hxs":"application/octet-stream",".hxt":"text/html",".hxv":"application/xml",".hxw":"application/octet-stream",".hxx":"text/plain",".i":"text/plain",".ico":"image/x-icon",".ics":"application/octet-stream",".idl":"text/plain",".ief":"image/ief",".iii":"application/x-iphone",".inc":"text/plain",".inf":"application/octet-stream",".ini":"text/plain",".inl":"text/plain",".ins":"application/x-internet-signup",".ipa":"application/x-itunes-ipa",".ipg":"application/x-itunes-ipg",".ipproj":"text/plain",".ipsw":"application/x-itunes-ipsw",".iqy":"text/x-ms-iqy",".isp":"application/x-internet-signup",".ite":"application/x-itunes-ite",".itlp":"application/x-itunes-itlp",".itms":"application/x-itunes-itms",".itpc":"application/x-itunes-itpc",".IVF":"video/x-ivf",".jar":"application/java-archive",".java":"application/octet-stream",".jck":"application/liquidmotion",".jcz":"application/liquidmotion",".jfif":"image/pjpeg",".jnlp":"application/x-java-jnlp-file",".jpb":"application/octet-stream",".jpe":"image/jpeg",".jpeg":"image/jpeg",".jpg":"image/jpeg",".js":"application/javascript",".json":"application/json",".jsx":"text/jscript",".jsxbin":"text/plain",".latex":"application/x-latex",".library-ms":"application/windows-library+xml",".lit":"application/x-ms-reader",".loadtest":"application/xml",".lpk":"application/octet-stream",".lsf":"video/x-la-asf",".lst":"text/plain",".lsx":"video/x-la-asf",".lzh":"application/octet-stream",".m13":"application/x-msmediaview",".m14":"application/x-msmediaview",".m1v":"video/mpeg",".m2t":"video/vnd.dlna.mpeg-tts",".m2ts":"video/vnd.dlna.mpeg-tts",".m2v":"video/mpeg",".m3u":"audio/x-mpegurl",".m3u8":"audio/x-mpegurl",".m4a":"audio/m4a",".m4b":"audio/m4b",".m4p":"audio/m4p",".m4r":"audio/x-m4r",".m4v":"video/x-m4v",".mac":"image/x-macpaint",".mak":"text/plain",".man":"application/x-troff-man",".manifest":"application/x-ms-manifest",".map":"text/plain",".master":"application/xml",".mda":"application/msaccess",".mdb":"application/x-msaccess",".mde":"application/msaccess",".mdp":"application/octet-stream",".me":"application/x-troff-me",".mfp":"application/x-shockwave-flash",".mht":"message/rfc822",".mhtml":"message/rfc822",".mid":"audio/mid",".midi":"audio/mid",".mix":"application/octet-stream",".mk":"text/plain",".mmf":"application/x-smaf",".mno":"text/xml",".mny":"application/x-msmoney",".mod":"video/mpeg",".mov":"video/quicktime",".movie":"video/x-sgi-movie",".mp2":"video/mpeg",".mp2v":"video/mpeg",".mp3":"audio/mpeg",".mp4":"video/mp4",".mp4v":"video/mp4",".mpa":"video/mpeg",".mpe":"video/mpeg",".mpeg":"video/mpeg",".mpf":"application/vnd.ms-mediapackage",".mpg":"video/mpeg",".mpp":"application/vnd.ms-project",".mpv2":"video/mpeg",".mqv":"video/quicktime",".ms":"application/x-troff-ms",".msi":"application/octet-stream",".mso":"application/octet-stream",".mts":"video/vnd.dlna.mpeg-tts",".mtx":"application/xml",".mvb":"application/x-msmediaview",".mvc":"application/x-miva-compiled",".mxp":"application/x-mmxp",".nc":"application/x-netcdf",".nsc":"video/x-ms-asf",".nws":"message/rfc822",".ocx":"application/octet-stream",".oda":"application/oda",".odb":"application/vnd.oasis.opendocument.database",".odc":"application/vnd.oasis.opendocument.chart",".odf":"application/vnd.oasis.opendocument.formula",".odg":"application/vnd.oasis.opendocument.graphics",".odh":"text/plain",".odi":"application/vnd.oasis.opendocument.image",".odl":"text/plain",".odm":"application/vnd.oasis.opendocument.text-master",".odp":"application/vnd.oasis.opendocument.presentation",".ods":"application/vnd.oasis.opendocument.spreadsheet",".odt":"application/vnd.oasis.opendocument.text",".ogv":"video/ogg",".one":"application/onenote",".onea":"application/onenote",".onepkg":"application/onenote",".onetmp":"application/onenote",".onetoc":"application/onenote",".onetoc2":"application/onenote",".orderedtest":"application/xml",".osdx":"application/opensearchdescription+xml",".otf":"application/font-sfnt",".otg":"application/vnd.oasis.opendocument.graphics-template",".oth":"application/vnd.oasis.opendocument.text-web",".otp":"application/vnd.oasis.opendocument.presentation-template",".ots":"application/vnd.oasis.opendocument.spreadsheet-template",".ott":"application/vnd.oasis.opendocument.text-template",".oxt":"application/vnd.openofficeorg.extension",".p10":"application/pkcs10",".p12":"application/x-pkcs12",".p7b":"application/x-pkcs7-certificates",".p7c":"application/pkcs7-mime",".p7m":"application/pkcs7-mime",".p7r":"application/x-pkcs7-certreqresp",".p7s":"application/pkcs7-signature",".pbm":"image/x-portable-bitmap",".pcast":"application/x-podcast",".pct":"image/pict",".pcx":"application/octet-stream",".pcz":"application/octet-stream",".pdf":"application/pdf",".pfb":"application/octet-stream",".pfm":"application/octet-stream",".pfx":"application/x-pkcs12",".pgm":"image/x-portable-graymap",".pic":"image/pict",".pict":"image/pict",".pkgdef":"text/plain",".pkgundef":"text/plain",".pko":"application/vnd.ms-pki.pko",".pls":"audio/scpls",".pma":"application/x-perfmon",".pmc":"application/x-perfmon",".pml":"application/x-perfmon",".pmr":"application/x-perfmon",".pmw":"application/x-perfmon",".png":"image/png",".pnm":"image/x-portable-anymap",".pnt":"image/x-macpaint",".pntg":"image/x-macpaint",".pnz":"image/png",".pot":"application/vnd.ms-powerpoint",".potm":"application/vnd.ms-powerpoint.template.macroEnabled.12",".potx":"application/vnd.openxmlformats-officedocument.presentationml.template",".ppa":"application/vnd.ms-powerpoint",".ppam":"application/vnd.ms-powerpoint.addin.macroEnabled.12",".ppm":"image/x-portable-pixmap",".pps":"application/vnd.ms-powerpoint",".ppsm":"application/vnd.ms-powerpoint.slideshow.macroEnabled.12",".ppsx":"application/vnd.openxmlformats-officedocument.presentationml.slideshow",".ppt":"application/vnd.ms-powerpoint",".pptm":"application/vnd.ms-powerpoint.presentation.macroEnabled.12",".pptx":"application/vnd.openxmlformats-officedocument.presentationml.presentation",".prf":"application/pics-rules",".prm":"application/octet-stream",".prx":"application/octet-stream",".ps":"application/postscript",".psc1":"application/PowerShell",".psd":"application/octet-stream",".psess":"application/xml",".psm":"application/octet-stream",".psp":"application/octet-stream",".pub":"application/x-mspublisher",".pwz":"application/vnd.ms-powerpoint",".qht":"text/x-html-insertion",".qhtm":"text/x-html-insertion",".qt":"video/quicktime",".qti":"image/x-quicktime",".qtif":"image/x-quicktime",".qtl":"application/x-quicktimeplayer",".qxd":"application/octet-stream",".ra":"audio/x-pn-realaudio",".ram":"audio/x-pn-realaudio",".rar":"application/x-rar-compressed",".ras":"image/x-cmu-raster",".rat":"application/rat-file",".rc":"text/plain",".rc2":"text/plain",".rct":"text/plain",".rdlc":"application/xml",".reg":"text/plain",".resx":"application/xml",".rf":"image/vnd.rn-realflash",".rgb":"image/x-rgb",".rgs":"text/plain",".rm":"application/vnd.rn-realmedia",".rmi":"audio/mid",".rmp":"application/vnd.rn-rn_music_package",".roff":"application/x-troff",".rpm":"audio/x-pn-realaudio-plugin",".rqy":"text/x-ms-rqy",".rtf":"application/rtf",".rtx":"text/richtext",".ruleset":"application/xml",".s":"text/plain",".safariextz":"application/x-safari-safariextz",".scd":"application/x-msschedule",".scr":"text/plain",".sct":"text/scriptlet",".sd2":"audio/x-sd2",".sdp":"application/sdp",".sea":"application/octet-stream",".searchConnector-ms":"application/windows-search-connector+xml",".setpay":"application/set-payment-initiation",".setreg":"application/set-registration-initiation",".settings":"application/xml",".sgimb":"application/x-sgimb",".sgml":"text/sgml",".sh":"application/x-sh",".shar":"application/x-shar",".shtml":"text/html",".sit":"application/x-stuffit",".sitemap":"application/xml",".skin":"application/xml",".sldm":"application/vnd.ms-powerpoint.slide.macroEnabled.12",".sldx":"application/vnd.openxmlformats-officedocument.presentationml.slide",".slk":"application/vnd.ms-excel",".sln":"text/plain",".slupkg-ms":"application/x-ms-license",".smd":"audio/x-smd",".smi":"application/octet-stream",".smx":"audio/x-smd",".smz":"audio/x-smd",".snd":"audio/basic",".snippet":"application/xml",".snp":"application/octet-stream",".sol":"text/plain",".sor":"text/plain",".spc":"application/x-pkcs7-certificates",".spl":"application/futuresplash",".src":"application/x-wais-source",".srf":"text/plain",".SSISDeploymentManifest":"text/xml",".ssm":"application/streamingmedia",".sst":"application/vnd.ms-pki.certstore",".stl":"application/vnd.ms-pki.stl",".sv4cpio":"application/x-sv4cpio",".sv4crc":"application/x-sv4crc",".svc":"application/xml",".svg":"image/svg+xml",".swf":"application/x-shockwave-flash",".t":"application/x-troff",".tar":"application/x-tar",".tcl":"application/x-tcl",".testrunconfig":"application/xml",".testsettings":"application/xml",".tex":"application/x-tex",".texi":"application/x-texinfo",".texinfo":"application/x-texinfo",".tgz":"application/x-compressed",".thmx":"application/vnd.ms-officetheme",".thn":"application/octet-stream",".tif":"image/tiff",".tiff":"image/tiff",".tlh":"text/plain",".tli":"text/plain",".toc":"application/octet-stream",".tr":"application/x-troff",".trm":"application/x-msterminal",".trx":"application/xml",".ts":"video/vnd.dlna.mpeg-tts",".tsv":"text/tab-separated-values",".ttf":"application/font-sfnt",".tts":"video/vnd.dlna.mpeg-tts",".txt":"text/plain",".u32":"application/octet-stream",".uls":"text/iuls",".user":"text/plain",".ustar":"application/x-ustar",".vb":"text/plain",".vbdproj":"text/plain",".vbk":"video/mpeg",".vbproj":"text/plain",".vbs":"text/vbscript",".vcf":"text/x-vcard",".vcproj":"application/xml",".vcs":"text/plain",".vcxproj":"application/xml",".vddproj":"text/plain",".vdp":"text/plain",".vdproj":"text/plain",".vdx":"application/vnd.ms-visio.viewer",".vml":"text/xml",".vscontent":"application/xml",".vsct":"text/xml",".vsd":"application/vnd.visio",".vsi":"application/ms-vsi",".vsix":"application/vsix",".vsixlangpack":"text/xml",".vsixmanifest":"text/xml",".vsmdi":"application/xml",".vspscc":"text/plain",".vss":"application/vnd.visio",".vsscc":"text/plain",".vssettings":"text/xml",".vssscc":"text/plain",".vst":"application/vnd.visio",".vstemplate":"text/xml",".vsto":"application/x-ms-vsto",".vsw":"application/vnd.visio",".vsx":"application/vnd.visio",".vtx":"application/vnd.visio",".wav":"audio/wav",".wave":"audio/wav",".wax":"audio/x-ms-wax",".wbk":"application/msword",".wbmp":"image/vnd.wap.wbmp",".wcm":"application/vnd.ms-works",".wdb":"application/vnd.ms-works",".wdp":"image/vnd.ms-photo",".webarchive":"application/x-safari-webarchive",".webm":"video/webm",".webp":"image/webp",".webtest":"application/xml",".wiq":"application/xml",".wiz":"application/msword",".wks":"application/vnd.ms-works",".WLMP":"application/wlmoviemaker",".wlpginstall":"application/x-wlpg-detect",".wlpginstall3":"application/x-wlpg3-detect",".wm":"video/x-ms-wm",".wma":"audio/x-ms-wma",".wmd":"application/x-ms-wmd",".wmf":"application/x-msmetafile",".wml":"text/vnd.wap.wml",".wmlc":"application/vnd.wap.wmlc",".wmls":"text/vnd.wap.wmlscript",".wmlsc":"application/vnd.wap.wmlscriptc",".wmp":"video/x-ms-wmp",".wmv":"video/x-ms-wmv",".wmx":"video/x-ms-wmx",".wmz":"application/x-ms-wmz",".woff":"application/font-woff",".wpl":"application/vnd.ms-wpl",".wps":"application/vnd.ms-works",".wri":"application/x-mswrite",".wrl":"x-world/x-vrml",".wrz":"x-world/x-vrml",".wsc":"text/scriptlet",".wsdl":"text/xml",".wvx":"video/x-ms-wvx",".x":"application/directx",".xaf":"x-world/x-vrml",".xaml":"application/xaml+xml",".xap":"application/x-silverlight-app",".xbap":"application/x-ms-xbap",".xbm":"image/x-xbitmap",".xdr":"text/plain",".xht":"application/xhtml+xml",".xhtml":"application/xhtml+xml",".xla":"application/vnd.ms-excel",".xlam":"application/vnd.ms-excel.addin.macroEnabled.12",".xlc":"application/vnd.ms-excel",".xld":"application/vnd.ms-excel",".xlk":"application/vnd.ms-excel",".xll":"application/vnd.ms-excel",".xlm":"application/vnd.ms-excel",".xls":"application/vnd.ms-excel",".xlsb":"application/vnd.ms-excel.sheet.binary.macroEnabled.12",".xlsm":"application/vnd.ms-excel.sheet.macroEnabled.12",".xlsx":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",".xlt":"application/vnd.ms-excel",".xltm":"application/vnd.ms-excel.template.macroEnabled.12",".xltx":"application/vnd.openxmlformats-officedocument.spreadsheetml.template",".xlw":"application/vnd.ms-excel",".xml":"text/xml",".xmta":"application/xml",".xof":"x-world/x-vrml",".XOML":"text/plain",".xpm":"image/x-xpixmap",".xps":"application/vnd.ms-xpsdocument",".xrm-ms":"text/xml",".xsc":"application/xml",".xsd":"text/xml",".xsf":"text/xml",".xsl":"text/xml",".xslt":"text/xml",".xsn":"application/octet-stream",".xss":"application/xml",".xtp":"application/octet-stream",".xwd":"image/x-xwindowdump",".z":"application/x-compress",".zip":"application/zip"},
+            defaultPhonePrefix: "+65",
+            phoneVerificationSentSeccessMessage: "<span class='text-success'>Please enter the phone verification code that was sent to your phone via text message.<span/>",
+            portfolioManagementSecondaryAssetsLoadDelay: 550,
+            portfolioManagementUseCarousel:0,
+            portfolioManagementEnableCardFlipping:0,
+            portfolioManagementLimitLoadedQuantity:0,
+            portfolioManagementConfirmationDisplayDescription: false,
+            assetsPricesDecimalDigits: 5,
+            percentagesDecimalDigits: 2,
+            competitionsPrizesDecimalPoints: 8,
+            moneySymbolHtml: "<span class='sk-money-icon-virtual sk-money-icon-virtual-gold'></span>",
+            mainCurrency: 20,
+                        imagesPreloadUrls: [
+                "/images/blur.svg",
+                "/images/google.svg?v=1",
+                "/images/facebook.svg?v=1",
+                "/images/twitter.svg?v=1",
+                "/images/brand/blockium/logo-white-with-word.svg",
+                "/images/brand/blockium/logo-white-with-fill.svg",
+                                                            ],
+            searchPageSizes : {
+                searchUsersRowsCountOnOnePage: 10,
+                searchAssetsRowsCountOnOnePage: 10,
+                searchCompetitionsRowsCountOnOnePage: 10,
+                searchLobbyRowsCountOnOnePage: 70
+            },
+            debounceMillisecondsAssetsCardsFlipHover: 200,
+            throttleMillisecondsContestGraphDraw: 2000,
+            throttleMillisecondsAssetFollow: 200,
+            backToPreviousPageEventName: "backToPreviousPage",
+            recaptchaCurrentIndex: 0,
+            twitterUser: "Blockium_io",
+            twitterHashtags: "blockium,cryptocurrency,bestportfoliowin,cryptomadness",
+            competitionInviteText: "I Invite you to an exclusive {0} entrance fee {1} {2} trading tournament I created on Blockium: &quot;{3}&quot;.",
+                        userSignupBonusOnSignupWithoutReferral: 0.0,
+            contactUsMessageLengthLimit: 2000,
+                loggedOffUsersRightSidebarEnabled:1,
+            currencySymbols: Object.keys(Currency).map(function (currencySymbol) {
+                var currencySymbolsDictionary = {"Uninitialized":"","Dollar":"$","Euro":"€","CanadianDollar":"C$","BritishPound":"£","Yen":"￥","SwissFranc":"CHF","AustralianDollar":"A$","Bitcoin":"Ƀ","Ethereum":"Ξ","IranianRial":"﷼","IndianRupee":"₹","BrazilianReal":"R$","SouthKoreanWon":"₩","RussianRuble":"₽","IsraeliNewShekel":"₪","SwedishKrona":"kr","SouthAfricanRand":"R","TurkishLira":"₺","MexicanPeso":"Mex$","BlockiumToken":"BOK","Tether":"₮","BlockiumDemo":"Ø","BinanceCoin":"BNB","LiteCoin":"Ł","DogeCoin":"Ð","TomoChain":"TOMO","Dai":"DAI","HuobiToken":"HT","Placeholder1":"Þ","Placeholder2":"§"};
+                return currencySymbolsDictionary[currencySymbol];
+            }),
+                mainSiteRemovePublicStartedContestsSectionsFromWelcomePage:1,
+            updateCompetitionsUsersFrequency: 1,
+            internationalFlagCountryShortcode: "intrntnl",
+            enableNotificationsSound: false,
+            addSoundToGenericNotifications: false,
+            addSoundToContestStartedNotifications: false,
+            addSoundToContestFinishedNotifications: false,
+            notificationsSound:0,
+            notificationsSoundLoaded:0,
+            notificationsSoundLoadedEventName: "NotificationsSoundLoaded",
+            removeDropdownNotificationsBubbleOnClick: true,
+            globalVariablesUpdatedEventName: "GlobalVariablesUpdated",
+            addBackgroundMusic: false,
+            competitionCountdownReloadPageTimeout: 2000,
+        };
+        for (var attrname in secondaryGlobalVariables) {
+            globalVariables[attrname] = secondaryGlobalVariables[attrname];
+        }
+    })();
+    var globalPageStateVariables = {
+        currUserCountry: "China",
+        currentUserBalance : 0,
+        currentUserFrozenBalance : 0,
+        currentUserBalancesDictionary : {},
+        currClientGuid: "09293187",
+
+            currUserIntercomHash: 'c3f6f280ac68abb06c990e071071b63c96e9829f5897b41f26a2c1f7d79e2631',
+                    
+        dailyBonusGiven: 0,
+        popupToDisplay: 0,
+                                                                currUserStatisticsInfo: null,
+        popupNotifications: null,
+        notificationsTotalRowsCount: 0,
+        urlParameterForNotificationsSignalR: "Home/Welcome",
+        secondsUntilIntradayBonusEnabled : 0,
+        intradayBonusIntervalMinutes: 60,
+        intradayBonusAmount: 500,
+        assetsTickerNewData : undefined
+    };
+    var globalPopupsVariables = {
+        defaultLoginRedirect: "/Competitions/Lobby",
+        loginTitle: "Welcome back",
+        signupTitle: "New account",
+        firstSocialLoginTitle: "Almost Done!",
+        firstSocialSignupTitle: "Almost Done!",
+        forgotPasswordTitle: "Forgot Password",
+        resetSentTitle: "Check Your Email",
+        confirmEmailTitle: "Almost Done!",
+        resetPasswordTitle: "Reset Password",
+        resetPasswordSuccessTitle: "Password Was Reset",
+        emailConfirmedTitle: "Account Activated",
+        emailChangeConfirmedTitle: "Email Changed",
+        emailAlreadyConfirmedTitle: "Email Already Confirmed",
+        emailChangeConfirmedLoggedOnTitle: "Email Changed",
+        emailAlreadyConfirmedLoggedOnTitle: "Email Already Confirmed",
+        emailNotConfirmedTitle: "Please Confirm Your Email",
+        forcedPasswordChangeTitle: "Please Change Your Password",
+        loginModalClass: "sk-modal-authentication-login",
+        signupModalClass: "sk-modal-authentication-signup",
+        firstSocialLoginModalClass: "sk-modal-authentication-first-social-login",
+        firstSocialSignupModalClass: "sk-modal-authentication-first-social-signup",
+        confirmEmailModalClass: "sk-modal-authentication-confirm-email",
+        forgotPasswordModalClass: "sk-modal-authentication-forgot-password",
+        resetSentModalClass: "sk-modal-authentication-reset-sent",
+        resetPasswordModalClass: "sk-modal-authentication-reset-password",
+        resetPasswordSuccessModalClass: "sk-modal-authentication-reset-password-success",
+        emailConfirmedModalClass: "sk-modal-authentication-email-confirmed",
+        emailChangeConfirmedModalClass: "sk-modal-authentication-email-change-confirmed",
+        emailAlreadyConfirmedModalClass: "sk-modal-authentication-email-already-confirmed",
+        emailChangeConfirmedLoggedOnModalClass: "sk-modal-authentication-email-change-confirmed-logged-on",
+        emailAlreadyConfirmedLoggedOnModalClass: "sk-modal-authentication-email-already-confirmed-logged-on",
+        emailNotConfirmedModalClass: "sk-modal-authentication-email-not-confirmed",
+        forcedPasswordChangeModalClass: "sk-modal-authentication-forced-password-change",
+        // TODO: (production) Change the password complexity tooltip message when adding strong password policy
+        // "Please choose a password with at least one uppercase letter, one lowercase letter and a digit."
+        passwordComplexityTooltipMessage: "Your password length must be at least 8",
+        loginAjaxRequestEmailNotConfirmedServerErrorMessage: "Email not confirmed.",
+        loginAjaxRequestForcedPasswordChangeServerErrorMessage: '{"":["Password must be changed."]}',
+    };
+    var globalGraphsVariables = {
+        contestGraphLinesHeight: '100%',
+        contestGraphShowLegends: false,
+        counterTitleWidth: 0,
+        counterTitle: '',
+        contestGraphShowGridlines: true,
+        contestGraphShowyAxisGridlines: true,
+        yAxisTitle: null,
+        timeFromStartButtonText: "Time From Start",
+        timeOfDayButtonText: "Time Of Day",
+        displayTimerForNextUpdate: false,
+        textForTopTimerWhileTimeIsUpForNextUpdate: "Update any second now!",
+        spaceBetweenLegends: 20,
+        spaceBetweenLegendsTextAndRectangle: 10,
+        graphLeftAndRightPaddingForLegends: 20,
+        legendsYPositionForFirstRowText: 16.6667,
+        legendsYPositionForFirstRowRectangle: 10,
+        legendsYPositionForSecondRowText: 29.6667,
+        legendsYPositionForSecondRowRectangle: 23,
+        contestGraphRightMarginPercentage: 0,
+        contestGraphTopMarginPercentage: 10,
+        contestGraphBottomMarginPercentage: 0,
+        contestGraphShowTooltipAndCircles: false,
+    };
+    var globalPagingVariables = {
+        lobbyScrollOffset: "50%",
+        lobbyScrollOffsetDecreaseValue: "5%",
+        lobbyScrollOffsetMinimumValue: "5%",
+        myContestsActiveScrollOffset: "50%",
+        myContestsActiveScrollOffsetDecreaseValue: "5%",
+        myContestsActiveScrollOffsetMinimumValue: "5%",
+        myContestsPreviousScrollOffset: "50%",
+        myContestsPreviousScrollOffsetDecreaseValue: "5%",
+        myContestsPreviousScrollOffsetMinimumValue: "5%",
+        notificationsScrollOffset: "30%",
+        notificationsScrollOffsetDecreaseValue: "5%",
+        notificationsScrollOffsetMinimumValue: "5%",
+        leftPanelSearchScrollOffset: "50%",
+        leftPanelSearchScrollOffsetDecreaseValue: "5%",
+        leftPanelSearchScrollOffsetMinimumValue: "5%",
+        assetOwnersScrollOffset: "50%",
+        assetOwnersScrollOffsetDecreaseValue: "5%",
+        assetOwnersScrollOffsetMinimumValue: "5%",
+        lobbyCompetitionsRowsCountOnOnePage: 70,
+        mainSiteAssetOwnersPageSize: 10,
+    };
+
+    var globalAPISettings = {
+        firebase: {
+            app: {"apiKey":"AIzaSyCTviXc31tY81ERHCOvGBf2auToNNtfn4E","authDomain":"stocker-firebase.firebaseapp.com","databaseURL":"https://stocker-firebase.firebaseio.com","projectId":"stocker-firebase","storageBucket":"stocker-firebase.appspot.com","messagingSenderId":"1045560394464"},
+            messaging: {"vapid":"BDDgjmUqnMQ9nHGKcXXv0M3nqi-EJOgIVMhbhELHK0SuZoIFSr-_F1cA0pyuc3p3lZojxpQKIGhafz2tvnXxvlQ"}
+        }
+    };
+  </script>
+  <script>
+   (function () {
+            setTimeout(function () {
+                document.documentElement.className += " sk-initial-loading-delay-over";
+            }, globalVariables.delayedCssClassTime);
+            var waitingAnimation = new Image();
+            var waitingLogo = new Image();
+            var whiteLogo = new Image();
+            var waitingAnimationLoaded = false;
+            var waitingLogoLoaded = false;
+            var whiteLogoLoaded = false;
+            waitingAnimation.onload = function () {
+                if (waitingLogoLoaded && whiteLogoLoaded) {
+                    document.documentElement.className += " sk-waiting-animations-loaded";
+                }
+                else {
+                    waitingAnimationLoaded = true;
+                }
+            };
+            waitingLogo.onload = function () {
+                if (waitingAnimationLoaded && whiteLogoLoaded) {
+                    document.documentElement.className += " sk-waiting-animations-loaded";
+                }
+                else {
+                    waitingLogoLoaded = true;
+                }
+            };
+            whiteLogo.onload = function () {
+                if (waitingAnimationLoaded && waitingLogoLoaded) {
+                    document.documentElement.className += " sk-waiting-animations-loaded";
+                }
+                else {
+                    whiteLogoLoaded = true;
+                }
+            };
+            var waitingAnimationPath = "/images/brand/blockium/logo-animation-white.svg?v=2";
+            var waitingLogoPath = "/images/brand/blockium/logo-white-word.svg";
+            var whiteLogoPath = "";
+            if (waitingAnimationPath) {
+                waitingAnimation.src = waitingAnimationPath;
+            }
+            else {
+                waitingAnimationLoaded = true;
+            }
+            if (waitingLogoPath) {
+                waitingLogo.src = waitingLogoPath;
+            }
+            else {
+                waitingLogoLoaded = true;
+            }
+            if (whiteLogoPath) {
+                whiteLogo.src = whiteLogoPath;
+            }
+            else {
+                whiteLogoLoaded = true;
+            }
+            if (!waitingAnimationPath && !waitingLogoPath && !whiteLogoPath) {
+                document.documentElement.className += " sk-waiting-animations-loaded";
+            }
+        })();
+  </script>
+  <script>
+   var originalLinkSetAttribute = HTMLLinkElement.prototype.setAttribute;
+    HTMLLinkElement.prototype.setAttribute = function(name, value) {
+        var googleFontsUrl = "https://fonts.googleapis.com/";
+        if (name === "href" && value.substr(0, googleFontsUrl.length) === googleFontsUrl) {
+            originalLinkSetAttribute.call(this, "crossorigin", "anonymous");
+        }
+        originalLinkSetAttribute.call(this, name, value);
+    };
+    var fontFallbackUsed = false;
+    WebFontConfig = {
+        google: {
+            families: ['Raleway:200,300,400,500,600,700,800:latin,latin-ext',
+                'Exo+2:400,600,700:latin,latin-ext',
+                'Material+Icons'],
+        },
+        timeout: 1000,
+        fontinactive: function (family, fvd) {
+            if (!fontFallbackUsed && (family === 'Raleway' || family === 'Exo 2' || family === 'Material Icons')) {
+                fontFallbackUsed = true;
+                WebFont.load({
+                    custom: {
+                        families: ['Raleway',
+                                    'Exo+2',
+                                    'Material+Icons'],
+                        urls: [ '/fonts/allfonts.css' ]
+                    }
+                })
+            }
+        }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = '/lib/webfontloader/webfontloader.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+  <link href="/lib/bootstrap/dist/css/bootstrap.min.css?v=R4qQ7MltSHbOAim_xgXXwibx4fdqNEPbOZgaka1syKQ" rel="stylesheet"/>
+  <link href="/lib/font-awesome/css/all.min.css?v=XANMfG-w3Vu36KYmwEBQiizfGDCCRvCk6N_xpymmF5E" rel="stylesheet"/>
+  <link href="/css/bundle.desktop.4.min.css?v=chsjlPshOq8pRAFj9_2W2ZVH_BmM9NwrYMl7wJVoDZ4" rel="stylesheet"/>
+  <link href="/lib/flags/flags.css?v=NQKB7aA0pIEga7XUFmHyF0wbjXBxqwc-gwz92uqPrAU" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="/lib/aos/aos.css?v=GqiEX9BuR1rv5zPU5Vs2qS_NSHl1BJyBcjQYJ6ycwD4" rel="stylesheet"/>
+  <!--[if lt IE 9]>
+    <script src="/lib/html5shiv/dist/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+  <script data-obct="" type="text/javascript">
+   !function(_window, _document) {
+            var OB_ADV_ID='0013811a2e25cb6cc358e8bf1fa5f0b270';
+            if (_window.obApi) {var toArray = function(object) {return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];};_window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));return;}
+            var api = _window.obApi = function() {api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);};api.version = '1.1';api.loaded = true;api.marketerId = OB_ADV_ID;api.queue = [];var tag = _document.createElement('script');tag.async = true;tag.src = '//amplify.outbrain.com/cp/obtp.js';tag.type = 'text/javascript';var script = _document.getElementsByTagName('script')[0];script.parentNode.insertBefore(tag, script);}(window, document);
+        obApi('track', 'PAGE_VIEW');
+  </script>
+ </head>
+ <body class="container-fluid sk-body page-loading bok-symbol skg-BLOCKIUM sk-BLOCKIUM">
+  <div class="sk-requests-wait-modal">
+  </div>
+  <div class="sk-loading-title-wrapper">
+   <img class="sk-loading-title-wrapper-image" src="/images/brand/blockium/logo-white-word.svg"/>
+  </div>
+  <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AUJnHutkHJBi9gqRu1ZA4xfX4QIDt3cYFDUtE_T6_fZ0ZRCGSVqlHYl8mv7EYl3bJmh9_G7lXiPRRpdeLj7eLz_sbgUnBPrWDd9knijd3sfXL2Vw2oTChFONszAQwQ6yrPPxyYIqVQRzSHBeF7jN0I"/>
+  <div class="sk-body-inner-wrapper">
+   <div class="sk-body-content sk-body-no-header">
+    <div class="sk-welcome-page sk-welcome-page-no-landingpage sk-welcome-page-iframe-wrapper">
+     <div class="sk-full-screen-iframe-container">
+      <iframe class="sk-full-screen-iframe" src="https://ieo.blockium.io">
+      </iframe>
+      <div class="sk-custom-page-loading-animation">
+      </div>
+      <div class="sk-loading-title-wrapper">
+       <img class="sk-loading-title-wrapper-image" src="/images/brand/blockium/logo-white-word.svg"/>
+      </div>
+     </div>
+     <div class="sk-neutral-walkthrough-part sk-neutral-walkthrough-part-one">
+      <div class="row sk-neutral-walkthrough-part-one-header-block">
+       <div class="col-xs-offset-1 col-xs-3 sk-neutral-walkthrough-follow-buttons">
+        <div class="instagram-link">
+         <a class="instagram external" href="https://www.blockium.io/s/instagram" target="“_blank”">
+          <img src="/images/desktop/welcome/social/instagramicon_white.png"/>
+          <img src="/images/desktop/welcome/social/instagramicon_color.png"/>
+         </a>
+        </div>
+        <div class="facebook-link">
+         <a class="facebook external" href="https://www.blockium.io/s/facebook" target="“_blank”">
+          <img src="/images/desktop/welcome/social/facebookicon_white.png"/>
+          <img src="/images/desktop/welcome/social/facebookicon_color.png"/>
+         </a>
+        </div>
+        <div class="medium-link">
+         <a class="medium external" href="https://www.blockium.io/s/medium" target="“_blank”">
+          <img src="/images/desktop/welcome/social/mediumicon_white.png"/>
+          <img src="/images/desktop/welcome/social/mediumicon_color.png"/>
+         </a>
+        </div>
+        <div class="twitter-link">
+         <a class="twitter external" href="https://www.blockium.io/s/twitter" target="“_blank”">
+          <img src="/images/desktop/welcome/social/twittericon_white.png"/>
+          <img src="/images/desktop/welcome/social/twittericon_color.png"/>
+         </a>
+        </div>
+       </div>
+       <div class="col-xs-4 sk-neutral-walkthrough-part-one-header-logo">
+        <img alt="Trading Platform" src="/images/brand/blockium/logo-white-equal-height.svg"/>
+       </div>
+       <div class="col-xs-4">
+        <div class="sk-airdrop-container">
+         <a class="sk-airdrop-button sk-custom-link sk-white-link sk-no-underline" href="https://airdrop.blockiumpartners.com" target="_blank">
+          <img src="/images/airdrop.svg"/>
+          <span data-i18n="global:launchairdrop">
+           Launch your airdrop
+          </span>
+         </a>
+        </div>
+        <div class="sk-language-selection-container" data-showlanguageinbutton="true">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <a class="twitter-timeline hidden" data-dnt="true" data-height="60vh" data-theme="light" data-width="70vw" href="https://twitter.com/Blockium_io/lists/crypto-experts?ref_src=twsrc%5Etfw">
+   <div class="sk-loading-animation">
+   </div>
+  </a>
+  <script type="text/javascript">
+   function checkBrowserCompability() {
+            var svgSupport = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
+            var audioSupport = function () {
+                var elem = document.createElement('audio');
+                var result = false;
+                try {
+                    result = !!elem.canPlayType;
+                } catch (e) {
+                }
+                return result;
+            };
+            var isHtml5Compatible = document.createElement('canvas').getContext !== undefined && audioSupport();
+            var isBrowserCompatible = svgSupport && isHtml5Compatible;
+            if (!isBrowserCompatible) {
+                document.body.innerHTML = "<div class='" + globalVariables.cssPrefix + "-browser-not-compatible'><div class='" + globalVariables.cssPrefix + "-browser-not-compatible-inner-wrapper'>"
+                    + "<div class='" + globalVariables.cssPrefix + "-browser-not-compatible-title'>Your browser is currently not supported.</div>"
+                    + "<div class='" + globalVariables.cssPrefix + "-browser-not-compatible-body'>Don't worry, there is an easy fix. All you have to do is click one of the icons below and follow the instructions. You'll be enjoying the new Blockium before you know it.</div>"
+                    + "<div class='" + globalVariables.cssPrefix + "-browser-not-compatible-browser-new-versions'>"
+                    + "<a href='https://www.google.com/chrome/browser/desktop/index.html' target='_blank' class='external'><img src='/images/chrome-icon.png' alt='Chrome' /></a>"
+                    + "<a href='https://www.mozilla.org/en-US/firefox/new/' target='_blank' class='external'><img src='/images/firefox-icon.png' alt='Firefox' /></a>"
+                    + "<a href='https://support.apple.com/downloads/safari' target='_blank' class='external'><img src='/images/safari-icon.png' alt='Safari' /></a>"
+                    + "</div>"
+                    + "<div class='" + globalVariables.cssPrefix + "-browser-not-compatible-footer'>© 2020 Blockium Inc.</div>"
+                    + "</div>"
+                    + "</div>";
+            }
+        }
+        checkBrowserCompability();
+  </script>
+  <script src="/js/bundle.common.desktop.min.js?v=-8kcT1EkwgHdsJUeBINZJEDS9ZteMhDJiH43dFtoM6k">
+  </script>
+  <script>
+   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
+                                        "12": function () {},
+"30": function () {},
+"104": function () {},
+"164": function () {},
+"165": function () {},
+"531": function () {},
+"632": function () {},
+"634": function () {},
+                                    }]);
+  </script>
+  <script src="/js/bundle.desktop.min.js?v=n33kUOn1xxFUMGoS16x6TVokZ0jBNFGqMCoJlKNQjaY">
+  </script>
+  <script type="text/javascript">
+   window.socialLoginCallbackModalErrors = null;
+  </script>
+  <script src="/js/bundle.welcome.fs.desktop.min.js?v=fjPtthr4K_Uyj6o1LUSvrn78175hAYTH_nFEjw4_u_g" type="text/javascript">
+  </script>
+ </body>
+</html>

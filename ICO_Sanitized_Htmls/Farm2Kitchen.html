@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114963079-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114963079-1');
+  </script>
+  <meta charset="utf-8"/>
+  <meta charset="utf-8"/>
+  <title>
+   Farm2Kitchen | Global Farmer's Marketplace with Food Traceability on Blockchain.
+  </title>
+  <meta content="Farm2Kitchen is developing a Global Farmers Network and Decentralized Food Marketplace with end-to-end Traceability thru the Food Supply Chain using Blockchain Technology." name="description"/>
+  <meta content="Farm2Kitchen, Blockchain, Ethereum, Food Supply Chain, Food Traceability, Food Safety, Food Security, Software, Cloud Platform, SaaS, Food Tracking Mobile App, Organic Food, Farm Fresh, Vegan, Sustainable Agriculture, Natural farming, Supply Chain Optimization Software" name="keywords"/>
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet"/>
+  <link href="plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"/>
+  <!-- REVOLUTION SETTINGS STYLES -->
+  <link href="plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"/>
+  <!-- REVOLUTION LAYERS STYLES -->
+  <link href="plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"/>
+  <!-- REVOLUTION NAVIGATION STYLES -->
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+  <!--Favicon-->
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="images/favicon.png" rel="icon" type="image/x-icon"/>
+  <!-- Responsive -->
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <!-- Whitelist and Newsletter script -->
+  <script type="text/javascript">
+   function joinWhitelist(){
+		var wlObject = new Object();
+		$(".whitelist").each(function(){
+				wlObject[$(this).attr("id")] = encodeURIComponent($(this).val());
+		});      
+		console.log(wlObject);
+       
+		var dataString = "action=joinWhitelist&sbRequest="+JSON.stringify(wlObject);
+		console.log("dataString: "+dataString);
+		$.ajax({
+				type: "POST",
+				url:"https://ico.farm2kitchen.io/api/user/profile",
+				data:dataString,
+				success: function(response){
+						console.log("Join Whitelist Response: " + response);
+						window.location="index.html";   
+				} 
+		}); 
+		alert("Thank you for joining our Whitelist.");
+		
+	} 
+
+	function joinNewsletter(){
+		var nlObject = new Object();
+		$(".newsletter").each(function(){
+				nlObject[$(this).attr("id")] = encodeURIComponent($(this).val());
+		});      
+		console.log(nlObject);
+       
+		var dataString = "action=joinNewsletter&sbRequest="+JSON.stringify(nlObject);
+		console.log("dataString: "+dataString);
+		$.ajax({
+				type: "POST",
+				url:"https://ico.farm2kitchen.io/api/user/profile",
+				data:dataString,
+				success: function(response){
+						console.log("Join Newsletter Response: " + response);
+						window.location="index.html";   
+				} 
+		}); 
+		alert("Thank you for subscribing to our Newsletter.");
+		
+	}
+  </script>
+  <!-- Whitelist and Newsletter script -->
+  <style type="text/css">
+   .flag-img {
+	height: 18px;
+}
+.card {
+    padding: 30px 20px 40px 20px;
+    /*background-color: #181818;*/
+    border-radius: 10px;
+    z-index: 99;
+    width: 100%;
+    background-color: rgba(9, 11, 16, 0.8)
+}
+.card .countdown h1 {
+    background-color: rgba(9, 11, 16, 0.4);
+    color: #ffffff;
+    /*width: 60%;*/
+    padding: 0 0 16px 0;
+    /*margin: 0 auto;*/
+    border-radius: 6px;
+}
+.card .countdown .col-xs-3:after {
+    content: ":";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    top: 47%;
+    transform: translate(-50%);
+    font-size: 4.2rem;
+    line-height: 0;
+    color: #ffffff;
+}
+.card .countdown .col-xs-3:first-child:after {
+    display: none;
+}
+.main-slider.home-slider {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/main-slider/image-2.jpg') no-repeat center / cover;
+    background-attachment: fixed;
+    min-height: calc(100vh - 60px);
+    padding: 20px 0;
+    margin-top: 60px;
+    height: 100%;
+    display: flex;
+    box-sizing: content-box;
+}
+.main-slider.home-slider .auto-container {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px; 
+}
+@media (min-width: 1500px) {
+    .main-slider.home-slider .auto-container {
+        max-width: 1350px;
+        /*margin: auto; */
+    }
+}
+.progress {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.progress-bar {
+    background-color: #27a1c7;
+}
+.token-sale p {
+    color: #ffffff;
+}
+.soft-cap {
+    margin-left: 52px;
+}
+.col-xs-3 p {
+    position: absolute;
+    color: white;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    line-height: 1;
+    padding-bottom: 4px;
+}
+.banner-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.banner-content.two .theme-btn.btn-style-one {
+    padding: 8px 28px;
+}
+.banner-content .text {
+    margin: 52px 0; 
+}
+.main-slider .banner-content.two h2 {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.main-slider .banner-content.two h3 {
+    margin-bottom: 20px;
+}
+.token-sale {
+    background-color: rgba(9, 11, 16, 0.6);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+.banner-widget-container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.banner-widget-container img {
+    max-height: 100px;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+		.fixed-header .sticky-header {
+				display: block;
+		}
+    .main-slider.home-slider {
+        margin-top: 50px;
+    }
+    .main-slider.home-slider .banner-content {
+        height: auto;
+    }
+    .banner-content {
+        margin: 20px 0;
+    }
+    .banner-content .text {
+        margin: 30px 0;
+    }
+    .theme-btn.btn-style-one {
+        line-height: 1;
+        padding: 10px 30px;
+    }
+}
+@media (max-width: 576px) {
+    .banner-content.one {
+        min-height: auto !important;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <div class="page-wrapper">
+   <!-- Preloader -->
+   <div class="preloader">
+   </div>
+   <!-- Main Header -->
+   <header class="main-header fixed-header header-style-two">
+    <!--Sticky Header-->
+    <div class="sticky-header">
+     <div class="auto-container clearfix">
+      <!--Logo-->
+      <div class="logo pull-left">
+       <a href="https://www.farm2kitchen.io/">
+        <img alt="Farm2Kitchen" src="images/logo1.png"/>
+       </a>
+      </div>
+      <!--Right Col-->
+      <div class="right-col pull-right">
+       <!-- Main Menu -->
+       <nav class="main-menu">
+        <div class="navbar-header">
+         <!-- Toggle Button -->
+         <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="navbar-collapse collapse clearfix">
+         <ul class="navigation clearfix">
+          <li class="current">
+           <a href="#">
+            Home
+           </a>
+          </li>
+          <li>
+           <a href="#about">
+            About
+           </a>
+          </li>
+          <!--<li><a href="#team">Our Team</a>
+                                </li>
+                                <li><a href="https://www.probit.com/en-us/ieo/f2k-round1/2" target="_blank">IEO</a>-->
+          <li>
+           <a href="https://ico.farm2kitchen.io">
+            My Dashboard
+           </a>
+          </li>
+          <li>
+           <a href="airdrop.html">
+            AirDrop
+           </a>
+          </li>
+          <li>
+           <a href="contact.html">
+            Contact
+           </a>
+          </li>
+          <!--<li class=" dropdown"><a href="#"><img src="images/icons/uk-flag.png" class="flag-img" alt="">&nbsp;&nbsp;English</a>
+                                    <ul>
+                                        <li><a href="#">English</a></li>
+                                        <li><a href="index_kr.html">íêµ­ì´</a></li>
+                                        <li><a href="index_cn.html">ç®ä½ä¸­æ</a></li>
+                                        <li><a href="index_ru.html">Ð ÑÑÑÐºÐ¸Ð¹</a></li>
+                                    </ul>
+                                </li>-->
+         </ul>
+        </div>
+       </nav>
+       <!-- Main Menu End-->
+      </div>
+     </div>
+    </div>
+    <!--End Sticky Header-->
+   </header>
+   <!--End Main Header -->
+   <!--Main Slider-->
+   <section class="main-slider home-slider">
+    <div class="auto-container">
+     <div class="row">
+      <div class="col-md-7">
+       <div class="banner-content one">
+        <h2 style="line-height: 1.2;">
+         <strong>
+          Food Traceability
+         </strong>
+         Â
+         <br/>
+         On
+         <span class="theme_color style-font">
+          Blockchain
+         </span>
+        </h2>
+        <p class="text">
+         Introducing the next gen Farmer's Marketplace.
+         <br/>
+         <br/>
+        </p>
+        <div>
+         <a class="theme-btn btn-style-one" href="downloads/1pager.pdf" target="new">
+          One Pager
+         </a>
+         <a class="theme-btn btn-style-one" href="downloads/pitchdeck.pdf" target="new">
+          Pitch Deck
+         </a>
+         <!--<a href="downloads/f2kwhitepaper.pdf" target="new" class="theme-btn btn-style-one">Whitepaper</a>-->
+        </div>
+       </div>
+      </div>
+      <div class="col-md-5">
+       <!--<div class="banner-content two">
+                        <div class="card">
+                            <h2>IEO - Stage 3 - Coming Soon</h2>
+                            <h3 style="color:#fff">50% Bonus on <a target="_index" href="https://www.probit.com/en-us/ieo/f2k-round1/2"> <img src="images/probit.png"/></a></h3>
+                            <!-- <h3 style="color:#fff">on <a href="https://exmarkets.com/launchpad">ExMarkets</a> Launchpad</h3> --
+                            <div class="countdown text-center"> 
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <h1 id="days"></h1>
+                                        <p>Days</p>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h1 id="hours"></h1>
+                                        <p>Hours</p>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h1 id="minutes"></h1>
+                                        <p>Minutes</p>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <h1 id="seconds"></h1>
+                                        <p>Seconds</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 20px;">
+                                <a target="_index" href="https://www.probit.com/en-us/ieo/f2k-round1/2" class="theme-btn btn-style-one">Buy on ProBit</a>
+                                <!--<a target="_index" href="https://exmarkets.com/launchpad/f2k-btc" class="theme-btn btn-style-one">Buy on ExMarkets</a>--
+                            </div>
+
+                            <!-- <div class="token-sale">
+                                <p>
+                                    <strong>TOKEN SALE PROGRESS</strong><br>
+                                    13,284,225 F2K
+                                </p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"></div>
+                                </div>
+                                <p class="goal">
+                                    0 F2K
+                                    <span class="soft-cap">Soft Cap</span>
+                                    <span style="float: right;">280,000,000 F2K</span>
+                                <p>
+                            </div> --
+                            <div style="margin-top: 20px;">
+                                <a href="https://ico.farm2kitchen.io/register.html" class="theme-btn btn-style-one">Buy Now</a>
+                                <a href="https://ico.farm2kitchen.io/airdrop.html" class="theme-btn btn-style-one">Join Airdrop</a>
+                            </div>
+                        </div>
+                        <!--<div class="banner-widget-container">
+                            <a style="margin-right: 20px;" href="https://icobench.com/ico/farm2kitchen" target="_blank" rel="nofollow" title="Farm2Kitchen on ICObench">
+                                <img border="0" src="images/" alt="Farm2Kitchen ICO rating"/>
+                            </a>
+                            <a href="https://www.trackico.io/ico/farm2kitchen/" target="_blank" title="Farm2Kitchen on TrackICO">
+                                <img border="0" src="https://www.trackico.io/widget/horizontal/farm2kitchen/500.png" alt="Farm2Kitchen TrackICO rating">
+                            </a>
+                        </div>--
+												</div>
+                    </div>-->
+       <h4>
+       </h4>
+       <div class="row clearfix">
+        <div class="home-ratings col-md-4 col-sm-4 col-xs-12 form-group">
+         <a class="rating-box" href="https://icobench.com/ico/farm2kitchen" target="_blank">
+          <div class="col-xs-12 rating-box__footer" style="background-color:#4954ac;">
+           <img alt="Farm2Kitchen ICO rating" border="0" src="images/rating/icobench.png"/>
+          </div>
+         </a>
+        </div>
+        <div class="home-ratings col-md-4 col-sm-4 col-xs-12 form-group">
+         <a class="rating-box" href="https://www.trackico.io/ico/farm2kitchen/" target="_blank">
+          <div class="col-xs-12 rating-box__footer" style="background-color:#3f4a59;">
+           <img alt="Farm2Kitchen ICO rating" border="0" src="images/rating/trackico.png"/>
+          </div>
+         </a>
+        </div>
+        <div class="home-ratings col-md-4 col-sm-4 col-xs-12 form-group">
+         <a class="rating-box" href="https://icomarks.com/ico/farm2kitchen" target="_blank">
+          <div class="col-xs-12 rating-box__footer" style="background-color:#3b4c86;">
+           <img alt="Farm2Kitchen ICO rating" border="0" src="images/rating/icomarks.png"/>
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!--End Main Slider-->
+   <!--<section style="background-image: url(images/background/2.jpg);">
+		<div class="auto-container">
+				<h3>&nbsp;</h3>
+				<div class="row clearfix">
+					<div class="col-sm-1 empty">.</div>
+					<div class="rating col-sm-10">
+						<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+							<a class="rating-box" target="_blank" href="https://icobench.com/ico/farm2kitchen">
+								<div class="col-xs-12 rating-box__footer">
+									<img border="0" src="images/rating/icobench.png" alt="Farm2Kitchen ICO rating" />
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+							<a class="rating-box" target="_blank" href="https://icomarks.com/ico/farm2kitchen">
+								<div class="col-xs-12 rating-box__footer">
+									<img border="0" src="images/rating/icomarks.png" alt="Farm2Kitchen ICO rating" />
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+							<a class="rating-box" target="_blank" href="https://www.trackico.io/ico/farm2kitchen/">
+								<div class="col-xs-12 rating-box__footer">
+									<img border="0" src="images/rating/trackico.png" alt="Farm2Kitchen ICO rating" />
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-1 empty">.</div>
+				</div>
+				<h3>&nbsp;</h3>
+			</div>
+		</section>-->
+   <!-- About Us Section -->
+   <section class="about-us" id="about">
+    <div class="auto-container">
+     <div class="row clearfix">
+      <div class="video-column col-md-6 col-sm-12 col-xs-12">
+       <div class="inner-box">
+        <div class="sec-title">
+         <h2>
+          <strong>
+           The Backbone of Food Supply Chain
+          </strong>
+         </h2>
+         <h3>
+          We Track, So You Can Trust What You Eat!
+         </h3>
+        </div>
+        <div class="text">
+         Farm2Kitchen is revolutionizing the way food is delivered to food services, restaurants and other wholesale buyers. We are building a truly decentralized and trustless food distribution network which is powered by Blockchain technology to track the food delivery from the farm to the kitchen in order to ensure freshness and quality.
+        </div>
+        <!--Farm2Kitchen platform is a B2B hub for all the parties in the Food Supply Chain including, the Farmer (or Producer), Transporter, Packager, Distributor, and Retailer. The platform uses the Private Blockchain technology for ensuring data security and immutability. </div>-->
+        <a class="theme-btn btn-style-five" href="blog-pr-01.html">
+         Read More
+        </a>
+        <div class="video-image-box">
+         <figure class="image">
+          <div class="overlay">
+          </div>
+          <img alt="Farm2kitchen Journey" src="images/resource/video-bg3.jpg"/>
+          <a class="video-link lightbox-image" href="https://youtu.be/2L6YmtSX_Gk">
+           <span class="fa fa-play-circle-o">
+           </span>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="blocks-column col-md-6 col-sm-12 col-xs-12">
+       <div class="featured-service-style-two">
+        <div class="inner-box">
+         <div class="icon-box">
+          <span class="fa fa-barcode">
+          </span>
+         </div>
+         <div class="content-box">
+          <h4 class="title">
+           Food Traceability
+          </h4>
+          <div class="text">
+           Consumer is curious about where the food on his plate is coming from and if it was responsibiliy grown. Blockchain technology enables us to trace the food from the farm to their plate.
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="featured-service-style-two">
+        <div class="inner-box">
+         <div class="icon-box">
+          <span class="fa fa-shopping-cart">
+          </span>
+         </div>
+         <div class="content-box">
+          <h4 class="title">
+           Farmers Marketplace
+          </h4>
+          <div class="text">
+           We provide an online marketplace for fresh produce from the farmers enrolled on the platform. Its like a global farmers market for bulk buyers to procure fresh food direct from the producer.
+          </div>
+          <!--<div class="text">If there is an issue identified with the food such as some contamination, the platform will provide the ability to quickly identify the entire batch of affected food and pull it off the shelf. This can be a life saver!</div>-->
+         </div>
+        </div>
+       </div>
+       <div class="featured-service-style-two">
+        <div class="inner-box">
+         <div class="icon-box">
+          <span class="fa fa-check-circle">
+          </span>
+         </div>
+         <div class="content-box">
+          <h4 class="title">
+           Food Security
+          </h4>
+          <div class="text">
+           The data helps us understand the food consumption trends and plan the crop for the next harvest, improve revenue for the farmers, provide better value to the consumers and reduce food wastage.
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End About Us -->
+   <!-- Fun Fact -->
+   <section class="fun-facts-section" style="background-image:url(images/background/3.jpg);">
+    <div class="auto-container">
+     <div class="row clearfix">
+      <div class="column count-box col-lg-4 col-md-4 col-sm-12 col-xs-12 counted">
+       <div class="inner">
+        <div class="icon-box">
+         <span class="flaticon-yoga">
+         </span>
+        </div>
+        <div class="content">
+         <div class="count-outer count-box">
+          <span class="count-text" data-speed="3000" data-stop="120">
+           0
+          </span>
+          Million
+         </div>
+         <div class="counter-title">
+          Small Farmers
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="column count-box col-lg-4 col-md-4 col-sm-12 col-xs-12 counted">
+       <div class="inner">
+        <div class="icon-box">
+         <span class="fa fa-money">
+         </span>
+        </div>
+        <div class="content">
+         <div class="count-outer count-box">
+          $
+          <span class="count-text" data-speed="1000" data-stop="5">
+           0
+          </span>
+          Trillion
+         </div>
+         <div class="counter-title">
+          Food Industry
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="column count-box col-lg-4 col-md-4 col-sm-12 col-xs-12 counted">
+       <div class="inner">
+        <div class="icon-box">
+         <span class="flaticon-smiley">
+         </span>
+        </div>
+        <div class="content">
+         <div class="count-outer count-box">
+          $
+          <span class="count-text" data-speed="1000" data-stop="4.5">
+           0
+          </span>
+          Billion+
+         </div>
+         <div class="counter-title">
+          Market Opportunity
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End Fun Fact -->
+   <!-- Advantages -->
+   <section class="services-section" style="background-image: url(images/background/2.jpg);">
+    <div class="auto-container">
+     <div class="sec-title text-center">
+      <h2>
+       Our
+       <strong>
+        Advantage
+       </strong>
+      </h2>
+      <h3>
+       How we are leading a revolution in the Food industry
+      </h3>
+     </div>
+     <div class="row clearfix">
+      <!-- Service Blcok -->
+      <div class="service-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <div class="title-box">
+         <h3>
+          Innovative Solution
+         </h3>
+        </div>
+        <div class="content-box">
+         <div class="icon-box">
+          <span class="flaticon-finger-touching-tablet-screen">
+          </span>
+         </div>
+         <div class="text">
+          We have developed a solution to global food security issues identified by UNÃ¢â¬â¢s World Food Program (WFP).
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- Service Blcok -->
+      <div class="service-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <div class="title-box">
+         <h3>
+          Trustless Platform
+         </h3>
+        </div>
+        <div class="content-box">
+         <div class="icon-box">
+          <span class="flaticon-safe">
+          </span>
+         </div>
+         <div class="text">
+          No one part owns or controls the data ensuring that there is complete transparency and trust for all members.
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- Service Blcok -->
+      <div class="service-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <div class="title-box">
+         <h3>
+          1st Mover Advantage
+         </h3>
+        </div>
+        <div class="content-box">
+         <div class="icon-box">
+          <span class="flaticon-medal-1">
+          </span>
+         </div>
+         <div class="text">
+          We have the 1st mover advantage on a solution addressing basic human need i.e. good food that you can trust.
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- Service Blcok -->
+      <div class="service-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <div class="title-box">
+         <h3>
+          Amazing Team
+         </h3>
+        </div>
+        <div class="content-box">
+         <div class="icon-box">
+          <span class="flaticon-diamond">
+          </span>
+         </div>
+         <div class="text">
+          We are a team of highly motivated industry experts in Food Distribution, Agriculture and Information Technology.
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- Service Blcok -->
+      <div class="service-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <div class="title-box">
+         <h3>
+          Lifesaver
+         </h3>
+        </div>
+        <div class="content-box">
+         <div class="icon-box">
+          <span class="flaticon-medical-1">
+          </span>
+         </div>
+         <div class="text">
+          The platform will enable effective management of food recalls in the event of contamination, thus helping save lives.
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- Service Blcok -->
+      <div class="service-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <div class="title-box">
+         <h3>
+          Large Market
+         </h3>
+        </div>
+        <div class="content-box">
+         <div class="icon-box">
+          <span class="flaticon-money-bag">
+          </span>
+         </div>
+         <div class="text">
+          Asia is a huge market with a rapidly growing population and ever increasing demand for healthy lifestyle.
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End Advantages  -->
+   <!-- Timeline -->
+   <section class="timeline-section">
+    <div class="auto-container">
+     <div class="sec-title text-center">
+      <h2>
+       Project
+       <strong>
+        Timeline
+       </strong>
+      </h2>
+      <!--<h3>Token Distribution & Timeline</h3>-->
+     </div>
+     <div class="row clearfix">
+      <div class="image-column col-sm-6">
+       <h3>
+        Token Distribution
+       </h3>
+       <div class="big-image">
+        <figure class="text-center">
+         <img alt="Software for Sustainable agriculture" src="images/resource/distribution.png"/>
+        </figure>
+       </div>
+       <!--<div class="distribution">
+                        <ul>
+                            <li>Ticker Symbol: <b>F2K</b></li>
+                            <li>Token Standard: <b>Etherum (ERC20)</b></li>
+                            <li>Total Tokens: <b>280 million</b></li>
+                            <li>Base Price: <b>1 F2K = US $0.10</b></li>
+                            <li>Soft cap: <b>$2,000,000</b></li>
+                            <li>Hard cap: <b>$9,000,000</b></li>
+                        </ul>
+                    </div>-->
+      </div>
+      <div class="col-sm-6">
+       <div class="timeline">
+        <ul>
+         <li>
+          <div>
+           <date-time>
+            February 2018
+           </date-time>
+           <span class="timeline-description">
+            Project launched.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            July 2018
+           </date-time>
+           <span class="timeline-description">
+            Platform development started.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            February 2019
+           </date-time>
+           <span class="timeline-description">
+            MVP released.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            April 2019
+           </date-time>
+           <span class="timeline-description">
+            IEO launched.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            August 2019
+           </date-time>
+           <span class="timeline-description">
+            Farmer and Producer onboarding starts.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            October 2019
+           </date-time>
+           <span class="timeline-description">
+            Farmer's Marketplace pre-opening.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            November 2019
+           </date-time>
+           <span class="timeline-description">
+            Start of Operations on the Marketplace.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            January 2020
+           </date-time>
+           <span class="timeline-description">
+            Launch of Blockchain main network for Traceability.
+           </span>
+          </div>
+         </li>
+         <li>
+          <div>
+           <date-time>
+            April 2020
+           </date-time>
+           <span class="timeline-description">
+            Phased global launch of the platform.
+           </span>
+          </div>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End Timeline -->
+   <!-- Exchanges --
+	<section style="background-image: url(images/background/2.jpg);">
+		<div class="auto-container">
+				<div class="container">
+					<h3>&nbsp;</h3>
+					<div class="sec-title text-center">
+							<h2>Future <strong>Exchanges</strong></h2>
+					</div>
+					<div class="row exchange clearfix">
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<a target="_blank" href="#">
+								<div class="col-xs-12">
+									<img class="img-fluid img-responsive" border="0" src="images/exchanges/bancor.png" alt="Bancor" />
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<a target="_blank" href="#">
+								<div class="col-xs-12">
+									<img class="img-fluid img-responsive" border="0" src="images/exchanges/iqfinex.png" alt="IQFinex" />
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<a target="_blank" href="#">
+								<div class="col-xs-12">
+									<img class="img-fluid img-responsive" border="0" src="images/exchanges/idex.png" alt="IDex" />
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 ">
+							<a target="_blank" href="#">
+								<div class="col-xs-12">
+									<img class="img-fluid img-responsive" border="0" src="images/exchanges/hitBTC.png" alt="hitBTC" />
+								</div>
+							</a>
+						</div>
+					</div>
+					<h2>&nbsp;</h2>
+				</div>
+		</div>
+    </section><!-- End Ratings  -->
+   <!-- Call Us Section -->
+   <section class="call-us-section" id="Whitelist2" style="background-image: url(images/background/3.jpg);">
+    <div class="auto-container">
+     <div class="row clearfix">
+      <div class="content-column col-md-6 col-sm-12 col-xs-12">
+       <div class="inner-box">
+        <h2>
+         Join Whitelist
+        </h2>
+        <p>
+         Like to participate in our private pre-sale? Join our Whitelist.
+        </p>
+       </div>
+      </div>
+      <div class="form-column col-md-6 col-sm-12 col-xs-12">
+       <div class="subscribe-form">
+        <form method="post">
+         <div class="form-group" id="whitelist">
+          <input class="whitelist" id="email" name="email" placeholder="Enter your email address ....." required="" type="email" value=""/>
+          <button class="theme-btn" onclick="return joinWhitelist();" type="submit">
+           Submit
+          </button>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End Call Us -->
+   <!-- Our Team -->
+   <section class="our-departments" id="team">
+    <div class="auto-container">
+     <div class="sec-title text-center">
+      <h2>
+       Our
+       <strong>
+        Team
+       </strong>
+      </h2>
+      <!--<h3>The amazing people who are behind this innovation</h3>-->
+     </div>
+     <div class="row clearfix">
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/dr-hemraj-gaidhani-ceng-mba-b5b68414/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/hemraj.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/dr-hemraj-gaidhani-ceng-mba-b5b68414/" target="new">
+           Dr H Gaidhani
+          </a>
+         </h3>
+         <h4>
+          Co-founder
+         </h4>
+         <p>
+          Hemraj is process expert and a business leader. He has a PhD in Chemical Engineering and 20 years of industry experience in various Field Operations.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/yogeshkondaskar/">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/yogesh.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/yogeshkondaskar/">
+           Yogesh Kondaskar
+          </a>
+         </h3>
+         <h4>
+          Co-founder
+         </h4>
+         <p>
+          Fractional CTO, Tech Entrepreneur, Innovator, Solutions Architect, Startup Advisor and a problem solver with 22 years of industry experience.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/nitesh-agarwal-464b7a57/">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/nitesh.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/nitesh-agarwal-464b7a57/">
+           Nitesh Agarwal
+          </a>
+         </h3>
+         <h4>
+          Blockchain Developer
+         </h4>
+         <p>
+          Certified Blockchain Developer with extensive experience in BPM, RPA, Blockchain, Web and Mobile Development.
+          <br/>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/vkarora/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/vk-arora.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/vkarora/" target="new">
+           V. K. Arora
+          </a>
+         </h3>
+         <h4>
+          Director of Sales
+         </h4>
+         <p>
+          Technocrat with a PhD in Entrepreneurship. Startup Advisor. CEO at Incubation Centre of IGDTUW Delhi.
+         </p>
+         <!--<p>With deep experience in procurement and sourcing Mr. Arora has worked with world renowned brands over the past 18+ years.</p>-->
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/rajannikam/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/rajan.png);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/rajannikam/" target="new">
+           Rajan Nikam
+          </a>
+         </h3>
+         <h4>
+          Marketing Lead
+         </h4>
+         <p>
+          Experienced in all facets of digital marketing including email, video, SEO, product launch, social media.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/mehtasamarth/">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/sam.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/mehtasamarth/">
+           Sam Mehta
+          </a>
+         </h3>
+         <h4>
+          Solutions Architect
+         </h4>
+         <p>
+          Industry leading technology solutions architect with more than 11 years in Process Improvement and BPM.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-offset-4 col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/jade-kuchar-ba66b4150/">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/jade.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/jade-kuchar-ba66b4150/">
+           Jade Kuchar
+          </a>
+         </h3>
+         <h4>
+          UX Designer/Process Analyst
+         </h4>
+         <p>
+          Digital Transformation expert and UI/UX Designer with extensive experience in Web 3.0 and Responsive Design.
+         </p>
+        </div>
+       </div>
+      </div>
+      <!--<div class="service-block-style-two col-md-4 col-md-offset-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/erica-rosales-7aa641158/"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/erica.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/erica-rosales-7aa641158/">Erica Rosales</a></h3>
+                            <h4>Digital Marketing</h4>
+                        </div>
+                    </div>
+                </div>-->
+     </div>
+    </div>
+    <div class="auto-container">
+     <div class="sec-title text-center">
+      <h2>
+       Our
+       <strong>
+        Advisors
+       </strong>
+      </h2>
+      <!-- <h3>The amazing people who are behind this innovation</h3> -->
+     </div>
+     <div class="row clearfix">
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/giacomo-arcaro-crypto/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/Giacomo.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/giacomo-arcaro-crypto/" target="new">
+           Giacomo Arcaro
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/quentin-herbrecht-5a0a9612b/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/QuentinHerbrecht.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/quentin-herbrecht-5a0a9612b/" target="new">
+           Quentin Herbrecht
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/giovanni-casagrande-crypto/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/Giovanni.png);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/giovanni-casagrande-crypto/" target="new">
+           Giovanni Casagrande
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/masaniparesh/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/PareshMasani.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/masaniparesh/" target="new">
+           Paresh Masani
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/bogdanfiedur/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/Bogdan.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/bogdanfiedur/" target="new">
+           Bogdan Fiedur
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <!--<div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/shofkom/" target="new"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/RobertShofkom.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/shofkom/" target="new">Robert Shofkom</a></h3>
+                            <h4>Advisor</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/desmondprimus/" target="new"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/Desmond.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/desmondprimus/" target="new">Desmond Primus</a></h3>
+                            <h4>Advisor</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>-->
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/kmajumder-pfsspkr/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/KMajumder.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/kmajumder-pfsspkr/" target="new">
+           Kaushik Majumder
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-offset-2 col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/dinesh-bhatia-2193a48/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/dinesh-bhatia.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/dinesh-bhatia-2193a48/" target="new">
+           Dinesh Bhatia
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <!--<p>Subject Matter Expert in Agri Produce Value Chain Management. Founder and CEO at Blissful Food Products Pvt. Ltd. </p>-->
+         <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. Even the all-powerful Pointing has no control about the blind texts.<br>&nbsp;</p> -->
+        </div>
+       </div>
+      </div>
+      <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+       <div class="inner-box">
+        <a href="https://www.linkedin.com/in/philipe-michael-dasilva-3987704b/" target="new">
+         <i class="fa fa-linkedin">
+         </i>
+        </a>
+        <div class="profile-image" style="background-image: url(./images/profile/Philipe.jpg);">
+        </div>
+        <div class="content-box">
+         <h3>
+          <a href="https://www.linkedin.com/in/philipe-michael-dasilva-3987704b/" target="new">
+           Philipe DaSilva
+          </a>
+         </h3>
+         <h4>
+          Advisor
+         </h4>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+      <!--<div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/prashant-naikwadi-5250971a/" target="new"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/prashant-naikwadi.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/prashant-naikwadi-5250971a/" target="new">Dr. Prashant Naikwadi</a></h3>
+                            <h4>Advisor</h4>
+                        </div>
+                    </div>
+                </div>-->
+     </div>
+     <!-- <div class="row clearfix">
+                <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/prashant-naikwadi-5250971a/" target="new"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/prashant-naikwadi.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/prashant-naikwadi-5250971a/" target="new">Dr. Prashant Naikwadi</a></h3>
+                            <h4>Advisor</h4>
+                            <p>15 years of experience in Agro Produce Value Chain Management. He has a PhD in Organic Farming and Regulations.</p>
+                            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. Even the all-powerful Pointing has no control about the blind texts.</p> --
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/dinesh-bhatia-2193a48/" target="new"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/dinesh-bhatia.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/dinesh-bhatia-2193a48/" target="new">Dinesh Bhatia</a></h3>
+                            <h4>Advisor</h4>
+                            <p>Subject Matter Expert in Agri Produce Value Chain Management. Founder and CEO at Blissful Food Products Pvt. Ltd. </p>
+                            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. Even the all-powerful Pointing has no control about the blind texts.<br>&nbsp;</p> --
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-block-style-two col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <a href="https://www.linkedin.com/in/vkarora/" target="new"><i class="fa fa-linkedin"></i></a>
+                        <div class="profile-image" style="background-image: url(./images/profile/vk-arora.jpg);"></div>
+                        <div class="content-box">
+                            <h3><a href="https://www.linkedin.com/in/vkarora/" target="new">Dr. V. K. Arora</a></h3>
+                            <h4>Advisor</h4>
+                            <p>Technocrat with a PhD in Entrepreneurship. Startup Advisor. CEO at Incubation Centre of IGDTUW Delhi.</p>
+                            <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. Even the all-powerful Pointing has no control about the blind texts.<br>&nbsp;</p> --
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+    </div>
+    <div class="auto-container">
+     <div class="sec-title text-center">
+      <h2>
+       Development
+       <strong>
+        Partner
+       </strong>
+      </h2>
+      <p>
+       <img alt="Bizteon Software" height="100px" src="images/bizteon.png"/>
+      </p>
+      <!--<h3>The amazing people who are behind this innovation</h3>-->
+     </div>
+     <div class="row clearfix">
+     </div>
+     <!-- row -->
+    </div>
+   </section>
+   <!-- End Our Advisors -->
+   <!-- PR Section -->
+   <section class="certificate-section text-center">
+    <div class="auto-container">
+     <div class="sec-title text-center">
+      <h2>
+       In The
+       <strong>
+        News
+       </strong>
+      </h2>
+      <!--<h3>What The Popular News Outlets Says About Us</h3>-->
+     </div>
+     <!--<div class="certificate-slider owl-carousel owl-theme owl-loaded owl-drag">-->
+     <div class="row">
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://www.business-standard.com/article/technology/online-alternative-to-veg-shopping-111062000036_1.html" target="new">
+           <img alt="Business Standard" src="images/clients/M2.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://yourstory.com/2016/09/farm2kitchen-growth-story" target="new">
+           <img alt="Your Story" src="images/clients/M3.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="#" target="new">
+           <img alt="The Times Of India" src="images/clients/M4.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="#" target="new">
+           <img alt="The Telegraph" src="images/clients/M8.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="owl-item client_logo col-md-4 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://www.techinasia.com/facebook-grocery-shopping-farm2kitchen" target="new">
+           <img alt="Tech In Asia" src="images/clients/M6.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-4 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://www.vogue.in/content/surf-your-supper/" target="new">
+           <img alt="Vogue" src="images/clients/M9.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-4 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://www.indiatimes.com/health/buzz/farm2kitchencom-your-organic-shopping-destination-[website-review]-239348.html" target="new">
+           <img alt="India Times" src="images/clients/M11.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="http://www.forbesindia.com/printcontent/38677" target="new">
+           <img alt="Forbes India" src="images/clients/M13.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://finance.yahoo.com/news/farm2kitchen-leverages-blockchain-technology-food-110000686.html" target="new">
+           <img alt="Yahoo Finance" src="images/clients/c11.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://blockchaindaily.news/farm2kitchen-leverages-blockchain-technology-for-food-safety-and-security/" target="new">
+           <img alt="Blockchain Daily" src="images/clients/BlockchainDaily.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="http://markets.businessinsider.com/news/stocks/farm2kitchen-leverages-blockchain-technology-for-food-safety-and-security-1017164631" target="new">
+           <img alt="Business Insider" src="images/clients/c22.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="owl-item client_logo col-md-4 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://economictimes.indiatimes.com/tech/internet/online-groceries-vie-for-bigger-share-in-organic-food-market/articleshow/23064736.cms" target="new">
+           <img alt="The Economic Times" src="images/clients/M1.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-4 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="#" target="new">
+           <img alt="LightHouse Insight" src="images/clients/M7.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-4 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="https://www.deccanherald.com/content/521019/india-set-go-organic-diet.html" target="new">
+           <img alt="Deccan Herald" src="images/clients/M14.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="#" target="new">
+           <img alt="News Break App" src="images/clients/c99.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="#" target="new">
+           <img alt="Evanino" src="images/clients/c44.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="#" target="new">
+           <img alt="The Daily Telescope" src="images/clients/c33.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+      <div class="owl-item client_logo col-md-3 col-sm-6">
+       <div class="slide-item">
+        <div class="image-box">
+         <figure>
+          <a href="http://www.biznews.in/article/farm2kitchen-leverages-blockchain-technology-for-food-safety-and-security" target="new">
+           <img alt="Biz News" src="images/clients/c55.png"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End PR Section -->
+   <!-- Subscribe Section -->
+   <section class="subscribe-section" style="background-image: url(images/background/3.jpg);">
+    <div class="auto-container">
+     <div class="row clearfix">
+      <div class="title-column col-md-6 col-sm-12 col-xs-12">
+       <div class="inner-box">
+        <h2>
+         Newsletter
+        </h2>
+        <p>
+         Want to get updates about our project? Join the Mailing List.
+        </p>
+       </div>
+      </div>
+      <div class="form-column col-md-6 col-sm-12 col-xs-12">
+       <div class="subscribe-form">
+        <form action="#" method="post">
+         <div class="form-group">
+          <input class="newsletter" id="email" name="email" placeholder="Enter your email address ....." required="" type="email" value=""/>
+          <button class="theme-btn" onclick="return joinNewsletter();" type="submit">
+           Subscribe
+          </button>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End Subscribe section-->
+   <!-- Contact Info Section -->
+   <section class="contact-info-section" id="contact">
+    <div class="auto-container">
+     <div class="row clearfix">
+      <!--Info Block-->
+      <div class="info-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner">
+        <div class="icon-box">
+         <span class="icon fa fa-map-marker">
+         </span>
+        </div>
+        <div class="text">
+         <span>
+          Address
+         </span>
+         Toronto, Canada
+        </div>
+       </div>
+      </div>
+      <div class="info-block col-md-4 col-sm-6 col-xs-12">
+      </div>
+      <!--Info Block-->
+      <div class="info-block col-md-4 col-sm-6 col-xs-12">
+       <div class="inner">
+        <div class="icon-box">
+         <span class="icon fa fa-envelope-o">
+         </span>
+        </div>
+        <div class="text">
+         <span>
+          Email
+         </span>
+         info@farm2kitchen.io
+        </div>
+       </div>
+      </div>
+      <!--Info Block--
+                <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner">
+                        <div class="icon-box">
+                            <span class="icon fa fa-phone"></span>
+                        </div>
+                        <div class="text"><span>Phone</span>+1</div>
+                    </div> 
+                </div>-->
+     </div>
+    </div>
+   </section>
+   <!-- End Contact Info -->
+   <!-- Main Footer -->
+   <footer class="main-footer footer-style-two" style="background-image: url(images/background/footer-bg.png);">
+    <div class="auto-container">
+     <div class="inner-box">
+      <div class="logo-box">
+       <figure>
+        <img alt="Food Traceability Software - Farm2Kitchen Foods Pvt Ltd" src="images/footer-logo-2.png"/>
+       </figure>
+      </div>
+      <div class="footer-menu">
+       <ul class="navigation">
+        <li>
+         <a href="#">
+          Home
+         </a>
+        </li>
+        <li>
+         <a href="#about">
+          About
+         </a>
+        </li>
+        <li>
+         <a href="#team">
+          Our Team
+         </a>
+        </li>
+        <li>
+         <a href="news.html">
+          News
+         </a>
+        </li>
+        <li>
+         <a href="https://ico.farm2kitchen.io">
+          Crowd Sale
+         </a>
+        </li>
+        <li>
+         <a href="contact.html">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="footer-social-links">
+       <ul class="social-links">
+        <li>
+         <a href="https://www.facebook.com/farm2kitchen">
+          <i class="fa fa-facebook">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://twitter.com/Farm2Kitchen">
+          <i class="fa fa-twitter">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://www.instagram.com/Farm2Kitchen/">
+          <i class="fa fa-instagram">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://www.youtube.com/farm2kitchen">
+          <i class="fa fa-youtube">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://t.me/farm2kitchen">
+          <i class="fa fa-send">
+          </i>
+         </a>
+        </li>
+        <!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
+       </ul>
+      </div>
+     </div>
+    </div>
+    <!--Footer Bottom-->
+    <div class="footer-bottom">
+     <div class="auto-container">
+      <div class="copyright-text">
+       <h4>
+        Copyrights © 2018-2019. All Rights Reserved, Powered by
+        <a href="https://www.farm2kitchen.io/">
+         Farm2Kitchen Foods Pvt. Ltd.
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <!--End pagewrapper-->
+  <!--Scroll to top-->
+  <div class="scroll-to-top">
+   <a href="https://t.me/farm2kitchen" target="new">
+    <span class="icon fa fa-send">
+    </span>
+   </a>
+  </div>
+  <script src="js/jquery.js">
+  </script>
+  <!--Revolution Slider-->
+  <script src="plugins/revolution/js/jquery.themepunch.revolution.min.js">
+  </script>
+  <script src="plugins/revolution/js/jquery.themepunch.tools.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.actions.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.carousel.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.kenburn.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.migration.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js">
+  </script>
+  <script src="plugins/revolution/js/extensions/revolution.extension.video.min.js">
+  </script>
+  <script src="js/main-slider-script.js">
+  </script>
+  <script src="js/bootstrap.min.js">
+  </script>
+  <script src="js/jquery-ui.js">
+  </script>
+  <script src="js/jquery.fancybox.js">
+  </script>
+  <script src="js/owl.js">
+  </script>
+  <script src="js/wow.js">
+  </script>
+  <script src="js/appear.js">
+  </script>
+  <script src="js/mixitup.js">
+  </script>
+  <script src="js/script.js">
+  </script>
+  <!-- Timeline Script -->
+  <script>
+   (function() {
+
+        'use strict';
+
+        // define variables
+        var items = document.querySelectorAll(".timeline li");
+
+        // check if an element is in viewport
+        // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+        function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+        }
+
+        function callbackFunc() {
+        for (var i = 0; i < items.length; i++) {
+          if (isElementInViewport(items[i])) {
+            items[i].classList.add("in-view");
+          }
+        }
+        }
+
+        // listen for events
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("resize", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+
+    })();
+  </script>
+  <script>
+   // Set the date we're counting down to
+var countDownDate = new Date("Jun 4, 2019 03:30:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+		x = new Date();
+		//var now = (x.getTime() + x.getTimezoneOffset()*60*1000)/1000;    
+		
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now - (x.getTimezoneOffset()*60*1000);
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    
+    if(days < 10) {
+        days = '0' + days;
+        document.getElementById("days").innerHTML = '0' + days;
+    }
+    if(hours < 10) {
+        hours = '0' + hours;
+        document.getElementById("hours").innerHTML = '0' + hours;
+    }
+    if(minutes < 10) {
+        minutes = '0' + minutes;
+        document.getElementById("minutes").innerHTML = '0' + minutes;
+    }
+    if(seconds < 10) {
+        seconds = '0' + seconds;
+        document.getElementById("seconds").innerHTML = '0' + seconds;
+    }
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+    
+}, 1000);
+  </script>
+  <script type="text/javascript">
+   $(document).ready(function() {
+        var divHeight = $('.banner-content.two').height(); 
+        $('.banner-content.one').css('min-height', divHeight+'px');
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <title>
+   reOrder
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width" name="viewport"/>
+  <meta title="reOrder"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/images/favicon.png" rel="icon" type="image/png"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/animate.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/non-responsive.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/timeline.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/main.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/media.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://ico.reorder.world/wp-content/themes/new-theme/css/floatscroll.css" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/js/jquery-3.2.1.min.js" type="text/javascript">
+  </script>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/js/bootstrap.min.js" type="text/javascript">
+  </script>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/js/jquery.countdown.min.js" type="text/javascript">
+  </script>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/js/timeline.js" type="text/javascript">
+  </script>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/node_modules/web3/dist/web3.min.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/js/abi.js">
+  </script>
+  <script>
+   if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/YkaXdvldurpxCCFFsPEP"));
+        }
+        
+        // creation of contract object
+        var MyContract = web3.eth.contract(abi);
+
+        // initiate contract for an address
+        var myContractInstance = MyContract.at('0xf9C05E27aD87d8FEf58225024eaa124118a2Af7b');
+        var result;
+
+        // call constant function
+        result = myContractInstance.currentBonus();
+        var currentBonus = result.c[0]; //40;
+
+        //totalAmount
+        result = myContractInstance.totalAmount();
+        var totalAmount = result.c[0];
+
+        //transactionCounter
+        result = myContractInstance.transactionCounter();
+        var transactionCounter = result.c[0];
+  </script>
+  <div class="hidden" id="langs_list">
+   <li class="lang-item lang-item-16 lang-item-ru lang-item-first">
+    <a href="https://ico.reorder.world/?lang=ru" hreflang="ru-RU" lang="ru-RU">
+     Русский
+    </a>
+   </li>
+   <li class="lang-item lang-item-19 lang-item-en current-lang">
+    <a href="https://ico.reorder.world/" hreflang="en-GB" lang="en-GB">
+     English
+    </a>
+   </li>
+  </div>
+  <script type="application/javascript">
+   $(document).ready(function(){
+		$("header a.nav-link[href*='#']").on("click", function(e){
+			var anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $(anchor.attr('href')).offset().top
+			}, 800);
+			e.preventDefault();
+			return false;
+		});
+		$(".fix-nav-btn").on("click", function(){
+			$(this).toggleClass('active');
+			$(this).next('.navbar').toggleClass('active');
+		});
+		$(window).scroll(function (e) {
+			var header_h = $('header').outerHeight(true) - $('header').outerHeight(true) + $('.ro-promo-block').outerHeight(true);
+			var target = e.currentTarget,
+				self = $(target),
+				scrollTop = window.pageYOffset || target.scrollTop,
+				lastScrollTop = self.data("lastScrollTop") || 0;
+			//nav
+			if(scrollTop > header_h && !$('body').hasClass('.mobile-body')) {
+				$('body:not(.mobile-body) header').addClass('fixed-nav');
+			} else {
+				$('body:not(.mobile-body) header').removeClass('fixed-nav');
+			}
+		});
+		$('li.file-toggle').hover(function() {
+			var w = $(this).outerWidth(true);
+			$(this).find('.lfile-list').width(w -2).stop(true, true).delay(200).fadeIn(300);
+		}, function() {
+			$(this).find('.lfile-list').stop(true, true).delay(200).fadeOut(300);
+		});
+
+
+		
+		$('#lang-select-title').html('en');
+		$('.lang-list').html($('#langs_list').html());
+	});
+  </script>
+  <script type="text/javascript">
+   $(document).ready(function(){
+		$('#statistic_bitcoins').html('0');
+		$('#statistic_etherium').html(totalAmount/10000);
+		$('#statistic_investors').html(transactionCounter);
+	});
+  </script>
+  <script type="text/javascript">
+   $(document).ready(function(){
+		$('.time-counter').countdown('2017/11/07 00:00:00', function(event) {
+			$(this).find('td#days').html(event.strftime('%D'));
+			$(this).find('td#hours').html(event.strftime('%H'));
+			$(this).find('td#minutes').html(event.strftime('%M'));
+			$(this).find('td#seconds').html(event.strftime('%S'));
+		});
+	});
+  </script>
+  <script src="https://ico.reorder.world/wp-content/themes/new-theme/js/Chart.js" type="text/javascript">
+  </script>
+  <script>
+   function animatePie()
+	{
+		max_val_1 = $('#chart-pie-1-percent').html();
+		max_val_2 = $('#chart-pie-2-percent').html();
+		$('#chart-pie-1-percent').html(0);
+		$('#chart-pie-2-percent').html(0);
+		current_val_1 = 0;
+		current_val_2 = 0;
+
+		setTimeout(function() {
+			theInterval1 = setInterval(function() {
+				if (current_val_1 > max_val_1) {
+					clearInterval(theInterval1);
+				} else {
+					current_val_1++;
+					if (current_val_1 > max_val_1) {
+						current_val_1 = max_val_1;
+					}
+					$('#chart-pie-1-percent').html(current_val_1);
+				}
+			}, 15);
+
+			theInterval2 = setInterval(function() {
+				if (current_val_1 > max_val_1) {
+					clearInterval(theInterval2);
+				} else {
+					current_val_2++;
+					if (current_val_2 > max_val_2) {
+						current_val_2 = max_val_2;
+					}
+					$('#chart-pie-2-percent').html(current_val_2);
+				}
+			}, 15);
+		}, 500);
+	}
+
+	function animateBar(step = 1)
+	{
+		var start_val = parseFloat($('#element4').attr('data-start'));
+		var end_val = parseFloat($('#element4').attr('data-end'));
+		if (step == 1) {
+			var data_pie_3 = {
+				datasets: [{data: [start_val],	backgroundColor: ['#94b647']}]
+			};
+			var options_3 = {
+				elements: {arc: {borderWidth: 0}},
+				scales: {
+					xAxes: [{
+						stacked: true,
+						display: false,
+						ticks: {display: false},
+						barThickness : 100
+					}],
+					yAxes: [{
+						ticks: {min: 0,	max: end_val, display: false},
+						barThickness : 1,
+						display: false,
+						stacked: true,
+					}]
+				},
+				animation: {duration: 1},
+				responsive: true,
+				legend: {display: false},
+				tooltips: {enabled: false},
+				hover: {mode: null},
+				maintainAspectRatio: false
+			};
+			var config_pie_3 = {
+				type: 'bar',
+				data: data_pie_3,
+				options: options_3
+			};
+
+			$('#pie_chart_canvas_3').html('<canvas id="chart-area-3" width="100%" height="100%"></canvas>');
+			var ctx3 = document.getElementById("chart-area-3").getContext("2d");
+			window.myPie3 = new Chart(ctx3, config_pie_3);
+		}
+		else {
+			var max_value = end_val;
+			var first_offset = window.myPie3.data.datasets[0].data[0];
+			var element_parent_offset = 188;
+			var new_padding = element_parent_offset;
+			var increase_interval = element_parent_offset / (max_value - first_offset);
+
+			theInterval = setInterval(function() {
+				if (window.myPie3.data.datasets[0].data[0] > max_value) {
+					clearInterval(theInterval);
+				} else {
+					window.myPie3.data.datasets[0].data[0] += 1;
+					window.myPie3.update();
+					new_padding -= increase_interval;
+					start_val += 1;
+					if (start_val > max_value) {
+						start_val = max_value;
+					}
+					$('#element4').parent('td').css('padding-top', new_padding + 'px');
+					$('#element4').html('$' + start_val);
+				}
+			}, 30);
+		}
+	}
+  </script>
+  <!-- CONTENT -->
+  <header class="header" id="home">
+   <div class="container">
+    <div class="navbar-box">
+     <a class="main-logotype" href="/">
+      <img src="/wp-content/themes/new-theme/images/logo.png"/>
+     </a>
+     <div class="media-btn" title="Sign In">
+      <a class="nav-link" href="/wp-login.php" rel="alternate">
+       <img src="/wp-content/themes/new-theme/images/user.png"/>
+      </a>
+     </div>
+     <div class="fix-nav-btn">
+     </div>
+     <div class="navbar" role="navigation">
+      <div class="collapse navbar-collapse navbgline" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav mobile-menu-navigation">
+        <li style="list-style-type: none;">
+         <ul class="nav navbar-nav mobile-menu-navigation">
+          <li class="nav-item">
+           <a class="nav-link" href="#marketinfo" hreflang="en-US" rel="alternate">
+            Market
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#product" hreflang="en-US" rel="alternate">
+            Product
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#testimonials" hreflang="en-US" rel="alternate">
+            Testimonials
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#team" hreflang="en-US" rel="alternate">
+            Team
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+       <div class="clear">
+       </div>
+      </div>
+     </div>
+     <div class="fix-nav-added">
+      <ul>
+       <li>
+        <a href="http://demo.reorder.tech" rel="noopener" target="_blank">
+         Live Demo
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="ro-promo-block">
+   <a id="intro" name="intro">
+   </a>
+   <div class="container">
+    <video autoplay="autoplay" height="150" loop="loop" muted="" width="300">
+     <source src="/wp-content/themes/new-theme/files/ny.mp4" type="video/mp4"/>
+     <source src="/wp-content/themes/new-theme/files/ny.mp4" type="video/webm"/>
+    </video>
+    <div class="left-side">
+     <h1>
+      reOrder Gateway
+     </h1>
+     <h2>
+      Retail infrastructure
+     </h2>
+     <hr/>
+     <h3>
+      New York based startup for US retail market
+     </h3>
+     <ul>
+      <li style="list-style-type: none;">
+       <ul class="links">
+        <li>
+         <a href="http://demo.reorder.tech" rel="noopener" target="_blank">
+          Live Demo
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+     <div class="clear">
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+   </div>
+  </div>
+  <div class="ro-solution-block">
+   <div class="container">
+    <b>
+     Deadly statistics 90 out of 100 restaurants will go bankrupt in the first year of operation, 7 out of 10 will close the doors in the next 3 years and only 2 will survive in the next decade
+    </b>
+   </div>
+  </div>
+  <div class="ro-solution-info">
+   <div class="container">
+    <h2 class="floatscroll">
+     reOrder Gateway dramatically improves those statistics
+    </h2>
+    <div class="four-blocks floatscroll">
+     <div>
+      <img src="/wp-content/themes/new-theme/images/bank.png"/>
+      Operational expenses cut and optimized
+     </div>
+     <div>
+      <img src="/wp-content/themes/new-theme/images/prime.png"/>
+      $15 per hour minimum wage hike
+     </div>
+     <div>
+      <img src="/wp-content/themes/new-theme/images/stars.png"/>
+      Service quality improvement
+     </div>
+     <div>
+      <img src="/wp-content/themes/new-theme/images/pig.png"/>
+      Additional income source through marketing
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="before-slider hide">
+     <div class="floatscroll">
+      <p class="text">
+       Зародившаяся в 2015 году идея к настоящему моменту воплотилась в инфраструктуре, способной перевернуть представление об организации розничных продаж.
+      </p>
+      <p class="text">
+       Ключевыми составляющими является многофункциональный криптовалютный терминал и программный комплекс, основанный в том числе на использовании технологии блокчейн.
+      </p>
+     </div>
+     <div class="floatscroll">
+      <p class="text">
+       Инфраструктура несомненно будет интересна как молодым бизнесам, так и опытным участникам рынка.
+      </p>
+      <p class="text">
+       Включение нового участника в инфраструктуру предельно простое: клиентская часть легко масштабируется и настраивается под специфику конкретного бизнеса.
+      </p>
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+    <h1 class="floatscroll">
+     <i>
+      Our goal
+     </i>
+     2000 New York restaurants
+    </h1>
+    <div class="carousel slide main-slider floatscroll" data-ride="carousel" id="myCarousel">
+     <ol class="carousel-indicators" id="carousel-indicators" style="z-index: 1 !important;">
+      <li class="active" data-slide-to="0" data-target="#myCarousel">
+      </li>
+      <li class="" data-slide-to="1" data-target="#myCarousel">
+      </li>
+      <li class="" data-slide-to="2" data-target="#myCarousel">
+      </li>
+      <li class="" data-slide-to="3" data-target="#myCarousel">
+      </li>
+      <li class="" data-slide-to="4" data-target="#myCarousel">
+      </li>
+     </ol>
+     <div class="carousel-inner" id="carousel-inner">
+      <div class="item active" id="item1">
+       <div class="slide-block" id="block1" style="background: #ffffff url('/wp-content/themes/new-theme/images/slider/slide1.jpg') no-repeat top center;">
+        <i>
+         text
+        </i>
+       </div>
+      </div>
+      <div class="item" id="item2">
+       <div class="slide-block" id="block2" style="background: #ffffff url('/wp-content/themes/new-theme/images/slider/slide2.jpg') no-repeat top center;">
+        <i>
+         text
+        </i>
+       </div>
+      </div>
+      <div class="item" id="item3">
+       <div class="slide-block" id="block3" style="background: #ffffff url('/wp-content/themes/new-theme/images/slider/slide3.jpg') no-repeat top center;">
+        <i>
+         text
+        </i>
+       </div>
+      </div>
+      <div class="item" id="item4">
+       <div class="slide-block" id="block4" style="background: #ffffff url('/wp-content/themes/new-theme/images/slider/slide4.jpg') no-repeat top center;">
+        <i>
+         text
+        </i>
+       </div>
+      </div>
+      <div class="item" id="item5">
+       <div class="slide-block" id="block5" style="background: #ffffff url('/wp-content/themes/new-theme/images/slider/slide5.jpg') no-repeat top center;">
+        <i>
+         text
+        </i>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="after-slider">
+     <div class="floatscroll">
+      <p class="text">
+       <b>
+        Relevance.
+       </b>
+       Satisfaction for the legendary New York, daily rushing retail customers, speaking 800 different foreign languages with a high quality of life and service demand.
+      </p>
+      <p class="text">
+       <b>
+        Actuality.
+       </b>
+       Solution to incoming restaurant industry crisis related to $15 per hour minimal wage increase law and related retail business profits loss.
+      </p>
+     </div>
+     <div class="floatscroll">
+      <p class="text">
+       <b>
+        Demand.
+       </b>
+       Any new restaurant has a vital need to acquire a returning customer base and address it with appropriate marketing messages for different types of customers.
+      </p>
+      <p class="text">
+       <b>
+        Opportunity.
+       </b>
+       Restaurants will get the ability to stand out from the crowd of competitors by increasing speed and quality of service and increase their attractiveness.
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- /TODO Market-information block -->
+  <div class="market-information-block">
+   <a id="marketinfo" name="marketinfo">
+   </a>
+   <div class="container">
+    <div class="inl100 floatscroll">
+     Fast Casual Market
+    </div>
+    <div class="inl100 floatscroll">
+     Situation analysis
+    </div>
+    <div class="separating-unit floatscroll">
+     <div>
+     </div>
+     <p class="text floatscroll">
+      Fast-casual dining was the strongest growing segment across the industry at 10.4 percent, increasing $3.4 billion from 2014 to 2015.
+     </p>
+    </div>
+    <div class="segment-growth first-type">
+     <table class="bar_chart_table floatscroll">
+      <tbody>
+       <tr>
+        <td>
+         <i id="element1">
+          B
+         </i>
+        </td>
+        <td rowspan="2">
+         <span id="element3">
+          $23
+         </span>
+         BILLION
+        </td>
+        <td id="pie_chart_canvas_3">
+        </td>
+        <td rowspan="2">
+         <span data-end="66.9" data-start="23" id="element4">
+          $23
+         </span>
+         BILLION
+        </td>
+       </tr>
+       <tr>
+        <td>
+         2010
+        </td>
+        <td>
+         2020
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div>
+      <h4 class="floatscroll">
+       Long term US market growth
+      </h4>
+      <p class="text floatscroll">
+       Technavio study expects U.S. fast-casual restaurant marketplace to reach $66.87 billion by 2020.
+      </p>
+      <p class="text floatscroll">
+       Consumers’ affinity toward fast-casual restaurants continues to grow, according to data from Technavio. In fact, Technavio projects fast-casual restaurants will experience a compound annual growth rate of 10.38 percent in the U.S. by the year 2020.
+      </p>
+      <div>
+       According to Technavio research
+      </div>
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="segment-growth">
+     <div>
+      <h4>
+       Automation demand trend
+      </h4>
+      <p class="text floatscroll">
+       High-tech electronic ordering and payment systems and electronic tablet menus aren’t wide spread practice yet, but customer-facing technologies experience an increasing demand that stimulates its implementation trend.
+      </p>
+      <p class="text floatscroll">
+       According to research 41 percent of restaurant customers would use self-service terminals, if available. 56 percent of all Fast Casual restaurants respond that customer-facing terminals will become more popular soon.
+      </p>
+     </div>
+     <table class="usage-schedules floatscroll">
+      <tbody>
+       <tr>
+        <td>
+         <div class="pie floatscroll" id="pie1">
+          0
+         </div>
+        </td>
+        <td>
+         <div class="pie floatscroll" id="pie2">
+          0
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <div class="pull-left" style="width: 25%;">
+          <span id="chart-pie-1-percent">
+           52
+          </span>
+         </div>
+         <div class="pull-right" style="width: 75%;">
+          <span id="no-remove">
+           %
+          </span>
+          Clients
+         </div>
+        </td>
+        <td>
+         <div class="pull-left" style="width: 20%;">
+          <span id="chart-pie-2-percent">
+           55
+          </span>
+         </div>
+         <div class="pull-right" style="width: 80%;">
+          <span id="no-remove">
+           %
+          </span>
+          Owners
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         wish to use electronic payment system
+        </td>
+        <td>
+         electronic payment system will become more popular
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="ny-map-block floatscroll">
+     <div class="ny-map floatscroll">
+      <div>
+       <span id="element7">
+        2000
+       </span>
+       restaurants
+      </div>
+     </div>
+     <div>
+      <h4 class="floatscroll">
+       reOrder on New York’s market
+      </h4>
+      <p class="text floatscroll">
+       million New Yorkers and 60 million tourists living in and visiting one of the highest income customer markets and spending $43.3 billion yearly or an average $118 million daily.
+      </p>
+      <p class="text floatscroll">
+       According to DOH statistics there are more than 48,000 operating eating and drinking locations in New York City and an estimated 2000 of them will join the reOrder network during our first deployment phase, starting in 2018.
+      </p>
+      <p class="text floatscroll">
+       National Restaurant Association research reveals that New York restaurants represent 6% of the total US restaurant market, which is worth $799 billion a year.
+      </p>
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+   </div>
+  </div>
+  <!-- /TODO reOrder-infrastructure block -->
+  <div class="ro-infrastructure-block">
+   <a id="product" name="product">
+   </a>
+   <div class="container">
+    <h2 class="floatscroll">
+     <i>
+      reOrder
+     </i>
+     Infrastructure
+    </h2>
+    <hr/>
+    <p class="text floatscroll">
+     The system of interactive modules allowing business owners to maintain control of operations and transactions between customers and restaurant staff and ordering of goods and services, without the involvement of banks, payments systems and processing companies
+    </p>
+    <div class="changer-nav floatscroll">
+     <div class="item active" id="item-1">
+      <div>
+       <span class="spr-crypt" id="spr-crypt">
+       </span>
+      </div>
+      <p class="text">
+       Payment terminal
+      </p>
+     </div>
+     <div class="item" id="item-2">
+      <div>
+       <span class="spr-purse" id="spr-purse">
+       </span>
+      </div>
+      <p class="text">
+       Wallet and exchange
+      </p>
+     </div>
+     <div class="item" id="item-3">
+      <div>
+       <span class="spr-star" id="spr-star">
+       </span>
+      </div>
+      <p class="text">
+       advertisement module
+      </p>
+     </div>
+     <div class="item" id="item-4">
+      <div>
+       <span class="spr-bookk" id="spr-bookk">
+       </span>
+      </div>
+      <p class="text">
+       accounting module
+      </p>
+     </div>
+     <div class="item" id="item-5">
+      <div>
+       <span class="spr-cloude" id="spr-cloude">
+       </span>
+      </div>
+      <p class="text">
+       Cloud management system
+      </p>
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="changer-block floatscroll">
+     <div class="item-1 active">
+      <div class="left-block">
+       <h3>
+        Interactive menu and price list
+       </h3>
+       <div>
+        Clients’ WOW effect
+       </div>
+       <div>
+        15% sales increase
+       </div>
+       <div>
+        “Tasty” food photos
+       </div>
+       <div>
+        Fast ordering
+       </div>
+       <div>
+        Upselling technics
+       </div>
+       <div>
+        Lowering tips
+       </div>
+       <div>
+        Improving service quality
+       </div>
+       <div>
+        Waiter error rate cut
+       </div>
+       <div>
+        Multilanguage menu
+       </div>
+      </div>
+      <div class="middle-block">
+       <img src="/wp-content/themes/new-theme/images/menu.gif"/>
+      </div>
+      <div class="right-block">
+       <h3>
+        Embedded card reader
+       </h3>
+       <div>
+        reOrder prepaid cards, banking cards and instant payment solution
+       </div>
+      </div>
+      <div class="clear">
+      </div>
+      <div class="afte-block floatscroll">
+       Customer table reOrder terminals installation is
+       <b>
+        100% free
+       </b>
+       and therefore easily affordable for New York retail business owners. Ready to deploy solution provides seamless next day operation.
+      </div>
+      <div class="afte-block floatscroll">
+       Business gets all the advantages of self-selling menu, profit increase and expenses cut as well as client base accumulation and customer loyalty growth
+      </div>
+      <div class="clear">
+      </div>
+     </div>
+     <div class="item-2">
+      <div class="left-block">
+       <img src="/wp-content/themes/new-theme/images/terminal1.png"/>
+      </div>
+      <div class="right-block">
+       <h3>
+        Convenient and lowered payments
+       </h3>
+       <p class="text">
+        The moment customer press payment button reOrder system provide three different payment choices: cash, banking cards through reOrder prepaid cards. Average ticket total depends on selected payments mean giving the customer most price effective way to save by using accumulated bonus points, special offers and promotions.
+       </p>
+      </div>
+      <div class="clear">
+      </div>
+      <div class="afte-block floatscroll">
+       Customer table reOrder terminals installation is
+       <b>
+        100% free
+       </b>
+       and therefore easily affordable for New York retail business owners. Ready to deploy solution provide seamless next day operation.
+      </div>
+      <div class="afte-block floatscroll">
+       Business gets all the advantages of self-selling menu, profit increase and expenses cut as well as client base accumulation and customer loyalty growth.
+      </div>
+      <div class="clear">
+      </div>
+     </div>
+     <div class="item-3">
+      <div class="left-block">
+       <h3>
+        Brand advertising
+       </h3>
+       <p class="text">
+        All vacant tables equipped with reOrder terminals will stream global brand advertisement widely visible like regular outdoors billboards.
+       </p>
+       <h3>
+        Buy time context advertisement
+       </h3>
+       <p class="text">
+        Introduced to the customer right before order placing, during the wait time or after order delivery. This format fits well for advertising and cross-marketing of local goods and services.
+       </p>
+       <h3>
+        Instant purchase
+       </h3>
+       <p class="text">
+        Ability to buy advertised products straight from the appearing advertisement using reOrder terminal connection to accept banking cards. This gives unmatched competitive advantage to any advertiser.
+       </p>
+      </div>
+      <div class="right-block">
+       <img src="/wp-content/themes/new-theme/images/terminal2.png"/>
+      </div>
+      <div class="clear">
+      </div>
+      <div class="afte-block floatscroll">
+       Customer table reOrder terminals installation is
+       <b>
+        free
+       </b>
+       and therefore easily affordable for New York retail business owners. Ready to deploy solution provide seamless next day operation.
+      </div>
+      <div class="afte-block floatscroll">
+       Business gets all the advantages of self-selling menu, profit increase and expenses cut as well as client base accumulation and customer loyalty growth
+      </div>
+      <div class="clear">
+      </div>
+     </div>
+     <div class="item-4">
+      <div class="left-block">
+       <img src="/wp-content/themes/new-theme/images/accounting.png"/>
+      </div>
+      <div class="right-block">
+       <h3>
+        Технологии блокчейн
+       </h3>
+       <p class="text">
+        Для владельца бизнеса технологии блокчейн могут обеспечить самый надежный способ полного контроля продаж, c гарантией того, что никто из его сотрудников не сможет умышленно изменить данные об уже сделанных продажах в свою пользу.
+       </p>
+      </div>
+      <div class="clear">
+      </div>
+      <div class="afte-block floatscroll">
+       Customer table reOrder terminals installation is
+       <b>
+        free
+       </b>
+       and therefore easily affordable for New York retail business owners. Ready to deploy solution provide seamless next day operation.
+      </div>
+      <div class="afte-block floatscroll">
+       Business gets all the advantages of self-selling menu, profit increase and expenses cut as well as client base accumulation and customer loyalty growth
+      </div>
+      <div class="clear">
+      </div>
+     </div>
+     <div class="item-5">
+      <img src="/wp-content/themes/new-theme/images/cloude_bg.png"/>
+      <div class="clear">
+      </div>
+      <div class="afte-block floatscroll">
+       Customer table reOrder terminals installation is
+       <b>
+        free
+       </b>
+       and therefore easily affordable for New York retail business owners. Ready to deploy solution provide seamless next day operation.
+      </div>
+      <div class="afte-block floatscroll">
+       Business gets all the advantages of self-selling menu, profit increase and expenses cut as well as client base accumulation and customer loyalty growth
+      </div>
+      <div class="clear">
+      </div>
+     </div>
+    </div>
+    <div class="clear">
+    </div>
+   </div>
+  </div>
+  <!-- /TODO about us block -->
+  <div class="ro-about-us-block">
+   <a id="testimonials" name="testimonials">
+   </a>
+   <div class="container">
+    <h2 class="floatscroll">
+     <i>
+      Testimonials.
+     </i>
+     Feedback
+    </h2>
+    <div class="line-block-contain">
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22981175#msg22981175" rel="noopener" target="_blank">
+        <i>
+         hildacitra
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22981175#msg22981175" rel="noopener" target="_blank">
+        it is such a great project. the concept is drawn perfectly and makes me interested. It is very good and useful as well as appropriate for business owners to facilitate their business or others.
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22956741#msg22956741" rel="noopener" target="_blank">
+        <i>
+         GendalfTheFireRed
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22956741#msg22956741" rel="noopener" target="_blank">
+        We need more projects like this, helping to promote crypto. I think it’s an excellent way for people to get acquainted with it – in familiar setting and without large investment. Wishing you all the best!
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22295517#msg22295517" rel="noopener" target="_blank">
+        <i>
+         inspiredinvestor
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22295517#msg22295517" rel="noopener" target="_blank">
+        Great ingenious idea for a project and I love how you are clearly stating the problem you are solving. have already starting engaging business, especially since it’s free for business I am sure you will get some interest if you successfully help them try it.
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22073894#msg22073894" rel="noopener" target="_blank">
+        <i>
+         adarwis
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22073894#msg22073894" rel="noopener" target="_blank">
+        I think you guys have an interesting concept, and yes, you also have a great team, what to worry about, make something big today, then a brilliant future is not a problem you get. Decision and determination will produce sweet results in the end. good luck.
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22951157#msg22951157" rel="noopener" target="_blank">
+        <i>
+         william1980
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22951157#msg22951157" rel="noopener" target="_blank">
+        Hello Dev
+Good luck for your project .
+Closely watching the progress !!! Cheers
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22909149#msg22909149" rel="noopener" target="_blank">
+        <i>
+         Medow
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22909149#msg22909149" rel="noopener" target="_blank">
+        I would like to be involved in this, I think your model of distribution looks fairer than some of the other ones that have been happening recently. I hope it all works out well and best wishes with it.
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22615608#msg22615608" rel="noopener" target="_blank">
+        <i>
+         bezzler
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22615608#msg22615608" rel="noopener" target="_blank">
+        Nice concept sir, it helps retailers to develop well in the business. your project has a good mission, many will support it. Good luck.
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22325185#msg22325185" rel="noopener" target="_blank">
+        <i>
+         Musicrela
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22325185#msg22325185" rel="noopener" target="_blank">
+        Need to learn more in this coin, I think is very interesting
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22089910#msg22089910" rel="noopener" target="_blank">
+        <i>
+         nor9854
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22089910#msg22089910" rel="noopener" target="_blank">
+        Looks good.Will consider to participate in presale
+       </a>
+      </div>
+     </div>
+     <div class="line-block floatscroll">
+      <div>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22215242#msg22215242" rel="noopener" target="_blank">
+        <i>
+         Buckwheet
+        </i>
+        https://bitcointalk.org
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2143865.msg22215242#msg22215242" rel="noopener" target="_blank">
+        Hi. Your design look like this project focus on restaurant or food industry. But when I read it seem like paypal platform. interesting with reorder system. Your guy should make a video for people known more about this project
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="deploy-reviews lnk" id="btt-1">
+     Show all
+    </div>
+    <div class="deploy-reviews lnk" id="btt-2">
+     Hide
+    </div>
+   </div>
+  </div>
+  <!-- /TODO team block -->
+  <div class="ro-team-block">
+   <a id="team" name="team">
+   </a>
+   <div class="container">
+    <h2 class="floatscroll">
+     reOrder
+     <i>
+      Team
+     </i>
+    </h2>
+    <p class="text floatscroll">
+     Development and marketing
+    </p>
+    <div class="team-list">
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/1.jpg"/>
+      <div>
+       <div>
+        Serge Shilnov
+       </div>
+       <div>
+        New York, USA
+       </div>
+       <div>
+        CEO, Founder
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/dozier.doz" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <!--
+<img src="/wp-content/themes/new-theme/images/team/4.jpg" />
+<div>
+<div>Evgeny Mityaev</div>
+<div>New York, USA</div>
+<div>CTO, Co-founder</div>
+</div>
+<div><a class="team-in" href="https://www.linkedin.com/in/evgeny-mityaev-a2583392/" target="_blank" rel="noopener"> </a></div>
+</div>
+<div class="floatscroll">
+-->
+      <img src="/wp-content/themes/new-theme/images/team/3.jpg"/>
+      <div>
+       <div>
+        Alexey Potapov
+       </div>
+       <div>
+        New York, USA
+       </div>
+       <div>
+        CMO, Co-founder
+       </div>
+      </div>
+      <div>
+       <a class="team-in" href="https://www.linkedin.com/in/alexey-immorta-potapov/" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <!--
+<img src="/wp-content/themes/new-theme/images/team/2.jpg" />
+<div>
+<div>Alexander Teplitskiy</div>
+<div>New York, USA</div>
+<div>Investor</div>
+</div>
+<div><a class="team-fb" href="https://www.facebook.com/alex.teplitsky.3" target="_blank" rel="noopener"> </a></div>
+</div>
+<div class="floatscroll">
+-->
+      <img src="/wp-content/themes/new-theme/images/team/7.jpg"/>
+      <div>
+       <div>
+        Olga Sabinina
+       </div>
+       <div>
+        Moscow, Russia
+       </div>
+       <div>
+        Brand Manager
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/olga.sabinina" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/6.jpg"/>
+      <div>
+       <div>
+        Tatiana Bokhonskaya
+       </div>
+       <div>
+        Kiev, Ukraine
+       </div>
+       <div>
+        Developer
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/profile.php?id=100002072660269" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/5.jpg"/>
+      <div>
+       <div>
+        Igor Bokhonsky
+       </div>
+       <div>
+        Kiev, Ukraine
+       </div>
+       <div>
+        Developer
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/bohonsky" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/14.jpg"/>
+      <div>
+       <div>
+        Igor Klimovskiy
+       </div>
+       <div>
+        Smart Contract Developer
+       </div>
+      </div>
+      <div>
+       <a class="team-in" href="https://www.linkedin.com/in/igor-klimovskiy-1985-09-03" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- /TODO advisor block -->
+  <div class="ro-advisor-block">
+   <div class="container">
+    <h3>
+     Advisors
+    </h3>
+    <div class="team-list">
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/12.jpg"/>
+      <div>
+       <div>
+        Anatol Ostrowski
+       </div>
+       <div>
+        Kharkov, Ukraine
+       </div>
+       <div>
+        Founder Nousplatform
+       </div>
+       <div>
+        Blockchain consultant
+       </div>
+       <div>
+        <a href="https://nousplatform.com" rel="noopener" target="_blank">
+         https://nousplatform.com
+        </a>
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/anatol.in.9" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/11.jpg"/>
+      <div>
+       <div>
+        Iliya Svirin
+       </div>
+       <div>
+        Moscow, Russia
+       </div>
+       <div>
+        Blockchain consultant
+       </div>
+       <div>
+        <a href="http://prover.io">
+         http://prover.io
+        </a>
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/profile.php?id=100009292827441" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <!--
+<img src="/wp-content/themes/new-theme/images/team/8.jpg" />
+<div>
+<div>Arturas Vaitaitis</div>
+<div>New York, USA</div>
+<div>Business consultant</div>
+<div>CTO at Mondevices Inc.</div>
+</div>
+<div><a class="team-in" href="https://www.linkedin.com/in/varturas/" target="_blank" rel="noopener"> </a></div>
+</div>
+<div class="floatscroll">
+
+<img src="/wp-content/themes/new-theme/images/team/9.jpg" />
+<div>
+<div>Artem Mishchenko</div>
+<div>Singapore</div>
+<div>Processing Systems Consultant</div>
+<div><a href="https://www.wirecard.com/" target="_blank" rel="noopener">https://www.wirecard.com/</a></div>
+</div>
+<div><a class="team-in" href="https://www.linkedin.com/in/artem-mishchenko-9b33a123/" target="_blank" rel="noopener"> </a></div>
+</div>
+<div class="floatscroll">
+
+<img src="/wp-content/themes/new-theme/images/team/10.jpg" />
+<div>
+<div>Alexander Sudakov</div>
+<div>Moscow, Russia</div>
+<div>Senior Hardware Engineer</div>
+<div>Samsung S1 Corporation Ltd</div>
+</div>
+<div><a class="team-in" href="https://www.linkedin.com/in/alexander-sudakov-27142486/" target="_blank" rel="noopener"> </a></div>
+</div>
+<div class="floatscroll">
+-->
+      <img src="/wp-content/themes/new-theme/images/team/13.jpg"/>
+      <div>
+       <div>
+        Andrey Sulimko
+       </div>
+       <div>
+        Moscow, Russia
+       </div>
+       <div>
+        Product Strategy Consultant
+       </div>
+       <div>
+        <a href="https://www.coruna.ru/coruna/">
+         https://www.coruna.ru/coruna/
+        </a>
+       </div>
+      </div>
+      <div>
+       <a class="team-fb" href="https://www.facebook.com/sulimko" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+     <div class="floatscroll">
+      <img src="/wp-content/themes/new-theme/images/team/15.jpg"/>
+      <div>
+       <div>
+        Mike Shokin
+       </div>
+       <div>
+        USA, New York
+       </div>
+       <div>
+        CFA
+       </div>
+       <div>
+        Advisory Board Member at
+       </div>
+       <div>
+        <a href="https://coinloan.io/">
+         https://coinloan.io
+        </a>
+       </div>
+      </div>
+      <div>
+       <a class="team-in" href="https://www.linkedin.com/in/mshokin/" rel="noopener" target="_blank">
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <style>
+   .market-information-block div.ny-map > div {font-size: 21px;margin:10px 20px 0 0;}
+.market-information-block div.ny-map > div > span {display: block;line-height: 1;}
+.cd-timeline-navigation a {margin-top:-42px;}
+  </style>
+  <!-- Content end -->
+  <script type="application/javascript">
+   var currentTime = new Date();
+	var month = currentTime.getMonth() + 1;
+	var year = currentTime.getFullYear();
+	$('.choice-year #year-' + year).addClass('active');
+
+	$(document).ready(function() {
+		$('#box-year-'+year+' li a[data-month="'+month+'"]').click();
+
+		var ww = $(window).width();
+		is_pie_animated = false;
+		is_bar_animated = false;
+		animateBar();
+		function isScrolled(){
+			$(".floatscroll").each(function() {
+				elem = $(this);
+				if(!$(this).length) return false;
+
+				var docViewBottom = $(window).scrollTop() + $(window).height();
+				var elemBottom = $(elem).offset().top + $(elem).height();
+
+				if(elem.hasClass('main-slider') || elem.hasClass('changer-block')) {
+					elemBottom = elemBottom -300;
+				}
+				if(elem.closest('.team-list')) {
+					elemBottom = elemBottom -125;
+				}
+
+				if((elemBottom < docViewBottom)) {
+					elem.addClass('floating');
+					if (elem.hasClass('usage-schedules') && !is_pie_animated) {
+						is_pie_animated = true;
+						animatePie();
+					}
+					if (elem.hasClass('bar_chart_table') && !is_bar_animated) {
+						is_bar_animated = true;
+						animateBar(2);
+					}
+
+				}
+			});
+		}
+
+		$(window).scroll(function(){
+			isScrolled();
+		});
+
+		var min_height = 10;
+		var max_height = 10;
+		$('.timeline-center-block').css('left', '50%');
+		$('.line-block-contain .line-block').each(function() {
+			max_height = max_height + $(this).outerHeight(true);
+			if($(this).index() > 5) {
+				$('#btt-1').addClass('visible');
+			} else {
+				min_height = min_height + $(this).outerHeight(true);
+			}
+		});
+		$('.line-block-contain').height(min_height);
+
+		$('.deploy-reviews').on('click', function() {
+			if($(this).attr('id') != 'btt-1') {
+				$(this).removeClass('visible');
+				$('#btt-1').addClass('visible');
+				$('.line-block-contain').removeClass('scrolled').height(min_height);
+			} else {
+				$(this).removeClass('visible');
+				$('#btt-2').addClass('visible');
+				$('.line-block-contain').addClass('scrolled').height(max_height);
+			}
+		});
+
+		$(".choice-year > li").on( "click", function() {
+			var elem = $(this).attr('id');
+
+			$(".choice-year > li, .ro-roadmap-block > section").each(function(index) {
+				$(this).removeClass('active');
+			});
+			$(this).addClass('active');
+			$('#box-'+elem).addClass('active');
+		});
+		$(".changer-nav > div").on( "click", function() {
+			var elem = $(this).attr('id');
+
+			$(".changer-nav .item, .changer-block > div").each(function( index ) {
+				$(this).removeClass('active');
+			});
+			$(this).addClass('active');
+			$('.'+elem).addClass('active');
+		});
+	});
+  </script>
+  <footer>
+   <div class="container">
+    © 2018 reOrder World
+   </div>
+  </footer>
+ </body>
+</html>

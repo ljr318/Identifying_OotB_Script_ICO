@@ -1,0 +1,1197 @@
+<html>
+ <head>
+  <title>
+   Home | Sportsbook Demo Betrium
+  </title>
+  <meta charset="utf-8"/>
+  <link href="/css/jquery.calendar.css" rel="stylesheet"/>
+  <link href="/css/fonts.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/style.css?18.3" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet"/>
+  <link href="/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="/css/owl.carousel.css" rel="stylesheet"/>
+  <link href="/favicon.ico" rel="shortcut icon"/>
+  <script src="/js/jquery.min.js">
+  </script>
+  <script src="/js/owl.carousel.js">
+  </script>
+  <script src="/js/main.js?18.3">
+  </script>
+ </head>
+ <body>
+  <div id="overlay">
+   <form class="window" id="signin">
+    <div class="header">
+     Sign In
+    </div>
+    <input class="email" placeholder="Email" type="text"/>
+    <input class="password" placeholder="Password" type="password"/>
+    <button class="send" type="submit">
+     Go!
+    </button>
+   </form>
+   <form class="window" id="signup">
+    <div class="header">
+     Sign Up
+    </div>
+    <input class="email" placeholder="Email" type="text"/>
+    <input class="fullname" placeholder="Full Name" type="text"/>
+    <input class="password" placeholder="Password" type="password"/>
+    <input class="password2" placeholder="Password repeat" type="password"/>
+    <input class="country" placeholder="Country" type="text"/>
+    <input class="nickname" placeholder="Nickname" type="text"/>
+    <button class="send" type="submit">
+     Go!
+    </button>
+   </form>
+   <div class="window" id="success">
+    <big>
+     Success!
+    </big>
+    <p>
+    </p>
+    <img src="/img/transaction_done.png"/>
+    <div class="close">
+     Close
+    </div>
+   </div>
+   <div class="window" id="license">
+    <img src="/img/caution_2.png"/>
+    <big>
+     Please Note
+    </big>
+    <p>
+     — This is a demo, minimal viable product, which is launched to demonstrate the possible way of functionating of the Betrium’s sportsbook.
+     <br/>
+     — Some features and functionality are disabled or limited and will appear step by step during the next 30 days. Only BTC is currently accepted.
+     <br/>
+     — The demo can’t be regarded as a real gambling product and launched for demonstrating purposes only, as it is not covered by any online gambling license.
+     <br/>
+     <b>
+      — Withdrawals are currently disabled. Please note, you won’t be able to withdraw your BTC for the next 90 days.
+     </b>
+     <br/>
+     — The odds and other content are just for demonstration. At the time, we do not guaruantee payment of the winnings made here until May 2018.
+     <br/>
+     — USD balances are for testing purposes only. Each user gets $1000 upon registration. It can’t be withdrawed in future and will disappear.
+     <br/>
+     — We use Cookies in your browser on this website to track user’s activity and form statistics to impove user experience in future.
+     <br/>
+     — By clicking «I Agree», you confirm and agree to the statements listed above.
+    </p>
+    <div class="close">
+     I Agree
+    </div>
+   </div>
+  </div>
+  <div id="menu">
+   <a class="logo wrap_left" href="/sport">
+    <img alt="Logo" src="/img/logo.png"/>
+    <img class="demo" src="/img/demo.png"/>
+   </a>
+   <div class="wrap_center">
+    <div class="pages">
+     <a href="/sport">
+      Sport
+     </a>
+     <a href="/live">
+      Live
+      <span>
+       1
+      </span>
+     </a>
+     <a href="/results">
+      Results
+     </a>
+     <a href="/exchange">
+      Exchange
+     </a>
+    </div>
+   </div>
+   <div class="wrap_right">
+    <div class="search">
+     <i aria-hidden="true" class="fa fa-search">
+     </i>
+     <input placeholder="Search" type="text"/>
+     <div class="items">
+      <a class="template item" href="">
+       <div class="game">
+        Exchange
+       </div>
+       <div class="date">
+        10/08 - 05:30
+       </div>
+       <div class="title">
+        Juventus - Ukraine
+       </div>
+      </a>
+     </div>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id=ga.betrium.sportbets" target="_blank">
+     <img class="mobile" src="/img/mobile.png"/>
+    </a>
+    <div class="signin">
+     Sign In
+    </div>
+    <div class="signup">
+     Sign Up
+    </div>
+   </div>
+  </div>
+  <div class="page_sport page_live wrap" id="page">
+   <div class="wrap_left">
+    <div id="calendar">
+    </div>
+    <div class="betslip_form">
+     <h2>
+      Betslip
+      <span class="clear_placebet hide">
+       <i aria-hidden="true" class="fa fa-times">
+       </i>
+       Clear
+      </span>
+     </h2>
+     <div class="betslip">
+      <div class="wrapper">
+       <div class="half">
+        Bets selected:
+       </div>
+       <div class="half">
+        <b class="bets">
+         0
+        </b>
+       </div>
+       <div class="full bets_list">
+        <!--p>Chelsea(ENG) - Barcelona(ESP): <b>Under 7.5</b></p-->
+       </div>
+       <div class="half">
+        <div class="currency">
+         <div class="current">
+          USD
+         </div>
+         <div class="list">
+          <div class="usd" data-currency="usd">
+           USD
+           <span>
+            0
+           </span>
+          </div>
+          <div class="btc" data-currency="btc">
+           BTC
+           <span>
+            0.000000
+           </span>
+          </div>
+          <div class="eth" data-currency="eth">
+           ETH
+           <span>
+            0.000000
+           </span>
+          </div>
+         </div>
+        </div>
+        <input class="stake" placeholder="Stake" type="text"/>
+       </div>
+       <div class="half">
+        <button class="place">
+         PLACE BET
+        </button>
+       </div>
+       <div class="accept">
+        Accept all rates raise
+        <i aria-hidden="true" class="fa fa-caret-down">
+        </i>
+       </div>
+      </div>
+     </div>
+     <h2 class="delete_coupons">
+      Your coupons
+      <div>
+       <i aria-hidden="true" class="fa fa-times">
+       </i>
+       Delete all
+      </div>
+     </h2>
+     <div class="coupons">
+      <div class="item template">
+       <div class="delete">
+        <i aria-hidden="true" class="fa fa-times">
+        </i>
+       </div>
+       <div class="team">
+        {{ TEAM }}
+       </div>
+       <div class="division">
+        {{ DIVISION }}
+       </div>
+       <div class="selected">
+        Selected:
+        <b>
+        </b>
+       </div>
+       <div class="body">
+        <div class="part p1">
+         STAKE
+        </div>
+        <div class="part p2">
+         ODD
+        </div>
+        <div class="part p3">
+         WIN
+        </div>
+        <div class="part p1">
+         <input class="stake" placeholder="Stake" type="text"/>
+        </div>
+        <div class="part p2">
+         <div class="odd">
+          {{ ODD }}
+         </div>
+        </div>
+        <div class="part p3">
+         <input class="win" placeholder="Win" type="text"/>
+        </div>
+        <div class="max">
+         Max bet: $
+         <span>
+          {{ MAX }}
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="total">
+      <div class="header">
+       TOTAL STAKE:
+       <span>
+        0
+       </span>
+       <i class="btc">
+        BTC
+       </i>
+       <i class="usd show">
+        USD
+       </i>
+       <i class="eth">
+        ETH
+       </i>
+      </div>
+      <div class="body">
+       <div class="half win">
+        Total Win:
+        <div class="inline">
+         <span>
+          0
+         </span>
+         <i class="btc">
+          BTC
+         </i>
+         <i class="usd show">
+          USD
+         </i>
+         <i class="eth">
+          ETH
+         </i>
+        </div>
+       </div>
+       <div class="half">
+        <div class="confirm">
+         CONFIRM
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <h2>
+     Markets
+     <span class="reset">
+      <i aria-hidden="true" class="fa fa-times">
+      </i>
+      Reset
+     </span>
+    </h2>
+    <div class="menu_left">
+     <div class="list open">
+      <div class="header">
+       Soccer
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+       <div class="item" data-cat="1" data-subcat="2">
+        League UEFA
+       </div>
+       <div class="item" data-cat="1" data-subcat="4">
+        Semi-Pro League
+       </div>
+       <div class="item" data-cat="1" data-subcat="5">
+        Champions League
+       </div>
+       <div class="item" data-cat="1" data-subcat="14">
+        Custom Events
+       </div>
+      </div>
+     </div>
+     <div class="list open">
+      <div class="header">
+       Basketball
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+       <div class="item" data-cat="2" data-subcat="8">
+        NBA World
+       </div>
+       <div class="item" data-cat="2" data-subcat="9">
+        NBA G League
+       </div>
+       <div class="item" data-cat="2" data-subcat="11">
+        Euroleague
+       </div>
+       <div class="item" data-cat="2" data-subcat="15">
+        Custom Events
+       </div>
+      </div>
+     </div>
+     <div class="list open">
+      <div class="header">
+       Tennis
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+       <div class="item" data-cat="3" data-subcat="12">
+        ATP Challenger
+       </div>
+       <div class="item" data-cat="3" data-subcat="13">
+        ITF World
+       </div>
+       <div class="item" data-cat="3" data-subcat="16">
+        Custom Events
+       </div>
+      </div>
+     </div>
+     <div class="list open">
+      <div class="header">
+       Entertainment
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+       <div class="item" data-cat="4" data-subcat="17">
+        Cryptocurrencies
+       </div>
+       <div class="item" data-cat="4" data-subcat="19">
+        Custom Events
+       </div>
+      </div>
+     </div>
+     <div class="list open">
+      <div class="header">
+       Baseball
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+       <div class="item" data-cat="5" data-subcat="18">
+        MLB
+       </div>
+       <div class="item" data-cat="5" data-subcat="20">
+        Custom Events
+       </div>
+      </div>
+     </div>
+     <div class="list open empty">
+      <div class="header">
+       Cricket
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+      </div>
+     </div>
+     <div class="list open empty">
+      <div class="header">
+       Golf
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+      </div>
+     </div>
+     <div class="list open empty">
+      <div class="header">
+       Hockey
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+      </div>
+     </div>
+     <div class="list open empty">
+      <div class="header">
+       CyberSport
+      </div>
+      <div class="opener">
+      </div>
+      <div class="items">
+      </div>
+     </div>
+    </div>
+    <!--a href="https://betrium.co">
+	<img class="banner" src="/img/banner_mini.jpg">
+</a-->
+   </div>
+   <div class="wrap_right_big tournaments">
+    <div class="owl-carousel">
+     <a class="item" href="/sport/42">
+      <img src="/img/slider/banner1.jpg"/>
+      <div class="category">
+       Soccer
+      </div>
+      <div class="dark">
+       <div class="title">
+        Paulo Dybala – new Ronaldo?
+       </div>
+       <div class="event">
+        Tottenham Hotspur — Juventus
+       </div>
+      </div>
+     </a>
+     <a class="item" href="/sport/41">
+      <img src="/img/slider/banner2.jpg"/>
+      <div class="category">
+       Soccer
+      </div>
+      <div class="dark">
+       <div class="title">
+        Will Ronaldo break his neck again?
+       </div>
+       <div class="event">
+        Sevilla — Realmadrid
+       </div>
+      </div>
+     </a>
+     <a class="item" href="/sport/14">
+      <img src="/img/slider/banner3.jpg"/>
+      <div class="category">
+       Soccer
+      </div>
+      <div class="dark">
+       <div class="title">
+        Brisbane Roar win streak!
+       </div>
+       <div class="event">
+        Melbourne City — Brisbane Roar
+       </div>
+      </div>
+     </a>
+     <a class="item" href="/sport/5">
+      <img src="/img/slider/banner4.jpg"/>
+      <div class="category">
+       Tennis
+      </div>
+      <div class="dark">
+       <div class="title">
+        Lamine is new ladder top 1!
+       </div>
+       <div class="event">
+        Ouahab Lamine — Gutierrez Sergio
+       </div>
+      </div>
+     </a>
+     <a class="item" href="/sport/9">
+      <img src="/img/slider/banner5.jpg"/>
+      <div class="category">
+       Basketball
+      </div>
+      <div class="dark">
+       <div class="title">
+        Love Basketball?
+       </div>
+       <div class="event">
+        Los Angeles Clippers	—  	Denver Nuggets
+       </div>
+      </div>
+     </a>
+    </div>
+    <div class="search">
+     <i aria-hidden="true" class="fa fa-search">
+     </i>
+     <input placeholder="Search" type="text"/>
+    </div>
+    <h2 class="soccer" data-cat="1">
+     Soccer
+    </h2>
+    <div class="table" data-cat="1">
+     <div class="list" data-subcat="1">
+      <div class="row header">
+       <a class="division" href="/category/1">
+        World Cup 2018
+       </a>
+       <div class="tittler block" data-desc="Total">
+        Total
+       </div>
+       <div class="tittler block" data-desc="Over">
+        Over
+       </div>
+       <div class="tittler block" data-desc="Under">
+        Under
+       </div>
+       <div class="tittler block" data-desc="First team win">
+        1
+       </div>
+       <div class="tittler block" data-desc="Draw game">
+        X
+       </div>
+       <div class="tittler block" data-desc="Second team win">
+        2
+       </div>
+      </div>
+     </div>
+    </div>
+    <h2 class="basketball" data-cat="2">
+     Basketball
+    </h2>
+    <div class="table" data-cat="2">
+     <div class="list" data-subcat="8">
+      <div class="row header">
+       <a class="division" href="/category/8">
+        NBA World
+       </a>
+       <div class="tittler block part" data-desc="Handicap value">
+        Hand.
+       </div>
+       <div class="tittler block" data-desc="Handicap coefficient">
+        Odds
+       </div>
+       <div class="tittler block" data-desc="Total">
+        Total
+       </div>
+       <div class="tittler block" data-desc="Over">
+        Over
+       </div>
+       <div class="tittler block" data-desc="Under">
+        Under
+       </div>
+       <div class="tittler block" data-desc="First team win">
+        1
+       </div>
+       <div class="tittler block" data-desc="Draw game">
+        X
+       </div>
+       <div class="tittler block" data-desc="Second team win">
+        2
+       </div>
+      </div>
+      <div class="row" data-available="1" data-category="2" data-date="1729260639" data-division="Los Angeles Clippers — Denver Nuggets" data-event="9" data-subcategory="8">
+       <div class="date" title="Kiev / Moscow / UTC+3">
+        18/10 - 14:10
+       </div>
+       <div class="division" title="Los Angeles Clippers — Denver Nuggets">
+        <img src="/img/teams/9.png"/>
+        Los Angeles Clippers									—
+        <img src="/img/teams/10.png"/>
+        Denver Nuggets
+       </div>
+       <div class="block part" data-event="9" data-max="500" data-odd="65">
+        <span data-type="1">
+         3
+        </span>
+        <span data-type="2">
+         -3
+        </span>
+       </div>
+       <div class="block selectable" data-event="9" data-max="500" data-odd="66">
+        <span data-type="1">
+         9.3
+        </span>
+        <span data-type="2">
+         5.5
+        </span>
+       </div>
+       <div class="block" data-event="9" data-max="500" data-odd="67">
+        <span data-type="1">
+         1
+        </span>
+       </div>
+       <div class="block selectable" data-event="9" data-max="500" data-odd="68">
+        <span data-type="1">
+         4.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="9" data-max="500" data-odd="69">
+        <span data-type="1">
+         8.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="9" data-max="500" data-odd="70">
+        <span data-type="1">
+         9.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="9" data-max="500" data-odd="71">
+        <span data-type="1">
+         8.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="9" data-max="500" data-odd="72">
+        <span data-type="1">
+         8.7
+        </span>
+       </div>
+      </div>
+      <div class="additions">
+       <div class="addition empty">
+        No additional outcomes
+       </div>
+       <div class="total">
+        Current trading volume:
+        <b>
+         $ 0
+        </b>
+       </div>
+      </div>
+      <div class="row" data-available="0" data-category="2" data-date="1745260639" data-division="Sacramento — Utah Jazz" data-event="8" data-subcategory="8">
+       <div class="date" title="Kiev / Moscow / UTC+3">
+        21/04 - 18:37
+       </div>
+       <div class="division" title="Sacramento — Utah Jazz">
+        <img src="/img/teams/3.png"/>
+        Sacramento									—
+        <img src="/img/teams/4.png"/>
+        Utah Jazz
+        <div class="stoped">
+         STOPPED
+        </div>
+       </div>
+       <div class="block part" data-event="8" data-max="500" data-odd="57">
+        <span data-type="1">
+         2
+        </span>
+        <span data-type="2">
+         -2
+        </span>
+       </div>
+       <div class="block selectable" data-event="8" data-max="500" data-odd="58">
+        <span data-type="1">
+         0.3
+        </span>
+        <span data-type="2">
+         5.5
+        </span>
+       </div>
+       <div class="block" data-event="8" data-max="500" data-odd="59">
+        <span data-type="1">
+         3
+        </span>
+       </div>
+       <div class="block selectable" data-event="8" data-max="500" data-odd="60">
+        <span data-type="1">
+         4.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="8" data-max="500" data-odd="61">
+        <span data-type="1">
+         2.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="8" data-max="500" data-odd="62">
+        <span data-type="1">
+         2.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="8" data-max="500" data-odd="63">
+        <span data-type="1">
+         4
+        </span>
+       </div>
+       <div class="block selectable" data-event="8" data-max="500" data-odd="64">
+        <span data-type="1">
+         7.3
+        </span>
+       </div>
+      </div>
+      <div class="additions">
+       <div class="addition" data-available="0" data-category="2" data-event="8" data-subcategory="8">
+        <b>
+         Will there be dogs running on the field:
+        </b>
+        <div class="block selectable addit" data-event="8" data-max="1000" data-odd="163">
+         <p>
+          Only cats
+         </p>
+         <span data-type="1">
+          4.3
+         </span>
+        </div>
+        <div class="block selectable addit" data-event="8" data-max="1000" data-odd="164">
+         <p>
+          No
+         </p>
+         <span data-type="1">
+          3.7
+         </span>
+        </div>
+        <div class="block selectable addit" data-event="8" data-max="1000" data-odd="165">
+         <p>
+          Yes
+         </p>
+         <span data-type="1">
+          1
+         </span>
+        </div>
+       </div>
+       <div class="addition" data-available="0" data-category="2" data-event="8" data-subcategory="8">
+        <b>
+         Field will light up:
+        </b>
+        <div class="block selectable addit" data-event="8" data-max="1000" data-odd="166">
+         <p>
+          Yes
+         </p>
+         <span data-type="1">
+          8.7
+         </span>
+        </div>
+        <div class="block selectable addit" data-event="8" data-max="1000" data-odd="167">
+         <p>
+          No
+         </p>
+         <span data-type="1">
+          0.7
+         </span>
+        </div>
+       </div>
+       <div class="total">
+        Current trading volume:
+        <b>
+         $ 0
+        </b>
+       </div>
+      </div>
+     </div>
+     <div class="list" data-subcat="11">
+      <div class="row header">
+       <a class="division" href="/category/11">
+        Euroleague
+       </a>
+       <div class="tittler block part" data-desc="Handicap value">
+        Hand.
+       </div>
+       <div class="tittler block" data-desc="Handicap coefficient">
+        Odds
+       </div>
+       <div class="tittler block" data-desc="Total">
+        Total
+       </div>
+       <div class="tittler block" data-desc="Over">
+        Over
+       </div>
+       <div class="tittler block" data-desc="Under">
+        Under
+       </div>
+       <div class="tittler block" data-desc="First team win">
+        1
+       </div>
+       <div class="tittler block" data-desc="Draw game">
+        X
+       </div>
+       <div class="tittler block" data-desc="Second team win">
+        2
+       </div>
+      </div>
+      <div class="row" data-available="1" data-category="2" data-date="1758300005" data-division="Zalgiris — Valencia" data-event="7" data-subcategory="11">
+       <div class="date" title="Kiev / Moscow / UTC+3">
+        19/09 - 16:40
+       </div>
+       <div class="division" title="Zalgiris(LTU) — Valencia(ESP)">
+        <img src="/img/teams/7.png"/>
+        Zalgiris									—
+        <img src="/img/teams/8.png"/>
+        Valencia
+       </div>
+       <div class="block part" data-event="7" data-max="500" data-odd="49">
+        <span data-type="1">
+         2.5
+        </span>
+        <span data-type="2">
+         -2.5
+        </span>
+       </div>
+       <div class="block selectable" data-event="7" data-max="500" data-odd="50">
+        <span data-type="1">
+         7.3
+        </span>
+        <span data-type="2">
+         5.5
+        </span>
+       </div>
+       <div class="block" data-event="7" data-max="500" data-odd="51">
+        <span data-type="1">
+         2
+        </span>
+       </div>
+       <div class="block selectable" data-event="7" data-max="500" data-odd="52">
+        <span data-type="1">
+         1
+        </span>
+       </div>
+       <div class="block selectable" data-event="7" data-max="500" data-odd="53">
+        <span data-type="1">
+         5.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="7" data-max="500" data-odd="54">
+        <span data-type="1">
+         8.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="7" data-max="500" data-odd="55">
+        <span data-type="1">
+         6.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="7" data-max="500" data-odd="56">
+        <span data-type="1">
+         4.7
+        </span>
+       </div>
+      </div>
+      <div class="additions">
+       <div class="addition empty">
+        No additional outcomes
+       </div>
+       <div class="total">
+        Current trading volume:
+        <b>
+         $ 0
+        </b>
+       </div>
+      </div>
+     </div>
+    </div>
+    <h2 class="tennis" data-cat="3">
+     Tennis
+    </h2>
+    <div class="table" data-cat="3">
+     <div class="list" data-subcat="12">
+      <div class="row header">
+       <a class="division" href="/category/12">
+        ATP Challenger
+       </a>
+       <div class="tittler block part" data-desc="Handicap value">
+        Hand.
+       </div>
+       <div class="tittler block" data-desc="Handicap coefficient">
+        Odds
+       </div>
+       <div class="tittler block" data-desc="Total">
+        Total
+       </div>
+       <div class="tittler block" data-desc="Over">
+        Over
+       </div>
+       <div class="tittler block" data-desc="Under">
+        Under
+       </div>
+       <div class="tittler block" data-desc="First team win">
+        1
+       </div>
+       <div class="tittler block" data-desc="Draw game">
+        X
+       </div>
+       <div class="tittler block" data-desc="Second team win">
+        2
+       </div>
+      </div>
+      <div class="row" data-available="1" data-category="3" data-date="1745280639" data-division="- No team 1 - — - No team 2 -" data-event="5" data-subcategory="12">
+       <div class="result">
+        <span>
+         3:2
+        </span>
+       </div>
+       <div class="division" title="Lys Eva — Shapatava Sofia">
+        Lys Eva — Shapatava Sofia
+        <div class="status live">
+         LIVE
+        </div>
+       </div>
+       <div class="block part" data-event="5" data-max="500" data-odd="33">
+        <span data-type="1">
+         2
+        </span>
+        <span data-type="2">
+         -2
+        </span>
+       </div>
+       <div class="block selectable" data-event="5" data-max="500" data-odd="34">
+        <span data-type="1">
+         8
+        </span>
+        <span data-type="2">
+         5.5
+        </span>
+       </div>
+       <div class="block" data-event="5" data-max="500" data-odd="35">
+        <span data-type="1">
+         4
+        </span>
+       </div>
+       <div class="block selectable" data-event="5" data-max="500" data-odd="36">
+        <span data-type="1">
+         5
+        </span>
+       </div>
+       <div class="block selectable" data-event="5" data-max="500" data-odd="37">
+        <span data-type="1">
+         6.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="5" data-max="500" data-odd="38">
+        <span data-type="1">
+         5.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="5" data-max="500" data-odd="39">
+        <span data-type="1">
+         1
+        </span>
+       </div>
+       <div class="block selectable" data-event="5" data-max="500" data-odd="40">
+        <span data-type="1">
+         10
+        </span>
+       </div>
+      </div>
+      <div class="additions">
+       <div class="addition empty">
+        No additional outcomes
+       </div>
+       <div class="total">
+        Current trading volume:
+        <b>
+         $ 0
+        </b>
+       </div>
+      </div>
+      <div class="row" data-available="1" data-category="3" data-date="1796260639" data-division="- No team 1 - — - No team 2 -" data-event="4" data-subcategory="12">
+       <div class="date" title="Kiev / Moscow / UTC+3">
+        03/12 - 1:17
+       </div>
+       <div class="division" title="Kolodziejova Miriam — Oz Ipek">
+        Kolodziejova Miriam — Oz Ipek
+       </div>
+       <div class="block part" data-event="4" data-max="500" data-odd="25">
+        <span data-type="1">
+         2.5
+        </span>
+        <span data-type="2">
+         -2.5
+        </span>
+       </div>
+       <div class="block selectable" data-event="4" data-max="500" data-odd="26">
+        <span data-type="1">
+         4
+        </span>
+        <span data-type="2">
+         5.5
+        </span>
+       </div>
+       <div class="block" data-event="4" data-max="500" data-odd="27">
+        <span data-type="1">
+         9.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="4" data-max="500" data-odd="28">
+        <span data-type="1">
+         9.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="4" data-max="500" data-odd="29">
+        <span data-type="1">
+         3.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="4" data-max="500" data-odd="30">
+        <span data-type="1">
+         5.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="4" data-max="500" data-odd="31">
+        <span data-type="1">
+         5.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="4" data-max="500" data-odd="32">
+        <span data-type="1">
+         9.7
+        </span>
+       </div>
+      </div>
+      <div class="additions">
+       <div class="addition" data-available="1" data-category="3" data-event="4" data-subcategory="12">
+        <b>
+         How many people will come to the match:
+        </b>
+        <div class="block selectable addit" data-event="4" data-max="1000" data-odd="155">
+         <p>
+          over 10 000
+         </p>
+         <span data-type="1">
+          4
+         </span>
+        </div>
+        <div class="block selectable addit" data-event="4" data-max="1000" data-odd="156">
+         <p>
+          over 10 000
+         </p>
+         <span data-type="1">
+          4
+         </span>
+        </div>
+        <div class="block selectable addit" data-event="4" data-max="1000" data-odd="157">
+         <p>
+          less 10 000
+         </p>
+         <span data-type="1">
+          9.7
+         </span>
+        </div>
+       </div>
+       <div class="total">
+        Current trading volume:
+        <b>
+         $ 0
+        </b>
+       </div>
+      </div>
+     </div>
+     <div class="list" data-subcat="13">
+      <div class="row header">
+       <a class="division" href="/category/13">
+        ITF World
+       </a>
+       <div class="tittler block part" data-desc="Handicap value">
+        Hand.
+       </div>
+       <div class="tittler block" data-desc="Handicap coefficient">
+        Odds
+       </div>
+       <div class="tittler block" data-desc="Total">
+        Total
+       </div>
+       <div class="tittler block" data-desc="Over">
+        Over
+       </div>
+       <div class="tittler block" data-desc="Under">
+        Under
+       </div>
+       <div class="tittler block" data-desc="First team win">
+        1
+       </div>
+       <div class="tittler block" data-desc="Draw game">
+        X
+       </div>
+       <div class="tittler block" data-desc="Second team win">
+        2
+       </div>
+      </div>
+      <div class="row" data-available="1" data-category="3" data-date="1747260639" data-division="- No team 1 - — - No team 2 -" data-event="2" data-subcategory="13">
+       <div class="date" title="Kiev / Moscow / UTC+3">
+        14/05 - 22:10
+       </div>
+       <div class="division" title="Ouahab Lamine — Gutierrez Sergio">
+        Ouahab Lamine — Gutierrez Sergio
+       </div>
+       <div class="block part" data-event="2" data-max="500" data-odd="9">
+        <span data-type="1">
+         0.5
+        </span>
+        <span data-type="2">
+         -0.5
+        </span>
+       </div>
+       <div class="block selectable" data-event="2" data-max="500" data-odd="10">
+        <span data-type="1">
+         2.3
+        </span>
+        <span data-type="2">
+         5.5
+        </span>
+       </div>
+       <div class="block" data-event="2" data-max="500" data-odd="11">
+        <span data-type="1">
+         3
+        </span>
+       </div>
+       <div class="block selectable" data-event="2" data-max="500" data-odd="12">
+        <span data-type="1">
+         0.3
+        </span>
+       </div>
+       <div class="block selectable" data-event="2" data-max="500" data-odd="13">
+        <span data-type="1">
+         8.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="2" data-max="500" data-odd="14">
+        <span data-type="1">
+         0.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="2" data-max="500" data-odd="15">
+        <span data-type="1">
+         9.7
+        </span>
+       </div>
+       <div class="block selectable" data-event="2" data-max="500" data-odd="16">
+        <span data-type="1">
+         3
+        </span>
+       </div>
+      </div>
+      <div class="additions">
+       <div class="addition empty">
+        No additional outcomes
+       </div>
+       <div class="total">
+        Current trading volume:
+        <b>
+         $ 0
+        </b>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="/js/jquery.calendar.min.js">
+  </script>
+  <div class="footer">
+   <div class="content">
+    <div class="left">
+     <strong>
+      BETRIUM HOLDING LTD.
+     </strong>
+     Hong Kong
+     <br/>
+     148 Wing Lok Street, Sheung Wan, Room 1905, Nam Wo Hong Building
+     <br/>
+     <a href="mailto:info@betrium.co">
+      info@betrium.co
+     </a>
+     <div class="disclaimers">
+      The presented solution is an intellectual property of BETRIUM HOLDING LTD. registered under Hong Kong jurisdiction. The solution is not an actual gambling platform and can not be taken as a real online gambling or sports betting website. The presented solution is not currently covered by any online gambling license. The solution is available for demonstrating and testing purposes only.
+     </div>
+    </div>
+    <div class="right">
+     <img class="age" src="https://betrium.co/img/18p.png"/>
+     <br/>
+     Limited for 18+ only.
+     <br/>
+     Gambling and betting can be addictive.
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

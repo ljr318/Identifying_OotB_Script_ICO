@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Start of HubSpot Embed Code -->
+  <script async="" defer="" id="hs-script-loader" src="//js.hs-scripts.com/5062075.js" type="text/javascript">
+  </script>
+  <!-- End of HubSpot Embed Code -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="SunContract - Decentralized Energy Market" name="description"/>
+  <meta content="SunContract,Decentralized,Energy Market,Ethereum,ETH,Solar, Blockchain, P2P Energy, Electricity" name="keywords"/>
+  <meta content="SunContract Team" name="author"/>
+  <title>
+   SunContract - buy and sell energy
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="assets/icons/favicon.ico" rel="icon"/>
+  <script src="./assets/mobile-detect.min.js">
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="assets/css/mailchimp.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Karla|Open+Sans" rel="stylesheet"/>
+  <link href="assets/css/index-page.css?v=8" rel="stylesheet" type="text/css"/>
+  <script src="/tokensale/js/scripts.js?v=35" type="text/javascript">
+  </script>
+  <meta content="Energy Trading Platform | SunContract" property="og:title"/>
+  <meta content="SunContract - Decentralized Energy Market" property="og:description"/>
+  <meta content="SunContract - buy and sell energy" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://suncontract.org/" property="og:url"/>
+  <meta content="https://suncontract.org/img/fb.png" property="og:image"/>
+  <meta content="147460225858192" property="fb:app_id"/>
+  <meta content="https://suncontract.org/img/tw.png" name="twitter:image"/>
+  <script async="" src="https://cdn.ywxi.net/js/1.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   window.onload = function () { 
+            $(document).ready(function () {
+                $.ajax({url: "https://publicapi.suncontract.energy/api/v1/CoinMarketCap/GetCurrentPrice", success: function(result){
+                    var t = result.priceEur.toFixed(4);
+                    document.getElementById('coinmarket-price').innerHTML = '€' + t
+                    var percent = result.change1h.toFixed(2);
+                    if(percent < 0){
+                        $("#coinmarket-percent").addClass("lower");
+                        document.getElementById('coinmarket-percent').innerHTML = "<i class='fa fa-long-arrow-down'></i>("+percent+"%)"
+                    }else{
+                        $("#coinmarket-percent").addClass("higher");
+                        document.getElementById('coinmarket-percent').innerHTML = "<i class='fa fa-long-arrow-up'></i>("+percent+"%)"
+                    }
+                }});
+            });
+            $(".xbutton").click(function () {
+                $('.android').css('display', 'none');
+                $('.ios').css('display', 'none');
+            });
+            var md = new MobileDetect(window.navigator.userAgent);
+            console.log(md);
+            if (md.mobile()) {
+                if (md.os() == "AndroidOS") {
+                    $('.android').css('display', 'block');
+                    // $('.navbar').css('background-color', 'black');
+                }
+                else if (md.os() == "iOS") {
+                    $('.ios').css('display', 'block');
+                    //$('.navbar').css('background-color', 'black');
+                }
+            }
+        }
+  </script>
+ </head>
+ <body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-135012197-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+
+  gtag('config', 'UA-135012197-1');
+  </script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe class="noscript_frame" height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSHCP8J" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Modal window for cookie consent -->
+  <div class="cookies_height" id="myModal">
+   <p class="cookies_notification">
+    This website uses cookies to ensure you get the best experience on our site.
+    <button class="btn btn-success allow_cookies" id="allow_cookies_button" type="button">
+     Allow cookies
+    </button>
+   </p>
+  </div>
+  <nav class="navbar navbar-fixed-top">
+   <div style="background:white; height:60px;">
+    <div class="container-fluid white-color">
+     <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#myNavbar1" data-toggle="collapse" type="button">
+       <span class="sr-only">
+        Toggle navigation
+       </span>
+       <span class="icon-bar black">
+       </span>
+       <span class="icon-bar black">
+       </span>
+       <span class="icon-bar black">
+       </span>
+      </button>
+      <a class="navbar-brand">
+       <img class="nav-logo" src="assets/img/SUNCONTRACT-LOGO.png"/>
+      </a>
+     </div>
+     <!-- Collect the nav links, forms, and other content for toggling -->
+     <div class="collapse navbar-collapse navbar_height" id="myNavbar1">
+      <ul class="nav navbar-nav navbar-right no">
+       <li class="links">
+        <a class="links-sign" href="/tokensale/index.html">
+         ABOUT US
+         <div class="line">
+         </div>
+        </a>
+       </li>
+       <li class="links">
+        <a class="links-sign" href="https://blog.suncontract.org/en">
+         BLOG
+         <div class="line">
+         </div>
+        </a>
+       </li>
+       <li class="links">
+        <a class="links-sign" href="/history/index.html">
+         PLATFORM RATE
+         <div class="line">
+         </div>
+        </a>
+       </li>
+       <li class="links">
+        <a class="links-sign" href="http://suncontract.org/res/FEE%20structure.pdf">
+         FEE STRUCTURE
+         <div class="line">
+         </div>
+        </a>
+       </li>
+       <li class="links">
+        <a href="https://auth.suncontract.org/auth/realms/SunContract/protocol/openid-connect/registrations?client_id=account-management-web&amp;redirect_uri=https%3A%2F%2Fsuncontract.energy%2F&amp;state=64eb081c-2875-430e-855d-d79d2e11af68&amp;nonce=26dafa29-3cb7-4507-820d-e5d03b9d1708&amp;response_mode=fragment&amp;response_type=code&amp;scope=openid">
+         JOIN PLATFORM
+         <div class="line">
+         </div>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- /.navbar-collapse -->
+    </div>
+    <div class="coinmarket">
+     <p>
+      <img class="snc-logo-white" src="assets/img/Nsymbol.svg"/>
+      <span>
+       <a href="https://coinmarketcap.com/currencies/suncontract/">
+        SunContract (SNC)
+       </a>
+      </span>
+      <span class="coinmarket-price" id="coinmarket-price">
+       €0.0
+      </span>
+      <span class="coinmarket-percent" id="coinmarket-percent">
+       <i class="fa fa-long-arrow-down">
+       </i>
+       (0,0%)
+      </span>
+     </p>
+    </div>
+    <div class="getapp android">
+     <div class="container-fluid header">
+      <div class="header-text">
+       Get SunContract app for Android
+      </div>
+      <div class="header-image">
+       <a href="https://play.google.com/store/apps/details?id=org.suncontract.app">
+        <img alt="Get it on Google Play" height="40" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
+       </a>
+      </div>
+      <div class="header-exit">
+       <img class="xbutton" src="./assets/img/x.png" width="13"/>
+      </div>
+     </div>
+    </div>
+    <div class="getapp ios">
+     <div class="container-fluid header">
+      <div class="header-text">
+       Get SunContract app for iOS
+      </div>
+      <div class="header-image">
+       <a href="https://itunes.apple.com/si/app/suncontract/id1324953609?mt=8">
+        <img alt="Downlaod on the App Store" height="35" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"/>
+       </a>
+      </div>
+      <div class="header-exit">
+       <img class="xbutton" src="./assets/img/x.png" width="13"/>
+      </div>
+     </div>
+    </div>
+    <!-- /.container -->
+   </div>
+  </nav>
+  <div>
+   <div class="main_container">
+    <div class="first_container">
+     <div class="large">
+      <video autoplay="" id="bgvid" loop="" muted="" playsinline="" width="100%">
+       <source src="assets/img/suncontract_video.mp4" type="video/mp4">
+       </source>
+      </video>
+      <div style="height: 0px;">
+       <a href="https://suncontract.energy" target="_blank">
+        <div class="button-join1">
+         <label class="button-label">
+          JOIN THE PLATFORM
+         </label>
+        </div>
+       </a>
+      </div>
+     </div>
+     <div class="show-normal">
+      <div class="content-container" id="scr">
+       <img class="logo" src="assets/img/SUNCONTRACT-LOGO-WHITE.svg"/>
+       <p class="subtitle">
+        Open energy market of the Future
+       </p>
+       <a href="https://suncontract.energy" target="_blank">
+        <div class="button-join">
+         <label class="button-label">
+          JOIN THE PLATFORM
+         </label>
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="second_container">
+     <div class="content-container extra-padding">
+      <p class="what-is">
+       We successfully launched in the European Union in April 2018, working on new markets!
+      </p>
+      <p class="desc">
+       SunContract is a blockchain based company that is pioneering the decentralisation of the energy sector - tailoring it to maximize the welfare of the common man, rather than utilities. Our company’s business model directly connects 
+                        energy customers (producers and consumers of electricity) in an open energy marketplace, allowing for P2P electricity trading to occur efficiently between the involved parties, without the need for an intermediary. Our customers 
+                        on the SunContract platform range from residential households, to commercial faciltites as well as industrial-scale businesses. Through the platform, electricity consumers in Slovenia - EU are currently witnessing electricity cost reductions while supporting local producers of renewable energy. Local producers or renewable energy are also experiencing 
+                        increased profits by selling their surpluses on the SunContract P2P energy marketplace.
+       <br/>
+       <br/>
+       The SunContract Project continues to receive backing years after successfully completing its Token Sale in August 2017. More recently, the project has received a $2,300,000 USD grant from the European Union's European Regional 
+                        Development Fund (ERDF) for a Research and Development project that will introduce artificial intelligence and automated trading on the SunContract platform. The project will be ongoing for the next 3 years, and its aim is to concretely show
+                        the positive business effects of blockchain technology and P2P energy trading, when upgraded with automated trading based on Artificial Intelligence.
+      </p>
+     </div>
+    </div>
+    <div class="third_container">
+     <div class="box-container">
+      <div class="black-box">
+       <p class="box-title">
+        ENVIRONMENT FRIENDLY
+       </p>
+       <p class="box-text">
+        By using renewable energy and buying green energy products from the SunContract platform, you can now back a community of small, local power producers and contribute towards a more sustainable environment for our future generations. Users on the
+                            SunContract platform can select exactly which sources of energy they prefer to use. Is it sun, wind, hydro or something else? The choice is yours!
+       </p>
+       <p class="box-more">
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="fourth_container">
+     <div class="box-container">
+      
+      <div class="black-box1">
+       <p class="box-title">
+        TIME FOR DECENTRALIZED ENERGY
+       </p>
+       <p class="box-text">
+        For more than a century Electric Power Industry dominated the energy markets. They had full sovereignty over generating, transmitting, distributing and selling of electric power. This “natural monopoly” is about to change thanks to SunContract.
+                           Homeowners will now have the power to select their energy producer and individuals will be able to engage in an exchange of electricity directly with their neighbors and local community. From now on, you will be able to produce electricity in your
+                            home or buy it directly from the people you know.
+       </p>
+       <p class="box-more">
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="fifth_container">
+     <div class="box-container">
+      <div class="black-box">
+       <p class="box-title">
+        INCREASED SAVINGS FOR ENERGY CUSTOMERS
+       </p>
+       <p class="box-text">
+        With the SunContract platform, energy consumers have an option to pick not only the origin of their energy supply, but also the price they are comfortable with from a financial and ecological standpoint. On their personal dashboard, they are able
+                            to follow their daily energy consumption and adjust it as they see fit. Similarly, enery producers can define the price they are willing to sell their surplus energy at on the platform, and bid for consumer orders on the marketplace.
+       </p>
+       <p class="box-more">
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="sixth_container">
+     <div class="box-container">
+      <div class="black-box1">
+       <p class="box-title">
+        BLOCKCHAIN FOR TRANSPARRENCY
+       </p>
+       <p class="box-text">
+        The SunContract platform is gaining a lot of trust from its customers due to the tamper-proof audit trail of data they have constant access to on the platform. Users on the platform have instant access to consumption and 
+                            production insights which are immutable thanks to blockchain. Transparency of the platform breeds credibility among users and removes the need for intermediaries whose role has often been to createtrust in a chain of 
+                            transactions or in the exchange of information. This offers huge productivity and efficiency savings, as well as ridding SunContract and its customers of unnecessary paper trailsorm enables full overview of your personal data,
+                            transparency and trustworthiness.
+       </p>
+       <p class="box-more">
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="seventh_container">
+     <div class="content-container">
+      <a href="https://suncontract.energy" target="_blank">
+       <div class="button-platform">
+        <label class="button-label">
+         Download the app!
+        </label>
+       </div>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=org.suncontract.app">
+       <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="150"/>
+      </a>
+      <a href="https://itunes.apple.com/si/app/suncontract/id1324953609?mt=8">
+       <img alt="Downlaod on the App Store" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" style="height: 43.5px;" width="150"/>
+      </a>
+     </div>
+    </div>
+    <div class="eight_container">
+     <div class="content-container">
+      <p class="how-it-works">
+       SunContract P2P Energy Marketplace
+      </p>
+      <div class="videocontainer">
+       <iframe allowfullscreen="" class="video" frameborder="0" src="https://www.youtube.com/embed/BD8izBMyx80?controls=0&amp;showinfo=0">
+       </iframe>
+      </div>
+     </div>
+    </div>
+    <div class="ninth_container">
+     <div class="content-container center">
+      <p class="what-is">
+       Join over 10,000 others to get access to exclusive content and offers!
+      </p>
+      <section class="About" id="About">
+       <div class="custom_container">
+        <div class="row top-buffer">
+         <!-- Begin MailChimp Signup Form -->
+         <div class="form_top_margin" id="mc_embed_signup">
+          <form action="//suncontract.us16.list-manage.com/subscribe/post?u=6abb619ad804927437e5b23d7&amp;id=578f719573" class="validate" id="mc-embedded-subscribe-form" method="post" novalidate="" target="_blank">
+           <div id="nova_forma_signup_scroll form_input_div">
+            <div class="wrapper row first form_input_div2">
+             <div class="input-wrapper mc-field-group" id="row_one_desktop">
+              <input class="input required email custom_input custom_float email_input" id="mce-EMAIL" name="EMAIL" placeholder="E-mail" type="email" value=""/>
+             </div>
+            </div>
+            <div class="clear" id="mce-responses">
+             <div class="response res_neg" id="mce-error-response">
+             </div>
+             <div class="response res_pos" id="mce-success-response">
+             </div>
+            </div>
+            <div aria-hidden="true" class="form_hidden">
+             <input name="b_6abb619ad804927437e5b23d7_578f719573" style="display: none;" tabindex="-1" type="text" value=""/>
+            </div>
+            <div class="wrapper row last form_but_mar">
+             <div class="input-wrapper mc-field-group">
+              <input class="button-platform news button-label" id="mc-embedded-subscribe1" name="subscribe_popup" type="submit" value="Subscribe to our Newsletter"/>
+             </div>
+            </div>
+           </div>
+          </form>
+         </div>
+         <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" type="text/javascript">
+         </script>
+         <script type="text/javascript">
+          (function ($) {
+                                        window.fnames = new Array();
+                                        window.ftypes = new Array();
+                                        fnames[0] = 'EMAIL';
+                                        ftypes[0] = 'email';
+                                    }(jQuery));
+                                var $mcj = jQuery.noConflict(true);
+         </script>
+        </div>
+       </div>
+      </section>
+      <!--        <div class="button-platform news"><label class="button-label">Subscribe to our Newsletter</label></div>-->
+     </div>
+    </div>
+   </div>
+   <div class="full footer">
+    <div class="icons">
+     <div style="display: inline-block; ">
+      <a href="https://twitter.com/sun_contract" target="_blank">
+       <img class="icon" id="twitter"/>
+       <img/>
+      </a>
+      <a href="https://www.facebook.com/suncontractorg/" target="_blank">
+       <img class="icon" id="facebook"/>
+       <img/>
+      </a>
+      <a href="https://www.linkedin.com/company/suncontract" target="_blank">
+       <img class="icon" id="linkedin"/>
+       <img/>
+      </a>
+      <a href="https://bitcointalk.org/index.php?topic=1934763.0" target="_blank">
+       <img class="icon" id="bitcoin"/>
+       <img/>
+      </a>
+      <a href="https://www.reddit.com/r/suncontract/" target="_blank">
+       <img class="icon" id="reddit"/>
+       <img/>
+      </a>
+     </div>
+     <div style="display: inline-block;">
+      <a href="https://github.com/SunContract/" target="_blank">
+       <img class="icon" id="github"/>
+       <img/>
+      </a>
+      <a href="https://t.me/joinchat/GL05EULsRTS7hxxMfXCTVw" target="_blank">
+       <img class="icon" id="telegram"/>
+       <img/>
+      </a>
+      <a href="https://medium.com/suncontract" target="_blank">
+       <img class="icon" id="medium"/>
+       <img/>
+      </a>
+     </div>
+    </div>
+    <!-- <div class="legal">
+                 <a href="#"><div class="legal-sign" > Legal informations </div></a>
+                 <a href="#"><div class="legal-sign"  > Terms of service </div></a>
+                 <a href="#"><div class="legal-sign" > Privacy Policy </div></a>
+             </div>-->
+    <div class="rights">
+    </div>
+    <p class="rights-sign">
+     Copyright © 2020 All rigths reserved
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

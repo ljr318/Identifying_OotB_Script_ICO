@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="http://gmpg.org/xfn/11" rel="profile"/>
+  <link href="https://finamatrix.net/xmlrpc.php" rel="pingback"/>
+  <title>
+   Finamatrix – Risk-Cybernetics
+  </title>
+  <!-- Async WordPress.com Remote Login -->
+  <script id="wpcom_remote_login_js">
+   var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.remove(); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[i].remove();
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '/remote-login.php?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+						+ '//' + window.location.hostname;
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly9maW5hbWF0cml4Lm5ldA%3D%3D"
+		+ "&wpcomid=133515905"
+		+ "&time=1596289038";
+	document.body.appendChild( iframe );
+}, false );
+  </script>
+  <link href="//s2.wp.com" rel="dns-prefetch"/>
+  <link href="//s1.wp.com" rel="dns-prefetch"/>
+  <link href="//finamatrix.wordpress.com" rel="dns-prefetch"/>
+  <link href="//s0.wp.com" rel="dns-prefetch"/>
+  <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+  <link href="https://finamatrix.net/feed/" rel="alternate" title="Finamatrix » Feed" type="application/rss+xml"/>
+  <link href="https://finamatrix.net/comments/feed/" rel="alternate" title="Finamatrix » Comments Feed" type="application/rss+xml"/>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+  </script>
+  <script type="text/javascript">
+   window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1582709031h&ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+  </style>
+  <link href="https://s0.wp.com/_static/??-eJydkdtOwzAQRH8IZ5uCS/KA+Bbb2ZotdmJ516ry99i9qUKoIB73ckajGTgm5ZZZcBaIRaVQPM0Mx+SWqDhSwPXb1DnmJ7jDrowvdbSYfb1khKF77jZgC4UJbFjcpwpks8krsKwB/yBzohgOKMk03KxLEeUzTf+VyEZo9vwLvi8hKCZBhRM14BIL9MPmZdztRg0pY6QSb+hjQbdcfPTdtoUyEcttqX5m78pocdZ9TEbaR6yuDAaM9e0Rdm7N2uqVWV0dy0cFTyW+x7dej1rr1+0wHL4AuavBwg==?cssminify=yes" id="all-css-0-1" media="all" rel="stylesheet" type="text/css"/>
+  <style id="wp-block-library-inline-css">
+   .has-text-align-justify {
+	text-align:justify;
+}
+  </style>
+  <style id="global-styles-inline-css">
+   :root {
+	--wp--preset--color--black: #000000;
+	--wp--preset--color--cyan-bluish-gray: #abb8c3;
+	--wp--preset--color--light-green-cyan: #7bdcb5;
+	--wp--preset--color--luminous-vivid-amber: #fcb900;
+	--wp--preset--color--luminous-vivid-orange: #ff6900;
+	--wp--preset--color--pale-cyan-blue: #8ed1fc;
+	--wp--preset--color--pale-pink: #f78da7;
+	--wp--preset--color--vivid-cyan-blue: #0693e3;
+	--wp--preset--color--vivid-green-cyan: #00d084;
+	--wp--preset--color--vivid-purple: #9b51e0;
+	--wp--preset--color--vivid-red: #cf2e2e;
+	--wp--preset--color--white: #ffffff;
+	--wp--preset--font-size--small: 13;
+	--wp--preset--font-size--normal: 16;
+	--wp--preset--font-size--medium: 20;
+	--wp--preset--font-size--large: 36;
+	--wp--preset--font-size--huge: 48;
+	--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+	--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+	--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+	--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+	--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+	--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+	--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+	--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+	--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+	--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+	--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+	--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+}
+  </style>
+  <link href="https://s0.wp.com/wp-content/themes/pub/harmonic/style.css?m=1503077088h&amp;cssminify=yes" id="all-css-2-1" media="all" rel="stylesheet" type="text/css"/>
+  <link crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Hind%3A300%2C400%2C500%2C600%2C700&amp;subset=latin%2Clatin-ext" id="harmonic-hind-css" media="all" rel="stylesheet"/>
+  <link href="https://s1.wp.com/_static/??-eJx9jdsKAjEMRH/IGtcb+iB+SzfEbqRJSi+If2/1RRfRtxnmHAZuyaFpJa0gzaXYAmuBQEqZ+/AjLrGUBXy4dSKhAqmNMPkspozQmY6giSv1HunLmf2Zi4a+sumsuEv0nP+pmcZoocfwOnzXp3SW07A97Fe747BZXx8UkliO?cssminify=yes" id="all-css-4-1" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://s2.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035h&amp;cssminify=yes" id="print-css-5-1" media="print" rel="stylesheet" type="text/css"/>
+  <link href="https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?m=1560469195h&amp;cssminify=yes" id="all-css-6-1" media="all" rel="stylesheet" type="text/css"/>
+  <style id="jetpack-global-styles-frontend-style-inline-css">
+   :root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+  </style>
+  <link href="https://s0.wp.com/wp-content/themes/h4/global.css?m=1420737423h&amp;cssminify=yes" id="all-css-8-1" media="all" rel="stylesheet" type="text/css"/>
+  <script>
+   var BackStretchImg = {"src":"https:\/\/finamatrix.files.wordpress.com\/2017\/08\/cropped-artificial-intelligence-21678355.jpg"};
+  </script>
+  <script src="https://s1.wp.com/_static/??-eJyNj+sOgjAMhV/IMTUO4YfxWWAUKO7m2kl8ezGKRmKMSZM2Od/paeUYBDptUgMkh6nOCeL12bKBVvIXICx2sWLILLoZ1t4xOL6zwRNbIKo6+KJaX6MBkQjiBDieYlq/5IJJHTqSbTJGEDIIaJDRdeKhyE2x3pV5XioZIlhM9mW9IIzLddzDdJAMqZZ9Fa13qN9PZXWlT8QRWPd/GudZfFqP9rBRpVJqvy2K4QYAw4O4" type="text/javascript">
+  </script>
+  <link href="https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1530132353h&amp;cssminify=yes" id="all-css-0-2" media="all" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' media='all' />
+<![endif]-->
+  <link href="https://finamatrix.wordpress.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://s1.wp.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress.com" name="generator"/>
+  <link href="https://wp.me/92dAl" rel="shortlink"/>
+  <!-- Jetpack Open Graph Tags -->
+  <meta content="website" property="og:type"/>
+  <meta content="Finamatrix" property="og:title"/>
+  <meta content="Risk-Cybernetics" property="og:description"/>
+  <meta content="https://finamatrix.net/" property="og:url"/>
+  <meta content="Finamatrix" property="og:site_name"/>
+  <meta content="https://finamatrix.files.wordpress.com/2017/08/cropped-logo-arial.png?w=200" property="og:image"/>
+  <meta content="200" property="og:image:width"/>
+  <meta content="200" property="og:image:height"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="@wordpressdotcom" name="twitter:site"/>
+  <!-- End Jetpack Open Graph Tags -->
+  <link href="https://finamatrix.net/osd.xml" rel="search" title="Finamatrix" type="application/opensearchdescription+xml"/>
+  <link href="https://s1.wp.com/opensearch.xml" rel="search" title="WordPress.com" type="application/opensearchdescription+xml"/>
+  <meta content="Finamatrix" name="application-name"/>
+  <meta content="width=device-width;height=device-height" name="msapplication-window"/>
+  <meta content="Risk-Cybernetics" name="msapplication-tooltip"/>
+  <meta content="name=Subscribe;action-uri=https://finamatrix.net/feed/;icon-uri=https://finamatrix.files.wordpress.com/2017/08/cropped-logo-arial.png?w=16" name="msapplication-task"/>
+  <meta content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico" name="msapplication-task"/>
+  <meta content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" name="msapplication-task"/>
+  <meta content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" name="msapplication-task"/>
+  <meta content="Risk-Cybernetics" name="description"/>
+  <link href="https://finamatrix.files.wordpress.com/2017/08/cropped-logo-arial.png?w=32" rel="icon" sizes="32x32"/>
+  <link href="https://finamatrix.files.wordpress.com/2017/08/cropped-logo-arial.png?w=192" rel="icon" sizes="192x192"/>
+  <link href="https://finamatrix.files.wordpress.com/2017/08/cropped-logo-arial.png?w=180" rel="apple-touch-icon"/>
+  <meta content="https://finamatrix.files.wordpress.com/2017/08/cropped-logo-arial.png?w=270" name="msapplication-TileImage"/>
+ </head>
+ <body class="home blog custom-background customizer-styles-applied loading highlander-enabled highlander-light">
+  <div class="hfeed site" id="page">
+   <header id="masthead" role="banner">
+    <div id="mobile-panel">
+     <div id="mobile-link">
+      <span id="menu-title">
+       Menu
+      </span>
+     </div>
+     <h1 class="site-title">
+      <a href="https://finamatrix.net/" rel="home">
+       Finamatrix
+      </a>
+     </h1>
+    </div>
+    <div id="mobile-block">
+     <nav class="main-navigation" id="site-navigation" role="navigation">
+      <a class="skip-link screen-reader-text" href="#content">
+       Skip to content
+      </a>
+      <div class="menu-primary-container">
+       <ul class="menu" id="menu-primary">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231" id="menu-item-231">
+         <a href="https://finamatrix.wordpress.com">
+          About
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493" id="menu-item-493">
+         <a href="https://finamatrix.net/team/">
+          Team
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-332" id="menu-item-332">
+         <a href="https://finamatrix.net/tech/">
+          A.I. Tech
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-337" id="menu-item-337">
+         <a href="https://finamatrix.net/assets/">
+          A.I. Assets
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-677" id="menu-item-677">
+         <a href="https://finamatrix.net/fix-index/">
+          FiX Index
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639" id="menu-item-639">
+         <a href="https://finamatrix.net/member/">
+          Member
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-637" id="menu-item-637">
+         <a href="https://finamatrix.net/risk-tech/">
+          Risk-Tech
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-661" id="menu-item-661">
+         <a href="https://finamatrix.net/digital/">
+          Digital
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-636" id="menu-item-636">
+         <a href="https://finamatrix.net/awards/">
+          Awards
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-638" id="menu-item-638">
+         <a href="https://finamatrix.net/copytrade/">
+          CopyTrade
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-635" id="menu-item-635">
+         <a href="https://finamatrix.net/links/">
+          Links
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-343" id="menu-item-343">
+         <a href="https://finamatrix.net/contact/">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <!-- #site-navigation .main-navigation -->
+    </div>
+    <!-- #menu-block-->
+    <div id="site-branding">
+     <h1 class="site-title">
+      <a href="https://finamatrix.net/" rel="home">
+       Finamatrix
+      </a>
+     </h1>
+     <div id="social-links-wrapper">
+      <div class="social-links">
+       <ul class="clear" id="menu-social-links">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16" id="menu-item-16">
+         <a href="http://facebook.com/finamatrix" rel="noopener noreferrer" target="_blank">
+          <span class="screen-reader-text">
+           Menu Item
+          </span>
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17" id="menu-item-17">
+         <a href="http://twitter.com/finamatrix" rel="noopener noreferrer" target="_blank">
+          <span class="screen-reader-text">
+           Menu Item
+          </span>
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18" id="menu-item-18">
+         <a href="http://instagram.com/finamatrix" rel="noopener noreferrer" target="_blank">
+          <span class="screen-reader-text">
+           Menu Item
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <nav class="desktop-nav main-navigation site-wrapper" id="site-navigation" role="navigation">
+     <a class="skip-link screen-reader-text" href="#content">
+      Skip to content
+     </a>
+     <div class="menu-primary-container">
+      <ul class="menu" id="menu-primary-1">
+       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231">
+        <a href="https://finamatrix.wordpress.com">
+         About
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493">
+        <a href="https://finamatrix.net/team/">
+         Team
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-332">
+        <a href="https://finamatrix.net/tech/">
+         A.I. Tech
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-337">
+        <a href="https://finamatrix.net/assets/">
+         A.I. Assets
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-677">
+        <a href="https://finamatrix.net/fix-index/">
+         FiX Index
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639">
+        <a href="https://finamatrix.net/member/">
+         Member
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-637">
+        <a href="https://finamatrix.net/risk-tech/">
+         Risk-Tech
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-661">
+        <a href="https://finamatrix.net/digital/">
+         Digital
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-636">
+        <a href="https://finamatrix.net/awards/">
+         Awards
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-638">
+        <a href="https://finamatrix.net/copytrade/">
+         CopyTrade
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-635">
+        <a href="https://finamatrix.net/links/">
+         Links
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-343">
+        <a href="https://finamatrix.net/contact/">
+         Contact
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <!-- #site-navigation .main-navigation -->
+   </header>
+   <div id="custom-header" style="height: 400px;">
+   </div>
+   <div id="content-wrapper">
+    <div class="site-wrapper" id="content">
+     <div class="content-area" id="primary">
+      <main class="site-main" id="main" role="main">
+       <div id="archive-container">
+        <article class="post-58 post type-post status-publish format-standard hentry category-uncategorized" id="post-58">
+         <footer class="entry-meta">
+          <a href="https://finamatrix.net/2020/03/12/decoding-crypto-risk-with-risk-cybernetics/" title="FiNAMATRIX A.I.">
+           <span class="entry-format icon-block">
+           </span>
+          </a>
+          <span class="posted-on">
+           <a href="https://finamatrix.net/2020/03/12/decoding-crypto-risk-with-risk-cybernetics/" rel="bookmark">
+            <time class="entry-date published" datetime="2020-03-12T03:38:00+00:00">
+             March 12, 2020
+            </time>
+            <time class="updated" datetime="2020-07-16T20:39:04+00:00">
+             July 16, 2020
+            </time>
+           </a>
+          </span>
+          <span class="comments-link">
+           <a href="https://finamatrix.net/2020/03/12/decoding-crypto-risk-with-risk-cybernetics/#comments">
+            8 Comments
+           </a>
+          </span>
+         </footer>
+         <!-- .entry-meta -->
+         <div class="entry-main">
+          <header class="entry-header">
+           <h1 class="entry-title">
+            <a href="https://finamatrix.net/2020/03/12/decoding-crypto-risk-with-risk-cybernetics/" rel="bookmark">
+             FiNAMATRIX A.I.
+            </a>
+           </h1>
+          </header>
+          <!-- .entry-header -->
+          <div class="entry-content">
+           <div class="wp-block-image">
+            <figure class="alignleft size-large is-resized">
+             <img alt="" class="wp-image-1581" data-attachment-id="1581" data-comments-opened="1" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="fi-g-1" data-large-file="https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png?w=662" data-medium-file="https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png?w=300" data-orig-file="https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png" data-orig-size="678,583" data-permalink="https://finamatrix.net/fi-g-1/" height="146" sizes="(max-width: 170px) 100vw, 170px" src="https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png" srcset="https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png?w=170&amp;h=146 170w, https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png?w=340&amp;h=292 340w, https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png?w=150&amp;h=129 150w, https://finamatrix.files.wordpress.com/2019/07/fi-g-1.png?w=300&amp;h=258 300w" width="170"/>
+            </figure>
+           </div>
+           <p>
+            <a href="https://translate.google.com/translate?hl=en&amp;sl=auto&amp;tl=zh-CN&amp;u=https%3A%2F%2Ffinamatrix.net" rel="noreferrer noopener" target="_blank">
+             TRANSLATE SITE
+            </a>
+            <br/>
+            <strong>
+             #FIXourWorld
+            </strong>
+            .
+            <br/>
+            ‘Fi’ is Financial intelligence.
+            <br/>
+            <strong>
+             No.1 in FX Risk-Cybernetics.
+            </strong>
+           </p>
+           <p>
+            Finamatrix (since 2006) is the one-stop solution for tech investors with proprietary
+            <strong>
+             risk-tech
+            </strong>
+            in currency hedging for sustainable returns. Founder &amp; ex-UBS banker ex-Professor Dr. Lanz Chan, Ph.D., developed
+            <em>
+             <strong>
+              Risk-Cybernetics™
+             </strong>
+            </em>
+            . Finamatrix was voted
+            <strong>
+             Best A.I. Tech Firm 2018
+            </strong>
+            . Finamatrix also provides
+            <strong>
+             research
+            </strong>
+            &amp; development, customized technical
+            <strong>
+             algorithmic software
+            </strong>
+            (digital codes), Seychelles &amp; Singapore
+            <strong>
+             real estate intelligence
+            </strong>
+            , and
+            <strong>
+             valuation
+            </strong>
+            consulting services.
+           </p>
+           <figure class="wp-block-embed-youtube wp-block-embed is-type-rich wp-embed-aspect-16-9 wp-has-aspect-ratio">
+            <div class="wp-block-embed__wrapper">
+             <div class="jetpack-video-wrapper">
+              <span class="embed-youtube" style="text-align:center; display: block;">
+               <iframe allowfullscreen="true" class="youtube-player" height="373" src="https://www.youtube.com/embed/GiDrbqSs7dk?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" style="border:0;" width="662">
+               </iframe>
+              </span>
+             </div>
+            </div>
+           </figure>
+           <p>
+            <a href="https://finamatrix.net/team/">
+             Meet our Team
+            </a>
+           </p>
+          </div>
+          <!-- .entry-content -->
+         </div>
+         <!-- .entry-main -->
+        </article>
+        <!-- #post-## -->
+       </div>
+       <!--#archive-container-->
+      </main>
+      <!-- #main .site-main -->
+     </div>
+     <!-- #primary .content-area -->
+     <div class="clear">
+     </div>
+    </div>
+    <!-- #content .site-wrapper -->
+   </div>
+   <!-- #content-wrapper -->
+   <footer class="site-footer" id="colophon" role="contentinfo">
+    <div class="site-info">
+     <a href="https://wordpress.com/?ref=footer_custom_svg" rel="nofollow" title="Create a website or blog at WordPress.com">
+      <svg aria-labelledby="title" height="15px" role="img" style="fill: currentColor; position: relative; top: 1px;" version="1.1" viewbox="0 0 14 15" width="14px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+       <desc id="title">
+        Create a website or blog at WordPress.com
+       </desc>
+       <path d="M12.5225848,4.97949746 C13.0138466,5.87586309 13.2934037,6.90452431 13.2934037,7.99874074 C13.2934037,10.3205803 12.0351007,12.3476807 10.1640538,13.4385638 L12.0862862,7.88081544 C12.4453251,6.98296834 12.5648813,6.26504621 12.5648813,5.62667922 C12.5648813,5.39497674 12.549622,5.17994084 12.5225848,4.97949746 L12.5225848,4.97949746 Z M7.86730089,5.04801561 C8.24619178,5.02808979 8.58760099,4.98823815 8.58760099,4.98823815 C8.9267139,4.94809022 8.88671369,4.44972248 8.54745263,4.46957423 C8.54745263,4.46957423 7.52803983,4.54957381 6.86996227,4.54957381 C6.25158863,4.54957381 5.21247202,4.46957423 5.21247202,4.46957423 C4.87306282,4.44972248 4.83328483,4.96816418 5.17254589,4.98823815 C5.17254589,4.98823815 5.49358462,5.02808979 5.83269753,5.04801561 L6.81314716,7.73459399 L5.43565839,11.8651647 L3.14394256,5.04801561 C3.52312975,5.02808979 3.86416859,4.98823815 3.86416859,4.98823815 C4.20305928,4.94809022 4.16305906,4.44972248 3.82394616,4.46957423 C3.82394616,4.46957423 2.80475558,4.54957381 2.14660395,4.54957381 C2.02852925,4.54957381 1.88934333,4.54668493 1.74156477,4.54194422 C2.86690406,2.83350881 4.80113651,1.70529256 6.99996296,1.70529256 C8.638342,1.70529256 10.1302017,2.33173369 11.2498373,3.35765419 C11.222726,3.35602457 11.1962815,3.35261718 11.1683554,3.35261718 C10.5501299,3.35261718 10.1114609,3.89113285 10.1114609,4.46957423 C10.1114609,4.98823815 10.4107217,5.42705065 10.7296864,5.94564049 C10.969021,6.36482346 11.248578,6.90326506 11.248578,7.68133501 C11.248578,8.21992476 11.0413918,8.84503256 10.7696866,9.71584277 L10.1417574,11.8132391 L7.86730089,5.04801561 Z M6.99996296,14.2927074 C6.38218192,14.2927074 5.78595654,14.2021153 5.22195356,14.0362644 L7.11048207,8.54925635 L9.04486267,13.8491542 C9.05760348,13.8802652 9.07323319,13.9089317 9.08989995,13.9358945 C8.43574834,14.1661896 7.73285573,14.2927074 6.99996296,14.2927074 L6.99996296,14.2927074 Z M0.706448182,7.99874074 C0.706448182,7.08630113 0.902152921,6.22015756 1.25141403,5.43749503 L4.25357806,13.6627848 C2.15393732,12.6427902 0.706448182,10.4898387 0.706448182,7.99874074 L0.706448182,7.99874074 Z M6.99996296,0.999 C3.14016476,0.999 0,4.13905746 0,7.99874074 C0,11.8585722 3.14016476,14.999 6.99996296,14.999 C10.8596871,14.999 14,11.8585722 14,7.99874074 C14,4.13905746 10.8596871,0.999 6.99996296,0.999 L6.99996296,0.999 Z" fill="“currentColor”" fill-rule="evenodd" id="wordpress-logo-simplified-cmyk" stroke="none">
+       </path>
+      </svg>
+     </a>
+    </div>
+    <!-- .site-info -->
+   </footer>
+   <!-- #colophon .site-footer -->
+  </div>
+  <!-- #page -->
+  <!-- -->
+  <script src="//0.gravatar.com/js/gprofiles.js?ver=202031y">
+  </script>
+  <script>
+   var WPGroHo = {"my_hash":""};
+  </script>
+  <script src="https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h" type="text/javascript">
+  </script>
+  <script>
+   //initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+  </script>
+  <div style="display:none">
+  </div>
+  <script>
+   var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/finamatrix.wordpress.com\/public.api\/connect\/?action=request&domain=finamatrix.net","logoutURL":"https:\/\/finamatrix.wordpress.com\/wp-login.php?action=logout&_wpnonce=c0fbdb9ab2","homeURL":"https:\/\/finamatrix.net\/","postID":"58","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+  </script>
+  <script src="https://s0.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1573483029j" type="text/javascript">
+  </script>
+  <div id="carousel-reblog-box">
+   <form action="#" name="carousel-reblog">
+    <textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+    <label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">
+     Post to
+    </label>
+    <select id="carousel-reblog-to-blog-id" name="carousel-reblog-to-blog-id">
+    </select>
+    <div class="submit">
+     <span class="canceltext">
+      <a class="cancel" href="#">
+       Cancel
+      </a>
+     </span>
+     <input class="button" id="carousel-reblog-submit" name="carousel-reblog-submit" type="submit" value="Reblog Post"/>
+     <input id="carousel-reblog-blog-id" type="hidden" value="133515905"/>
+     <input id="carousel-reblog-blog-url" type="hidden" value="https://finamatrix.net"/>
+     <input id="carousel-reblog-blog-title" type="hidden" value="Finamatrix"/>
+     <input id="carousel-reblog-post-url" type="hidden" value=""/>
+     <input id="carousel-reblog-post-title" type="hidden" value=""/>
+    </div>
+    <input id="_wpnonce" name="_wpnonce" type="hidden" value="fb7df60737"/>
+    <input name="_wp_http_referer" type="hidden" value="/"/>
+   </form>
+   <div class="arrow">
+   </div>
+  </div>
+  <link href="https://s2.wp.com/_static/??-eJxty0sKgCAQANALZVOCUYvoLDINofnDUbt+tGjn9sGDJwmMoVAo4KtIrl4mMGTiFAObRqKZk2JHRmQeoN9R51iZHFgqSeMtfvjS4fdZbVItk1ylfQGmXDAD?cssminify=yes" id="all-css-0-3" media="all" rel="stylesheet" type="text/css"/>
+  <script>
+   var actionbardata = {"siteID":"133515905","siteName":"Finamatrix","siteURL":"https:\/\/finamatrix.net","icon":"<img alt='' src='https:\/\/finamatrix.files.wordpress.com\/2017\/08\/cropped-logo-arial.png?w=50' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/harmonic","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Ffinamatrix.net%2F2020%2F03%2F12%2Fdecoding-crypto-risk-with-risk-cybernetics%2F&signup_flow=account&domain=finamatrix.net","themeURL":"","xhrURL":"https:\/\/finamatrix.net\/wp-admin\/admin-ajax.php","nonce":"f0c281ab04","isSingular":"","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"db10c26f07\" \/>","referer":"https:\/\/finamatrix.net\/","canFollow":"1","feedID":"70033894","statusMessage":"","customizeLink":"https:\/\/finamatrix.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Ffinamatrix.wordpress.com%2F","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Harmonic","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Ffinamatrix.net%2F2020%2F03%2F12%2Fdecoding-crypto-risk-with-risk-cybernetics%2F&signup_flow=account&domain=finamatrix.net\">Log in now.<\/a>","stats":"Stats"}};
+  </script>
+  <script>
+   var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/finamatrix.net\/wp-admin\/admin-ajax.php","nonce":"1868e96f0e","display_exif":"1","display_comments":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/finamatrix.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Ffinamatrix.net%2F2020%2F03%2F12%2Fdecoding-crypto-risk-with-risk-cybernetics%2F","blog_id":"133515905","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=133515905&v=wpcom&tz=0&user_id=0&subd=finamatrix","is_public":"1","reblog_enabled":""};
+  </script>
+  <script src="https://s1.wp.com/_static/??-eJyVjs0OgjAQhF/IZWOAgwfjs5SyyAL9SbetPr7lADHGEL1NZuabDD48aGcj2YiTYE+ZNflnNckJ36I4kiFBnzocVTDOsl7rMrOHhe0Mg9NJYOBfyU1/1k0Cv6Q7W0HVG7bQqYBGSaRQFLhMIXBfBnfvz4UYlJ7lCNKRnV2hXR20A4l3VjgT5PLLfXGqcuJgQavgktCCE0VfvsFmFOZmruf20tZN3bTN9AJWqqCe" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+  </script>
+  <script async="" defer="" src="//stats.wp.com/w.js?61" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   _tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'133515905','blog_tz':'0','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'133515905','v':'wpcom','tz':'0','user_id':'0','subd':'finamatrix'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1TaVhzUzFMbjdWNHpwZGhTayxPSUFCMGNrd29+Smw0TDhnZmRTK0hlRi9QSGh6bi9GXVhBJWIlZlR5U1JMLU8/MkNtblkvY1ctMFJUdThDM3hCX3hCOFNpaWdPb2xWLFhjazdwVDl5TFJKL0ZUKzEyTUp5LWtvMU5OM1BxOH5RNDQmb1FqaUhTdUJjcWE3elh6QzRrREN8Z11GXWpnRXhHLVgmeE1sNDdDaC5NXWUvNlg1bk1WUUguZENGSlEuRi9bNFpoNG81NFBvNXNGK20wZDJfTVVNSWJOcmFlWTVRaXE1UTcyVVY3fjEvfFhhUjc='}]);
+_stq.push([ 'clickTrackerInit', '133515905', '0' ]);
+  </script>
+  <noscript>
+   <img alt="" src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden"/>
+  </noscript>
+  <script>
+   if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+  </script>
+ </body>
+</html>
+<!--
+	generated in 0.086 seconds
+	41749 bytes batcached for 300 seconds
+-->

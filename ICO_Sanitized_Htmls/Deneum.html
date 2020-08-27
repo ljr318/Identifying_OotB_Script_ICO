@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   DENEUM
+  </title>
+  <meta content="Ultra low-cost renewable electricity" name="description"/>
+  <meta content="ie=edge,chrome=1" http-equiv="x-ua-compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="css/global.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="img/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="img/favicon//apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="img/favicon//apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="img/favicon//apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="img/favicon//apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="img/favicon//apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="img/favicon//apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="img/favicon//apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="img/favicon//apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="img/favicon//android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="img/favicon//favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="img/favicon//favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="img/favicon//favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="img/favicon//manifest.json" rel="manifest"/>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="img/favicon//ms-icon-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <meta content="#272c7e" name="theme-color"/>
+  <meta content="#272c7e" name="msapplication-navbutton-color"/>
+  <meta content="#272c7e" name="apple-mobile-web-app-status-bar-style"/>
+ </head>
+ <body>
+  <script>
+   async function subscribe( ) {
+       const email = document.getElementById('email') && document.getElementById('email').value
+
+      if (!email) {
+          return false
+      }
+
+      const name = document.getElementById('name') ? document.getElementById('name').value : ''
+      const message = document.getElementById('message') ? document.getElementById('message').value : ''
+
+      return await fetch(`https://api.unisender.com/ru/api/subscribe?format=json&api_key=6e5zcq4nz57aw38gkcudakp38co161qiqtu9fkoo&list_ids=14532597&fields[email]=${email}&fields[Name]=${name}&fields[message]=${message}&fields[source]=mainform&fields[language]=eng&double_optin=4`, {
+              method: 'GET'
+          })
+          .then(
+              res => res.json(),
+              err => err
+          )
+          .then(json => {
+              console.log(json)
+              if (json && json.result) {
+                  if (json.result.person_id) {
+                      Array.from(document.querySelectorAll('.popup__content')).map(el => {
+                        el.style.display = el.style.display == 'block' 
+                          ?  'none'
+                          :  'block'
+                      });
+                       $('.js-btn-popup').on('click', function(){
+                            $('#js-popup').fadeToggle(250);
+                          });
+                   }
+
+                 
+
+                  //window.location.href='/after_subscribe'
+              }
+          })
+          .then(() => false)
+  }
+  </script>
+  <!--[if lt IE 8]>
+        <p class="browserhappy">
+            Your browser is <strong>out of date</strong>. Please <a href="https://browsehappy.com/"  target="_blank">update it</a>.
+        </p>
+    <![endif]-->
+  <noscript>
+   You need to enable JavaScript in your browser to display this page correctly.
+  </noscript>
+  <div class="wrapper">
+   <header class="header" id="js-header">
+    <div class="container">
+     <div class="header__container">
+      <a class="header__logo" href="#js-main-slider">
+       <div class="header__logo-name">
+        <img alt="DENEUM" src="img/deneum.svg"/>
+       </div>
+       <div class="header__logo-slogan">
+        BREAKTHROUGH VENTURE
+       </div>
+      </a>
+      <nav class="header__nav">
+       <ul>
+        <li>
+         <a href="#js-focus">
+          Focus
+         </a>
+        </li>
+        <li>
+         <a class="active" href="#join">
+          Join us
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+    </div>
+   </header>
+   <div class="main">
+    <section class="main-sec">
+     <div class="main-sec__slider" id="js-main-slider">
+      <div>
+       <div class="main-sec__slide">
+        <div class="container">
+         <div class="main-sec__slide-wrap">
+          <div class="main-sec__slide-main">
+           <blockquote class="main-sec__slide-blockquote">
+            <div class="main-sec__slide-quote">
+             <p>
+              âHeavier-than-air flying
+              <br/>
+              machines are impossibleâ
+             </p>
+            </div>
+            <cite class="main-sec__slide-quote-author">
+             Lord Kelvin. 1895
+            </cite>
+           </blockquote>
+           <h2 class="main-sec__slide-title">
+            Breakthroughs happen
+            <br/>
+            when you question dogma.
+           </h2>
+          </div>
+          <div class="main-sec__slide-pic">
+           <img alt="" src="img/slider/photo.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <div class="main-sec__slide">
+        <div class="container">
+         <div class="main-sec__slide-wrap">
+          <div class="main-sec__slide-main">
+           <blockquote class="main-sec__slide-blockquote main-sec__slide-blockquote--2">
+            <div class="main-sec__slide-quote">
+             <p>
+              âNo airship will ever fly
+              <br/>
+              from New York to Parisâ
+             </p>
+            </div>
+            <cite class="main-sec__slide-quote-author">
+             Orville Wright. 1909
+            </cite>
+           </blockquote>
+           <h2 class="main-sec__slide-title">
+            Breakthroughs happen
+            <br/>
+            when you question dogma.
+           </h2>
+          </div>
+          <div class="main-sec__slide-pic">
+           <img alt="" src="img/slider/ow.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <div class="main-sec__slide">
+        <div class="container">
+         <div class="main-sec__slide-wrap">
+          <div class="main-sec__slide-main">
+           <blockquote class="main-sec__slide-blockquote main-sec__slide-blockquote--3">
+            <div class="main-sec__slide-quote">
+             <p>
+              âMeteorits are impossible
+              <br/>
+              as rocks cannot fall from the Heavenâ
+             </p>
+            </div>
+            <cite class="main-sec__slide-quote-author">
+             French Academy of Science. 1772
+            </cite>
+           </blockquote>
+           <h2 class="main-sec__slide-title">
+            Breakthroughs happen
+            <br/>
+            when you question dogma.
+           </h2>
+          </div>
+          <div class="main-sec__slide-pic main-sec__slide-pic--3">
+           <img alt="" src="img/slider/f.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <div class="main-sec__slide">
+        <div class="container">
+         <div class="main-sec__slide-wrap">
+          <div class="main-sec__slide-main">
+           <blockquote class="main-sec__slide-blockquote main-sec__slide-blockquote--4">
+            <div class="main-sec__slide-quote">
+             <p>
+              âEverything that can be
+              <br/>
+              invented has been invented.â
+             </p>
+            </div>
+            <cite class="main-sec__slide-quote-author">
+             Charles H. Duell.
+             <br/>
+             Comissioner of the US Patent Office. 1899
+            </cite>
+           </blockquote>
+           <h2 class="main-sec__slide-title main-sec__slide-title--4">
+            Breakthroughs happen
+            <br/>
+            when you question dogma.
+           </h2>
+          </div>
+          <div class="main-sec__slide-pic main-sec__slide-pic--4">
+           <img alt="" src="img/slider/chd.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <div class="main-sec__slide">
+        <div class="container">
+         <div class="main-sec__slide-wrap">
+          <div class="main-sec__slide-main">
+           <blockquote class="main-sec__slide-blockquote main-sec__slide-blockquote--5">
+            <div class="main-sec__slide-quote">
+             <p>
+              âThere is not the slightest indication
+              <br/>
+              that nuclear energy will ever be obtainable.â
+             </p>
+            </div>
+            <cite class="main-sec__slide-quote-author">
+             Albert Einstein. 1932
+            </cite>
+           </blockquote>
+           <h2 class="main-sec__slide-title main-sec__slide-title--4">
+            Breakthroughs happen
+            <br/>
+            when you question dogma.
+           </h2>
+          </div>
+          <div class="main-sec__slide-pic main-sec__slide-pic--5">
+           <img alt="" src="img/slider/ae.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="wow fadeInUp diagramms" data-wow-duration="1s" id="js-diagramm">
+     <div class="container">
+      <div class="diagramms-d" id="js-diagramm-d">
+       D
+      </div>
+      <h2 class="diagramms__title">
+       We look beyond the existing science
+       <br/>
+       to discover, validate and commercialize
+       <br/>
+       phenomena within
+       <strong id="js-color-list">
+        <br/>
+       </strong>
+      </h2>
+      <div class="diagramms__text">
+       DENEUM is
+       <strong>
+        THE FIRST EVER PROJECT
+       </strong>
+       to apply a business approach to futuristic science ideation to make sci-fi a reality.
+      </div>
+      <div class="diagramms__wrap">
+       <div class="diagramms__item">
+        <div class="diagramms__circle">
+         <svg viewbox="0 0 178.99 178.995">
+          <g fill="none" stroke="#24d0b5" stroke-width="2" transform="translate(14.078 14.078)">
+           <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+           </ellipse>
+           <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+           </ellipse>
+          </g>
+          <g fill="none" opacity="0.302" stroke="#24d0b5" stroke-width="1">
+           <ellipse cx="89.495" cy="89.497" rx="89.495" ry="89.497" stroke="none">
+           </ellipse>
+           <ellipse cx="89.495" cy="89.497" fill="none" rx="88.995" ry="88.997">
+           </ellipse>
+          </g>
+         </svg>
+         <div class="diagramms__circle-anim">
+          <svg viewbox="0 0 178.99 178.995">
+           <g fill="none" stroke="#fff" stroke-width="2" transform="translate(14.078 14.078)">
+            <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+            </ellipse>
+            <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+            </ellipse>
+           </g>
+          </svg>
+         </div>
+         <div class="diagramms__item-val">
+          700+
+         </div>
+        </div>
+        <div class="diagramms__txt">
+         Experiments
+         <br/>
+         accomplished
+        </div>
+       </div>
+       <div class="diagramms__item">
+        <div class="diagramms__circle">
+         <svg viewbox="0 0 178.99 178.995">
+          <g fill="none" stroke="#24d0b5" stroke-width="2" transform="translate(14.078 14.078)">
+           <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+           </ellipse>
+           <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+           </ellipse>
+          </g>
+          <g fill="none" opacity="0.302" stroke="#24d0b5" stroke-width="1">
+           <ellipse cx="89.495" cy="89.497" rx="89.495" ry="89.497" stroke="none">
+           </ellipse>
+           <ellipse cx="89.495" cy="89.497" fill="none" rx="88.995" ry="88.997">
+           </ellipse>
+          </g>
+         </svg>
+         <div class="diagramms__circle-anim">
+          <svg viewbox="0 0 178.99 178.995">
+           <g fill="none" stroke="#fff" stroke-width="2" transform="translate(14.078 14.078)">
+            <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+            </ellipse>
+            <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+            </ellipse>
+           </g>
+          </svg>
+         </div>
+         <div class="diagramms__item-val">
+          1st
+         </div>
+        </div>
+        <div class="diagramms__txt">
+         Ever patented
+         <br/>
+         antigravity machine
+        </div>
+       </div>
+       <div class="diagramms__item">
+        <div class="diagramms__circle">
+         <svg viewbox="0 0 178.99 178.995">
+          <g fill="none" stroke="#24d0b5" stroke-width="2" transform="translate(14.078 14.078)">
+           <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+           </ellipse>
+           <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+           </ellipse>
+          </g>
+          <g fill="none" opacity="0.302" stroke="#24d0b5" stroke-width="1">
+           <ellipse cx="89.495" cy="89.497" rx="89.495" ry="89.497" stroke="none">
+           </ellipse>
+           <ellipse cx="89.495" cy="89.497" fill="none" rx="88.995" ry="88.997">
+           </ellipse>
+          </g>
+         </svg>
+         <div class="diagramms__circle-anim">
+          <svg viewbox="0 0 178.99 178.995">
+           <g fill="none" stroke="#fff" stroke-width="2" transform="translate(14.078 14.078)">
+            <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+            </ellipse>
+            <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+            </ellipse>
+           </g>
+          </svg>
+         </div>
+         <div class="diagramms__item-val">
+          7
+         </div>
+        </div>
+        <div class="diagramms__txt">
+         Labs in Europe
+         <br/>
+         and Russia
+        </div>
+       </div>
+       <div class="diagramms__item">
+        <div class="diagramms__circle">
+         <svg viewbox="0 0 178.99 178.995">
+          <g fill="none" stroke="#24d0b5" stroke-width="2" transform="translate(14.078 14.078)">
+           <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+           </ellipse>
+           <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+           </ellipse>
+          </g>
+          <g fill="none" opacity="0.302" stroke="#24d0b5" stroke-width="1">
+           <ellipse cx="89.495" cy="89.497" rx="89.495" ry="89.497" stroke="none">
+           </ellipse>
+           <ellipse cx="89.495" cy="89.497" fill="none" rx="88.995" ry="88.997">
+           </ellipse>
+          </g>
+         </svg>
+         <div class="diagramms__circle-anim">
+          <svg viewbox="0 0 178.99 178.995">
+           <g fill="none" stroke="#fff" stroke-width="2" transform="translate(14.078 14.078)">
+            <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+            </ellipse>
+            <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+            </ellipse>
+           </g>
+          </svg>
+         </div>
+         <div class="diagramms__item-val">
+          $1mln
+         </div>
+        </div>
+        <div class="diagramms__txt">
+         Raised in the first
+         <br/>
+         seed round
+        </div>
+       </div>
+       <div class="diagramms__item">
+        <div class="diagramms__circle">
+         <svg viewbox="0 0 178.99 178.995">
+          <g fill="none" stroke="#24d0b5" stroke-width="2" transform="translate(14.078 14.078)">
+           <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+           </ellipse>
+           <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+           </ellipse>
+          </g>
+          <g fill="none" opacity="0.302" stroke="#24d0b5" stroke-width="1">
+           <ellipse cx="89.495" cy="89.497" rx="89.495" ry="89.497" stroke="none">
+           </ellipse>
+           <ellipse cx="89.495" cy="89.497" fill="none" rx="88.995" ry="88.997">
+           </ellipse>
+          </g>
+         </svg>
+         <div class="diagramms__circle-anim">
+          <svg viewbox="0 0 178.99 178.995">
+           <g fill="none" stroke="#fff" stroke-width="2" transform="translate(14.078 14.078)">
+            <ellipse cx="75.417" cy="75.419" rx="75.417" ry="75.419" stroke="none">
+            </ellipse>
+            <ellipse cx="75.417" cy="75.419" fill="none" rx="74.417" ry="74.419">
+            </ellipse>
+           </g>
+          </svg>
+         </div>
+         <div class="diagramms__item-val">
+          25
+         </div>
+        </div>
+        <div class="diagramms__txt">
+         Bright minds
+         <br/>
+         and counting
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="focus" id="js-focus">
+     <div class="container">
+      <div class="wow fadeInUp" data-wow-duration="1s">
+       <h2 class="sec-title">
+        FOCUS
+       </h2>
+       <div class="focus-d" id="js-focus-d">
+        D
+       </div>
+       <div class="focus__wrap">
+        <div class="focus__col">
+         <h3 class="focus__col-title">
+          ENERGY
+         </h3>
+         <div class="focus__col-main">
+          <div class="focus__col-blc">
+           <h4 class="focus__col-subtitle focus__col-subtitle--red">
+            PROBLEM:
+           </h4>
+           <p>
+            85% of total energy production is non-renewable. Consumption is growing. Most electricity for electric vehicles is made from fossil fuels. Sun and Wind are not a sustainable solution. Li-ion batteries cannot have much higher density. Commercially viable nuclear fusion is too far away.
+           </p>
+          </div>
+          <div class="focus__col-blc">
+           <h4 class="focus__col-subtitle focus__col-subtitle--green">
+            OUR MEMORANDUM:
+           </h4>
+           <p>
+            <b>
+             Safe:
+            </b>
+            Energy must be completely safe for humans and nature (no CO2, radiation or any waste).
+           </p>
+           <p>
+            <b>
+             Low-Cost:
+            </b>
+            Sustainable energy must be at least three times cheaper than energy made from fossil fuels.
+           </p>
+           <p>
+            <b>
+             Distributed:
+            </b>
+            Energy sources must be portable enough to power households, electric vehicles and drones.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="focus__col">
+         <h3 class="focus__col-title">
+          TRANSPORT
+         </h3>
+         <div class="focus__col-main">
+          <div class="focus__col-blc">
+           <h4 class="focus__col-subtitle focus__col-subtitle--red">
+            PROBLEM:
+           </h4>
+           <p>
+            Long local commutes, congestions, traffic jams. Air transport has reached its speed limits. Space rockets have reached their limits at only 5% of payload. A new era of space exploration is impossible because we canât get much faster or travel much farther. Nor is anyone working on brand new ways that could break the limits.
+           </p>
+          </div>
+          <div class="focus__col-blc">
+           <h4 class="focus__col-subtitle focus__col-subtitle--green">
+            OUR MEMORANDUM:
+           </h4>
+           <p>
+            <b>
+             Fast:
+            </b>
+            Long-distance travel must be at least five times faster.
+           </p>
+           <p>
+            <b>
+             Safe:
+            </b>
+            Transportation must have zero impact on the environment.
+           </p>
+           <p>
+            <b>
+             Discovery:
+            </b>
+            The new transport must open up a new era of space exploration.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="focus__blc wow fadeInUp" data-wow-duration="1s">
+       <blockquote class="focus__blc-blockquote">
+        <div class="focus__blc-quote">
+         <p>
+          Like inventing an engine vs. riding horses or passing information via radio channels vs. physical communication, technologies based on old ideas reach their limits and dry up.
+         </p>
+         <p>
+          To reach a new level, we have to think far outside the box. If we keep accepting fundamental science as our ultimate knowledge, the new era will remain science fiction.
+         </p>
+         <p>
+          <strong>
+           We must act.
+          </strong>
+         </p>
+        </div>
+        <cite class="focus__blc-quote-author">
+         Dmitry Samoylovskikh
+         <span>
+          Founder and CEO of Deneum
+         </span>
+        </cite>
+       </blockquote>
+      </div>
+     </div>
+    </section>
+    <section class="wow fadeInUp how-we-act" data-wow-duration="1s">
+     <div class="container">
+      <h2 class="sec-title">
+       HOW WE ACT
+      </h2>
+      <div class="how-we-act__steps">
+       <div class="how-we-act__step">
+        IDEATION
+       </div>
+       <div class="how-we-act__arrow">
+       </div>
+       <div class="how-we-act__step">
+        VERIFICATION
+       </div>
+       <div class="how-we-act__arrow">
+       </div>
+       <div class="how-we-act__step">
+        COMMERCIALISATION
+       </div>
+      </div>
+      <div class="how-we-act__wrap">
+       <div class="how-we-act__item">
+        <div class="how-we-act__item-title">
+         IDEATION
+        </div>
+        <ul>
+         <li>
+          In-house brainstorm
+         </li>
+         <li>
+          Collaboration with institutes
+         </li>
+         <li>
+          Theorists workshops
+         </li>
+         <li>
+          Inbound inventors
+         </li>
+        </ul>
+       </div>
+       <div class="how-we-act__item">
+        <div class="how-we-act__item-title">
+         VERIFICATION
+        </div>
+        <ul>
+         <li>
+          Own scientific and R&amp;D team
+         </li>
+         <li>
+          In-house well-equipped labs
+         </li>
+         <li>
+          Partnersâ labs and expertise
+         </li>
+        </ul>
+       </div>
+       <div class="how-we-act__item">
+        <div class="how-we-act__item-title">
+         COMMERCIALISATION
+        </div>
+        <ul>
+         <li>
+          Securing IPs
+         </li>
+         <li>
+          Licensing
+         </li>
+         <li>
+          Proprietary products
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="wow fadeInUp we" data-wow-duration="1s">
+     <div class="container">
+      <div class="we__wrap">
+       <div class="we__item">
+        <h3 class="we__title">
+         We know a thing or two about business.
+        </h3>
+        <p class="we__txt">
+         With years of experience launching startups from scratch on a global scale, weâve seen and done it all. Our Forbes 30 Under 30 executive team devotes their lives to the big mission.
+        </p>
+       </div>
+       <div class="we__item">
+        <h3 class="we__title">
+         We love breakthroughs.
+        </h3>
+        <p class="we__txt">
+         Itâs more like passion. But as in any industry, the true magic happens when you combine advanced knowledge and skills. Like we do.
+        </p>
+       </div>
+       <div class="we__item">
+        <h3 class="we__title">
+         We want a better future for all of us.
+        </h3>
+        <p class="we__txt">
+         <strong>
+          Period.
+         </strong>
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="wow fadeInUp about" data-wow-duration="1s">
+     <div class="container">
+      <h2 class="sec-title">
+       WHAT WE SAY ABOUT US
+      </h2>
+      <div class="about__wrap">
+       <div class="about__item">
+        <h3 class="about__title">
+         THE MOST OPEN-MINDED SCIENTISTS
+        </h3>
+        <p class="about__txt">
+         Science is dogmatic. They say, âThere is no room for misfits who question the existing principles of physics with their alternative views. We keep the door open to anyone willing to share their crazy ideas. Each and every hypothesis and theory that potentially fits our philosophy is granted our thorough attention and provided with all the necessary resources for verification.
+        </p>
+       </div>
+       <div class="about__item">
+        <h3 class="about__title">
+         NOT MONEY-DRIVEN FAT CATS
+        </h3>
+        <p class="about__txt">
+         Once the technology is validated, we take it to our in-house research and development, switch our business machine on and follow the straightest line to its widest adoption. Once the invention team is rewarded, the profits are used to create new meaningful technologies. Deneum will never be another big corporation pursuing greedy aims.
+        </p>
+       </div>
+       <div class="about__item">
+        <h3 class="about__title">
+         BIG DREAMERS BUT PRUDENT PERFORMERS
+        </h3>
+        <p class="about__txt">
+         Sometimes, the truly impossible happens. We not only build a bridge between,  but also combine, two opposites under one roof: adventurous, futuristic and naive ideation with rigorous, smart and rapid execution. Thatâs a powerful mix. Thatâs what we call
+         <strong>
+          Creation.
+         </strong>
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="wow fadeInUp video-sec" data-wow-duration="1s">
+     <div class="container">
+      <div class="video-sec__wrap horns">
+       <span class="horn horn--top-left">
+       </span>
+       <span class="horn horn--top-right">
+       </span>
+       <span class="horn horn--bottom-left">
+       </span>
+       <span class="horn horn--bottom-right">
+       </span>
+       <div class="video-sec__blc">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/g1e3jPOTQZg" width="560">
+        </iframe>
+       </div>
+      </div>
+      <div class="video-sec__txt">
+       <h2 class="video-sec__title">
+        INTRODUCTION VIDEO
+       </h2>
+       <p>
+        Ð¡heck our introduction video. It will channel you into the Deneumâs initial concept and the team behind the project.
+       </p>
+      </div>
+     </div>
+    </section>
+    <div class="wow fadeInUp logotyps" data-wow-duration="1s">
+     <div class="container">
+      <div class="logotyps__slider" id="js-logotyps-slider">
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="http://e-catworld.com/2018/09/01/deneum-white-paper-outlines-science-process-business-plan/" target="_blank">
+         <img alt="newsbtc" src="img/logos/planet.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.entrepreneur.com/article/318719" target="_blank">
+         <img alt="newsbtc" src="img/logos/entrepreneur.svg"/>
+        </a>
+       </div>
+       <div>
+        <a class="logotyps__slide" href="https://www.newsbtc.com/press-releases/deneum-reveals-power-station-revolutionize-global-energy-market/" target="_blank">
+         <img alt="newsbtc" src="img/logos/newsbtc.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" href="https://bitcoinist.com/titanium-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89m-ico/" target="_blank">
+         <img alt="newsbtc" src="img/logos/bitcoinist.png" style="margin-top:17px;"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://coinidol.com/titanium-deuterium-shaken-not-stirred/" target="_blank">
+         <img alt="newsbtc" src="img/logos/coinidol.svg"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.ccn.com/titanium-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market/" target="_blank">
+         <img alt="newsbtc" src="img/logos/ccn.svg"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://bitcoinexchangeguide.com/deneum-ico-dnm-token/" target="_blank">
+         <img alt="newsbtc" src="img/logos/beg.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://btcmanager.com/titanium-and-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89-million-ico/" target="_blank">
+         <img alt="newsbtc" src="img/logos/btcmanager.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.windkraft-journal.de/2018/07/19/deneum-stellt-sein-kraftwerk-power-station-vor/124915" target="_blank">
+         <img alt="newsbtc" src="img/logos/wj.svg"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.globalbankingandfinance.com/titanium-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89m-ico/" target="_blank">
+         <img alt="newsbtc" src="img/logos/gbaf.svg"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.marketwatch.com/press-release/titanium-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89m-ico-2018-07-18" target="_blank">
+         <img alt="newsbtc" src="img/logos/marketwatch.svg"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://markets.businessinsider.com/news/stocks/titanium-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89m-ico-1027378674" target="_blank">
+         <img alt="newsbtc" src="img/logos/insider.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.oilandgas360.com/titanium-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89m-ico-2/" target="_blank">
+         <img alt="newsbtc" src="img/logos/oil.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.liberoquotidiano.it/news/comunicati/13362096/titanium-+-deuterium-shaken-not-stirred-deneum-reveals-its-power-station-to-revolutionize-global-energy-market-gears-up-for-89m-ico.html" target="_blank">
+         <img alt="newsbtc" src="img/logos/libero.png"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.lavanguardia.com/vida/20180719/45964528349/comunicado-titanio--deuterio-mezclado-no-agitado-deneum-revela-su-power-station.html" target="_blank">
+         <img alt="newsbtc" src="img/logos/lavanguardia.svg"/>
+        </a>
+       </div>
+       <div>
+        <a alt="newsbtc" class="logotyps__slide" href="https://www.wallstreet-online.de/nachricht/10739967-titan-deuterium-geschuettelt-geruehrt-deneum-stellt-kraftwerk-power-station-vor-revolutioniert-globalen-strommarkt-bereitet-ico-89-mio-usd" target="_blank">
+         <img alt="newsbtc" src="img/logos/wallstreet.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <section class="wow fadeInUp options" data-wow-duration="1s">
+     <div class="container">
+      <h2 class="sec-title" id="join">
+       OPTIONS TO JOIN THE MOVE
+      </h2>
+      <div class="options__wrap">
+       <div class="options__item horns">
+        <span class="horn horn--top-left">
+        </span>
+        <span class="horn horn--top-right">
+        </span>
+        <span class="horn horn--bottom-left">
+        </span>
+        <span class="horn horn--bottom-right">
+        </span>
+        <div class="options__blc">
+         <h3 class="options__title">
+          INVESTORS
+         </h3>
+         <div class="options__txt">
+          <p>
+           You can think of it as insurance against missing out on the next big gamechanger. There is a high risk that your investment will fail. But if we succeed, you will likely hit the jackpot.
+          </p>
+          <p>
+           Think twice and do not invest if you are not completely comfortable with taking an extremely high risk with potentially higher reward.
+          </p>
+         </div>
+        </div>
+        <div class="options__bar">
+         <button class="btn btn--green options__btn js-btn-popup" id="INVESTOR">
+          I TAKE THE RISK
+         </button>
+        </div>
+       </div>
+       <div class="options__item horns">
+        <span class="horn horn--top-left">
+        </span>
+        <span class="horn horn--top-right">
+        </span>
+        <span class="horn horn--bottom-left">
+        </span>
+        <span class="horn horn--bottom-right">
+        </span>
+        <div class="options__blc">
+         <h3 class="options__title">
+          ADVISORS AND TEAMMATES
+         </h3>
+         <div class="options__txt">
+          <p>
+           We do better when we collaborate. We are happy to welcome any like-minded people who are happy to share their expertise in science, experimental and theoretical physics, administrative/financial/technical resources and any networking that could help the project.
+          </p>
+         </div>
+        </div>
+        <div class="options__bar">
+         <button class="btn btn--green options__btn js-btn-popup" id="ADVISOR">
+          I WANT TO ASSIST
+         </button>
+        </div>
+       </div>
+       <div class="options__item horns">
+        <span class="horn horn--top-left">
+        </span>
+        <span class="horn horn--top-right">
+        </span>
+        <span class="horn horn--bottom-left">
+        </span>
+        <span class="horn horn--bottom-right">
+        </span>
+        <div class="options__blc">
+         <h3 class="options__title">
+          INVENTORS
+         </h3>
+         <div class="options__txt">
+          <p>
+           You bring an idea, we verify it. If itâs worthwhile, we provide all the resources and you lead the team. Your education, science degrees and age / race / residence etc. donât matter. What does matter is that your idea can help solve the problems that we are fighting.
+          </p>
+         </div>
+        </div>
+        <div class="options__bar">
+         <button class="btn btn--green options__btn js-btn-popup" id="INVENTOR">
+          I HAVE AN IDEA
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+   <footer class="wow fadeInUp footer" data-wow-duration="1s">
+    <div class="container">
+     <div class="footer__txt">
+      Â© 2019, DENEUM OU.
+      <br/>
+      Ahtri 12, 10151, Tallinn, Estonia.
+      <br/>
+      <br/>
+      This site uses cookies from Google and Facebook. The collected information helps to display personalized ads, provide services and receive marketing statistical data. By continuing to browse the site you agree to our use of cookies.
+      <br/>
+      <br/>
+      <a class="footer__link footer__link-mail" href="/cdn-cgi/l/email-protection#2a424f4646456a4e4f444f5f4704494547">
+       <span class="__cf_email__" data-cfemail="adc5c8c1c1c2edc9c8c3c8d8c083cec2c0">
+        [email protected]
+       </span>
+      </a>
+      <br/>
+      <a class="footer__link footer__link-website" href="https://www.deneum.com/">
+       www.deneum.com
+      </a>
+     </div>
+    </div>
+   </footer>
+   <div class="popup" id="js-popup">
+    <div class="popup__overlay js-btn-popup">
+    </div>
+    <div class="popup__main horns">
+     <span class="horn horn--top-left">
+     </span>
+     <span class="horn horn--top-right">
+     </span>
+     <span class="horn horn--bottom-left">
+     </span>
+     <span class="horn horn--bottom-right">
+     </span>
+     <div class="popup__content" id="form-content">
+      <h2 class="popup__title" id="popup-title">
+       INVESTORS
+      </h2>
+      <div class="js-btn-popup popup__close">
+       Ã
+      </div>
+      <form action="php/mail.php" class="popup__form js-form-val" method="post">
+       <input class="input popup__form-input popup__form-input--name js-val" id="name" name="name" placeholder="Name" required="" type="text"/>
+       <input class="input popup__form-input popup__form-input--email js-val" id="email" name="email" placeholder="E-mail" required="" type="email"/>
+       <textarea class="input popup__form-input popup__form-input--text popup__form-textarea" id="message" name="text" placeholder="Message"></textarea>
+       <button class="btn btn--green popup__form-submit" id="button" type="submit">
+        SEND
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+   <div class="popup" id="js-popup-confirm">
+    <div class="popup__overlay js-btn-popup-confirm">
+    </div>
+    <div class="popup__main horns">
+     <span class="horn horn--top-left">
+     </span>
+     <span class="horn horn--top-right">
+     </span>
+     <span class="horn horn--bottom-left">
+     </span>
+     <span class="horn horn--bottom-right">
+     </span>
+     <div class="popup__content" id="form-content">
+      <h2 class="popup__title" id="popup-title">
+       ADVISORS
+      </h2>
+      <div class="js-btn-popup-confirm popup__close">
+       Ã
+      </div>
+      <h2 class="popup__title">
+       DEAR
+       <span id="js-confirm-name">
+        ADVISOR
+       </span>
+      </h2>
+      <div class="popup__form">
+       <div class="popup__congrats">
+        Thank you for your message. We will get back to you shortly.
+       </div>
+       <button class="btn js-btn-popup-confirm btn--green popup__form-submit" id="button" type="button">
+        OK
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--jQuery-->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script src="js/vendors/jquery.min.js">
+  </script>
+  <!--slick-->
+  <script src="js/vendors/slick.min.js">
+  </script>
+  <!--wow-->
+  <script src="js/vendors/wow.min.js">
+  </script>
+  <!--typping-->
+  <script src="js/vendors/typping.js">
+  </script>
+  <script src="js/main.js">
+  </script>
+ </body>
+</html>

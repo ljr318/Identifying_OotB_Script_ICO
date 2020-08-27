@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+ <head>
+  <!--script type="text/javascript" src="apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+	<script type="text/javascript" src="apiGateway-js-sdk/apigClient.js"></script-->
+  <!--script src="/socket.io-client/socket.io.js"></script>
+	<script src="/utilities/ethereumjs-wallet/ethereumjs-wallet-0.6.0.min.js"></script>
+	<script src="/etc/dcp-config.js"></script>
+	<script type="module" src="/protocol.js"></script>
+	<script type="module">
+		import Compute from "/compute.js";
+		window.Compute = Compute;
+		document.querySelector('#mineDemo').style.display = 'block'
+	</script>
+	<script nomodule>
+		document.querySelector('#mineDemoNoModule').style.display = 'block'
+	</script-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149281202-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-149281202-1');
+  </script>
+  <script src="https://portal.distributed.computer/etc/dcp-config.js">
+  </script>
+  <script src="https://portal.distributed.computer/dcp-client/dist/compute.min.js">
+  </script>
+  <link href="media/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="media/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="media/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="media/site.webmanifest" rel="manifest"/>
+  <link color="#5bbad5" href="media/safari-pinned-tab.svg" rel="mask-icon"/>
+  <link href="media/favicon.ico" rel="shortcut icon"/>
+  <link href="https://distributed.computer" rel="canonical"/>
+  <meta content="Compute" name="apple-mobile-web-app-title"/>
+  <meta content="Compute" name="application-name"/>
+  <meta content="#2b5797" name="msapplication-TileColor"/>
+  <meta content="media/browserconfig.xml" name="msapplication-config"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <meta content="Next-generation distributed computing powering science and innovation worldwide." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Distributed Compute Labs" property="og:site_name"/>
+  <meta content="https://distributed.computer/media/DCP_Logo__1_.png " property="og:image"/>
+  <meta content="Distributed Compute Labs Logo" property="og:image:alt"/>
+  <meta content="Next Generation Computing" property="og:title"/>
+  <meta content="https://distributed.computer" property="og:url"/>
+  <meta content="Next-generation distributed computing powering science and innovation worldwide. No install required, runs on any device, deploys in minutes." property="og:description"/>
+  <script src="/dist/bundle.min.js">
+  </script>
+  <script src="/dist/sign-up-form.bundle.min.js">
+  </script>
+  <script src="/js/anti-scraper.js">
+  </script>
+  <!-- Required Core stylesheet -->
+  <link href="/dist/style.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" name="viewport"/>
+  <title>
+   Distributed Compute Labs
+  </title>
+ </head>
+ <body>
+  <div class="onload" id="topbar">
+   <div id="headerMain">
+    <div class="logo">
+     <a class="navbar-brand" href="/">
+      <img alt="DCL" height="auto" src="media/DCL_logo.svg" width="200px"/>
+     </a>
+    </div>
+    <div class="menu">
+     <nav id="nav_desktop">
+      <ul>
+       <li>
+        <a href="#top" title="Home">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="#lowerhold" title="About">
+         About
+        </a>
+       </li>
+       <li>
+        <a href="#demo" title="Demo">
+         Demo
+        </a>
+       </li>
+       <li>
+        <a href="#tech" title="Tech">
+         Technology
+        </a>
+       </li>
+       <li>
+        <a href="https://portal.distributed.computer" target="_blank" title="Portal">
+         Portal
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <div class="nav_toggle">
+     ☰
+    </div>
+   </div>
+   <nav class="nav_mobil collapsed">
+    <ul class="mobilmenu">
+     <li>
+      <a href="#top" title="Home">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="#lowerhold" title="About">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="#demo" title="Demo">
+       Demo
+      </a>
+     </li>
+     <li>
+      <a href="#tech" title="Tech">
+       Tech
+      </a>
+     </li>
+     <li>
+      <a href="https://portal.distributed.computer" target="_blank" title="Portal">
+       Portal
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </div>
+  <div id="top">
+  </div>
+  <canvas id="mainCanvas">
+  </canvas>
+  <div class="onload" id="titleHolder">
+   <div id="title">
+    <h2 class="main">
+     Meet the new standard in distributed computing.
+    </h2>
+   </div>
+  </div>
+  <div class="onload" id="signUpHolder">
+   <!--h2>Join the DCP Beta today!</h2>
+		<div class="spacer"></div>
+		<a class="btn_a btn_link w150 btn_registerTop" target="_blank" href = "https://portal.distributed.computer">Sign Up</a-->
+  </div>
+  <div class="onload" id="lowerhold">
+   <div id="about">
+    <img alt="Distributed Compute Technology" src="media/tech.svg"/>
+   </div>
+  </div>
+  <div class="container onload bg-white" id="toppage">
+   <div class="spacer s1">
+   </div>
+   <div class="cntr">
+    <h2>
+     About DCL: Accelerating Science, Innovation, and Discovery
+    </h2>
+   </div>
+   <p>
+    <b>
+     Distributed Compute Labs
+    </b>
+    is a Canadian educational nonprofit organization responsible for developing the next-generation of computing networks.
+   </p>
+   <p>
+    Modern day research requires extensive computing power. Researchers are competing for limited resources, either in availability or cost. Meanwhile, your computer's own processing power is going to waste while your computer sits idle. Distributed Compute Labs is building the tools for you to provide your computing power to the network as well as use computing power from the network on demand. Organizing processing power as a utility will accelerate compute-enabled research, innovation, and discovery across the world.
+   </p>
+   <div class="spacer s2">
+   </div>
+  </div>
+  <div class="container onload bg-dark">
+   <div class="spacer s1">
+   </div>
+   <div class="cntr">
+    <h2>
+     Distributed Compute Protocol
+    </h2>
+   </div>
+   <div class="cntr">
+    <div class="spacer s1">
+    </div>
+    <div class="cardGroup">
+     <div class="card cardGroup_card card50">
+      <div class="card_contents">
+       <div class="card_img_holder">
+        <img alt="Distributed Compute Credits" src="media/DCC.svg"/>
+       </div>
+       <div class="card_text">
+        <h3>
+         <b>
+          Compute Credits
+         </b>
+        </h3>
+        <div class="lft">
+         <p>
+          Suppliers provide computing resources to the global network, which are metered using Distributed Compute Credits (DCC). The protocol accesses unused cycles in otherwise idle machines or completely uses dedicated machines. DCC can then be used to deploy new computing tasks.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="card cardGroup_card card50">
+      <div class="card_contents">
+       <div class="card_img_holder">
+        <img alt="Fog Computing" src="media/fog.svg"/>
+       </div>
+       <div class="card_text">
+        <h3>
+         <b>
+          Fog Computing
+         </b>
+        </h3>
+        <div class="lft">
+         <p>
+          Researchers and developers deploy computational projects in exchange for DCC. Abundant compute resources are available at a fraction of the cost of current commercial cloud computing services, disrupting existing market powers and accelerating compute-enabled research, innovation, and discovery.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="spacer s1">
+    </div>
+   </div>
+  </div>
+  <div class="spacer s0 bg-white onload">
+  </div>
+  <div class="container onload bg-white" id="demo">
+   <div class="spacer ss">
+   </div>
+   <div class="cntr">
+    <h2>
+     Live Demo
+    </h2>
+   </div>
+   <div class="demogrid bg-white">
+    <div class="col66_dm dbrd-right">
+     <div class="pdemo">
+      <h3>
+       Computational physics using DCP: electromagnetic propulsion
+      </h3>
+      <p>
+       Exact mathematical solutions describing the electromagnetic force interactions arising between a two-layer ferromagnetic conducting tube and a coaxial bobbin coil, carrying a DC or AC current and traveling at constant velocity, are presented here. The research explores innovative electromagnetic propulsion technologies that have potential applications in futuristic transportation such as magnetic levitation and space elevators.
+      </p>
+      <div class="col_ cntr">
+       <div class="flexgrid">
+        <div class="col50">
+         <div class="pd20 cntr bg-white">
+          <div class="demo_img_holder">
+           <img alt="Coil around two-layer tube" src="media/demo/coil.png"/>
+          </div>
+          <div class="sm">
+           Coil encircling a two-layer tube.
+          </div>
+         </div>
+        </div>
+        <div class="col50">
+         <div class="pd20 cntr bg-white">
+          <div class="demo_img_holder">
+           <img alt="Crosssection of tube" src="media/demo/variables.png"/>
+          </div>
+          <div class="sm">
+           Cross-section diagram of the system.
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <p>
+       To simulate different geometries and material properties would require some 10
+       <sup>
+        9
+       </sup>
+       computations which would take almost two years to complete using a single modern CPU. By spreading these calculations over a million CPUs on the DCP network, the task is completed in hours instead of years.
+      </p>
+     </div>
+    </div>
+    <div class="col33_dm">
+     <div class="demogrid_sub">
+      <div class="col50_dm_sub">
+       <div class="pdemo" id="mineDemo">
+        <h3 id="run-the-demo">
+         Run the Demo
+        </h3>
+        <div id="task">
+         <b>
+          Tasks Completed
+         </b>
+         :
+         <span>
+          --
+         </span>
+        </div>
+        <div id="dccs">
+         <b>
+          Credits
+         </b>
+         :
+         <span id="dccs-earned">
+          --
+         </span>
+        </div>
+        <div id="taskname" style="display:none;">
+         <b>
+          Name of task
+         </b>
+         :
+         <i>
+          <span id="name-of-task">
+           --
+          </span>
+         </i>
+        </div>
+        <div class="btn_link_sm btn_com_demo" id="compDemo">
+         COMPUTE
+        </div>
+        <div class="spacer s1">
+        </div>
+        <div class="cntr">
+         <div class="meter">
+          <span>
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="pdemo" id="mineDemoNoModule" style="display:none;">
+        <p>
+         The DCP Miner is not available on this browser.
+         <br/>
+         Please update your browser and try again.
+        </p>
+       </div>
+      </div>
+      <div class="col50_dm_sub">
+       <div class="dbrd-top">
+        <div class="pdemo">
+         <b>
+          Launch your project
+         </b>
+         on the Distributed Compute Protocol.
+         <br/>
+         <br/>
+         <b>
+          Earn credits
+         </b>
+         by connecting your computer to the network.
+         <div class="spacer s0">
+         </div>
+         Join the DCP Beta today!
+         <a class="btn_a btn_link_sm btn_reg_demo" href="https://portal.distributed.computer" target="_blank">
+          Sign Up
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="spacer s1">
+   </div>
+  </div>
+  <div class="spacer s0 bg-dark onload">
+  </div>
+  <div class="container onload bg-dark">
+   <div class="spacer ss">
+   </div>
+   <div class="cntr">
+    <h2>
+     Connect devices to research projects
+    </h2>
+   </div>
+   <div class="spacer s1">
+   </div>
+   <div class="cardGroup">
+    <div class="card cardGroup_card card50">
+     <div class="card_contents">
+      <div class="card_img_holder_big">
+       <img alt="Miners" src="media/sellers.svg"/>
+      </div>
+      <div class="card_text">
+       <h3>
+        <b>
+         Computing Resource Suppliers
+        </b>
+       </h3>
+       <div class="lft">
+        <p>
+         Connect idle processing power - from mobile devices to mainframes - to help accelerate academic, research, institutional, and enterprise computational objectives.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="card cardGroup_card card50">
+     <div class="card_contents">
+      <div class="card_img_holder_big">
+       <img alt="Researchers" src="media/buyers.svg"/>
+      </div>
+      <div class="card_text">
+       <h3>
+        <b>
+         Researchers
+        </b>
+       </h3>
+       <div class="lft">
+        <p>
+         Deploy compute tasks from your computer and obtain results at unprecedented speed, cost-effectiveness, and ease of use. Compute resources are securely obtained from a decentralized compute supply.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="spacer s1">
+   </div>
+  </div>
+  <div class="spacer s0 bg-white onload">
+  </div>
+  <div class="container onload bg-white">
+   <div class="spacer ss">
+   </div>
+   <div class="cntr">
+    <h2>
+     Researchers Are Using the Distributed Compute Protocol
+    </h2>
+   </div>
+   <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+     <ul class="glide__slides">
+      <li class="glide__slide">
+       <div class="flex_holder_md">
+        <div class="col25_md">
+         <img alt="K. Spekkens" class="circ" src="media/researchers/K_Spekkens.png" width="175px"/>
+         <p class="sm">
+          <b>
+           Dr. Kristine Spekkens
+          </b>
+          <br/>
+          Associate Professor, RMC Physics and Space Science
+         </p>
+        </div>
+        <div class="col col66_md lft">
+         “The discovery potential of next-generation astronomical telescopes hinges on access to sufficient compute power to process the tremendous volume of data that will be produced. The Distributed Compute Protocol is an innovative approach to tackling this challenge that holds tremendous promise for my own research to understand the physical processes that drive galaxy evolution in the Universe.”
+        </div>
+       </div>
+      </li>
+      <li class="glide__slide">
+       <div class="flex_holder_md">
+        <div class="col25_md">
+         <img alt="G. Blohm" class="circ" src="media/researchers/G_Blohm.png" width="175px"/>
+         <p class="sm">
+          <b>
+           Dr. Gunnar Blohm
+          </b>
+          <br/>
+          Associate Professor, Queen’s University Computational Neuroscience
+         </p>
+        </div>
+        <div class="col col66_md lft">
+         “Current advances in brain research are accompanied with an exponential growth in computation needs; Distributed Compute Protocol is an exciting new tool that will enable brain researchers and other scientists to get easy and cost-effective access to unprecedented compute power.”
+        </div>
+       </div>
+      </li>
+      <li class="glide__slide">
+       <div class="flex_holder_md">
+        <div class="col25_md">
+         <img alt="N. Ladak" class="circ" src="media/researchers/N_Ladak.png" width="175px"/>
+         <p class="sm">
+          <b>
+           Nizar Ladak
+          </b>
+          <br/>
+          President &amp; CEO Compute Ontario
+         </p>
+        </div>
+        <div class="col col66_md lft">
+         “Harnessing the unused power of latent computer cores opens up real opportunity for Canadian researchers to access much-needed advanced computing resources. Advanced research computing is the backbone of innovation, and the potential of the Distributed Compute Protocol to complement and enhance existing resources is incredible.”
+        </div>
+       </div>
+      </li>
+      <li class="glide__slide">
+       <div class="flex_holder_md">
+        <div class="col25_md">
+         <img alt="F. Magpantay" class="circ" src="media/researchers/F_Magpantay.png" width="175px"/>
+         <p class="sm">
+          <b>
+           Dr. Felicia Magpantay
+          </b>
+          <br/>
+          Assistant Professor, Queen’s University Mathematics and Statistics
+         </p>
+        </div>
+        <div class="col col66_md lft">
+         “I work on understanding the major mechanisms governing the transmission patterns of childhood diseases and the impact of public health interventions. This involves fitting complex stochastic models to data. The Distributed Compute Protocol is a very promising tool to aid in my research and other people's work that require large amounts of computing power.”
+        </div>
+       </div>
+      </li>
+     </ul>
+    </div>
+    <div class="spacer s1">
+    </div>
+    <div class="glide__bullets" data-glide-el="controls[nav]">
+     <button class="glide__bullet" data-glide-dir="=0">
+     </button>
+     <button class="glide__bullet" data-glide-dir="=1">
+     </button>
+     <button class="glide__bullet" data-glide-dir="=2">
+     </button>
+     <button class="glide__bullet" data-glide-dir="=3">
+     </button>
+    </div>
+   </div>
+   <div class="spacer s1">
+   </div>
+  </div>
+  <div class="spacer s0 bg-dark onload">
+  </div>
+  <div class="container onload bg-dark" id="tech">
+   <div class="spacer ss">
+   </div>
+   <div class="cntr">
+    <h2>
+     DCP Technology
+    </h2>
+   </div>
+   <div class="spacer s0">
+   </div>
+   <div class="dcp_arch_holder">
+    <img alt="DCP Technology" src="media/job_board.svg"/>
+   </div>
+   <div class="spacer s1">
+   </div>
+   <p>
+    DCP consists of a task scheduling system, an algorithm for efficiently distributing those tasks, and a compartment to securely compute them. Research groups can compute together using their own equipment, and reach out to a trusted network of global providers during peak demand.
+   </p>
+   <p>
+    DCP remains browser-compatible, enabling new opportunities in distributed computing. When embedded, micro-computations provide passive income from computing power; these provide welcome alternatives to webpage advertisements or subscription costs.
+   </p>
+   <p>
+    Subsequent versions of the protocol will see the addition of more extensive implementation kits and auxiliary libraries that will plug into widely used and industry-leading software.
+   </p>
+   <div class="spacer s1">
+   </div>
+  </div>
+  <div class="spacer s0 bg-white onload">
+  </div>
+  <div class="container onload bg-white" id="tech">
+   <div class="spacer ss">
+   </div>
+   <div class="cntr">
+    <h2>
+     Built on Web Technology
+    </h2>
+   </div>
+   <div class="cntr">
+    <p>
+     DCP is standards-based and future-proof.
+     <br/>
+     It is lightweight and simple in form, built on top of standards that share a similar philosophy.
+    </p>
+    <div class="spacer s1">
+    </div>
+    <div class="cardGroup">
+     <div class="card cardGroup_card card50">
+      <div class="card_contents">
+       <div class="card_img_holder_md">
+        <img alt="JavaScript" src="media/tech/JS.svg"/>
+       </div>
+       <div class="card_text">
+        <h3>
+         <b>
+          JavaScript
+         </b>
+        </h3>
+        <div class="lft">
+         <p>
+          JavaScript is the universal language in which all websites and web applications are written. It is driven by rapid development from Google, Mozilla, Apple, and Microsoft who continuously compete for the fastest implementation. It has the largest and youngest development community in the world. These factors make it the obvious choice for a distributed compute network.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="card cardGroup_card card50">
+      <div class="card_contents">
+       <div class="card_img_holder_md">
+        <img alt="WebAssembly" src="media/tech/webAssembly.svg"/>
+       </div>
+       <div class="card_text">
+        <h3>
+         <b>
+          WebAssembly
+         </b>
+        </h3>
+        <div class="lft">
+         <p>
+          WebAssembly was created for optimal performance without compromising security. Specific tasks can be hard-coded and compiled ahead of time, allowing developers to benefit from the convenience and performance of both high- and low-level languages. WebAssembly is a compile target for many native languages including C, C++, Julia, and Rust. Dozens of other compilers that have WebAssembly as a compile target are under development by their respective communities.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="card cardGroup_card card50">
+      <div class="card_contents">
+       <div class="card_img_holder_md">
+        <img alt="WebGL and WebCompute" src="media/tech/webGL.svg"/>
+       </div>
+       <div class="card_text">
+        <h3>
+         <b>
+          WebGL™ 2.0
+         </b>
+        </h3>
+        <div class="lft">
+         <p>
+          DCP currently integrates WebGL 2.0 for rendering and general computing tasks. WebCompute Shaders, the browser equivalent of CUDA, is under development. Many home computers have GPUs that can be accessed by DCP, representing in aggregate more computing power than centralized GPU centers. DCP will enable GPU processing and in the future, general-purpose computing on graphics (GPGPU) computation, parallel data and algorithms, physics simulations, machine learning, and neural networks.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="spacer s1">
+   </div>
+  </div>
+  <div class="spacer s0 bg-dark">
+  </div>
+  <div class="container onload bg-dark" id="contact">
+   <div class="spacer ss">
+   </div>
+   <div class="cntr">
+    <h2>
+     Join the DCP Beta today!
+    </h2>
+   </div>
+   <div class="spacer s1">
+   </div>
+   <div class="cntr">
+    <a class="btn_link btn_a w300 btn_register" href="https://portal.distributed.computer" target="_blank">
+     Sign Up
+    </a>
+   </div>
+   <div class="spacer s1">
+   </div>
+   <div class="spacer s1">
+   </div>
+  </div>
+  <div class="onload bg-white" id="footer">
+   <div class="footer_row">
+    <div class="foot_bg cntr">
+     <a class="navbar-brand" href="/" title="DCL">
+      <img alt="DCL" height="auto" src="media/DCL_logo_dark.svg" width="150px"/>
+     </a>
+    </div>
+    <div class="foot brdlft">
+     <ul class="footerlist">
+      <li>
+       <a href="#top" title="Home">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="#lowerhold" title="About">
+        About
+       </a>
+      </li>
+      <li>
+       <a href="#demo" title="Demo">
+        Demo
+       </a>
+      </li>
+      <li>
+       <a href="#tech" title="Tech">
+        Tech
+       </a>
+      </li>
+      <li>
+       <a href="https://portal.distributed.computer" target="_blank" title="Portal">
+        Portal
+       </a>
+      </li>
+      <li>
+       <a class="set-mailto-info-email" href="#" title="Contact">
+        Contact
+       </a>
+      </li>
+      <li>
+       <a href="/tos.html" title="Terms of Service">
+        Terms of Service
+       </a>
+      </li>
+      <li>
+       <a href="/privacy.html" title="Privacy Policy">
+        Privacy Policy
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="foot address brdlft">
+     <b>
+      Distributed Compute Labs
+     </b>
+     <br/>
+     303 Bagot St, Suite 402
+     <br/>
+     Kingston, Ontario, Canada
+     <br/>
+     K7K 5W7
+    </div>
+    <div class="foot_bg brdlft">
+     <div class="footer_social">
+      <div class="social icn_holder">
+       <a class="href_icn" href="https://facebook.com/dcprotocol/" id="href_learn" title="Facebook">
+        <div class="icn" id="icn_fb">
+        </div>
+       </a>
+      </div>
+      <div class="social icn_holder">
+       <a class="href_icn" href="https://twitter.com/DC_Protocol" id="href_learn" title="Twitter">
+        <div class="icn" id="icn_twt">
+        </div>
+       </a>
+      </div>
+      <div class="social icn_holder">
+       <a class="href_icn" href="https://www.linkedin.com/company/distributed-compute-labs/" id="href_learn" title="LinkedIn">
+        <div class="icn" id="icn_lnkin">
+        </div>
+       </a>
+      </div>
+      <div class="social icn_holder">
+       <a class="href_icn" href="https://t.me/DCP_Team" target="blank" title="telegram">
+        <div class="icn" id="icn_tele">
+        </div>
+       </a>
+      </div>
+      <div class="social icn_holder">
+       <a class="href_icn" href="https://join.slack.com/t/dcprotocol/shared_invite/enQtNDA2NzY5NzYzODU5LTExMGZjYTg4Njc4OTM3ZjBmMTRlYzJkMTE4ODE1ZDIyNzBmMmY1YjkwODhjZDc2YzIwOTkxZTY3ZjgzNmQxNDM" target="blank" title="slack">
+        <div class="icn" id="icn_slack">
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer_row bg-lgt-grey">
+    <div class="col_f">
+     <div class="cntr sm pd10">
+      ©2018 Distributed Compute Labs
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+ <!-- touched 2020-06-17 to force cache refresh in browsers, and to add missing HTML close tag: -->
+</html>

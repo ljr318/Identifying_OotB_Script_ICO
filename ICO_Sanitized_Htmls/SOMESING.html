@@ -1,0 +1,4097 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+  <!-- SEO : S -->
+  <meta content="SOMESING" name="description"/>
+  <meta content="SOMESING" name="keywords"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <!-- SEO : E -->
+  <!-- SEO : E -->
+  <!-- SNS 공유 : S -->
+  <meta content="SOMESING" data-role="url" property="og:url"/>
+  <meta content="SOMESING" data-role="title" property="og:title"/>
+  <meta content="https://somesing.io/global/assets/img/sns1.png" data-role="image" property="og:image"/>
+  <meta content="SOMESING" data-role="description" property="og:description"/>
+  <!-- SNS 공유 : E -->
+  <title>
+   SOMESING
+  </title>
+  <link href="/global/assets/favicon/favicon.ico" rel="shortcut icon"/>
+  <link href="/global/assets/favicon/favicon.ico" rel="icon"/>
+  <link href="/global/assets/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="/global/assets/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/global/assets/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="/global/assets/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/global/assets/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="/global/assets/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/global/assets/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="/global/assets/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/global/assets/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/global/assets/favicon/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/global/assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/global/assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="/global/assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/web/eng/assets/css/style.css" rel="stylesheet" type="text/css"/>
+  <script src="/web/eng/assets/js/lib/jquery-2.2.4.min.js" type="text/javascript">
+  </script>
+  <script src="/web/eng/assets/js/lib/slick.min.js" type="text/javascript">
+  </script>
+  <script src="/web/eng/assets/js/lib/jquery.nice-select.min.js" type="text/javascript">
+  </script>
+  <script src="/web/eng/assets/js/lib/chart.min.js">
+  </script>
+  <script src="/web/eng/assets/js/entry.js" type="text/javascript">
+  </script>
+  <script src="/web/eng/assets/js/main.js" type="text/javascript">
+  </script>
+  <script src="/global/assets/js/common.js" type="text/javascript">
+  </script>
+  <script src="/global/assets/js/bignumber.min.js" type="text/javascript">
+  </script>
+  <script async="" src="//somesing.api.useinsider.com/ins.js?id=10002402">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics  -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129301671-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129301671-1');
+  </script>
+  <!-- Enliple Common Tracker v3.6 [공용] start -->
+  <script type="text/javascript">
+   <!--
+function mobRf() {
+    var rf = new EN();
+    rf.setData("userid", "somesing");
+    rf.setSSL(true);
+    rf.sendRf();
+}
+//-->
+  </script>
+  <script defer="defer" onload="mobRf()" src="https://cdn.megadata.co.kr/js/en_script/3.6/enliple_min3.6.js">
+  </script>
+  <!-- Enliple Common Tracker v3.6 [공용] end -->
+  <script type="text/javascript">
+   $(function(){
+				$('.somesing-mail-send').click(function(e){
+					
+					e.preventDefault();
+					
+					if($('#email_name').val() == ''){
+						alert("Please fill out every required field \n(Name, Email, Message )");
+						$('#email_name').focus();
+						return false;
+					}
+					
+					if($('#email_email').val() == ''){
+						alert("Please fill out every required field \n(Name, Email, Message )");
+						$('#email_email').focus();
+						return false;
+					}
+					
+					if($('#email_message').val() == ''){
+						alert("Please fill out every required field \n(Name, Email, Message )");
+						$('#email_message').focus();
+						return false;
+					}
+					
+					ajax_data_upload_callback("/email/send", $('#emailForm').serialize(), '',function(data){
+						
+					if(data.result == 'Y'){
+							alert("Email sent successfully");
+						}else{
+							alert("Temporary error occurred. please try again later.");
+						}
+					});
+				});
+				
+				/* $('.ssx-history-open').click(function(e){
+					var $popup = $(this).attr("href");
+					ajax_data_upload_callback("/dashboard/history", '', '',function(data){
+						$('#popup-ssx-history .popup__container').empty();
+						$('#popup-ssx-history .popup__container').append(data);
+						$($popup).addClass("is-selected");
+					});
+				}); */
+				
+				//dashboard
+				
+				
+				//setting
+				
+			});
+			
+			/* BigNumber.config({ EXPONENTIAL_AT: [-10, 20] }) */
+			//clipboard
+			function copyClipboard(id){
+				var input = document.getElementById(id);
+				var isiOSDevice = navigator.userAgent.match(/ipad|iphone/i);
+				if (isiOSDevice) {
+					  
+					var editable = input.contentEditable;
+					var readOnly = input.readOnly;
+
+					input.contentEditable = true;
+					input.readOnly = false;
+
+					var range = document.createRange();
+					range.selectNodeContents(input);
+
+					var selection = window.getSelection();
+					selection.removeAllRanges();
+					selection.addRange(range);
+
+					input.setSelectionRange(0, 999999);
+					input.contentEditable = editable;
+					input.readOnly = readOnly;
+
+				} else{
+					input.select();
+				}
+				document.execCommand('Copy');
+				alert("Copied");
+			}
+  </script>
+ </head>
+ <body class="main-type">
+  <div class="viewport">
+   <div class="view-container">
+    <!-- HEADER : [S] -->
+    <header class="gnb is-fixed">
+     <div class="gnb-container">
+      <div class="gnb-box">
+       <div class="gnb-header">
+        <h1 class="gnb-header__symbol">
+         <a href="/index">
+          <img alt="SOME SING" src="/global/assets/img/ss-logo.svg"/>
+         </a>
+        </h1>
+       </div>
+       <!-- gnb-header//end -->
+       <div class="gnb-menu">
+        <div class="gnb-menu__container" role="group">
+         <nav class="gnb-menu__nav gnb-menu__nav--all">
+          <div aria-hidden="false" class="gnb-menu__header sr-only">
+           <h2 class="gnb-menu__header-title">
+            Site Navigation
+           </h2>
+          </div>
+          <!-- gnb-menu__header//end -->
+          <div class="gnb-menu__menu" role="navigation">
+           <ul class="gnb-menu__itembox" role="menu">
+            <li class="gnb-menu__item" role="menuitem">
+             <a class="gnb-menu__anchor js-gnb-menu-anchor" href="#main-about">
+              ABOUT SOMESING
+             </a>
+            </li>
+            <li class="gnb-menu__item" role="menuitem">
+             <a class="gnb-menu__anchor js-gnb-menu-anchor" href="#main-team">
+              TEAM
+             </a>
+            </li>
+            <li class="gnb-menu__item" role="menuitem">
+             <a class="gnb-menu__anchor js-gnb-menu-anchor" href="#main-roadmap">
+              ROADMAP
+             </a>
+            </li>
+            <li class="gnb-menu__item" role="menuitem">
+             <a class="gnb-menu__anchor js-gnb-menu-anchor" href="#main-allocation">
+              TOKEN ALLOCATION
+             </a>
+            </li>
+            <!-- 20181124 : [S] -->
+            <li class="gnb-menu__item" role="menuitem">
+             <a class="gnb-menu__anchor js-gnb-menu-anchor" href="#main-feed">
+              NEWS FEED
+             </a>
+            </li>
+            <!-- 20181124 : [E] -->
+           </ul>
+          </div>
+          <!-- gnb-menu__menu//end -->
+         </nav>
+        </div>
+        <!-- gnb-menu__container//end -->
+       </div>
+       <!-- gnb-menu//end -->
+      </div>
+      <!--gnb-box//end -->
+      <div class="gnb-util">
+       <div class="gnb-util__container">
+        <nav class="gnb-util__nav">
+         <ul class="gnb-util__itembox" role="menu">
+          <li class="gnb-util__item" role="menuitem">
+           <a class="gnb-util__anchor gnb-util-kla-swap" href="void(0);" onclick="alert('Token swap is not available yet. Please try again during the swap period.');return false;">
+            TOKEN SWAP
+           </a>
+          </li>
+          <!-- 20181225 : [S] -->
+          <li class="gnb-util__item" role="menuitem">
+           <a class="gnb-util__anchor" href="/user/login">
+            SIGN IN
+           </a>
+          </li>
+          <!-- 
+            <li class="gnb-util__item" role="menuitem">
+              <a href="/user/signUp" class="gnb-util__anchor">SIGN UP</a>
+            </li>
+             -->
+          <!-- 20181225 : [E] -->
+          <li class="gnb-util__item" role="menuitem">
+           <a class="gnb-util__anchor gnb-util__anchor--language js-language-menu" href="#none">
+            ENG
+           </a>
+           <div class="gnb-util__language">
+            <ul class="gnb-util__language-itembox">
+             <li class="gnb-util__language-item">
+              <a class="gnb-util__language-anchor" href="?lang=kor">
+               한국어
+              </a>
+             </li>
+             <!-- 현재 언어 페이지 일때 is-selected class 추가 -->
+             <li class="gnb-util__language-item">
+              <a class="gnb-util__language-anchor is-selected" href="?lang=en">
+               ENGLISH
+              </a>
+             </li>
+            </ul>
+           </div>
+          </li>
+         </ul>
+        </nav>
+       </div>
+       <!-- gnb-util__container//end -->
+      </div>
+      <!-- gnb-util//end -->
+     </div>
+     <!-- gnb-container//end -->
+    </header>
+    <!-- HEADER : [E] -->
+    <section class="content-container">
+     <!-- 20190319 : [S] -->
+     <article class="main-board js-scroll-item">
+      <div class="main-board__container js-carousel-main">
+       <div class="main-board__itembox js-carousel__screen">
+        <div class="main-board__item js-carousel__list">
+         <div class="main-board__text">
+          <strong class="main-board__text-title">
+           Freedom of Time! Freedom of Location!
+           <br/>
+           You can sing and Listen with no limits.
+          </strong>
+          <p class="main-board__text-desc">
+           365days 24hours Free | Over 40,000 songs Free | Everyday New Songs offering
+           <br/>
+           Social Music Service based on BLOCKCHAIN TECHNOLOGY
+          </p>
+         </div>
+         <div class="main-board__image">
+          <img alt="" class="main-board__image-bg" src="/web/eng/assets/img/img-main-board1.jpg"/>
+         </div>
+        </div>
+        <!-- main-board__item//end -->
+        <div class="main-board__item js-carousel__list">
+         <div class="main-board__text">
+          <strong class="main-board__text-title">
+           You have personal studio
+           <br/>
+           in your hands.
+           <br/>
+           Mix up and create your own songs!
+          </strong>
+          <p class="main-board__text-desc">
+           Social Music Service based on BLOCKCHAIN TECHNOLOGY
+          </p>
+         </div>
+         <div class="main-board__image">
+          <img alt="" class="main-board__image-bg" src="/web/eng/assets/img/img-main-board2.jpg"/>
+         </div>
+        </div>
+        <!-- main-board__item//end -->
+        <div class="main-board__item js-carousel__list">
+         <div class="main-board__text">
+          <strong class="main-board__text-title">
+           Share your music!
+           <br/>
+           People all around the world will applause
+           <br/>
+           and encourage you.
+          </strong>
+          <p class="main-board__text-desc">
+           Social Music Service based on BLOCKCHAIN TECHNOLOGY
+          </p>
+         </div>
+         <div class="main-board__image">
+          <img alt="" class="main-board__image-bg" src="/web/eng/assets/img/img-main-board3.jpg"/>
+         </div>
+        </div>
+        <!-- main-board__item//end -->
+        <div class="main-board__item js-carousel__list">
+         <div class="main-board__text">
+          <strong class="main-board__text-title">
+           You will be popular with your music
+           <br/>
+           in demand, and the profit and recognition
+           <br/>
+           will naturally follow.
+          </strong>
+          <p class="main-board__text-desc">
+           Social Music Service based on BLOCKCHAIN TECHNOLOGY
+          </p>
+         </div>
+         <div class="main-board__image">
+          <img alt="" class="main-board__image-bg" src="/web/eng/assets/img/img-main-board4.jpg"/>
+         </div>
+        </div>
+        <!-- main-board__item//end -->
+       </div>
+       <!-- main-board__itembox//end -->
+       <div class="main-board__indicator js-carousel__indicator">
+       </div>
+      </div>
+      <!-- main-board__live//end -->
+      <div class="main-board__download">
+       <div class="download-language">
+        <p class="download-language__caption">
+         White Paper Download
+        </p>
+        <div class="download-language__filebox">
+         <span class="download-language__file js-download-language">
+          <span class="download-language__file-type js-file-text">
+           ENG
+          </span>
+         </span>
+         <a class="btn-download js-target-href" href="/global/assets/file/SOMESING_whitepaper_en.pdf" target="_blank">
+          DOWNLOAD
+         </a>
+         <div class="download-language__list">
+          <ul class="download-language__itembox">
+           <li class="download-language__item">
+            <a class="download-language__anchor js-download-file" href="/global/assets/file/SOMESING_whitepaper_kr.pdf">
+             한국어
+            </a>
+           </li>
+           <li class="download-language__item">
+            <a class="download-language__anchor js-download-file is-selected" href="/global/assets/file/SOMESING_whitepaper_en.pdf">
+             ENGLISH
+            </a>
+           </li>
+           <!-- 현재 언어 페이지 일때 is-selected class 추가 -->
+           <li class="download-language__item">
+            <a class="download-language__anchor js-download-file" href="/global/assets/file/SOMESING_whitepaper_jp.pdf">
+             日本語
+            </a>
+           </li>
+           <li class="download-language__item">
+            <a class="download-language__anchor js-download-file" href="/global/assets/file/SOMESING_whitepaper_ch.pdf">
+             中國語
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <!-- download-language__filebox//end -->
+       </div>
+       <!-- download-language//end -->
+      </div>
+      <!-- main-board__download//end -->
+     </article>
+     <!-- 20190303 : [E] -->
+     <!-- 20190105 : [S] -->
+     <article class="main-billboard js-fixed-board">
+      <div class="billboard-container">
+       <div class="main-billboard__sns col-6">
+        <div class="main-sns__header">
+         <h3 class="main-sns__header-heading heading heading--main5">
+          SOMESING CHANNEL
+         </h3>
+        </div>
+        <!-- main-sns__header//end -->
+        <ul class="main-sns__listbox">
+         <li class="main-sns__item main-sns__item--telegram">
+          <a class="btn-share btn-share--telegram" href="#none">
+           TELEGRAM
+          </a>
+          <div class="sns-link sns-link--telegram">
+           <div class="sns-link__header">
+            <h4 class="sns-link__header-heading">
+             Teleglam
+            </h4>
+           </div>
+           <ul class="sns-link__itembox">
+            <li class="sns-link__item">
+             <a class="btn btn-default sns-link__anchor" href="https://t.me/somesinglovers_EN" target="_blank">
+              Group
+             </a>
+            </li>
+            <li class="sns-link__item">
+             <a class="btn btn-default sns-link__anchor" href="https://t.me/somesing_Notice" target="_blank">
+              Channel
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="main-sns__item">
+          <a class="btn-share btn-share--kakao" href="https://pf.kakao.com/_txoPDT" target="_blank">
+           KAKAO TALK
+          </a>
+         </li>
+         <li class="main-sns__item">
+          <a class="btn-share btn-share--youtube" href="https://www.youtube.com/channel/UCrR-v-FQ7tDZntlqz5sbCrw" target="_blank">
+           YOUTUBE
+          </a>
+         </li>
+         <li class="main-sns__item">
+          <a class="btn-share btn-share--medium" href="https://medium.com/@singlovers" target="_blank">
+           MEDIUM
+          </a>
+         </li>
+        </ul>
+       </div>
+       <!-- main-billboard__sns//end -->
+       <div class="main-billboard__ico col-6">
+        <div class="main-ico__header">
+         <h3 class="main-ico__header-heading heading heading--main5">
+          Xangle Disclosure
+         </h3>
+        </div>
+        <div class="main-xangle">
+         <a class="billboard-xangle" href="https://xangle.io/project/SSX/full-disclosure" target="_blank">
+          <span class="billboard-caption-title-image">
+           <img alt="Xangle" src="/global/assets/img/img-xangle-trans.png"/>
+          </span>
+         </a>
+        </div>
+       </div>
+       <!-- main-billboard__ico//end -->
+      </div>
+      <!-- billboard-container//end -->
+     </article>
+     <!-- 20190105 : [E] -->
+     <!-- 20181219 : 판매 Start : [E] -->
+     <article class="main-alliance js-scroll-item">
+      <div class="alliance-container">
+       <div class="alliance-header">
+        <h3 class="alliance-header__heading heading heading--main1">
+         Klaytn Mainnet :
+         <span style="text-transform: capitalize;">
+          Cypress
+         </span>
+        </h3>
+        <p class="alliance-header__desc">
+         Klaytn is a public blockchain platform of Ground X
+        </p>
+       </div>
+       <!-- alliance-header//end -->
+       <div class="alliance-info">
+        <div class="alliance-info__thumbnail">
+         <img alt="SOMESING, as one of the official DApps on Klaytn, is making a significant contribution to the birth of a whole new era of blockchain." class="alliance-info__thumbnail-image" src="/web/eng/assets/img/img-main-alliance.png"/>
+        </div>
+       </div>
+       <!-- alliance-info//end -->
+      </div>
+      <!-- alliance-container//end -->
+     </article>
+     <article class="main-about js-scroll-item" id="main-about">
+      <div class="about-bg">
+       <div class="about-bg__image">
+        <div class="about-bg__thumbnail">
+         <img alt="" class="about-bg__thumbnail-image" src="/web/eng/assets/img/bg-about-service.png"/>
+        </div>
+       </div>
+      </div>
+      <div class="about-container">
+       <div class="about-service">
+        <!-- 20181020 : [S] -->
+        <div class="about-header">
+         <h3 class="about-header__heading heading heading--main6">
+          What is SOMESING?
+         </h3>
+         <p class="about-header__desc">
+          WORLD’S FIRST
+          <br/>
+          KARAOKE SERVICE
+          <br/>
+          ON BLOCKCHAIN
+         </p>
+        </div>
+        <!-- about-header//end -->
+        <div class="about-list">
+         <ul class="about-list__itembox">
+          <li class="about-list__item">
+           <div class="about-list__caption">
+            <strong class="about-list__caption-title">
+             New songs added daily basis
+            </strong>
+           </div>
+          </li>
+          <li class="about-list__item">
+           <div class="about-list__caption">
+            <strong class="about-list__caption-title">
+             Professional studio-grade recording system
+            </strong>
+           </div>
+          </li>
+          <li class="about-list__item">
+           <div class="about-list__caption">
+            <strong class="about-list__caption-title">
+             Music social network enjoyed by global audiences
+            </strong>
+           </div>
+          </li>
+         </ul>
+        </div>
+        <!-- about-list//end -->
+        <div class="about-app">
+         <div class="app-container">
+          <div class="app-header">
+           <h4 class="app-header__heading heading heading--main7">
+            Sing with SOMESING
+            <br/>
+            Application, NOW!
+           </h4>
+           <p class="app-header__desc">
+            Download the free app for iOS &amp; Android devices.
+           </p>
+          </div>
+          <!-- app-header//end -->
+          <div class="btn-group btn-group--app">
+           <div class="btn-group--app__qrcode">
+            <img alt="QR CODE" src="/web/eng/assets/img/img-qr-code-160x160.jpg"/>
+           </div>
+           <!-- 20190314 -->
+           <a class="btn btn-google" href="#none">
+            GOOGLE PLAY
+           </a>
+          </div>
+          <!-- btn-group//end -->
+         </div>
+         <!-- app-container//end -->
+        </div>
+        <!-- about-app//end -->
+       </div>
+       <!-- about-service//end -->
+       <div class="about-movie">
+        <div class="movie-header">
+         <h4 class="movie-header__heading heading heading--main8">
+          MOVIE about SOMESING
+         </h4>
+        </div>
+        <!-- movie-header//end -->
+        <div class="movie-container movie-container--wide">
+         <div class="movie-list js-movie-list js-carousel-dual" data-slides-to-scroll="4">
+          <ul class="movie-list__itembox js-carousel-dual__screen">
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/uGKfiHQXx9A?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X D'Live청춘스튜디오] 내가부른 노래영상이 방송으로~ 24H OPEN!!" class="movie-list__thumbnail-image" src="/upload/feed/fd/59mvlnk1/zds31594269881180.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X D'Live청춘스튜디오] 내가부른 노래영상이 방송으로~ 24H OPEN!!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/V_fSofePCrg?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X SL Studio] 2차 오디션 현장 공개! 기회는 잡아야 내꺼❤" class="movie-list__thumbnail-image" src="/upload/feed/tc/h81leto1/yc161594269788145.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X SL Studio] 2차 오디션 현장 공개! 기회는 잡아야 내꺼❤
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/aENHgU-TxBc?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽]코노 안가도 노래 가능! 장소,시간 불문! 맘껏 부르자!" class="movie-list__thumbnail-image" src="/upload/feed/ma/od7o4gvd/4tpv1591949249511.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽]코노 안가도 노래 가능! 장소,시간 불문! 맘껏 부르자!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/5MDNOtG2yJk?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt='[SOMESING 썸씽]코로나 극복 릴레이 응원 캠페인 "거리는 잠시 두고 마음은 가까이, 서로에게 응원을 전해보세요!' class="movie-list__thumbnail-image" src="/upload/feed/gd/v7c3ksq5/ileq1589269995338.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽]코로나 극복 릴레이 응원 캠페인 "거리는 잠시 두고 마음은 가까이, 서로에게 응원을 전해보세요!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/5xvCUGCODVQ?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X연규성의라이브쇼] 사랑하기 딱 2cm 전 '민서&amp;폴킴'의 '2cm' " class="movie-list__thumbnail-image" src="/upload/feed/kv/7le8t641/iszt1579756816302.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X연규성의라이브쇼] 사랑하기 딱 2cm 전 '민서&amp;폴킴'의 '2cm'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/6SPxto5kJjg?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의라이브쇼]크리스마스이브에 듣기 좋은 'Michael Buble'의 'All of Me' " class="movie-list__thumbnail-image" src="/upload/feed/qs/c5gusb0p/eks31579756270251.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의라이브쇼]크리스마스이브에 듣기 좋은 'Michael Buble'의 'All of Me'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/gMxTmZ-wgLQ?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의라이브쇼]이놈의 술이 웬수라서 니가 자꾸 여자로 보여@.@ '윤딴딴'의 '술이 웬수라서' " class="movie-list__thumbnail-image" src="/upload/feed/kj/15lguyd6/0hpg1579756125100.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의라이브쇼]이놈의 술이 웬수라서 니가 자꾸 여자로 보여@.@ '윤딴딴'의 '술이 웬수라서'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/IlfbhVeN1_4?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING x 연규성의라이브쇼]듀엣 케미 뿜뿜!! '한동근&amp;최효인'의 '스물다섯, 스물하나'" class="movie-list__thumbnail-image" src="/upload/feed/xv/8z6as6yx/1afs1579755791444.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING x 연규성의라이브쇼]듀엣 케미 뿜뿜!! '한동근&amp;최효인'의 '스물다섯, 스물하나'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/XeJVhy-9NyU?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의라이브쇼] 마! 느그 신청곡 받아봤나? 'Jessi J'의 'Thunder', '안예은'의 '상사화' &amp; 신청곡 '한영애'의 '누구없소'" class="movie-list__thumbnail-image" src="/upload/feed/ss/3rjtk993/sx0b1574071947946.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의라이브쇼] 마! 느그 신청곡 받아봤나? 'Jessi J'의 'Thunder', '안예은'의 '상사화' &amp; 신청곡 '한영애'의 '누구없소'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/v-m1cRQNYZc?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의라이브쇼] '장범준'의 '흔들리는꽃들속에서네샴푸향이느껴진거야' &amp; '박효신'의 'Home'" class="movie-list__thumbnail-image" src="/upload/feed/hm/svodkyyr/g24c1574071645346.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의라이브쇼] '장범준'의 '흔들리는꽃들속에서네샴푸향이느껴진거야' &amp; '박효신'의 'Home'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/U1fU7-W4eIY?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의라이브쇼] '숀(SHAUN)의 습관(Bad Habits)' &amp; 'Sam Smith의 I'm Not The Only One'" class="movie-list__thumbnail-image" src="/upload/feed/cd/q9risurt/hm861574071468212.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의라이브쇼] '숀(SHAUN)의 습관(Bad Habits)' &amp; 'Sam Smith의 I'm Not The Only One'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/wWzEJnOaTBo?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 트러블메이커(현아,장현승) - Trouble Maker" class="movie-list__thumbnail-image" src="/upload/feed/xk/haghfqvk/8aj61574071197192.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 트러블메이커(현아,장현승) - Trouble Maker
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/FCQ2vA7iCxE?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]오디션프로 3관왕! 'BMK'의 '물들어'를 2키 올려서? 현장에서 듣다가 내 귀 천국 가는줄!" class="movie-list__thumbnail-image" src="/upload/feed/ko/x6k411d4/0pdo1572329423916.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]오디션프로 3관왕! 'BMK'의 '물들어'를 2키 올려서? 현장에서 듣다가 내 귀 천국 가는줄!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/na0ZsP1PMOM?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼] '끼'라는 것이 폭발한다! 무대를 휘어잡음!! '윙크'의 '얼쑤', '홍진영'의 '오늘밤에'" class="movie-list__thumbnail-image" src="/upload/feed/gy/pe4jci8d/t55j1572329336840.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼] '끼'라는 것이 폭발한다! 무대를 휘어잡음!! '윙크'의 '얼쑤', '홍진영'의 '오늘밤에'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/kroHqudQbzo?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]혼자서도 잘해요! 둘이면 더 잘해요!! '아이유'의 '있잖아', '폴킴'의 '허전해, '휘성&amp;거미'의 'Special Love'" class="movie-list__thumbnail-image" src="/upload/feed/nk/9v2bldsm/mc3s1572329204470.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]혼자서도 잘해요! 둘이면 더 잘해요!! '아이유'의 '있잖아', '폴킴'의 '허전해, '휘성&amp;거미'의 'Special Love'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/8Dz24a87JcI?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]성지순례 오세요!글로벌 아이돌 데뷔각~ '김동률'의 '오래된노래', 'John legend'의 'All of me'" class="movie-list__thumbnail-image" src="/upload/feed/hy/ntcardga/2wmw1572329052327.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]성지순례 오세요!글로벌 아이돌 데뷔각~ '김동률'의 '오래된노래', 'John legend'의 'All of me'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/WYcGl-RbfKE?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]수줍은 소울이 터진다. 안듣고 가시려구?? '이하이'의 '희망고문, '정인'의 '위로'" class="movie-list__thumbnail-image" src="/upload/feed/vy/4d6r1k0b/0uib1572328946817.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]수줍은 소울이 터진다. 안듣고 가시려구?? '이하이'의 '희망고문, '정인'의 '위로'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/Wwb1nA0RjLQ?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]음색 미친 갓반인 등장 'Anne-Marie'의 '2002' &amp; '볼빨간사춘기'의 '워커홀릭'!!" class="movie-list__thumbnail-image" src="/upload/feed/uk/ddmmsrip/90yk1570762226578.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]음색 미친 갓반인 등장 'Anne-Marie'의 '2002' &amp; '볼빨간사춘기'의 '워커홀릭'!!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/ZDiCdbS1xRs?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]멜빵바지에서 나오는 파워쏘울! 'Lady Gaga'의 'I'll never love again'" class="movie-list__thumbnail-image" src="/upload/feed/vn/ooo849ce/az281569585691993.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]멜빵바지에서 나오는 파워쏘울! 'Lady Gaga'의 'I'll never love again'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/ULC59Uhj65Y?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼]폭발고음에광광 '임재현'의 '사랑에 연습이 있었다면'" class="movie-list__thumbnail-image" src="/upload/feed/dd/1kkg4qmd/5onn1569585369127.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼]폭발고음에광광 '임재현'의 '사랑에 연습이 있었다면'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/oUq75tfK8a8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING X 연규성의 라이브쇼] 첫회부터 데뷔각!? 체육선생님이 부르는 포맨(4MEN) Baby Baby!!" class="movie-list__thumbnail-image" src="/upload/feed/kb/m4c83kob/pj041569585166085.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING X 연규성의 라이브쇼] 첫회부터 데뷔각!? 체육선생님이 부르는 포맨(4MEN) Baby Baby!!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/HswYgTwnX9c?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 신혜성, 린 - 사랑후에 (Covered by 뮤직비디오 주인공도 울고 갈 연기까지 되는 carry &amp; 별하님)" class="movie-list__thumbnail-image" src="/upload/feed/lu/rurcb7kw/0hge1569307197879.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 신혜성, 린 - 사랑후에 (Covered by 뮤직비디오 주인공도 울고 갈 연기까지 되는 carry &amp; 별하님)
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/OAUav89opZU?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 내일은 썸씽트롯! 어깨가 썸씽썸씽 : )" class="movie-list__thumbnail-image" src="/upload/feed/is/x9vbl49n/k1y21565059834594.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 내일은 썸씽트롯! 어깨가 썸씽썸씽 : )
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/NBMpgsv8yFc?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING's 1st User Concert - 썸씽 듀엣 가요제] 유저들의 라이브 개봉박두!!!" class="movie-list__thumbnail-image" src="/upload/feed/qp/3khmg0we/ufzw1563527149922.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING's 1st User Concert - 썸씽 듀엣 가요제] 유저들의 라이브 개봉박두!!!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/lUyXPzWGJ7A?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING's 1st User Concert - 썸씽 듀엣 가요제] 유저들의 라이브 대결!" class="movie-list__thumbnail-image" src="/upload/feed/aw/wg4v9u66/y6fk1563329442457.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING's 1st User Concert - 썸씽 듀엣 가요제] 유저들의 라이브 대결!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/wQVVy-bOI2A?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING's 1st User Concert] Shallow - covered by 연규성 &amp; oksusu" class="movie-list__thumbnail-image" src="/upload/feed/gd/k5xt90tx/n07w1563329350979.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING's 1st User Concert] Shallow - covered by 연규성 &amp; oksusu
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/QFZflYQyjQw?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] Naomi Scott - Speechless" class="movie-list__thumbnail-image" src="/upload/feed/qj/prr0ytaq/y13b1563328269649.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] Naomi Scott - Speechless
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/MY8bJnVtyJ4?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 90년대 댄스곡 메들리! 추억의 디스코 팡팡!!" class="movie-list__thumbnail-image" src="/upload/feed/gt/wpolb385/ue9n1562652333069.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 90년대 댄스곡 메들리! 추억의 디스코 팡팡!!
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/PAyc__ruZoA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 오페라의 유령 - The phantom of the opera" class="movie-list__thumbnail-image" src="/upload/feed/fe/8j3xfgw6/d7tc1561706341440.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 오페라의 유령 - The phantom of the opera
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/oa9rOH1vkIA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 유해준 - '나에게 그대만이(다함께차차차OST)'" class="movie-list__thumbnail-image" src="/upload/feed/st/tmkfij1z/45fl1560822170003.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 유해준 - '나에게 그대만이(다함께차차차OST)'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/E6eqxVkcuWA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 이승철 - '인연(불새OST)'" class="movie-list__thumbnail-image" src="/upload/feed/fy/wk09ldjr/19k61560391427560.JPG"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 이승철 - '인연(불새OST)'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/_yGvwfDSYaY?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 이승철 - '말리꽃' (covered by Matsuoka)" class="movie-list__thumbnail-image" src="/upload/feed/pi/fq89s0au/a9401557743113912.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 이승철 - '말리꽃' (covered by Matsuoka)
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/BuVbKkTaj_w?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 구윤회, 마크툽 - 'Marry Me'" class="movie-list__thumbnail-image" src="/upload/feed/ia/ck6o6hmc/e8w21557743145863.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 구윤회, 마크툽 - 'Marry Me'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/6Xmoa7CBcj8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 서인국, 정은지 - 'All For You(응답하라1997 ost)'" class="movie-list__thumbnail-image" src="/upload/feed/iz/wmadu6r9/9xml1557743156531.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 서인국, 정은지 - 'All For You(응답하라1997 ost)'
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/bUZm3Kj59R8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING 썸씽] 걸그룹 전 스텔라 멤버 소영님의 축하메세지" class="movie-list__thumbnail-image" src="/upload/feed/qm/h9u2vh5l/kq411557743168846.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING 썸씽] 걸그룹 전 스텔라 멤버 소영님의 축하메세지
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/4BBzTaDotnM?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING APP] 서인국&amp;정은지 - All For You(응답하라1997 OST)" class="movie-list__thumbnail-image" src="/upload/feed/eb/v45foxes/nrfk1551776609578.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING APP] 서인국&amp;정은지 - All For You(응답하라1997 OST)
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/U-pCUNvWHtQ?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING APP] 가수, 보이그룹 알파벳(AlphaBAT)의 축하메세지" class="movie-list__thumbnail-image" src="/upload/feed/xw/zhjaiyct/a2ct1551776621273.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING APP] 가수, 보이그룹 알파벳(AlphaBAT)의 축하메세지
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/RLQuXKebPS8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING APP] 크러쉬(Crush) - Beautiful" class="movie-list__thumbnail-image" src="/upload/feed/nf/tltlt6mi/nwhh1551693077257.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING APP] 크러쉬(Crush) - Beautiful
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/CJMCF99Nax4?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING APP] 소유(SOYOU) - I Miss You [도깨비 OST]" class="movie-list__thumbnail-image" src="/upload/feed/wd/qhoelvj7/zwbp1551691033082.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING APP] 소유(SOYOU) - I Miss You [도깨비 OST]
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/uU_K83wbpL0?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING APP] 빅뱅(Bigbang) - If you" class="movie-list__thumbnail-image" src="/upload/feed/hn/imgsb2wv/ezkx1551690959841.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING APP] 빅뱅(Bigbang) - If you
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/arz528HxaFA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING APP] 손승연 - 보란듯이 (Feat. 앤덥)" class="movie-list__thumbnail-image" src="/upload/feed/pj/hrif5go7/p62i1551690562219.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING APP] 손승연 - 보란듯이 (Feat. 앤덥)
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/2I7JX0ekP9A?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="ABOUT SOMESING SERVICE" class="movie-list__thumbnail-image" src="/upload/feed/qa/pn75tmca/riia1551690035053.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               ABOUT SOMESING SERVICE
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/Q7t3b78vpX0?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING] Sign Up Membership Guide" class="movie-list__thumbnail-image" src="/upload/feed/mu/bi1sqqlm/qz0x1551162315241.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING] Sign Up Membership Guide
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+           <li class="movie-list__item">
+            <a class="movie-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/jVz2DWhTISU?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-main-video">
+             <div class="movie-list__image">
+              <div class="movie-list__thumbnail">
+               <img alt="[SOMESING] KYC Guide" class="movie-list__thumbnail-image" src="/upload/feed/cq/mwbv57zv/r2o01551162229330.jpg"/>
+              </div>
+             </div>
+             <!-- movie-ist__image//end -->
+             <div class="movie-list__caption">
+              <p class="movie-list__caption-title">
+               [SOMESING] KYC Guide
+              </p>
+             </div>
+             <!-- movie-list__caption//end -->
+            </a>
+           </li>
+          </ul>
+          <!-- movie-list__itembox//end -->
+          <div class="movie-list__controller">
+           <button class="movie-list__btn movie-list__btn--prev js-carousel-dual__btn--prev" title="Prev Slide" type="button">
+            Prev Slide
+           </button>
+           <button class="movie-list__btn movie-list__btn--next js-carousel-dual__btn--next" title="Next Slide" type="button">
+            Next Slide
+           </button>
+          </div>
+          <!-- movie-list__controller//end -->
+         </div>
+         <!-- movie-list//end -->
+        </div>
+        <!-- movie-container//end -->
+       </div>
+       <!-- about-movie//end -->
+      </div>
+      <!-- about-container//end -->
+     </article>
+     <article class="main-system js-scroll-item">
+      <div class="system-container">
+       <div class="system-header">
+        <h3 class="system-header__heading heading heading--main1">
+         SOMESING Ecosystem
+        </h3>
+        <p class="system-header__desc">
+         Each stakeholder voluntarily enters SOMESING’s ecosystem to serve themselves participating in making profits, and the ecosystem grows
+         <br/>
+         by those entrants and participants based on their growth of activities, which create the overall virtuous cycle in the ecosystem
+        </p>
+        <!-- 20181027 -->
+       </div>
+       <!-- system-header//end -->
+       <div class="system-step">
+        <div class="system-step__thumbnail">
+         <img alt="SOMESING Ecosystem Step - Pratner, User Pay Free User Get 70%, SOMESING + ACCOMPANIMENTGet 30%, Invester, Virtuous circle of SOMESING Ecosystem" class="system-step__thumbnail-image" src="/web/eng/assets/img/img-main-system.png"/>
+        </div>
+        <!-- 20181020 -->
+       </div>
+       <!-- system-step//end -->
+      </div>
+      <!-- system-container//end -->
+     </article>
+     <article class="main-flow js-scroll-item">
+      <div class="flow-conatiner">
+       <div class="flow-header">
+        <h3 class="flow-header__heading heading heading--main2">
+         User &amp; Service Flow
+        </h3>
+        <!-- 20181027 -->
+        <p class="flow-header__desc">
+         The ecosystem of SOMESING is designed in a way that the SingLovers receive their fair share of profit based on our effort of
+         <br/>
+         designing the promotions and events. (e.g. Fans’ gifts, supports, and other various collaborations of communities and events)
+        </p>
+        <!-- 20181027 -->
+       </div>
+       <!-- flow-header//end -->
+       <div class="flow-step">
+        <div class="flow-step__image">
+         <div class="flow-step__thumbnail">
+          <img alt="User &amp; Service Step" class="flow-step__thumbnail-image" src="/web/eng/assets/img/img-main-flow.png"/>
+         </div>
+        </div>
+       </div>
+       <!-- flow-step//end -->
+      </div>
+      <!-- flow-contaniner//end -->
+     </article>
+     <!-- 20190105 : [S] -->
+     <article class="main-team js-scroll-item" id="main-team">
+      <div class="team-header">
+       <h3 class="team-header__heading heading heading--main1">
+        SOMESING Team
+       </h3>
+       <p class="team-header__desc">
+        We're a team of experts and specialists creating the very first Karaoke service
+        <br/>
+        empowered by blockchain technology.
+       </p>
+      </div>
+      <!-- team-header//end -->
+      <!-- 20190331 : [S] -->
+      <div class="team-container team-container--wide">
+       <div class="team-name">
+        <h4 class="team-name__heading">
+         Core Members
+        </h4>
+       </div>
+       <!-- team-name//end -->
+       <div class="team-list js-team-list js-carousel-dual" data-slides-to-scroll="4">
+        <ul class="team-list__itembox js-carousel-dual__screen">
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-hbk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Heuibae Kim
+           </p>
+           <p class="team-list__caption-level">
+            CEO &amp; Founder
+           </p>
+           <p class="team-list__caption-job">
+            General Planning and Operation
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-hky.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Hyunkeun Yoon
+           </p>
+           <p class="team-list__caption-level">
+            COO
+           </p>
+           <p class="team-list__caption-job">
+            LG Fashion HR Manager
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-kyk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Kyle Kim
+           </p>
+           <p class="team-list__caption-level">
+            CSO
+           </p>
+           <p class="team-list__caption-job">
+            IconLoop Consulting Director
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-thr.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Taehee Ryu
+           </p>
+           <p class="team-list__caption-level">
+            CBDO
+           </p>
+           <p class="team-list__caption-job">
+            EMC/Adobe Account Manager
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-jk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Jason Kim
+           </p>
+           <p class="team-list__caption-level">
+            CGBO
+           </p>
+           <p class="team-list__caption-job">
+            Director of Marketing SIEC College, Australia
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-jhc.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Jaehoon Chang
+           </p>
+           <p class="team-list__caption-level">
+            CTO
+           </p>
+           <p class="team-list__caption-job">
+            Infraware R&amp;D Team Leader
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-hsc.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Heeseok Choi
+           </p>
+           <p class="team-list__caption-level">
+            CPDO
+           </p>
+           <p class="team-list__caption-job">
+            PENTABREED UI/UX DIRECTOR
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-jhh.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            JunHee Han
+           </p>
+           <p class="team-list__caption-level">
+            Blockchain Developer
+           </p>
+           <p class="team-list__caption-job">
+            BitorGroup General Manager
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-wis.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Wonil Seo
+           </p>
+           <p class="team-list__caption-level">
+            Lead Server Developer
+           </p>
+           <p class="team-list__caption-job">
+            Infraware FR Dev. Team
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-da.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Doug Ahn
+           </p>
+           <p class="team-list__caption-level">
+            CVO
+           </p>
+           <p class="team-list__caption-job">
+            Former Dialpad CEO
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-dws.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Dongwook Shin
+           </p>
+           <p class="team-list__caption-level">
+            Lead Server Developer
+           </p>
+           <p class="team-list__caption-job">
+            Infraware TT Dev. Team
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-mhk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Mihee Kim
+           </p>
+           <p class="team-list__caption-level">
+            Senior Server Developer
+           </p>
+           <p class="team-list__caption-job">
+            Infraware TT Dev. Team
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-sml.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Seungmi Lee
+           </p>
+           <p class="team-list__caption-level">
+            Lead Client Developer
+           </p>
+           <p class="team-list__caption-job">
+            SOFTSEED Sw Dev. / CEO
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-ekk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Eunkyoung Kim
+           </p>
+           <p class="team-list__caption-level">
+            Senior Client Developer
+           </p>
+           <p class="team-list__caption-job">
+            SOFTSEED Dev. Team  Manager
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-mjk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Miju Kim
+           </p>
+           <p class="team-list__caption-level">
+            Senior Client Developer
+           </p>
+           <p class="team-list__caption-job">
+            SOFTSEED  SW Dev.
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-jel.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Jungeun Lee
+           </p>
+           <p class="team-list__caption-level">
+            Senior Client Developer
+           </p>
+           <p class="team-list__caption-job">
+            Infraware
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-srk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Sungryung Ko
+           </p>
+           <p class="team-list__caption-level">
+            UI/UX Designer
+           </p>
+           <p class="team-list__caption-job">
+            PENTABREED Platform Designer
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-hyo.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Hyeyoung Oh
+           </p>
+           <p class="team-list__caption-level">
+            UI/UX Designer
+           </p>
+           <p class="team-list__caption-job">
+            PENTABREED Platform Designer
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-hjj.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Heejun Je
+           </p>
+           <p class="team-list__caption-level">
+            Product Designer
+           </p>
+           <p class="team-list__caption-job">
+            PENTABREED UI/UX Leader
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-cyb.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Chaeyoon Bae
+           </p>
+           <p class="team-list__caption-level">
+            Product Designer
+           </p>
+           <p class="team-list__caption-job">
+            line.games Designer
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-kky.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            KyungKeun Yoon
+           </p>
+           <p class="team-list__caption-level">
+            Product Designer
+           </p>
+           <p class="team-list__caption-job">
+            Hongik-Univ. Master of Design
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-msl.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Myungsu Lee
+           </p>
+           <p class="team-list__caption-level">
+            Japan Business Manager
+           </p>
+           <p class="team-list__caption-job">
+            HI Corp.Business Dev.Team
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-harp.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Haearum Park
+           </p>
+           <p class="team-list__caption-level">
+            Global Biz
+           </p>
+           <p class="team-list__caption-job">
+            Chinese Language Instructor
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-khk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            kunhee Ko
+           </p>
+           <p class="team-list__caption-level">
+            Communication Manager
+           </p>
+           <p class="team-list__caption-job">
+            IMAGINATION PLANT Designer
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+         <li class="team-list__item">
+          <div class="team-list__image">
+           <div class="team-list__thumbnail">
+            <img alt="" class="team-list__thumbnail-image" src="/global/assets/img/img-team-core-list-hjk.jpg"/>
+           </div>
+          </div>
+          <!-- team-list__image//end -->
+          <div class="team-list__caption">
+           <p class="team-list__caption-name">
+            Heejung Kim
+           </p>
+           <p class="team-list__caption-level">
+            BM Team / Manager
+           </p>
+           <p class="team-list__caption-job">
+            CTS BM Manager
+           </p>
+          </div>
+          <!-- team-list__caption//end -->
+         </li>
+         <!-- team-list__item//end -->
+        </ul>
+        <!-- team-list__itembox//end -->
+        <div class="team-list__controller">
+         <button class="team-list__btn team-list__btn--prev js-carousel-dual__btn--prev" title="Prev Slide" type="button">
+          Prev Slide
+         </button>
+         <button class="team-list__btn team-list__btn--next js-carousel-dual__btn--next" title="Next Slide" type="button">
+          Next Slide
+         </button>
+        </div>
+        <!-- team-list__controller//end -->
+       </div>
+       <!-- team-list//end -->
+      </div>
+      <!-- team-container//end -->
+      <!-- 20190331 : [E] -->
+     </article>
+     <article class="main-download js-scroll-item" id="main-download">
+      <div class="download-container">
+       <div class="download-header">
+        <h3 class="download-header__heading heading heading--main4">
+         White Paper Download
+        </h3>
+        <p class="download-header__desc">
+         Select the language of the WHITE PAPER you want to download and download it.
+        </p>
+       </div>
+       <!-- download-header//end -->
+       <div class="download-list">
+        <div class="download-language">
+         <div class="download-language__filebox">
+          <span class="download-language__file js-download-language">
+           <span class="download-language__file-type js-file-text">
+            ENG
+           </span>
+          </span>
+          <a class="btn-download js-target-href" href="/global/assets/file/SOMESING_whitepaper_en.pdf" target="_blank">
+           DOWNLOAD
+          </a>
+          <div class="download-language__list">
+           <ul class="download-language__itembox">
+            <li class="download-language__item">
+             <a class="download-language__anchor js-download-file" href="/global/assets/file/SOMESING_whitepaper_kr.pdf">
+              한국어
+             </a>
+            </li>
+            <li class="download-language__item">
+             <a class="download-language__anchor js-download-file is-selected" href="/global/assets/file/SOMESING_whitepaper_en.pdf">
+              ENGLISH
+             </a>
+            </li>
+            <!-- 현재 언어 페이지 일때 is-selected class 추가 -->
+            <li class="download-language__item">
+             <a class="download-language__anchor js-download-file" href="/global/assets/file/SOMESING_whitepaper_jp.pdf">
+              日本語
+             </a>
+            </li>
+            <li class="download-language__item">
+             <a class="download-language__anchor js-download-file" href="/global/assets/file/SOMESING_whitepaper_ch.pdf">
+              中國語
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <!-- download-language__filebox//end -->
+        </div>
+        <!-- download-language//end -->
+       </div>
+       <!-- download-list//end -->
+      </div>
+      <!-- download-container//end -->
+     </article>
+     <!-- 20190128 : [S] -->
+     <article class="main-partners js-scroll-item">
+      <div class="partners-container">
+       <div class="partners-header">
+        <h3 class="partners-header__heading heading heading--main1">
+         our Partners
+        </h3>
+       </div>
+       <!-- 20190331-header//end -->
+       <!-- 20190324 : [S] -->
+       <div class="partners-list">
+        <ul class="partners-list__itembox">
+         <li class="partners-list__item">
+          <a class="partners-list__anchor" href="https://xangle.io" target="_blank">
+           <div class="partners-list__image">
+            <div class="partners-list__thumbnail">
+             <img alt="Xangle" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-xa.png"/>
+            </div>
+           </div>
+           <div class="partners-list__caption">
+            <div class="partners-list__caption-inner">
+             <strong class="partners-list__caption-title">
+              Xangle
+             </strong>
+             <p class="partners-list__caption-link">
+              https://xangle.io
+             </p>
+             <p class="partners-list__caption-desc">
+              Global digital asset disclosure platform 
+                                                	that everyone can access providing transparent and reliable information on virtual assets
+             </p>
+            </div>
+           </div>
+          </a>
+         </li>
+         <li class="partners-list__item">
+          <a class="partners-list__anchor" href="http://www.ziller.co.kr" target="_blank">
+           <div class="partners-list__image">
+            <div class="partners-list__thumbnail">
+             <img alt="TJ communication" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-tj.png"/>
+            </div>
+           </div>
+           <div class="partners-list__caption">
+            <div class="partners-list__caption-inner">
+             <strong class="partners-list__caption-title">
+              TJ communication
+             </strong>
+             <p class="partners-list__caption-link">
+              www.ziller.co.kr
+             </p>
+             <p class="partners-list__caption-desc">
+              Subsidiary company of TJ media, No1 Karaoke
+              <br/>
+              Company in Korea / Supplying music resources to SOMESING
+             </p>
+            </div>
+           </div>
+          </a>
+         </li>
+         <li class="partners-list__item">
+          <a class="partners-list__anchor" href="http://sl-studio.co.kr" target="_blank">
+           <div class="partners-list__image">
+            <div class="partners-list__thumbnail">
+             <img alt="SL Studio" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-sl.png"/>
+            </div>
+           </div>
+           <div class="partners-list__caption">
+            <div class="partners-list__caption-inner">
+             <strong class="partners-list__caption-title">
+              SL Studio
+             </strong>
+             <p class="partners-list__caption-link">
+              http://sl-studio.co.kr
+             </p>
+             <p class="partners-list__caption-desc">
+              A leading K-POP Idol training center built into an entertainment network.
+													Operating programs in collaboration with top-notch facilities, instructors, and large stage performance.
+             </p>
+            </div>
+           </div>
+          </a>
+         </li>
+         <li class="partners-list__item">
+          <a class="partners-list__anchor" href="http://dlive.kr" target="_blank">
+           <div class="partners-list__image">
+            <div class="partners-list__thumbnail">
+             <img alt="SL Studio" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-dl.png"/>
+            </div>
+           </div>
+           <div class="partners-list__caption">
+            <div class="partners-list__caption-inner">
+             <strong class="partners-list__caption-title">
+              dlive
+             </strong>
+             <p class="partners-list__caption-link">
+              http://dlive.kr
+             </p>
+             <p class="partners-list__caption-desc">
+              No.1 multi-media service company that leads the future media market such as digital broadcasting, VOD, OTT, mobile services, etc.
+             </p>
+            </div>
+           </div>
+          </a>
+         </li>
+         <li class="partners-list__item">
+          <a class="partners-list__anchor" href="https://www.cashtree.id" target="_blank">
+           <div class="partners-list__image">
+            <div class="partners-list__thumbnail">
+             <img alt="SL Studio" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-ct.png"/>
+            </div>
+           </div>
+           <div class="partners-list__caption">
+            <div class="partners-list__caption-inner">
+             <strong class="partners-list__caption-title">
+              Cashtree
+             </strong>
+             <p class="partners-list__caption-link">
+              https://www.cashtree.id
+             </p>
+             <p class="partners-list__caption-desc">
+              Indonesia's largest mobile advertising platform
+              <br/>
+              (lock screen reward app)
+             </p>
+            </div>
+           </div>
+          </a>
+         </li>
+         <li class="partners-list__item">
+          <a class="partners-list__anchor" href="http://www.contentos.io" target="_blank">
+           <div class="partners-list__image">
+            <div class="partners-list__thumbnail">
+             <img alt="Keypair" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-ctt.png"/>
+            </div>
+           </div>
+           <div class="partners-list__caption">
+            <div class="partners-list__caption-inner">
+             <strong class="partners-list__caption-title">
+              Contentos
+             </strong>
+             <p class="partners-list__caption-link">
+              http://www.contentos.io
+             </p>
+             <p class="partners-list__caption-desc">
+              Blockchain-based and decentralized global digital content platform company
+             </p>
+            </div>
+           </div>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <!-- partners-list//end -->
+       <!-- 20190331 : [S] -->
+       <div class="partners-header">
+        <h3 class="partners-header__heading heading heading--main1">
+         media Partners
+        </h3>
+       </div>
+       <!-- partners-header//end -->
+       <div class="partners-list partners-list--small">
+        <ul class="partners-list__itembox">
+         <li class="partners-list__item">
+          <div class="partners-list__image">
+           <div class="partners-list__thumbnail">
+            <img alt="UBB" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-UBB.png"/>
+           </div>
+          </div>
+         </li>
+         <li class="partners-list__item">
+          <div class="partners-list__image">
+           <div class="partners-list__thumbnail">
+            <img alt="PR Writing" class="partners-list__thumbnail-image" src="/global/assets/img/img-partners-logo-320-pw.png"/>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <!-- partners-list//end -->
+      </div>
+      <!-- partners-container//end -->
+     </article>
+     <!-- 20190216 : [E] -->
+     <article class="main-roadmap js-scroll-item" id="main-roadmap">
+      <div class="roadmap-container">
+       <div class="roadmap-header">
+        <h3 class="roadmap-header__heading heading heading--main2">
+         Road map
+        </h3>
+       </div>
+       <div class="rodamap-image-box">
+        <img alt="roadmap" class="rodamap-img" src="/global/assets/img/new_roadmap.png"/>
+       </div>
+      </div>
+      <!-- roadmap-container//end -->
+     </article>
+     <!-- 20190331 : [S] -->
+     <article class="main-allocation js-scroll-item" id="main-allocation">
+      <div class="allocation-container">
+       <div class="allocation-header">
+        <h3 class="allocation-header__heading heading heading--main1">
+         Token Allocation
+        </h3>
+       </div>
+       <!-- allocation-header//end-->
+       <!-- 20181118 : [S] -->
+       <div class="allocation-data">
+        <ul class="allocation-data__itembox">
+         <li class="allocation-data__item allocation-data__item1">
+          Sales 15%
+         </li>
+         <li class="allocation-data__item allocation-data__item2">
+          Sales Bonus 5%
+         </li>
+         <li class="allocation-data__item allocation-data__item3">
+          Team &amp; Others 15%
+         </li>
+         <li class="allocation-data__item allocation-data__item4">
+          Strategical Partner 20%
+         </li>
+         <li class="allocation-data__item allocation-data__item5">
+          Community 25%
+         </li>
+         <li class="allocation-data__item allocation-data__item6">
+          Dex 20%
+         </li>
+        </ul>
+       </div>
+       <!-- allocation-data//end -->
+       <div class="allocation-chart">
+        <div class="allocation-chart__graph">
+         <div class="allocation-chart__pie">
+          <canvas id="myChart">
+          </canvas>
+         </div>
+         <!-- allocation-chart__pie//end -->
+         <div class="allocation-chart__num">
+          <ul class="allocation-chart__num-itembox">
+           <li class="allocation-chart__num-item allocation-chart__num-item1">
+            Sales
+            <strong class="allocation-chart__num-bold">
+             15%
+            </strong>
+           </li>
+           <li class="allocation-chart__num-item allocation-chart__num-item2">
+            Sales
+            <br/>
+            Bonus
+            <strong class="allocation-chart__num-bold">
+             5%
+            </strong>
+           </li>
+           <li class="allocation-chart__num-item allocation-chart__num-item3">
+            Team &amp;
+            <br/>
+            Others
+            <strong class="allocation-chart__num-bold">
+             15%
+            </strong>
+           </li>
+           <li class="allocation-chart__num-item allocation-chart__num-item4">
+            Strategical
+            <br/>
+            Partner
+            <strong class="allocation-chart__num-bold">
+             20%
+            </strong>
+           </li>
+           <li class="allocation-chart__num-item allocation-chart__num-item5">
+            Community
+            <strong class="allocation-chart__num-bold">
+             25%
+            </strong>
+           </li>
+           <li class="allocation-chart__num-item allocation-chart__num-item6">
+            Dex
+            <strong class="allocation-chart__num-bold">
+             20%
+            </strong>
+           </li>
+          </ul>
+         </div>
+         <!-- allocation-chart__num//end-->
+        </div>
+        <div class="allocation-chart__table table table--type1">
+         <table>
+          <colgroup>
+           <col width="205px"/>
+           <col width="*"/>
+          </colgroup>
+          <thead>
+           <tr>
+            <th scope="col">
+             Token
+            </th>
+            <th scope="col">
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             Token Name
+            </td>
+            <td>
+             SOMESING Exchange
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Token Symbol
+            </td>
+            <td>
+             SSX
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Token Platform
+            </td>
+            <td>
+             Klaytn
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Token Cap
+            </td>
+            <td>
+             6,000,000,000 SSX
+            </td>
+           </tr>
+           <!-- 20181219 : [S] -->
+          </tbody>
+         </table>
+        </div>
+        <!-- allocation-chart__table//end -->
+       </div>
+       <!-- allocation-chart//end -->
+       <!-- 20181118 : [E] -->
+      </div>
+     </article>
+     <!-- 20190331 : [E] -->
+     <!-- 20190224 : [S] -->
+     <article class="main-tv js-scroll-item">
+      <div class="tv-header">
+       <h3 class="tv-header__heading heading heading--main1">
+        SOMESING TV
+       </h3>
+      </div>
+      <!-- feed-header//end -->
+      <div class="tv-container tv-container--wide">
+       <div class="tv-list js-tv-list js-carousel-dual" data-slides-to-scroll="4">
+        <ul class="tv-list__itembox js-carousel-dual__screen">
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/RsDYQ6jgG2I?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING, Global Social Mobile Karaoke Platform!" class="tv-list__thumbnail-image" src="/upload/feed/xz/4g6w3k3z/m8021589269354559.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING, Global Social Mobile Karaoke Platform!
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//https://www.youtube.com/embed/vg-5AvOii3E?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="비트펠라 듀엣 파트너 대모집! Looking for BeatPella’s Duet Partners" class="tv-list__thumbnail-image" src="/upload/feed/sz/cs4lcrd2/j2xo1589269220009.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             비트펠라 듀엣 파트너 대모집! Looking for BeatPella’s Duet Partners
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/WnW5F2YFafc?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[해시넷] 썸씽 김효식 이사 인터뷰" class="tv-list__thumbnail-image" src="/upload/feed/ny/j6gqsdxj/l2dp1583901004349.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [해시넷] 썸씽 김효식 이사 인터뷰
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/KkRbaFdGows?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING X Crossroads Coversong Challenge 여자친구교차로커버챌린지" class="tv-list__thumbnail-image" src="/upload/feed/gy/o64u2ovp/37r91581407874619.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING X Crossroads Coversong Challenge 여자친구교차로커버챌린지
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/tApwy7SXt60?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt='[신의두뇌SOMESING노래방어플시연] 싸이 "낙원" #SOMESING 노래방 어플' class="tv-list__thumbnail-image" src="/upload/feed/ud/641xr5wf/dy7a1580707878334.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [신의두뇌SOMESING노래방어플시연] 싸이 "낙원" #SOMESING 노래방 어플
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/hentkre2FZc?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="노래방 어플 SOMESING - 블록체인 '찐'이 나타났다!" class="tv-list__thumbnail-image" src="/upload/feed/ce/6gnp0mtx/k2981580707578782.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             노래방 어플 SOMESING - 블록체인 '찐'이 나타났다!
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/q4ikoloAGjw?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[아이돌투어✈에 떴다] 아이돌 캠핑 필수 아이템 썸씽!!" class="tv-list__thumbnail-image" src="/upload/feed/qb/sl2k1tk9/mosq1569293854321.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [아이돌투어✈에 떴다] 아이돌 캠핑 필수 아이템 썸씽!!
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/TYjPe6yGvTI?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="극한 난이도라는 레이디스 코드 노래 잘 부르는 비결 (with SOMESING)" class="tv-list__thumbnail-image" src="/upload/feed/ef/pgjplp71/jqo11569293583705.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             극한 난이도라는 레이디스 코드 노래 잘 부르는 비결 (with SOMESING)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/2hX88SA_AiA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="송하예피셜 '니 소식' 잘 부르는 꿀팁(with SOMESING)" class="tv-list__thumbnail-image" src="/upload/feed/yd/f5ygf7ro/t0cn1569293338618.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             송하예피셜 '니 소식' 잘 부르는 꿀팁(with SOMESING)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/1PqsOEsPSdI?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="홍은채 전문가의 오늘의 잇 코인_썸씽(SOMESING)" class="tv-list__thumbnail-image" src="/upload/feed/cf/f2ibs1yr/sh131568102285762.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             홍은채 전문가의 오늘의 잇 코인_썸씽(SOMESING)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/RfF49vfSlL0?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="코인인터뷰: 내 손안의 블록체인 노래방_SOMESING" class="tv-list__thumbnail-image" src="/upload/feed/xt/jc4frxpd/stkv1567667424732.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             코인인터뷰: 내 손안의 블록체인 노래방_SOMESING
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/3g6qQWqceOE?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="블록배틀 시즌 2 5화(공식 한국어자막)" class="tv-list__thumbnail-image" src="/upload/feed/jp/iqe319fo/5lqr1563526225534.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             블록배틀 시즌 2 5화(공식 한국어자막)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/SZq6drqVUs8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="블록배틀 시즌 2 4화(공식 한국어자막)" class="tv-list__thumbnail-image" src="/upload/feed/lp/pez58cj6/2qyk1562921010405.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             블록배틀 시즌 2 4화(공식 한국어자막)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/fJmGxyOVqho?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING X BlockBattle S2 Director's Cut (feat. Special Guest)" class="tv-list__thumbnail-image" src="/upload/feed/sj/4kw3vlh8/1cwz1562919801836.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING X BlockBattle S2 Director's Cut (feat. Special Guest)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/0RbsSyQkP8M?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="블록배틀 시즌 2 2화" class="tv-list__thumbnail-image" src="/upload/feed/fx/soyvskpu/xnjp1561690283928.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             블록배틀 시즌 2 2화
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/2ChH9TGlj6w?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="블록배틀 시즌 2 1화" class="tv-list__thumbnail-image" src="/upload/feed/fz/adxmw021/vinm1561688734296.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             블록배틀 시즌 2 1화
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/nf-DE2iDmj4?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESINGX블록배틀시즌2 예고편1탄" class="tv-list__thumbnail-image" src="/upload/feed/bc/xsf4i34f/vd6j1560332598392.JPG"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESINGX블록배틀시즌2 예고편1탄
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/7ZRAOaYwiWk?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="음악과 블록체인의 만남? - 썸씽(SOMESING) 2nd Meetup" class="tv-list__thumbnail-image" src="/upload/feed/lv/8mkvrs4n/k5w11560326260076.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             음악과 블록체인의 만남? - 썸씽(SOMESING) 2nd Meetup
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/SmJ8UASN1jk?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING X 머니투데이(토큰플러스) 생방송 출연" class="tv-list__thumbnail-image" src="/upload/feed/dg/h03lvewk/0oc71560309372305.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING X 머니투데이(토큰플러스) 생방송 출연
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/qpPXkCfFeYM?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="게릴라 데이트, 배우 성훈! 썸씽으로 데이뚜~ 데이뚜~" class="tv-list__thumbnail-image" src="/upload/feed/bp/zj1umjav/v9nc1557742622167.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             게릴라 데이트, 배우 성훈! 썸씽으로 데이뚜~ 데이뚜~
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/F92GOet_2e8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING in Tokyo Street Collection (TSC)" class="tv-list__thumbnail-image" src="/upload/feed/oe/hs3056nc/as6l1557742556434.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING in Tokyo Street Collection (TSC)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/kyJwFIFcDZA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="#1. SOMESING X 仮想通貨トピック Blockchain Summit in Tokyo" class="tv-list__thumbnail-image" src="/upload/feed/mi/tvvq50b9/n1tx1557742435131.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             #1. SOMESING X 仮想通貨トピック Blockchain Summit in Tokyo
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/zjfS0MfUZyI?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING X BLOCK CLIP Blockchain Summit in Tokyo" class="tv-list__thumbnail-image" src="/upload/feed/kh/2s7jlrq7/59y11555915046318.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING X BLOCK CLIP Blockchain Summit in Tokyo
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/Iikqv9YU_68?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING in Hong Kong Blockchain Week (Interview)" class="tv-list__thumbnail-image" src="/upload/feed/df/zvucze1g/w36h1552560622150.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING in Hong Kong Blockchain Week (Interview)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/9wFBu5P4mW8?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="SOMESING in Hong Kong Blockchain Week (with Chia Hock Lai)" class="tv-list__thumbnail-image" src="/upload/feed/ur/i5yfjw2s/psej1551776587663.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             SOMESING in Hong Kong Blockchain Week (with Chia Hock Lai)
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/1pmzZkzJsF4?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[썸씽TV] SOMESING의 SOMETHING SPECIAL #5" class="tv-list__thumbnail-image" src="/upload/feed/jy/z88rwqzw/0k9u1551698884726.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [썸씽TV] SOMESING의 SOMETHING SPECIAL #5
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/ultHPAqjtL0?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[썸씽TV] SOMESING의 SOMETHING SPECIAL #4" class="tv-list__thumbnail-image" src="/upload/feed/ka/48ug40t4/c1n91551160968491.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [썸씽TV] SOMESING의 SOMETHING SPECIAL #4
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/VQxL6GHsYwA?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[썸씽TV] SOMESING의 SOMETHING SPECIAL #3" class="tv-list__thumbnail-image" src="/upload/feed/rd/7t4wynqo/4dbn1551160927962.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [썸씽TV] SOMESING의 SOMETHING SPECIAL #3
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/ZU4uG-8EhO0?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[썸씽TV] SOMESING의 SOMETHING SPECIAL #2" class="tv-list__thumbnail-image" src="/upload/feed/fb/yvyznfm2/dfdw1551160869942.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [썸씽TV] SOMESING의 SOMETHING SPECIAL #2
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+         <li class="tv-list__item">
+          <a class="tv-video__anchor js-popup-open js-video-data" data-youtube-src="//www.youtube.com/embed/felfYfNAVOM?autoplay=1&amp;autohide=1?rel=0&amp;vq=hd1080" href="#popup-tv-video">
+           <div class="tv-list__image">
+            <div class="tv-list__thumbnail">
+             <img alt="[썸씽TV] SOMESING의 SOMETHING SPECIAL #1" class="tv-list__thumbnail-image" src="/upload/feed/zo/6lxf5n6d/s1qj1551160814621.jpg"/>
+            </div>
+           </div>
+           <!-- tv-ist__image//end -->
+           <div class="tv-list__caption">
+            <p class="tv-list__caption-title">
+             [썸씽TV] SOMESING의 SOMETHING SPECIAL #1
+            </p>
+           </div>
+           <!-- tv-list__caption//end -->
+          </a>
+         </li>
+        </ul>
+        <!-- tv-list__itembox//end -->
+        <div class="tv-list__controller">
+         <button class="tv-list__btn tv-list__btn--prev js-carousel-dual__btn--prev" title="Prev Slide" type="button">
+          Prev Slide
+         </button>
+         <button class="tv-list__btn tv-list__btn--next js-carousel-dual__btn--next" title="Next Slide" type="button">
+          Next Slide
+         </button>
+        </div>
+        <!-- tv-list__controller//end -->
+       </div>
+       <!-- tv-list//end -->
+      </div>
+      <!-- tv-container//end -->
+     </article>
+     <!-- 20190224 : [E] -->
+     <!-- 20181202 : [S] -->
+     <article class="main-feed js-scroll-item" id="main-feed">
+      <div class="feed-header">
+       <h3 class="feed-header__heading heading heading--main1">
+        NEWS FEED
+       </h3>
+      </div>
+      <!-- feed-header//end -->
+      <div class="feed-container feed-container--wide">
+       <div class="feed-list js-feed-list js-carousel-dual" data-slides-to-scroll="4">
+        <ul class="feed-list__itembox js-carousel-dual__screen">
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.it-b.co.kr/news/articleView.html?idxno=40624" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/lq/m1o1o8s6/h5uv1589875769757.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             아이티비즈
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 노래방 앱 썸씽(SOMESING), ‘헬로우아폴로’와 업무협약 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-19
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.xportsnews.com/?ac=article_view&amp;entry_id=1271963" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/rp/7xfd0lb6/gpbt1589875657990.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             xportsnews
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 노래방 앱 썸씽, 오디션 사업 확장을 위해 SL Studio와 전략적 MOU 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-19
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202005150190&amp;t=NN" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/ru/dhwz64xm/5dai1589521806812.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             한국경제TV
+            </p>
+            <p class="feed-list__caption-title">
+             롯데월드몰에 `JYP 카페` 생겼다…커뮤니티 공간에 스튜디오까지
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-15
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://isplus.live.joins.com/news/article/article.asp?total_id=23776721&amp;cloc=" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/db/j4unrvpl/pec31589521649299.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             일간스포츠
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 노래방 앱 썸씽, ‘81만 구독자’의 TJ 유튜브 노래방채널과 콘텐츠 제휴협력
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-15
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://www.blockmedia.co.kr/archives/139111" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/ge/xeo1yzm2/11ri1589334433410.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             블록미디어
+            </p>
+            <p class="feed-list__caption-title">
+             썸씽토큰, 편의점·프랜차이즈 매장서 사용… 다날 페이코인과 MOU 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-13
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.newsrep.co.kr/news/articleView.html?idxno=124321" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/bo/ryhdl21a/ht6a1589334290955.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             뉴스렙 newsrep
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 노래방 앱 썸씽(SOMESING), 13일 글로벌 거래소 5곳 동시 상장
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-13
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://nbntv.co.kr/news/view/866403" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/zz/ldila5u9/n21k1589267856281.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             내외경제TV
+            </p>
+            <p class="feed-list__caption-title">
+             ‘벨릭, 디코인, 프로비트’ 연합출범.. 우수 프로젝트 글로벌진출 위한 공동상장 추진
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-12
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.sportsw.kr/news/newsview.php?ncode=1065593202196638" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/qe/0xxkyorf/743g1589267663812.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             스포츠W
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 노래방 앱 ‘썸씽’, 케이스타라이브와 글로벌 사업제휴 위한 업무협약 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-12
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.paxetv.com/news/articleView.html?idxno=90478" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/yj/fw9uavk9/51dj1589256179939.png"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             PAX경제TV
+            </p>
+            <p class="feed-list__caption-title">
+             노래방앱,썸씽(SOMESING) 애플, 앱스토어‘오늘의 앱’ 선정!
+            </p>
+            <p class="feed-list__caption-time">
+             2020-05-12
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.joynews24.com/view/1241458" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/lq/br931f14/uz0f1581406682439.png"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             joynews24
+            </p>
+            <p class="feed-list__caption-title">
+             노래방 앱 썸씽, 여자친구 신곡 ‘교차로(Crossroads)’ 커버챌린지 이벤트
+            </p>
+            <p class="feed-list__caption-time">
+             2020-02-11
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.paxetv.com/news/articleView.html?idxno=83691" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/hp/29upnk18/4ogt1577161262475.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             PAX경제TV
+            </p>
+            <p class="feed-list__caption-title">
+             노래방 앱 썸씽, ‘위드 아티스트’ 신규 오픈…“걸그룹 여자친구와 듀엣 부른다”
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://m.srtimes.kr/news/articleView.html?idxno=52706#_enliple" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/wc/i940m8qs/vdbu1577161070768.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             SR타임스
+            </p>
+            <p class="feed-list__caption-title">
+             썸씽, 인니 최대 모바일 광고 플랫폼 ‘캐시트리’와 MOU
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.joynews24.com/view/1227430" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/ye/y5xyz5or/73lt1577155871184.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             조이뉴스24
+            </p>
+            <p class="feed-list__caption-title">
+             '블록체인 노래방 앱'썸씽, 대세 가수 뜐뜐과 ‘국밥송 듀엣’ 이벤트
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.etnews.com/20191206000130" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/xf/f9dppeic/yrsc1577160935965.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             전자신문
+            </p>
+            <p class="feed-list__caption-title">
+             블록체인 노래방 앱 ‘썸씽’, 일본저작권협회와 계약-일본 시장 진출
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://mleaders.asiae.co.kr/news/articleView.html?idxno=136236" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/bg/d7kzz9gl/q2mu1577160956014.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             리더스경제
+            </p>
+            <p class="feed-list__caption-title">
+             블록체인 기반 노래 디앱(DApp) 썸씽, 5일 디코인거래소에 썸씽코인 상장
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://newsbrite.net/130740" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/ui/ooxf8x6z/wtw01577161561462.JPG"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             NewsBrite
+            </p>
+            <p class="feed-list__caption-title">
+             디코인(Dcoin)거래소, 썸씽프로젝트를 위한 MOU체결 및 썸씽토큰(SSX) 상장 예정
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.zdnet.co.kr/view/?no=20191120081529" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/aw/yih7ug5j/383e1577153870901.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             ZDNet Korea
+            </p>
+            <p class="feed-list__caption-title">
+             블록체인 노래방 디앱 '썸씽', 정식 출시
+            </p>
+            <p class="feed-list__caption-time">
+             2019-12-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.etnews.com/20191104000227" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/cl/d7g0pqps/yqs91572846213822.JPG"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             전자신문
+            </p>
+            <p class="feed-list__caption-title">
+             노래방 앱 '썸씽', 가수·인플루언서 초청...'서비스 설명회' 개최
+            </p>
+            <p class="feed-list__caption-time">
+             2019-11-04
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://isplus.live.joins.com/news/article/article.asp?total_id=23584038&amp;cloc=" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/sh/t9907pus/bbdj1569294161454.JPG"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             일간스포츠
+            </p>
+            <p class="feed-list__caption-title">
+             연규성의 라이브쇼 1차 홍대 버스킹 관객들의 뜨거운 호응 속에 성공적으로 마쳐
+            </p>
+            <p class="feed-list__caption-time">
+             2019-09-24
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://n.news.naver.com/article/030/0002839127" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/xg/cq53qv5d/qll81567667074475.JPG"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             전자신문
+            </p>
+            <p class="feed-list__caption-title">
+             썸씽, 크리에이터 앱 개발 업체 튠 토큰과 전략적 파트너쉽 계약 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2019-09-05
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.koreadaily.com/news/read.asp?art_id=7439389" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/my/ze5m0ctu/5jv91563526805915.JPG"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             THE KOREA DAILY
+            </p>
+            <p class="feed-list__caption-title">
+             Winner of Blockchain Survival “Block Battle Season 2”
+            </p>
+            <p class="feed-list__caption-time">
+             2019-07-19
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://blockinpress.com/archives/19734" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/kn/ln0sfrqz/k02r1563173820800.JPG"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             Blockinpress
+            </p>
+            <p class="feed-list__caption-title">
+             연규성·허니지 등 ‘노래 좀 하는’ 4만 모인 이곳…무료 노래방 디앱 ‘썸씽’
+            </p>
+            <p class="feed-list__caption-time">
+             2019-07-12
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://it.chosun.com/site/data/html_dir/2019/04/26/2019042602240.html" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/vc/jmo84m2x/9twl1556265233053.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             IT Chosun
+            </p>
+            <p class="feed-list__caption-title">
+             내 손안의 스튜디오 노래방 앱(APP) 썸씽, ‘iOS 베타버전’ 출시
+            </p>
+            <p class="feed-list__caption-time">
+             2019-04-26
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.etnews.com/20190422000074" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/nm/e3h3f5u8/ziu81555916322813.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             전자신문
+            </p>
+            <p class="feed-list__caption-title">
+             노래방 앱 ‘썸씽’, 글로벌 콘텐츠 플랫폼 ‘콘텐토스’와 전략적 파트너십 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2019-04-22
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.koreadaily.com/news/read.asp?art_id=7171917" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/mt/0611iyk9/mx641555915492258.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             THE KOREA DAILY
+            </p>
+            <p class="feed-list__caption-title">
+             SOMESING, social music Karaoke App, announced Strategic Partnership with Contentos, a global leading content platform
+            </p>
+            <p class="feed-list__caption-time">
+             2019-04-22
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://it.chosun.com/site/data/html_dir/2019/04/03/2019040300639.html" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/nh/jvvpyppv/nz5k1554368792154.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             IT Chosun
+            </p>
+            <p class="feed-list__caption-title">
+             내 손안의 스튜디오 노래방 앱 ‘썸씽’, 성공적 베타 런칭  출처
+            </p>
+            <p class="feed-list__caption-time">
+             2019-04-04
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://www.btcwires.com/press-release/successful-beta-service-launch-of-somesing-my-hand-carry-studio-karaoke-app/" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/la/71fptya3/x2ih1554368613314.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             BTC Wires
+            </p>
+            <p class="feed-list__caption-title">
+             Successful Beta Service launch of SOMESING
+            </p>
+            <p class="feed-list__caption-time">
+             2019-04-04
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.dt.co.kr/contents.html?article_no=2019031402109923813002&amp;ref=naver" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/hs/19im4j2j/6nyc1552559560401.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             디지털타임스
+            </p>
+            <p class="feed-list__caption-title">
+             썸씽, 중국 등 해외사업 확장 위해 체인투비와 전략 파트너십 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2019-03-14
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.topdaily.kr/news/articleView.html?idxno=56684&amp;fbclid=IwAR0kovJ9_izfMWI6sXtQl_j8N9BqZ9VPZsbi_w5EPE3usuHt-PUxy4deP2Q#098P" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/dm/zq5v2rmz/l4w91551701347683.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             TOP데일리
+            </p>
+            <p class="feed-list__caption-title">
+             [인터뷰] 내 손안의 STUDIO 노래방 앱(APP), 썸씽 김희배 대표
+            </p>
+            <p class="feed-list__caption-time">
+             2019-03-04
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.edaily.co.kr/news/read?newsId=03965526622395112&amp;mediaCodeNo=257&amp;OutLnkChk=Y&amp;fbclid=IwAR2O4qhPmRU96rf8hlhrGwgjmEG8xNNS09JL9Kz0B44D5kkAyn7cK-rIjkY" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/gi/34dl0ner/ms5t1551701235116.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             이데일리
+            </p>
+            <p class="feed-list__caption-title">
+             '썸씽' 베타버전 출시 이벤트…BT21 블루투스 스피커&amp;피규어 등 경품
+            </p>
+            <p class="feed-list__caption-time">
+             2019-03-04
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://www.entrepreneur.com/article/328725" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/yg/g1kssuu0/b0b31551701143346.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             Entrepreneur
+            </p>
+            <p class="feed-list__caption-title">
+             This App is Accelerating Application of Real-life Block-chain
+            </p>
+            <p class="feed-list__caption-time">
+             2019-03-04
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://medium.com/@singlovers/why-somesing-services-are-free-e8933e46419b" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/cs/logb1ufa/nilu1550718858164.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             Medium
+            </p>
+            <p class="feed-list__caption-title">
+             WHY SOMESING SERVICES ARE FREE
+            </p>
+            <p class="feed-list__caption-time">
+             2019-02-21
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.businesskorea.co.kr/news/articleView.html?idxno=29163" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/bz/zt8q6qho/6sif1550221510578.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             BusinessKorea
+            </p>
+            <p class="feed-list__caption-title">
+             SOMESING Signs Strategic Partnership MOU with ContentBox
+            </p>
+            <p class="feed-list__caption-time">
+             2019-02-15
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.etnews.com/20190215000207" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/rj/ggyofp80/0oh11550211029936.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             전자신문
+            </p>
+            <p class="feed-list__caption-title">
+             [SOMESING] 전자지갑 개발업체 키페어와 전략적 제휴 체결
+            </p>
+            <p class="feed-list__caption-time">
+             2019-02-15
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.it-b.co.kr/news/articleView.html?idxno=27404" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/wg/h7clwl35/hy181547703161520.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             아이티비즈
+            </p>
+            <p class="feed-list__caption-title">
+             디블락ㆍ아이콘으로부터 전략적 투자 유치
+            </p>
+            <p class="feed-list__caption-time">
+             2019-01-17
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://www.btcwires.com/press-release/somesing-a-fun-and-rewarding-karaoke-ecosystem/" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/ng/gg896yoz/1t581547703088428.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             BTC Wires
+            </p>
+            <p class="feed-list__caption-title">
+             SOMESING – A Fun and Rewarding Karaoke Ecosystem
+            </p>
+            <p class="feed-list__caption-time">
+             2019-01-17
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://u.wn.com/2019/01/14/SOMESING_Listen_Sing_and_Get_Rewarded/" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/rs/n7oul46c/vctu1547701541373.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             The WorldNews
+            </p>
+            <p class="feed-list__caption-title">
+             SOMESING - Listen, Sing and Get Rewarded
+            </p>
+            <p class="feed-list__caption-time">
+             2019-01-17
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://betanews.heraldcorp.com:8080/article/941716.html" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/pi/wdde2uun/ea0b1547691652523.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             베타뉴스
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 뮤직 서비스 앱 ‘SOMESING’, 1차 밋업 성황리에 마쳐
+            </p>
+            <p class="feed-list__caption-time">
+             2018-11-29
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="https://medium.com/@singlovers/somesing-1st-workshop-f72f7c0fdfa2" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/ah/e9nwuvvu/qvly1547691625103.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             Medium
+            </p>
+            <p class="feed-list__caption-title">
+             SOMESING 1st Workshop
+            </p>
+            <p class="feed-list__caption-time">
+             2018-11-26
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://www.ebn.co.kr/news/view/962710" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/cg/5aqyt8dn/m0op1547691579503.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             EBN
+            </p>
+            <p class="feed-list__caption-title">
+             [인터뷰]김희배 이멜벤처스 대표 "블록체인 썸씽, 음악생태계 재편"
+            </p>
+            <p class="feed-list__caption-time">
+             2018-11-22
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+         <li class="feed-list__item">
+          <a class="feed-list__anchor" href="http://leaders.asiae.co.kr/news/articleView.html?idxno=80411" target="_blank">
+           <div class="feed-list__image">
+            <div class="feed-list__thumbnail">
+             <img alt="" class="feed-list__thumbnail-image" src="/upload/feed/dr/drxjz3yc/5sef1547691393816.jpg"/>
+            </div>
+           </div>
+           <!-- feed-ist__image//end -->
+           <div class="feed-list__caption">
+            <p class="feed-list__caption-media">
+             리더스경제
+            </p>
+            <p class="feed-list__caption-title">
+             소셜 뮤직 서비스 앱 ‘SOMESING’ 11월 27일 1차 밋업 개최
+            </p>
+            <p class="feed-list__caption-time">
+             2018-11-22
+            </p>
+           </div>
+           <!-- feed-list__caption//end -->
+          </a>
+         </li>
+         <!-- feed-list__item//end -->
+        </ul>
+        <!-- feed-list__itembox//end -->
+        <div class="feed-list__controller">
+         <button class="feed-list__btn feed-list__btn--prev js-carousel-dual__btn--prev" title="Prev Slide" type="button">
+          Prev Slide
+         </button>
+         <button class="feed-list__btn feed-list__btn--next js-carousel-dual__btn--next" title="Next Slide" type="button">
+          Next Slide
+         </button>
+        </div>
+        <!-- feed-list__controller//end -->
+       </div>
+       <!-- feed-list//end -->
+      </div>
+      <!-- feed-container//end -->
+     </article>
+     <!-- 20181202 : [E] -->
+    </section>
+    <!-- FOOTER : [S] -->
+    <!-- FOOTER : [S] -->
+    <footer class="footer">
+     <div class="nav-float nav-float--footer">
+      <a class="nav-float__btn nav-float__btn-top js-btn-top" href="#none">
+       TOP
+      </a>
+     </div>
+     <!-- nav-float//end -->
+     <div class="footer-container">
+      <div class="footer-contact">
+       <div class="footer-contact__header">
+        <h3 class="footer-contact__heading heading heading--main2">
+         contact us
+        </h3>
+       </div>
+       <form id="emailForm" name="emailForm">
+        <filedset>
+         <legend>
+          Contact Us message input
+         </legend>
+         <div class="input-field">
+          <ul class="input-field__itembox">
+           <li class="input-field__item">
+            <label class="label" for="input-name">
+             Your name
+            </label>
+            <div class="input-text input-text--type1">
+             <input id="email_name" name="name" type="text"/>
+            </div>
+           </li>
+           <!-- input-field__list//end -->
+           <li class="input-field__item">
+            <label class="label" for="input-email">
+             Your Email
+            </label>
+            <div class="input-text input-text--type1">
+             <input id="email_email" name="email" type="text"/>
+            </div>
+           </li>
+           <!-- input-field__list//end -->
+           <li class="input-field__item">
+            <label class="label" for="input-message">
+             Message
+            </label>
+            <div class="input-text input-text--type1">
+             <input id="email_message" name="message" type="text"/>
+            </div>
+           </li>
+           <!-- input-field__list//end -->
+          </ul>
+         </div>
+         <!-- input-field//end -->
+         <div class="btn-group btn-group--input">
+          <a class="btn btn-ghost1 somesing-mail-send" href="#none">
+           SEND MESSAGE
+          </a>
+         </div>
+        </filedset>
+       </form>
+       <div class="sns-share">
+        <ul class="sns-share__itembox">
+         <li class="sns-share__item sns-share__item--telegram">
+          <a class="btn-share btn-share--telegram" href="#none">
+           TELEGRAM
+          </a>
+          <div class="sns-link sns-link--telegram">
+           <div class="sns-link__header">
+            <h4 class="sns-link__header-heading">
+             Teleglam
+            </h4>
+           </div>
+           <ul class="sns-link__itembox">
+            <li class="sns-link__item">
+             <a class="btn btn-default sns-link__anchor" href="https://t.me/somesinglovers_EN" target="_blank">
+              Group
+             </a>
+            </li>
+            <li class="sns-link__item">
+             <a class="btn btn-default sns-link__anchor" href="https://t.me/somesing_Notice" target="_blank">
+              Channel
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--kakao" href="https://pf.kakao.com/_txoPDT" target="_blank">
+           KAKAO TALK
+          </a>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--youtube" href="https://www.youtube.com/channel/UCrR-v-FQ7tDZntlqz5sbCrw" target="_blank">
+           YOUTUBE
+          </a>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--medium" href="https://medium.com/@singlovers" target="_blank">
+           MEDIUM
+          </a>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--facebook" href="https://www.facebook.com/somesinglovers" target="_blank">
+           FACEBOOK
+          </a>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--twitter" href="https://twitter.com/somesinglovers" target="_blank">
+           TWITTER
+          </a>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--insta" href="https://www.instagram.com/somesinglovers/" target="_blank">
+           INSTAGRAM
+          </a>
+         </li>
+         <li class="sns-share__item">
+          <a class="btn-share btn-share--blog" href="https://blog.naver.com/somesinglovers" target="_blank">
+           BLOG
+          </a>
+         </li>
+        </ul>
+       </div>
+       <!-- sns-share//end -->
+      </div>
+      <!-- footer-contact//end -->
+      <div class="footer-copy">
+       <div class="footer-copy__header">
+        <h3 class="footer-copy__heading">
+         <img alt="somesing" src="/web/eng/assets/img/ico-logo-333.png"/>
+        </h3>
+        <h4 class="footer-copy__summary">
+         Contact us
+        </h4>
+        <p class="footer-copy__text">
+         <a class="footer-copy__text-anchor" href="mailto:support@somesing.io">
+          support@somesing.io
+         </a>
+        </p>
+        <p class="footer-copy__copy">
+         ©2018 SOMESING. All Copyrights reserved
+        </p>
+       </div>
+       <!-- footer-header//end -->
+       <div class="footer-copy__menu_kla">
+        <ul class="footer-copy__itembox">
+         <li class="footer-copy__item_kla">
+          <a class="footer-copy__anchor" href="/agreePrivacy" target="_blank">
+           Privacy Policy
+          </a>
+         </li>
+         <li class="footer-copy__item_kla">
+          <a class="footer-copy__anchor" href="/agreeTerms" target="_blank">
+           Terms &amp; Conditions
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="footer-kla_divide">
+       </div>
+       <div class="btn-group btn-group--footer">
+        <ul class="btn-group__itembox">
+         <li class="btn-group__item_kla">
+          <a class="btn-kla-footer" href="#main-download">
+           WHITE PAPER
+          </a>
+         </li>
+         <li class="btn-group__item_kla">
+          <a class="btn-kla-footer" herf="void(0);" onclick="alert('Token check is not available yet. Please try again during the inquiry period.'); return false;">
+           CHECK SSX ON KLAYTN
+          </a>
+         </li>
+         <li class="btn-group__item_kla">
+          <a class="btn-kla-footer" href="/checkBalance" target="_blank">
+           ICON SSX Balance
+          </a>
+         </li>
+         <li class="btn-group__item">
+          <a class="btn btn-ghost2" herf="void(0);" onclick="alert('Token swap is not available yet. Please try again during the swap period.'); return false;">
+           TOKEN SWAP
+          </a>
+         </li>
+        </ul>
+       </div>
+       <!-- btn-group//end -->
+      </div>
+      <!-- footer-copy//end -->
+     </div>
+     <!-- footer-container//end -->
+    </footer>
+    <!-- FOOTER : [E] -->
+   </div>
+   <!-- view-container//end -->
+   <div class="push-container">
+    <div class="popup popup--main-video" id="popup-main-video">
+     <div class="popup__container">
+      <div class="popup__content">
+       <div class="popup__video">
+        <iframe allowfullscreen="" class="popup__video-iframe js-video-src" frameborder="0" src="">
+        </iframe>
+       </div>
+      </div>
+      <!-- popup__content//end -->
+      <div class="btn-group btn-group--popup">
+       <a class="btn btn-close js-popup-close" href="#none">
+        닫기
+       </a>
+      </div>
+     </div>
+     <!-- popup__container//end -->
+     <div class="popup__dim">
+     </div>
+    </div>
+    <!-- popup//end -->
+    <!-- 20190224 : [S] -->
+    <div class="popup popup--tv-video" id="popup-tv-video">
+     <div class="popup__container">
+      <div class="popup__content">
+       <div class="popup__video">
+        <iframe allowfullscreen="" class="popup__video-iframe js-video-src" frameborder="0" src="">
+        </iframe>
+       </div>
+      </div>
+      <!-- popup__content//end -->
+      <div class="btn-group btn-group--popup">
+       <a class="btn btn-close js-popup-close" href="#none">
+        Close
+       </a>
+      </div>
+     </div>
+     <!-- popup__container//end -->
+     <div class="popup__dim">
+     </div>
+    </div>
+    <!-- popup//end -->
+    <!-- 20190224 : [E] -->
+    <div class="popup popup--buy-token" id="popup-buy-token">
+     <div class="popup__container">
+      <div class="popup__content">
+       <div class="popup-header">
+        <p class="popup-header__desc">
+         It is not a token purchase period.
+         <br/>
+         Please check the ICO schedule.
+        </p>
+       </div>
+      </div>
+      <!-- popup__content//end -->
+      <div class="btn-group btn-group--popup">
+       <a class="btn btn-close js-popup-close" href="#none">
+        Close
+       </a>
+      </div>
+     </div>
+     <!-- popup__container//end -->
+     <div class="popup__dim">
+     </div>
+    </div>
+    <!-- popup//end -->
+    <div class="popup popup--main-waiting" id="popup-main-waiting">
+     <div class="popup__container">
+      <div class="popup__content">
+       <div class="popup-header">
+        <p class="popup-header__desc">
+         Coming soon.
+        </p>
+       </div>
+      </div>
+      <!-- popup__content//end -->
+      <div class="btn-group btn-group--popup">
+       <a class="btn btn-close js-popup-close" href="#none">
+        Close
+       </a>
+      </div>
+     </div>
+     <!-- popup__container//end -->
+     <div class="popup__dim">
+     </div>
+    </div>
+    <!-- popup//end -->
+   </div>
+   <!-- push-container//end -->
+  </div>
+  <!-- viewport//end -->
+ </body>
+ <script>
+  //popup
+  	$(window).ready(function(){
+  		
+	});
+ </script>
+</html>

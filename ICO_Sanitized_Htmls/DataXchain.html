@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <title>
+   dataXchain
+  </title>
+  <!-- Import CSS	-->
+  <link href="/css/common.css" rel="stylesheet"/>
+  <link href="/css/santiago.datepicker.css" rel="stylesheet"/>
+  <link href="/css/jquery-ui.min.css" rel="stylesheet"/>
+  <link href="/css/view-web.css" rel="stylesheet" type="text/css"/>
+  <!-- Import JS	-->
+  <script src="/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="/js/jquery-ui.min.js">
+  </script>
+  <script src="/js/moment.min.js">
+  </script>
+  <script src="/js/jquery.twbsPagination.min.js">
+  </script>
+  <script src="/js/common.js">
+  </script>
+  <script src="/js/xModal.js">
+  </script>
+ </head>
+ <body>
+  <header id="header">
+   <div class="wrapper">
+    <div class="contents flex sb">
+     <div class="logo_wrap v_center">
+      <img src="/images/img-dataxchain-logo.png"/>
+     </div>
+     <div class="account_wrap">
+      <ul class="flex">
+       <li menu="">
+        <a class="nav_login" href="/login" onclick="return rmSession();">
+         Login
+        </a>
+       </li>
+       <li menu="">
+        <a class="nav_signup" href="/register/terms" onclick="return rmSession();">
+         Sign up
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <nav id="nav">
+   <div class="wrapper">
+    <div class="nav_wrap nav_depth1">
+     <ul class="flex sb">
+      <li menu="service">
+       <a href="/service" onclick="return rmSession();">
+        Services
+       </a>
+      </li>
+      <li menu="data">
+       <a href="/data/list" onclick="return rmSession();">
+        Data Market
+       </a>
+      </li>
+      <li menu="news">
+       <a href="/news" onclick="return rmSession();">
+        News
+       </a>
+      </li>
+      <li menu="contact">
+       <a href="/contact" onclick="return rmSession();">
+        Contact
+       </a>
+      </li>
+      <li menu="faq">
+       <a href="/faq/list" onclick="return rmSession();">
+        FAQ
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <div id="loader" style="display: none;">
+   <div class="spinner">
+    <div class="dot1">
+    </div>
+    <div class="dot2">
+    </div>
+   </div>
+  </div>
+  <div class="" id="floating">
+   <div class="f_cont">
+    <a href="/user/cart">
+     <div class="f_icon">
+      <img src="/images/btn-cart.png"/>
+     </div>
+     <div class="f_txt">
+      Cart
+     </div>
+     <div class="f_cnt">
+     </div>
+    </a>
+   </div>
+   <div class="f_cont">
+    <a href="/faq/ask">
+     <div class="f_icon">
+      <img src="/images/btn-1-1-ask.png"/>
+     </div>
+     <div class="f_txt">
+      1:1 ASK
+     </div>
+    </a>
+   </div>
+   <div class="f_top">
+    TOP
+   </div>
+  </div>
+  <div class="hide" id="progressBar">
+   <div class="progress_back">
+    <div class="progress_value">
+    </div>
+   </div>
+  </div>
+  <script>
+   $(function(){
+			
+				"use strict";    
+				
+				window.baseUrl = ''+'/';
+				window.imgUrl = ''+'/images/';
+				
+				
+				//  ****** 테스트용 ********
+// 				window.uploadImgUrl = location.origin + "/uploadFile/dataxchain/";
+				
+				//  ****** 배포용 ********
+				// window.console = {};
+				// window.console.log = function(obj){};
+				window.uploadImgUrl = "https://dataxchaintest.blob.core.windows.net";
+
+	 			window.tf = "YYYY-MM-DD HH:mm:ss";
+	 			window.locale = "en";
+				window.currency = locale == "ko" ? "￦" : "$";
+	 			
+				$.ajaxSetup({
+					cache:false,
+					crossDomain:true,
+					crossOrigin: true,
+					contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+					type:"POST",
+					dataType:"json",
+					beforeSend:function(){
+						const target = "body";
+						var h = $(target).outerHeight()/2;
+						var w = $(target).outerWidth()/2;
+						var s = 50 /2; 
+						
+						var top = h-s, left = w-s;
+						if(top <= 0) top = 0;
+						else if(left <= 0) left = 0;
+						
+						var lc = "<div id='loading' class=''><div class='loading_img' style='top: "+top+"px; left: "+left+"px;'></div></div>";
+						
+						$(target).append(lc);
+				    },
+				    complete:function(){
+				  	  	$("body").find("#loading").remove();
+				    },
+					error: function(jqXHR, exception) {
+							if (jqXHR.status === 0) {
+							    alert('Not connect.\n Verify Network.');
+							}
+							else if (jqXHR.status == 400) {
+							    alert('Server understood the request, but request content was invalid. [400]');
+							}
+							else if (jqXHR.status == 401) {
+							    alert('Unauthorized access. [401]');
+							}
+							else if (jqXHR.status == 403) {
+							    alert('Forbidden resource can not be accessed. [403]');
+							}
+							else if (jqXHR.status == 404) {
+							    alert('Requested page not found. [404]');
+							}
+							else if (jqXHR.status == 500) {
+							    alert('Internal server error. [500]');
+							}
+							else if (jqXHR.status == 503) {
+							    alert('Service unavailable. [503]');
+							}
+							else if (exception === 'parsererror') {
+							    alert('Requested JSON parse failed. [Failed]');
+							}
+							else if (exception === 'timeout') {
+							    alert('Time out error. [Timeout]');
+							}
+							else if (exception === 'abort') {
+							    alert('Ajax request aborted. [Aborted]');
+							}
+							else {
+							    alert('Uncaught Error.n' + jqXHR.responseText);
+							}
+					    }
+
+				});
+				
+			    jQuery.ajaxSettings.traditional = true; 
+	
+				
+			    $(".logo_wrap").off("click").on("click",function(){
+			   	 	location.href = baseUrl + "main";
+			    });
+			    
+			    $(".nav_wrap a").filter(function() {
+			        const url = location.href.toLocaleLowerCase().replace("dataxchain","");
+			        if(url.indexOf("request")>-1 && $(this).parent().attr("menu") == "data") return true;
+			        else if(url.indexOf($(this).parent().attr("menu"))>-1) return true;
+		        }).addClass("active");
+				
+				$.datepicker.setDefaults({
+						inline: true,
+						showOtherMonths: true,
+						dateFormat: "yy-mm-dd",
+// 						dayNamesMin: ["월", "화", "수", "목", "금", "토", "일"],
+// 						monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+// 						monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+						maxDate : moment().format("YYYY-MM-DD"),
+						buttonImage: imgUrl + ""
+				});
+			
+
+// 			  $("body").scroll(() => {
+// 			    var scrollTop = $("body").scrollTop();
+// 			     if(scrollTop > 100 ) $("#floating").removeClass("hide");
+// 			     else if(scrollTop < 100) $("#floating").addClass("hide");
+// 			  }).scroll();
+
+				
+			$("#floating .f_top").off("click").on("click",function(){
+				$("body").scrollTop(0);
+			});
+
+			window.logout = function(){
+				
+				$.ajax({
+				   	url :  baseUrl + "auth/logout.json",
+				   	data : {	},
+				   	type : "POST",
+				   	success : function(res){
+						console.log("=====logout=====", res);
+						location.href = baseUrl + "main";
+				   	},
+				   	error : function(err){
+				   		 console.log("ERROR!!", err);
+				   	}
+				});
+			}
+			
+			$("#header .nav_logout").off("click").on("click",function(){
+				logout();
+			});
+				
+			getNewDataList();
+			getSession();
+			
+			function getNewDataList(){
+				
+				$.ajax({
+				   	url :  baseUrl + "main/getNewDataList.json",
+				   	data : {},
+				   	success : function(res){
+						console.log("=====getNewDataList=====", res);
+						if(res.result.data.length > 0) $("#nav .nav_depth1 > ul > li[menu='data']").addClass("new");
+				   	}
+				});
+			}
+			
+			function getSession(){
+				
+				$.ajax({
+				   	url :  baseUrl + "auth/getSession.json",
+				   	data : {},
+				   	success : function(res){
+						console.log("=====getSession=====", res);
+						
+						if(res.result.code == "200"){
+							// 로그인 되어있는 상태
+							window.loginUserInfo = res.result.data;
+							$("#floating .f_cnt").html(res.result.data.cartCnt);
+							
+						} else{
+							window.loginUserInfo = {};
+						}
+						  
+						$(document).trigger("sessionLoad");
+				   	}
+				});
+			}
+				
+				
+			$("#header .account_wrap li[menu='mypage']").hover(function(){
+			    $("#header .account_wrap .account_sub").removeClass("hide");
+			},function(){
+				$("#header .account_wrap .account_sub").addClass("hide");
+			});
+				
+			
+
+// 				var fileBox = $("#file_box");
+// 				fileBox.each(function(){ 
+// 					var fileUpload = $(this).find(".input_file"),
+// 						fileText = $(this).find(".file_text");
+					
+// 					console.log(fileUpload, fileText)
+// 					fileUpload.on("change", function(){ 	
+// 						var fileName = $(this).val(); 	
+// 						fileText.attr("disabled", "disabled").val(fileName); 
+// 					});
+// 				});
+
+				
+			fileListener();
+		
+			
+			$(".btn_cancel").off("click").on("click",function(){
+				
+				if(document.referrer.indexOf("register")>-1 || document.referrer.indexOf("findPassword")>-1  || document.referrer.indexOf("reset")>-1 ) location.href = baseUrl + "main";
+				else if(document.referrer != null && typeof document.referrer != "undefined" && document.referrer != "") location.href = document.referrer;
+				else location.href = baseUrl + "main";
+			});
+				
+			$(".data_search_wrap select, .filter_wrap select").each(function(){
+				
+			    var $this = $(this), numberOfOptions = $(this).children("option").length;
+			  
+			    $this.addClass("select_hidden "); 
+			    $this.wrap("<div class='select'></div>");
+			    $this.after("<div class='select_styled'></div>");
+
+			    var $styledSelect = $this.next("div.select_styled");
+			    $styledSelect.text($this.children("option").eq(0).text());
+			  
+			    var $list = $("<ul />", {
+			        "class": "select_options"
+			    }).insertAfter($styledSelect);
+			  
+			    for (var i = 0; i < numberOfOptions; i++) {
+			        $("<li />", {
+			            text: $this.children("option").eq(i).text(),
+			            rel: $this.children("option").eq(i).val()
+			        }).appendTo($list);
+			    }
+			  
+			    var $listItems = $list.children("li");
+			  
+			    $styledSelect.click(function(e) {
+			        e.stopPropagation();
+			        $("div.select_styled.active").not(this).each(function(){
+			            $(this).removeClass("active").next("ul.select_options").hide();
+			        });
+			        $(this).toggleClass("active").next("ul.select_options").toggle();
+			    });
+			  
+			    $listItems.click(function(e) {
+			        e.stopPropagation();
+			        $styledSelect.text($(this).text()).removeClass("active");
+			        $this.val($(this).attr("rel"));
+			        $list.hide();
+			        //console.log($this.val());
+			    });
+			  
+			    $(document).click(function() {
+			        $styledSelect.removeClass("active");
+			        $list.hide();
+			    });
+
+			});
+		
+			window.nodataHtml ="<div class='nodata flex'>"
+					+"	<div><img src='/images/img-data-empty.png'></div>"
+					+"	<div>Data not Attached!</div>"
+					+"</div>";
+		});	
+
+		function fileListener(){
+			$("#file_box .input_file").on("change",function(e){
+				const file = e.target.files[0];
+				const name = file.name
+					,ext = file.name.split('.').pop().toLowerCase()
+					,size = file.size;
+				
+				$(this).siblings(".file_text").attr("disabled", "disabled").val(name); 
+				$(this).data("ext", ext);
+				$(this).data("size", size)
+			});
+			
+		}
+		
+		function rmSession(){
+			sessionStorage.clear();
+			return true;
+		}
+  </script>
+  <link href="/css/slick.css" rel="stylesheet"/>
+  <script src="/js/slick.min.js">
+  </script>
+  <link href="/css/leaflet.css" rel="stylesheet"/>
+  <script src="/js/leaflet.js">
+  </script>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1b7e3b098a4a8f27a35981418d92107b" type="text/javascript">
+  </script>
+  <div class="container" id="main">
+   <div class="main_1">
+    <div class="wrapper">
+     <div class="contents">
+      <div class="m_txt">
+       <strong>
+        BOOST YOUR
+       </strong>
+       DATA POWER
+      </div>
+      <div class="m_img">
+      </div>
+      <div class="m_subtxt">
+       Endless Possibility Awaits You
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="main_2">
+    <div class="wrapper">
+     <div class="contents">
+      <div class="data_search_wrap big_search">
+       <div class="search_box flex fs">
+        <select class="search_type" name="search_type">
+         <option value="search_txt">
+          All
+         </option>
+         <option value="title">
+          Title
+         </option>
+         <option value="description">
+          Description
+         </option>
+         <option value="keyword">
+          Keyword
+         </option>
+        </select>
+        <div class="search_input flex">
+         <input class="search_txt" name="search_txt" placeholder="Please enter your search word." type="text"/>
+         <div class="btn_clear">
+          X
+         </div>
+         <div class="btn_search">
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="m_txt t_center">
+       Data Market
+      </div>
+      <div class="m_subtxt t_center">
+       Find the Data You Need.
+      </div>
+      <div class="filter_wrap flex">
+       <div class="filter active" data-type="0">
+        RECENT
+       </div>
+       <div class="filter" data-type="1">
+        HOT
+       </div>
+       <div class="filter" data-type="2">
+        REVIEW
+       </div>
+       <div class="filter" data-type="3">
+        RATING
+       </div>
+      </div>
+      <div class="data_items_wrap flex fs">
+      </div>
+      <div class="btn_wrap flex">
+       <div class="btn btn_basic">
+        <a href="/data/list">
+         More
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="main_3 request_msg_link">
+    <div class="wrapper">
+     <div class="contents t_center">
+      <p>
+       Don’t have what you are looking for?
+      </p>
+      <p>
+       Request Your Data.
+      </p>
+      <div class="btn_wrap flex">
+       <div class="btn btn_basic">
+        <a href="/request/list">
+         Data Request
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="main_4 map" id="map">
+   </div>
+  </div>
+  <footer id="footer">
+   <div class="footer_contents1">
+    <div class="wrapper">
+     <div class="company_info_wrap flex sb">
+      <div class="company_info flex xiilab">
+       <div class="company_logo">
+        <img src="/images/xiilab-logo.png"/>
+       </div>
+       <div class="v_bar">
+       </div>
+       <div class="company_addr">
+        dataXchain KR
+        <br/>
+        4F, 9, Nonhyeon-ro 76-gil, Gangnam-gu,
+        <br/>
+        Seoul, Republic of Korea
+       </div>
+      </div>
+      <div class="company_info flex tobelet">
+       <div class="company_logo">
+        <img src="/images/tobelet.png"/>
+       </div>
+       <div class="v_bar">
+       </div>
+       <div class="company_addr">
+        dataXchain Global
+        <br/>
+        105 Cecil St. #15-02 The Octagon
+        <br/>
+        Singapore
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer_contents2">
+    <div class="wrapper">
+     <div class="contents t_center">
+      Copyright © 2019 dataXchain
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script>
+  </script>
+  <script>
+   $(document).on("sessionLoad", function() {
+		$("#floating").addClass("hide");
+		main.init();
+		
+	});
+	
+	const main = {
+		pt: $("#main"),
+		init: function(){
+			const that = this;
+			activeMenu(".nav_logout");
+			$(".nav_wrap li[menu='main'] > a").addClass("active")
+// 			that.pt.find(".main_3 .cont_wrap").slick({
+// 				  infinite: true,
+// 				  slidesToShow: 3,
+// 				  slidesToScroll: 3,
+// 				  prevArrow: ".slick_prev", 
+// 				  nextArrow: ".slick_next", 
+
+// 			});
+			
+// 			that.drawMap();
+			xiiMap.init("en", "xiilab");
+			that.getData();
+			
+			that.listener();
+			
+			
+			
+		},
+		getData: function(search){
+			const that = this;
+
+			const ajaxData = { page_num : 0, type: that.pt.find(".filter_wrap .filter.active").data("type")};
+			
+			if(typeof search != "undefined"){
+				ajaxData.search_txt = search;
+			}
+			
+			
+			
+			
+			$.ajax({
+			   	url :  baseUrl + "main/getMainDataList.json",
+			   	data : ajaxData,
+			   	success : function(res){
+					console.log("=====getMainDataList=====", res);
+					that.drawData(res.result.data);
+					
+			   	}
+			});
+		},
+		drawData: function(result){
+			const that = this;
+			
+			that.pt.find(".data_items_wrap").html("");
+			let html = "";
+			for(let i=0, len=result.length; i<len; i++){
+				const rdata = result[i];
+				html += " <div class='data_item' data-id='"+rdata.data_id+"'> ";
+				if(rdata.thumbnail_path != null){
+					html += " 	<div class='data_img'><img src='"+uploadImgUrl+rdata.thumbnail_path+"'  onerror='ImgError(this)' /></div> ";
+				} else {
+					html += " 	<div class='data_img'></div> ";
+				}
+				html += " 	<div class='data_category'>"+rdata.category+"</div> ";
+				html += " 	<div class='data_title break_word'>"+rdata.title+"</div> ";
+				html += " 	<div class='data_desc break_word3'>"+rdata.description+"</div> ";
+				html += "   <div class='flex sb'>"
+				html += " 		<div class='data_score'>★★★★★<div class='score' style='width: "+(rdata.grade*1) * 20+"%;'>★★★★★</div></div>";
+				html += " 		<div class='data_price'>"+currency+num(rdata.price)+"</div> ";
+				html += " 	</div> ";
+				html += " </div> ";
+			
+			}
+			that.pt.find(".main_2 .data_items_wrap").append(html);
+
+
+			that.pt.find(".data_item").off("click").on("click",function(){
+				sessionStorage.setItem("viewId", $(this).data("id"));
+				location.href=baseUrl + "data/view?id="+$(this).data("id");		
+			});
+		},
+		listener: function(){
+			const that = this;
+			
+			that.pt.find(".main_2 .filter_wrap .filter").off("click").on("click",function(){
+				that.pt.find(".main_2 .filter_wrap .filter").removeClass("active");
+				$(this).addClass("active");
+				that.getData();
+			});
+			
+			
+			that.pt.find(".main_2 .btn_search").off("click").on("click",function(){
+				const searchType = that.pt.find(".search_type").val(),
+					searchTxt = that.pt.find(".search_txt").val();
+				
+				sessionStorage.setItem("dataList", 1);
+				sessionStorage.setItem("dataList searchTxt", searchTxt);
+				sessionStorage.setItem("dataList searchType", searchType);
+				
+				location.href = baseUrl + "data/list";
+			});
+			
+			that.pt.find(".search_txt").keydown(function (key) {
+		        if(key.keyCode == 13){
+		        		that.pt.find(".btn_search").trigger("click");
+		        }
+		    });
+			
+			$("body").scroll(function(){
+			    var scrollTop = $("body").scrollTop();
+			     if(scrollTop > 300 ) $("#floating").removeClass("hide");
+			     else if(scrollTop < 300) $("#floating").addClass("hide");
+			 }).scroll();
+		
+			
+		},
+		
+		drawMap: function(){
+			
+			const xiiPosition = new daum.maps.LatLng(37.51109386496505, 127.0357416082457)
+			const mapContainer = $(".map")[0], 
+		    mapOption = { 
+		        center: xiiPosition,
+		        level: 2 ,
+		        draggable: false
+		    };
+
+			const map = new daum.maps.Map(mapContainer, mapOption); 
+	
+			
+	        let content = '<div class="map_inner_box">' +
+		                    '   <h3>Xiilab Office</h3>' +
+		                    '   <p>서울특별시 강남구 언주로 617, 3</p>' +
+		                    '   <p>02-2039-3145</p>' +
+		                    '   <p>xiilab@xiilab.com</p>' +
+		                    '</div>';
+		   
+        
+            const customOverlay = new daum.maps.CustomOverlay({
+                position: xiiPosition,
+                content: content,
+                xAnchor: -0.1,
+                yAnchor: 1
+            });
+            
+            customOverlay.setMap(map);
+
+            
+            const imageSrc = "resources/images/ic-map.png",   
+            imageSize = new daum.maps.Size(23, 37), 
+            imageOption = {offset: new daum.maps.Point(27, 69)};
+            
+			const marker = new daum.maps.Marker({
+							position: xiiPosition, 
+							image: new daum.maps.MarkerImage(imageSrc, imageSize)
+						});
+			marker.setMap(map);
+				
+				
+		}
+	};
+  </script>
+ </body>
+</html>

@@ -1,0 +1,3036 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5VBBL79');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+  <script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">
+   //<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+  </script>
+  <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+  <!-- This site is optimized with the Yoast SEO plugin v14.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>
+   EOSIO - Blockchain software architecture
+  </title>
+  <link data-minify="1" href="https://eos.io/wp-content/cache/min/1/54f1e7a34bc73622fcf51713f88e7e8f.css" rel="stylesheet"/>
+  <meta content="EOSIO is a next-generation, open-source blockchain protocol with industry-leading transaction speed and flexible utility." name="description"/>
+  <meta content="index, follow" name="robots"/>
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot"/>
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot"/>
+  <link href="https://eos.io/" rel="canonical"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="website" property="og:type"/>
+  <meta content="EOSIO - Blockchain software architecture" property="og:title"/>
+  <meta content="EOSIO is a next-generation, open-source blockchain protocol with industry-leading transaction speed and flexible utility." property="og:description"/>
+  <meta content="https://eos.io/" property="og:url"/>
+  <meta content="EOSIO" property="og:site_name"/>
+  <meta content="2020-07-17T01:29:40+00:00" property="article:modified_time"/>
+  <meta content="https://eos.io/wp-content/uploads/2020/07/EOSIO-Homepage-OG.jpg" property="og:image"/>
+  <meta content="2800" property="og:image:width"/>
+  <meta content="1600" property="og:image:height"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <script class="yoast-schema-graph" type="application/ld+json">
+   {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://eos.io/#organization","name":"EOSIO","url":"https://eos.io/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://eos.io/#logo","inLanguage":"en-US","url":"https://eos.io/wp-content/uploads/2019/03/favicon.png","width":120,"height":120,"caption":"EOSIO"},"image":{"@id":"https://eos.io/#logo"}},{"@type":"WebSite","@id":"https://eos.io/#website","url":"https://eos.io/","name":"EOSIO","description":"","publisher":{"@id":"https://eos.io/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://eos.io/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://eos.io/#primaryimage","inLanguage":"en-US","url":"https://eos.io/wp-content/uploads/2020/07/EOSIO-Homepage-OG.jpg","width":2800,"height":1600},{"@type":"WebPage","@id":"https://eos.io/#webpage","url":"https://eos.io/","name":"EOSIO - Blockchain software architecture","isPartOf":{"@id":"https://eos.io/#website"},"about":{"@id":"https://eos.io/#organization"},"primaryImageOfPage":{"@id":"https://eos.io/#primaryimage"},"datePublished":"2019-03-04T22:53:36+00:00","dateModified":"2020-07-17T01:29:40+00:00","description":"EOSIO is a next-generation, open-source blockchain protocol with industry-leading transaction speed and flexible utility.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://eos.io/"]}]}]}
+  </script>
+  <!-- / Yoast SEO plugin. -->
+  <link href="//code.jquery.com" rel="dns-prefetch"/>
+  <link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+  <link href="//use.typekit.net" rel="dns-prefetch"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://eos.io/feed/" rel="alternate" title="EOSIO » Feed" type="application/rss+xml"/>
+  <link href="https://eos.io/comments/feed/" rel="alternate" title="EOSIO » Comments Feed" type="application/rss+xml"/>
+  <style type="text/css">
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+  </style>
+  <link href="https://use.typekit.net/agm7hgt.css?ver=5.4.2" id="typekit-css" media="all" rel="stylesheet" type="text/css"/>
+  <script data-no-minify="1" src="https://eos.io/wp-content/cache/busting/1/gtm-b1cf7e306baaf25252b210de74ade680.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-118900796-4', {"anonymize_ip":true} );
+  </script>
+  <link href="https://eos.io/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://eos.io/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://eos.io/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <link href="https://eos.io/" rel="shortlink"/>
+  <link href="https://eos.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feos.io%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://eos.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feos.io%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <meta content="Site Kit by Google 1.12.0" name="generator"/>
+  <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+  <script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">
+   //<![CDATA[
+	var dataLayer_content = {"pagePostType":"frontpage","pagePostType2":"single-page","pagePostAuthor":"Justin Radomski"};
+	dataLayer.push( dataLayer_content );//]]>
+  </script>
+  <script data-cfasync="false">
+   //<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7FT8J7');//]]>
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+  <style type="text/css">
+   .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+  </style>
+  <link href="https://eos.io/wp-content/uploads/2020/04/favicon-196-150x150.png" rel="icon" sizes="32x32"/>
+  <link href="https://eos.io/wp-content/uploads/2020/04/favicon-196.png" rel="icon" sizes="192x192"/>
+  <link href="https://eos.io/wp-content/uploads/2020/04/favicon-196.png" rel="apple-touch-icon"/>
+  <meta content="https://eos.io/wp-content/uploads/2020/04/favicon-196.png" name="msapplication-TileImage"/>
+  <noscript>
+   <style id="rocket-lazyload-nojs-css">
+    .rll-youtube-player, [data-lazy-src]{display:none !important;}
+   </style>
+  </noscript>
+ </head>
+ <body class="home page-template-default page page-id-12 wp-embed-responsive page-home">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5VBBL79" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N7FT8J7" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="site" id="page">
+   <a class="skip-link screen-reader-text" href="#content">
+    Skip to content
+   </a>
+   <header class="site-header" id="masthead">
+    <div class="container flex">
+     <div class="site-branding">
+      <a href="https://eos.io">
+       <svg id="Layer_1" style="enable-background:new 0 0 33.2 50;" version="1.1" viewbox="0 0 33.2 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+        <title>
+         eosio-icon
+        </title>
+        <g>
+         <path d="M16.6,0L4.9,16.1L0,39.9L16.6,50l16.6-10.1L28.2,16L16.6,0z M2.7,38.8l3.7-18.1l8.4,25.5L2.7,38.8z M7.6,16.6l9-12.4
+		l9,12.4l-9,27.2L7.6,16.6z M18.3,46.2l8.4-25.5l3.7,18.1L18.3,46.2z">
+         </path>
+        </g>
+       </svg>
+      </a>
+     </div>
+     <!-- .site-branding -->
+     <nav class="main-navigation" id="site-navigation">
+      <div class="menu-header-menu-container">
+       <ul class="main-navigation__menu" id="header-menu">
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-491" id="menu-item-491">
+         <a href="https://eos.io/about-us/">
+          About Us
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-492" id="menu-item-492">
+         <a href="https://eos.io/why-eosio/">
+          Why EOSIO
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1196" id="menu-item-1196">
+         <a href="https://eos.io/strategic-vision/">
+          Strategic Vision
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496 mega-menu__contains-mega-menu" id="menu-item-496">
+         <a href="https://eos.io/build-on-eosio/">
+          FOR DEVELOPERS
+          <span class="mega-menu__down-icon">
+           <i class="b1-icon-chevron-right">
+           </i>
+          </span>
+         </a>
+         <div class="acf-widget-area mega-menu mega_menu" id="" role="complementary">
+          <div class="container mega-menu__row">
+           <section class="widget widget_nav_menu" id="nav_menu-7">
+            <h2 class="widget-title">
+             Learn
+            </h2>
+            <div class="menu-build-on-eosio-learn-container">
+             <ul class="menu" id="menu-build-on-eosio-learn">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3021" id="menu-item-3021">
+               <a href="https://developers.eos.io/" rel="noopener noreferrer" target="_blank">
+                Developer Portal
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3022" id="menu-item-3022">
+               <a href="https://battles.eos.io/" rel="noopener noreferrer" target="_blank">
+                Elemental Battles
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3023" id="menu-item-3023">
+               <a href="https://developers.eos.io/welcome/latest/getting-started/index" rel="noopener noreferrer" target="_blank">
+                Getting Started
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3024" id="menu-item-3024">
+               <a href="https://developers.eos.io/welcome/latest/tutorials/index" rel="noopener noreferrer" target="_blank">
+                Tutorials
+               </a>
+              </li>
+              <li class="megamenu__heading-devider menu-item menu-item-type-custom menu-item-object-custom menu-item-3025" id="menu-item-3025">
+               <a href="#">
+                EOSIO Core
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3027" id="menu-item-3027">
+               <a href="https://eos.io/build-on-eosio/nodeos/">
+                Nodeos
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3026" id="menu-item-3026">
+               <a href="https://eos.io/build-on-eosio/cleos/">
+                Cleos
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3035" id="menu-item-3035">
+               <a href="https://eos.io/build-on-eosio/keosd/">
+                Keosd
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3036" id="menu-item-3036">
+               <a href="https://developers.eos.io/welcome/latest/reference/index" rel="noopener noreferrer" target="_blank">
+                API References
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3037" id="menu-item-3037">
+               <a href="https://eos.io/build-on-eosio/reference-smart-contracts/">
+                Reference Smart Contracts
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3038" id="menu-item-3038">
+               <a href="https://eos.io/eosio-software-releases/">
+                EOSIO Software Releases
+               </a>
+              </li>
+             </ul>
+            </div>
+           </section>
+           <section class="widget widget_nav_menu" id="nav_menu-8">
+            <h2 class="widget-title">
+             EOSIO Tools
+            </h2>
+            <div class="menu-products-eosio-tools-container">
+             <ul class="menu" id="menu-products-eosio-tools">
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2404" id="menu-item-2404">
+               <a href="https://eos.io/build-on-eosio/eosio-testnet/">
+                EOSIO Testnet
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2405" id="menu-item-2405">
+               <a href="https://eos.io/build-on-eosio/eosio-cdt/">
+                EOSIO.CDT
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2403" id="menu-item-2403">
+               <a href="https://eos.io/build-on-eosio/ricardian-template-toolkit/">
+                Ricardian Template Toolkit
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2402" id="menu-item-2402">
+               <a href="https://eos.io/build-on-eosio/eos-vm/">
+                EOS-VM
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2401" id="menu-item-2401">
+               <a href="https://eos.io/build-on-eosio/eosjs/">
+                EOSJS
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2400" id="menu-item-2400">
+               <a href="https://eos.io/build-on-eosio/history-tools/">
+                History Tools
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2399" id="menu-item-2399">
+               <a href="https://eos.io/build-on-eosio/universal-authenticator-library/">
+                Universal Authenticator (UAL)
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2398" id="menu-item-2398">
+               <a href="https://eos.io/build-on-eosio/eosio-sdk-for-swift/">
+                EOSIO SDK for Swift
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2397" id="menu-item-2397">
+               <a href="https://eos.io/build-on-eosio/eosio-sdk-for-java/">
+                EOSIO SDK for Java
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2396" id="menu-item-2396">
+               <a href="https://eos.io/build-on-eosio/demux/">
+                Demux
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2395" id="menu-item-2395">
+               <a href="https://eos.io/build-on-eosio/eosio-quickstart-web-ide/">
+                EOSIO Quickstart Web IDE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2394" id="menu-item-2394">
+               <a href="https://eos.io/build-on-eosio/webauthn/">
+                WebAuthn
+               </a>
+              </li>
+             </ul>
+            </div>
+           </section>
+           <section class="widget widget_nav_menu" id="nav_menu-9">
+            <h2 class="widget-title">
+             EOSIO Labs™
+            </h2>
+            <div class="menu-products-eosio-labs-container">
+             <ul class="menu" id="menu-products-eosio-labs">
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2416" id="menu-item-2416">
+               <a href="https://eos.io/build-on-eosio/webauthn-example-app/">
+                WebAuthn Example App
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2407" id="menu-item-2407">
+               <a href="https://eos.io/build-on-eosio/eosio-explorer/">
+                EOSIO Explorer
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2408" id="menu-item-2408">
+               <a href="https://eos.io/build-on-eosio/assert-manifest-security-model/">
+                Assert Manifest Security Model
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2410" id="menu-item-2410">
+               <a href="https://eos.io/build-on-eosio/chrome-reference-authenticator/">
+                Chrome Reference Authenticator
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2409" id="menu-item-2409">
+               <a href="https://eos.io/build-on-eosio/ios-reference-authenticator/">
+                iOS Reference Authenticator
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2411" id="menu-item-2411">
+               <a href="https://eos.io/build-on-eosio/eosio-specifications-repository/">
+                EOSIO Specifications Repository
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2412" id="menu-item-2412">
+               <a href="https://eos.io/build-on-eosio/elemental-battles/">
+                Elemental Battles
+               </a>
+              </li>
+             </ul>
+            </div>
+           </section>
+           <section class="widget widget-promo-label" id="promo_label-2">
+            <div class="widget-promo-label__underline">
+            </div>
+            <a class="widget-promo-label__link widget-promo-label__link--basic" href="https://eos.io/news/eosio-challenge-promotes-blockchain-interoperability" target="_self">
+             <img alt="" class="widget-promo-label__image" data-lazy-sizes="(max-width: 550px) 100vw, 550px" data-lazy-src="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg 550w, https://eos.io/wp-content/uploads/2020/04/Promo-Label-300x111.jpg 300w" height="204" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20204'%3E%3C/svg%3E" width="550"/>
+             <noscript>
+              <img alt="" class="widget-promo-label__image" height="204" sizes="(max-width: 550px) 100vw, 550px" src="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg" srcset="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg 550w, https://eos.io/wp-content/uploads/2020/04/Promo-Label-300x111.jpg 300w" width="550"/>
+             </noscript>
+             <div class="widget-promo-label__title">
+              <span class="widget-promo-label__title-wrapper">
+               And the winner is..
+              </span>
+             </div>
+             <div class="widget-promo-label__subtitle">
+              <span class="widget-promo-label__subtitle-wrapper">
+               Learn how this solution improves blockchain interoperability, making EOSIO work for everyone.
+              </span>
+             </div>
+            </a>
+           </section>
+          </div>
+         </div>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2956 mega-menu__contains-mega-menu" id="menu-item-2956">
+         <a href="#">
+          Community
+          <span class="mega-menu__down-icon">
+           <i class="b1-icon-chevron-right">
+           </i>
+          </span>
+         </a>
+         <div class="acf-widget-area mega-menu mega_menu" id="" role="complementary">
+          <div class="container mega-menu__row">
+           <section class="widget widget_nav_menu" id="nav_menu-14">
+            <h2 class="widget-title">
+             Learn the Essentials
+            </h2>
+            <div class="menu-community-eosio-essentials-container">
+             <ul class="menu" id="menu-community-eosio-essentials">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2941" id="menu-item-2941">
+               <a href="https://developers.eos.io/welcome/latest/getting-started/smart-contract-development/hello-world" rel="noopener noreferrer" target="_blank">
+                Smart contracts
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2942" id="menu-item-2942">
+               <a href="https://eos.io/strategic-vision/#scalability">
+                Scalability
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2943" id="menu-item-2943">
+               <a href="https://developers.eos.io/welcome/latest/protocol/accounts_and_permissions#312-active-permission" rel="noopener noreferrer" target="_blank">
+                Security
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2944" id="menu-item-2944">
+               <a href="https://developers.eos.io/welcome/latest/glossary/index#cryptographic-hash" rel="noopener noreferrer" target="_blank">
+                Cryptography
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" id="menu-item-2945">
+               <a href="https://developers.eos.io/welcome/latest/overview/technical_features#programmable-economics-and-governance" rel="noopener noreferrer" target="_blank">
+                Resource allocation
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2946" id="menu-item-2946">
+               <a href="https://developers.eos.io/welcome/latest/protocol/consensus_protocol#52-block-production" rel="noopener noreferrer" target="_blank">
+                Block production
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2947" id="menu-item-2947">
+               <a href="https://developers.eos.io/welcome/latest/protocol/consensus_protocol" rel="noopener noreferrer" target="_blank">
+                Delegated proof of stake (dpos)
+               </a>
+              </li>
+             </ul>
+            </div>
+           </section>
+           <section class="widget widget_nav_menu" id="nav_menu-15">
+            <h2 class="widget-title">
+             Get Tutorials &amp; More
+            </h2>
+            <div class="menu-community-eosio-tutorials-container">
+             <ul class="menu" id="menu-community-eosio-tutorials">
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2948" id="menu-item-2948">
+               <a href="https://eos.io/build-on-eosio/elemental-battles/">
+                Elemental Battles
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2949" id="menu-item-2949">
+               <a href="https://eos.io/webinars/">
+                Webinars
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2950" id="menu-item-2950">
+               <a href="https://eos.io/faq/">
+                FAQ
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2951" id="menu-item-2951">
+               <a href="https://eos.io/build-on-eosio/eosio-testnet/">
+                EOSIO Testnet
+               </a>
+              </li>
+             </ul>
+            </div>
+           </section>
+           <section class="widget widget_nav_menu" id="nav_menu-16">
+            <h2 class="widget-title">
+             Learn From the Community
+            </h2>
+            <div class="menu-community-eosio-learn-container">
+             <ul class="menu" id="menu-community-eosio-learn">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2952" id="menu-item-2952">
+               <a href="https://github.com/EOSIO" rel="noopener noreferrer" target="_blank">
+                GitHub
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2953" id="menu-item-2953">
+               <a href="https://developers.eos.io/" rel="noopener noreferrer" target="_blank">
+                Developer Portal
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2954" id="menu-item-2954">
+               <a href="https://eosio.stackexchange.com/" rel="noopener noreferrer" target="_blank">
+                Stack Exchange
+               </a>
+              </li>
+             </ul>
+            </div>
+           </section>
+           <section class="widget widget-promo-label" id="promo_label-3">
+            <div class="widget-promo-label__underline">
+            </div>
+            <a class="widget-promo-label__link widget-promo-label__link--basic" href="https://vc.eos.io/" target="_blank">
+             <img alt="" class="widget-promo-label__image" data-lazy-sizes="(max-width: 550px) 100vw, 550px" data-lazy-src="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg 550w, https://eos.io/wp-content/uploads/2020/07/eosio_banner-300x111.jpg 300w" height="204" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20204'%3E%3C/svg%3E" width="550"/>
+             <noscript>
+              <img alt="" class="widget-promo-label__image" height="204" sizes="(max-width: 550px) 100vw, 550px" src="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg" srcset="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg 550w, https://eos.io/wp-content/uploads/2020/07/eosio_banner-300x111.jpg 300w" width="550"/>
+             </noscript>
+             <div class="widget-promo-label__title">
+              <span class="widget-promo-label__title-wrapper">
+               #builtoneosio
+              </span>
+             </div>
+             <div class="widget-promo-label__subtitle">
+              <span class="widget-promo-label__subtitle-wrapper">
+               70+ investments, 30+ grants. See how EOS VC invests in next-generation blockchain applications.
+              </span>
+             </div>
+            </a>
+           </section>
+          </div>
+         </div>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26" id="menu-item-26">
+         <a href="https://eos.io/news/">
+          News
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2870" id="menu-item-2870">
+         <a href="https://eos.io/contact/">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <!-- #site-navigation -->
+     <div class="header-search">
+      <i class="b1-icon-glyph-search-alt search-toggle">
+      </i>
+      <form action="/" class="search-form" method="get">
+       <input name="s" placeholder="Search" type="search" value=""/>
+       <button aria-label="Submit Search" class="news-search-submit no-style" type="submit">
+        <i class="b1-icon-glyph-search">
+        </i>
+       </button>
+      </form>
+     </div>
+     <div class="menu-toggle">
+      <div class="hamburger">
+       <span>
+       </span>
+       <span>
+       </span>
+       <span>
+       </span>
+       <span>
+       </span>
+      </div>
+     </div>
+    </div>
+   </header>
+   <!-- #masthead -->
+   <nav class="mobile-navigation" id="mobile-navigation">
+    <div class="container">
+     <div class="mobile-nav-content">
+      <form action="/" class="search-form" method="get">
+       <input name="s" placeholder="Search" type="search" value=""/>
+       <button aria-label="Submit Search" class="news-search-submit no-style" type="submit">
+        <i class="b1-icon-glyph-search">
+        </i>
+       </button>
+      </form>
+      <div class="menu-mobile-menu-container">
+       <ul class="main-navigation-mobile__menu" id="mobile-menu">
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2134" id="menu-item-2134">
+         <a href="https://eos.io/about-us/">
+          About Us
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2135" id="menu-item-2135">
+         <a href="https://eos.io/why-eosio/">
+          Why EOSIO
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2136" id="menu-item-2136">
+         <a href="https://eos.io/strategic-vision/">
+          Strategic Vision
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2137 mega-menu-mobile__contains-mega-menu" id="menu-item-2137">
+         <a href="https://eos.io/build-on-eosio/">
+          Build on EOSIO
+          <span class="mega-menu-mobile__forward-icon">
+           <i class="b1-icon-chevron-right">
+           </i>
+          </span>
+         </a>
+         <div class="mega-menu-mobile__container">
+          <div class="container">
+           <div class="mega-menu-mobile__back">
+            <span class="mega-menu-mobile__back-icon">
+             <i class="b1-icon-chevron-right">
+             </i>
+            </span>
+            Back
+           </div>
+           <a class="mega-menu-mobile__all-page" href="https://eos.io/build-on-eosio/">
+            All Build on EOSIO
+           </a>
+           <div class="acf-widget-area mega-menu mega_menu" id="" role="complementary">
+            <div class="container mega-menu__row">
+             <section class="widget widget_nav_menu" id="nav_menu-7">
+              <h2 class="widget-title">
+               Learn
+              </h2>
+              <div class="menu-build-on-eosio-learn-container">
+               <ul class="menu" id="menu-build-on-eosio-learn-1">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3021">
+                 <a href="https://developers.eos.io/" rel="noopener noreferrer" target="_blank">
+                  Developer Portal
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3022">
+                 <a href="https://battles.eos.io/" rel="noopener noreferrer" target="_blank">
+                  Elemental Battles
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3023">
+                 <a href="https://developers.eos.io/welcome/latest/getting-started/index" rel="noopener noreferrer" target="_blank">
+                  Getting Started
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3024">
+                 <a href="https://developers.eos.io/welcome/latest/tutorials/index" rel="noopener noreferrer" target="_blank">
+                  Tutorials
+                 </a>
+                </li>
+                <li class="megamenu__heading-devider menu-item menu-item-type-custom menu-item-object-custom menu-item-3025">
+                 <a href="#">
+                  EOSIO Core
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3027">
+                 <a href="https://eos.io/build-on-eosio/nodeos/">
+                  Nodeos
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3026">
+                 <a href="https://eos.io/build-on-eosio/cleos/">
+                  Cleos
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3035">
+                 <a href="https://eos.io/build-on-eosio/keosd/">
+                  Keosd
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3036">
+                 <a href="https://developers.eos.io/welcome/latest/reference/index" rel="noopener noreferrer" target="_blank">
+                  API References
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3037">
+                 <a href="https://eos.io/build-on-eosio/reference-smart-contracts/">
+                  Reference Smart Contracts
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3038">
+                 <a href="https://eos.io/eosio-software-releases/">
+                  EOSIO Software Releases
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </section>
+             <section class="widget widget_nav_menu" id="nav_menu-8">
+              <h2 class="widget-title">
+               EOSIO Tools
+              </h2>
+              <div class="menu-products-eosio-tools-container">
+               <ul class="menu" id="menu-products-eosio-tools-1">
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2404">
+                 <a href="https://eos.io/build-on-eosio/eosio-testnet/">
+                  EOSIO Testnet
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2405">
+                 <a href="https://eos.io/build-on-eosio/eosio-cdt/">
+                  EOSIO.CDT
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2403">
+                 <a href="https://eos.io/build-on-eosio/ricardian-template-toolkit/">
+                  Ricardian Template Toolkit
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2402">
+                 <a href="https://eos.io/build-on-eosio/eos-vm/">
+                  EOS-VM
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2401">
+                 <a href="https://eos.io/build-on-eosio/eosjs/">
+                  EOSJS
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2400">
+                 <a href="https://eos.io/build-on-eosio/history-tools/">
+                  History Tools
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2399">
+                 <a href="https://eos.io/build-on-eosio/universal-authenticator-library/">
+                  Universal Authenticator (UAL)
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2398">
+                 <a href="https://eos.io/build-on-eosio/eosio-sdk-for-swift/">
+                  EOSIO SDK for Swift
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2397">
+                 <a href="https://eos.io/build-on-eosio/eosio-sdk-for-java/">
+                  EOSIO SDK for Java
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2396">
+                 <a href="https://eos.io/build-on-eosio/demux/">
+                  Demux
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2395">
+                 <a href="https://eos.io/build-on-eosio/eosio-quickstart-web-ide/">
+                  EOSIO Quickstart Web IDE
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2394">
+                 <a href="https://eos.io/build-on-eosio/webauthn/">
+                  WebAuthn
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </section>
+             <section class="widget widget_nav_menu" id="nav_menu-9">
+              <h2 class="widget-title">
+               EOSIO Labs™
+              </h2>
+              <div class="menu-products-eosio-labs-container">
+               <ul class="menu" id="menu-products-eosio-labs-1">
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2416">
+                 <a href="https://eos.io/build-on-eosio/webauthn-example-app/">
+                  WebAuthn Example App
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2407">
+                 <a href="https://eos.io/build-on-eosio/eosio-explorer/">
+                  EOSIO Explorer
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2408">
+                 <a href="https://eos.io/build-on-eosio/assert-manifest-security-model/">
+                  Assert Manifest Security Model
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2410">
+                 <a href="https://eos.io/build-on-eosio/chrome-reference-authenticator/">
+                  Chrome Reference Authenticator
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2409">
+                 <a href="https://eos.io/build-on-eosio/ios-reference-authenticator/">
+                  iOS Reference Authenticator
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2411">
+                 <a href="https://eos.io/build-on-eosio/eosio-specifications-repository/">
+                  EOSIO Specifications Repository
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2412">
+                 <a href="https://eos.io/build-on-eosio/elemental-battles/">
+                  Elemental Battles
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </section>
+             <section class="widget widget-promo-label" id="promo_label-2">
+              <div class="widget-promo-label__underline">
+              </div>
+              <a class="widget-promo-label__link widget-promo-label__link--basic" href="https://eos.io/news/eosio-challenge-promotes-blockchain-interoperability" target="_self">
+               <img alt="" class="widget-promo-label__image" data-lazy-sizes="(max-width: 550px) 100vw, 550px" data-lazy-src="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg 550w, https://eos.io/wp-content/uploads/2020/04/Promo-Label-300x111.jpg 300w" height="204" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20204'%3E%3C/svg%3E" width="550"/>
+               <noscript>
+                <img alt="" class="widget-promo-label__image" height="204" sizes="(max-width: 550px) 100vw, 550px" src="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg" srcset="https://eos.io/wp-content/uploads/2020/04/Promo-Label.jpg 550w, https://eos.io/wp-content/uploads/2020/04/Promo-Label-300x111.jpg 300w" width="550"/>
+               </noscript>
+               <div class="widget-promo-label__title">
+                <span class="widget-promo-label__title-wrapper">
+                 And the winner is..
+                </span>
+               </div>
+               <div class="widget-promo-label__subtitle">
+                <span class="widget-promo-label__subtitle-wrapper">
+                 Learn how this solution improves blockchain interoperability, making EOSIO work for everyone.
+                </span>
+               </div>
+              </a>
+             </section>
+            </div>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2957 mega-menu-mobile__contains-mega-menu" id="menu-item-2957">
+         <a href="#">
+          Community
+          <span class="mega-menu-mobile__forward-icon">
+           <i class="b1-icon-chevron-right">
+           </i>
+          </span>
+         </a>
+         <div class="mega-menu-mobile__container">
+          <div class="container">
+           <div class="mega-menu-mobile__back">
+            <span class="mega-menu-mobile__back-icon">
+             <i class="b1-icon-chevron-right">
+             </i>
+            </span>
+            Back
+           </div>
+           <div class="acf-widget-area mega-menu mega_menu" id="" role="complementary">
+            <div class="container mega-menu__row">
+             <section class="widget widget_nav_menu" id="nav_menu-14">
+              <h2 class="widget-title">
+               Learn the Essentials
+              </h2>
+              <div class="menu-community-eosio-essentials-container">
+               <ul class="menu" id="menu-community-eosio-essentials-1">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2941">
+                 <a href="https://developers.eos.io/welcome/latest/getting-started/smart-contract-development/hello-world" rel="noopener noreferrer" target="_blank">
+                  Smart contracts
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2942">
+                 <a href="https://eos.io/strategic-vision/#scalability">
+                  Scalability
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2943">
+                 <a href="https://developers.eos.io/welcome/latest/protocol/accounts_and_permissions#312-active-permission" rel="noopener noreferrer" target="_blank">
+                  Security
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2944">
+                 <a href="https://developers.eos.io/welcome/latest/glossary/index#cryptographic-hash" rel="noopener noreferrer" target="_blank">
+                  Cryptography
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945">
+                 <a href="https://developers.eos.io/welcome/latest/overview/technical_features#programmable-economics-and-governance" rel="noopener noreferrer" target="_blank">
+                  Resource allocation
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2946">
+                 <a href="https://developers.eos.io/welcome/latest/protocol/consensus_protocol#52-block-production" rel="noopener noreferrer" target="_blank">
+                  Block production
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2947">
+                 <a href="https://developers.eos.io/welcome/latest/protocol/consensus_protocol" rel="noopener noreferrer" target="_blank">
+                  Delegated proof of stake (dpos)
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </section>
+             <section class="widget widget_nav_menu" id="nav_menu-15">
+              <h2 class="widget-title">
+               Get Tutorials &amp; More
+              </h2>
+              <div class="menu-community-eosio-tutorials-container">
+               <ul class="menu" id="menu-community-eosio-tutorials-1">
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2948">
+                 <a href="https://eos.io/build-on-eosio/elemental-battles/">
+                  Elemental Battles
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2949">
+                 <a href="https://eos.io/webinars/">
+                  Webinars
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2950">
+                 <a href="https://eos.io/faq/">
+                  FAQ
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2951">
+                 <a href="https://eos.io/build-on-eosio/eosio-testnet/">
+                  EOSIO Testnet
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </section>
+             <section class="widget widget_nav_menu" id="nav_menu-16">
+              <h2 class="widget-title">
+               Learn From the Community
+              </h2>
+              <div class="menu-community-eosio-learn-container">
+               <ul class="menu" id="menu-community-eosio-learn-1">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2952">
+                 <a href="https://github.com/EOSIO" rel="noopener noreferrer" target="_blank">
+                  GitHub
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2953">
+                 <a href="https://developers.eos.io/" rel="noopener noreferrer" target="_blank">
+                  Developer Portal
+                 </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2954">
+                 <a href="https://eosio.stackexchange.com/" rel="noopener noreferrer" target="_blank">
+                  Stack Exchange
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </section>
+             <section class="widget widget-promo-label" id="promo_label-3">
+              <div class="widget-promo-label__underline">
+              </div>
+              <a class="widget-promo-label__link widget-promo-label__link--basic" href="https://vc.eos.io/" target="_blank">
+               <img alt="" class="widget-promo-label__image" data-lazy-sizes="(max-width: 550px) 100vw, 550px" data-lazy-src="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg 550w, https://eos.io/wp-content/uploads/2020/07/eosio_banner-300x111.jpg 300w" height="204" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20204'%3E%3C/svg%3E" width="550"/>
+               <noscript>
+                <img alt="" class="widget-promo-label__image" height="204" sizes="(max-width: 550px) 100vw, 550px" src="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg" srcset="https://eos.io/wp-content/uploads/2020/07/eosio_banner.jpg 550w, https://eos.io/wp-content/uploads/2020/07/eosio_banner-300x111.jpg 300w" width="550"/>
+               </noscript>
+               <div class="widget-promo-label__title">
+                <span class="widget-promo-label__title-wrapper">
+                 #builtoneosio
+                </span>
+               </div>
+               <div class="widget-promo-label__subtitle">
+                <span class="widget-promo-label__subtitle-wrapper">
+                 70+ investments, 30+ grants. See how EOS VC invests in next-generation blockchain applications.
+                </span>
+               </div>
+              </a>
+             </section>
+            </div>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2138" id="menu-item-2138">
+         <a href="https://eos.io/news/">
+          News
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2139" id="menu-item-2139">
+         <a href="https://eos.io/faq/">
+          FAQ
+         </a>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2876" id="menu-item-2876">
+         <a href="https://eos.io/contact/">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <!-- #site-navigation -->
+   <div class="header-spacer">
+   </div>
+   <div class="site-content" id="content">
+    <section class="front-panel section-hero-slider">
+     <div class="hero-slider">
+      <div class="slide-wrapper">
+       <div class="hero-slider-slide slide-eosio-webinars slide-eosio-webinars-0">
+        <style type="text/css">
+         .slide-eosio-webinars-0 {
+					background-image: url(https://eos.io/wp-content/uploads/2020/04/webinars-bg-blank.svg) !important;
+				}
+
+								@media screen and (max-width: 600px) {
+					.slide-eosio-webinars-0 {
+						background-image: url(https://eos.io/wp-content/uploads/2020/04/webinars-bg-blank-m.svg) !important;
+					}
+				}
+        </style>
+        <div class="slide-content slide-content-center">
+         <div class="container">
+          <div class="content-void">
+           <div class="content-wrap">
+            <h2 class="slide-title">
+             EOSIO Webinars
+            </h2>
+            <div class="slide-text margin-fix">
+             <p>
+              Learn the skills you need to build on EOSIO.
+             </p>
+            </div>
+            <div class="button-row">
+             <a class="button outline" href="https://eos.io/webinars/">
+              Watch Recordings
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="slide-content-center">
+         <div class="bg-animation">
+          <div class="wpbdmv-animation align-center renderer-svg" id="anim-5f25ccc7df810" style="max-width: 100%; margin-right: auto; margin-left: auto;">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="slide-wrapper" data-style="dark">
+       <div class="hero-slider-slide slide-featured-hackathon dark-ui">
+        <style type="text/css">
+         .slide-featured-hackathon {
+                    background-image: url(https://eos.io/wp-content/uploads/2020/04/featured-hackathon-desktop-2400x1167.jpg);
+                }
+                                    @media screen and (max-width: 600px) {
+                        .slide-featured-hackathon {
+                            background-image: url(https://eos.io/wp-content/uploads/2020/04/featured-hackathon-mobile-636x1024.jpg);
+                        }
+                    }
+        </style>
+        <div class="slide-content">
+         <div class="container small">
+          <h2 class="slide-heading">
+           <span class="pre-heading">
+            EOSIO Virtual Hackathon
+           </span>
+           Coding for Change
+          </h2>
+          <div class="button-row">
+           <a class="button outline" href="https://hackathon.eos.io/events/coding-for-change/" target="_blank">
+            See Submissions
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="slide-wrapper">
+       <div class="hero-slider-slide slide-eosio-challenge">
+        <style type="text/css">
+         .slide-eosio-challenge {
+                    background-image: url(https://eos.io/wp-content/uploads/2020/04/challenge-slider-desktop-2400x1167.jpg);
+                }
+                                    @media screen and (max-width: 600px) {
+                        .slide-eosio-challenge {
+                            background-image: url(https://eos.io/wp-content/uploads/2020/04/challenge-slider-mobile-636x1024.jpg);
+                        }
+                    }
+        </style>
+        <div class="slide-content">
+         <div class="container small">
+          <div class="hero-logo">
+           <img alt="" class="attachment-full size-full" data-lazy-src="https://eos.io/wp-content/uploads/2020/01/eosio-challenege_logo.svg" height="75" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20576%2075'%3E%3C/svg%3E" width="576"/>
+           <noscript>
+            <img alt="" class="attachment-full size-full" height="75" src="https://eos.io/wp-content/uploads/2020/01/eosio-challenege_logo.svg" width="576"/>
+           </noscript>
+          </div>
+          <div class="hero-text margin-fix">
+           <p>
+            <span>
+             Want to scale blockchain for future adoption?
+            </span>
+            <br/>
+            <span>
+             Take the first step and read about the winning EOSIO Challenge solution.
+            </span>
+           </p>
+          </div>
+          <div class="button-row">
+           <a class="button outline" href="https://eos.io/news/eosio-challenge-promotes-blockchain-interoperability">
+            Read More
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="slide-wrapper" data-style="dark">
+       <div class="hero-slider-slide slide-testnet dark-ui">
+        <style type="text/css">
+         .slide-testnet {
+                    background-image: url(https://eos.io/wp-content/uploads/2020/04/testnet-bg.svg);
+                }
+        </style>
+        <div class="slide-content">
+         <div class="container small">
+          <div class="slide-logo">
+           <img alt="" class="attachment-full size-full" data-lazy-src="https://eos.io/wp-content/uploads/2020/04/testnetlogo-1-1.svg" height="72.8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%2072'%3E%3C/svg%3E" width="225.9"/>
+           <noscript>
+            <img alt="" class="attachment-full size-full" height="72.8" src="https://eos.io/wp-content/uploads/2020/04/testnetlogo-1-1.svg" width="225.9"/>
+           </noscript>
+          </div>
+          <div class="slide-text margin-fix">
+           <p>
+            Test your app before users do. Build on Block.one's official EOSIO Testnet.
+           </p>
+          </div>
+          <div class="button-row">
+           <a class="button outline" href="https://testnet.eos.io/" target="_blank">
+            Get Started
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="front-panel section-icon-list padded">
+     <div class="container">
+      <h2 class="section-heading">
+       Features
+      </h2>
+      <div class="icon-list">
+       <div class="icon-list-item">
+        <div class="icon-list-item-content">
+         <div class="list-item-icon">
+          <svg height="104px" version="1.1" viewbox="0 0 104 104" width="104px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+           <title>
+            Flexible
+           </title>
+           <g fill="none" fill-rule="evenodd" id="Icons/Flexible" stroke="none" stroke-linejoin="round" stroke-width="1">
+            <g id="27" stroke="#3892E3" stroke-width="1.5" transform="translate(0.000000, 30.500000)">
+             <ellipse cx="51.896" cy="26.4625" id="Oval" rx="6.123" ry="25.8107143">
+             </ellipse>
+             <ellipse cx="24.388" cy="66.5342857" id="Oval" rx="23.738" ry="6.13982143">
+             </ellipse>
+             <ellipse cx="24.6763889" cy="57.2207036" id="Oval" rx="6.17798291" ry="23.7547182" transform="translate(24.676389, 57.220704) rotate(-76.190000) translate(-24.676389, -57.220704) ">
+             </ellipse>
+             <ellipse cx="26.7809345" cy="48.1962993" id="Oval" rx="6.27909193" ry="23.9359848" transform="translate(26.780934, 48.196299) rotate(-60.450000) translate(-26.780934, -48.196299) ">
+             </ellipse>
+             <ellipse cx="32.173385" cy="38.1224545" id="Oval" rx="6.17041171" ry="23.940391" transform="translate(32.173385, 38.122454) rotate(-44.520000) translate(-32.173385, -38.122454) ">
+             </ellipse>
+             <ellipse cx="38.078531" cy="31.8525152" id="Oval" rx="6.16609584" ry="24.3087825" transform="translate(38.078531, 31.852515) rotate(-29.200000) translate(-38.078531, -31.852515) ">
+             </ellipse>
+             <ellipse cx="44.2538975" cy="28.6928185" id="Oval" rx="6.1236728" ry="24.7912701" transform="translate(44.253898, 28.692819) rotate(-11.410000) translate(-44.253898, -28.692819) ">
+             </ellipse>
+             <ellipse cx="79.417" cy="66.5342857" id="Oval" rx="23.738" ry="6.13982143">
+             </ellipse>
+             <ellipse cx="79.1145811" cy="57.218696" id="Oval" rx="23.7547182" ry="6.17798291" transform="translate(79.114581, 57.218696) rotate(-13.810000) translate(-79.114581, -57.218696) ">
+             </ellipse>
+             <ellipse cx="77.0085771" cy="48.1865126" id="Oval" rx="23.9359848" ry="6.27909193" transform="translate(77.008577, 48.186513) rotate(-29.550000) translate(-77.008577, -48.186513) ">
+             </ellipse>
+             <ellipse cx="71.6106206" cy="38.1195301" id="Oval" rx="23.940391" ry="6.17041171" transform="translate(71.610621, 38.119530) rotate(-45.480000) translate(-71.610621, -38.119530) ">
+             </ellipse>
+             <ellipse cx="65.7285199" cy="31.8571346" id="Oval" rx="24.3087825" ry="6.16609584" transform="translate(65.728520, 31.857135) rotate(-60.800000) translate(-65.728520, -31.857135) ">
+             </ellipse>
+             <ellipse cx="59.5472162" cy="28.7038145" id="Oval" rx="24.7912701" ry="6.1236728" transform="translate(59.547216, 28.703815) rotate(-78.590000) translate(-59.547216, -28.703815) ">
+             </ellipse>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="list-item-title">
+          Flexible
+         </h3>
+         <div class="list-item-description">
+          <p>
+           Built for public or private blockchain networks, customizable to suit your business needs.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="icon-list-item">
+        <div class="icon-list-item-content">
+         <div class="list-item-icon">
+          <svg height="104px" version="1.1" viewbox="0 0 104 104" width="104px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+           <title>
+            Scalable
+           </title>
+           <g fill="none" fill-rule="evenodd" id="Icons/Scalable" stroke="none" stroke-linejoin="round" stroke-width="1">
+            <g id="28" stroke="#3892E3" stroke-width="1.5" transform="translate(0.000000, 6.000000)">
+             <polygon id="Path" points="14.5284615 80.8434667 0.653846154 72.8466667 0.653846154 56.84 14.5284615 64.8498667">
+             </polygon>
+             <polygon id="Path" points="28.39 56.7485333 14.5284615 64.7584 0.653846154 56.7485333 14.5284615 48.7517333">
+             </polygon>
+             <polygon id="Path" points="28.39 72.8466667 14.5284615 80.8434667 14.5284615 64.8498667 28.39 56.84">
+             </polygon>
+             <polygon id="Path" points="42.2646154 64.7976 28.39 56.8008 28.39 40.7941333 42.2646154 48.7909333">
+             </polygon>
+             <polygon id="Path" points="56.1392308 40.7026667 42.2646154 48.7125333 28.39 40.7026667 42.2646154 32.7058667">
+             </polygon>
+             <polygon id="Path" points="56.1392308 56.8008 42.2646154 64.7976 42.2646154 48.7909333 56.1392308 40.7941333">
+             </polygon>
+             <polygon id="Path" points="42.2646154 96.9024 28.39 88.8925333 28.39 72.8858667 42.2646154 80.8957333">
+             </polygon>
+             <polygon id="Path" points="56.1392308 72.8074667 42.2646154 80.8042667 28.39 72.8074667 42.2646154 64.7976">
+             </polygon>
+             <polygon id="Path" points="56.1392308 88.8925333 42.2646154 96.9024 42.2646154 80.8957333 56.1392308 72.8858667">
+             </polygon>
+             <polygon id="Path" points="70.0007692 80.8042667 56.1392308 72.8074667 56.1392308 56.8008 70.0007692 64.7976">
+             </polygon>
+             <polygon id="Path" points="83.8753846 56.7093333 70.0007692 64.7061333 56.1392308 56.7093333 70.0007692 48.7125333">
+             </polygon>
+             <polygon id="Path" points="83.8753846 72.8074667 70.0007692 80.8042667 70.0007692 64.7976 83.8753846 56.8008">
+             </polygon>
+             <polygon id="Path" points="14.5284615 48.7517333 0.653846154 40.7549333 0.653846154 24.7482667 14.5284615 32.7450667">
+             </polygon>
+             <polygon id="Path" points="28.39 24.6568 14.5284615 32.6666667 0.653846154 24.6568 14.5284615 16.66">
+             </polygon>
+             <polygon id="Path" points="28.39 40.7549333 14.5284615 48.7517333 14.5284615 32.7450667 28.39 24.7482667">
+             </polygon>
+             <polygon id="Path" points="70.0007692 48.7909333 56.1392308 40.7941333 56.1392308 24.7874667 70.0007692 32.7973333">
+             </polygon>
+             <polygon id="Path" points="83.8753846 24.7090667 70.0007692 32.7058667 56.1392308 24.7090667 70.0007692 16.6992">
+             </polygon>
+             <polygon id="Path" points="83.8753846 40.7941333 70.0007692 48.7909333 70.0007692 32.7973333 83.8753846 24.7874667">
+             </polygon>
+             <polygon id="Path" points="42.2646154 32.7450667 28.39 24.7482667 28.39 8.7416 42.2646154 16.7514667">
+             </polygon>
+             <polygon id="Path" points="56.1392308 8.65013333 42.2646154 16.66 28.39 8.65013333 42.2646154 0.653333333">
+             </polygon>
+             <polygon id="Path" points="56.1392308 24.7482667 42.2646154 32.7450667 42.2646154 16.7514667 56.1392308 8.7416">
+             </polygon>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="list-item-title">
+          Scalable
+         </h3>
+         <div class="list-item-description">
+          <p>
+           Secure processing designed for mass adoption with industry-leading transaction speeds.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="icon-list-item">
+        <div class="icon-list-item-content">
+         <div class="list-item-icon">
+          <svg height="104px" version="1.1" viewbox="0 0 104 104" width="104px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <g fill="none" fill-rule="evenodd" id="icons/feature/user-friendly" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+            <g id="User-Friendly_02" stroke="#3892E3" stroke-width="1.33766234" transform="translate(1.000000, 27.000000)">
+             <path d="M22.2720779,41.04 C9.14662483,46.7435616 0.662773871,59.6611633 0.668831169,73.9333333 L0.668827927,75.36 L72.6350649,75.36" id="Path">
+             </path>
+             <path d="M48.7845455,4.14666667 C45.1509336,1.86849227 40.9446102,0.661990056 36.6519481,0.666666667 L18.2590909,0.666666667 L20.0649351,7.74666667 C12.2376231,15.8959569 11.5904985,28.5342068 18.5447595,37.4354767 C25.4990204,46.3367466 37.9504371,48.8076781 47.7946753,43.24" id="Path">
+             </path>
+             <path d="M51.8076623,41.08 C38.8724675,47.12 30.2846753,59.2533333 30.2846753,73.9333333 L30.2846753,75.36 L102.250909,75.36 L102.250909,73.9333333 C102.24605,59.7482547 93.8573923,46.8976587 80.8483117,41.1466667" id="Path">
+             </path>
+             <path d="M49.7342857,7.74666667 C42.3155307,15.5543449 41.4217975,27.483334 47.5948325,36.302744 C53.7678675,45.122154 65.3083705,48.4041961 75.2209368,44.1594239 C85.133503,39.9146517 90.689422,29.3115571 88.5209113,18.7773244 C86.3524006,8.24309176 77.0564034,0.677562458 66.2677922,0.666666667 L47.8615584,0.666666667 L49.7342857,7.74666667 Z" id="Path">
+             </path>
+             <path d="M78.4003896,42.6666667 C73.2637026,45.5879141 68.9127918,49.7051579 65.7193506,54.6666667 L65.7193506,54.6666667 L51.5401299,40.9866667" id="Path">
+             </path>
+             <path d="M49.7342857,7.74666667 C50.7943354,12.1620211 54.7438666,15.2838909 59.2985714,15.3066667 L59.2985714,15.3066667 C71.3774693,15.3066667 81.1693506,25.0668591 81.1693506,37.1066667 L81.1693506,40.6" id="Path">
+             </path>
+             <path d="M20.1318182,7.77333333 L20.1318182,7.77333333 C21.1903127,12.1838397 25.146434,15.2943733 29.6961039,15.2933333 L29.6961039,15.2933333 C34.7727856,15.2862436 39.6928308,17.045126 43.6077922,20.2666667" id="Path">
+             </path>
+             <path d="M35.942987,54.6666667 L22.338961,41.1066667 C24.5880635,40.1747446 26.353653,38.3618316 27.2214286,36.0933333" id="Path">
+             </path>
+             <path d="M51.6605195,41.0533333 C53.914885,40.1082839 55.6803521,38.2810329 56.542987,36" id="Path">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="list-item-title">
+          User-Friendly
+         </h3>
+         <div class="list-item-description">
+          <p>
+           Developer and consumer-friendly design built for practical real-world use cases
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="front-panel section-card-slider padded">
+     <div class="container">
+      <h2 class="section-heading">
+       Get Started with EOSIO
+      </h2>
+      <div class="card-slider">
+       <a class="card dark-ui" href="https://eos.io/why-eosio/">
+        <div class="card-background">
+        </div>
+        <div class="card-content">
+         <div class="card-icon">
+          <svg height="73px" version="1.1" viewbox="0 0 73 73" width="73px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+           <title>
+            EOSIO for Your Business
+           </title>
+           <g fill="none" fill-rule="evenodd" id="Home-Page" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+            <g id="Artboard" stroke="#3892E3" stroke-width="1.5" transform="translate(-1097.000000, -1465.000000)">
+             <g id="Group-8" transform="translate(1098.000000, 1466.000000)">
+              <g id="34-copy">
+               <g id="32">
+                <polygon id="Path" points="31.5006329 0.449367089 70.9550633 23.9782278 70.9550633 70.5506329 48.9540506 70.5506329 31.5006329 70.5506329">
+                </polygon>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="10.8027848" y="18.801519">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="10.8027848" y="29.1459494">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="10.8027848" y="39.4993671">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="10.8027848" y="49.8527848">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="10.8027848" y="60.1972152">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="21.1472152" y="18.801519">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="21.1472152" y="29.1459494">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="21.1472152" y="39.4993671">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="21.1472152" y="49.8527848">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="21.1472152" y="60.1972152">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="31.5006329" y="18.801519">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="31.5006329" y="29.1459494">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="31.5006329" y="39.4993671">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="31.5006329" y="49.8527848">
+                </rect>
+                <rect height="10.3534177" id="Rectangle" width="10.3534177" x="31.5006329" y="60.1972152">
+                </rect>
+                <path d="M41.8540506,29.1459494 L70.9550633,29.1459494" id="Path">
+                </path>
+                <path d="M41.8540506,39.4993671 L70.9550633,39.4993671" id="Path">
+                </path>
+                <path d="M41.8540506,49.8527848 L70.9550633,49.8527848" id="Path">
+                </path>
+                <path d="M41.8540506,60.1972152 L70.9550633,60.1972152" id="Path">
+                </path>
+                <polyline id="Path" points="6.83037975 29.1549367 0.449367089 29.1549367 0.449367089 70.5506329">
+                </polyline>
+                <path d="M21.1472152,18.801519 L21.1472152,8.44810127" id="Path">
+                </path>
+               </g>
+              </g>
+             </g>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="card-title">
+          EOSIO for Your Business
+         </h3>
+         <div class="card-description">
+          <p>
+           Built for applications across industries, learn how EOSIO fits the needs of your business.
+          </p>
+         </div>
+         <div class="card-cta">
+          <span class="button chevron-button">
+           Learn More
+          </span>
+         </div>
+        </div>
+       </a>
+       <a class="card dark-ui" href="https://eos.io/strategic-vision/">
+        <div class="card-background">
+        </div>
+        <div class="card-content">
+         <div class="card-icon">
+          <svg height="73px" version="1.1" viewbox="0 0 73 73" width="73px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+           <title>
+            See the EOSIO Roadmap
+           </title>
+           <g fill="none" fill-rule="evenodd" id="Home-Page" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+            <g id="Artboard" stroke="#3892E3" stroke-width="1.5" transform="translate(-568.000000, -1665.000000)">
+             <g id="Group-6" transform="translate(519.000000, 1605.000000)">
+              <g id="33" transform="translate(50.000000, 61.000000)">
+               <polyline id="Path" points="60.1612658 33.1543038 70.8472152 33.1543038 70.8472152 70.8562025 48.3878481 70.8562025 24.5444304 33.1543038 0.449367089 70.8562025 0.449367089 33.1543038 24.2927848 33.1543038">
+               </polyline>
+               <path d="M24.5444304,70.8562025 L24.5444304,62.2373418" id="Path">
+               </path>
+               <path d="M24.5444304,56.6292405 L24.5444304,52.3153165" id="Path">
+               </path>
+               <path d="M24.5444304,47.4172152 L24.5444304,45.2602532" id="Path">
+               </path>
+               <path d="M60.4129114,33.055443 L42.4382278,61.455443 L24.4635443,33.055443 C19.1586438,24.6519216 20.3907927,13.693264 27.4293671,6.67759494 L27.4293671,6.67759494 C31.4155196,2.67997355 36.8287907,0.433166614 42.4741772,0.433166614 C48.1195637,0.433166614 53.5328349,2.67997355 57.5189873,6.67759494 L57.5189873,6.67759494 C64.5342748,13.7111752 65.7363714,24.668174 60.4129114,33.055443 L60.4129114,33.055443 Z" id="Path">
+               </path>
+               <circle cx="42.4562025" cy="21.3" id="Oval" r="8.1964557">
+               </circle>
+              </g>
+             </g>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="card-title">
+          See the EOSIO Strategic Vision
+         </h3>
+         <div class="card-description">
+          <p>
+           EOSIO is built for scale and is growing rapidly with the ecosystem - see where we’re going.
+          </p>
+         </div>
+         <div class="card-cta">
+          <span class="button chevron-button">
+           Learn More
+          </span>
+         </div>
+        </div>
+       </a>
+       <a class="card dark-ui" href="https://eos.io/build-on-eosio/elemental-battles/">
+        <div class="card-background">
+        </div>
+        <div class="card-content">
+         <div class="card-icon">
+          <svg height="71px" version="1.1" viewbox="0 0 71 71" width="71px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+            <g id="icons/get-started/elemental-battles" transform="translate(0.000000, -33.000000)">
+             <g id="elemental-battles" transform="translate(0.000000, 33.000000)">
+              <path d="M35.0094484,1.6770776 L1.2058951,70.25 L69.7788175,70.25 L35.0094484,1.6770776 Z" id="Triangle" stroke="#3892E3" stroke-width="1.5">
+              </path>
+              <circle cx="35" cy="43" id="Oval" r="12.25" stroke="#3892E3" stroke-width="1.5">
+              </circle>
+              <path d="M39.2187447,39.4722758 L35,34 L30.7812553,39.4722758 L29,47.5736988 L35,51 L41,47.5736988 L39.2187447,39.4722758 Z M29.9703522,47.1704135 L31.3241336,41.0130074 L34.3820065,49.6894852 L29.9703522,47.1704135 Z M31.741706,39.6144972 L35,35.3881196 L38.258294,39.6144972 L35,48.8598606 L31.741706,39.6144972 Z M38.675525,41.0130074 L40.0293063,47.1704135 L35.6176521,49.68981 L38.675525,41.0130074 Z" fill="#3892E3" fill-rule="nonzero" id="Shape">
+              </path>
+              <line id="Path-6" stroke="#3892E3" stroke-width="1.5" x1="1.72584261" x2="25.0246399" y1="70.1303089" y2="49">
+              </line>
+              <line id="Path-6-Copy" stroke="#3892E3" stroke-width="1.5" transform="translate(57.047466, 59.565154) scale(-1, 1) translate(-57.047466, -59.565154) " x1="45.0895959" x2="69.0053355" y1="70.1303089" y2="49">
+              </line>
+              <line id="Path-2" stroke="#3892E3" stroke-width="1.5" x1="35" x2="35" y1="2.04396608" y2="30">
+              </line>
+             </g>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="card-title">
+          Elemental
+          <br/>
+          Battles
+         </h3>
+         <div class="card-description">
+          <p>
+           Learn EOSIO while building Elemental Battles.
+          </p>
+         </div>
+         <div class="card-cta">
+          <span class="button chevron-button">
+           Learn More
+          </span>
+         </div>
+        </div>
+       </a>
+       <a class="card dark-ui" href="https://developers.eos.io/" target="_blank">
+        <div class="card-background">
+        </div>
+        <div class="card-content">
+         <div class="card-icon">
+          <svg height="60px" version="1.1" viewbox="0 0 73 60" width="73px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+           <title>
+            Start Developing on EOSIO
+           </title>
+           <g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+            <g id="Group-5" stroke="#3892E3" stroke-width="1.5" transform="translate(-49.000000, -69.000000)">
+             <g id="30">
+              <g transform="translate(50.000000, 70.000000)">
+               <rect height="51.3209375" id="Rectangle" width="69.8496203" x="0.449367089" y="0.453125">
+               </rect>
+               <polyline id="Path" points="46.0241772 43.2915625 59.7029114 29.4984375 46.0241772 15.7053125">
+               </polyline>
+               <polyline id="Path" points="24.7151899 15.7053125 11.0364557 29.4984375 24.7151899 43.2915625">
+               </polyline>
+               <path d="M39.9397468,6.5975 L30.9434177,51.7740625" id="Path">
+               </path>
+               <rect height="51.3209375" id="Rectangle" width="69.8496203" x="0.449367089" y="6.5975">
+               </rect>
+              </g>
+             </g>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="card-title">
+          Explore EOSIO Documentation
+         </h3>
+         <div class="card-description">
+          <p>
+           Head to the EOSIO Developer Portal for in-depth tutorials and the Getting Started Guide.
+          </p>
+         </div>
+         <div class="card-cta">
+          <span class="button chevron-button">
+           Learn More
+          </span>
+         </div>
+        </div>
+       </a>
+       <a class="card dark-ui" href="https://eos.io/build-on-eosio/">
+        <div class="card-background">
+        </div>
+        <div class="card-content">
+         <div class="card-icon">
+          <svg height="65px" version="1.1" viewbox="0 0 73 65" width="73px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+           <title>
+            Meet the EOSIO Product Family
+           </title>
+           <g fill="none" fill-rule="evenodd" id="Home-Page" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+            <g id="Artboard" stroke="#3892E3" stroke-width="1.5" transform="translate(-999.000000, -1666.000000)">
+             <g id="Group-7" transform="translate(949.000000, 1605.000000)">
+              <g id="31" transform="translate(51.000000, 62.000000)">
+               <polyline id="Path" points="11.6296203 20.826 35.6258228 34.704 35.6258228 62.451 11.6296203 48.582 11.6296203 33.714">
+               </polyline>
+               <polygon id="Path" points="59.6220253 20.673 35.6258228 34.551 11.6296203 20.673 35.6258228 6.795">
+               </polygon>
+               <polyline id="Path" points="59.6310127 33.489 59.6310127 48.582 35.6348101 62.451 35.6348101 34.704 59.6310127 20.826">
+               </polyline>
+               <path d="M35.6258228,6.795 L35.6258228,34.704" id="Path">
+               </path>
+               <polygon id="Path" points="70.8112658 27.018 46.8150633 40.896 35.6348101 34.551 59.6310127 20.673">
+               </polygon>
+               <polygon id="Path" points="0.449367089 27.018 24.4455696 40.896 35.6348101 34.551 11.6296203 20.673">
+               </polygon>
+               <polygon id="Path" points="35.6348101 6.795 11.6296203 20.673 0.449367089 14.328 24.4455696 0.45">
+               </polygon>
+               <polygon id="Path" points="35.6348101 6.795 59.6310127 20.673 70.8112658 14.328 46.8150633 0.45">
+               </polygon>
+              </g>
+             </g>
+            </g>
+           </g>
+          </svg>
+         </div>
+         <h3 class="card-title">
+          Meet the EOSIO Product Family
+         </h3>
+         <div class="card-description">
+          <p>
+           EOSIO is comprised of software components and tools for blockchain development.
+          </p>
+         </div>
+         <div class="card-cta">
+          <span class="button chevron-button">
+           Learn More
+          </span>
+         </div>
+        </div>
+       </a>
+      </div>
+     </div>
+    </section>
+    <section class="front-panel section-latest-release padded">
+     <div class="container">
+      <h2 class="section-heading">
+       Latest Release
+      </h2>
+      <style type="text/css">
+       .section-latest-release .release-banner {
+                    background-image: url(https://eos.io/wp-content/uploads/2020/05/latest-bg-desktop-1-2400x347.jpg);
+                }
+                                    @media screen and (max-width: 600px) {
+                        .section-latest-release .release-banner {
+                            background-image: url(https://eos.io/wp-content/uploads/2020/05/latest-bg-mobile-1.jpg);
+                        }
+                    }
+      </style>
+      <div class="release-banner dark-ui">
+       <div class="banner-content">
+        <div class="banner-main">
+         <h3 class="release-title">
+          EOSIO 2
+         </h3>
+         <div class="section-content margin-fix">
+          <p>
+           Better performance, security, and developer tools
+          </p>
+         </div>
+        </div>
+        <div class="banner-side">
+         <div class="button-row">
+          <a class="button outline" href="https://eos.io/news/introducing-eosio-2/" target="_self">
+           Read Announcement
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="front-panel section-hackathon padded">
+     <div class="container">
+      <h2 class="section-heading">
+       EOSIO Hackathon
+      </h2>
+      <div class="hackathon-banner rocket-lazyload" data-bg="https://eos.io/wp-content/uploads/2019/11/SKS_0010-2-1.jpg" style="">
+       <div class="banner-content">
+        <div class="banner-main dark-ui">
+         <div class="section-content margin-fix">
+          Powered by EOSIO blockchain software, built by Block.one. Host your own #eosiohackathon today.
+         </div>
+         <div class="button-row">
+          <a class="button chevron-button" href="https://hackathon.eos.io" target="_blank">
+           Get started
+          </a>
+         </div>
+        </div>
+        <div class="banner-side">
+         <span class="hackathon-heading">
+          Meet.
+          <br/>
+          Build.
+          <br/>
+          Inspire.
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="front-panel section-news padded">
+     <div class="container">
+      <h2 class="section-heading">
+       Latest News
+      </h2>
+      <div class="post-grid">
+       <article class="post-3004 news type-news status-publish has-post-thumbnail hentry news-category-eosio news-category-eosio-community" id="post-3004">
+        <a class="post-block" href="https://eos.io/news/virginia-tech-challenge/">
+         <div class="post-image">
+          <img alt="" class="attachment-latest-small size-latest-small" data-lazy-sizes="(max-width: 360px) 100vw, 360px" data-lazy-src="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-360x236.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-360x236.jpg 360w, https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-1280x840.jpg 1280w, https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-640x420.jpg 640w" height="236" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" width="360"/>
+          <noscript>
+           <img alt="" class="attachment-latest-small size-latest-small" height="236" sizes="(max-width: 360px) 100vw, 360px" src="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-360x236.jpg" srcset="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-360x236.jpg 360w, https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-1280x840.jpg 1280w, https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_VT_EOSIO-Challenge-Winner_CH_20200717_final_Web-640x420.jpg 640w" width="360"/>
+          </noscript>
+         </div>
+         <div class="post-text">
+          <div class="post-meta">
+           <span class="post-label">
+            EOSIO Community
+           </span>
+           <span class="post-date">
+            <time date="" datetime="2020-07-27T15:26:54-04:00">
+             Loading...
+            </time>
+           </span>
+          </div>
+          <div class="post-title">
+           <h2 class="entry-title">
+            Virginia Tech Blockchain Challenge Competition Winners
+           </h2>
+          </div>
+         </div>
+        </a>
+       </article>
+       <!-- #post-3004 -->
+       <article class="post-3007 news type-news status-publish has-post-thumbnail hentry news-category-builtoneosio news-category-applications news-category-blockchain news-category-eosio news-category-eosio-community" id="post-3007">
+        <a class="post-block" href="https://eos.io/news/puml/">
+         <div class="post-image">
+          <img alt="" class="attachment-latest-small size-latest-small" data-lazy-sizes="(max-width: 360px) 100vw, 360px" data-lazy-src="https://eos.io/wp-content/uploads/2020/07/265_05l_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_PUML_JT_20200709_Web-360x236.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/07/265_05l_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_PUML_JT_20200709_Web-360x236.jpg 360w, https://eos.io/wp-content/uploads/2020/07/265_05l_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_PUML_JT_20200709_Web-640x420.jpg 640w" height="236" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" width="360"/>
+          <noscript>
+           <img alt="" class="attachment-latest-small size-latest-small" height="236" sizes="(max-width: 360px) 100vw, 360px" src="https://eos.io/wp-content/uploads/2020/07/265_05l_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_PUML_JT_20200709_Web-360x236.jpg" srcset="https://eos.io/wp-content/uploads/2020/07/265_05l_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_PUML_JT_20200709_Web-360x236.jpg 360w, https://eos.io/wp-content/uploads/2020/07/265_05l_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_PUML_JT_20200709_Web-640x420.jpg 640w" width="360"/>
+          </noscript>
+         </div>
+         <div class="post-text">
+          <div class="post-meta">
+           <span class="post-label">
+            EOSIO Community
+           </span>
+           <span class="post-date">
+            <time date="" datetime="2020-07-22T11:33:25-04:00">
+             Loading...
+            </time>
+           </span>
+          </div>
+          <div class="post-title">
+           <h2 class="entry-title">
+            PUML Incentivizes Fitness Rewards with EOSIO
+           </h2>
+          </div>
+         </div>
+        </a>
+       </article>
+       <!-- #post-3007 -->
+       <article class="post-2918 news type-news status-publish has-post-thumbnail hentry news-category-builtoneosio news-category-eosio-challenge news-category-eosio-community news-category-interoperability news-category-solution" id="post-2918">
+        <a class="post-block" href="https://eos.io/news/syed-jafri-talks-about-interoperability/">
+         <div class="post-image">
+          <img alt="" class="attachment-latest-small size-latest-small" data-lazy-sizes="(max-width: 360px) 100vw, 360px" data-lazy-src="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_EOSIO-Challenge-Winner_JT_20200709_Web-2-360x236.jpg" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_EOSIO-Challenge-Winner_JT_20200709_Web-2-360x236.jpg 360w, https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_EOSIO-Challenge-Winner_JT_20200709_Web-2-640x420.jpg 640w" height="236" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" width="360"/>
+          <noscript>
+           <img alt="" class="attachment-latest-small size-latest-small" height="236" sizes="(max-width: 360px) 100vw, 360px" src="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_EOSIO-Challenge-Winner_JT_20200709_Web-2-360x236.jpg" srcset="https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_EOSIO-Challenge-Winner_JT_20200709_Web-2-360x236.jpg 360w, https://eos.io/wp-content/uploads/2020/07/265_05m_MKT_EOSIO-Web_News-Images_BulitOnEOSIO_EOSIO-Challenge-Winner_JT_20200709_Web-2-640x420.jpg 640w" width="360"/>
+          </noscript>
+         </div>
+         <div class="post-text">
+          <div class="post-meta">
+           <span class="post-label">
+            EOSIO Community
+           </span>
+           <span class="post-date">
+            <time date="" datetime="2020-07-13T09:00:42-04:00">
+             Loading...
+            </time>
+           </span>
+          </div>
+          <div class="post-title">
+           <h2 class="entry-title">
+            Syed Jafri Talks About EOSIO Blockchain Interoperability
+           </h2>
+          </div>
+         </div>
+        </a>
+       </article>
+       <!-- #post-2918 -->
+       <article class="post-2839 news type-news status-publish has-post-thumbnail hentry news-category-builtoneosio news-category-applications news-category-blockchain news-category-eosio-community" id="post-2839">
+        <a class="post-block" href="https://eos.io/news/liquidapps/">
+         <div class="post-image">
+          <img alt="LiquidApps BuiltOnEOSIO" class="attachment-latest-small size-latest-small" data-lazy-sizes="(max-width: 360px) 100vw, 360px" data-lazy-src="https://eos.io/wp-content/uploads/2020/06/LiquidApps-BuiltOnEOSIO-360x236.png" data-lazy-srcset="https://eos.io/wp-content/uploads/2020/06/LiquidApps-BuiltOnEOSIO-360x236.png 360w, https://eos.io/wp-content/uploads/2020/06/LiquidApps-BuiltOnEOSIO-640x420.png 640w" height="236" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" width="360"/>
+          <noscript>
+           <img alt="LiquidApps BuiltOnEOSIO" class="attachment-latest-small size-latest-small" height="236" sizes="(max-width: 360px) 100vw, 360px" src="https://eos.io/wp-content/uploads/2020/06/LiquidApps-BuiltOnEOSIO-360x236.png" srcset="https://eos.io/wp-content/uploads/2020/06/LiquidApps-BuiltOnEOSIO-360x236.png 360w, https://eos.io/wp-content/uploads/2020/06/LiquidApps-BuiltOnEOSIO-640x420.png 640w" width="360"/>
+          </noscript>
+         </div>
+         <div class="post-text">
+          <div class="post-meta">
+           <span class="post-label">
+            EOSIO Community
+           </span>
+           <span class="post-date">
+            <time date="" datetime="2020-06-25T11:21:12-04:00">
+             Loading...
+            </time>
+           </span>
+          </div>
+          <div class="post-title">
+           <h2 class="entry-title">
+            Scaling Decentralized Applications with LiquidApps
+           </h2>
+          </div>
+         </div>
+        </a>
+       </article>
+       <!-- #post-2839 -->
+      </div>
+      <div class="button-row">
+       <a class="button outline" href="https://eos.io/news/">
+        See More
+       </a>
+      </div>
+     </div>
+    </section>
+   </div>
+   <!-- #content -->
+   <section class="page-panel section-newsletter dark-ui" id="newsletter">
+    <div class="container">
+     <h2 class="section-heading">
+      Newsletter
+     </h2>
+     <div class="section-description margin-fix">
+      <p>
+       Sign up for new updates from Block.one here:
+      </p>
+     </div>
+     <div class="button-row">
+      <button class="button arrow-button popup-trigger" data-popup="newsletter-signup">
+       Sign Up
+      </button>
+     </div>
+    </div>
+   </section>
+   <div class="popup" id="newsletter-signup">
+    <div class="popup-table">
+     <div class="popup-cell">
+      <div class="popup-card">
+       <i class="b1-icon-glyph-close popup-close">
+       </i>
+       <div class="container medium">
+        <div class="popup-card-content">
+         <h2 class="popup-title">
+          Subscribe for Updates on EOSIO
+         </h2>
+         <div class="popup-form popup-form-gravity">
+          <div class="gf_browser_unknown gform_wrapper" id="gform_wrapper_2">
+           <div class="gform_anchor" id="gf_2" tabindex="-1">
+           </div>
+           <form action="/#gf_2" enctype="multipart/form-data" id="gform_2" method="post" target="gform_ajax_frame_2">
+            <div class="gform_body">
+             <ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_2">
+              <li class="gfield gf_flex_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_1">
+               <label class="gfield_label" for="input_2_1">
+                First Name
+                <span class="gfield_required">
+                 *
+                </span>
+               </label>
+               <div class="ginput_container ginput_container_text">
+                <input aria-invalid="false" aria-required="true" class="medium" id="input_2_1" name="input_1" tabindex="1" type="text" value=""/>
+               </div>
+              </li>
+              <li class="gfield gf_flex_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_2">
+               <label class="gfield_label" for="input_2_2">
+                Last Name
+                <span class="gfield_required">
+                 *
+                </span>
+               </label>
+               <div class="ginput_container ginput_container_text">
+                <input aria-invalid="false" aria-required="true" class="medium" id="input_2_2" name="input_2" tabindex="2" type="text" value=""/>
+               </div>
+              </li>
+              <li class="gfield gf_flex_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_3">
+               <label class="gfield_label" for="input_2_3">
+                Email Address
+                <span class="gfield_required">
+                 *
+                </span>
+               </label>
+               <div class="ginput_container ginput_container_email">
+                <input aria-invalid="false" aria-required="true" class="medium" id="input_2_3" name="input_3" tabindex="3" type="text" value=""/>
+               </div>
+              </li>
+              <li class="gfield gf_flex_half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_4">
+               <label class="gfield_label" for="input_2_4">
+                Location
+                <span class="gfield_required">
+                 *
+                </span>
+               </label>
+               <div class="ginput_container ginput_container_select">
+                <select aria-invalid="false" aria-required="true" class="medium gfield_select" id="input_2_4" name="input_4" tabindex="4">
+                 <option class="gf_placeholder" selected="selected" value="">
+                  Select One
+                 </option>
+                 <option value="Aaland Islands">
+                  Aaland Islands
+                 </option>
+                 <option value="Afghanistan">
+                  Afghanistan
+                 </option>
+                 <option value="Albania">
+                  Albania
+                 </option>
+                 <option value="Algeria">
+                  Algeria
+                 </option>
+                 <option value="American Samoa">
+                  American Samoa
+                 </option>
+                 <option value="Andorra">
+                  Andorra
+                 </option>
+                 <option value="Angola">
+                  Angola
+                 </option>
+                 <option value="Anguilla">
+                  Anguilla
+                 </option>
+                 <option value="Antarctica">
+                  Antarctica
+                 </option>
+                 <option value="Antigua And Barbuda">
+                  Antigua And Barbuda
+                 </option>
+                 <option value="Argentina">
+                  Argentina
+                 </option>
+                 <option value="Armenia">
+                  Armenia
+                 </option>
+                 <option value="Aruba">
+                  Aruba
+                 </option>
+                 <option value="Australia">
+                  Australia
+                 </option>
+                 <option value="Austria">
+                  Austria
+                 </option>
+                 <option value="Azerbaijan">
+                  Azerbaijan
+                 </option>
+                 <option value="Bahamas">
+                  Bahamas
+                 </option>
+                 <option value="Bahrain">
+                  Bahrain
+                 </option>
+                 <option value="Bangladesh">
+                  Bangladesh
+                 </option>
+                 <option value="Barbados">
+                  Barbados
+                 </option>
+                 <option value="Belarus">
+                  Belarus
+                 </option>
+                 <option value="Belgium">
+                  Belgium
+                 </option>
+                 <option value="Belize">
+                  Belize
+                 </option>
+                 <option value="Benin">
+                  Benin
+                 </option>
+                 <option value="Bermuda">
+                  Bermuda
+                 </option>
+                 <option value="Bhutan">
+                  Bhutan
+                 </option>
+                 <option value="Bolivia">
+                  Bolivia
+                 </option>
+                 <option value="Bonaire">
+                  Bonaire
+                 </option>
+                 <option value="Saint Eustatius and Saba">
+                  Saint Eustatius and Saba
+                 </option>
+                 <option value="Bosnia and Herzegovina">
+                  Bosnia and Herzegovina
+                 </option>
+                 <option value="Botswana">
+                  Botswana
+                 </option>
+                 <option value="Bouvet Island">
+                  Bouvet Island
+                 </option>
+                 <option value="Brazil">
+                  Brazil
+                 </option>
+                 <option value="British Indian Ocean Territory">
+                  British Indian Ocean Territory
+                 </option>
+                 <option value="Brunei Darussalam">
+                  Brunei Darussalam
+                 </option>
+                 <option value="Bulgaria">
+                  Bulgaria
+                 </option>
+                 <option value="Burkina Faso">
+                  Burkina Faso
+                 </option>
+                 <option value="Burundi">
+                  Burundi
+                 </option>
+                 <option value="Cambodia">
+                  Cambodia
+                 </option>
+                 <option value="Cameroon">
+                  Cameroon
+                 </option>
+                 <option value="Canada">
+                  Canada
+                 </option>
+                 <option value="Cape Verde">
+                  Cape Verde
+                 </option>
+                 <option value="Cayman Islands">
+                  Cayman Islands
+                 </option>
+                 <option value="Central African Republic">
+                  Central African Republic
+                 </option>
+                 <option value="Chad">
+                  Chad
+                 </option>
+                 <option value="Chile">
+                  Chile
+                 </option>
+                 <option value="China">
+                  China
+                 </option>
+                 <option value="Christmas Island">
+                  Christmas Island
+                 </option>
+                 <option value="Cocos (Keeling) Islands">
+                  Cocos (Keeling) Islands
+                 </option>
+                 <option value="Colombia">
+                  Colombia
+                 </option>
+                 <option value="Comoros">
+                  Comoros
+                 </option>
+                 <option value="Congo">
+                  Congo
+                 </option>
+                 <option value="Cook Islands">
+                  Cook Islands
+                 </option>
+                 <option value="Costa Rica">
+                  Costa Rica
+                 </option>
+                 <option value="Cote D'Ivoire">
+                  Cote D'Ivoire
+                 </option>
+                 <option value="Croatia">
+                  Croatia
+                 </option>
+                 <option value="Cuba">
+                  Cuba
+                 </option>
+                 <option value="Curacao">
+                  Curacao
+                 </option>
+                 <option value="Cyprus">
+                  Cyprus
+                 </option>
+                 <option value="Czech Republic">
+                  Czech Republic
+                 </option>
+                 <option value="Democratic Republic of the Congo">
+                  Democratic Republic of the Congo
+                 </option>
+                 <option value="Denmark">
+                  Denmark
+                 </option>
+                 <option value="Djibouti">
+                  Djibouti
+                 </option>
+                 <option value="Dominica">
+                  Dominica
+                 </option>
+                 <option value="Dominican Republic">
+                  Dominican Republic
+                 </option>
+                 <option value="Ecuador">
+                  Ecuador
+                 </option>
+                 <option value="Egypt">
+                  Egypt
+                 </option>
+                 <option value="El Salvador">
+                  El Salvador
+                 </option>
+                 <option value="Equatorial Guinea">
+                  Equatorial Guinea
+                 </option>
+                 <option value="Eritrea">
+                  Eritrea
+                 </option>
+                 <option value="Estonia">
+                  Estonia
+                 </option>
+                 <option value="Ethiopia">
+                  Ethiopia
+                 </option>
+                 <option value="Falkland Islands">
+                  Falkland Islands
+                 </option>
+                 <option value="Faroe Islands">
+                  Faroe Islands
+                 </option>
+                 <option value="Fiji">
+                  Fiji
+                 </option>
+                 <option value="Finland">
+                  Finland
+                 </option>
+                 <option value="France">
+                  France
+                 </option>
+                 <option value="French Guiana">
+                  French Guiana
+                 </option>
+                 <option value="French Polynesia">
+                  French Polynesia
+                 </option>
+                 <option value="French Southern Territories">
+                  French Southern Territories
+                 </option>
+                 <option value="Gabon">
+                  Gabon
+                 </option>
+                 <option value="Gambia">
+                  Gambia
+                 </option>
+                 <option value="Georgia">
+                  Georgia
+                 </option>
+                 <option value="Germany">
+                  Germany
+                 </option>
+                 <option value="Ghana">
+                  Ghana
+                 </option>
+                 <option value="Gibraltar">
+                  Gibraltar
+                 </option>
+                 <option value="Greece">
+                  Greece
+                 </option>
+                 <option value="Greenland">
+                  Greenland
+                 </option>
+                 <option value="Grenada">
+                  Grenada
+                 </option>
+                 <option value="Guadeloupe">
+                  Guadeloupe
+                 </option>
+                 <option value="Guam">
+                  Guam
+                 </option>
+                 <option value="Guatemala">
+                  Guatemala
+                 </option>
+                 <option value="Guernsey">
+                  Guernsey
+                 </option>
+                 <option value="Guinea">
+                  Guinea
+                 </option>
+                 <option value="Guinea-Bissau">
+                  Guinea-Bissau
+                 </option>
+                 <option value="Guyana">
+                  Guyana
+                 </option>
+                 <option value="Haiti">
+                  Haiti
+                 </option>
+                 <option value="Heard and Mc Donald Islands">
+                  Heard and Mc Donald Islands
+                 </option>
+                 <option value="Honduras">
+                  Honduras
+                 </option>
+                 <option value="Hong Kong">
+                  Hong Kong
+                 </option>
+                 <option value="Hungary">
+                  Hungary
+                 </option>
+                 <option value="Iceland">
+                  Iceland
+                 </option>
+                 <option value="India">
+                  India
+                 </option>
+                 <option value="Indonesia">
+                  Indonesia
+                 </option>
+                 <option value="Iran">
+                  Iran
+                 </option>
+                 <option value="Iraq">
+                  Iraq
+                 </option>
+                 <option value="Ireland">
+                  Ireland
+                 </option>
+                 <option value="Isle of Man">
+                  Isle of Man
+                 </option>
+                 <option value="Israel">
+                  Israel
+                 </option>
+                 <option value="Italy">
+                  Italy
+                 </option>
+                 <option value="Jamaica">
+                  Jamaica
+                 </option>
+                 <option value="Japan">
+                  Japan
+                 </option>
+                 <option value="Jersey  (Channel Islands)">
+                  Jersey  (Channel Islands)
+                 </option>
+                 <option value="Jordan">
+                  Jordan
+                 </option>
+                 <option value="Kazakhstan">
+                  Kazakhstan
+                 </option>
+                 <option value="Kenya">
+                  Kenya
+                 </option>
+                 <option value="Kiribati">
+                  Kiribati
+                 </option>
+                 <option value="Kuwait">
+                  Kuwait
+                 </option>
+                 <option value="Kyrgyzstan">
+                  Kyrgyzstan
+                 </option>
+                 <option value="Lao People's Democratic Republic">
+                  Lao People's Democratic Republic
+                 </option>
+                 <option value="Latvia">
+                  Latvia
+                 </option>
+                 <option value="Lebanon">
+                  Lebanon
+                 </option>
+                 <option value="Lesotho">
+                  Lesotho
+                 </option>
+                 <option value="Liberia">
+                  Liberia
+                 </option>
+                 <option value="Libya">
+                  Libya
+                 </option>
+                 <option value="Liechtenstein">
+                  Liechtenstein
+                 </option>
+                 <option value="Lithuania">
+                  Lithuania
+                 </option>
+                 <option value="Luxembourg">
+                  Luxembourg
+                 </option>
+                 <option value="Macau">
+                  Macau
+                 </option>
+                 <option value="Macedonia">
+                  Macedonia
+                 </option>
+                 <option value="Madagascar">
+                  Madagascar
+                 </option>
+                 <option value="Malawi">
+                  Malawi
+                 </option>
+                 <option value="Malaysia">
+                  Malaysia
+                 </option>
+                 <option value="Maldives">
+                  Maldives
+                 </option>
+                 <option value="Mali">
+                  Mali
+                 </option>
+                 <option value="Malta">
+                  Malta
+                 </option>
+                 <option value="Marshall Islands">
+                  Marshall Islands
+                 </option>
+                 <option value="Martinique">
+                  Martinique
+                 </option>
+                 <option value="Mauritania">
+                  Mauritania
+                 </option>
+                 <option value="Mauritius">
+                  Mauritius
+                 </option>
+                 <option value="Mayotte">
+                  Mayotte
+                 </option>
+                 <option value="Mexico">
+                  Mexico
+                 </option>
+                 <option value="Micronesia">
+                  Micronesia
+                 </option>
+                 <option value="Federated States of">
+                  Federated States of
+                 </option>
+                 <option value="Moldova">
+                  Moldova
+                 </option>
+                 <option value="Republic of">
+                  Republic of
+                 </option>
+                 <option value="Monaco">
+                  Monaco
+                 </option>
+                 <option value="Mongolia">
+                  Mongolia
+                 </option>
+                 <option value="Montenegro">
+                  Montenegro
+                 </option>
+                 <option value="Montserrat">
+                  Montserrat
+                 </option>
+                 <option value="Morocco">
+                  Morocco
+                 </option>
+                 <option value="Mozambique">
+                  Mozambique
+                 </option>
+                 <option value="Myanmar">
+                  Myanmar
+                 </option>
+                 <option value="Namibia">
+                  Namibia
+                 </option>
+                 <option value="Nauru">
+                  Nauru
+                 </option>
+                 <option value="Nepal">
+                  Nepal
+                 </option>
+                 <option value="Netherlands">
+                  Netherlands
+                 </option>
+                 <option value="Netherlands Antilles">
+                  Netherlands Antilles
+                 </option>
+                 <option value="New Caledonia">
+                  New Caledonia
+                 </option>
+                 <option value="New Zealand">
+                  New Zealand
+                 </option>
+                 <option value="Nicaragua">
+                  Nicaragua
+                 </option>
+                 <option value="Niger">
+                  Niger
+                 </option>
+                 <option value="Nigeria">
+                  Nigeria
+                 </option>
+                 <option value="Niue">
+                  Niue
+                 </option>
+                 <option value="Norfolk Island">
+                  Norfolk Island
+                 </option>
+                 <option value="North Korea">
+                  North Korea
+                 </option>
+                 <option value="Northern Mariana Islands">
+                  Northern Mariana Islands
+                 </option>
+                 <option value="Norway">
+                  Norway
+                 </option>
+                 <option value="Oman">
+                  Oman
+                 </option>
+                 <option value="Pakistan">
+                  Pakistan
+                 </option>
+                 <option value="Palau">
+                  Palau
+                 </option>
+                 <option value="Palestine">
+                  Palestine
+                 </option>
+                 <option value="Panama">
+                  Panama
+                 </option>
+                 <option value="Papua New Guinea">
+                  Papua New Guinea
+                 </option>
+                 <option value="Paraguay">
+                  Paraguay
+                 </option>
+                 <option value="Peru">
+                  Peru
+                 </option>
+                 <option value="Philippines">
+                  Philippines
+                 </option>
+                 <option value="Pitcairn">
+                  Pitcairn
+                 </option>
+                 <option value="Poland">
+                  Poland
+                 </option>
+                 <option value="Portugal">
+                  Portugal
+                 </option>
+                 <option value="Puerto Rico">
+                  Puerto Rico
+                 </option>
+                 <option value="Qatar">
+                  Qatar
+                 </option>
+                 <option value="Republic of Kosovo">
+                  Republic of Kosovo
+                 </option>
+                 <option value="Reunion">
+                  Reunion
+                 </option>
+                 <option value="Romania">
+                  Romania
+                 </option>
+                 <option value="Russia">
+                  Russia
+                 </option>
+                 <option value="Rwanda">
+                  Rwanda
+                 </option>
+                 <option value="Saint Kitts and Nevis">
+                  Saint Kitts and Nevis
+                 </option>
+                 <option value="Saint Lucia">
+                  Saint Lucia
+                 </option>
+                 <option value="Saint Martin">
+                  Saint Martin
+                 </option>
+                 <option value="Saint Vincent and the Grenadines">
+                  Saint Vincent and the Grenadines
+                 </option>
+                 <option value="Samoa (Independent)">
+                  Samoa (Independent)
+                 </option>
+                 <option value="San Marino">
+                  San Marino
+                 </option>
+                 <option value="Sao Tome and Principe">
+                  Sao Tome and Principe
+                 </option>
+                 <option value="Saudi Arabia">
+                  Saudi Arabia
+                 </option>
+                 <option value="Senegal">
+                  Senegal
+                 </option>
+                 <option value="Serbia">
+                  Serbia
+                 </option>
+                 <option value="Seychelles">
+                  Seychelles
+                 </option>
+                 <option value="Sierra Leone">
+                  Sierra Leone
+                 </option>
+                 <option value="Singapore">
+                  Singapore
+                 </option>
+                 <option value="Sint Maarten">
+                  Sint Maarten
+                 </option>
+                 <option value="Slovakia">
+                  Slovakia
+                 </option>
+                 <option value="Slovenia">
+                  Slovenia
+                 </option>
+                 <option value="Solomon Islands">
+                  Solomon Islands
+                 </option>
+                 <option value="Somalia">
+                  Somalia
+                 </option>
+                 <option value="South Africa">
+                  South Africa
+                 </option>
+                 <option value="South Georgia and the South Sandwich Islands">
+                  South Georgia and the South Sandwich Islands
+                 </option>
+                 <option value="South Korea">
+                  South Korea
+                 </option>
+                 <option value="South Sudan">
+                  South Sudan
+                 </option>
+                 <option value="Spain">
+                  Spain
+                 </option>
+                 <option value="Sri Lanka">
+                  Sri Lanka
+                 </option>
+                 <option value="St. Helena">
+                  St. Helena
+                 </option>
+                 <option value="St. Pierre and Miquelon">
+                  St. Pierre and Miquelon
+                 </option>
+                 <option value="Sudan">
+                  Sudan
+                 </option>
+                 <option value="Suriname">
+                  Suriname
+                 </option>
+                 <option value="Svalbard and Jan Mayen Islands">
+                  Svalbard and Jan Mayen Islands
+                 </option>
+                 <option value="Swaziland">
+                  Swaziland
+                 </option>
+                 <option value="Sweden">
+                  Sweden
+                 </option>
+                 <option value="Switzerland">
+                  Switzerland
+                 </option>
+                 <option value="Syria">
+                  Syria
+                 </option>
+                 <option value="Taiwan">
+                  Taiwan
+                 </option>
+                 <option value="Tajikistan">
+                  Tajikistan
+                 </option>
+                 <option value="Tanzania">
+                  Tanzania
+                 </option>
+                 <option value="Thailand">
+                  Thailand
+                 </option>
+                 <option value="Timor-Leste">
+                  Timor-Leste
+                 </option>
+                 <option value="Togo">
+                  Togo
+                 </option>
+                 <option value="Tokelau">
+                  Tokelau
+                 </option>
+                 <option value="Tonga">
+                  Tonga
+                 </option>
+                 <option value="Trinidad and Tobago">
+                  Trinidad and Tobago
+                 </option>
+                 <option value="Tunisia">
+                  Tunisia
+                 </option>
+                 <option value="Turkey">
+                  Turkey
+                 </option>
+                 <option value="Turkmenistan">
+                  Turkmenistan
+                 </option>
+                 <option value="Turks &amp; Caicos Islands">
+                  Turks &amp; Caicos Islands
+                 </option>
+                 <option value="Turks and Caicos Islands">
+                  Turks and Caicos Islands
+                 </option>
+                 <option value="Tuvalu">
+                  Tuvalu
+                 </option>
+                 <option value="Uganda">
+                  Uganda
+                 </option>
+                 <option value="Ukraine">
+                  Ukraine
+                 </option>
+                 <option value="United Arab Emirates">
+                  United Arab Emirates
+                 </option>
+                 <option value="United Kingdom">
+                  United Kingdom
+                 </option>
+                 <option value="United States of America">
+                  United States of America
+                 </option>
+                 <option value="Uruguay">
+                  Uruguay
+                 </option>
+                 <option value="USA Minor Outlying Islands">
+                  USA Minor Outlying Islands
+                 </option>
+                 <option value="Uzbekistan">
+                  Uzbekistan
+                 </option>
+                 <option value="Vanuatu">
+                  Vanuatu
+                 </option>
+                 <option value="Vatican City State (Holy See)">
+                  Vatican City State (Holy See)
+                 </option>
+                 <option value="Venezuela">
+                  Venezuela
+                 </option>
+                 <option value="Vietnam">
+                  Vietnam
+                 </option>
+                 <option value="Virgin Islands (British)">
+                  Virgin Islands (British)
+                 </option>
+                 <option value="Virgin Islands (U.S.)">
+                  Virgin Islands (U.S.)
+                 </option>
+                 <option value="Wallis and Futuna Islands">
+                  Wallis and Futuna Islands
+                 </option>
+                 <option value="Western Sahara">
+                  Western Sahara
+                 </option>
+                 <option value="Yemen">
+                  Yemen
+                 </option>
+                 <option value="Zambia">
+                  Zambia
+                 </option>
+                 <option value="Zimbabwe">
+                  Zimbabwe
+                 </option>
+                </select>
+               </div>
+              </li>
+              <li class="gfield top-margin field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_7">
+               <label class="gfield_label">
+                Yes, please send me EOSIO developer updates from Developer Relations (optional)
+               </label>
+               <div class="ginput_container ginput_container_checkbox">
+                <ul class="gfield_checkbox" id="input_2_7">
+                 <li class="gchoice_2_7_1">
+                  <input id="choice_2_7_1" name="input_7.1" tabindex="5" type="checkbox" value="Yes, please send me EOSIO developer updates from Developer Relations (optional)"/>
+                  <label for="choice_2_7_1" id="label_2_7_1">
+                   Yes, please send me EOSIO developer updates from Developer Relations (optional)
+                  </label>
+                 </li>
+                </ul>
+               </div>
+              </li>
+              <li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_5">
+               <label class="gfield_label">
+                Yes, please send me general marketing updates from Block.one (optional)
+               </label>
+               <div class="ginput_container ginput_container_checkbox">
+                <ul class="gfield_checkbox" id="input_2_5">
+                 <li class="gchoice_2_5_1">
+                  <input id="choice_2_5_1" name="input_5.1" tabindex="6" type="checkbox" value="Yes, please send me general marketing updates from Block.one (optional)"/>
+                  <label for="choice_2_5_1" id="label_2_5_1">
+                   Yes, please send me general marketing updates from Block.one (optional)
+                  </label>
+                 </li>
+                </ul>
+               </div>
+              </li>
+              <li class="gfield disclaimer-field gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_6">
+               <p>
+                By signing up, you agree to our
+                <a href="https://eos.io/terms-of-use/" target="_blank">
+                 terms of use
+                </a>
+                and
+                <a href="https://eos.io/privacy-policy/" target="_blank">
+                 privacy policy
+                </a>
+                , and you agree to your information being transferred to our email service provider for processing in accordance with their
+                <a href="https://mailchimp.com/legal/privacy/" rel="noopener" target="_blank">
+                 privacy policy
+                </a>
+                and
+                <a href="https://mailchimp.com/legal/cookies/" rel="noopener" target="_blank">
+                 cookie policy
+                </a>
+                . You can unsubscribe at any time by clicking the “unsubscribe” link in any of these emails.
+               </p>
+              </li>
+              <li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" id="field_2_8">
+               <label class="gfield_label" for="input_2_8">
+                Comments
+               </label>
+               <div class="ginput_container">
+                <input id="input_2_8" name="input_8" type="text" value=""/>
+               </div>
+               <div class="gfield_description" id="gfield_description__8">
+                This field is for validation purposes and should be left unchanged.
+               </div>
+              </li>
+             </ul>
+            </div>
+            <div class="gform_footer top_label">
+             <input class="gform_button button" id="gform_submit_button_2" onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' tabindex="7" type="submit" value="Submit"/>
+             <input name="gform_ajax" type="hidden" value="form_id=2&amp;title=&amp;description=&amp;tabindex=1"/>
+             <input class="gform_hidden" name="is_submit_2" type="hidden" value="1"/>
+             <input class="gform_hidden" name="gform_submit" type="hidden" value="2"/>
+             <input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+             <input class="gform_hidden" name="state_2" type="hidden" value="WyJbXSIsImRjYTZjYzdmMzM4M2NmNDkzMTlkYzc3ZmM0ODlkYmIzIl0="/>
+             <input class="gform_hidden" id="gform_target_page_number_2" name="gform_target_page_number_2" type="hidden" value="0"/>
+             <input class="gform_hidden" id="gform_source_page_number_2" name="gform_source_page_number_2" type="hidden" value="1"/>
+             <input name="gform_field_values" type="hidden" value=""/>
+            </div>
+           </form>
+          </div>
+          <iframe id="gform_ajax_frame_2" name="gform_ajax_frame_2" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms.">
+          </iframe>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer-sep">
+    <div class="container">
+     <hr/>
+    </div>
+   </div>
+   <footer class="site-footer" id="colophon">
+    <div class="container">
+     <div class="footer-zones">
+      <div class="company-zone zone-column">
+       <div class="zone-logo">
+        <svg viewbox="0 0 1661.31 253.74" xmlns="http://www.w3.org/2000/svg">
+         <title>
+          blockonelogo
+         </title>
+         <g>
+          <polygon points="1610.83 222.81 1620.28 222.81 1620.28 249.54 1621.62 249.54 1621.62 222.81 1631.1 222.81 1631.1 221.55 1610.83 221.55 1610.83 222.81">
+          </polygon>
+          <polygon points="1659.17 221.55 1648.85 246.6 1638.53 221.55 1636.38 221.55 1636.38 249.54 1637.73 249.54 1637.73 223.15 1648.64 249.54 1649.06 249.54 1659.96 223.15 1659.96 249.54 1661.31 249.54 1661.31 221.55 1659.17 221.55">
+          </polygon>
+          <path d="M97.16,64.28c-22.79,0-43.72,10.46-57.92,29.52V0H0V249.26H39.24V224.6c13.82,17.93,34.38,29.14,57.92,29.14,46,0,80-35.12,80-94.55C177.13,100.9,143.5,64.28,97.16,64.28ZM85.58,219c-18.31,0-37.75-10.47-46.34-23.92V123.7C47.83,110.24,67.27,99,85.58,99c31.39,0,51.2,25,51.2,60.16S117,219,85.58,219Z" transform="translate(0 0)">
+          </path>
+          <rect height="249.26" width="39.24" x="217.13">
+          </rect>
+          <path d="M388.66,64.28c-57.18,0-92.69,43-92.69,94.54,0,52,35.51,94.92,92.69,94.92,57.92,0,93-43,93-94.92C481.7,107.25,446.58,64.28,388.66,64.28Zm0,154.71c-33.26,0-52-28-52-60.17,0-31.77,18.69-59.79,52-59.79,33.63,0,52.31,28,52.31,59.79C441,191,422.29,219,388.66,219Z" transform="translate(0 0)">
+          </path>
+          <path d="M605.41,99q26.34,0,41.47,21.3l25.79-23.92c-12.71-17.19-34-32.13-69.14-32.13-54.93,0-93.42,40-93.42,94.54,0,54.94,38.49,94.92,93.42,94.92,35.14,0,56.43-14.94,69.14-32.14l-25.79-23.91C636.79,211.51,623,219,605.41,219c-32.89,0-54.57-25-54.57-60.17S572.52,99,605.41,99Z" transform="translate(0 0)">
+          </path>
+          <polygon points="874.47 68.76 825.89 68.76 746.29 155.83 746.29 0 707.05 0 707.05 249.26 746.29 249.26 746.29 200.68 771.33 174.89 826.64 249.26 875.96 249.26 799.35 150.6 874.47 68.76">
+          </polygon>
+          <path d="M923.8,201.05A26.16,26.16,0,1,0,950,227.21,26.48,26.48,0,0,0,923.8,201.05Z" transform="translate(0 0)">
+          </path>
+          <path d="M1076.65,64.28c-57.18,0-92.68,43-92.68,94.54,0,52,35.5,94.92,92.68,94.92,57.92,0,93-43,93-94.92C1169.7,107.25,1134.57,64.28,1076.65,64.28Zm0,154.71c-33.26,0-52-28-52-60.17,0-31.77,18.69-59.79,52-59.79,33.63,0,52.32,28,52.32,59.79C1129,191,1110.28,219,1076.65,219Z" transform="translate(0 0)">
+          </path>
+          <path d="M1312.08,64.28c-28.4,0-51.57,14.94-63.53,29.15V68.76h-39.24v180.5h39.24V123.32c9-12.33,26.16-24.29,46.34-24.29,22,0,36.25,9.34,36.25,37.37V249.26h39.23V122.2C1370.37,85.2,1350.94,64.28,1312.08,64.28Z" transform="translate(0 0)">
+          </path>
+          <path d="M1501.55,64.28c-53.44,0-91.56,42.22-91.56,94.54,0,57.18,40.36,94.92,94.54,94.92,28.78,0,55.31-9,73.25-26.16l-17.94-25.78c-12.7,12.71-33.63,19.8-51.19,19.8-34,0-54.56-22.41-57.55-49.7h139.39v-9.34C1590.49,105.76,1555.73,64.28,1501.55,64.28Zm-50.83,80c1.87-22,17.2-47.84,50.83-47.84,35.5,0,50.07,26.54,50.82,47.84Z" transform="translate(0 0)">
+          </path>
+         </g>
+        </svg>
+       </div>
+       <div class="zone-content">
+        <div class="widget-area">
+         <section class="widget widget_nav_menu" id="nav_menu-4">
+          <h2 class="widget-title">
+           Company
+          </h2>
+          <div class="menu-footer-company-container">
+           <ul class="menu" id="menu-footer-company">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-560" id="menu-item-560">
+             <a href="https://block.one" rel="noopener noreferrer" target="_blank">
+              Block.one
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1105" id="menu-item-1105">
+             <a href="https://voice.com" rel="noopener noreferrer" target="_blank">
+              Voice
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-561" id="menu-item-561">
+             <a href="https://vc.eos.io" rel="noopener noreferrer" target="_blank">
+              EOS VC
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-562" id="menu-item-562">
+             <a href="https://hackathon.eos.io" rel="noopener noreferrer" target="_blank">
+              EOSIO Hackathon
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-563" id="menu-item-563">
+             <a href="https://block.one/careers/" rel="noopener noreferrer" target="_blank">
+              Careers at Block.one
+             </a>
+            </li>
+           </ul>
+          </div>
+         </section>
+         <section class="widget acf_social" id="acf_social-3">
+          <h2 class="widget-title">
+           Social
+          </h2>
+          <div class="social-navigation-container">
+           <ul class="social-navigation-menu">
+            <li class="social-facebook">
+             <a href="https://www.facebook.com/blockoneofficial" target="_blank">
+              <i class="b1-icon-social-facebook">
+              </i>
+              <span class="screen-reader-text">
+               facebook
+              </span>
+             </a>
+            </li>
+            <li class="social-twitter">
+             <a href="https://twitter.com/block_one_" target="_blank">
+              <i class="b1-icon-social-twitter">
+              </i>
+              <span class="screen-reader-text">
+               twitter
+              </span>
+             </a>
+            </li>
+            <li class="social-instagram">
+             <a href="https://www.instagram.com/block.one_official" target="_blank">
+              <i class="b1-icon-social-instagram">
+              </i>
+              <span class="screen-reader-text">
+               instagram
+              </span>
+             </a>
+            </li>
+            <li class="social-linkedin">
+             <a href="https://www.linkedin.com/company/block-one-official/" target="_blank">
+              <i class="b1-icon-social-linkedin">
+              </i>
+              <span class="screen-reader-text">
+               linkedin
+              </span>
+             </a>
+            </li>
+            <li class="social-youtube">
+             <a href="https://www.youtube.com/channel/UCbc7vIgwb-sPSckU0FbWmRg" target="_blank">
+              <i class="b1-icon-social-youtube">
+              </i>
+              <span class="screen-reader-text">
+               youtube
+              </span>
+             </a>
+            </li>
+            <li class="social-github">
+             <a href="https://github.com/EOSIO" target="_blank">
+              <i class="b1-icon-social-github">
+              </i>
+              <span class="screen-reader-text">
+               github
+              </span>
+             </a>
+            </li>
+            <li class="social-medium">
+             <a href="https://medium.com/eosio" target="_blank">
+              <i class="b1-icon-social-medium">
+              </i>
+              <span class="screen-reader-text">
+               medium
+              </span>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </section>
+        </div>
+       </div>
+      </div>
+      <div class="zone-sep zone-column">
+      </div>
+      <div class="brand-zone zone-column">
+       <div class="zone-logo">
+        <svg viewbox="0 0 155.85 42.58" xmlns="http://www.w3.org/2000/svg">
+         <defs>
+          <style>
+           .a {
+        fill: #111a44;
+      }
+          </style>
+         </defs>
+         <g>
+          <g>
+           <polygon class="a" points="150.84 34.44 149.68 34.44 149.68 34.31 152.16 34.31 152.16 34.44 151 34.44 151 37.32 150.84 37.32 150.84 34.44 150.84 34.44">
+           </polygon>
+           <polygon class="a" points="155.69 34.48 154.36 37.32 154.3 37.32 152.97 34.48 152.97 37.32 152.81 37.32 152.81 34.31 153.07 34.31 154.33 37 155.59 34.31 155.85 34.31 155.85 37.32 155.69 37.32 155.69 34.48">
+           </polygon>
+          </g>
+          <g>
+           <path class="a" d="M47.74,23.2a7.72,7.72,0,0,0,8,8.09,14.39,14.39,0,0,0,7-1.89v2.26a16.67,16.67,0,0,1-7.23,1.65C50.35,33.31,45,29.9,45,23.2c0-6.29,4.52-9.74,9.88-9.74s9.41,3.29,9.41,9.74Zm.17-1.93H61.45a6.63,6.63,0,0,0-6.7-5.79A6.8,6.8,0,0,0,47.91,21.27Z" transform="translate(0 -0.11)">
+           </path>
+           <path class="a" d="M69.73,23.37c0-6.37,5.35-9.91,10.71-9.91S91,17,91,23.32s-5.31,10-10.67,10S69.73,29.73,69.73,23.37Zm10.62,7.92a7.76,7.76,0,0,0,8-7.92,7.95,7.95,0,0,0-15.89,0A7.72,7.72,0,0,0,80.35,31.29Z" transform="translate(0 -0.11)">
+           </path>
+           <path class="a" d="M101.91,23.53c-3-1.44-5.66-2.92-5.27-6.08.31-2.42,2.14-4,5.93-4a11.68,11.68,0,0,1,5.79,1.4l-1.7,1.25a9.22,9.22,0,0,0-3.31-.63c-2.09,0-3.75.37-4,2.09-.34,2.3,2.4,3.29,4.71,4.36,3.57,1.64,5.53,2.87,5.53,5.87s-2.18,5.51-7.06,5.51a13,13,0,0,1-6.62-1.73l1.7-1.26a11.05,11.05,0,0,0,4.58,1c3.65,0,4.87-1.76,4.87-3.49C107.05,25.79,105.4,25.17,101.91,23.53Z" transform="translate(0 -0.11)">
+           </path>
+           <path class="a" d="M122,32.9h-2.62V15.81H115.2V13.87H122v19ZM120.61,5.32a1.91,1.91,0,0,1,1.91,1.81,1.92,1.92,0,0,1-3.83,0A1.91,1.91,0,0,1,120.61,5.32Z" transform="translate(0 -0.11)">
+           </path>
+           <path class="a" d="M129.34,23.37c0-6.37,5.36-9.91,10.72-9.91s10.58,3.54,10.58,9.86-5.31,10-10.67,10S129.34,29.73,129.34,23.37ZM140,31.29a7.76,7.76,0,0,0,8-7.92,8,8,0,0,0-15.9,0A7.73,7.73,0,0,0,140,31.29Z" transform="translate(0 -0.11)">
+           </path>
+          </g>
+          <path class="a" d="M25,13.81,14.65.11,4.35,13.81,0,34.1l14.65,8.59L29.3,34.1ZM2.37,33.09,5.68,17.67,13.14,39.4ZM6.69,14.17l8-10.58,8,10.58-8,23.16Zm16.94,3.5,3.3,15.42L16.16,39.4Z" transform="translate(0 -0.11)">
+          </path>
+         </g>
+        </svg>
+       </div>
+       <div class="zone-content">
+        <div class="widget-area">
+         <section class="widget widget_nav_menu" id="nav_menu-12">
+          <h2 class="widget-title">
+           Platform
+          </h2>
+          <div class="menu-footer-platform-container">
+           <ul class="menu" id="menu-footer-platform">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-798" id="menu-item-798">
+             <a href="https://eos.io/build-on-eosio/">
+              Products
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567" id="menu-item-567">
+             <a href="https://eos.io/strategic-vision/">
+              Strategic Vision
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2717" id="menu-item-2717">
+             <a href="https://eos.io/eosio-software-releases/">
+              EOSIO Releases
+             </a>
+            </li>
+           </ul>
+          </div>
+         </section>
+         <section class="widget widget_nav_menu" id="nav_menu-11">
+          <h2 class="widget-title">
+           Resources
+          </h2>
+          <div class="menu-footer-resources-container">
+           <ul class="menu" id="menu-footer-resources">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2713" id="menu-item-2713">
+             <a href="https://developers.eos.io/" rel="noopener noreferrer" target="_blank">
+              Developer Portal
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2714" id="menu-item-2714">
+             <a href="https://battles.eos.io/" rel="noopener noreferrer" target="_blank">
+              Elemental Battles
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2715" id="menu-item-2715">
+             <a href="https://testnet.eos.io/" rel="noopener noreferrer" target="_blank">
+              Testnet
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2716" id="menu-item-2716">
+             <a href="https://eos.io/webinars/">
+              Webinars
+             </a>
+            </li>
+           </ul>
+          </div>
+         </section>
+         <section class="widget widget_nav_menu" id="nav_menu-10">
+          <h2 class="widget-title">
+           Communication
+          </h2>
+          <div class="menu-footer-communication-container">
+           <ul class="menu" id="menu-footer-communication">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2872" id="menu-item-2872">
+             <a href="https://eos.io/contact/">
+              Contact
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2871" id="menu-item-2871">
+             <a href="https://eos.io/feedback/">
+              Feedback
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570" id="menu-item-570">
+             <a href="https://eos.io/news/">
+              Latest News
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-578" id="menu-item-578">
+             <a href="https://eos.io/faq/">
+              FAQ
+             </a>
+            </li>
+           </ul>
+          </div>
+         </section>
+        </div>
+        <div class="site-info">
+         <nav class="footer-navigation">
+          <div class="menu-legal-menu-container">
+           <ul class="menu" id="footer-menu">
+            <li class="menu-item menu-item-type-post_type menu-item-object-legal menu-item-1855" id="menu-item-1855">
+             <a href="https://eos.io/legal/privacy-policy/">
+              Privacy Policy
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-legal menu-item-1854" id="menu-item-1854">
+             <a href="https://eos.io/legal/terms-of-use/">
+              Terms of Use
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-legal menu-item-1853" id="menu-item-1853">
+             <a href="https://eos.io/legal/important-notice/">
+              Legal
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2331" id="menu-item-2331">
+             <a href="https://eos.io/sitemap/">
+              Sitemap
+             </a>
+            </li>
+           </ul>
+          </div>
+         </nav>
+         <div class="copyright">
+          <span>
+           Copyright © 2020 Block.one. All rights reserved.
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <!-- #colophon -->
+   <div class="cookie-bar dark-ui">
+    <div class="container flex">
+     <div class="cookie-notice">
+      <p>
+       Our website uses cookies to offer you a better browsing experience. By using this website, you consent to the cookies being used. To learn more about our cookies, please read our
+       <a href="https://eos.io/cookies-policy/">
+        Cookies Policy
+       </a>
+       and
+       <a href="https://eos.io/privacy-policy/">
+        Privacy Policy
+       </a>
+       .
+      </p>
+     </div>
+     <div class="cookie-actions">
+      <a class="button outline more-info-button" href="https://eos.io/legal/cookies-policy/">
+       More Info
+      </a>
+      <button class="cookie-acceptance" id="cookieAccept">
+       OK
+      </button>
+     </div>
+    </div>
+   </div>
+   <a class="back-to-top" href="#page">
+    <i class="b1-icon-glyph-next">
+    </i>
+   </a>
+  </div>
+  <!-- #page -->
+  <script>
+   window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){return}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){return}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)
+  </script>
+  <script async="" data-no-minify="1" src="https://eos.io/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js">
+  </script>
+  <script data-minify="1" src="https://eos.io/wp-content/cache/min/1/97c0c298b7e2a5aac67c03f401823474.js">
+  </script>
+  <script type="text/javascript">
+   jQuery(document).ready(function($){gformInitSpinner( 2, 'https://eos.io/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_2').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'https://eos.io/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_2').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;}, 50);}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [2, current_page]);} );} );
+  </script>
+  <script type="text/javascript">
+   jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );
+  </script>
+  <script type="text/javascript">
+   jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [2, 1]) } );
+  </script>
+ </body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

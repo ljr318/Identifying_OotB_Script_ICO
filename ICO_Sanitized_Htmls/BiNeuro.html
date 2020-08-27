@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   BiNeuro
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="site.webmanifest" rel="manifest"/>
+  <link color="#5bbad5" href="safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#603cba" name="msapplication-TileColor"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+  <link href="css/style2.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js">
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+   (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-TF5B26J');
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+   .form-title {
+                font-weight: 300;
+                line-height: 65px;
+                font-size: 54px;
+                margin-bottom: 30px;
+                margin-top: 50px;
+            }
+            .amount-wrap {
+                margin-bottom: 20px;
+            }
+
+            .btn-close {
+                font-size: 19px;
+                display: block;
+                font-weight: 500;
+                line-height: 10px;
+                letter-spacing: 3.2px;
+                padding: 24px 0 25px;
+                text-align: center;
+                width: 100%;
+                -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+                height: 60px;
+            }
+
+            .contacts-btn {
+                background: #3B5C9B;
+                height: 45px;
+                padding: 0px;
+                max-width: 25%;
+                margin-left: 20px !important;
+                letter-spacing: 0px;
+                display: inline;
+            }
+
+            .main-form-btn {
+                letter-spacing:0px;
+                margin-bottom:30px
+            }
+
+            #main-form .m-title {
+                font-weight: 500;
+                /*font-size: 36px;*/
+                margin-bottom:0px;
+            }
+
+            @media (max-width: 767px){
+                #main-form .w3-medium-btn {
+                    margin: 10px 15px 15px;
+                    max-width: 85%;
+                }
+            }
+
+            @media (min-width: 992px) {
+                #main-form .w3-medium-btn {
+                    max-width: 60%;
+                }
+            }
+
+            @media (max-width:1920px){
+                .modal-lg1 {
+                    max-width: 1250px;
+                }
+            }
+
+            @media (max-width:1366px){
+                .modal-lg1 {
+                    max-width: 1100px;
+                }
+                .m-title {
+                    margin: 30px 0 20px;
+                    font-size: 40px;
+                }
+                .m-caption {
+                    font-size:26px;
+                    margin-left: 17%;
+                }
+            }
+            
+            @media (max-width:1024px){
+                .m-caption {
+                    margin-left: 20%;
+                }
+            }
+
+            @media (max-width:1270px){
+                .modal-lg1 {
+                    max-width: 1000px;
+                }
+                .form-title {
+                    font-weight: 500;
+                    font-size: 36px;
+                }
+            }
+
+            @media (max-width:1199px){
+                .modal-lg1 {
+                    max-width: 900px;
+                }
+            }
+
+            @media (max-width: 768px){
+                .m-caption {
+                    margin-left: 25%;
+                }
+            }
+
+            @media (max-width: 414px){
+                .m-caption {
+                    margin-left: 50%;
+                }
+            }
+            
+            @media (max-width: 375px){
+                .m-title {
+                    font-size: 35px;
+                }
+                .m-caption {
+                    margin-left: 40%;
+                }
+            }
+            
+            @media (max-width: 360px){
+                .m-title {
+                    font-size: 34px;
+                }
+            }
+            
+            @media (max-width: 320px){
+                #main-form .w3-medium-btn {
+                    margin: 10px 8px 15px;
+                    max-width: 95%;
+                }
+                .m-title {
+                    font-size: 30px;
+                }
+                .m-caption {
+                    margin-left: 35%;
+                }
+            }
+            
+            .m-caption {
+                font-size: 1rem;
+                font-family: Coming Soon;
+                color: #96c8e2
+            }
+  </style>
+ </head>
+ <body>
+  <h1 class="text-hide m-0">
+   Bineuro
+  </h1>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TF5B26J" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="bgimg container-fluid text-white w3-padding-regular">
+   <div class="display-topmiddle d-flex lighten justify-content-center close-form">
+    <video class="main-logo video-logo" loop="" muted="" playsinline="">
+     <source src="img/main-logo.mp4" type="video/mp4">
+     </source>
+    </video>
+    <img alt="logo" class="main-logo img-logo" src="img/logo.png"/>
+   </div>
+   <div class="col-12 display-middle">
+    <div class="row justify-content-center">
+     <div class="col-md-10 desrc alert fade show text-center mb-5">
+      <p class="m-title mt-0 mb-3">
+       Your Application Accepted.
+      </p>
+      <div class="d-flex col-xl-9 col-lg-12 mt-5 flex-sm-row flex-column follow-wrap mx-auto align-items-center">
+       <p class="d-block my-2 follow-us">
+        Please, contact our manager to make next step:
+       </p>
+       <a class="col-md-3 my-2 mx-md-4 mx-0 w3-subscribe w3-fb" href="skype:manager111.uct">
+        <!-- <i class=" ico-responce ico-responce-fb"></i> -->
+        <i class="fab fa-skype">
+        </i>
+        <span class="d-none d-lg-block ml-3">
+         Follow
+        </span>
+       </a>
+       <a class="col-md-3 mx-md-4 mx-0 my-2 w3-subscribe w3-tg" href="https://t.me/UCT_dalaraan/" target="_blank">
+        <i class="ico-responce ico-responce-tg">
+        </i>
+        <span class="d-none d-lg-block ml-3">
+         Connect
+        </span>
+       </a>
+       <a class="col-md-3 mx-md-4 mx-0 my-2 w3-subscribe w3-fb" href="/cdn-cgi/l/email-protection#a2c0cbccc7d7d0cde2d7c1d6d5cdd0cec68cc1cdcf">
+        <!-- <i class=" ico-responce ico-responce-tg"></i> -->
+        <i class="far fa-envelope">
+        </i>
+        <span class="d-none d-lg-block ml-3">
+         Write
+        </span>
+       </a>
+       <div class="d-flex col-md-10 justify-content-center">
+        <!--<a href="https://bitcointalk.org/index.php?topic=3229031.msg33603348#msg33603348/" rel="nofollow" target="_blank" class="ico-tag " title="Bitcointalk">
+                                  <i class="fab fa-btc"></i>
+                                </a>-->
+        <a class="ico-tag" href="https://t.me/BiNeuroChannel/" target="_blank" title="Telegram Channel">
+         <i class="fab fa-telegram-plane">
+         </i>
+        </a>
+        <!--<a href="https://t.me/joinchat/HcmMaQtO7U5bwM3NMTkRxw/"  target="_blank" class="ico-tag social-link__ru" title="Telegram Group RU">
+                                  <i class="fab fa-telegram-plane"></i>
+                                </a>
+                                <a href="https://t.me/BiNeuroTokenSaleEN/"  target="_blank" class="ico-tag  social-link__en" title="Telegram Group EN">
+                                  <i class="fab fa-telegram-plane"></i>
+                                </a>-->
+        <a class="ico-tag social-link__en" href="https://www.facebook.com/BiNeuroPartnersEN/" target="_blank" title="Facebook EN">
+         <i class="fab fa-facebook-f">
+         </i>
+        </a>
+        <a class="ico-tag social-link__ru" href="https://www.facebook.com/www.bineuro/" target="_blank" title="Facebook RU">
+         <i class="fab fa-facebook-f">
+         </i>
+        </a>
+        <a class="ico-tag" href="https://twitter.com/BiNeuroPartners/" target="_blank" title="Twitter">
+         <i class="fab fa-twitter">
+         </i>
+        </a>
+        <a class="ico-tag" href="https://www.youtube.com/channel/UCbLBP9uZQfZ7mmsAaqeGxLQ/" target="_blank" title="Youtube">
+         <i class="fab fa-youtube">
+         </i>
+        </a>
+        <!--<a href="https://www.instagram.com/bineuro.ico/?hl=ru/" target="_blank" class="ico-tag" title="Instagram">
+                                  <i class="fab fa-instagram  "></i>
+                                </a>-->
+        <a class="ico-tag" href="https://medium.com/@bineuro.ico/" target="_blank" title="Medium">
+         <i class="fab fa-medium-m">
+         </i>
+        </a>
+        <!--<a href="https://www.reddit.com/user/BiNeuro/" target="_blank" class="ico-tag" title="Reddit">
+                                  <i class="fab fa-reddit-alien "></i>
+                                </a>-->
+        <a class="ico-tag" href="https://www.linkedin.com/company/bineuro/?trk=organization-update_share-update_update-text" target="_blank" title="LinkedIn">
+         <i class="fab fa-linkedin-in">
+         </i>
+        </a>
+       </div>
+      </div>
+      <!--<button type="button"  class="d-block mx-auto w3-btn w3-main w3-light-btn col-xl-4 col-lg-8 close-form w3-thank" >OK, thank you</button>-->
+     </div>
+    </div>
+   </div>
+   <form class="display-middle text-center col-12" id="main-form">
+    <input name="check" type="hidden" value="mainform"/>
+    <p class="m-title">
+     #1 CPI PLATFORM
+    </p>
+    <p class="m-caption">
+     powered by AI BiNeuro
+    </p>
+    <div class="row justify-content-center">
+     <div class="col-xl-8 col-lg-11 text-center">
+      <div class="row justify-content-center">
+       <div class="text-left d-flex align-items-center m-counter-container">
+        <div class="m-counter-wrap m-counter-wrap1">
+        </div>
+        <p class="text-center d-inline-block m-0">
+         Google accounts registered
+        </p>
+       </div>
+       <div class="text-left d-flex align-items-center m-counter-container">
+        <div class="m-counter-wrap m-counter-wrap2">
+        </div>
+        <p class="text-center d-inline-block m-0">
+         Google Ads campaigns finished
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-xl-9 col-lg-11 text-center">
+      <div class="row justify-content-center">
+       <div class="col-12">
+        <p class="subtitle">
+         Please fill in the form to get the CPI price for your Mobile App
+        </p>
+       </div>
+       <div class="col-md-12 d-flex flex-wrap">
+        <div class="inputs-wrapper col-md-6">
+         <input class="input-big" name="linkGP" placeholder="" required="" type="text" value=""/>
+         <label alt="Link to your App in Google Play" placeholder="nOc">
+         </label>
+        </div>
+        <div class="inputs-wrapper col-md-6">
+         <input class="input-big" name="linkAS" placeholder="" required="" type="text" value=""/>
+         <label alt="Link to your App in App Store" placeholder="nOc">
+         </label>
+        </div>
+        <div class="inputs-wrapper col-md-6">
+         <input class="input-big" name="countries" placeholder="" required="" style="height: 70px;" type="text" value=""/>
+         <label alt="List of countries you want to promote your App" placeholder="nOc">
+         </label>
+        </div>
+        <div class="inputs-wrapper col-md-6">
+         <input class="input-big" name="contacts" placeholder="" required="" style="height: 70px;" type="text" value=""/>
+         <label alt="Your contacts (e-mail, phone, telegram, etc)" placeholder="nOc">
+         </label>
+        </div>
+       </div>
+      </div>
+      <div class="row justify-content-center">
+       <div class="order-xl-0 order-lg-1 order-md-1 col-xl-6 col-md-5">
+        <button class="w3-btn w3-main w3-medium-btn col-lg-6 col-md-12 submit-btn main-form-btn g-recaptcha" data-callback="validate" data-sitekey="6LdJ7GkUAAAAAA39cS4zxUcqgYVNp5metvle5r96">
+         GET THE BEST CPI PRICE
+        </button>
+        <!--button onclick="validate(this); return false;" class="w3-btn w3-main w3-medium-btn col-lg-6  col-md-12 submit-btn">SUBMIT</button-->
+       </div>
+      </div>
+      <div class="row justify-content-center d-lg-none">
+       <p class="footer-p">
+        Â© 2009-2018
+       </p>
+      </div>
+     </div>
+    </div>
+   </form>
+   <div class="display-bottomleft">
+    <div class="c-partner-img">
+     <!--noindex-->
+     <a href="https://google.com/partners/agency?id=2668645037" rel="nofollow" target="_blank">
+      <img alt="" src="img/c-partner.png"/>
+     </a>
+     <!--/noindex-->
+    </div>
+   </div>
+   <div class="display-left bg-v-line-l d-none d-lg-block">
+   </div>
+   <div class="display-topleft col-lg-4 col-md-5 d-lg-flex d-md-none partner-block flex-column p-0">
+    <div class="d-flex flex-sm-row justify-content-sm-start flex-column align-items-sm-end align-items-center">
+     <div class="c-uct-img">
+      <!--noindex-->
+      <a href="https://uctworld.com/" rel="nofollow" target="_blank">
+       <img alt="" src="img/uct.svg"/>
+      </a>
+      <!--/noindex-->
+     </div>
+    </div>
+   </div>
+   <div class="display-topright col-lg-5 col-md-9 flex-column contact-block p-0 mt-0">
+    <div class="d-flex flex-sm-row justify-content-sm-end flex-column justify-content-center align-items-center">
+     <a href="/" style="text-decoration:none;">
+      <h6 class="text-white info-item">
+       Mobile App Registration
+      </h6>
+     </a>
+     <a href="our-services.html">
+      <h6 class="text-white">
+       Our services
+      </h6>
+     </a>
+     <a href="about.html">
+      <h6 class="text-white">
+       About BiNeuro
+      </h6>
+     </a>
+     <!--a href="#"><h6 class="text-white ">Blog</h6></a-->
+     <a data-target="#contactUs" data-toggle="modal" href="#">
+      <h6 class="text-white">
+       Contact BiNeuro
+      </h6>
+     </a>
+    </div>
+   </div>
+   <div class="display-right bg-v-line-r d-none d-lg-block">
+   </div>
+   <div class="display-bottomright d-none d-lg-block">
+    <div class="d-flex flex-wrap">
+     <!--a href="https://medium.com/@bineuro.ico/" target="_blank" class="ico-tag" title="Medium">
+                      <i class="fab fa-medium-m "></i>
+                    </a-->
+     <a class="ico-tag" href="https://t.me/BiNeuroChannel/" target="_blank" title="Telegram Channel">
+      <i class="fab fa-telegram-plane">
+      </i>
+     </a>
+     <a class="ico-tag" href="https://www.facebook.com/BiNeuroPartnersEN/" target="_blank" title="Facebook EN">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+    </div>
+   </div>
+   <div class="display-bottommiddle d-flex footer-c">
+    <div class="bg-g-line bg-g-l-line d-none d-lg-block">
+    </div>
+    <div class="bg-g-line bg-g-r-line d-none d-lg-block">
+    </div>
+   </div>
+   <div class="display-bottommiddle d-none d-lg-block footer-c" style="width:215px;  text-align: center;">
+    <p class="footer-p">
+     Â© 2009-2018
+    </p>
+   </div>
+  </div>
+  <!-- Modal -->
+  <div aria-hidden="true" aria-labelledby="contactUs" class="modal fade" id="contactUs" role="dialog" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <span aria-hidden="true">
+       ×
+      </span>
+     </button>
+     <form class="modal-body" id="modal-form">
+      <p class="m-title m-3 text-center text-white">
+       Contact
+      </p>
+      <input name="check" type="hidden" value="modalform"/>
+      <div class="col-12">
+       <input class="input-big" name="cEmail" required="" type="text" value=""/>
+       <label alt="Email" placeholder="mail">
+       </label>
+      </div>
+      <div class="col-12">
+       <textarea class="input-big" name="cQuestion" placeholder="Your question" required="" rows="3" type="textarea" value=""></textarea>
+      </div>
+      <div class="col-md-6">
+       <button class="w3-btn w3-main w3-medium-btn col-md-12 text-white submit-btn g-recaptcha" data-callback="validate2" data-sitekey="6LdJ7GkUAAAAAA39cS4zxUcqgYVNp5metvle5r96">
+        SUBMIT
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- Modal -->
+  <div aria-hidden="true" aria-labelledby="thanks" class="modal fade" id="thanks" role="dialog" tabindex="-1">
+   <div class="modal-dialog modal-lg1 modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <span aria-hidden="true">
+       Ã
+      </span>
+     </button>
+     <form class="modal-body justify-content-center text-white" id="modal-form">
+      <div class="col-md-12 amount-wrap">
+       <p class="form-title text-center">
+        Thanks for your application
+       </p>
+       <h3 class="text-center">
+        We will contact you soon
+       </h3>
+      </div>
+      <p style="
+                           font-size: 20px;
+                           font-weight: 500;
+                           ">
+       Our contacts:
+      </p>
+      <div class="" style="
+                             width: 100%;
+                             text-align: center;
+                             margin-bottom: 30px;
+                             ">
+       <button class="border-0 btn-buy w3-main mt-3 mx-auto col-lg-4 col-md-12 close-response contacts-btn" onclick="window.location.href = 'skype:ann.moskalyuk'" type="button">
+        <svg aria-hidden="true" class="svg-inline--fa fa-skype fa-w-14" data-fa-i2svg="" data-icon="skype" data-prefix="fab" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+         <path d="M424.7 299.8c2.9-14 4.7-28.9 4.7-43.8 0-113.5-91.9-205.3-205.3-205.3-14.9 0-29.7 1.7-43.8 4.7C161.3 40.7 137.7 32 112 32 50.2 32 0 82.2 0 144c0 25.7 8.7 49.3 23.3 68.2-2.9 14-4.7 28.9-4.7 43.8 0 113.5 91.9 205.3 205.3 205.3 14.9 0 29.7-1.7 43.8-4.7 19 14.6 42.6 23.3 68.2 23.3 61.8 0 112-50.2 112-112 .1-25.6-8.6-49.2-23.2-68.1zm-194.6 91.5c-65.6 0-120.5-29.2-120.5-65 0-16 9-30.6 29.5-30.6 31.2 0 34.1 44.9 88.1 44.9 25.7 0 42.3-11.4 42.3-26.3 0-18.7-16-21.6-42-28-62.5-15.4-117.8-22-117.8-87.2 0-59.2 58.6-81.1 109.1-81.1 55.1 0 110.8 21.9 110.8 55.4 0 16.9-11.4 31.8-30.3 31.8-28.3 0-29.2-33.5-75-33.5-25.7 0-42 7-42 22.5 0 19.8 20.8 21.8 69.1 33 41.4 9.3 90.7 26.8 90.7 77.6 0 59.1-57.1 86.5-112 86.5z" fill="currentColor">
+         </path>
+        </svg>
+       </button>
+       <button class="border-0 btn-buy w3-main mt-3 mx-auto col-lg-4 col-md-12 close-response contacts-btn" onclick="window.open('https://t.me/Ann_MissAnn')" type="button">
+        <svg aria-hidden="true" class="svg-inline--fa fa-telegram-plane fa-w-14" data-fa-i2svg="" data-icon="telegram-plane" data-prefix="fab" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+         <path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z" fill="currentColor">
+         </path>
+        </svg>
+       </button>
+       <button class="border-0 btn-buy w3-main mt-3 mx-auto col-lg-4 col-md-12 close-response contacts-btn" onclick="window.open('mailto:bineuro@uctworld.com')" type="button">
+        <svg aria-hidden="true" class="svg-inline--fa fa-envelope fa-w-16" data-fa-i2svg="" data-icon="envelope" data-prefix="fa" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+         <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" fill="currentColor">
+         </path>
+        </svg>
+       </button>
+      </div>
+      <div class="col-md-12 mb-5 text-center">
+       <button class="border-0 btn-close w3-main mt-3 mx-auto col-lg-4 col-md-12 close-response" data-dismiss="modal" type="button">
+        CLOSE
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.3.0/js/md5.min.js">
+  </script>
+  <!-- Development version: -->
+  <script>
+   document.write('<script src="js/main1.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">
+  </script>
+  <script defer="" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js">
+  </script>
+ </body>
+</html>

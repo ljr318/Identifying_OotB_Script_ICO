@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <title>
+   BIOHAL OPEN NETWORK | Decentralized Biometrics Medical Blockchain Solution with Liquid Biopsy
+  </title>
+  <meta content="People taking the early detection test for cancers by liquid biopsy. Decentralized medical blockchain with biometrics authentication changes the world and save your life." name="description"/>
+  <meta content="ICO, health care, liquid biopsy, proteo, blockchain" name="keywords"/>
+  <meta content="BIOHAL:Super Early Cancer Detection for people for free" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.biohal.io" property="og:url"/>
+  <meta content=" https://www.biohal.io/assets/images/tw_biohal_1200_630.png" property="og:image"/>
+  <meta content="BIOHAL OPEN NETWORK" property="og:site_name"/>
+  <meta content="Biohal Solution is based on the blockhain with Liquid Biopsy. How to find your cancer even less than 1mm?" property="og:description"/>
+  <!--  FB設定-->
+  <meta content="529854590790806" property="fb:app_id"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@BiohalOfficial" name="twitter:site"/>
+  <link href="https://www.biohal.io/amp/index.html" rel="amphtml"/>
+  <link href="https://jp.biohal.io/" hreflang="ja" rel="alternate"/>
+  <link href="https://www.biohal.io/" hreflang="en" rel="alternate"/>
+  <link href="assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-datepicker.css" rel="stylesheet"/>
+  <link href="assets/fonts/ionicons/css/ionicons.min.css" rel="stylesheet"/>
+  <link href="assets/fonts/flaticon/font/flaticon.css" rel="stylesheet"/>
+  <link href="assets/css/animate.css" rel="stylesheet"/>
+  <link href="assets/css/select2.css" rel="stylesheet"/>
+  <link href="assets/css/helpers.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="assets/css/jquery.yycountdown.css" rel="stylesheet"/>
+  <link href="assets/css/owl.carousel.min.css" rel="stylesheet"/>
+  <link href="assets/fonts/fontawesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet"/>
+  <script src="assets/js/jquery.min.js">
+  </script>
+  <script type="application/ld+json">
+   { 
+			  "@context": "http://schema.org",
+			  "@type": "Product",
+			  "name": "Biohal Open Network",
+			  "url": "https://www.biohal.io/",
+			  "description": "BIOHAL Open Network is a Cancer Eearly Detection Screening service with the Decentaralized Medical Blockchain Technology",
+              "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.6",
+                    "bestRating": "5",
+                    "ratingCount": "153"
+                    },
+			"offers": {
+					"@type": "Offer",
+					"priceCurrency": "USD",
+					"price": "0.6",
+					"priceValidUntil": "2018-08-31",
+                    "seller": {
+                            "@type": "Organization",
+                            "name": "BIOHAL, Inc"
+                            }
+			} 
+            }
+  </script>
+  <script type="text/javascript">
+   $('head').append(
+				'<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>'
+			);
+
+			jQuery.event.add(window,"load",function() { // 全ての読み込み完了後に呼ばれる関数
+				var pageH = $("#container").height();
+
+				$("#fade").css("height", pageH).delay(900).fadeOut(800);
+				$("#loader").delay(600).fadeOut(300);
+				$("#container").css("display", "block");
+			});
+
+			var aid = '';
+			if (document.location.search.length > 4 && document.location.search.substring(0, 5)=='?aid=') { 
+			aid=document.location.search.substring(1); 
+			} 
+			document.cookie=aid;
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122654132-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122654132-1');
+  </script>
+  <script>
+   function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, '+')
+    .replace(/_/g, '/');
+
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
+
+window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("/serviceWorker.js")
+      .then(function(registration) {
+        console.log("serviceWorker registed.");
+      }).catch(function(error) {
+        console.warn("serviceWorker error.", error);
+      });
+
+    navigator.serviceWorker.ready
+      .then(function (registration) {
+        return registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array('BL_v6-EzFaKY9Z2_FH-ADCdcBUBeFgCWcBVRe1sFhFvblbcWelGMmRTtdNmU5bUHrT5RZ_YdcrHogKUox7e1y7E') });
+      })
+      .then(function (subscription) {
+        console.log('GCM EndPoint is:' + subscription.endpoint);
+        var auth = subscription.getKey('auth') ? btoa(String.fromCharCode.apply(null, new Uint8Array(subscription.getKey('auth')))) : '';
+        console.log('User Auth is:' + auth);
+        var publicKey = subscription.getKey('p256dh') ? btoa(String.fromCharCode.apply(null, new Uint8Array(subscription.getKey('p256dh')))) : '';
+        console.log('User PublicKey is:' + publicKey);
+      })
+      .catch(console.error.bind(console));
+  }
+});
+  </script>
+ </head>
+ <body>
+  <div id="loader">
+   <img alt="BIOHAL Open Network ICO" height="auto" src="assets/images/loading_roll02.gif" width="200px"/>
+  </div>
+  <div id="fade">
+  </div>
+  <div id="container">
+   <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
+    <div class="container">
+     <h1>
+      <a class="navbar-brand" href="index.html">
+       <img alt="BIOHAL Open Network" class="logo" src="assets/images/logo.svg"/>
+      </a>
+     </h1>
+     <button aria-controls="probootstrap-menu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#probootstrap-menu" data-toggle="collapse" type="button">
+      <span>
+       <i class="ion-navicon">
+       </i>
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="probootstrap-menu">
+      <ul class="navbar-nav ml-auto">
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="concept" href="#concept">
+         Concept
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="mission" href="#mission">
+         Mission
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="ecosystem" href="#ecosystem">
+         BIOHAL Ecosystem
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="wproteo" href="#wproteo">
+         PROTEO
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="token" href="#token">
+         PON Token
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="roadmap" href="#roadmap">
+         Road Map
+        </a>
+       </li>
+       <!--<li class="nav-item"><a class="nav-link" href="#team" data-i18n="team">Team</a></li>-->
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="media" href="#Media">
+         Media
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-i18n="login" href="./ico/login.html">
+         User Login
+        </a>
+       </li>
+       <ul class="nav navbar-nav navbar-right">
+        <!-- Nav6 dropdown -->
+        <li class="dropdown">
+         <a aria-expanded="false" class="dropdown-toggle" data-i18n="language" data-toggle="dropdown" href="#">
+          LANGUAGE
+          <span class="caret">
+          </span>
+         </a>
+         <ul class="dropdown-menu clearfix">
+          <li>
+           <a class="en" data-i18n="lang_en" href="#">
+            English
+           </a>
+          </li>
+          <li>
+           <a class="zh-CN" data-i18n="lang_zh" href="#">
+            Chinese
+           </a>
+          </li>
+          <li>
+           <a class="kr" data-i18n="lang_kr" href="#">
+            Korean
+           </a>
+          </li>
+          <li>
+           <a class="jp" data-i18n="lang_jp" href="#">
+            Japanese
+           </a>
+          </li>
+          <li>
+           <a class="th" data-i18n="lang_th" href="#">
+            Thai
+           </a>
+          </li>
+          <li>
+           <a class="vi" data-i18n="lang_vi" href="#">
+            Tiếng Việt
+           </a>
+          </li>
+          <li>
+           <a class="de" data-i18n="lang_de" href="#">
+            German
+           </a>
+          </li>
+          <li>
+           <a class="pt" data-i18n="lang_pt" href="#">
+            Portuguese
+           </a>
+          </li>
+          <li>
+           <a class="fr" data-i18n="lang_fr" href="#">
+            French
+           </a>
+          </li>
+          <li>
+           <a class="ru" data-i18n="lang_ru" href="#">
+            Russian
+           </a>
+          </li>
+          <!--<li><a href="#" class="es" data-i18n="lang_es">Spanish</a></li>
+						<li><a href="#" class="it" data-i18n="lang_it">Italian</a></li>
+						-->
+         </ul>
+        </li>
+       </ul>
+      </ul>
+     </div>
+    </div>
+   </nav>
+   <!-- END nav -->
+   <div id="footbanner">
+    <h4 class="sp">
+     JOIN OUR ICO！
+    </h4>
+    <ul class="footbannerIn clearfix">
+     <li class="pc">
+      <a class="navbar-brand" href="index.html">
+       <img class="logo" src="assets/images/logo.svg"/>
+      </a>
+     </li>
+     <li class="pc">
+      <h4>
+       JOIN OUR ICO！
+      </h4>
+     </li>
+     <!--
+  		<li><section class="countdown-wrapper">
+  			<ul id="back-countdiown">
+  				<li>                    
+  					<span class="days">00</span>
+  					<p>days</p>
+  				</li>
+  				<li>
+  					<span class="hours">00</span>
+  					<p>hours </p>
+  				</li>
+  				<li>
+  					<span class="minutes">00</span>
+  					<p>minutes</p>
+  				</li>
+  				<li>
+  					<span class="seconds">00</span>
+  					<p>seconds</p>
+  				</li>               
+  			</ul>
+  		</section>
+-->
+     <li>
+      <a class="btn btn-light" data-i18n="joinico" href="https://www.biohal.io/ico/register.html" role="button">
+       JOIN ICO
+      </a>
+     </li>
+    </ul>
+   </div>
+   <section class="probootstrap-cover overflow-hidden relative wrapvideo" data-stellar-background-ratio="0.5" id="section-home">
+    <video autoplay="" id="video1" loop="" muted="" src="video/dna.mp4">
+     <p data-i18n="videotag">
+      Your browser does not support the video tag.
+     </p>
+    </video>
+    <div class="overlay">
+    </div>
+    <div class="container hero">
+     <div class="row align-items-center">
+      <div class="col-md">
+       <h2 class="heading mb-2 display-4 font-light probootstrap-animate" data-i18n="[html]heading1">
+        Accelerating Biotech Breakthroughs with PROTEO
+       </h2>
+       <p class="lead mb-4 probootstrap-animate" data-i18n="[html]heading1p">
+        Super-Early Detection Liquid Biopsy "PROTEO" for people.
+        <br/>
+        The Biometrics authentication on blockchain changes the world.
+        <br/>
+       </p>
+       <p class="probootstrap-animate">
+        <a class="btn btn-primary p-3 pl-5 pr-5 text-uppercase d-lg-inline d-md-inline d-sm-block d-block mb-3" data-i18n="joinwl" href="ico/login.html" role="button">
+         Contribute to BIOHAL
+        </a>
+       </p>
+       <ul class="icon_list clearfix">
+        <li>
+         <img src="assets/images/icon_bit.png"/>
+         <p>
+          BTC
+         </p>
+        </li>
+        <li>
+         <img src="assets/images/icon_en.png"/>
+         <p>
+          ETH
+         </p>
+        </li>
+        <li>
+         <img src="assets/images/icon_ripple.png"/>
+         <p>
+          XRP
+         </p>
+        </li>
+        <li>
+         <img src="assets/images/icon_ada.png"/>
+         <p>
+          ADA
+         </p>
+        </li>
+       </ul>
+      </div>
+      <!--
+          <div class="col-md probootstrap-animate">
+                <div class="row mb-3 probootstrap-form top-right">
+                  <div class="col-md">
+                    <h2 data-i18n="[html]next_event">PRE-SALE coming soon.</h2>
+					 <p data-i18n="[html]next_event_p1">Apply to have the chance to access PON ICO priority whitelist!</p>
+					 <p class="startdate" data-i18n="[html]next_event_p2">Start at September 18st, 2018 12:00(UTC)</p>
+                  </div>
+                </div>
+          </div>
+-->
+      <div class="col-md probootstrap-animate">
+       <div class="row mb-3 probootstrap-form top-right">
+        <div class="col-md text-center">
+         <h2 data-i18n="[html]next_event">
+          Join our Crowd-Sale 2nd
+         </h2>
+         <!--
+                    <p data-i18n="[html]next_event1">Crowd-Sale 2nd Ends in</p>
+					 <div id="timer_hero"></div>
+-->
+         <a class="btn btn-primary" data-i18n="joinico" href="https://www.biohal.io/ico/register.html" role="button">
+          JOIN ICO
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- END section -->
+   <!--<section class="probootstrap_section" id="aboutus">
+      <div class="container">
+        <div class="row text-center mb-3 probootstrap-animate">
+          <div class="col-md-12">
+            <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading2">What the BIOHAL OPEN NETWORK is?</h2>
+          </div>
+        </div>
+        
+        <div class="row probootstrap-animate">
+          <div class="col-md-12">
+            <div class="owl-carousel js-owl-carousel">
+			<a class="probootstrap-slide" href="#">
+                <iframe src="" data-src="https://www.youtube.com/embed/HJhyqIftf6Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<p data-i18n="heading2p1">Decentralized Medical Blockchain</p>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <iframe src="" data-src="https://www.youtube.com/embed/VyjF-YnImiE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<p data-i18n="heading2p2">Concept of the Open Network</p>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <iframe src="" data-src="https://www.youtube.com/embed/wLP-2nWNGbw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<p data-i18n="heading2p3">How the Proteo Works</p>
+              </a>
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+   <!-- END section -->
+   <section class="probootstrap_section" id="news">
+    <div class="container">
+     <div class="row justify-content-center">
+      <div class="col-md-12 text-center mb-5 probootstrap-animate">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading39">
+        News
+       </h2>
+       <blockquote class="">
+        <p class="lead mb-4" data-i18n="[html]heading39p1">
+         <span style="font-weight: bold;">
+          2018/12/07
+         </span>
+         For BIOHAL investors, 2nd Crowdsale has been extended.
+        </p>
+       </blockquote>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- END section -->
+   <section class="probootstrap_section bg-light" id="concept">
+    <div class="container">
+     <div class="row justify-content-center mb-5">
+      <div class="col-md-12 text-center mb-5 probootstrap-animate">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading3">
+        the BIOHAL OPEN NETWORK
+       </h2>
+       <blockquote class="">
+        <p class="lead mb-4" data-i18n="[html]heading3p1">
+         Bio Authentication protocol
+         <br/>
+         BIOHAL OPEN NETWORK is a decentralized preventive medicine platform with liquid biopsy authentication protocol that enables secure and transparent exchange and usage of a variety of medical data.
+        </p>
+       </blockquote>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- END section -->
+   <section class="probootstrap_section" id="mission">
+    <div class="container">
+     <div class="row justify-content-center mb-5">
+      <div class="col-md-12 text-center mb-5 probootstrap-animate">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading4">
+        OUR MISSION
+       </h2>
+       <blockquote class="">
+        <p class="lead mb-4" data-i18n="[html]heading4p1">
+         As liquid biopsy experts, we are having an extremely difficult time to know the fact that most people recognized their cancer at stage 1 to 4, needed an emergency surgery or already cannot be cured.
+         <br/>
+         <strong>
+          Our mission is to eliminate that situation and find their disease at stage 0.
+         </strong>
+        </p>
+       </blockquote>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-3 mb-4">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_ourmission01.png"/>
+        <p data-i18n="heading4p2">
+         Standardize and enable comprehensive medical data to authentication to access over the blockchain.
+        </p>
+       </div>
+      </div>
+      <div class="col-md-3 mb-4">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_ourmission02.png"/>
+        <p data-i18n="heading4p3">
+         Decentralize the access layer and automate secure authentication for users
+        </p>
+       </div>
+      </div>
+      <div class="col-md-3 mb-4">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_ourmission03.png"/>
+        <p data-i18n="heading4p4">
+         Increase the survival rate and Quality of life by early detection system
+        </p>
+       </div>
+      </div>
+      <div class="col-md-3 mb-4">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_ourmission04.png"/>
+        <p data-i18n="heading4p5">
+         Enable people around the world to take free liquid biopsy test and overcome their potential diseases.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- END section -->
+   <section class="probootstrap_section bg-light" id="section-feature-testimonial">
+    <div class="container">
+     <div class="row justify-content-center mb-5">
+      <div class="col-md-12 text-center mb-5 probootstrap-animate">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading5">
+        Capable Solution
+       </h2>
+       <blockquote class="">
+        <p class="lead mb-4" data-i18n="[html]heading5p1">
+         BIOHAL OPEN NETWORK is a free, open-source, blockchain based biometrics authentication protocol featuring the reliable and secure architecture of Biometrics: Smart contracts that utilize liquid biopsy test as known as PROTEO.
+        </p>
+       </blockquote>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-3 fiveicon">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_protocol01.png"/>
+        <h5 data-i18n="heading5p2">
+         Decrease Medical Cost
+        </h5>
+       </div>
+      </div>
+      <div class="col-md-3 fiveicon">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_protocol02.png"/>
+        <h5 data-i18n="heading5p3">
+         Expand the choice of treatment
+        </h5>
+       </div>
+      </div>
+      <div class="col-md-3 fiveicon">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_protocol03.png"/>
+        <h5 data-i18n="heading5p4">
+         Less Burden
+        </h5>
+       </div>
+      </div>
+      <div class="col-md-3 fiveicon">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_protocol04.png"/>
+        <h5 data-i18n="heading5p5">
+         No Regional disparities
+        </h5>
+       </div>
+      </div>
+      <div class="col-md-3 fiveicon">
+       <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+        <img class="icon_cases" src="assets/images/icon_protocol05.png"/>
+        <h5 data-i18n="heading5p6">
+         Full Control liquid biopsy data over blockchain
+        </h5>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- END section -->
+   <section class="probootstrap_section bg-green" id="">
+    <div class="container">
+     <div class="row justify-content-center mb-5">
+      <div class="col-md-12 text-center mb-5 probootstrap-animate">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading29">
+        HOW TO ACTUALIZE GLOBAL TESTING SERVICES?
+       </h2>
+       <blockquote class="">
+        <p class="lead mb-4" data-i18n="heading29p1">
+         <em>
+          Our dried serum technology solves!
+         </em>
+        </p>
+        <p data-i18n="[html]heading29p2">
+         There are international regulations on every means of transportation of infectious substances (air, rail, road and marine transport as well as mail). The UN model rules are reflected in the international laws through the international model agreements.
+         <br/>
+         We have invented the dried serum technology by separating serum from the blood as a way to solve these problems.
+         <br/>
+         This enables safe transport of dried serum.
+         <br/>
+         By enabling transport of dried serum, it is possible to perform a stable test
+         <br/>
+         whose accuracy is not adversely affected by the condition of transportation.
+        </p>
+       </blockquote>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- END section -->
+   <section class="probootstrap_section">
+    <div class="container">
+     <div class="row text-center mb-5 probootstrap-animate">
+      <div class="col-md-12">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading6">
+        Focused on Dapp with Liquid Biopsy
+       </h2>
+       <blockquote class="">
+        <p class="lead mb-4" data-i18n="[html]heading6p1">
+         <em>
+          BIOHAL OPEN NETWORK is a Biotech Decentralized Solution, Powered by Blockchain &amp; PON Tokens
+         </em>
+        </p>
+        <p data-i18n="heading6p2">
+         BIOHAL OPEN NETWORK by design is a platform which allows not only processing of clinical trials data but also support for researchers during R&amp;D phase and marketplace for all types of market participants involved in clinical trials as well as direct sales of final biotech products to customers (patients).
+        </p>
+       </blockquote>
+      </div>
+      <div class="col-md-8 laptop">
+       <img src="assets/images/laptop.png"/>
+      </div>
+      <div class="col-md-4 probootstrap-media wrapinfointro">
+       <div class="infointro">
+        <div class="date">
+         <div class="" data-i18n="heading6p3">
+          Accuracy
+         </div>
+         <div class="" data-i18n="heading6p4">
+          September 2018
+         </div>
+        </div>
+        <div data-i18n="heading6p5">
+         Nearly 100%. We are developing a new system and getting improved.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="probootstrap_section bg-green">
+    <div class="container">
+     <div class="row text-center probootstrap-animate">
+      <div class="col-md-12">
+       <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading30">
+        COMPARISON WITH OTHER SERVICES
+       </h2>
+       <blockquote class="">
+        <p class="lead" data-i18n="[html]heading30p">
+         <em>
+          BIOHAL is a competitive blockchain platform and the quality of being scalable.
+         </em>
+        </p>
+       </blockquote>
+      </div>
+     </div>
+     <div class="row text-center probootstrap-animate">
+      <div class="table-responsive col-md-12">
+       <table class="diff__table table mt-5">
+        <thead>
+         <tr>
+          <th>
+          </th>
+          <th class="diff__logo">
+           <div class="diff__col diff__biohal">
+            <div class="diff__col-wrap">
+             <img class="img-fluid" src="assets/images/logo_biohal.png"/>
+            </div>
+           </div>
+          </th>
+          <th class="diff__logo">
+           <div class="diff__col">
+            <div class="diff__col-wrap">
+             <img class="img-fluid" src="assets/images/logo_medicalchain.png"/>
+            </div>
+           </div>
+          </th>
+          <th class="diff__logo">
+           <div class="diff__col">
+            <div class="diff__col-wrap">
+             <img class="img-fluid" src="assets/images/logo_arna.png"/>
+            </div>
+           </div>
+          </th>
+          <th class="diff__logo">
+           <div class="diff__col">
+            <div class="diff__col-wrap">
+             <img class="img-fluid" src="assets/images/logo_medrec.png"/>
+            </div>
+           </div>
+          </th>
+          <th class="diff__logo">
+           <div class="diff__col">
+            <div class="diff__col-wrap">
+             <img class="img-fluid" src="assets/images/logo_patientory.png"/>
+            </div>
+           </div>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="diff__row">
+          <td data-i18n="heading12p1">
+           Focused on working with DApp
+          </td>
+          <td>
+           <div class="diff__col diff__biohal">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+         </tr>
+         <tr class="diff__row">
+          <td data-i18n="heading12p2">
+           Bio Authentication Protocol
+          </td>
+          <td>
+           <div class="diff__col diff__biohal">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+         </tr>
+         <tr class="diff__row">
+          <td data-i18n="heading12p3">
+           Artificial Intelligence
+          </td>
+          <td>
+           <div class="diff__col diff__biohal">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+         </tr>
+         <tr class="diff__row">
+          <td data-i18n="heading12p4">
+           Liquid Biopsy Product
+          </td>
+          <td>
+           <div class="diff__col diff__biohal">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+         </tr>
+         <tr class="diff__row">
+          <td data-i18n="heading12p5">
+           Disease Early Detection
+          </td>
+          <td>
+           <div class="diff__col diff__biohal">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+         </tr>
+         <tr class="diff__row">
+          <td data-i18n="heading12p6">
+           Secured health records
+          </td>
+          <td>
+           <div class="diff__col diff__biohal">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-done">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+          <td>
+           <div class="diff__col">
+            <i class="icon ion-android-close">
+            </i>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <!-- END section -->
+     <section class="probootstrap_section bg-light">
+      <div class="container">
+       <div class="row text-center mb-5 probootstrap-animate">
+        <div class="col-md-12">
+         <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading7">
+          BIOHAL OPEN NETWORK use cases
+         </h2>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-4">
+         <div class="align-items-stretch mb-4 probootstrap-animate text-center">
+          <img class="icon_cases" src="assets/images/icon_cases01.png"/>
+          <h5 data-i18n="heading7p1">
+           Proof of research
+          </h5>
+          <p data-i18n="heading7p11">
+           The Data stored in the public blockchain BIOHAL OPEN NETWORK will be the basis of the evidence base.
+          </p>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <div class="align-items-stretch mb-4 probootstrap-animate text-center">
+          <img class="icon_cases" src="assets/images/icon_cases02.png"/>
+          <h5 data-i18n="heading7p2">
+           Protected research
+          </h5>
+          <p data-i18n="heading7p21">
+           The ability to “scientific research” in a secure format using encrypted key in blockchain ecosystem
+          </p>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <div class="align-items-stretch mb-4 probootstrap-animate text-center">
+          <img class="icon_cases" src="assets/images/icon_cases03.png"/>
+          <h5 data-i18n="heading7p3">
+           Big Data
+          </h5>
+          <p data-i18n="heading7p31">
+           Global access to the accumulated array of information through an open API interface with the functionality required to analyze the available data.
+          </p>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <div class="align-items-stretch mb-4 probootstrap-animate text-center">
+          <img class="icon_cases" src="assets/images/icon_cases04.png"/>
+          <h5 data-i18n="heading7p4">
+           Ecosystem
+          </h5>
+          <p data-i18n="heading7p41">
+           A single blockchain platform for collecting, storing and analyzing information methods of diagnosis and treatment of cancer
+          </p>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <div class="align-items-stretch mb-4 probootstrap-animate text-center">
+          <img class="icon_cases" src="assets/images/icon_cases05.png"/>
+          <h5 data-i18n="heading7p5">
+           Smart Blockchain
+          </h5>
+          <p data-i18n="heading7p51">
+           The possibility of connecting an AI to search for “patterns” for developing new methods of cancer treatment
+          </p>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <div class="align-items-stretch mb-4 probootstrap-animate text-center">
+          <img class="icon_cases" src="assets/images/icon_cases06.png"/>
+          <h5 data-i18n="heading7p6">
+           PON Tokens
+          </h5>
+          <p data-i18n="heading7p61">
+           Usage through interaction within the ecosystem of patients, researchers, Regulator, CRO, pharmaceutical companies, clinics
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- END section -->
+     <section class="probootstrap_section" id="ecosystem">
+      <div class="container">
+       <div class="row text-center mb-5 probootstrap-animate">
+        <div class="col-md-12">
+         <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading8">
+          BIOHAL OPEN NETWORK Ecosystem
+         </h2>
+         <blockquote class="">
+          <p class="lead mb-4" data-i18n="[html]heading8p">
+           <em>
+            community roles
+           </em>
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/01.png"/>
+         </div>
+         <p data-i18n="heading8p1">
+          General Users(Patients)
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/02.png"/>
+         </div>
+         <p data-i18n="heading8p2">
+          Medical Doctors
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/03.png"/>
+         </div>
+         <p data-i18n="heading8p3">
+          Clinics
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/04.png"/>
+         </div>
+         <p data-i18n="heading8p4">
+          Pharmaceutical companies
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/05.png"/>
+         </div>
+         <p data-i18n="heading8p5">
+          Insurance companies
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/06.png"/>
+         </div>
+         <p data-i18n="heading8p6">
+          Sponsors / Investors
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/07.png"/>
+         </div>
+         <p data-i18n="heading8p7">
+          National Ethical Committees
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/08.png"/>
+         </div>
+         <p data-i18n="heading8p8">
+          Researchers
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/09.png"/>
+         </div>
+         <p data-i18n="heading8p9">
+          Contract research organizations (CRO)
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/10.png"/>
+         </div>
+         <p data-i18n="heading8p10">
+          Experts
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/11.png"/>
+         </div>
+         <p data-i18n="heading8p11">
+          Regulators
+         </p>
+        </div>
+        <div class="col-md-3 ecosystem-box probootstrap-animate fadeInUp probootstrap-animated">
+         <div class="icon_ecosystem">
+          <img src="assets/images/12.png"/>
+         </div>
+         <p data-i18n="heading8p12">
+          Big Data
+         </p>
+        </div>
+       </div>
+       <!-- END section -->
+       <section class="probootstrap_section">
+        <div class="container">
+         <div class="row justify-content-center mb-5">
+          <div class="col-md-12 text-center mb-5 probootstrap-animate">
+           <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading9">
+            Enter the Precision Medicine Market with BIOHAL OPEN NETWORK
+           </h2>
+           <blockquote class="">
+            <p class="lead mb-4" data-i18n="[html]heading9p1">
+             <em>
+              Innovative Precision Medicine and Blockchain technology company specializing in the development of liqud biopsy for early diagnosis of cancer and monitoring the efficacy of cancer treatment
+             </em>
+            </p>
+           </blockquote>
+          </div>
+          <div class="col-md-6">
+           <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated">
+            <div class="probootstrap-media-image img_whitepaper text-center">
+             <a href="./pdf/biohal_whitepaper1.4.8.pdf">
+              <img src="assets/images/whitepaper.jpg"/>
+             </a>
+            </div>
+            <div class="media-body">
+             <p data-i18n="[html]heading9p2">
+              PROTEO Cancer Test
+              <br/>
+              first in the world early stage cancer test with UNPRECEDENTED accuracy!
+             </p>
+             <h5 class="mb-3 mt-5" data-i18n="[html]heading9p3">
+              BIOHAL OPEN NETWORK Whitepaper
+             </h5>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <!-- END section -->
+       <section class="probootstrap_section bg-light" id="wproteo">
+        <div class="container">
+         <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+           <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading10">
+            What is PROTEO
+           </h2>
+           <blockquote class="">
+            <p class="lead mb-4" data-i18n="[html]heading10p">
+             <em>
+              PROTEO is a liquid biopsy developed and ready.
+             </em>
+            </p>
+           </blockquote>
+          </div>
+         </div>
+         <!--<<div class="row">
+          <div class="col-md-6">
+            <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate">
+              <iframe src="" data-src="https://www.youtube.com/embed/wLP-2nWNGbw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="movie"></iframe>
+            </div>
+			<p>BIOHAL OPEN NETWORK Advisor Akira Nakamura tells about BIOHAL OPEN NETWORK project and blockchain. Full Interview</p>
+          </div>
+          <div class="col-md-6">
+           <div class="media probootstrap-media d-flex align-items-stretch mb-4 probootstrap-animate">
+              <iframe src="" data-src="https://www.youtube.com/embed/wLP-2nWNGbw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="movie"></iframe>
+            </div>
+			<p>BIOHAL OPEN NETWORK Advisor Rickey Cole tells about BIOHAL OPEN NETWORK project and blockchain. Full Interview</p>
+          </div>
+        </div>-->
+         <div class="row mt-5 mb-3">
+          <div class="col-md-12 mb-5">
+           <p class="" data-i18n="[html]heading10p1">
+            PROTEO is the liquid biopsy technology which can theoretically detect the very early cancer of approx. 1 mm, and it has obtained an international patent for measuring a nucleosome. PROTEO has been successful in detecting molecular-level cancerﾓ for the first time in the world.
+            <br/>
+            <strong>
+             This is the only test method that can quantify the amount of cancer-related substances.
+            </strong>
+            <br/>
+            <strong>
+             This is the only test method that can conduct cancer examination for a wide range of age from the infant (childhood cancer) to the elderly.
+            </strong>
+            <br/>
+            Samples can be sent to the medical laboratory via international mail; therefore, the area the international mail covers is the target area for this test.  This means that its potential demand can be the whole worldﾕs population of 7.6 billion people.
+           </p>
+          </div>
+          <div class="col-md-6 mb-4">
+           <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+            <img class="icon_cases" src="assets/images/icon_what01.png"/>
+            <p data-i18n="[html]heading10p2">
+             Very early detection of cancer
+             <br/>
+             from stage 0 (treatment is effective).
+            </p>
+           </div>
+          </div>
+          <div class="col-md-6 mb-4">
+           <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+            <img class="icon_cases" src="assets/images/icon_what02.png"/>
+            <p data-i18n="[html]heading10p3">
+             Minimally invasive
+             <br/>
+             (very little physical distress).
+            </p>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+            <img class="icon_cases" src="assets/images/icon_what03.png"/>
+            <p data-i18n="[html]heading10p4">
+             No medical radiation exposure (safe for those who are pregnant or with possibility of pregnancy).
+            </p>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+            <img class="icon_cases" src="assets/images/icon_what04.png"/>
+            <p data-i18n="[html]heading10p5">
+             No fasting or diet restriction required before the test. (can be tested any time)
+            </p>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="align-items-stretch mb-4 probootstrap-animate text-center fadeInUp probootstrap-animated">
+            <img class="icon_cases" src="assets/images/icon_what05.png"/>
+            <p data-i18n="[html]heading10p6">
+             Blood sample taken at home with self-testing kit (can eliminate disparities in quality of health care).
+            </p>
+           </div>
+          </div>
+          <div class="col-md-12 mt-5">
+           <p class="mb-4" data-i18n="[html]heading10p7">
+            If a test method that can quantitatively and quickly detect cancer-related or Alzheimer-related substances from blood components is developed, it can contribute not only to treatmentof cancer and Alzheimer but also greatly to reduction of medical expense worldwide.
+           </p>
+           <p class="mb-4" data-i18n="[html]heading10p8">
+            As PROTEO is known as being applied not only cancer, but also other diseases such as Alzheimer dementia, Arthritis, and so on, PROTEO technology is the key role on this Open network.
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <!-- END section -->
+       <section class="probootstrap_section">
+        <div class="container">
+         <div class="row text-center mb-3 probootstrap-animate">
+          <div class="col-md-12">
+           <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading11">
+            RESEARCH PAPER REFERENCE
+           </h2>
+          </div>
+          <p class="lead mb-4" data-i18n="heading11p1">
+           The technology of PROTEO has been successful in basic research and clinical trials, and the results have been published, including the following.
+          </p>
+         </div>
+         <div class="row text-center probootstrap-animate mb-3">
+          <div class="col-md-4">
+           <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document" style="height: 166px;">
+            <h5 data-i18n="heading11p2">
+             May 2015
+            </h5>
+            <a href="https://www.nature.com/articles/srep10455" target="_blank">
+             <p data-i18n="heading11p3">
+              "Scientific Reports" published by the Nature Publishing Group
+             </p>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document" style="height: 166px;">
+            <h5 data-i18n="heading11p4">
+             April 2014
+            </h5>
+            <a href="https://www.sciencedirect.com/science/article/pii/S1549963413005406" target="_blank">
+             <p data-i18n="heading11p5">
+              Nanotechnology, Biology, and Medicine"
+             </p>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document" style="height: 166px;">
+            <h5 data-i18n="heading11p6">
+             July 2013
+            </h5>
+            <a href="https://pubs.rsc.org/en/content/articlelanding/2013/cp/c3cp52564c#!divAbstract" target="_blank">
+             <p data-i18n="heading11p7">
+              "Royal Society of Chemistry"
+             </p>
+            </a>
+           </div>
+          </div>
+         </div>
+         <!-- END section -->
+         <section class="probootstrap_section bg-green">
+          <div class="container">
+           <div class="row text-center mb-5 probootstrap-animate">
+            <div class="col-md-12">
+             <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading12">
+              COMPARISON WITH OTHER SERVICES
+             </h2>
+            </div>
+           </div>
+           <div class="row text-center probootstrap-animate">
+            <div class="col-md-12">
+             <p class="mb-4" data-i18n="[html]heading12p">
+              Liquid biopsy is ideal as it is minimally invasive; 
+			however, it has not been implemented for practical use despite the fact that it has been known as cancer markers in the research publications of exosomes, circulating tumor cells (CTCs), and circulating tumor DNA (ctDNA).
+              <br/>
+              <br/>
+              These marker substances begin to be inactivated as soon as they are taken out of blood. 
+			It is also unsuitable for quantitative detection since it is terribly difficult to directly extract the target substance only because the available amount in the blood is extremely small. 
+			Moreover, it has been kept away from practical use since the protocol up to the detection is complex and requires a long period of time.
+             </p>
+            </div>
+           </div>
+           <!-- END section -->
+           <section class="probootstrap_section" id="section-feature-testimonial">
+            <div class="container">
+             <div class="row justify-content-center mb-5">
+              <div class="col-md-12 text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+               <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading13">
+                MARKET CAPABILITY
+               </h2>
+               <blockquote class="">
+                <p class="mt-5" data-i18n="[html]heading13p">
+                 Cancer early detection by the liquid biopsy is attracting more attention than ever.
+                 <br/>
+                 According to a marketing research company, the market size is rapidly growing and estimated in the size of 10 billion US dollars annually.
+                 <br/>
+                 Piper Jaffray companies, an investment bank reports that field by liquid biopsy is already being developed by 38 companies.
+                 <br/>
+                 Analysts predicted the market size of the genetic screening by liquid biopsy will be from 20 billion to 40 billion US dollars in USA.
+                </p>
+               </blockquote>
+              </div>
+              <div class="col-md-12 text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+               <div class="row text-center probootstrap-animate fadeInUp probootstrap-animated">
+                <div class="col-md-3 marketing">
+                 <h3>
+                  1B
+                 </h3>
+                 <p data-i18n="heading13p1">
+                  Cancer annually globally
+                 </p>
+                </div>
+                <div class="col-md-3 marketing">
+                 <h3>
+                  1,000s
+                 </h3>
+                 <p data-i18n="[html]heading13p2">
+                  Thousands of
+                  <br/>
+                  biotech Researchers
+                 </p>
+                </div>
+                <div class="col-md-3 marketing">
+                 <h3>
+                  40M
+                 </h3>
+                 <p data-i18n="[html]heading13p3">
+                  PROTEO Tests only
+                  <br/>
+                  in Japan
+                 </p>
+                </div>
+                <div class="col-md-3 marketing">
+                 <h3>
+                  $150B+
+                 </h3>
+                 <p data-i18n="[html]heading13p4">
+                  M&amp;A deals on medical market
+                  <br/>
+                  during each of the last 3 years
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </section>
+           <section class="probootstrap_section" id="token">
+            <div class="container">
+             <div class="row justify-content-center mb-5">
+              <div class="col-md-12 text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+               <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading14">
+                PON token sale
+               </h2>
+              </div>
+              <div class="col-md-12 mb-5" data-i18n="[html]heading14p">
+               PON owners have the following opportunities
+               <br/>
+               <br/>
+               •Become a provider of resources in order to provide the data-storage needs of the service, and receive rewards for it.
+               <br/>
+               •To lease out the token to the supplier and receive part of its rewards for using your token.
+               <br/>
+               •To sell the token freely on the stock exchange at market value.
+              </div>
+              <div class="col-md-8 img_graph">
+               <img alt="" class="img-fluid mb-4 pc" src="assets/images/graph.png"/>
+               <img alt="" class="img-fluid mb-4 sp" src="assets/images/graph_sp.png"/>
+              </div>
+             </div>
+            </div>
+           </section>
+           <section class="probootstrap_section bg-light">
+            <div class="container">
+             <div class="row text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+              <div class="col-md-12">
+               <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading15">
+                Token detail
+               </h2>
+              </div>
+             </div>
+             <div class="row mb-4">
+              <div class="col-md-2 marketing">
+               <h3 data-i18n="[html]heading15p1">
+                Pre-ICO Price
+               </h3>
+               <p data-i18n="heading15p2">
+                1 PON = 0.06 USD
+               </p>
+              </div>
+              <div class="col-md-2 marketing">
+               <h3 data-i18n="[html]heading15p3">
+                Price
+               </h3>
+               <p data-i18n="heading15p4">
+                1 PON = 0.10 USD
+               </p>
+              </div>
+              <div class="col-md-2 marketing">
+               <h3 data-i18n="[html]heading15p5">
+                Platform
+               </h3>
+               <p data-i18n="heading15p6">
+                Ethereum
+               </p>
+              </div>
+              <div class="col-md-2 marketing">
+               <h3 data-i18n="[html]heading15p7">
+                Accepting
+               </h3>
+               <p data-i18n="heading15p8">
+                ETH, BTC, XRP
+               </p>
+              </div>
+              <div class="col-md-2 marketing">
+               <h3 data-i18n="[html]heading15p11">
+                Hard cap
+               </h3>
+               <p data-i18n="heading15p12">
+                550,000,000 USD
+               </p>
+              </div>
+             </div>
+             <section class="probootstrap_section Roadmap" id="roadmap">
+              <div class="container">
+               <div class="row justify-content-center mb-5">
+                <div class="col-md-12 text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+                 <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading16">
+                  Roadmap
+                 </h2>
+                 <blockquote class="">
+                  <p class="lead mb-4">
+                   <em>
+                    2018 - 2023
+                   </em>
+                  </p>
+                 </blockquote>
+                 <div class="RoadmapTimeline">
+                  <div class="RoadmapTimeline-fundingPhase">
+                   <div class="RoadmapTimelinePhase">
+                    <p class="RoadmapTimelinePhase-heading">
+                     Phase01
+                    </p>
+                    <div class="RoadmapTimelinePhase-frame">
+                     <div class="RoadmapTimelinePhase-content">
+                      <ul class="RoadmapTimelinePhase-entries">
+                       <li class="RoadmapTimelinePhase-entry">
+                        <div class="RoadmapTimelineEntry">
+                         <div class="RoadmapTimelineEntry-bullet">
+                          <div class="RoadmapTimelineBullet RoadmapTimelineBullet--small">
+                           <div class="RoadmapTimelineBullet-core">
+                           </div>
+                          </div>
+                         </div>
+                         <div class="RoadmapTimelineEntry-content">
+                          <p class="RoadmapTimelineEntry-date">
+                           1st Quater, 2018
+                          </p>
+                          <p class="RoadmapTimelineEntry-text" data-i18n="heading16p1">
+                           Started decentralized medical blockchain project
+                          </p>
+                         </div>
+                        </div>
+                       </li>
+                       <li class="RoadmapTimelinePhase-entry">
+                        <div class="RoadmapTimelineEntry">
+                         <div class="RoadmapTimelineEntry-bullet">
+                          <div class="RoadmapTimelineBullet">
+                           <div class="RoadmapTimelineBullet-core">
+                           </div>
+                          </div>
+                         </div>
+                         <div class="RoadmapTimelineEntry-content">
+                          <p class="RoadmapTimelineEntry-date">
+                           2nd Quater, 2018
+                          </p>
+                          <p class="RoadmapTimelineEntry-text" data-i18n="heading16p2">
+                           Started to develop Demo app with Bio medical protocol
+                          </p>
+                         </div>
+                        </div>
+                       </li>
+                      </ul>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="RoadmapTimeline-implementationPhase">
+                   <div class="RoadmapTimelinePhase RoadmapTimelinePhase--inverted">
+                    <p class="RoadmapTimelinePhase-heading">
+                     Phase02
+                    </p>
+                    <div class="RoadmapTimelinePhase-frame">
+                     <div class="RoadmapTimelinePhase-content">
+                      <ul class="RoadmapTimelinePhase-entries">
+                       <li class="RoadmapTimelinePhase-entry">
+                        <div class="RoadmapTimelineEntry RoadmapTimelineEntry--inverted">
+                         <div class="RoadmapTimelineEntry-bullet">
+                          <div class="RoadmapTimelineBullet RoadmapTimelineBullet--small">
+                           <div class="RoadmapTimelineBullet-core">
+                           </div>
+                          </div>
+                         </div>
+                         <div class="RoadmapTimelineEntry-content">
+                          <p class="RoadmapTimelineEntry-date">
+                           3rd Quater, 2018
+                          </p>
+                          <p class="RoadmapTimelineEntry-text" data-i18n="heading16p3">
+                           BIOHAL ICO Launched
+                          </p>
+                         </div>
+                        </div>
+                       </li>
+                       <li class="RoadmapTimelinePhase-entry">
+                        <div class="RoadmapTimelineEntry RoadmapTimelineEntry--inverted">
+                         <div class="RoadmapTimelineEntry-bullet">
+                          <div class="RoadmapTimelineBullet">
+                           <div class="RoadmapTimelineBullet-core">
+                           </div>
+                          </div>
+                         </div>
+                         <div class="RoadmapTimelineEntry-content">
+                          <p class="RoadmapTimelineEntry-date">
+                           3rd Quater, 2018
+                          </p>
+                          <p class="RoadmapTimelineEntry-text" data-i18n="heading16p4">
+                           Bio Authentication Dapp(β）
+                          </p>
+                         </div>
+                        </div>
+                       </li>
+                      </ul>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="RoadmapTimeline-rolloutPhase">
+                   <div class="RoadmapTimelinePhase">
+                    <p class="RoadmapTimelinePhase-heading">
+                     Phase03
+                    </p>
+                    <div class="RoadmapTimelinePhase-frame">
+                     <div class="RoadmapTimelinePhase-content">
+                      <ul class="RoadmapTimelinePhase-entries">
+                       <li class="RoadmapTimelinePhase-entry">
+                        <div class="RoadmapTimelineEntry">
+                         <div class="RoadmapTimelineEntry-bullet">
+                          <div class="RoadmapTimelineBullet">
+                           <div class="RoadmapTimelineBullet-core">
+                           </div>
+                          </div>
+                         </div>
+                         <div class="RoadmapTimelineEntry-content">
+                          <p class="RoadmapTimelineEntry-date">
+                           2nd Quater, 2019
+                          </p>
+                          <p class="RoadmapTimelineEntry-text" data-i18n="heading16p5">
+                           Establish the new Liquid Biopsy Labs
+                          </p>
+                         </div>
+                        </div>
+                       </li>
+                       <li class="RoadmapTimelinePhase-entry">
+                        <div class="RoadmapTimelineEntry">
+                         <div class="RoadmapTimelineEntry-bullet">
+                          <div class="RoadmapTimelineBullet RoadmapTimelineBullet--small">
+                           <div class="RoadmapTimelineBullet-core">
+                           </div>
+                          </div>
+                         </div>
+                         <div class="RoadmapTimelineEntry-content">
+                          <p class="RoadmapTimelineEntry-date">
+                           2nd Quater, 2019
+                          </p>
+                          <p class="RoadmapTimelineEntry-text" data-i18n="heading16p6">
+                           Release BIOHAL Open Network α
+                          </p>
+                         </div>
+                        </div>
+                       </li>
+                      </ul>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </section>
+             <section class="probootstrap_section bg-light" id="team">
+              <div class="container">
+               <div class="row text-center mb-5 probootstrap-animate">
+                <div class="col-md-12">
+                 <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading17">
+                  Adviser
+                 </h2>
+                </div>
+               </div>
+               <div class="col-md-12 row text-center probootstrap-animate fadeInUp probootstrap-animated">
+                <div class="col-md-4">
+                 <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                  <div class="teampic_wrap">
+                   <a class="open_modal" data-openmodal="ModalWindow8">
+                    <img alt="Free Template by uiCookies" class="img-fluid" src="assets/images/pic_hasegawa.jpg"/>
+                   </a>
+                  </div>
+                  <button class="open_modal btn-link" data-openmodal="ModalWindow8">
+                   <h5 data-i18n="heading37">
+                    Yuki Hasegawa
+                   </h5>
+                  </button>
+                  <h6>
+                   <br/>
+                   CEO and Founder
+                  </h6>
+                 </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                  <div class="teampic_wrap">
+                   <a class="open_modal" data-openmodal="ModalWindow4">
+                    <img alt="Free Template by uiCookies" class="img-fluid" src="assets/images/pic_fukuzawa.png"/>
+                   </a>
+                  </div>
+                  <button class="open_modal btn-link" data-openmodal="ModalWindow4">
+                   <h5 data-i18n="heading34">
+                    Dr. Yoshitaka Fukuzawa
+                   </h5>
+                  </button>
+                  <h6>
+                   Medical Advisor/M.D./Ph.D./Bio Technical Officer
+                  </h6>
+                 </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                  <div class="teampic_wrap">
+                   <a class="open_modal" data-openmodal="ModalWindow5">
+                    <img alt="Free Template by uiCookies" class="img-fluid" src="assets/images/pic_goto.png"/>
+                   </a>
+                  </div>
+                  <button class="open_modal btn-link" data-openmodal="ModalWindow5">
+                   <h5 data-i18n="heading35">
+                    Dr. Akinobu Gotoh
+                   </h5>
+                  </button>
+                  <h6>
+                   Medical Advisor/M.D./Ph.D./Bio Technical Officer
+                  </h6>
+                 </div>
+                </div>
+               </div>
+               <div class="col-md-12 row text-center probootstrap-animate fadeInUp probootstrap-animated">
+                <div class="col-md-4">
+                 <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                  <div class="teampic_wrap">
+                   <a class="open_modal" data-openmodal="ModalWindow6">
+                    <img alt="Free Template by uiCookies" class="img-fluid" src="assets/images/pic_yorozu.png"/>
+                   </a>
+                  </div>
+                  <button class="open_modal btn-link" data-openmodal="ModalWindow6">
+                   <h5 data-i18n="heading36">
+                    Dr. Kensho Yorozu
+                   </h5>
+                  </button>
+                  <h6>
+                   CTO/Medical Advisor/M.D./
+                   <br/>
+                   Bio Technical Officer
+                  </h6>
+                 </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                  <div class="teampic_wrap">
+                   <a class="open_modal" data-openmodal="ModalWindow9">
+                    <img alt="Chikamoto" class="img-fluid" src="assets/images/pic_chikamatsu.png"/>
+                   </a>
+                  </div>
+                  <button class="open_modal btn-link" data-openmodal="ModalWindow9">
+                   <h5 data-i18n="heading38">
+                    Mr. Youichi Chikamoto
+                   </h5>
+                  </button>
+                  <h6>
+                   Healthcare Medical Advisor
+                   <br/>
+                   Bio Technical Officer
+                  </h6>
+                 </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                  <div class="teampic_wrap">
+                   <a class="open_modal" data-openmodal="ModalWindow7">
+                    <img alt="Raj" class="img-fluid" src="assets/images/pic_raj.jpg"/>
+                   </a>
+                  </div>
+                  <button class="open_modal btn-link" data-openmodal="ModalWindow7">
+                   <h5>
+                    Raj S. DaveD, D.Sc.
+                   </h5>
+                  </button>
+                  <h6>
+                   <br/>
+                   Legal Advisor
+                  </h6>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </section>
+             <!-- END section -->
+             <section class="probootstrap_section" id="Partners">
+              <div class="container">
+               <div class="row text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+                <div class="col-md-12">
+                 <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading18">
+                  Partners
+                 </h2>
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-md-6">
+                 <div class="media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated partners">
+                  <img class="img-fluid" src="assets/images/logo_mytech.png"/>
+                 </div>
+                </div>
+                <div class="col-md-6">
+                 <div class="media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated partners">
+                  <img class="img-fluid" src="assets/images/logo_dex.png"/>
+                 </div>
+                </div>
+               </div>
+               <section class="probootstrap_section" id="Media">
+                <div class="container">
+                 <div class="row text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+                  <div class="col-md-12">
+                   <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading19">
+                    Media
+                   </h2>
+                  </div>
+                 </div>
+                 <div class="row">
+                  <div class="col-md-3">
+                   <div class="media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated">
+                    <img class="img-fluid mb-4" src="assets/images/logo-300x77.png"/>
+                   </div>
+                  </div>
+                  <div class="col-md-3">
+                   <div class="media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated">
+                    <img class="img-fluid mb-4" src="assets/images/logo_forbes.png"/>
+                   </div>
+                  </div>
+                  <div class="col-md-3">
+                   <div class="media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated">
+                    <img class="img-fluid mb-4" src="assets/images/logo_nasdaq.png"/>
+                   </div>
+                  </div>
+                  <div class="col-md-3">
+                   <div class="media d-flex align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated">
+                    <img class="img-fluid mb-4" src="assets/images/logo_syna.png"/>
+                   </div>
+                  </div>
+                 </div>
+                 <section class="probootstrap_section" id="section-feature-testimonial">
+                  <div class="container">
+                   <div class="row justify-content-center mb-5">
+                    <div class="col-md-12 text-center mb-5 probootstrap-animate fadeInUp probootstrap-animated">
+                     <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading20">
+                      PROTEO liquid biopsy Cancer test is already available in Japan at our first center!
+                     </h2>
+                     <blockquote class="">
+                      <p class="lead mb-4" data-i18n="[html]]heading21">
+                       <em>
+                        10 PON Tokens to get ahead of millions – sign up for testing at
+                        <a href="#">
+                         https://www.biohal.io
+                        </a>
+                       </em>
+                      </p>
+                     </blockquote>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                 <section class="probootstrap_section bg-light" id="whitepaper">
+                  <div class="container">
+                   <div class="row text-center mb-5 probootstrap-animate">
+                    <div class="col-md-12">
+                     <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading22">
+                      Documents
+                     </h2>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-md-4 text-center">
+                     <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                      <a href="/pdf/BIOHAL_message.pdf">
+                       <img class="" src="assets/images/message_ceo.png"/>
+                      </a>
+                      <h5 data-i18n="heading23">
+                       Message from CEO
+                      </h5>
+                     </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                     <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                      <a href="./pdf/market.pdf">
+                       <img class="" src="assets/images/market.png"/>
+                      </a>
+                      <h5 data-i18n="heading32">
+                       Market
+                      </h5>
+                     </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                     <div class="probootstrap-media align-items-stretch mb-4 probootstrap-animate fadeInUp probootstrap-animated document">
+                      <a href="./pdf/IntroductionProteo.pdf">
+                       <img class="" src="assets/images/whyproteo.png"/>
+                      </a>
+                      <h5 data-i18n="heading25">
+                       Introduction of PROTEO
+                      </h5>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                 <!-- END section -->
+                 <!--<section class="probootstrap_section">
+      <div class="container">
+        <div class="row text-center mb-5 probootstrap-animate">
+          <div class="col-md-12">
+            <h2 class="display-4 border-bottom probootstrap-section-heading" data-i18n="heading26">PROTEO at conferences</h2>
+          </div>
+        </div>
+        
+        <div class="row probootstrap-animate">
+          <div class="col-md-12">
+            <div class="owl-carousel js-owl-carousel slider_img">
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Liquid Biopsy Summit in Japan</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in London</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Event in New York</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              <a class="probootstrap-slide" href="#">
+                <img src="assets/images/sq_img_1.jpg" alt="Free Template by uiCookies" class="img-fluid">
+                <em>Blockchain Summit in Monaco</em>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+                 <!-- END section -->
+                 <footer class="probootstrap_section probootstrap-border-top">
+                  <div class="container">
+                   <!--<div class="row mb-5">
+          <div class="col-md-3">
+            <h3 class="probootstrap_font-18 mb-3">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://free-template.co" target="_blank">Home</a></li>
+              <li><a href="https://free-template.co" target="_blank">About</a></li>
+              <li><a href="https://free-template.co" target="_blank">Services</a></li>
+              <li><a href="https://free-template.co" target="_blank">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3 class="probootstrap_font-18 mb-3">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://free-template.co" target="_blank">Home</a></li>
+              <li><a href="https://free-template.co" target="_blank">About</a></li>
+              <li><a href="https://free-template.co" target="_blank">Services</a></li>
+              <li><a href="https://free-template.co" target="_blank">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3 class="probootstrap_font-18 mb-3">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://free-template.co" target="_blank">Home</a></li>
+              <li><a href="https://free-template.co" target="_blank">About</a></li>
+              <li><a href="https://free-template.co" target="_blank">Services</a></li>
+              <li><a href="https://free-template.co" target="_blank">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3 class="probootstrap_font-18 mb-3">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://free-template.co" target="_blank">Home</a></li>
+              <li><a href="https://free-template.co" target="_blank">About</a></li>
+              <li><a href="https://free-template.co" target="_blank">Services</a></li>
+              <li><a href="https://free-template.co" target="_blank">Contact</a></li>
+            </ul>
+          </div>
+        </div>-->
+                   <div class="row pt-5">
+                    <div class="col-md-12 text-center">
+                     <div class="modalwindow" id="ModalWindow1">
+                      <div class="body">
+                       <div class="modal_content text-left">
+                        <h3 class="mt-5" data-i18n="heading27">
+                         Term of Condition
+                        </h3>
+                        Nationals or residents of the following countries are NOT eligible to participate in the subscription of PON Tokens (“Token Sale”):
+                        <ul style="list-style: none;">
+                         <li>
+                          1) United States of America;
+                         </li>
+                         <li>
+                          2) The People’s Republic of China;
+                         </li>
+                         <li>
+                          3) Any sanctioned countries as depicted within https://www.treasury.gov/resource-center/sanctions/Programs/Pages/Programs.aspx); or
+                         </li>
+                        </ul>
+                        <p>
+                         Participants from rest of the world must self-declare to be sophisticated investors in having knowledge of cryptocurrencies, digital assets, token sales, initial coin offerings, blockchain technology, and smart contracts. Any decision to participate in the Token Sale should be based upon your independent assessment. You should obtain independent advice before making a purchase. You must not participate in the Token Sale unless you have read and fully understood these terms and all other relevant materials in particular, the whitepaper and fully understand the purpose and process of PON, the Platform and the Token Sale. You must monitor the https://www.biohal.io website (“Website”) for any announcements that relate to the Token Sale, as they may supplement these terms.
+                        </p>
+                        <p>
+                         Purchase or possession of PON does not constitute an ownership interest in Proteo, and carries no rights, express or implied, to receive revenue, shares, debentures, intellectual property rights, voting rights or any other form of participation in or relating to Proteo or its affiliates.
+                        </p>
+                        <p>
+                         Neither these terms nor the Whitepaper constitutes a prospectus or offering document, or an offer to sell, nor the solicitation of an offer to buy any security, investment, share, financial instrument, or investment advice or equivalent in any jurisdiction. No regulatory authority has examined or approved of the Token Sale or any of the information set out in these terms or other relevant materials.
+						Please read the Terms and Conditions carefully before using the Website, Proteo’s platform or registering your interest in the PON Token issuance. By agreeing to subscribe to the PON Token on the page linking to the Terms and Conditions, you accept and agree to be bound by these Terms and Conditions. The full text of the said Terms and Conditions can be found here: https://www.biohal.io/assets/docs/proteo-terms conditions.pdf. If you have any questions about these terms and conditions please contact us at info@biohal.io.
+                        </p>
+                        <p>
+                         DO NOT PURCHASE PON IF YOU ARE NOT AN EXPERT IN DEALING WITH CRYPTOGRAPHIC TOKENS AND BLOCKCHAIN-BASED SOFTWARE SYSTEMS. BEFORE PURCHASING PON, YOU SHOULD CAREFULLY CONSIDER THE TERMS LISTED BELOW AND, TO THE EXTENT NECESSARY, CONSULT AN APPROPRIATE LAWYER, ACCOUNTANT, OR TAX PROFESSIONAL. IF ANY OF THE FOLLOWING TERMS ARE UNACCEPTABLE TO YOU, YOU SHOULD NOT PURCHASE PON. PURCHASES OF PON SHOULD BE UNDERTAKEN ONLY BY INDIVIDUALS, ENTITIES, OR COMPANIES THAT HAVE SIGNIFICANT EXPERIENCE WITH, AND UNDERSTANDING OF, THE USAGE AND INTRICACIES OF CRYPTOGRAPHIC TOKENS, INCLUDING ETHEREUM TOKENS, AND BLOCKCHAIN BASED SOFTWARE SYSTEMS. PURCHASERS SHOULD HAVE A FUNCTIONAL UNDERSTANDING OF STORAGE AND TRANSMISSION MECHANISMS ASSOCIATED WITH OTHER CRYPTOGRAPHIC TOKENS. WHILE THE COMPANY WILL BE AVAILABLE TO ASSIST PURCHASERS OF PON DURING THE SALE, THE COMPANY WILL NOT BE RESPONSIBLE IN ANY WAY FOR LOSS OF BTC, ETH, XRP, NEM OR PON RESULTING FROM ACTIONS TAKEN BY, OR OMITTED BY PURCHASERS. IF YOU DO NOT HAVE SUCH EXPERIENCE OR EXPERTISE, THEN YOU SHOULD NOT PURCHASE PON OR PARTICIPATE IN THE SALE OF PON. YOUR PARTICIPATION IN PON SALE IS DEEMED TO BE YOUR UNDERTAKING THAT YOU SATISFY THE REQUIREMENTS MENTIONED IN THIS PARAGRAPH.
+                        </p>
+                       </div>
+                       <footer style="text-align:center">
+                        <button class="close_modal" data-closemodal="ModalWindow1">
+                         Close
+                        </button>
+                       </footer>
+                      </div>
+                     </div>
+                     <div class="modalwindow" id="ModalWindow2">
+                      <div class="body">
+                       <div class="modal_content text-left">
+                        BIOHAL OPEN NETWORK (”We”) are committed to protecting and respecting your privacy.
+                        <br/>
+                        This policy (together with our terms of use Terms &amp; Conditions and any other documents referred to on it) sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it. By visiting
+                        <a href="https://www.biohal.io">
+                         https://www.biohal.io
+                        </a>
+                        you are accepting and consenting to the practices described in this policy.
+                        <h3 class="mt-5">
+                         INFORMATION WE COLLECT FROM YOU
+                        </h3>
+                        We will collect and process the following data about you:
+                        <br/>
+                        <ul>
+                         <li>
+                          <span class="font-weight-bold">
+                           Information you give us.
+                          </span>
+                          <br/>
+                          This is information about you that you give us by filling in forms on our site
+                          <a href="https://www.biohal.io">
+                           https://www.biohal.io
+                          </a>
+                          (our site) or by corresponding with us by phone, e-mail or otherwise. It includes information you provide when you register to use our site, subscribe to our service, participate in discussion boards or other social media functions on our site and when you report a problem with our site. The information you give us may include your name, address, e-mail address and phone number, financial and credit card information, personal description and photograph.
+                         </li>
+                         <li>
+                          <span class="font-weight-bold">
+                           Information we collect about you.
+                          </span>
+                          <br/>
+                          With regard to each of your visits to our site we will automatically collect the following information:
+                          <ul>
+                           <li>
+                            technical information, including the Internet protocol (IP) address used to connect your computer to the Internet, browser type and version, time zone setting, browser plug-in types and versions, operating system and platform;
+                           </li>
+                           <li>
+                            information about your visit, including the full Uniform Resource Locators (URL), clickstream to, through and from our site (including date and time), page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs), methods used to browse away from the page and any phone number used to call our customer service number.
+                           </li>
+                          </ul>
+                         </li>
+                         <li>
+                          <span class="font-weight-bold">
+                           Information we receive from other sources.
+                          </span>
+                          <br/>
+                          This is information we receive about you if you use any of the other websites we operate or the other services we provide. In this case, we will have informed you when we collected that data if we intend to share those data internally and combine it with data collected on this site. We will also have told you for what purpose we will share and combine your data. We are working closely with third parties (including, for example, business partners, sub-contractors in technical, payment and delivery services, advertising networks, analytics providers, search information providers, credit reference agencies). We will notify you when we receive information about you from them and the purposes for which we intend to use that information.
+                         </li>
+                        </ul>
+                        <h3 class="mt-5">
+                         COOKIES
+                        </h3>
+                        Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.
+                        <h3 class="mt-5">
+                         USES MADE OF THE INFORMATION
+                        </h3>
+                        We use information held about you in the following ways:
+                        <ul>
+                         <li>
+                          <span class="font-weight-bold">
+                           Information you give to us.
+                          </span>
+                          <br/>
+                          We will use this information:
+                          <ul>
+                           <li>
+                            to carry out our obligations arising from any contracts entered into between you and us and to provide you with the information, products and services that you request from us;
+                           </li>
+                           <li>
+                            to provide you with information about other goods and services we offer that are similar to those that you have already purchased or enquired about;
+                           </li>
+                           <li>
+                            to provide you, or permit selected third parties to provide you, with information about goods or services we feel may interest you. If you are an existing customer, we will only contact you by electronic means (e-mail or SMS) with information about goods and services similar to those which were the subject of a previous sale or negotiations of a sale to you. If you are a new customer, and where we permit selected third parties to use your data, we (or they) will contact you by electronic means only if you have consented to this. If you do not want us to use your data in this way, or to pass your details on to third parties for marketing purposes, please tick the relevant box situated on the form on which we collect your data (the [order form OR registration form]);
+                           </li>
+                           <li>
+                            to notify you about changes to our service;
+                           </li>
+                           <li>
+                            to ensure that content from our site is presented in the most effective manner for you and for your computer.
+                           </li>
+                          </ul>
+                         </li>
+                         <li>
+                          <span class="font-weight-bold">
+                           Information we collect about you.
+                          </span>
+                          <br/>
+                          We will use this information:
+                          <ul>
+                           <li>
+                            to administer our site and for internal operations, including troubleshooting, data analysis, testing, research, statistical and survey purposes;
+                           </li>
+                           <li>
+                            to improve our site to ensure that content is presented in the most effective manner for you and for your computer;
+                           </li>
+                           <li>
+                            to allow you to participate in interactive features of our service, when you choose to do so;
+                           </li>
+                           <li>
+                            as part of our efforts to keep our site safe and secure;
+                           </li>
+                           <li>
+                            to measure or understand the effectiveness of advertising we serve to you and others, and to deliver relevant advertising to you;
+                           </li>
+                           <li>
+                            to make suggestions and recommendations to you and other users of our site about goods or services that may interest you or them.
+                           </li>
+                          </ul>
+                         </li>
+                         <li>
+                          <span class="font-weight-bold">
+                           Information we receive from other sources.
+                          </span>
+                          <br/>
+                          We will combine this information with information you give to us and information we collect about you. We will use this information and the combined information for the purposes set out above (depending on the types of information we receive).
+                         </li>
+                        </ul>
+                        <h3 class="mt-5">
+                         DISCLOSURE OF YOUR INFORMATION
+                        </h3>
+                        You agree that we have the right to share your personal information with:
+                        <ul>
+                         <li>
+                          Any member of our group, which means our subsidiaries, our ultimate holding company, and its subsidiaries.
+                         </li>
+                         <li>
+                          Selected third parties including:
+                          <ul>
+                           <li>
+                            business partners, suppliers, and sub-contractors for the performance of any contract we enter into with them or you;
+                           </li>
+                           <li>
+                            advertisers and advertising networks that require the data to select and serve relevant adverts to you and others. We do not disclose information about identifiable individuals to our advertisers, but we will provide them with aggregate information about our users (for example, we may inform them that 500 men aged under 30 have clicked on their advertisement on any given day). We may also use such aggregate information to help advertisers reach the kind of audience they want to target (for example, women in SW1). We may make use of the personal data we have collected from you to enable us to comply with our advertisers’ wishes by displaying their advertisement to that target audience;
+                           </li>
+                           <li>
+                            analytics and search engine providers that assist us in the improvement and optimization of our site;
+                           </li>
+                           <li>
+                            credit reference agencies to assess your credit score where this is a condition of us entering into a contract with you.
+                           </li>
+                          </ul>
+                         </li>
+                        </ul>
+                        <span class="font-weight-bold">
+                         We will disclose your personal information to third parties:
+                        </span>
+                        <ul>
+                         <li>
+                          In the event that we sell or buy any business or assets, in which case we will disclose your personal data to the prospective seller or buyer of such business or assets.
+                         </li>
+                         <li>
+                          If BIOHAL OPEN NETWORK or substantially all of its assets are acquired by a third party, in which personal case data held by it about its customers will be one of the transferred assets.
+                         </li>
+                         <li>
+                          If we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our terms of use Terms &amp; Conditions and other agreements; or to protect the rights, property, or safety of BIOHAL OPEN NETWORK, our customers, or others. This includes exchanging information with other companies and organizations for the purposes of fraud protection and credit risk reduction.
+                         </li>
+                        </ul>
+                        <h3 class="mt-5">
+                         WHERE WE STORE YOUR PERSONAL DATA
+                        </h3>
+                        The data that we collect from you will be transferred to, and stored at, a destination outside the European Economic Area (”EEA”). It will also be processed by staff operating outside the EEA who work for one of our suppliers or for us. This includes staff engaged in, among other things, the fulfillment of your order, the processing of your payment details and the provision of support services. By submitting your personal data, you agree to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this privacy policy.
+						All information you provide to us is stored on our secure servers. Any payment transactions will be encrypted using SSL technology. Where we have given you (or where you have chosen) a password which enables you to access certain parts of our site, you are responsible for keeping this password confidential. We ask you not to share a password with anyone.
+						Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorized access.
+                        <h3 class="mt-5">
+                         YOUR RIGHTS
+                        </h3>
+                        You have the right to ask us not to process your personal data for marketing purposes. We will usually inform you (before collecting your data) if we intend to use your data for such purposes or if we intend to disclose your information to any third party for such purposes. You can exercise your right to prevent such processing by checking certain boxes on the forms we use to collect your data. You can also exercise the right at any time by contacting at info@biohal.io.
+						Our site may, from time to time, contain links to and from the websites of our partner networks, advertisers and affiliates. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for these policies. Please check these policies before you submit any personal data to these websites.
+                        <h3 class="mt-5">
+                         ACCESS TO INFORMATION
+                        </h3>
+                        The Act gives you the right to access information held about you. Your right of access can be exercised in accordance with the Act. Any access request will be subject to a fee of £100 to meet our costs in providing you with details of the information we hold about you.
+                        <h3 class="mt-5">
+                         CHANGES TO OUR PRIVACY POLICY
+                        </h3>
+                        Any changes we make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail. Please check back frequently to see any updates or changes to our privacy policy.
+                        <h3 class="mt-5">
+                         CONTACT
+                        </h3>
+                        Questions, comments, and requests regarding this privacy policy are welcomed and should be addressed to
+                        <a href="mailto:info@biohal.io">
+                         info@biohal.io
+                        </a>
+                        .
+                       </div>
+                       <footer style="text-align:center">
+                        <button class="close_modal" data-closemodal="ModalWindow2">
+                         Close
+                        </button>
+                       </footer>
+                      </div>
+                     </div>
+                     <div class="modalwindow" id="ModalWindow3">
+                      <div class="body">
+                       <div class="modal_content text-left">
+                        <h3 data-i18n="heading28">
+                         LEGAL DISCLAIMER
+                        </h3>
+                        <p>
+                         This whitepaper is for information purposes only and may be subject to change.
+                        </p>
+                        <p>
+                         BIOHAL Open Network (“BIOHAL”) cannot guarantee the accuracy of the statements made or conclusions reached in this whitepaper. BIOHAL does not make and expressly disclaims all representations and warranties (whether express or implied by statute or otherwise) whatsoever, including but not limited to: any representations or warranties relating to merchantability, fitness for a particular purpose, description, suitability or non-infringement; that the contents of this document are accurate and free from any errors; and that such contents do not infringe any third party rights.
+                        </p>
+                        <p>
+                         BIOHAL shall have no liability or damages of any kind arising out of the use, reference to or reliance on the contents of this whitepaper. This whitepaper may contain references to third-party data and industry publications. As far as BIOHAL is aware, the information reproduced in this whitepaper is accurate and that its estimates and assumptions are reasonable. However, there are no assurances as to the accuracy or completeness of this information.
+                        </p>
+                        <p>
+                         Although information and data reproduced in this whitepaper are believed to have been obtained from reliable sources, we have not independently verified any of the information or data from third party sources referred to in this whitepaper or ascertained the underlying assumptions relied upon by such sources. As of the date of publication of this whitepaper, BIOHAL is not aware of any potential uses outside of the Proteo Ecosystem and are currently not permitted to be sold or otherwise traded on third-party exchanges.
+                        </p>
+                        <p>
+                         This whitepaper does not constitute advice nor a recommendation by BIOHAL, its officers, directors, manager, employees, agents, advisors, or consultants, or any other person to any recipient of this paper on the merits of participation in the Proteo Token Sale. Participation in the Proteo Token Sale carries substantial risk that could lead to a loss of all or a substantial portion of funds used to purchase the Token.
+                        </p>
+                        <p>
+                         No promises of future performance or value are or will be made with respect to Tokens, including no promise of inherent value, no promise of continuing payments, and no guarantee that PON Tokens will hold any particular value. Unless prospective participants fully understand and accept the nature of Proteo’s proposed business and the potential risks inherent in PON Tokens, they should not participate in the Proteo Token Sale.
+                        </p>
+                        <p>
+                         PON Tokens are not being structured or sold as securities. PON Tokens are not a participation in Proteo and PON Tokens hold no rights in Proteo. PON Tokens are sold with an intended future functionality on and access to the platform to be developed by BIOHAL and all proceeds received during the Token Sale may be spent freely, by Proteo.
+                        </p>
+                        <p>
+                         This whitepaper does not constitute a prospectus or offering document and is not an offer to sell, nor the solicitation of an offer to buy any investment or financial instrument in any jurisdiction. PON Tokens should not be acquired for speculative or investment purposes with the expectation of making an investment return. No regulatory authority has examined or approved any of the information set out in this whitepaper. No such action has been or will be taken under the laws, regulatory requirements or rules of any jurisdiction. The publication, distribution, or dissemination of this whitepaper does not imply that applicable laws, regulatory requirements or rules have been complied with. PON Tokens could be impacted by regulatory action and changes, including potential restrictions on the ownership, use, or possession of such tokens. Regulators or other competent authorities may demand that PON Tokens revises the mechanics and functionality of PON Tokens to comply with regulatory requirements or other governmental or business obligations. Nevertheless, Proteo believe they have taken commercially reasonable steps to ensure that its planned mechanics are proper and in compliance with currently considered regulations.
+                        </p>
+                        <p>
+                         BIOHAL is in the process of undertaking further legal and regulatory analysis of the functionality and mechanics of PON Tokens. Following the conclusion of this analysis, we may be required to amend the functionality of PON Tokens in order to ensure compliance with any legal or regulatory obligations that apply to us. We shall update this whitepaper and publish a notice on our website in the event that any changes are made to the PON Token.
+                        </p>
+                        <h3>
+                         CAUTION REGARDING FORWARD-LOOKING STATEMENTS
+                        </h3>
+                        <p>
+                         This whitepaper contains forward-looking statements or information (collectively “forward-looking statements”) that relate to Proteo’s current expectations and views of future events. In some cases, these forward-looking statements can be identified by words or phrases such as “may”, “will”, “expect”, “anticipate”, “aim”, “estimate”, “intend”, “plan”, “seek”, “believe”, “potential”, “continue”, “is/are likely to” or the negative of these terms, or other similar expressions intended to identify forward-looking statements.
+                        </p>
+                        <p>
+                         BIOHAL has based these forward-looking statements on its current expectations and projections about future events that it believes may affect its financial condition, results of operations, business strategy, financial needs, or the results of the token sale or the value or price stability of PON Tokens.
+                        </p>
+                        <p>
+                         In addition to statements relating to the matters set out here, this whitepaper contains forward-looking statements related to Proteo’s proposed operating model. The model speaks to its objectives only, and is not a forecast, projection or prediction of future results of operations. Forward-looking statements are based on certain assumptions and analysis made by BIOHAL in light of its experience and perception of historical trends, current conditions and expected future developments and other factors it believes are appropriate, and are subject to risks and uncertainties. Although the forward-looking statements contained in this whitepaper are based upon what BIOHAL believes are reasonable assumptions, these risks, uncertainties, assumptions, and other factors could cause Proteo’s actual results, performance, achievements, and experience to differ materially from its expectations which are expressed, implied, or perceived in forward-looking statements. Given such risks, prospective participants in this token sale should not place undue reliance on these forward-looking statements.
+                        </p>
+                       </div>
+                       <footer style="text-align:center">
+                        <button class="close_modal" data-closemodal="ModalWindow3">
+                         Close
+                        </button>
+                       </footer>
+                      </div>
+                     </div>
+                     <!--<ul class="list-inline mb-5">
+				<li class="list-inline-item sns"><a href="#"><i class="fa fa-telegram"></i></a></li>
+				<li class="list-inline-item sns"><a href="#"><i class="fa fa-github"></i></a></li>
+				<li class="list-inline-item sns"><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li class="list-inline-item sns"><a href="#"><img src="assets/images/medium_logo.svg"></a></li>
+				<li class="list-inline-item sns"><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li class="list-inline-item sns"><a href="#"><i class="fa fa-reddit"></i></a></li>
+				<li class="list-inline-item sns"><a href="#"><i class="fa fa-bitcoin"></i></a></li>
+			</ul>-->
+                     <ul class="list-inline">
+                      <li class="list-inline-item">
+                       <button class="open_modal btn-link" data-i18n="heading27" data-openmodal="ModalWindow1">
+                        Term and Condition
+                       </button>
+                      </li>
+                      <li class="list-inline-item">
+                       <button class="open_modal btn-link" data-i18n="heading31" data-openmodal="ModalWindow2">
+                        Privacy Policy
+                       </button>
+                      </li>
+                      <li class="list-inline-item">
+                       <button class="open_modal btn-link" data-i18n="heading28" data-openmodal="ModalWindow3">
+                        Disclaimer
+                       </button>
+                      </li>
+                     </ul>
+                    </div>
+                    <div class="col-md-12 text-center">
+                     <p class="probootstrap_font-14">
+                      © 2018 BIOHAL - All Rights Reserved
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </footer>
+                 <div class="modalwindow" id="ModalWindow4">
+                  <div class="body heightauto">
+                   <div class="modal_content text-left">
+                    <h3 class="mt-2" data-i18n="heading34" style="color:#00b555;">
+                     Dr. Yoshitaka Fukuzawa
+                    </h3>
+                    <p data-i18n="[html]heading34p1">
+                     JSPCM：Japan Society of Preemptive and Clinical Medicine/ Chairman
+                                                        JSCSF：Japan Society of Clinical Study for Frontier-Medicine/Vice Chairman
+                    </p>
+                    <h5 data-i18n="heading34p2" style="color:#00b555;">
+                     Comment
+                    </h5>
+                    <p data-i18n="[html]heading34p3">
+                     Now people want that their personal future health conditions could be detectable by a risk screening from the stage the potential diseases that not appear yet.
+                     <br/>
+                     BIOHAL will realize the desire.
+                    </p>
+                   </div>
+                   <footer style="text-align:center">
+                    <button class="close_modal" data-closemodal="ModalWindow4">
+                     Close
+                    </button>
+                   </footer>
+                  </div>
+                 </div>
+                 <div class="modalwindow" id="ModalWindow5">
+                  <div class="body heightauto">
+                   <div class="modal_content text-left">
+                    <h3 class="mt-2" data-i18n="heading35" style="color:#00b555;">
+                     Dr. Akinobu Gotoh
+                    </h3>
+                    <p data-i18n="[html]heading35p1">
+                     Chairman: Foundation for Kobe International Medical Alliance
+                                                Professor and Director: Laboratory of Cell and Gene Therapy
+                                                Institute for Advanced Medical Sciences
+                     <br/>
+                     JSPCM：Japan Society of Preemptive and Clinical Medicine/ Vice Chairman
+                    </p>
+                    <h5 data-i18n="heading35p2" style="color:#00b555;">
+                     Comment
+                    </h5>
+                    <p data-i18n="[html]heading35p3">
+                     Patients, doctors, hospitals, pharmaceutical companies, etc. need to cooperate more than ever. Therefore,  the data between them can be connected through BIOHAL blockchain as the best architecture.
+                    </p>
+                   </div>
+                   <footer style="text-align:center">
+                    <button class="close_modal" data-closemodal="ModalWindow5">
+                     Close
+                    </button>
+                   </footer>
+                  </div>
+                 </div>
+                 <div class="modalwindow" id="ModalWindow6">
+                  <div class="body heightauto">
+                   <div class="modal_content text-left">
+                    <h3 class="mt-2" data-i18n="heading36" style="color:#00b555;">
+                     Dr. Kensho Yorozu
+                    </h3>
+                    <p data-i18n="[html]heading36p1">
+                     Yorozu Clinic / President
+JSCSF：Japan Society of Clinical Study for Frontier-Medicine
+Director
+The Association for Clinical Research of Fecal Microbiota Transplantation Japan
+Managing Director
+                    </p>
+                    <h5 data-i18n="heading36p2" style="color:#00b555;">
+                     Comment
+                    </h5>
+                    <p data-i18n="heading36p3">
+                     How can we better support our patients?
+                                                For that purpose,early detection of disease and appropriate treatment suitable for that person are more important than anything.
+                                                BIOHAL not only makes it possible, everyone in the world can take inspections.
+                    </p>
+                   </div>
+                   <footer style="text-align:center">
+                    <button class="close_modal" data-closemodal="ModalWindow6">
+                     Close
+                    </button>
+                   </footer>
+                  </div>
+                 </div>
+                 <div class="modalwindow" id="ModalWindow7">
+                  <div class="body heightauto">
+                   <div class="modal_content text-left">
+                    <h3 class="mt-2" style="color:#00b555;">
+                     Dr. Raj S. Dave
+                    </h3>
+                    <p>
+                     President &amp; Founder Dave  Law Group, LLC / Patent Attorney of in the United States Gujarat Council on Science and Technology (GUJCOST) Chair Professor for IPR Excellence at Gujarat National Law University (GNLU).
+                    </p>
+                    <h5 style="color:#00b555;">
+                     Comment
+                    </h5>
+                    <p>
+                     Although science and technology has advanced dramatically, human being have to be alive with diseases. An innovative architecture, BIOHAL could save people from the sufferings and anxiety of the diseases. Everyone would want it. I am also one of them. I wish for the happiness of people, I will join in this project.
+                    </p>
+                   </div>
+                   <footer style="text-align:center">
+                    <button class="close_modal" data-closemodal="ModalWindow7">
+                     Close
+                    </button>
+                   </footer>
+                  </div>
+                 </div>
+                 <div class="modalwindow" id="ModalWindow8">
+                  <div class="body heightauto">
+                   <div class="modal_content text-left">
+                    <h3 class="mt-2" data-i18n="heading37" style="color:#00b555;">
+                     Yuki Hasegawa
+                    </h3>
+                    <h5 data-i18n="heading37p2" style="color:#00b555;">
+                     Comment
+                    </h5>
+                    <p data-i18n="heading37p3">
+                     I always think about a life of human being.
+										And I also think how I can help people in the world.
+										As I have developed the best laboratory procedure at that time for most of my life,  I would like to save lives of people by the procedure as much as I can. BIOHAL can make it possible.
+                    </p>
+                   </div>
+                   <footer style="text-align:center">
+                    <button class="close_modal" data-closemodal="ModalWindow8">
+                     Close
+                    </button>
+                   </footer>
+                  </div>
+                 </div>
+                 <div class="modalwindow" id="ModalWindow9">
+                  <div class="body heightauto">
+                   <div class="modal_content text-left">
+                    <h3 class="mt-2" data-i18n="heading38" style="color:#00b555;">
+                     Mr. Youichi Chikamoto
+                    </h3>
+                    <p data-i18n="[html]heading38p1">
+                     President: Fukuyama Medical Laboratory
+                    </p>
+                    <h5 data-i18n="heading38p2" style="color:#00b555;">
+                     Comment
+                    </h5>
+                    <p data-i18n="heading38p3">
+                     Because everyone in the world can take an inspection by BIOHAL ecosystem which can detect a disease at early stage.The earlier you concentrate on treatment, the less burden of disease you have.  And your family can contribute your energy to society.This new approach will be a savior for people all over the world.
+                    </p>
+                   </div>
+                   <footer style="text-align:center">
+                    <button class="close_modal" data-closemodal="ModalWindow9">
+                     Close
+                    </button>
+                   </footer>
+                  </div>
+                 </div>
+                </div>
+                <script src="assets/js/popper.min.js">
+                </script>
+                <script src="assets/js/bootstrap.min.js">
+                </script>
+                <script src="assets/js/bootstrap-datepicker.js">
+                </script>
+                <script src="assets/js/owl.carousel.min.js">
+                </script>
+                <script src="assets/js/jquery.waypoints.min.js">
+                </script>
+                <script src="assets/js/jquery.easing.1.3.js">
+                </script>
+                <script src="assets/js/select2.min.js">
+                </script>
+                <script src="ico/js/i18next.js">
+                </script>
+                <script src="ico/js/i18nextXHRBackend.min.js">
+                </script>
+                <script src="ico/js/i18nextBrowserLanguageDetector.min.js">
+                </script>
+                <script src="ico/js/jquery-i18next.min.js">
+                </script>
+                <script src="assets/js/coundown-timer.js">
+                </script>
+                <script src="assets/js/scripts.js">
+                </script>
+                <script src="assets/js/jquery.yycountdown.js">
+                </script>
+                <script src="assets/js/ofi.min.js">
+                </script>
+                <script type="text/javascript">
+                 $('#timer_hero').yycountdown({endDateTime:'2018/12/15 00:00:00'});
+                </script>
+                <script>
+                 objectFitImages('#video1');
+                </script>
+                <script>
+                 $(function(){
+        // ブレークポイントを設定
+        var breakpoint = 768;
+        // ウィンドウサイズを取得
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+
+        // ウィンドウサイズがブレークポイント以上の場合
+        if(windowWidth >= breakpoint) {
+                $('meta[name="viewport"]').attr('content', 'width=1280, maximum-scale=1, user-scalable=0');
+        // ウィンドウサイズがブレークポイント未満の場合
+        } else {
+                $('meta[name="viewport"]').attr('content', 'width=device-width,initial-scale=1');
+        }
+});
+                </script>
+                <script>
+                 i18next
+    .use(i18nextBrowserLanguageDetector)
+    .use(i18nextXHRBackend)
+    .init({
+      fallbackLng: 'en',
+      debug: true,
+      backend: {
+        // for all available options read the backend's repository readme file
+        loadPath: 'ico/locales/{{lng}}/{{ns}}.json'
+      }
+    }, function () {
+      jqueryI18next.init(i18next, $);
+      $('#container').localize();
+    });
+                </script>
+                <script src="assets/js/main.js">
+                </script>
+                <script>
+                 $(function() {
+			var footbanner = $('#footbanner');    
+			footbanner.hide();
+			//スクロールが100になったらバナーを表示してそのまま
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					footbanner.fadeIn();
+				} else {
+					footbanner.fadeOut();
+				}
+			});
+		});
+                </script>
+                <script>
+                 $(function() {
+		// スクロールバーの幅を取得して調整するためのCSSをヘッダーに追加
+		var width = window.innerWidth - document.body.clientWidth;
+		var newStyle = document.createElement('style');
+		document.head.appendChild(newStyle);
+		newStyle.sheet.insertRule('body { overflow: hidden; }', 0);
+		newStyle.sheet.insertRule('body.enabled_modal #Main, body.enabled_modal #Header, body.enabled_modal #Footer, body.enabled_modal .fixedlay { padding-right: ' + (width) + 'px; }', 1);
+		// モーダルウィンドウを開く処理
+		$(document).on('open', '.modalwindow', function() {
+			$(this).addClass('is_visible').show().animate({
+				opacity: 1
+			}, 200).scrollTop(0);
+			$('body').addClass('enabled_modal');
+		});
+		// モーダルウィンドウを閉じる処理
+		$(document).on('close', '.modalwindow:not(.lock)', function() {
+			$(this).removeClass('is_visible').animate({
+				opacity: 0
+			}, 200, function() {
+				$(this).hide();
+				$('body').removeClass('enabled_modal');
+			});
+		});
+		// data-openmodalをクリックした時 → 開く処理
+		$(document).on('click', '[data-openmodal]', function(e) {
+			var targetID = $(this).attr('data-openmodal');
+			$('#' + targetID).trigger('open');
+		});
+		// data-closemodalをクリックした時 → 閉じる処理
+		$(document).on('click', '[data-closemodal]', function(e) {
+			var targetID = $(this).attr('data-closemodal');
+			$('#' + targetID).trigger('close');
+		});
+		// オーバーレイをクリックした時 → 閉じる処理
+		$(document).on('click', '.modalwindow:not(.no_overlay_close)', function(e) {
+			if (e.currentTarget === e.target) {
+				$(this).trigger('close');
+			}
+		});
+	});
+                </script>
+                <script>
+                 function init() {
+var vidDefer = document.getElementsByTagName('iframe');
+for (var i=0; i<vidDefer.length; i++) {
+if(vidDefer[i].getAttribute('data-src')) {
+vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+} } }
+window.onload = init;
+                </script>
+               </section>
+              </div>
+             </section>
+            </div>
+           </section>
+          </div>
+         </section>
+        </div>
+       </section>
+      </div>
+     </section>
+    </div>
+   </section>
+  </div>
+ </body>
+</html>

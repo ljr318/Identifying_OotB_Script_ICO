@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="zh">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+  <meta content="" name="keywords"/>
+  <meta content="" name="description"/>
+  <meta content="dUVhMVcvcHQzekFicUY1N3hxMUtmcysxZzR3TEgrcXlJdldHcS8wazJ5Zz0" name="csrf"/>
+  <meta content="X-CSRF-TOKEN" name="csrf_header"/>
+  <title>
+   AIDUS – D Fund Platform
+  </title>
+  <meta content="website" property="og:type"/>
+  <meta content="AIDUS Decentralized Fund Platform" property="og:title"/>
+  <meta content="https://aidus.io" property="og:url"/>
+  <meta content="AIDUS Decentralized Fund Platform - Free access to foreign fund portfolios is facilitated through the AIDUS Coin that would overcome various limitations from border, time, and currency" property="og:description"/>
+  <meta content="/images/banner.png" property="og:image"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"/>
+  <link href="/images/icon/favicon.ico" rel="shortcut icon"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="/css/aidus_pay.css" rel="stylesheet"/>
+  <link href="/css/custom.css" rel="stylesheet"/>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet"/>
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="/css/swiper.css" rel="stylesheet"/>
+  <script src="js/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <script src="js/jquery.waterwheelCarousel.js" type="text/javascript">
+  </script>
+  <script src="/js/function.js">
+  </script>
+  <script src="/js/_swiper.js">
+  </script>
+  <script async="" defer="" src="https://www.google.com/recaptcha/api.js?hl=zh">
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js">
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js">
+  </script>
+  <script src="/js/echarts.js">
+  </script>
+ </head>
+ <body>
+  <div class="wrapper">
+   <header>
+    <div class="top_header">
+     <div class="container">
+      <div class="col col-6 header_news flex_r_l">
+       <span class="news_title">
+        HOT NEWS!
+       </span>
+       <a class="news_subject_box" href="http://d2ao5bnwtor39o.cloudfront.net/QTS/QkUrMUVNeFpWWmhCZzRscS9id0RnUT09_July242020_AIDUS_Weekly Report.pdf" target="_blank" title="July242020_AIDUS_Weekly Report.pdf">
+        <span class="news_subject cursor">
+         QTS-S2 Weekly Report by July 24, 2020 :
+         <span style="color:red;font-size:15px;">
+          +72.12%
+         </span>
+        </span>
+       </a>
+       <span class="more_detail_btn cursor">
+        <a href="qts.php?page_type=report">
+         More Detailed Report
+        </a>
+       </span>
+      </div>
+      <style>
+       .reserve_event_btn{
+                        position: relative;
+                    }
+                    .reserve_event_btn:before{
+                        content: 'HIT';
+                        color: #ff0000;
+                        position: absolute;
+                        top: 0px;
+                        left: -10px;
+                        transform: rotate(-20deg);
+                        font-weight: bold;
+                        font-size: 13px;
+                    }
+      </style>
+      <div class="col col-6 header_btn flex_r_r">
+       <a href="/aidus_pay_reserve.php">
+        <span class="reserve_event_btn white_btn cursor">
+         AIDUS PAY 二次 早鸟注册活动
+        </span>
+       </a>
+       <a href="/signup.php">
+        <span class="white_btn margin-left-10 cursor">
+         SIGN UP
+        </span>
+       </a>
+       <a href="/login.php">
+        <span class="white_btn margin-left-10 cursor">
+         LOGIN
+        </span>
+       </a>
+       <a href="/contact.php">
+        <span class="white_btn margin-left-10 cursor">
+         Contact US
+        </span>
+       </a>
+       <span class="white_btn margin-left-10 cursor region_select_btn">
+        <img src="/images/icon/ch_icon.png"/>
+        <span class="region_after_span">
+         简体中文
+        </span>
+        <div class="region_select_area">
+         <div class="region_select_region cursor" data="en">
+          <img src="/images/icon/en_icon.png"/>
+          <span>
+           English
+          </span>
+         </div>
+         <div class="region_select_region cursor" data="ko">
+          <img src="/images/icon/kr_icon.png"/>
+          <span>
+           한국어
+          </span>
+         </div>
+         <div class="region_select_region cursor" data="cn">
+          <img src="/images/icon/ch_icon.png"/>
+          <span>
+           简体中文
+          </span>
+         </div>
+         <div class="region_select_region cursor" data="jp">
+          <img src="/images/icon/jp_icon.png"/>
+          <span>
+           日本語
+          </span>
+         </div>
+        </div>
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="bottom_header">
+     <div class="container">
+      <div class="header_logo">
+       <a href="/">
+        <img src="/images/icon/logo.png" width="100%"/>
+       </a>
+      </div>
+      <div class="header_nav">
+       <span class="navbar_menu on">
+        <a class="header_menu_link flex_r" href="/">
+         HOME
+        </a>
+        <div class="menu_box">
+         <span class="menu_box_menu" data-id="carousel_box">
+          AIDUS NEWS
+         </span>
+         <span class="menu_box_menu" data-id="why">
+          WHY AIDUS
+         </span>
+         <span class="menu_box_menu" data-id="fund">
+          FUND PLATFORM
+         </span>
+         <span class="menu_box_menu" data-id="qts">
+          SMART QTS
+         </span>
+         <span class="menu_box_menu" data-id="article">
+          PRESS ARTICLE
+         </span>
+         <span class="menu_box_menu" data-id="social">
+          SOCIAL NETWORK
+         </span>
+        </div>
+       </span>
+       <span data-id="menu-6" id="ap_menu">
+        <a class="header_menu_link flex_r" href="/daily_pay.php">
+         AIDUS PAY
+        </a>
+       </span>
+       <span class="navbar_menu" data-id="menu-1">
+        <a class="header_menu_link flex_r" href="/whyaidus.php">
+         WHY AIDUS
+        </a>
+        <div class="menu_box">
+         <span class="menu_box_menu" data-id="adfp">
+          ADFP
+         </span>
+         <span class="menu_box_menu" data-id="coin">
+          AIDUS TOKEN
+         </span>
+         <span class="menu_box_menu" data-id="point">
+          DIFFERENTIATION
+         </span>
+         <span class="menu_box_menu" data-id="team">
+          TEAM
+         </span>
+        </div>
+       </span>
+       <span class="navbar_menu" data-id="menu-2">
+        <a class="header_menu_link flex_r" href="/platform.php">
+         D-FUND PLATFORM
+        </a>
+        <div class="menu_box">
+         <span class="menu_box_menu" data-id="fund">
+          D-FUND PLATFORM
+         </span>
+         <span class="menu_box_menu" data-id="paper">
+          WHITE PAPER
+         </span>
+         <span class="menu_box_menu" data-id="market">
+          MARKET PLATFORM
+         </span>
+        </div>
+       </span>
+       <span class="navbar_menu" data-id="menu-3">
+        <a class="header_menu_link flex_r" href="/qts.php">
+         SMART QTS
+        </a>
+        <div class="menu_box">
+         <span class="menu_box_menu" data-id="qts">
+          SMART QTS
+         </span>
+         <span class="menu_box_menu" data-id="meta">
+          AUTHENTICATION
+         </span>
+         <span class="menu_box_menu" data-id="desc">
+          AUTHENTICATION DETAIL
+         </span>
+         <span class="menu_box_menu" data-id="cross">
+          CROSS CHECK
+         </span>
+         <span class="menu_box_menu" data-id="report">
+          QTS REPORT
+         </span>
+        </div>
+       </span>
+       <span data-id="menu-4">
+        <a class="header_menu_link flex_r" href="/news.php">
+         NEWS
+        </a>
+        <div class="menu_box">
+         <span class="menu_box_menu">
+          PHOTO
+         </span>
+         <span class="menu_box_menu">
+          MOVIE
+         </span>
+        </div>
+       </span>
+       <span data-id="menu-5">
+        <a class="header_menu_link flex_r" href="/faq.php">
+         FAQ
+        </a>
+       </span>
+       <span>
+        <a class="buy_token_link_open">
+         BUY AIDUS TOKEN
+        </a>
+        <div class="buy_token_link_area" style="bottom: -270%;">
+         <div class="buy_token_link_box">
+          <a href="https://bitsonic.co.kr/front/exchange/aidus-krw" target="_blank">
+           <div class="buy_token_link">
+            <img src="/images/icon/bitsonic.png"/>
+            <span class="buy_token_link_text" id="">
+             BITSONIC
+            </span>
+           </div>
+          </a>
+          <a href="https://www.coinbene.com/spot/exchange/AIDUS_BTC" target="_blank">
+           <div class="buy_token_link">
+            <img src="/images/icon/coinbene.png"/>
+            <span class="buy_token_link_text" id="buy_coinbene">
+             CoinBene
+            </span>
+           </div>
+          </a>
+          <a href="https://www.digifinex.com/ko-kr/trade/USDT/AIDUS" target="_blank">
+           <div class="buy_token_link">
+            <img src="/images/icon/digifinex.png"/>
+            <span class="buy_token_link_text">
+             DigiFinex
+            </span>
+           </div>
+          </a>
+          <a href="https://coinsbit.io/ko/trade/AIDUS_BTC" target="_blank">
+           <div class="buy_token_link">
+            <img src="/images/icon/coinsbit.png"/>
+            <span class="buy_token_link_text">
+             CoinsBit
+            </span>
+           </div>
+          </a>
+          <a href="https://www.foblgate.com/trade?pairName=AIDUS/KRW" target="_blank">
+           <div class="buy_token_link">
+            <img src="/images/icon/foblgate.png"/>
+            <span class="buy_token_link_text">
+             FoblGate
+            </span>
+           </div>
+          </a>
+          <a href="https://bigonezh.com/trade/AIDUS-USDT" target="_blank">
+           <div class="buy_token_link">
+            <img src="/images/icon/bigone.png"/>
+            <span class="buy_token_link_text">
+             BigONE
+            </span>
+           </div>
+          </a>
+         </div>
+        </div>
+       </span>
+       <div class="buy_token_mask" id="buy_token_mask">
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="head_sub_menu_box" id="head_sub_menu_box">
+    </div>
+    <div class="mobile_header">
+     <div class="mobile_logo">
+      <a href="/">
+       <img src="/images/icon/logo.png" width="100%"/>
+      </a>
+     </div>
+     <div class="mobile_menu_btn">
+      <button class="minMenu_btn" id="minMenu_btn">
+       <div class="burgur">
+       </div>
+      </button>
+     </div>
+    </div>
+    <div class="mobile_menu_area">
+     <div class="mobile_menu_list">
+      <div class="mobile_menu">
+       <a href="/">
+        HOME
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/aidus_pay_reserve.php" id="mobile_pay_menu">
+        AIDUS PAY 早鸟注册活动
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/daily_pay.php" id="mobile_ap_menu">
+        AIDUS PAY
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/whyaidus.php">
+        WHY AIDUS
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/platform.php">
+        D-FUND PLATFORM
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/qts.php">
+        SMART QTS
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/news.php">
+        NEWS
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/faq.php">
+        FAQ
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/signup.php">
+        SIGN UP
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/login.php">
+        LOGIN
+       </a>
+      </div>
+      <div class="mobile_menu">
+       <a href="/contact.php">
+        Contact US
+       </a>
+      </div>
+      <div class="mobile_menu moba_buy_token" id="moba_buy_token" style="background-color: #00afb8;padding:10px;">
+       <a>
+        BUY AIDUS TOKEN
+       </a>
+      </div>
+      <div class="moba_buy_token_area">
+       <div class="moba_buy_token_box" style="margin-top: -220px;">
+        <a href="https://bitsonic.co.kr/front/exchange/aidus-krw" target="_blank">
+         <div class="moba_buy_token_link">
+          <img src="/images/icon/bitsonic.png" width="20"/>
+          BITSONIC
+         </div>
+        </a>
+        <a href="https://www.coinbene.com/spot/exchange/AIDUS_BTC" target="_blank">
+         <div class="moba_buy_token_link">
+          <img src="/images/icon/coinbene.png" width="20"/>
+          CoinBene
+         </div>
+        </a>
+        <a href="https://www.digifinex.com/ko-kr/trade/USDT/AIDUS" target="_blank">
+         <div class="moba_buy_token_link">
+          <img src="/images/icon/digifinex.png" width="20"/>
+          DigiFinex
+         </div>
+        </a>
+        <a href="https://coinsbit.io/ko/trade/AIDUS_BTC" target="_blank">
+         <div class="moba_buy_token_link">
+          <img src="/images/icon/coinsbit.png" width="20"/>
+          CoinsBit
+         </div>
+        </a>
+        <a href="https://www.foblgate.com/trade?pairName=AIDUS/KRW" target="_blank">
+         <div class="moba_buy_token_link">
+          <img src="/images/icon/foblgate.png" width="20"/>
+          FoblGate
+         </div>
+        </a>
+        <a href="https://bigonezh.com/trade/AIDUS-USDT" target="_blank">
+         <div class="moba_buy_token_link">
+          <img src="/images/icon/bigone.png" width="20"/>
+          BigONE
+         </div>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="mobile_region_list">
+      <div class="container">
+       <div class="row">
+        <div class="col col-6 mobile_region_btn_box">
+         <div class="mobile_region_btn" data="en">
+          <img src="/images/icon/en_icon.png"/>
+          <span>
+           English
+          </span>
+         </div>
+        </div>
+        <div class="col col-6 mobile_region_btn_box">
+         <div class="mobile_region_btn" data="ko">
+          <img src="/images/icon/kr_icon.png"/>
+          <span>
+           한국어
+          </span>
+         </div>
+        </div>
+        <div class="col col-6 mobile_region_btn_box">
+         <div class="mobile_region_btn" data="cn">
+          <img src="/images/icon/ch_icon.png"/>
+          <span>
+           简体中文
+          </span>
+         </div>
+        </div>
+        <div class="col col-6 mobile_region_btn_box">
+         <div class="mobile_region_btn" data="jp">
+          <img src="/images/icon/jp_icon.png"/>
+          <span>
+           日本語
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <script>
+     $(function(){
+                realWidth = $(window).width();
+            });
+
+            $("#minMenu_btn").click(function(){
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');
+                    $(".burgur").removeClass('on');
+                    $(".mobile_menu_area").fadeOut(300);
+                }else{
+                    $(this).addClass('on');
+                    $(".burgur").addClass('on');
+                    $(".mobile_menu_area").fadeIn(300);
+                }
+            });
+
+            $('.region_select_region.cursor,.mobile_region_btn').on('click',function() {
+                var selectLang = $(this).attr('data');
+                document.cookie = "lang=" + selectLang;
+                location.reload();
+            });
+                $(".buy_token_link_open").click(function(){
+                    if($(this).hasClass('on')){
+                        $(".buy_token_link_area").fadeOut();
+                        $("#buy_token_mask").hide();
+                        $(this).removeClass('on');
+                    }else{
+                        $(".buy_token_link_area").fadeIn();
+                        $("#buy_token_mask").show();
+                        $(this).addClass('on');
+                    }
+                });
+            
+                $("#buy_token_mask").click(function(){
+                    $(this).hide();
+                    $(".buy_token_link_area").fadeOut();
+                    $(".buy_token_link_open").removeClass('on');
+                });
+                $("#moba_buy_token").click(function(){
+                    if($(this).hasClass('on')){
+                        $(".moba_buy_token_box").css({
+                            'visibility':'hidden',
+                            'margin-top':'-220px',
+                            'opacity':'0',
+                            'transition':' opacity .2s ease-in-out, visibility .4s ease-in-out, margin .5s ease-in-out'
+                        });
+                        $(this).removeClass('on');
+                    }else{
+                        $(".moba_buy_token_box").css({
+                            'visibility':'inherit',
+                            'margin-top':'0',
+                            'opacity':'1',
+                            'transition':' opacity .8s ease-in-out, visibility .4s ease-in-out, margin .5s ease-in-out'
+                        });
+                        $(this).addClass('on');
+                    }
+
+                });
+    </script>
+   </header>
+   <section class="main_top">
+    <div class="main_top_slide_area" id="main_top_slide">
+     <div class="mouse_box" id="stop_slide">
+      <div class="mouse_img_box">
+       <img alt="mouse" src="/images/mouse.png"/>
+      </div>
+      <div class="mouse_text_box">
+       마우스를 올려주세요.
+      </div>
+     </div>
+     <div class="play_stop_box" id="play_stop_box">
+      <div class="play_box" id="play_box">
+       <img alt="play" src="/images/play.png"/>
+      </div>
+      <div class="stop_box" id="stop_box">
+       <img alt="stop" src="/images/stop.png"/>
+      </div>
+     </div>
+     <div class="slide_right_left right_box" id="slide_next">
+     </div>
+     <div class="slide_right_left left_box" id="slide_prev">
+     </div>
+     <div class="main_top_slide_box box1" data-idx="1" id="main_top_slide_box1">
+      <div class="main_top_slide_before">
+       <div class="main_top_slide_title">
+        WHY AIDUS
+        <div class="why_aidus_bottom_line">
+        </div>
+        <div class="main_top_slide_sub">
+         WORLD TOP
+         <br/>
+         AIDUS QTS 収益率
+        </div>
+        <div class="main_top_slide_whyaidus">
+         +72.12%/ Yr
+        </div>
+       </div>
+       <div class="main_top_slide_click_title">
+        WHY AIDUS
+       </div>
+      </div>
+      <div class="in_box box1">
+       <div class="in_box_division">
+        <div class="division_title">
+         WHY AIDUS
+        </div>
+        <div class="division_sub">
+         <span class="division_sub_sm">
+          全球首屈一指的
+          <br/>
+          AIDUS QTS收益率
+         </span>
+         +72.12%/ Yr
+        </div>
+        <div class="division_img_box">
+         <img alt="" src="/images/slide_1_1.png"/>
+        </div>
+        <div class="division_img_desc">
+         由美国PKF O`CONNOR DAVIES认证
+        </div>
+       </div>
+       <div class="in_box_division">
+        <div class="division_title">
+         Barron`s
+                            Top100 Hedge
+                            Fund
+        </div>
+        <div class="division_sub">
+         <span class="division_sub_sm">
+          三年平均收益率
+         </span>
+         <div style="font-size: 30px;font-weight: bold;color:red;text-align: center">
+          13.49%
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="main_top_slide_box box2" data-idx="2">
+      <div class="main_top_slide_before">
+       <div class="season_title">
+        SEASON2
+       </div>
+       <div class="main_top_slide_title">
+        QTS収益率图表
+        <div class="main_top_slide_sub" id="main_slide">
+        </div>
+       </div>
+       <div class="main_top_slide_click_title">
+        QTS 图表
+       </div>
+      </div>
+      <div class="in_box box2">
+       <div class="in_box_division chart_box">
+        <div class="season_title">
+         SEASON2
+        </div>
+        <div class="chart_title">
+         QTS 图表
+        </div>
+        <div class="chart" id="main">
+        </div>
+       </div>
+       <div class="in_box_division graph_bottom">
+        <div class="chart_title_sub">
+         QTS-S2 Weekly Report by July 24, 2020
+        </div>
+        <div class="chart_title_sub chart_title_sub_2">
+         AIDUS QTS Earning Rate
+        </div>
+        <div class="chart_IRR">
+         IRR : +72.12%
+        </div>
+        <div class="chart_title_sub chart_sub">
+         巴伦百强对冲基金3年平均收益率为
+         <span style="color:red;font-size: 30px;font-weight: bold;">
+          +13.49%
+         </span>
+        </div>
+        <div class="chart_btn_box">
+         <span class="chart_btn" id="go_qts_report">
+          了解更多有关收益率的报告
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="main_top_slide_box box3" data-idx="3">
+      <div class="main_top_slide_before">
+       <div class="main_top_slide_title">
+        持续的AIDUS
+        <br/>
+        TOKEN的价值上升
+        <div class="main_top_slide_sub">
+         持续的需求和供给存在/稳定的价值上升。
+        </div>
+       </div>
+       <div class="main_top_slide_click_title">
+        AIDUS
+        <br/>
+        TOKEN
+       </div>
+      </div>
+      <div class="in_box box3">
+       <div class="in_box_division in_box_division_full">
+        <div class="sub_title">
+         AIDUS TOKEN 价值上升
+        </div>
+        <div class="sub_img_box">
+         <img alt="adfp_in" src="/images/aidus_value_cn.png"/>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="main_top_slide_box box4" data-idx="4">
+      <div class="main_top_slide_before">
+       <div class="main_top_slide_title">
+        ADFP没有边境货币障碍
+        <div class="main_top_slide_sub">
+         利用AIDUS TOKEN注册全球基金商品
+        </div>
+       </div>
+       <div class="main_top_slide_click_title">
+        ADFP
+       </div>
+      </div>
+      <div class="in_box box4">
+       <div class="in_box_division in_box_division_full">
+        <div class="sub_title">
+         AIDUS Decentralized Fund Platform
+        </div>
+        <div class="sub_img_box">
+         <img alt="adfp_in" src="/images/adfp_in_cn.png"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="carousel_box" id="carousel_box">
+    <div class="carousel_pop_mask">
+     <div class="carousel_pop_box">
+      <div class="carousel_pop_head">
+       <span id="news_pop_title">
+        Title
+       </span>
+       <span class="news_pop_close">
+        X
+       </span>
+      </div>
+      <div class="carousel_pop_body">
+       <div class="carousel_pop_body_contents" id="news_pop_content">
+       </div>
+      </div>
+      <div class="carousel_pop_foot">
+       <div class="carousel_pop_foot_left_right carousel_pop_foot_left cursor flex_r" id="carousel_left">
+        〈
+       </div>
+       <div class="carousel_pop_foot_center flex_r">
+        <div class="carousel_pop_close cursor">
+         CLOSE
+        </div>
+       </div>
+       <div class="carousel_pop_foot_left_right carousel_pop_foot_right cursor flex_r" id="carousel_right">
+        〉
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="container flex_c carousel_container">
+     <div class="carousel_menu col col-12">
+      <div class="row" style="height:100%;">
+       <div class="carousel_menu_btn cursor all on" data-type="ALL">
+        All
+       </div>
+       <div class="carousel_menu_btn cursor" data-type="MOVIE">
+        MOVIE
+       </div>
+       <div class="carousel_menu_btn cursor" data-type="NEWS">
+        NEWS
+       </div>
+       <div class="carousel_menu_btn cursor" data-type="MEET">
+        MEETUP
+       </div>
+       <div class="carousel_menu_btn cursor" data-type="QTS">
+        SMART QTS
+       </div>
+      </div>
+     </div>
+     <!--<div class="carousel_title margin-bottom-30">
+            <span class="carousel_text">
+                AIDUS <span>NEWS</span>
+            </span>
+
+            </div>-->
+     <div style="width: 100%;text-align: right;font-weight: 700;padding-right: 10px;">
+      Total :
+      <span id="slide_total_cnt">
+       111
+      </span>
+     </div>
+     <div class="item" id="loader">
+      <div class="loader">
+      </div>
+     </div>
+     <div class="swiper_area" id="swiper_area" style="display: none;">
+      <div class="swiper-container">
+       <div class="swiper-wrapper">
+       </div>
+       <div class="swiper-button-next">
+       </div>
+       <div class="swiper-button-prev">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="main_section bg-grey" id="why">
+    <div class="main_title">
+     WHY
+     <span>
+      AIDUS?
+     </span>
+    </div>
+    <img id="why_aidus_image" onerror="this.src='/images/why_aidus_en.png'" src="/images/why_aidus_cn.png" width="100%"/>
+    <a href="whyaidus.php">
+     <div class="main_btn flex_r">
+      DETAIL
+     </div>
+    </a>
+   </div>
+   <div class="main_section fund_section" id="fund" style="text-align: center;">
+    <div class="container">
+     <div class="fund_title margin-bottom-30">
+      AIDUS
+      <span>
+       去中心化基金平台
+      </span>
+     </div>
+     <br/>
+     <span class="fund_text_area">
+      <span class="fund_text_sub margin-bottom-10">
+       利用独家QTS操作，经营实现高收益资产管理的
+      </span>
+      <br/>
+      <span class="fund_text_main margin-bottom-30">
+       去中心化全球基金市场平台 (ADFP)
+      </span>
+     </span>
+     <div class="fund_img_box">
+      <div class="fund_img_box_img">
+       <img alt="" src="/images/index_1.png"/>
+       <div class="text">
+        投资者
+       </div>
+      </div>
+      <div class="plus_img">
+       <img alt="" src="/images/index_plus.png"/>
+      </div>
+      <div class="fund_img_box_img">
+       <img alt="" src="/images/index_2.png"/>
+       <div class="text">
+        AIDUS D-Fund Platform
+       </div>
+      </div>
+      <div class="plus_img">
+       <img alt="" src="/images/index_plus.png"/>
+      </div>
+      <div class="fund_img_box_img">
+       <img alt="" src="/images/index_3.png"/>
+       <div class="text">
+        资产管理公司
+       </div>
+      </div>
+      <div class="plus_img">
+       <img alt="" src="/images/index_plus.png"/>
+      </div>
+      <div class="fund_img_box_img">
+       <img alt="" src="/images/index_4.png"/>
+       <div class="text">
+        SMART QTS
+       </div>
+      </div>
+     </div>
+     <a href="platform.php">
+      <span class="fund_btn cursor flex_r">
+       DETAIL
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="main_section" id="qts" style="background-color: #f5f5f5;">
+    <div class="container">
+     <div class="row">
+      <div class="col col-4 qts_text_box">
+       <div class="qts_title margin-bottom-20">
+        SMART
+        <span>
+         QTS
+        </span>
+       </div>
+       <div class="qts_text margin-bottom-30">
+        累积多年的大数据为基础                        可获得稳定收益率的自动化交易系统
+       </div>
+       <a href="qts.php">
+        <span class="fund_btn go_qts_btn cursor flex_r">
+         DETAIL
+        </span>
+       </a>
+      </div>
+      <div class="col col-4 qts_box">
+       <div class="certificate_box">
+        <div class="certificate_area">
+         <div class="certificate_img">
+          <img src="/images/certificate.png" width="100%"/>
+          <img class="medal_img" src="/images/medal.png"/>
+         </div>
+         <div class="certificate_text">
+          <span class="small_text">
+           Update QTS Earning Rate Report by
+          </span>
+          <span class="big_text">
+           QTS-S2 Weekly Report by July 24, 2020
+          </span>
+          <span class="small_text">
+           AVERAGE ANNUAL IRR
+          </span>
+          <span class="big_text" style="color:#fff600;">
+           +72.12%
+           <span style="font-size:16px;">
+            %
+           </span>
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col col-4 revenue_box">
+       <div class="certificate_revenue">
+        <div class="revenue_img">
+         <img src="/images/revenue.png" width="100%"/>
+        </div>
+        <div class="revenue_text">
+         <span class="big_text">
+          CERTIFICATE OF REVENUE
+         </span>
+         <span class="small_text">
+          Update QTS Earning Rate Report by Dec. 21, 2018
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="main_section article_section" id="article" style="text-align: center;">
+    <div class="container">
+     <div class="fund_title margin-bottom-50">
+      AIDUS
+      <span>
+       PRESS ARTICLE
+      </span>
+     </div>
+     <div class="row" id="article_area">
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105&amp;oid=009&amp;aid=0004583081" target="_blank">
+        <div class="article_box" data-seq="809">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://ssl.pstatic.net/static.news/image/news/ogtag/navernews_200x200_20160804.png                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이시스글로벌, 글로벌 자산운용사 터너리와 QTS 공급계약
+          </div>
+          <div class="article_date">
+           2020-06-02 06:07:48
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="https://www.mk.co.kr/news/it/view/2020/02/193053/" target="_blank">
+        <div class="article_box" data-seq="808">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://file.mk.co.kr/news/facebook_mknews.jpg                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이더스페이 서비스 24일 오픈…연 12% 이자 매일 지급 - 매일경제
+          </div>
+          <div class="article_date">
+           2020-02-25 02:11:59
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="http://www.mk.co.kr/?_ga=2.135276082.2084779986.1573784792-410079325.1573784792" target="_blank">
+        <div class="article_box" data-seq="807">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://file.mk.co.kr/news/facebook_mknews.jpg                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           매일경제 - No.1 경제포털
+          </div>
+          <div class="article_date">
+           2019-11-15 02:41:44
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="https://www.mk.co.kr/news/it/view/2019/10/807577/" target="_blank">
+        <div class="article_box" data-seq="806">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://file.mk.co.kr/news/facebook_mknews.jpg                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이시스 글로벌, 韓  의료 서비스 분야 본격 진출 - 매일경제
+          </div>
+          <div class="article_date">
+           2019-10-08 04:19:20
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="https://www.mk.co.kr/news/it/view/2019/09/714449/" target="_blank">
+        <div class="article_box" data-seq="805">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://file.mk.co.kr/news/facebook_mknews.jpg                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이더스토큰, 암호자산 적극 행보…의료서비스 분야 진출 - 매일경제
+          </div>
+          <div class="article_date">
+           2019-09-09 02:24:49
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="http://game.mk.co.kr/view.php?year=2019&amp;no=566474" target="_blank">
+        <div class="article_box" data-seq="804">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://aidus-staging.s3.ap-northeast-2.amazonaws.com/NEWS_LINK/U3dKemtFZHpkeThWdDR5ekhnWE5PUT09_aidus12.png                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이더스 페이 사전 가입 이벤트 1차·2차 조기 매진
+          </div>
+          <div class="article_date">
+           2019-07-26 07:00:56
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="http://game.mk.co.kr/view.php?year=2019&amp;no=550075" target="_blank">
+        <div class="article_box" data-seq="803">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://aidus-staging.s3.ap-northeast-2.amazonaws.com/NEWS_LINK/cFRtYkl1TFZMa2dyNGtYMXVxQWRzdz09_first%20event.png                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이더스페이 사전가입 이벤트 6분만에 물량 매진
+          </div>
+          <div class="article_date">
+           2019-07-26 07:00:38
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col col-3 margin-bottom-20 article_area_box">
+       <a href="http://game.mk.co.kr/view.php?year=2019&amp;no=456971" target="_blank">
+        <div class="article_box" data-seq="802">
+         <div class="article_box_img">
+          <img onerror="this.src='/images/no-image.png'" src="https://aidus-staging.s3.ap-northeast-2.amazonaws.com/NEWS_LINK/cUZUbjZEUkF3UzhPbXZiOEdHYTJQdz09_aiduspay.png                                "/>
+         </div>
+         <div class="article_desc">
+          <div class="article_title margin-bottom-10">
+           아이시스글로벌 ‘아이더스 페이’ 공개…금융계 새 패러다임 제시
+          </div>
+          <div class="article_date">
+           2019-07-26 07:00:16
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+     </div>
+     <div id="article_loader_area">
+     </div>
+     <span class="article_btn cursor flex_r" id="article_more" style="display: inline-flex">
+      MORE
+     </span>
+     <span class="article_btn reset cursor flex_r" id="article_reset" style="display: inline-flex">
+      RESET
+     </span>
+    </div>
+   </div>
+   <div class="main_section social_section" id="social">
+    <div class="social_title">
+     AIDUS Social Network Service
+    </div>
+    <a href="https://www.facebook.com/AIDUSofficial/?modal=admin_todo_tour" target="_blank">
+     <img src="/images/icon/facebook_icon.png"/>
+    </a>
+    <a href="https://twitter.com/AIDUSofficial" target="_blank">
+     <img src="/images/icon/twitter_icon.png"/>
+    </a>
+    <a href="https://medium.com/@AIDUSofficial" target="_blank">
+     <img src="/images/icon/naver_icon.png"/>
+    </a>
+    <a href="https://www.reddit.com/user/AIDUSofficial" target="_blank">
+     <img src="/images/icon/robot_icon.png"/>
+    </a>
+    <a href="https://t.me/aidusofficial" target="_blank">
+     <img src="/images/icon/plain_icon.png"/>
+    </a>
+   </div>
+   <script>
+    currentViewIndex = 0;
+        var swiper;
+        totalIndex   = "111";
+        var slidePage = 1;
+        var cover;
+        var menuType = '';
+
+        var repeat;
+        var index = 0;
+        var first = true;
+        var graph = false;
+        var start = false;
+        $("#go_qts_report").click(function(e){
+            e.stopPropagation();
+            location.href='https://aidus.io/qts.php';
+        });
+        $(".main_top_slide_box").click(function () {
+            if (first) {
+                $(".main_top_slide_box").css('display','none');
+                $(this).css('display','block');
+                $(".main_top_slide_box").addClass('click');
+            }
+            index = $(this).attr('data-idx');
+
+            $(".main_top_slide_box").removeClass('on').addClass('off');
+            $(this).removeClass('off').addClass('on');
+            $(this).find(".in_box_division").css('display', 'flex').hide().fadeIn();
+            if (index == 2) {
+                getChart();
+            }
+            stopLoop();
+            if(first){
+                $(".main_top_slide_box").css('display','block');
+                first = false;
+            }
+
+        });
+        $("#slide_next").click(function(){
+            var target = parseInt(index) + 1;
+            if(target > 4){
+                target = 1
+            }
+            $(".main_top_slide_box.box"+target).click();
+        });
+        $("#slide_prev").click(function(){
+            var target = parseInt(index) - 1;
+            if(target < 1){
+                target = 4;
+            }
+            $(".main_top_slide_box.box"+target).click();
+        });
+        $("#stop_slide").mouseenter(function () {
+            $("#play_stop_box").fadeIn();
+        });
+        $("#play_box").click(function () {
+            if (!start) {
+                startLoop(index);
+            } else {
+                console.log('already start');
+            }
+
+        });
+        $("#stop_box").click(function () {
+            stopLoop();
+        });
+        $(window).resize(function(){
+            if($(window).width() < 992){
+                if(first){
+                    $("#slide_next").click();
+                    $("#play_box").click();
+                }
+            }
+        });
+        if($(window).width() < 992){
+            if(first){
+                $("#slide_next").click();
+                $("#play_box").click();
+            }
+        }
+        function stopLoop() {
+            clearInterval(repeat);
+            start = false;
+            if($(window).width() > 992){
+                $("#play_stop_box").fadeOut();
+            }
+
+            $("#stop_box").css('display','none');
+            $("#play_box").css('display','block');
+        }
+
+        function startLoop(index) {
+            start = true;
+            if($(window).width() > 992){
+                $("#play_stop_box").fadeOut();
+            }
+
+            $("#play_box").css('display','none');
+            $("#stop_box").css('display','block');
+            repeat = setInterval(function () {
+                index++;
+                if (index > 4) {
+                    index = 1;
+                }
+                if (index == 2) {
+                    getChart();
+                }
+                if (first) {
+                    $(".main_top_slide_box").addClass('click');
+                    first = false;
+                }
+                $(".main_top_slide_box").removeClass('on').addClass('off');
+                $(".main_top_slide_box.box" + index).removeClass('off').addClass('on');
+                $(".main_top_slide_box.box" + index).find(".in_box_division").css('display', 'flex').hide().fadeIn();
+            }, 2000);
+
+        }
+
+        function getChart() {
+            if (!graph) {
+                setTimeout(function () {
+                    var xAxis = ["2019-10-04","2019-10-11","2019-10-18","2019-10-25","2019-11-01","2019-11-08","2019-11-15","2019-11-22","2019-11-29","2019-12-06","2019-12-13","2019-12-20","2019-12-27","2020-01-03","2020-01-10","2020-01-17","2020-01-24","2020-01-31","2020-02-07","2020-02-14","2020-02-21","2020-02-28","2020-03-06","2020-03-13","2020-03-20","2020-03-27","2020-03-31","2020-04-03","2020-04-10","2020-04-17","2020-04-24","2020-04-30","2020-05-01","2020-05-08","2020-05-15","2020-05-22","2020-05-29","2020-05-31","2020-06-05","2020-06-12","2020-06-19","2020-06-26","2020-06-30","2020-07-03","2020-07-10","2020-07-17","2020-07-24"];
+                    var yAxis = ["6.27","6.32","4.50","4.91","5.06","5.29","5.88","6.13","6.34","6.70","5.49","10.13","11.21","11.85","12.62","13.21","13.83","12.77","14.55","17.31","17.71","15.80","15.15","6.25","17.13","13.82","16.67","21.28","20.12","21.09","24.86","27.73","29.05","32.36","34.84","37.84","38.70","38.70","38.17","43.80","49.59","55.15","56.21","56.70","57.84","60.14","61.85"];
+                    var min = "-4";
+                    var max = "71";
+                    var myChart = echarts.init(document.getElementById('main'));
+                    // specify chart configuration item and data
+                    var option = {
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'cross',
+                                animation: false,
+                                label: {
+                                    backgroundColor: '#ccc',
+                                    borderColor: '#aaa',
+                                    borderWidth: 1,
+                                    shadowBlur: 0,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    textStyle: {
+                                        color: '#222'
+                                    }
+                                }
+
+                            },
+                            formatter : "{b} <br> {a}:{c}%"
+                        },
+                        xAxis: {
+                            type: 'category',
+                            data: xAxis,
+                            splitLine: {show: false},
+                            axisTick: {show: false},
+                            axisLine: {
+                                show: true,
+                                lineStyle: {
+                                    color: '#fff'
+                                }
+                            },
+                            axisLabel: {show: false},
+                        },
+                        yAxis: {
+                            type: 'value',
+                            splitLine: {show: false},
+                            axisTick: {show: false},
+                            axisLine: {
+                                show: true,
+                                lineStyle: {
+                                    color: '#fff'
+                                }
+                            },
+                            axisLabel: {show: false},
+                            /*scale: [min, max]*/
+                        },
+
+                        color: ['#00afb8'],
+                        series: [{
+                            name: 'Yield',
+                            data: yAxis,
+                            type: 'line',
+                            animation: false
+                        }]
+                    };
+                    myChart.setOption(option);
+                }, 400);
+                graph = true;
+            }
+        }
+
+        mainGraph();
+
+        function mainGraph(){
+            var xAxis = ["2019-10-04","2019-10-11","2019-10-18","2019-10-25","2019-11-01","2019-11-08","2019-11-15","2019-11-22","2019-11-29","2019-12-06","2019-12-13","2019-12-20","2019-12-27","2020-01-03","2020-01-10","2020-01-17","2020-01-24","2020-01-31","2020-02-07","2020-02-14","2020-02-21","2020-02-28","2020-03-06","2020-03-13","2020-03-20","2020-03-27","2020-03-31","2020-04-03","2020-04-10","2020-04-17","2020-04-24","2020-04-30","2020-05-01","2020-05-08","2020-05-15","2020-05-22","2020-05-29","2020-05-31","2020-06-05","2020-06-12","2020-06-19","2020-06-26","2020-06-30","2020-07-03","2020-07-10","2020-07-17","2020-07-24"];
+            var yAxis = ["6.27","6.32","4.50","4.91","5.06","5.29","5.88","6.13","6.34","6.70","5.49","10.13","11.21","11.85","12.62","13.21","13.83","12.77","14.55","17.31","17.71","15.80","15.15","6.25","17.13","13.82","16.67","21.28","20.12","21.09","24.86","27.73","29.05","32.36","34.84","37.84","38.70","38.70","38.17","43.80","49.59","55.15","56.21","56.70","57.84","60.14","61.85"];
+            var min = "-4";
+            var max = "71";
+            console.log(min);
+            console.log(max);
+            var mainChart = echarts.init(document.getElementById('main_slide'));
+            var option = {
+
+                xAxis: {
+                    type: 'category',
+                    data: xAxis,
+                    splitLine: {show: false},
+                    axisTick: {show: false},
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    axisLabel: {show: false},
+                },
+                yAxis: {
+                    type: 'value',
+                    splitLine: {show: false},
+                    axisTick: {show: false},
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    axisLabel: {show: false},
+                    /*scale: [min, max]*/
+                },
+
+                color: ['#009e5a'],
+                series: [{
+                    data: yAxis,
+                    type: 'line',
+                    animation: false,
+                    symbol : 'none'
+                }]
+            };
+            mainChart.setOption(option);
+        }
+
+
+        $(function(){
+            var locale = "cn";
+            menuType = "ALL";
+            $.ajax({
+                url: "/ajax/ajax.news.php",
+                type: "post",
+                data: {'type': menuType,'page':1, 'locale' : locale},
+                dataType: "json",
+                headers: { "X-CSRF-TOKEN": $("meta[name='csrf']").attr("content") },
+                async: true,
+                error: function () {
+                },
+                success: function (result) {
+                    totalIndex = result['total_cnt'];
+                    indexArray = new Array();
+                    $("#slide_total_cnt").html(totalIndex);
+                    result = result['data'];
+
+                    for(var i=0;i<result.length;i++){
+                        var append_text = '';
+                        if(result[i]['news_type'] != 'MOVIE'){
+                            append_text = '<div data-seq="'+
+                                result[i]['seq']+'" class="swiper-slide flex_r"><img src="'+
+                                result[i]['cover_url']+'" onerror="this.src=\'/images/no-image.png\'"><div class="slide_center_title"><div class="slide_center_title_text">'+
+                                result[i]['title']+'</div></div><div class="slide_center_detail"><div class="slide_center_detail_btn swiper_pop flex_r">Detail</div></div></div>';
+                        }else {
+                            var yImg = '';
+                            var yImgLink = '';
+                            if (result[i]['cover_url'].indexOf('.be/') != -1) {
+                                yImg = result[i]['cover_url'].split('.be/');
+                                yImg = yImg[1];
+                            } else {
+                                yImg = result[i]['cover_url'].split('embed/');
+                                yImg = yImg[1];
+                            }
+                            yImgLink = 'http://img.youtube.com/vi/' + yImg + '/0.jpg';
+                            append_text = '<div data-seq="' +
+                                result[i]['seq'] + '" class="swiper-slide flex_r"><img src="' +
+                                yImgLink + '" onerror="this.src=\'/images/no-image.png\'"><div class="slide_center_title"><div class="slide_center_title_text">' +
+                                result[i]['title'] + '</div></div><div class="slide_center_detail"><div class="slide_center_detail_btn swiper_pop flex_r">Detail</div></div></div>';
+
+                        }
+                        $(".swiper-wrapper").append(append_text);
+                    }
+                    if($(window).width() < 768){
+                        swiper = new Swiper('.swiper-container', {
+                            effect: 'slide',
+                            grabCursor: true,
+                            centeredSlides: true,
+                            slidesPerView: 'auto',
+                            loop:true,
+                            allowTouchMove:false,
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                                spaceBetween : 100
+                            },
+                        });
+                    }else{
+
+                        swiper = new Swiper('.swiper-container', {
+                            effect: 'coverflow',
+                            centeredSlides: true,
+                            slidesPerView: 'auto',
+                            loop:true,
+                            simulateTouch: true,
+                            allowTouchMove:false,
+                            slideToClickedSlide:true,
+                            coverflowEffect: {
+                                rotate: 20,
+                                stretch: 100,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows : true,
+                            },
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                                spaceBetween : 100
+                            }
+                        });
+                    }
+                    swiper.slideToLoop(0,0);
+                    $("#loader").fadeOut();
+                }
+            });
+        });
+
+        $("#loader").fadeOut();
+        $("#swiper_area").fadeIn();
+
+        var totalIndex;
+        var indexArray;
+        $(".carousel_menu_btn").click(function(){
+            $("#loader").css('display','block');
+            var locale = "cn";
+            menuType = $(this).attr('data-type');
+            if(menuType == 'QTS'){
+                location.href='qts.php?page_type=report';
+            }else{
+                //swiper.removeAllSlides();
+                $(".swiper-wrapper").html('');
+                $(".carousel_menu_btn").removeClass('on');
+                $(this).addClass('on');
+                var page = 1;
+                $.ajax({
+                    url: "/ajax/ajax.news.php",
+                    type: "post",
+                    data: {'type': menuType,'page':page, 'locale' : locale},
+                    dataType: "json",
+                    headers: { "X-CSRF-TOKEN": $("meta[name='csrf']").attr("content") },
+                    async: true,
+                    error: function () {
+                    },
+                    success: function (result) {
+                        totalIndex = result['total_cnt'];
+                        indexArray = new Array();
+                        $("#slide_total_cnt").html(totalIndex);
+                        result = result['data'];
+                        $("#swiper_area").html("");
+                        $("#swiper_area").append('<div class="swiper-container">' +
+                            '                    <div class="swiper-wrapper">' +
+                            '                    </div>' +
+                            '                    <div class="swiper-button-next"></div>' +
+                            '                    <div class="swiper-button-prev"></div>' +
+                            '                </div>');
+                        for(var i=0;i<result.length;i++){
+                            var append_text = '';
+                            if(result[i]['news_type'] != 'MOVIE'){
+                                append_text = '<div data-seq="'+
+                                    result[i]['seq']+'" class="swiper-slide flex_r"><img src="'+
+                                    result[i]['cover_url']+'" onerror="this.src=\'/images/no-image.png\'"><div class="slide_center_title"><div class="slide_center_title_text">'+
+                                    result[i]['title']+'</div></div><div class="slide_center_detail"><div class="slide_center_detail_btn swiper_pop flex_r">Detail</div></div></div>';
+                            }else {
+                                var yImg = '';
+                                var yImgLink = '';
+                                if (result[i]['cover_url'].indexOf('.be/') != -1) {
+                                    yImg = result[i]['cover_url'].split('.be/');
+                                    yImg = yImg[1];
+                                } else {
+                                    yImg = result[i]['cover_url'].split('embed/');
+                                    yImg = yImg[1];
+                                }
+                                yImgLink = 'http://img.youtube.com/vi/' + yImg + '/0.jpg';
+                                append_text = '<div data-seq="' +
+                                    result[i]['seq'] + '" class="swiper-slide flex_r"><img src="' +
+                                    yImgLink + '" onerror="this.src=\'/images/no-image.png\'"><div class="slide_center_title"><div class="slide_center_title_text">' +
+                                    result[i]['title'] + '</div></div><div class="slide_center_detail"><div class="slide_center_detail_btn swiper_pop flex_r">Detail</div></div></div>';
+
+                            }
+                            $(".swiper-wrapper").append(append_text);
+                        }
+                        if($(window).width() < 768){
+                            swiper = new Swiper('.swiper-container', {
+                                effect: 'slide',
+                                grabCursor: true,
+                                centeredSlides: true,
+                                slidesPerView: 'auto',
+                                loop:true,
+                                allowTouchMove:false,
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                    spaceBetween : 100
+                                },
+                            });
+                        }else{
+                            swiper = new Swiper('.swiper-container', {
+                                effect: 'coverflow',
+                                centeredSlides: true,
+                                slidesPerView: 'auto',
+                                loop:true,
+                                simulateTouch: true,
+                                allowTouchMove:false,
+                                slideToClickedSlide:true,
+                                coverflowEffect: {
+                                    rotate: 20,
+                                    stretch: 100,
+                                    depth: 100,
+                                    modifier: 1,
+                                    slideShadows : true,
+                                },
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                    spaceBetween : 100
+                                }
+                            });
+                        }
+                        swiper.slideToLoop(0,0);
+                        $("#loader").fadeOut();
+                    }
+                });
+            }
+        });
+
+        var articlePage = 1;
+        $("#article_more").click(function(){
+            var appendText = '<div class="loader"></div>';
+            $("#article_loader_area").append(appendText);
+            articlePage++;
+            $.ajax({
+                url: "/ajax/ajax.news_link.php",
+                type: "post",
+                data: {'type': 'NEWS','page':articlePage},
+                dataType: "json",
+                headers: { "X-CSRF-TOKEN": $("meta[name='csrf']").attr("content") },
+                async: false,
+                error: function (e) {
+                },
+                success: function (result) {
+                    $("#article_area").append('<div class="col col-12" id="article'+articlePage+'" style="display:none;">');
+                    for(var i=0;i<result.length;i++){
+                        var imageLink = result[i]['image_link'];
+                        if(imageLink.trim() == '') {
+                            imageLink = '../images/no-image.png';
+                        }
+                        var articleAppend = '<div class="col col-3 margin-bottom-20 load_article article_area_box">' +
+                            '                            <a href="'+
+                            result[i]['link']+'" target="_blank"><div class="article_box" data-seq="'+
+                            result[i]['seq']+'">'+
+                            '                                <div class="article_box_img">' +
+                            '                                    <img src="'+
+                            imageLink+'" onerror="this.src=\'/images/no-image.png\'"/>' +
+                            '                                </div>' +
+                            '                                <div class="article_desc">' +
+                            '                                    <div class="article_title margin-bottom-10">'+
+                            result[i]['title']+'</div>' +
+                            '                                    <div class="article_date">'+
+                            result[i]['reg_date']+'</div>' +
+                            '                                </div>' +
+                            '                            </div></a>' +
+                            '                        </div>';
+                        $("#article"+articlePage).append(articleAppend);
+                    }
+                    $("#article"+articlePage).fadeIn();
+                    $("#article_loader_area").html("");
+                }
+            });
+        });
+        $("#article_reset").click(function(){
+            $(".load_article").remove();
+        });
+
+
+        $(".carousel_pop_close,.news_pop_close").click(function(){
+            $(".carousel_pop_mask").fadeOut();
+            $("html, body").css({
+                "overflow":"auto"
+            });
+        });
+        $(".carousel_pop_foot_left_right").click(function(){
+            var thisId = $(this).attr('id');
+            var thisSeq;
+            if(thisId == 'carousel_left'){
+                thisSeq = $(".swiper-slide-prev").attr('data-seq');
+                $(".swiper-button-prev").click();
+            }else{
+                thisSeq = $(".swiper-slide-next").attr('data-seq');
+                $(".swiper-button-next").click();
+            }
+            if(!thisSeq){
+                alert("No More Article");
+                return false;
+            }
+            $("#news_pop_content").html('');
+            var appendData = '<div class="item" id="loader">' +
+                '            <div class="loader"></div>' +
+                '        </div>';
+            $("#news_pop_content").append(appendData);
+            popup_move(thisSeq,'more');
+        });
+
+        function popup_move(seq,text){
+            var thisSeq = seq;
+
+            $.ajax({
+                url: "/ajax/ajax.popup.php",
+                type: "post",
+                data: {'seq': thisSeq},
+                dataType: "json",
+                headers: { "X-CSRF-TOKEN": $("meta[name='csrf']").attr("content") },
+                async: false,
+                error: function (e) {
+                },
+                success: function (result) {
+                    if(result == 100){
+                        alert("실행 오류");
+                    }else{
+                        $("#news_pop_title").html(result['title']);
+                        $("#news_pop_content").html(result['contents']);
+                        if(text == 'new'){
+                            $("html, body").css({
+                                "overflow":"hidden"
+                            });
+                            location.href="#carousel_box";
+                            $(".carousel_pop_mask").css('display','flex');
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).on("click",".slide_center_detail",function(){
+            var target = $(this).parents('div.swiper-slide');
+            var thisSeq = target.attr('data-seq');
+            popup_move(thisSeq,'new');
+        });
+        var locale = "cn";
+        if($(window).width() < 768){
+            $("#why_aidus_image").attr('src','/images/why_aidus_mo_'+locale+'.png');
+            $("#fund_image").attr('src','/images/fund_img_mo_'+locale+'.png');
+        }
+        $(window).resize(function(){
+            if($(window).width() < 768){
+                $("#why_aidus_image").attr('src','/images/why_aidus_mo_'+locale+'.png');
+                $("#fund_image").attr('src','/images/fund_img_mo_'+locale+'.png');
+            }else{
+                $("#why_aidus_image").attr('src','/images/why_aidus_'+locale+'.png');
+                $("#fund_image").attr('src','/images/fund_img_'+locale+'.png');
+            }
+        });
+        /*$(".swiper-button-prev,.swiper-button-next").click(function(){
+            var curIndex = swiper.activeIndex;
+        });*/
+        function loaderHide(){
+            $("#loader").fadeOut();
+        }
+   </script>
+   <div class="alert_mask" id="alert_mask">
+    <div class="alert_box">
+     <div class="alert_head">
+      AIDUS
+     </div>
+     <div class="alert_body" id="alert_content">
+     </div>
+     <div class="alert_foot">
+      <div class="alert_close_btn cursor" id="alert_close_btn" onclick="alert_close()">
+       닫기
+      </div>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <div class="container">
+     <div class="row">
+      <div class="col col-6 footer_left">
+       <div class="col footer_logo_area">
+        <img src="/images/footer_logo.png"/>
+       </div>
+       <div class="col footer_text">
+        <div>
+         CONTACT US : info@aidus.io
+        </div>
+        <div>
+         Copyright © 2018 AIDUS Inc. All rights reserved.
+        </div>
+       </div>
+      </div>
+      <div class="col col-6 footer_right">
+       <a href="https://d2ao5bnwtor39o.cloudfront.net/pdf/Privacy_Policy_PDF/AIDUS_Privacy_Policy_chi.pdf">
+        <span>
+         Privacy Policy
+        </span>
+       </a>
+       <a href="https://d2ao5bnwtor39o.cloudfront.net/pdf/Terms&amp;Conditions_PDF/AIDUS_Terms&amp;Conditions_chi.pdf">
+        <span>
+         Terms&amp;Conditions
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <div class="loading_mask" id="loading_mask">
+    <div class="loading_box">
+     <div class="item" id="loader">
+      <div class="loader">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-128027872-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-128027872-1');
+  </script>
+  <script type="text/javascript">
+   function alert(msg){
+        $("#alert_content").html(msg);
+        $("#alert_mask").css('display','flex');
+    }
+    function alert_close(){
+        $("#alert_content").html('');
+        $("#alert_mask").fadeOut(300);
+    }
+
+    function readPrev(current){
+        page--;
+        var locale = "cn";
+        console.log("readPrev : " + locale);
+        $.ajax({
+            url: "/ajax/ajax.news.php",
+            type: "post",
+            data: {'type': menuType,'page':page,'locale' : locale},
+            dataType: "json",
+            headers: { "X-CSRF-TOKEN": $("meta[name='csrf']").attr("content") },
+            async: false,
+            error: function (e) {
+                console.log(e);
+            },
+            success: function (result) {
+                appendData = false;
+                var append_text = '';
+                for(var i=0;i<result.length;i++){
+                    append_text = '<li data-seq="'+result[i]['seq']+'" class="flipster__item" style="z-index: 16; margin-right: -210px;"><div class="flipster__item__content"><img src="'+
+                        result[i]['cover_url']+'"/></div></li>';
+                    $(".flip-items").prepend(append_text);
+                    $(".flipster__item").last().remove();
+                }
+                $("#coverflow").flipster('index');
+
+                currentViewIndex = currentViewIndex - 16;
+                //$("#coverflow").flipster('jump', currentViewIndex);
+                $("#coverflow").flipster('index');
+                appendData = true;
+            }
+        });
+    }
+    
+    $(".region_select_btn").click(function(){
+        if($(this).hasClass('on')){
+            $(this).removeClass('on');
+            $(".region_select_area").fadeOut(300);
+        } else{
+            $(this).addClass('on');
+            $(".region_select_area").fadeIn(300);
+        }
+    });
+    $(".menu_box_menu").click(function(){
+        var target= $(this).parents('span');
+        var thisId = $(this).attr('data-id');
+        if(target.hasClass('on')){
+            var offset = $("#"+thisId).offset();
+            var offsetTop = offset.top - 130;
+            $('html, body').animate({scrollTop : offsetTop}, 400);
+        }else{
+            var href = target.find('a').attr('href');
+            location.href = href+"?move="+thisId;
+        }
+
+    });
+    $(".navbar_menu").hover(function(){
+        $(this).addClass('over');
+        $("#head_sub_menu_box").css('display','block');
+        $(this).find('.menu_box').css('display','block');
+    },function(){
+        $(this).removeClass('over');
+        $("#head_sub_menu_box").css('display','none');
+        $(".menu_box").css('display','none');
+    });
+    $(function(){
+        var movePage = "";
+        if(movePage){
+            var offset = $("#"+movePage).offset();
+            var offsetTop = offset.top - 130;
+            $('html, body').animate({scrollTop : offsetTop}, 400);
+        }
+    });
+    $("#noshow").click(function(){
+        document.cookie = "latoken=Y;expires=7*86400";
+        $("#latoken_mask").fadeOut();
+    });
+    $("#latoken_pop_close").click(function(){
+        $("#latoken_mask").fadeOut();
+    });
+  </script>
+ </body>
+</html>

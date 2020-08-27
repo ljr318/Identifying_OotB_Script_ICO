@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>
+   Faceter
+  </title>
+  <meta content="" name="description"/>
+  <meta content="width=device-width, user-scalable=no, shrink-to-fit=no" name="viewport"/>
+  <link href="/img/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="/img/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/img/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="/img/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/img/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="/img/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/img/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="/img/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/img/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/img/favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/img/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="/img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/img/favicon.ico" rel="shortcut icon"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet"/>
+  <link href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css"/>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="header utm-mark" data-content="top">
+   <div class="container-fluid">
+    <div class="row header-row">
+     <div class="header-block header-center">
+      <a class="header__logo" href="/">
+      </a>
+     </div>
+     <div class="header-block__center">
+      <a class="header-block__left js-popup" data-fancybox="" href="#small-dialog">
+       Stay updated
+      </a>
+      <a class="header-block__right js-popup" data-fancybox="" href="#sales-dialog">
+       Contact sales
+      </a>
+     </div>
+     <div class="header-block header-center">
+      <ul class="menu menu-header">
+       <li class="menu__item">
+        <a class="js-scroll" href="#cases">
+         Cases
+        </a>
+       </li>
+       <li class="menu__item">
+        <a class="js-scroll" href="#mining">
+         For miners
+        </a>
+       </li>
+       <!--             <li class="menu__item menu__item-selected">
+              <a target="__blank" href="https://app.faceter.io/auth">Sign in</a>
+            </li> -->
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <video autoplay="" class="bg-video" loop="" muted="" src="/bg.mov">
+  </video>
+  <div class="hero-bg">
+  </div>
+  <div class="popup-layer">
+   <div class="popup-wrapper" id="small-dialog" style="display: none;">
+    <div class="popup">
+     <button class="popup-close js-close-popup">
+     </button>
+     <div class="popup-done" style="display: none">
+      <div class="popup-done__icon">
+      </div>
+      <h4 class="popup-done__title">
+       Done!
+      </h4>
+      <p class="popup-done__text">
+       Thank you for submitting.
+       <br/>
+       We will be in touch!
+      </p>
+      <button class="button button_blue button_popup js-close-popup">
+       Close
+      </button>
+     </div>
+     <div class="text text-popup">
+      <h3 class="text__title">
+       Stay updated
+      </h3>
+      <p class="text__descr">
+       Please keep me up to date with Faceter news.
+      </p>
+      <form class="form form-popup js-popup-form" data-type="clients">
+       <div class="field __email">
+        <label class="field-label" for="email">
+         Email:
+        </label>
+        <input class="field-input email" id="email" required="" type="email"/>
+       </div>
+       <div class="field __message">
+        <label class="field-label" for="message">
+         Message:
+        </label>
+        <textarea class="field-textarea message" id="message" placeholder="Optional" type="text"></textarea>
+       </div>
+       <button class="button button_blue button_popup js-popup-submit" type="submit">
+        Send
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="popup-layer">
+   <div class="popup-wrapper popup-sales" id="sales-dialog" style="display: none;">
+    <div class="popup">
+     <button class="popup-close js-close-popup">
+     </button>
+     <div class="popup-done" style="display: none">
+      <div class="popup-done__icon">
+      </div>
+      <h4 class="popup-done__title">
+       Done!
+      </h4>
+      <p class="popup-done__text">
+       Thank you for submitting.
+       <br/>
+       We will be in touch!
+      </p>
+      <button class="button button_blue js-close-popup">
+       Close
+      </button>
+     </div>
+     <div class="text text-popup">
+      <h3 class="text__title">
+       Contact sales
+      </h3>
+      <p class="text__descr">
+       We will be happy to work with you!
+      </p>
+      <form class="form form-popup js-popup-form" data-type="miners">
+       <div class="field __email">
+        <label class="field-label" for="email">
+         Email:
+        </label>
+        <input class="field-input email" id="email" required="" type="email"/>
+       </div>
+       <div class="field __select">
+        <label class="field-label" for="select-popup">
+         Subject:
+        </label>
+        <select class="select-popup" name="select-popup">
+         <option value="B2B Partnership/ Reselling">
+          B2B Partnership/ Reselling
+         </option>
+         <option value="B2B Partnership/ Co-brand">
+          B2B Partnership/ Co-brand
+         </option>
+         <option value="B2B Partnership/ Integration with your service">
+          B2B Partnership/ Integration with your service
+         </option>
+         <option value="B2B Solution for Enterprises">
+          B2B Solution for Enterprises
+         </option>
+         <option value="B2C Small Business">
+          B2C Small Business
+         </option>
+         <option value="B2C Solution Homes">
+          B2C Solution Homes
+         </option>
+         <option value="Other">
+          Other
+         </option>
+        </select>
+       </div>
+       <div class="field __message">
+        <label class="field-label" for="message">
+         Message:
+        </label>
+        <textarea class="field-textarea message" id="message" placeholder="Optional" type="text"></textarea>
+       </div>
+       <p class="field-error">
+       </p>
+       <button class="button button_blue button_popup js-popup-submit" type="submit">
+        Send
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <main class="main utm-mark" data-content="top">
+   <section class="hero">
+    <h1 class="hero__title">
+     Easy to use video
+     <br/>
+     surveillance
+    </h1>
+    <p class="hero__descr">
+     Simply know when and where an activity
+     <br/>
+     started and ended.
+    </p>
+    <div class="hero__buttons">
+     <a class="button button_blue js-popup" data-fancybox="" href="#small-dialog">
+      Stay updated
+     </a>
+     <a class="button button_contact button_opacity js-popup" data-fancybox="" href="#sales-dialog">
+      Contact sales
+     </a>
+    </div>
+    <div class="watch-video">
+     <a class="watch-video__link" data-fancybox="" href="https://vimeo.com/242751019">
+      Watch video
+     </a>
+    </div>
+    <div class="twitter">
+     <a class="twitter__block" href="https://twitter.com/faceterofficial" target="__blank">
+      <article class="twitter__text">
+       <span class="twitter__last">
+        Latest tweet:
+       </span>
+       <span class="tweet" id="tweet">
+        Hi, I'm Vladimir, Faceter's CTO. Today I would like to...
+       </span>
+      </article>
+     </a>
+    </div>
+   </section>
+   <section class="surveillance">
+    <div class="surveillance-text">
+     <h3 class="surveillance-text__title">
+      Truly smart surveillance
+     </h3>
+     <p class="surveillance-text__descr">
+      Faceter is a system that makes video surveillance smart, changing cameras from just seeing to thinking â face recognition,
+          object detection and real-time video content analysis.
+     </p>
+    </div>
+    <div class="surveillance-bg">
+     <div class="detect">
+      <div class="detect-icon">
+      </div>
+      <p class="detect-text">
+       Anna Smith
+       <br/>
+       FEMale, 24 Y.O.
+       <br/>
+       Cam 01, 11:20
+      </p>
+     </div>
+     <h5 class="surveillance__title">
+      Faceter is using Computer Vision to understand
+      <br/>
+      everything that happens on your cameras.
+     </h5>
+    </div>
+    <div class="container">
+     <div class="row surveillance-blocks">
+      <div class="col-lg-6">
+       <div class="surveillance-block">
+        <div class="surveillance-block__digit">
+         10+
+        </div>
+        <p class="surveillance-block__text">
+         years of experience in AI
+         <br/>
+         and computer vision.
+        </p>
+       </div>
+      </div>
+      <div class="col-lg-6">
+       <div class="surveillance-block">
+        <div class="surveillance-block__digit">
+         99.78%
+        </div>
+        <p class="surveillance-block__text">
+         accuracy proven by
+         <br/>
+         independent testing
+        </p>
+       </div>
+      </div>
+     </div>
+     <section class="alerts" data-aos="fade-up" data-aos-duration="1000">
+      <div class="text text-center text-alerts">
+       <h3 class="text__title">
+        Smart alerts
+       </h3>
+       <p class="text__descr">
+        Get alerts that matter. Advanced algorithms pick out the activity you care about.
+       </p>
+      </div>
+      <div class="alerts-bg">
+       <div class="alerts__iphone">
+       </div>
+       <img alt="" class="alerts__iphone-img" src="/img/iphone-sm.png"/>
+      </div>
+      <div class="container">
+       <div class="row">
+        <div class="col-lg-4">
+         <div class="alerts-block" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="alerts-block__img-wrapper">
+           <div class="alerts-block__img __flexible">
+           </div>
+          </div>
+          <h6 class="alerts-block__title">
+           âFlexibleâ alerts
+          </h6>
+          <p class="alerts-block__text">
+           Be aware of a certain or unknown person visit or about any visit in a period of time.
+          </p>
+         </div>
+        </div>
+        <div class="col-lg-4">
+         <div class="alerts-block" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="alerts-block__img-wrapper">
+           <div class="alerts-block__img __activity">
+           </div>
+          </div>
+          <h6 class="alerts-block__title">
+           Activity zones
+          </h6>
+          <p class="alerts-block__text">
+           Organize your cameras in zones and configure special rules for them.
+          </p>
+         </div>
+        </div>
+        <div class="col-lg-4">
+         <div data-aos="zoom-in" data-aos-duration="1000">
+          <div class="alerts-block">
+           <div class="alerts-block__img-wrapper __notifications">
+            <div class="alerts-block__img __notifications">
+            </div>
+           </div>
+           <h6 class="alerts-block__title">
+            Fast notifications
+           </h6>
+           <p class="alerts-block__text">
+            Receive emails or Push notifications regarding any alert triggered.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <section class="video-archive" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+         <div class="row">
+          <div class="col-lg-5">
+           <div class="text text-archive">
+            <h3 class="text__title">
+             Convenient video archive
+            </h3>
+            <p class="text__descr">
+             Track each case of a particular person appearing in a certain place and easily pull up those specific records from your archive.
+            </p>
+           </div>
+          </div>
+          <div class="col-lg-7">
+           <div class="video-archive-img">
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="apps" id="apps">
+        <div class="apps-bg">
+        </div>
+        <div class="container">
+         <div class="row">
+          <div class="col-lg-7 offset-lg-5">
+           <div class="text text-apps">
+            <h3 class="text__title">
+             Powerful apps for intelligent surveillance
+            </h3>
+            <p class="text__descr">
+             Applications for any computer or mobile device, allow users to access video surveillance systems from anywhere and without
+                having to master complex and slow interfaces.
+            </p>
+           </div>
+           <div class="apps-links">
+            <a class="apps-links__item __apple" href="https://itunes.apple.com/us/app/faceter-io/id1458596215?ls=1&amp;mt=8" target="__blank">
+             iOS
+            </a>
+            <a class="apps-links__item __android" href="https://play.google.com/store/apps/details?id=io.faceter.faceter" target="__blank">
+             Android
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="cases" id="cases">
+        <div class="cases-menu__wrapper">
+         <ul class="cases-menu">
+          <li class="cases-menu__item __faceter">
+           Faceter for:
+          </li>
+          <li class="cases-menu__item">
+           <a class="js-scroll-cases" href="#offices">
+            Offices
+           </a>
+          </li>
+          <li class="cases-menu__item">
+           <a class="js-scroll-cases" href="#homes">
+            Homes
+           </a>
+          </li>
+          <li class="cases-menu__item">
+           <a class="js-scroll-cases" href="#retails">
+            Retails
+           </a>
+          </li>
+          <li class="cases-menu__item">
+           <a class="js-scroll-cases" href="#enterprises">
+            Enterprises
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="cases-tab __offices utm-mark" data-content="offices" id="offices">
+         <div class="container">
+          <div class="row pad-content">
+           <div class="col-lg-8 offset-lg-4">
+            <div class="cases-block cases-offices">
+             <div class="text text-cases">
+              <h3 class="text__title">
+               Workforce attendance reporting and analytics
+              </h3>
+              <p class="text__descr">
+               Collection of attendance data with Faceter allows you to make weighted managerial decisions and perform strategic planning.
+                    Flexible and customizable reporting system will help to understand your labor needs, vacation trends
+                    and have an audit trail for regulatory compliance.
+              </p>
+             </div>
+             <ul class="list">
+              <li class="list__item">
+               Identify and eliminate time card fraud
+              </li>
+              <li class="list__item">
+               Monitor employee attendance
+              </li>
+              <li class="list__item">
+               Compare work hours, overtimes and employee costs
+              </li>
+              <li class="list__item">
+               Time allocation breakdown
+              </li>
+              <li class="list__item">
+               Get an accurate view of employment costs
+              </li>
+              <li class="list__item">
+               Export reports to Excel and PDF
+              </li>
+             </ul>
+             <button class="button button_blue js-popup" data-fancybox="" href="#small-dialog">
+              Send request
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="cases-tab __homes utm-mark" data-content="homes" id="homes">
+         <div class="container">
+          <div class="row pad-content">
+           <div class="col-lg-8 offset-lg-4">
+            <div class="cases-block cases-homes">
+             <div class="text text-cases">
+              <h3 class="text__title">
+               Secure your home
+              </h3>
+              <p class="text__descr">
+               Owing to a variety of the offered Applications, home video surveillance becomes handy and easy to use for anyone who owns smartphone.
+                    Faceter is a user friendly interface that can connect to existing CCTV infrastructure.
+                    Users have the flexibility to add just the cameras they want or all of them with simple step by step instructions and online support.
+                    Our open API, digital smart AI solution allows smart homes to connect their technology as well.
+                    User friendly installation process, customisable notifications and alert triggers, enable new level of home security &amp; surveillance.
+              </p>
+             </div>
+             <ul class="list">
+              <li class="list__item">
+               Identify and alert when family/children come home with push notifications. Monitor your childrenâs attendance and friends without pressure
+              </li>
+              <li class="list__item">
+               Alert on new/unfamiliar faces on premises
+              </li>
+              <li class="list__item">
+               Easily track domestic movements
+              </li>
+              <li class="list__item">
+               Smart home ready for backend integrations
+              </li>
+              <li class="list__item">
+               Get analytics on your own timing
+              </li>
+             </ul>
+             <button class="button button_blue js-popup" data-fancybox="" href="#small-dialog">
+              Send request
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="cases-tab __retails utm-mark" data-content="retails" id="retails">
+         <div class="container">
+          <div class="row pad-content">
+           <div class="col-lg-8 offset-lg-4">
+            <div class="cases-block cases-retails">
+             <div class="text text-cases">
+              <h3 class="text__title">
+               Study your customer behaviour in retail
+              </h3>
+              <p class="text__descr">
+               Thanks to the high-level facial recognition technology (confirmed by LFW and MegaFace tests), Faceter can generate
+                    a report indicating who and when was filmed by cameras; track each case of a particular person appearing
+                    in a certain place and issue specific records from the archive.
+              </p>
+             </div>
+             <ul class="list">
+              <li class="list__item">
+               Get visualized attendance data
+              </li>
+              <li class="list__item">
+               Find out the number of unique visitors in a period
+              </li>
+              <li class="list__item">
+               Measure customer retention rate
+              </li>
+              <li class="list__item">
+               Measure the effectiveness of marketing campaigns
+              </li>
+              <li class="list__item">
+               Know the number of visitors inside at any specific moment
+              </li>
+             </ul>
+             <div class="quote">
+              <article class="quote__text">
+               We have completed a proof of concept on Faceter for exactly these purposes and were very satisfied by the quality and level
+                    of technology displayed.
+              </article>
+              <div class="quote__author">
+               Debonairs Pizza
+              </div>
+             </div>
+             <button class="button button_blue js-popup" data-fancybox="" href="#small-dialog">
+              Send request
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="cases-tab __enterprises utm-mark" data-content="enterprises" id="enterprises">
+         <div class="container">
+          <div class="row pad-content">
+           <div class="col-lg-8 offset-lg-4">
+            <div class="cases-block cases-enterprise">
+             <div class="text text-cases">
+              <h3 class="text__title">
+               Enterprise scale readyness
+              </h3>
+             </div>
+             <div class="cases-enterprise-blocks-without-quote">
+              <div class="cases-enterprise-block">
+               <div class="cases-enterprise-block__img __flash">
+               </div>
+               <p class="cases-enterprise-block__text">
+                <span>
+                 On-premise solution
+                </span>
+                Consumer trust is our priority that is why we offer on-premise solution giving our customers an opportunity to fully control
+                      their sensitive data.
+               </p>
+              </div>
+              <div class="cases-enterprise-block">
+               <div class="cases-enterprise-block__img __open-source">
+               </div>
+               <p class="cases-enterprise-block__text">
+                <span>
+                 Open-source
+                </span>
+                Avoid unwelcome surprises that may come with unforeseen limitations of proprietary code and be sure in reliability and security
+                      of transparent Faceter code.
+               </p>
+              </div>
+              <div class="cases-enterprise-block">
+               <div class="cases-enterprise-block__img __api">
+               </div>
+               <p class="cases-enterprise-block__text">
+                <span>
+                 Flexible API
+                </span>
+                Benefit from integrating Faceter with your existing information systems to solve your special business cases and add more
+                      value to your investment in facial recognition technology.
+               </p>
+              </div>
+             </div>
+             <button class="button button_blue js-popup" data-fancybox="" href="#small-dialog">
+              Send request
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="partners" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+         <div class="row">
+          <div class="col-md-12">
+           <h6 class="partners__quote">
+            âGoogle revolutionized the Internet 20 years ago. Faceter does the same now to make video data meaningfulâ
+           </h6>
+           <p class="partners__author">
+            Ken Huang, ex. Chief Blockchain Expert at Huawei Technologies, VP
+           </p>
+           <h3 class="text__title __featured __centered">
+            Featured in:
+           </h3>
+          </div>
+         </div>
+        </div>
+        <section class="carousel">
+         <div class="container-fluid">
+          <button class="carousel__button __prev">
+          </button>
+          <button class="carousel__button __next">
+          </button>
+          <div class="partners__logos">
+           <a class="partners__logo __security" href="https://securitytoday.com/blogs/reaction/2018/01/how-will-facial-id-technology-affect-different-parts-of-our-lives.aspx" target="__blank">
+            <img alt="" class="partners__logo-img" src="/img/press/SecurityToday@2x.png"/>
+            <img alt="" class="partners__logo-img __color" src="/img/press/SecurityToday_Color@2x.png"/>
+           </a>
+           <a class="partners__logo __tech-republic" href="https://www.techrepublic.com/article/make-your-company-a-video-powerhouse-with-these-6-tools/" target="__blank">
+            <img alt="" class="partners__logo-img" src="/img/press/TechRepublic@2x.png"/>
+            <img alt="" class="partners__logo-img __color" src="/img/press/TechRepublic_Color@2x.png"/>
+           </a>
+           <a class="partners__logo __product-hunt" href="https://www.producthunt.com/posts/faceter" target="__blank">
+            <img alt="" class="partners__logo-img" src="/img/press/ProductHunt@2x.png"/>
+            <img alt="" class="partners__logo-img __color" src="/img/press/ProductHunt_Color@2x.png"/>
+           </a>
+           <a class="partners__logo __sociable" href="https://sociable.co/technology/facial-recognition-video/" target="__blank">
+            <img alt="" class="partners__logo-img" src="/img/press/Sociable@2x.png"/>
+            <img alt="" class="partners__logo-img __color" src="/img/press/Sociable_Color@2x.png"/>
+           </a>
+           <a class="partners__logo __forbes" href="http://www.forbes.ru/tehnologii/354395-blokcheyn-v-kremnievoy-doline-russkie-anarhiya-i-novye-trebovaniya-k-ico" target="__blank">
+            <img alt="" class="partners__logo-img" src="/img/press/Forbes@2x.png"/>
+            <img alt="" class="partners__logo-img __color" src="/img/press/Forbes_Color@2x.png"/>
+           </a>
+          </div>
+         </div>
+        </section>
+       </section>
+       <section class="mining utm-mark" data-aos="fade-up" data-aos-duration="1000" data-content="bottom" id="mining">
+        <h3 class="text__title __centered __mining">
+         Fog computing and miners
+        </h3>
+        <div class="container">
+         <div class="row">
+          <div class="col-lg-6">
+           <div class="text __centered __mining">
+            <h3 class="text__title">
+             Faceter token is a fuel for FOG computing
+            </h3>
+            <p class="text__descr">
+             The token is the core of the decentralized network, both as a Proof of Recognition and a flexible, transparent, closed-loop
+                cross-border settlement mechanism for all participants.
+            </p>
+           </div>
+           <div class="calculator">
+            <div class="calculator-blocks">
+             <div class="select-wrapper">
+              <select class="select" id="currencies" name="select">
+               <option value="FACE/ETH">
+                FACE/ETH
+               </option>
+               <option value="FACE/BTC">
+                FACE/BTC
+               </option>
+              </select>
+             </div>
+             <div class="calculator__currencies">
+              <span>
+               Ask:
+               <span id="ask">
+                0.000022 ETH
+               </span>
+              </span>
+              <span>
+               Bid:
+               <span id="bid">
+                0.000021 ETH
+               </span>
+              </span>
+             </div>
+            </div>
+            <h4 class="calculator__result" id="last">
+             0.000022 ETH
+            </h4>
+            <div class="calculator-blocks __content-between">
+             <a class="calculator__sign js-hitbtc" href="https://hitbtc.com/FACE-to-ETH" target="__blank">
+              Based on data from HitBTC
+             </a>
+             <a class="calculator__hitbtc-link js-hitbtc" href="https://hitbtc.com/FACE-to-ETH" target="__blank">
+              <img alt="" class="calculator__hitbtc-logo" src="/img/hitbtc-logo-sm.png"/>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="col-lg-6">
+           <div class="text __centered __mining">
+            <h3 class="text__title">
+             Decentralized approach
+            </h3>
+            <p class="text__descr">
+             Decentralized infrastructure where complex computational tasks are performed using the power of Fog Computing and Blockchain,
+                allows us to get the low cost of computations, making them affordable for small businesses and mass consumers.
+            </p>
+           </div>
+           <div class="mining-blocks">
+            <div class="mining-block">
+             <div class="mining-block__img __flash">
+             </div>
+             <h3 class="mining-block__title">
+              On-premise solution
+             </h3>
+             <a class="mining-block__link js-popup" data-fancybox="" href="#sales-dialog">
+              Contact sales
+             </a>
+            </div>
+            <div class="mining-block">
+             <div class="mining-block__img __cloud">
+             </div>
+             <h3 class="mining-block__title">
+              Cloud-based Faceter
+             </h3>
+             <span class="mining-block__note">
+              In development
+             </span>
+            </div>
+            <div class="mining-block">
+             <div class="mining-block__img __decentralized">
+             </div>
+             <h3 class="mining-block__title">
+              Decentralized Faceter
+             </h3>
+             <span class="mining-block__note">
+              Coming soon
+             </span>
+            </div>
+           </div>
+           <div class="mining__note-wrapper">
+            <p class="mining__note">
+             If you are ready to share your GPU power in return of Faceter Tokens
+             <a class="link mining-popup js-popup" data-fancybox="" href="#small-dialog">
+              leave your request.
+             </a>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+     </section>
+     <footer class="footer utm-mark" data-aos="fade-up" data-aos-duration="1000" data-content="bottom">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-12">
+         <div class="text text-center text-footer __white-color">
+          <h3 class="text__title">
+           Get notified
+          </h3>
+          <p class="text__descr">
+           Our Beta version invites you to try Faceter
+           <br/>
+           in your site, starting soon.
+          </p>
+         </div>
+         <div class="hero__buttons __footer">
+          <a class="button button_blue js-popup" data-fancybox="" href="#small-dialog">
+           Stay updated
+          </a>
+          <a class="button button_contact button_opacity js-popup" data-fancybox="" href="#sales-dialog">
+           Contact sales
+          </a>
+         </div>
+         <ul class="menu menu-footer">
+          <li class="menu__item __rights">
+           Â© 2018-2019 Faceter, Inc
+          </li>
+          <li class="menu__item">
+           <a href="/terms">
+            Terms of Use
+           </a>
+          </li>
+          <li class="menu__item">
+           <a href="/privacy">
+            Privacy policy
+           </a>
+          </li>
+         </ul>
+         <ul class="social-links">
+          <li class="social-links__item __telegram">
+           <a href="https://t.me/faceter" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __twitter">
+           <a href="https://twitter.com/FaceterOfficial" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __facebook">
+           <a href="https://www.facebook.com/FaceterOfficial" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __medium">
+           <a href="https://medium.com/faceter" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __bitcoin">
+           <a href="https://bitcointalk.org/index.php?topic=2783865.0" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __youtube">
+           <a href="https://www.youtube.com/channel/UCNuni06vUuSyi_D5rQm6pww" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __producthunt">
+           <a href="https://www.producthunt.com/posts/faceter" target="__blank">
+           </a>
+          </li>
+          <li class="social-links__item __reddit">
+           <a href="https://www.reddit.com/user/Faceter" target="__blank">
+           </a>
+          </li>
+         </ul>
+         <div class="footer__text">
+          Investment Strategies Ltd, registered at Unit 117 Orion Mall, Palm Street, Victoria, Mahe, Seychelles
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js">
+     </script>
+     <script src="js/plugins.js">
+     </script>
+     <script src="js/script.js">
+     </script>
+     <script>
+      AOS.init()
+     </script>
+    </div>
+   </section>
+  </main>
+ </body>
+</html>

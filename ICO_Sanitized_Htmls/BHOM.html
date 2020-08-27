@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="NONE,NOARCHIVE" name="robots"/>
+  <title>
+   DisallowedHost at /
+  </title>
+  <style type="text/css">
+   html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; white-space: pre-wrap; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+      padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+      font-weight:normal; font-size:11px; border:1px solid #ddd;
+    }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; color: #222; }
+    ul.traceback li.frame { padding-bottom:1em; color:#666; }
+    ul.traceback li.user { background-color:#e0e0e0; color:#000 }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#777; cursor:pointer; padding-left: 2px; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:#505050; background-color:#dfdfdf; padding: 3px 2px; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    .user div.context ol.context-line li { background-color:#bbb; color:#000; }
+    .user div.context ol li { color:#666; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:#555; text-decoration:none; }
+    .user div.commands a { color: black; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 10px 20px; }
+    #template-not-exist .postmortem-section { margin-bottom: 3px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size:.7em;}
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #666; font-size: 1.5em; margin: 10px 0 10px 0; }
+    .append-bottom { margin-bottom: 10px; }
+  </style>
+  <script type="text/javascript">
+   //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon; Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\\-");
+        var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+      hideAll(getElementsByClassName(document, 'div', 'pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block': 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.textContent = s.textContent == uarr ? darr : uarr;
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.textContent = link.textContent.trim() == s1 ? s2: s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+    //-->
+  </script>
+ </head>
+ <body>
+  <div id="summary">
+   <h1>
+    DisallowedHost at /
+   </h1>
+   <pre class="exception_value">Invalid HTTP_HOST header: 'bhom.io'. You may need to add 'bhom.io' to ALLOWED_HOSTS.</pre>
+   <table class="meta">
+    <tr>
+     <th>
+      Request Method:
+     </th>
+     <td>
+      GET
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Request URL:
+     </th>
+     <td>
+      http://bhom.io/
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Django Version:
+     </th>
+     <td>
+      1.11.13
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Exception Type:
+     </th>
+     <td>
+      DisallowedHost
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Exception Value:
+     </th>
+     <td>
+      <pre>Invalid HTTP_HOST header: 'bhom.io'. You may need to add 'bhom.io' to ALLOWED_HOSTS.</pre>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Exception Location:
+     </th>
+     <td>
+      /home/lunchbus/venv/lib/python3.5/site-packages/django/http/request.py in get_host, line 113
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Python Executable:
+     </th>
+     <td>
+      /home/lunchbus/venv/bin/python3
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Python Version:
+     </th>
+     <td>
+      3.5.2
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Python Path:
+     </th>
+     <td>
+      <pre>['/home/lunchbus/venv/bin',
+ '/home/lunchbus/dqapp/stable',
+ '/',
+ '/usr/lib/python35.zip',
+ '/usr/lib/python3.5',
+ '/usr/lib/python3.5/plat-x86_64-linux-gnu',
+ '/usr/lib/python3.5/lib-dynload',
+ '/home/lunchbus/venv/lib/python3.5/site-packages',
+ '/']</pre>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      Server time:
+     </th>
+     <td>
+      ëª©ìì¼, 6 8ì 2020 15:03:45 +0900
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div id="traceback">
+   <h2>
+    Traceback
+    <span class="commands">
+     <a href="#" onclick="return switchPastebinFriendly(this);">
+      Switch to copy-and-paste view
+     </a>
+    </span>
+   </h2>
+   <div id="browserTraceback">
+    <ul class="traceback">
+     <li class="frame django">
+      <code>
+       /home/lunchbus/venv/lib/python3.5/site-packages/django/core/handlers/exception.py
+      </code>
+      in
+      <code>
+       inner
+      </code>
+      <div class="context" id="c139743603630728">
+       <ol class="pre-context" id="pre139743603630728" start="34">
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    This decorator is automatically applied to all middleware to ensure that</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    no middleware leaks an exception and that the next middleware in the stack</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    can rely on getting a response instead of an exception.</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    """</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    @wraps(get_response, assigned=available_attrs(get_response))</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    def inner(request):</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>        try:</pre>
+        </li>
+       </ol>
+       <ol class="context-line" start="41">
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>
+            response = get_response(request)</pre>
+         <span>
+          ...
+         </span>
+        </li>
+       </ol>
+       <ol class="post-context" id="post139743603630728" start="42">
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>        except Exception as exc:</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>            response = response_for_exception(request, exc)</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>        return response</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre>    return inner</pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre></pre>
+        </li>
+        <li onclick="toggle('pre139743603630728', 'post139743603630728')">
+         <pre></pre>
+        </li>
+       </ol>
+      </div>
+      <div class="commands">
+       <a href="#" onclick="return varToggle(this, '139743603630728')">
+        <span>
+         ▶
+        </span>
+        Local vars
+       </a>
+      </div>
+      <table class="vars" id="v139743603630728">
+       <thead>
+        <tr>
+         <th>
+          Variable
+         </th>
+         <th>
+          Value
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          exc
+         </td>
+         <td class="code">
+          <pre>DisallowedHost("Invalid HTTP_HOST header: 'bhom.io'. You may need to add 'bhom.io' to ALLOWED_HOSTS.",)</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          get_response
+         </td>
+         <td class="code">
+          <pre>&lt;django.middleware.common.CommonMiddleware object at 0x7f189c2c1940&gt;</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          request
+         </td>
+         <td class="code">
+          <pre>&lt;WSGIRequest: GET '/'&gt;</pre>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </li>
+     <li class="frame django">
+      <code>
+       /home/lunchbus/venv/lib/python3.5/site-packages/django/utils/deprecation.py
+      </code>
+      in
+      <code>
+       __call__
+      </code>
+      <div class="context" id="c139743603632968">
+       <ol class="pre-context" id="pre139743603632968" start="131">
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>    def __init__(self, get_response=None):</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        self.get_response = get_response</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        super(MiddlewareMixin, self).__init__()</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre></pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>    def __call__(self, request):</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        response = None</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        if hasattr(self, 'process_request'):</pre>
+        </li>
+       </ol>
+       <ol class="context-line" start="138">
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>
+            response = self.process_request(request)</pre>
+         <span>
+          ...
+         </span>
+        </li>
+       </ol>
+       <ol class="post-context" id="post139743603632968" start="139">
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        if not response:</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>            response = self.get_response(request)</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        if hasattr(self, 'process_response'):</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>            response = self.process_response(request, response)</pre>
+        </li>
+        <li onclick="toggle('pre139743603632968', 'post139743603632968')">
+         <pre>        return response</pre>
+        </li>
+       </ol>
+      </div>
+      <div class="commands">
+       <a href="#" onclick="return varToggle(this, '139743603632968')">
+        <span>
+         ▶
+        </span>
+        Local vars
+       </a>
+      </div>
+      <table class="vars" id="v139743603632968">
+       <thead>
+        <tr>
+         <th>
+          Variable
+         </th>
+         <th>
+          Value
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          request
+         </td>
+         <td class="code">
+          <pre>&lt;WSGIRequest: GET '/'&gt;</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          response
+         </td>
+         <td class="code">
+          <pre>None</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          self
+         </td>
+         <td class="code">
+          <pre>&lt;django.middleware.common.CommonMiddleware object at 0x7f189c2c1940&gt;</pre>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </li>
+     <li class="frame django">
+      <code>
+       /home/lunchbus/venv/lib/python3.5/site-packages/django/middleware/common.py
+      </code>
+      in
+      <code>
+       process_request
+      </code>
+      <div class="context" id="c139743603633992">
+       <ol class="pre-context" id="pre139743603633992" start="50">
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        # Check for denied User-Agents</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        if 'HTTP_USER_AGENT' in request.META:</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>            for user_agent_regex in settings.DISALLOWED_USER_AGENTS:</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>                if user_agent_regex.search(request.META['HTTP_USER_AGENT']):</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>                    raise PermissionDenied('Forbidden user agent')</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre></pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        # Check for a redirect based on settings.PREPEND_WWW</pre>
+        </li>
+       </ol>
+       <ol class="context-line" start="57">
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>
+        host = request.get_host()</pre>
+         <span>
+          ...
+         </span>
+        </li>
+       </ol>
+       <ol class="post-context" id="post139743603633992" start="58">
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        must_prepend = settings.PREPEND_WWW and host and not host.startswith('www.')</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        redirect_url = ('%s://www.%s' % (request.scheme, host)) if must_prepend else ''</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre></pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        # Check if a slash should be appended</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>        if self.should_redirect_with_slash(request):</pre>
+        </li>
+        <li onclick="toggle('pre139743603633992', 'post139743603633992')">
+         <pre>            path = self.get_full_path_with_slash(request)</pre>
+        </li>
+       </ol>
+      </div>
+      <div class="commands">
+       <a href="#" onclick="return varToggle(this, '139743603633992')">
+        <span>
+         ▶
+        </span>
+        Local vars
+       </a>
+      </div>
+      <table class="vars" id="v139743603633992">
+       <thead>
+        <tr>
+         <th>
+          Variable
+         </th>
+         <th>
+          Value
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          request
+         </td>
+         <td class="code">
+          <pre>&lt;WSGIRequest: GET '/'&gt;</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          self
+         </td>
+         <td class="code">
+          <pre>&lt;django.middleware.common.CommonMiddleware object at 0x7f189c2c1940&gt;</pre>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </li>
+     <li class="frame django">
+      <code>
+       /home/lunchbus/venv/lib/python3.5/site-packages/django/http/request.py
+      </code>
+      in
+      <code>
+       get_host
+      </code>
+      <div class="context" id="c139743603632456">
+       <ol class="pre-context" id="pre139743603632456" start="106">
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>            return host</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>        else:</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>            msg = "Invalid HTTP_HOST header: %r." % host</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>            if domain:</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>                msg += " You may need to add %r to ALLOWED_HOSTS." % domain</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>            else:</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>                msg += " The domain name provided is not valid according to RFC 1034/1035."</pre>
+        </li>
+       </ol>
+       <ol class="context-line" start="113">
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>
+            raise DisallowedHost(msg)</pre>
+         <span>
+          ...
+         </span>
+        </li>
+       </ol>
+       <ol class="post-context" id="post139743603632456" start="114">
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre></pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>    def get_port(self):</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>        """Return the port number for the request as a string."""</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>        if settings.USE_X_FORWARDED_PORT and 'HTTP_X_FORWARDED_PORT' in self.META:</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>            port = self.META['HTTP_X_FORWARDED_PORT']</pre>
+        </li>
+        <li onclick="toggle('pre139743603632456', 'post139743603632456')">
+         <pre>        else:</pre>
+        </li>
+       </ol>
+      </div>
+      <div class="commands">
+       <a href="#" onclick="return varToggle(this, '139743603632456')">
+        <span>
+         ▶
+        </span>
+        Local vars
+       </a>
+      </div>
+      <table class="vars" id="v139743603632456">
+       <thead>
+        <tr>
+         <th>
+          Variable
+         </th>
+         <th>
+          Value
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          allowed_hosts
+         </td>
+         <td class="code">
+          <pre>['10.0.100.36',
+ 'msg.api.dinnerqueen.net',
+ 'alpha.msg.api.dinnerqueen.net',
+ 'dq-msg-api-elb-199690660.ap-northeast-2.elb.amazonaws.com']</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          domain
+         </td>
+         <td class="code">
+          <pre>'bhom.io'</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          host
+         </td>
+         <td class="code">
+          <pre>'bhom.io'</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          msg
+         </td>
+         <td class="code">
+          <pre>("Invalid HTTP_HOST header: 'bhom.io'. You may need to add 'bhom.io' to "
+ 'ALLOWED_HOSTS.')</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          port
+         </td>
+         <td class="code">
+          <pre>''</pre>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          self
+         </td>
+         <td class="code">
+          <pre>&lt;WSGIRequest: GET '/'&gt;</pre>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </li>
+    </ul>
+   </div>
+   <form action="http://dpaste.com/" id="pasteform" method="post" name="pasteform">
+    <div class="pastebin" id="pastebinTraceback">
+     <input name="language" type="hidden" value="PythonConsole"/>
+     <input name="title" type="hidden" value="DisallowedHost at /"/>
+     <input name="source" type="hidden" value="Django Dpaste Agent"/>
+     <input name="poster" type="hidden" value="Django"/>
+     <textarea cols="140" id="traceback_area" name="content" rows="25">
+Environment:
+
+
+Request Method: GET
+Request URL: http://bhom.io/
+
+Django Version: 1.11.13
+Python Version: 3.5.2
+Installed Applications:
+['django.contrib.admin',
+ 'django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'rest_framework',
+ 'line',
+ 'bot']
+Installed Middleware:
+['django.middleware.security.SecurityMiddleware',
+ 'django.contrib.sessions.middleware.SessionMiddleware',
+ 'django.middleware.common.CommonMiddleware',
+ 'django.middleware.csrf.CsrfViewMiddleware',
+ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 'django.contrib.messages.middleware.MessageMiddleware',
+ 'django.middleware.clickjacking.XFrameOptionsMiddleware']
+
+
+
+Traceback:
+
+File "/home/lunchbus/venv/lib/python3.5/site-packages/django/core/handlers/exception.py" in inner
+  41.             response = get_response(request)
+
+File "/home/lunchbus/venv/lib/python3.5/site-packages/django/utils/deprecation.py" in __call__
+  138.             response = self.process_request(request)
+
+File "/home/lunchbus/venv/lib/python3.5/site-packages/django/middleware/common.py" in process_request
+  57.         host = request.get_host()
+
+File "/home/lunchbus/venv/lib/python3.5/site-packages/django/http/request.py" in get_host
+  113.             raise DisallowedHost(msg)
+
+Exception Type: DisallowedHost at /
+Exception Value: Invalid HTTP_HOST header: 'bhom.io'. You may need to add 'bhom.io' to ALLOWED_HOSTS.
+</textarea>
+     <br/>
+     <br/>
+     <input type="submit" value="Share this traceback on a public website"/>
+    </div>
+   </form>
+  </div>
+  <div id="requestinfo">
+   <h2>
+    Request information
+   </h2>
+   <h3 id="user-info">
+    USER
+   </h3>
+   <p>
+    [unable to retrieve the current user]
+   </p>
+   <h3 id="get-info">
+    GET
+   </h3>
+   <p>
+    No GET data
+   </p>
+   <h3 id="post-info">
+    POST
+   </h3>
+   <p>
+    No POST data
+   </p>
+   <h3 id="files-info">
+    FILES
+   </h3>
+   <p>
+    No FILES data
+   </p>
+   <h3 id="cookie-info">
+    COOKIES
+   </h3>
+   <p>
+    No cookie data
+   </p>
+   <h3 id="meta-info">
+    META
+   </h3>
+   <table class="req">
+    <thead>
+     <tr>
+      <th>
+       Variable
+      </th>
+      <th>
+       Value
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       HTTP_ACCEPT
+      </td>
+      <td class="code">
+       <pre>'*/*'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_ACCEPT_ENCODING
+      </td>
+      <td class="code">
+       <pre>'gzip, deflate'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_CONNECTION
+      </td>
+      <td class="code">
+       <pre>'close'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_HOST
+      </td>
+      <td class="code">
+       <pre>'bhom.io'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_USER_AGENT
+      </td>
+      <td class="code">
+       <pre>'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_X_AMZN_TRACE_ID
+      </td>
+      <td class="code">
+       <pre>'Root=1-5f2b9d41-39bacdbc04e98a5a8437301c'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_X_FORWARDED_FOR
+      </td>
+      <td class="code">
+       <pre>'121.226.80.38, 10.0.101.186'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_X_FORWARDED_PORT
+      </td>
+      <td class="code">
+       <pre>'443'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_X_FORWARDED_PROTO
+      </td>
+      <td class="code">
+       <pre>'http'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       HTTP_X_REAL_IP
+      </td>
+      <td class="code">
+       <pre>'10.0.101.186'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       PATH_INFO
+      </td>
+      <td class="code">
+       <pre>'/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       QUERY_STRING
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       RAW_URI
+      </td>
+      <td class="code">
+       <pre>'/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       REMOTE_ADDR
+      </td>
+      <td class="code">
+       <pre>"b''"</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       REQUEST_METHOD
+      </td>
+      <td class="code">
+       <pre>'GET'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SCRIPT_NAME
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SERVER_NAME
+      </td>
+      <td class="code">
+       <pre>'bhom.io'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SERVER_PORT
+      </td>
+      <td class="code">
+       <pre>'80'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SERVER_PROTOCOL
+      </td>
+      <td class="code">
+       <pre>'HTTP/1.0'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SERVER_SOFTWARE
+      </td>
+      <td class="code">
+       <pre>'gunicorn/19.8.1'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       gunicorn.socket
+      </td>
+      <td class="code">
+       <pre>&lt;socket.socket fd=10, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=/tmp/wsgi.sock&gt;</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.errors
+      </td>
+      <td class="code">
+       <pre>&lt;gunicorn.http.wsgi.WSGIErrorsWrapper object at 0x7f1897dbd198&gt;</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.file_wrapper
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.input
+      </td>
+      <td class="code">
+       <pre>&lt;gunicorn.http.body.Body object at 0x7f1897dbd160&gt;</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.multiprocess
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.multithread
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.run_once
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.url_scheme
+      </td>
+      <td class="code">
+       <pre>'http'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       wsgi.version
+      </td>
+      <td class="code">
+       <pre>(1, 0)</pre>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="settings-info">
+    Settings
+   </h3>
+   <h4>
+    Using settings module
+    <code>
+     dqmsgapp.settings
+    </code>
+   </h4>
+   <table class="req">
+    <thead>
+     <tr>
+      <th>
+       Setting
+      </th>
+      <th>
+       Value
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       ABSOLUTE_URL_OVERRIDES
+      </td>
+      <td class="code">
+       <pre>{}</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       ADMINS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       ALLOWED_HOSTS
+      </td>
+      <td class="code">
+       <pre>['10.0.100.36',
+ 'msg.api.dinnerqueen.net',
+ 'alpha.msg.api.dinnerqueen.net',
+ 'dq-msg-api-elb-199690660.ap-northeast-2.elb.amazonaws.com']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APPEND_SLASH
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       AUTHENTICATION_BACKENDS
+      </td>
+      <td class="code">
+       <pre>['django.contrib.auth.backends.ModelBackend']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       AUTH_PASSWORD_VALIDATORS
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       AUTH_USER_MODEL
+      </td>
+      <td class="code">
+       <pre>'auth.User'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       BASE_DIR
+      </td>
+      <td class="code">
+       <pre>'/home/lunchbus/dqapp/stable'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CACHES
+      </td>
+      <td class="code">
+       <pre>{'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CACHE_MIDDLEWARE_ALIAS
+      </td>
+      <td class="code">
+       <pre>'default'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CACHE_MIDDLEWARE_KEY_PREFIX
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CACHE_MIDDLEWARE_SECONDS
+      </td>
+      <td class="code">
+       <pre>600</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_COOKIE_AGE
+      </td>
+      <td class="code">
+       <pre>31449600</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_COOKIE_DOMAIN
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_COOKIE_HTTPONLY
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_COOKIE_NAME
+      </td>
+      <td class="code">
+       <pre>'csrftoken'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_COOKIE_PATH
+      </td>
+      <td class="code">
+       <pre>'/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_COOKIE_SECURE
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_FAILURE_VIEW
+      </td>
+      <td class="code">
+       <pre>'django.views.csrf.csrf_failure'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_HEADER_NAME
+      </td>
+      <td class="code">
+       <pre>'HTTP_X_CSRFTOKEN'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_TRUSTED_ORIGINS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       CSRF_USE_SESSIONS
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATABASES
+      </td>
+      <td class="code">
+       <pre>{}</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATABASE_ROUTERS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATA_UPLOAD_MAX_MEMORY_SIZE
+      </td>
+      <td class="code">
+       <pre>2621440</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATA_UPLOAD_MAX_NUMBER_FIELDS
+      </td>
+      <td class="code">
+       <pre>1000</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATETIME_FORMAT
+      </td>
+      <td class="code">
+       <pre>'N j, Y, P'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATETIME_INPUT_FORMATS
+      </td>
+      <td class="code">
+       <pre>['%Y-%m-%d %H:%M:%S',
+ '%Y-%m-%d %H:%M:%S.%f',
+ '%Y-%m-%d %H:%M',
+ '%Y-%m-%d',
+ '%m/%d/%Y %H:%M:%S',
+ '%m/%d/%Y %H:%M:%S.%f',
+ '%m/%d/%Y %H:%M',
+ '%m/%d/%Y',
+ '%m/%d/%y %H:%M:%S',
+ '%m/%d/%y %H:%M:%S.%f',
+ '%m/%d/%y %H:%M',
+ '%m/%d/%y']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATE_FORMAT
+      </td>
+      <td class="code">
+       <pre>'N j, Y'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DATE_INPUT_FORMATS
+      </td>
+      <td class="code">
+       <pre>['%Y-%m-%d',
+ '%m/%d/%Y',
+ '%m/%d/%y',
+ '%b %d %Y',
+ '%b %d, %Y',
+ '%d %b %Y',
+ '%d %b, %Y',
+ '%B %d %Y',
+ '%B %d, %Y',
+ '%d %B %Y',
+ '%d %B, %Y']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEBUG
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEBUG_PROPAGATE_EXCEPTIONS
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DECIMAL_SEPARATOR
+      </td>
+      <td class="code">
+       <pre>'.'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_CHARSET
+      </td>
+      <td class="code">
+       <pre>'utf-8'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_CONTENT_TYPE
+      </td>
+      <td class="code">
+       <pre>'text/html'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_EXCEPTION_REPORTER_FILTER
+      </td>
+      <td class="code">
+       <pre>'django.views.debug.SafeExceptionReporterFilter'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_FILE_STORAGE
+      </td>
+      <td class="code">
+       <pre>'django.core.files.storage.FileSystemStorage'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_FROM_EMAIL
+      </td>
+      <td class="code">
+       <pre>'webmaster@localhost'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_INDEX_TABLESPACE
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DEFAULT_TABLESPACE
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       DISALLOWED_USER_AGENTS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_BACKEND
+      </td>
+      <td class="code">
+       <pre>'django.core.mail.backends.smtp.EmailBackend'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_HOST
+      </td>
+      <td class="code">
+       <pre>'localhost'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_HOST_PASSWORD
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_HOST_USER
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_PORT
+      </td>
+      <td class="code">
+       <pre>25</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_SSL_CERTFILE
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_SSL_KEYFILE
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_SUBJECT_PREFIX
+      </td>
+      <td class="code">
+       <pre>'[Django] '</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_TIMEOUT
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_USE_LOCALTIME
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_USE_SSL
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       EMAIL_USE_TLS
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FILE_CHARSET
+      </td>
+      <td class="code">
+       <pre>'utf-8'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FILE_UPLOAD_DIRECTORY_PERMISSIONS
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FILE_UPLOAD_HANDLERS
+      </td>
+      <td class="code">
+       <pre>['django.core.files.uploadhandler.MemoryFileUploadHandler',
+ 'django.core.files.uploadhandler.TemporaryFileUploadHandler']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FILE_UPLOAD_MAX_MEMORY_SIZE
+      </td>
+      <td class="code">
+       <pre>2621440</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FILE_UPLOAD_PERMISSIONS
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FILE_UPLOAD_TEMP_DIR
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FIRST_DAY_OF_WEEK
+      </td>
+      <td class="code">
+       <pre>0</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FIXTURE_DIRS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FORCE_SCRIPT_NAME
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FORMAT_MODULE_PATH
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       FORM_RENDERER
+      </td>
+      <td class="code">
+       <pre>'django.forms.renderers.DjangoTemplates'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       IGNORABLE_404_URLS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       INSTALLED_APPS
+      </td>
+      <td class="code">
+       <pre>['django.contrib.admin',
+ 'django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'rest_framework',
+ 'line',
+ 'bot']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       INTERNAL_IPS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGES
+      </td>
+      <td class="code">
+       <pre>[('af', 'Afrikaans'),
+ ('ar', 'Arabic'),
+ ('ast', 'Asturian'),
+ ('az', 'Azerbaijani'),
+ ('bg', 'Bulgarian'),
+ ('be', 'Belarusian'),
+ ('bn', 'Bengali'),
+ ('br', 'Breton'),
+ ('bs', 'Bosnian'),
+ ('ca', 'Catalan'),
+ ('cs', 'Czech'),
+ ('cy', 'Welsh'),
+ ('da', 'Danish'),
+ ('de', 'German'),
+ ('dsb', 'Lower Sorbian'),
+ ('el', 'Greek'),
+ ('en', 'English'),
+ ('en-au', 'Australian English'),
+ ('en-gb', 'British English'),
+ ('eo', 'Esperanto'),
+ ('es', 'Spanish'),
+ ('es-ar', 'Argentinian Spanish'),
+ ('es-co', 'Colombian Spanish'),
+ ('es-mx', 'Mexican Spanish'),
+ ('es-ni', 'Nicaraguan Spanish'),
+ ('es-ve', 'Venezuelan Spanish'),
+ ('et', 'Estonian'),
+ ('eu', 'Basque'),
+ ('fa', 'Persian'),
+ ('fi', 'Finnish'),
+ ('fr', 'French'),
+ ('fy', 'Frisian'),
+ ('ga', 'Irish'),
+ ('gd', 'Scottish Gaelic'),
+ ('gl', 'Galician'),
+ ('he', 'Hebrew'),
+ ('hi', 'Hindi'),
+ ('hr', 'Croatian'),
+ ('hsb', 'Upper Sorbian'),
+ ('hu', 'Hungarian'),
+ ('ia', 'Interlingua'),
+ ('id', 'Indonesian'),
+ ('io', 'Ido'),
+ ('is', 'Icelandic'),
+ ('it', 'Italian'),
+ ('ja', 'Japanese'),
+ ('ka', 'Georgian'),
+ ('kk', 'Kazakh'),
+ ('km', 'Khmer'),
+ ('kn', 'Kannada'),
+ ('ko', 'Korean'),
+ ('lb', 'Luxembourgish'),
+ ('lt', 'Lithuanian'),
+ ('lv', 'Latvian'),
+ ('mk', 'Macedonian'),
+ ('ml', 'Malayalam'),
+ ('mn', 'Mongolian'),
+ ('mr', 'Marathi'),
+ ('my', 'Burmese'),
+ ('nb', 'Norwegian BokmÃ¥l'),
+ ('ne', 'Nepali'),
+ ('nl', 'Dutch'),
+ ('nn', 'Norwegian Nynorsk'),
+ ('os', 'Ossetic'),
+ ('pa', 'Punjabi'),
+ ('pl', 'Polish'),
+ ('pt', 'Portuguese'),
+ ('pt-br', 'Brazilian Portuguese'),
+ ('ro', 'Romanian'),
+ ('ru', 'Russian'),
+ ('sk', 'Slovak'),
+ ('sl', 'Slovenian'),
+ ('sq', 'Albanian'),
+ ('sr', 'Serbian'),
+ ('sr-latn', 'Serbian Latin'),
+ ('sv', 'Swedish'),
+ ('sw', 'Swahili'),
+ ('ta', 'Tamil'),
+ ('te', 'Telugu'),
+ ('th', 'Thai'),
+ ('tr', 'Turkish'),
+ ('tt', 'Tatar'),
+ ('udm', 'Udmurt'),
+ ('uk', 'Ukrainian'),
+ ('ur', 'Urdu'),
+ ('vi', 'Vietnamese'),
+ ('zh-hans', 'Simplified Chinese'),
+ ('zh-hant', 'Traditional Chinese')]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGES_BIDI
+      </td>
+      <td class="code">
+       <pre>['he', 'ar', 'fa', 'ur']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGE_CODE
+      </td>
+      <td class="code">
+       <pre>'ko-kr'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGE_COOKIE_AGE
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGE_COOKIE_DOMAIN
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGE_COOKIE_NAME
+      </td>
+      <td class="code">
+       <pre>'django_language'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LANGUAGE_COOKIE_PATH
+      </td>
+      <td class="code">
+       <pre>'/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LINE_CHANNEL_ACCESS_TOKEN
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LINE_CHANNEL_SECRET
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LOCALE_PATHS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LOGGING
+      </td>
+      <td class="code">
+       <pre>{}</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LOGGING_CONFIG
+      </td>
+      <td class="code">
+       <pre>'logging.config.dictConfig'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LOGIN_REDIRECT_URL
+      </td>
+      <td class="code">
+       <pre>'/accounts/profile/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LOGIN_URL
+      </td>
+      <td class="code">
+       <pre>'/accounts/login/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       LOGOUT_REDIRECT_URL
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MANAGERS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MEDIA_ROOT
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MEDIA_URL
+      </td>
+      <td class="code">
+       <pre>''</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MESSAGE_STORAGE
+      </td>
+      <td class="code">
+       <pre>'django.contrib.messages.storage.fallback.FallbackStorage'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MIDDLEWARE
+      </td>
+      <td class="code">
+       <pre>['django.middleware.security.SecurityMiddleware',
+ 'django.contrib.sessions.middleware.SessionMiddleware',
+ 'django.middleware.common.CommonMiddleware',
+ 'django.middleware.csrf.CsrfViewMiddleware',
+ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 'django.contrib.messages.middleware.MessageMiddleware',
+ 'django.middleware.clickjacking.XFrameOptionsMiddleware']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MIDDLEWARE_CLASSES
+      </td>
+      <td class="code">
+       <pre>['django.middleware.common.CommonMiddleware',
+ 'django.middleware.csrf.CsrfViewMiddleware']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MIGRATION_MODULES
+      </td>
+      <td class="code">
+       <pre>{}</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       MONTH_DAY_FORMAT
+      </td>
+      <td class="code">
+       <pre>'F j'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       NUMBER_GROUPING
+      </td>
+      <td class="code">
+       <pre>0</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       PASSWORD_HASHERS
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       PASSWORD_RESET_TIMEOUT_DAYS
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       PREPEND_WWW
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       ROOT_URLCONF
+      </td>
+      <td class="code">
+       <pre>'dqmsgapp.urls'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECRET_KEY
+      </td>
+      <td class="code">
+       <pre>'********************'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_BROWSER_XSS_FILTER
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_CONTENT_TYPE_NOSNIFF
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_HSTS_INCLUDE_SUBDOMAINS
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_HSTS_PRELOAD
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_HSTS_SECONDS
+      </td>
+      <td class="code">
+       <pre>0</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_PROXY_SSL_HEADER
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_REDIRECT_EXEMPT
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_SSL_HOST
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SECURE_SSL_REDIRECT
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SERVER_EMAIL
+      </td>
+      <td class="code">
+       <pre>'root@localhost'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_CACHE_ALIAS
+      </td>
+      <td class="code">
+       <pre>'default'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_COOKIE_AGE
+      </td>
+      <td class="code">
+       <pre>1209600</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_COOKIE_DOMAIN
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_COOKIE_HTTPONLY
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_COOKIE_NAME
+      </td>
+      <td class="code">
+       <pre>'sessionid'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_COOKIE_PATH
+      </td>
+      <td class="code">
+       <pre>'/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_COOKIE_SECURE
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_ENGINE
+      </td>
+      <td class="code">
+       <pre>'django.contrib.sessions.backends.db'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_EXPIRE_AT_BROWSER_CLOSE
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_FILE_PATH
+      </td>
+      <td class="code">
+       <pre>None</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_SAVE_EVERY_REQUEST
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SESSION_SERIALIZER
+      </td>
+      <td class="code">
+       <pre>'django.contrib.sessions.serializers.JSONSerializer'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SETTINGS_MODULE
+      </td>
+      <td class="code">
+       <pre>'dqmsgapp.settings'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SHORT_DATETIME_FORMAT
+      </td>
+      <td class="code">
+       <pre>'m/d/Y P'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SHORT_DATE_FORMAT
+      </td>
+      <td class="code">
+       <pre>'m/d/Y'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SIGNING_BACKEND
+      </td>
+      <td class="code">
+       <pre>'django.core.signing.TimestampSigner'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       SILENCED_SYSTEM_CHECKS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       STATICFILES_DIRS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       STATICFILES_FINDERS
+      </td>
+      <td class="code">
+       <pre>['django.contrib.staticfiles.finders.FileSystemFinder',
+ 'django.contrib.staticfiles.finders.AppDirectoriesFinder']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       STATICFILES_STORAGE
+      </td>
+      <td class="code">
+       <pre>'django.contrib.staticfiles.storage.StaticFilesStorage'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       STATIC_ROOT
+      </td>
+      <td class="code">
+       <pre>'/home/lunchbus/static'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       STATIC_URL
+      </td>
+      <td class="code">
+       <pre>'/static/'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       TEMPLATES
+      </td>
+      <td class="code">
+       <pre>[{'APP_DIRS': True,
+  'BACKEND': 'django.template.backends.django.DjangoTemplates',
+  'DIRS': [],
+  'OPTIONS': {'context_processors': ['django.template.context_processors.debug',
+                                     'django.template.context_processors.request',
+                                     'django.contrib.auth.context_processors.auth',
+                                     'django.contrib.messages.context_processors.messages']}}]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       TEST_NON_SERIALIZED_APPS
+      </td>
+      <td class="code">
+       <pre>[]</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       TEST_RUNNER
+      </td>
+      <td class="code">
+       <pre>'django.test.runner.DiscoverRunner'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       THOUSAND_SEPARATOR
+      </td>
+      <td class="code">
+       <pre>','</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       TIME_FORMAT
+      </td>
+      <td class="code">
+       <pre>'P'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       TIME_INPUT_FORMATS
+      </td>
+      <td class="code">
+       <pre>['%H:%M:%S', '%H:%M:%S.%f', '%H:%M']</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       TIME_ZONE
+      </td>
+      <td class="code">
+       <pre>'Asia/Seoul'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_ETAGS
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_I18N
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_L10N
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_THOUSAND_SEPARATOR
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_TZ
+      </td>
+      <td class="code">
+       <pre>True</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_X_FORWARDED_HOST
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       USE_X_FORWARDED_PORT
+      </td>
+      <td class="code">
+       <pre>False</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       WSGI_APPLICATION
+      </td>
+      <td class="code">
+       <pre>'dqmsgapp.wsgi.application'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       X_FRAME_OPTIONS
+      </td>
+      <td class="code">
+       <pre>'SAMEORIGIN'</pre>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       YEAR_MONTH_FORMAT
+      </td>
+      <td class="code">
+       <pre>'F Y'</pre>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <div id="explanation">
+   <p>
+    You're seeing this error because you have
+    <code>
+     DEBUG = True
+    </code>
+    in your
+      Django settings file. Change that to
+    <code>
+     False
+    </code>
+    , and Django will
+      display a standard page generated by the handler for this status code.
+   </p>
+  </div>
+ </body>
+</html>

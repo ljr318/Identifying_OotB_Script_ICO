@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Digital Currency Daily
+  </title>
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+  </script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js">
+  </script>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <span id="siteseal">
+   <script async="" src="https://seal.godaddy.com/getSeal?sealID=yDJGbflnYtKrZ6qyCAKu8125pyu1gukI40bYWzGgpHKLtW0v3Y636KP6vlw3" type="text/javascript">
+   </script>
+  </span>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-light bg-success sticky-top">
+   <div class="container-fluid">
+    <a class="navbar-brand logo" href="index.php">
+     <img src="https://img1.wsimg.com/isteam/ip/d898fa92-f559-4dd8-b8d4-4d4a60aeabf3/dcdlogo3.png"/>
+    </a>
+    <p class="small text-left">
+     Wallet address:
+     <span id="walletAddress" placeholder="">
+      Loading...
+     </span>
+     TRX balance:
+     <span id="walletBalanceValue">
+      0.0
+     </span>
+     TRX
+     <br/>
+     DCD balance:
+     <span id="DCDValue">
+      0.0
+     </span>
+     DCD
+     <br/>
+    </p>
+    <button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="index.php">
+        <h6>
+         HOME
+        </h6>
+       </a>
+      </li>
+      <li class="nav-item submenu dropdown">
+       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbardrop">
+        <h6 class="d-inline">
+         Token
+        </h6>
+       </a>
+       <ul class="dropdown-menu bg-success">
+        <li class="nav-item">
+         <a class="nav-link" href="http://swapdcd.com/" target="_blank">
+          Get DCD on OIKOS
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="./simple-swap.php">
+          Get TRX using SimpleSwap
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="token-info.php">
+          Token Info
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="news.php">
+        <h6>
+         News
+        </h6>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="coin-ranking.php">
+        <h6>
+         Coin Ranking
+        </h6>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="access-crypto.php">
+        Access Crypto
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="free-coins.php">
+        Free Coins
+       </a>
+      </li>
+      <li class="nav-item submenu dropdown">
+       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbardrop">
+        <h6 class="d-inline">
+         More
+        </h6>
+       </a>
+       <ul class="dropdown-menu bg-success">
+        <!--                        <li class="nav-item">-->
+        <!--                            <a class="nav-link" href="#">Mining Calculators</a>-->
+        <!-- -->
+        <!-- -->
+        <!--                            <ul class=" list bg-success">-->
+        <!--                                <li class="nav-item">-->
+        <!--                                    <a class="nav-link text-body" href="./btc-minning-calculator.php">BTC Mining Calculator</a>-->
+        <!--                                </li>-->
+        <!--                                <li class="nav-item">-->
+        <!--                                    <a class="nav-link" href="./eth-minning-calculator.php">ETH Mining Calculator</a>-->
+        <!--                                </li>-->
+        <!--                                <li class="nav-item">-->
+        <!--                                    <a class="nav-link" href="./ltc-minning-calculator.php">LTC Mining Calculator</a>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+        <li class="nav-item">
+         <a class="nav-link" href="liquid.php">
+          Liquid
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="contact-us.php">
+          Contact Us
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="whitepaper/Digital Currency Daily Whitepaper V1.0.0.pdf
+">
+          White Paper
+         </a>
+        </li>
+       </ul>
+      </li>
+      <!--<li class="nav-item">-->
+      <!--    <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+      <!--    <button class="btn btn-success" type="submit"><i class="fas fa-user"></i></button></a>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+      <!--    <button class="btn btn-success" type="submit"><i class="fas fa-shopping-cart"></i></button>-->
+      <!--</li>-->
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <script type="text/javascript">
+   const main = async () => {
+      const { tronWeb } = window;
+      const TRX_IN_SUN = 1000000;
+
+      if (!tronWeb) return console.log('Do not run this before tronWeb is injected.');
+
+      // The current address of the user.
+      const userAddress = tronWeb.defaultAddress.base58;
+	  
+	  const contractAddress = 'TNp9BX9NMjsmWPZugw13VisP1oVJT2pMDv';
+      const contract = await tronWeb.contract().at(contractAddress);
+	  
+	  const balance = await contract.balanceOf(userAddress).call();
+	  const bal1 = parseInt(balance._hex)/1000000;
+	  
+	  const userBalance = await tronWeb.trx.getBalance(tronWeb.defaultAddress.base58)/TRX_IN_SUN;
+	  
+	  var bal = document.getElementById("walletBalanceValue").innerHTML = userBalance;
+      var addr = document.getElementById("walletAddress").innerHTML = userAddress;
+	  var dcd = document.getElementById("DCDValue").innerHTML = bal1;
+	  
+		
+    tronWeb.on('addressChanged', async({ base58 }) => {
+		const userAddress = tronWeb.defaultAddress.base58;
+		
+		const userBalance = await tronWeb.trx.getBalance(tronWeb.defaultAddress.base58)/TRX_IN_SUN;
+		
+		const contractAddress = 'TNp9BX9NMjsmWPZugw13VisP1oVJT2pMDv';
+      const contract = await tronWeb.contract().at(contractAddress);
+	  
+	  const balance = await contract.balanceOf(userAddress).call();
+	  const bal1 = parseInt(balance._hex)/1000000;
+	
+		var addr = document.getElementById("walletAddress").innerHTML = userAddress;
+		var bal = document.getElementById("walletBalanceValue").innerHTML = userBalance;
+		var dcd = document.getElementById("DCDValue").innerHTML = bal1;
+		});
+    }
+  </script>
+  <script>
+   const onLoadHandler = () => {
+    let counter = 0;
+    const maxAttempts = 5; // We're only going to check this many times.
+
+    // Add an event listener for when 'tronWeb' is successfully injected.
+    window.addEventListener('tronWebInjected', main, { once: true });
+
+    const intervalId = setInterval(() => {
+      const { tronWeb } = window;
+      counter++;
+
+      // If we tried more than the 'maxAttempt' we stop checking.
+      if (counter > maxAttempts) {
+        console.log(`- Could not find tronWeb after ${counter - 1} attempts.`);
+
+        // Clean up the event listener.
+        window.removeEventListener('tronWebInjected', main, { once: true });
+
+        // Clean up interval.
+        return clearInterval(intervalId);
+      }
+
+      console.log(`${counter}: Checking for tronWeb...`);
+
+      // Check if 'tronWeb' is injected in the page.
+      if (tronWeb && tronWeb.ready) {
+        console.log('- tronWeb was successfully injected!');
+
+        // Clean up interval.
+        clearInterval(intervalId);
+
+        // Dispatch 'tronWebInjected' event to trigger the 'main' function.
+        dispatchEvent(new Event('tronWebInjected'));
+      }
+    }, 1000); // We're going to check ever 1000 milliseconds (or every 1 seconds).
+  };
+
+  // When page is loaded. Start checking if 'TronLink' has injected 'tronWeb'.
+  window.addEventListener('load', onLoadHandler, { once: true });
+  </script>
+  <style>
+   p {text-align: center;}
+  </style>
+  <div class="d-flex flex-column bg-success col-lg-12 col-sm-12">
+   <div class="display-2 text-body mt-5">
+    <h1 class="font-weight-bolder flex-text text-center">
+     <strong>
+      Gain access to trusted
+      <br/>
+      blockchain data
+     </strong>
+    </h1>
+   </div>
+  </div>
+  <!--- Welcome Section -->
+  <div class="container-fluid wel padding">
+   <div class="row Welcome text-center">
+    <div class="col-12 mt-5 mb-3">
+     <h1 class="text-success pl-3 pr-3">
+      <strong>
+       what we do. what we are here for. why we do it.
+      </strong>
+     </h1>
+    </div>
+    <hr/>
+   </div>
+  </div>
+  <!--- Three Column Section -->
+  <div class="container-fluid padding">
+   <div class="row home-row text-center padding">
+    <div class="col-sm-12 col-md-4 col-lg-4">
+     <h5 class="mb-4">
+      Digital Currency Changes Daily.
+     </h5>
+     <p class="w-75 m-auto font-weight-normal">
+      It's hard to stay up to date.
+      <br/>
+      We aggregate the best information,
+      <br/>
+      so you don't have to go looking for it.
+      <br/>
+      Access Market Capitalizations, News, Learning
+      <br/>
+      Market Research, &amp; More!
+     </p>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+     <h5 class="mb-4">
+      Make Things Easy. Lower The Barrier.
+     </h5>
+     <p class="w-75 m-auto font-weight-normal">
+      Newcomers can quickly get overwhelmed and never access the proper information to get started safely.
+                We want to assist and create a basic foundation to ensure everyone gets started on the right foot.
+     </p>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+     <h5 class="mb-4">
+      To Contribute. To Give Back.
+     </h5>
+     <p class="w-75 m-auto font-weight-normal">
+      Crypto-currency is our everyday.
+
+                ₿y providing a platform for users to access information they need to get started safely, we are
+                increasing the chances of a positive experience!
+     </p>
+    </div>
+   </div>
+  </div>
+  <!--- Footer -->
+  <footer class="footer text-white bg-body">
+   <div class="container-fluid padding">
+    <div class="row text-center">
+     <div class="col-12 mt-5">
+      <p>
+       <strong>
+        Digital Currency Daily
+       </strong>
+      </p>
+     </div>
+     <div class="col-12 mt-5">
+      <p class="text-muted">
+       <small>
+        Copyright © 2020 Digital Currency Daily - All Rights Reserved
+       </small>
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

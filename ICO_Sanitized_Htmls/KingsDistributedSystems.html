@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-170786247-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-170786247-1');
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <title>
+   Kings Distributed Systems
+  </title>
+  <link href="https://fonts.googleapis.com/" rel="dns-prefetch"/>
+  <link href="https://s.w.org/" rel="dns-prefetch"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="feed/index.html" rel="alternate" title="Kings Distributed Systems » Feed" type="application/rss+xml"/>
+  <link href="comments/feed/index.html" rel="alternate" title="Kings Distributed Systems » Comments Feed" type="application/rss+xml"/>
+  <script>
+   window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"./wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.1"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+  </script>
+  <style>
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+
+DIV.fl-node-5ec58eba30762 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/*DIV.fl-node-5ec58eba49f02 { */
+DIV.fl-node-5ec58eba30762 > DIV.fl-row-content-wrap {
+  margin-top: -10px;
+  padding-top: 0;
+}
+
+DIV.fl-node-5ec58eba49f02 DIV:first-child {
+  margin-top: 0px;
+  padding-top: 0;
+
+}
+  </style>
+  <link href="wp-includes/css/dist/block-library/style.min.css?ver=5.4.1" id="wp-block-library-css" media="all" rel="stylesheet"/>
+  <link href="wp-includes/css/dist/block-library/theme.min.css?ver=5.4.1" id="wp-block-library-theme-css" media="all" rel="stylesheet"/>
+  <link href="wp-content/plugins/bb-plugin/fonts/fontawesome/5.13.0/css/all.min.css?ver=2.3.2.5" id="font-awesome-5-css" media="all" rel="stylesheet"/>
+  <link href="wp-content/uploads/bb-plugin/cache/8-layout.css?ver=78b26197beef0eb0b68b708b771ef7e2" id="fl-builder-layout-8-css" media="all" rel="stylesheet"/>
+  <link href="wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.3.2.5" id="jquery-magnificpopup-css" media="all" rel="stylesheet"/>
+  <link href="wp-content/themes/bb-theme/css/base.min.css?ver=1.7.6.2" id="base-css" media="all" rel="stylesheet"/>
+  <link href="wp-content/uploads/bb-theme/skin-5ec5932a10eee.css?ver=1.7.6.2" id="fl-automator-skin-css" media="all" rel="stylesheet"/>
+  <link href="wp-content/themes/bb-theme-child/style.css?ver=5.4.1" id="fl-child-theme-css" media="all" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Inter%3A300%2C400%2C700%2C700%2C500&amp;ver=5.4.1" id="fl-builder-google-fonts-4f570a10a54510156ca51493a80e1ddc-css" media="all" rel="stylesheet"/>
+  <script src="wp-includes/js/jquery/jquery.js?ver=1.12.4-wp">
+  </script>
+  <script src="wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1">
+  </script>
+  <script src="wp-includes/js/imagesloaded.min.js?ver=5.4.1">
+  </script>
+  <link href="wp-json/index.html" rel="https://api.w.org/"/>
+  <link href="xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress 5.4.1" name="generator"/>
+  <link href="index.html" rel="canonical"/>
+  <link href="index.html" rel="shortlink"/>
+  <link href="wp-json/oembed/1.0/embed?url=https:%252F%252Fkds.pitchdev.com%252F" rel="alternate" type="application/json+oembed"/>
+  <link href="wp-json/oembed/1.0/embed?url=https:%252F%252Fkds.pitchdev.com%252F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <link href="wp-content/uploads/2020/05/cropped-KDS-Logo-Dark-cropped-32x32.png" rel="icon" sizes="32x32"/>
+  <link href="wp-content/uploads/2020/05/cropped-KDS-Logo-Dark-cropped-192x192.png" rel="icon" sizes="192x192"/>
+  <link href="wp-content/uploads/2020/05/cropped-KDS-Logo-Dark-cropped-180x180.png" rel="apple-touch-icon"/>
+  <meta content="./wp-content/uploads/2020/05/cropped-KDS-Logo-Dark-cropped-270x270.png" name="msapplication-TileImage"/>
+  <style id="wp-custom-css">
+   .fl-page-header-wrap, .fl-page-header {
+	border: none !important;
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+}
+@media(min-width: 768px) {
+	.fl-page-nav-wrap {
+		border: none;
+		background: transparent;
+	}
+}
+@media(max-width: 992px) {
+	.header-heading {
+		margin-top: 120px;
+	}
+}
+
+.blue .fl-heading {
+	  background: -webkit-linear-gradient(#0555AB, rgba(5, 85, 171, 0.7));
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.advantage-list {
+	display: flex;
+}
+.advantage {
+	display: flex;
+	align-items: center;
+}
+@media(max-width: 900px) {
+	.advantage-list {
+		justify-content: center;
+	}
+	.advantage {
+		flex-direction: column;
+		text-align: center;
+		margin: 0 12px;
+	}
+	.advantage-list .advantage .advantage-img {
+		margin-bottom: 8px;
+	}
+	.advantage-list .advantage .advantage-text {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+.advantage-list .advantage .advantage-img {
+	width: 48px;
+	
+}
+.advantage-list .advantage .advantage-text {
+	color: #0656AC;
+	margin-left: 12px;
+	margin-right: 40px;
+	margin-bottom: 0;
+}
+.highlight {
+	color: #0656AC;
+}
+
+.product-box {
+	position: relative;
+	border: solid 2px #0555AB;
+	border-radius: 4px;
+	margin: 0 16px;
+	min-height: 400px;
+}
+@media(max-width: 768px) {
+	.product-box {
+		margin: 16px;
+	}
+}
+@media(max-width: 400px) {
+	.product-box {
+		min-height: 480px;
+	}
+}
+.product-box.blue {
+	background-color: #0555AB;
+}
+.product-box .background-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+	padding: 8px;
+}
+
+.product-box .background-img img{
+	max-width: 50%;
+}
+@media(max-width: 992px) {
+	.product-box .background-img img {
+	}
+}
+.product-box .content {
+	position: absolute;
+	bottom: 36px;
+	left: 48px;
+	right: 36px;
+}
+.product-box .content .title {
+	font-size: 24px;
+	margin-bottom: 24px;
+}
+.product-box.blue .content .title {
+	color: #fff;
+}
+.product-box .content .description {
+	margin-bottom: 56px;
+	color: #0555AB;
+}
+.product-box.blue .content .description {
+	color: #fff;
+}
+.product-box .content .cta {
+	font-weight: 600;
+	color: #0555AB;
+}
+.product-box.blue .content .cta {
+	color: #fff;
+}
+
+.fl-page-footer-wrap, .fl-page-footer {
+	border: none !important;
+}
+
+.featured-application {
+	border: solid 1px #CBCBCB;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 400px;
+}
+.featured-application .application-logo {
+	max-width: 160px;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+.featured-application .application-name {
+	font-size: 18px;
+	color: #000;
+
+}
+
+.fl-logo-img {
+	max-width: 160px;
+}
+@media(min-width: 1100px) {
+	.fl-page-header-wrap .fl-page-header-container {
+	width: 1060px;
+}
+}
+.fl-col-small {
+	max-width: none !important;
+}
+  </style>
+ </head>
+ <body class="home page-template-default page page-id-8 fl-builder fl-framework-base fl-preset-default fl-full-width" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+  <a aria-label="Skip to content" class="fl-screen-reader-text" href="index.html#fl-main-content">
+   Skip to content
+  </a>
+  <div class="fl-page">
+   <header class="fl-page-header fl-page-header-primary fl-page-nav-right fl-page-nav-toggle-icon fl-page-nav-toggle-visible-mobile" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
+    <div class="fl-page-header-wrap">
+     <div class="fl-page-header-container container">
+      <div class="fl-page-header-row row">
+       <div class="col-sm-12 col-md-4 fl-page-header-logo-col">
+        <div class="fl-page-header-logo" itemscope="itemscope" itemtype="https://schema.org/Organization">
+         <a href="index.html" itemprop="url">
+          <img alt="Kings Distributed Systems" class="fl-logo-img" data-no-lazy="1" data-retina="" itemscope="" itemtype="https://schema.org/ImageObject" src="wp-content/uploads/2020/05/KDS-Logo-Light.png" title=""/>
+          <meta content="Kings Distributed Systems" itemprop="name"/>
+         </a>
+        </div>
+       </div>
+       <div class="col-sm-12 col-md-8 fl-page-nav-col">
+        <div class="fl-page-nav-wrap">
+         <nav aria-label="Header Menu" class="fl-page-nav fl-nav navbar navbar-default navbar-expand-md" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+          <button class="navbar-toggle navbar-toggler" data-target=".fl-page-nav-collapse" data-toggle="collapse" type="button">
+           <span>
+            <i aria-hidden="true" class="fas fa-bars">
+            </i>
+            <span class="sr-only">
+             Menu
+            </span>
+           </span>
+          </button>
+          <div class="fl-page-nav-collapse collapse navbar-collapse">
+           <ul class="nav navbar-nav navbar-right menu fl-theme-menu" id="menu-main">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-179 nav-item" id="menu-item-179">
+             <a class="nav-link" href="index-p41.html">
+              About
+             </a>
+            </li>
+           </ul>
+          </div>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <!-- .fl-page-header -->
+   <div class="fl-page-content" id="fl-main-content" itemprop="mainContentOfPage" role="main">
+    <div class="fl-content-full container">
+     <div class="row">
+      <div class="fl-content col-md-12">
+       <article class="fl-post post-8 page type-page status-publish hentry" id="fl-post-8" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+        <div class="fl-post-content clearfix" itemprop="text">
+         <div class="fl-builder-content fl-builder-content-8 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="8">
+          <div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-5ec4920b20261 fl-row-custom-height fl-row-align-center fl-row-bg-overlay" data-node="5ec4920b20261">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4920b236d5" data-node="5ec4920b236d5">
+              <div class="fl-col fl-node-5ec4920b238ca" data-node="5ec4920b238ca">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4997af2b5a header-heading" data-node="5ec4997af2b5a">
+                 <div class="fl-module-content fl-node-content">
+                  <h1 class="fl-heading">
+                   <span class="fl-heading-text">
+                    High-Throughput Computing for Enterprise
+                   </span>
+                  </h1>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-heading fl-node-5ec49a0cbaa9e" data-node="5ec49a0cbaa9e">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Introducing a platform for harnessing affordable, secure HTC resources
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec49a59d9146" data-node="5ec49a59d9146">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    Introducing a platform for harnessing affordable, secure compute resources. Factories, hospital networks, and more use the Distributed Computer to grow and connect their private clouds.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec49afecdea9" data-node="5ec49afecdea9">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-center">
+                   <a class="fl-button" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     Get Started
+                    </span>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-photo fl-node-5ec49cde13cbc" data-node="5ec49cde13cbc">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec49cde169e6" data-node="5ec49cde169e6">
+              <div class="fl-col fl-node-5ec49cde16b04" data-node="5ec49cde16b04">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec49ce4bcde2 blue" data-node="5ec49ce4bcde2">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Hyperscale. Secure. Affordable.
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec49d1c28504" data-node="5ec49d1c28504">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    With one API, the Distributed Computer lets enterprise create secure compute networks that improve efficiency, cost, and productivity. Accelerate your applications with the only platform that runs everywhere from the Cloud to the Edge, and end lock-in for good.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-heading fl-node-5ec49d8b08839 blue" data-node="5ec49d8b08839">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    How Does it Work?
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec49f490f300" data-node="5ec49f490f300">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    The Distributed Computer builds software-defined compute grids that can be elastically combined or partitioned. These grids form a network of hyperscale infrastructure accessed through an intuitive API.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4a0c1aa4a0" data-node="5ec4a0c1aa4a0">
+              <div class="fl-col fl-node-5ec4a0c1aa677 fl-col-small" data-node="5ec4a0c1aa677">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4a0b230235" data-node="5ec4a0b230235">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (1)" class="fl-photo-img wp-image-50 size-full" height="126" itemprop="image" src="wp-content/uploads/2020/05/Vector-1.png" title="Vector (1)" width="126"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-heading fl-node-5ec4a0d7a9632" data-node="5ec4a0d7a9632">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Lowest Cost
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4a0793a5ff" data-node="5ec4a0793a5ff">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Work is distributed across many cores, greatly reducing cost
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4a0c1aa6c2 fl-col-small" data-node="5ec4a0c1aa6c2">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4a0d1150a2" data-node="5ec4a0d1150a2">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (2)" class="fl-photo-img wp-image-51 size-full" height="138" itemprop="image" src="wp-content/uploads/2020/05/Vector-2.png" title="Vector (2)" width="132"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-heading fl-node-5ec4a0d82f5c3" data-node="5ec4a0d82f5c3">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Interoperable
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4a0e221a7b" data-node="5ec4a0e221a7b">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Write once and run the same code anywhere
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4a0c1aa701 fl-col-small" data-node="5ec4a0c1aa701">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4a0cf94e5a" data-node="5ec4a0cf94e5a">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (1)" class="fl-photo-img wp-image-50 size-full" height="126" itemprop="image" src="wp-content/uploads/2020/05/Vector-1.png" title="Vector (1)" width="126"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-heading fl-node-5ec4a02d67af4" data-node="5ec4a02d67af4">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Bespoke Deployments
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4a0e193dab" data-node="5ec4a0e193dab">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Fine grained control over the infrastructure, privacy, and security
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5ec4b29be858a" data-node="5ec4b29be858a">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec567d808215" data-node="5ec567d808215">
+              <div class="fl-col fl-node-5ec567d8083cc fl-col-has-cols" data-node="5ec567d8083cc">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4b2a2be231" data-node="5ec4b2a2be231">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Access Any Infrastructure, Anywhere
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b2c7bb60a" data-node="5ec4b2c7bb60a">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    The Distributed Computer is completely composable and serverless. An organization can adjust their resource allocation on demand. Orchestration, networking, and automation can easily be changed to allow for all kinds of architectures.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-col-group fl-node-5ec567faade5f fl-col-group-nested" data-node="5ec567faade5f">
+                 <div class="fl-col fl-node-5ec567faae158 fl-col-small" data-node="5ec567faae158">
+                  <div class="fl-col-content fl-node-content">
+                   <div class="fl-module fl-module-photo fl-node-5ec4b3527a920" data-node="5ec4b3527a920">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                      <div class="fl-photo-content fl-photo-img-png">
+                       <img alt="Vector (7)" class="fl-photo-img wp-image-199 size-full" height="92" itemprop="image" src="wp-content/uploads/2020/05/Vector-7.png" title="Vector (7)" width="88"/>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-heading fl-node-5ec4b405cca05" data-node="5ec4b405cca05">
+                    <div class="fl-module-content fl-node-content">
+                     <h3 class="fl-heading">
+                      <span class="fl-heading-text">
+                       On-Premise &amp; Private Cloud
+                      </span>
+                     </h3>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-rich-text fl-node-5ec4b3ecef209" data-node="5ec4b3ecef209">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-rich-text">
+                      <p style="text-align: center;">
+                       Scale up and simplify private clouds, while load balancing with intra- and inter-enterprise resources
+                      </p>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="fl-col fl-node-5ec567faae1ac fl-col-small" data-node="5ec567faae1ac">
+                  <div class="fl-col-content fl-node-content">
+                   <div class="fl-module fl-module-photo fl-node-5ec4b3e684dfb" data-node="5ec4b3e684dfb">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                      <div class="fl-photo-content fl-photo-img-png">
+                       <img alt="Vector (7)" class="fl-photo-img wp-image-199 size-full" height="92" itemprop="image" src="wp-content/uploads/2020/05/Vector-7.png" title="Vector (7)" width="88"/>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-heading fl-node-5ec4b40a6816c" data-node="5ec4b40a6816c">
+                    <div class="fl-module-content fl-node-content">
+                     <h3 class="fl-heading">
+                      <span class="fl-heading-text">
+                       Edge Computing
+                      </span>
+                     </h3>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-rich-text fl-node-5ec4b41486361" data-node="5ec4b41486361">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-rich-text">
+                      <p style="text-align: center;">
+                       Easily extend applications to the edge on both public and private infrastructure
+                      </p>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-col-group fl-node-5ec5681cf200f fl-col-group-nested" data-node="5ec5681cf200f">
+                 <div class="fl-col fl-node-5ec5681cf2317 fl-col-small" data-node="5ec5681cf2317">
+                  <div class="fl-col-content fl-node-content">
+                   <div class="fl-module fl-module-photo fl-node-5ec4b3ff96e8f" data-node="5ec4b3ff96e8f">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                      <div class="fl-photo-content fl-photo-img-png">
+                       <img alt="Vector (8)" class="fl-photo-img wp-image-200 size-full" height="88" itemprop="image" src="wp-content/uploads/2020/05/Vector-8.png" title="Vector (8)" width="92"/>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-heading fl-node-5ec4b36f6284c" data-node="5ec4b36f6284c">
+                    <div class="fl-module-content fl-node-content">
+                     <h3 class="fl-heading">
+                      <span class="fl-heading-text">
+                       Hybrid Cloud
+                      </span>
+                     </h3>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-rich-text fl-node-5ec4b40fc636e" data-node="5ec4b40fc636e">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-rich-text">
+                      <p style="text-align: center;">
+                       Manage a complex hybrid cloud system that meets your requirements
+                      </p>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="fl-col fl-node-5ec5681cf2364 fl-col-small" data-node="5ec5681cf2364">
+                  <div class="fl-col-content fl-node-content">
+                   <div class="fl-module fl-module-photo fl-node-5ec4b3fd6e71a" data-node="5ec4b3fd6e71a">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                      <div class="fl-photo-content fl-photo-img-png">
+                       <img alt="Vector (8)" class="fl-photo-img wp-image-200 size-full" height="88" itemprop="image" src="wp-content/uploads/2020/05/Vector-8.png" title="Vector (8)" width="92"/>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-heading fl-node-5ec4b3ea943fa" data-node="5ec4b3ea943fa">
+                    <div class="fl-module-content fl-node-content">
+                     <h3 class="fl-heading">
+                      <span class="fl-heading-text">
+                       Public Cloud
+                      </span>
+                     </h3>
+                    </div>
+                   </div>
+                   <div class="fl-module fl-module-rich-text fl-node-5ec4b3957f06b" data-node="5ec4b3957f06b">
+                    <div class="fl-module-content fl-node-content">
+                     <div class="fl-rich-text">
+                      <p style="text-align: center;">
+                       The Distributed Computer aggregates tremendous compute resources through one API
+                      </p>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec58e69836e0" data-node="5ec58e69836e0">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec58e69a0090" data-node="5ec58e69a0090">
+              <div class="fl-col fl-node-5ec58e69a0266" data-node="5ec58e69a0266">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4a358c24f1 blue" data-node="5ec4a358c24f1">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Advantages &amp; Benefits
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec58eba30762" data-node="5ec58eba30762">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec58eba49f02" data-node="5ec58eba49f02">
+              <div class="fl-col fl-node-5ec58eba4a0ac fl-col-small" data-node="5ec58eba4a0ac">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4a30fe9780 blue" data-node="5ec4a30fe9780">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Self-Provisioned, Private Edge Networks
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec58eba4a0f0" data-node="5ec58eba4a0f0">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4ada39e641" data-node="5ec4ada39e641">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    The Distributed Computer links diverse hardware together to create an internal private cloud. Unlocking this otherwise idle compute across servers, workstations, and more increases your bandwidth while keeping data on-premise. Organizations can also combine these networks together to reduce downtime and aggregate capacity while preserving privacy requirements.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec4ada53f3eb" data-node="5ec4ada53f3eb">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
+                   <a class="fl-button fl-button-icon-animation" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     Learn About Distributed Computer
+                    </span>
+                    <i aria-hidden="true" class="fl-button-icon fl-button-icon-after fas fa-long-arrow-alt-right">
+                    </i>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-html fl-node-5ec4adb28da01" data-node="5ec4adb28da01">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-html">
+                   <div class="advantage-list">
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-36-1.png"/>
+                     <p class="advantage-text">
+                      Eliminates Idle Time
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-37-1.png"/>
+                     <p class="advantage-text">
+                      Lowest Cost
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-38-1.png"/>
+                     <p class="advantage-text">
+                      Elastic to Demand
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec58eef2295d" data-node="5ec58eef2295d">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec58eef22c52" data-node="5ec58eef22c52">
+              <div class="fl-col fl-node-5ec58eef22c9c fl-col-small" data-node="5ec58eef22c9c">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4ad9cbcf98 blue" data-node="5ec4ad9cbcf98">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    HTC Resources On-Demand
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec58eef22d17" data-node="5ec58eef22d17">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4a325b974e" data-node="5ec4a325b974e">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    The Distributed Computer aggregates tremendous amounts of compute from trusted third party datacentres and institutions. Its proprietary technology schedules HTC tasks for the best suited hardware, making sure you get the ideal mix of cost, security, and performance.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec4a38cc120a" data-node="5ec4a38cc120a">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
+                   <a class="fl-button fl-button-icon-animation" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     Learn About PaaS Compute Groups
+                    </span>
+                    <i aria-hidden="true" class="fl-button-icon fl-button-icon-after fas fa-long-arrow-alt-right">
+                    </i>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-html fl-node-5ec4a9d5205c6" data-node="5ec4a9d5205c6">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-html">
+                   <div class="advantage-list">
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-33-1.png"/>
+                     <p class="advantage-text">
+                      International Sites
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-34-1.png"/>
+                     <p class="advantage-text">
+                      Serverless Billing
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-35-1.png"/>
+                     <p class="advantage-text">
+                      Competitive Rates
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec58f2993e21" data-node="5ec58f2993e21">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec58f2994042" data-node="5ec58f2994042">
+              <div class="fl-col fl-node-5ec58f299407e fl-col-small" data-node="5ec58f299407e">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4aee93ca30 blue" data-node="5ec4aee93ca30">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Flexible &amp; Interoperable
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec58f29940ef" data-node="5ec58f29940ef">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4aeea99e38" data-node="5ec4aeea99e38">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    Run your HTC application through any combination of hardware whether on-premise, in the Cloud, or through a Hybrid framework. With cutting edge hardware and network interoperability, the Distributed Computer lets you build applications on any infrastructure from datacentres to the 5G-enabled Edge.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec4aeebeee35" data-node="5ec4aeebeee35">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
+                   <a class="fl-button fl-button-icon-animation" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     Learn About Cross-Platform Solutions
+                    </span>
+                    <i aria-hidden="true" class="fl-button-icon fl-button-icon-after fas fa-long-arrow-alt-right">
+                    </i>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-html fl-node-5ec4af7972da4" data-node="5ec4af7972da4">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-html">
+                   <div class="advantage-list">
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-39-1.png"/>
+                     <p class="advantage-text">
+                      Hybrid Cloud-Ready
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-40-1.png"/>
+                     <p class="advantage-text">
+                      Simple, Powerful Orchestration
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-41-2.png"/>
+                     <p class="advantage-text">
+                      Unified API Access
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec58f4bf211d" data-node="5ec58f4bf211d">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec58f4bf2363" data-node="5ec58f4bf2363">
+              <div class="fl-col fl-node-5ec58f4bf239f fl-col-small" data-node="5ec58f4bf239f">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4b1ec97a9e blue" data-node="5ec4b1ec97a9e">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Low-Code, Low-Cost Management
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec58f4bf2414" data-node="5ec58f4bf2414">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b1f2074c7" data-node="5ec4b1f2074c7">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    Unmatched hardware abstraction and simple APIs keep the costs of development low. IT professionals can program without concern for the underlying architecture, and iterate faster than ever before. Best of all, the Distributed Computer is intuitive to developers of all skills.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec4b1f651173" data-node="5ec4b1f651173">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
+                   <a class="fl-button fl-button-icon-animation" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     How KDS Powers Digital Transformation
+                    </span>
+                    <i aria-hidden="true" class="fl-button-icon fl-button-icon-after fas fa-long-arrow-alt-right">
+                    </i>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-html fl-node-5ec4b1fb93225" data-node="5ec4b1fb93225">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-html">
+                   <div class="advantage-list">
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-42-1.png"/>
+                     <p class="advantage-text">
+                      Microservice Ready
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-43-1.png"/>
+                     <p class="advantage-text">
+                      Build Gorgeous UIs
+                     </p>
+                    </div>
+                    <div class="advantage">
+                     <img class="advantage-img" src="wp-content/uploads/2020/05/Group-44-1.png"/>
+                     <p class="advantage-text">
+                      Complete Data Mobility
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec4b5f216752" data-node="5ec4b5f216752">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4b5f673a15" data-node="5ec4b5f673a15">
+              <div class="fl-col fl-node-5ec4b5f673b4b" data-node="5ec4b5f673b4b">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4b4b1a8c97 blue" data-node="5ec4b4b1a8c97">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Simplified Application Development
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b4e7450e1" data-node="5ec4b4e7450e1">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Enterprise workloads no longer have to target specific virtual machines or containers with the Distributed Computer, improving cost and agility.
+                    <span class="highlight">
+                     Workloads can also be scaled up or down on demand
+                    </span>
+                    , and seamlessly move across heterogeneous hardware.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b553d00de" data-node="5ec4b553d00de">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Applications can be as sophisticated or low-code as the organization desires. Users can consistently meet their demands
+                    <span class="highlight">
+                     without involving IT, improving agility and cost savings.
+                    </span>
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec4b5946fa94" data-node="5ec4b5946fa94">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-center fl-button-has-icon">
+                   <a class="fl-button fl-button-icon-animation" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     Learn About Applications
+                    </span>
+                    <i aria-hidden="true" class="fl-button-icon fl-button-icon-after fas fa-long-arrow-alt-right">
+                    </i>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec4b640d5136" data-node="5ec4b640d5136">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4b640e630f" data-node="5ec4b640e630f">
+              <div class="fl-col fl-node-5ec4b640e655e fl-col-small" data-node="5ec4b640e655e">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec57463970d6" data-node="5ec57463970d6">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Screenshot (1362)" class="fl-photo-img wp-image-223 size-full" height="2072" itemprop="image" sizes="(max-width: 3685px) 100vw, 3685px" src="wp-content/uploads/2020/05/Screenshot-1362.png" srcset="wp-content/uploads/2020/05/Screenshot-1362.png 3685w, wp-content/uploads/2020/05/Screenshot-1362-300x169.png 300w, wp-content/uploads/2020/05/Screenshot-1362-1024x576.png 1024w, wp-content/uploads/2020/05/Screenshot-1362-768x432.png 768w, wp-content/uploads/2020/05/Screenshot-1362-1536x864.png 1536w, wp-content/uploads/2020/05/Screenshot-1362-2048x1152.png 2048w" title="Screenshot (1362)" width="3685"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4b640e65ab fl-col-small" data-node="5ec4b640e65ab">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec573af2fa1e" data-node="5ec573af2fa1e">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Screenshot (1361)-min" class="fl-photo-img wp-image-224 size-full" height="2160" itemprop="image" sizes="(max-width: 3840px) 100vw, 3840px" src="wp-content/uploads/2020/05/Screenshot-1361-min.png" srcset="wp-content/uploads/2020/05/Screenshot-1361-min.png 3840w, wp-content/uploads/2020/05/Screenshot-1361-min-300x169.png 300w, wp-content/uploads/2020/05/Screenshot-1361-min-1024x576.png 1024w, wp-content/uploads/2020/05/Screenshot-1361-min-768x432.png 768w, wp-content/uploads/2020/05/Screenshot-1361-min-1536x864.png 1536w, wp-content/uploads/2020/05/Screenshot-1361-min-2048x1152.png 2048w" title="Screenshot (1361)-min" width="3840"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5ec4b6fb242a1" data-node="5ec4b6fb242a1">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4b6fb24500" data-node="5ec4b6fb24500">
+              <div class="fl-col fl-node-5ec4b6fb24543" data-node="5ec4b6fb24543">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4b6fb24582" data-node="5ec4b6fb24582">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Powering the Composable Organization
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b6fb245c1" data-node="5ec4b6fb245c1">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Whether you are a global brand or an innovative startup, the Distributed Computer is a force-multiplier for your compute-intensive applications.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b6fb245ff" data-node="5ec4b6fb245ff">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Making your infrastructure flexible and adaptive has many benefits, and it will be a top goal of 70% of companies by 2022 according to Gartner. Only the Distributed Computer provides hyperscale resources through a single API, breaking down siloes and providing the agility a modern business needs
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4b8b61e676 fl-col-group-equal-height fl-col-group-align-center" data-node="5ec4b8b61e676">
+              <div class="fl-col fl-node-5ec4b8b61e891 fl-col-small" data-node="5ec4b8b61e891">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4b8dd6a690 fl-visible-desktop-medium" data-node="5ec4b8dd6a690">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (7)" class="fl-photo-img wp-image-199 size-full" height="92" itemprop="image" src="wp-content/uploads/2020/05/Vector-7.png" title="Vector (7)" width="88"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4b8b61e8f3" data-node="5ec4b8b61e8f3">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4ba5ce9b6c" data-node="5ec4ba5ce9b6c">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Automated Management
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4bbdc1e1f1" data-node="5ec4bbdc1e1f1">
+              <div class="fl-col fl-node-5ec4bbdc1e3b2 fl-col-small" data-node="5ec4bbdc1e3b2">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bbdc1e401" data-node="5ec4bbdc1e401">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4b94b106b9" data-node="5ec4b94b106b9">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    There is minimal setup or maintenance required for the platform, freeing your IT staff’s valuable time. Spend more time driving business outcomes and less managing VMs and Containers.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bbdc1e448 fl-col-small" data-node="5ec4bbdc1e448">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4b99c3fb23 fl-col-group-equal-height fl-col-group-align-center" data-node="5ec4b99c3fb23">
+              <div class="fl-col fl-node-5ec4b99c3fd40" data-node="5ec4b99c3fd40">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4b9ae68410" data-node="5ec4b9ae68410">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Improved ROI
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4b99c3fd87 fl-col-small" data-node="5ec4b99c3fd87">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4b9b0e6d83 fl-visible-desktop-medium" data-node="5ec4b9b0e6d83">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (7)" class="fl-photo-img wp-image-199 size-full" height="92" itemprop="image" src="wp-content/uploads/2020/05/Vector-7.png" title="Vector (7)" width="88"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4bbfb5f911" data-node="5ec4bbfb5f911">
+              <div class="fl-col fl-node-5ec4bbfb5fb2b fl-col-small" data-node="5ec4bbfb5fb2b">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bbfb5fb7e" data-node="5ec4bbfb5fb7e">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4ba25d6eba" data-node="5ec4ba25d6eba">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: right;">
+                    Stop paying for overallocated resources in the public cloud with transparent SaaS and metered billing. Expand your on-premise capacity without additional CapEx, and earn new passive revenue streams to offset your costs.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bbfb5fbc1 fl-col-small" data-node="5ec4bbfb5fbc1">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4ba4c5fe1d fl-col-group-equal-height fl-col-group-align-center" data-node="5ec4ba4c5fe1d">
+              <div class="fl-col fl-node-5ec4ba4c5ff93 fl-col-small" data-node="5ec4ba4c5ff93">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4ba5a79d78 fl-visible-desktop-medium" data-node="5ec4ba5a79d78">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (7)" class="fl-photo-img wp-image-199 size-full" height="92" itemprop="image" src="wp-content/uploads/2020/05/Vector-7.png" title="Vector (7)" width="88"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4ba4c5ffd2" data-node="5ec4ba4c5ffd2">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4bb4f16964" data-node="5ec4bb4f16964">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Continuous Delivery
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4bc1d02e9c" data-node="5ec4bc1d02e9c">
+              <div class="fl-col fl-node-5ec4bc1d0302d fl-col-small" data-node="5ec4bc1d0302d">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bc1d03076" data-node="5ec4bc1d03076">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4ba69931e7" data-node="5ec4ba69931e7">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p>
+                    Shorten the time to application launch with no more need to write code for different environments. The Distributed Computer makes it easier than ever to integrate microservices to offload compute-intensive work.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bc1d030b3 fl-col-small" data-node="5ec4bc1d030b3">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4bb3715461 fl-col-group-equal-height fl-col-group-align-center" data-node="5ec4bb3715461">
+              <div class="fl-col fl-node-5ec4bb37155c2" data-node="5ec4bb37155c2">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4b8f6e219b" data-node="5ec4b8f6e219b">
+                 <div class="fl-module-content fl-node-content">
+                  <h3 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Cloud Native API
+                   </span>
+                  </h3>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bb3715600 fl-col-small" data-node="5ec4bb3715600">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-photo fl-node-5ec4bb4941545 fl-visible-desktop-medium" data-node="5ec4bb4941545">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-photo fl-photo-align-center" itemscope="" itemtype="https://schema.org/ImageObject">
+                   <div class="fl-photo-content fl-photo-img-png">
+                    <img alt="Vector (7)" class="fl-photo-img wp-image-199 size-full" height="92" itemprop="image" src="wp-content/uploads/2020/05/Vector-7.png" title="Vector (7)" width="88"/>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="fl-col-group fl-node-5ec4bc3e44fbf" data-node="5ec4bc3e44fbf">
+              <div class="fl-col fl-node-5ec4bc3e45126 fl-col-small" data-node="5ec4bc3e45126">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bc3e45167" data-node="5ec4bc3e45167">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-rich-text fl-node-5ec4bba0bf281" data-node="5ec4bba0bf281">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: right;">
+                    Replace dozens of siloed, manual frameworks with one cloud-native API. Encourage your citizen developers and every business unit to innovate their own solutions from a low-code framework, driving your company forward.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4bc3e451a4 fl-col-small" data-node="5ec4bc3e451a4">
+               <div class="fl-col-content fl-node-content">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ec4bca3ed2bf" data-node="5ec4bca3ed2bf">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4bca417fb5" data-node="5ec4bca417fb5">
+              <div class="fl-col fl-node-5ec4bca418349" data-node="5ec4bca418349">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4bcb26cd94 blue" data-node="5ec4bcb26cd94">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Provide A Smarter Foundation for Computing
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4bd845f592" data-node="5ec4bd845f592">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    There are two ways the platform assembles, combines, and extends powerful compute grids for HTC apps, which can be used independently or in conjunction. Two models, one powerful toolkit.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5ec4be0587f6c" data-node="5ec4be0587f6c">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4be05b21ea" data-node="5ec4be05b21ea">
+              <div class="fl-col fl-node-5ec4be05b2477 fl-col-small" data-node="5ec4be05b2477">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-html fl-node-5ec4be76336bf" data-node="5ec4be76336bf">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-html">
+                   <div class="product-box blue">
+                    <div class="background-img">
+                     <img src="wp-content/uploads/2020/05/Group-65.png" style=""/>
+                    </div>
+                    <div class="content">
+                     <h3 class="title">
+                      The Distributed Computer
+                     </h3>
+                     <p class="description">
+                      The Distributed Computer is a gateway to global hyperscale infrastructure provided by datacentres and more. It the first platform where organizations can buy and sell both compute in an open market through a system that standardizes time, memory, and I/O.
+                     </p>
+                     <a class="cta" href="./about">
+                      Learn More
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fl-col fl-node-5ec4be05b24c3 fl-col-small" data-node="5ec4be05b24c3">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-html fl-node-5ec4c370ed388" data-node="5ec4c370ed388">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-html">
+                   <div class="product-box">
+                    <div class="background-img">
+                     <img src="wp-content/uploads/2020/05/Group-66.png" style=""/>
+                    </div>
+                    <div class="content">
+                     <h3 class="title">
+                      Compute Groups
+                     </h3>
+                     <p class="description">
+                      A Compute Group is an internal private cloud made from idle and underutilized computing cycles. They extend the same composability and hyperscale style of the public cloud to your on-premises operations, and let different business units access a central pool of computing.
+                     </p>
+                     <a class="cta" href="./about">
+                      Learn More
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-5ec4cc2fd4d6d" data-node="5ec4cc2fd4d6d">
+           <div class="fl-row-content-wrap">
+            <div class="fl-row-content fl-row-fixed-width fl-node-content">
+             <div class="fl-col-group fl-node-5ec4cc2fed2e7" data-node="5ec4cc2fed2e7">
+              <div class="fl-col fl-node-5ec4cc2fed55c" data-node="5ec4cc2fed55c">
+               <div class="fl-col-content fl-node-content">
+                <div class="fl-module fl-module-heading fl-node-5ec4cc43548a7 blue" data-node="5ec4cc43548a7">
+                 <div class="fl-module-content fl-node-content">
+                  <h2 class="fl-heading">
+                   <span class="fl-heading-text">
+                    Do More With The Distributed Computer
+                   </span>
+                  </h2>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-rich-text fl-node-5ec4cc57ed952" data-node="5ec4cc57ed952">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-rich-text">
+                   <p style="text-align: center;">
+                    Contact our experts and get your own enterprise edge network set up today.
+                   </p>
+                   <p>
+                   </p>
+                   <p style="text-align: center;">
+                    Lowest Cost Compute | Increased On-Prem Bandwidth | Improved Data Security
+                   </p>
+                   <p style="text-align: center;">
+                    Simplified Deployment &amp; IT Management | Fully Interoperable Applications
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="fl-module fl-module-button fl-node-5ec4cc84233c5" data-node="5ec4cc84233c5">
+                 <div class="fl-module-content fl-node-content">
+                  <div class="fl-button-wrap fl-button-width-auto fl-button-center">
+                   <a class="fl-button" href="./about" role="button" target="_self">
+                    <span class="fl-button-text">
+                     Get Started
+                    </span>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- .fl-post-content -->
+       </article>
+       <!-- .fl-post -->
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- .fl-page-content -->
+   <footer class="fl-page-footer-wrap" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+    <div class="fl-page-footer">
+     <div class="fl-page-footer-container container">
+      <div class="fl-page-footer-row row">
+       <div class="col-sm-6 col-md-6 text-left clearfix">
+        <div class="fl-page-footer-text fl-page-footer-text-1">
+         <img src="wp-content/uploads/2020/05/KDS-Logo-Dark-cropped.png" style="width: 32px"/>
+        </div>
+       </div>
+       <div class="col-sm-6 col-md-6 text-right clearfix">
+        <div class="fl-page-footer-text fl-page-footer-text-2">
+         <p style="margin: 0;padding: 0;">
+          © 2020 Kings Distributed Systems Ltd.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- .fl-page-footer -->
+   </footer>
+  </div>
+  <!-- .fl-page -->
+  <script src="wp-content/uploads/bb-plugin/cache/8-layout.js?ver=78b26197beef0eb0b68b708b771ef7e2">
+  </script>
+  <script src="wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=2.3.2.5">
+  </script>
+  <script src="wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=2.3.2.5">
+  </script>
+  <script>
+   var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"768"};
+  </script>
+  <script src="wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.6.2">
+  </script>
+  <script src="wp-includes/js/wp-embed.min.js?ver=5.4.1">
+  </script>
+ </body>
+</html>

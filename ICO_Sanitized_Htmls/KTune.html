@@ -1,0 +1,4919 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="telephone=no, address=no, email=no" name="format-detection"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="no" http-equiv="imagetoolbar"/>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   K-Tune
+  </title>
+  <meta content="K-Tune is where professional pop producers gather to collaborate. Meet other talents and complete your song. Purchase thousands of tracks to add your own topline." name="description"/>
+  <meta content="https://k-tune.org" property="og:type"/>
+  <meta content="K-Tune" property="og:title"/>
+  <meta content="K-Tune is where professional pop producers gather to collaborate. Meet other talents and complete your song. Purchase thousands of tracks to add your own topline." property="og:description"/>
+  <meta content="https://www.k-tune.org/images/logo.png" property="og:image"/>
+  <meta content="https://k-tune.org" property="og:url"/>
+  <script>
+   !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '410702699585449');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=410702699585449&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+  </noscript>
+  <link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <!--[if lte IE 8]>
+			<script src="http://www.k-tune.org/js/html5.js"></script>
+		<![endif]-->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-141695481-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'UA-141695481-1');
+  </script>
+  <script>
+   // 자바스크립트에서 사용하는 전역변수 선언 Declaring global variables
+
+			var g5_url       = "http://www.k-tune.org";
+			var g5_bbs_url   = "http://www.k-tune.org/bbs";
+			var g5_is_member = "";
+			var g5_is_admin  = "";
+			var g5_is_mobile = "";
+			var g5_bo_table  = "";
+			var g5_sca       = "";
+			var g5_editor    = "";
+			var g5_cookie_domain = "";
+  </script>
+  <link href="https://www.k-tune.org/css/default.css?ver=171222" rel="stylesheet"/>
+  <script src="https://www.k-tune.org/js/jquery-1.11.1.min.js">
+  </script>
+  <script src="https://www.k-tune.org/js/jquery.menu.js?ver=171222">
+  </script>
+  <script src="https://www.k-tune.org/js/common.js?ver=171222">
+  </script>
+  <script src="https://www.k-tune.org/js/wrest.js?ver=171222">
+  </script>
+  <script src="https://www.k-tune.org/js/placeholders.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
+  </script>
+  <link href="https://www.k-tune.org/js/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="/css/main.css?v=1621" rel="stylesheet"/>
+  <link href="/css/responsive.css" rel="stylesheet"/>
+  <link href="/css/animate.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="/css/slick.css" rel="stylesheet"/>
+  <script src="/js/jquery.min.js" type="text/javascript">
+  </script>
+  <script src=" /js/slick.min.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <div id="mainCont">
+   <div id="hd_pop">
+    <h2>
+     팝업레이어 알림
+    </h2>
+    <span class="sound_only">
+     팝업레이어 알림이 없습니다.
+    </span>
+   </div>
+   <script>
+    $(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+   </script>
+   <section class="banner section" id="banner">
+    <header id="headNav">
+     <div id="navBarHead">
+      <ul class="nav navbar-nav" style="font-size: 0.5rem;">
+       <li>
+        <a href="https://www.youtube.com/channel/UCvYcNgekFTs_l7_cx6KOyiA" target="_blank">
+         <i class="fab fa-youtube fa-3x">
+         </i>
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/KTuneofficial1" target="_blank">
+         <i class="fab fa-twitter fa-3x">
+         </i>
+        </a>
+       </li>
+       <li>
+        <a href="https://medium.com/@k_tune" target="_blank">
+         <i class="fab fa-medium fa-3x">
+         </i>
+        </a>
+       </li>
+       <li>
+        <a href="https://open.kakao.com/o/g1KjRGvb" target="_blank">
+         <img alt="" src="https://www.k-tune.org/images/kt-icon.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/OfficialKtune" target="_blank">
+         <i class="fab fa-telegram fa-3x">
+         </i>
+        </a>
+       </li>
+       <li>
+        <a href="https://business.facebook.com/KTuneKorea/?business_id=2164706890293309" target="_blank">
+         <i class="fab fa-facebook fa-3x">
+         </i>
+        </a>
+       </li>
+       <li>
+        <a class="lan active" href="https://www.k-tune.org/index.php" style="margin-left:1059px;font-size: 15px">
+         EN
+        </a>
+       </li>
+       <li>
+        <a class="lan sm-btn" href="https://www.k-tune.org/kr_index.php" style="font-size: 15px; padding: 5px 10px 0!important;">
+         KR
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div id="navbar">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="navbar-header">
+        <button class="navbar-toggle" data-target="#navbar-collapse-1" data-toggle="collapse" style="z-index: 999;" type="button">
+         <span class="sr-only">
+          Toggle navigation
+         </span>
+         <span class="icon-bar">
+         </span>
+         <span class="icon-bar">
+         </span>
+         <span class="icon-bar">
+         </span>
+        </button>
+        <a class="navbar-brand logo" href="/">
+         <img alt="" src="https://www.k-tune.org/images/logo.png"/>
+        </a>
+       </div>
+       <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav">
+         <li style="width: 45%;">
+          <a class="navbar-brand logo" href="/" style="padding:20px 15px 10px 10px;">
+           <img alt="" src="https://www.k-tune.org/images/logo.png"/>
+          </a>
+         </li>
+         <li class="dropdown" style="width: 10%;">
+          <a class="dropdown-toggle nrm-btn" data-toggle="dropdown" href="#">
+           About
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+            <a href="#about">
+             How it works
+            </a>
+           </li>
+           <li>
+            <a href="#technology">
+             Technology
+            </a>
+           </li>
+           <li>
+            <a href="#team">
+             Team
+            </a>
+           </li>
+           <li>
+            <a href="#partner">
+             Partners
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="dropdown" style="width: 16%;">
+          <a class="dropdown-toggle nrm-btn" data-toggle="dropdown" href="#z">
+           Learn More
+          </a>
+          <ul class="dropdown-menu">
+           <li>
+            <a href="/blog">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a href="#news">
+             News
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li style="width: 14%;">
+          <a class="nrm-btn" href="#contact">
+           Contact
+          </a>
+         </li>
+         <li class="cta-li">
+          <a class="cta-btn" href="https://play.k-tune.org/">
+           Get Started
+          </a>
+         </li>
+         <li class="lang-li" style="padding-top:10px;">
+          <a class="lan active" href="/index.php" style="margin-left:1059px;font-size: 15px;display:inline;">
+           EN
+          </a>
+          <a class="lan sm-btn" href="/kr_index.php" style="font-size: 15px; padding: 5px 10px 0!important;display:inline;">
+           KR
+          </a>
+         </li>
+        </ul>
+       </div>
+      </nav>
+     </div>
+    </header>
+    <video autoplay="" id="bgvid" loop="" muted="" playsinline="" poster="/images/banner.jpg">
+     <source src="ktune-banner-video-20200312-yt.mp4" type="video/mp4">
+      <source src="ktune.webm" type="video/webm">
+      </source>
+     </source>
+    </video>
+    <div class="banner-text text-center">
+     <h1>
+      Worldwide Collaboration
+      <span>
+       for K-Pop
+      </span>
+     </h1>
+    </div>
+    <p class="scroll" data-target="#video_modal" data-toggle="modal">
+     <img alt="" src="images/scroll-125.png"/>
+    </p>
+   </section>
+   <section class="about section" id="about">
+    <div class="container">
+     <div class="row text-center">
+      <h2>
+       ABOUT
+      </h2>
+      <p class="title">
+       Platform for
+       <strong>
+        global music producers
+       </strong>
+       with a focus on K-Pop
+      </p>
+      <p>
+       K-Tune is a platform as well as a community for musicians all over the world to collaborate and freely express themselves. It is your gateway to becoming a K-Pop producer.
+       <br/>
+       K-Tune aims to bring musical talents together for an exciting and profitable music-making endeavor.
+      </p>
+      <p>
+       <strong>
+        Click the button below to start.
+       </strong>
+       (Now BETA)
+      </p>
+      <a href="https://play.k-tune.org" target="_blank">
+       <img src="images/play_btn.png" width="100px"/>
+      </a>
+     </div>
+    </div>
+    <div class="about1">
+     <div class="container">
+      <div class="row text-center">
+       <h3>
+        K-Tune
+        <strong>
+         MASTERS
+        </strong>
+       </h3>
+       <p>
+        K-Tune Masters are current and former professional producers affiliated with K-Tune whose role is to provide help to users in the music-making process.
+        <br/>
+        Users can share their work with the Masters to seek advice or for collaborations.
+       </p>
+       <div class="col-md-2">
+        <img alt="" src="images/about_icon1.png"/>
+        <p>
+         Track Masters
+        </p>
+       </div>
+       <div class="col-md-2">
+        <img alt="" src="images/about_icon2.png"/>
+        <p>
+         Topline Masters
+        </p>
+       </div>
+       <div class="col-md-2">
+        <img alt="" src="images/about_icon3.png"/>
+        <p>
+         Lyrics Masters
+        </p>
+       </div>
+       <div class="col-md-2 last">
+        <img alt="" src="images/about_icon4.png"/>
+        <p>
+         Chorus Masters
+        </p>
+       </div>
+       <div class="col-md-2 last1">
+        <img alt="" src="images/about_icon5.png"/>
+        <p>
+         Mixing/Engineering Masters
+        </p>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <h3>
+        <strong>
+         ARENA
+        </strong>
+       </h3>
+       <p>
+        Arena is an open market where all users can sell their work – track, topline, instrument arrangements, lyrics and so on.
+        <br/>
+        Furthermore, users are at liberty to set their own price and control licensing rights.
+        <br/>
+        On Arena, once a user buys content from another user, she can freely use it to complete her song.
+       </p>
+       <img alt="ARENA" class="img-responsive pv" src="images/en_about_img1.png"/>
+       <img alt="ARENA" class="img-responsive mv1" src="images/en_about_img1m.png"/>
+       <h3>
+        <strong>
+         CAMP
+        </strong>
+       </h3>
+       <p>
+        On Camp, all users can open a camp to find a partner to collaborate with.
+        <br/>
+        The selected partner receives a bounty and a share of the completed song.
+       </p>
+       <img alt="CAMP" class="img-responsive pv" src="images/en_about_img2.png"/>
+       <img alt="CAMP" class="img-responsive mv1" src="images/en_about_img2m.png"/>
+      </div>
+      <p class="event_btn text-center">
+       <a href="K-Tune-whitepaper_en.pdf" target="_blank">
+        <span>
+         <i class="fa fa-download">
+         </i>
+         Whitepaper
+        </span>
+       </a>
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="section team" id="technology" style="background-image: none; background-color: #F7F7F7;">
+    <div class="container wow fadeInUp">
+     <div class="row text-center about1" style="background: none;  margin-top: 0px; padding: 0px;">
+      <h2>
+       Technology
+      </h2>
+      <p>
+       K-Tune is powered by blockchain technology that is perfect for real-time, comprehensive tracking of all activities engaged on the platform and fair royalty distribution.
+      </p>
+      <p>
+       All the transactions on K-Tune are done in ERC20 token: KTT.
+      </p>
+     </div>
+    </div>
+   </section>
+   <style>
+    div#token_tb {
+	width: 10%;
+}
+   </style>
+   <section class="section team" id="tokenomics">
+    <div class="container wow fadeInUp">
+     <div class="row text-center">
+      <h2>
+       Tokenomics
+      </h2>
+      <h3 align="left">
+       <img src="images/token_icon2.png" width="33px"/>
+       KTT Token Allocation
+      </h3>
+      <table>
+       <tbody>
+        <tr height="10%">
+         <td align="left" rowspan="7" valign="middle" width="50%">
+          <img src="images/tokenomics_rs2.png" width="100%"/>
+         </td>
+         <td align="right" valign="middle" width="5%">
+          <img src="images/lock_icon.png" width="25px"/>
+         </td>
+         <td align="center" width="2%">
+         </td>
+         <td align="left" valign="middle" width="43%">
+          <h4>
+           <strong>
+            Locked-up
+           </strong>
+          </h4>
+          <p>
+           10% monthly release starting from 00:01 Jan. 1. 2021(UTC)
+          </p>
+         </td>
+        </tr>
+        <tr height="10%" style="background: #FDD">
+         <td align="right" valign="middle" width="5%">
+          <img src="images/burn_icon.png" width="25px"/>
+          <img src="images/lock_icon.png" width="25px"/>
+         </td>
+         <td align="center" width="2%">
+         </td>
+         <td align="left" valign="middle" width="53%">
+          <h4>
+           <strong style="color: #F00;">
+            Burn
+           </strong>
+           <br/>
+           Private/Public Sale
+          </h4>
+          <p>
+           All unsold amount to be burnt at 00:01 Dec. 3. 2019 (UTC)
+          </p>
+          Marketing
+          <p>
+           All unused amount to be burnt at 00:01 Oct. 1. 2019 (UTC)
+          </p>
+          Reserve
+          <p>
+           1 billion unused amount to be burnt at 00:01 Apr. 8. 2020 (UTC)
+          </p>
+          Advisors &amp; Partners
+          <p>
+           All unused amount to be burnt at 00:01 Apr. 8. 2020 (UTC)
+          </p>
+         </td>
+        </tr>
+        <tr height="10%">
+         <td align="right" valign="middle" width="5%">
+          <img src="images/platform_icon.png" width="25px"/>
+         </td>
+         <td align="center" width="2%">
+         </td>
+         <td align="left" valign="middle" width="53%">
+          <h4>
+           <strong>
+            Timed-release
+           </strong>
+           <br/>
+           Platform Operation
+          </h4>
+          <p>
+           Monthly release from 00:01 Sep. 1, 2019 (UTC)
+min.0.01% ~ max. 0.11% (UTC, proportional to the number of K-Tune users)
+Always Locked-up remaining KTT
+          </p>
+         </td>
+        </tr>
+        <tr height="5%">
+         <td width="2%">
+         </td>
+         <td align="left" colspan="2" valign="middle">
+          <h4>
+           <strong>
+            Locked-up Wallet details
+           </strong>
+          </h4>
+          <p>
+           <strong>
+            The wallet is cold wallet(Nano ledger)
+           </strong>
+           (More look up information of wallet on click below)
+          </p>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" valign="middle" width="5%">
+          <img src="images/lock_icon.png" width="25px"/>
+         </td>
+         <td align="center" valign="middle" width="2%">
+         </td>
+         <td align="left" valign="middle" width="53%">
+          <h4>
+          </h4>
+          <p>
+           <a href="https://etherscan.io/address/0x7C8BBeaD47EA7CcB173a29EA4c92DC0a66fa01f8#tokentxns" target="_blank">
+            <strong>
+             Reserve
+            </strong>
+            : 0x7C8BBeaD47EA7CcB173a29EA4c92DC0a66fa01f8
+           </a>
+           <a href="https://etherscan.io/address/0xf53C850184a334A88e31355eed29aA1135926585#tokentxns" target="_blank">
+            <strong>
+             Founder &amp; Team
+            </strong>
+            : 0xf53C850184a334A88e31355eed29aA1135926585
+           </a>
+           <a href="https://etherscan.io/address/0x3551B71826F1896CbBb78D4869ca7563bDcCE7E1#tokentxns" target="_blank">
+            <strong>
+             Adv. &amp; Partners
+            </strong>
+            : 0x3551B71826F1896CbBb78D4869ca7563bDcCE7E1
+           </a>
+          </p>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" valign="middle" width="5%">
+          <img src="images/burn_icon.png" width="25px"/>
+         </td>
+         <td align="center" width="2%">
+         </td>
+         <td align="left" valign="middle" width="53%">
+          <h4>
+          </h4>
+          <p>
+           <a href="https://etherscan.io/address/0x800f0D993dBFbD8BDddBDE4Cf59F11b563b95507#tokentxns" target="_blank">
+            <strong>
+             Marketing
+            </strong>
+            : 0x800f0D993dBFbD8BDddBDE4Cf59F11b563b95507
+           </a>
+          </p>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" valign="middle" width="5%">
+          <img src="images/platform_icon.png" width="25px"/>
+         </td>
+         <td align="center" width="2%">
+         </td>
+         <td align="left" valign="middle" width="53%">
+          <h4>
+          </h4>
+          <p>
+           <a href="https://etherscan.io/address/0xea0593b1525691a3C5AbE28EffD21fa4cBA5a215#tokentxns" target="_blank">
+            <strong>
+             Platform Operation
+            </strong>
+            : 0xea0593b1525691a3C5AbE28EffD21fa4cBA5a215
+           </a>
+          </p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </section>
+   <style>
+    news_title {
+	font-size:15px;
+	color:#333333;
+	display: block;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: normal;
+	line-height: 1.2;
+	height: 5.9em
+}
+   </style>
+   <section class="news section" id="news">
+    <div class="container wow fadeInUp">
+     <div class="row text-center">
+      <h2>
+       NEWS
+      </h2>
+      <div class="slider-news">
+       <div>
+        <ul class="slider-news-ul-temp">
+         <li>
+          <a data-target="#news_modal_0" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1846158665_u5nsxST3_3a65810bd82ca89b42e1a5610c07ce241dd4c405_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            The ICO of K-Tune is progressing uninterrupted
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_1" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1846158665_CPwYBqhV_a0a710ff4393877f32b6a0844a2f4acd01110f62_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            How the blockchain influences the music industry
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_2" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1938390615_gGCntwV7_9353b29750135903c1c517cc5300bb7510d27aab_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            How Music Goes on the Ethereum Blockchain with the ICO of K-Tune
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_3" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1785103023_uOig6hUm_4739e34fb29dbb58c4bba65a73f42ecd9c3303a9_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            K-Tune la musica va su blockchain
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_4" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1785103023_izwLM5tv_754dcd74a18b37064387b3f5d3b8d110ce865d44_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            Le Fonti International: una puntata dedicata alla musica blockchain
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_5" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1785103023_wdZ4JEYe_da3555dc5e8817f4dda066286acdda9eefe1d052_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            Le ICO in Svizzera vanno ancora forte
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_6" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1970215988_WLN8IJsj_eafbd2a280e133bc20695da02457c0c27e7c8668_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            K-Tune: the countdown for the ICO has begun
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_7" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1970215988_mLx4bUFQ_83f7c850ef530db93b66d5a455115ede6cfb9e6b_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            K-Tune: The initial coin offering to start on October 30th
+           </news_title>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <ul class="slider-news-ul-temp">
+         <li>
+          <a data-target="#news_modal_8" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1970210255_56QkMGht_78a6e40d46aef87b533fb8440431414be95da701_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            K-tune: airdrop of 1 million tokens on Eidoo
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_9" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1970212574_PAt5WkBd_169dbf5cf2a001e4563a2814572911108d8a28b5_280x210.png" width="280"/>
+           <news_title>
+            <br/>
+            K-tune, the blockchain platform for music creators
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_10" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1938390615_ndYGFRfH_f02ab20a2f8e87342688ac7a027206d09c42a193_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            Blockchain is Reshaping the Music Industry
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_11" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1935376732_yzvZP0tH_d54cd32b3043f9c0e89f10628126381ff77cb0a7_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            K-Tune: music on the blockchain
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_12" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1970210091_AG5yKXHk_ceb3d73ae8ac63d922f597a17e5c780aa2f2a53c_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            Exclusive: How is Blockchain D﻿isrupting the Music Industry Globally?
+           </news_title>
+          </a>
+         </li>
+         <li>
+          <a data-target="#news_modal_13" data-toggle="modal" href="#!">
+           <img alt="" height="210" src="https://www.k-tune.org/data/file/en_notice/thumb-1935376732_XK9HrUD1_5e6bb41f7ba817e49b27c686357350118ed78506_280x210.jpg" width="280"/>
+           <news_title>
+            <br/>
+            How Blockchain Is About To Change The Music Industry
+           </news_title>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <script type="text/javascript">
+    $('.slider-news').slick({
+	        rows: 1,
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [
+				{
+                    breakpoint: 1025,
+                    settings: {
+                        
+                        
+                      
+						dots: true,
+						arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 770,
+                    settings: {
+                        
+                        
+						dots: true,
+						arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                       
+						dots: true,
+						arrows: false,
+                    }
+                }
+            ]
+});
+   </script>
+   <div aria-hidden="true" class="modal fade" id="news_modal_0" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        The ICO of K-Tune is progressing uninterrupted
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-11-19
+       </p>
+       <p>
+        The ICO of K-Tune is progressing uninterrupted
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         More
+        </span>
+        <b>
+         record numbers for the ICO (Initial Coin Offering) of K-Tune
+        </b>
+        <span style="font-weight: 400;">
+         , a project that brings together the world of music and that of the blockchain by allowing the monetisation of new songs, created by both musicians and producers.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         In this respect,
+        </span>
+        <b>
+         blockchain technology protects copyright
+        </b>
+        <span style="font-weight: 400;">
+         and will provide musicians with the opportunity to
+        </span>
+        <b>
+         monetise their works
+        </b>
+        <span style="font-weight: 400;">
+         , without going through record labels and other intermediaries that, in the traditional world, take a high percentage of revenues.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Being a Korean project, the musical genre most promoted by the platform is
+        </span>
+        <b>
+         K-Pop
+        </b>
+        <span style="font-weight: 400;">
+         , but in reality
+        </span>
+        <b>
+         K-Tune is open
+        </b>
+        <a href="https://en.cryptonomist.ch/2019/09/20/k-tune-blockchain-platform-music/" rel="noopener noreferrer" target="_blank">
+         <b>
+          to all types of music
+         </b>
+        </a>
+        <span style="font-weight: 400;">
+         .
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         As is known,
+        </span>
+        <a href="https://en.cryptonomist.ch/2019/10/28/k-tune-countdown-ico-has-begun/" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          the ICO was launched on Eidoo’s platform
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         , Eidoo Crowd, and thanks to it K-Tune has now collected
+        </span>
+        <b>
+         12020 Ethereum (ETH)
+        </b>
+        <span style="font-weight: 400;">
+         , including off-chain investment equivalent to more than 2 million dollars, thus surpassing the soft cap.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         The ICO will run until November 30th and is
+        </span>
+        <b>
+         already at 28% of the collection
+        </b>
+        <span style="font-weight: 400;">
+         .
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         It’s definitely a great result given the rather bearish period of the market and the fact that the ICO of K-Tune was launched only two weeks ago.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         The project involves the creation of a platform that allows uploading or downloading new songs. The target are artists who need to promote a song or a record.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         K-Tune will also launch a sort of e-commerce within the platform for purchasing artists’ merchandise.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Worth noting is that everything will make use of
+        </span>
+        <b>
+         the K-Tune token, KTT
+        </b>
+        <span style="font-weight: 400;">
+         , which will be the currency of the platform for payments or the purchase of goods and services, hence a pure utility token.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         At the end of the ICO, KTT will be listed on several exchanges, although it is not yet possible to reveal their names. As for the platform, the development is almost complete at 90%.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Currently the
+        </span>
+        <a href="https://www.k-tune.org/" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          K-tune
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         platform is in beta version, but it is already possible to register using email and password.
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        By
+        <a href="https://en.cryptonomist.ch/author/alfredo-de-candia/" rel="noopener noreferrer">
+         Alfredo de Candia
+        </a>
+        <span class="time">
+         - 13 Nov 2019
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <a href="https://en.cryptonomist.ch/2019/11/13/ico-of-k-tune/">
+         https://en.cryptonomist.ch/2019/11/13/ico-of-k-tune/
+        </a>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_1" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        How the blockchain influences the music industry
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-11-19
+       </p>
+       <p>
+        How the blockchain influences the music industry
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        The blockchain we hear so much about today is revolutionising every sector, from finance to the so-called supply chain, including the music industry.
+       </p>
+       <p>
+        One of the platforms we will often hear about is the Swiss-Korean
+        <a href="https://k-tune.org/" rel="nofollow noopener noreferrer" style="color: rgb(30, 115, 190);" target="_blank">
+         K-Tune
+        </a>
+        , which connects musicians and producers for the creation of new music tracks.
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        The platform is open to all genres of music, albeit with a special focus on the K-Pop genre, very popular in South Korea, from where the company originates.
+       </p>
+       <p>
+        In this respect, the blockchain protects copyright and will give musicians the opportunity to monetise their works, without having to go through record labels and other intermediaries that, in the traditional world, take a high percentage of revenues.
+       </p>
+       <p>
+        Currently, K-Tune is in beta version, but it is already possible to register using email and password.
+       </p>
+       <h2>
+        How to buy music on the blockchain
+       </h2>
+       <p>
+        The homepage, called Arena, allows users to buy audio files through the virtual currency of K-Tune (KTT): the website already shows various tracks available, as shown in the following image:
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <figure class="wp-block-image size-large">
+        <img alt="" class="wp-image-8332 lazyloaded" data-lazy-sizes="(max-width: 700px) 100vw, 700px" data-lazy-src="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg" data-lazy-srcset="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg 700w, https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1-300x158.jpg 300w" data-was-processed="true" sizes="(max-width: 700px) 100vw, 700px" src="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg" srcset="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg 700w, https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1-300x158.jpg 300w"/>
+        <noscript>
+         &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;img src="&amp;amp;amp;amp;amp;amp;amp;lt;a href="&amp;lt;a href="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg"&amp;gt;https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg&amp;lt;/a&amp;gt;"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;lt;a href="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;"&amp;gt;https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;&amp;lt;/a&amp;gt;" alt="" class="wp-image-8332" srcset="&amp;amp;amp;amp;amp;amp;amp;lt;a href="&amp;lt;a href="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg"&amp;gt;https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg&amp;lt;/a&amp;gt;"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;lt;a href="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;"&amp;gt;https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1.jpg&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;&amp;lt;/a&amp;gt; 700w, &amp;amp;amp;amp;amp;amp;amp;lt;a href="&amp;lt;a href="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1-300x158.jpg"&amp;gt;https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1-300x158.jpg&amp;lt;/a&amp;gt;"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;lt;a href="https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1-300x158.jpg&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;"&amp;gt;https://thecurrencyanalytics.com/wp-content/uploads/2019/11/KTUNE1-300x158.jpg&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;&amp;lt;/a&amp;gt; 300w" sizes="(max-width: 700px) 100vw, 700px" /&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;
+        </noscript>
+       </figure>
+       <h3>
+        <br/>
+       </h3>
+       <h3>
+        <br/>
+       </h3>
+       <h3>
+        How to sell music on the blockchain
+       </h3>
+       <p>
+        If, on the other hand, I am a musician and I want to use K-tune to apply for some offer, I have to use the Camp section, where it is possible to view the various proposals and earn KTT tokens.
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <span class="author-meta">
+         <span class="author-meta-by" style="top: -3px; font-size: 14px; font-style: italic; font-weight: 300; position: relative; opacity: 0.7;">
+          By
+         </span>
+         <a href="https://thecurrencyanalytics.com/author/tcatpr/" style="color: rgb(0, 0, 0); text-transform: uppercase; font-size: 14px;">
+          TCA PR
+         </a>
+        </span>
+        <span class="posted-date" style="display: inline;">
+         November 18, 2019
+        </span>
+       </p>
+       <p>
+        <span class="posted-date" style="display: inline;">
+         <br/>
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+        <a href="https://thecurrencyanalytics.com/8331/how-the-blockchain-influences-the-music-industry/">
+         https://thecurrencyanalytics.com/8331/how-the-blockchain-influences-the-music-industry/
+        </a>
+       </p>
+       <p>
+        <br/>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_2" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        How Music Goes on the Ethereum Blockchain with the ICO of K-Tune
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-11-07
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <span style='text-align: left; color: rgb(10, 10, 10); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: "Poppins"; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; word-spacing: 0px; display: inline !important; white-space: normal; orphans: 2; float: none; -webkit-text-stroke-width: 0px; overflow-wrap: break-word; background-color: rgb(250, 243, 234);'>
+         How Music Goes on the Ethereum Blockchain with the ICO of K-Tune
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+        <br/>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         he
+        </span>
+        <a data-wpel-link="external" href="http://k-tune.org/" rel="noopener noreferrer" style="border-bottom-color: currentColor; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: inherit; color: rgb(30, 115, 190); padding-bottom: 3px; text-decoration: none; touch-action: manipulation; transition-delay: 0s; transition-duration: 0.1s; transition-property: border-bottom; transition-timing-function: ease-in-out;" target="_blank">
+         <b style="box-sizing: inherit; font-weight: bolder;">
+          K-Tune
+         </b>
+        </a>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         project is a solution that allows musicians from all around the world to form communities and actively collaborate to create new songs. It also provides a platform for aspiring artists to become music producers.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         Currently the project is raising money through an ICO on the Swiss platform
+        </span>
+        <a data-wpel-link="external" href="http://eidoo.io/" rel="noopener noreferrer" style="border-bottom-color: currentColor; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: inherit; color: rgb(30, 115, 190); padding-bottom: 3px; text-decoration: none; touch-action: manipulation; transition-delay: 0s; transition-duration: 0.1s; transition-property: border-bottom; transition-timing-function: ease-in-out;" target="_blank">
+         <span style="box-sizing: inherit; font-weight: 400;">
+          Eidoo Crowd
+         </span>
+        </a>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         . The funding is 30% complete and it received a high score on websites such as
+        </span>
+        <a data-wpel-link="external" href="https://icoholder.com/" rel="noopener noreferrer" style="border-bottom-color: currentColor; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: inherit; color: rgb(30, 115, 190); padding-bottom: 3px; text-decoration: none; touch-action: manipulation; transition-delay: 0s; transition-duration: 0.1s; transition-property: border-bottom; transition-timing-function: ease-in-out;" target="_blank">
+         <span style="box-sizing: inherit; font-weight: 400;">
+          ICOholder.com.
+         </span>
+        </a>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <h2 style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: &amp;quot;Poppins&amp;quot;; font-size: 3.5rem; font-style: normal; font-variant: normal; font-weight: 700; letter-spacing: normal; line-height: 1.25; margin-bottom: 3.6rem; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         <span style="font-size: 18pt;">
+          How K-Tune works
+         </span>
+        </b>
+       </h2>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         K-Tune offers a variety of useful tools that can simplify the process of
+        </span>
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         music-making
+        </b>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         , including an open market (K-Tune Arena) and an online song camp (K-Tune Camp). In addition, K-Masters, a team of established K-Pop producers, are available to assist, advise and interact with the users.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         The platform is global
+        </b>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         , dedicated to all music producers in the world, but with a particular focus on
+        </span>
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         K-Pop
+        </b>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         , the dominant music genre in
+        </span>
+        <a data-wpel-link="external" href="https://en.cryptonomist.ch/2019/09/05/south-korea-report-blockchain/" rel="noopener noreferrer" style="border-bottom-color: currentColor; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: inherit; color: rgb(30, 115, 190); padding-bottom: 3px; text-decoration: none; touch-action: manipulation; transition-delay: 0s; transition-duration: 0.1s; transition-property: border-bottom; transition-timing-function: ease-in-out;" target="_blank">
+         <b style="box-sizing: inherit; font-weight: bolder;">
+          South Korea,
+         </b>
+        </a>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         where the project was born.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         The idea is to bring together musical talents and produce music, also thanks to the so-called K-Tune Masters, which are actual producers and former professionals affiliated with K-Tune who will assist users in their music production process.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         Platform users will be able to share their work with the masters and ask for advice or collaboration on the music, lyrics, choirs, mixing, etc…
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         The platform will also have a
+        </span>
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         marketplace
+        </b>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         where all users can sell their works: it will be called K-Arena and will allow selling not only songs but also individual tracks, such as melodies, arrangements, lyrics and so on.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         When purchasing content from another user, users will be able to utilise it as they wish to complete their own pieces. In addition, users will be free to set their own prices and control license fees.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <h2 style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: &amp;quot;Poppins&amp;quot;; font-size: 3.5rem; font-style: normal; font-variant: normal; font-weight: 700; letter-spacing: normal; line-height: 1.25; margin-bottom: 3.6rem; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         <span style="font-size: 18pt;">
+          The KTT token
+         </span>
+        </b>
+       </h2>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         The token – recognised as a utility from the Swiss Authority FINMA – is called KTT, which will be used as a means of payment to use the K-Tune services. Users will be able to buy KTT directly on the platform or through exchanges.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         In November, in fact, when the ICO will be over, the KTT token will be listed on various exchanges, starting from a very famous one.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         The initiative is designed for all artists
+        </b>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         who wish to use their talents to produce content and trade it with other artists, with the objective of bringing their work to the market and earning money, especially in the growing K-Pop market.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="box-sizing: inherit; font-weight: 400;">
+         Among the masters, there are professional trackmakers, songwriters and sound engineers who have considerable experience in the production of K-Pop songs, including EXO, TWICE, IZ*ONE, GOT7 and Beast.
+        </span>
+       </p>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <h2 style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: &amp;quot;Poppins&amp;quot;; font-size: 3.5rem; font-style: normal; font-variant: normal; font-weight: 700; letter-spacing: normal; line-height: 1.25; margin-bottom: 3.6rem; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         <span style="font-size: 18pt;">
+          K-tune to solve the copyright issues
+         </span>
+        </b>
+       </h2>
+       <p>
+        <span style="display: inline !important; float: none; background-color: rgb(250, 243, 234); color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        </span>
+       </p>
+       <p style="box-sizing: inherit; color: rgb(10, 10, 10); font-family: Georgia,serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 3.6rem; margin-left: 0px; margin-right: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <b style="box-sizing: inherit; font-weight: bolder;">
+         The platform also provides a fair and transparent distribution of royalties,
+        </b>
+        <span style="box-sizing: inherit; font-weight: 400;">
+         something that today is hardly guaranteed in the industry. K-Tune’s copyright monitoring system is based on blockchain technology and allows full real-time monitoring of all activities on the platform. This feature also eliminates possible disputes between artists and distributes copyrights in a fair and simple way
+        </span>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <div class="meta-item meta-author" style="box-sizing: inherit; color: rgb(0, 0, 0); display: inline-table; font-family: Georgia,serif; font-size: 1.3rem; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-right: 15px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; vertical-align: top; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="font-size: 11pt;">
+         By
+        </span>
+        <span class="vcard author" style="box-sizing: inherit; color: rgb(0, 0, 0);">
+         <span class="fn" style="color: rgb(0, 0, 0); font-size: 11pt; box-sizing: inherit;">
+          <a data-wpel-link="internal" href="https://www.ccn.com/author/press-release/" rel="noopener" style="border-bottom-color: transparent; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: inherit; color: rgb(0, 0, 0); padding-bottom: 3px; text-decoration: none; touch-action: manipulation; transition-delay: 0s; transition-duration: 0.1s; transition-property: border-bottom; transition-timing-function: ease-in-out;">
+           Press Release
+          </a>
+         </span>
+        </span>
+       </div>
+       <div class="meta-item meta-date" style="box-sizing: inherit; color: rgb(0, 0, 0); display: inline-table; font-family: Georgia,serif; font-size: 1.3rem; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-right: 15px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; vertical-align: top; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span class="updated" style="color: rgb(0, 0, 0); font-size: 11pt; box-sizing: inherit;">
+         November 5, 2019
+        </span>
+       </div>
+       <div class="meta-item meta-rtime" style="box-sizing: inherit; color: rgb(0, 0, 0); display: inline-table; font-family: Georgia,serif; font-size: 1.3rem; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-right: 15px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; vertical-align: top; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="font-size: 11pt;">
+         3 Min read
+        </span>
+       </div>
+       <div class="meta-item meta-category" style="box-sizing: inherit; color: rgb(0, 0, 0); display: inline-table; font-family: Georgia,serif; font-size: 1.3rem; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; margin-right: 15px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; vertical-align: top; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">
+        <span style="font-size: 11pt;">
+         In
+        </span>
+        <a data-wpel-link="internal" href="https://www.ccn.com/press-releases/" rel="category tag noopener" style="border-bottom-color: transparent; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: inherit; color: rgb(0, 0, 0); padding-bottom: 3px; text-decoration: none; touch-action: manipulation; transition-delay: 0s; transition-duration: 0.1s; transition-property: border-bottom; transition-timing-function: ease-in-out;">
+         <span style="font-size: 11pt;">
+          Press Releases
+         </span>
+        </a>
+       </div>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <a href="https://www.ccn.com/how-music-goes-on-the-ethereum-blockchain-with-the-ico-of-k-tune/">
+         https://www.ccn.com/how-music-goes-on-the-ethereum-blockchain-with-the-ico-of-k-tune/
+        </a>
+        <br/>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_3" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        K-Tune la musica va su blockchain
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-11-01
+       </p>
+       <section class="custom-content custom-content-post_content-before">
+        <p id="breadcrumbs">
+         <span>
+          <span>
+           <a href="https://assodigitale.it/">
+            Assodigitale Notizie
+           </a>
+           &gt;
+           <span>
+            <a href="https://assodigitale.it/criptovalute/">
+             Criptovalute
+            </a>
+            &gt;
+            <span>
+             <a href="https://assodigitale.it/criptovalute/ico/">
+              ICO - Initial Coin Offering
+             </a>
+             &gt;
+             <strong aria-current="page" class="breadcrumb_last">
+              K-Tune la musica va su blockchain
+             </strong>
+            </span>
+           </span>
+          </span>
+         </span>
+        </p>
+        <h2 class="titoloh2pergoogle">
+         K-Tune la musica va su blockchain
+        </h2>
+       </section>
+       <section class="entry-content">
+        <p>
+         <strong>
+          L’initial coin offering del progetto di musica su
+          <a href="https://assodigitale.it/criptovalute/blockchain/" title="blockchain">
+           blockchain
+          </a>
+          è partita il 30 ottobre
+         </strong>
+        </p>
+        <p>
+         Siamo agli sgoccioli per l’inizio della ICO del progetto
+         <a href="http://k-tune.org/">
+          K-Tune
+         </a>
+         , piattaforma blockchain per musicisti.
+        </p>
+        <p>
+         La data della ICO (Initial Coin Offering) è iniziata il
+         <a href="https://crowd.eidoo.io/app/project/k-tune">
+          30 di ottobre.
+         </a>
+        </p>
+        <p>
+         Il progetto di K-Tune si pone come soluzione sia per creare una community di musicisti al fine di creare collaborazioni per la realizzazione di nuovi brani, sia come piattaforma per diventare un produttore musicale; K-Tune inoltre offre diversi strumenti molto utili che possono semplificare la vita ad un artista, come ad esempio i cosiddetti K-Tune Masters, Arena e Camp.
+        </p>
+        <p>
+         La piattaforma sarà globale, dedicata a tutti i
+         <strong>
+          produttori musicali del mondo
+         </strong>
+         , ma con un focus particolare sul
+         <a href="https://en.wikipedia.org/wiki/K-pop">
+          K-Pop
+         </a>
+         , il genere musicale dominante in Corea del Sud.
+        </p>
+        <p>
+         <b>
+         </b>
+         <i>
+         </i>
+         <u>
+         </u>
+         <sub>
+         </sub>
+         <sup>
+         </sup>
+         <strike>
+         </strike>
+         <br/>
+        </p>
+        <p>
+         <br/>
+        </p>
+        <div style="clear: both; margin-top: -2em; margin-bottom: -2em;">
+         <div style="padding-right: 1em; padding-left: 1em;">
+          <a class="u9f19286db8eb36c20e6277341c233313" href="https://assodigitale.it/criptovalute/ico/crypto-scam-grandissima-truffa-in-corea-per-oltre-185-milioni/" target="_self">
+           <span class="ctaText">
+            ▷
+           </span>
+           <span class="postTitle">
+            Crypto Scam Grandissima truffa in Corea per oltre $ 18,5 milioni
+           </span>
+          </a>
+         </div>
+         <div style="padding-right: 1em; padding-left: 1em;">
+          <br/>
+         </div>
+         <div style="padding-right: 1em; padding-left: 1em;">
+          <p>
+           Lo scopo infatti è quello di riunire talenti musicali per produrre musica, grazie anche ai cosiddetti
+           <strong>
+            K-Tune Masters
+           </strong>
+           , ovvero produttori attuali ed ex professionisti affiliati a K-Tune che avranno il ruolo di
+           <strong>
+            fornire assistenza agli utenti
+           </strong>
+           nel loro processo di produzione musicale.
+          </p>
+          <p>
+           Gli utenti della piattaforma infatti potranno condividere il loro lavoro con i Master per chiedere consigli o collaborazioni in merito a musica, testi, cori, mixaggio, eccetera.
+          </p>
+          <p>
+           La piattaforma disporrà anche di un
+           <strong>
+            mercato aperto
+           </strong>
+           in cui tutti gli utenti potranno
+           <strong>
+            mettere in vendita i propri lavori
+           </strong>
+           : si chiamerà
+           <strong>
+            K-Arena
+           </strong>
+           e consentirà di mettere in vendita non solo pezzi, ma anche singole tracce, come le melodie, gli arrangiamenti, i testi e così via.
+          </p>
+          <p>
+           <b>
+           </b>
+           <i>
+           </i>
+           <u>
+           </u>
+           <sub>
+           </sub>
+           <sup>
+           </sup>
+           <strike>
+           </strike>
+           <br/>
+          </p>
+          <a class="u41e35a97c3e9406fca8ec78e172c1e7d" href="https://assodigitale.it/criptovalute/ico/cosa-cercare-nei-termini-condizioni-ico-brutte-sorprese/" target="_self">
+           <div style="padding-right: 1em; padding-left: 1em;">
+            <span class="ctaText">
+             ▷
+            </span>
+            <span class="postTitle">
+             Cosa cercare nei Termini e condizioni T&amp;C di una ICO per non avere brutte sorprese
+            </span>
+           </div>
+          </a>
+          <p>
+           Una volta acquistati contenuti da un altro utente, gli utenti potranno
+           <strong>
+            utilizzarli liberamente per completare i propri pezzi
+           </strong>
+           . Inoltre, gli utenti saranno liberi di
+           <strong>
+            impostare i propri prezzi
+           </strong>
+           e
+           <strong>
+            controllare i diritti di licenza
+           </strong>
+           .
+          </p>
+          <p>
+           <b>
+           </b>
+           <i>
+           </i>
+           <u>
+           </u>
+           <sub>
+           </sub>
+           <sup>
+           </sup>
+           <strike>
+           </strike>
+           <br/>
+          </p>
+          <p>
+           Oltre a K-Arena ci sarà anche
+           <strong>
+            K-Camp
+           </strong>
+           , ovvero una sezione in cui gli utenti possono
+           <strong>
+            cercare partner con cui collaborare
+           </strong>
+           , e con i quali condividere gli eventuali introiti derivanti dalle vendite dei brani realizzati insieme.
+          </p>
+          <p>
+           Nel
+           <a href="https://www.k-tune.org/K-Tune_v1.19.pdf">
+            whitepaper
+           </a>
+           si legge che K-Tune vuole diventare una piattaforma in cui musicisti professionisti e dilettanti possano incontrarsi e riunirsi per
+           <strong>
+            scrivere e produrre canzoni popolari da mettere sul mercato
+           </strong>
+           .
+          </p>
+          <p>
+           Il token utilizzato all’interno della piattaforma sarà
+           <strong>
+            KTT
+           </strong>
+           , che verrà utilizzato come mezzo di pagamento per utilizzare i servizi di K-Tune.
+          </p>
+          <p>
+           <b>
+           </b>
+           <i>
+           </i>
+           <u>
+           </u>
+           <sub>
+           </sub>
+           <sup>
+           </sup>
+           <strike>
+           </strike>
+           <br/>
+          </p>
+          <a class="ufc4f387e45f9fc1d5a0068895d2258cd" href="https://assodigitale.it/criptovalute/ico/cina-contro-criptovalute-blocca-imo-ico/" target="_self">
+           <div style="padding-right: 1em; padding-left: 1em;">
+            <span class="ctaText">
+             ▷
+            </span>
+            <span class="postTitle">
+             La Cina contro le Criptovalute blocca anche le IMO considerate ICO camuffate
+            </span>
+           </div>
+          </a>
+          <p>
+           Gli utenti potranno acquistare KTT direttamente all’interno della piattaforma, o tramite exchange.
+          </p>
+          <div class="assod-registrazione-social-fondo-pagina" id="assod-646801574">
+           <p>
+            Commenta l’articolo
+            <strong>
+             collegandoti ai nostri social:
+            </strong>
+            <a href="https://facebook.com/assodigitale">
+             PAGINA FACEBOOK
+            </a>
+            –
+            <a href="https://twitter.com/assodigitale">
+             FEED TWITTER
+            </a>
+            –
+            <a href="https://www.youtube.com/user/assodigitale">
+             CANALE YOUTUBE
+            </a>
+            , oltre a quelli del nostro
+            <strong>
+             Direttore Editoriale Michele Ficara Manganelli
+            </strong>
+            che trovi su
+            <a href="https://www.facebook.com/micheleficara">
+             FACEBOOK
+            </a>
+            e su
+            <a href="https://twitter.com/micheleficara">
+             TWITTER
+            </a>
+            . Per ricevere gli sconti speciali su Conferenze e su Prodotti riservati agli iscritti registrati alla
+            <a href="https://assodigitale.it/iscrizione-newsletter/">
+             Newsletter
+            </a>
+            .
+           </p>
+           <p>
+            <b>
+            </b>
+            <i>
+            </i>
+            <u>
+            </u>
+            <sub>
+            </sub>
+            <sup>
+            </sup>
+            <strike>
+            </strike>
+            <br/>
+           </p>
+           <p>
+            <a href="https://assodigitale.it/criptovalute/ico/k-tune-la-musica-va-su-blockchain/" rel="bookmark">
+             31 Ottobre 2019
+            </a>
+           </p>
+           <p>
+            <b>
+            </b>
+            <i>
+            </i>
+            <u>
+            </u>
+            <sub>
+            </sub>
+            <sup>
+            </sup>
+            <strike>
+            </strike>
+            <a href="https://assodigitale.it/criptovalute/ico/k-tune-la-musica-va-su-blockchain/">
+             https://assodigitale.it/criptovalute/ico/k-tune-la-musica-va-su-blockchain/
+            </a>
+            <br/>
+           </p>
+           <p>
+            <b>
+            </b>
+            <i>
+            </i>
+            <u>
+            </u>
+            <sub>
+            </sub>
+            <sup>
+            </sup>
+            <strike>
+            </strike>
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_4" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        Le Fonti International: una puntata dedicata alla musica blockchain
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-11-01
+       </p>
+       <p>
+        Le Fonti International: una puntata dedicata alla musica blockchain
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Come ogni giovedì, anche oggi va in diretta alle ore 19.15
+        </span>
+        <b>
+         Le Fonti International
+        </b>
+        <span style="font-weight: 400;">
+         , format del canale online
+        </span>
+        <b>
+         Le Fonti.tv
+        </b>
+        <span style="font-weight: 400;">
+         in lingua inglese.
+        </span>
+        <span style="font-weight: 400;">
+         La puntata di questa sera vedrà come ospite
+        </span>
+        <b>
+         Sean Jong
+        </b>
+        <span style="font-weight: 400;">
+         , COO e CMO di
+        </span>
+        <a href="https://cryptonomist.ch/?s=k-tune&amp;search=" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          K-Tune
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         , attuale ICO in corso su
+        </span>
+        <a href="https://crowd.eidoo.io/app/project/k-tune" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          Eidoo Crowd.
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         La ICO è stata lanciata ieri e in poche ore ha già raccolto oltre mezzo milione di dollari (
+        </span>
+        <b>
+         3,320 ETH)
+        </b>
+        <span style="font-weight: 400;">
+         , raggiungendo il 26% di funding.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         L’hard cap totale è di 12,750 ETH: Ethereum, infatti, è la sola crypto che si può usare per inviare fondi al progetto; si ha tempo fino al 30 novembre 2019 per partecipare alla raccolta.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Attualmente la ICO di K-Tune ha un voto di
+        </span>
+        <b>
+         4.2 su ICO Holder
+        </b>
+        <span style="font-weight: 400;">
+         ed è segnalata tra i migliori progetti del momento anche su
+        </span>
+        <a href="https://icobench.com/ico/k-tune" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          ICO Bench.
+         </span>
+        </a>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Si tratta di un progetto che prevede lo sviluppo di una piattaforma musicale dove i musicisti e i produttori possono creare nuovi brani musicali avendo pieno controllo dei copyright. In futuro verrà anche implementato un ecommerce per comprare e vendere oggetti musicali.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Il progetto ha infatti un utility token, KTT, con cui verranno gestite tutte le transazioni della piattaforma.
+        </span>
+        <b>
+         Il token è un ERC20,
+        </b>
+        <span style="font-weight: 400;">
+         quindi basato su Ethereum. Gli utenti possono usare il token, tra le tante cose, anche per offrire e ricevere ricompense per i contenuti musicali pubblicati.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Inizialmente la piattaforma sarà incentrata sul genere musicale
+        </span>
+        <b>
+         K-Pop
+        </b>
+        <span style="font-weight: 400;">
+         , molto forte in Sud Corea, Paese di origine del progetto, ma in realtà l’uso è aperto ai musicisti di tutti i generi musicali.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Per commentare la puntata e mandare messaggi agli ospiti in studio si può utilizzare whatsapp al numero +39 393 82 79 197.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <br/>
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <br/>
+        </span>
+       </p>
+       <p>
+        By
+        <a href="https://cryptonomist.ch/author/ilaria-stirpe/" rel="noopener noreferrer">
+         Ilaria Stirpe
+        </a>
+        <span class="time">
+         - 31 Ott 2019
+        </span>
+       </p>
+       <p>
+        <a href="https://cryptonomist.ch/2019/10/31/le-fonti-international-musica-blockchain/">
+         https://cryptonomist.ch/2019/10/31/le-fonti-international-musica-blockchain/
+        </a>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_5" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        Le ICO in Svizzera vanno ancora forte
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-11-01
+       </p>
+       <p>
+        Le ICO in Svizzera vanno ancora forte
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+        <br/>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <b>
+         </b>
+         <i>
+         </i>
+         <u>
+         </u>
+         <sub>
+         </sub>
+         <sup>
+         </sup>
+         <strike>
+         </strike>
+         <br/>
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <br/>
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Sappiamo tutti che ormai
+         <strong>
+          il rally della ICO (Initial Coin Offering) ha avuto il suo picco nel dicembre 2017
+         </strong>
+         e adesso, invece, stanno a poco alla volta diminuendo, sostituite in alcuni casi dalle recenti IEO (Initial Exchange Offering) o dalle STO.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Ma sarà davvero così? Possibile che l’hype si sia infranto e che in questi anni non ci siano stati progetti che abbiano adottato con successo questo strumento di raccolta fondi?
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Un esempio degli ultimi giorni è
+         <strong>
+          K-Tune
+         </strong>
+         , lanciata su Eidoo, che in pochi minuti ha raccolto già il 25% del proprio goal.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Annunciata pochi giorni fa e aperta proprio oggi,
+         <strong>
+          la ICO ha già guadagnato oltre mezzo milione di dollari.
+         </strong>
+        </span>
+       </p>
+       <h2>
+        <span style="font-weight: 400;">
+         Le ICO nel mondo
+        </span>
+       </h2>
+       <p>
+        <span style="font-weight: 400;">
+         In generale, comunque, il numero di progetti si è ridotto e si tratta di un riduzione evidente dei progetti lanciati, che sono 3 volte inferiori rispetto ad un anno fa.
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Se ci spostiamo a vedere i Paesi per numero di ICO lanciate, possiamo notare una
+         <strong>
+          netta supremazia americana; segue Singapore con 577 ICO ed al terzo posto l’Inghilterra con poco meno di 500 ICO.
+         </strong>
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Per quanto concerne le piattaforme utilizzate dalle ICO, vediamo che
+         <strong>
+          il 90% si è affidato alla piattaforma di Ethereum (ETH)
+         </strong>
+         che, con i suoi 4882 progetti, è quella che sbaraglia la concorrenza; Waves segue al secondo posto e Stellar al terzo posto.
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         Se parliamo in termini economici, vediamo che in questo settore bisogna ragionare con cifre a 9 zeri dato che solo in America si sono superati i $ 7 miliardi.
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <strong>
+          La Svizzera si piazza in classifica al 4° posto con poco meno di $ 2 miliardi raccolti con le ICO.
+         </strong>
+         Ed è quindi doveroso ricordare che proprio in Svizzera troviamo proprio la piattaforma di Eidoo, nello specifico Eidoo
+        </span>
+        <a href="https://crowd.eidoo.io/app/" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          crowd
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         , che permette di lanciare una ICO in completa semplicità, tramite app, rendendo il processo facile. Non a caso l’ultimo progetto, K-Tune, con la sua ICO
+        </span>
+        <a href="https://cryptonomist.ch/2019/10/28/k-tune-ico/" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          iniziata
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         oggi, ha già
+        </span>
+        <a href="https://crowd.eidoo.io/app/project/k-tune" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          raccolto
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         oltre 3000 ETH.
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        By
+        <a href="https://cryptonomist.ch/author/alfredo-de-candia/" rel="noopener noreferrer">
+         Alfredo de Candia
+        </a>
+        <span class="time">
+         - 30 Ott 2019
+        </span>
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+        <a href="https://cryptonomist.ch/2019/10/30/ico-in-svizzera/">
+         https://cryptonomist.ch/2019/10/30/ico-in-svizzera/
+        </a>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_6" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        K-Tune: the countdown for the ICO has begun
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-10-30
+       </p>
+       <p>
+        <strong>
+         The ICO (Initial Coin Offering) of the K-Tune project,
+        </strong>
+        a blockchain platform for musicians,
+        <strong>
+         is about to begin on October 30th.
+        </strong>
+       </p>
+       <p>
+        <strong>
+         <br/>
+        </strong>
+       </p>
+       <p>
+        <strong>
+         <br/>
+        </strong>
+       </p>
+       <p>
+        The K-Tune project is a solution that allows musicians from all corners of the world to form communities and actively collaborate to create new songs. It also provides a platform for aspiring artists to become music producers. K-Tune offers a variety of useful tools that can simplify the process of music-making, including an open market (K-Tune Arena) and an online song camp (K-Tune Camp). In addition, K-Masters, a team of established K-Pop producers, are available to assist, advise and interact with the users.
+       </p>
+       <p>
+        An airdrop
+        <a href="https://en.cryptonomist.ch/2019/10/02/k-tune-airdrop-tokens-eidoo/" rel="noopener noreferrer" target="_blank">
+         campaign
+        </a>
+        of 1 million KTT (K-Tune Token) began a few weeks ago, in order to promote the diffusion of these tokens, a process easily achievable through the Eidoo platform where these tokens can then be managed in complete freedom.
+       </p>
+       <p>
+        Through the airdrop, eligible participants can obtain up to 500 KTT.
+       </p>
+       <p>
+        As mentioned,
+        <strong>
+         the ICO will start in less than a week and will use the
+         <a href="https://crowd.eidoo.io/app/project/k-tune" rel="noopener noreferrer" target="_blank">
+          Eidoo platform here
+         </a>
+         .
+        </strong>
+       </p>
+       <p>
+        Moreover, in order to guarantee maximum transparency, all the various wallet addresses used by the team for marketing and other expenses are available on the
+        <a href="https://www.k-tune.org/" rel="noopener noreferrer" target="_blank">
+         K-tune
+        </a>
+        website. It is also possible to check the related supply – currently 8.5 billion KTT – which will gradually be burned. Consequently, this system will create scarcity for the token which could lead to a price increase in the long term.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p class="author">
+        By
+        <a href="https://en.cryptonomist.ch/author/alfredo-de-candia/" rel="noopener noreferrer">
+         Alfredo de Candia
+        </a>
+        <span class="time">
+         - 28 Oct 2019
+        </span>
+       </p>
+       <a href="https://en.cryptonomist.ch/2019/10/28/k-tune-countdown-ico-has-begun/">
+        https://en.cryptonomist.ch/2019/10/28/k-tune-countdown-ico-has-begun/
+       </a>
+       <br/>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_7" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        K-Tune: The initial coin offering to start on October 30th
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-10-30
+       </p>
+       <h1>
+        <span style="font-size: 10pt;">
+         K-Tune: The initial coin offering to start on October 30th
+        </span>
+       </h1>
+       <div>
+        <br/>
+       </div>
+       <div>
+        <p>
+         The ICO (Initial Coin Offering) of the
+         <a data-wpel-link="external" href="http://k-tune.org/" target="_blank">
+          K-Tune
+         </a>
+         project, a blockchain platform for musicians, is about to begin on
+         <a data-wpel-link="external" href="https://crowd.eidoo.io/app/project/k-tune" target="_blank">
+          October 30th.
+         </a>
+        </p>
+        <p>
+         The K-Tune project is a solution that allows musicians from all corners of the world to form communities and actively collaborate to create new songs. It also provides a platform for aspiring artists to become music producers. K-Tune offers a variety of useful tools that can simplify the process of music-making, including an open market (K-Tune Arena) and an online song camp (K-Tune Camp). In addition, K-Masters, a team of established K-Pop producers, are available to assist, advise and interact with the users.
+        </p>
+        <p>
+         The platform will be global, dedicated to all music producers in the world, but with a particular focus on K-Pop, the dominant music genre in South Korea.
+        </p>
+        <p>
+         K-Tune will allow musicians and producers from all over the world to collaborate and express themselves without restriction, allowing anyone to become a K-Pop producer, for example.
+        </p>
+        <p>
+         The idea is to bring together musical talents and produce music, also thanks to the so-called K-Tune Masters, which are actual producers and former professionals affiliated with K-Tune who will assist users in their music production process.
+        </p>
+        <p>
+         Platform users will be able to share their work with the Masters and ask for advice or collaboration on the music, lyrics, choirs, mixing, etc. The platform will also have an open market where all users can sell their works: it will be called K-Arena and will allow selling not only songs but also individual tracks, such as melodies, arrangements, lyrics and so on.
+        </p>
+        <h2>
+         K-Camp and K-Tune
+        </h2>
+        <p>
+         When purchasing content from another user, users will be able to utilize it as they wish to complete their own pieces. In addition, users will be free to set their own prices and control license fees. In addition to K-Arena, there will also be K-Camp, which is a section where users can search for partners to collaborate with, and with whom to share any income from the sale of songs made together.
+        </p>
+        <p>
+         The whitepaper mentions that K-Tune wants to become a platform where professional and amateur musicians can meet and work together to write and produce popular songs for the market.
+        </p>
+        <p>
+         The token used within the platform will be KTT, which will be used as a means of payment to use the K-Tune services. Users will be able to buy KTT directly on the platform, or through exchanges.
+        </p>
+        <p>
+         The initiative is designed for all artists who wish to use their talents to produce content and trade it with other artists, with the objective of bringing their work to the market and earning money, especially in the growing K-Pop market.
+        </p>
+        <p>
+         Among the Masters, there are professional trackmakers, songwriters and sound engineers who have considerable experience in the production of K-Pop songs, including EXO, TWICE, IZ*ONE, GOT7 and Beast.
+        </p>
+        <p>
+         The platform also provides a fair and transparent distribution of royalties, something that today is hardly guaranteed in the industry. K-Tune’s copyright monitoring system is based on blockchain technology and allows full real-time monitoring of all activities on the platform. This feature also eliminates possible disputes between artists and distributes copyrights in a fair and simple way.
+        </p>
+        <p>
+         In November the KTT token will be listed on various exchanges, while in February of next year the first K-Tune test for the X-Pop should be launched in Ho Chi Minh, thanks to a collaboration with KCI Group.
+        </p>
+        <p>
+         <br/>
+        </p>
+        <p>
+         <br/>
+        </p>
+        <p>
+         <span class="entry-user">
+          Author:
+          <a class="fn" data-wpel-link="internal" href="https://cryptopotato.com/author/press/" rel="author">
+           Press Release
+          </a>
+         </span>
+         <span class="entry-date">
+          Updated
+          <span class="last-modified-timestamp">
+           Oct 29, 2019 @ 13:13
+          </span>
+         </span>
+         <br/>
+        </p>
+        <p>
+         <span class="entry-date">
+          <span class="last-modified-timestamp">
+           <a href="https://cryptopotato.com/k-tune-the-initial-coin-offering-to-start-on-october-30th/">
+            https://cryptopotato.com/k-tune-the-initial-coin-offering-to-start-on-october-30th/
+           </a>
+           <br/>
+          </span>
+         </span>
+        </p>
+       </div>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_8" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        K-tune: airdrop of 1 million tokens on Eidoo
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-10-04
+       </p>
+       <h1 class="main-title page-title">
+        <strong style="font-size: 12px;">
+         To celebrate the launch of the ICO on Eidoo,
+         <a href="https://en.cryptonomist.ch/2019/09/20/k-tune-blockchain-platform-music/" rel="noopener noreferrer" target="_blank">
+          K-tune
+         </a>
+         has decided to run an airdrop of 1 million tokens.
+        </strong>
+       </h1>
+       <div>
+        <p>
+         <a href="https://tiny.cc/z4bpdz" rel="noopener noreferrer" target="_blank">
+          A guide
+         </a>
+         has been published showing how to receive the KTT tokens that will be distributed for free. A total of 1,000,000 tokens will be distributed, for a total value of about 100,000 USD.
+        </p>
+        <p>
+         The airdrop is accessible by downloading and installing the Eidoo app from the following link:
+         <a href="https://eidoo.page.link/ktune" rel="noopener noreferrer" target="_blank">
+          eidoo.page.link/k-tune
+         </a>
+         . If the app is downloaded directly from the store, the user will not have access to the airdrop.
+        </p>
+        <p>
+         After downloading and installing the App, it is necessary to follow
+         <a href="https://tiny.cc/z4bpdz" rel="noopener noreferrer" target="_blank">
+          the procedure
+         </a>
+         described in the guide in order to be eligible for the distribution of tokens.
+        </p>
+        <p>
+         The procedure involves verifying the identity as a private user: the tokens will be distributed only to those who download the Eidoo wallet from the special URL mentioned above and complete the tier
+         <strong>
+          1 or 2 KYC procedure.
+         </strong>
+        </p>
+        <p>
+         Those who complete tier 1 will receive 100 KTT, or about 10 USD, while those who complete tier 2 will receive another 400 KTT, or about 40 USD. So whoever reaches tier 2 will receive a total of
+         <strong>
+          500 KTT tokens.
+         </strong>
+        </p>
+        <p>
+         There is time until November 30th, 2019 to perform this procedure, whereas the maximum number of KTT tokens that will be distributed is one million.
+        </p>
+        <p>
+         The
+         <a href="https://www.k-tune.org/K-Tune-whitepaper_en.pdf" rel="noopener noreferrer" target="_blank">
+          whitepaper
+         </a>
+         is available on
+         <a href="https://www.k-tune.org/" rel="noopener noreferrer" target="_blank">
+          k-tune.org
+         </a>
+         , which specifies that KTT (K-Tune Token) is a classic ERC-20 utility token based on the Ethereum blockchain, usable within the K-tune platform, which supports only this token.
+        </p>
+        <p>
+         Obviously, the KTT tokens can also be freely exchanged or transferred to other wallets, such as the Eidoo one.
+        </p>
+        <p>
+         <strong>
+          K-tune is a platform created in South Korea that allows musicians to collaborate with each other
+         </strong>
+         . It uses blockchain technology and the KTT as a utility token.
+        </p>
+        <p>
+         <br/>
+        </p>
+        <p>
+         <br/>
+        </p>
+        <p>
+         <br/>
+        </p>
+        <p>
+         Marco Cavicchioli
+        </p>
+        <p>
+         <br/>
+        </p>
+        <p>
+         <a href="https://en.cryptonomist.ch/2019/10/02/k-tune-airdrop-tokens-eidoo/">
+          https://en.cryptonomist.ch/2019/10/02/k-tune-airdrop-tokens-eidoo/
+         </a>
+        </p>
+       </div>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_9" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        K-tune, the blockchain platform for music creators
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-09-26
+       </p>
+       <p>
+        <a href="https://k-tune.org/" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          K-tune
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         is a
+         <strong>
+          blockchain-based platform
+         </strong>
+         for
+         <a href="https://en.cryptonomist.ch/2019/08/21/k-tune-music-blockchain/" rel="noopener noreferrer" target="_blank">
+          music
+         </a>
+         creators.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         It was born in South Korea with a particular focus on the local K-pop market, but it is open to any music genre and to artists and creatives from all over the world.
+        </span>
+       </p>
+       <p>
+        <a href="https://en.wikipedia.org/wiki/K-pop" rel="noopener noreferrer" target="_blank">
+         <span style="font-weight: 400;">
+          K-pop
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         is currently one of the fastest-growing markets out there. Born in the 1990s as a modern evolution of Korean folk music, it has been particularly successful since the 2000s, thanks to fusion with Western music genres such as hip hop, R&amp;B, reggae, dance, rock, folk, jazz and others, distancing itself from the country’s traditional music.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         One of the peculiarities of the K-pop music scene is that of the so-called idols, i.e. artists who are able to gather around themselves a wide base of fans with whom they maintain continuous relations through concerts, meetings and via social networks.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         The success of K-pop has become global over the years, particularly in East Asia and Southeast Asia, but also in Bangladesh, India, Latin America, North Africa, South Africa and the West.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         The most famous case in the world is certainly that of PSY, whose hit song “Gangnam Style” in 2012 was the most-watched video in the history of YouTube, becoming the first to reach one billion views. To date, the video has almost three and a half billion views, although it lost the record in 2017.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         More recently, a K-pop boy group, BTS, has taken the world by storm with a relay of mega hit songs including “DNA,” “Fake Love,” “Idol” and “Boy with Luv (feat. Halsey),” reaching No.1 in over 73 countries (iTunes) and winning the Top Social Artist Award for three consecutive years at the Billboard Music Awards.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         For some time now, the new trend in pop music has been the collaboration between artists, and the K-tune platform aims at facilitating the interaction between artists who are very distant from each other, through a system based on the
+        </span>
+        <a href="https://en.cryptonomist.ch/2019/08/21/k-tune-music-blockchain/">
+         <span style="font-weight: 400;">
+          sharing of copyright
+         </span>
+        </a>
+        <span style="font-weight: 400;">
+         .
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         As a matter of fact, finding professional collaborators using traditional methods is extremely difficult and limited, whereas using a collaborative platform like K-tune makes it very simple. Moreover, the method for copyright sharing eliminates many of the common risks arising from possible plagiarism or unfair revenue sharing.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         K-tune is a platform designed for industry professionals, but it is actually open to everyone, even amateur musicians.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         The goal is to become a real virtual meeting place on a global level for all those who create music, regardless of the genre or the successes already achieved.
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         For this purpose, a fundraising campaign is underway that aims to raise $15 million through an ICO that will be launched shortly on
+         <strong>
+          Eidoo.
+         </strong>
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <strong>
+          <br/>
+         </strong>
+        </span>
+       </p>
+       <p>
+        <span style="font-weight: 400;">
+         <strong>
+          <br/>
+         </strong>
+        </span>
+       </p>
+       <p>
+        <a href="https://en.cryptonomist.ch/author/marco-cavicchioli/" rel="noopener noreferrer">
+         Marco Cavicchioli
+        </a>
+        <span class="time">
+         - 20 Sep 2019
+        </span>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <a href="https://en.cryptonomist.ch/2019/09/20/k-tune-blockchain-platform-music/">
+         https://en.cryptonomist.ch/2019/09/20/k-tune-blockchain-platform-music/
+        </a>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_10" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        Blockchain is Reshaping the Music Industry
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-09-19
+       </p>
+       <p>
+        Blockchain is Reshaping the Music Industry
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        The music industry could benefit hugely from the advent of blockchain. The technology could improve royalty distribution, prove creators’ rights, improve delivery and access, and reduce costs.
+       </p>
+       <p>
+        Like many sectors, the music industry is seeing the first applications of blockchain to its administrative and sharing processes. For musicians and their audiences, this could translate to better creation and enjoyment, and procedures which more fairly reward artists for their efforts.
+       </p>
+       <h3>
+        <strong>
+         Creator’s Rights
+        </strong>
+       </h3>
+       <p>
+        Digitalization has already delivered new opportunities for music production and sharing over recent decades. Artists from all over the world can work together on a single track and today, there are often as many as ten or more contributors to the creation of a single tune.
+       </p>
+       <p>
+        But, how is the work of each contributor recognized and recorded effectively? Along with issues of rights and intellectual property, there is also an issue of middle operator costs.
+       </p>
+       <p>
+        Agents and record companies have often taken a disproportionate cut of the revenue. Today too, music platforms and distributors take a significant percentage of artists profits.
+       </p>
+       <p>
+        <strong>
+         READ:
+        </strong>
+        <em>
+         <a href="https://theblockchainland.com/2019/01/07/blockchain-apps-being-released-to-protect-artists-rights/" rel="noopener" target="_blank">
+          Blockchain Apps Being Released to Protect Artists’ Rights
+         </a>
+        </em>
+       </p>
+       <h3>
+        <strong>
+         Better Music and Royalties Distribution
+        </strong>
+       </h3>
+       <p>
+        The secure, immutable, and trustless nature of blockchain technology could make attributing work to musicians and artists more accurate and effective. And, blockchain technology opens up new avenues of sharing and distributing music to listeners which could better record its patronage and distribute resulting revenues.
+        <a href="https://www.singlegrain.com/blockchain/will-blockchain-technology-be-a-music-industry-savior/" rel="noopener" target="_blank">
+         Musicoin
+        </a>
+        , for example, is a blockchain platform where users “pay to play” but can also build their own music distribution network for rewards.
+       </p>
+       <p>
+        New blockchain platforms could more effectively reward both musicians and music fans, cutting out some of the monopoly held by traditional high-cut middle operators.
+        <a href="https://www.disruptordaily.com/blockchain-startups-music/" rel="noopener" target="_blank">
+         Inmusik
+        </a>
+        is another new platform where music fans can invest in a track or an artist that they believe will be popular, earning monthly pay-outs based on any subsequent success.
+       </p>
+       <h3>
+        <strong>
+         Immutable Contracts
+        </strong>
+       </h3>
+       <p>
+        Furthermore, blockchain’s smart contracts are
+        <a href="https://www.singlegrain.com/blockchain/will-blockchain-technology-be-a-music-industry-savior/" rel="noopener" target="_blank">
+         arguably
+        </a>
+        more difficult to tamper with or falsify than any other type of record. This makes them an increasingly popular choice for recording legal agreements and contracts.
+       </p>
+       <p>
+        As a blockchain’s distributed ledger can be transparently shared in real-time with permissioned participants, it’s far easier to monitor these contracts. In addition, one can follow what happens to music that is hosted on a blockchain platform.
+       </p>
+       <p>
+        Artists can more clearly evidence any claims in a dispute. This clarity could help to overcome the challenge that in 2017, only
+        <a href="https://consequenceofsound.net/2018/08/musician-12-percent-43-billion-revenue/">
+         12%
+        </a>
+        of the total revenue from the music industry went to musicians themselves.
+       </p>
+       <p>
+        It could also mean that artists and any of their collaborators are rewarded faster.
+        <a href="https://www.disruptordaily.com/blockchain-startups-music/" rel="noopener" target="_blank">
+         UjoMusic
+        </a>
+        is just one blockchain startup planning a decentralized database of rights ownership.
+       </p>
+       <h3>
+        <strong>
+         Preventing Piracy
+        </strong>
+       </h3>
+       <p>
+        Not only can putting music and its rights on a blockchain to avoid disputes between artists and agents, but it can also help prevent music piracy. That’s due to blockchain being secure against hackers who wish to act illicitly.
+       </p>
+       <h3>
+        <strong>
+         Decentralization and Community Control
+        </strong>
+       </h3>
+       <p>
+        And, as with financial transactions on a blockchain, when applied to music too, the technology has no geographical borders, increasing access to content. A blockchain’s distributed ledger means the information it holds can be hosted on computers around the world. This decentralization can mean less censorship or regulatory restriction and greater community control. Of course, decentralization still holds the ongoing challenge of how bad actors and content are managed.
+       </p>
+       <h3>
+        <strong>
+         Opportunities for Musicians, Fans and Investors
+        </strong>
+       </h3>
+       <p>
+        <a href="https://www.forbes.com/sites/ilkerkoksal/2019/08/19/how-blockchain-is-about-to-change-the-music-industry/#1f2f6b652baa" rel="noopener" target="_blank">
+         K-Tune
+        </a>
+        , building on Korea’s K-Pop phenomenon, is building a blockchain platform where artists around the globe, new or already established, can collaborate and have their work attributed. Musicians can sell their skills or find help with their creations.
+       </p>
+       <p>
+        Budding musicians can also use the platform to sell their collaborations to major record labels with the help of experts and the security of a blockchain record. The K-Tune platform uses an ERC-20 token,
+        <a href="https://www.k-tune.org/K-Tune-whitepaper_en.pdf" rel="noopener" target="_blank">
+         KTT
+        </a>
+        , for all transactions and rewards.
+       </p>
+       <p>
+        Another such platform for collaboration in creating music is
+        <a href="https://www.disruptordaily.com/blockchain-startups-music/" rel="noopener" target="_blank">
+         Aballoon
+        </a>
+        who are also working to securitize music royalties, creating music backed securities for open trading.
+       </p>
+       <p>
+        Blockchain could improve the production, administrative, and delivery systems of the music industry. So, what will this mean for another sector that is part of our daily lives? Blockchain could enable better-paid artists, give us more diverse music, better entertainment, and the offshoot economic and social benefits.
+       </p>
+       <p>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <span class="meta-author meta-item">
+         <a class="author-name" href="https://theblockchainland.com/author/melaniekramer/" title="Melanie Kramer">
+          Melanie Kramer
+         </a>
+        </span>
+       </p>
+       <p>
+        <span class="meta-author meta-item">
+         <br/>
+        </span>
+       </p>
+       <p>
+        <span class="meta-author meta-item">
+        </span>
+        <a href="https://theblockchainland.com/2019/09/06/blockchain-reshaping-music-industry/">
+         https://theblockchainland.com/2019/09/06/blockchain-reshaping-music-industry/
+        </a>
+        <b>
+        </b>
+        <i>
+        </i>
+        <u>
+        </u>
+        <sub>
+        </sub>
+        <sup>
+        </sup>
+        <strike>
+        </strike>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_11" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        K-Tune: music on the blockchain
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-09-11
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        The
+        <strong>
+         ICO
+        </strong>
+        of
+        <a href="https://www.k-tune.org/" rel="noopener noreferrer" target="_blank">
+         K-Tune
+        </a>
+        , a collaborative platform for musicians and producers, will be launched soon on
+        <strong>
+         Eidoo.
+        </strong>
+       </p>
+       <p>
+        The platform will be global, dedicated to all music producers in the world, but with a particular focus on
+        <a href="https://en.wikipedia.org/wiki/K-pop">
+         K-Pop
+        </a>
+        , the dominant music genre in South Korea.
+       </p>
+       <p>
+        <a href="https://www.forbes.com/sites/ilkerkoksal/2019/08/19/how-blockchain-is-about-to-change-the-music-industry/#5edb17842baa" rel="noopener noreferrer" target="_blank">
+         K-Tune
+        </a>
+        will allow musicians and producers from all over the world to collaborate and express themselves without restriction, allowing anyone to become a K-Pop producer, for example.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        The idea is to bring together musical talents and produce music, also thanks to the so-called
+        <strong>
+         K-Tune Masters
+        </strong>
+        , which are actual producers and former professionals affiliated with K-Tune who will assist users in their music production process.
+       </p>
+       <p>
+        Platform users will be able to share their work with the Masters and ask for advice or collaboration on the music, lyrics, choirs, mixing, etc.
+       </p>
+       <p>
+        The platform will also have an open market where all users can sell their works: it will be called K-Arena and will allow selling not only songs but also individual tracks, such as melodies, arrangements, lyrics and so on.
+       </p>
+       <p>
+        When purchasing content from another user, users will be able to utilise it as they wish to complete their own pieces. In addition, users will be free to set their own prices and control license fees.
+       </p>
+       <p>
+        In addition to K-Arena, there will also be K-Camp, which is a section where users can search for partners to collaborate with, and with whom to share any income from the sale of songs made together.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        The
+        <a href="https://www.k-tune.org/K-Tune_v1.19.pdf" rel="noopener noreferrer" target="_blank">
+         whitepaper
+        </a>
+        mentions that K-Tune wants to become a platform where professional and amateur musicians can meet and work together to write and produce popular songs for the market.
+       </p>
+       <p>
+        The token used within the platform will be KTT, which will be used as a means of payment to use the K-Tune services. Users will be able to buy KTT directly on the platform, or through exchanges.
+       </p>
+       <p>
+        The initiative is designed for all artists who wish to use their talents to produce content and trade it with other artists, with the objective of bringing their work to the market and earning money, especially in the growing K-Pop market.
+       </p>
+       <p>
+        Among the Masters, there are professional trackmakers, songwriters and sound engineers who have considerable experience in the production of K-Pop songs, including EXO, TWICE, IZ*ONE, GOT7 and Beast.
+       </p>
+       <p>
+        The platform also provides a fair and transparent distribution of royalties, something that today is hardly guaranteed in the industry. K-Tune’s copyright monitoring system is based on blockchain technology and allows full real-time monitoring of all activities on the platform. This feature also eliminates possible disputes between artists and distributes copyrights in a fair and simple way.
+       </p>
+       <p>
+        The roadmap foresees the launch of an ICO but the date hasn’t been revealed yet. However, the platform will already be launched in August 2019, before the ICO, in order to achieve greater market penetration.
+       </p>
+       <p>
+        In November the KTT token should be listed on various exchanges, while in February of next year the first K-Tune test for the X-Pop should be launched in Ho Chi Minh, thanks to a collaboration with KCI Group.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <a href="https://en.cryptonomist.ch/2019/08/21/k-tune-music-blockchain/">
+         https://en.cryptonomist.ch/2019/08/21/k-tune-music-blockchain/
+        </a>
+        <br/>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_12" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        Exclusive: How is Blockchain D﻿isrupting the Music Industry Globally?
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-08-29
+       </p>
+       <p>
+        Exclusive: How is Blockchain D﻿isrupting the Music Industry Globally?
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        With the widespread of blockchain technology used in different industries in the past decade, Sean Jong from K-Tune in Korea explains how blockchain can address the current pain points in the traditional music industry. He also explains the role of blockchain in royalty distribution and copyright infringement!
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        What are the pain points in the music industry and how can blockchain be used to solve them?
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        There is a range of areas that blockchain technology can help improve the music industry. For instance, reducing transactional costs in the conventional and traditional music industry would be a major improvement. In the traditional methods, if you want to make music, you have to meet professionals from the industry and settle on the royalty shares. For instance, if I were more involved in the development of music then I would claim for 80% of the shares while the other party gets 20%. In the process of doing this involves a lot of intermediaries such as copyright agencies or even lawyers.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        Thanks to the nature of blockchain technology, it would be very difficult or virtually impossible to infringe or manipulate data; therefore you will not need to use intermediaries as you can settle and write the division of shares and consensus with other parties on the blockchain.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        What is royalty distribution and why is it important?
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        There are two phases, the first phase of royalty distribution is when they're making music together, they have to reach a consensus of the division of shares. In the music industry, it is hard to pinpoint, you know, who's your, what's your job, and what's mine. Roles in the music industry are quite arbitrary and hard to pinpoint from the royalty shares perspective. In short, the first stage is to make a consensus between artists.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        The second phase is when the music is being sold and release that how to collect the royalties, from streaming companies such as iTunes, Spotify, Pandora or Melon in Korea. Blockchain technology has not been yet adopted around the second phase. A solution has not be found for the second phase but we can take care of at least the first phase of royalty sharing because between artists they must come to a conclusion or a consensus of who owns how many shares. Once they have reached a consensus, conventionally, they have to go to an authority or intermediary and report it. With the use of blockchain technology, artists involved will be able to come to a consensus and write it on the blockchain, and that’s the K-Tune solution.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        How are you encouraging more artists to use K-Tune and how has it been adopted in Korea and across the world?
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        In Korea, it is at a very nascent stage and not many people know about blockchain technology nor do they understand it. Since I am representing K-Tune, I believe it can be one of the pioneers who can spearhead the market awareness and public education of what blockchain is and how blockchain can disrupt the creative industry. I believe the awareness and the level of understanding will keep growing, we have just started our first step, not only in Korea, but also worldwide.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        By Matthew Lam   Jul 25, 2019
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <a href="https://blockchain.news/Post?id=Exclusive-How-is-Blockchain-Disrupting-the-Music-Industry-Globally-">
+         https://blockchain.news/Post?id=Exclusive-How-is-Blockchain-Disrupting-the-Music-Industry-Globally-
+        </a>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" class="modal fade" id="news_modal_13" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        How Blockchain Is About To Change The Music Industry
+       </h4>
+      </div>
+      <div class="modal-body">
+       <p class="date text-right">
+        2019-08-29
+       </p>
+       <p>
+        How Blockchain Is About To Change The Music Industry
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        We hear music every day, we dance to it and sing along with it. Music moves us and even defines our mood and the ambiance of the space around us. But do we know how it is made? Writing music was indeed literally writing music notes on a manuscript, but this practice is now long outdated with modern technological advancements which have made musical endeavors accessible to more people. Today, all you need is a laptop and the relevant software.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+       </p>
+       <p>
+        The shift in music-making from analogue to digital has changed the music scene significantly in a permanent manner. With increased accessibility to music-making thanks to the digitalization of music production, competition is fierce with more players in the market due to the lower threshold. Thousands of songs are released daily with more and more musicians seeking to make it big in the pop scene. In this competitive environment, a trend has emerged in the music industry for survival and a greater chance at success: collaboration, with not just one, but up to a dozen artists.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        Hit songs such as “Despacito” by Fonsi, “thank u, next” by Ariana Grande and “Boy With Luv” by BTS were written by at least five to almost a dozen writers at most. These writers each specialize in a certain part of music-making – creating the track, writing the lyrics, adding the top line or melody, and engineering. The fierce competition has led to this division for specialization in the music production market, and writers hone their respective skills and talent to increase competitiveness.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        However, collaboration has its own problems and limitations, too. Writers and artists rarely collaborate outside their tight circle – resulting in the ‘cartelization’ of the industry – which means that amateurs barely get a chance to have their work heard. Even if they do get a break and sell a song, the royalty distribution is grossly unfair. Aspiring songwriters and producers continue to moonlight as waitresses or valets. Without the right network or a brilliant chance of fate, they cannot expect to benefit greatly from their musical talent.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+       </p>
+       <p>
+        K-Tune, a company founded by a financial specialist, a serial entrepreneur and a renowned K-pop producer, has created a platform of the same name designed to overcome the prevailing issues in the music-making industry. And the key solution is blockchain technology.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        As the name indicates, they focus on K-pop music production, and how artists from all over the world can contribute to this musical and cultural phenomenon that has previously taken the form of Big Bang, PSY and, now, of course, BTS. On K-Tune, users can find partners to work with, open projects and purchase components of a song – track, melody, lyrics, vocals and so on – that best complement theirs. It offers amateurs a chance to work with professionals, and established writers, with fresh talent and sound. The synergy is augmented by a team of popular
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        K-pop producers and writers called ‘Masters’ who offer guidance and help throughout the music production process from engineering to sales. They are also available for collaborations themselves for higher quality projects. These K-Tune affiliated ‘Masters’ have experience producing songs and selling them to major K-pop performers including EXO, TWICE, IZ*ONE, GOT7, and Beast.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        “K-pop has moved beyond Korea and an increasing number of global musicians want to get involved,” says Dawn, music producer and co-founder of K-Tune. “But it is not easy for non-Koreans to overcome the language barrier and geographical difficulties that entail collaboration with multiple parties.” He explains that K-Tune breaks such barriers and ensures fair profit-sharing. “Anyone with talent can team up with another talent, sell their work to a major record label and get their fair share of the profit through our platform.”
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        Providing a virtual ubiquitous studio, blockchain-dependent examples like K-Tune expands opportunities for collaboration outside the boundaries of existing networks within the industry and highlights the importance of seeking talent rather than name value.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        Ilker Koksal
+        <span style="white-space:pre">
+        </span>
+        Contributor
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <a href="https://www.forbes.com/sites/ilkerkoksal/2019/08/19/how-blockchain-is-about-to-change-the-music-industry/#5eb1bda2baa2">
+         https://www.forbes.com/sites/ilkerkoksal/2019/08/19/how-blockchain-is-about-to-change-the-music-industry/#5eb1bda2baa2
+        </a>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <br/>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <style>
+    @media screen and (max-width: 768px) {
+.slider-news-ul-temp li {
+    
+    
+}	
+}
+@media screen and (max-width: 640px) {
+.slider-news-ul-temp li {
+    
+    width: 50%;
+}
+}
+   </style>
+   <section class="section team" id="team">
+    <div class="container wow fadeInUp">
+     <div class="row text-center">
+      <h2>
+       TEAM
+      </h2>
+      <div class="slider-team">
+       <div>
+        <img alt="" class="photo" src="images/SEAN.png"/>
+        <h3>
+         SEAN JONG
+         <a href="https://www.linkedin.com/in/sean-jong-4b1898a6/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Chief Execuive Officer
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon3.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/CEO2.png"/>
+        <h3>
+         JUN KIM
+         <a href="https://www.linkedin.com/in/bumjun-kim-93829518a/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Chief Financial Officer
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/CCO.png"/>
+        <h3>
+         DAWN
+         <a href="https://www.linkedin.com/in/hank-kong-038866189/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Chief Content Officer
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon2.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/CTO.png"/>
+        <h3>
+         ELI LEE
+         <a href="https://www.linkedin.com/in/eli-lee-000a32193/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Chief Technical Officer
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/marketing-director.png"/>
+        <h3>
+         Inna Karmolit
+         <a href="https://linkedin.com/in/inna-karmolit" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Marketing Director
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/Brian2.png"/>
+        <h3>
+         BRIAN KIM
+         <a href="https://linkedin.com/in/brian-kim-ba983a193" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Contents Director
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/team-sale.png"/>
+        <h3>
+         NICK SHIN
+        </h3>
+        <p class="title">
+         Sales Director
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+      </div>
+      <h3>
+       MASTERS
+      </h3>
+      <div class="slider-team">
+       <div>
+        <a data-target="#team-s_tiger_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/STiger.png"/>
+         <h3>
+          S. TIGER
+         </h3>
+         <p class="title">
+          Chief of Masters
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon2.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-g_face_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/team-5.png"/>
+         <h3>
+          GLORY FACE
+         </h3>
+         <p class="title">
+          Head Track Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-EW_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/team-6.png"/>
+         <h3>
+          EASTWEST
+         </h3>
+         <p class="title">
+          Head Track Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon2.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-cosmic_S_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/COSMIC.png"/>
+         <h3>
+          COSMIC SOUND
+         </h3>
+         <p class="title">
+          Head Track Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-real-fantasy" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/REALF.png"/>
+         <h3>
+          REAL FANTASY
+         </h3>
+         <p class="title">
+          Head Track Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon2.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-E_SHIM_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/EJShim.png"/>
+         <h3>
+          EUNJI SHIM
+         </h3>
+         <p class="title">
+          Head Topline Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon1.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-Y_MIN_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/YJMin.png"/>
+         <h3>
+          YEONJAE MIN
+         </h3>
+         <p class="title">
+          Head Lyrics Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon3.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-SORI_modal" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/SORI.png"/>
+         <h3>
+          SORI
+         </h3>
+         <p class="title">
+          Head Chorus Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon2.png"/>
+        </a>
+       </div>
+       <div>
+        <a data-target="#team-hyoyoung-choi" data-toggle="modal" href="#!">
+         <img alt="" class="photo" src="images/HYChoi.png"/>
+         <h3>
+          Hyoyoung Choi
+         </h3>
+         <p class="title">
+          Head Engineering Master
+         </p>
+        </a>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon2.png"/>
+        </a>
+       </div>
+      </div>
+      <h3>
+       ADVISORS
+      </h3>
+      <div class="slider-team">
+       <div>
+        <img alt="" class="photo" src="images/Lars.png"/>
+        <h3>
+         Lars
+         <br/>
+         Schlichting
+         <a href="https://www.linkedin.com/in/lars-schlichting-2a808113/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Legal Advisor
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon3.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/Filippo.png"/>
+        <h3>
+         Filippo
+         <br/>
+         Bianchi
+         <a href="https://www.linkedin.com/in/filippo-bianchi-a1628537/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Tokenomics Advisor
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon3.png"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" class="photo" src="images/Fabiano.png"/>
+        <h3>
+         Fabiano
+         <br/>
+         Mazzoleni
+         <a href="https://www.linkedin.com/in/fabianomazzoleni/" target="_blank">
+          <img height="20px" src="images/linked_in_icon2.png" width="20px"/>
+         </a>
+        </h3>
+        <p class="title">
+         Accounting Advisor
+        </p>
+        <a class="sns_btn" href="#!" target="_blank">
+         <img alt="" src="images/team_icon3.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-ceo_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        JUN KIM
+       </h4>
+       <p>
+        Chief Executive Officer
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-coo_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        SEAN JONG
+       </h4>
+       <p>
+        Chief Operation OfficerChief Marketing Officer
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-cto_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        ELI LEE
+       </h4>
+       <p>
+        Chief Technical Officer
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-cco_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        DAWN
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_3_1.png"/>
+         <h4>
+          SISTAR
+         </h4>
+         <p>
+          Shake it
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_3_2.png"/>
+         <h4>
+          Apink
+         </h4>
+         <p>
+          Mr. Chu
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-s_tiger_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        S. TIGER
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_4_1.png"/>
+         <h4>
+          MOMOLAND
+         </h4>
+         <p>
+          Bboom Bboom
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_4_2.png"/>
+         <h4>
+          EXID
+         </h4>
+         <p>
+          Up and Down
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_4_3.png"/>
+         <h4>
+          AILEE
+         </h4>
+         <p>
+          U&amp;I
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_4_4.png"/>
+         <h4>
+          HYUNA
+         </h4>
+         <p>
+          BeBe
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_4_5.png"/>
+         <h4>
+          BEAST
+         </h4>
+         <p>
+          Shock
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-g_face_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        GLORY FACE
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_5_1.png"/>
+         <h4>
+          SUZY
+         </h4>
+         <p>
+          Holiday
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_5_2.png"/>
+         <h4>
+          PRODUCE48
+         </h4>
+         <p>
+          I am
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-EW_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        EASTWEST
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_6_1.png"/>
+         <h4>
+          IZONE
+         </h4>
+         <p>
+          Really Like You
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_6_2.png"/>
+         <h4>
+          GOT7
+         </h4>
+         <p>
+          Love Loop
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_6_3.png"/>
+         <h4>
+          ASTRO
+         </h4>
+         <p>
+          1 in a million
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_6_4.png"/>
+         <h4>
+          AILEE
+         </h4>
+         <p>
+          Mind Your Own Business
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_6_5.png"/>
+         <h4>
+          TURBO
+         </h4>
+         <p>
+          Again
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-cosmic_S_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        COSMIC SOUND
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_7_1.png"/>
+         <h4>
+          San E
+         </h4>
+         <p>
+          A Midsummer Night's Sweetness
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_7_2.png"/>
+         <h4>
+          MAMAMOO
+         </h4>
+         <p>
+          Everyday
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-E_SHIM_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        EUNJI SHIM
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_8_1.png"/>
+         <h4>
+          TWICE
+         </h4>
+         <p>
+          Knock Knock
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_8_2.png"/>
+         <h4>
+          Baek A-yeon
+         </h4>
+         <p>
+          Shoudn't have...
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-Y_MIN_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        YEONJAE MIN
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_9_1.png"/>
+         <h4>
+          EXO
+         </h4>
+         <p>
+          Heaven
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_9_2.png"/>
+         <h4>
+          WANNA ONE
+         </h4>
+         <p>
+          Burn It Up
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-SORI_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        SORI
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_10_1.png"/>
+         <h4>
+          TWICE
+         </h4>
+         <p>
+          You in My Heart
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_10_2.png"/>
+         <h4>
+          Gfriend
+         </h4>
+         <p>
+          Me Gustas Tu
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-real-fantasy" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        Real Fantasy
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_12_1.jpg"/>
+         <h4>
+          Astro
+         </h4>
+         <p>
+          Rise Up
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_12_2.jpg"/>
+         <h4>
+          B.O.Y
+         </h4>
+         <p>
+          Phase One : YOU
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_12_3.jpg"/>
+         <h4>
+          Snuper
+         </h4>
+         <p>
+          Very Very
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_12_4.jpg"/>
+         <h4>
+          Teen Top
+         </h4>
+         <p>
+          Take My Hand
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="team-hyoyoung-choi" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        Hyoyoung Choi
+       </h4>
+       <p>
+        Discography
+       </p>
+      </div>
+      <div class="modal-body">
+       <ul class="modal_list">
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_11_1.jpg"/>
+         <h4>
+          2PM
+         </h4>
+         <p>
+          No.5
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_11_2.jpg"/>
+         <h4>
+          Got7
+         </h4>
+         <p>
+          Flight Log: Departure
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_11_3.jpg"/>
+         <h4>
+          Chat-Shire
+         </h4>
+         <p>
+          IU Mini Album
+         </p>
+        </li>
+        <li class="text-center">
+         <img alt="" class="img-responsive" src="images/team_album_11_4.jpg"/>
+         <h4>
+          Twice
+         </h4>
+         <p>
+          Page 02
+         </p>
+        </li>
+       </ul>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <section class="section team" id="partner">
+    <div class="container wow fadeInUp">
+     <div class="row text-center">
+      <h2>
+       PARTNERS
+      </h2>
+      <div class="slider-team">
+       <div>
+        <a href="https://www.komca.or.kr" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/KoreaSongCopy.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="https://www.copyright.or.kr" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/KoreaCopy.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="https://crowd.eidoo.io" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/eidoo_crowd.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" src="images/partner/HighSeason.png" width="190px"/>
+       </div>
+       <div>
+        <img alt="" src="images/partner/HighTouch.png" width="190px"/>
+       </div>
+       <div>
+        <a href="https://trackmakersound.com" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/TrackMaker.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" src="images/partner/Boverat.png" width="190px"/>
+       </div>
+       <div>
+        <a href="https://www.facebook.com/dublekickent" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/DubleKick.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="http://blockwatch.co.kr" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/BlockWatch.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="http://aftermoonkorea.com" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/AfterMoon.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" src="images/partner/JS_enter.png" width="190px"/>
+       </div>
+       <div>
+        <a href="http://www.kblockchain.org/" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/Koreablockchain.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" src="images/partner/ONDA.png" width="190px"/>
+       </div>
+       <div>
+        <a href="https://www.kellerhals-carrard.ch" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/Keller.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <img alt="" src="images/partner/HMI.png" width="190px"/>
+       </div>
+       <div>
+        <a href="http://www.soundstove.kr" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/SoundStove.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="https://en.cryptonomist.ch" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/Crypto.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="http://www.suonomastering.com" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/Suono.png" width="190px"/>
+        </a>
+       </div>
+       <div>
+        <a href="https://cointelegraph.com" rel="nofollow" target="_blank">
+         <img alt="" src="images/partner/CoinTel.png" width="190px"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section event" id="event">
+    <div class="container wow fadeInUp">
+     <div class="row text-center">
+      <h2>
+       EVENT
+      </h2>
+      <div class="event-wrap">
+       <img alt="" class="img-responsive" src="https://www.k-tune.org/data/banner/2"/>
+       <div class="event-info">
+        <p>
+         Enter your e-mail address below and click start. Welcome to K-Tune!
+        </p>
+        <p>
+         <strong>
+          Name
+         </strong>
+         <input id="event_name" name="event_name" type="text"/>
+        </p>
+        <p>
+         <strong>
+          E-mail
+         </strong>
+         <input id="event_email" name="event_email" type="text"/>
+        </p>
+        <div align="center" class="g-recaptcha" data-sitekey="6Le5o8MUAAAAAAuIuQQ-UcavxgRYuydMC2L_5m-h">
+        </div>
+        <p class="policy" style="font-size:12px;">
+         <input name="event_policy" type="checkbox"/>
+         I agree to the terms and conditions, cookie and privacy policies of this website.
+         <a data-target="#policy_modal" data-toggle="modal" href="#!">
+          View
+         </a>
+        </p>
+       </div>
+      </div>
+      <p class="event_btn">
+       <a href="javascript:;" onclick="event_proc();">
+        <span>
+         START
+        </span>
+       </a>
+      </p>
+     </div>
+    </div>
+   </section>
+   <script type="text/javascript">
+    $(document).ready(function () {
+
+		if (get_cookie('notice') == null) {
+    
+ 				$('#pop_modal').modal('toggle');			
+		
+		}		
+		
+		$('[name="pop_model_check"').click(function(e) {
+			
+			write_cookie('notice',1,1);
+			
+		});
+					
+	});
+		
+	$('#video_modal').on('hidden.bs.modal', function () {	
+		$('#pop_video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+	});
+	
+	$('#video_modal').on('shown.bs.modal', function () {
+		$('#pop_video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+	});
+	
+	//$('.video-stream').get(0).pause();
+
+	function close_pop() {
+
+		$('#pop_modal').modal('toggle');	
+		
+	}
+	
+	function event_proc() {
+		
+		$('#event_modal').modal('toggle');
+		
+		if (grecaptcha.getResponse() == "") {
+			alert("Check the robot");
+			return false;
+		}
+		
+		
+		var event_name_val = $("#event_name").val();
+		if(event_name_val==""){
+			alert("이름을 입력해주세요.");
+			return false;
+		}
+
+		var event_email_val = $("#event_email").val();
+		if(event_email_val==""){
+			alert("이메일을 입력해주세요.");
+			return false;
+		}
+
+		if ($("input:checkbox[name='event_policy']").is(":checked") == true){
+
+			$.ajax({
+				url:'./_ajax_event_2.php',
+				type:'post',
+				dataType: 'json',
+				data:{
+					event_email:event_email_val, event_name:event_name_val, event_etc:'en', event_policy:event_policy
+				},
+				success:function(data){
+					
+					console.log(data);
+					
+					if(data.result=="1"){
+						$('#event_modal').modal();
+					}
+					if(data.result=="2"){
+						alert("You have already been verified."); // 이미 인증완료된 이메일입니다. This email has already been verified.					
+						$('#event .event-info, #event .event_btn').fadeOut();
+					}
+				},
+				error: function (request, status, error) {
+					console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+				}
+			});
+
+		}else{
+			alert("개인정보취급방침에 동의하셔야 참여가능합니다.");
+		}
+	}
+
+	//인증확인
+	function check_event() {
+
+		var event_email_val = $("#event_email").val();
+		if(event_email_val==""){
+			alert("이메일을 입력해주세요.");
+			return false;
+		}
+
+		var event_code_val = $("#event_code").val();
+		if(event_code_val==""){
+			alert("인증코드를 입력해주세요.");
+			return false;
+		}else{
+
+			$.ajax({
+				url:'./_ajax_event_check.php',
+				type:'post',
+				dataType: 'json',
+				data:{
+					event_email:event_email_val, event_code:event_code_val
+				},
+				success:function(data){
+					if(data.result=="1"){
+						$('#event_modal').modal('toggle');
+						$('#event1_modal').modal();
+						$('#event .event-info, #event .event_btn').fadeOut();
+						
+					}
+					if(data.result=="2"){
+						alert("인증코드를 확인해주세요.");
+					}
+				},
+				error: function (request, status, error) {
+					console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+				}
+			});
+		}
+	}
+	
+	function write_cookie(key, value, hours) {
+	
+	    var date = new Date();
+	
+	    date.setTime(+ date + (hours * 3600000));
+	
+	    window.document.cookie = key + "=" + value + "; expires=" + date.toGMTString() + "; path=/";
+	
+	    return value;
+	};
+	
+	function get_cookie(name) {
+	    var dc = document.cookie;
+	    var prefix = name + "=";
+	    var begin = dc.indexOf("; " + prefix);
+	    if (begin == -1) {
+	        begin = dc.indexOf(prefix);
+	        if (begin != 0) return null;
+	    }
+	    else
+	    {
+	        begin += 2;
+	        var end = document.cookie.indexOf(";", begin);
+	        if (end == -1) {
+	        end = dc.length;
+	        }
+	    }
+	    return decodeURI(dc.substring(begin + prefix.length, end));
+	}
+   </script>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade song" id="event_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        E-mail Verification
+       </h4>
+      </div>
+      <div class="modal-body s_body text-center">
+       <p>
+        <strong>
+         Code
+        </strong>
+        <input id="event_code" name="event_code" type="text"/>
+       </p>
+       <p>
+        Check your inbox and put in the code above
+        <br/>
+        (If you cannot find the code, please check your spam)
+       </p>
+       <a href="javascript:;" onclick="check_event();">
+        OK
+       </a>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade song" id="event1_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        All Done!
+       </h4>
+      </div>
+      <div class="modal-body s_body text-center">
+       <p>
+        Thank you for your participation.
+        <br/>
+        You are eligible for various gifts and KTT points upon registering to K-Tune using the same email address you just used.
+        <br/>
+        Stay tuned!
+        <br/>
+        (inquiries:
+        <a class="__cf_email__" data-cfemail="2c5f595c5c435e586c47015859424902435e4b" href="/cdn-cgi/l/email-protection">
+         [email protected]
+        </a>
+        )
+       </p>
+       <a data-dismiss="modal" href="javascript:;">
+        OK
+       </a>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="policy_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">
+        terms and conditions
+       </h4>
+      </div>
+      <div class="modal-body">
+       It is K-Tune Sagl's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to https://www.k-tune.org (hereinafter, "us", "we", or "https://www.k-tune.org"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.
+       <br/>
+       <br/>
+       This Privacy Policy, together with the Terms and conditions posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms and conditions.
+       <br/>
+       <br/>
+       - Website Visitors
+       <br/>
+       Like most website operators, K-Tune Sagl collects non-personally-identifying information of the sort that web browsers and servers typically make available, such as the browser type, language preference, referring site, and the date and time of each visitor request. K-Tune Sagl's purpose in collecting non-personally identifying information is to better understand how K-Tune Sagl's visitors use its website. From time to time, K-Tune Sagl may release non-personally-identifying information in the aggregate, e.g., by publishing a report on trends in the usage of its website.
+       <br/>
+       <br/>
+       K-Tune Sagl also collects potentially personally-identifying information like Internet Protocol (IP) addresses for logged in users and for users leaving comments on https://www.k-tune.org blog posts. K-Tune Sagl only discloses logged in user and commenter IP addresses under the same circumstances that it uses and discloses personally-identifying information as described below.
+       <br/>
+       <br/>
+       - Gathering of Personally-Identifying Information
+       <br/>
+       Certain visitors to K-Tune Sagl's websites choose to interact with K-Tune Sagl in ways that require K-Tune Sagl to gather personally-identifying information. The amount and type of information that K-Tune Sagl gathers depends on the nature of the interaction. For example, we ask visitors who sign up for a blog at https://www.k-tune.org to provide a username and email address.
+       <br/>
+       <br/>
+       - Security
+       <br/>
+       The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.
+       <br/>
+       <br/>
+       - Advertisements
+       <br/>
+       Ads appearing on our website may be delivered to users by advertising partners, who may set cookies. These cookies allow the ad server to recognize your computer each time they send you an online advertisement to compile information about you or others who use your computer. This information allows ad networks to, among other things, deliver targeted advertisements that they believe will be of most interest to you. This Privacy Policy covers the use of cookies by K-Tune Sagl and does not cover the use of cookies by any advertisers.
+       <br/>
+       <br/>
+       - Links To External Sites
+       <br/>
+       Our Service may contain links to external sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy and terms and conditions of every site you visit.
+       <br/>
+       <br/>
+       We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites, products or services.
+       <br/>
+       <br/>
+       - Protection of Certain Personally-Identifying Information
+       <br/>
+       K-Tune Sagl discloses potentially personally-identifying and personally-identifying information only to those of its employees, contractors and affiliated organizations that (i) need to know that information in order to process it on K-Tune Sagl's behalf or to provide services available at K-Tune Sagl's website, and (ii) that have agreed not to disclose it to others. Some of those employees, contractors and affiliated organizations may be located outside of your home country; by using K-Tune Sagl's website, you consent to the transfer of such information to them. K-Tune Sagl will not rent or sell potentially personally-identifying and personally-identifying information to anyone. Other than to its employees, contractors and affiliated organizations, as described above, K-Tune Sagl discloses potentially personally-identifying and personally-identifying information only in response to a subpoena, court order or other governmental request, or when K-Tune Sagl believes in good faith that disclosure is reasonably necessary to protect the property or rights of K-Tune Sagl, third parties or the public at large.
+       <br/>
+       <br/>
+       If you are a registered user of https://www.k-tune.org and have supplied your email address, K-Tune Sagl may occasionally send you an email to tell you about new features, solicit your feedback, or just keep you up to date with what's going on with K-Tune Sagl and our products. We primarily use our blog to communicate this type of information, so we expect to keep this type of email to a minimum. If you send us a request (for example via a support email or via one of our feedback mechanisms), we reserve the right to publish it in order to help us clarify or respond to your request or to help us support other users. K-Tune Sagl takes all measures reasonably necessary to protect against the unauthorized access, use, alteration or destruction of potentially personally-identifying and personally-identifying information.
+       <br/>
+       <br/>
+       - Aggregated Statistics
+       <br/>
+       K-Tune Sagl may collect statistics about the behavior of visitors to its website. K-Tune Sagl may display this information publicly or provide it to others. However, K-Tune Sagl does not disclose your personally-identifying information.
+       <br/>
+       <br/>
+       - Cookies
+       <br/>
+       To enrich and perfect your online experience, K-Tune Sagl uses "Cookies", similar technologies and services provided by others to display personalized content, appropriate advertising and store your preferences on your computer.
+       <br/>
+       <br/>
+       A cookie is a string of information that a website stores on a visitor's computer, and that the visitor's browser provides to the website each time the visitor returns. K-Tune Sagl uses cookies to help K-Tune Sagl identify and track visitors, their usage of https://www.k-tune.org, and their website access preferences. K-Tune Sagl visitors who do not wish to have cookies placed on their computers should set their browsers to refuse cookies before using K-Tune Sagl's websites, with the drawback that certain features of K-Tune Sagl's websites may not function properly without the aid of cookies.
+       <br/>
+       <br/>
+       By continuing to navigate our website without changing your cookie settings, you hereby acknowledge and agree to K-Tune Sagl's use of cookies.
+       <br/>
+       <br/>
+       - Privacy Policy Changes
+       <br/>
+       Although most changes are likely to be minor, K-Tune Sagl may change its Privacy Policy from time to time, and in K-Tune Sagl's sole discretion. K-Tune Sagl encourages visitors to frequently check this page for any changes to its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute your acceptance of such change.
+       <br/>
+       <br/>
+       - Credit &amp; Contact Information
+       <br/>
+       This privacy policy was created at https://termsandconditionstemplate.com/privacy-policy-generator/. If you have any questions about this Privacy Policy, please contact us via or phone.
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="introHeader" class="modal fade" id="video_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog big">
+     <div class="modal-content">
+      <div class="modal-body video">
+       <div style="position: relative; height:0; padding-bottom: 56.25%">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" id="pop_video" src="https://www.youtube.com/embed/msz1nwjfq6U?rel=0;amp;autoplay=0&amp;enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" style="position: absolute; width:100%; height:100%;" width="560">
+        </iframe>
+       </div>
+      </div>
+      <div class="modal-footer">
+       <button data-dismiss="modal" id="video_stop" type="button">
+        <i class="fa fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script async="" defer="" src="https://www.google.com/recaptcha/api.js">
+   </script>
+   <script type="text/javascript">
+    function send_contact(){
+	if (grecaptcha.getResponse() == "") {
+		alert("봇확인을 해주세요.");
+		return false;
+	}
+	var co_name = $("#co_name").val();
+	var co_email = $("#co_email").val();
+	var co_address = $("#co_address").val();
+	var co_memo = $("#co_memo").val();
+
+	if(co_name==""){
+		alert("이름을 입력해주세요.");
+		return false;
+	}
+	if(co_email==""){
+		alert("이메일을 입력해주세요.");
+		return false;
+	}
+	if(co_memo==""){
+		alert("요청사항을 입력해주세요.");
+		return false;
+	}
+
+	if ($("input:checkbox[name='co_agree']").is(":checked") == true){
+
+		$.ajax({
+			url:'./_ajax_contact.php',
+			type:'post',
+			dataType: 'json',
+			data:{
+				co_name:co_name, co_email:co_email, co_address:co_address, co_memo:co_memo
+			},
+			success:function(data){
+				$('#contact').fadeOut();
+				alert("접수되었습니다. 감사합니다.");
+			},
+			error: function (request, status, error) {
+				console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+			}
+		});
+
+	}else{
+		alert("개인정보취급방침에 동의하셔야 참여가능합니다.");
+	}
+}
+
+function send_contact_en(){
+	if (grecaptcha.getResponse() == "") {
+		alert("Check the robot");
+		return false;
+	}
+	var co_name = $("#co_name").val();
+	var co_email = $("#co_email").val();
+	var co_address = $("#co_address").val();
+	var co_memo = $("#co_memo").val();
+
+	if(co_name==""){
+		alert("Enter the Name");
+		return false;
+	}
+	if(co_email==""){
+		alert("Enter the Email");
+		return false;
+	}
+	if(co_memo==""){
+		alert("Enter the request");
+		return false;
+	}
+
+	if ($("input:checkbox[name='co_agree']").is(":checked") == true){
+
+		$.ajax({
+			url:'./_ajax_contact.php',
+			type:'post',
+			dataType: 'json',
+			data:{
+				co_name:co_name, co_email:co_email, co_address:co_address, co_memo:co_memo
+			},
+			success:function(data){
+				$('#contact').fadeOut();
+				alert("It's been received. Thank you");
+			},
+			error: function (request, status, error) {
+				console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+			}
+		});
+
+	}else{
+		alert("You can participate only if you agree to the privacy policy.");
+	}
+}
+   </script>
+   <section class="section contact" id="contact">
+    <div class="container wow fadeInUp">
+     <div class="row text-center">
+      <h2>
+       CONTACT
+      </h2>
+      <div class="col-md-10">
+       <p>
+        <input class="point" id="co_name" name="co_name" placeholder="Name" type="text"/>
+       </p>
+       <p>
+        <input class="point" id="co_email" name="co_email" placeholder="E-mail" type="text"/>
+       </p>
+       <p>
+        <input id="co_address" name="co_address" placeholder="Address" type="text"/>
+       </p>
+       <p>
+        <textarea id="co_memo" name="co_memo" placeholder="How can we help you?"></textarea>
+       </p>
+       <p style="font-size:12px;">
+        <input name="co_agree" type="checkbox"/>
+        I agree to the terms and conditions, cookie and privacy policies of this website.
+        <a data-target="#policy_modal" data-toggle="modal" href="#!">
+         View
+        </a>
+       </p>
+      </div>
+      <div align="center" class="g-recaptcha" data-sitekey="6Le5o8MUAAAAAAuIuQQ-UcavxgRYuydMC2L_5m-h">
+      </div>
+      <p class="event_btn">
+       <a href="javascript:;" onclick="send_contact_en()">
+        <span>
+         SEND
+        </span>
+       </a>
+      </p>
+     </div>
+    </div>
+   </section>
+   <footer class="footer">
+    <div class="footer-top">
+     <div class="container-fluid">
+      <div class="row">
+       <div class="footer-col col-md-1">
+        <img alt="" src="images/footer_logo.png"/>
+       </div>
+       <div class="footer-col col-md-8">
+        <h5>
+         K-Tune Sagl.
+        </h5>
+        <p>
+         Corso San Gottardo 89, 6830, Ticino, SWITZERLAND
+         <a href="/cdn-cgi/l/email-protection#7c0f090c0c130e083c17510809121952130e1b">
+          <span class="__cf_email__" data-cfemail="c1b2b4b1b1aeb3b581aaecb5b4afa4efaeb3a6">
+           [email protected]
+          </span>
+         </a>
+        </p>
+        <p class="copy">
+         COPYRIGHT©20 ALL RIGHTS RESERVED BY K-Tune Sagl.
+        </p>
+       </div>
+       <div class="footer-col col-md-3 text-right">
+        <a href="https://twitter.com/KTuneofficial1" target="_blank">
+         <img alt="" src="images/footer_icon1.png"/>
+        </a>
+        <a href="https://medium.com/@k_tune" target="_blank">
+         <img alt="" src="images/footer_icon2.png"/>
+        </a>
+        <a href="https://open.kakao.com/o/g1KjRGvb" target="_blank">
+         <img alt="" src="images/footer_icon3.png"/>
+        </a>
+        <a href="https://t.me/ktuneofficial" target="_blank">
+         <img alt="" src="images/footer_icon4.png"/>
+        </a>
+        <a href="https://business.facebook.com/KTuneKorea/?business_id=2164706890293309" target="_blank">
+         <img alt="" src="images/footer_icon5.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script src="/js/bootstrap.min.js">
+   </script>
+   <script src="/js/main.js">
+   </script>
+   <script src="/js/wow.min.js">
+   </script>
+   <script>
+    new WOW().init();
+   </script>
+   <!--[if lte IE 7]>
+		<script>
+		$(function() {
+		    var $sv_use = $(".sv_use");
+		    var count = $sv_use.length;
+		
+		    $sv_use.each(function() {
+		        $(this).css("z-index", count);
+		        $(this).css("position", "relative");
+		        count = count - 1;
+		    });
+		});
+		</script>
+		<![endif]-->
+  </div>
+ </body>
+</html>

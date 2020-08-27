@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html class="ie7 oldie" lang="en" lang="en-US"
+	prefix="og: http://ogp.me/ns#" > <![endif]-->
+<!--[if IE 8]> <html class="ie8 oldie" lang="en" lang="en-US"
+	prefix="og: http://ogp.me/ns#" > <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en" lang="en-US"
+	prefix="og: http://ogp.me/ns#" > <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" prefix="og: http://ogp.me/ns#">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <script type="text/javascript">
+   (window.NREUM||(NREUM={})).loader_config={licenseKey:"1c39a20a01",applicationID:"5996444"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);
+  </script>
+  <title>
+   wardZ | Blockchain Smart Rewards
+  </title>
+  <link href="http://gmpg.org/xfn/11" rel="profile"/>
+  <link href="https://wardz.cc/xmlrpc.php" rel="pingback"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/var/www/vhosts/wardz.cc/httpdocs/wp-content/themes/wardz/images/fav/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/images/fav/manifest.json" rel="manifest"/>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="https://wardz.cc/wp-content/themes/wardz/images/fav/ms-icon-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <!--[if lt IE 9]>
+    <script src="https://wardz.cc/wp-content/themes/reboot/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+        google: {
+          families: ['Lato', 'Source Sans Pro']
+        }
+      });
+  </script>
+  <style data-type="vc_shortcodes-custom-css" type="text/css">
+   .vc_custom_1503600164133{background-color: #41bfa9 !important;}.vc_custom_1503585384088{background-color: #fcffff !important;}.vc_custom_1503667321156{background-color: rgba(0,172,138,0.08) !important;*background-color: rgb(0,172,138) !important;}.vc_custom_1503667311962{background-color: rgba(0,172,138,0.08) !important;*background-color: rgb(0,172,138) !important;}.vc_custom_1503808739139{background: #49bfa8 url(https://wardz.cc/wp-content/uploads/2017/07/bg_token_sale.png?id=386) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1566676865015{background-color: rgba(0,172,138,0.03) !important;*background-color: rgb(0,172,138) !important;}.vc_custom_1503670497187{padding-top: 0px !important;}.vc_custom_1503883470229{margin-bottom: 60px !important;}.vc_custom_1503670505152{padding-top: 0px !important;}.vc_custom_1503610894214{padding-top: 0px !important;}.vc_custom_1503670861277{margin-top: 116px !important;margin-bottom: 44px !important;}.vc_custom_1503672042995{margin-bottom: 20px !important;}.vc_custom_1503671387936{margin-bottom: 24px !important;}.vc_custom_1510918479808{margin-bottom: 80px !important;}.vc_custom_1503610894214{padding-top: 0px !important;}.vc_custom_1503612925532{margin-bottom: 44px !important;}.vc_custom_1503671936062{margin-bottom: 20px !important;}.vc_custom_1510918495675{margin-bottom: 80px !important;}.vc_custom_1503671077288{padding-top: 0px !important;}.vc_custom_1510854278580{padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1503672181796{padding-top: 0px !important;}.vc_custom_1505769022350{margin-bottom: 0px !important;}.vc_custom_1505769070791{margin-bottom: 0px !important;}.vc_custom_1503705337610{margin-left: -23px !important;}.vc_custom_1503885452320{margin-bottom: 0px !important;}.vc_custom_1505769039653{margin-bottom: 0px !important;}.vc_custom_1503705347377{margin-left: -23px !important;}.vc_custom_1503672427014{padding-top: 0px !important;}.vc_custom_1503706429345{margin-bottom: 0px !important;}.vc_custom_1503629731658{margin-bottom: 0px !important;}.vc_custom_1503706249591{margin-left: -23px !important;}.vc_custom_1503706450607{margin-bottom: 0px !important;}.vc_custom_1503629693327{margin-bottom: 0px !important;}.vc_custom_1503706221875{margin-left: -23px !important;}.vc_custom_1503705909793{margin-bottom: 0px !important;}.vc_custom_1503629711400{margin-bottom: 0px !important;}.vc_custom_1503705414260{margin-left: -23px !important;}
+  </style>
+  <!-- All in One SEO Pack 3.2.4 by Michael Torbert of Semper Fi Web Design[633,640] -->
+  <script class="aioseop-schema" type="application/ld+json">
+   {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://wardz.cc/#organization","url":"https://wardz.cc/","name":"wardZ","sameAs":[]},{"@type":"WebSite","@id":"https://wardz.cc/#website","url":"https://wardz.cc/","name":"wardZ","publisher":{"@id":"https://wardz.cc/#organization"}},{"@type":"WebPage","@id":"https://wardz.cc/#webpage","url":"https://wardz.cc/","inLanguage":"en-US","name":"Home","isPartOf":{"@id":"https://wardz.cc/#website"},"datePublished":"2017-07-12T18:10:28+00:00","dateModified":"2019-08-24T20:35:05+00:00","about":{"@id":"https://wardz.cc/#organization"}}]}
+  </script>
+  <link href="https://wardz.cc/" rel="canonical"/>
+  <meta content="REWARD CONSUMERS FOR BEING PHYSICALLY PRESENT IN YOUR BUSINESS ZONE." property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://wardz.cc/" property="og:url"/>
+  <meta content="https://wardz.cc/wp-content/uploads/2017/07/wardZ_default-background.jpg" property="og:image"/>
+  <meta content="wardZ" property="og:site_name"/>
+  <meta content="Blockchain Smart Rewards" property="og:description"/>
+  <meta content="https://wardz.cc/wp-content/uploads/2017/07/wardZ_default-background.jpg" property="og:image:secure_url"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="REWARD CONSUMERS FOR BEING PHYSICALLY PRESENT IN YOUR BUSINESS ZONE." name="twitter:title"/>
+  <meta content="Blockchain Smart Rewards" name="twitter:description"/>
+  <meta content="https://wardz.cc/wp-content/uploads/2017/07/wardZ_default-background.jpg" name="twitter:image"/>
+  <script type="text/javascript">
+   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', 'UA-105359094-1', 'auto');
+				// Plugins
+				
+				ga('send', 'pageview');
+  </script>
+  <script async="" src="https://www.google-analytics.com/analytics.js">
+  </script>
+  <!-- All in One SEO Pack -->
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+  <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+  <link href="//s.w.org" rel="dns-prefetch"/>
+  <script type="text/javascript">
+   window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wardz.cc\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+  </style>
+  <link href="https://wardz.cc/wp-content/plugins/formidable/css/formidableforms.css?ver=8241857" id="formidable-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,italic,500,600,700,800,900|Roboto:100,300,regular,italic,500,700,900" id="ot-google-fonts-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-includes/css/dist/block-library/style.min.css?ver=5.2.7" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/plugins/seventhw_vc_extended/assets/frontend.css?ver=5.2.7" id="vc_front_style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.0.5" id="js_composer_front-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/themes/reboot/style.css?ver=5.2.7" id="parent-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/style.css?ver=5.2.7" id="child-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/css/normalize.css?ver=20141010" id="upfront-normalize-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/css/components.css?ver=20141010" id="upfront-components-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/themes/wardz/css/wardz.css?ver=20141010" id="upfront-css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=6.0.5" id="font-awesome-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/uploads/reboot-style.css?ver=5.2.7" id="compiled-css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/themes/reboot/css/custom.css?ver=5.2.7" id="custom-css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://wardz.cc/wp-content/uploads/wp-less-cache/user-styles.css?ver=1596466739" id="user-styles-css" media="all" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+<link rel='stylesheet' id='vc_lte_ie9-css'  href='https://wardz.cc/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css?ver=6.0.5' type='text/css' media='screen' />
+<![endif]-->
+  <script src="https://wardz.cc/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1" type="text/javascript">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <link href="https://wardz.cc/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://wardz.cc/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://wardz.cc/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress 5.2.7" name="generator"/>
+  <link href="https://wardz.cc/" rel="shortlink"/>
+  <link href="https://wardz.cc/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwardz.cc%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://wardz.cc/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwardz.cc%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <script type="text/javascript">
+   document.documentElement.className += " js";
+  </script>
+  <meta content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." name="generator"/>
+  <noscript>
+   <style>
+    .wpb_animate_when_almost_visible { opacity: 1; }
+   </style>
+  </noscript>
+ </head>
+ <body class="home page-template-default page page-id-7 wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
+  <header>
+   <div class="vc_container container">
+    <div class="vc_row wpb_row vc_row-fluid" data-vc-full-width="true" data-vc-full-width-init="false">
+     <div class="wpb_column vc_column_container vc_col-sm-3 vc_col-lg-2 vc_col-md-2 vc_col-xs-6">
+      <div class="vc_column-inner">
+       <div class="wpb_wrapper">
+        <div class="vc_empty_space" style="height: 32px">
+         <span class="vc_empty_space_inner">
+         </span>
+        </div>
+        <div class="wpb_single_image wpb_content_element vc_align_left">
+         <figure class="wpb_wrapper vc_figure">
+          <a class="vc_single_image-wrapper vc_box_border_grey" href="/" target="_self">
+           <img class="vc_single_image-img" height="94" src="/wp-content/themes/wardz/images/wardZ-02.svg" width="300"/>
+          </a>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="wpb_column vc_column_container vc_col-sm-3">
+      <div class="vc_column-inner">
+       <div class="wpb_wrapper">
+       </div>
+      </div>
+     </div>
+     <div class="wpb_column vc_column_container vc_col-sm-3">
+      <div class="vc_column-inner">
+       <div class="wpb_wrapper">
+       </div>
+      </div>
+     </div>
+     <div class="wpb_column vc_column_container vc_col-sm-3">
+      <div class="vc_column-inner">
+       <div class="wpb_wrapper">
+        <div class="more-navigation-space">
+        </div>
+        <div class="navigation w-clearfix">
+         <div class="navigation-button">
+          <div class="nav-open-close">
+          </div>
+         </div>
+         <div class="link-section">
+          <div class="nav-links-wrap">
+           <ul class="menu" id="menu-main-menu">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item" id="menu-item-614">
+             <a href="/">
+              WELCOME
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" id="menu-item-342">
+             <a href="https://wardz.cc/#why">
+              INTRODUCTION
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" id="menu-item-343">
+             <a href="https://wardz.cc/#wardz-row">
+              CORE VISION
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom" id="menu-item-533">
+             <a href="http://wardz.cc/whitepaper/wardZ_whitepaper.pdf" target="_blank">
+              WHITE PAPER
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" id="menu-item-344">
+             <a href="https://wardz.cc/#tokensale">
+              TOKEN SALE
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" id="menu-item-341">
+             <a href="https://wardz.cc/#team">
+              OUR TEAM
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" id="menu-item-469">
+             <a href="https://wardz.cc/#board">
+              ADVISORS
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="nav-social">
+           <a class="nav-slack fa fa-comments-o nav-social-link w-inline-block" data-label="chat" href="https://discord.gg/tweadZn" target="_blank">
+           </a>
+           <a class="nav-facebook fa fa-facebook nav-social-link w-inline-block" data-label="facebook" href="https://www.facebook.com/wardZcc/" target="_blank">
+           </a>
+           <a class="nav-social-link fa fa-twitter nav-twitter w-inline-block" href="https://twitter.com/wardZcc" target="_blank">
+           </a>
+           <a class="nav-github fa fa-github nav-social-link w-inline-block" href="https://github.com/wardzcc" target="_blank">
+           </a>
+           <a class="nav-dev-link" href="mailto:admin@wardz.cc" target="_blank">
+            admin@wardz.cc
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="vc_row-full-width vc_clearfix">
+    </div>
+   </div>
+  </header>
+  <div class="vc_row wpb_row vc_row-fluid section_one vc_row-no-padding vc_row-o-full-height vc_row-o-columns-bottom vc_row-flex" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true">
+   <div class="wpb_column vc_column_container vc_col-sm-12">
+    <div class="vc_column-inner">
+     <div class="wpb_wrapper">
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="vc_row-full-width vc_clearfix">
+  </div>
+  <div class="vc_container container">
+   <div class="vc_row wpb_row vc_row-fluid engagements vc_custom_1503600164133 vc_row-has-fill vc_row-o-full-height vc_row-o-columns-middle vc_row-flex" data-vc-full-width="true" data-vc-full-width-init="false" id="why">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+     <div class="vc_column-inner vc_custom_1503670497187">
+      <div class="wpb_wrapper">
+       <h1 class="vc_custom_heading vc_custom_1503883470229" style="font-size: 33px;color: #ffffff;line-height: 1em;text-align: center">
+        REWARD CONSUMERS FOR BEING PHYSICALLY
+        <br/>
+        PRESENT IN YOUR BUSINESS ZONE.
+       </h1>
+       <div class="wpb_single_image wpb_content_element vc_align_left" id="phone">
+        <figure class="wpb_wrapper vc_figure">
+         <div class="vc_single_image-wrapper vc_box_border_grey">
+          <img alt="" class="vc_single_image-img attachment-full" height="1290" sizes="(max-width: 2294px) 100vw, 2294px" src="https://wardz.cc/wp-content/uploads/2017/07/wardZ_phone_app_3.png" srcset="https://wardz.cc/wp-content/uploads/2017/07/wardZ_phone_app_3.png 2294w, https://wardz.cc/wp-content/uploads/2017/07/wardZ_phone_app_3-300x169.png 300w, https://wardz.cc/wp-content/uploads/2017/07/wardZ_phone_app_3-768x432.png 768w, https://wardz.cc/wp-content/uploads/2017/07/wardZ_phone_app_3-1024x576.png 1024w" width="2294"/>
+         </div>
+        </figure>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid mobile-margin">
+        <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-2 vc_col-lg-4 vc_col-md-offset-2 vc_col-md-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_text_column wpb_content_element">
+            <div class="wpb_wrapper">
+             <h4 style="text-align: left;">
+              + Paying at any wardZ ready POS.
+              <br/>
+              + Scanning a QR code.
+              <br/>
+              + Referring / Advertising.
+             </h4>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_text_column wpb_content_element">
+            <div class="wpb_wrapper">
+             <h4 style="text-align: left;">
+              + Entering a receipt total amount.
+              <br/>
+              + Leaving a review / comment.
+              <br/>
+              + Any measurable engagement.
+             </h4>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="vc_row-full-width vc_clearfix">
+   </div>
+  </div>
+  <div class="vc_container container">
+   <div class="vc_row wpb_row vc_row-fluid vc_custom_1503585384088 vc_row-has-fill vc_row-o-full-height vc_row-o-columns-middle vc_row-flex" data-vc-full-width="true" data-vc-full-width-init="false" id="wardz-row">
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8 vc_col-xs-12">
+     <div class="vc_column-inner vc_custom_1503670505152">
+      <div class="wpb_wrapper">
+       <h1 class="vc_custom_heading" style="font-size: 26px;color: #128797;text-align: center">
+        WHAT IS WARDZ?
+       </h1>
+       <div class="wpb_text_column wpb_content_element bigger">
+        <div class="wpb_wrapper">
+         <h5 style="text-align: center;">
+          A universal reward token with loyalty options, referral links, reputation system, low cost automatic smart contracts, and NFC POS compatible wallets. Free to integrate to any app.
+         </h5>
+        </div>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="shadow-box wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <h2 class="vc_custom_heading" style="font-size: 20px;text-align: left">
+            SECURE
+           </h2>
+           <div class="wpb_text_column wpb_content_element">
+            <div class="wpb_wrapper">
+             <p>
+              Built on the Ethereum blockchain, wardZ contracts will be using the highest standard in Solidity development. Every contract will also be audited by third parties.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="shadow-box wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <h2 class="vc_custom_heading" style="font-size: 20px;text-align: left">
+            OPEN SOURCE
+           </h2>
+           <div class="wpb_text_column wpb_content_element">
+            <div class="wpb_wrapper">
+             <p>
+              Developers will have access to a complete software development kit (SDK), a versatile application program interface (API) and an affordable white label app.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="shadow-box wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <h2 class="vc_custom_heading" style="font-size: 20px;text-align: left">
+            VERSATILE
+           </h2>
+           <div class="wpb_text_column wpb_content_element">
+            <div class="wpb_wrapper">
+             <p>
+              Developers will be able to customize how their App will interact with our contracts and edit their own settings in our editor in order to adjust to any business model.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="vc_empty_space" style="height: 32px">
+        <span class="vc_empty_space_inner">
+        </span>
+       </div>
+       <div class="vc_btn3-container hidden-xs vc_btn3-inline">
+        <a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-success" href="/whitepaper/wardZ_whitepaper.pdf" target="_blank" title="">
+         WHITE PAPER
+        </a>
+       </div>
+       <div class="vc_btn3-container visible-xs vc_btn3-center">
+        <a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-success" href="/whitepaper/wardZ_whitepaper.pdf" target="_blank" title="">
+         WHITE PAPER
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="vc_row-full-width vc_clearfix">
+   </div>
+  </div>
+  <div class="vc_container container">
+   <div class="vc_row wpb_row vc_row-fluid hidden-xs vc_custom_1503667321156 vc_row-has-fill" data-vc-full-width="true" data-vc-full-width-init="false" id="tokensale">
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8">
+     <div class="vc_column-inner vc_custom_1503610894214">
+      <div class="wpb_wrapper">
+       <h1 class="vc_custom_heading vc_custom_1503670861277" style="font-size: 26px;color: #128797;text-align: center">
+        WARDZ TOKEN SALE
+       </h1>
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html vc_custom_1503672042995">
+        <div class="wpb_wrapper">
+         <div class="row">
+          <div class="col-sm-6">
+           <div class="pull-left">
+            <img height="52" src="/wp-content/themes/wardz/images/wardz_z.svg" style="vertical-align:middle; padding-right: 5px;"/>
+            <b>
+             Total Supply
+            </b>
+            60B WDZ
+           </div>
+          </div>
+          <div class="col-sm-6">
+           <div class="pull-right">
+            <img height="52" src="/wp-content/themes/wardz/images/ethereum.svg" style="vertical-align:middle; padding-right: 5px;"/>
+            <b>
+             Exchange Rate
+            </b>
+            300 000 WDZ = 1 ETH
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="wpb_single_image wpb_content_element vc_align_center vc_custom_1503671387936">
+        <figure class="wpb_wrapper vc_figure">
+         <div class="vc_single_image-wrapper vc_box_border_grey">
+          <img alt="" class="vc_single_image-img attachment-full" height="175" sizes="(max-width: 2474px) 100vw, 2474px" src="https://wardz.cc/wp-content/uploads/2017/07/distribution_wardz.png" srcset="https://wardz.cc/wp-content/uploads/2017/07/distribution_wardz.png 2474w, https://wardz.cc/wp-content/uploads/2017/07/distribution_wardz-300x21.png 300w, https://wardz.cc/wp-content/uploads/2017/07/distribution_wardz-768x54.png 768w, https://wardz.cc/wp-content/uploads/2017/07/distribution_wardz-1024x72.png 1024w" width="2474"/>
+         </div>
+        </figure>
+       </div>
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html vc_custom_1510918479808 period">
+        <div class="wpb_wrapper">
+         <div class="row">
+          <div class="col-sm-6">
+           <div class="pull-left">
+            <p>
+             <b>
+              Token Sale Phase One
+             </b>
+             <br/>
+             08/24/17 - 09/30/17
+             <span class="pink">
+              +50% Token Bonus
+             </span>
+             <br/>
+             10/01/17 - Min. goal reached
+             <span class="pink">
+              +25% Token Bonus
+             </span>
+            </p>
+            <p class="green">
+             Min. Goal 50M WDZ (50,000 USD) and Max. 2B WDZ (2M USD)
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-6">
+           <div class="pull-left">
+            <p>
+             <b>
+              Token Sale Phase Two
+             </b>
+             <br/>
+             Starts when the Phase one min. goal is reached and
+ continues until all available WDZ are sold.
+             <br/>
+             <span class="green">
+              Min. 2B WDZ / Max.
+ 40B WDZ (Min. 2M USD / Max. 40M USD)
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+        <div class="wpb_wrapper">
+         <div class="leg">
+          <span style="color: rgb(0, 172, 138);">
+           DEVELOPMENT
+          </span>
+          <span style="color: rgb(3, 108, 88);">
+           CONTINGENCY
+          </span>
+          <span style="color: rgb(238, 42, 123);">
+           MARKETING
+          </span>
+          <span style="color: rgb(0, 174, 239);">
+           CONTRACTORS
+          </span>
+          <span style="color: rgb(57, 181, 74);">
+           ADMINISTRATION
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <canvas height="170" id="chart-one" width="170">
+             </canvas>
+             <div class="amount">
+              $2M
+             </div>
+             <div class="text-below">
+              1 year development
+              <br/>
+              1 year operation
+              <br/>
+             </div>
+            </div>
+           </div>
+           <div class="wpb_raw_code wpb_raw_js">
+            <div class="wpb_wrapper">
+             <script>
+              var ctx = document.getElementById("chart-one").getContext('2d');
+var chart_one = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Developer", "Contingency", "Marketing", "Contractors", "Administration"],
+        datasets: [{
+            label: '',
+            data: [60, 5, 20, 7.5, 7.5],
+            backgroundColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    //animation: false,
+    animationEasing: 'easeOutQuart',
+    animateScale: false,
+    legend: {display:false}
+    }
+});
+             </script>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <canvas height="170" id="chart-two" width="170">
+             </canvas>
+             <div class="amount">
+              $20M
+             </div>
+             <div class="text-below">
+              8 months development
+              <br/>
+              6 years operation + international
+             </div>
+            </div>
+           </div>
+           <div class="wpb_raw_code wpb_raw_js">
+            <div class="wpb_wrapper">
+             <script>
+              var ctx = document.getElementById("chart-two").getContext('2d');
+var chart_one = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Developer", "Contingency", "Marketing", "Contractors", "Administration"],
+        datasets: [{
+            label: '',
+            data: [50, 5, 30, 7.5, 7.5],
+            backgroundColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    //animation: false,
+    animationEasing: 'easeOutQuart',
+    animateScale: false,
+legend: {display:false}
+    }
+});
+             </script>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <canvas height="170" id="chart-three" width="170">
+             </canvas>
+             <div class="amount">
+              $40M
+             </div>
+             <div class="text-below">
+              6 months development
+              <br/>
+              8 years operation + international
+             </div>
+            </div>
+           </div>
+           <div class="wpb_raw_code wpb_raw_js">
+            <div class="wpb_wrapper">
+             <script>
+              var ctx = document.getElementById("chart-three").getContext('2d');
+var chart_one = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Developer", "Contingency", "Marketing", "Contractors", "Administration"],
+        datasets: [{
+            label: '',
+            data: [40, 5, 40, 7.5, 7.5],
+            backgroundColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    //animation: false,
+    animationEasing: 'easeOutQuart',
+    animateScale: false,
+legend: {display:false}
+    }
+});
+             </script>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="vc_row-full-width vc_clearfix">
+   </div>
+  </div>
+  <div class="vc_container container">
+   <div class="vc_row wpb_row vc_row-fluid visible-xs vc_custom_1503667311962 vc_row-has-fill" data-vc-full-width="true" data-vc-full-width-init="false">
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8">
+     <div class="vc_column-inner vc_custom_1503610894214">
+      <div class="wpb_wrapper">
+       <h1 class="vc_custom_heading vc_custom_1503612925532" style="font-size: 26px;color: #128797;text-align: center">
+        TOKEN SALE
+       </h1>
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html vc_custom_1503671936062">
+        <div class="wpb_wrapper">
+         <div class="row">
+          <div class="col-xs-12">
+           <div class="text-center">
+            <img height="52" src="/wp-content/themes/wardz/images/wardz_z.svg" style="vertical-align:middle"/>
+            <p>
+             <b>
+              Total Supply
+             </b>
+             60B WDZ
+            </p>
+           </div>
+          </div>
+          <div class="col-xs-12">
+           <div class="text-center">
+            <img height="52" src="/wp-content/themes/wardz/images/ethereum.svg" style="vertical-align:middle"/>
+            <p>
+             <b>
+              Exchange Rate
+             </b>
+             300 000 WDZ = 1 ETH
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <h4 class="vc_custom_heading light-green" style="color: #ffffff;text-align: center">
+        40B WDZ For Sale
+       </h4>
+       <h4 class="vc_custom_heading dark-green" style="color: #ffffff;text-align: center">
+        20B WDZ Growth
+       </h4>
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html vc_custom_1510918495675 period">
+        <div class="wpb_wrapper">
+         <div class="row">
+          <div class="col-sm-12">
+           <div class="pull-left">
+            <p>
+             <b>
+              Token Sale Phase One
+             </b>
+             <br/>
+             08/24/17 - 09/30/17
+             <span class="pink">
+              +50% Token Bonus
+             </span>
+             <br/>
+             10/01/17 - Min. goal reached
+             <span class="pink">
+              +25% Token Bonus
+             </span>
+            </p>
+            <p class="green">
+             Min. Goal 50M WDZ (50,000 USD) and Max. 2B WDZ (2M USD)
+            </p>
+            <br/>
+           </div>
+          </div>
+          <div class="col-sm-12">
+           <div class="pull-left">
+            <p>
+             <b>
+              Token Sale Phase Two
+             </b>
+             <br/>
+             Starts when the Phase one min. goal is reached and
+ continues until all available WDZ are sold.
+             <br/>
+             <span class="green">
+              Min. 2B WDZ / Max.
+ 40B WDZ (Min. 2M USD / Max. 40M USD)
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+        <div class="wpb_wrapper">
+         <div class="leg">
+          <span style="color: rgb(0, 172, 138);">
+           DEVELOPMENT
+          </span>
+          <span style="color: rgb(3, 108, 88);">
+           CONTINGENCY
+          </span>
+          <span style="color: rgb(238, 42, 123);">
+           MARKETING
+          </span>
+          <span style="color: rgb(0, 174, 239);">
+           CONTRACTORS
+          </span>
+          <span style="color: rgb(57, 181, 74);">
+           ADMINISTRATION
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="mobile-graph wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <canvas height="170" id="chart-one-mobile" width="170">
+             </canvas>
+             <div class="amount">
+              $2M
+             </div>
+             <div class="text-below">
+              1 year development
+              <br/>
+              1 year operation
+              <br/>
+             </div>
+            </div>
+           </div>
+           <div class="wpb_raw_code wpb_raw_js">
+            <div class="wpb_wrapper">
+             <script>
+              var ctx = document.getElementById("chart-one-mobile").getContext('2d');
+var chart_one = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Developer", "Contingency", "Marketing", "Contractors", "Administration"],
+        datasets: [{
+            label: '',
+            data: [60, 5, 20, 7.5, 7.5],
+            backgroundColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    //animation: false,
+    animationEasing: 'easeOutQuart',
+    animateScale: false,
+    legend: {display:false}
+    }
+});
+             </script>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="mobile-graph wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <canvas height="170" id="chart-two-mobile" width="170">
+             </canvas>
+             <div class="amount">
+              $20M
+             </div>
+             <div class="text-below">
+              8 months development
+              <br/>
+              6 years operation + international
+             </div>
+            </div>
+           </div>
+           <div class="wpb_raw_code wpb_raw_js">
+            <div class="wpb_wrapper">
+             <script>
+              var ctx = document.getElementById("chart-two-mobile").getContext('2d');
+var chart_one = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Developer", "Contingency", "Marketing", "Contractors", "Administration"],
+        datasets: [{
+            label: '',
+            data: [50, 5, 30, 7.5, 7.5],
+            backgroundColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    //animation: false,
+    animationEasing: 'easeOutQuart',
+    animateScale: false,
+legend: {display:false}
+    }
+});
+             </script>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="mobile-graph wpb_column vc_column_container vc_col-sm-4">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <canvas height="170" id="chart-three-mobile" width="170">
+             </canvas>
+             <div class="amount">
+              $40M
+             </div>
+             <div class="text-below">
+              6 months development
+              <br/>
+              8 years operation + international
+             </div>
+            </div>
+           </div>
+           <div class="wpb_raw_code wpb_raw_js">
+            <div class="wpb_wrapper">
+             <script>
+              var ctx = document.getElementById("chart-three-mobile").getContext('2d');
+var chart_one = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Developer", "Contingency", "Marketing", "Contractors", "Administration"],
+        datasets: [{
+            label: '',
+            data: [40, 5, 40, 7.5, 7.5],
+            backgroundColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderColor: [
+                'rgba(0, 172, 138, 1)',
+                'rgba(3, 108, 88, 1)',
+                'rgba(238, 42, 123, 1)',
+                'rgba(0, 174, 239, 1)',
+                'rgba(57, 181, 74, 1)',
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    //animation: false,
+    animationEasing: 'easeOutQuart',
+    animateScale: false,
+legend: {display:false}
+    }
+});
+             </script>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="vc_row-full-width vc_clearfix">
+   </div>
+  </div>
+  <div class="vc_container container">
+   <div class="vc_row wpb_row vc_row-fluid token-sale-form vc_custom_1503808739139 vc_row-has-fill" data-vc-full-width="true" data-vc-full-width-init="false" id="moving-panel">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+     <div class="vc_column-inner vc_custom_1503671077288">
+      <div class="wpb_wrapper">
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <a class="tab-panel" href="#">
+              LEARN MORE
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="vc_empty_space" style="height: 10px">
+        <span class="vc_empty_space_inner">
+        </span>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid the-green-text">
+        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_text_column wpb_content_element vc_custom_1510854278580">
+            <div class="wpb_wrapper">
+             <p>
+              To invest in our project please deposit any amount of Ether to our address below. YOU MUST USE A
+              <a href="https://wardz.cc/contribution/">
+               ERC20 TOKEN WALLET
+              </a>
+              . Each contribution will be recorded in our blockchain smart contract for you to receive your wardZ ERC20 Tokens at the end of Phase Two. Thank you.
+              <a href="/contribution">
+               CHECKOUT OUR CONTRIBUTION GUIDE
+              </a>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+            <div class="wpb_wrapper">
+             <h5>
+              <span class="white">
+               BUY PHASE ONE WARDZ
+              </span>
+              <span class="pink">
+               25% BONUS
+              </span>
+             </h5>
+             <div class="address">
+             </div>
+             <a class="copy-address" data-clipboard-target=".address">
+              COPY ETH ADDRESS
+             </a>
+             <div class="clearfix">
+             </div>
+             <p>
+              <a data-target="#termsAndConditions" data-toggle="modal" href="javascript:void(0);">
+               TERMS &amp; CONDITIONS
+              </a>
+              |
+              <a href="https://etherscan.io/address/0x04cfd07965632edc6069de39575ffebb5684040d" target="_blank">
+               VIEW YOUR CONTRIBUTION
+              </a>
+             </p>
+             <div class="modal fade" id="termsAndConditions" role="dialog" tabindex="-1">
+              <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                <div class="modal-header">
+                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                  <span aria-hidden="true">
+                   ×
+                  </span>
+                 </button>
+                 <h4 class="modal-title">
+                  Terms and Conditions
+                 </h4>
+                </div>
+                <div class="modal-body">
+                 <p>
+                  Our goal with Phase One (A) &amp; (B) is sell a minimun of 50,000,000 WDZ ($50,000) in order to kick-start the roadmap to the phase two token sale. Early investors will be rewarded with a 50%/25% bonus value of the
+purchased wardZ for Phase One A and B respectively. The tokens are not to be released right away, but only at the end of Phase Two token sale. The early contribution values will be
+stored in a Ethereum smart contract and will be available for consultation.
+                 </p>
+                 <p>
+                  WardZ tokens will be built in the Ethereum blockchain technology. They are not securities or for speculation nor refundable.
+All sold WDZ are intent to be used with the wardZ system. There is no suggestion or commitment that WDZ has or will hold a specific value.
+There is no company equity given with the purchase of WDZ.
+                 </p>
+                </div>
+               </div>
+               <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+             </div>
+             <!-- /.modal -->
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="vc_empty_space" style="height: 65px">
+        <span class="vc_empty_space_inner">
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="vc_row-full-width vc_clearfix">
+   </div>
+  </div>
+  <div class="vc_container container">
+   <div class="vc_row wpb_row vc_row-fluid vc_row-o-full-height vc_row-o-columns-middle vc_row-flex" id="team">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+     <div class="vc_column-inner vc_custom_1503672181796">
+      <div class="wpb_wrapper">
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-2 vc_col-md-8">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <h4 class="vc_custom_heading" style="font-size: 26px;color: #128797;text-align: center">
+            TEAM
+           </h4>
+           <div class="wpb_text_column wpb_content_element same-as-shadow-box">
+            <div class="wpb_wrapper">
+             <p style="text-align: center;">
+              We have been in web development, POS and loyalty program business for over 10 years. In the past few years, our team has developed apps with functionalities such as geo-locations, interactive maps, geo-notifications, reward systems, referral tracking, and complex business modeling. Following closely the blockchain evolution for the past 3 years, we recognized that it was the missing element for an all inclusive decentralized versatile reward system.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-3 vc_col-lg-3 vc_col-md-offset-3 vc_col-md-3">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_single_image wpb_content_element vc_align_left">
+            <figure class="wpb_wrapper vc_figure">
+             <div class="vc_single_image-wrapper vc_box_border_grey">
+              <img alt="" class="vc_single_image-img attachment-large" height="1024" sizes="(max-width: 997px) 100vw, 997px" src="https://wardz.cc/wp-content/uploads/2017/08/Hami-Gilbet-997x1024.jpg" srcset="https://wardz.cc/wp-content/uploads/2017/08/Hami-Gilbet-997x1024.jpg 997w, https://wardz.cc/wp-content/uploads/2017/08/Hami-Gilbet-292x300.jpg 292w, https://wardz.cc/wp-content/uploads/2017/08/Hami-Gilbet-768x789.jpg 768w, https://wardz.cc/wp-content/uploads/2017/08/Hami-Gilbet.jpg 1305w" width="997"/>
+             </div>
+            </figure>
+           </div>
+           <div class="wpb_text_column wpb_content_element vc_custom_1505769022350">
+            <div class="wpb_wrapper">
+             <p>
+              Hami Gilbert
+              <br/>
+              <strong>
+               Co-Founder / CEO
+              </strong>
+             </p>
+             <p>
+              <strong>
+               Vision / Strategy / Design
+              </strong>
+             </p>
+            </div>
+           </div>
+           <div class="wpb_text_column wpb_content_element vc_custom_1505769070791">
+            <div class="wpb_wrapper">
+             <p>
+              <b>
+               __
+              </b>
+             </p>
+             <p>
+              Co-Founded
+              <strong>
+               7thw
+              </strong>
+              <br/>
+              Co-Founded
+              <strong>
+               Local Bookup
+              </strong>
+             </p>
+            </div>
+           </div>
+           <div class="vc_icon_element vc_icon_element-outer vc_custom_1503705337610 vc_icon_element-align-left">
+            <div class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-size-sm vc_icon_element-style- vc_icon_element-background-color-grey">
+             <span class="vc_icon_element-icon fa fa-linkedin" style="color:#00ac8a !important">
+             </span>
+             <a class="vc_icon_element-link" href="https://www.linkedin.com/in/hamigendron/" target=" _blank" title="">
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3">
+         <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+           <div class="wpb_single_image wpb_content_element vc_align_left">
+            <figure class="wpb_wrapper vc_figure">
+             <div class="vc_single_image-wrapper vc_box_border_grey">
+              <img alt="" class="vc_single_image-img attachment-large" height="1024" sizes="(max-width: 997px) 100vw, 997px" src="https://wardz.cc/wp-content/uploads/2017/08/Rogers-Santos-997x1024.jpg" srcset="https://wardz.cc/wp-content/uploads/2017/08/Rogers-Santos-997x1024.jpg 997w, https://wardz.cc/wp-content/uploads/2017/08/Rogers-Santos-292x300.jpg 292w, https://wardz.cc/wp-content/uploads/2017/08/Rogers-Santos-768x789.jpg 768w, https://wardz.cc/wp-content/uploads/2017/08/Rogers-Santos.jpg 1305w" width="997"/>
+             </div>
+            </figure>
+           </div>
+           <div class="wpb_text_column wpb_content_element vc_custom_1503885452320">
+            <div class="wpb_wrapper">
+             <p>
+              Rogers Sampaio
+              <br/>
+              <strong>
+               Co-Founder / CTO
+              </strong>
+             </p>
+             <p>
+              <strong>
+               -Engagement Contracts
+               <br/>
+               -Blockchain API
+               <br/>
+               -Hybrid Wallet
+              </strong>
+             </p>
+            </div>
+           </div>
+           <div class="wpb_text_column wpb_content_element vc_custom_1505769039653">
+            <div class="wpb_wrapper">
+             <p>
+              <strong>
+               __
+              </strong>
+             </p>
+             <p>
+              Co-Founded
+              <strong>
+               7thw
+              </strong>
+              <br/>
+              Co-Founded
+              <strong>
+               Local Bookup
+              </strong>
+             </p>
+            </div>
+           </div>
+           <div class="vc_icon_element vc_icon_element-outer vc_custom_1503705347377 vc_icon_element-align-left">
+            <div class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-size-sm vc_icon_element-style- vc_icon_element-background-color-grey">
+             <span class="vc_icon_element-icon fa fa-linkedin" style="color:#00ac8a !important">
+             </span>
+             <a class="vc_icon_element-link" href="https://www.linkedin.com/in/rogerssampaio/" target=" _blank" title="">
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="vc_container container">
+  </div>
+  <footer>
+   <div class="vc_row wpb_row vc_row-fluid">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+     <div class="vc_column-inner">
+      <div class="wpb_wrapper">
+       <div class="vc_empty_space" style="height: 32px">
+        <span class="vc_empty_space_inner">
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="vc_container container">
+    <div class="vc_row wpb_row vc_row-fluid vc_custom_1503679132855 vc_row-has-fill" data-vc-full-width="true" data-vc-full-width-init="false">
+     <div class="wpb_column vc_column_container vc_col-sm-12">
+      <div class="vc_column-inner">
+       <div class="wpb_wrapper">
+        <div class="vc_empty_space" style="height: 32px">
+         <span class="vc_empty_space_inner">
+         </span>
+        </div>
+        <div class="vc_row wpb_row vc_inner vc_row-fluid">
+         <div class="wpb_column vc_column_container vc_col-sm-6">
+          <div class="vc_column-inner">
+           <div class="wpb_wrapper">
+            <div class="wpb_text_column wpb_content_element footerlinks">
+             <div class="wpb_wrapper">
+              <p style="text-align: left;">
+               copyright © 2017 wardZ | all rights reserved
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="wpb_column vc_column_container vc_col-sm-6">
+          <div class="vc_column-inner">
+           <div class="wpb_wrapper">
+            <div class="wpb_text_column wpb_content_element footerlinks">
+             <div class="wpb_wrapper">
+              <p style="text-align: right;">
+               <a href="http://wardz.cc/contact/">
+                contact us
+               </a>
+               |
+               <a href="http://wardz.cc/terms-of-use/">
+                terms of use
+               </a>
+               |
+               <a href="http://wardz.cc/privacy-policy/">
+                privacy policy
+               </a>
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="vc_empty_space" style="height: 32px">
+         <span class="vc_empty_space_inner">
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="vc_row-full-width vc_clearfix">
+    </div>
+   </div>
+   <style data-type="vc_custom-css" type="text/css">
+    .vc_custom_1503679132855{background-color: #128797 !important;}
+   </style>
+  </footer>
+  <script src="https://wardz.cc/wp-content/plugins/seventhw_vc_extended/assets/Scrollify-master/jquery.scrollify.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/plugins/seventhw_vc_extended/assets/frontend.js?ver=1.0" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-includes/js/clipboard.min.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/themes/wardz/js/verge/verge.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/themes/wardz/js/smooth-scroll-master/dist/js/smooth-scroll.polyfills.min.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/themes/wardz/js/main.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/themes/reboot/framework/js/less.min.js?ver=2.5.3" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/wardz.cc\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+  </script>
+  <script src="https://wardz.cc/wp-content/themes/reboot/js/custom.js?ver=1.0" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/themes/reboot/bootstrap/js/bootstrap.min.js?ver=1.0" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-includes/js/wp-embed.min.js?ver=5.2.7" type="text/javascript">
+  </script>
+  <script src="https://wardz.cc/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.0.5" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1c39a20a01","applicationID":"5996444","transactionName":"b1YHbEEEWRFUAkNbX1YcJFtHDFgMGhFWVVU=","queueTime":0,"applicationTime":667,"atts":"QxEEGgkeSh8=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>

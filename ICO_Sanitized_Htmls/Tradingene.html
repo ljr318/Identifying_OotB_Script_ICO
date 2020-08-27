@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <meta content="https://tradingene.com/" property="og:url"/>
+  <meta content="article" property="og:type"/>
+  <meta content="Professional tools for algorithmic trading | Tradingene" property="og:title"/>
+  <meta content="Tradingene is designed to connect algorithm developers with professional market players and investors in a transparent ecosystem." property="og:description"/>
+  <meta content="https://img.stat-pulse.com/files/emailservice/userfiles/d8df82515d259ce2ad920d6d7fe05d8f6804145/rost/tradingeneOpenGraphpWhite.png" property="og:image"/>
+  <meta content="Tradingene is designed to connect algorithm developers with professional market players and investors in a transparent ecosystem." name="description"/>
+  <title>
+   Tradingene
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&amp;display=swap" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" rel="stylesheet"/>
+  <style>
+   *{
+          outline: none;
+        }
+        html,
+        body {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          font-family: 'Montserrat', sans-serif !important;
+          font-weight: 400;
+          background-color: #fff;
+          color: #2b334e;
+        }
+        #app {
+        }
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+        button {
+          font-family: 'Montserrat', sans-serif !important;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button
+        {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input[type=number]
+        {
+          -moz-appearance: textfield;
+        }
+
+        #global-modal-container{
+          display: none;
+          overflow: auto;
+          background-color: rgba(0,0,0,0.8);
+          position: fixed;
+          z-index: 151;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        #global-modal-body{
+          width: 500px;
+          border-radius: 2px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #fff;
+        }
+
+        #global-modal-header{
+          font-size: 14px;
+          font-weight: 400;
+          color: #0078dd;
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          text-transform: uppercase;
+          border-bottom: 0.5px solid #e8e8e8;
+        }
+
+        #global-modal-header div{
+          padding: 20px;
+        }
+
+        #global-modal-content{
+          padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+          #global-modal-body {
+            width: 100%;
+          }
+        }
+  </style>
+  <style data-styled="cWmfeE cxsAOP dYzrpV dlyuiC cwvmpg bjNCkG flmfwG cYSLlr cJxQpk kTQRKK bCxwBN bsoIMk dHlzUK hYlcOz juopPC iLjQMw gZMujk gFdYJQ iQiybp loQuSx kMglsf eYheRa jGlThm hXjMUa bKNxDg kbNEXy iiZOax jGyEig jOITkg jSoCFd haavHT gQgcKC gvhatC jCEBGP cLfvvn dTMqlU gnkKKf ksGAot kIHzYE iddGJm" data-styled-version="4.3.2">
+   /* sc-component-id: commonStyles__Button-hw42pk-0 */
+.cJxQpk{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:none;border-radius:4px;font-size:16px;font-weight:500;line-height:normal;background:#0E5CC8;color:#fff;text-align:center;padding:15px;width:100%;cursor:pointer;text-transform:none;border:none;} .cJxQpk:hover{background:#006BC4;}.kTQRKK{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:none;border-radius:4px;font-size:16px;font-weight:500;line-height:normal;background:#74CE7D;color:#fff;text-align:center;padding:15px;width:100%;cursor:pointer;text-transform:none;border:none;} .kTQRKK:hover{background:#6FCF97;}.bCxwBN{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:none;border-radius:4px;font-size:16px;font-weight:500;line-height:normal;background:#FFA945;color:#fff;text-align:center;padding:15px;width:100%;cursor:pointer;text-transform:none;border:none;} .bCxwBN:hover{background:#FFA945;}.bsoIMk{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;border:none;border-radius:4px;font-size:16px;font-weight:500;line-height:normal;background:#2B334E;color:#fff;text-align:center;padding:15px;width:100px;cursor:pointer;text-transform:none;border:none;} .bsoIMk:hover{background:#006BC4;}
+/* sc-component-id: commonStyles__Container-hw42pk-1 */
+.bKNxDg{padding:40px;padding-left:auto;padding-right:auto;} @media all and (max-width:56.25em){.bKNxDg{padding-left:40px;padding-right:40px;}} @media all and (max-width:37.5em){.bKNxDg{padding:20px 10px;}}
+/* sc-component-id: commonStyles__ContainerWrapper-hw42pk-2 */
+.dHlzUK{margin:0 auto;max-width:1279px;} @media all and (max-width:56.25em){.dHlzUK{max-width:1081px;}} @media all and (max-width:37.5em){.dHlzUK{max-width:100%;width:100%;}}
+/* sc-component-id: commonStyles__TextComponent-hw42pk-6 */
+.iLjQMw{padding:0 20px 0 0;margin:0;font-size:18px;color:#2B334E;font-weight:500;text-align:inherit;line-height:inherit;}.gZMujk{padding:0;margin:0;font-size:60px;color:#2B334E;font-weight:500;text-align:inherit;line-height:inherit;}.gFdYJQ{padding:20px 30px;margin:0;font-size:20px;color:#2B334E;font-weight:400;text-align:center;line-height:inherit;}.iQiybp{padding:0;margin:0;font-size:20px;color:#2B334E;font-weight:500;text-align:inherit;line-height:inherit;}
+/* sc-component-id: commonStyles__Heading-hw42pk-9 */
+.cwvmpg{font-weight:500;font-size:18px;margin-left:5px;color:#2B334E;}.bjNCkG{font-weight:500;font-size:18px;margin-left:5px;color:#0E5CC8;}.flmfwG{font-weight:500;font-size:18px;margin-left:5px;color:#74CE7D;}.cYSLlr{font-weight:500;font-size:18px;margin-left:5px;color:#FFA945;}
+/* sc-component-id: Header__FixedHeader-z9mbmp-0 */
+.cWmfeE{display:none;position:fixed;top:0;left:0;background-color:rgba(255,255,255,0.8);width:100%;z-index:101;} @media all and (max-width:56.25em){}
+/* sc-component-id: Header-z9mbmp-1 */
+.hXjMUa{position:absolute;top:0;left:0;right:0;z-index:101;}
+/* sc-component-id: Header__MobileHeader-z9mbmp-2 */
+.juopPC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+/* sc-component-id: Header__MobileMenu-z9mbmp-3 */
+.cxsAOP{padding:50px 0;display:none;width:100vw;background:#fff;position:fixed;top:60px;right:0;-webkit-transform:translateX(200%);-ms-transform:translateX(200%);transform:translateX(200%);-webkit-transition:200ms ease-out;transition:200ms ease-out;height:calc(100vh - 60px);-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;} @media all and (max-width:56.25em){.cxsAOP{width:50vw;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}} @media all and (max-width:37.5em){.cxsAOP{width:100vw;}}
+/* sc-component-id: Header__Ham-z9mbmp-4 */
+.jGlThm{position:relative;height:20px;width:20px;display:none;} .jGlThm span{position:absolute;height:3px;width:20px;background:#000;display:block;top:9px;} .jGlThm span:first-child{top:0;} .jGlThm span:last-child{top:17px;} @media all and (max-width:56.25em){.jGlThm{display:block;}}
+/* sc-component-id: Header__HeaderLinksContainer-z9mbmp-5 */
+.dYzrpV{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:space-evenly;-webkit-justify-content:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly;max-width:1170px;margin:0 auto;} .dYzrpV > div{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:40px;} .dYzrpV > div div:first-child{margin-bottom:20px;}
+/* sc-component-id: Header__CustomLink-z9mbmp-6 */
+.dlyuiC{display:block;} .dlyuiC:not(:first-child){margin-top:60px;}
+/* sc-component-id: Header__CustomContainer-z9mbmp-7 */
+.hYlcOz{padding:40px;padding-left:auto;padding-right:auto;padding-top:15px;padding-bottom:15px;} @media all and (max-width:56.25em){.hYlcOz{padding-left:40px;padding-right:40px;}} @media all and (max-width:37.5em){.hYlcOz{padding:20px 10px;}}
+/* sc-component-id: Header__LanguageContainer-z9mbmp-8 */
+@media all and (max-width:56.25em){.eYheRa{display:none;}}
+/* sc-component-id: Footer__FooterContainer-htuprn-0 */
+.gnkKKf{padding:40px;padding-left:8.333333%;padding-right:auto;padding-top:60px;padding-bottom:60px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;} @media all and (max-width:56.25em){.gnkKKf{padding-left:40px;padding-right:40px;}} @media all and (max-width:37.5em){.gnkKKf{padding:20px 10px;}} .gnkKKf:last-child{padding-top:0;} @media all and (max-width:56.25em){.gnkKKf{padding-top:40px;padding-bottom:40px;}} @media all and (max-width:37.5em){.gnkKKf{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}
+/* sc-component-id: Footer__LinksContainer-htuprn-1 */
+.ksGAot{width:33.33333%;} .ksGAot a{display:block;margin-bottom:25px;} @media all and (max-width:37.5em){.ksGAot{width:100%;margin-bottom:35px;}}
+/* sc-component-id: Footer__SupportContainer-htuprn-2 */
+.kIHzYE > div{margin-bottom:15px;}
+/* sc-component-id: Footer__SocialsContainer-htuprn-3 */
+.iddGJm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;max-width:200px;} @media all and (max-width:37.5em){.iddGJm{max-width:auto;}} .iddGJm >a{color:inherit;}
+/* sc-component-id: MainPageTile__Wrapper-sc-37zigm-0 */
+.haavHT{cursor:pointer;min-height:470px;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0;background:#fff;border-radius:4px;max-width:460px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:500ms;transition:500ms;} .haavHT:not(:last-child){margin-right:20px;} .haavHT span{-webkit-transition:300ms;transition:300ms;opacity:0;} .haavHT:hover{box-shadow:0px 5px 30px #e5e5e5;-webkit-transform:translate(0,-5px);-ms-transform:translate(0,-5px);transform:translate(0,-5px);} .haavHT:hover span{opacity:1;} @media all and (max-width:56.25em){.haavHT{min-height:450px;width:100%;margin-right:0;margin-left:0;max-width:100%;margin-bottom:40px;}.haavHT span{opacity:1;}}
+/* sc-component-id: MainPageTile__TextContainer-sc-37zigm-1 */
+.cLfvvn{text-align:center;margin:45px 0 20px;} @media all and (max-width:56.25em){.cLfvvn{text-align:center;margin:40px 0;}}
+/* sc-component-id: MainPageTile__Image-sc-37zigm-2 */
+.gQgcKC{background-image:url(/img/devs.png);background-repeat:no-repeat;background-size:cover;background-position-y:center;height:200px;width:100%;}.gvhatC{background-image:url(/img/elevator.jpg);background-repeat:no-repeat;background-size:cover;background-position-y:center;height:200px;width:100%;}.jCEBGP{background-image:url(/img/driver.png);background-repeat:no-repeat;background-size:cover;background-position-y:center;height:200px;width:100%;}
+/* sc-component-id: MainPage__HeadWrapper-sc-1oc3h5-0 */
+.iiZOax{background:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:120px 20px;} .iiZOax > div:first-child{margin-right:20px;margin-bottom:0;} @media all and (max-width:37.5em){.iiZOax{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:100px 20px;}.iiZOax > div:first-child{margin-right:0;margin-bottom:20px;font-size:40px;}}
+/* sc-component-id: MainPage__ContentWrapper-sc-1oc3h5-1 */
+.jOITkg{background:#f5f7fa;padding:85 0;}
+/* sc-component-id: MainPage__HighlightsContainer-sc-1oc3h5-2 */
+.dTMqlU{padding:40px;padding-left:auto;padding-right:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:none;min-height:220px;} @media all and (max-width:56.25em){.dTMqlU{padding-left:40px;padding-right:40px;}} @media all and (max-width:37.5em){.dTMqlU{padding:20px 10px;}} @media all and (max-width:56.25em){.dTMqlU{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:550px;}}
+/* sc-component-id: MainPage__Tiles-sc-1oc3h5-4 */
+.jSoCFd{padding:40px;padding-left:auto;padding-right:auto;min-height:550px;margin:40px auto 60px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:none;} @media all and (max-width:56.25em){.jSoCFd{padding-left:40px;padding-right:40px;}} @media all and (max-width:37.5em){.jSoCFd{padding:20px 10px;}} @media all and (max-width:56.25em){.jSoCFd{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:1500px;}}
+/* sc-component-id: MainPage__Devider-sc-1oc3h5-8 */
+.loQuSx{height:60px;width:3px;background:#2B334E;margin-right:20px;} @media all and (max-width:37.5em){.loQuSx{display:none;}}
+/* sc-component-id: MainPage__CustomText-sc-1oc3h5-9 */
+.kMglsf{padding:0;margin:0;font-size:20px;color:#B7BBC7;font-weight:400;text-align:inherit;line-height:inherit;} @media all and (max-width:37.5em){.kMglsf{display:none;}}
+/* sc-component-id: MainPage__CustomHeadText-sc-1oc3h5-10 */
+.jGyEig{padding:0;margin:0;font-size:20px;color:#B7BBC7;font-weight:400;text-align:inherit;line-height:inherit;max-width:240px;} @media all and (max-width:37.5em){.jGyEig{text-align:center;}}
+/* sc-component-id: MainPage__LngSwitcherContainer-sc-1oc3h5-11 */
+.kbNEXy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111552930-6">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-111552930-6');
+          gtag('config', 'UA-111552930-5');
+  </script>
+ </head>
+ <body>
+  <form id="csrf-form" method="post">
+   <input name="csrf-token" type="hidden" value="63348db34948ee97885327292d9be0b1df3737efd0ecd839ca00fb36279bdc3a84e75c4b5da6b9e7d5528db89ff469ea138073b948ab3935fea6b05516622427a5f264055e9f75f8f4cc82709c2254967f8e7e8d10404b5f95341a5f6a901c041a5541c977ed639f270f9996d0be53fe5244eb1da59758fa3d65fea7c30261439a68491cda80d8126064b872d18ad0ad22e6f86cf25eeb243f0def6f9dbd06363170b46a68e4ae086877e41603edd858d1ed9f120e2a6aa229549f8e3c956b9500cd4080b1dfbcbb4a7a92c373a5983832ca626c0a0f191d3bc82931a06317996529922906f4abde220acbaed1135a09ce6d6c1119bb66f0d74132774891146c"/>
+  </form>
+  <section id="app">
+   <div style="overflow-x:hidden">
+    <div class="Header__FixedHeader-z9mbmp-0 cWmfeE">
+     <div class="Header__MobileMenu-z9mbmp-3 cxsAOP">
+      <div class="Header__HeaderLinksContainer-z9mbmp-5 dYzrpV">
+       <a class="Header__CustomLink-z9mbmp-6 dlyuiC" href="/developers">
+        <div style="margin-bottom:20px">
+         <div style="display:flex;justify-content:center">
+          <div style="color:#0E5CC8">
+           <svg fill="none" height="18" width="47" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.552h2.59a10 10 0 0 0 6.659-2.54L23.403.38h-2.59a10 10 0 0 0-6.658 2.54L0 15.552zM46.097 2.448h-2.59a10 10 0 0 0-6.658 2.54L22.694 17.62h2.59a10 10 0 0 0 6.659-2.54L46.097 2.448z">
+            </path>
+            <path d="M0 2.448h2.937a10 10 0 0 1 6.388 2.306l6.36 5.28 4.568 3.794s1.22 1.207 3.15 2.413c1.93 1.207 3.192 1.38 3.192 1.38h-5.463a10 10 0 0 1-6.577-2.467L0 2.448zM46.097 15.552h-2.132c-2.863 0-5.647-.94-7.901-2.705-2.272-1.778-4.996-3.943-6.006-4.881-1.854-1.725-5.236-5.173-7.01-6.207a12.7 12.7 0 0 0-3.545-1.38h4.338a13 13 0 0 1 8.55 3.207l13.706 11.966z" fill="#2B334E">
+            </path>
+           </svg>
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cwvmpg">
+           Tradingene
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 bjNCkG" color="#0E5CC8">
+           Developers
+          </div>
+         </div>
+        </div>
+        <div class="commonStyles__Button-hw42pk-0 cJxQpk" color="blue">
+         Learn more
+        </div>
+       </a>
+       <a class="Header__CustomLink-z9mbmp-6 dlyuiC" href="/business">
+        <div style="margin-bottom:20px">
+         <div style="display:flex;justify-content:center">
+          <div style="color:#74CE7D">
+           <svg fill="none" height="18" width="47" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.552h2.59a10 10 0 0 0 6.659-2.54L23.403.38h-2.59a10 10 0 0 0-6.658 2.54L0 15.552zM46.097 2.448h-2.59a10 10 0 0 0-6.658 2.54L22.694 17.62h2.59a10 10 0 0 0 6.659-2.54L46.097 2.448z">
+            </path>
+            <path d="M0 2.448h2.937a10 10 0 0 1 6.388 2.306l6.36 5.28 4.568 3.794s1.22 1.207 3.15 2.413c1.93 1.207 3.192 1.38 3.192 1.38h-5.463a10 10 0 0 1-6.577-2.467L0 2.448zM46.097 15.552h-2.132c-2.863 0-5.647-.94-7.901-2.705-2.272-1.778-4.996-3.943-6.006-4.881-1.854-1.725-5.236-5.173-7.01-6.207a12.7 12.7 0 0 0-3.545-1.38h4.338a13 13 0 0 1 8.55 3.207l13.706 11.966z" fill="#2B334E">
+            </path>
+           </svg>
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cwvmpg">
+           Tradingene
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 flmfwG" color="#74CE7D">
+           Business
+          </div>
+         </div>
+        </div>
+        <div class="commonStyles__Button-hw42pk-0 kTQRKK" color="green">
+         Learn more
+        </div>
+       </a>
+       <a class="Header__CustomLink-z9mbmp-6 dlyuiC" href="/market">
+        <div style="margin-bottom:20px">
+         <div style="display:flex;justify-content:center">
+          <div style="color:#FFA945">
+           <svg fill="none" height="18" width="47" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.552h2.59a10 10 0 0 0 6.659-2.54L23.403.38h-2.59a10 10 0 0 0-6.658 2.54L0 15.552zM46.097 2.448h-2.59a10 10 0 0 0-6.658 2.54L22.694 17.62h2.59a10 10 0 0 0 6.659-2.54L46.097 2.448z">
+            </path>
+            <path d="M0 2.448h2.937a10 10 0 0 1 6.388 2.306l6.36 5.28 4.568 3.794s1.22 1.207 3.15 2.413c1.93 1.207 3.192 1.38 3.192 1.38h-5.463a10 10 0 0 1-6.577-2.467L0 2.448zM46.097 15.552h-2.132c-2.863 0-5.647-.94-7.901-2.705-2.272-1.778-4.996-3.943-6.006-4.881-1.854-1.725-5.236-5.173-7.01-6.207a12.7 12.7 0 0 0-3.545-1.38h4.338a13 13 0 0 1 8.55 3.207l13.706 11.966z" fill="#2B334E">
+            </path>
+           </svg>
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cwvmpg">
+           Tradingene
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cYSLlr" color="#FFA945">
+           Market
+          </div>
+         </div>
+        </div>
+        <div class="commonStyles__Button-hw42pk-0 bCxwBN" color="orange">
+         Learn more
+        </div>
+       </a>
+       <div style="padding:10px 0 0">
+       </div>
+      </div>
+     </div>
+     <div class="commonStyles__ContainerWrapper-hw42pk-2 dHlzUK">
+      <div class="commonStyles__Container-hw42pk-1 Header__CustomContainer-z9mbmp-7 hYlcOz">
+       <div class="Header__MobileHeader-z9mbmp-2 juopPC">
+        <div style="display:flex;align-items:center">
+         <div class="commonStyles__TextComponent-hw42pk-6 iLjQMw">
+          Tradingene
+         </div>
+         <div class="MainPage__Devider-sc-1oc3h5-8 loQuSx">
+         </div>
+         <div class="commonStyles__TextComponent-hw42pk-6 MainPage__CustomText-sc-1oc3h5-9 kMglsf" color="#B7BBC7">
+          Professional tools for algorithmic trading
+         </div>
+        </div>
+        <div style="display:flex;align-items:center">
+         <div class="Header__LanguageContainer-z9mbmp-8 eYheRa">
+         </div>
+         <a class="commonStyles__Button-hw42pk-0 bsoIMk" color="darkBlue" href="https://auth.tradingene.com" style="margin:0 20px" width="100px">
+          Log In
+         </a>
+         <div class="Header__Ham-z9mbmp-4 jGlThm">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="Header-z9mbmp-1 hXjMUa">
+     <div class="commonStyles__ContainerWrapper-hw42pk-2 dHlzUK">
+      <div class="commonStyles__Container-hw42pk-1 bKNxDg">
+       <div style="display:flex;align-items:center;justify-content:flex-end">
+        <div class="MainPage__LngSwitcherContainer-sc-1oc3h5-11 kbNEXy">
+        </div>
+        <a class="commonStyles__Button-hw42pk-0 bsoIMk" color="darkBlue" href="https://auth.tradingene.com" style="margin:0 20px" width="100px">
+         Log In
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="MainPage__HeadWrapper-sc-1oc3h5-0 iiZOax">
+     <div class="commonStyles__TextComponent-hw42pk-6 gZMujk" style="transition:500ms;opacity:0;transform:translateX(-50px)">
+      Tradingene
+     </div>
+     <div class="MainPage__Devider-sc-1oc3h5-8 loQuSx">
+     </div>
+     <div class="commonStyles__TextComponent-hw42pk-6 MainPage__CustomHeadText-sc-1oc3h5-10 jGyEig" color="#B7BBC7" style="transition:500ms;opacity:0;transform:translateX(50px)">
+      Professional tools for algorithmic trading
+     </div>
+    </div>
+    <div class="MainPage__ContentWrapper-sc-1oc3h5-1 jOITkg">
+     <div class="commonStyles__ContainerWrapper-hw42pk-2 dHlzUK">
+      <div class="commonStyles__Container-hw42pk-1 MainPage__Tiles-sc-1oc3h5-4 jSoCFd">
+       <div class="MainPageTile__Wrapper-sc-37zigm-0 haavHT" style="transition:500ms;opacity:0;transform:translateX(-50px)">
+        <div class="MainPageTile__Image-sc-37zigm-2 gQgcKC" src="/img/devs.png">
+        </div>
+        <div class="MainPageTile__TextContainer-sc-37zigm-1 cLfvvn">
+         <div style="display:flex;justify-content:center">
+          <div style="color:#0E5CC8">
+           <svg fill="none" height="18" width="47" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.552h2.59a10 10 0 0 0 6.659-2.54L23.403.38h-2.59a10 10 0 0 0-6.658 2.54L0 15.552zM46.097 2.448h-2.59a10 10 0 0 0-6.658 2.54L22.694 17.62h2.59a10 10 0 0 0 6.659-2.54L46.097 2.448z">
+            </path>
+            <path d="M0 2.448h2.937a10 10 0 0 1 6.388 2.306l6.36 5.28 4.568 3.794s1.22 1.207 3.15 2.413c1.93 1.207 3.192 1.38 3.192 1.38h-5.463a10 10 0 0 1-6.577-2.467L0 2.448zM46.097 15.552h-2.132c-2.863 0-5.647-.94-7.901-2.705-2.272-1.778-4.996-3.943-6.006-4.881-1.854-1.725-5.236-5.173-7.01-6.207a12.7 12.7 0 0 0-3.545-1.38h4.338a13 13 0 0 1 8.55 3.207l13.706 11.966z" fill="#2B334E">
+            </path>
+           </svg>
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cwvmpg">
+           Tradingene
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 bjNCkG" color="#0E5CC8">
+           Developers
+          </div>
+         </div>
+         <h2 class="commonStyles__TextComponent-hw42pk-6 gFdYJQ">
+          Advanced platform for algorithmic creation
+         </h2>
+         <span class="commonStyles__Button-hw42pk-0 cJxQpk" color="blue" style="margin:0 auto;max-width:150px">
+          Learn more
+         </span>
+        </div>
+       </div>
+       <div class="MainPageTile__Wrapper-sc-37zigm-0 haavHT" style="transition:500ms;opacity:0;transform:translateX(-50px)">
+        <div class="MainPageTile__Image-sc-37zigm-2 gvhatC" src="/img/elevator.jpg">
+        </div>
+        <div class="MainPageTile__TextContainer-sc-37zigm-1 cLfvvn">
+         <div style="display:flex;justify-content:center">
+          <div style="color:#74CE7D">
+           <svg fill="none" height="18" width="47" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.552h2.59a10 10 0 0 0 6.659-2.54L23.403.38h-2.59a10 10 0 0 0-6.658 2.54L0 15.552zM46.097 2.448h-2.59a10 10 0 0 0-6.658 2.54L22.694 17.62h2.59a10 10 0 0 0 6.659-2.54L46.097 2.448z">
+            </path>
+            <path d="M0 2.448h2.937a10 10 0 0 1 6.388 2.306l6.36 5.28 4.568 3.794s1.22 1.207 3.15 2.413c1.93 1.207 3.192 1.38 3.192 1.38h-5.463a10 10 0 0 1-6.577-2.467L0 2.448zM46.097 15.552h-2.132c-2.863 0-5.647-.94-7.901-2.705-2.272-1.778-4.996-3.943-6.006-4.881-1.854-1.725-5.236-5.173-7.01-6.207a12.7 12.7 0 0 0-3.545-1.38h4.338a13 13 0 0 1 8.55 3.207l13.706 11.966z" fill="#2B334E">
+            </path>
+           </svg>
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cwvmpg">
+           Tradingene
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 flmfwG" color="#74CE7D">
+           Business
+          </div>
+         </div>
+         <h2 class="commonStyles__TextComponent-hw42pk-6 gFdYJQ">
+          Algorithmic Solutions for Professional Market Participants
+         </h2>
+         <span class="commonStyles__Button-hw42pk-0 kTQRKK" color="green" style="margin:0 auto;max-width:150px">
+          Learn more
+         </span>
+        </div>
+       </div>
+       <div class="MainPageTile__Wrapper-sc-37zigm-0 haavHT" style="transition:500ms;opacity:0;transform:translateX(-50px)">
+        <div class="MainPageTile__Image-sc-37zigm-2 jCEBGP" src="/img/driver.png">
+        </div>
+        <div class="MainPageTile__TextContainer-sc-37zigm-1 cLfvvn">
+         <div style="display:flex;justify-content:center">
+          <div style="color:#FFA945">
+           <svg fill="none" height="18" width="47" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.552h2.59a10 10 0 0 0 6.659-2.54L23.403.38h-2.59a10 10 0 0 0-6.658 2.54L0 15.552zM46.097 2.448h-2.59a10 10 0 0 0-6.658 2.54L22.694 17.62h2.59a10 10 0 0 0 6.659-2.54L46.097 2.448z">
+            </path>
+            <path d="M0 2.448h2.937a10 10 0 0 1 6.388 2.306l6.36 5.28 4.568 3.794s1.22 1.207 3.15 2.413c1.93 1.207 3.192 1.38 3.192 1.38h-5.463a10 10 0 0 1-6.577-2.467L0 2.448zM46.097 15.552h-2.132c-2.863 0-5.647-.94-7.901-2.705-2.272-1.778-4.996-3.943-6.006-4.881-1.854-1.725-5.236-5.173-7.01-6.207a12.7 12.7 0 0 0-3.545-1.38h4.338a13 13 0 0 1 8.55 3.207l13.706 11.966z" fill="#2B334E">
+            </path>
+           </svg>
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cwvmpg">
+           Tradingene
+          </div>
+          <div class="commonStyles__Heading-hw42pk-9 cYSLlr" color="#FFA945">
+           Market
+          </div>
+         </div>
+         <h2 class="commonStyles__TextComponent-hw42pk-6 gFdYJQ">
+          Marketplace for trading algorithms
+         </h2>
+         <span class="commonStyles__Button-hw42pk-0 bCxwBN" color="orange" style="margin:0 auto;max-width:150px">
+          Learn more
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="commonStyles__ContainerWrapper-hw42pk-2 dHlzUK">
+      <div class="commonStyles__Container-hw42pk-1 MainPage__HighlightsContainer-sc-1oc3h5-2 dTMqlU">
+      </div>
+     </div>
+    </div>
+    <div style="background:#fff;width:100%">
+     <div class="commonStyles__ContainerWrapper-hw42pk-2 dHlzUK">
+      <div class="commonStyles__Container-hw42pk-1 Footer__FooterContainer-htuprn-0 gnkKKf">
+       <div class="Footer__LinksContainer-htuprn-1 ksGAot">
+        <div class="Footer__SupportContainer-htuprn-2 kIHzYE">
+         <div class="commonStyles__TextComponent-hw42pk-6 iQiybp">
+          Support
+         </div>
+         <a href="mailto:support@tradingene.com" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
+          support@tradingene.com
+         </a>
+        </div>
+        <div class="Footer__SocialsContainer-htuprn-3 iddGJm" style="color:#2B334E">
+         <a href="https://t.me/tradingene_channel_en" rel="noopener noreferrer" target="_blank">
+          <i class="fab fa-telegram">
+          </i>
+         </a>
+         <a href="https://medium.com/@tradingene" rel="noopener noreferrer" target="_blank">
+          <i class="fab fa-medium">
+          </i>
+         </a>
+         <a href="https://twitter.com/tradingene" rel="noopener noreferrer" target="_blank">
+          <i class="fab fa-twitter">
+          </i>
+         </a>
+         <a href="https://www.facebook.com/tradingene" rel="noopener noreferrer" target="_blank">
+          <i class="fab fa-facebook-square">
+          </i>
+         </a>
+         <a href="https://www.youtube.com/channel/UCEz83zeLCPHLlyy1mji7G0A" rel="noopener noreferrer" target="_blank">
+          <i class="fab fa-youtube">
+          </i>
+         </a>
+        </div>
+       </div>
+       <div class="Footer__LinksContainer-htuprn-1 ksGAot">
+        <div>
+         <a href="https://id.tradingene.com/terms.pdf" rel="noopener noreferrer" target="_blank">
+          Terms of use
+         </a>
+         <a href="https://id.tradingene.com/privacy_policy.pdf" rel="noopener noreferrer" target="_blank">
+          Privacy Policy
+         </a>
+         <a href="https://id.tradingene.com/disclaimer.pdf" rel="noopener noreferrer" target="_blank">
+          Disclaimer
+         </a>
+        </div>
+       </div>
+       <div class="Footer__LinksContainer-htuprn-1 ksGAot">
+        <div>
+         <a href="/business">
+          Tradingene Business
+         </a>
+         <a href="/developers">
+          Tradingene Developers
+         </a>
+         <a href="/market">
+          Tradingene Market
+         </a>
+         <a href="/">
+          Tradingene.com
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="commonStyles__Container-hw42pk-1 Footer__FooterContainer-htuprn-0 gnkKKf">
+       <div style="display:flex;justify-content:space-between;width:100%">
+        <span>
+         Tradingene.com 2019
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script>
+   window.SIGNALS = [{"id":"5b86ab71d6498bb0459faeae","symbol":"BTCUSD","profit":90,"image":"https://charts.tradingene.com/signals/faeae.svg","twitter":"1146050318947553285"}]
+  </script>
+  <script src="/build/runtime.15616d20cfafa8e47bc9.bundle.js">
+  </script>
+  <script src="/build/npm.core-js.0bb3753f72b229854a59.bundle.js">
+  </script>
+  <script src="/build/npm.react-router.f0876e04cb52b9174571.bundle.js">
+  </script>
+  <script src="/build/npm.react-dom.a7b8be3f8295dde9030a.bundle.js">
+  </script>
+  <script src="/build/npm.i18next.3626d1b5fac864d88737.bundle.js">
+  </script>
+  <script src="/build/npm.styled-components.2af05290f33d4717b06d.bundle.js">
+  </script>
+  <script src="/build/vendors~main.12c29b73dec769bbb854.bundle.js">
+  </script>
+  <script src="/build/main.1d93fd27b275e1a077ac.bundle.js">
+  </script>
+ </body>
+</html>

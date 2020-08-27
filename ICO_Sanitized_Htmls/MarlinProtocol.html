@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   Marlin - Accelerating decenteralized communication
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="An open protocol that provides a high-performance programmable network infrastructure for Web 3.0" name="description"/>
+  <!-- <meta property="og:title" content="">
+    <meta property="og:image" content="/build/images/og.jpg">
+    <meta property="og:description" content="">
+    <meta name="format-detection" content="telephone=no"> -->
+  <style>
+   *,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}header,nav{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;font-size:16px;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}ul{margin-bottom:16px;margin-bottom:1rem}ul{margin-top:0}a{color:#007bff;text-decoration:none;background-color:transparent}img{border-style:none}img,svg{vertical-align:middle}svg{overflow:hidden}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.d-flex{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important}.justify-content-between{-webkit-box-pack:justify!important;-ms-flex-pack:justify!important;justify-content:space-between!important}.align-items-center{-webkit-box-align:center!important;-ms-flex-align:center!important;align-items:center!important}@font-face{font-family:InterReg;src:url(/fonts/Inter-Regular.woff2) format("woff2"),url(/fonts/Inter-Regular.woff) format("woff"),url(/fonts/Inter-Regular.ttf) format("truetype")}@font-face{font-family:InterMed;src:url(/fonts/Inter-Medium.woff2) format("woff2"),url(/fonts/Inter-Medium.woff) format("woff"),url(/fonts/Inter-Medium.ttf) format("truetype")}#header-top-text{font-family:InterReg}.header a{font-family:InterMed}body,html{position:relative;width:100%;min-height:100%}img{width:100%;height:auto}ul{margin-bottom:0}ul{padding-left:0;list-style:none}.social-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-left:12px;margin-right:12px}.social-icon:first-child{margin-left:0}.social-icon:last-child{margin-right:0}.social-icon.social-icon-first{margin-left:0}@media (min-width:1200px){.container{max-width:1200px}}.container{padding-left:16px;padding-right:16px}.header--top{border-bottom:1px solid #ebebf3;padding-top:12px;padding-bottom:12px}.header{margin-top:24px}.header .company-logo{margin-right:42px}.header .nav li{margin-left:16px;margin-right:16px;padding-top:4px;padding-bottom:4px}.header .nav li a{font-size:16px;color:#282942;text-decoration:none;position:relative}.header .nav li a:after{content:"";position:absolute;bottom:-8px;height:1px;background:#3740c7;left:0;width:100%;opacity:0}.header .nav li a .svg-menu{width:10px;height:14px}.has-submenu{position:relative}.has-submenu a{color:#282942!important}.has-submenu a:after{display:none}.header--left .nav{margin-top:3px}.header--top-right{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}@media (max-width:991px){.header--top{display:none}.header{padding-top:14px;padding-bottom:14px;margin-top:0;border-bottom:1px solid #ebebf3}.header .company-logo{max-width:103px;margin-right:0}.header .nav{position:fixed;width:100%;right:-100%;width:432px;background:#fff;height:100%;visibility:visible;z-index:9;top:0;display:-webkit-box;display:-ms-flexbox;display:flex;padding:110px 54px 40px}.header .nav,.header .nav ul{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.header .nav ul li{margin-left:0;line-height:2;margin-bottom:8px}.header .nav ul li a{font-size:20px}.header .nav ul li a .svg-menu{margin-left:100px}}@media (max-width:767px){.header .container{max-width:100%}.header .nav{top:60px;padding:40px 16px;width:100%;height:calc(100% - 60px)}.header .nav ul li{position:relative;margin-right:0}.header .nav ul li a{width:100%;display:block}.header .nav ul li a .svg-menu{position:absolute;right:5px;margin-left:0;top:15px}}#header-top-text{position:relative;width:500px;height:26px;overflow:hidden}
+  </style>
+  <link as="style" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+  <noscript>
+   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&amp;display=swap" rel="stylesheet"/>
+  </noscript>
+  <link href="/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/favicon/manifest.json" rel="manifest"/>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="/favicon/ms-icon-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <link as="style" href="/css/style-ltr.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+  <noscript>
+   <link href="/css/style-ltr.css" rel="stylesheet"/>
+  </noscript>
+  <script>
+   !function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-157138034-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-157138034-1');
+  </script>
+ </head>
+ <body class="home">
+  <div class="header--top">
+   <div class="container d-flex justify-content-between">
+    <div class="header--top-left">
+     <div id="header-top-text">
+     </div>
+    </div>
+    <div class="header--top-right">
+     <a class="social-icon social-icon-first" href="https://medium.com/marlin-protocol" target="_blank">
+      <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M15 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm-1.708 3.791l-.858.823a.251.251 0 0 0-.1.241V10.9a.251.251 0 0 0 .1.241l.838.823v.181H9.057v-.181l.868-.843c.085-.085.085-.11.085-.241V5.993L7.6 12.124h-.329l-2.81-6.13V10.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472V5.351A.416.416 0 0 0 3.683 5l-1-1.209V3.61H5.8l2.4 5.283 2.122-5.283h2.971l-.001.181z" fill="#A7A8B7" fill-rule="nonzero">
+       </path>
+      </svg>
+     </a>
+     <a class="social-icon" href="https://t.me/marlinprotocol" target="_blank">
+      <svg height="13" viewbox="0 0 16 13" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M15.967.272a.335.335 0 0 0-.232-.25 1.208 1.208 0 0 0-.63.045S1.087 5.033.286 5.583c-.172.119-.23.187-.259.268-.138.394.293.564.293.564l3.613 1.16c.061.011.124.008.183-.01.822-.512 8.27-5.147 8.7-5.303.067-.02.117 0 .1.048-.172.592-6.606 6.228-6.641 6.263a.135.135 0 0 0-.05.116l-.336 3.478s-.142 1.084.956 0a30.506 30.506 0 0 1 1.9-1.713c1.242.845 2.579 1.78 3.156 2.266.195.188.46.289.731.28a.821.821 0 0 0 .7-.614S15.893 2.26 15.978.896C15.986.763 16 .682 16 .584a1.144 1.144 0 0 0-.032-.312z" fill="#A7A8B7" fill-rule="nonzero">
+       </path>
+      </svg>
+     </a>
+     <a class="social-icon" href="https://discord.gg/pdQZyyy" target="_blank">
+      <svg height="20" viewbox="0 0 245 240" width="20" xmlns="http://www.w3.org/2000/svg">
+       <path d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" fill="#A7A8B7" fill-rule="nonzero">
+       </path>
+       <path d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" fill="#A7A8B7" fill-rule="nonzero">
+       </path>
+      </svg>
+     </a>
+     <a class="social-icon" href="https://www.facebook.com/marlinprotocol/" target="_blank">
+      <svg height="16" viewbox="0 0 10 16" width="10" xmlns="http://www.w3.org/2000/svg">
+       <path d="M3.023 16L3 9H0V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H10L9 9H6.28v7H3.023z" fill="#A7A8B7" fill-rule="nonzero">
+       </path>
+      </svg>
+     </a>
+     <a class="social-icon" href="https://twitter.com/MarlinProtocol/" target="_blank">
+      <svg height="13" viewbox="0 0 16 13" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M16 1.5c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7C5.2 3.9 2.7 2.6 1.1.6c-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4 0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4c.7-.5 1.3-1.1 1.7-1.8z" fill="#A7A8B7" fill-rule="nonzero">
+       </path>
+      </svg>
+     </a>
+     <!-- <a href="" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="#A7A8B7" fill-rule="evenodd" d="M7.95 0C3.578 0 0 3.688 0 8.195c0 3.585 2.286 6.658 5.466 7.785.397.102.497-.205.497-.41v-1.434c-2.187.512-2.683-1.024-2.683-1.024-.398-.922-.895-1.23-.895-1.23-.696-.512.1-.512.1-.512.795.103 1.192.82 1.192.82.696 1.331 1.888.922 2.286.717.1-.513.298-.922.497-1.127-1.79-.205-3.578-.922-3.578-4.097 0-.922.298-1.64.795-2.152-.1-.204-.397-1.024.1-2.15 0 0 .695-.206 2.186.819.596-.205 1.292-.308 1.987-.308.696 0 1.392.103 1.988.308 1.49-1.025 2.186-.82 2.186-.82.398 1.127.199 1.947.1 2.151.496.615.795 1.332.795 2.152 0 3.175-1.889 3.79-3.677 3.994.298.41.596.922.596 1.64v2.253c0 .205.1.512.596.41C13.714 14.853 16 11.78 16 8.195 15.9 3.688 12.323 0 7.95 0z"/>
+            </svg>
+          </a> -->
+     <!-- <a href="" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12">
+                <path fill="#A7A8B7" fill-rule="nonzero" d="M15.8 2.8C15.6 1.5 15 .6 13.6.4 11.4 0 8 0 8 0S4.6 0 2.4.4C1 .6.3 1.5.2 2.8 0 4.1 0 6 0 6s0 1.9.2 3.2c.2 1.3.8 2.2 2.2 2.4C4.6 12 8 12 8 12s3.4 0 5.6-.4c1.4-.3 2-1.1 2.2-2.4C16 7.9 16 6 16 6s0-1.9-.2-3.2zM6 9V3l5 3-5 3z"/>
+            </svg>
+          </a> -->
+     <!-- <a href="" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="#A7A8B7" fill-rule="nonzero" d="M15.205 0H.695C.299 0 0 .3 0 .7v14.7c0 .3.298.6.696.6h14.608c.398 0 .696-.3.696-.7V.7c-.1-.4-.398-.7-.795-.7zM4.671 13.6H2.385V6H4.77v7.6h-.1zM3.578 5c-.795 0-1.392-.7-1.392-1.4 0-.8.597-1.4 1.392-1.4.795 0 1.39.6 1.39 1.4-.098.7-.695 1.4-1.39 1.4zm9.938 8.6H11.13V9.9c0-.9 0-2-1.192-2-1.193 0-1.391 1-1.391 2v3.8H6.16V6h2.286v1c.298-.6 1.093-1.2 2.187-1.2 2.385 0 2.782 1.6 2.782 3.6v4.2h.1z"/>
+            </svg>
+          </a>
+           -->
+    </div>
+   </div>
+  </div>
+  <header class="header">
+   <div class="container d-flex align-items-center justify-content-between">
+    <div class="header--left d-flex align-items-center">
+     <a class="company-logo" href="/">
+      <img alt="marlin logo marlin-logo" src="/images/marlin-logo.svg"/>
+     </a>
+     <nav class="nav">
+      <ul class="d-flex">
+       <li class="">
+        <a href="/about">
+         About
+        </a>
+       </li>
+       <li class="has-submenu">
+        <a href="javascript:;void(0)">
+         Build
+         <svg class="svg-menu" id="Capa_1" style="enable-background:new 0 0 240.811 240.811;" version="1.1" viewbox="0 0 240.811 240.811" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+          <g>
+           <path d="M220.088,57.667l-99.671,99.695L20.746,57.655c-4.752-4.752-12.439-4.752-17.191,0
+                        c-4.74,4.752-4.74,12.451,0,17.203l108.261,108.297l0,0l0,0c4.74,4.752,12.439,4.752,17.179,0L237.256,74.859
+                        c4.74-4.752,4.74-12.463,0-17.215C232.528,52.915,224.828,52.915,220.088,57.667z" id="Expand_More">
+           </path>
+          </g>
+         </svg>
+        </a>
+        <ul class="submenu">
+         <li>
+          <a href="/whitepaper">
+           Whitepaper
+          </a>
+         </li>
+         <li>
+          <a href="/docs">
+           Documentation
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="">
+        <a href="/relay">
+         Relay
+        </a>
+       </li>
+       <li class="">
+        <a href="/contribute">
+         Contribute
+        </a>
+       </li>
+       <li class="">
+        <a href="/blog">
+         Blog
+        </a>
+       </li>
+      </ul>
+      <a class="d-flex btn btn-blue d-flex d-lg-none" data-target="#contactModal" data-toggle="modal" href="javascript:void(0)">
+       Stay connected
+       <svg class="svg" height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+      </a>
+     </nav>
+    </div>
+    <div class="header--right d-flex align-items-center">
+     <!-- <div class="lang">
+            <div class="lang--curent">
+              en
+              <svg width="10px" height="6px" viewBox="0 0 11 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                  <g id="Marlin-index_mobile" transform="translate(-318.000000, -2255.000000)" stroke="#282942" stroke-width="2">
+                    <polyline id="Path-Copy-2" transform="translate(323.500000, 2258.500000) rotate(-270.000000) translate(-323.500000, -2258.500000) " points="321 2254 326 2258.5 321 2263"></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <ul class="lang--list">
+              <li class="lang--list-element">
+                <a href="">
+                  ko
+                </a>
+              </li>
+              <li class="lang--list-element">
+                <a href="">
+                  zh
+                </a>
+              </li>
+            </ul>
+          </div> -->
+     <a class="btn btn-blue d-none d-lg-flex" data-target="#contactModal" data-toggle="modal" href="javascript:void(0)">
+      Stay connected
+      <svg class="svg" height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+     </a>
+     <div class="hamburger">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </div>
+    </div>
+   </div>
+  </header>
+  <header class="header header-sticky-custom is-hidden" style="background-color: white;">
+   <div class="container d-flex align-items-center justify-content-between">
+    <div class="header--left d-flex align-items-center">
+     <a class="company-logo" href="/">
+      <img alt="marlin logo marlin-logo" src="/images/marlin-logo.svg"/>
+     </a>
+     <nav class="nav">
+      <ul class="d-flex">
+       <li class="">
+        <a href="/about">
+         About
+        </a>
+       </li>
+       <li class="has-submenu">
+        <a href="javascript:;void(0)">
+         Build
+         <svg class="svg-menu" id="Capa_1" style="enable-background:new 0 0 240.811 240.811;" version="1.1" viewbox="0 0 240.811 240.811" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+          <g>
+           <path d="M220.088,57.667l-99.671,99.695L20.746,57.655c-4.752-4.752-12.439-4.752-17.191,0
+                        c-4.74,4.752-4.74,12.451,0,17.203l108.261,108.297l0,0l0,0c4.74,4.752,12.439,4.752,17.179,0L237.256,74.859
+                        c4.74-4.752,4.74-12.463,0-17.215C232.528,52.915,224.828,52.915,220.088,57.667z" id="Expand_More">
+           </path>
+          </g>
+         </svg>
+        </a>
+        <ul class="submenu">
+         <li>
+          <a href="/whitepaper">
+           Whitepaper
+          </a>
+         </li>
+         <li>
+          <a href="/docs">
+           Documentation
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="">
+        <a href="/relay">
+         Relay
+        </a>
+       </li>
+       <li class="">
+        <a href="/contribute">
+         Contribute
+        </a>
+       </li>
+       <li class="">
+        <a href="/blog">
+         Blog
+        </a>
+       </li>
+      </ul>
+      <a class="d-flex btn btn-blue d-flex d-lg-none" data-target="#contactModal" data-toggle="modal" href="javascript:void(0)">
+       Stay connected
+       <svg class="svg" height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+      </a>
+     </nav>
+    </div>
+    <div class="header--right d-flex align-items-center">
+     <!-- <div class="lang">
+            <div class="lang--curent">
+              en
+              <svg width="10px" height="6px" viewBox="0 0 11 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                  <g id="Marlin-index_mobile" transform="translate(-318.000000, -2255.000000)" stroke="#282942" stroke-width="2">
+                    <polyline id="Path-Copy-2" transform="translate(323.500000, 2258.500000) rotate(-270.000000) translate(-323.500000, -2258.500000) " points="321 2254 326 2258.5 321 2263"></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <ul class="lang--list">
+              <li class="lang--list-element">
+                <a href="">
+                  ko
+                </a>
+              </li>
+              <li class="lang--list-element">
+                <a href="">
+                  zh
+                </a>
+              </li>
+            </ul>
+          </div> -->
+     <a class="btn btn-blue d-none d-lg-flex" data-target="#contactModal" data-toggle="modal" href="javascript:void(0)">
+      Stay connected
+      <svg class="svg" height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+     </a>
+     <div class="hamburger">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </div>
+    </div>
+   </div>
+  </header>
+  <style>
+   .animation-element.fade-in {
+        opacity: 0;
+      }
+      .animation-element.fade-in.in-view {
+        opacity: 1;
+      }
+  </style>
+  <section class="section section-hero animation-element fade-in" id="hero">
+   <div class="container">
+    <div class="row d-flex justify-content-between align-items-center">
+     <div class="col-12 col-lg-4">
+      <h1 class="heading">
+       Accelerating Decentralized Communication
+      </h1>
+      <p class="par">
+       An open protocol that provides a
+       <br/>
+       high-performance programmable network infrastructure for Web 3.0
+      </p>
+      <div class="btn-wrapper d-flex">
+       <a class="btn btn-border" href="#economy">
+        <!-- data-fancybox -->
+        <span class="icon">
+         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8">
+                    <path fill="#3740C7" fill-rule="nonzero" d="M5.812 3.608L.802.1A.5.5 0 0 0 0 .501v7.015c0 .4.45.651.802.4l5.01-3.507c.25-.2.25-.601 0-.801z"/>
+                  </svg> -->
+         <svg height="40px" version="1.1" viewbox="0 0 40 39" width="42px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g fill="none" fill-rule="nonzero" id="Page-1" stroke="none" stroke-width="1">
+           <g id="Marlin-index" transform="translate(-701.000000, -677.000000)">
+            <g id="Group-36" transform="translate(701.000000, 677.000000)">
+             <!-- <circle id="Oval" stroke="#3740C7" cx="19.5" cy="19.5" r="19"></circle> -->
+             <polyline id="Path" points="17 15 24 20.5 17 26" stroke="#3840C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(19.500000, 20.500000) rotate(-270.000000) translate(-19.500000, -20.500000) ">
+             </polyline>
+            </g>
+           </g>
+          </g>
+         </svg>
+        </span>
+        <span>
+         Learn More
+        </span>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-lg-7">
+      <div class="hero-animation-wrapper">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="arrow-down">
+    <svg height="39px" version="1.1" viewbox="0 0 39 39" width="39px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+     <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+      <g id="Marlin-index" transform="translate(-701.000000, -677.000000)">
+       <g id="Group-36" transform="translate(701.000000, 677.000000)">
+        <circle cx="19.5" cy="19.5" id="Oval" r="19" stroke="#3740C7">
+        </circle>
+        <polyline id="Path" points="17 16 22 20.5 17 25" stroke="#3840C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(19.500000, 20.500000) rotate(-270.000000) translate(-19.500000, -20.500000) ">
+        </polyline>
+       </g>
+      </g>
+     </g>
+    </svg>
+   </div>
+  </section>
+  <script>
+   let hero = document.getElementById('hero');
+      hero.classList.add('in-view');
+  </script>
+  <section class="section section-grey section-decentralized-economy animation-element fade-in" id="economy">
+   <div class="container">
+    <div class="row">
+     <div class="col-12 d-flex flex-column align-items-center">
+      <h3 class="heading">
+       The unglamourous underbelly of the decentralized economy
+      </h3>
+      <p class="par">
+       Marlin addresses todayâs pressing concerns at layer 0
+      </p>
+     </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+     <div class="col-12 col-lg-11">
+      <div class="row">
+       <div class="col-12 col-lg-4 col-economy">
+        <div class="col-visible">
+         <div class="icon">
+          <img alt="" src="/images/scalability-icon.svg"/>
+         </div>
+         <div class="col-heading">
+          Scalability
+         </div>
+         <p class="col-par">
+          Unreliable networks and long block propagation delays are a key factor limiting blockchain throughput
+         </p>
+         <a href="javascript::void(0)">
+          Learn more
+          <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </a>
+        </div>
+        <div class="col-hidden">
+         <div class="close d-flex d-lg-none">
+          <svg id="Capa_1" style="enable-background:new 0 0 47.971 47.971;" version="1.1" viewbox="0 0 47.971 47.971" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+           <g>
+            <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+                    		c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+                    		C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+                    		s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z">
+            </path>
+           </g>
+          </svg>
+         </div>
+         <div class="col-heading">
+          Scalability
+         </div>
+         <p class="par-hidden-grey">
+          Unreliable networks and long block propagation delays are a key factor limiting blockchain throughput
+         </p>
+         <p class="par-hidden">
+          Marlin SDK provides a plug-and-play networking alternative to increase the throughput of all blockchains with minimal protocol changes
+         </p>
+         <a href="https://www.marlin.pro/blog">
+          Detailed information
+          <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </a>
+        </div>
+       </div>
+       <div class="col-12 col-lg-4 col-economy">
+        <div class="col-visible">
+         <div class="icon">
+          <img alt="" src="/images/decentralization-icon.svg"/>
+         </div>
+         <div class="col-heading">
+          Decentralization
+         </div>
+         <p class="col-par">
+          The number of nodes in a blockchain are often restricted to small numbers to guarantee low confirmation times
+         </p>
+         <a href="javascript::void(0)">
+          Learn more
+          <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </a>
+        </div>
+        <div class="col-hidden">
+         <div class="close d-flex d-lg-none">
+          <svg id="Capa_1" style="enable-background:new 0 0 47.971 47.971;" version="1.1" viewbox="0 0 47.971 47.971" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+           <g>
+            <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+                    		c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+                    		C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+                    		s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z">
+            </path>
+           </g>
+          </svg>
+         </div>
+         <div class="col-heading">
+          Decentralization
+         </div>
+         <p class="par-hidden-grey">
+          The number of nodes in a blockchain are often restricted to small numbers to guarantee low confirmation times
+         </p>
+         <p class="par-hidden">
+          Marlin SDK allows blockchains and off-chain protocols to scale to hundreds of thousands of nodes without compromising on performance
+         </p>
+         <a href="https://www.marlin.pro/blog">
+          Detailed information
+          <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </a>
+        </div>
+       </div>
+       <div class="col-12 col-lg-4 col-economy">
+        <div class="col-visible">
+         <div class="icon">
+          <img alt="" src="/images/anonymity-icon.svg"/>
+         </div>
+         <div class="col-heading">
+          Anonymity
+         </div>
+         <p class="col-par">
+          The pattern of packet propagation through a P2P network reveals the origin of transactions
+         </p>
+         <a href="javascript::void(0)">
+          Learn more
+          <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </a>
+        </div>
+        <div class="col-hidden">
+         <div class="close d-flex d-lg-none">
+          <svg id="Capa_1" style="enable-background:new 0 0 47.971 47.971;" version="1.1" viewbox="0 0 47.971 47.971" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+           <g>
+            <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+                    		c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+                    		C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+                    		s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z">
+            </path>
+           </g>
+          </svg>
+         </div>
+         <div class="col-heading">
+          Anonymity
+         </div>
+         <p class="par-hidden-grey">
+          The pattern of packet propagation through a P2P network reveals the origin of transactions
+         </p>
+         <p class="par-hidden">
+          Marlin Foundry enables creation and deployment of anonymity networks that can be seamlessly integrated through the Marlin SDK
+         </p>
+         <a href="https://www.marlin.pro/blog">
+          Detailed information
+          <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-sdk animation-element fade-in" id="sdk">
+   <div class="container">
+    <h2 class="heading" style="margin-bottom: 16px">
+     Marlin SDK
+    </h2>
+    <p class="par" style="margin-bottom: 0px">
+     <b>
+      Robust P2P networking designed for performance and security
+     </b>
+    </p>
+   </div>
+   <div class="sdk-desktop d-none d-lg-flex flex-column">
+    <div class="container">
+     <div class="row d-flex justify-content-between">
+      <div class="col-12 col-lg-5">
+       <div class="sdk-list">
+        <div class="sdk-list-element sdk-list-element-first active" data-blue="Higher throughput" data-blue-two="" data-green="Larger network" data-green-two="" data-text="Optimized topologies for faster delivery using staking and slashing for maximum security" data-white="Low confirmation time" data-white-two="">
+         High-throughput blockchains
+        </div>
+        <div class="sdk-list-element" data-blue="Plug-and-play" data-blue-two="" data-green="Metadata privacy" data-green-two="" data-text="Diversify traffic through our large set of full and mining nodes without bandwidth constraints" data-white="Flexible integration" data-white-two="">
+         Wallets and messaging apps
+        </div>
+        <div class="sdk-list-element" data-blue="Lag-free experience" data-blue-two="" data-green="Extensible architecture" data-green-two="" data-text="Low latency communication for decentralized cloud compute and storage solutions" data-white="Plug-and-play" data-white-two="">
+         Web 3 infrastructures
+        </div>
+        <div class="sdk-list-element" data-blue="Blockchain agnostic" data-blue-two="" data-green="Incentive-compatible" data-green-two="" data-text="Support distributed nodes at large scale without worrying about performance setbacks" data-white="No protocol changes required" data-white-two="">
+         Offchain protocols
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-lg-7 col-xl-6 col-sdk">
+       <div class="sdk-illustration first-active">
+        <img alt="" src="/images/sdk-bg.svg"/>
+        <div class="sdk-illustration-element-wrapper d-flex">
+         <div class="sdk-illustration-element sdk-illustration-element-green">
+          <div class="inner-green-circle">
+           <div class="inner-green">
+            Larger network
+           </div>
+          </div>
+         </div>
+         <div class="sdk-illustration-element sdk-illustration-element-blue">
+          <div class="inner-blue-circle">
+           <div class="inner-blue">
+            Higher throughput
+           </div>
+          </div>
+         </div>
+         <div class="sdk-illustration-element sdk-illustration-element-white">
+          <div class="inner-white-circle">
+           <div class="inner-white">
+            Low confirmation time
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="inner-text">
+         Optimized topologies for faster delivery using staking and slashing for maximum security
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="sdk-tablet-mobile d-flex d-lg-none" style="margin-top: 30px">
+     <div class="sdk-list" id="accordion">
+      <div class="card">
+       <div class="card-header">
+        <button aria-controls="collapseOne" aria-expanded="true" class="sdk-list-element-tablet" data-target="#collapseOne" data-toggle="collapse">
+         High-throughput blockchains
+         <svg height="7px" version="1.1" viewbox="0 0 11 7" width="11px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+           <g id="Marlin-index_mobile" stroke="#A5A6B2" stroke-width="2" transform="translate(-318.000000, -2255.000000)">
+            <polyline id="Path-Copy-2" points="321 2254 326 2258.5 321 2263" transform="translate(323.500000, 2258.500000) rotate(-270.000000) translate(-323.500000, -2258.500000) ">
+            </polyline>
+           </g>
+          </g>
+         </svg>
+        </button>
+       </div>
+       <div class="collapse show" data-parent="#accordion" id="collapseOne">
+        <div class="card-body">
+         <div class="sdk-illustration-tablet first-active">
+          <picture>
+           <source media="(max-width: 767px)" srcset="/images/sdk-bg-tablet.svg">
+            <img alt="" src="/images/sdk-bg.svg"/>
+           </source>
+          </picture>
+          <div class="sdk-illustration-element-wrapper-tablet d-flex">
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-green-tablet">
+            <div class="inner-green-circle-tablet">
+             <div class="inner-green-tablet">
+              Larger network
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-blue-tablet">
+            <div class="inner-blue-circle-tablet">
+             <div class="inner-blue-tablet">
+              Higher throughput
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-white-tablet">
+            <div class="inner-white-circle-tablet">
+             <div class="inner-white-tablet">
+              Low confirmation time
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="inner-text-tablet">
+           Optimized topologies for faster delivery using staking and slashing for maximum security
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header">
+        <button aria-controls="collapseTwo" aria-expanded="false" class="sdk-list-element-tablet" data-target="#collapseTwo" data-toggle="collapse">
+         Wallets and messaging apps
+         <svg height="7px" version="1.1" viewbox="0 0 11 7" width="11px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+           <g id="Marlin-index_mobile" stroke="#A5A6B2" stroke-width="2" transform="translate(-318.000000, -2255.000000)">
+            <polyline id="Path-Copy-2" points="321 2254 326 2258.5 321 2263" transform="translate(323.500000, 2258.500000) rotate(-270.000000) translate(-323.500000, -2258.500000) ">
+            </polyline>
+           </g>
+          </g>
+         </svg>
+        </button>
+       </div>
+       <div class="collapse" data-parent="#accordion" id="collapseTwo">
+        <div class="card-body">
+         <div class="sdk-illustration-tablet first-active">
+          <picture>
+           <source media="(max-width: 767px)" srcset="/images/sdk-bg-tablet.svg">
+            <img alt="" src="/images/sdk-bg.svg"/>
+           </source>
+          </picture>
+          <div class="sdk-illustration-element-wrapper-tablet d-flex">
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-green-tablet">
+            <div class="inner-green-circle-tablet">
+             <div class="inner-green-tablet">
+              Metadata privacy
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-blue-tablet">
+            <div class="inner-blue-circle-tablet">
+             <div class="inner-blue-tablet">
+              Plug-and-play
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-white-tablet">
+            <div class="inner-white-circle-tablet">
+             <div class="inner-white-tablet">
+              Flexible integration
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="inner-text-tablet">
+           Diversify traffic through our large set of full and mining nodes without bandwidth constraints
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header">
+        <button aria-controls="collapseThree" aria-expanded="false" class="sdk-list-element-tablet" data-target="#collapseThree" data-toggle="collapse">
+         Web 3 infrastructures
+         <svg height="7px" version="1.1" viewbox="0 0 11 7" width="11px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+           <g id="Marlin-index_mobile" stroke="#A5A6B2" stroke-width="2" transform="translate(-318.000000, -2255.000000)">
+            <polyline id="Path-Copy-2" points="321 2254 326 2258.5 321 2263" transform="translate(323.500000, 2258.500000) rotate(-270.000000) translate(-323.500000, -2258.500000) ">
+            </polyline>
+           </g>
+          </g>
+         </svg>
+        </button>
+       </div>
+       <div class="collapse" data-parent="#accordion" id="collapseThree">
+        <div class="card-body">
+         <div class="sdk-illustration-tablet first-active">
+          <picture>
+           <source media="(max-width: 767px)" srcset="/images/sdk-bg-tablet.svg">
+            <img alt="" src="/images/sdk-bg.svg"/>
+           </source>
+          </picture>
+          <div class="sdk-illustration-element-wrapper-tablet d-flex">
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-green-tablet">
+            <div class="inner-green-circle-tablet">
+             <div class="inner-green-tablet">
+              Extensible architecture
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-blue-tablet">
+            <div class="inner-blue-circle-tablet">
+             <div class="inner-blue-tablet">
+              Lag-free experience
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-white-tablet">
+            <div class="inner-white-circle-tablet">
+             <div class="inner-white-tablet">
+              Plug-and-play
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="inner-text-tablet">
+           Low latency communication for decentralized cloud compute and storage solutions
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header">
+        <button aria-controls="collapseFour" aria-expanded="false" class="sdk-list-element-tablet" data-target="#collapseFour" data-toggle="collapse">
+         Offchain protocols
+         <svg height="7px" version="1.1" viewbox="0 0 11 7" width="11px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+           <g id="Marlin-index_mobile" stroke="#A5A6B2" stroke-width="2" transform="translate(-318.000000, -2255.000000)">
+            <polyline id="Path-Copy-2" points="321 2254 326 2258.5 321 2263" transform="translate(323.500000, 2258.500000) rotate(-270.000000) translate(-323.500000, -2258.500000) ">
+            </polyline>
+           </g>
+          </g>
+         </svg>
+        </button>
+       </div>
+       <div class="collapse" data-parent="#accordion" id="collapseFour">
+        <div class="card-body">
+         <div class="sdk-illustration-tablet first-active">
+          <picture>
+           <source media="(max-width: 767px)" srcset="/images/sdk-bg-tablet.svg">
+            <img alt="" src="/images/sdk-bg.svg"/>
+           </source>
+          </picture>
+          <div class="sdk-illustration-element-wrapper-tablet d-flex">
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-green-tablet">
+            <div class="inner-green-circle-tablet">
+             <div class="inner-green-tablet">
+              Interactive-compatible
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-blue-tablet">
+            <div class="inner-blue-circle-tablet">
+             <div class="inner-blue-tablet">
+              Blockchain agnostic
+             </div>
+            </div>
+           </div>
+           <div class="sdk-illustration-element-tablet sdk-illustration-element-white-tablet">
+            <div class="inner-white-circle-tablet">
+             <div class="inner-white-tablet">
+              No protocol changes required
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="inner-text-tablet">
+           Support distributed nodes at large scale without worrying about performance setbacks
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container">
+    <p class="par d-none d-lg-inline-flex">
+     Augment your network stack with Marlin in 5 easy steps!
+    </p>
+    <div class="button-wrapper">
+     <a class="btn btn-blue align-items-center d-none d-lg-inline-flex sdk-button" href="#sdk">
+      <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+     </a>
+     <a class="btn btn-border d-inline-flex align-items-center" href="/docs/sdk/" target="_blank">
+      Documentation
+      <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3840c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="section section-grey section-foundry animation-element fade-in" id="foundry">
+   <div class="container">
+    <div class="row d-flex justify-content-between align-items-center flex-column-reverse flex-lg-row">
+     <div class="col-12 col-lg-6">
+      <div class="img-wrapper foundry-animation-wrapper">
+      </div>
+     </div>
+     <div class="col-12 col-lg-5">
+      <h2 class="heading">
+       Marlin Foundry
+      </h2>
+      <p class="par">
+       Our decentralized network of programmable routers enables you to launch your own
+       <span id="foundry-text">
+       </span>
+      </p>
+      <ul class="foundry-list">
+       <li class="foundry-list-element d-flex align-items-center">
+        <div class="icon">
+         <img alt="" src="/images/networked.svg"/>
+        </div>
+        <div class="content">
+         <div class="heading">
+          Networked Bandwidth
+         </div>
+         <p class="par">
+          Leverage an existing node network for added security
+         </p>
+        </div>
+       </li>
+       <li class="foundry-list-element d-flex align-items-center">
+        <div class="icon">
+         <img alt="" src="/images/flexible.svg"/>
+        </div>
+        <div class="content">
+         <div class="heading">
+          Flexible Incentivisation
+         </div>
+         <p class="par">
+          Use your own token for payments and governance
+         </p>
+        </div>
+       </li>
+       <li class="foundry-list-element d-flex align-items-center">
+        <div class="icon">
+         <img alt="" src="/images/extensible.svg"/>
+        </div>
+        <div class="content">
+         <div class="heading">
+          Extensible Architecture
+         </div>
+         <p class="par">
+          Deploy customized routing rules on the Marlin VM
+         </p>
+        </div>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section section-omni animation-element fade-in">
+   <div class="container">
+    <div class="row flex-column align-items-center">
+     <div class="blue-title">
+      Metanodes
+     </div>
+     <h3 class="heading">
+      Enabling decentralized high-performance communication
+     </h3>
+     <p class="par">
+      <!-- Running full nodes for free? 
+            Forwarding blocks and transactions without being compensated? <br/> -->
+      Metanodes all across the globe share bandwidth to support networks built using Marlin Foundry. Metanodes are incentivised to relay packets in exchange for fees.
+     </p>
+     <a class="btn btn-blue" href="/relay">
+      More about Metanodes
+      <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </section>
+  <div class="seperator">
+  </div>
+  <section class="section section-news animation-element fade-in">
+   <div class="container">
+    <div class="row flex-column align-items-center">
+     <div class="col-12 d-flex justify-content-between align-items-center col-static">
+      <h3 class="heading">
+       What's new at Marlin
+       <!-- Latest News and Events -->
+      </h3>
+      <a class="btn btn-border" href="/blog">
+       Explore all news
+       <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+      </a>
+     </div>
+    </div>
+    <div class="row news-row" id="news-row">
+    </div>
+   </div>
+  </section>
+  <section class="section section-grey section-partners animation-element fade-in">
+   <div class="container d-flex container-partner justify-content-center justify-content-xl-between">
+    <div class="partner-logo">
+     <a href="https://www.coindesk.com/binance-backed-firm-working-to-boost-blockchain-speeds-raises-3-million" target="_blank">
+      <img alt="" src="/images/partners-logo/coindesk.svg"/>
+     </a>
+    </div>
+    <div class="partner-logo">
+     <a href="https://www.bloomberg.com/press-releases/2019-06-12/layer-zero-scalability-solution-marlin-announces-binance-labs-funding" target="_blank">
+      <img alt="" src="/images/partners-logo/bloomberg.svg"/>
+     </a>
+    </div>
+    <div class="partner-logo">
+     <a href="https://finance.yahoo.com/news/layer-zero-scalability-solution-marlin-163500563.html" target="_blank">
+      <img alt="" src="/images/partners-logo/yahoo-2x.jpg" srcset="/images/partners-logo/yahoo.jpg, /images/partners-logo/yahoo-2x.jpg 2x"/>
+     </a>
+    </div>
+    <!--     <div class="partner-logo">
+          <a href="https://finance.yahoo.com/news/layer-zero-scalability-solution-marlin-163500563.html" target="_blank">
+            <img srcset="/images/partners-logo/forbes.jpg, /images/partners-logo/forbes-2x.jpg 2x" src="/images/partners-logo/forbes-2x.jpg" alt="">
+          </a>
+        </div> -->
+    <!-- 
+        <div class="partner-logo">
+          <a href="" target="_blank">
+            <img src="/images/partners-logo/entrepreneur.svg" alt="">
+          </a>
+        </div> -->
+    <div class="partner-logo">
+     <a href="https://www.binance.com/en/blog/342988062870470656/Binance-Labs-Reveals-13-Startups-in-its-Incubation-Program" target="_blank">
+      <img alt="" src="/images/partners-logo/binance-labs.svg"/>
+     </a>
+    </div>
+    <!--     <div class="partner-logo">
+          <a href="" target="_blank">
+            <img srcset="/images/partners-logo/blockonomi.jpg, /images/partners-logo/blockonomi-2x.jpg 2x" src="/images/partners-logo/blockonomi-2x.jpg" alt="">
+          </a>
+        </div> -->
+    <div class="partner-logo">
+     <a href="https://www.chainnews.com/articles/778173954614.htm" target="_blank">
+      <img alt="" src="/images/partners-logo/chainnews.svg"/>
+     </a>
+    </div>
+    <!--    <div class="partner-logo">
+          <a href="" target="_blank">
+            <img src="/images/partners-logo/cointelegraph.svg" alt="">
+          </a>
+        </div>
+    
+        <div class="partner-logo">
+          <a href="" target="_blank">
+            <img srcset="/images/partners-logo/bcomp.jpg, /images/partners-logo/bcomp-2x.jpg 2x" src="/images/partners-logo/bcomp-2x.jpg" alt="">
+          </a>
+        </div> -->
+   </div>
+  </section>
+  <div class="container container-full">
+   <section class="section section-blue section-integrate">
+    <div class="integrate-title">
+     Ready to integrate Marlin?
+    </div>
+    <p class="par">
+     Dive into our docs or submit a pull request and our community will be on it!
+    </p>
+    <div class="row">
+     <div class="col-12 col-sm-3 col-md-4">
+     </div>
+     <div class="col-12 col-sm-3 col-md-2 integrate-button">
+      <div class="btn-wrapper">
+       <a class="btn btn-white" href="/docs/sdk">
+        Get Started
+        <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+         <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+         </path>
+        </svg>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-sm-3 col-md-2 integrate-button2">
+      <div class="btn-wrapper">
+       <a class="btn btn-white" data-target="#contactModal" data-toggle="modal" href="/cdn-cgi/l/email-protection#86efe8e0e9c6ebe7f4eaefe8a8f6f4e9">
+        Request
+        <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+         <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+         </path>
+        </svg>
+       </a>
+      </div>
+     </div>
+     <div class="col-12 col-sm-3 col-md-2">
+     </div>
+    </div>
+   </section>
+  </div>
+  <section class="section section-faq-help">
+   <div class="container">
+    <div class="row">
+     <div class="col-12 col-md-6">
+      <a class="widget" href="/faqs">
+       <div class="widget-content">
+        <div class="widget-title">
+         Questions?
+        </div>
+        <p class="par">
+         Check out our FAQ for commonly asked questions
+        </p>
+        <div class="help-link">
+         Browse the FAQ
+         <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </div>
+       </div>
+       <div class="widget-icon">
+        <img alt="" src="/images/faq-icon.svg"/>
+       </div>
+      </a>
+     </div>
+     <div class="col-12 col-md-6">
+      <div class="widget">
+       <!-- <a href="https://riot.im/app/#/room/#marlin:matrix.org" class="widget" target="_blank"> -->
+       <div class="widget-content">
+        <div class="widget-title">
+         Even more questions?
+        </div>
+        <p class="par">
+         Join our social channels and engage with the community
+        </p>
+        <div class="help-link">
+         <span style="margin-right: 25px">
+          <a href="https://discord.gg/pdQZyyy" style="color: #3740c7">
+           Discord
+          </a>
+          <svg height="13" style="margin-left: 5px" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </span>
+         <span>
+          <a href="https://research.marlin.pro" style="color: #3740c7">
+           Forum
+          </a>
+          <svg height="13" style="margin-left: 5px" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+           <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </span>
+        </div>
+       </div>
+       <div class="widget-icon">
+        <img alt="" src="/images/help-icon.svg"/>
+       </div>
+       <!-- </a> -->
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="footer">
+   <div class="footer-menu-socials">
+    <div class="container">
+     <div class="row flex-column-reverse flex-lg-row">
+      <div class="col-12 col-md-12 col-lg-4">
+       <a class="company-logo" href="/">
+        <img alt="marlin logo marlin-logo" src="/images/marlin-logo.svg"/>
+       </a>
+       <div class="socials-wrapper d-flex align-items-center">
+        <a class="social-icon social-icon-first" href="https://medium.com/marlin-protocol" target="_blank">
+         <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm-1.708 3.791l-.858.823a.251.251 0 0 0-.1.241V10.9a.251.251 0 0 0 .1.241l.838.823v.181H9.057v-.181l.868-.843c.085-.085.085-.11.085-.241V5.993L7.6 12.124h-.329l-2.81-6.13V10.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472V5.351A.416.416 0 0 0 3.683 5l-1-1.209V3.61H5.8l2.4 5.283 2.122-5.283h2.971l-.001.181z" fill="#A7A8B7" fill-rule="nonzero">
+          </path>
+         </svg>
+        </a>
+        <a class="social-icon" href="https://t.me/marlinprotocol" target="_blank">
+         <svg height="13" viewbox="0 0 16 13" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.967.272a.335.335 0 0 0-.232-.25 1.208 1.208 0 0 0-.63.045S1.087 5.033.286 5.583c-.172.119-.23.187-.259.268-.138.394.293.564.293.564l3.613 1.16c.061.011.124.008.183-.01.822-.512 8.27-5.147 8.7-5.303.067-.02.117 0 .1.048-.172.592-6.606 6.228-6.641 6.263a.135.135 0 0 0-.05.116l-.336 3.478s-.142 1.084.956 0a30.506 30.506 0 0 1 1.9-1.713c1.242.845 2.579 1.78 3.156 2.266.195.188.46.289.731.28a.821.821 0 0 0 .7-.614S15.893 2.26 15.978.896C15.986.763 16 .682 16 .584a1.144 1.144 0 0 0-.032-.312z" fill="#A7A8B7" fill-rule="nonzero">
+          </path>
+         </svg>
+        </a>
+        <a class="social-icon" href="https://discord.gg/pdQZyyy" target="_blank">
+         <svg height="20" viewbox="0 0 245 240" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" fill="#A7A8B7" fill-rule="nonzero">
+          </path>
+          <path d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" fill="#A7A8B7" fill-rule="nonzero">
+          </path>
+         </svg>
+        </a>
+        <a class="social-icon" href="https://www.facebook.com/marlinprotocol/" target="_blank">
+         <svg height="16" viewbox="0 0 10 16" width="10" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.023 16L3 9H0V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H10L9 9H6.28v7H3.023z" fill="#A7A8B7" fill-rule="nonzero">
+          </path>
+         </svg>
+        </a>
+        <a class="social-icon" href="https://twitter.com/MarlinProtocol/" target="_blank">
+         <svg height="13" viewbox="0 0 16 13" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1.5c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7C5.2 3.9 2.7 2.6 1.1.6c-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4 0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4c.7-.5 1.3-1.1 1.7-1.8z" fill="#A7A8B7" fill-rule="nonzero">
+          </path>
+         </svg>
+        </a>
+        <!-- <a href="" class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                      <path fill="#A7A8B7" fill-rule="evenodd" d="M7.95 0C3.578 0 0 3.688 0 8.195c0 3.585 2.286 6.658 5.466 7.785.397.102.497-.205.497-.41v-1.434c-2.187.512-2.683-1.024-2.683-1.024-.398-.922-.895-1.23-.895-1.23-.696-.512.1-.512.1-.512.795.103 1.192.82 1.192.82.696 1.331 1.888.922 2.286.717.1-.513.298-.922.497-1.127-1.79-.205-3.578-.922-3.578-4.097 0-.922.298-1.64.795-2.152-.1-.204-.397-1.024.1-2.15 0 0 .695-.206 2.186.819.596-.205 1.292-.308 1.987-.308.696 0 1.392.103 1.988.308 1.49-1.025 2.186-.82 2.186-.82.398 1.127.199 1.947.1 2.151.496.615.795 1.332.795 2.152 0 3.175-1.889 3.79-3.677 3.994.298.41.596.922.596 1.64v2.253c0 .205.1.512.596.41C13.714 14.853 16 11.78 16 8.195 15.9 3.688 12.323 0 7.95 0z"/>
+                  </svg>
+                </a> -->
+        <!-- <a href="" class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12">
+                      <path fill="#A7A8B7" fill-rule="nonzero" d="M15.8 2.8C15.6 1.5 15 .6 13.6.4 11.4 0 8 0 8 0S4.6 0 2.4.4C1 .6.3 1.5.2 2.8 0 4.1 0 6 0 6s0 1.9.2 3.2c.2 1.3.8 2.2 2.2 2.4C4.6 12 8 12 8 12s3.4 0 5.6-.4c1.4-.3 2-1.1 2.2-2.4C16 7.9 16 6 16 6s0-1.9-.2-3.2zM6 9V3l5 3-5 3z"/>
+                  </svg>
+                </a> -->
+        <!-- <a href="" class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                      <path fill="#A7A8B7" fill-rule="nonzero" d="M15.205 0H.695C.299 0 0 .3 0 .7v14.7c0 .3.298.6.696.6h14.608c.398 0 .696-.3.696-.7V.7c-.1-.4-.398-.7-.795-.7zM4.671 13.6H2.385V6H4.77v7.6h-.1zM3.578 5c-.795 0-1.392-.7-1.392-1.4 0-.8.597-1.4 1.392-1.4.795 0 1.39.6 1.39 1.4-.098.7-.695 1.4-1.39 1.4zm9.938 8.6H11.13V9.9c0-.9 0-2-1.192-2-1.193 0-1.391 1-1.391 2v3.8H6.16V6h2.286v1c.298-.6 1.093-1.2 2.187-1.2 2.385 0 2.782 1.6 2.782 3.6v4.2h.1z"/>
+                  </svg>
+                </a>
+                 -->
+       </div>
+       <div class="copyrights-text" style="margin-top: 26px">
+        2020 Marlin Labs | All Rights Reserved
+       </div>
+       <div class="copyrights-text" style="margin-top: 8px">
+        Nothing herein constitutes an offer to sell, or the solicitation of an offer to buy, any securities or tokens.
+       </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-8">
+       <div class="row">
+        <div class="col-6 col-md-3">
+         <div class="footer-menu-title">
+          Project
+         </div>
+         <ul class="footer-menu-list">
+          <li class="footer-menu-list-element">
+           <a href="/docs/sdk/">
+            SDK
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/#foundry">
+            Foundry
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/relay">
+            Metanodes
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/contribute">
+            Contribute
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-6 col-md-3">
+         <div class="footer-menu-title">
+          Resources
+         </div>
+         <ul class="footer-menu-list">
+          <li class="footer-menu-list-element">
+           <a href="/whitepaper">
+            Whitepaper
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/docs/specs/">
+            Specs
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/docs">
+            Docs
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/blog">
+            Blog
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-6 col-md-3">
+         <div class="footer-menu-title">
+          Support
+         </div>
+         <ul class="footer-menu-list">
+          <li class="footer-menu-list-element">
+           <a href="/faqs">
+            FAQ
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="https://drive.google.com/open?id=1nFjMEig0-xbksRqBXc-TNBQ_zHUXYkHP">
+            Media Kit
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="https://discord.gg/pdQZyyy">
+            Discord
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="https://research.marlin.pro">
+            Forum
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-6 col-md-3">
+         <div class="footer-menu-title">
+          General
+         </div>
+         <ul class="footer-menu-list">
+          <li class="footer-menu-list-element">
+           <a href="/about">
+            About
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/mission">
+            Mission
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/terms-of-use">
+            Terms of Use
+           </a>
+          </li>
+          <li class="footer-menu-list-element">
+           <a href="/privacy-policy">
+            Privacy Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--   <div class="container">
+        <div class="seperator"></div>
+      </div>
+      <div class="footer-copyrights">
+        <div class="container d-flex justify-content-between">
+          <div class="copyrights-text">
+            Copyright Â© 2019 Marlin
+          </div>
+          <a href="https://flairdigital.co/" class="designed-text" target="_blank">
+            Designed by Flair Digital
+          </a>
+        </div>
+      </div> -->
+  </footer>
+  <div aria-hidden="true" aria-labelledby="contactModal" class="modal" id="contactModal" role="dialog" tabindex="-1">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg height="12" viewbox="0 0 12 12" width="12">
+       <path d="M11.7.3c-.4-.4-1-.4-1.4 0L6 4.6 1.7.3C1.3-.1.7-.1.3.3c-.4.4-.4 1 0 1.4L4.6 6 .3 10.3c-.4.4-.4 1 0 1.4.2.2.4.3.7.3.3 0 .5-.1.7-.3L6 7.4l4.3 4.3c.2.2.5.3.7.3.2 0 .5-.1.7-.3.4-.4.4-1 0-1.4L7.4 6l4.3-4.3c.4-.4.4-1 0-1.4z" fill="#fff" fill-rule="nonzero">
+       </path>
+      </svg>
+     </button>
+     <div class="modal-body">
+      <div class="contact-form-box">
+       <h3>
+        Updates that matter
+       </h3>
+       <p class="par">
+        No spam. Unsubscribe anytime.
+       </p>
+       <form action="" id="form" method="post">
+        <input id="emailField" name="email" placeholder="Enter your email" required="" type="email"/>
+        <button class="btn btn-white" id="submit" name="submit" type="submit" value="submit">
+         Subscribe
+         <svg height="11" viewbox="0 0 7 11" width="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1l5 4.5L1 10" fill="none" fill-rule="evenodd" stroke="#3740C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+        </button>
+        <div class="message">
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script defer="" src="/js/scripts.js">
+  </script>
+ </body>
+</html>

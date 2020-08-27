@@ -1,0 +1,3659 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head id="Head1">
+  <title>
+   Parkres
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="/img/fav-p.png" rel="shortcut icon" type="image/png"/>
+  <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="/css/flexslider.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="/css/animate.min.css" rel="stylesheet"/>
+  <link href="/css/time_line.css" rel="stylesheet"/>
+  <link href="/css/custom.css" rel="stylesheet"/>
+  <link href="/css/countdown.css" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="/popup/colorbox.css" rel="stylesheet"/>
+  <script src="/js/jquery-3.1.0.js">
+  </script>
+  <script src="/js/popper.min.js">
+  </script>
+  <script src="/js/bootstrap.min.js">
+  </script>
+  <style type="text/css">
+   #chartdiv,
+        #chartdiv11
+        {
+            width: 100%;
+            height: 380px;
+            margin: auto;
+        }
+
+        #chartdiv,
+        #chartdiv02
+        {
+            width: 100%;
+            height: 380px;
+            margin: auto;
+        }
+
+        @-moz-keyframes bounce
+        {
+            0%, 20%, 50%, 80%, 100%
+            {
+                -moz-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40%
+            {
+                -moz-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+
+            60%
+            {
+                -moz-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        @-webkit-keyframes bounce
+        {
+            0%, 20%, 50%, 80%, 100%
+            {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40%
+            {
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+
+            60%
+            {
+                -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes bounce
+        {
+            0%, 20%, 50%, 80%, 100%
+            {
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40%
+            {
+                -moz-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+
+            60%
+            {
+                -moz-transform: translateY(-15px);
+                -ms-transform: translateY(-15px);
+                -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        .bounce
+        {
+            -moz-animation: bounce 2s infinite;
+            -webkit-animation: bounce 2s infinite;
+            animation: bounce 2s infinite;
+        }
+
+        canvas
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .totalsold-widget
+        {
+            font-family: 'Titillium Web', sans-serif;
+            color: #fff;
+            max-width: 500px;
+            padding: 4px 0;
+        }
+
+        .txt-lrg
+        {
+            font-size: 0.9em;
+        }
+
+        .tokens-sold,
+        .fundraised-block > .txt-lrg
+        {
+            margin-right: 5px;
+        }
+
+        .inline-radio
+        {
+        }
+
+            .inline-radio label
+            {
+                padding-left: 10px;
+            }
+
+            .inline-radio input[type="radio"]
+            {
+            }
+
+        .wt
+        {
+            width: 130px;
+        }
+  </style>
+  <style type="text/css">
+   .scrollup
+        {
+            width: 40px;
+            height: 40px;
+            bottom: 20px;
+            position: fixed;
+            right: 30px;
+            text-indent: -999px;
+            background: url("img/arrowup.png") no-repeat;
+            display: none;
+            cursor: pointer;
+        }
+
+        #sales-area table
+        {
+            font-family: 'Open Sans', sans-serif;
+            margin: 25px auto;
+            border-collapse: separate;
+            border-spacing: 3px;
+            border: 1px solid #eee;
+            box-shadow: 0px 0px 20px #808080;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #sales-area td:hover
+        {
+            color: #2665b3;
+            background: #f1f1f1;
+            text-decoration: underline;
+        }
+
+        #sales-area th,
+        #sales-area td
+        {
+            color: #999;
+            border: 1px solid #eee;
+            padding: 7px 25px;
+        }
+
+        #sales-area th
+        {
+            text-align: center;
+            background: #2665b3;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+
+        #sales-area tr,
+        #sales-area td
+        {
+            box-shadow: 1px 1px 2px #2c354a;
+        }
+
+        .mar-btm-10
+        {
+            margin-bottom: 10px;
+        }
+
+        .proof-of-use p
+        {
+            font-size: 14px;
+        }
+
+        .contained
+        {
+            font-weight: 700;
+        }
+
+        .amcharts-export-menu ul
+        {
+            display: none;
+        }
+
+        .process-box
+        {
+            left: 36%;
+            top: 25%;
+            position: fixed;
+            padding: 7px 15px;
+            border-radius: 5px;
+            color: #438eb9;
+            font-size: 1.2em;
+            background: #FFF url('images/AjaxLoader.gif') no-repeat 10px;
+            padding-left: 40px;
+            border: 7px solid #438eb9;
+            z-index: 100001;
+            opacity: 1;
+        }
+
+        .process-overealy
+        {
+            background: #000;
+            z-index: 100000;
+            opacity: .5;
+            filter: alpha(opacity=50);
+            top: 0;
+            left: 0;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: block;
+        }
+  </style>
+  <style>
+   .border122
+        {
+            color: #fff;
+            margin-top: 49px;
+            border: 2px solid #fff;
+            padding: 20px;
+        }
+
+        table
+        {
+            margin: 25px auto;
+        }
+
+        td:hover
+        {
+            color: #2665b3;
+            background: #f1f1f1;
+            text-decoration: underline;
+        }
+
+        th,
+        td
+        {
+            color: #404040;
+            border: 1px solid #eee;
+            padding: 9px 12px;
+        }
+
+        th
+        {
+            background: #053361;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        tr,
+        td
+        {
+            box-shadow: 1px 1px 2px #909192;
+            font-size: 14px;
+        }
+
+        .mar-btm-10
+        {
+            margin-bottom: 10px;
+        }
+
+        .goog-te-gadget-simple
+        {
+            background-color: rgba(255, 255, 255, 0)!important;
+            border: 1px solid rgba(255, 255, 255, 0) !important;
+            border-radius: 4px!important;
+            display: inline-block;
+            cursor: pointer;
+            zoom: 1;
+        }
+
+        .goog-te-menu2
+        {
+            max-width: 100%;
+        }
+
+        .goog-te-menu-value
+        {
+            color: #fff !important;
+            &:before;
+
+        {
+            font-family: 'Material Icons';
+            content: "\E927";
+            margin-right: 16px;
+            font-size: 2rem;
+            vertical-align: -10px;
+        }
+
+        }
+
+        .goog-te-menu-value span:nth-child(5)
+        {
+            display: none;
+        }
+
+        .goog-te-menu-value span:nth-child(3)
+        {
+            border: none!important;
+            font-family: 'Material Icons';
+            &:after;
+
+        {
+            font-family: 'Material Icons';
+            content: "\E5C5";
+            font-size: 1.5rem;
+            vertical-align: -6px;
+        }
+
+        }
+
+        .goog-te-banner-frame.skiptranslate
+        {
+            display: none!important;
+        }
+        /* ================================== *\
+                    Mediaqueries
+                    \* ================================== */
+
+        @media (max-width: 667px)
+        {
+            #google_translate_element
+            {
+                bottom: calc(100% - 50% - 53px);
+                left: 16px!important;
+                width: 100%!important;
+            }
+
+            goog-te-gadget
+            {
+                width: 100%!important;
+            }
+
+            .skiptranslate
+            {
+                width: 100%!important;
+            }
+
+            .goog-te-gadget-simple
+            {
+                width: calc(100% - 32px)!important;
+                text-align: center;
+            }
+        }
+        /*-----------------rating desktop---------------------*/
+
+        #trackico-rating
+        {
+            /*z-index: 9;
+            position: absolute;
+            right: 80px;
+            top: 130px;*/
+            display: flex !important;
+            justify-content: center;
+            position: relative;
+            top: 2px;
+        }
+
+            #trackico-rating a
+            {
+                /*display: block;
+                    margin-bottom: 16px;*/
+                margin-left: 22px;
+            }
+
+            #trackico-rating img, #trackico-rating-bottom img
+            {
+                /*width: 63px;
+                    height: 63px;*/
+                width: 83px;
+                height: 83px;
+                margin: 0;
+            }
+
+
+        #trackico-rating-mob a, #trackico-rating-bottom a
+        {
+            z-index: 9;
+        }
+
+        @media (max-width: 479px)
+        {
+            #trackico-rating-mob
+            {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 991px)
+        {
+            #trackico-rating-mob
+            {
+                display: flex !important;
+                justify-content: center;
+                position: relative;
+                top: 19px;
+            }
+
+                #trackico-rating-mob img
+                {
+                    width: 53px;
+                    height: 53px;
+                    margin-left: 10px;
+                }
+        }
+
+        #trackico-rating-mob
+        {
+            display: none;
+        }
+
+        @media (mim-width: 991px)
+        {
+            #trackico-rating-mob
+            {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px)
+        {
+            #trackico-rating
+            {
+                display: none !important;
+            }
+        }
+  </style>
+  <style>
+   /*--------------------whitelist-------------------*/
+        #trackico-rating1
+        {
+            z-index: 9;
+            position: absolute;
+            left: 78px;
+            top: 183px;
+        }
+
+            #trackico-rating1 a
+            {
+                display: block;
+                margin-bottom: 16px;
+                color: #007bff00;
+                outline: none;
+            }
+
+                #trackico-rating1 a:hover
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+                #trackico-rating1 a:focus
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+
+                #trackico-rating1 a:visited
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+                #trackico-rating1 a:active
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+            #trackico-rating1 img
+            {
+                width: 46%;
+                margin: 0;
+            }
+
+        #trackico-rating-mob1 a
+        {
+            z-index: 9;
+        }
+
+        #trackico-rating-mob1 a
+        {
+            display: block;
+            margin-bottom: 16px;
+            color: #007bff00;
+            outline: none;
+        }
+
+            #trackico-rating-mob1 a:hover
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+            #trackico-rating-mob1 a:focus
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+            #trackico-rating-mob1 a:visited
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+            #trackico-rating-mob1 a:active
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+        @media (max-width: 479px)
+        {
+            #trackico-rating-mob1
+            {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 425px)
+        {
+            #trackico-rating-mob1
+            {
+                display: flex !important;
+                justify-content: center;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                right: 0;
+            }
+        }
+
+        @media only screen and (max-width: 769px) and (min-width: 426px)
+        {
+            #trackico-rating-mob1
+            {
+                display: flex !important;
+                justify-content: center;
+                position: absolute;
+                top: 177px;
+                left: 22px;
+            }
+        }
+
+        #trackico-rating-mob1 img
+        {
+            width: 154px;
+            margin-left: 17px;
+        }
+
+        #trackico-rating-mob1
+        {
+            display: none;
+        }
+
+        @media (min-width: 991px)
+        {
+            #trackico-rating-mob1
+            {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px)
+        {
+            #trackico-rating1
+            {
+                display: none;
+            }
+        }
+
+        /*-------------------Mobile Screen-----------------*/
+
+        #trackico-rating2
+        {
+            z-index: 9;
+            position: absolute;
+            right: -140px;
+            top: 84px;
+        }
+
+            #trackico-rating2 a
+            {
+                display: block;
+                margin-bottom: 16px;
+                color: #007bff00;
+                outline: none;
+            }
+
+                #trackico-rating2 a:hover
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+                #trackico-rating2 a:focus
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+
+                #trackico-rating2 a:visited
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+                #trackico-rating2 a:active
+                {
+                    color: #007bff00;
+                    border: none !important;
+                    outline: none;
+                }
+
+            #trackico-rating2 img
+            {
+                width: 48%;
+                margin: 0;
+            }
+
+        #trackico-rating-mob2 a
+        {
+            z-index: 9;
+        }
+
+        #trackico-rating-mob2 a
+        {
+            display: block;
+            margin-bottom: 16px;
+            color: #007bff00;
+            outline: none;
+        }
+
+            #trackico-rating-mob2 a:hover
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+            #trackico-rating-mob2 a:focus
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+            #trackico-rating-mob2 a:visited
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+            #trackico-rating-mob2 a:active
+            {
+                color: #007bff00;
+                border: none !important;
+                outline: none;
+            }
+
+        @media (max-width: 479px)
+        {
+            #trackico-rating-mob2
+            {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 425px)
+        {
+            #trackico-rating-mob2
+            {
+                display: flex !important;
+                justify-content: center;
+                position: relative;
+                top: 10px;
+                left: 0;
+                right: 0;
+            }
+        }
+
+        @media (max-width: 1024px)
+        {
+            #trackico-rating2
+            {
+                z-index: 9;
+                position: absolute;
+                right: -168px;
+                top: 84px;
+            }
+        }
+
+        @media only screen and (max-width: 769px) and (min-width: 426px)
+        {
+            #trackico-rating-mob2
+            {
+                display: flex !important;
+                justify-content: center;
+                position: relative;
+            }
+        }
+
+        #trackico-rating-mob2 img
+        {
+            width: 175px;
+        }
+
+        #trackico-rating-mob2
+        {
+            display: none;
+        }
+
+        @media (min-width: 991px)
+        {
+            #trackico-rating-mob2
+            {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px)
+        {
+            #trackico-rating2
+            {
+                display: none;
+            }
+        }
+
+        .cls
+        {
+            max-width: 1350px!important;
+        }
+  </style>
+  <script type="text/javascript">
+   var counterStartDate = new Date("16/03/2016");
+        var counterEndDate = new Date("16/03/2016");
+  </script>
+ </head>
+ <body>
+  <form action="./" id="form1" method="post">
+   <div class="aspNetHidden">
+    <input id="__EVENTTARGET" name="__EVENTTARGET" type="hidden" value=""/>
+    <input id="__EVENTARGUMENT" name="__EVENTARGUMENT" type="hidden" value=""/>
+    <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUKLTQ0OTMyNjQ4OA9kFgICAw9kFgICAQ8WAh4EVGV4dAWSAzxkaXYgY2xhc3M9ImNsZWFyZml4Ij48L2Rpdj48ZGl2IGNsYXNzPSJjb2wtc20tMTIiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZTsgdGV4dC1hbGlnbjogY2VudGVyO21hcmdpbjogMHB4IDA7Ij48YSBzdHlsZT0iZmxvYXQ6IG5vbmU7IiBocmVmPSIvam9pbi5hc3B4IiBjbGFzcz0iYmFubmVyLWJ0bi0xMSB0cnMgd293IGZhZGVJblVwIiBkYXRhLXdvdy1kdXJhdGlvbj0iMXMiIGRhdGEtd293LWRlbGF5PSIwLjNzIj48Yj5Kb2luIFVzPC9iPjwvYT48YSBzdHlsZT0iZmxvYXQ6IG5vbmU7IiBocmVmPSIvbG9naW4uYXNweCIgY2xhc3M9ImJhbm5lci1idG4tMTEgdHJzIHdvdyBmYWRlSW5VcCIgZGF0YS13b3ctZHVyYXRpb249IjFzIiBkYXRhLXdvdy1kZWxheT0iMC4zcyI+PGI+TG9naW48L2I+PC9hPjwvZGl2PmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCWNoa1NlbGVjdAUGd3Rlcm1zmT/GvdKhR8Q/BODBY6vIBtUCoHA="/>
+   </div>
+   <script type="text/javascript">
+    //<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+   </script>
+   <script src="/WebResource.axd?d=zQoiTf-a8dSjZDmxKIl0UM41B5v0EM7-DrQgBMD5yZmynAAXItYgQNGgEx03DCllzJomGJ3lqzngFeeHhOyO7_qFb541&amp;t=636934670580000000" type="text/javascript">
+   </script>
+   <script src="/ScriptResource.axd?d=ruc-4x_9uqlb7NDktX6S1BL610edDi01wcZIpqcwcQBlGxLd0Zw5v4_EPLoPeba7CgtST3GXAAmBadqEBvsBkTKDCbgs0HlaNSd3u7TX3otwIz5kGtSIO5u5xz_W5gVc0Jxmw_nUDE8CQ24MSVhgUIeok8pQSBxE4PGH_YBYtiA_cLx40&amp;t=ffffffffa580202a" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    //<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+   </script>
+   <script src="/ScriptResource.axd?d=C0suiNROFZUhXlnrJNl52V524IBnnnMjn7RJLhlbTpBGBSWBG2WhL3M3TTXx2SqCfhO4KzNmSN8yMHP-NUT1gcLrXfiehbeLG1jWLOVbn3PDXMbHQobnEW4RPM-hjjp7oWctn6Jq1Gf_a-2Q0TiphfNwD-x4Ui1J34kAFzvPVPyW3Wj-0&amp;t=ffffffffa580202a" type="text/javascript">
+   </script>
+   <div class="aspNetHidden">
+    <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="CA0B0334"/>
+   </div>
+   <script type="text/javascript">
+    //<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tupdatepanel3','updatepanel3','tupdatepanel1','updatepanel1'], [], [], 90, '');
+//]]>
+   </script>
+   <nav>
+    <input class="hidden" id="nav" type="checkbox"/>
+    <label class="nav-open" for="nav">
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+    </label>
+    <div class="nav-container">
+     <div style="display: inline-block;">
+      <a href="/">
+       <img src="img/sm.png" style="width: 84px; display: inline-block;"/>
+       <img alt="" class="img-responsive" src="/img/p-logo.png" style="width: 153px; margin-left: -8px; display: inline; margin-top: -5px;"/>
+      </a>
+     </div>
+     <div style="display: inline;">
+      <ul class="fontsm">
+       <li>
+        <a href="/#home">
+         HOME
+        </a>
+       </li>
+       <li>
+        <a href="/#ico">
+         ITO
+        </a>
+       </li>
+       <li>
+        <a href="/Parkreswhitepaper.pdf" target="_blank">
+         WHITE PAPER
+        </a>
+       </li>
+       <li>
+        <a href="/Parkres_Onepager_English.pdf" target="_blank">
+         ONEPAGER
+        </a>
+       </li>
+       <li>
+        <a href="/#howto">
+         HOW TO
+        </a>
+       </li>
+       <li>
+        <a href="/#roadmap">
+         ROADMAP
+        </a>
+       </li>
+       <li>
+        <a href="/#team">
+         TEAM
+        </a>
+       </li>
+       <li>
+        <a href="contactus.aspx">
+         CONTACT-US
+        </a>
+       </li>
+       <li>
+        <a href="https://bitcointalk.org/index.php?topic=4166597.new#new" target="_blank">
+         BOUNTY
+        </a>
+       </li>
+       <li>
+        <div id="google_translate_element" style="margin-top: -4px;">
+        </div>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </nav>
+   <div class="clearfix">
+   </div>
+   <main>
+    <div class="parallax-window" data-image-src="/img/top_banner.jpg" data-parallax="scroll" id="home">
+     <section class="intro" style="">
+      <div class="background">
+      </div>
+      <div id="particles-js2">
+      </div>
+      <div class="copy">
+       <div>
+        <div class="cloud cloud3">
+         <div class="container" style="display:none;">
+          <div class="row">
+           <div class="col-sm-12">
+            <img alt="" src="/img/p-logo1.png" style="margin: 0 auto 0 auto;position: inherit;"/>
+            <h3 class="wow fadeInUp" style="text-align: center;line-height: 43px;font-size: 19px;visibility: visible; animation-name: fadeInUp;color: #fff;">
+             <b>
+              Parking	Reservation	System .
+             </b>
+            </h3>
+            <p class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s" style="text-align: center;line-height: 1;">
+             PARKRES platform and launch of PARKING future
+            </p>
+            <div class="clearfix">
+            </div>
+            <div class="col-sm-12" style="display: table; text-align: center;margin: 0px 0;">
+             <a class="banner-btn-11 trs wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" href="/join.aspx" style="float: none;">
+              <b>
+               Join Us
+              </b>
+             </a>
+             <a class="banner-btn-11 trs wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" href="/login.aspx" style="float: none;">
+              <b>
+               Login
+              </b>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div id="counter">
+          </div>
+          <div class="clearfix">
+          </div>
+         </div>
+         <div class="container">
+          <div class="row">
+           <div class="col-sm-12">
+            <img alt="" src="/img/p-logo1.png" style="margin: 0 auto 0 auto;position: inherit;"/>
+            <h3 class="wow fadeInUp" style="text-align: center;line-height: 43px;font-size: 21px;visibility: visible; animation-name: fadeInUp;color: #fff;">
+             <b>
+              Parking	Reservation	System .
+             </b>
+            </h3>
+            <p class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s" style="text-align: center;line-height: 1;">
+             PARKRES platform and launch of PARKING future
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div id="trackico-rating1">
+      <a data-target="#wishlist" data-toggle="modal" href="javascript:;" title="whishlist">
+       <img src="img/whitelist.png"/>
+      </a>
+     </div>
+     <div id="trackico-rating-mob1">
+      <a data-target="#wishlist" data-toggle="modal" href="javascript:;" title="whishlist">
+       <img src="img/whitelist.png"/>
+      </a>
+     </div>
+     <div id="trackico-rating-mob">
+      <a href="  https://icobench.com/ico/parkres" target="_blank" title="icobench">
+       <img src="img/srate1.png" style="margin-left: 1px;"/>
+      </a>
+      <a href=" https://icomarks.com/ico/parkres" target="_blank" title="icomarks">
+       <img src="img/srate2.png"/>
+      </a>
+      <a href=" https://duxton.ru/crowdsale/parkres/" target="_blank" title="duxton">
+       <img src="img/srate3.png"/>
+      </a>
+      <a href=" https://www.trackico.io/ico/parkres/" target="_blank" title="trackico">
+       <img src="img/srate4.png"/>
+      </a>
+      <a href="https://ico.coincheckup.com/Parkres/" target="_blank" title="coincheckup">
+       <img src="img/srate5.png"/>
+      </a>
+     </div>
+     <div id="trackico-rating2">
+      <a href="javascript:;">
+       <img src="img/ParkresMobileScreen.png"/>
+      </a>
+     </div>
+    </div>
+    <br/>
+    <div id="trackico-rating-mob2">
+     <a href="javascript:;">
+      <img src="img/ParkresMobileScreen.png"/>
+     </a>
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-6">
+       <img class="img-fluid" src="img/intro.png"/>
+      </div>
+      <div class="col-lg-6">
+       <h1 style="padding-bottom: 8px;">
+        <b>
+         Introduction
+        </b>
+       </h1>
+       <p style="font-size: 14px;text-align: justify;">
+        We are a young, innovative company driven by the passion for technology and customer satisfaction. We believe that the sharing economy can help cities become friendlier, cleaner and happier for everyone.
+       </p>
+       <ul style="font-size: 14px;text-align: justify;">
+        <li>
+         Improved Parking Solutions
+        </li>
+        <li>
+         PARKRES let customer Find and Reserve parking spot on the click of a button
+        </li>
+        <li>
+         PARKRES will help reduce traffic situations in downtown, hospitals and airports etc.
+        </li>
+        <li>
+         PARKRES will help reducing fuel consumption and protecting environment.
+        </li>
+        <li>
+         PARKRES system give smart notifications to customers, which provides real time alerts of all available parking spots and location around them.
+        </li>
+        <li>
+         Easy mode of payment via PARKRES tokens and FIAT currency.
+        </li>
+        <li>
+         Discounted parking rates with PARK tokens.
+        </li>
+        <li>
+         Dividend plans for dividend token holders
+        </li>
+        <li>
+         PARKRES let user register their open/free parking spot on PARKRES ecosystem and monetize their free space. Its like parking Airbnb
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12 text-center">
+       <iframe allow="autoplay; encrypted-media" allowfullscreen="" class="video2" frameborder="0" src="https://www.youtube.com/embed/LjXkAoQo4J0">
+       </iframe>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12">
+       <h1 style="text-align: center; padding-bottom: 40px;">
+        <b>
+         Challenges With Parking
+        </b>
+       </h1>
+      </div>
+      <div class="col-lg-3 text-center">
+       <img src="img/challenage1.png" style="padding-bottom: 20px;"/>
+       <h5>
+        Non User-Centric
+        <br/>
+        Design
+       </h5>
+       <p style="text-align: justify;letter-spacing: -0.30px;">
+        Customer have to circle around parking in search of an open space, which results in significant loss of time, and energy in time sensitive situations.
+       </p>
+      </div>
+      <div class="col-lg-3 text-center">
+       <img src="img/challenage2.png" style="padding-bottom: 20px;"/>
+       <h5>
+        Unmanaged and
+        <br/>
+        Unmonitored
+       </h5>
+       <p style="text-align: justify;letter-spacing: -0.30px;">
+        Inefficient management and monitoring systems leading to waste of valuable time and fuel.
+       </p>
+      </div>
+      <div class="col-lg-3 text-center">
+       <img src="img/challenage3.png" style="padding-bottom: 20px;"/>
+       <h5>
+        Payment takes
+        <br/>
+        too long
+       </h5>
+       <p style="text-align: justify;letter-spacing: -0.30px;">
+        Long waiting queues for parking payment due to limited and inefficient payment consoles and technical problem.
+       </p>
+      </div>
+      <div class="col-lg-3 text-center">
+       <img src="img/challenage4.png" style="padding-bottom: 20px;"/>
+       <h5>
+        Traffic Problems and
+        <br/>
+        Anti-ecological
+       </h5>
+       <p style="text-align: justify;letter-spacing: -0.30px;">
+        Traffic issues due to secondary parking traffic in city centres. Unnecessary use of fuel causing environmental problems.
+       </p>
+      </div>
+     </div>
+    </div>
+    g
+    <br/>
+    <br/>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-6">
+       <h1 style="padding-bottom: 20px;">
+        <b>
+         Solution
+        </b>
+       </h1>
+       <p style="font-size: 14px;text-align: justify;">
+        PARKRES solves all of these problems by state of the art sensory network to track and manage parking spots across the city and different parking locations. It employs IoT (Internet of Things) based sensory network to track and monitor the parking spots across different parking location and suggest you a parking spot closest to your destination in advance.
+       </p>
+       <p style="font-size: 14px;text-align: justify;">
+        PARKRES also let you find and reserve your parking spot, so you don’t lose it when you reach your destinations.
+       </p>
+      </div>
+      <div class="col-lg-6">
+       <img class="img-fluid" src="img/solution.jpg"/>
+      </div>
+     </div>
+    </div>
+    <div class="container cls" style="background-image:url(images/123.jpg);background-repeat: no-repeat;padding: 26px 35px;background-position: center;background-size: cover;width: 100%;">
+     <div class="row">
+      <div class="col-lg-5">
+       <h1 style="padding-bottom: 20px;color:#fff!important;">
+        <b>
+         OUR PROJECT
+        </b>
+       </h1>
+       <h5>
+        <b style="color:#fff;">
+         "The best parking app available!"
+        </b>
+       </h5>
+       <ul style="color:#fff;">
+        <li>
+         Check daily and monthly rates for lots, plus rates for street parking (where available).
+        </li>
+        <li>
+         Set our parking timer to help you avoid overstaying, overpaying or getting a ticket.
+        </li>
+        <li>
+         See real-time info on available parking spots and street parking (select markets only).
+        </li>
+        <li>
+         Get directions to the nearest lot entrance, not just the street address.
+        </li>
+        <li>
+         Go to the link
+        </li>
+        <li>
+         Go to
+         <a href="http://dev.airrnp.com/home" style="color:#fff!important;text-decoration: underline;">
+          http://dev.airrnp.com/home
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12" style="margin-top: 30px;">
+       <h1 style="text-align: center; padding-bottom: 40px;">
+        <b>
+         PARKRES Network Components
+        </b>
+       </h1>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10" style="padding-left: 0px;
+    padding-right: 0px; margin:auto;">
+       <img class="img-fluid" src="img/session2.jpg" style="border: 1px solid #053361;
+    padding: 20px;"/>
+       <br/>
+       <br/>
+       <br/>
+      </div>
+      <div class="col-lg-3" style="background-color: #fff;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Parking Cluster
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        It’s a mesh of multiple parking facilities across a city. Each city is
+                                divided into a cluster. Similarly there will be multiple clusters for different cities.
+                                Each cluster will talk to a dedicated gateway and network server. These parking
+                                clusters will be equipped with IoT sensors and transponder network, which
+                                communicates parking spot change events to gateway.
+       </p>
+      </div>
+      <div class="col-lg-3" style="background-color: #cfe0fd;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Parking Console
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        It’s a electronic device that would read Universal Identification
+                                Number from user’s device. UIN will be in the form of a QR code. User’s PARK wallet
+                                address will serve as their UIN on Parkres network. Parking Console will scan the
+                                UIN and presents a touch screen with available parking spot for selection and
+                                reservation. Once User selects a spot, a transaction will be triggered to contract on
+                                blockchain.
+       </p>
+      </div>
+      <div class="col-lg-3" style="background-color: #fff;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Cloud
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        Data center will be hosted on cloud. It will store the metadata and
+                                transactional data received from different gateway modules and software
+                                components. Data is stored and read from cloud via big data, queryplex framework.
+                                This will serve as a source for Business Analytics and Telemetry for business
+                                development and expansion.
+       </p>
+      </div>
+      <div class="col-lg-3" style="background-color: #cfe0fd;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Smart Contract
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        PARK smart contracts, written in solidity, controls the transactions
+                                performed during parking reservation. Smart contract will hold the parking charges
+                                once the user scans UIN at the parking location or at the start of the reservation slot.
+                                When User leaves the parking spot, Sensors activates the network and triggers a
+                                confirmation to contract, contract then transfers the amount equivalent to parking
+                                time used to PARK wallet and reverses any access amount back to user wallet.
+       </p>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-lg-3" style="background-color: #cfe0fd;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         IoT / Sensor Gateway
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        Gateway is a device, which is capable of receiving all the IoT
+                                and Sensor communications. Sensor network from parking facility will
+                                communicate the event data to gateway. Gateway then feeds this to network servers
+                                in batches.
+       </p>
+      </div>
+      <div class="col-lg-3" style="background-color:  #fff;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Adapter
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        Adapter is a software component, which provides capability of data
+                                transformation, orchestration, data enrichment, data translation, aggregation,
+                                routing and data massaging. Different devices on network talking different
+                                technologies can communicate through adapter.
+       </p>
+      </div>
+      <div class="col-lg-3" style="background-color: #cfe0fd;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Devices
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        Devices can be mobiles devices like iPhone, Samsung etc. or Desktop,
+                            Laptop, Tablets, which will allow users to perform parking discovery, reservations
+                            and required transactions.
+       </p>
+      </div>
+      <div class="col-lg-3" style="background-color:  #fff;padding: 15px 15px 0px 15px;">
+       <h5 class="text-center">
+        <b>
+         Network Servers
+        </b>
+       </h5>
+       <p style="font-size: 14px;text-align: justify;letter-spacing: -1px;">
+        Network Servers receives the data and events from different
+                            systems in the network and store them over to cloud. They form the backbone of the
+                            ecosystem. Every data transaction directly or indirectly goes through Network
+                            Servers.
+       </p>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="advantages-full" id="advantages">
+     <div id="particles-js">
+     </div>
+     <section class="boon-advantages" id="pie-scroll-top">
+      <div id="sales-area">
+       <h1 class="text-center mar-btm-30">
+        Many Opportunities of Investment
+       </h1>
+       <ul class="timeline-boxes-sales">
+        <li class="revealOnScroll" data-animation="fadeInLeft" data-timeout="100">
+         <div class="bullet">
+         </div>
+         <div class="date">
+          INVEST
+         </div>
+         <div class="sales-contents">
+          Parkres Investing
+         </div>
+        </li>
+        <li class="revealOnScroll" data-animation="fadeInLeft" data-timeout="200">
+         <div class="bullet">
+         </div>
+         <div class="date">
+          TRADE
+         </div>
+         <div class="sales-contents">
+          Parkres trading
+         </div>
+        </li>
+        <li class="revealOnScroll" data-animation="fadeInLeft" data-timeout="300">
+         <div class="bullet">
+         </div>
+         <div class="date">
+          STAKE
+         </div>
+         <div class="sales-contents">
+          Parkres Staking
+         </div>
+        </li>
+        <li class="revealOnScroll" data-animation="fadeInLeft" data-timeout="400">
+         <div class="bullet">
+         </div>
+         <div class="date">
+          MINE
+         </div>
+         <div class="sales-contents">
+          Parkres Mining
+         </div>
+        </li>
+       </ul>
+      </div>
+     </section>
+    </div>
+    <div class="boon-pie-chart" id="distribution " style="overflow-x: hidden; ">
+     <div class="container-fluid">
+      <h1 class="text-center mar-btm-60">
+       <b>
+        ITO	 ALLOWCATIONS
+       </b>
+      </h1>
+      <br/>
+      <div class="row">
+       <div class="col-lg-6" id="use-funds1">
+        <h1 class="text-center">
+         <b>
+          Funds
+         </b>
+         Allocation
+        </h1>
+        <div id="chartdiv11">
+        </div>
+        <script src="//amcharts.com/lib/3/amcharts.js">
+        </script>
+        <script src="//amcharts.com/lib/3/pie.js">
+        </script>
+        <script src="//amcharts.com/lib/3/plugins/export/export.min.js">
+        </script>
+        <link href="https://localhost:2552/amcharts.com/lib/3/plugins/export/export.css" media="all" rel="stylesheet" type="text/css"/>
+        <script src="//amcharts.com/lib/3/themes/light.js">
+        </script>
+        <script>
+         $(function () {
+
+                                    var chart = AmCharts.makeChart("chartdiv11", {
+                                        "type": "pie",
+                                        "theme": "light",
+                                        "dataProvider": [{
+                                            "title": "Engineering and R&D	",
+                                            "value": 35,
+                                            "color": "#e81e62"
+                                        }, {
+                                            "title": "Parkres Platform operations",
+                                            "value": 15,
+                                            "color": "#e81e62db"
+                                        }, {
+                                            "title": "Overhead",
+                                            "value": 5,
+                                            "color": "#e81e62b8"
+                                        }, {
+                                            "title": "Supporting infrastucture and Blockchain projects",
+                                            "value": 5,
+                                            "color": "#e81e628a"
+                                        }, {
+                                            "title": "PARKRES Growth: Marketing, Strategic Planning	",
+                                            "value": 40,
+                                            "color": "#e81e625c"
+                                        }, ],
+                                        "titleField": "title",
+                                        "valueField": "value",
+                                        "colorField": "color",
+                                        "labelRadius": 5,
+                                        "startDuration": 0,
+                                        "radius": "35%",
+                                        "innerRadius": "60%",
+                                        "labelText": "[[title]]<br>([[percents]]%)",
+                                        "export": {
+                                            "enabled": true
+                                        }
+                                    });
+
+                                });
+                                window.onload = function () { }
+        </script>
+       </div>
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="use-funds">
+        <h1 class="text-center">
+         <b>
+          Token
+         </b>
+         Allocation
+        </h1>
+        <br/>
+        <div id="chartdiv02">
+        </div>
+        <script src="//amcharts.com/lib/3/amcharts.js">
+        </script>
+        <script src="//amcharts.com/lib/3/pie.js">
+        </script>
+        <script src="//amcharts.com/lib/3/plugins/export/export.min.js">
+        </script>
+        <link href="https://localhost:2552/amcharts.com/lib/3/plugins/export/export.css" media="all" rel="stylesheet" type="text/css"/>
+        <script src="//amcharts.com/lib/3/themes/light.js">
+        </script>
+        <script>
+         $(function () {
+                                            var chart = AmCharts.makeChart("chartdiv02", {
+                                                "type": "pie",
+                                                "theme": "light",
+                                                "dataProvider": [{
+                                                    "title": "Cryptoeconomics Reserve",
+                                                    "value": 27.5,
+                                                    "color": "#e81e62"
+
+                                                }, {
+                                                    "title": "PARKRES Team,",
+                                                    "value": 13,
+                                                    "color": "#e81e62db"
+                                                }, {
+                                                    "title": "Advisors",
+                                                    "value": 3,
+                                                    "color": "#e81e62b8"
+                                                }, {
+                                                    "title": "Enterprise Partnerships",
+                                                    "value": 4,
+                                                    "color": "#e81e628a"
+                                                }, {
+                                                    "title": "Promosion and Bonuses",
+                                                    "value": 5,
+                                                    "color": "#e81e62b8"
+                                                }, {
+                                                    "title": "Private Token Sale",
+                                                    "value": 8.5,
+                                                    "color": "#e81e62b8"
+                                                }, {
+                                                    "title": "Pre-ITO Sale",
+                                                    "value": 11.5,
+                                                    "color": "#e81e62b8"
+                                                }, {
+                                                    "title": "Public Sale",
+                                                    "value": 27.5,
+                                                    "color": "#e81e62b8"
+                                                }],
+                                                "titleField": "title",
+                                                "valueField": "value",
+                                                "colorField": "color",
+                                                "labelRadius": 5,
+                                                "startDuration": 0,
+                                                "radius": "35%",
+                                                "innerRadius": "60%",
+                                                "labelText": "[[title]]<br>([[percents]]%)",
+                                                "export": {
+                                                    "enabled": true
+                                                }
+                                            });
+                                        });
+                                        window.onload = function () { }
+        </script>
+        <br/>
+        <br/>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="roadmap-line" id="roadmap">
+     <h1 class="text-center mar-btm-60">
+      <b>
+       PARKRES ROADMAP
+      </b>
+     </h1>
+     <section class="cd-container" id="cd-timeline">
+      <div class="row">
+       <div class="col-lg-1">
+       </div>
+       <div class="col-lg-10">
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q1 2018
+           </span>
+           <br/>
+           Assembling the co-founding team and developing initial idea.
+          </p>
+          <span class="cd-date">
+           2018
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q2 2018
+           </span>
+           <br/>
+           Building Development and marketing team, Creating first draft of white paper, Launch of Private Sale for private investors.
+          </p>
+          <span class="cd-date">
+           2018
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q3 2018
+           </span>
+           <br/>
+           Internal testing of alpha version- Tokens, Signing initial partners and customers, Releasing of smart contracts, Approching first customers, Start of Pre-ITO Sale event.
+          </p>
+          <span class="cd-date">
+           2018
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q4 2018
+            <br/>
+           </span>
+           Completion of croundfunding event, Token distribution, Negotiate Listing on exchanges, Partnership with scalable blockchains.
+          </p>
+          <span class="cd-date">
+           2018
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q2 2019
+            <br/>
+           </span>
+           Release of open source SDK Contracts, Building of ecosystem with development community participation, Start of mobile app developments for Android, IOS and web Interface.
+          </p>
+          <span class="cd-date">
+           2019
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q4 2019
+            <br/>
+           </span>
+           Launch of Beta mobile apps, Start of Design and development of IOT gateway modules.
+          </p>
+          <span class="cd-date">
+           2019
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q1 2020
+            <br/>
+           </span>
+           Launch of Alpha version for mobile apps, Development of IOT gateway modules, Prototype development and test implimentation.
+          </p>
+          <span class="cd-date">
+           2020
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q4 2020
+            <br/>
+           </span>
+           Integration of systems, Wallet backend, IOT analytics, Assembly of Parking Reading Consoles.
+          </p>
+          <span class="cd-date">
+           2020
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q3 2021
+            <br/>
+           </span>
+           Contract Negotiation with customers, Installation of Reading Consoles, End to End Testing of Consoles and application.
+          </p>
+          <span class="cd-date">
+           2021
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q4 2022
+            <br/>
+           </span>
+           Luanch of Phase 1- Product in Canada, North America, Instalation of reading consoles on parking loacations, roadshows and bussiness development.
+          </p>
+          <span class="cd-date">
+           2022
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q2 2023
+            <br/>
+           </span>
+           R &amp; D center canada, India. System improvements and setup of Architecture university. Start of Traffic updates console in PARKRES.
+          </p>
+          <span class="cd-date">
+           2023
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q4 2023
+            <br/>
+           </span>
+           Lauch of traffic update feature in PARKRES. Start of LPALMS platform development.
+          </p>
+          <span class="cd-date">
+           2023
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q4 2024
+            <br/>
+           </span>
+           Launch of LPALMS platform, to users. Performance tuning and infrastrucure upgrade for PARKRES platform. Roadshows and business devlopment events.
+          </p>
+          <span class="cd-date">
+           2024
+          </span>
+         </div>
+        </div>
+        <div class="cd-timeline-block revealOnScroll" data-animation="fadeInRight" data-timeout="100">
+         <div class="cd-timeline-img cd-picture">
+         </div>
+         <div class="cd-timeline-content">
+          <p>
+           <span>
+            Q3 2025
+            <br/>
+           </span>
+           R&amp;D Center USA, Phillippines. Integration of Parkres apis into vehical GPS modules, Negotiation of contracts and licensing terms with car manufacturers.
+          </p>
+          <span class="cd-date">
+           2025
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-1">
+       </div>
+      </div>
+     </section>
+    </div>
+    <section class="Why-hadeplatform" id="Why-ORYXplatform">
+     <div class="container">
+      <div class="row">
+       <div class="col-sm-12">
+        <div class="copy">
+         <h1 class="revealOnScroll text-center mar-btm-30" data-animation="fadeInUp">
+          <b>
+           Parkres Security
+          </b>
+         </h1>
+         <ul class="why-boon-boxs">
+          <li>
+           <div class="why-boon-box-in revealOnScroll" data-animation="fadeInLeft" data-timeout="100">
+            <div class="card-icon trs">
+             <img alt="" src="/img/why04.png"/>
+            </div>
+            <p>
+             Cold Storage
+            </p>
+           </div>
+          </li>
+          <li>
+           <div class="why-boon-box-in revealOnScroll" data-animation="fadeInLeft" data-timeout="300">
+            <div class="card-icon trs">
+             <img alt="" src="/img/why01.png"/>
+            </div>
+            <p>
+             Institutional-Grade Security
+            </p>
+           </div>
+          </li>
+          <li>
+           <div class="why-boon-box-in revealOnScroll" data-animation="fadeInLeft" data-timeout="500">
+            <div class="card-icon trs">
+             <img alt="" src="/img/why05.png"/>
+            </div>
+            <p>
+             Least Privileged Access
+            </p>
+           </div>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div id="team">
+     <div class="meet-our-team">
+      <div class="container">
+       <h1 class="text-center">
+        <b>
+         MANAGEMENT AND DEVELOPMENT TEAM
+        </b>
+       </h1>
+       <p>
+        In addition to our leadership team, there are approximately 10 staff members who are working on Parkres Platform.
+       </p>
+       <div class="row team-blocks">
+        <div class="revealOnScroll col-md-4" data-animation="fadeInUp" data-timeout="100" style="padding: 0px;">
+         <div class="advisors-box expand" ontouchstart="this.classList.toggle('hover');">
+          <div class="">
+           <div class="our-team-box">
+            <div class="our-team-box-img">
+             <img alt="" class="img-responsive full-width" src="/img/t4.png"/>
+            </div>
+            <div class="our-team-cont">
+             <p class="team-meb-name" style="color:#053361">
+              Amol Mozarkar
+             </p>
+             <p style="color:#053361">
+              Chief Executive Officer and Co-Founder
+             </p>
+             <div class="text-center">
+              <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn3 trs wow fadeInUp" data-toggle="collapse" href="#amol" role="button">
+               Read Information
+              </a>
+             </div>
+             <div class="collapse" id="amol">
+              <div class="card card-body expand" style="padding: 5px !important;">
+               Amol has 15+ years of experience in the IT business, Technology and data centre management. An IT entrepreneur, blockchain activist, inventor, author of patent and international patent applications for Decentralized Parking Reservation System. Amol is a serial entrepreneur and business manager with in-depth knowledge of IT, Internet, cloud services, cryptocurrencies, financial &amp; strategic planning, and business valuations. Amol brings in-depth technology and high-level management experience to PARKRES from such companies as Bell Canada, IBM, Enbridge, Aviva UK, Wipro, Citi Bank, and Aviva Canada.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="back">
+            <p>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="https://www.linkedin.com/in/amol-mozarkar-26625211/" target="_blank">
+           <img src="img/linkin.png"/>
+          </a>
+         </div>
+        </div>
+        <div class="revealOnScroll col-md-4" data-animation="fadeInUp" data-timeout="300" style="padding: 0px;">
+         <div class="advisors-box expand" ontouchstart="this.classList.toggle('hover');">
+          <div class="">
+           <div class="our-team-box">
+            <div class="our-team-box-img">
+             <img alt="" class="img-responsive full-width" src="/img/t1.png"/>
+            </div>
+            <div class="our-team-cont">
+             <p class="team-meb-name" style="color:#053361">
+              Kavita Jangam
+             </p>
+             <p style="color:#053361">
+              Business Development Manager and Co-Founder
+             </p>
+             <div class="text-center">
+              <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn3 trs wow fadeInUp" data-toggle="collapse" href="#kavita" role="button">
+               Read Information
+              </a>
+             </div>
+             <div class="collapse" id="kavita">
+              <div class="card card-body expand" style="padding: 5px !important;">
+               Kavita has 10+ years of experience in complex business analysis, application development and design, and testing automation. She brings her technical and business domain expertise to PARKRES. She has worked with companies like J.P Morgan, Delloite, Amdocs DBCI, Mindtree, and Willis Towers Watson.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="back">
+            <p>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="https://www.linkedin.com/in/kavita-jangam-3817751a/" target="_blank">
+           <img src="img/linkin.png"/>
+          </a>
+         </div>
+        </div>
+        <div class="revealOnScroll col-md-4" data-animation="fadeInUp" data-timeout="300" style="padding: 0px;">
+         <div class="advisors-box expand" ontouchstart="this.classList.toggle('hover');">
+          <div class="">
+           <div class="our-team-box">
+            <div class="our-team-box-img">
+             <img alt="" class="img-responsive full-width" src="/img/t6.png"/>
+            </div>
+            <div class="our-team-cont">
+             <p class="team-meb-name" style="color:#053361">
+              Arvind Betala
+             </p>
+             <p style="color:#053361">
+              Chief Finance Officer
+             </p>
+             <div class="text-center">
+              <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn3 trs wow fadeInUp" data-toggle="collapse" href="#arvind" role="button">
+               Read Information
+              </a>
+             </div>
+             <div class="collapse" id="arvind">
+              <div class="card card-body expand" style="padding: 5px !important;">
+               Chief Finance Officer CA, CPA and Tax expert. A well rounded professional with 15+ years of post qualification experience and with continuous educational development from different countries To sharpen the role skills and achieving revenue, profit and business growth objective. Arvind is specialist in International Tax Management and Arbitration, Tax Reporting, and Finance Management.
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="https://www.linkedin.com/in/arvindbetala/" target="_blank">
+           <img src="img/linkin.png"/>
+          </a>
+         </div>
+        </div>
+        <div class="revealOnScroll col-md-4" data-animation="fadeInUp" data-timeout="200" style="padding: 0px;">
+         <div class="advisors-box expand" ontouchstart="this.classList.toggle('hover');">
+          <div class="">
+           <div class="our-team-box">
+            <div class="our-team-box-img">
+             <img alt="" class="img-responsive full-width" src="/img/t7.png"/>
+            </div>
+            <div class="our-team-cont">
+             <p class="team-meb-name" style="color:#053361">
+              Maruti Thota
+             </p>
+             <p style="color:#053361">
+              Full Stack Developer
+             </p>
+             <div class="text-center">
+              <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn3 trs wow fadeInUp" data-toggle="collapse" href="#Maruti" role="button">
+               Read Information
+              </a>
+             </div>
+             <div class="collapse" id="Maruti">
+              <div class="card card-body expand" style="padding: 5px !important;">
+               Maruthi has more than 14 years of experience in development and design of software applications and working with complex architecture. Highly qualified Smart Contract, Front-End, Full-Stack, Database &amp; Mobile applications developer. Maruthi has experience working  with organizations like TCS, IBM Canada, ENBRIDGE, BELL Canada for a long time (Toronto, Canada) and other international companies; now he is totally focused on blockchain technologies.
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="https://www.linkedin.com/in/sridhar2403/" target="_blank">
+           <img src="img/linkin.png"/>
+          </a>
+         </div>
+        </div>
+        <div class="revealOnScroll col-md-4" data-animation="fadeInUp" data-timeout="200" style="padding: 0px;">
+         <div class="advisors-box expand" ontouchstart="this.classList.toggle('hover');">
+          <div class="">
+           <div class="our-team-box">
+            <div class="our-team-box-img">
+             <img alt="" class="img-responsive full-width" src="/img/t2.png"/>
+            </div>
+            <div class="our-team-cont">
+             <p class="team-meb-name" style="color:#053361">
+              Robinson Rengraj
+             </p>
+             <p style="color:#053361">
+              Blockchain Developer
+             </p>
+             <div class="text-center">
+              <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn3 trs wow fadeInUp" data-toggle="collapse" href="#Robinson" role="button">
+               Read Information
+              </a>
+             </div>
+             <div class="collapse" id="Robinson">
+              <div class="card card-body expand" style="padding: 5px !important;">
+               Robinson has 15+ years of experience working on complex integration systems. Robin's experience and technical knowledge is unparallel. Robinson is a crypto currency enthusiast and a blockchain expert. He has worked with techno giants like IBM Canada, IBM India, Sryas Inc Canada, Bell Canada and ENBRIDGE.
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="#" target="_blank">
+           <img src="img/linkin.png"/>
+          </a>
+         </div>
+        </div>
+        <div class="revealOnScroll col-md-4" data-animation="fadeInUp" data-timeout="200" style="padding: 0px;">
+         <div class="advisors-box expand" ontouchstart="this.classList.toggle('hover');">
+          <div class="">
+           <div class="our-team-box">
+            <div class="our-team-box-img">
+             <img alt="" class="img-responsive full-width" src="/img/t8.png"/>
+            </div>
+            <div class="our-team-cont">
+             <p class="team-meb-name" style="color:#053361">
+              Jincy Johnson
+             </p>
+             <p style="color:#053361">
+              Community Manager
+             </p>
+             <div class="text-center">
+              <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn3 trs wow fadeInUp" data-toggle="collapse" href="#Jincy" role="button">
+               Read Information
+              </a>
+             </div>
+             <div class="collapse" id="Jincy">
+              <div class="card card-body expand" style="padding: 5px !important;">
+               Jincy has over 10 years of experience working in different industry sectors like Mass Media, Software, Hardware, Reality Media, Game shows, Event Management, and everything else out there. Multi talented sums it all. Jincy has a very wide spectrum of extensive work experience in variety of domains and that gives her an edge that we are proud of. Jincy is not scared of taking up challenges, and envision herself working at a place where quality and good work speak the most.
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="https://www.linkedin.com/in/jincy-johnson-61780866/" target="_blank">
+           <img src="img/linkin.png"/>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+    </div>
+    <div class="advisors" id="advisors-area1">
+     <div class="advisorsin">
+      <div class="container">
+       <h1 class="text-center">
+        <b>
+         ADVISORS
+        </b>
+       </h1>
+       <p>
+        Our advisors are actual advisors of the company. These are experienced individuals with their own teams of staff who will play crucial roles in helping us reach our goals.
+       </p>
+       <div class="row">
+        <div class="col-md-12">
+         <div class="row">
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="100">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad1.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Neel Mehta
+            </h3>
+            <p style="margin-top: 0px;">
+             Business Strategy Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;  font-size: 12px; color: #d4d0d0;">
+             Asst Director Bell Canada
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#neel" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="neel">
+             <div class="card card-body expand">
+              Director at Bell Canada, business development  expert, technology enthusiast. Worked as Strategy Architecture and business development lead at Bell Canada.
+                                                Broadly experienced systems architect and team lead. Accustomed to working on simplifying complex enterprise architectures from a design and process perspective. Specializes in Business to Business Systems Integration, Business Intelligence Portals, Web Services, E-Commerce Payment Systems, Web portals, Web Security and Enterprise Service Integration. 
+                                                Neel received several accolades for his work: IT Breakthrough Awards - 2012, 2013, 2014, 2015, Eugene Roman Technology Innovation (Individual) Award 2008, Mentor of the Year Award, Career Edge 2007.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/neelmehta/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad2.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Matthew Taylor
+            </h3>
+            <p style="margin-top: 0px;">
+             Patent and Copyright Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;  font-size: 12px; color: #d4d0d0;">
+             Director Innovative Licensing &amp; Promotion Inc
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#matthew" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="matthew">
+             <div class="card card-body expand">
+              Director of New Product at Development, Innovative Licensing &amp; Promotion, Inc. Attorney based in Toronto with specialization in business copyright and patents. Strengths in customer service, sales and negotiations. Proven skills in marketing, advertising, product integration, and promotions. Successful in developing strategies that have resulted in an over 500% increase in new clients. Instrumental in developing a customer contact program for client retention with 80% success rate.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/matthew-taylor-ab16b1126/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad3.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Mike Bishop
+            </h3>
+            <p style="margin-top: 0px;">
+             Legal Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;  font-size: 12px; color: #d4d0d0;">
+             Seasoned ICO Advisor
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#mike" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="mike">
+             <div class="card card-body expand">
+              Mike is a seasoned advisor on various ICO/ITO and TGE including Coinseed, BCharity, FLASHMONI, Covesting, CareX Health Network, LAToken to name a few. Mike was also an advisor on Global Investment Services Corp, Cayman Island. Expert in Real estate analytics. Real estate risk. Real estate promotions, Business Development. Skilled at forging high level strategic alliances. Led two start-ups to over $3mm profitability each within 18 months of operation. Product Development. Designed, created or marketed creative financial products, including: foreign currency hedge straddles, bulk real estate acquisition, real estate risk reduction contracts, derivative contracts.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/mikebishops/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad7.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Chintan Thakkar
+            </h3>
+            <p style="margin-top: 0px;">
+             Strategy and Business Devlopment Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px; font-size: 12px; color: #d4d0d0;">
+             Former Vice President of Goldman Sachs, NYC
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#Chintan" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="Chintan">
+             <div class="card card-body expand">
+              Chintan is passionate about leveraging tech-driven solutions to make a global impact and empower individuals and enterprises. Chintan is a serial advisor to Blockchain projects - Chintan understands blockchain technology and provides businesses consultation on how their business could leverage blockchain solutions to make it a profitable investment. He has worked with 100+ founders, helped them in building the next-generation product and raised multi-million dollar funding for their startup. Chintan was working as Vice President of Goldman Sachs, NYC - managing front office interest rate derivatives for Goldman Sachs. Chintan has completed his Masters in Computer Science from Georgia Tech, Atlanta.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/chintan7/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad4.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Berry Buter
+            </h3>
+            <p style="margin-top: 0px;">
+             Advisor-Marketing
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;  font-size: 12px; color: #d4d0d0;">
+             Co-Founder of Cryptomizers – Blockchain Marketing
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#Berry" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="Berry">
+             <div class="card card-body expand">
+              Blockchain and ICO Advisor. Berry has 8 Years of experience at a Big Four Audit Form in The Netherlands and 5 Years of experience as a business/financial controller. Berry has completed his post-masters degree in Accountancy &amp; Control from Erasmus University Rotterdam.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/bbuter/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad5.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Mark Borsten
+            </h3>
+            <p style="margin-top: 0px;">
+             Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;  font-size: 12px; color: #d4d0d0;">
+             Co-Founder of Cryptomizers – Blockchain Marketing
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#Mark" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="Mark">
+             <div class="card card-body expand">
+              Mark has 6.5 years of experience at a Big Four Audit Firm in the Netherlands. Mark has completed his Masters in Accounting from Nyenrode Business University.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/markalexander1993/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/ad6.png" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Miikka Saloseutu
+            </h3>
+            <p style="margin-top: 0px;">
+             Business Strategy Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;font-size: 12px; color: #d4d0d0;">
+             CEO and Co-Founder Crypto Coin Judge
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#Miikka" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="Miikka">
+             <div class="card card-body expand">
+              Miikka is Co-Founder of ICOToken News, CEO and Co-Founder of Triplex Trading OU, he is experienced marketing professional with a demonstrated history of working in the internet industry. Skilled in Search Engine Optimization (SEO), E-commerce Optimization, Sales, Initial Coin Offerings, Crypto Currencies and Pay Per Click (PPC) marketing. Miikka has been an advisor on various successful ICOs and has helped raised multi-million dollars for a variety of projects in blockchain industry.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/miikka-saloseutu-72141a131/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+          <div class="col-md-3 mar-top-30 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+           <div class="advisors-box">
+            <div style="text-align: center;margin-bottom: 10px;">
+             <img src="img/thomus.jpg" style="border: 2px solid #ffffff;border-radius: 50px;"/>
+            </div>
+            <h3>
+             Thomas Goslee
+            </h3>
+            <p style="margin-top: 0px;">
+             Advisor
+            </p>
+            <p style="margin-top: -3px; line-height: 0px;font-size: 12px; color: #d4d0d0;">
+             Member of Bitcoin and Crypto Valley Associations
+            </p>
+            <div class="text-center">
+             <a aria-controls="collapseExample" aria-expanded="false" class="expand1-btn2 trs wow fadeInUp" data-toggle="collapse" href="#Thomas" role="button">
+              Read Information
+             </a>
+            </div>
+            <div class="collapse" id="Thomas">
+             <div class="card card-body expand">
+              Thomas is a current member of the Bitcoin and Crypto Valley Associations of Switzerland and a former member of the International Society for Telemedicine &amp; eHealth (ISfTeH). A 2015 member of the inaugural UAE Seed Group; Lean LaunchPad 10-week course at the Dubai SME Entrepreneur Academy - 2017 completion of the introduction prerequisite course for the Cryptocurrencies &amp; Blockchain MSc Degree program at the University of Nicosia in Cyprus.
+Thomas was also an ICO advisor on many successful ICOs like Coinseed, Stitching Karuna Foundation, Leading Locally to name a few.
+             </div>
+            </div>
+           </div>
+           <div style="text-align: center;">
+            <a href="https://www.linkedin.com/in/thomas-goslee-24560841/" target="_blank">
+             <img src="img/linkin1.png"/>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="faq" id="faq-area">
+     <div class="container">
+      <h1 class="text-center">
+       <b>
+        FAQs
+       </b>
+      </h1>
+      <div class="clearfix">
+      </div>
+      <div class="row">
+       <div class="col-lg-1">
+       </div>
+       <div class="col-lg-10">
+        <div class="panel-group mar-top-30" id="accordion">
+         <div class="panel panel-default">
+          <div class="panel-heading" data-parent="#accordion" data-target="#collapse01" data-toggle="collapse">
+           <h4 class="panel-title">
+            <a class="accordion-toggle">
+             Why will PARKRES accept Fiat Currency? Isn't this in conflict with decentralized economy?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse in" id="collapse01">
+           <div class="panel-body">
+            Fiat currency will be accepted.
+            <br/>
+            The decentralized PARKRES ledger will function solely with the native PARK token. Fiat is accepted only to provide an easier way for inexperienced users to directly purchase the digital token on the marketplace at the time of the park booking (instead of going through an exchange and buying Ethereum first). The decentralized backend/engine that handles the bookings, and all transactions between clients and hotels will operate solely in PARK.
+           </div>
+          </div>
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h4 class="panel-title" data-parent="#accordion" data-target="#collapse02" data-toggle="collapse">
+            <a class="accordion-toggle">
+             Is the PARK Token a Security?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse02">
+           <div class="panel-body">
+            PARK token is a digital/software utility product which is not a security and which does not provide any ownership rights. It is a way for you to book a parking spot on our website or mobile App.You can either buy the PARK in advance, or at the moment of placing an order for a parking spot listing from our marketplace.
+           </div>
+          </div>
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h4 class="panel-title" data-parent="#accordion" data-target="#collapse03" data-toggle="collapse">
+            <a class="accordion-toggle">
+             What type of risks are involved in investing?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse03">
+           <div class="panel-body">
+            Holding a PARK Token is not an Investment in securities (ie shares or debt of a company). PARK Token is the payment mean for participating as a driver or parking owner in the PARKRES Reservation Platform.
+            <br/>
+            The overall demand and supply of PARK Tokens in the market will  determine the underlying value against FIAT or other Currencies. Nevertheless this will not influence the actual price in FIAT that someone will pay for the parking.
+            <br/>
+            Some of you may buy PARK Tokens with a view of investing towards a future appreciation of the PARK Token exchange values. Although this is not the primary scope of the PARK Token you are free to do it, if you wish.
+            <br/>
+            To build wealth over time, investors need to accept certain levels of risk. The main general risks associated with investing are as follows:
+            <ul>
+             <li>
+              Investments risks
+              <br/>
+              Market value of investments may go down as well as up, even if the quality of your investment remains the same. Past performance is not an indicator of future performance.
+             </li>
+             <li>
+              Political risks
+              <br/>
+              Factors such as monetary restrictions, war conflicts, coups and racial and national tensions create political instability in countries. Political instability can significantly influence a project’s ability to generate earnings.
+              <br/>
+              Government economic policies of any country may lead to challenging macroeconomic environment for projects.
+             </li>
+             <li>
+              Legal risk
+              <br/>
+              Many countries don’t have the legal systems necessary for the proper and efficient regulation of digital assets. This may include the non-existence or limited functioning of Market Regulators, incomplete legislation and regulations pertaining to the crypto currency capital markets and no or limited investor compensation schemes. There is therefore a high degree of legal uncertainty as to the nature and extent of investor’s rights and the ability to enforce those rights.
+             </li>
+             <li>
+              Taxation
+              <br/>
+              Tax law and practice is not clearly established for crypto currency market and there is significant uncertainty as to the position of investors (local or international) in many Countries. It is possible therefore that a current interpretation of Tax law or practice may change or, indeed, that a specific Tax law may be changed with retrospective effect. An investor could become subject to taxation that is not anticipated when Investments are made and this could impact the overall investment performance.
+             </li>
+             <li>
+              Liquidity risk
+              <br/>
+              Market liquidity risk – is inability of financial instrument to be converted into cash in the shortest possible time without significant change in value or increasing bid/ask spread. This type of risk is interdependent to holding concentration risk.
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h4 class="panel-title" data-parent="#accordion" data-target="#collapse04" data-toggle="collapse">
+            <a class="accordion-toggle">
+             How will PARKRES store the raised funds?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse04">
+           <div class="panel-body">
+            PARKRES will use a multi-signature wallet to store the raised funds.
+           </div>
+          </div>
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h4 class="panel-title" data-parent="#accordion" data-target="#collapse05" data-toggle="collapse">
+            <a class="accordion-toggle">
+             Do you accept cooperation proposals?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse05">
+           <div class="panel-body">
+            <p>
+             Yes, we do. Please send your proposal to
+             <a class="__cf_email__" data-cfemail="40292e262f003021322b3225336e2f3227" href="/cdn-cgi/l/email-protection">
+              [email protected]
+             </a>
+             and we will make sure to reach out to you by the end of the Token Sale if there is an opportunity for cooperation.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h4 class="panel-title" data-parent="#accordion" data-target="#collapse06" data-toggle="collapse">
+            <a class="accordion-toggle">
+             What is the gas limit?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse06">
+           <div class="panel-body">
+            All transactions, from simple transfers to ITO smart contracts, require some amount of operations to perform. Each of these operations has an associated cost in
+            <strong>
+             gas
+            </strong>
+            . Thus, simple transactions like transfers will require less gas to perform than more intense smart contracts.
+            <br/>
+            When transfering ETH from your wallet to the ETHEREUM Address provided by the token sale platform you need to add certain amount for gas.
+            <br/>
+            The recommended gas limit is 150 000 GAS which cost 0.00000002 Ether.
+           </div>
+          </div>
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h4 class="panel-title" data-parent="#accordion" data-target="#collapse07" data-toggle="collapse">
+            <a class="accordion-toggle">
+             What currencies can I use to buy Parkres?
+            </a>
+           </h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse07">
+           <div class="panel-body">
+            Parkres will accept BTC, ETH.
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-1">
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="growth-chart" id="growth-chart">
+     <div class="container">
+      <div class="row">
+       <div class="col-sm-12">
+        <h1 class="text-center mar-btm-30">
+         <b>
+          EXPECTED BUSINESS GROWTH
+         </b>
+        </h1>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+        </script>
+        <script src="//amcharts.com/lib/3/amcharts.js">
+        </script>
+        <script src="//amcharts.com/lib/3/serial.js">
+        </script>
+        <script src="//amcharts.com/lib/3/plugins/export/export.min.js">
+        </script>
+        <link href="https://localhost:2552/amcharts.com/lib/3/plugins/export/export.css" media="all" rel="stylesheet" type="text/css"/>
+        <script src="//amcharts.com/lib/3/themes/light.js">
+        </script>
+        <div id="chartdiv04">
+        </div>
+        <script>
+         var chartData = [{
+                                                "date": "April 2018",
+                                                "distance": 0,
+                                                "latitude": 0,
+                                            }, {
+                                                "date": "November 2018",
+                                                "distance": 15.3,
+                                                "latitude": 0.5,
+                                            }, {
+                                                "date": "April 2019",
+                                                "distance": 39,
+                                                "latitude": 1,
+                                            }, {
+                                                "date": "November 2019",
+                                                "distance": 86.4,
+                                                "latitude": 3,
+                                            }, {
+                                                "date": "April 2020",
+                                                "distance": 139.2,
+                                                "latitude": 5,
+                                            }, {
+                                                "date": "November 2020",
+                                                "distance": 160,
+                                                "latitude": 6,
+                                            }, {
+                                                "date": "April 2021",
+                                                "distance": 200,
+                                                "latitude": 8,
+                                                "bulletClass": "lastBullet"
+                                            }, {
+                                                "date": "November 2021",
+                                                "distance": 310,
+                                                "latitude": 9,
+                                                "bulletClass": "lastBullet"
+                                            }, {
+                                                "date": "April 2022",
+                                                "distance": 400,
+                                                "latitude": 9,
+                                                "bulletClass": "lastBullet"
+                                            }, {
+                                                "date": "November 2022",
+                                                "distance": 450,
+                                                "latitude": 12,
+                                                "bulletClass": "lastBullet"
+                                            }];
+                                            var chart = AmCharts.makeChart("chartdiv04", {
+                                                "type": "serial",
+                                                "theme": "light",
+                                                "dataDateFormat": "YYYY",
+                                                "dataProvider": chartData,
+                                                "addClassNames": true,
+                                                "startDuration": 1,
+                                                "color": "#8b959b",
+                                                "marginLeft": 0,
+                                                "categoryField": "date",
+                                                "categoryAxis": {
+                                                    "parseDates": false,
+                                                    "minPeriod": "DD",
+                                                    "autoGridCount": false,
+                                                    "gridCount": 50,
+                                                    "gridAlpha": 0.1,
+                                                    "gridColor": "#FFFFFF",
+                                                    "axisColor": "#053361",
+                                                    "dateFormats": [{
+                                                        "period": 'DD',
+                                                        "format": 'DD'
+                                                    }, {
+                                                        "period": 'WW',
+                                                        "format": 'MMM DD'
+                                                    }, {
+                                                        "period": 'MM',
+                                                        "format": 'MMM'
+                                                    }, {
+                                                        "period": 'YYYY',
+                                                        "format": 'YYYY'
+                                                    }]
+                                                },
+                                                "valueAxes": [{
+                                                    "id": "a1",
+                                                    "title": "million",
+
+                                                }, {
+                                                    "id": "a2",
+                                                    "position": "right",
+                                                    "gridAlpha": 0,
+                                                    "axisAlpha": 0,
+                                                    "labelsEnabled": true
+                                                }, {
+                                                    "id": "a3",
+                                                    "title": "duration",
+                                                    "position": "right",
+                                                    "gridAlpha": 0,
+                                                    "axisAlpha": 0,
+                                                    "inside": true,
+                                                    "duration": "YY",
+                                                    "durationUnits": {
+                                                        "DD": "d. ",
+                                                        "hh": "h ",
+                                                        "mm": "min",
+                                                        "ss": ""
+                                                    }
+                                                }],
+                                                "graphs": [{
+                                                    "id": "g1",
+                                                    "valueField": "latitude",
+                                                    "title": "Advertising Revenue",
+                                                    "type": "column",
+                                                    "fillAlphas": 0.9,
+                                                    "valueAxis": "a1",
+                                                    "balloonText": "$[[value]]",
+                                                    "legendValueText": "$[[value]]  ",
+                                                    "legendPeriodValueText": " Token Price ",
+                                                    "lineColor": "#053361",
+                                                    "alphaField": "alpha",
+                                                    "labelText": "$[[latitude]]"
+                                                }, {
+                                                    "id": "g2",
+                                                    "valueField": "distance",
+                                                    "classNameField": "bulletClass",
+                                                    "title": "Total Revenue",
+                                                    "type": "line",
+                                                    //"valueAxis": "a2",
+                                                    "lineColor": "#053361",
+                                                    "lineThickness": 1,
+                                                    "legendValueText": "[[value]]/[[description]]",
+                                                    "descriptionField": "townName",
+                                                    "bullet": "round",
+                                                    "bulletSizeField": "townSize",
+                                                    "bulletBorderColor": "#786c56",
+                                                    "bulletBorderAlpha": 1,
+                                                    "bulletBorderThickness": 2,
+                                                    "bulletColor": "#e71e62",
+                                                    "labelText": "[[townName2]]",
+                                                    "labelPosition": "right",
+                                                    "balloonText": "$[[value]]",
+                                                    "showBalloon": true,
+                                                    "animationPlayed": true,
+                                                    "labelText": "$[[distance]]"
+                                                }],
+                                                "chartCursor": {
+                                                    "zoomable": false,
+                                                    "categoryBalloonDateFormat": "YY",
+                                                    "cursorAlpha": 0,
+                                                    "valueBalloonsEnabled": true
+                                                },
+                                                "legend": {
+                                                    "bulletType": "round",
+                                                    "equalWidths": true,
+                                                    "valueWidth": 120,
+                                                    "useGraphSettings": true,
+                                                    //"color": "#FFFFFF"
+                                                }
+                                            });
+        </script>
+       </div>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12">
+       <h1 style="text-align:center; padding-bottom: 27px;">
+        <b>
+         PARTNERS
+        </b>
+       </h1>
+      </div>
+      <div class="col-lg-4 text-center">
+       <a href="https://verifiedtopics.com/" target="_blank">
+        <img class="img-fluid" src="img/verifiedtopics.png" style="padding: 0px 50px 0px 50px;"/>
+       </a>
+       <a href="https://verifiedtopics.com/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-4 text-center">
+       <a href="https://coinigraphy.com/en/" target="_blank">
+        <img class="img-fluid" src="img/coinigraphy.png" style="padding: 0px 50px 0px 50px;"/>
+       </a>
+       <a href="https://coinigraphy.com/en/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-4 text-center">
+       <a href="https://www.bitcoinblackhat.com/" target="_blank">
+        <img class="img-fluid" src="img/bitcoinblackhat.png" style="padding: 0px 50px 0px 50px;"/>
+       </a>
+       <a href="https://www.bitcoinblackhat.com/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-4 text-center">
+       <a href="https://www.coinmarkets.net/index.php?page=" target="_blank">
+        <img class="img-fluid" src="img/coinmarkets.png" style="padding: 0px 50px 0px 50px;"/>
+       </a>
+       <a href="https://www.coinmarkets.net/index.php?page=" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-4 text-center">
+       <a href="http://topicoagency.net/" target="_blank">
+        <img class="img-fluid" src="img/topicoagency.png" style="padding: 0px 50px 0px 50px;"/>
+       </a>
+       <a href="http://topicoagency.net/" target="_blank">
+       </a>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <br/>
+    <div id="howto">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-12">
+        <h1 style="text-align:center; padding-bottom: 8px;">
+         <b>
+          Videos
+         </b>
+        </h1>
+       </div>
+       <div class="col-lg-2">
+       </div>
+       <div class="col-lg-8 text-center">
+        <h4 class="text-center">
+         How to Purchase Parkres (PARK) Tokens?
+        </h4>
+        <br/>
+        <iframe allow="autoplay; encrypted-media" allowfullscreen="" class="video1" frameborder="0" src="https://www.youtube.com/embed/dNm3rV0xLlM" target="_blank">
+        </iframe>
+       </div>
+       <div class="col-lg-2">
+       </div>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12">
+       <h1 style="text-align:center; padding-bottom: 40px;">
+        <b>
+         BLOGS, MEDIA &amp; PRESS RELEASES
+        </b>
+       </h1>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://investor.wallstreetselect.com/wss/news/read/36414809" target="_blank">
+        <img class="img-fluid" src="img/wallstreet.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://investor.wallstreetselect.com/wss/news/read/36414809" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://thewajournal.com/Technology/parkres%E2%80%8A-%E2%80%8Adecentralized-parking-reservation-system/" target="_blank">
+        <img class="img-fluid" src="img/Washington.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://thewajournal.com/Technology/parkres%E2%80%8A-%E2%80%8Adecentralized-parking-reservation-system/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://finance.dailyherald.com/dailyherald/news/read/36414809/Parkres?--?Decentralized_Parking_Reservation_System" target="_blank">
+        <img class="img-fluid" src="img/dailyhearld.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://finance.dailyherald.com/dailyherald/news/read/36414809/Parkres?--?Decentralized_Parking_Reservation_System" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="https://markets.financialcontent.com/ibtimes/news/read/36414809" target="_blank">
+        <img class="img-fluid" src="img/ibt.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="https://markets.financialcontent.com/ibtimes/news/read/36414809" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://thevegastimes.com/Technology/parkres%E2%80%8A-%E2%80%8Adecentralized-parking-reservation-system/" target="_blank">
+        <img class="img-fluid" src="img/thevegas.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://thevegastimes.com/Technology/parkres%E2%80%8A-%E2%80%8Adecentralized-parking-reservation-system/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="https://markets.financialcontent.com/gafri/news/read/36414809/Parkres?--?Decentralized_Parking_Reservation_System" target="_blank">
+        <img class="img-fluid" src="img/greatamerican.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="https://markets.financialcontent.com/gafri/news/read/36414809/Parkres?--?Decentralized_Parking_Reservation_System" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://www.nbcrightnow.com/story/38347767/parkresdecentralized-parking-reservation-system" target="_blank">
+        <img class="img-fluid" src="img/nbc.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://www.nbcrightnow.com/story/38347767/parkresdecentralized-parking-reservation-system" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="https://markets.financialcontent.com/investplace/news/read/36414809/Parkres?--?Decentralized_Parking_Reservation_System" target="_blank">
+        <img class="img-fluid" src="img/investorsplace.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="https://markets.financialcontent.com/investplace/news/read/36414809/Parkres?--?Decentralized_Parking_Reservation_System" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://markets.siliconinvestor.com/siliconinvestor/news/read/36414809" target="_blank">
+        <img class="img-fluid" src="img/silicon.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://markets.siliconinvestor.com/siliconinvestor/news/read/36414809" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://shanghaimirror.com/parkres%E2%80%8A-%E2%80%8Adecentralized-parking-reservation-system" target="_blank">
+        <img class="img-fluid" src="img/Shanghai-Mirror.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://shanghaimirror.com/parkres%E2%80%8A-%E2%80%8Adecentralized-parking-reservation-system" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://isprofits.com/parkres/" target="_blank">
+        <img class="img-fluid" src="img/financespot.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://isprofits.com/parkres/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="https://coinworldstory.com/parkres-org/" target="_blank">
+        <img class="img-fluid" src="img/coinworld.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="https://coinworldstory.com/parkres-org/" target="_blank">
+       </a>
+      </div>
+      <div class="col-lg-3 text-center">
+       <a href="http://www.24-7pressrelease.com/press-release/453848/parkresdecentralized-parking-reservation-system" target="_blank">
+        <img class="img-fluid" src="img/24HRS.png" style="padding: 20px 35px 20px 35px;"/>
+       </a>
+       <a href="http://www.24-7pressrelease.com/press-release/453848/parkresdecentralized-parking-reservation-system" target="_blank">
+       </a>
+      </div>
+     </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="footer-top">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-4 mar-top-20">
+        <img alt="logo" class="img-fluid" src="img/footer_logo1.png" style="margin-top: -14PX;"/>
+        <p>
+        </p>
+        <p>
+         We are a young, innovative company driven by the passion for technology and customer satisfaction. We believe that the sharing economy can help cities become friendlier, cleaner and happier for everyone.
+        </p>
+       </div>
+       <div class="col-md-5 mar-top-20">
+        <h3>
+         CONTACT US
+        </h3>
+        <ul style="color: #fff;font-size: 14px;">
+         <li>
+          <strong>
+           Office Address:
+          </strong>
+          Exchange Tower, 130 King Street West, Suite 1800, Toronto, M5X 1E3, Canada
+         </li>
+         <li style="margin-top: 12px;">
+          <strong>
+           Email Address:
+          </strong>
+          <a class="__cf_email__" data-cfemail="177e797178576776657c65726439786570" href="/cdn-cgi/l/email-protection">
+           [email protected]
+          </a>
+         </li>
+         <li style="margin-top: 12px;">
+          <strong>
+           Web Site:
+          </strong>
+          https://parkres.org/
+         </li>
+        </ul>
+       </div>
+       <div class="col-md-3 mar-top-20">
+        <h3>
+         GET SOCIAL
+        </h3>
+        <div class="social-icons">
+         <a href="https://twitter.com/ParkresICO" target="_blank">
+          <i aria-hidden="true" class="fa fa-twitter">
+          </i>
+         </a>
+         <a href="https://www.linkedin.com/company/parkresico/" target="_blank">
+          <i aria-hidden="true" class="fa fa-linkedin">
+          </i>
+         </a>
+         <a href="https://www.facebook.com/parkresico/" target="_blank">
+          <i aria-hidden="true" class="fa fa-facebook">
+          </i>
+         </a>
+         <a href="https://t.me/parkres" target="_blank">
+          <i aria-hidden="true" class="fa fa-telegram">
+          </i>
+         </a>
+         <br/>
+         <a href="https://github.com/ParkresOrg" target="_blank">
+          <i aria-hidden="true" class="fa">
+           <img src="img/sc7.png" style="margin-top: 7px;"/>
+          </i>
+         </a>
+         <a href="https://bitcointalk.org/index.php?topic=3671573.msg36748666#msg36748666" target="_blank">
+          <i aria-hidden="true" class="fa">
+           <img src="img/bitcoin_pro.png" style="margin-top: 7px;"/>
+          </i>
+         </a>
+         <a href="https://www.reddit.com/user/parkresico/" target="_blank">
+          <i aria-hidden="true" class="fa">
+           <img src="img/reggit.png" style="margin-top: 7px;"/>
+          </i>
+         </a>
+         <a href="https://medium.com/@parkresico/parkres-decentralized-parking-reservation-system-c0a584ff6e41" target="_blank">
+          <i aria-hidden="true" class="fa">
+           <img src="img/medium.png" style="margin-top: 7px;"/>
+          </i>
+         </a>
+        </div>
+        <div class="mar-top-30">
+         <a class="Button whitepaper-btn trs" href="Parkreswhitepaper.pdf" target="_blank">
+          Download Whitepaper
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <div class="container">
+      <div class="row">
+       <div class="col-sm-12">
+        Copyright © 2018
+        <a href="https://parkres.org/" style="color:#e71e62;">
+         PARKRES
+        </a>
+        , All rights reserved
+       </div>
+       <div class="scrollup">
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+   <div class="clearfix">
+   </div>
+   <div class="modal fade" id="privateinvesters" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header1">
+       <button class="close" data-dismiss="modal" type="button">
+        ×
+       </button>
+       <h4 class="modal-title">
+        Registration For Private Investors
+       </h4>
+      </div>
+      <div id="updatepanel3">
+       <div class="modal-body">
+        <div class="msg-investor">
+        </div>
+        <div class="row">
+         <div class="col-md-6">
+          <div class="form-group">
+           <label>
+            Full Name
+           </label>
+           <span style="color: red">
+            *
+           </span>
+           <input class="form-control" id="Ifullname" name="Ifullname" type="text"/>
+          </div>
+         </div>
+         <div class="col-md-6">
+          <div class="form-group">
+           <label>
+            Mobile No.
+           </label>
+           <span style="color: red">
+            *
+           </span>
+           <input class="form-control" id="Imobile" name="Imobile" type="text"/>
+          </div>
+         </div>
+        </div>
+        <div class="form-group">
+         <label>
+          Email ID
+         </label>
+         <span style="color: red">
+          *
+         </span>
+         <input class="form-control" id="IEmail" name="IEmail" type="text"/>
+        </div>
+        <div class="form-group">
+         <label>
+          Password
+         </label>
+         <span style="color: red">
+          *
+         </span>
+         <input class="form-control" id="IPassword" name="IPassword" type="password"/>
+        </div>
+        <div class="form-group">
+         <label>
+          Ethereum Address
+         </label>
+         <span style="color: red">
+          *
+         </span>
+         <input class="form-control" id="IEthereum" name="IEthereum" type="text"/>
+        </div>
+        <div class="form-group">
+         <label>
+          <input id="chkSelect" name="chkSelect" type="checkbox"/>
+          <span style="font-size: 14px;">
+           Please accept PARKRES
+           <a href="terms-of-use.aspx" target="_blank">
+            <u>
+             Terms and Condition
+            </u>
+           </a>
+           and
+           <a href="privacy.aspx" target="_blank">
+            <u>
+             Privacy Policy
+            </u>
+           </a>
+           .
+          </span>
+         </label>
+        </div>
+        <div class="form-group">
+         <a class="btn btn11 wt" href="javascript:__doPostBack('btnSubmit','')" id="btnSubmit">
+          Join Now
+         </a>
+        </div>
+        <div class="form-group text-center">
+         <h5 style="color: #f00;">
+          <u>
+           Note
+          </u>
+          : Minimum purchase during private sale 1000 PARK tokens.
+         </h5>
+        </div>
+       </div>
+      </div>
+      <div id="UpdateProgress2" style="display:none;">
+       <div class="process-overealy">
+       </div>
+       <div class="process-box">
+        Please wait...
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="wishlist" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header1">
+       <button class="close" data-dismiss="modal" type="button">
+        ×
+       </button>
+       <h4 class="modal-title">
+        Whitelist Registration
+       </h4>
+      </div>
+      <div id="updatepanel1">
+       <div class="modal-body">
+        <div class="msg-investor">
+        </div>
+        <div class="row">
+         <div class="col-md-6">
+          <div class="form-group">
+           <label>
+            Full Name
+           </label>
+           <span style="color: red">
+            *
+           </span>
+           <input class="form-control" id="wfulname" name="wfulname" type="text"/>
+          </div>
+         </div>
+         <div class="col-md-6">
+          <div class="form-group">
+           <label>
+            Mobile No.
+           </label>
+           <span style="color: red">
+            *
+           </span>
+           <input class="form-control" id="wmobile" name="wmobile" type="text"/>
+          </div>
+         </div>
+        </div>
+        <div class="form-group">
+         <label>
+          Email ID
+         </label>
+         <span style="color: red">
+          *
+         </span>
+         <input class="form-control" id="wemail" name="wemail" type="text"/>
+        </div>
+        <div class="form-group">
+         <label>
+          Password
+         </label>
+         <span style="color: red">
+          *
+         </span>
+         <input class="form-control" id="wpassword" name="wpassword" type="password"/>
+        </div>
+        <div class="form-group">
+         <label>
+          Ethereum Address
+         </label>
+         <span style="color: red">
+          *
+         </span>
+         <input class="form-control" id="wethaddress" name="wethaddress" type="text"/>
+        </div>
+        <div class="form-group">
+         <label>
+          <input id="wterms" name="wterms" type="checkbox"/>
+          <span style="font-size: 14px;">
+           Please accept PARKRES
+           <a href="terms-of-use.aspx" target="_blank">
+            <u>
+             Terms and Condition
+            </u>
+           </a>
+           and
+           <a href="privacy.aspx" target="_blank">
+            <u>
+             Privacy Policy
+            </u>
+           </a>
+           .
+          </span>
+         </label>
+        </div>
+        <div class="form-group">
+         <a class="btn btn11 wt" href="javascript:__doPostBack('wbutton','')" id="wbutton">
+          Join Now
+         </a>
+        </div>
+       </div>
+      </div>
+      <div id="UpdateProgress1" style="display:none;">
+       <div class="process-overealy">
+       </div>
+       <div class="process-box">
+        Please wait...
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-md">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-body" style="padding: 3px 4px!important">
+       <img class="img-responsive" src="popup/banner1.jpg" style="width: 100%;"/>
+      </div>
+      <div class="modal-footer" style="padding: 2px!important;">
+       <button class="btn btn-default" data-dismiss="modal" style="font-weight: 700;padding: 0.2rem 0.45rem;font-size: 0.8rem;" type="button">
+        X
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script src="/js/jquery-3.1.0.js">
+   </script>
+   <script src="/js/modernizr-2.7.2.js">
+   </script>
+   <script src="/js/TweenMax.min.js">
+   </script>
+   <script src="/js/jquery-parallax.js">
+   </script>
+   <script type="text/javascript">
+    $(document).mousemove(function (e) {
+                //$('.background').parallax(-30, e);
+                //$('.cloud1').parallax(5, e);
+                //$('.cloud2').parallax(20, e);
+                //$('.cloud3').parallax(30, e);
+                //$('.clouds').parallax(10, e);
+            });
+   </script>
+   <script src="/popup/jquery.colorbox-min.js">
+   </script>
+   <script src="/popup/jquery.colorbox.js">
+   </script>
+   <script type="text/javascript">
+    var jq = $.noConflict();
+            jq(document).ready(function () {
+                $("#myModal").modal("show");
+                //setTimeout(function () {
+                //    jq.fn.colorbox({
+                //        href: "/popup/banner.jpg", open: true,
+                //        onClosed: function () {
+                //            ShowPopup();
+                //        }
+                //    });
+                //}, 1000);
+            });
+   </script>
+   <script src="/js/wow.js" type="text/javascript">
+   </script>
+   <script src="/js/particles.min.js" type="text/javascript">
+   </script>
+   <script async="" src="//cdn.ywxi.net/js/1.js" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    function AlertMessage(container, msg, typ) {
+                if (typ == 1) {
+                    $(container).html('<div class=\"alert alert-block alert-success\" style=\"color:#4caf50\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span></button><strong></strong> ' + msg + '</div>');
+                } else if (typ == 2) {
+                    $(container).html('<div class=\"alert alert-block alert-danger\" style=\"color:#f44237\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span></button><strong></strong> ' + msg + '</div>');
+                } else {
+                    $(container).html('<div class=\"alert alert-block alert-info\" style=\"color:#f07c22\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span></button><strong></strong> ' + msg + '</div>');
+                }
+            }
+   </script>
+   <script type="text/javascript">
+    $(document).ready(function () {
+                particlesJS("particles-js2", {
+                    "particles": {
+                        "number": {
+                            "value": 200,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#fff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#fff"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            },
+                            "image": {
+                                "src": "img/github.svg",
+                                "width": 100,
+                                "height": 100
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 1,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 30,
+                            "color": "#fff",
+                            "opacity": 0.4,
+                            "width": 2
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": false,
+                                "mode": "repulse"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 400,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            });
+   </script>
+   <script src="/js/flexslider.js" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    $(function () {
+                $(".b2bx-modal-video").on("hidden.bs.modal", function () {
+                    var $this = $(this).find("iframe"),
+                        tmp = $this.attr("src");
+
+                    $this.attr("src", "");
+                    $this.attr("src", tmp);
+                });
+            });
+            $(function () {
+                try {
+                    $('.flexslider').flexslider({
+                        animation: 'slide',
+                        animationLoop: false,
+                        slideshow: false,
+                        itemWidth: 210,
+                        itemMargin: 5,
+                        minItems: 4,
+                        maxItems: 4,
+                        slideshowSpeed: 3000,
+                        animationSpeed: 1000,
+                    });
+                } catch (e) { }
+            });
+   </script>
+   <script src="/js/smoothscroll.js">
+   </script>
+   <script src="/js/custom.js">
+   </script>
+   <script>
+    $(document).ready(function () {
+                $("#AgreeCheck").click(function () {
+                    if (this.checked)
+                        $("#SubmitButton").removeAttr("disabled");
+                    else
+                        $("#SubmitButton").attr("disabled", "disabled");
+                });
+            });
+   </script>
+   <script type="text/javascript">
+    function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+            (function () {
+                var gtConstEvalStartTime = new Date();
+
+                function d(b) {
+                    var a = document.getElementsByTagName("head")[0];
+                    a || (a = document.body.parentNode.appendChild(document.createElement("head")));
+                    a.appendChild(b)
+                }
+
+                function _loadJs(b) {
+                    var a = document.createElement("script");
+                    a.type = "text/javascript";
+                    a.charset = "UTF-8";
+                    a.src = b;
+                    d(a)
+                }
+
+                function _loadCss(b) {
+                    var a = document.createElement("link");
+                    a.type = "text/css";
+                    a.rel = "stylesheet";
+                    a.charset = "UTF-8";
+                    a.href = b;
+                    d(a)
+                }
+
+                function _isNS(b) {
+                    b = b.split(".");
+                    for (var a = window, c = 0; c < b.length; ++c)
+                        if (!(a = a[b[c]])) return !1;
+                    return !0
+                }
+
+                function _setupNS(b) {
+                    b = b.split(".");
+                    for (var a = window, c = 0; c < b.length; ++c) a.hasOwnProperty ? a.hasOwnProperty(b[c]) ? a = a[b[c]] : a = a[b[c]] = {} : a = a[b[c]] || (a[b[c]] = {});
+                    return a
+                }
+                window.addEventListener && "undefined" == typeof document.readyState && window.addEventListener("DOMContentLoaded", function () {
+                    document.readyState = "complete"
+                }, !1);
+                if (_isNS('google.translate.Element')) {
+                    return
+                } (function () {
+                    var c = _setupNS('google.translate._const');
+                    c._cest = gtConstEvalStartTime;
+                    gtConstEvalStartTime = undefined;
+                    c._cl = 'en';
+                    c._cuc = 'googleTranslateElementInit';
+                    c._cac = '';
+                    c._cam = '';
+                    c._ctkk = eval('((function(){var a\x3d814543065;var b\x3d2873925779;return 414629+\x27.\x27+(a+b)})())');
+                    var h = 'translate.googleapis.com';
+                    var s = (true ? 'https' : window.location.protocol == 'https:' ? 'https' : 'http') + '://';
+                    var b = s + h;
+                    c._pah = h;
+                    c._pas = s;
+                    c._pbi = b + '/translate_static/img/te_bk.gif';
+                    c._pci = b + '/translate_static/img/te_ctrl3.gif';
+                    c._pli = b + '/translate_static/img/loading.gif';
+                    c._plla = h + '/translate_a/l';
+                    c._pmi = b + '/translate_static/img/mini_google.png';
+                    c._ps = b + '/translate_static/css/translateelement.css';
+                    c._puh = 'translate.google.com';
+                    _loadCss(c._ps);
+                    _loadJs(b + '/translate_static/js/element/main.js');
+                })();
+            })();
+   </script>
+   <script type="text/javascript">
+    /* ---- particles.js config ---- */
+
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 380,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#00bdbf"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#00bdbf"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 100,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 50,
+                        "color": "#00bdbf",
+                        "opacity": 0.3,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": false,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": false,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 10,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 600,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 1
+                        },
+                        "repulse": {
+                            "distance": 500,
+                            "duration": 5
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": false
+            });
+
+            /* ---- stats.js config ---- */
+            try {
+                var count_particles, stats, update;
+                stats = new Stats;
+                stats.setMode(0);
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0px';
+                stats.domElement.style.top = '0px';
+                document.body.appendChild(stats.domElement);
+                count_particles = document.querySelector('.js-count-particles');
+                update = function () {
+                    stats.begin();
+                    stats.end();
+                    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                    }
+                    requestAnimationFrame(update);
+                };
+                requestAnimationFrame(update);
+            }
+            catch (e) { }
+   </script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async="" src="//www.googletagmanager.com/gtag/js?id=UA-118364480-1">
+   </script>
+   <script>
+    window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-118364480-1');
+   </script>
+   <script type="text/javascript">
+    $(document).ready(function () {
+               
+
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('.scrollup').fadeIn();
+                    } else {
+                        $('.scrollup').fadeOut();
+                    }
+                });
+
+                $('.scrollup').click(function () {
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+
+            });
+   </script>
+   <script type="text/javascript">
+    //<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"updatepanel3","displayAfter":0,"dynamicLayout":true}, null, null, $get("UpdateProgress2"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"updatepanel1","displayAfter":0,"dynamicLayout":true}, null, null, $get("UpdateProgress1"));
+});
+//]]>
+   </script>
+  </form>
+ </body>
+</html>

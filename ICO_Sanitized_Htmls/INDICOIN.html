@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119064051-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119064051-1');
+  </script>
+ </head>
+ <body>
+  <p>
+   Indicoin: Blockchain Redefining Social Service
+   <meta content="" name="description"/>
+   <meta content="" name="author"/>
+   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+   <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport"/>
+   <meta content="img/ogimage.jpg" property="og:image"/>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"/>
+   <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+   <link href="css/assets.min.css" rel="stylesheet"/>
+   <link href="css/style.min.css" rel="stylesheet"/>
+   <link href="../../fonts.googleapis.com/css.css" rel="stylesheet"/>
+   <link href="js/flipclock/flipclock.css" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+   <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+   <script src="js/myjs.js">
+   </script>
+  </p>
+  <!--<div class="pre-loaderx" align="center">
+<i aria-hidden="true" class="fa fa-3x fa-pulse fa-spinner pre-x"></i>
+</div>-->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="" defer="" src="https://apis.google.com/js/platform.js">
+  </script>
+  <!-- facebook JDK initialisation in the website -->
+  <div id="fb-root">
+  </div>
+  <script>
+   (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div id="loadx" style="display:none;padding:20%;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:5000">
+   <center>
+    <div align="center" style="width:80px;padding:20px;background-color:white;border-radius:5px;">
+     <i aria-hidden="true" class="fa fa-pulse fa-spinner" style="font-size:18px">
+     </i>
+    </div>
+   </center>
+  </div>
+  <div class="mox" id="ether">
+   <center>
+    <div class="loginbox" style="height:200px;">
+     <div class="login-head">
+      <a class="close-btn" href="#q">
+       <i aria-hidden="true" class="fa fa-close">
+       </i>
+      </a>
+     </div>
+     <div class="login-body">
+      <div class="col-md-12">
+       <p align="center" style="font-size:20px">
+        My Ether Address
+       </p>
+      </div>
+      <div align="center" class="dgi-form-control">
+       <div class="col-md-12">
+        <p style="color:black;font-size:18px;text-align:center;word-wrap: break-word;">
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </center>
+  </div>
+  <div class="mox" id="etherinput">
+   <center>
+    <div class="loginbox" style="height:250px;">
+     <form action="" enctype="multipart/form-data" id="ether-form" method="post">
+      <div class="login-head">
+       <a class="close-btn" href="#q">
+        <i aria-hidden="true" class="fa fa-close">
+        </i>
+       </a>
+      </div>
+      <div class="login-body">
+       <div class="col-md-12">
+        <p align="center" style="font-size:20px">
+         Input Your Ether Address
+        </p>
+       </div>
+       <div align="center" class="dgi-form-control">
+        <div class="col-md-12">
+         <input id="user_ether" placeholder="eg: 1X0002045789WGT2122" required="" type="text"/>
+        </div>
+       </div>
+       <div align="center" class="col-md-12">
+        <button class="rocket-btn rocket-btn-animated-icon rocket-btn-width" id="save-ether-btn" onclick="save_ether()" type="submit">
+         Save
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </center>
+  </div>
+  <div class="mox" id="loginx">
+   <center>
+    <div class="loginbox">
+     <form action="" enctype="multipart/form-data" id="login-form" method="post">
+      <div class="login-head">
+       <a class="close-btn" href="#close">
+        <i aria-hidden="true" class="fa fa-close">
+        </i>
+       </a>
+       <div class="login-icon">
+        <i aria-hidden="true" class="fa fa-user-o fa-3x">
+        </i>
+       </div>
+      </div>
+      <div class="login-body">
+       <div class="col-md-12">
+        <p align="center" style="font-size:30px">
+         Log in
+        </p>
+        <p align="center" style="font-size:15px;margin-top:-20px">
+         Haven’t joined Indicoin yet?
+         <br/>
+         <br/>
+         <a class="rocket-btn" href="#signupx" style="margin-top:-10px;">
+          Sign up today
+         </a>
+        </p>
+        <p align="center" id="output-login" style="height:10px">
+        </p>
+       </div>
+       <div align="center" class="dgi-form-control">
+        <div class="col-md-12">
+         <input id="user_email" placeholder="you@example.com" required="" type="email"/>
+        </div>
+        <div class="col-md-12">
+         <input id="user_password" placeholder="password(e.g.abcd@&amp;1234)" required="" type="password"/>
+        </div>
+       </div>
+       <div>
+        <p align="center">
+         <a href="#forgotpass">
+          Cant login?
+         </a>
+        </p>
+       </div>
+       <div align="center" class="col-md-12">
+        <button class="rocket-btn rocket-btn-animated-icon rocket-btn-width" id="login-btn" onclick="login()" type="submit">
+         Login
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </center>
+  </div>
+  <div class="mox" id="signupx">
+   <center>
+    <div id="up-el">
+     <form action="" enctype="multipart/form-data" id="signup-form" method="post">
+      <div class="col-md-12">
+       <a href="#close" style="float:right;">
+        <i aria-hidden="true" class="fa fa-close">
+        </i>
+       </a>
+       <p align="center" style="font-size:30px;padding-top:10px">
+        Sign Up
+       </p>
+       <p align="center" style="font-size:15px">
+        Already have an account?
+        <a href="#loginx">
+         Sign in
+        </a>
+       </p>
+       <p align="center" id="output-signup" style="font-size:12px;height:30px;">
+       </p>
+      </div>
+      <div class="col-md-12">
+       <input id="activeInput" type="hidden" value=""/>
+       <div align="center" class="col-md-12" style="margin-top:-30px">
+        <div class="col-md-12">
+         <select id="test-dropdown" onchange="choice1(this)">
+          <option value="">
+           Are you an ? *
+          </option>
+          <option value="Individual">
+           Individual
+          </option>
+          <option value="Organisation">
+           Organisation
+          </option>
+         </select>
+        </div>
+        <div class="col-md-12" id="u_indv" style="display:none">
+         <input id="r_name" placeholder="Your Name*" type="text"/>
+         <input id="r_phone" maxlength="10" placeholder="Mobile (optional)" type="number"/>
+        </div>
+        <div class="col-md-12" id="u_org" style="display:none">
+         <input id="r_org_name" placeholder="Organisation Name*" type="text"/>
+         <input id="r_rep_name" placeholder="Representatives Name*" type="text"/>
+         <input id="r_rep_contact" maxlength="10" placeholder="Representatives Contact" type="number"/>
+        </div>
+        <div class="col-md-12">
+         <input id="r_email" placeholder="you@example.com*" required="" type="email"/>
+        </div>
+        <div class="col-md-12">
+         <input id="r_erc20" placeholder="Enter ERC20 Token Address" type="text"/>
+        </div>
+        <div class="col-md-12">
+         <input id="r_telegram" placeholder="Your Telegram Handle" type="text"/>
+        </div>
+        <div class="col-md-12">
+         <input id="r_pass" placeholder="password*(e.g.abcd@&amp;1234)" required="" type="password"/>
+        </div>
+       </div>
+       <div align="center" class="col-md-12">
+        <button class="rocket-btn rocket-btn-animated-icon rocket-btn-width" id="signup-btn" onclick="registerx()" type="submit">
+         Register
+        </button>
+        <p align="center" style="margin-top:10px;">
+         <i style="font-size:12px;">
+          By registering you agree with our terms &amp; conditions.
+         </i>
+        </p>
+       </div>
+      </div>
+     </form>
+    </div>
+   </center>
+  </div>
+  <div class="startBox" id="start_campaign">
+   <div class="innerbox">
+    <a class="close" href="#">
+     <i aria-hidden="true" class="fa fa-close">
+     </i>
+    </a>
+    <span class="start-icon">
+     <i aria-hidden="true" class="fa fa-user fa-3x">
+     </i>
+    </span>
+    <h1>
+     Are You
+    </h1>
+    <a class="start-btn" href="start_campaign/?reg=indv">
+     An Individual
+    </a>
+    <br/>
+    <br/>
+    <tt>
+     OR
+    </tt>
+    <br/>
+    <br/>
+    <a class="start-btn" href="start_campaign/?reg=org">
+     An Organisation
+    </a>
+    <br/>
+    <br/>
+    <br/>
+   </div>
+  </div>
+  <div class="mox" id="joinnow">
+   <center>
+    <div class="innerbox">
+     <form action="join.php" method="post">
+      <table>
+       <tr>
+        <td align="center">
+         <h3 class="r-head">
+          Join The Token Sale
+          <a href="#">
+           <i aria-hidden="true" class="fa fa-close">
+           </i>
+          </a>
+         </h3>
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+         Join now for getting benefits immediately.
+         <br/>
+         <br/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="j_email" placeholder="Enter your email" required="" type="email"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="j_eth" placeholder="Enter ETH Address(Optional)" type="text"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="j_amount" placeholder="Enter approximate contribution amount" required="" type="number"/>
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+         <button class="rocket-btn rocket-btn-animated-icon rocket-btn-width" type="submit">
+          <span class="rocket-btn-icon-wrap">
+           <i aria-hidden="true" class="fa fa-send-o">
+           </i>
+          </span>
+          <span class="rocket-btn-text-wrap">
+           Join Now
+          </span>
+         </button>
+        </td>
+       </tr>
+      </table>
+     </form>
+    </div>
+   </center>
+  </div>
+  <div class="mox" id="register">
+   <center>
+    <div class="innerbox">
+     <form action="register.php" method="post">
+      <table>
+       <tr>
+        <td align="center">
+         <h3 class="r-head">
+          Register For Token Sale
+          <a href="#">
+           <i aria-hidden="true" class="fa fa-close">
+           </i>
+          </a>
+         </h3>
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+         Register now for updates regarding the Token Sale
+         <br/>
+         <br/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="r_name" placeholder="Enter name" required="" type="text"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="r_email" placeholder="Enter your email" required="" type="email"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="r_phone" placeholder="Enter your phone number (optional)" type="number"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <input name="r_amount" placeholder="Enter approximate contribution amount" required="" type="number"/>
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+         <button class="rocket-btn rocket-btn-animated-icon rocket-btn-width" type="submit">
+          <span class="rocket-btn-icon-wrap">
+           <i aria-hidden="true" class="fa fa-send-o">
+           </i>
+          </span>
+          <span class="rocket-btn-text-wrap">
+           Subscribe Now
+          </span>
+         </button>
+        </td>
+       </tr>
+      </table>
+     </form>
+    </div>
+   </center>
+  </div>
+  <header class="scrolled">
+   <div class="container">
+    <div class="row">
+     <a class="logo" href="index.php">
+      <img alt="Rocket" class="top-logo" src="img/logos/logo_black.png"/>
+     </a>
+     <a class="menutoggle" href="#a">
+      <div class="bar" style="margin-top:10px">
+      </div>
+     </a>
+     <ul class="menu">
+      <li class="top-bar-wrap">
+       <a class="close-icon-wrap" href="../../neonunicorns_default.html">
+        <div class="close-icon">
+        </div>
+       </a>
+      </li>
+      <li>
+       <a href="index.php">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="index.php#features">
+        Features
+       </a>
+      </li>
+      <li>
+       <a href="index.php#roadmap">
+        RoadMap
+       </a>
+      </li>
+      <li>
+       <a href="index.php#documentation">
+        Documentation
+       </a>
+      </li>
+      <li>
+       <a href="team.php">
+        Team
+       </a>
+      </li>
+      <li>
+       <a href="blog.php">
+        Blog
+       </a>
+      </li>
+      <li>
+       <a href="guide.php">
+        Guide
+       </a>
+      </li>
+      <li>
+       <a href="#loginx">
+        Start Campaign
+       </a>
+      </li>
+      <li>
+       <a href="explore.php">
+        Explore Campaign
+       </a>
+      </li>
+      <li>
+       <a href="#loginx" title="login">
+        Login
+       </a>
+      </li>
+     </ul>
+     <script>
+      var menu = document.getElementsByClassName("menu")[0];
+	 if(screen.availWidth>720){
+		 menu.style.marginTop="7px";
+	 }else{
+		menu.style.marginTop="0"; 
+	}
+     </script>
+    </div>
+   </div>
+  </header>
+  <section class="light-section animated-section lg-only" style="background-image:url('img/home_bg.svg');height:720px;margin-top:50px;background-position:0 80px;background-size:cover;background-attachment: fixed;background-repeat: no-repeat;">
+   <div class="col-sm-5 col-md-6 text-section margin-top-block" style="margin-left:80px;">
+    <h2 class="hero-header margin-top-block" style="color: black">
+     Blockchain Redefining
+     <br/>
+     <span class="text-">
+      Social
+     </span>
+     Service
+     <!--
+         <h4 style="color: black">Indias first Token Sale is now <span class="text- text-danger">Live</span></h4>
+          
+          <div class="button-block"><a href="ico.php" class="rocket-btn rocket-btn-animated-icon rocket-btn-width"><span class="rocket-btn-icon-wrap"><i class="fa fa-thumbs-o-up" aria-hidden="true" style="padding-top:10px "></i></span> <span class="rocket-btn-text-wrap">Participate Now</span></a>
+          </div>
+          
+       -->
+     <div class="button-block">
+      <a class="rocket-btn rocket-btn-animated-icon rocket-btn-width" href="explore.php" style="background-color:#87C535">
+       <span class="rocket-btn-icon-wrap">
+        <i aria-hidden="true" class="fa fa-thumbs-o-up" style="padding-top:10px ">
+        </i>
+       </span>
+       <span class="rocket-btn-text-wrap">
+        Explore Campaigns
+       </span>
+      </a>
+     </div>
+     <div class="button-block">
+      <a class="rocket-btn rocket-btn-animated-icon rocket-btn-width" href="#loginx" style="background-color:#87C535">
+       <span class="rocket-btn-icon-wrap">
+        <i aria-hidden="true" class="fa fa-thumbs-o-up" style="padding-top:10px ">
+        </i>
+       </span>
+       <span class="rocket-btn-text-wrap">
+        Start Campaign
+       </span>
+      </a>
+     </div>
+    </h2>
+   </div>
+  </section>
+  <section class="sr-x light-section animated-section" style="background-image:url('img/home_bg1.svg');height:620px;background-position:0px 0px;background-size:cover;background-attachment: fixed;background-repeat: no-repeat;">
+   <div align="center" class="col-sm-5 col-md-6 text-section margin-top-block" style="margin-top:51%;">
+    <h3 class="hero-header margin-top-block" style="color:black">
+     Blockchain Redefining
+     <br/>
+     <span style="color:green">
+      Social
+     </span>
+     Service
+    </h3>
+    <!--
+         <h4 style="color: black">Indias first Token Sale is now <span class="text- text-danger">Live</span></h4>
+          
+          <div class="button-block"><a href="ico.php" class="rocket-btn rocket-btn-animated-icon rocket-btn-width"><span class="rocket-btn-icon-wrap"><i class="fa fa-thumbs-o-up" aria-hidden="true" style="padding-top:10px "></i></span> <span class="rocket-btn-text-wrap">Participate Now</span></a>
+          </div>
+          
+       -->
+    <div class="button-block">
+     <a class="rocket-btn rocket-btn-animated-icon rocket-btn-width" href="explore.php" style="background-color:#87C535">
+      <span class="rocket-btn-icon-wrap">
+       <i aria-hidden="true" class="fa fa-thumbs-o-up" style="padding-top:10px ">
+       </i>
+      </span>
+      <span class="rocket-btn-text-wrap">
+       Explore Campaign
+      </span>
+     </a>
+    </div>
+    <div class="button-block">
+     <a class="rocket-btn rocket-btn-animated-icon rocket-btn-width" href="#start_campaign" style="background-color:#87C535">
+      <span class="rocket-btn-icon-wrap">
+       <i aria-hidden="true" class="fa fa-thumbs-o-up" style="padding-top:10px ">
+       </i>
+      </span>
+      <span class="rocket-btn-text-wrap">
+       Start Campaign
+      </span>
+     </a>
+    </div>
+   </div>
+  </section>
+  <main style="position:relative;">
+   <!--<div style="width:100%;background:white;height:10px;position:absolute;top:0px;left:0;"></div>-->
+   <!--									
+<section class=" animated-section" style="background: #f7f7f7; border-top: solid 1px #eee; border-bottom: solid 1px #eee;">
+                                	<div class="container" >
+                                	<div class="card" style="background-color:hsla(0,0%,100%,0.89)" data-anim-type="fadeInUp"  >
+                              		  <div class="card-content ">
+                              		  	<div class="fadeInUp section-header">
+                               			<h2 class="text-align-center">
+                                			<span style="color:#A6DE03">TOKEN SALE</span>
+                                			<span style="color:#FB7909">ENDS ON</span>
+                               			  </h2>
+                                			<h4 class="text-align-center"> <em class="fa fa-calendar" style="color:#A6DE03"></em> <span style="color:grey"> &nbsp;1st November 2017</span> &nbsp;&nbsp; <em class="fa fa-map-marker" style="color:#A6DE03"></em><span style="color:grey"> &nbsp;www.indicoin.org.in</span></h4>
+                                			<h5 class="text-align-center">
+                                				<span style="color:grey">Thank you, The Pre Sale is Over.</span> <br>
+												<span style="color:grey">Over 18 Million Tokens Sold.</span>
+                                			</h5>
+                                			<h5 class="text-align-center">
+                                				<span style="color:grey">Accepted Currencies</span> <br>
+                                				
+                                				<p style="text-align: center;">
+                               			<img src="img/Bitcoin-icon.png" alt="" width="54" height="55">
+                               			<img src="img/600px-Litecoin-logo-1-300x300.png" alt="" width="44" height="44">
+                               			<img src="img/ethereum1600-300x300.png" alt="" width="45" height="46"></p>
+                              			  <span style="color:grey">Minimum Investment : 0.05 BTC |  0.5 ETH  |  5 LTC  |</span><br><br>
+                              			  <span style="color:grey">
+                              			  Rate of INDI tokens during Token sale: 1 ETH = 12500 INDI | 1 BTC = 175,000 INDI | 1 LTC = 2500 INDI</span><br>
+                              			  <br>
+                              			  <span id="chgalert" class="mx" style="color:grey">TOKEN-SALE ENDS IN:</span><br><br><br>
+                              			                              			  
+                               			  </h5>
+                               			
+                               			<div class="myclock" style="margin-left:20%"></div>
+                               			<div class="cmsg"></div>
+										<br>
+										
+                                		<div class="button-block"><a id="chgbtnlink" href="ico.php" class="rocket-btn rocket-btn-animated-icon rocket-btn-width"><span class="rocket-btn-icon-wrap"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span> <span id="chgbtninfo" class="rocket-btn-text-wrap">Participate in Token Sale</span></a></div>
+                                		
+                                		
+                                		</div>
+                              		  </div>
+                               		  
+                                		</div>
+                                	</div>
+                                </section>
+ -->
+   <section class="animated-section" id="vision" style="background-color:#ffffff;margin-top:-80px">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-12">
+       <h3 align="center" class="section-title" data-anim-queue="1" data-anim-type="fadeInUp" style="text-transform:uppercase;color:#008000">
+        Vision &amp; Mission
+       </h3>
+       <hr data-anim-queue="1" data-anim-type="fadeInUp"/>
+      </div>
+      <div class="col-md-8">
+       <div class="section-header" data-anim-queue="1" data-anim-type="fadeInUp">
+        <p class="section-subtitle2" style="text-align: justify">
+         Indicoin is a platform independent, autonomous social service DApp for a community of people who really want to contribute for the society. It aims to use the technology of Blockchain and Smart Contracts to provide meaningful tasks to the user community and attaching a monetary value (indicoins) on these tasks approved by the community through a decentralized, unbiased and transparent voting process. The idea behind Indicoin is to create an inclusive community of people who are incentivized to do socially positive and constructive tasks. Indicoin has the potential to address certain limitations of the current processes by modernizing, streamlining and simplifying the traditional siloed design of the help and social service with a shared fabric of layers of technology for a first ever social platform where people can not only share but also validate through any kind of content anonymously from any part of the World at any part of the clock and also earn through it.
+        </p>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="video-container" data-anim-queue="2" data-anim-type="fadeInUp" style="margin-top:5px;">
+        <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/d28G4XtAxRk" style="max-width:500px;max-height:300px;width:100%;height:250px;">
+        </iframe>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="call-to-action animated-section" id="documentation" style="height:500px;background:url('img/community_bg.svg');background-attachment:fixed;background-size:cover;position:relative;color:black;">
+    <div style="position:absolute;width:100%;height:100%;background:rgba(100,100,100,0.5);top:0;left:0;">
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="col-md-7" data-anim-queue="1" data-anim-type="fadeInLeft">
+       <div class="row">
+        <h3 align="center" class="call-to-action-text text-uppercase" data-anim-queue="1" data-anim-type="fadeInLeft" style="color:#f8d941">
+         Documentation
+        </h3>
+       </div>
+       <div class="row">
+        <p style="font-size: 18px;padding-top:25px;color:white">
+         Our documentations give a clear picture of our vision. You can find all the project related intricate details in them that will answer all your queries, if any. If you still feel you want to talk about the project on an individual level, do write to us.
+        </p>
+       </div>
+      </div>
+      <!---for large screen only--->
+      <div class="col-md-5 lg-only" data-anim-queue="1" data-anim-type="fadeInRight">
+       <div class="col-md-12">
+        <a class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent" href="others/documentations/whitepaper.pdf">
+         <span class="rocket-btn-icon-wrap">
+          <em aria-hidden="true" class="fa fa-file-text" style="padding-top:10px">
+          </em>
+         </span>
+         <span class="rocket-btn-text-wrap">
+          white paper
+         </span>
+        </a>
+        <br/>
+        <br/>
+        <br/>
+       </div>
+       <div class="col-md-12">
+        <a class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent" href="others/documentations/overview.pdf">
+         <span class="rocket-btn-icon-wrap">
+          <em aria-hidden="true" class="fa fa-file-text" style="padding-top:10px">
+          </em>
+         </span>
+         <span class="rocket-btn-text-wrap">
+          overview
+         </span>
+        </a>
+        <br/>
+        <br/>
+        <br/>
+       </div>
+       <div class="col-md-12">
+        <a class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent" href="others/documentations/cryptocurrency.pdf">
+         <span class="rocket-btn-icon-wrap">
+          <em aria-hidden="true" class="fa fa-file-text" style="padding-top:10px ">
+          </em>
+         </span>
+         <span class="rocket-btn-text-wrap">
+          guide
+         </span>
+        </a>
+       </div>
+      </div>
+      <!---for small screen only--->
+      <div class="col-md-5 sm-only" data-anim-queue="1" data-anim-type="fadeInRight">
+       <div class="col-md-12">
+        <a class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent" href="others/documentations/whitepaper.pdf">
+         <span class="rocket-btn-icon-wrap">
+          <em aria-hidden="true" class="fa fa-file-text" style="padding-top:10px">
+          </em>
+         </span>
+         <span class="rocket-btn-text-wrap">
+          white paper
+         </span>
+        </a>
+       </div>
+       <div class="col-md-12">
+        <a class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent" href="others/documentations/overview.pdf">
+         <span class="rocket-btn-icon-wrap">
+          <em aria-hidden="true" class="fa fa-file-text" style="padding-top:10px">
+          </em>
+         </span>
+         <span class="rocket-btn-text-wrap">
+          overview
+         </span>
+        </a>
+       </div>
+       <div class="col-md-12">
+        <a class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent" href="others/documentations/cryptocurrency.pdf">
+         <span class="rocket-btn-icon-wrap">
+          <em aria-hidden="true" class="fa fa-file-text" style="padding-top:10px ">
+          </em>
+         </span>
+         <span class="rocket-btn-text-wrap">
+          guide
+         </span>
+        </a>
+       </div>
+      </div>
+      <!--<section id="roadmap" class="light-section animated-section"  style="background: #f7f7f7; border-top: solid 1px #eee; border-bottom: solid 1px #eee;">
+  <div class="container">
+  <div class="row">
+  <div class="section-header" data-anim-queue="1" data-anim-type="fadeIn">
+	  <h3 class="section-title">ROAD MAP</h3>
+<hr></div></div><div class="row"><div class="ss-timeline"><div class="timeline-block first-block"><div class="timeline-planet-wrap"><div id="sun-wrap" class="planet"><svg version="1.1" id="sun_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 75 75" style="enable-background:new 0 0 75 75" xml:space="preserve"><g id="sun-rays"><path class="ss-change-stroke" style="fill:none;stroke:#2F2442;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,9.991,0,0,0,0" d="
+                                M37.5,72.5c-19.3,0-35-15.7-35-35c0-19.3,15.7-35,35-35c19.3,0,35,15.7,35,35C72.5,56.8,56.8,72.5,37.5,72.5z"/></g><circle class="ss-change-fill" id="sun-circle" style="fill:#FFFFFF;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" cx="37.5" cy="37.5" r="25"/></svg></div></div></div><div class="timeline-block"><div class="timeline-planet-wrap"><div id="mercury-wrap" class="planet"><svg version="1.1" id="Layer_01" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22" xml:space="preserve"><circle class="ss-change-fill" id="mercury" style="fill:#FFFFFF;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" cx="11" cy="11" r="10"/></svg></div></div>
+	  <div class="timeline-content left" data-anim-queue="2" data-anim-type="fadeInUp"><span>
+		  <h4>QUARTER 2 2017</h4></span>
+		  <ul style="margin:0;padding:0;text-align: left">
+		 <li> Concept development and research</li>
+		  <li>Domain name registered </li><br>
+<!--
+<ul style="margin:0;padding:0;text-align: left">
+<li>Non-Profit organization registration</li>
+<li>Token Sale</li>
+<li>Listing on various Exchanges</li>
+<li>Distribution Plan Update</li>
+<li>Audit and Revision</li>
+<li>Community Plan Update
+	<ol style="list-style:lower-alpha">
+		<li>Indicoin Comm-Tech conferences and token summit
+			<ol style="list-style:lower-roman">	
+				<li>intially tour planned for India</li>
+				<li>International summits organized by the community of specific location (integrated on platform itself)</li>
+			</ol>
+		</li>	
+		<li>Community Summit</li>
+		<li>Hackathon for project development</li>
+		<li>Bug bounties</li>
+	</ol>
+</li>
+</ul>
+
+
+		  
+	  </div></div><div class="timeline-block"><div class="timeline-planet-wrap"><div id="venus-wrap" class="planet"><svg version="1.1" id="Layer_02" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve"><g id="venus"><circle class="ss-change-fill" id="venus-circle" style="fill:#FFFFFF;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" cx="16" cy="16" r="15"/><line class="ss-change-stroke" id="venus-line-03" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:85%,25%" x1="28.4" y1="7.6" x2="3.6" y2="7.6"/><line class="ss-change-stroke" id="venus-line-02" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:76%,26%" x1="1" y1="16" x2="31" y2="16"/><line class="ss-change-stroke" id="venus-line-01" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:53%,19%" x1="2.9" y1="23.4" x2="29.1" y2="23.4"/></g></svg></div></div><div class="timeline-content right" data-anim-queue="3" data-anim-type="fadeInUp"><span><h4>QUARTER 3 2017</h4></span>
+<div class="lg-only">
+• Token presale <br>
+• Whitepaper and platform development <br>
+• Initial part team creation <br>
+• Project initiated with local NGOs support &amp; affiliation <br>
+• Community development
+	  </div>
+<div class="sr-x">
+	<ul style="margin:0;padding:0;">
+	<li>Token presale</li>
+	<li>
+		Whitepaper and platform development
+	</li>
+	<li>Initial part team creation</li>
+	<li>Project initiated with local NGOs support &amp; affiliation</li>
+	<li>Community development</li>
+	</ul>
+</div>
+</div></div><div class="timeline-block"><div class="timeline-planet-wrap"><div id="earth-wrap" class="planet"><svg version="1.1" id="Layer_03" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 37" style="enable-background:new 0 0 37 37" xml:space="preserve"><g id="earth"><circle class="ss-change-fill" id="earth-circle" style="fill:#FFFFFF;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" cx="18.5" cy="18.5" r="17.5"/><polyline class="ss-change-stroke" id="earth-line-01" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" points="
+                                26.4,2.9 22.1,8.7 24.6,13 21.1,18.5 29,18.5 29,24 32.5,24.7 31.2,30.5   "/><polyline class="ss-change-stroke" id="earth-line-02" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" points="
+                                1,17.7 5.5,11.5 11.8,11.5 10.3,14.6 15.1,16.7 12.7,19.8 9.1,24 11,27.7 16.6,30.5 12.7,32.5 18.5,36  "/></g></svg></div></div><div class="timeline-content left" data-anim-queue="4" data-anim-type="fadeInUp"><span><h4>QUARTER 4 2017</h4></span>
+	  <div class="lg-only">
+	      <ul style="margin:0;padding:0;text-align: left">
+<li>Non-Profit organization registration</li>
+<li>Token Sale</li>
+<li>Listing on various Exchanges</li>
+<li>Distribution Plan Update</li>
+<li>Audit and Revision</li>
+<li>Community Plan Update
+	<ol style="list-style:lower-alpha">
+		<li>Indicoin Comm-Tech conferences and token summit
+			<ol style="list-style:lower-roman">	
+				<li>intially tour planned for India</li>
+				<li>International summits organized by the community of specific location (integrated on platform itself)</li>
+			</ol>
+		</li>	
+		<li>Community Summit</li>
+		<li>Hackathon for project development</li>
+		<li>Bug bounties</li>
+	</ol>
+</li>
+</ul>
+	  </div>
+      <div class="sr-x">
+      	<ul style="margin:0;padding:0;">
+      		<li>Concept development and research</li>
+      		<li>Domain name registered</li>
+      	</ul>
+      </div>
+
+                                   
+                                   </div></div><div class="timeline-block"><div class="timeline-planet-wrap"><div id="mars-wrap" class="planet"><svg version="1.1" id="Layer_04" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-284 376 42 42" style="enable-background:new -284 376 42 42" xml:space="preserve"><g id="mars"><circle class="ss-change-fill" id="mars-circle" style="fill:#FFFFFF;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" cx="-263" cy="397" r="20"/><g id="mars-lines"><path class="ss-change-stroke" id="mars-line-05" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10" d="
+                                    M-277,383c0.6,0.2,1.3,0.3,2.3,0.3c3.9,0,3.9-2,7.8-2c3.9,0,3.9,2,7.8,2c3.9,0,3.9-2,7.8-2c0.2,0,0.3,0,0.4,0"/><path class="ss-change-stroke" id="mars-line-04" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10" d="
+                                    M-280.8,388.8c2.4,0.5,2.8,1.8,6.2,1.8c3.9,0,3.9-2,7.8-2c3.9,0,3.9,2,7.8,2s3.9-2,7.8-2c3.5,0,3.9,1.6,6.8,2"/><path class="ss-change-stroke" id="mars-line-03" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10" d="
+                                    M-243.4,398c-3.9,0-3.9-2-7.8-2s-3.9,2-7.8,2c-3.9,0-3.9-2-7.8-2c-3.9,0-3.9,2-7.8,2s-3.9-2-7.8-2"/><path class="ss-change-stroke" id="mars-line-02" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10" d="
+                                    M-245.2,405.2c-2.4-0.5-2.8-1.8-6.1-1.8c-3.9,0-3.9,2-7.8,2c-3.9,0-3.9-2-7.8-2c-3.9,0-3.9,2-7.8,2c-3.5,0-3.9-1.6-6.9-2l0,0"/><path class="ss-change-stroke" id="mars-line-01" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10" d="
+                                    M-275.1,412.7c0.1,0,0.3,0,0.4,0c3.9,0,3.9-2,7.8-2c3.9,0,3.9,2,7.8,2c3.9,0,3.9-2,7.8-2c1,0,1.7,0.1,2.3,0.3"/></g></g></svg></div></div><div class="timeline-content right" data-anim-queue="5" data-anim-type="fadeInUp"><span><h4>QUARTER 1 2018</h4></span>
+                                    <div class="lg-only">
+                                    • Distribution protocol	development <br>
+									• Integrated and independent platform development <br>
+									• Smart Contract for Social Vault development<br>
+									• Collaboration with non-profit organisations and other social &nbsp;&nbsp;partners<br>
+									• Incubation and community center setups all over the world
+									
+                                   </div>
+								   
+								   
+								   
+								   
+								   
+								   
+                                   <div class="sr-x">
+                                   	<ul style="margin:0;padding:0;">
+                                   		<li>Distribution protocol	development</li>
+                                   		<li>Integrated and independent platform development</li>
+                                   		<li>Smart Contract for Social Vault development</li>
+                                   		<li>Collaboration with non-profit organisations and other social partners</li>
+                                   		<li>Incubation and community center setups all over the world</li>
+                                   	</ul>
+                                   </div>
+                                    </div></div><div class="timeline-block"><div class="timeline-planet-wrap"><div id="neptune-wrap" class="planet"><svg version="1.1" id="Layer_08" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-294 386 22 22" style="enable-background:new -294 386 22 22" xml:space="preserve"><g id="neptune"><circle class="ss-change-fill" id="neptune-circle" style="fill:#FFFFFF;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" cx="-283" cy="397" r="10"/><path class="ss-change-stroke" id="neptune-circle-01" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" d="M-292.8,398.8
+                                c1-1.1,2.5-1.8,4.1-1.8c3,0,5.5,2.5,5.5,5.5c0,1.7-0.8,3.2-2,4.2"/><path class="ss-change-stroke" id="neptune-circle-02" style="fill:none;stroke:#2F2442;stroke-width:2;stroke-miterlimit:10" d="M-273.4,394.4
+                                c-0.8,1.1-2.1,1.9-3.7,1.9c-2.5,0-4.5-2-4.5-4.5c0-1.7,1-3.2,2.4-4h0"/></g></svg></div></div><div class="timeline-content right" data-anim-queue="6" data-anim-type="fadeInUp"><span><h4>RoadMap v.2 coming soon!</h4></span></div></div></div></div>
+    </section>
+-->
+      <section class="dark-pattern-section features-section animated-section" id="features" style="background: white;">
+       <div class="container">
+        <div class="row">
+         <div class="section-header">
+          <h3 data-anim-queue="3" data-anim-type="fadeInUp">
+           <span style="color:#008000">
+            FEATURES OF INDICOIN
+           </span>
+          </h3>
+          <hr/>
+         </div>
+        </div>
+        <div class="row">
+         <div class="features-inline" data-anim-queue="3" data-anim-type="fadeInUp">
+          <div class="col-sm-1 col-md-3" data-anim-queue="3" data-anim-type="fadeInUp">
+           <div class="feature">
+            <div class="icon-wrapper">
+             <img alt="" src="img/features-icon-ufo.svg"/>
+            </div>
+            <h4 style="color:#008000">
+             Independent
+            </h4>
+            <p style="color:black">
+             Independent access through multiple platforms
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-1 col-md-3" data-anim-queue="3" data-anim-type="fadeInUp">
+           <div class="feature">
+            <div class="icon-wrapper">
+             <img alt="" src="img/features-icon-astronaut.svg"/>
+            </div>
+            <h4 style="color:#008000">
+             Incentivization
+            </h4>
+            <p style="color:black">
+             Users get monetary appreciation for their social work upon providing a proof for the same
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-1 col-md-3" data-anim-queue="3" data-anim-type="fadeInUp">
+           <div class="feature">
+            <div class="icon-wrapper">
+             <img alt="" src="img/features-icon-telescope.svg"/>
+            </div>
+            <h4 style="color:#008000">
+             Proof of Works
+            </h4>
+            <p style="color:black">
+             Various means for providing proof of work on the platform including live videos, pictures, documentational proofs etc.
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-1 col-md-3" data-anim-queue="3" data-anim-type="fadeInUp">
+           <div class="feature">
+            <div class="icon-wrapper">
+             <img alt="" src="img/features-icon-satellite.svg"/>
+            </div>
+            <h4 style="color:#008000">
+             Consensus
+            </h4>
+            <p style="color:black">
+             Verification of Proof of Work via a Voting System and Reward Sharing
+            </p>
+           </div>
+          </div>
+          <div class="col-sm-1 col-md-3" data-anim-queue="3" data-anim-type="fadeInUp">
+           <div class="feature">
+            <div class="icon-wrapper">
+             <img alt="" src="img/token.svg"/>
+            </div>
+            <h4 style="color:#008000">
+             Verify your work
+            </h4>
+            <p style="color:black">
+             Transparent distribution of tokens through Smart Contract
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <!--<section class="light-section pricing-section animated-section" style="background:#f7f7f7;">
+                                 <div class="container">
+                                 <div class="row">
+                                 <div class="section-header" data-anim-queue="1" data-anim-type="fadeIn">
+                                  <h3 class="section-title text-uppercase">Indicoin Token Specification</h3>
+<hr></div></div>			<div class="row">
+                               <div class="col-sm-12 col-md-12">
+                               <div class="pricing" data-anim-queue="2" data-anim-type="fadeInUp">
+                               <table class="table table-responsive table-hover table-striped">
+                               	<tr>
+                               		<th style="padding-left:30px;">Token Name :</th>
+                               		<td>Indicoin</td>
+                               	</tr>
+                               	<tr>
+                               		<th style="padding-left:30px;">Available Token Supply :</th>
+                               		<td>550 Million</td>
+                               	</tr>
+                               	<tr>
+                               		<th style="padding-left:30px;">Unused Tokens :</th>
+                               		<td>150 Million Tokens in Social Vault Smart Contract <br>
+									(Rest available for Token Sale, Bounty and Team)
+									</td>
+                               	</tr>
+                               	<tr>
+                               		<th style="padding-left:30px;">Token Protocol :</th>
+                               		<td>ERC20</td>
+                               	</tr>
+                               	<tr>
+                               		<th style="padding-left:30px;">Accepted Currencies :</th>
+                               		<td>ETH, BTC, LTC,</td>
+                               	</tr>
+                               	<tr>
+                               		<th style="padding-left:30px;">Token Utility :</th>
+                               		<td>Social Proof, Proofs of actual Work</td>
+                               	</tr>
+                               </table>
+                               </div>
+                               </div>
+							</div></div></div>
+                               </section>-->
+      <section class="light-section half-width-section after-features-phone animated-section">
+       <div class="container">
+        <div class="row">
+         <div class="col-md-7">
+          <div class="section-header text-align-left" data-anim-queue="2" data-anim-type="fadeInUp">
+           <h3 class="section-title">
+            <span style="color:#008000">
+             PLATFORM MODEL
+            </span>
+           </h3>
+           <p class="section-subtitle">
+            It is an autonomous social service DApp for a community of people who really want to contribute to the society.
+            <br/>
+            It aims to use the technology of Blockchain and Smart Contracts to provide meaningful tasks to the user community.
+           </p>
+           <hr class="left"/>
+          </div>
+          <h4 class="section-subtitle" data-anim-queue="3" data-anim-type="fadeInUp">
+           The Indicoin Platform
+          </h4>
+          <div class="features">
+           <div class="row">
+            <div class="feature col-sm-6 text-xs-center" data-anim-queue="3" data-anim-type="fadeInUp">
+             <div class="feature-icon">
+              <i aria-hidden="true" class="fa fa-first-order fa-3x">
+              </i>
+             </div>
+             <div class="feature-text">
+              <p>
+               Indicoin is the first cryptocurrency from India built on top of Ethereum Blockchain.
+              </p>
+             </div>
+            </div>
+            <div class="feature col-sm-6 text-xs-center" data-anim-queue="4" data-anim-type="fadeInUp">
+             <div class="feature-icon">
+              <i aria-hidden="true" class="fa fa-globe fa-3x">
+              </i>
+             </div>
+             <div class="feature-text">
+              <p>
+               First cryptocurrency from India to be listed on major cryptocurrency exchanges across the globe.
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="row">
+            <div class="feature col-sm-6 text-xs-center" data-anim-queue="5" data-anim-type="fadeInUp">
+             <div class="feature-icon">
+              <i aria-hidden="true" class="fa fa-share-alt fa-3x">
+              </i>
+             </div>
+             <div class="feature-text">
+              <p>
+               First ever platform to offer content sharing for social causes along with live content upload and various other features.
+              </p>
+              <br/>
+             </div>
+            </div>
+            <div class="feature col-sm-6 text-xs-center" data-anim-queue="6" data-anim-type="fadeInUp">
+             <div class="feature-icon">
+              <i aria-hidden="true" class="fa fa-inr fa-3x">
+              </i>
+             </div>
+             <div class="feature-text">
+              <p>
+               Indicoin is a variable currency accepted throughout the world. No actual movement of cash is involved.
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-md-6">
+             <a class="rocket-btn rocket-btn-flat" href="https://www.youtube.com/watch?v=zPlDjLCnlhI&amp;t=3s">
+              <span class="rocket-btn-icon-wrap">
+               <em aria-hidden="true" class="fa fa-arrow-circle-o-right" style="padding-top:10px">
+               </em>
+              </span>
+              <span class="rocket-btn-text-wrap" style="font-size: 12px;">
+               See Our Prototype Now
+              </span>
+             </a>
+            </div>
+            <div class="col-md-6">
+             <a class="rocket-btn rocket-btn-flat" href="https://www.youtube.com/watch?v=-C2v67X9uXs">
+              <span class="rocket-btn-icon-wrap">
+               <em aria-hidden="true" class="fa fa-arrow-circle-o-right" style="padding-top:10px">
+               </em>
+              </span>
+              <span class="rocket-btn-text-wrap" style="font-size: 12px">
+               See Our Structure
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-5" data-anim-queue="1" data-anim-type="fadeInUp">
+          <img alt="features-phone" class="responsive-img phones-image" src="img/features-phones.png"/>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="light-section recent-blog-posts-section animated-section" style="background:url('img/community_bg.svg');background-attachment:fixed;background-size:cover;position:relative;">
+       <div style="position:absolute;width:100%;height:100%;background:rgba(100,100,100,0.5);top:0;left:0;">
+       </div>
+       <div class="container">
+        <div class="row">
+         <div class="section-header" data-anim-queue="1" data-anim-type="fadeInUp">
+          <h3 class="section-title text-uppercase">
+           <span style="color:#f8d941">
+            Join Our Community
+           </span>
+          </h3>
+          <hr/>
+         </div>
+         <div align="center" class="col-md-12">
+          <p data-anim-queue="3" data-anim-type="fadeInUp" style="font-size:19px;color:#E9E7E7;text-align:center;">
+           “Come, let’s be a part of a community where we can together build up a better society for everyone.”
+          </p>
+         </div>
+         <div align="center" class="col-md-4 col-md-offset-2" data-anim-queue="1" data-anim-type="fadeInUp">
+          <a class="rocket-btn dgi-margin-5" href="#loginx" style="background-color:#87C535">
+           As Individual
+          </a>
+         </div>
+         <div align="center" class="col-md-4" data-anim-queue="1" data-anim-type="fadeInUp">
+          <a class="rocket-btn dgi-margin-5" href="#loginx" style="background-color:#87C535">
+           As Organisation
+          </a>
+         </div>
+        </div>
+        <!-- 
+<div class="row top-margin-45" data-anim-queue="1" data-anim-type="fadeInUp">
+	<div class="col-md-12" align="center">
+		<a href="others/community/Community-Growth-Campaign.pdf" class="dgi-btn">
+		<i class="fa fa-pagelines" aria-hidden="true"></i>
+		Community Growth Program
+		</a>
+		<a href="#" class="dgi-btn">
+		<i class="fa fa-pagelines" aria-hidden="true"></i>
+		Community BuildUp Program
+		</a>
+		<a href="others/community/Social-Stakeholders.pdf" class="dgi-btn">
+		<i class="fa fa-pagelines" aria-hidden="true"></i>
+		Social Stake Holders
+		</a>
+	</div>
+</div>  -->
+       </div>
+      </section>
+      <section class="light-section half-width-section after-features-phone animated-section" style="background:#F7F5F9;">
+       <div class="col-md-12" style="background:#f7f5f9">
+        <div class="section-header text-align-left" data-anim-queue="2" data-anim-type="fadeInUp">
+         <h3 align="center" class="section-title text-uppercase">
+          <span style="color:#008000;">
+           Trending Campaigns
+          </span>
+         </h3>
+         <hr class="center-block"/>
+         <div id="outputx" style="margin:0;width:100%;height: :100%;">
+          <center>
+           <p align="center">
+            No Campaigns Found
+           </p>
+          </center>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="light-section recent-blog-posts-section animated-section" style="background:#fff;">
+       <div class="container">
+        <div class="row">
+         <div class="section-header" data-anim-queue="1" data-anim-type="fadeInUp">
+          <!-- <h3 class="section-title">
+<div class="lg-only">
+<br><br><br><br><br><br>
+<br><br><br><br><br> -->
+          <h3 class="section-title">
+           <div class="lg-only">
+            <span style="color:#008000;">
+             OUR NEWS
+            </span>
+            <p class="section-subtitle" style="color:#008000">
+             Latest blog posts
+            </p>
+            <hr/>
+           </div>
+          </h3>
+         </div>
+         <div class="row">
+          <div class="posts-carousel owl-carousel owl-theme" data-anim-queue="2" data-anim-type="fadeInUp" id="recent-posts-carousel">
+          </div>
+         </div>
+         <link href="assets/zoomtimeline/zoomtimeline.css" rel="stylesheet" type="text/css"/>
+         <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+         <link href="assets/css/plyr.css" rel="stylesheet"/>
+         <link href="a\featured.css" rel="stylesheet" type="text/css"/>
+         <section class="page six">
+          <div id="page-6">
+           <h1 id="p6-head">
+            Featured On
+           </h1>
+           <p>
+            Some of the best know our name.
+           </p>
+           <div class="logo-holder">
+            <div class="hvr-sweep-to-right one" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/toi.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom two" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/coinsider.png"/>
+            </div>
+            <div class="hvr-sweep-to-left three" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/bitcoincom.png"/>
+            </div>
+            <div class="hvr-sweep-to-top four" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/bitcointap.png"/>
+            </div>
+            <div class="hvr-sweep-to-right five" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/bitintruder.png"/>
+            </div>
+            <div class="hvr-sweep-to-top six" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/bitnews.png"/>
+            </div>
+            <div class="hvr-sweep-to-left seven" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/coinagenews.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom eight" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/coincrispy.png"/>
+            </div>
+            <div class="hvr-sweep-to-top nine" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/coindelite.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom ten" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/coingape.png"/>
+            </div>
+            <div class="hvr-sweep-to-right eleven" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/coinwire.png"/>
+            </div>
+            <div class="hvr-sweep-to-left twelve" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/criptoeconomia.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom thirteen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/cryptoanalyze.png"/>
+            </div>
+            <div class="hvr-sweep-to-left fourteen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/dailyhunt.png"/>
+            </div>
+            <div class="hvr-sweep-to-right fifteen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/firstpost.png"/>
+            </div>
+            <div class="hvr-sweep-to-top sixteen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/icenter.png"/>
+            </div>
+            <div class="hvr-sweep-to-left seventeen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/idealnews.png"/>
+            </div>
+            <div class="hvr-sweep-to-right eighteen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/indiafinancenews.png"/>
+            </div>
+            <div class="hvr-sweep-to-top nineteen" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/livemint.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom twenty" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/menafn.png"/>
+            </div>
+            <div class="hvr-sweep-to-left twentyone" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/milleniumpost.png"/>
+            </div>
+            <div class="hvr-sweep-to-top twentytwo" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/mtn.png"/>
+            </div>
+            <div class="hvr-sweep-to-left twentythree" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/newsolive.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom twentyfour" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/nie.png"/>
+            </div>
+            <div class="hvr-sweep-to-right twentyfive" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/pressreader.png"/>
+            </div>
+            <div class="hvr-sweep-to-top twentysix" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/smartinvestor.png"/>
+            </div>
+            <div class="hvr-sweep-to-bottom twentyseven" id="featured">
+             <span class="helper">
+             </span>
+             <img src="media/logos/featured/v4s.png"/>
+            </div>
+           </div>
+          </div>
+         </section>
+         <section class="dark-pattern-section download-app animated-section" style="background:#F7F5F9;">
+          <div class="container">
+           <div class="row">
+            <div class="col-md-4 margin-block text-center" data-anim-queue="2" data-anim-type="fadeInUp">
+             <center>
+              <div align="center" class="card">
+               <h4 class="card-content">
+                Exchange Partner
+               </h4>
+               <div style="padding-left:50px;">
+                <img height="auto" src="img/hitbtc_logo_1500_transparent_for_white_bg-1.png"/>
+               </div>
+               <br/>
+               <div style="width:98%">
+                <img height="auto" src="img/idexlogo.png"/>
+               </div>
+               <br/>
+               <div style="width:50%">
+                <img class="img-responsive" src="img/etherdeltalogo.png"/>
+               </div>
+               <br/>
+              </div>
+             </center>
+            </div>
+            <div class="col-md-4 margin-block text-center" data-anim-queue="2" data-anim-type="fadeInUp">
+             <div class="card">
+              <h4 class="card-content">
+               Powered By
+              </h4>
+              <br/>
+              <div>
+               <img height="auto" src="img/commtech.png"/>
+              </div>
+              <br/>
+              <br/>
+             </div>
+             <center>
+              <div class="card">
+               <h4 class="card-content">
+                Media Partners
+               </h4>
+               <br/>
+               <div style="width:100px;">
+                <img class="img-responsive" src="img/Coinwolf.png"/>
+               </div>
+               <br/>
+               <div>
+                <img class="img-responsive" src="img/NEWSBTC-Logo-Left-Var1-1.1-By-Mohsin-18-Dec-2015-01.png"/>
+               </div>
+               <br/>
+              </div>
+             </center>
+             <br/>
+            </div>
+            <div class="col-md-4 margin-block text-center" data-anim-queue="2" data-anim-type="fadeInUp">
+             <div align="center" class="card">
+              <h4 class="card-content">
+               Trusted Partners
+              </h4>
+              <br/>
+              <div>
+               <img height="auto" src="img/E_Logo_No UN Emblem-01.png"/>
+              </div>
+              <br/>
+              <div style="width:50%">
+               <img class="img-responsive" src="img/CTI.png" style="margin-left:-5px"/>
+              </div>
+              <br/>
+              <div style="width:50%">
+               <img class="img-responsive" src="img/india logo transparent.png" style="margin-left:-5px"/>
+               Blockchain India
+              </div>
+              <br/>
+             </div>
+            </div>
+           </div>
+          </div>
+          <!-- team section has been disabled for a while.
+<section id="team" class="dark-pattern-section testimonials-section animated-section" style="background: url(img/team_bg.svg);background-size:cover;">
+<div class="container">
+<div class="row">
+<div class="section-header" data-anim-queue="1" data-anim-type="fadeIn"><h3 class="section-title" style="color:#000000;">Our team</h3><hr></div>
+<div id="testimonials-carousel" class="testimonials-carousel owl-carousel owl-theme" data-anim-queue="1" data-anim-type="fadeInUp">
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/supreet.jpg" >
+<h4 class="client-name">Supreet Gupta</h4>
+<p class="client-details">Product Designer</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/kapil kapadi.jpg" >
+<h4 class="client-name">Kapil Kapadi</h4>
+<p class="client-details">Smart Contract &amp; Back-end Developer 
+</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/Deepak Yadav.jpg" >
+<h4 class="client-name">Deepak Yadav</h4>
+<p class="client-details">Bounty Manager</p></div></div>
+
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/Varad Shambhawa.jpg" alt="client01">
+<h4 class="client-name">Varad Shambhawa</h4>
+<p class="client-details">Community Admin &amp; Lead Developer
+</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/vansh.jpg" alt="client01">
+<h4 class="client-name">Vansh Bajaj</h4>
+<p class="client-details">Platform Developer &amp; Operations
+</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/Rishabh.jpeg" alt="client01">
+<h4 class="client-name">Rishabh Jain</h4>
+<p class="client-details"> Strategy Advisor</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/aaditya.jpg" alt="client01">
+<h4 class="client-name">Aditya Prakash</h4>
+<p class="client-details">P.R. &amp; Media Relations
+</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/richa.jpg" alt="client01">
+<h4 class="client-name">Richa Kulshrestha</h4>
+<p class="client-details">Platform Analyst</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/Mihir.jpg" alt="client01">
+<h4 class="client-name">Mihir</h4>
+<p class="client-details">Community Manager & Researcher</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/shobhit.jpg" alt="client01">
+<h4 class="client-name">Shobhit Bajpai</h4>
+<p class="client-details">Assistant Product Designer(UI/UX)
+</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/tushar.jpg" alt="client01">
+<h4 class="client-name">Tushar Saraswat</h4>
+<p class="client-details">Community Consultant &amp; Social Media Team Head
+</p></div></div>
+
+<div class="testimonial">
+<div class="client-info">
+<img src="img/Team Photos/yash.jpg" alt="client01">
+<h4 class="client-name">Yash Mathur</h4>
+<p class="client-details">Blockchain Analyst &amp; Front End Developer</p></div></div>
+
+
+</div></div></div></section>
+-->
+          <!--﻿<footer class="fix-footer">-->
+          <div class="footer-wrapper">
+           <div class="main-footer" style="background:url('img/community_bg.svg');background-attachment:fixed;background-size:cover;position:relative;">
+            <div style="position:absolute;width:100%;height:100%;background:rgba(100,100,100,0.5);top:0;left:0;">
+            </div>
+            <div class="container">
+             <div class="row">
+              <div class="footer-widget light-widget col-md-3 col-sm-6">
+               <div class="widget categories-widget">
+                <h4 class="widget-title">
+                 <span style="color:#f8d941">
+                  CONTACT INFO
+                 </span>
+                </h4>
+                <!--
+<p><b style="color: palevioletred">Address:</b> C-541, Omaxe NRI City, Greater Noida, Uttar Pradesh, India</p>
+<p><b style="color: palevioletred">Phone:</b> +91 9811120575</p>
+-->
+                <p>
+                 <b style="color: white">
+                  Email:
+                 </b>
+                 <a href="mailto:contact@indicoin.org.in">
+                  contact@indicoin.org.in
+                 </a>
+                </p>
+                <br/>
+               </div>
+              </div>
+              <div class="footer-widget light-widget col-md-4 col-sm-7">
+               <div class="widget">
+                <h4 class="widget-title">
+                 <span style="color:#f8d941">
+                  SUBSCRIBE TO NEWSLETTER
+                 </span>
+                </h4>
+                <ul class="recent-posts" style="list-style: none;margin:0;padding:0;">
+                 <li class="recent-posts subscribe">
+                  <table cellpadding="0" cellspacing="0" width="100%">
+                   <tr>
+                    <td>
+                     <input id="s_email" placeholder="Enter Your Email" type="email"/>
+                    </td>
+                   </tr>
+                   <tr>
+                    <td align="center">
+                     <button class="rocket-btn rocket-btn-animated-icon rocket-btn-width" onclick="u_subscribe()" style="background-color:#87C535" type="button">
+                      <span class="rocket-btn-icon-wrap">
+                       <i aria-hidden="true" class="fa fa-send-o">
+                       </i>
+                      </span>
+                      <span class="rocket-btn-text-wrap">
+                       Subscribe Now
+                      </span>
+                     </button>
+                    </td>
+                   </tr>
+                  </table>
+                 </li>
+                </ul>
+               </div>
+              </div>
+              <div class="footer-widget light-widget col-md-3 col-sm-6">
+               <div class="widget categories-widget">
+                <ul class="categories">
+                 <li class="category">
+                  <a class="twitter-timeline" data-height="300" data-width="300" href="https://twitter.com/Indi_Coin?ref_src=twsrc%5Etfw">
+                   Tweets by Indi_Coin
+                  </a>
+                  <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js">
+                  </script>
+                 </li>
+                 <!--
+<li class="category"><p style="font-size: 13px">Get Ready! #India 's 1st #TokenSale to start in 1 day. #ICO #altcoinlive #cryptocurrency #Blockchain #ETH #BTC…<a href="https://t.co/5ZFtElnPUL">https://t.co/5ZFtElnPUL</a> </p></li>
+
+<li class="category"><p style="font-size: 13px">Read about #Indicoin on @newbiumcoin #cryptocurrency #Blockchain #ICO #ETH #BTC #altcoinlive #TokenSale #Crypto <a href="https://t.co/WpRLUFJAiG">https://t.co/WpRLUFJAiG</a> </p></li> 
+
+<li class="category"><p style="font-size: 13px">#India 1st #ICO to go #live on 1st Oct'17. #cryptocurrency #TokenSale #Blockchain #ETH #BTC #cryptotwitter #altcoin <a href="https://t.co/gUsa0WSFMw">https://t.co/gUsa0WSFMw</a> </p></li><br>
+<a href="https://twitter.com/Indi_Coin" class="rocket-btn rocket-btn-animated-icon-left rocket-btn-accent2" style="background-color:#87C535"><span class="rocket-btn-icon-wrap"><em class="fa fa-twitter" aria-hidden="true" style="padding-top:10px" ></em></span> <span class="rocket-btn-text-wrap" style="font-size: 12px">Follow Us</span></a>  
+
+</ul> -->
+                </ul>
+               </div>
+               <a class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" href="https://twitter.com/Indi_Coin">
+                Follow @Indicoin
+               </a>
+              </div>
+              <div class="footer-widget light-widget col-md-3 col-sm-6">
+               <div class="widget categories-widget">
+                <h4 class="widget-title">
+                 <span style="color:#f8d941">
+                  WE ARE SOCIAL
+                 </span>
+                </h4>
+                <p style="color: white">
+                 <i class="fa fa-twitter">
+                 </i>
+                 <a href="https://twitter.com/indi_coin">
+                  Follow us on twitter
+                 </a>
+                </p>
+                <p style="color: white">
+                 <i class="fa fa-telegram">
+                 </i>
+                 <a href="https://www.telegram.me/indicoin">
+                  Join our Telegram Channel
+                 </a>
+                </p>
+                <p style="color: white">
+                 <i class="fa fa-facebook">
+                 </i>
+                 <a href="https://facebook.com/indicoin.crypto">
+                  Like us on Facebook
+                 </a>
+                </p>
+                <p style="color: white">
+                 <i class="fa fa-instagram">
+                 </i>
+                 <a href="https://www.instagram.com/indicoin.org.in">
+                  Follow us on Instagram
+                 </a>
+                </p>
+                <p style="color: white">
+                 <i class="fa fa-reddit">
+                 </i>
+                 <a href="https://www.reddit.com/user/Indicoin/">
+                  Follow us on Reddit
+                 </a>
+                </p>
+                <p style="color: white">
+                 <i class="fa fa-medium">
+                 </i>
+                 <a href="https://www.medium.com/@Indi_coin">
+                  Follow us on Medium
+                 </a>
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="bottom-bar">
+            <div class="container">
+             <div class="row">
+              <div class="col-md-8 text-align-left text-sm-center">
+               © Copyright 2018 -
+               <a href="https://www.indicoin.org.in/" target="_blank">
+                Indicoin Foundation
+               </a>
+               And Powered By Community Tech Labs | All Rights Reserved.
+              </div>
+              <div class="col-md-4 text-align-right text-sm-center">
+               <ul class="inline-list center-align">
+                <li>
+                 <a class="social-icon" href="https://facebook.com/indicoin.crypto">
+                  <i class="fa fa-facebook">
+                  </i>
+                 </a>
+                </li>
+                <li>
+                 <a class="social-icon" href="https://twitter.com/indi_coin">
+                  <i class="fa fa-twitter">
+                  </i>
+                 </a>
+                </li>
+                <li>
+                 <a class="social-icon" href="https://www.telegram.me/indicoin">
+                  <i class="fa fa-paper-plane">
+                  </i>
+                 </a>
+                </li>
+                <li>
+                 <a class="social-icon" href="https://www.instagram.com/indicoin.org.in">
+                  <i class="fa fa-instagram">
+                  </i>
+                 </a>
+                </li>
+                <li>
+                 <a class="social-icon" href="https://www.reddit.com/user/Indicoin/">
+                  <i class="fa fa-reddit">
+                  </i>
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="scrollToTop" id="scrollToTop" style="bottom:100px">
+           <div class="scrollToTop-circle">
+            <div class="scrollToTop-icon">
+            </div>
+           </div>
+          </div>
+          <script src="js/assets.min.js">
+          </script>
+          <script src="js/main.min.js">
+          </script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+          </script>
+          <script src="js/flipclock/flipclock.js">
+          </script>
+          <script type="text/javascript">
+           var clock;
+		$(document).ready(function() {
+			var clock;
+			var d = new Date();
+			var n = d.getHours()*3600;
+			var x = 3600*24*24;
+			var z = x-n;
+			
+			var q = new Date("2017-11-01T24:00:00");
+			var qn = new Date();
+			if(q==qn || qn>q){
+				z = 1;
+			}
+			clock = $('.myclock').FlipClock(z,{
+		        clockFace: 'DailyCounter',
+		        autoStart: false,
+		        callbacks: {
+		        	stop: function() {
+						$("#chgalert").text("The Token Sale Has Been Started");
+						$("#chgbtninfo").text("Join The Token Sale");
+						$("#chgbtnlink").attr("href", "ico.php");
+		        	}
+		        }
+		    });
+				    
+		    clock.setCountdown(true);
+		    clock.start();
+
+		});
+          </script>
+          <!--Start of Tawk.to Script-->
+          <script type="text/javascript">
+           var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5a0820de198bd56b8c03aa43/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+          </script>
+          <!--End of Tawk.to Script-->
+         </section>
+        </div>
+       </div>
+      </section>
+     </div>
+    </div>
+   </section>
+  </main>
+ </body>
+</html>

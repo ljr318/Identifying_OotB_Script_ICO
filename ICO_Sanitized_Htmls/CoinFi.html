@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <script>
+   var _rollbarConfig = {
+      accessToken: "e096d72e2c6442ac924a369ae40065c0",
+      captureUncaught: true,
+      captureUnhandledRejections: true,
+      logLevel: 'error',
+      hostWhiteList: ['coinfi.com', 'herokuapp.com'],
+      payload: {
+        environment: "production"
+      }
+  };
+  // Rollbar Snippet
+  !function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.14.4/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){var n=o(2);function t(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var a=0;function l(r,e){this.options=r,this._rollbarOldOnError=null;var o=a++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var i=o(3),s=function(r,e){return new l(r,e)},d=function(r){return new i(s,r)};function c(r){return t(function(){var e=Array.prototype.slice.call(arguments,0),o={shim:this,method:r,args:e,ts:new Date};window._rollbarShims[this.shimId()].messages.push(o)})}l.prototype.loadFull=function(r,e,o,n,a){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=t(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if("function"==typeof(l=t[i])){l(e);break}}"function"==typeof a&&a(e)}()}}),d.insertBefore(i,s)},l.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),u=0;u<p.length;++u)l.prototype[p[u]]=c(p[u]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var a=new d(e);return t(function(){e.captureUncaught&&(a._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,a,!0),e.wrapGlobalEventHandlers&&n.wrapGlobals(r,a,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,a,!0);var t=e.autoInstrument;return!1!==e.enabled&&(void 0===t||!0===t||"object"==typeof t&&t.network)&&r.addEventListener&&(r.addEventListener("load",a.captureLoad.bind(a)),r.addEventListener("DOMContentLoaded",a.captureDomContentLoaded.bind(a))),r[o]=a,a})()}},Rollbar:d}},function(r,e){function o(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var n;if("function"==typeof e._rollbarOldOnError)n=e._rollbarOldOnError;else if(r.onerror){for(n=r.onerror;n._rollbarOldOnError;)n=n._rollbarOldOnError;e._rollbarOldOnError=n}e.handleAnonymousErrors();var t=function(){var o=Array.prototype.slice.call(arguments,0);!function(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}(r,e,n,o)};o&&(t._rollbarOldOnError=n),r.onerror=t}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}},wrapGlobals:function(r,e,n){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&o(e,r[a].prototype,n)}}}},function(r,e){function o(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(o.prototype)}o.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  // End Rollbar Snippet
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <title>
+   Cryptocurrency Prices Live - Crypto Market Cap, Price Charts, News &amp; Trading Signals | CoinFi
+  </title>
+  <link href="/manifest.json" rel="manifest"/>
+  <link href="/assets/apple-touch-icon-2988004631429cc8e8e33e91b942430a81e66ad4117fb4a6e1d95463dc6c6215.png" rel="apple-touch-icon"/>
+  <link href="/assets/apple-touch-icon-precomposed-2988004631429cc8e8e33e91b942430a81e66ad4117fb4a6e1d95463dc6c6215.png" rel="apple-touch-icon-precomposed"/>
+  <link href="/assets/favicon-493991078f825db8aa2cf452753f4ba9565b37a2a170a6048dcc41d0886e5201.png" rel="icon"/>
+  <link crossorigin="" href="https://www.google-analytics.com" rel="preconnect"/>
+  <link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+  <link crossorigin="" href="https://script.hotjar.com" rel="preconnect"/>
+  <link crossorigin="" href="https://vars.hotjar.com" rel="preconnect"/>
+  <link crossorigin="" href="https://bid.g.doubleclick.net" rel="preconnect"/>
+  <link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/08d8853f9c.js">
+  </script>
+  <link href="/assets/application-d01bb0d9eb04eb15500ea5d05db71751803ba336085178dcc38ac9b139d1c344.css" media="screen" rel="stylesheet"/>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="4//SBJSg0RvpF7qTrGxkDRpVBiCLzt2+N8KaZw6RfR0RNH4+Yl4BZGmOIzg3kR5bPwhNvaZdJSmgzZnWA5Il4g==" name="csrf-token"/>
+  <link href="/assets/ag-grid-5374c6fd59e19e4508e4f1a5b1ed24cd3411f4580a5f2942813c72e9dcbd1b9f.css" media="screen" rel="stylesheet"/>
+ </head>
+ <body class="" id="">
+  <header>
+   <nav class="nav w-100 border-box ph3 bb b--black-10">
+    <div class="nav__inner fixed-width">
+     <a class="nav-menu-toggle link" href="#">
+      <img alt="Menu Toggle" class="nav-menu-toggle__img" src="/assets/nav-trigger-74f6e84b90c6af95336f628e1068094e928224d8a5758633394f99795c943585.svg"/>
+     </a>
+     <a class="nav-logo link pa2 ma2 ma0-ns mr4-ns h-70" href="/" title="Home">
+      <img alt="CoinFi Logo" class="nav-logo__img" src="/assets/logo-18db413dcf31f14703bd292bb40eb5074986900b32da6afcfa2efe66ff841146.svg"/>
+     </a>
+     <div class="nav-menu nav-menu--out ph0-ns" id="nav-menu">
+      <div class="nav-items">
+       <a class="nav-menu__item" href="https://www.coinfi.com/research/">
+        Research
+       </a>
+       <a class="nav-menu__item" href="/news">
+        Crypto News
+       </a>
+       <div class="nav-menu__item-wrapper nav-menu-item-coins">
+        <div class="nav-menu__item nav-menu__item-toggle nav-menu-coins-toggle">
+         <span>
+          Coins
+         </span>
+         <i class="fa fa-angle-down">
+         </i>
+        </div>
+        <div class="nav-menu__dropdown nav-menu-coins">
+         <div class="nav-menu__dropdown-inner">
+          <a class="nav-menu__item" href="/coins">
+           Cryptocurrency Prices Live
+          </a>
+          <a class="nav-menu__item" href="/token-metrics">
+           ERC-20 Token Metrics
+          </a>
+          <a class="nav-menu__item" href="/how-to-buy-cryptocurrency">
+           How To Buy Cryptocurrency
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="nav-menu__item-wrapper nav-menu-item-exchanges">
+        <div class="nav-menu__item nav-menu__item-toggle nav-menu-exchanges-toggle">
+         <span>
+          Exchanges
+         </span>
+         <i class="fa fa-angle-down">
+         </i>
+        </div>
+        <div class="nav-menu__dropdown nav-menu-exchanges">
+         <div class="nav-menu__dropdown-inner">
+          <a class="nav-menu__item" href="/cryptocurrency-exchanges/best-crypto-exchanges">
+           Best Cryptocurrency Exchanges
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/changelly-review">
+           Changelly Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/coinswitch-review">
+           CoinSwitch Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/ftx-review">
+           FTX Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/bybit-review">
+           Bybit Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/coinmama-review">
+           Coinmama Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/coinbase-review">
+           Coinbase Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/binance-review">
+           Binance Review
+          </a>
+          <a class="nav-menu__item nav-menu__sub-item" href="/cryptocurrency-exchanges/paxful-review">
+           Paxful Review
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="nav-menu__item-wrapper nav-menu-item-company">
+        <div class="nav-menu__item nav-menu__item-toggle nav-menu-company-toggle">
+         <span>
+          Company
+         </span>
+         <i class="fa fa-angle-down">
+         </i>
+        </div>
+        <div class="nav-menu__dropdown nav-menu-company">
+         <div class="nav-menu__dropdown-inner">
+          <a class="nav-menu__item" href="/podcast">
+           Podcast
+          </a>
+          <a class="nav-menu__item" href="https://www.coinfi.com/blog/">
+           Blog
+          </a>
+          <a class="nav-menu__item" href="https://careers.coinfi.com">
+           Careers
+          </a>
+          <a class="nav-menu__item" href="/press">
+           Press
+          </a>
+          <a class="nav-menu__item" href="/about">
+           About
+          </a>
+          <a class="nav-menu__item" href="https://feedback.coinfi.com/feature-requests">
+           Feedback
+          </a>
+          <a class="nav-menu__item" href="/contact-us">
+           Contact Us
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="nav-menu-actions pa2">
+       <div id="CurrencySelectorWidget-react-component-8cfe56cc-6b98-4a6e-b061-21852e496e35">
+       </div>
+       <script class="js-react-on-rails-component" data-component-name="CurrencySelectorWidget" data-dom-id="CurrencySelectorWidget-react-component-8cfe56cc-6b98-4a6e-b061-21852e496e35" type="application/json">
+        {"user":null,"currencies":{"CAD":1.3418298447,"HKD":7.7502532073,"ISK":135.043889264,"PHP":49.0580688724,"DKK":6.2830857529,"HUF":291.1461850101,"CZK":22.0923362593,"GBP":0.76006921,"RON":4.0779034436,"SEK":8.6795239703,"IDR":14655.6380823768,"INR":74.8105165429,"BRL":5.1670324105,"RUB":74.0124915598,"HRK":6.3145678596,"JPY":104.9206617151,"THB":31.1850101283,"CHF":0.9089297772,"EUR":0.8440243079,"MYR":4.2395340986,"BGN":1.6507427414,"TRY":6.9712187711,"CNY":6.9747636732,"NOK":9.0583220797,"NZD":1.4999155976,"ZAR":16.9615124916,"USD":1.0,"MXN":22.179270763,"SGD":1.3711174882,"AUD":1.3916272789,"ILS":3.40243079,"KRW":1189.7029034436,"PLN":3.7165766374,"updated_at":"2020-07-31"},"stylesNamespace":"CurrencySelectorWidget"}
+       </script>
+       <a class="nav-menu-actions__btn nav-menu-actions--secondary" href="#login" onclick="openLoginModal(event)">
+        Login
+       </a>
+       <a class="nav-menu-actions__btn nav-menu-actions--primary nav-menu-close" href="#sign-up" onclick="openSignUpModal(event)">
+        Get Started
+       </a>
+      </div>
+     </div>
+     <div class="nav-actions">
+      <a class="nav-menu__item nav-menu-login" href="#login" onclick="openLoginModal(event)">
+       Login
+      </a>
+      <a class="nav-menu__item nav-menu--primary" href="#sign-up" onclick="openSignUpModal(event)">
+       Get Started
+      </a>
+      <div id="CurrencySelectorWidget-react-component-a33b1e0b-603c-4a4b-ae97-9191068ea11d">
+      </div>
+      <script class="js-react-on-rails-component" data-component-name="CurrencySelectorWidget" data-dom-id="CurrencySelectorWidget-react-component-a33b1e0b-603c-4a4b-ae97-9191068ea11d" type="application/json">
+       {"user":null,"currencies":{"CAD":1.3418298447,"HKD":7.7502532073,"ISK":135.043889264,"PHP":49.0580688724,"DKK":6.2830857529,"HUF":291.1461850101,"CZK":22.0923362593,"GBP":0.76006921,"RON":4.0779034436,"SEK":8.6795239703,"IDR":14655.6380823768,"INR":74.8105165429,"BRL":5.1670324105,"RUB":74.0124915598,"HRK":6.3145678596,"JPY":104.9206617151,"THB":31.1850101283,"CHF":0.9089297772,"EUR":0.8440243079,"MYR":4.2395340986,"BGN":1.6507427414,"TRY":6.9712187711,"CNY":6.9747636732,"NOK":9.0583220797,"NZD":1.4999155976,"ZAR":16.9615124916,"USD":1.0,"MXN":22.179270763,"SGD":1.3711174882,"AUD":1.3916272789,"ILS":3.40243079,"KRW":1189.7029034436,"PLN":3.7165766374,"updated_at":"2020-07-31"},"stylesNamespace":"CurrencySelectorWidget"}
+      </script>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <script id="js-react-on-rails-context" type="application/json">
+    {"railsEnv":"production","inMailer":false,"i18nLocale":"en","i18nDefaultLocale":"en","rorVersion":"11.1.4","rorPro":false,"href":"https://www.coinfi.com/","location":"/","scheme":"https","host":"www.coinfi.com","port":null,"pathname":"/","search":null,"httpAcceptLanguage":null,"deviceProviderProps":{"breakpoints":{"m":992},"fallback":{"width":1366,"height":768}},"serverSide":false}
+   </script>
+   <div id="App-react-component-bc7da318-63c4-47cf-b952-aa1dc79c3f1b">
+    <div class="jssApp1">
+     <div class="jssApp9 jssApp32 jssApp26 jssApp2">
+      <div class="jssApp10 jssApp49 jssApp70 jssApp5">
+       <div class="jssApp9 jssApp32 jssApp7">
+        <div class="jssApp10 jssApp65">
+         <div class="jssApp9 jssApp12 jssApp106">
+          <div class="jssApp10">
+           <div class="jssApp9 jssApp15 jssApp20 jssApp28 jssApp109">
+            <div class="jssApp10">
+             <h5 class="jssApp115 jssApp131 jssApp110">
+              Crypto Market Cap
+             </h5>
+            </div>
+            <div class="jssApp10">
+             <div class="jssApp9 jssApp12 jssApp19 jssApp23">
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123 jssApp111">
+                $352,605,228,904
+               </span>
+               <span class="jssApp115 jssApp123 jssApp112">
+                USD
+               </span>
+              </div>
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123 jssApp113" style="color:#0f0">
+                ▲ $17.2B (5.1%)
+               </span>
+               <span class="jssApp115 jssApp123 jssApp114">
+                24h
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="jssApp10 jssApp108">
+           <div id="market-cap-chart">
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="jssApp10 jssApp65">
+         <div class="jssApp9 jssApp28 jssApp151">
+          <div class="jssApp10 jssApp49">
+           <h2 class="jssApp115 jssApp128 jssApp156">
+            Market Dominance
+           </h2>
+          </div>
+          <div class="jssApp10 jssApp43">
+           <div class="jssApp9 jssApp12 jssApp29 jssApp155">
+            <div class="jssApp10">
+             <div class="jssApp9 jssApp17 jssApp28">
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                <span class="ph2 v-mid" style="color:#05161f;font-size:16px">
+                 •
+                </span>
+                1.
+                <a href="/coins/bitcoin">
+                 Bitcoin BTC
+                </a>
+               </span>
+              </div>
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                62.3%
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="jssApp10">
+             <div class="jssApp9 jssApp17 jssApp28">
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                <span class="ph2 v-mid" style="color:#103649;font-size:16px">
+                 •
+                </span>
+                2.
+                <a href="/coins/ethereum">
+                 Ethereum ETH
+                </a>
+               </span>
+              </div>
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                11.5%
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="jssApp10">
+             <div class="jssApp9 jssApp17 jssApp28">
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                <span class="ph2 v-mid" style="color:#135373;font-size:16px">
+                 •
+                </span>
+                3.
+                <a href="/coins/tether">
+                 Tether USDT
+                </a>
+               </span>
+              </div>
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                3%
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="jssApp10">
+             <div class="jssApp9 jssApp17 jssApp28">
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                <span class="ph2 v-mid" style="color:#2495ce;font-size:16px">
+                 •
+                </span>
+                4.
+                <a href="/coins/ripple">
+                 XRP XRP
+                </a>
+               </span>
+              </div>
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                2.9%
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="jssApp10">
+             <div class="jssApp9 jssApp17 jssApp28">
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                <span class="ph2 v-mid" style="color:#2faeed;font-size:16px">
+                 •
+                </span>
+                5.
+                <a href="/coins/bitcoin-cash">
+                 Bitcoin Cash BCH
+                </a>
+               </span>
+              </div>
+              <div class="jssApp10">
+               <span class="jssApp115 jssApp123">
+                1.7%
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="jssApp10 jssApp41 jssApp154">
+           <div id="market-dominance-chart">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="jssApp10 jssApp49 jssApp72 jssApp6">
+       <div class="jssApp9 jssApp12 jssApp158">
+        <div class="jssApp10">
+         <h2 class="jssApp115 jssApp128 jssApp138 jssApp162">
+          Latest Cryptocurrency News
+         </h2>
+        </div>
+        <div class="jssApp10 jssApp159">
+         <div class="jssApp9 jssApp12 jssApp28 jssApp160">
+          <div class="jssApp10 jssApp161">
+           <div class="jssApp170">
+            <img alt="" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCndpZHRoPSI0MHB4IiBoZWlnaHQ9IjQwcHgiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNDAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHBhdGggb3BhY2l0eT0iMC4yIiBmaWxsPSIjMDAwIiBkPSJNMjAuMjAxLDUuMTY5Yy04LjI1NCwwLTE0Ljk0Niw2LjY5Mi0xNC45NDYsMTQuOTQ2YzAsOC4yNTUsNi42OTIsMTQuOTQ2LDE0Ljk0NiwxNC45NDYKICAgIHMxNC45NDYtNi42OTEsMTQuOTQ2LTE0Ljk0NkMzNS4xNDYsMTEuODYxLDI4LjQ1NSw1LjE2OSwyMC4yMDEsNS4xNjl6IE0yMC4yMDEsMzEuNzQ5Yy02LjQyNSwwLTExLjYzNC01LjIwOC0xMS42MzQtMTEuNjM0CiAgICBjMC02LjQyNSw1LjIwOS0xMS42MzQsMTEuNjM0LTExLjYzNGM2LjQyNSwwLDExLjYzMyw1LjIwOSwxMS42MzMsMTEuNjM0QzMxLjgzNCwyNi41NDEsMjYuNjI2LDMxLjc0OSwyMC4yMDEsMzEuNzQ5eiIvPgogICAgPHBhdGggZmlsbD0iIzIzYWRmMCIgZD0iTTI2LjAxMywxMC4wNDdsMS42NTQtMi44NjZjLTIuMTk4LTEuMjcyLTQuNzQzLTIuMDEyLTcuNDY2LTIuMDEyaDB2My4zMTJoMAogICAgQzIyLjMyLDguNDgxLDI0LjMwMSw5LjA1NywyNi4wMTMsMTAuMDQ3eiI+CiAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVUeXBlPSJ4bWwiCiAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iCiAgICB0eXBlPSJyb3RhdGUiCiAgICBmcm9tPSIwIDIwIDIwIgogICAgdG89IjM2MCAyMCAyMCIKICAgIGR1cj0iMC41cyIKICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgICA8L3BhdGg+Cjwvc3ZnPg=="/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="jssApp10 jssApp49 jssApp8">
+       <div class="jssApp171">
+        <div class="jssApp9 jssApp172">
+         <div class="jssApp10 jssApp49 jssApp74 jssApp173">
+          <h1 class="jssApp115 jssApp127 jssApp138 jssApp174">
+           Cryptocurrency Prices Live
+          </h1>
+          <a class="jssApp178" href="/coins?page=2">
+           See more
+          </a>
+         </div>
+         <div class="jssApp10 jssApp49 jssApp68 jssApp175">
+          <div class="jssApp199 jssApp201 jssApp176">
+           <div class="search-field autosuggest unstyled">
+            <div class="flex items-center f5 tiber">
+             <button class="btn-icon icon silver mr1">
+              <i class="pr1 fal fa-search">
+              </i>
+             </button>
+             <div aria-expanded="false" aria-haspopup="listbox" aria-owns="react-autowhatever-1" role="combobox" style="width:100%">
+              <input aria-autocomplete="list" aria-controls="react-autowhatever-1" autocomplete="off" placeholder="Search coins" style="width:100%;max-width:100%;border:none;background-color:inherit" type="text" value=""/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="jssApp179">
+         <div class="ag-theme-material" style="width:100%">
+          <div style="height:100%">
+          </div>
+         </div>
+        </div>
+        <div class="jssApp9 jssApp15 jssApp196">
+         <a class="jssApp280" href="/coins?page=1">
+          1
+         </a>
+         <a class="jssApp280" href="/coins?page=2">
+          2
+         </a>
+         <a class="jssApp280" href="/coins?page=3">
+          3
+         </a>
+         <a class="jssApp280" href="/coins?page=4">
+          4
+         </a>
+         <a class="jssApp280" href="/coins?page=5">
+          5
+         </a>
+         <a class="jssApp280" href="/coins?page=6">
+          6
+         </a>
+         <a class="jssApp280" href="/coins?page=7">
+          7
+         </a>
+         <a class="jssApp280" href="/coins?page=8">
+          8
+         </a>
+         <a class="jssApp280" href="/coins?page=9">
+          9
+         </a>
+         <a class="jssApp280" href="/coins?page=10">
+          10
+         </a>
+         <span class="jssApp253">
+          ...
+         </span>
+         <a class="jssApp280" href="/coins?page=22">
+          22
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script class="js-react-on-rails-component" data-component-name="App" data-dom-id="App-react-component-bc7da318-63c4-47cf-b952-aa1dc79c3f1b" type="application/json">
+    {"user":null,"loggedIn":false,"coins":[{"id":109,"name":"Bitcoin","symbol":"BTC","slug":"bitcoin","ranking":1,"coin_key":"bitcoin.org","sparkline":[9677.11349729,9905.16724705,10990.8733998,10912.8230505,11100.4681253,11111.2142899,11323.4664207],"price":11766.9610356,"market_cap":217084910485.21402,"change1h":0.135484,"change24h":3.77158,"change7d":21.9057,"volume24h":25499918260.8617,"image_url":"/static/coins/1.png"},{"id":357,"name":"Ethereum","symbol":"ETH","slug":"ethereum","ranking":2,"coin_key":"ethereum.org","sparkline":[304.056761197,309.643609292,321.514088181,316.657252341,318.190884419,334.586629282,345.554649307],"price":383.617816241,"market_cap":42966581837.37239,"change1h":0.263672,"change24h":11.1098,"change7d":29.1396,"volume24h":13487438935.6142,"image_url":"/static/coins/1027.png"},{"id":809,"name":"XRP","symbol":"XRP","slug":"ripple","ranking":3,"coin_key":"ripple.com","sparkline":[0.214102459226,0.214981839536,0.223671602002,0.230276595514,0.24309913809,0.244522489999,0.258903787865],"price":0.22464162062,"market_cap":9726956453.402214,"change1h":-0.40824,"change24h":0.877342,"change7d":3.40528,"volume24h":1135031895.49023,"image_url":"/static/coins/52.png"},{"id":940,"name":"Tether","symbol":"USDT","slug":"tether","ranking":4,"coin_key":"tether.to","sparkline":[0.998061750776,0.998870744427,1.00109697177,1.00085351005,1.00254028961,1.00186289861,1.00014138236],"price":0.998918941422,"market_cap":9987413059.833378,"change1h":0.147906,"change24h":-0.107449,"change7d":-0.0591537,"volume24h":35538225953.3368,"image_url":"/static/coins/825.png"},{"id":111,"name":"Bitcoin Cash","symbol":"BCH","slug":"bitcoin-cash","ranking":5,"coin_key":"bitcoincash.org","sparkline":[249.510097018,246.824430917,267.427612228,288.552087209,288.374141266,292.194189744,300.504513567],"price":317.56184813,"market_cap":5867937601.169402,"change1h":0.470394,"change24h":5.49814,"change7d":27.967,"volume24h":2382764491.12934,"image_url":"/static/coins/1831.png"},{"id":534325,"name":"Bitcoin SV","symbol":"BSV","slug":"bitcoin-sv","ranking":6,"coin_key":"bitcoinsv.io","sparkline":[190.270076577,190.035672742,207.326832655,214.147535872,213.399535311,215.35566696,229.83689492],"price":242.404930584,"market_cap":4478857320.86721,"change1h":0.699246,"change24h":5.6955,"change7d":29.3719,"volume24h":2280772277.83587,"image_url":"/static/coins/3602.png"},{"id":571,"name":"Litecoin","symbol":"LTC","slug":"litecoin","ranking":7,"coin_key":"litecoin.com","sparkline":[48.8047660378,47.9787189689,52.9500269171,55.5752050111,55.172003914,56.6431120818,57.9981370878],"price":61.3638241125,"market_cap":3998347636.194262,"change1h":0.460769,"change24h":5.53135,"change7d":26.7588,"volume24h":2983403636.85932,"image_url":"/static/coins/2.png"},{"id":1090,"name":"Cardano","symbol":"ADA","slug":"cardano","ranking":8,"coin_key":"cardano.org","sparkline":[0.143577755393,0.148107607279,0.138770879263,0.148598234585,0.139879411021,0.140588453716,0.138797615868],"price":0.141300137344,"market_cap":3663498627.9469757,"change1h":1.0751,"change24h":1.40013,"change7d":1.73575,"volume24h":288594767.367156,"image_url":"/static/coins/2010.png"},{"id":534371,"name":"Crypto.com Coin","symbol":"CRO","slug":"crypto-com-chain","ranking":9,"coin_key":"www.crypto.com","sparkline":[0.150216674821,0.153313406276,0.164870857644,0.159432124369,0.163462499434,0.162346619335,0.164463171978],"price":0.0378429327819,"market_cap":368838995.5386557,"change1h":-0.520927,"change24h":-1.23731,"change7d":-0.43196,"volume24h":6244526.25946341,"image_url":"/static/coins/3635.png"},{"id":92,"name":"Binance Coin","symbol":"BNB","slug":"binance-coin","ranking":10,"coin_key":"binance.com","sparkline":[19.776422459,19.5210245477,19.6203278101,20.1735473438,19.8955891274,20.0127358852,20.6681463971],"price":21.592596996,"market_cap":3118112653.658694,"change1h":1.99033,"change24h":5.42877,"change7d":9.54274,"volume24h":263123089.601841,"image_url":"/static/coins/1839.png"},{"id":349,"name":"EOS","symbol":"EOS","slug":"eos","ranking":11,"coin_key":"eos.io","sparkline":[2.72614518577,2.71397480479,2.84077121023,2.9934242675,3.02584690479,3.05116300816,3.0917196846],"price":3.26908564313,"market_cap":3056035284.1936154,"change1h":0.347816,"change24h":5.54166,"change7d":20.9995,"volume24h":2412125366.64855,"image_url":"/static/coins/1765.png"},{"id":1483,"name":"Chainlink","symbol":"LINK","slug":"chainlink","ranking":12,"coin_key":"chain.link","sparkline":[7.65782354111,7.4990048432,7.09558309808,7.22346045015,7.11608293845,7.41699154541,7.77291238489],"price":7.87211118171,"market_cap":2755238913.5985003,"change1h":1.59201,"change24h":2.33523,"change7d":2.88949,"volume24h":631904417.903987,"image_url":"/static/coins/1975.png"},{"id":1511,"name":"Tezos","symbol":"XTZ","slug":"tezos","ranking":13,"coin_key":"tezos.com","sparkline":[3.05685237761,2.98234225957,2.81898342083,2.83408291752,2.78616088095,2.81062678431,2.83985350732],"price":3.0099926397,"market_cap":2222383991.7344894,"change1h":-0.404785,"change24h":5.89417,"change7d":-1.62479,"volume24h":152888514.738386,"image_url":"/static/coins/2011.png"},{"id":896,"name":"Stellar","symbol":"XLM","slug":"stellar","ranking":14,"coin_key":"stellar.org","sparkline":[0.100178548926,0.0987322565803,0.0945406750944,0.0970017526498,0.095287982875,0.0966427565154,0.0969311728168],"price":0.106661799835,"market_cap":2185743506.1019306,"change1h":1.2712,"change24h":10.181,"change7d":7.7631,"volume24h":366715383.184511,"image_url":"/static/coins/512.png"},{"id":630,"name":"Monero","symbol":"XMR","slug":"monero","ranking":15,"coin_key":"getmonero.org","sparkline":[73.4635602655,77.9424418399,78.4901594476,81.3063297941,79.1458586632,81.0899229739,84.4647771937],"price":88.8787664048,"market_cap":1568822695.936788,"change1h":0.814275,"change24h":6.32346,"change7d":21.035,"volume24h":106521426.903186,"image_url":"/static/coins/328.png"},{"id":1501,"name":"TRON","symbol":"TRX","slug":"tron","ranking":16,"coin_key":"tron.network","sparkline":[0.0186831145326,0.0185248274937,0.0186658760744,0.0191221897976,0.0193253539815,0.0192764100199,0.0196771484328],"price":0.0205795086879,"market_cap":1474720541.407357,"change1h":0.618112,"change24h":4.66497,"change7d":11.1748,"volume24h":611210344.214663,"image_url":"/static/coins/1958.png"},{"id":534370,"name":"UNUS SED LEO","symbol":"LEO","slug":"unus-sed-leo","ranking":17,"coin_key":"bitfinex.com","sparkline":[1.21055384518,1.21378670462,1.24880888035,1.25080351682,1.25185992532,1.2527616321,1.25784596998],"price":1.26221226548,"market_cap":1261579761.952061,"change1h":-0.0916765,"change24h":0.383681,"change7d":4.51218,"volume24h":16393304.4399279,"image_url":"/static/coins/3957.png"},{"id":235617,"name":"USD Coin","symbol":"USDC","slug":"usd-coin","ranking":18,"coin_key":"centre.io","sparkline":[0.99780454249,0.997417002271,0.998513179928,0.998608905131,1.00005030972,0.999815825377,1.00648333218],"price":0.996432702671,"market_cap":1081646290.2034314,"change1h":0.118778,"change24h":-0.981556,"change7d":-0.181811,"volume24h":394677217.039208,"image_url":"/static/coins/3408.png"},{"id":1211,"name":"Huobi Token","symbol":"HT","slug":"huobi-token","ranking":19,"coin_key":"hbg.com","sparkline":[4.27429997094,4.27819761726,4.46897560237,4.43055290455,4.42738586288,4.39611976696,4.37632770011],"price":4.74124300481,"market_cap":1023111561.005046,"change1h":0.138265,"change24h":8.46809,"change7d":11.6743,"volume24h":174041203.41441,"image_url":"/static/coins/2502.png"},{"id":5862,"name":"VeChain","symbol":"VET","slug":"vechain","ranking":20,"coin_key":"vechain.org","sparkline":[0.0181549533741,0.0175460776296,0.015624944238,0.0159591661733,0.0156205138691,0.0173378768644,0.017262311248],"price":0.0169845029095,"market_cap":941871104.556151,"change1h":0.337369,"change24h":-1.53749,"change7d":-5.53725,"volume24h":154079733.912464,"image_url":"/static/coins/3077.png"},{"id":653,"name":"Neo","symbol":"NEO","slug":"neo","ranking":21,"coin_key":"neo.org/neo","sparkline":[11.59472435,11.6046529093,11.5838247964,11.740729476,11.7024643181,11.795261639,12.1764021701],"price":13.3005782667,"market_cap":938207242.5570242,"change1h":0.0751089,"change24h":10.8164,"change7d":15.3955,"volume24h":354515806.484124,"image_url":"/static/coins/1376.png"},{"id":358,"name":"Ethereum Classic","symbol":"ETC","slug":"ethereum-classic","ranking":22,"coin_key":"ethereumclassic.org","sparkline":[6.67686230185,6.62022953608,7.11022909626,7.22725562457,7.27117912846,7.35254694856,7.40843722291],"price":7.84812673529,"market_cap":912841511.5516796,"change1h":0.290682,"change24h":6.12441,"change7d":19.3594,"volume24h":1103068170.3215,"image_url":"/static/coins/1321.png"},{"id":266,"name":"Dash","symbol":"DASH","slug":"dash","ranking":23,"coin_key":"dash.org","sparkline":[74.5044089749,75.0982229002,77.6214243868,79.825201832,81.7440782442,81.3829303199,82.5482026222],"price":93.1616395799,"market_cap":897374637.6833816,"change1h":1.0875,"change24h":12.3583,"change7d":25.555,"volume24h":455242219.915872,"image_url":"/static/coins/131.png"},{"id":1070,"name":"Zcash","symbol":"ZEC","slug":"zcash","ranking":24,"coin_key":"z.cash","sparkline":[65.4092152627,65.75966208,70.5546432567,70.9705453041,72.4326839595,70.89002932,74.60410192],"price":90.9111055257,"market_cap":883774698.3413969,"change1h":3.44152,"change24h":22.7738,"change7d":40.6123,"volume24h":688592048.561515,"image_url":"/static/coins/1437.png"},{"id":517,"name":"IOTA","symbol":"MIOTA","slug":"iota","ranking":25,"coin_key":"iota.org","sparkline":[0.275226083482,0.268578161305,0.271333189726,0.271688729406,0.286075437604,0.301011286491,0.299628466996],"price":0.31075326438,"market_cap":863748108.8853152,"change1h":0.0418049,"change24h":3.15707,"change7d":13.9273,"volume24h":23960583.0542382,"image_url":"/static/coins/1720.png"},{"id":4642,"name":"Cosmos","symbol":"ATOM","slug":"cosmos","ranking":26,"coin_key":"cosmos.network","sparkline":[3.90502377359,3.80503462843,3.588862394,3.75045900209,3.64044144672,3.71943302238,3.7923709067],"price":4.05459399666,"market_cap":773164200.8127854,"change1h":0.62307,"change24h":6.7889,"change7d":5.11359,"volume24h":154357746.015469,"image_url":"/static/coins/3794.png"},{"id":80284,"name":"Maker","symbol":"MKR","slug":"maker","ranking":27,"coin_key":"makerdao.com/maker","sparkline":[525.098418728,520.872242162,511.295431074,516.125082184,545.563363001,569.176721813,557.337901028],"price":592.081500651,"market_cap":595383388.98954,"change1h":1.26409,"change24h":6.14156,"change7d":14.1979,"volume24h":17147391.4590067,"image_url":"/static/coins/1518.png"},{"id":1296,"name":"Ontology","symbol":"ONT","slug":"ontology","ranking":28,"coin_key":"ont.io","sparkline":[0.713220396246,0.707292821754,0.687724335405,0.699945300188,0.68992728648,0.705552186449,0.712547990269],"price":0.750464803128,"market_cap":524597319.02339506,"change1h":-0.521094,"change24h":6.01455,"change7d":5.57304,"volume24h":114744988.588225,"image_url":"/static/coins/3217.png"},{"id":202552,"name":"HedgeTrade","symbol":"HEDG","slug":"hedgetrade","ranking":29,"coin_key":"hedgetrading.io","sparkline":[1.37557614212,1.42709247206,1.51855983129,1.33809175198,1.41685997449,1.43549460969,1.45949469266],"price":1.76192675588,"market_cap":507802792.5881495,"change1h":0.0823514,"change24h":21.7012,"change7d":28.8419,"volume24h":1014043.60222919,"image_url":"/static/coins/3662.png"},{"id":652,"name":"NEM","symbol":"XEM","slug":"nem","ranking":30,"coin_key":"nem.io","sparkline":[0.0507466193033,0.0495149681249,0.0495455815035,0.0510132654294,0.0515175230721,0.0518571476664,0.0525041495226],"price":0.055424075141,"market_cap":498816676.2135759,"change1h":-0.738023,"change24h":6.16398,"change7d":9.3023,"volume24h":17158788.6434358,"image_url":"/static/coins/873.png"},{"id":304,"name":"Dogecoin","symbol":"DOGE","slug":"dogecoin","ranking":31,"coin_key":"dogecoin.com","sparkline":[0.0032340153331,0.00323459683512,0.00315332257459,0.00319739452561,0.00319239943282,0.00323111702726,0.00322536145576],"price":0.00370538750497,"market_cap":465589642.1184014,"change1h":0.452759,"change24h":15.1789,"change7d":14.8439,"volume24h":147740880.840892,"image_url":"/static/coins/74.png"},{"id":1385,"name":"Aave","symbol":"LEND","slug":"ethlend","ranking":32,"coin_key":"ethlend.io","sparkline":[0.289470004877,0.27109537776,0.236536076953,0.285693824985,0.314669435275,0.333623249249,0.306369461738],"price":0.00460138243844,"market_cap":5192006.118809215,"change1h":1.83398,"change24h":-1.61436,"change7d":-5.52294,"volume24h":159061.224609126,"image_url":"/static/coins/2239.png"},{"id":78,"name":"Basic Attention Token","symbol":"BAT","slug":"basic-attention-token","ranking":34,"coin_key":"basicattentiontoken.org","sparkline":[0.263046993817,0.253959944635,0.247475131439,0.251436605048,0.247387573642,0.247281388621,0.252871782503],"price":0.257514446494,"market_cap":382927236.0916075,"change1h":0.473109,"change24h":2.18273,"change7d":-1.78517,"volume24h":195709765.946928,"image_url":"/static/coins/1697.png"},{"id":286,"name":"DigiByte","symbol":"DGB","slug":"digibyte","ranking":38,"coin_key":"digibyte.io","sparkline":[0.0252540765867,0.0242001933561,0.0231517308067,0.0237648186942,0.0233808371567,0.0252963592003,0.0243408626321],"price":0.0255287782378,"market_cap":342181727.9008988,"change1h":1.44803,"change24h":4.11543,"change7d":2.06527,"volume24h":19532820.5410667,"image_url":"/static/coins/109.png"},{"id":534353,"name":"Synthetix Network Token","symbol":"SNX","slug":"synthetix-network-token","ranking":39,"coin_key":"synthetix.io","sparkline":[3.56010952506,3.13107504054,2.86814027301,3.35691017721,3.28643980112,3.57376639619,3.93013941389],"price":3.69334094623,"market_cap":330815611.62281054,"change1h":-3.00505,"change24h":-3.53571,"change7d":4.31557,"volume24h":32549183.229873,"image_url":"/static/coins/2586.png"},{"id":1488,"name":"Kyber Network","symbol":"KNC","slug":"kyber-network","ranking":41,"coin_key":"kyber.network","sparkline":[1.53922612004,1.51043941632,1.37129048748,1.46073822271,1.42146150213,1.44180823177,1.46696769101],"price":1.45612884089,"market_cap":284723589.9688171,"change1h":-0.191653,"change24h":-1.55284,"change7d":-7.01147,"volume24h":83757071.7354113,"image_url":"/static/coins/1982.png"},{"id":1,"name":"0x","symbol":"ZRX","slug":"0x","ranking":42,"coin_key":"0xproject.com","sparkline":[0.393075775133,0.384649701528,0.365898541321,0.382691801737,0.385543492442,0.389286275969,0.381768964203],"price":0.394033697115,"market_cap":281337944.7458354,"change1h":1.22594,"change24h":2.26097,"change7d":0.447266,"volume24h":34658578.7709107,"image_url":"/static/coins/1896.png"},{"id":534372,"name":"BitTorrent","symbol":"BTT","slug":"bittorrent","ranking":44,"coin_key":"bittorrent.com","sparkline":[0.000387453811237,0.00038792963055,0.000375310335828,0.00038277243174,0.000385100671213,0.000384274597964,0.000385886614474],"price":0.000394362217566,"market_cap":260260380.6835028,"change1h":0.368628,"change24h":2.00901,"change7d":1.52837,"volume24h":26369312.2793941,"image_url":"/static/coins/3718.png"},{"id":1303,"name":"THETA","symbol":"THETA","slug":"theta","ranking":45,"coin_key":"thetatoken.org","sparkline":[0.259251174307,0.250727692735,0.241881783324,0.251149401424,0.249114094565,0.257691760458,0.268849469963],"price":0.298122954189,"market_cap":259516833.57227126,"change1h":-0.0502116,"change24h":11.1199,"change7d":14.5177,"volume24h":61952308.394137,"image_url":"/static/coins/2416.png"},{"id":1153,"name":"Algorand","symbol":"ALGO","slug":"algorand","ranking":46,"coin_key":"algorand.com","sparkline":[0.319127053601,0.320546801095,0.287449484087,0.313288626716,0.308853697611,0.333733103843,0.32534209207],"price":0.326828804797,"market_cap":252252029.89632317,"change1h":0.8329,"change24h":1.84935,"change7d":0.773785,"volume24h":60018915.5757489,"image_url":"/static/coins/4030.png"},{"id":777,"name":"Qtum","symbol":"QTUM","slug":"qtum","ranking":47,"coin_key":"qtum.org","sparkline":[2.40451920816,2.35450267553,2.32139439807,2.37465324239,2.35857005536,2.37874735842,2.41515739788],"price":2.58871775769,"market_cap":250866993.6069567,"change1h":-0.0311674,"change24h":7.64716,"change7d":8.04099,"volume24h":302827899.082,"image_url":"/static/coins/1684.png"},{"id":534355,"name":"Hyperion","symbol":"HYN","slug":"hyperion","ranking":48,"coin_key":"hyn.space","sparkline":[0.713753069085,0.711011398589,0.710894835839,0.711512025104,0.72148375976,0.758279096563,0.76698472727],"price":0.783925470753,"market_cap":248320870.92100447,"change1h":-0.379904,"change24h":2.09589,"change7d":9.69869,"volume24h":15385206.5279077,"image_url":"/static/coins/3695.png"},{"id":206028,"name":"Paxos Standard","symbol":"PAX","slug":"paxos-standard-token","ranking":49,"coin_key":"paxos.com","sparkline":[0.997273909014,0.99683244808,0.999097411274,0.998052615378,0.999275882124,0.999208058732,0.998260678818],"price":1.00163785413,"market_cap":237388727.74838537,"change1h":0.0187948,"change24h":0.19103,"change7d":-0.24294,"volume24h":235164240.290525,"image_url":"/static/coins/3330.png"},{"id":1512,"name":"OMG Network","symbol":"OMG","slug":"omisego","ranking":50,"coin_key":"omisego.network","sparkline":[1.65025865683,1.63978770656,1.58202948516,1.60842645179,1.62085142802,1.60333385918,1.64362772421],"price":1.72004477453,"market_cap":241228364.40341988,"change1h":0.346264,"change24h":-0.659467,"change7d":5.49456,"volume24h":138004602.258219,"image_url":"/static/coins/1808.png"},{"id":66,"name":"Augur","symbol":"REP","slug":"augur","ranking":52,"coin_key":"augur.net","sparkline":[23.0620549661,22.2678266733,20.3833857091,21.4274960688,20.1989142731,20.3922425759,19.970659836],"price":20.5986239706,"market_cap":226584863.67659998,"change1h":0.251034,"change24h":2.80852,"change7d":-11.4737,"volume24h":19980848.1627958,"image_url":"/static/coins/1104.png"},{"id":2211,"name":"TrueUSD","symbol":"TUSD","slug":"trueusd","ranking":53,"coin_key":"trueusd.com","sparkline":[0.998862067153,0.998116386123,1.00049603163,0.99914956795,1.00009502791,1.00138436971,1.00028173543],"price":1.00265313322,"market_cap":217779084.9421607,"change1h":0.0112574,"change24h":0.149256,"change7d":0.383793,"volume24h":123962363.655422,"image_url":"/static/coins/2563.png"},{"id":1481,"name":"ICON","symbol":"ICX","slug":"icon","ranking":54,"coin_key":"icon.foundation","sparkline":[0.399270026321,0.385604295268,0.367187231266,0.380271925372,0.37687797073,0.371882206467,0.373862725151],"price":0.377013022863,"market_cap":210462064.8603743,"change1h":0.404778,"change24h":1.5718,"change7d":-5.77298,"volume24h":23262971.6442948,"image_url":"/static/coins/2099.png"},{"id":273,"name":"Decred","symbol":"DCR","slug":"decred","ranking":55,"coin_key":"decred.org","sparkline":[15.4850100382,15.0714288452,14.9177885389,15.2150521475,15.1909422044,15.5048903414,15.2581490044],"price":16.5274334108,"market_cap":195384846.35459673,"change1h":0.916963,"change24h":7.3334,"change7d":6.5709,"volume24h":9774875.42886903,"image_url":"/static/coins/1168.png"},{"id":1304,"name":"Zilliqa","symbol":"ZIL","slug":"zilliqa","ranking":56,"coin_key":"zilliqa.com","sparkline":[0.0185470317918,0.0179834719453,0.0169631437765,0.0179584784398,0.0177641932768,0.0183457309702,0.0180415584385],"price":0.0182415038442,"market_cap":188272206.07239708,"change1h":-0.109619,"change24h":0.654267,"change7d":-1.54519,"volume24h":44648000.8409243,"image_url":"/static/coins/2469.png"},{"id":5857,"name":"Bitcoin Gold","symbol":"BTG","slug":"bitcoin-gold","ranking":57,"coin_key":"bitcoingold.org","sparkline":[9.50961629929,9.58053659874,9.88528301509,9.96404906107,9.9242717454,9.73079832514,9.8620150303],"price":10.101942234,"market_cap":176924644.38676795,"change1h":0.0143291,"change24h":2.78367,"change7d":6.35339,"volume24h":42760175.6766189,"image_url":"/static/coins/2083.png"},{"id":5847,"name":"Bitcoin Diamond","symbol":"BCD","slug":"bitcoin-diamond","ranking":58,"coin_key":"btcd.io","sparkline":[0.883277521284,0.857692747497,0.867450953261,0.902213262255,0.881402357908,0.876647208285,0.873378352996],"price":0.897939512166,"market_cap":167459341.81034043,"change1h":0.524995,"change24h":3.33357,"change7d":0.258779,"volume24h":22278700.0424716,"image_url":"/static/coins/2222.png"},{"id":568,"name":"Lisk","symbol":"LSK","slug":"lisk","ranking":59,"coin_key":"lisk.io","sparkline":[1.27468941744,1.26059622254,1.22650789114,1.25073691668,1.27141377404,1.26068720777,1.2707702787],"price":1.29832182734,"market_cap":162270029.76538324,"change1h":0.581585,"change24h":1.74254,"change7d":1.17254,"volume24h":4890735.70070419,"image_url":"/static/coins/1214.png"},{"id":1033,"name":"Waves","symbol":"WAVES","slug":"waves","ranking":60,"coin_key":"wavesplatform.com","sparkline":[1.52720414037,1.52345456524,1.47310308069,1.49679049458,1.49807314632,1.53366328897,1.52342114043],"price":1.56013339353,"market_cap":160104851.58286816,"change1h":0.463685,"change24h":2.24942,"change7d":0.503476,"volume24h":35415521.6168305,"image_url":"/static/coins/1274.png"},{"id":5747,"name":"Ravencoin","symbol":"RVN","slug":"ravencoin","ranking":62,"coin_key":"ravencoin.org","sparkline":[0.0203063741396,0.0205041442958,0.0197083832752,0.020196752714,0.0199326498343,0.0204590100321,0.0205762607652],"price":0.0217620630893,"market_cap":146332791.0560174,"change1h":1.33611,"change24h":6.11902,"change7d":7.35088,"volume24h":19433626.4523758,"image_url":"/static/coins/2577.png"},{"id":1432,"name":"Enjin Coin","symbol":"ENJ","slug":"enjin-coin","ranking":63,"coin_key":"enjincoin.io","sparkline":[0.187134293672,0.1783828016,0.168931627946,0.174253711816,0.176548173976,0.178177376433,0.174417657463],"price":0.175978338342,"market_cap":144513706.9859261,"change1h":0.265756,"change24h":1.31103,"change7d":-6.27355,"volume24h":8734756.29977555,"image_url":"/static/coins/2130.png"},{"id":534388,"name":"Ren","symbol":"REN","slug":"ren","ranking":64,"coin_key":"renproject.io","sparkline":[0.157549945233,0.153384124565,0.153476006509,0.171305013449,0.163123987602,0.16288296014,0.159162055844],"price":0.164641855867,"market_cap":142932288.4855657,"change1h":1.9212,"change24h":1.38455,"change7d":4.75037,"volume24h":12057157.4278488,"image_url":"/static/coins/2539.png"},{"id":206016,"name":"The Midas Touch Gold","symbol":"TMTG","slug":"the-midas-touch-gold","ranking":65,"coin_key":"dgex.io","sparkline":[0.0428140747648,0.0423147621013,0.0394508939754,0.0384834058679,0.0372815043067,0.035819816768,0.0320872107589],"price":0.0323472355213,"market_cap":139633931.33225083,"change1h":0.0924467,"change24h":-3.94669,"change7d":-24.8714,"volume24h":12497913.5204462,"image_url":"/static/coins/3356.png"},{"id":629,"name":"MonaCoin","symbol":"MONA","slug":"monacoin","ranking":66,"coin_key":"monacoin.org","sparkline":[1.83517752168,1.84804879126,1.9847704672,1.98744486106,2.04897505086,2.0259355555,2.02590532898],"price":2.08704633884,"market_cap":137180877.29301453,"change1h":0.718818,"change24h":2.85142,"change7d":14.2864,"volume24h":13000455.1156499,"image_url":"/static/coins/213.png"},{"id":1685,"name":"DxChain Token","symbol":"DX","slug":"dxchain-token","ranking":67,"coin_key":"dxchain.com","sparkline":[0.00292562486169,0.00280663781365,0.00277898740913,0.00269121250191,0.00265525073461,0.00258137038757,0.00256440518605],"price":0.00274064142089,"market_cap":137032071.04364002,"change1h":-0.721796,"change24h":7.57016,"change7d":-5.04229,"volume24h":1324176.8268058,"image_url":"/static/coins/3139.png"},{"id":850,"name":"Siacoin","symbol":"SC","slug":"siacoin","ranking":69,"coin_key":"sia.tech","sparkline":[0.0031901539725,0.00309918940562,0.0029895674245,0.00307508022145,0.00316016587146,0.00315782680357,0.00300933312279],"price":0.00326560105141,"market_cap":136557794.72045246,"change1h":1.57417,"change24h":7.25945,"change7d":2.44918,"volume24h":6248535.79033965,"image_url":"/static/coins/1042.png"},{"id":5858,"name":"Nano","symbol":"NANO","slug":"nano","ranking":71,"coin_key":"nano.org","sparkline":[0.988793098604,0.959901553314,0.931977191248,0.953205918407,0.940637441923,0.935720817331,0.93411568205],"price":0.993214714106,"market_cap":132344169.40562968,"change1h":2.35295,"change24h":6.60406,"change7d":-0.048951,"volume24h":8521050.79230646,"image_url":"/static/coins/1567.png"},{"id":1171,"name":"Nexo","symbol":"NEXO","slug":"nexo","ranking":72,"coin_key":"nexo.io","sparkline":[0.225133338579,0.225267984611,0.227724600354,0.233158906241,0.231659221032,0.230657220086,0.231827226996],"price":0.236262207798,"market_cap":132306838.96576428,"change1h":0.0817391,"change24h":1.112,"change7d":9.2079,"volume24h":6737047.21498986,"image_url":"/static/coins/2694.png"},{"id":1579,"name":"Holo","symbol":"HOT","slug":"holo","ranking":73,"coin_key":"holo.host","sparkline":[0.000765310312105,0.000759049244106,0.000740103999842,0.000793131275216,0.000762164490512,0.000771787687289,0.000769867866882],"price":0.000783956439693,"market_cap":130029308.88625535,"change1h":0.149872,"change24h":1.98101,"change7d":0.748613,"volume24h":10262853.2437671,"image_url":"/static/coins/2682.png"},{"id":5848,"name":"Bytom","symbol":"BTM","slug":"bytom","ranking":74,"coin_key":"bytom.io","sparkline":[0.0892569312071,0.0881305509754,0.094045241986,0.0925378741412,0.0912443086898,0.0927532022142,0.0910451254082],"price":0.0969663987068,"market_cap":127123040.2217928,"change1h":0.325718,"change24h":7.04588,"change7d":9.33081,"volume24h":23752563.6622578,"image_url":"/static/coins/1866.png"},{"id":76,"name":"Bancor","symbol":"BNT","slug":"bancor","ranking":75,"coin_key":"bancor.network","sparkline":[1.38931284164,1.42495448421,1.34829703824,1.48308206985,1.47031361864,1.69705446732,1.6589102203],"price":1.75098673908,"market_cap":121078157.53596112,"change1h":1.39499,"change24h":5.85044,"change7d":25.1172,"volume24h":65712593.489696,"image_url":"/static/coins/1727.png"},{"id":577,"name":"Loopring","symbol":"LRC","slug":"loopring","ranking":76,"coin_key":"loopring.org","sparkline":[0.016886234721,0.0174111443934,0.0153860320175,0.0173269721762,0.016102999397,0.0172050457306,0.0162017689529],"price":0.105489166597,"market_cap":117373518.91817872,"change1h":-0.118317,"change24h":3.41039,"change7d":-9.41736,"volume24h":17785917.4691916,"image_url":"/static/coins/2693.png"},{"id":206018,"name":"ZB Token","symbol":"ZB","slug":"zb","ranking":78,"coin_key":"zb.com","sparkline":[0.22647462444,0.230358992244,0.238141715731,0.23413836251,0.236651876458,0.237063797951,0.239938810265],"price":0.197022200238,"market_cap":91278180.69184473,"change1h":0.848909,"change24h":0.177132,"change7d":0.722186,"volume24h":217398406.358681,"image_url":"/static/coins/3351.png"},{"id":1179,"name":"Celsius","symbol":"CEL","slug":"celsius","ranking":82,"coin_key":"celsius.network","sparkline":[0.412025414856,0.409372382204,0.402360147059,0.395300306592,0.405334963986,0.399546591498,0.407391721661],"price":0.466984394103,"market_cap":111545536.07925455,"change1h":2.25886,"change24h":16.2232,"change7d":13.604,"volume24h":1346089.25709889,"image_url":"/static/coins/2700.png"},{"id":1571,"name":"Quant","symbol":"QNT","slug":"quant","ranking":83,"coin_key":"quant.network","sparkline":[7.96898393162,8.09642189796,8.36368696438,8.47601839425,7.87915551957,7.38573195439,8.21623240361],"price":9.21103986649,"market_cap":111202471.01568875,"change1h":17.1283,"change24h":10.4372,"change7d":14.1873,"volume24h":2793957.77095836,"image_url":"/static/coins/3155.png"},{"id":1007,"name":"Verge","symbol":"XVG","slug":"verge","ranking":84,"coin_key":"vergecurrency.com","sparkline":[0.00669858381124,0.00627209174652,0.00597067945282,0.00592940589399,0.00599443995505,0.0062531498407,0.00596752341406],"price":0.00594812629376,"market_cap":97164321.23292804,"change1h":-0.425933,"change24h":-1.41854,"change7d":-11.3478,"volume24h":3047208.55455942,"image_url":"/static/coins/693.png"},{"id":1513,"name":"Status","symbol":"SNT","slug":"status","ranking":85,"coin_key":"status.im","sparkline":[0.0265504201621,0.0291548135211,0.0266637412765,0.026793185623,0.0268490590215,0.0263432059322,0.0263247729255],"price":0.0275416494271,"market_cap":95582847.83153003,"change1h":1.16666,"change24h":3.83321,"change7d":4.37674,"volume24h":17060472.1400301,"image_url":"/static/coins/1759.png"},{"id":812,"name":"iExec RLC","symbol":"RLC","slug":"rlc","ranking":86,"coin_key":"iex.ec","sparkline":[1.15157646048,1.15391208463,0.993403593188,1.18228791708,1.09779161454,1.16741443289,1.18179222509],"price":1.14835837615,"market_cap":91949966.10071333,"change1h":-1.09956,"change24h":-3.01194,"change7d":-0.949362,"volume24h":4096344.54336955,"image_url":"/static/coins/1637.png"},{"id":1653,"name":"IOST","symbol":"IOST","slug":"iostoken","ranking":88,"coin_key":"iost.io","sparkline":[0.00608141172776,0.00597905042167,0.00551797688433,0.00581735300811,0.00572380056656,0.00574412735139,0.00586075995657],"price":0.00595383781652,"market_cap":89778229.47164562,"change1h":-0.266883,"change24h":0.886457,"change7d":-2.14414,"volume24h":39657722.2581144,"image_url":"/static/coins/2405.png"},{"id":47,"name":"Aragon","symbol":"ANT","slug":"aragon","ranking":89,"coin_key":"aragon.org","sparkline":[2.20234623818,2.23991795519,2.00556676175,2.05033503133,2.00768551333,2.27735595143,2.38041725055],"price":2.67178976968,"market_cap":86782084.880638,"change1h":0.60154,"change24h":11.2438,"change7d":25.0326,"volume24h":1297312.36901902,"image_url":"/static/coins/1680.png"},{"id":1075,"name":"Horizen","symbol":"ZEN","slug":"zencash","ranking":90,"coin_key":"horizen.global","sparkline":[9.09174534024,9.31220775511,8.720463791,8.3956889675,8.12510927846,8.20531340586,8.04567074708],"price":5.57143935094,"market_cap":43940618.94401793,"change1h":0.374704,"change24h":1.11091,"change7d":19.616,"volume24h":546442.302525843,"image_url":"https://gitcdn.link/repo/cjdowner/cryptocurrency-icons/master/svg/color/zen.svg"},{"id":3570,"name":"ABBC Coin","symbol":"ABBC","slug":"abbc-coin","ranking":92,"coin_key":"abbcfoundation.com","sparkline":[0.186352655527,0.180722797022,0.186300055757,0.169845373956,0.171029679534,0.157835816986,0.151812475201],"price":0.148331899981,"market_cap":82386047.67054594,"change1h":0.027793,"change24h":-6.57376,"change7d":-20.8769,"volume24h":42998539.9108765,"image_url":"/static/coins/3437.png"},{"id":534360,"name":"Reserve Rights","symbol":"RSR","slug":"reserve-rights","ranking":94,"coin_key":"reserve.org","sparkline":[0.00912077250264,0.00968300713035,0.00804951103924,0.00935753730341,0.00926996499715,0.00879528799879,0.0101846067304],"price":0.0119068884233,"market_cap":81562173.79271562,"change1h":0.139826,"change24h":14.7851,"change7d":26.855,"volume24h":8674775.31389603,"image_url":"/static/coins/3964.png"},{"id":894,"name":"Steem","symbol":"STEEM","slug":"steem","ranking":95,"coin_key":"steem.io/steem","sparkline":[0.210870607826,0.206785972214,0.20266669403,0.2067280154,0.210999091964,0.214366120196,0.211935228022],"price":0.213253189571,"market_cap":79396661.68375053,"change1h":-0.230392,"change24h":1.05292,"change7d":0.980082,"volume24h":2771076.59616772,"image_url":"/static/coins/1230.png"},{"id":544,"name":"Komodo","symbol":"KMD","slug":"komodo","ranking":96,"coin_key":"komodoplatform.com","sparkline":[0.671640475224,0.651533546863,0.612160040182,0.642508061994,0.64090312966,0.655703809401,0.645940956537],"price":0.65388975473,"market_cap":79156964.2891762,"change1h":-0.414977,"change24h":1.5984,"change7d":-3.14539,"volume24h":3506754.25695693,"image_url":"/static/coins/1521.png"},{"id":2263,"name":"Matic Network","symbol":"MATIC","slug":"matic-network","ranking":97,"coin_key":"matic.network","sparkline":[0.0208254037807,0.0206956588134,0.0198285632222,0.020481404387,0.0203814264545,0.0204287914806,0.0202578046921],"price":0.0208053128883,"market_cap":77954799.66420893,"change1h":1.02184,"change24h":2.44688,"change7d":-0.478582,"volume24h":14133311.3985691,"image_url":"/static/coins/3890.png"},{"id":1292,"name":"SwissBorg","symbol":"CHSB","slug":"swissborg","ranking":98,"coin_key":"swissborg.com","sparkline":[0.112925400835,0.108843425285,0.102990137995,0.111405545306,0.110449118444,0.108638837817,0.109939766261],"price":0.108093669058,"market_cap":77393087.41529226,"change1h":-1.28067,"change24h":-1.52822,"change7d":-4.63111,"volume24h":848795.191301307,"image_url":"/static/coins/2499.png"},{"id":6082,"name":"Aurora","symbol":"AOA","slug":"aurora","ranking":99,"coin_key":"aurorachain.io","sparkline":[0.014312544018,0.0132028982069,0.0125486712333,0.0121630059783,0.0116335299512,0.0112009974466,0.0110949125322],"price":0.011667097315,"market_cap":76330002.50600798,"change1h":1.4074,"change24h":10.4334,"change7d":-16.6232,"volume24h":13394275.2987793,"image_url":"/static/coins/2874.png"},{"id":3896,"name":"Digitex Futures","symbol":"DGTX","slug":"digitex-futures","ranking":100,"coin_key":"digitexfutures.com","sparkline":[0.102786967212,0.108193093185,0.105839348128,0.0973638501902,0.112484874614,0.102362866272,0.0884956163828],"price":0.0853094322359,"market_cap":76248351.88720793,"change1h":-1.4939,"change24h":-7.31353,"change7d":-13.4668,"volume24h":4779192.5807239,"image_url":"/static/coins/2772.png"},{"id":136,"name":"BitShares","symbol":"BTS","slug":"bitshares","ranking":101,"coin_key":"bitshares.org","sparkline":[0.0254485891074,0.025313352593,0.0252618769864,0.025539858905,0.026012486312,0.0269936199956,0.0263345214526],"price":0.0272587095463,"market_cap":75000976.38116714,"change1h":0.579559,"change24h":3.33528,"change7d":7.65988,"volume24h":10119289.9090998,"image_url":"/static/coins/463.png"},{"id":5879,"name":"Energi","symbol":"NRG","slug":"energi","ranking":103,"coin_key":"energi.world","sparkline":[1.92991457154,2.15115058357,2.12957801785,2.15227943859,2.14194438049,2.15494402596,2.1918621463],"price":2.21264137086,"market_cap":69853972.33510019,"change1h":0.990386,"change24h":0.0844458,"change7d":12.7014,"volume24h":1405692.22424686,"image_url":"/static/coins/3218.png"},{"id":1073,"name":"Zcoin","symbol":"XZC","slug":"zcoin","ranking":104,"coin_key":"zcoin.io","sparkline":[5.88111444081,5.69501559503,5.60575041331,5.59108020177,5.64096140783,5.63550804146,5.60209965661],"price":6.53550662657,"market_cap":69795565.81073716,"change1h":4.29908,"change24h":17.6857,"change7d":11.0826,"volume24h":23487948.4157838,"image_url":"/static/coins/1414.png"},{"id":1191,"name":"Ocean Protocol","symbol":"OCEAN","slug":"ocean-protocol","ranking":105,"coin_key":"oceanprotocol.com","sparkline":[],"price":0.200498264249,"market_cap":69760819.31839815,"change1h":-1.43534,"change24h":-1.83498,"change7d":19.4866,"volume24h":3561999.5555315,"image_url":"/static/coins/3911.png"},{"id":3426,"name":"Travala.com","symbol":"AVA","slug":"travala","ranking":107,"coin_key":"travala.com","sparkline":[1.02116634034,1.20795565529,1.23017469699,1.56169093858,1.83262865397,1.66792778036,1.47699271095],"price":1.69922882383,"market_cap":66962531.49622354,"change1h":0.605271,"change24h":15.06,"change7d":69.3129,"volume24h":3167833.64971908,"image_url":"/static/coins/2776.png"},{"id":1508,"name":"Decentraland","symbol":"MANA","slug":"decentraland","ranking":108,"coin_key":"decentraland.org","sparkline":[0.0462570602043,0.0443301384072,0.0409484533252,0.0425202851741,0.048604861911,0.0471807446494,0.0457162684802],"price":0.0464556667216,"market_cap":66930336.723975174,"change1h":0.403272,"change24h":2.83187,"change7d":-0.996545,"volume24h":14938259.2580018,"image_url":"/static/coins/1966.png"},{"id":1648,"name":"KuCoin Shares","symbol":"KCS","slug":"kucoin-shares","ranking":109,"coin_key":"kucoin.com","sparkline":[0.872086795937,0.899134013824,0.891159743732,0.859188016804,0.836395837642,0.814756764995,0.793778247886],"price":0.828333136505,"market_cap":66870003.80703142,"change1h":-0.458096,"change24h":3.57478,"change7d":-2.84478,"volume24h":5778534.66680609,"image_url":"/static/coins/2087.png"},{"id":627,"name":"MCO","symbol":"MCO","slug":"crypto-com","ranking":110,"coin_key":"crypto.com","sparkline":[4.02108543554,3.97638254312,4.13917575414,4.15308151632,4.16366910958,4.13704054662,4.09711558079],"price":4.14609016603,"market_cap":65482647.78676284,"change1h":0.294933,"change24h":1.16521,"change7d":2.76944,"volume24h":18562239.3448316,"image_url":"/static/coins/1776.png"},{"id":534327,"name":"HyperCash","symbol":"HC","slug":"hypercash","ranking":111,"coin_key":"h.cash","sparkline":[1.32027626862,1.37144438785,1.35669167499,1.36444455321,1.36741928896,1.37291239327,1.37251711474],"price":1.46161475728,"market_cap":65358622.62140591,"change1h":0.735371,"change24h":5.52113,"change7d":11.2087,"volume24h":31906475.0230804,"image_url":"/static/coins/1903.png"},{"id":1118,"name":"Unibright","symbol":"UBT","slug":"unibright","ranking":112,"coin_key":"unibright.io","sparkline":[0.418912354835,0.438355551943,0.439994739969,0.441543427757,0.430715084588,0.426987646221,0.427060098304],"price":0.438970899291,"market_cap":65228880.448061585,"change1h":-4.48744,"change24h":2.96382,"change7d":3.35846,"volume24h":2541421.65432567,"image_url":"/static/coins/2758.png"},{"id":3757,"name":"XinFin Network","symbol":"XDCE","slug":"xinfin-network","ranking":113,"coin_key":"xinfin.io","sparkline":[0.00590617205608,0.00644096565165,0.00605808233505,0.00643890105596,0.00659666453725,0.00709646877763,0.00631197592137],"price":0.0067351696586,"market_cap":64916599.87089598,"change1h":-1.47042,"change24h":6.11495,"change7d":14.9152,"volume24h":2907995.96055532,"image_url":"/static/coins/2634.png"},{"id":1390,"name":"WAX","symbol":"WAXP","slug":"wax","ranking":114,"coin_key":"wax.io","sparkline":[0.0535277822286,0.0519540484333,0.0484760903213,0.0505471458514,0.0521095484588,0.051455949263,0.0507187714678],"price":0.0508036183972,"market_cap":63616839.746911615,"change1h":-0.239124,"change24h":-0.19737,"change7d":-5.08097,"volume24h":1829103.99859941,"image_url":"/static/coins/2300.png"},{"id":7967,"name":"Chiliz","symbol":"CHZ","slug":"chiliz","ranking":115,"coin_key":"chiliz.io","sparkline":[],"price":0.0133029654457,"market_cap":62742261.68203479,"change1h":0.802083,"change24h":-2.99685,"change7d":11.6471,"volume24h":15752167.6192801,"image_url":"/static/coins/4066.png"},{"id":447,"name":"Golem","symbol":"GNT","slug":"golem-network-tokens","ranking":117,"coin_key":"golem.network","sparkline":[0.0639497564605,0.060100589701,0.0564353059318,0.0604847574251,0.0621216116325,0.0614060880293,0.0602628011567],"price":0.0611447680652,"market_cap":60574287.37915169,"change1h":0.250238,"change24h":1.43314,"change7d":-1.95303,"volume24h":7432490.26156166,"image_url":"/static/coins/1455.png"},{"id":1198,"name":"TomoChain","symbol":"TOMO","slug":"tomochain","ranking":118,"coin_key":"tomochain.com","sparkline":[1.06418290957,1.0550626487,0.903321602585,0.960603245169,0.91323882481,0.912977539381,0.856224711861],"price":0.842188815933,"market_cap":60197530.03613061,"change1h":-0.381054,"change24h":-2.76199,"change7d":-22.9221,"volume24h":7266362.78783861,"image_url":"/static/coins/2570.png"},{"id":534351,"name":"RSK Infrastructure Framework","symbol":"RIF","slug":"rif-token","ranking":119,"coin_key":"rifos.org","sparkline":[0.087365696926,0.0884986303275,0.0914743699999,0.0913915672024,0.0921846133393,0.0930079626164,0.0941757123836],"price":0.078038781514,"market_cap":44439965.60499837,"change1h":-0.230615,"change24h":6.01951,"change7d":-9.63483,"volume24h":10353811.9539649,"image_url":"/static/coins/3701.png"},{"id":1259,"name":"Elastos","symbol":"ELA","slug":"elastos","ranking":120,"coin_key":"elastos.org","sparkline":[3.1602576494,2.7170739472,2.72374663676,2.93900433979,2.98731645324,2.75523802782,2.68760097645],"price":2.65917983071,"market_cap":57858038.531614415,"change1h":0.657626,"change24h":-2.99582,"change7d":-14.4274,"volume24h":8597066.51635955,"image_url":"/static/coins/2492.png"}],"pageCount":22,"watchList":null,"marketDominance":[{"id":109,"name":"Bitcoin","symbol":"BTC","slug":"bitcoin","price_usd":11323.4664207,"market_percentage":0.622612934042856},{"id":357,"name":"Ethereum","symbol":"ETH","slug":"ethereum","price_usd":345.554649307,"market_percentage":0.11534328592596298},{"id":940,"name":"Tether","symbol":"USDT","slug":"tether","price_usd":1.00014138236,"market_percentage":0.029803935351403205},{"id":809,"name":"XRP","symbol":"XRP","slug":"ripple","price_usd":0.22464162062,"market_percentage":0.02899121545334737},{"id":111,"name":"Bitcoin Cash","symbol":"BCH","slug":"bitcoin-cash","price_usd":300.492021966,"market_percentage":0.016548558652016297}],"totalMarketCap":[{"id":168270,"total_market_cap":299750708007.18,"total_volume_24h":80497820223.01,"timestamp":"2020-07-26T23:59:00.000Z"},{"id":168558,"total_market_cap":321835039547.95,"total_volume_24h":121274897753.71,"timestamp":"2020-07-27T23:59:00.000Z"},{"id":168846,"total_market_cap":321967558023.04,"total_volume_24h":101775116622.27,"timestamp":"2020-07-28T23:59:00.000Z"},{"id":169134,"total_market_cap":325886285759.25,"total_volume_24h":88313818280.7,"timestamp":"2020-07-29T23:59:00.000Z"},{"id":169422,"total_market_cap":328727120959.33,"total_volume_24h":84583199917.66,"timestamp":"2020-07-30T23:58:00.000Z"},{"id":169710,"total_market_cap":335434113612.41,"total_volume_24h":86128538908.87,"timestamp":"2020-07-31T23:59:00.000Z"},{"id":169960,"total_market_cap":352605228903.63,"total_volume_24h":99578251503.69,"timestamp":"2020-08-01T20:48:00.000Z"}],"currencies":{"CAD":1.3418298447,"HKD":7.7502532073,"ISK":135.043889264,"PHP":49.0580688724,"DKK":6.2830857529,"HUF":291.1461850101,"CZK":22.0923362593,"GBP":0.76006921,"RON":4.0779034436,"SEK":8.6795239703,"IDR":14655.6380823768,"INR":74.8105165429,"BRL":5.1670324105,"RUB":74.0124915598,"HRK":6.3145678596,"JPY":104.9206617151,"THB":31.1850101283,"CHF":0.9089297772,"EUR":0.8440243079,"MYR":4.2395340986,"BGN":1.6507427414,"TRY":6.9712187711,"CNY":6.9747636732,"NOK":9.0583220797,"NZD":1.4999155976,"ZAR":16.9615124916,"USD":1.0,"MXN":22.179270763,"SGD":1.3711174882,"AUD":1.3916272789,"ILS":3.40243079,"KRW":1189.7029034436,"PLN":3.7165766374,"updated_at":"2020-07-31"},"stylesNamespace":"App"}
+   </script>
+   <style data-jss-server-side="" data-meta="App">
+    .jssApp170 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jssApp199 {
+  background-color: #fff;
+}
+.jssApp200 {
+  border-radius: 4px;
+}
+.jssApp201 {
+  box-shadow: none;
+}
+.jssApp202 {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12);
+}
+.jssApp203 {
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+}
+.jssApp204 {
+  box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12);
+}
+.jssApp205 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.jssApp206 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.jssApp207 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.jssApp208 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.jssApp209 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.jssApp210 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.jssApp211 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.jssApp212 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.jssApp213 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.jssApp214 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.jssApp215 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.jssApp216 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.jssApp217 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.jssApp218 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.jssApp219 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.jssApp220 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.jssApp221 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.jssApp222 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.jssApp223 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.jssApp224 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.jssApp225 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+.jssApp115 {
+  margin: 0;
+  display: block;
+}
+.jssApp116 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 7rem;
+  font-weight: 300;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.14286em;
+  margin-left: -.04em;
+  letter-spacing: -.04em;
+}
+.jssApp117 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.30357em;
+  margin-left: -.02em;
+  letter-spacing: -.02em;
+}
+.jssApp118 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.8125rem;
+  font-weight: 400;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.13333em;
+  margin-left: -.02em;
+}
+.jssApp119 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.125rem;
+  font-weight: 400;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.20588em;
+}
+.jssApp120 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.35417em;
+}
+.jssApp121 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3125rem;
+  font-weight: 500;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.16667em;
+}
+.jssApp122 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Avenir",sans-serif;
+  line-height: 1.5em;
+}
+.jssApp123 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.jssApp124 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.jssApp125 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+}
+.jssApp126 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+.jssApp127 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 6rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 300;
+  line-height: 1;
+}
+.jssApp128 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3.75rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 300;
+  line-height: 1;
+}
+.jssApp129 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.04;
+}
+.jssApp130 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 2.125rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+}
+.jssApp131 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.jssApp132 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.25rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.jssApp133 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.jssApp134 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.jssApp135 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: "Avenir",sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.jssApp136 {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+.jssApp137 {
+  text-align: left;
+}
+.jssApp138 {
+  text-align: center;
+}
+.jssApp139 {
+  text-align: right;
+}
+.jssApp140 {
+  text-align: justify;
+}
+.jssApp141 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.jssApp142 {
+  margin-bottom: 0.35em;
+}
+.jssApp143 {
+  margin-bottom: 16px;
+}
+.jssApp144 {
+  color: inherit;
+}
+.jssApp145 {
+  color: #23adf0;
+}
+.jssApp146 {
+  color: #f50057;
+}
+.jssApp147 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.jssApp148 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.jssApp149 {
+  color: #f44336;
+}
+.jssApp150 {
+  display: inline;
+}
+.jssApp9 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.jssApp10 {
+  margin: 0;
+  box-sizing: border-box;
+}
+.jssApp11 {
+  min-width: 0;
+}
+.jssApp12 {
+  flex-direction: column;
+}
+.jssApp13 {
+  flex-direction: column-reverse;
+}
+.jssApp14 {
+  flex-direction: row-reverse;
+}
+.jssApp15 {
+  flex-wrap: nowrap;
+}
+.jssApp16 {
+  flex-wrap: wrap-reverse;
+}
+.jssApp17 {
+  align-items: center;
+}
+.jssApp18 {
+  align-items: flex-start;
+}
+.jssApp19 {
+  align-items: flex-end;
+}
+.jssApp20 {
+  align-items: baseline;
+}
+.jssApp21 {
+  align-content: center;
+}
+.jssApp22 {
+  align-content: flex-start;
+}
+.jssApp23 {
+  align-content: flex-end;
+}
+.jssApp24 {
+  align-content: space-between;
+}
+.jssApp25 {
+  align-content: space-around;
+}
+.jssApp26 {
+  justify-content: center;
+}
+.jssApp27 {
+  justify-content: flex-end;
+}
+.jssApp28 {
+  justify-content: space-between;
+}
+.jssApp29 {
+  justify-content: space-around;
+}
+.jssApp30 {
+  justify-content: space-evenly;
+}
+.jssApp31 {
+  width: calc(100% + 8px);
+  margin: -4px;
+}
+.jssApp31 > .jssApp10 {
+  padding: 4px;
+}
+.jssApp32 {
+  width: calc(100% + 16px);
+  margin: -8px;
+}
+.jssApp32 > .jssApp10 {
+  padding: 8px;
+}
+.jssApp33 {
+  width: calc(100% + 24px);
+  margin: -12px;
+}
+.jssApp33 > .jssApp10 {
+  padding: 12px;
+}
+.jssApp34 {
+  width: calc(100% + 32px);
+  margin: -16px;
+}
+.jssApp34 > .jssApp10 {
+  padding: 16px;
+}
+.jssApp35 {
+  width: calc(100% + 40px);
+  margin: -20px;
+}
+.jssApp35 > .jssApp10 {
+  padding: 20px;
+}
+.jssApp36 {
+  flex-grow: 0;
+  max-width: none;
+  flex-basis: auto;
+}
+.jssApp37 {
+  flex-grow: 1;
+  max-width: 100%;
+  flex-basis: 0;
+}
+.jssApp38 {
+  flex-grow: 0;
+  max-width: 8.333333%;
+  flex-basis: 8.333333%;
+}
+.jssApp39 {
+  flex-grow: 0;
+  max-width: 16.666667%;
+  flex-basis: 16.666667%;
+}
+.jssApp40 {
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+}
+.jssApp41 {
+  flex-grow: 0;
+  max-width: 33.333333%;
+  flex-basis: 33.333333%;
+}
+.jssApp42 {
+  flex-grow: 0;
+  max-width: 41.666667%;
+  flex-basis: 41.666667%;
+}
+.jssApp43 {
+  flex-grow: 0;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+.jssApp44 {
+  flex-grow: 0;
+  max-width: 58.333333%;
+  flex-basis: 58.333333%;
+}
+.jssApp45 {
+  flex-grow: 0;
+  max-width: 66.666667%;
+  flex-basis: 66.666667%;
+}
+.jssApp46 {
+  flex-grow: 0;
+  max-width: 75%;
+  flex-basis: 75%;
+}
+.jssApp47 {
+  flex-grow: 0;
+  max-width: 83.333333%;
+  flex-basis: 83.333333%;
+}
+.jssApp48 {
+  flex-grow: 0;
+  max-width: 91.666667%;
+  flex-basis: 91.666667%;
+}
+.jssApp49 {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+@media (min-width:600px) {
+  .jssApp50 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jssApp51 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jssApp52 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jssApp53 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jssApp54 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jssApp55 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jssApp56 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jssApp57 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jssApp58 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jssApp59 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jssApp60 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jssApp61 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jssApp62 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jssApp63 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:992px) {
+  .jssApp64 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jssApp65 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jssApp66 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jssApp67 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jssApp68 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jssApp69 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jssApp70 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jssApp71 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jssApp72 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jssApp73 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jssApp74 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jssApp75 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jssApp76 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jssApp77 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1184px) {
+  .jssApp78 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jssApp79 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jssApp80 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jssApp81 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jssApp82 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jssApp83 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jssApp84 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jssApp85 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jssApp86 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jssApp87 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jssApp88 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jssApp89 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jssApp90 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jssApp91 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1920px) {
+  .jssApp92 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jssApp93 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jssApp94 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jssApp95 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jssApp96 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jssApp97 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jssApp98 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jssApp99 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jssApp100 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jssApp101 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jssApp102 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jssApp103 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jssApp104 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jssApp105 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+.jssApp254 {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+@media (min-width:992px) {
+  .jssApp254 {
+    border: 1px solid #e5e8ed;
+    border-radius: 2px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp255 {
+    padding-bottom: 8px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp256 {
+    align-self: flex-end;
+    padding-bottom: 8px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp257 {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp257 {
+    font-size: 26px;
+    font-weight: 400;
+    padding-top: 16px !important;
+    border-bottom: 1px solid #e5e8ed;
+    padding-bottom: 16px !important;
+  }
+}
+.jssApp258 {
+  padding: 8px !important;
+  text-align: center;
+}
+@media (min-width:992px) {
+  .jssApp258 {
+    z-index: 100;
+    align-self: flex-end;
+    padding-top: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+.jssApp259 {
+  border: 1px solid #e5e8ed;
+  padding: 0 10px;
+  border-radius: 2px;
+}
+.jssApp260 {
+  display: flex;
+  text-align: center;
+  padding-top: 8px !important;
+  align-items: flex-end;
+  padding-bottom: 8px !important;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+@media (max-width:991.95px) {
+  .jssApp260 {
+    border-bottom: 1px solid #e5e8ed;
+    padding-right: 8px !important;
+  }
+}
+@media (min-width:992px) {
+  .jssApp260 {
+    padding-right: 16px !important;
+  }
+}
+.jssApp261 {
+  height: 30px;
+  font-size: 14px;
+  max-height: 30px;
+  font-weight: 500;
+  line-height: 30px;
+}
+@media (max-width:991.95px) {
+  .jssApp261 {
+    float: right;
+    margin-right: 8px;
+  }
+}
+.jssApp262 {
+  flex: 1;
+  display: flex;
+  border-top: 1px solid #e5e8ed;
+}
+.jssApp264 {
+  height: 32px;
+}
+.jssApp265 {
+  padding-left: 4px !important;
+}
+.jssApp266 {
+  padding-left: 4px !important;
+  padding-bottom: 3px !important;
+}
+.jssApp267 {
+  color: #333;
+  padding-right: 4px !important;
+}
+.jssApp268 {
+  color: #777;
+  padding-right: 4px !important;
+}
+.jssApp269 {
+  color: #333;
+}
+.jssApp270 {
+  color: #777;
+}
+.jssApp271 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.jssApp272 {
+  width: 36px;
+  max-width: 36px;
+  flex-shrink: 0;
+  padding-right: 4px;
+}
+.jssApp274 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.jssApp275 {
+  min-width: 40px;
+  max-width: 40px;
+  font-size: 0.6rem;
+}
+.jssApp276 {
+  min-width: 100px;
+  font-size: 0.6rem;
+  text-align: right;
+  flex-direction: column;
+}
+.jssApp277 {
+  color: #333;
+  min-width: 100px;
+  text-align: right;
+  padding-right: 8px !important;
+}
+.jssApp278 {
+  color: #333;
+  text-align: right;
+  padding-right: 8px !important;
+}
+.jssApp279 {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+@media (min-width:992px) {
+  .jssApp279 {
+    margin: 0 auto;
+    padding: 8px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp279 {
+    padding: 8px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+.jssApp280 {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 30px;
+}
+.jssApp281 {
+  height: 30px;
+  max-height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.jssApp226 {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+@media (min-width:992px) {
+  .jssApp226 {
+    border: 1px solid #e5e8ed;
+    border-radius: 2px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp227 {
+    padding-bottom: 8px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp228 {
+    align-self: flex-end;
+    padding-bottom: 8px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp229 {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp229 {
+    font-size: 26px;
+    font-weight: 400;
+    padding-top: 16px !important;
+    border-bottom: 1px solid #e5e8ed;
+    padding-bottom: 16px !important;
+  }
+}
+.jssApp230 {
+  padding: 8px !important;
+  text-align: center;
+}
+@media (min-width:992px) {
+  .jssApp230 {
+    z-index: 100;
+    align-self: flex-end;
+    padding-top: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+.jssApp231 {
+  border: 1px solid #e5e8ed;
+  padding: 0 10px;
+  border-radius: 2px;
+}
+.jssApp232 {
+  display: flex;
+  text-align: center;
+  padding-top: 8px !important;
+  align-items: flex-end;
+  padding-bottom: 8px !important;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+@media (max-width:991.95px) {
+  .jssApp232 {
+    border-bottom: 1px solid #e5e8ed;
+    padding-right: 8px !important;
+  }
+}
+@media (min-width:992px) {
+  .jssApp232 {
+    padding-right: 16px !important;
+  }
+}
+.jssApp233 {
+  height: 30px;
+  font-size: 14px;
+  max-height: 30px;
+  font-weight: 500;
+  line-height: 30px;
+}
+@media (max-width:991.95px) {
+  .jssApp233 {
+    float: right;
+    margin-right: 8px;
+  }
+}
+.jssApp234 {
+  flex: 1;
+  display: flex;
+  border-top: 1px solid #e5e8ed;
+}
+.jssApp236 {
+  height: 32px;
+}
+.jssApp237 {
+  padding-left: 4px !important;
+}
+.jssApp238 {
+  padding-left: 4px !important;
+  padding-bottom: 3px !important;
+}
+.jssApp239 {
+  color: #333;
+  padding-right: 4px !important;
+}
+.jssApp240 {
+  color: #777;
+  padding-right: 4px !important;
+}
+.jssApp241 {
+  color: #333;
+}
+.jssApp242 {
+  color: #777;
+}
+.jssApp243 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.jssApp244 {
+  width: 36px;
+  max-width: 36px;
+  flex-shrink: 0;
+  padding-right: 4px;
+}
+.jssApp246 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.jssApp247 {
+  min-width: 40px;
+  max-width: 40px;
+  font-size: 0.6rem;
+}
+.jssApp248 {
+  min-width: 100px;
+  font-size: 0.6rem;
+  text-align: right;
+  flex-direction: column;
+}
+.jssApp249 {
+  color: #333;
+  min-width: 100px;
+  text-align: right;
+  padding-right: 8px !important;
+}
+.jssApp250 {
+  color: #333;
+  text-align: right;
+  padding-right: 8px !important;
+}
+.jssApp251 {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+@media (min-width:992px) {
+  .jssApp251 {
+    margin: 0 auto;
+    padding: 8px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp251 {
+    padding: 8px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+.jssApp252 {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 30px;
+}
+.jssApp253 {
+  height: 30px;
+  max-height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.jssApp171 {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+@media (min-width:992px) {
+  .jssApp171 {
+    border: 1px solid #e5e8ed;
+    border-radius: 2px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp172 {
+    padding-bottom: 8px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp173 {
+    align-self: flex-end;
+    padding-bottom: 8px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp174 {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp174 {
+    font-size: 26px;
+    font-weight: 400;
+    padding-top: 16px !important;
+    border-bottom: 1px solid #e5e8ed;
+    padding-bottom: 16px !important;
+  }
+}
+.jssApp175 {
+  padding: 8px !important;
+  text-align: center;
+}
+@media (min-width:992px) {
+  .jssApp175 {
+    z-index: 100;
+    align-self: flex-end;
+    padding-top: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+.jssApp176 {
+  border: 1px solid #e5e8ed;
+  padding: 0 10px;
+  border-radius: 2px;
+}
+.jssApp177 {
+  display: flex;
+  text-align: center;
+  padding-top: 8px !important;
+  align-items: flex-end;
+  padding-bottom: 8px !important;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+@media (max-width:991.95px) {
+  .jssApp177 {
+    border-bottom: 1px solid #e5e8ed;
+    padding-right: 8px !important;
+  }
+}
+@media (min-width:992px) {
+  .jssApp177 {
+    padding-right: 16px !important;
+  }
+}
+.jssApp178 {
+  height: 30px;
+  font-size: 14px;
+  max-height: 30px;
+  font-weight: 500;
+  line-height: 30px;
+}
+@media (max-width:991.95px) {
+  .jssApp178 {
+    float: right;
+    margin-right: 8px;
+  }
+}
+.jssApp179 {
+  flex: 1;
+  display: flex;
+  border-top: 1px solid #e5e8ed;
+}
+.jssApp181 {
+  height: 32px;
+}
+.jssApp182 {
+  padding-left: 4px !important;
+}
+.jssApp183 {
+  padding-left: 4px !important;
+  padding-bottom: 3px !important;
+}
+.jssApp184 {
+  color: #333;
+  padding-right: 4px !important;
+}
+.jssApp185 {
+  color: #777;
+  padding-right: 4px !important;
+}
+.jssApp186 {
+  color: #333;
+}
+.jssApp187 {
+  color: #777;
+}
+.jssApp188 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.jssApp189 {
+  width: 36px;
+  max-width: 36px;
+  flex-shrink: 0;
+  padding-right: 4px;
+}
+.jssApp191 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.jssApp192 {
+  min-width: 40px;
+  max-width: 40px;
+  font-size: 0.6rem;
+}
+.jssApp193 {
+  min-width: 100px;
+  font-size: 0.6rem;
+  text-align: right;
+  flex-direction: column;
+}
+.jssApp194 {
+  color: #333;
+  min-width: 100px;
+  text-align: right;
+  padding-right: 8px !important;
+}
+.jssApp195 {
+  color: #333;
+  text-align: right;
+  padding-right: 8px !important;
+}
+.jssApp196 {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+@media (min-width:992px) {
+  .jssApp196 {
+    margin: 0 auto;
+    padding: 8px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp196 {
+    padding: 8px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+.jssApp197 {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 30px;
+}
+.jssApp198 {
+  height: 30px;
+  max-height: 30px;
+  line-height: 30px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.jssApp151 {
+  border: 1px solid #e5e8ed;
+  padding: 16px 16px 16px 24px;
+  background: #fff;
+  border-radius: 2px;
+}
+@media (max-width:991.95px) {
+  .jssApp151 {
+    display: none;
+  }
+}
+.jssApp153 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.jssApp154 {
+  max-width: 200px;
+}
+.jssApp155 {
+  height: 100%;
+  flex-basis: unset !important;
+}
+@media (max-width:991.95px) {
+  .jssApp156 {
+    color: #d7d7d7;
+    white-space: nowrap;
+    padding-right: 5px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp156 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}
+.jssApp157 {
+  display: inline-block;
+}
+@media (max-width:991.95px) {
+  .jssApp157 {
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+}
+.jssApp106 {
+  border: 1px solid #e5e8ed;
+  padding: 16px 24px;
+  background: #fff;
+  border-radius: 2px;
+}
+@media (max-width:991.95px) {
+  .jssApp106 {
+    display: none;
+  }
+}
+.jssApp108 {
+  margin-left: -10px;
+  margin-right: -12px;
+}
+@media (min-width:992px) {
+  .jssApp109 {
+    margin-bottom: 10px;
+  }
+}
+.jssApp110 {
+  white-space: nowrap;
+}
+@media (max-width:991.95px) {
+  .jssApp110 {
+    color: #d7d7d7;
+    padding-right: 5px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp110 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.jssApp111 {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+@media (max-width:991.95px) {
+  .jssApp111 {
+    color: #fff;
+    font-size: 0.7rem;
+  }
+}
+.jssApp112 {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 8px;
+}
+.jssApp113 {
+  display: inline-block;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.jssApp114 {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding-left: 8px;
+}
+.jssApp158 {
+  background: #fff;
+}
+@media (min-width:992px) {
+  .jssApp158 {
+    height: 100%;
+    border: 1px solid #e5e8ed;
+    padding: 16px 24px;
+    border-radius: 2px;
+  }
+}
+.jssApp159 {
+  flex: 1;
+}
+.jssApp160 {
+  height: 100%;
+}
+.jssApp161 {
+  margin: auto;
+}
+@media (max-width:991.95px) {
+  .jssApp162 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 16px !important;
+    border-bottom: 1px solid #e5e8ed;
+    margin-bottom: 16px !important;
+    padding-bottom: 8px !important;
+  }
+}
+@media (min-width:992px) {
+  .jssApp162 {
+    font-size: 20px;
+    text-align: left;
+    font-weight: 500;
+    padding-bottom: 16px !important;
+  }
+}
+.jssApp163 {
+  border-bottom: 1px solid #e5e8ed;
+  margin-bottom: 16px;
+}
+@media (max-width:991.95px) {
+  .jssApp163 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp164 {
+    margin-bottom: 0 !important;
+  }
+}
+.jssApp165 {
+  font-size: 1rem;
+  margin-bottom: 0.25em !important;
+}
+.jssApp165 a {
+  color: unset;
+}
+.jssApp166 {
+  margin-bottom: 0.5em;
+}
+.jssApp167 {
+  color: #999;
+  font-size: 0.875rem;
+}
+.jssApp169 {
+  text-align: right;
+}
+@media (max-width:991.95px) {
+  .jssApp169 {
+    text-align: center;
+    margin-top: -16px;
+    padding-top: 16px;
+    border-bottom: 1px solid #e5e8ed;
+    padding-bottom: 16px;
+    background-color: #f6f8fa;
+  }
+}
+.jssApp1 {
+  width: 100%;
+}
+@media (min-width:992px) {
+  .jssApp1 {
+    margin: 16px auto;
+    max-width: 1200px;
+  }
+}
+@media (min-width:992px) {
+  .jssApp2 {
+    align-content: stretch;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp3 {
+    padding-bottom: 0 !important;
+  }
+}
+.jssApp4 {
+  width: 100%;
+}
+@media (min-width:992px) {
+  .jssApp4 {
+    border-radius: 2px;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp5 {
+    background-color: rgb(7, 29, 41);
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp6 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+@media (min-width:992px) {
+  .jssApp7 {
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp7 {
+    flex-wrap: nowrap;
+    align-items: baseline;
+    padding-left: 8px;
+    align-content: baseline;
+    padding-right: 8px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (max-width:991.95px) {
+  .jssApp8 {
+    padding-top: 0 !important;
+  }
+}
+   </style>
+  </main>
+  <footer>
+   <div class="footer w-100 border-box">
+    <div class="container fixed-width">
+     <div class="footer-flex-container">
+      <div class="footer-item">
+       <div class="link nav-logo-wrapper">
+        <a href="/" title="Home">
+         <img alt="CoinFi Logo" class="nav-logo__img" src="/assets/logo-18db413dcf31f14703bd292bb40eb5074986900b32da6afcfa2efe66ff841146.svg"/>
+        </a>
+       </div>
+      </div>
+      <div class="footer-item expandable" data-target="coins">
+       <div class="footer-item__header">
+        Coins
+        <i class="fas fa-angle-down accordion-icon">
+        </i>
+       </div>
+       <nav class="nav-x" data-expandable="coins" data-height="80">
+        <ul classname="flex-wrap">
+         <li>
+          <a href="/coins">
+           Cryptocurrency Prices Live
+          </a>
+         </li>
+         <li>
+          <a href="/token-metrics">
+           ERC-20 Token Metrics
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+      <div class="footer-item expandable" data-target="research">
+       <div class="footer-item__header">
+        Research
+        <i class="fas fa-angle-down">
+        </i>
+       </div>
+       <nav class="nav-x" data-expandable="research" data-height="80">
+        <ul classname="flex-wrap">
+         <li>
+          <a href="/research/crypto-market">
+           Crypto Analysis
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+      <div class="footer-item expandable" data-target="calculators">
+       <div class="footer-item__header">
+        Calculators
+        <i class="fas fa-angle-down">
+        </i>
+       </div>
+       <nav class="nav-x" data-expandable="calculators" data-height="30">
+        <ul classname="flex-wrap">
+         <li>
+          <a href="/calculators/bitcoin-investment-calculator">
+           Bitcoin Investment Calculator
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+      <div class="footer-item expandable" data-target="company">
+       <div class="footer-item__header">
+        Company
+        <i class="fas fa-angle-down">
+        </i>
+       </div>
+       <nav class="nav-x" data-expandable="company" data-height="180">
+        <ul classname="flex-wrap">
+         <li>
+          <a href="/podcast">
+           Podcast
+          </a>
+         </li>
+         <li>
+          <a href="https://www.coinfi.com/blog">
+           Blog
+          </a>
+         </li>
+         <li>
+          <a href="https://careers.coinfi.com">
+           Careers
+          </a>
+         </li>
+         <li>
+          <a href="/press" rel="nofollow">
+           Press
+          </a>
+         </li>
+         <li>
+          <a href="/about">
+           About
+          </a>
+         </li>
+         <li>
+          <a href="https://feedback.coinfi.com/feature-requests" rel="nofollow">
+           Feedback
+          </a>
+         </li>
+         <li>
+          <a href="/privacy-policy" rel="nofollow">
+           Privacy Policy
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+      <div class="footer-item expandable" data-target="contact">
+       <div class="footer-item__header">
+        Contact
+        <i class="fas fa-angle-down">
+        </i>
+       </div>
+       <nav class="nav-x" data-expandable="contact" data-height="90">
+        <ul classname="flex-wrap">
+         <li>
+          <a href="/cdn-cgi/l/email-protection#beddd1d0cadfddcafeddd1d7d0d8d790ddd1d3">
+           <span class="__cf_email__" data-cfemail="b0d3dfdec4d1d3c4f0d3dfd9ded6d99ed3dfdd">
+            [email protected]
+           </span>
+          </a>
+         </li>
+         <li>
+          <div class="social-icons f6 pv3 flex-none flex-auto-l">
+           <a class="pv1 pr1" href="https://www.facebook.com/CoinFiProject/" rel="noopener" target="_blank">
+            <i class="fab fa-facebook icon-white" title="Facebook">
+            </i>
+           </a>
+           <a class="pv1 ph1" href="https://twitter.com/coin_fi" rel="noopener" target="_blank">
+            <i class="fab fa-twitter icon-white" title="Twitter">
+            </i>
+           </a>
+           <a class="pv1 ph1" href="https://www.linkedin.com/company/coinfi/" rel="noopener" target="_blank">
+            <i class="fab fa-linkedin icon-white" title="LinkedIn">
+            </i>
+           </a>
+           <a class="pv1 ph1" href="https://angel.co/coinfi" rel="noopener" target="_blank">
+            <i class="fab fa-angellist icon-white" title="AngelList">
+            </i>
+           </a>
+           <a class="pv1 pl1" href="https://github.com/coinfi" rel="noopener" target="_blank">
+            <i class="fab fa-github icon-white" title="GitHub">
+            </i>
+           </a>
+           <br/>
+          </div>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="footer-copyright">
+      Copyright © 2020
+      <a class="color-inherit" href="/">
+       CoinFi
+      </a>
+      - All rights reserved.
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div aria-hidden="true" class="micromodal micromodal-slide" id="modal-login">
+   <div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+    <div aria-labelledby="modal-login-title" aria-modal="true" class="modal__container" role="dialog">
+     <header class="modal__header">
+      <img alt="CoinFi Logo" class="nav-logo__img" src="/assets/logo-18db413dcf31f14703bd292bb40eb5074986900b32da6afcfa2efe66ff841146.svg"/>
+      <h2 class="modal__title" id="modal-login-title">
+       Financial Intelligence for Cryptocurrencies
+      </h2>
+     </header>
+     <main class="modal__content" id="modal-login-content">
+      <div class="devise-error show ba b--light-silver mv3 pa2" id="form-errors" style="display:none;">
+       <i class="fas fa-exclamation-triangle">
+       </i>
+       <div class="alert-container">
+       </div>
+      </div>
+      <form action="/auth/facebook" class="button_to" method="post">
+       <button class="btn btn-sm btn-fb-blue w-100 btn-logo" type="submit">
+        <i class="fab fa-facebook-f">
+        </i>
+        <span>
+         Login with Facebook
+        </span>
+       </button>
+       <input name="authenticity_token" type="hidden" value="d1wa5iHTkoMU2Jd2HhUOUY/3mE9ngj/o8S+hs6TV5y/sV8UpnLiwW51+tDicHon2WVn/IFKF1DqX2bM9zseEkg=="/>
+      </form>
+      <form action="/auth/google_oauth2" class="button_to" method="post">
+       <button class="btn btn-sm btn-google-red w-100 btn-logo" type="submit">
+        <i class="fab fa-google">
+        </i>
+        <span>
+         Login with Google
+        </span>
+       </button>
+       <input name="authenticity_token" type="hidden" value="yOb2ZugLyIiXIXIfC9UxsFBADFcjC1ndUGloIAUm/E8seFcGhL95embidXCSnkVXTBzIgD5mw9ZePGOSEaTOXg=="/>
+      </form>
+      <div class="divider-text">
+       OR
+      </div>
+      <form accept-charset="UTF-8" action="https://www.coinfi.com/login" class="new_user" data-remote="true" data-type="json" id="login_form" method="post">
+       <input name="utf8" type="hidden" value="✓"/>
+       <input name="authenticity_token" type="hidden" value="WgNJ9ZO+Aqh8gO5XU+cbNzVg+xdfjKXz4yCqzhkZhjF5vORfsu65OUKLTZSY2AdnfUTQ4ZAxBSk5ohNSwO1FSA=="/>
+       <input autofocus="autofocus" class="email-input w-100 focus-first" id="login_user_email" name="user[email]" placeholder="Email" type="email" value=""/>
+       <input class="password-input w-100" id="login_user_password" name="user[password]" placeholder="Password" type="password"/>
+       <input id="login_user_remember_me" name="user[remember_me]" type="hidden" value="1"/>
+      </form>
+      <button class="btn btn-sm btn-blue w-100 btn-enter" onclick="loginByEmail(event)">
+       Login
+      </button>
+     </main>
+     <footer class="modal__footer">
+      <span class="important">
+       Don't have an account?
+       <a href="#sign-up" onclick="switchFromLoginToSignup(event)">
+        Sign up
+       </a>
+      </span>
+     </footer>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" class="micromodal micromodal-slide" id="modal-sign-up">
+   <div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+    <div aria-labelledby="modal-sign-up-title" aria-modal="true" class="modal__container" role="dialog">
+     <header class="modal__header">
+      <img alt="CoinFi Logo" class="nav-logo__img" src="/assets/logo-18db413dcf31f14703bd292bb40eb5074986900b32da6afcfa2efe66ff841146.svg"/>
+      <h2 class="modal__title" id="modal-sign-up-title">
+       Financial Intelligence for Cryptocurrencies
+      </h2>
+     </header>
+     <main class="modal__content" id="modal-sign-up-content">
+      <div class="devise-error show ba b--light-silver mv3 pa2" id="form-errors" style="display:none;">
+       <i class="fas fa-exclamation-triangle">
+       </i>
+       <div class="alert-container">
+       </div>
+      </div>
+      <form action="/auth/facebook" class="button_to" method="post">
+       <button class="btn btn-sm btn-fb-blue w-100 btn-logo" type="submit">
+        <i class="fab fa-facebook-f">
+        </i>
+        <span>
+         Sign up with Facebook
+        </span>
+       </button>
+       <input name="authenticity_token" type="hidden" value="aPRX2luIB8eWSPdy1zKR3eUZnvOMcjfArX1Bs2oZBnLz/4gV5uMlHx/u1DxVORZ6M7f5nLl13BLLi1M9AAtlzw=="/>
+      </form>
+      <form action="/auth/google_oauth2" class="button_to" method="post">
+       <button class="btn btn-sm btn-google-red w-100 btn-logo" type="submit">
+        <i class="fab fa-google">
+        </i>
+        <span>
+         Sign up with Google
+        </span>
+       </button>
+       <input name="authenticity_token" type="hidden" value="uN9lzF3vrhMJvpdIeHMIMnAbKIeu1/75yZbqnukcdxRcQcSsMVsf4fh9kCfhOHzVbEfsULO6ZPLHw+Es/Z5FBQ=="/>
+      </form>
+      <div class="divider-text">
+       OR
+      </div>
+      <form accept-charset="UTF-8" action="/" class="new_user" data-remote="true" data-type="json" id="sign_up_form" method="post">
+       <input name="utf8" type="hidden" value="✓"/>
+       <input name="authenticity_token" type="hidden" value="N6g6ec81LzIflby5yZY24gTrPVGc1WhbLUuw0iFsvz3iIS0USvrlkHH2FrOyJX/3WC2i9zJex3LBg2MyttzzkQ=="/>
+       <input autofocus="autofocus" class="email-input w-100 focus-first" id="sign_up_user_email" name="user[email]" placeholder="Email" type="email" value=""/>
+      </form>
+      <button class="btn btn-sm btn-blue w-100 btn-enter" onclick="registerByEmail(event)">
+       Sign up
+      </button>
+     </main>
+     <main class="modal__content" id="modal-signed-up-content" style="display: none;">
+      <i class="fas fa-check-circle">
+      </i>
+      <h4>
+       Success!
+      </h4>
+      <div>
+       We've sent a verification email. Please check it and verify your account. You'll also be asked to set your password.
+      </div>
+     </main>
+     <footer class="modal__footer">
+      <div class="important mb2">
+       Already have an account?
+       <a href="#sign-up" onclick="switchFromSignUpToLogin(event)">
+        Login
+       </a>
+      </div>
+      By continuing, you agree to CoinFi's
+      <a href="/privacy-policy">
+       Privacy Policy
+      </a>
+      . Don't worry, we won't give your information to anyone else.
+     </footer>
+    </div>
+   </div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js">
+  </script>
+  <script src="/webpack/production/vendor-bundle-a1c650a19ffc5cdd5287.js">
+  </script>
+  <script src="/webpack/production/app-bundle-cdd6488cc10c73ed064c.js">
+  </script>
+  <script type="text/javascript">
+   var modalState = ''
+  var MODAL_IDS = {
+    login: 'login',
+    signup: 'sign-up',
+  }
+
+  function registerByEmail(e) {
+    e.preventDefault()
+
+    var $modal = $(`#modal-${MODAL_IDS.signup}`)
+    var $form = $modal.find('#sign_up_form')
+
+    hideAndClearErrors($modal)
+
+    $.ajax({
+      url: $form.attr('action'),
+      type: 'POST',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify($form.serializeJSON()),
+      success: function(result) {
+        $modal.find('#modal-sign-up-content').hide()
+        $modal.find('.modal__footer').hide()
+        $modal.find('#modal-signed-up-content').show()
+      },
+      error: function(xhr) {
+        handleErrors(xhr, $modal)
+      },
+    })
+  }
+
+  function loginByEmail(e) {
+    e.preventDefault()
+
+    var $modal = $(`#modal-${MODAL_IDS.login}`)
+    var $form = $modal.find('#login_form')
+
+    hideAndClearErrors($modal)
+
+    $.ajax({
+      url: $form.attr('action'),
+      type: 'POST',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify($form.serializeJSON()),
+      success: function(result) {
+        if (typeof result === 'string') {
+          result = JSON.parse(result)
+        }
+        if (result && result.location) {
+          window.location.href = result.location
+        } else {
+          removeHash()
+          window.location.reload()
+        }
+      },
+      error: function(xhr) {
+        handleErrors(xhr, $modal)
+      },
+    })
+  }
+
+  function handleErrors(response, $modal) {
+    if (!response) return
+
+    var json = response.responseJSON
+    var text = response.responseText
+    if (json && json.errors) {
+      showErrors($modal, json.errors)
+    } else if (
+      typeof text === 'string' &&
+      text.match(new RegExp('ActionController::InvalidAuthenticityToken'))
+    ) {
+      showErrors($modal, ['Your session has timedout. Try refreshing the page.'])
+    } else {
+      showErrors($modal, ['An unknown error has occurred.'])
+    }
+  }
+
+  function hideAndClearErrors($modal) {
+    $modal.find('#form-errors').hide()
+    $modal.find('.alert-container').empty()
+  }
+
+  function showErrors($modal, errors) {
+    $modal.find('#form-errors').show()
+    var $alertContainer = $modal.find('.alert-container')
+    errors.forEach(function(message) {
+      if (message === 'Email has already been taken') {
+        $alertContainer.append(
+          $('<li>').html(
+            `It looks like you already have an account. Please login <a href="#login" onclick="switchFromSignUpToLogin(event)">here</a>.`,
+          ),
+        )
+      } else {
+        $alertContainer.append($('<li>').text(message))
+      }
+    })
+  }
+
+  function setState(state) {
+    modalState = state
+  }
+
+  function clearState(state) {
+    if (!!state) {
+      if (state !== modalState) {
+        return // don't clear if not equal to specified state
+      }
+    }
+
+    modalState = ''
+  }
+
+  function getHash() {
+    return window.location.hash.slice(1)
+  }
+
+  function setHash(hash) {
+    var oldHash = getHash()
+    if (oldHash !== hash) {
+      window.location.hash = hash
+    }
+  }
+
+  function removeHash() {
+    window.location.hash = ''
+  }
+
+  function focusFirst(modal) {
+    var elementsToFocus = modal.getElementsByClassName('focus-first')
+    if (elementsToFocus && elementsToFocus.length > 0) {
+      elementsToFocus[0].focus()
+    }
+  }
+
+  function clearOpenModal() {
+    if (!!modalState) {
+      try {
+        MicroModal.close(`modal-${modalState}`)
+        clearState()
+      } catch (e) {
+        console.log(`Failed to close modal ${modalState}`)
+      }
+    }
+  }
+
+  function openLoginModal(event) {
+    openModal(MODAL_IDS.login)
+  }
+
+  function closeLoginModal(event) {
+    closeModal(MODAL_IDS.login)
+  }
+
+  function openSignUpModal(event) {
+    openModal(MODAL_IDS.signup)
+  }
+
+  function closeSignUpModal(event) {
+    closeModal(MODAL_IDS.signup)
+  }
+
+  function openModal(modalHash) {
+    clearOpenModal()
+    setState(modalHash)
+    setHash(modalHash)
+    MicroModal.show(`modal-${modalHash}`, {
+      onShow: focusFirst,
+      onClose: removeHash,
+    })
+  }
+
+  function closeModal(modalHash) {
+    clearState(modalHash)
+    MicroModal.close(`modal-${modalHash}`)
+  }
+
+  function switchFromLoginToSignup(e) {
+    closeLoginModal(e)
+    openSignUpModal(e)
+  }
+
+  function switchFromSignUpToLogin(e) {
+    closeSignUpModal(e)
+    openLoginModal(e)
+  }
+
+  window.addEventListener('load', function() {
+    deferredInit()
+
+    // check if URL includes modal hash
+    var hash = getHash()
+    if (Object.values(MODAL_IDS).includes(hash)) {
+      openModal(hash)
+    }
+  })
+
+  window.addEventListener('show-modal-sign-up', function() {
+    openSignUpModal()
+  })
+
+  window.addEventListener('hide-modal-sign-up', function() {
+    closeSignUpModal()
+  })
+
+  window.addEventListener('show-modal-login', function() {
+    openLoginModal()
+  })
+
+  window.addEventListener('hide-modal-login', function() {
+    closeLoginModal()
+  })
+
+  function deferredInit() {
+    setTimeout(function() {
+      if (typeof $ === 'function') {
+        // init requiring jquery
+        initFormSubmitByEntryKey()
+      } else {
+        deferredInit()
+      }
+    }, 50)
+  }
+
+  function initFormSubmitByEntryKey() {
+    // add event listeners to forms
+    Object.values(MODAL_IDS).forEach(function(name) {
+      $(`#modal-${name} form`).bind('keypress', function(e) {
+        if (e.keyCode === 13) {
+          e.preventDefault()
+          $(`#modal-${name} .btn-enter`).click()
+        }
+      })
+    })
+  }
+  </script>
+  <script type="text/javascript">
+   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+    heap.load('3291221357');
+    window.addEventListener('load', function() {
+      if (typeof web3 !== 'undefined' && web3.currentProvider.isMetaMask) {
+        heap.addUserProperties({ 'hasMetaMask': true })
+      } else {
+        heap.addUserProperties({ 'hasMetaMask': false })
+      }
+    })
+  </script>
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105378428-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+    var google_conversion_id = 995933950;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+  </script>
+  <script src="//www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+  </script>
+  <noscript>
+   <div style="display:inline;">
+    <img alt="" height="1" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/995933950/?guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+   </div>
+  </noscript>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1064039393">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-1064039393');
+  </script>
+  <script>
+   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '175229079700938'); // Insert your pixel ID here.
+      fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=175229079700938&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+  </noscript>
+  <script>
+   !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','nyhv6');
+    twq('track','PageView');
+  </script>
+  <script>
+   var hotjarId = "691132";
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:hotjarId,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <script type="text/javascript">
+   var _vwo_code=(function(){
+    var account_id=323413,
+    settings_tolerance=2000,
+    library_tolerance=2500,
+    use_existing_jquery=false,
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+  </script>
+  <script async="" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js">
+  </script>
+  <script>
+   var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+        appId: "91b756ae-dfc8-45ab-b96e-93aa1bf9d474",
+        allowLocalhostAsSecureOrigin: true,
+        autoRegister: true,
+        notifyButton: {
+          enable: false /* Set to false to hide */
+        }
+      }]);
+  </script>
+  <script async="async" charset="utf-8" src="https://my.hellobar.com/7700c8817cb197d6aa452a9bf6647ba36e18a9f2.js" type="text/javascript">
+  </script>
+  <script async="">
+   (function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='0c8b73cba3978d265d963a6f8ccb376405d39e50a5fb59d2e02fb97e1a5c0fbe';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');
+  </script>
+ </body>
+</html>

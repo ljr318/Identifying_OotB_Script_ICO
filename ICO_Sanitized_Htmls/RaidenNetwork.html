@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+ <head>
+  <title>
+   Raiden Network
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="The Raiden Network is an off-chain scaling solution, enabling near-instant, low-fee and scalable payments." name="description"/>
+  <meta charset="utf-8"/>
+  <!--Encoding -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!--Movile first -->
+  <link href="../favicon.ico" rel="icon"/>
+  <!--JQuery -->
+  <script src="/js/jquery.js" type="application/javascript">
+  </script>
+  <link href="/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/materialize.min.js" type="text/javascript">
+  </script>
+  <script src="/js/inicializate.js" type="text/javascript">
+  </script>
+  <script src="/js/download-section.js" type="text/javascript">
+  </script>
+  <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+  <!-- Fonts -->
+  <link href="/fonts/material-icons/material-icons.css" rel="stylesheet"/>
+  <!-- Plugin CSS -->
+  <link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Custom scrollbar -->
+  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="css/main.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <style>
+   .brand-logo img {
+        height: 40px;
+        margin: 12px 0;
+      }
+      .bug-bounty-btn {
+        border-radius: 11.5px;
+        box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.16);
+        background-image: linear-gradient(to right, #90e9fa, #00d4ff);
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 2.2;
+        text-align: left;
+        color: #ffffff;
+        border-radius: 40px;
+        margin: 0 15px;
+      }
+      #bounty-modal p {
+        text-align: center;
+        color: black;
+      }
+      .sidenav-overlay {
+        z-index: 900 !important;
+      }
+  </style>
+  <div class="navbar-fixed">
+   <nav>
+    <div class="nav-wrapper">
+     <a class="brand-logo" href="/">
+      <img src="./assets/logo-black.png"/>
+     </a>
+     <a class="sidenav-trigger" data-target="mobile" href="#">
+      <i class="material-icons">
+       menu
+      </i>
+     </a>
+     <ul class="right hide-on-med-and-down valign-wrapper">
+      <li>
+       <a class="bug-bounty-btn" href="/bug-bounty.html">
+        Bug bounty
+       </a>
+      </li>
+      <li>
+       <a href="https://explorer.raiden.network/" target="_blank">
+        Explorer
+       </a>
+      </li>
+      <li>
+       <a href="/101.html">
+        Raiden 101
+       </a>
+      </li>
+      <li>
+       <a href="https://developer.raiden.network" target="_blank">
+        Developer
+       </a>
+      </li>
+      <li>
+       <a href="/roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li>
+       <a href="/token.html">
+        Token
+       </a>
+      </li>
+      <li>
+       <a href="/faq.html">
+        FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/raiddit.html">
+        Raiddit
+       </a>
+      </li>
+     </ul>
+     <ul class="sidenav" id="mobile">
+      <li>
+       <a href="/bug-bounty.html">
+        Bug bounty
+       </a>
+      </li>
+      <li>
+       <a href="https://explorer.raiden.network/" target="_blank">
+        Explorer
+       </a>
+      </li>
+      <li>
+       <a href="/101.html">
+        Raiden 101
+       </a>
+      </li>
+      <li>
+       <a href="https://developer.raiden.network" target="_blank">
+        Developer
+       </a>
+      </li>
+      <li>
+       <a href="/micro.html">
+        ÂµRaiden
+       </a>
+      </li>
+      <li>
+       <a href="/roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li>
+       <a href="/token.html">
+        Token
+       </a>
+      </li>
+      <li>
+       <a href="/faq.html">
+        FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/raiddit.html">
+        Raiddit
+       </a>
+      </li>
+     </ul>
+    </div>
+   </nav>
+  </div>
+  <style>
+   section.hero {
+    overflow: hidden;
+    position: relative;
+    overflow-y: hidden;
+    background-color: transparent;
+  }
+  .hero-video {
+    object-fit: cover;
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    z-index: -100;
+    background: black;
+  }
+  @media (max-width: 900px) {
+    .hero-video {
+      max-width: 100%;
+    }
+  }
+  .hero-content {
+    z-index: 3;
+    position: relative;
+  }
+  div.technology-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  section.no-bottom-padding {
+    padding-bottom: 0;
+  }
+  .technology-img-container img {
+    height: 49px;
+    margin: 0px 30px 0 30px;
+  }
+  @media (max-width: 900px) {
+    .technology-img-container {
+      margin-top: 30px;
+    }
+  }
+
+  .bottom-padding {
+    padding-bottom: 20px;
+  }
+  </style>
+  <section class="hero">
+   <div>
+    <img class="hero-content" src="./assets/logo.png" style="margin-top: 90px;"/>
+    <h1 class="hero-content">
+     Fast, cheap, scalable token transfers for Ethereum
+    </h1>
+   </div>
+   <video autoplay="" class="hero-video" id="bbvid" loop="" muted="" playsinline="" poster="../img/px.png">
+    <source src="../img/raiden_vid.mp4" type="video/mp4">
+    </source>
+   </video>
+  </section>
+  <section>
+   <div class="container">
+    <h1>
+     The Raiden Network
+    </h1>
+    <p class="long">
+     The Raiden Network is an off-chain scaling solution, enabling near-instant, low-fee and scalable payments. Itâs complementary to the Ethereum blockchain and works with any ERC20 compatible token. The Raiden project is work in progress. Its goal is to research state channel technology, define protocols and develop reference implementations.
+    </p>
+   </div>
+  </section>
+  <section class="dark bottom-padding">
+   <section>
+    <div class="container">
+     <h1>
+      Technology
+     </h1>
+     <p class="long">
+      The Raiden Network is an infrastructure layer on top of the Ethereum blockchain. While the basic idea is simple, the underlying protocol is quite complex and the implementation non-trivial. Nonetheless the technicalities can be abstracted away, such that developers can interface with a rather simple API to build scalable decentralized applications based on the Raiden Network.
+     </p>
+     <div class="technology-img-container">
+      <a href="https://github.com/raiden-network/raiden/?fref=ts" target="_blank">
+       <img src="./assets/github.png" style="height: 52px;"/>
+      </a>
+      <a href=" https://www.ethereum.org/" target="_blank">
+       <img src="./assets/powered-by-ethereum.svg" style="padding-bottom: 4px; height: 174px;"/>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="download-section">
+    <h1 class="header">
+     Download Raiden Client
+    </h1>
+    <div class="row">
+     <div class="box-container primary">
+      <div class="recommendation">
+       <span>
+        Recommended
+       </span>
+      </div>
+      <div class="inner">
+       <div class="box-header blue">
+        <span>
+         Beta/Stable
+        </span>
+       </div>
+       <div class="box-content">
+        <div class="description primary">
+         The Beta/Stable release is the latest tested and most mature version of the Raiden client. When following the
+            safety instructions, it can be used on the mainnet.
+        </div>
+        <div class="button blue ripple">
+         <a class="button" href="https://github.com/raiden-network/raiden/releases/tag/v1.0.0" target="_blank">
+          <span>
+           Download Stable
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="box-container primary">
+      <div class="inner secondary-download">
+       <div class="box-header dark">
+        <span>
+         Release Candidates
+        </span>
+       </div>
+       <div class="box-content">
+        <div class="description primary">
+         Release Candidates (RC) are untested releases. They usually come with new features and bug fixes to the
+            current stable release, but may still have glitches and issues to be fixed.
+
+            Release Candidates should not be used on the mainnet.
+        </div>
+        <div class="button dark">
+         <a id="rc-download" target="_blank">
+          <span>
+           Download RC
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="box-container primary">
+      <div class="inner secondary-download">
+       <div class="box-header dark">
+        <span>
+         Nightlies
+        </span>
+       </div>
+       <div class="box-content">
+        <div class="description primary">
+         The nightly release is a snapshot of master. It is not recommended for managing anything of value and
+            should only be used if you plan to do work on the code. It is certainly not suited to be used on the mainnet.
+        </div>
+        <div class="button dark">
+         <a class="button" id="nightlies-download" target="_blank">
+          <span>
+           Download Nightlies
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="separator">
+     or install via
+    </div>
+    <textarea id="copy-area"></textarea>
+    <div class="row">
+     <div class="box-container secondary">
+      <div class="inner secondary-download">
+       <div class="box-header dark">
+        <a href="https://hub.docker.com/r/raidennetwork/raiden" target="_blank">
+         <span>
+          Docker
+         </span>
+        </a>
+       </div>
+       <div class="box-content secondary">
+        <div class="description secondary">
+         <span id="docker-command">
+          docker pull raidennetwork/raiden
+         </span>
+         <span class="copy-button ripple" id="docker-copy">
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="box-container secondary">
+      <div class="inner secondary-download">
+       <div class="box-header dark">
+        <a href="https://github.com/raiden-network/homebrew-raiden/#installation" target="_blank">
+         <span>
+          Brew
+         </span>
+        </a>
+       </div>
+       <div class="box-content secondary">
+        <div class="description secondary">
+         <span id="brew-command">
+          $ brew install raiden
+         </span>
+         <span class="copy-button ripple" id="brew-copy">
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="box-container secondary">
+      <div class="inner secondary-download">
+       <div class="box-header dark">
+        <a href="https://pypi.org/project/raiden/" target="_blank">
+         <span>
+          PyPI
+         </span>
+        </a>
+       </div>
+       <div class="box-content secondary">
+        <div class="description secondary">
+         <span id="pipy-command">
+          pip install raiden
+         </span>
+         <span class="copy-button ripple" id="pipy-copy">
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div id="snackbar">
+   </div>
+  </section>
+  <section class="row no-padding">
+   <div class="col s12 m6 box">
+    <div class="inner-box">
+     <h2>
+      THE PROBLEM
+      <span class="line-span">
+       .
+      </span>
+     </h2>
+     <p>
+      Blockchains donât scale well because there needs to be global consensus on the order and outcome of all transfers. Every participant needs to learn about all updates to the shared ledger. Hardware and bandwidth constraints set a limit on the number of updates per second that can be shared in a decentralized network.
+     </p>
+    </div>
+   </div>
+   <div class="col s12 m6 dark-grey box" id="raiden101">
+    <div class="inner-box">
+     <h2>
+      RAIDEN NETWORK 101
+      <span class="line-span">
+       .
+      </span>
+     </h2>
+     <p>
+      The basic idea of the Raiden Network is to avoid the blockchain consensus bottleneck. This is done by leveraging a network of payment channels which allow to securely transfer value off-chain, i.e without involving the blockchain for every transfer.
+     </p>
+     <p>
+      To learn more, read the
+      <a href="/101.html">
+       Raiden Network 101
+      </a>
+      , take a look at the current
+      <a href="https://raiden-network-specification.readthedocs.io/en/latest/" target="_blank">
+       specification
+      </a>
+      or check out the
+      <a href="https://github.com/raiden-network/raiden" target="_blank">
+       code
+      </a>
+      .
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="grey">
+   <iframe allow="encrypted-media" allowfullscreen="" class="video1" frameborder="0" src="https://www.youtube-nocookie.com/embed/R1tIy1XgdPw?rel=0">
+   </iframe>
+  </section>
+  <section class="dark icons">
+   <div class="container row">
+    <div class="col l4 m6 s12">
+     <img class="scalable" src="./assets/scalable.svg"/>
+     <p class="title">
+      SCALABLE
+     </p>
+     <p>
+      Scales linearly with the number of participants
+     </p>
+    </div>
+    <div class="col l4 m6 s12">
+     <img class="fast" src="./assets/fast.svg"/>
+     <p class="title">
+      FAST
+     </p>
+     <p>
+      Transfers can be confirmed within a subsecond
+     </p>
+    </div>
+    <div class="col l4 m6 s12">
+     <img class="private" src="./assets/private.svg"/>
+     <p class="title">
+      PRIVATE
+     </p>
+     <p>
+      Individual transfers donât show up in the global shared ledger
+     </p>
+    </div>
+    <div class="col l4 m6 s12">
+     <img class="interoperable" src="./assets/interoperable.svg"/>
+     <p class="title">
+      INTEROPERABLE
+     </p>
+     <p>
+      Works with any token that follows Ethereumâs standardized token API (ERC20)
+     </p>
+    </div>
+    <div class="col l4 m6 s12">
+     <img class="low-fees" src="./assets/low-fees.svg"/>
+     <p class="title">
+      LOW FEES
+     </p>
+     <p>
+      Transfer fees can be orders of magnitude lower than on the blockchain
+     </p>
+    </div>
+    <div class="col l4 m6 s12">
+     <img class="micropayments" src="./assets/micropayments.svg"/>
+     <p class="title">
+      MICROPAYMENTS
+     </p>
+     <p>
+      Low transaction fees allow to efficiently transfer tiny values
+     </p>
+    </div>
+   </div>
+  </section>
+  <section>
+   <iframe allow="encrypted-media" allowfullscreen="" class="video2" frameborder="0" src="https://www.youtube-nocookie.com/embed/1wAbCnD-M_I?rel=0">
+   </iframe>
+  </section>
+  <section class="use-cases">
+   <div class="container">
+    <h1 class="blue">
+     Use cases
+    </h1>
+    <div class="use-cases-box">
+     <div class="cases-text-box">
+      <h2>
+       <span class="first-line-span">
+        .
+       </span>
+       RETAIL PAYMENTS
+      </h2>
+      <p>
+       There are quite a few high profile Ethereum token based projects competing to bring blockchain based payments to the masses. Especially in developing countries these efforts may potentially improve the life of millions. The Raiden Network can be a crucial building block, as significant adoption relies on scalable technology and competitive fees.
+      </p>
+     </div>
+     <div class="right-image-box">
+      <img src="./assets/1.png"/>
+     </div>
+    </div>
+    <div class="use-cases-box">
+     <div class="left-image-bo hide-on-small-only">
+      <img src="./assets/2.png"/>
+     </div>
+     <div class="cases-text-box">
+      <h2>
+       <span class="first-line-span">
+        .
+       </span>
+       P2P CASH
+      </h2>
+      <p>
+       Cash as we know it is on the retreat as there is a trend towards cashless societies. Scalable blockchain based payments can help to preserve the private and decentralized nature of cash while updating its user experience to the expectations of a new generation.
+      </p>
+     </div>
+     <div class="hide-on-med-and-up">
+      <img src="./assets/2.png"/>
+     </div>
+    </div>
+    <div class="use-cases-box">
+     <div class="cases-text-box">
+      <h2>
+       <span class="first-line-span">
+        .
+       </span>
+       MICROPAYMENTS
+      </h2>
+      <p>
+       Blockchains are a hot candidate to become the payment infrastructure of the upcoming machine-to-machine economy. IoT may increase the number of commercial transactions by an order of magnitude and the cheaper the cost of transfers become, the more use cases emerge. Micropayments can be used to get fine grained access to APIs, bandwidth, computing power, storage, electricity, basically any infrastructure. The same goes for content or entertainment such as webpages, gaming, video or audio streaming. Already today many proposed DApps rely on tiny payments between participants in the network to incentivise cooperative behaviour.
+      </p>
+     </div>
+     <div class="right-image-box">
+      <img src="./assets/3.png"/>
+     </div>
+    </div>
+    <div class="use-cases-box">
+     <div class="left-image-box hide-on-small-only">
+      <img src="./assets/4.png"/>
+     </div>
+     <div class="cases-text-box">
+      <h2>
+       <span class="first-line-span">
+        .
+       </span>
+       INSTANT TOKEN SWAPS
+      </h2>
+      <p>
+       Next to payments, the exchange of tokens is probably the second most prominent use case of blockchains. This is even more so the case, if the current trend of tokenization continues. Decentralized exchanges built on Raiden Networkâs atomic token swaps feature allow to instantly exchange tokens at low cost.
+      </p>
+     </div>
+     <div class="hide-on-med-and-up">
+      <img src="./assets/4.png"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <style>
+   .footer {
+    background: black;
+    color: white;
+  }
+  .footer .container {
+    width: 90%;
+  }
+  .footer a {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: #ffffff;
+    display: block;
+  }
+  .footer a:hover {
+    opacity: 0.5;
+  }
+  .footer-title {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+  }
+  .footer-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0!important;
+  }
+  .footer-box div {
+    padding: 0 10px;
+  }
+  .blog-link {
+    margin-bottom: 30px;
+  }
+  </style>
+  <section class="footer">
+   <div class="container">
+    <div class="row">
+     <div class="col l6 s12">
+      <h2 class="footer-title">
+       Latest blog post
+      </h2>
+      <script charset="UTF-8" language="JavaScript" src="https://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2Fraiden-network&amp;num=1&amp;targ=y&amp;utf=y" type="text/javascript">
+      </script>
+      <noscript>
+       <a class="blog-link" href="https://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2Fraiden-network&amp;num=1&amp;targ=y&amp;utf=y&amp;html=y">
+        View RSS feed
+       </a>
+      </noscript>
+     </div>
+     <div class="col l6 s12 footer-box">
+      <div>
+       <h2 class="footer-title">
+        Development
+       </h2>
+       <a href="http://www.github.com/raiden-network/raiden/?fref=ts" rel="noopener noreferrer" target="_blank">
+        Raiden Network Github
+       </a>
+       <a href="https://docs.raiden.network" rel="noopener noreferrer" target="_blank">
+        Raiden Network Docs
+       </a>
+       <a href="/micro.html">
+        ÂµRaiden
+       </a>
+       <a href="https://github.com/raiden-network/microraiden" rel="noopener noreferrer" target="_blank">
+        ÂµRaiden Github
+       </a>
+       <a href="http://microraiden.readthedocs.io" rel="noopener noreferrer" target="_blank">
+        ÂµRaiden Docs
+       </a>
+      </div>
+      <div>
+       <h2 class="footer-title">
+        Community
+       </h2>
+       <a href="https://twitter.com/raiden_network" rel="noopener noreferrer" target="_blank">
+        Twitter
+       </a>
+       <a href="https://medium.com/raiden-network" rel="noopener noreferrer" target="_blank">
+        Blog
+       </a>
+       <a href="https://www.reddit.com/r/raidennetwork/" rel="noopener noreferrer" target="_blank">
+        Reddit
+       </a>
+       <a href="https://www.youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg" rel="noopener noreferrer" target="_blank">
+        Youtube
+       </a>
+       <a href="https://gitter.im/raiden-network/raiden" rel="noopener noreferrer" target="_blank">
+        Dev chat
+       </a>
+      </div>
+      <div>
+       <h2 class="footer-title">
+        Organization
+       </h2>
+       <a href="https://angel.co/brainbot-group/jobs" target="_blank">
+        We're hiring!
+       </a>
+       <a href="/privacy.html" rel="noopener noreferrer">
+        Privacy Policy, Disclaimer &amp; Imprint
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </body>
+</html>

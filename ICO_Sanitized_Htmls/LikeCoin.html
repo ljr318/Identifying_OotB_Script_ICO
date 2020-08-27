@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html data-n-head-ssr="">
+ <head>
+  <title>
+   LikeCoin - the content protocol
+  </title>
+  <meta charset="utf-8" data-n-head="ssr"/>
+  <meta content="width=device-width, initial-scale=1" data-n-head="ssr" name="viewport"/>
+  <meta content="yes" data-n-head="ssr" name="mobile-web-app-capable"/>
+  <meta content="LikeCoin" data-hid="og_image_alt" data-n-head="ssr" property="og:image:alt"/>
+  <meta content="1200" data-hid="og_image_width" data-n-head="ssr" property="og:image:width"/>
+  <meta content="630" data-hid="og_image_height" data-n-head="ssr" property="og:image:height"/>
+  <meta content="#D2F0F0" data-hid="theme-color" data-n-head="ssr" name="theme-color"/>
+  <meta content="LikeCoin - the content protocol" data-hid="og_title" data-n-head="ssr" property="og:title"/>
+  <meta content="LikeCoin is a public blockchain for content monetization, attribution and distribution." data-hid="description" data-n-head="ssr" name="description"/>
+  <meta content="LikeCoin is a public blockchain for content monetization, attribution and distribution." data-hid="og_description" data-n-head="ssr" property="og:description"/>
+  <meta content="https://like.co/images/og/default.png" data-hid="og_image" data-n-head="ssr" property="og:image"/>
+  <link as="style" data-n-head="ssr" href="https://fonts.googleapis.com/css?family=Material+Icons" rel="preload"/>
+  <link as="script" data-n-head="ssr" href="/vendor/typekit.js" rel="preload"/>
+  <link as="script" data-n-head="ssr" href="/vendor/fb/sdk.js" rel="preload"/>
+  <link as="script" data-n-head="ssr" href="https://use.typekit.net/ube6iww.js" rel="preload"/>
+  <link data-n-head="ssr" href="https://connect.facebook.net" rel="preconnect"/>
+  <link data-n-head="ssr" href="/favicon.png" rel="icon" type="image/png"/>
+  <link data-n-head="ssr" href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet"/>
+  <link as="script" data-n-head="ssr" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" rel="preload"/>
+  <link as="script" data-n-head="ssr" href="/vendor/webflow/js/main.js" rel="preload"/>
+  <script data-hid="schema" data-n-head="ssr" type="application/ld+json">
+   {"@context":"http://www.schema.org","@type":"Organization","name":"LikeCoin Foundation","url":"https://like.co","logo":"https://like.co/logo.png","sameAs":["https://t.me/likecoin","https://matters.news/@likecoin","https://medium.com/likecoin","https://github.com/likecoin","https://twitter.com/likecoin","https://www.youtube.com/c/LikeCoin","https://www.facebook.com/Liker.Land"]}
+  </script>
+  <script async="" data-n-head="ssr" src="/vendor/typekit.js">
+  </script>
+  <script async="" data-n-head="ssr" defer="" src="/vendor/fb/sdk.js">
+  </script>
+  <script async="" data-n-head="ssr" src="//www.googletagmanager.com/gtm.js?id=GTM-PD6HBNB&amp;l=dataLayer">
+  </script>
+  <link as="script" href="/_nuxt/22aef46f636ffe6d32fd.js" rel="preload"/>
+  <link as="script" href="/_nuxt/87a4c0676761f4139abc.js" rel="preload"/>
+  <link as="style" href="/_nuxt/8edf231fe1e91e75e361.css" rel="preload"/>
+  <link as="script" href="/_nuxt/bf612b7d10fe7884c70b.js" rel="preload"/>
+  <link as="style" href="/_nuxt/51d802b07d06c93d1207.css" rel="preload"/>
+  <link as="script" href="/_nuxt/fa224361fccfcf5cd798.js" rel="preload"/>
+  <link href="/_nuxt/8edf231fe1e91e75e361.css" rel="stylesheet"/>
+  <link href="/_nuxt/51d802b07d06c93d1207.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div data-server-rendered="true" id="__nuxt">
+   <!-- -->
+   <div id="__layout">
+    <div class="webflow">
+     <div class="home-page v2">
+      <header class="site-hero" style="background-image:url(/_nuxt/img/fe038c1.jpg);">
+       <div class="site-header w-nav" data-animation="default" data-collapse="medium" data-doc-height="1" data-duration="400" data-no-scroll="1" role="banner">
+        <a class="brand w-nav-brand nuxt-link-exact-active nuxt-link-active" href="/">
+         <img alt="LikeCoin" class="image" src="/_nuxt/img/6f85a08.svg"/>
+        </a>
+        <div class="site-menu-wrap">
+         <nav class="site-menu w-nav-menu" role="navigation">
+          <a class="site-main-menu__item" href="https://docs.like.co/user-guide/faq" target="_blank">
+           FAQ
+          </a>
+          <a class="site-main-menu__item" href="https://github.com/likecoin/likecoin" target="_blank">
+           Develop
+          </a>
+          <a class="site-main-menu__item" href="https://docs.like.co/" target="_blank">
+           Learn
+          </a>
+          <a class="site-main-menu__item" href="https://likecoin.substack.com" target="_blank">
+           Newsletter
+          </a>
+          <ul class="social-media-icons w-list-unstyled" role="list">
+           <li>
+            <a class="icon-button-link icon-button-link--dark w-inline-block" href="https://join.g0v.tw/" target="_blank">
+             <div class="icon-button w-embed">
+              <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m8.843 12.651c-1.392 0-2.521 1.129-2.521 2.521v6.306c0 1.392 1.129 2.521 2.521 2.521s2.521-1.129 2.521-2.521v-6.306c-.001-1.392-1.13-2.521-2.521-2.521z">
+               </path>
+               <path d="m.019 15.172c0 1.393 1.13 2.523 2.523 2.523s2.523-1.13 2.523-2.523v-2.523h-2.521c-.001 0-.001 0-.002 0-1.393 0-2.523 1.13-2.523 2.523z">
+               </path>
+               <path d="m8.846-.001c-.001 0-.002 0-.003 0-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523h2.521c0-1.431 0-1.083 0-2.528-.001-1.391-1.128-2.518-2.518-2.518z">
+               </path>
+               <path d="m2.525 11.37h6.318c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523h-6.318c-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523z">
+               </path>
+               <path d="m21.457 6.323c-1.391 0-2.518 1.127-2.518 2.518v.005 2.523h2.521c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523c-.001 0-.002 0-.003 0z">
+               </path>
+               <path d="m12.641 2.522v6.325c0 1.392 1.129 2.521 2.521 2.521s2.521-1.129 2.521-2.521v-6.325c0-1.392-1.129-2.521-2.521-2.521-1.392 0-2.521 1.129-2.521 2.521z">
+               </path>
+               <path d="m17.682 21.476c0-1.392-1.129-2.521-2.521-2.521h-2.521v2.523c.001 1.391 1.129 2.519 2.521 2.519s2.521-1.129 2.521-2.521z">
+               </path>
+               <path d="m21.479 12.649h-6.318c-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523h6.318c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523z">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="icon-button-link icon-button-link--dark w-inline-block" href="https://medium.com/likecoin/" target="_blank">
+             <div class="icon-button w-embed">
+              <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m22.085 4.733 1.915-1.832v-.401h-6.634l-4.728 11.768-5.379-11.768h-6.956v.401l2.237 2.693c.218.199.332.49.303.783v10.583c.069.381-.055.773-.323 1.05l-2.52 3.054v.396h7.145v-.401l-2.52-3.049c-.273-.278-.402-.663-.347-1.05v-9.154l6.272 13.659h.729l5.393-13.659v10.881c0 .287 0 .346-.188.534l-1.94 1.877v.402h9.412v-.401l-1.87-1.831c-.164-.124-.249-.332-.214-.534v-13.467c-.035-.203.049-.411.213-.534z">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="icon-button-link icon-button-link--dark w-inline-block" href="http://github.com/likecoin" target="_blank">
+             <div class="icon-button w-embed">
+              <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="icon-button-link icon-button-link--dark w-inline-block" href="http://telegram.me/likecoin" target="_blank">
+             <div class="icon-button w-embed">
+              <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="icon-button-link icon-button-link--dark w-inline-block" href="https://www.facebook.com/Liker.Land/" target="_blank">
+             <div class="icon-button w-embed">
+              <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="icon-button-link icon-button-link--dark w-inline-block" href="https://twitter.com/likecoin" target="_blank">
+             <div class="icon-button w-embed">
+              <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="M24,4.56a10.38,10.38,0,0,1-2.84.78,4.94,4.94,0,0,0,2.17-2.72,10.14,10.14,0,0,1-3.12,1.19A4.92,4.92,0,0,0,11.7,7.17a5.07,5.07,0,0,0,.11,1.12A13.94,13.94,0,0,1,1.67,3.15,5,5,0,0,0,1,5.63,4.91,4.91,0,0,0,3.18,9.72,4.81,4.81,0,0,1,1,9.12v.05A5,5,0,0,0,4.9,14a5.36,5.36,0,0,1-1.29.16,4.13,4.13,0,0,1-.93-.09,5,5,0,0,0,4.6,3.43,9.9,9.9,0,0,1-6.1,2.1A9.12,9.12,0,0,1,0,19.54a13.81,13.81,0,0,0,7.55,2.21,13.91,13.91,0,0,0,14-14c0-.22,0-.43,0-.64A9.82,9.82,0,0,0,24,4.56Z">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+          </ul>
+         </nav>
+         <a class="button button--dark w-button" href="https://github.com/sponsors/likecoin" target="_blank">
+          Sponsor
+         </a>
+         <div class="menu-button w-nav-button">
+          <div class="icon w-icon-nav-menu">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="site-hero-content">
+        <div class="container container--fixed">
+         <h1 class="tagline">
+          A public blockchain for content
+          <strong class="text--bold">
+           monetization
+          </strong>
+          ,
+          <strong class="text--bold">
+           attribution
+          </strong>
+          and
+          <strong class="text--bold">
+           distribution
+          </strong>
+          .
+          <br/>
+         </h1>
+         <div class="liquid-quick-exchange-widget">
+         </div>
+        </div>
+       </div>
+      </header>
+      <section class="section">
+       <div class="container container--fixed" data-w-id="0f837ac9-4bf1-1302-9d48-8f9eaf91ba97" style="opacity:0">
+        <div class="collage">
+         <img alt="" class="collage__image collage__image--left" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 42vw" src="/_nuxt/img/6ee0943.png" srcset="/_nuxt/img/10469c0.png 500w, /_nuxt/img/e068a2e.png 800w, /_nuxt/img/91168a2.png 1080w, /_nuxt/img/64361cd.png 1600w, /_nuxt/img/346da3e.png 2000w, /_nuxt/img/6ee0943.png 2501w" width="649"/>
+         <div class="collage__content">
+          <h2 class="collage__title collage__title--light">
+           <a class="link link--light link--no-underline" href="https://docs.like.co/developer/likecoin-chain-node" target="_blank">
+            LikeCoin chain
+           </a>
+          </h2>
+          <p class="collage__description">
+           Launched in Nov 2019, LikeCoin chain operates under a permissionless, Bonded Proof-of-Stake (BPoS) mechanism. It is the infrastructure of the LikeCoin ecosystem. Explore LikeCoin chain in Big Dipper block explorer and read the documentations
+           <a class="link link--light" href="https://docs.like.co/developer/likecoin-chain-node">
+            here
+           </a>
+           .
+          </p>
+          <a class="button button--light w-button" href="https://likecoin.bigdipper.live" target="_blank">
+           Chain Explorer - Big Dipper
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="section section--light section--what-we-do">
+       <div class="container container--fixed">
+        <h2 class="section__title section__title section__title--light">
+         What We Do
+        </h2>
+        <div class="w-layout-grid grid">
+         <div class="grid-item">
+          <h3 class="grid-item__title">
+           Monetization
+          </h3>
+          <p class="grid-item__content">
+           By simply attaching a LikeCoin button beneath your content, every Like by readers is turned into measurable reward without a paywall. The
+           <a class="link link--light" href="https://liker.land/civic" target="_blank">
+            Civic Liker
+           </a>
+           movement encourages readers to contribute USD5/mo to reward creativity and journalism, while the Matching Fund doubles the rewarding pool. In LikeCoin ecosystem, every Like counts.
+          </p>
+         </div>
+         <div class="grid-item">
+          <h3 class="grid-item__title">
+           Attribution
+          </h3>
+          <p class="grid-item__content">
+           In collaboration with the industry, we are drafting the
+           <a class="link link--light" href="https://github.com/likecoin/iscn-specs/issues">
+            international standard content number
+           </a>
+           , ISCN, which is a specification to use blockchain to immutably store metadata such as author, publisher, license terms and creation footprint. ISCN serves as a content registry in the Internet paradigm, much like ISBN served as a book database in the printing era.
+          </p>
+         </div>
+         <div class="grid-item">
+          <h3 class="grid-item__title">
+           Distribution
+          </h3>
+          <p class="grid-item__content">
+           With IPFS, LikeCoin protocol helps creators to reach wider audience in heavily censored environment. Apart from rewarding creators as a Liker, readers are encouraged to become Content Jockeys to help distribute creative stories and insightful analysis. Our unique distribution footprint mechanism rewards both creators and Content Jockeys, creating a win-win.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="section section--slogan">
+       <div class="slogan-bg">
+       </div>
+       <div class="container container--fluid">
+        <h2 class="slogan">
+         Thrive to support content creators and publishers through the formation of a Decentralized Autonomous Organization (DAO).
+        </h2>
+       </div>
+      </section>
+      <section class="section section--dark section--use-case">
+       <div class="container container--fixed">
+        <div class="w-layout-grid grid">
+         <div class="grid-item grid-item--intro" id="w-node-994d7f87d61d-cba99d90">
+          <h2 class="section__title section__title--dark">
+           Use Cases
+          </h2>
+          <p class="section__description">
+           LikeCoin has been adopted to various use cases, ranging from
+           <strong class="text--bold">
+            website plugins
+           </strong>
+           ,
+           <strong class="text--bold">
+            mobile app
+           </strong>
+           to
+           <strong class="text--bold">
+            media platforms
+           </strong>
+           . As of April, 2020, the ecosystem of LikeCoin accumulated to
+           <strong class="text--bold">
+            60,625+ Likers
+           </strong>
+           ,
+           <strong class="text--bold">
+            223,200+ contents
+           </strong>
+           by
+           <strong class="text--bold">
+            8,400+ creators
+           </strong>
+           on
+           <strong class="text--bold">
+            1000+ media
+           </strong>
+           .
+          </p>
+         </div>
+         <div class="grid-item grid-item--hidden-tablet">
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Liker Land" class="grid-item__image" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 83vw" src="/_nuxt/img/38052ff.png" srcset="/_nuxt/img/ef3e881.png 500w, /_nuxt/img/df9230b.png 1080w, /_nuxt/img/38052ff.png 1200w"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://like.co/in/getapp" target="_blank">
+            Liker Land
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Mobile App
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Liker Land is a reader, passport, and wallet in one mobile app. It provides a friendly user interface to discover, read, and save content. With the unique Super Like feature, Liker Land traces distribution footprint and rewards not only Creators but also Content Jockeys who curate high-quality content.
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="LikeCoin Browser Extension" class="grid-item__image" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 83vw" src="/_nuxt/img/46cbfab.jpg" srcset="/_nuxt/img/38a5c5b.jpeg 500w, /_nuxt/img/34e4dfc.jpeg 800w, /_nuxt/img/9355968.jpeg 1080w, /_nuxt/img/46cbfab.jpg 1200w"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://chrome.google.com/webstore/detail/liker-land/cjjcemdmkddjbofomfgjedpiifpgkjhe?hl=en" target="_blank">
+            Chrome
+           </a>
+           ,
+           <a class="link link--dark link--no-underline" href="https://addons.mozilla.org/en-US/firefox/addon/liker-land/?src=search" target="_blank">
+            Firefox
+           </a>
+           ,
+           <a class="link link--dark link--no-underline" href="https://chrome.google.com/webstore/detail/liker-land/cjjcemdmkddjbofomfgjedpiifpgkjhe" target="_blank">
+            Brave
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Browser Extension
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Liker Land also features an extension for major browsers on computers. Users may save any web page to reading list and access from Liker Land app or
+           <a class="link link--dark" href="https://liker.land/">
+            website
+           </a>
+           for future reference.
+           <br/>
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="WordPress" class="grid-item__image" src="/_nuxt/img/0ae3e28.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://wordpress.org/plugins/likecoin/" target="_blank">
+            WordPress
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Plugin
+           </div>
+          </div>
+          <p class="grid-item__content">
+           LikeCoin button was first released on WordPress as a plugin in 2018. It allows creators to install and attach to websites and blogs. The button is connected to the LikeCoin reward mechanism and turn each Like into an actual reward. As of May 2020, it has more than 1000 active installations.
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Matters" class="grid-item__image" src="/_nuxt/img/e0f9023.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://matters.news/" target="_blank">
+            Matters
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            <strong>
+             Public Discussion
+            </strong>
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Matters Lab is a decentralized content platform that provides a shared infrastructure to creators. Matters and LikeCoin developed their partnership since 2018, LikeCoin helps provide an open-source solution to build a decentralized independent journalist network. The partnership is a winning Innovation project of the
+           <a class="link link--dark" href="https://newsinitiative.withgoogle.com/innovation-challenges/funding/">
+            Google News Initiative 2020
+           </a>
+           .
+           <br/>
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Stand News" class="grid-item__image" src="/_nuxt/img/30747e5.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://www.thestandnews.com/" target="_blank">
+            Stand News
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Media
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Stand News is a free not-for-profit online news website based in Hong Kong. It primarily focuses on social and political issues in Hong Kong. It has a monthly 5.4M viewership.
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Hong Kong In-media" class="grid-item__image" src="/_nuxt/img/3c57706.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://www.inmediahk.net/" target="_blank">
+            Hong Kong In-media
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Media
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Hong Kong In-Media is an independent online media platform in Hong Kong. It aims to provide an open public platform for the public and journalists, free from political intervention and commercial influence. It primarily focuses on local news content and opinions.
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Hong Kong Citizen News" class="grid-item__image" src="/_nuxt/img/a621996.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://www.hkcnews.com/" target="_blank">
+            Hong Kong Citizen News
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Media
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Hong Kong Citizen News is a not-for-profit online news website. It primary focuses on investigative and data-driven journalism to promote fair and neutral new content to the public.
+           <br/>
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Vocus" class="grid-item__image" src="/_nuxt/img/b6d43a0.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://vocus.cc/" target="_blank">
+            Vocus
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Blogging Platform
+           </div>
+          </div>
+          <p class="grid-item__content">
+           Vocus is a new-style content creation platform. It aims to provide a clean and simple reading space with no ads. It also supports multiple content payment mechanisms to readers. It attracts users from Chinese community such as Taiwan and Hong Kong.
+           <br/>
+          </p>
+         </div>
+         <div class="grid-item">
+          <div class="grid-item__image-wrapper">
+           <img alt="Medium" class="grid-item__image" src="/_nuxt/img/67890a7.svg"/>
+          </div>
+          <h3 class="grid-item__title grid-item__title--center">
+           <a class="link link--dark link--no-underline" href="https://medium.com/" target="_blank">
+            Medium
+           </a>
+          </h3>
+          <div class="grid-item__meta">
+           <div class="tag">
+            Plugin
+           </div>
+          </div>
+          <p class="grid-item__content">
+           LikeCoin plugin also works on Medium and various blogging platforms supporting
+           <a class="link link--dark link--no-underline" href="https://embed.ly/">
+            embedly
+           </a>
+           . Content creators are able to embed LikeCoin button to their content once registered a Liker ID. No coding required.
+           <br/>
+          </p>
+         </div>
+        </div>
+        <div class="use-case__footer">
+         <a class="button button--dark w-button" href="https://join.g0v.tw/" target="_blank">
+          How to join?
+         </a>
+        </div>
+       </div>
+      </section>
+      <footer class="section section--light" data-v-1dd73c52="">
+       <div class="container container--fixed" data-v-1dd73c52="">
+        <div class="footer__content" data-v-1dd73c52="">
+         <div data-v-1dd73c52="">
+          <img alt="LikeCoin" class="footer-logo" data-v-1dd73c52="" src="/_nuxt/img/eacd7eb.svg"/>
+          <ul class="social-media-icons social-media-icons--footer w-list-unstyled" data-v-1dd73c52="" role="list">
+           <li data-v-1dd73c52="">
+            <a class="icon-button-link icon-button-link--light w-inline-block" data-v-1dd73c52="" href="https://join.g0v.tw/" target="_blank">
+             <div class="icon-button w-embed" data-v-1dd73c52="">
+              <svg data-v-1dd73c52="" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m8.843 12.651c-1.392 0-2.521 1.129-2.521 2.521v6.306c0 1.392 1.129 2.521 2.521 2.521s2.521-1.129 2.521-2.521v-6.306c-.001-1.392-1.13-2.521-2.521-2.521z" data-v-1dd73c52="">
+               </path>
+               <path d="m.019 15.172c0 1.393 1.13 2.523 2.523 2.523s2.523-1.13 2.523-2.523v-2.523h-2.521c-.001 0-.001 0-.002 0-1.393 0-2.523 1.13-2.523 2.523z" data-v-1dd73c52="">
+               </path>
+               <path d="m8.846-.001c-.001 0-.002 0-.003 0-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523h2.521c0-1.431 0-1.083 0-2.528-.001-1.391-1.128-2.518-2.518-2.518z" data-v-1dd73c52="">
+               </path>
+               <path d="m2.525 11.37h6.318c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523h-6.318c-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523z" data-v-1dd73c52="">
+               </path>
+               <path d="m21.457 6.323c-1.391 0-2.518 1.127-2.518 2.518v.005 2.523h2.521c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523c-.001 0-.002 0-.003 0z" data-v-1dd73c52="">
+               </path>
+               <path d="m12.641 2.522v6.325c0 1.392 1.129 2.521 2.521 2.521s2.521-1.129 2.521-2.521v-6.325c0-1.392-1.129-2.521-2.521-2.521-1.392 0-2.521 1.129-2.521 2.521z" data-v-1dd73c52="">
+               </path>
+               <path d="m17.682 21.476c0-1.392-1.129-2.521-2.521-2.521h-2.521v2.523c.001 1.391 1.129 2.519 2.521 2.519s2.521-1.129 2.521-2.521z" data-v-1dd73c52="">
+               </path>
+               <path d="m21.479 12.649h-6.318c-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523h6.318c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523z" data-v-1dd73c52="">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li data-v-1dd73c52="">
+            <a class="icon-button-link icon-button-link--light w-inline-block" data-v-1dd73c52="" href="https://medium.com/likecoin/" target="_blank">
+             <div class="icon-button w-embed" data-v-1dd73c52="">
+              <svg data-v-1dd73c52="" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m22.085 4.733 1.915-1.832v-.401h-6.634l-4.728 11.768-5.379-11.768h-6.956v.401l2.237 2.693c.218.199.332.49.303.783v10.583c.069.381-.055.773-.323 1.05l-2.52 3.054v.396h7.145v-.401l-2.52-3.049c-.273-.278-.402-.663-.347-1.05v-9.154l6.272 13.659h.729l5.393-13.659v10.881c0 .287 0 .346-.188.534l-1.94 1.877v.402h9.412v-.401l-1.87-1.831c-.164-.124-.249-.332-.214-.534v-13.467c-.035-.203.049-.411.213-.534z" data-v-1dd73c52="">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li data-v-1dd73c52="">
+            <a class="icon-button-link icon-button-link--light w-inline-block" data-v-1dd73c52="" href="http://github.com/likecoin" target="_blank">
+             <div class="icon-button w-embed" data-v-1dd73c52="">
+              <svg data-v-1dd73c52="" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z" data-v-1dd73c52="">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li data-v-1dd73c52="">
+            <a class="icon-button-link icon-button-link--light w-inline-block" data-v-1dd73c52="" href="http://telegram.me/likecoin" target="_blank">
+             <div class="icon-button w-embed" data-v-1dd73c52="">
+              <svg data-v-1dd73c52="" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z" data-v-1dd73c52="">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li data-v-1dd73c52="">
+            <a class="icon-button-link icon-button-link--light w-inline-block" data-v-1dd73c52="" href="https://www.facebook.com/Liker.Land/" target="_blank">
+             <div class="icon-button w-embed" data-v-1dd73c52="">
+              <svg data-v-1dd73c52="" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" data-v-1dd73c52="">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+           <li data-v-1dd73c52="">
+            <a class="icon-button-link icon-button-link--light w-inline-block" data-v-1dd73c52="" href="https://twitter.com/likecoin" target="_blank">
+             <div class="icon-button w-embed" data-v-1dd73c52="">
+              <svg data-v-1dd73c52="" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="M24,4.56a10.38,10.38,0,0,1-2.84.78,4.94,4.94,0,0,0,2.17-2.72,10.14,10.14,0,0,1-3.12,1.19A4.92,4.92,0,0,0,11.7,7.17a5.07,5.07,0,0,0,.11,1.12A13.94,13.94,0,0,1,1.67,3.15,5,5,0,0,0,1,5.63,4.91,4.91,0,0,0,3.18,9.72,4.81,4.81,0,0,1,1,9.12v.05A5,5,0,0,0,4.9,14a5.36,5.36,0,0,1-1.29.16,4.13,4.13,0,0,1-.93-.09,5,5,0,0,0,4.6,3.43,9.9,9.9,0,0,1-6.1,2.1A9.12,9.12,0,0,1,0,19.54a13.81,13.81,0,0,0,7.55,2.21,13.91,13.91,0,0,0,14-14c0-.22,0-.43,0-.64A9.82,9.82,0,0,0,24,4.56Z" data-v-1dd73c52="">
+               </path>
+              </svg>
+             </div>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </footer>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   window.__NUXT__=(function(a,b,c){return {layout:"webflow",data:[{}],error:c,state:{payment:{pendingTx:b,pendingTxInfo:{}},staticData:{likeCoinUsdNumericPrice:0,LIKEStat:{},suggestedArticleInfo:{},suggestedArticleList:[],userInfos:{},likerListDetails:{},csrfToken:"aTTQ9uf7-14zDK262B7ci44vIhY4YzsNCD6E"},ui:{locale:"en",metamaskError:b,signPayloadObject:{},web3Type:"window",infoIsError:a,infoMsg:b,popupError:b,popupInfo:b,headerIcon:b,headerTitle:b,headerSubtitle:b,description:b,isInTransaction:a,isLoading:a,isBlocking:a,isShowingTxPopup:a,isSlidingMenuOpen:a,isLoginOverride:a,isErrorDisabled:a,txDialogHideAction:a,txDialogActionRoute:c,txDialogActionText:b,isShowingPromptNotificationDialog:a,authDialogStatus:{isShow:a},reAuthDialogStatus:{isShow:a},isShowWalletNoticeDialog:a,walletNoticeDialogCancelTitle:b,walletNoticeDialogCancelCallback:c,walletNoticeDialogConfirmCallback:c,popupDialogs:[]},user:{user:{},wallet:b,isFetching:a,preAuthRoute:c,afterAuthRoute:{},web3Fetching:a,isFetchedAuthPlatforms:a,isFetchingAuthPlatforms:a,authPlatforms:{},platforms:{},links:{},socialMeta:{},likecoinAmountObject:{},likeCoinAmountInBigNumber:c,authCoreAccessToken:b},eth:{isWeb3Polling:a},authCore:{accessToken:b,authClient:c,kvClient:c,cosmosProvider:c,oAuthFactors:[],currentUser:{}}},serverRendered:true}}(false,"",null));
+  </script>
+  <script defer="" src="/_nuxt/22aef46f636ffe6d32fd.js">
+  </script>
+  <script defer="" src="/_nuxt/87a4c0676761f4139abc.js">
+  </script>
+  <script defer="" src="/_nuxt/bf612b7d10fe7884c70b.js">
+  </script>
+  <script defer="" src="/_nuxt/fa224361fccfcf5cd798.js">
+  </script>
+ </body>
+</html>

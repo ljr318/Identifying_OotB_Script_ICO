@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   ParcelX
+  </title>
+  <link href="/stylesheets/app-f83d2b60ee.css" rel="stylesheet"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+  <meta content="nopin" name="pinterest"/>
+  <!-- Generate using http://realfavicongenerator.net/ -->
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <link color="#4d56f0" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="ParcelX" name="apple-mobile-web-app-title"/>
+  <meta content="ParcelX" name="application-name"/>
+  <meta content="#4d56f0" name="msapplication-TileColor"/>
+  <meta content="#4d56f0" name="theme-color"/>
+  <script src="/javascripts/libs/jquery/jquery-3.3.1.min.js">
+  </script>
+  <script>
+   $.get("https://api.ip.sb/geoip", function (response) {
+      var pathArr = window.location.pathname.split('/');
+      var introIndex = pathArr.indexOf('intro');
+      if (response.country_code == "CN" && introIndex == -1) {
+        window.location.href = '/zh/intro';
+      }
+      if (response.country) {
+        document.querySelector('input#country').value = response.country;
+      }
+    }, "jsonp");
+
+    /* el.querySelector('#hide-overlay')
+    el.querySelector('#hide-overlay').onclick = () => {
+      el.classList.remove('visible');
+    } */
+  </script>
+ </head>
+ <body>
+  <div class="float_div" style="display:none;">
+   <img class="float_img" id="float_img" src="/floatimg-en.png" width="200"/>
+   <a class="floatclose" href="javascript:;" target="_blank">
+    X
+   </a>
+   <a class="parcelx100" href="https://parcelx.io/parcelx100" target="_blank">
+   </a>
+   <a class="questionnaire" href="/questionnaire.html" target="_blank">
+   </a>
+  </div>
+  <div id="mask" style="display:none;position: fixed;top:0;left: 0;right: 0;bottom:0;background: rgba(77,86,240,.4);z-index: 9999999;">
+   <div style="display:inline-block;width:99px;position: absolute;left: 50%;top: 50%;margin: -50px 0 0 -50px;overflow: hidden;">
+    <img src="/images/Spinner-1s-200px-cefe411802.gif" style="display:inline-block;width:100px;"/>
+    <p style="margin-top: -1em;color: #4e3af1;text-align: center">
+     Under submission
+    </p>
+   </div>
+  </div>
+  <input id="lang" style="display:none" value="en"/>
+  <div id="wxImg">
+   <img src="/qrcode.jpg"/>
+  </div>
+  <header class="header header--top" data-module="header">
+   <div class="container">
+    <div class="header-logo">
+    </div>
+    <nav class="header-nav">
+     <div class="header-nav-links">
+      <a class="header-nav-link" href="#whitepaper">
+       Whitepaper
+      </a>
+      <a class="header-nav-link" href="#about">
+       About
+      </a>
+      <a class="header-nav-link" href="#roadmap">
+       Roadmap
+      </a>
+      <a class="header-nav-link" href="#tokensale">
+       Token Sale
+      </a>
+      <a class="header-nav-link" href="#faq">
+       FAQ
+      </a>
+      <a class="header-nav-link" href="https://bbs.parcelx.io">
+       Parcelx100
+      </a>
+      <a class="header-nav-link" href="/apidoc/ParcelX-OpenAPI-en.pdf">
+       API
+      </a>
+      <a class="header-nav-link" href="https://media.parcelx.io/ ">
+       Media
+      </a>
+     </div>
+     <div class="language-selector-wrapper">
+      <select class="language-selector">
+       <option selected="" value="/">
+        English
+       </option>
+       <option value="/zh/">
+        ä¸­æ
+       </option>
+       <option value="/ko/">
+        íêµ­ì´
+       </option>
+       <option value="/ja/">
+        æ¥æ¬èª
+       </option>
+      </select>
+     </div>
+     <div class="social-links">
+      <a class="social-link" href="https://www.youtube.com/channel/UCSfN3GnoAMcTXfbBMs3dxog/" target="_blank">
+       <svg height="23" viewbox="0 0 90 90" width="25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90,26.958C90,19.525,83.979,13.5,76.55,13.5h-63.1C6.021,13.5,0,19.525,0,26.958v36.084C0,70.475,6.021,76.5,13.45,76.5h63.1C83.979,76.5,90,70.475,90,63.042V26.958z M36,60.225V26.33l25.702,16.947L36,60.225 Z" fill="currentColor">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://www.facebook.com/GlobalParcelX/" target="_blank">
+       <svg height="25" viewbox="0 0 12 25" width="12" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.6123018,4.83178654 C2.6123018,5.46049884 2.6123018,8.26670534 2.6123018,8.26670534 L0.0412459348,8.26670534 L0.0412459348,12.4669374 L2.6123018,12.4669374 L2.6123018,24.9485499 L7.89379634,24.9485499 L7.89379634,12.4672854 L11.4379244,12.4672854 C11.4379244,12.4672854 11.7698475,10.4533063 11.9307422,8.2512181 C11.4694515,8.2512181 7.91376744,8.2512181 7.91376744,8.2512181 C7.91376744,8.2512181 7.91376744,5.80765661 7.91376744,5.37935035 C7.91376744,4.95011601 8.48961046,4.37273782 9.05875696,4.37273782 C9.62683674,4.37273782 10.8258134,4.37273782 11.9363128,4.37273782 C11.9363128,3.80087007 11.9363128,1.824942 11.9363128,5.80046404e-05 C10.4538296,5.80046404e-05 8.76725013,5.80046404e-05 8.02381586,5.80046404e-05 C2.48174893,-0.000232018561 2.6123018,4.20417633 2.6123018,4.83178654 Z" fill="currentColor">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/company/parcelx-foundation/" target="_blank">
+       <svg height="23" viewbox="0 0 25 23" width="25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.8925561,13.8647625 L23.8925561,22.5948914 L18.7716077,22.5948914 L18.7716077,14.4494539 C18.7716077,12.4032536 18.0309177,11.0068019 16.1773042,11.0068019 C14.7623053,11.0068019 13.9202385,11.947908 13.5497824,12.8582698 C13.4146873,13.1837205 13.3799136,13.6367054 13.3799136,14.0922706 L13.3799136,22.5948914 L8.25724321,22.5948914 C8.25724321,22.5948914 8.32623503,8.79919383 8.25724321,7.36985668 L13.3794137,7.36985668 L13.3794137,9.52794441 C13.369026,9.54408518 13.3555276,9.56148867 13.345751,9.57713534 L13.3794137,9.57713534 L13.3794137,9.52794441 C14.0599441,8.49202497 15.2753,7.01217926 17.9956441,7.01217926 C21.3659668,7.01212436 23.8925561,9.18821949 23.8925561,13.8647625 Z M2.89871187,0.0306345354 C1.14625298,0.0306345354 0,1.16669267 0,2.66064783 C0,4.12204693 1.11309025,5.29258264 2.83071993,5.29258264 L2.8649381,5.29258264 C4.65133741,5.29258264 5.7623168,4.12226653 5.7623168,2.66064783 C5.72865412,1.16669267 4.65133741,0.0306345354 2.89871187,0.0306345354 Z M0.304241706,22.5948914 L5.42496791,22.5948914 L5.42496791,7.36985668 L0.304241706,7.36985668 L0.304241706,22.5948914 Z" fill="currentColor" transform="translate(.129 .19)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://medium.com/@GlobalParcelX" target="_blank">
+       <svg height="23" viewbox="0 0 27 23" width="27" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor" transform="translate(.2 .19)">
+         <path d="M25.6703538,22.5568621 L17.5687636,18.6227008 L17.5077368,0.788628287 C17.5063331,0.372302772 17.9365954,0.09797086 18.3080366,0.278383085 L25.9887225,4.00924307 C26.1820966,4.10316276 26.3050859,4.30079247 26.3050859,4.51753021 L26.3050859,22.1537029 C26.3050191,22.4832658 25.9643252,22.699666 25.6703538,22.5568621 Z">
+         </path>
+         <path d="M17.5687636,18.6227008 L8.80042388,14.364108 L17.2417723,0.325309168 C17.3908969,0.0773098792 17.7020466,-0.0159346127 17.9609259,0.10978678 L25.7489601,3.89283937 C26.0466746,4.03746624 26.1556939,4.41010661 25.9835757,4.69490405 L17.5687636,18.6227008 Z" opacity=".7">
+         </path>
+         <path d="M17.5687636,18.6227008 L8.80042388,14.364108 L0.763403016,1.14391613 C0.539482159,0.775597015 0.92910445,0.339488273 1.31471622,0.526787491 L8.80042388,4.16291756 L17.5687636,18.6227008 Z">
+         </path>
+         <path d="M8.1656918,22.5567946 L0.250925044,18.7122317 C0.0975225462,18.6376901 0,18.4809773 0,18.3090725 L0,0.577157072 C0,0.258059701 0.329999185,0.0484115139 0.614746304,0.186759062 L8.80042388,4.16291756 L8.80042388,22.1536354 C8.80042388,22.4831983 8.45966312,22.6995984 8.1656918,22.5567946 Z">
+         </path>
+        </g>
+       </svg>
+      </a>
+      <a class="social-link" href="https://twitter.com/@globalparcelx" target="_blank">
+       <svg height="22" viewbox="0 0 27 22" width="27" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.3357664,2.53533718 C25.3664623,2.96557335 24.326413,3.25735459 23.2336491,3.38761946 C24.3494353,2.7183201 25.2035418,1.65671743 25.6083473,0.395622434 C24.561714,1.01543666 23.406424,1.46550136 22.1754401,1.70947859 C21.1896976,0.656109072 19.787574,0 18.2323842,0 C15.2487779,0 12.8296273,2.42326284 12.8296273,5.41030274 C12.8296273,5.83394376 12.8773502,6.24771361 12.9695255,6.64337915 C8.48013064,6.41750624 4.49924928,4.26296319 1.83490019,0.989056084 C1.36916087,1.7869392 1.10421057,2.71663899 1.10421057,3.7090573 C1.10421057,5.58669051 2.05871154,7.24340795 3.50692286,8.2126786 C2.62153188,8.183022 1.78881252,7.93904478 1.05980117,7.53350807 L1.05980117,7.60109752 C1.05980117,10.2221716 2.92271543,12.4096904 5.39285944,12.9075591 C4.94028802,13.0295477 4.46305906,13.0971371 3.96934869,13.0971371 C3.62048528,13.0971371 3.28311151,13.0625234 2.9523217,12.996572 C3.64019411,15.147839 5.63478741,16.7122244 7.99799599,16.7551144 C6.14988486,18.2057875 3.81959605,19.0679409 1.28856124,19.0679409 C0.852471218,19.0679409 0.422922117,19.0415603 0,18.9937563 C2.39117961,20.5318043 5.22998192,21.4285714 8.28106291,21.4285714 C18.2193023,21.4285714 23.6517085,13.182874 23.6517085,6.03179808 L23.6335919,5.33120411 C24.6950283,4.57284875 25.613296,3.62004441 26.3357664,2.53533718 Z" fill="currentColor" transform="translate(.664 .19)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://t.me/joinchat/HqU0ywvC0I_LQ-4LHreKyA" target="_blank">
+       <svg height="23" viewbox="0 0 28 23" width="28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.97103922,12.9798078 L21.5990893,4.36460122 C22.2793649,3.95122729 22.903155,4.17348416 22.3910059,4.62900905 L10.7218892,15.1786709 L10.2675555,20.034447 L7.97103922,12.9798078 Z M25.5200357,0.15210061 L1.27761454,9.52118506 C-0.376983128,10.1863426 -0.367113917,11.1109985 0.976008663,11.5233204 L7.0221951,13.4142221 L9.33558009,20.5211117 C9.61681759,21.2989757 9.47815868,21.6075684 10.2933835,21.6075684 C10.9224932,21.6075684 11.2015608,21.3200863 11.5519528,20.9771276 C11.774745,20.758658 13.0976392,19.4698627 14.5748011,18.0308389 L20.8639381,22.6868012 C22.0211555,23.32657 22.8567487,22.9951835 23.1449856,21.6098828 L27.2732555,2.11664375 C27.6959517,0.418682612 26.6272771,-0.351466551 25.5200357,0.15210061 Z" fill="currentColor" fill-rule="evenodd" transform="translate(.632)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://weibo.com/u/6630905707" target="_blank">
+       <svg height="30" viewbox="0 0 37 30" width="37" xmlns="http://www.w3.org/2000/svg">
+        <path d="M36.539,12.806 C36.539,12.808 36.539,12.810 36.539,12.812 C36.297,13.556 35.498,13.964 34.754,13.723 C34.008,13.482 33.600,12.683 33.841,11.937 L33.840,11.937 C34.580,9.646 34.111,7.033 32.384,5.117 C30.656,3.201 28.108,2.470 25.753,2.970 C24.987,3.133 24.234,2.644 24.071,1.878 C23.907,1.114 24.395,0.360 25.161,0.195 L25.162,0.195 C28.472,-0.509 32.058,0.519 34.489,3.217 C36.921,5.911 37.577,9.584 36.539,12.806 ZM26.721,7.506 L26.721,7.505 C26.064,7.648 25.415,7.226 25.274,6.568 C25.133,5.908 25.553,5.259 26.212,5.119 C27.825,4.775 29.572,5.274 30.756,6.588 C31.941,7.901 32.259,9.690 31.752,11.260 C31.545,11.902 30.857,12.252 30.216,12.047 C29.574,11.839 29.224,11.150 29.431,10.509 L29.429,10.509 C29.678,9.741 29.522,8.866 28.943,8.224 C28.365,7.583 27.510,7.340 26.721,7.506 ZM27.210,9.790 C27.851,10.706 27.789,11.990 27.198,13.478 C26.925,14.163 27.283,14.269 27.804,14.426 C29.927,15.084 32.291,16.678 32.291,19.485 C32.291,24.132 25.594,29.985 15.526,29.985 C7.847,29.985 -0.003,26.261 -0.003,20.135 C-0.003,16.933 2.025,13.230 5.516,9.736 C10.179,5.072 15.616,2.947 17.661,4.994 C18.563,5.896 18.650,7.458 18.070,9.323 C17.768,10.262 18.951,9.742 18.951,9.744 C22.720,8.165 26.008,8.072 27.210,9.790 ZM25.923,19.401 C25.526,15.377 20.236,12.605 14.107,13.211 C7.980,13.818 3.333,17.572 3.731,21.597 C4.129,25.623 9.419,28.394 15.547,27.789 C21.676,27.183 26.320,23.428 25.923,19.401 ZM11.584,26.060 C8.638,25.108 7.391,22.198 8.681,19.576 C9.948,17.005 13.243,15.551 16.159,16.310 C19.177,17.090 20.717,19.939 19.484,22.705 C18.233,25.536 14.636,27.045 11.584,26.060 ZM13.248,20.549 C12.299,20.151 11.073,20.560 10.487,21.479 C9.894,22.402 10.173,23.501 11.115,23.930 C12.071,24.367 13.340,23.952 13.933,23.006 C14.515,22.050 14.208,20.958 13.248,20.549 ZM15.587,19.579 C15.223,19.434 14.768,19.609 14.554,19.968 C14.347,20.328 14.461,20.738 14.826,20.888 C15.197,21.041 15.671,20.865 15.885,20.498 C16.090,20.129 15.957,19.714 15.587,19.579 Z" fill="currentColor" fill-rule="evenodd" transform="translate(.632)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link wechat-qrcode">
+       <svg height="29.031" viewbox="0 0 36.969 29.031" width="36.969" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32.399,25.866 L33.384,29.018 L29.793,27.124 C28.483,27.440 27.168,27.755 25.865,27.755 C19.636,27.755 14.731,23.656 14.731,18.609 C14.731,13.568 19.636,9.459 25.865,9.459 C31.747,9.459 36.984,13.568 36.984,18.609 C36.984,21.451 35.026,23.968 32.399,25.866 ZM22.256,14.509 C21.604,14.509 20.947,15.142 20.947,15.769 C20.947,16.407 21.604,17.031 22.256,17.031 C23.246,17.031 23.893,16.407 23.893,15.769 C23.893,15.142 23.246,14.509 22.256,14.509 ZM29.456,14.509 C28.809,14.509 28.155,15.142 28.155,15.769 C28.155,16.407 28.809,17.031 29.456,17.031 C30.437,17.031 31.094,16.407 31.094,15.769 C31.094,15.142 30.437,14.509 29.456,14.509 ZM13.908,18.760 C13.908,19.675 14.056,20.558 14.312,21.401 C13.908,21.432 13.501,21.451 13.090,21.451 C11.456,21.451 10.142,21.130 8.504,20.819 L3.929,23.028 L5.238,19.237 C1.960,17.031 0.001,14.187 0.001,10.726 C0.001,4.728 5.894,0.004 13.090,0.004 C19.527,0.004 25.165,3.778 26.298,8.856 C25.881,8.812 25.461,8.783 25.037,8.783 C18.818,8.783 13.908,13.252 13.908,18.760 ZM8.837,5.365 C7.856,5.365 6.866,5.989 6.866,6.938 C6.866,7.883 7.856,8.516 8.837,8.516 C9.819,8.516 10.471,7.883 10.471,6.938 C10.471,5.989 9.819,5.365 8.837,5.365 ZM17.998,5.365 C17.017,5.365 16.034,5.989 16.034,6.938 C16.034,7.883 17.017,8.516 17.998,8.516 C18.984,8.516 19.636,7.883 19.636,6.938 C19.636,5.989 18.984,5.365 17.998,5.365 Z" fill="currentColor" fill-rule="evenodd" transform="translate(.632)">
+        </path>
+       </svg>
+      </a>
+     </div>
+     <div class="header-button-wrapper">
+      <a class="button button--primary header-button" href="#join" id="join-whitelist">
+       JOIN OUR MAILING LIST
+      </a>
+     </div>
+    </nav>
+    <div class="header-menu-button">
+    </div>
+   </div>
+  </header>
+  <section class="section--light hero">
+   <div class="anchor" id="whitepaper">
+   </div>
+   <div class="container row middle-xs">
+    <div class="col col-xs-12 content hero-content">
+     <div class="">
+      <p class="hero-leader">
+       Radically transparent, efficientÂ andÂ inexpensive.
+      </p>
+      <h1 class="hero-title">
+       The future of decentralized
+       <br/>
+       cross-border parcel delivery.
+      </h1>
+      <p class="hero-subtitle">
+       The worldâs first blockchain-powered
+       <br/>
+       parcel network.
+      </p>
+      <div class="hero-buttons">
+       <a class="button button--primary hero-button addsearch" href="/onepager.html" target="_blank">
+        One Pager
+       </a>
+       <a class="button hero-button addsearch" href="/whitepaper.html" target="_blank">
+        white paper
+       </a>
+       <a class="button button--primary hero-button addsearch" href="/demo/" target="_blank">
+        MVP Demo
+       </a>
+      </div>
+     </div>
+    </div>
+    <!-- <div class="hero-banner">
+      <p class="price-title">Live Exchange Quote</p>
+      <p class="current-price">0.2312USD</p>
+      <p class="beta-title">ParcelX Beta Readyï¼</p>
+      <div class="beta-desc">Our invitation-only early beta is ready as of today and is open to selected partners. To
+        sign-in or receive an invitation please <a class="addsearch" target="_blank" href="https://ma.parcelx.io/parcelx-beta-login">click
+          here.</a>
+        <div style="display:inline-block;position:relative;"><span class="ques-mark">?</span>
+          <p class="mask-content">
+            ParcelX service will be gradually opening to the entire community through November. Please sign-up to our mailing list (above) and stay tuned for the upcoming exciting ParcelX Service announcementsï¼
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <div class="counter hero-counter" data-date="16 Feb 2019 17:00:00 GMT+8" data-module="counter" data-title="Public Token Sale Ends In:" style="display: none">
+     <span class="leader counter-title">
+      Public Token Sale Ends In:
+     </span>
+     <div class="counter-time">
+      <div>
+       <span class="days">
+       </span>
+       <div class="smalltext">
+        days
+       </div>
+      </div>
+      <div>
+       <span class="separator">
+        :
+       </span>
+      </div>
+      <div>
+       <span class="hours">
+       </span>
+       <div class="smalltext">
+        hours
+       </div>
+      </div>
+      <div>
+       <span class="separator">
+        :
+       </span>
+      </div>
+      <div>
+       <span class="minutes">
+       </span>
+       <div class="smalltext">
+        minutes
+       </div>
+      </div>
+      <div>
+       <span class="separator">
+        :
+       </span>
+      </div>
+      <div>
+       <span class="seconds">
+       </span>
+       <div class="smalltext">
+        seconds
+       </div>
+      </div>
+     </div>
+     <div id="buygpx">
+      <a class="normal-btn button button--primary hero-button" href="/publicsale.html">
+       BUY GPX &amp; GET BONUS
+      </a>
+      <p>
+       <span>
+        Live Exchange Quote
+       </span>
+       <span class="current-price">
+        0.2800USD
+       </span>
+       <br/>
+      </p>
+     </div>
+     <div class="additionalbonus">
+      <!-- Large Purchase Bonus!
+        <span class="ques-mark">?</span>
+        <p>* Bonuses will be in GPX tokens that will be locked (not convertible) for a period of 6 months</p> -->
+      <ul>
+       <li>
+        1st â 5th Days: 50% bonus GPX
+       </li>
+       <li>
+        6th- 10th Days: 30% bonus GPX
+       </li>
+       <li>
+        11th â 15th Days: 10% bonus GPX
+       </li>
+       <li>
+        Visit
+        <a href="https://partner.parcelx.io" style="color:#4d56f0" target="_blank">
+         https://partner.parcelx.io
+        </a>
+        for more details about the referral program.
+       </li>
+       <li style="color:rgba(255,0,0,0.8)">
+        Kindly note that we donât accept funds from countries which donât allow cryptocurrency investment. You will take all the responsivities for any violation.
+       </li>
+      </ul>
+     </div>
+     <!-- <div id="act0" style="display:none;">
+        <div class="sale-counter">
+          <div class="discount-title">
+            <span class="discount-start" style="display:none;">GPX DISCOUNT SALE starts in</span>
+            <span class="discount-end" style="display:none;color:#2ed29d;">GPX DISCOUNT SALE is now LIVE</span>
+            <span class="ques-mark">?</span>
+            <ul class="mask-content">
+              <li>Offer Details:
+              </li>
+              <li>A unique opportunity to participate in one of the hottest ICO projects of 2018
+              </li>
+              <li>10% Discount on the London time (GMT+1) previous dateâs 11am-RightBTC exchange average price
+              </li>
+              <li>Tokens will be transferred within 12 hours and will be immediately convertible.
+              </li>
+              <li>Offer Only valid on Tuesday 8/28 during the hours specified above
+              </li>
+              <li>No transaction limits
+              </li>
+              <li>The sale will be closed once all coins are sold out
+              </li>
+              <li>ETH and BTC will both be accepted
+              </li>
+            </ul>
+          </div>
+          <div class="rC_PJ redCountdownDemo"></div>
+          <div class="counterText" style="display:none;">
+            <input name="days" value="days">
+            <input name="hours" value="hours">
+            <input name="minutes" value="minutes">
+            <input name="seconds" value="seconds">
+          </div>
+        </div>
+        <a class="discount-btn button button--primary hero-button" href="/publicsale.html">BUY DISCOUNTED
+          GPX(10%OFF)
+        </a>
+        <p style="color:#2ed29d"><span>DISCOUNT PRICE (10% OFF)</span><span class="discount-price">0.2312USD</span><br/>
+          <p><span>Yesterday&#39;s Price*</span><span class="close-price">0.2312USD</span><br/>
+          </p>
+          <div class="additionalbonus">Additional bonuses are available!
+            <ul>
+              <li>Additional Bonuses*:</li>
+
+              <li>Whitelist â 10%</li>
+              <li>50+ ETH 10%</li>
+              <li>100+ ETH 15%</li>
+              <li>200+ ETH 20%</li>
+              <li>500+ ETH 30%</li>
+              <li>* Bonuses will be in GPX tokens that will be locked (not convertible) for a period of 6 months</li>
+            </ul>
+          </div>
+      </div> -->
+    </div>
+    <div class="counterText" style="display:none;">
+     <input name="days" value="days"/>
+     <input name="hours" value="hours"/>
+     <input name="minutes" value="minutes"/>
+     <input name="seconds" value="seconds"/>
+    </div>
+    <div class="row active" id="act0" style="display:none;">
+     <div class="sale-counter col-xs-12 col-md-6">
+      <div class="discount-title">
+       <span class="discount-start" style="display:none;">
+        GPX DISCOUNT SALE starts in
+       </span>
+       <span class="discount-end" style="display:none;color:#2ed29d;">
+        GPX DISCOUNT SALE is now LIVE
+       </span>
+       <span class="ques-mark">
+        ?
+        <ul class="mask-content">
+         <li>
+          Offer Details:
+         </li>
+         <li>
+          A unique opportunity to participate in one of the hottest ICO projects of 2018
+         </li>
+         <li>
+          10% Discount on the London time (GMT+1) previous dateâs 11am-RightBTC exchange average price
+         </li>
+         <li>
+          Tokens will be transferred within 12 hours and will be immediately convertible.
+         </li>
+         <li>
+          Offer Only valid on
+          <span class="date">
+          </span>
+          during the hours specified above
+         </li>
+         <li>
+          No transaction limits
+         </li>
+         <li>
+          The sale will be closed once all coins are sold out
+         </li>
+         <li>
+          ETH and BTC will both be accepted
+         </li>
+        </ul>
+       </span>
+      </div>
+      <div class="rC_PJ redCountdownDemo">
+      </div>
+     </div>
+     <div class="discount-wrapper col-xs-12 col-md-6">
+      <a class="discount-btn button button--primary hero-button" href="/publicsale.html">
+       BUY DISCOUNTED GPX(10%OFF)
+      </a>
+      <p style="color:#2ed29d;margin-top: .5em;">
+       <span>
+        DISCOUNT PRICE (10% OFF)
+       </span>
+       <span class="discount-price">
+        0.2312USD
+       </span>
+       <br/>
+      </p>
+      <p>
+       <span>
+        Yesterday's Price*
+       </span>
+       <span class="close-price">
+        0.2312USD
+       </span>
+       <br/>
+      </p>
+     </div>
+    </div>
+    <div class="row active" id="act1" style="display:none;">
+     <div class="sale-counter col-xs-12 col-md-6">
+      <div class="discount-title">
+       <span class="discount-start" style="display:none;">
+        GPX BONUS SALE starts in
+       </span>
+       <span class="discount-end" style="display:none;color:#2ed29d;">
+        GPX BONUS SALE is now LIVE
+       </span>
+       <span class="ques-mark">
+        ?
+        <ul class="mask-content">
+         <li>
+          LIMITED TIME AND VOLUME: MAXIMUM 50% BONUS OFFER FOR PARCELXâS GPX TOKEN STARTS NOW!
+         </li>
+         <li>
+          Buy at current exchange price and you will get maximum 50% bonus.
+         </li>
+         <li>
+          Offer is valid for GPX tokens locked for 6 months only.
+         </li>
+         <li>
+          The offer is valid only from 2019/2/1 9AM GMT.
+         </li>
+         <li>
+          This will be based on first come first served with a limited amount 2000ETH or 15 days- whichever comes first.
+         </li>
+        </ul>
+       </span>
+      </div>
+      <div class="rC_PJ redCountdownDemo">
+      </div>
+      <div style="clear:both;">
+      </div>
+     </div>
+     <div class="progress col-xs-12 col-md-6">
+      <p style="margin-top:0">
+       Volume Limit:
+      </p>
+      <div class="progress-body">
+       <div class="progress-content" style="width: 0%;">
+       </div>
+      </div>
+      <p class="detail">
+       ETH Sold
+      </p>
+     </div>
+     <!-- <div class="discount-wrapper col-xs-12 col-md-4">
+        <a class="discount-btn button button--primary hero-button" href="/publicsale.html">BUY GPX &amp; GET BONUS</a>
+      </div> -->
+    </div>
+    <div class="hero-illustration-wrapper">
+     <div class="hero-background">
+      <div class="hero-background-shaddow">
+      </div>
+     </div>
+     <img alt="" class="hero-illustration" src="/images/hero-illustration-1534b0c9c6.png" srcset="/images/hero-illustration@2x-099e678a12.png 2x"/>
+    </div>
+    <section class="section--light media">
+     <div class="container">
+      <h1 class="media-title">
+       Featured in the Media
+      </h1>
+      <div class="media-list" data-module="media">
+       <div class="media-list-item">
+        <a href="https://www.blockasia.io/launch-of-gpx-token-by-parcelx-signals-shift-to-blockchain-technology-use-in-cross-border-parcel-delivery-industry/">
+         <img alt="" src="/images/media/blockasia_logo-294eace9f1.png" srcset="/images/media/blockasia_logo@2x-1f71e9e377.png 2x"/>
+         <div class="media-list-item-quote">
+          "launch of gpx token by Parcel X signals shift to blockchain technology use in cross border parcel delivery industry"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://postandparcel.info/97925/news/parcelx-launch-gpx-token-to-eliminate-foreign-exchange-risk/">
+         <img alt="" src="/images/media/postandparcel_logo-6489f935ff.png" srcset="/images/media/postandparcel_logo@2x-bdbf419e20.png 2x"/>
+         <div class="media-list-item-quote">
+          "Parcel X launch gpx token to eliminate foreign exchange risk"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://www.coinschedule.com/blog/blockchain-e-commerces-problems/">
+         <img alt="" src="/images/media/coin_logo-7ba183fb32.png" srcset="/images/media/coin_logo@2x-5328106967.png 2x"/>
+         <div class="media-list-item-quote">
+          "Blockchain: The Solution to E-Commerceâs Billion-Dollar Problems"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://www.blockchainmagazine.net/decentralized-cross-border-parcel-delivery-the-future-of-e-commerce-unfolds/">
+         <img alt="" src="/images/media/magazine_logo-ba2549f418.png" srcset="/images/media/magazine_logo@2x-6ee072e560.png 2x"/>
+         <div class="media-list-item-quote">
+          "The future of e-commerce unfolds"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://technode.com/2018/06/08/are-outdated-courier-systems/">
+         <img alt="" src="/images/media/technode_logo-4442604ed9.png" srcset="/images/media/technode_logo@2x-078dc6a99d.png 2x"/>
+         <div class="media-list-item-quote">
+          "Are outdated courier systems hampering cross border trade?"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="http://3g.forbeschina.com/review/201805/0066724.shtml">
+         <img alt="" src="/images/media/forbes_logo-2d87929c53.png" srcset="/images/media/forbes_logo@2x-6f342d5118.png 2x"/>
+         <div class="media-list-item-quote">
+          "Revolutionize logistics industry in the digital era"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://medium.com/@GlobalParcelX/parcelx-ceo-guo-shunri-presents-at-2018-tokyo-finwise-summit-dfcf8cc28fb">
+         <img alt="" src="/images/media/medium_logo-21a28287be.png" srcset="/images/media/medium_logo@2x-4de627bc99.png 2x"/>
+         <div class="media-list-item-quote">
+          "CEO of ParcelX presents at 2018 Tokyo Finwise Summit"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://www.postalandparceltechnologyinternational.com/news/delivery/parcelx-and-metaverse-to-develop-global-delivery-network-using-blockchain-technology.html">
+         <img alt="" src="/images/media/postal_logo-ce9123cac6.png" srcset="/images/media/postal_logo@2x-d1744aef17.png 2x"/>
+         <div class="media-list-item-quote">
+          "Establish the worldâs first global, cross-border parcel delivery network"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://www.cryptoninjas.net/2018/05/11/parcelx-and-metaverse-to-build-parcel-delivery-network-using-blockchain/">
+         <img alt="" src="/images/media/ninjas_logo-cc1500b27e.png" srcset="/images/media/ninjas_logo@2x-95c48885cc.png 2x"/>
+         <div class="media-list-item-quote">
+          "Build parcel delivery network using blockchain"
+         </div>
+        </a>
+       </div>
+       <div class="media-list-item">
+        <a href="https://medium.com/@GlobalParcelX/blockchain-the-solution-to-disrupt-a-broken-supply-chain-industry-part-ii-335245d42716">
+         <img alt="" src="/images/media/medium_logo-21a28287be.png" srcset="/images/media/medium_logo@2x-4de627bc99.png 2x"/>
+         <div class="media-list-item-quote">
+          "Save the broken supply chain industry"
+         </div>
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section--light about">
+     <div class="about-video-wrapper">
+      <iframe allowfullscreen="" class="youtube" frameborder="0" src="//www.youtube.com/embed/UGJUJe67-0k?rel=0&amp;autoplay=0">
+      </iframe>
+     </div>
+     <div class="container row around-xs middle-xs">
+      <div class="col col-sm-5 col-md-4">
+       <blockquote class="about-quote">
+        Global cross-border e-commerce is a
+        <strong>
+         $1Â trillion
+        </strong>
+        market with parcel deliveries growing
+        <strong>
+         30% yearly
+        </strong>
+        .
+       </blockquote>
+       <p class="about-description">
+        The current service providers suffer from a trade-off between efficiency (time and service quality) and cost.
+       </p>
+      </div>
+      <div class="col col-sm-5 col-md-4 first-md">
+       <img class="about-illustration" src="/images/about-illustration-732b2d01ac.png" srcset="/images/about-illustration@2x-2da94e4e08.png 2x"/>
+      </div>
+     </div>
+    </section>
+    <section class="section--light why">
+     <div class="anchor" id="about">
+     </div>
+     <div class="container">
+      <h1 class="h1">
+       ParcelX is the "AirBnB" ofÂ cross‑border parcel delivery.
+      </h1>
+      <div class="why-intro">
+       <p>
+        ParcelX aims to create a cross-border parcel delivery ecosystem where anyone or service provider can trust and participate through revolutionary blockchain technology. We are creating a new
+        <strong>
+         Blue Ocean market with blockchain technology
+        </strong>
+        .
+       </p>
+       <p>
+        It will remove inefficiency, data opacity, and high costs from one of the world's oldest industries:
+        <strong>
+         cross-border logistics
+        </strong>
+        .
+       </p>
+      </div>
+      <div class="row center-sm">
+       <div class="col col-xs-12 col-sm-5">
+        <figure>
+         <img alt="Scaling up a successful existing business." class="scalingup-illustration" src="/images/scalingup-illustration-818941d83a.png" srcset="/images/scalingup-illustration@2x-f185c4f492.png 2x"/>
+        </figure>
+        <h2>
+         Scaling up a successful existing business.
+        </h2>
+        <p>
+         <strong>
+          ParcelX is a logistics network with an established market base in China, Korea and Japan.
+         </strong>
+         It possesses years of experience connecting cross-border e-commerce delivery providers,
+         <strong>
+          including 30 global air carriers and 20 national postal system platforms.
+         </strong>
+         ParcelX has
+         <strong>
+          exclusive ownership of ports
+         </strong>
+         China, with overseas warehouses at Japan and Korea.
+        </p>
+       </div>
+       <div class="col col-xs-12 col-sm-5">
+        <figure>
+         <img alt="A first-mover in adopting blockchain technology and token economics." class="first-mover-illustration" src="/images/first-mover-illustration-ea1f256393.png" srcset="/images/first-mover-illustration@2x-4fc4e5eca6.png 2x"/>
+        </figure>
+        <h2>
+         A first-mover in adopting blockchain technology and token economics.
+        </h2>
+        <p>
+         We use blockchain technology toÂ harness unutilized capacity from domestic delivery providers,
+         <strong>
+          removing inefficiency, data opacity, and high costs
+         </strong>
+         from geographically distant nodes.
+        </p>
+        <p>
+         ParcelX token economics will build value for early adopters &amp; partners, welcoming every player to participate and
+         <strong>
+          empowering them to focus on their core competencies.
+         </strong>
+        </p>
+       </div>
+      </div>
+      <h2 class="why-outro">
+       ParcelX will completely change the rules of the industry by rebuilding pricing, processes, and the service experience from the ground up.
+      </h2>
+     </div>
+    </section>
+    <hr class="divider"/>
+    <section class="section--light partners">
+     <div class="container">
+      <h1 class="h1">
+       Partners
+      </h1>
+      <div class="partners-list" data-module="partners">
+       <!-- li.partner-item*33>img.partner-logo[src="/images/partners/$.png" srcset="/images/partners/$\.png 2x"] -->
+       <div class="partner-item">
+        <a href="https://coincodex.com/ico/parcelx/" target="_blank">
+         <img alt="" class="partner-logo" src="/images/partners/01-75af00e50b.png" srcset="/images/partners/01@2x-04fe333b66.png 2x"/>
+        </a>
+       </div>
+       <div class="partner-item">
+        <a href="https://icobench.com/ico/parcelx" target="_blank">
+         <img alt="" class="partner-logo" src="/images/partners/02-9823981f05.png" srcset="/images/partners/02@2x-1d31e20b7c.png 2x"/>
+        </a>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/1-14a3b3c456.png" srcset="/images/partners/1@2x-2471ac7ae8.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/2-3e082e9cfb.png" srcset="/images/partners/2@2x-1064f44e94.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/3-56d7260ea3.png" srcset="/images/partners/3@2x-d70fab5ed8.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/4-0a37220a0d.png" srcset="/images/partners/4@2x-56b66ccae1.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/5-239d571651.png" srcset="/images/partners/5@2x-5047e937c7.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/6-2a08df3dcd.png" srcset="/images/partners/6@2x-30d0bfe475.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/7-8581d44869.png" srcset="/images/partners/7@2x-30b7c2f61e.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/8-78628af717.png" srcset="/images/partners/8@2x-d05cbe1b83.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/9-f40f04b409.png" srcset="/images/partners/9@2x-6b99718f74.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/10-ecdcb1c8c6.png" srcset="/images/partners/10@2x-73bce90cce.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/11-f9565b0fda.png" srcset="/images/partners/11@2x-8ed82be590.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/12-13c23dcb43.png" srcset="/images/partners/12@2x-407cfe5def.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/13-e6b52d5679.png" srcset="/images/partners/13@2x-7117c20ee4.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/14-9b452a3e29.png" srcset="/images/partners/14@2x-a3ac3c6ee3.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/15-969da7c71e.png" srcset="/images/partners/15@2x-73b9a40de1.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/16-15860ddf38.png" srcset="/images/partners/16@2x-fc6d8c1e53.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/17-22b26ad075.png" srcset="/images/partners/17@2x-ddf88eb458.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/18-66b6033012.png" srcset="/images/partners/18@2x-673264c496.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/19-fe6c465efd.png" srcset="/images/partners/19@2x-78aeebb96c.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/20-c534a66fb7.png" srcset="/images/partners/20@2x-a5d5d8230f.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/21-173cab8ac3.png" srcset="/images/partners/21@2x-8a482f798b.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/22-246d0aa41e.png" srcset="/images/partners/22@2x-be3d87d1c3.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/23-8bdec3bd1d.png" srcset="/images/partners/23@2x-ee0cf52d6f.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/24-63b43dd40d.png" srcset="/images/partners/24@2x-5cad050395.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/25-c9fa0e1316.png" srcset="/images/partners/25@2x-023405cf8d.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/26-74e8ceb917.png" srcset="/images/partners/26@2x-62a745a5c6.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/27-77d54cd0af.png" srcset="/images/partners/27@2x-12dcda4cbb.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/28-1baf18f7b4.png" srcset="/images/partners/28@2x-acea8505cf.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/29-072c76f7e3.png" srcset="/images/partners/29@2x-b2cd169cdf.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/30-e8261b7e20.png" srcset="/images/partners/30@2x-f32d68db65.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/31-16b3f1aec8.png" srcset="/images/partners/31@2x-e8e710d6f3.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/32-8cfebcfbe8.png" srcset="/images/partners/32@2x-3db52b9ffb.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/33-e387a7a39b.png" srcset="/images/partners/33@2x-74df99ab1b.png 2x"/>
+       </div>
+       <div class="partner-item">
+        <img alt="" class="partner-logo" src="/images/partners/34-d89f3ed2f3.png" srcset="/images/partners/34@2x-55c84e5995.png 2x"/>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section--light team" data-module="team">
+     <div class="container">
+      <h1 class="h1">
+       Team &amp; Advisors
+      </h1>
+      <div class="team-group">
+       <h4 class="team-group-name">
+        Management Team
+       </h4>
+       <ul class="team-group-list">
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Shunri-Guo-015736c010.png" srcset="/images/team/Shunri-Guo@2x-b88037157e.png 2x"/>
+         <h5 class="team-member-name">
+          Shunri Guo
+         </h5>
+         <p class="team-member-position">
+          CEO &amp; Co-Founder
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/shunrig" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            Serial entrepreneur with 5 global patents
+           </li>
+           <li class="team-member-bio-list-item">
+            20 years of large scale professional sofrware development experience; experience on big data applications and cross-border e-commerce logistics
+           </li>
+           <li class="team-member-bio-list-item">
+            Key founder for Microsoft China Research &amp; Development Center
+           </li>
+           <li class="team-member-bio-list-item">
+            Founder &amp; CEO of Yuntu.com, a pioneer for data-driven offline business
+           </li>
+           <li class="team-member-bio-list-item">
+            Co-founder &amp; CEO of Wuyao e-Commerce (Shanghai) Co., Ltd., bringing data insights to the traditional field of electronic port customs clearance
+           </li>
+           <li class="team-member-bio-list-item">
+            Mississippi State University, USA, Ph.D. Industrial Engineering
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Mingyi-Yang-63e47cdaf8.png" srcset="/images/team/Mingyi-Yang@2x-9b9bff8f5b.png 2x"/>
+         <h5 class="team-member-name">
+          Yang Mingyi
+         </h5>
+         <p class="team-member-position">
+          President &amp; Co-founder
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/YangMingYi" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            Serial entrepreneur with over 10 years experience across China, Japan, and South Korea
+           </li>
+           <li class="team-member-bio-list-item">
+            Expert on big data driven financial services and cross-border e-commerce logistics
+           </li>
+           <li class="team-member-bio-list-item">
+            Founder and Chairman of UCJ, Co., Ltd. (Japan), one of the earliest Japan-China cross border shopping platforms
+           </li>
+           <li class="team-member-bio-list-item">
+            Founder and Chairman of Shanghai United Cities Industrial Co., Ltd, one of the 1st credit card financial services and database marketing enterprises in China. Funded by Japan SBI, Japan JAIC, Jiangsu Province, China CMB International, Taiwan Fuxin, and other well-known VC arms
+           </li>
+           <li class="team-member-bio-list-item">
+            Co-founder of Wuyao E-commerce (Shanghai) Co., Ltd
+           </li>
+           <li class="team-member-bio-list-item">
+            University of Tokyo, Japan, Bachelors, Business Administration
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Nirvana-XU-f88950537f.png" srcset="/images/team/Nirvana-XU@2x-e754c6ae25.png 2x"/>
+         <h5 class="team-member-name">
+          Nirvana XU
+         </h5>
+         <p class="team-member-position">
+          PR Head ï¼Greater Chinaï¼
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/nirvanaxu" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            Over 18 years working experience in Public Relationship (In-house &amp; Agency), expert in Brand Management, Crisis PR, Government Relation and Corporate Communication through both traditional and social media, with great successes and good reputation.
+           </li>
+           <li class="team-member-bio-list-item">
+            Supor PR Director at Groupe SEB France, the world's number one small appliance group, well trained in systematic approach and process with strategic mindset. Versatile in multiple marketing techniques and tools from public relations, brand positioning, new media integrated marketing strategy to market research and event management.
+           </li>
+           <li class="team-member-bio-list-item">
+            University of South Australia, Australia, MBA (Top Student Award)
+           </li>
+          </ul>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <div class="team-group">
+       <h4 class="team-group-name">
+        Advisors
+       </h4>
+       <ul class="team-group-list">
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Eric-Gu-3d57b98be7.png" srcset="/images/team/Eric-Gu@2x-6435a4fb61.png 2x"/>
+         <h5 class="team-member-name">
+          Eric Gu
+         </h5>
+         <p class="team-member-position">
+          Blockchain Strategic Advisor
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/theericgu" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            Founder of Metaverse Foundation and CEO of Viewfin
+           </li>
+           <li class="team-member-bio-list-item">
+            Eric Gu, is a Blockchain and Digital Asset expert and a well-known opinion leader in the Chinese Blockchain ecosystem
+           </li>
+           <li class="team-member-bio-list-item">
+            As well as being a lifetime member of the Bitcoin Foundation, Eric was the main translator of âBlockchain: Blueprint for a New Economyâ, the first Blockchain book translated into Chinese
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Zhoulong-Yang-d982a51102.png" srcset="/images/team/Zhoulong-Yang@2x-9a197a481a.png 2x"/>
+         <h5 class="team-member-name">
+          Zhoulong Yang
+         </h5>
+         <p class="team-member-position">
+          Logistics Advisor
+         </p>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            Director, vice president and CIO at Yunda Group, one of the largest express delivery companies in China, delivered 4.5 billion parcels in 2017, with 40% year over year growth
+           </li>
+           <li class="team-member-bio-list-item">
+            Earlier career in IT for finance, had several achievements in the fields of planning, building and operating financial IT systems and the creation and application of financial models
+           </li>
+           <li class="team-member-bio-list-item">
+            Fudan University, bachelor and MBA, currently taking Ph.D. of financial management from the ASU Carey School of Business
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Daniel-Santos-a200678850.png" srcset="/images/team/Daniel-Santos@2x-430e353dd4.png 2x"/>
+         <h5 class="team-member-name">
+          Daniel Santos
+         </h5>
+         <p class="team-member-position">
+          Business Advisor
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/danilkafx" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            An advisor to Conduit, is a Henley Business school graduatewith over a decade of investment banking experience gained at Morgan Stanley, DB and Citi in London and Renaissance Capital in Moscow
+           </li>
+           <li class="team-member-bio-list-item">
+            He is the Founder of Token Advisors and a World Economic Forum Summer Davos participant. With a specialty in token economics, international business development, and token game theory he was an early investor in IOTA and advisor to TRONâs ICO
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Chuan-Jin-Fong-8867a73211.png" srcset="/images/team/Chuan-Jin-Fong@2x-ffe7da7761.png 2x"/>
+         <h5 class="team-member-name">
+          Chuan Jin (CJ) Fong
+         </h5>
+         <p class="team-member-position">
+          Strategy Advisor
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/chuanjinfong" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            A double degree holder from Singapore Management University with 10 years of experience in investment banking from Morgan Stanley and Nomura
+           </li>
+           <li class="team-member-bio-list-item">
+            He is the Asia CEO and Co-Founder at Token Advisors
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Ashishi-Gauray-f7cd581d5e.png" srcset="/images/team/Ashishi-Gauray@2x-227dd7d317.png 2x"/>
+         <h5 class="team-member-name">
+          Ashish Gaurav
+         </h5>
+         <p class="team-member-position">
+          Token Growth Advisor
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/ashish-gaurav-46268319" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            7 Years experience across Investment Banking, Financial Market Sales, Strategy and Change Management
+           </li>
+           <li class="team-member-bio-list-item">
+            Currently leading strategy and change management of Retail Bankingâs global investment portfolio (~$200 million) at Standard Chartered Bank. MBA from FMS Delhi
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="team-member expandable">
+         <img alt="" class="team-member-image" src="/images/team/Selvakumar-Esra-380c2aba9d.png" srcset="/images/team/Selvakumar-Esra@2x-f98abcc194.png 2x"/>
+         <h5 class="team-member-name">
+          Selvakumar Esra
+         </h5>
+         <p class="team-member-position">
+          Technical Advisor
+         </p>
+         <a class="team-member-linkedin" href="http://www.linkedin.com/in/selvae" target="_blank">
+          LinkedIn Profile
+         </a>
+         <div class="team-member-bio">
+          <ul class="team-member-bio-list">
+           <li class="team-member-bio-list-item">
+            Blockchain Architect, expertise in Ethereum  and Hyperledger
+           </li>
+           <li class="team-member-bio-list-item">
+            Delivered multiple successful blockchain projects
+           </li>
+           <li class="team-member-bio-list-item">
+            15 years of experience in software development &amp; product delivery. Delivered technology solutions for leading investment banks such as JPMorgan, CitiBank, Royal Bank of Scotland, Lehman Brothers etc
+           </li>
+          </ul>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <section class="section--light logos">
+       <hr class="divider"/>
+       <h2 class="logos-title">
+        ParcelX Team have developed technologies for major top-notch companies:
+       </h2>
+       <div class="logos-list">
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/microsoft-92f4b2e208.png" srcset="/images/logos/microsoft@2x-8c15521c7a.png 2x"/>
+        </div>
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/google-e3fc4c3e1d.png" srcset="/images/logos/google@2x-12cf62fba4.png 2x"/>
+        </div>
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/azure-1b28b0cbec.png" srcset="/images/logos/azure@2x-d876ba6301.png 2x"/>
+        </div>
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/jpmorgan-5afcc9e1f0.png" srcset="/images/logos/jpmorgan@2x-d05842fccd.png 2x"/>
+        </div>
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/tata-693f5275b8.png" srcset="/images/logos/tata@2x-28417dba2f.png 2x"/>
+        </div>
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/citybank-4ae53d0aea.png" srcset="/images/logos/citybank@2x-98e9b49f97.png 2x"/>
+        </div>
+        <div class="logos-list-item">
+         <img alt="" src="/images/logos/baidu-d5e3e87899.png" srcset="/images/logos/baidu@2x-4c767e3954.png 2x"/>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section class="section--light roadmap">
+     <div class="anchor" id="roadmap">
+     </div>
+     <div class="container">
+      <h1 class="h1">
+       Roadmap
+      </h1>
+      <div class="roadmap-legend">
+       <h4 class="roadmap-legend-name">
+        Legend
+       </h4>
+       <div class="roadmap-legend-group">
+        <div class="roadmap-legend-group-step" data-name="Blockchain">
+         Blockchain
+        </div>
+        <div class="roadmap-legend-group-step" data-name="Big Data / AI / Machine Learning">
+         Big Data / AI / Machine Learning
+        </div>
+        <div class="roadmap-legend-group-step" data-name="IoT">
+         IoT
+        </div>
+       </div>
+       <div class="roadmap-legend-group">
+        <div class="roadmap-legend-group-step" data-name="B2B">
+         B2B
+        </div>
+        <div class="roadmap-legend-group-step" data-name="B2C">
+         B2C
+        </div>
+       </div>
+      </div>
+      <div class="rodamp-list">
+       <div class="roadmap-group">
+        <div class="roadmap-group-title">
+         2018.10
+        </div>
+        <ul class="roadmap-group-list">
+         <li class="roadmap-group-item">
+          Begin ParcelX Network planning, development, and sandbox deployment.
+         </li>
+        </ul>
+       </div>
+       <div class="roadmap-group">
+        <div class="roadmap-group-title">
+         2018.12
+        </div>
+        <ul class="roadmap-group-list">
+         <li class="roadmap-group-item">
+          ParcelX v1 beta ready.
+         </li>
+         <li class="roadmap-group-item">
+          Begin migrating existing business to the ParcelX Network.
+         </li>
+        </ul>
+       </div>
+       <div class="roadmap-group">
+        <div class="roadmap-group-title">
+         2019.06
+        </div>
+        <ul class="roadmap-group-list">
+         <li class="roadmap-group-item">
+          Complete beta operations and expect stable &amp; quality service.
+         </li>
+         <li class="roadmap-group-item">
+          Intensify business development campaign.
+         </li>
+        </ul>
+       </div>
+       <div class="roadmap-group">
+        <div class="roadmap-group-title">
+         2019.10
+        </div>
+        <ul class="roadmap-group-list">
+         <li class="roadmap-group-item">
+          Network reaches scale with more than 5million/month parcel volume.
+         </li>
+         <li class="roadmap-group-item">
+          Begin data-driven optimization and value-add service planning.
+         </li>
+        </ul>
+       </div>
+       <div class="roadmap-group">
+        <div class="roadmap-group-title">
+         2020.04
+        </div>
+        <ul class="roadmap-group-list">
+         <li class="roadmap-group-item">
+          Refine ParcelX Network with AI &amp; machine learning
+         </li>
+         <li class="roadmap-group-item">
+          Start beta testing of technology-driven value-add service
+         </li>
+        </ul>
+       </div>
+       <div class="roadmap-group">
+        <div class="roadmap-group-title">
+         2020.10
+        </div>
+        <ul class="roadmap-group-list">
+         <li class="roadmap-group-item">
+          Premium service roll-out
+         </li>
+         <li class="roadmap-group-item">
+          B2C services roll-out
+         </li>
+         <li class="roadmap-group-item">
+          Planning of IoT integration when 5G adoption is widespread
+         </li>
+        </ul>
+       </div>
+       <div class="roadmap-process">
+        <div class="roadmap-process-timeline">
+         <div class="roadmap-process-timeline-step" data-name="Blockchain" style="height: 52%">
+         </div>
+         <div class="roadmap-process-timeline-step" data-name="Big Data / AI / Machine Learning" style="height: 38%">
+         </div>
+         <div class="roadmap-process-timeline-step" data-name="IoT" style="height: 10%">
+         </div>
+        </div>
+        <div class="roadmap-process-timeline">
+         <div class="roadmap-process-timeline-step" data-name="B2B" style="height: 75%">
+         </div>
+         <div class="roadmap-process-timeline-step" data-name="B2C" style="height: 25%">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section--light sale">
+     <div class="anchor" id="tokensale">
+     </div>
+     <div class="container">
+      <h1 class="h1">
+       Token Sale
+      </h1>
+      <div class="sale-intro">
+       <p>
+        <strong>
+         GPX
+        </strong>
+        is the token issued by the ParcelX Platform.
+        <br/>
+        It provides four main utility functions for all ParcelX Network stakeholders.
+       </p>
+      </div>
+      <ul class="sale-list">
+       <li class="sale-list-item">
+        <img alt="Payment" class="sale-list-item-icon" src="/images/payment-icon-8900776794.svg"/>
+        <h3 class="sale-list-item-title">
+         Payment
+        </h3>
+        <p class="sale-list-item-description">
+         Current Use
+        </p>
+       </li>
+       <li class="sale-list-item">
+        <img alt="Currency &lt;br/&gt;Hedge" class="sale-list-item-icon" src="/images/hedge-icon-dd6a73911b.svg"/>
+        <h3 class="sale-list-item-title">
+         Currency
+         <br/>
+         Hedge
+        </h3>
+        <p class="sale-list-item-description">
+         Current Use
+        </p>
+       </li>
+       <li class="sale-list-item">
+        <img alt="Reward &amp; &lt;br/&gt;Membership" class="sale-list-item-icon" src="/images/reward-icon-02da694ddb.svg"/>
+        <h3 class="sale-list-item-title">
+         Reward &amp;
+         <br/>
+         Membership
+        </h3>
+        <p class="sale-list-item-description">
+         Current
+         <br/>
+         &amp; Expected Use
+        </p>
+       </li>
+       <li class="sale-list-item">
+        <img alt="Credit" class="sale-list-item-icon" src="/images/credit-icon-2bed743e14.svg"/>
+        <h3 class="sale-list-item-title">
+         Credit
+        </h3>
+        <p class="sale-list-item-description">
+         Expected Use
+        </p>
+       </li>
+      </ul>
+     </div>
+     <div class="sale-graph">
+      <h4 class="sale-graph-title">
+       Network effect
+      </h4>
+      <picture>
+       <source media="(min-width: 48em)" srcset="/images/token-sale-graph-f0a7ac998f.svg">
+        <img alt="Network effect" src="/images/token-sale-graph--small-578f270b4d.svg"/>
+       </source>
+      </picture>
+      <p class="sale-graph-description">
+       The key indicators of measuring ParcelX network effect are the increase in the parcel volume (GMV) and its market share. Aiming to reach 34% of the market share at the end of year 3.
+      </p>
+     </div>
+    </section>
+    <section class="overlay" data-module="overlay">
+     <div class="popup popup--join" data-module="join">
+      <button class="close popup-close" id="hide-overlay">
+      </button>
+      <div class="popup--join-content row">
+       <div class="col-xs-12 col-md-4" style="position:relative;">
+        <p class="left-content">
+         Sign up for our mailing list to get access to exclusive  bonuses and promotions and get notified about future events and discounts!
+        </p>
+       </div>
+       <div class="col-xs-12 col-md-8">
+        <h4>
+         JOIN OUR MAILING LIST
+        </h4>
+        <form action="https://ma.parcelx.io/form/submit?formId=6" enctype="multipart/form-data">
+         <input id="email" name="email" placeholder="E-mail" required="" type="email"/>
+         <input id="name" name="name" placeholder="First Name" required="" type="text"/>
+         <input id="last_name" name="last_name" placeholder="Last Name" required="" type="text"/>
+         <input id="country" name="country" style="display:none;"/>
+         <!-- <div class="g-recaptcha" style="width:100%;margin-bottom:1em;" data-sitekey="6LfLVm0UAAAAAEr3f15s7v-6yb3rljjsjWg7Oa7R"></div> -->
+         <button class="button button--primary hero-button" type="submit">
+          Join
+         </button>
+        </form>
+       </div>
+      </div>
+      <div class="popup--join-succes">
+       <img alt="" src="/images/succes-icon-8a06740574.svg"/>
+       <p>
+        <em>
+         Congratulations!
+        </em>
+        You've joined our whitelist.
+        <br/>
+        We will keep you updated on further development.
+       </p>
+       <!-- <a class="button button--primary" id="hide-overlay" href="/publicsale.html">Click to read instructions on setting up the wallet</a> -->
+      </div>
+     </div>
+    </section>
+    <!-- <section data-module="warning" class="overlay">
+  <div class="popup popup--warning">
+    <button class="close popup-close" id="hide-overlay"></button>
+    <img src="/images/logo-color-36ba7b6ebe.svg" alt="">
+    <p>We notice that your IP is from China where participation in ICO has been banned.</p>
+     <a class="button button--primary warning-button" href="ParcelX%20ICO%20Warning%20Slides.pptx">READ FULL WARNING</a> 
+  </div>
+</section> -->
+    <footer class="footer" id="footer">
+     <a class="button button--primary hero-button" href="#join">
+      JOIN OUR MAILING LIST
+     </a>
+     <!--<form class="footer-form" data-module="footer" action="">-->
+     <!--<input class="footer-form-input" type="email" placeholder="Enter your e-mailâ¦" required >-->
+     <!--<input type="submit" value="Join" class="button button&#45;&#45;primary footer-form-button">-->
+     <!--</form>-->
+     <div class="social-links">
+      <a class="social-link" href="https://www.youtube.com/channel/UCSfN3GnoAMcTXfbBMs3dxog/" target="_blank">
+       <svg height="23" viewbox="0 0 90 90" width="25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90,26.958C90,19.525,83.979,13.5,76.55,13.5h-63.1C6.021,13.5,0,19.525,0,26.958v36.084C0,70.475,6.021,76.5,13.45,76.5h63.1C83.979,76.5,90,70.475,90,63.042V26.958z M36,60.225V26.33l25.702,16.947L36,60.225 Z" fill="currentColor">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://www.facebook.com/GlobalParcelX/" target="_blank">
+       <svg height="25" viewbox="0 0 12 25" width="12" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.6123018,4.83178654 C2.6123018,5.46049884 2.6123018,8.26670534 2.6123018,8.26670534 L0.0412459348,8.26670534 L0.0412459348,12.4669374 L2.6123018,12.4669374 L2.6123018,24.9485499 L7.89379634,24.9485499 L7.89379634,12.4672854 L11.4379244,12.4672854 C11.4379244,12.4672854 11.7698475,10.4533063 11.9307422,8.2512181 C11.4694515,8.2512181 7.91376744,8.2512181 7.91376744,8.2512181 C7.91376744,8.2512181 7.91376744,5.80765661 7.91376744,5.37935035 C7.91376744,4.95011601 8.48961046,4.37273782 9.05875696,4.37273782 C9.62683674,4.37273782 10.8258134,4.37273782 11.9363128,4.37273782 C11.9363128,3.80087007 11.9363128,1.824942 11.9363128,5.80046404e-05 C10.4538296,5.80046404e-05 8.76725013,5.80046404e-05 8.02381586,5.80046404e-05 C2.48174893,-0.000232018561 2.6123018,4.20417633 2.6123018,4.83178654 Z" fill="currentColor">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/company/parcelx-foundation/" target="_blank">
+       <svg height="23" viewbox="0 0 25 23" width="25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.8925561,13.8647625 L23.8925561,22.5948914 L18.7716077,22.5948914 L18.7716077,14.4494539 C18.7716077,12.4032536 18.0309177,11.0068019 16.1773042,11.0068019 C14.7623053,11.0068019 13.9202385,11.947908 13.5497824,12.8582698 C13.4146873,13.1837205 13.3799136,13.6367054 13.3799136,14.0922706 L13.3799136,22.5948914 L8.25724321,22.5948914 C8.25724321,22.5948914 8.32623503,8.79919383 8.25724321,7.36985668 L13.3794137,7.36985668 L13.3794137,9.52794441 C13.369026,9.54408518 13.3555276,9.56148867 13.345751,9.57713534 L13.3794137,9.57713534 L13.3794137,9.52794441 C14.0599441,8.49202497 15.2753,7.01217926 17.9956441,7.01217926 C21.3659668,7.01212436 23.8925561,9.18821949 23.8925561,13.8647625 Z M2.89871187,0.0306345354 C1.14625298,0.0306345354 0,1.16669267 0,2.66064783 C0,4.12204693 1.11309025,5.29258264 2.83071993,5.29258264 L2.8649381,5.29258264 C4.65133741,5.29258264 5.7623168,4.12226653 5.7623168,2.66064783 C5.72865412,1.16669267 4.65133741,0.0306345354 2.89871187,0.0306345354 Z M0.304241706,22.5948914 L5.42496791,22.5948914 L5.42496791,7.36985668 L0.304241706,7.36985668 L0.304241706,22.5948914 Z" fill="currentColor" transform="translate(.129 .19)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://medium.com/@GlobalParcelX" target="_blank">
+       <svg height="23" viewbox="0 0 27 23" width="27" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor" transform="translate(.2 .19)">
+         <path d="M25.6703538,22.5568621 L17.5687636,18.6227008 L17.5077368,0.788628287 C17.5063331,0.372302772 17.9365954,0.09797086 18.3080366,0.278383085 L25.9887225,4.00924307 C26.1820966,4.10316276 26.3050859,4.30079247 26.3050859,4.51753021 L26.3050859,22.1537029 C26.3050191,22.4832658 25.9643252,22.699666 25.6703538,22.5568621 Z">
+         </path>
+         <path d="M17.5687636,18.6227008 L8.80042388,14.364108 L17.2417723,0.325309168 C17.3908969,0.0773098792 17.7020466,-0.0159346127 17.9609259,0.10978678 L25.7489601,3.89283937 C26.0466746,4.03746624 26.1556939,4.41010661 25.9835757,4.69490405 L17.5687636,18.6227008 Z" opacity=".7">
+         </path>
+         <path d="M17.5687636,18.6227008 L8.80042388,14.364108 L0.763403016,1.14391613 C0.539482159,0.775597015 0.92910445,0.339488273 1.31471622,0.526787491 L8.80042388,4.16291756 L17.5687636,18.6227008 Z">
+         </path>
+         <path d="M8.1656918,22.5567946 L0.250925044,18.7122317 C0.0975225462,18.6376901 0,18.4809773 0,18.3090725 L0,0.577157072 C0,0.258059701 0.329999185,0.0484115139 0.614746304,0.186759062 L8.80042388,4.16291756 L8.80042388,22.1536354 C8.80042388,22.4831983 8.45966312,22.6995984 8.1656918,22.5567946 Z">
+         </path>
+        </g>
+       </svg>
+      </a>
+      <a class="social-link" href="https://twitter.com/@globalparcelx" target="_blank">
+       <svg height="22" viewbox="0 0 27 22" width="27" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.3357664,2.53533718 C25.3664623,2.96557335 24.326413,3.25735459 23.2336491,3.38761946 C24.3494353,2.7183201 25.2035418,1.65671743 25.6083473,0.395622434 C24.561714,1.01543666 23.406424,1.46550136 22.1754401,1.70947859 C21.1896976,0.656109072 19.787574,0 18.2323842,0 C15.2487779,0 12.8296273,2.42326284 12.8296273,5.41030274 C12.8296273,5.83394376 12.8773502,6.24771361 12.9695255,6.64337915 C8.48013064,6.41750624 4.49924928,4.26296319 1.83490019,0.989056084 C1.36916087,1.7869392 1.10421057,2.71663899 1.10421057,3.7090573 C1.10421057,5.58669051 2.05871154,7.24340795 3.50692286,8.2126786 C2.62153188,8.183022 1.78881252,7.93904478 1.05980117,7.53350807 L1.05980117,7.60109752 C1.05980117,10.2221716 2.92271543,12.4096904 5.39285944,12.9075591 C4.94028802,13.0295477 4.46305906,13.0971371 3.96934869,13.0971371 C3.62048528,13.0971371 3.28311151,13.0625234 2.9523217,12.996572 C3.64019411,15.147839 5.63478741,16.7122244 7.99799599,16.7551144 C6.14988486,18.2057875 3.81959605,19.0679409 1.28856124,19.0679409 C0.852471218,19.0679409 0.422922117,19.0415603 0,18.9937563 C2.39117961,20.5318043 5.22998192,21.4285714 8.28106291,21.4285714 C18.2193023,21.4285714 23.6517085,13.182874 23.6517085,6.03179808 L23.6335919,5.33120411 C24.6950283,4.57284875 25.613296,3.62004441 26.3357664,2.53533718 Z" fill="currentColor" transform="translate(.664 .19)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://t.me/joinchat/HqU0ywvC0I_LQ-4LHreKyA" target="_blank">
+       <svg height="23" viewbox="0 0 28 23" width="28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.97103922,12.9798078 L21.5990893,4.36460122 C22.2793649,3.95122729 22.903155,4.17348416 22.3910059,4.62900905 L10.7218892,15.1786709 L10.2675555,20.034447 L7.97103922,12.9798078 Z M25.5200357,0.15210061 L1.27761454,9.52118506 C-0.376983128,10.1863426 -0.367113917,11.1109985 0.976008663,11.5233204 L7.0221951,13.4142221 L9.33558009,20.5211117 C9.61681759,21.2989757 9.47815868,21.6075684 10.2933835,21.6075684 C10.9224932,21.6075684 11.2015608,21.3200863 11.5519528,20.9771276 C11.774745,20.758658 13.0976392,19.4698627 14.5748011,18.0308389 L20.8639381,22.6868012 C22.0211555,23.32657 22.8567487,22.9951835 23.1449856,21.6098828 L27.2732555,2.11664375 C27.6959517,0.418682612 26.6272771,-0.351466551 25.5200357,0.15210061 Z" fill="currentColor" fill-rule="evenodd" transform="translate(.632)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link" href="https://weibo.com/u/6630905707" target="_blank">
+       <svg height="30" viewbox="0 0 37 30" width="37" xmlns="http://www.w3.org/2000/svg">
+        <path d="M36.539,12.806 C36.539,12.808 36.539,12.810 36.539,12.812 C36.297,13.556 35.498,13.964 34.754,13.723 C34.008,13.482 33.600,12.683 33.841,11.937 L33.840,11.937 C34.580,9.646 34.111,7.033 32.384,5.117 C30.656,3.201 28.108,2.470 25.753,2.970 C24.987,3.133 24.234,2.644 24.071,1.878 C23.907,1.114 24.395,0.360 25.161,0.195 L25.162,0.195 C28.472,-0.509 32.058,0.519 34.489,3.217 C36.921,5.911 37.577,9.584 36.539,12.806 ZM26.721,7.506 L26.721,7.505 C26.064,7.648 25.415,7.226 25.274,6.568 C25.133,5.908 25.553,5.259 26.212,5.119 C27.825,4.775 29.572,5.274 30.756,6.588 C31.941,7.901 32.259,9.690 31.752,11.260 C31.545,11.902 30.857,12.252 30.216,12.047 C29.574,11.839 29.224,11.150 29.431,10.509 L29.429,10.509 C29.678,9.741 29.522,8.866 28.943,8.224 C28.365,7.583 27.510,7.340 26.721,7.506 ZM27.210,9.790 C27.851,10.706 27.789,11.990 27.198,13.478 C26.925,14.163 27.283,14.269 27.804,14.426 C29.927,15.084 32.291,16.678 32.291,19.485 C32.291,24.132 25.594,29.985 15.526,29.985 C7.847,29.985 -0.003,26.261 -0.003,20.135 C-0.003,16.933 2.025,13.230 5.516,9.736 C10.179,5.072 15.616,2.947 17.661,4.994 C18.563,5.896 18.650,7.458 18.070,9.323 C17.768,10.262 18.951,9.742 18.951,9.744 C22.720,8.165 26.008,8.072 27.210,9.790 ZM25.923,19.401 C25.526,15.377 20.236,12.605 14.107,13.211 C7.980,13.818 3.333,17.572 3.731,21.597 C4.129,25.623 9.419,28.394 15.547,27.789 C21.676,27.183 26.320,23.428 25.923,19.401 ZM11.584,26.060 C8.638,25.108 7.391,22.198 8.681,19.576 C9.948,17.005 13.243,15.551 16.159,16.310 C19.177,17.090 20.717,19.939 19.484,22.705 C18.233,25.536 14.636,27.045 11.584,26.060 ZM13.248,20.549 C12.299,20.151 11.073,20.560 10.487,21.479 C9.894,22.402 10.173,23.501 11.115,23.930 C12.071,24.367 13.340,23.952 13.933,23.006 C14.515,22.050 14.208,20.958 13.248,20.549 ZM15.587,19.579 C15.223,19.434 14.768,19.609 14.554,19.968 C14.347,20.328 14.461,20.738 14.826,20.888 C15.197,21.041 15.671,20.865 15.885,20.498 C16.090,20.129 15.957,19.714 15.587,19.579 Z" fill="currentColor" fill-rule="evenodd" transform="translate(.632)">
+        </path>
+       </svg>
+      </a>
+      <a class="social-link wechat-qrcode">
+       <svg height="29.031" viewbox="0 0 36.969 29.031" width="36.969" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32.399,25.866 L33.384,29.018 L29.793,27.124 C28.483,27.440 27.168,27.755 25.865,27.755 C19.636,27.755 14.731,23.656 14.731,18.609 C14.731,13.568 19.636,9.459 25.865,9.459 C31.747,9.459 36.984,13.568 36.984,18.609 C36.984,21.451 35.026,23.968 32.399,25.866 ZM22.256,14.509 C21.604,14.509 20.947,15.142 20.947,15.769 C20.947,16.407 21.604,17.031 22.256,17.031 C23.246,17.031 23.893,16.407 23.893,15.769 C23.893,15.142 23.246,14.509 22.256,14.509 ZM29.456,14.509 C28.809,14.509 28.155,15.142 28.155,15.769 C28.155,16.407 28.809,17.031 29.456,17.031 C30.437,17.031 31.094,16.407 31.094,15.769 C31.094,15.142 30.437,14.509 29.456,14.509 ZM13.908,18.760 C13.908,19.675 14.056,20.558 14.312,21.401 C13.908,21.432 13.501,21.451 13.090,21.451 C11.456,21.451 10.142,21.130 8.504,20.819 L3.929,23.028 L5.238,19.237 C1.960,17.031 0.001,14.187 0.001,10.726 C0.001,4.728 5.894,0.004 13.090,0.004 C19.527,0.004 25.165,3.778 26.298,8.856 C25.881,8.812 25.461,8.783 25.037,8.783 C18.818,8.783 13.908,13.252 13.908,18.760 ZM8.837,5.365 C7.856,5.365 6.866,5.989 6.866,6.938 C6.866,7.883 7.856,8.516 8.837,8.516 C9.819,8.516 10.471,7.883 10.471,6.938 C10.471,5.989 9.819,5.365 8.837,5.365 ZM17.998,5.365 C17.017,5.365 16.034,5.989 16.034,6.938 C16.034,7.883 17.017,8.516 17.998,8.516 C18.984,8.516 19.636,7.883 19.636,6.938 C19.636,5.989 18.984,5.365 17.998,5.365 Z" fill="currentColor" fill-rule="evenodd" transform="translate(.632)">
+        </path>
+       </svg>
+      </a>
+     </div>
+     <div class="language-selector-wrapper">
+      <select class="language-selector">
+       <option selected="" value="/">
+        English
+       </option>
+       <option value="/zh/">
+        ä¸­æ
+       </option>
+       <option value="/ko/">
+        íêµ­ì´
+       </option>
+       <option value="/ja/">
+        æ¥æ¬èª
+       </option>
+      </select>
+     </div>
+     <div class="parcelx-logo">
+     </div>
+     <p style="color:#fff;">
+      E-mail:support@parcelx.io
+     </p>
+     <div class="footer-copyright">
+      Global Parcel Network Ltd. Singapore
+     </div>
+    </footer>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js">
+    </script>
+    <script src="/javascripts/libs/svg4everybody/svg4everybody.min.js">
+    </script>
+    <script>
+     svg4everybody(); // run it now or whenever you are ready
+    </script>
+    <script src="/javascripts/libs/slick-carousel/slick.min.js">
+    </script>
+    <script src="/javascripts/libs/jquery.knob.min.js">
+    </script>
+    <script src="/javascripts/libs/jquery.ba-throttle-debounce.min.js">
+    </script>
+    <script src="/javascripts/libs/jquery.redcountdown.js">
+    </script>
+    <script src="/javascripts/app-ade49d60000d611a783d.js">
+    </script>
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+    <script type="text/javascript">
+     window.__lc = window.__lc || {};
+    window.__lc.license = 10063033;
+    (function () {
+      var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+      lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+    })();
+    </script>
+    <noscript>
+     <a href="https://www.livechatinc.com/chat-with/10063033/">
+      Chat with us
+     </a>
+     , powered by
+     <a href="https://www.livechatinc.com/?welcome" rel="noopener" target="_blank">
+      LiveChat
+     </a>
+    </noscript>
+    <!-- End of LiveChat code -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-124608645-1">
+    </script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-133434447-1');
+    </script>
+    <!-- Sendlane Site Tracking Site Tracking -->
+    <script>
+     window._Sendlane = window._Sendlane || [];
+    _Sendlane.domain = 'track.creatensend.com';
+    _Sendlane.push({
+      event_id: 'UgVebJB9bT7O6'
+    });
+    </script>
+    <script async="" src="https://sendlane.com/js/eventing.js">
+    </script>
+    <script>
+     (function (w, d, t, u, n, a, m) {
+      w['MauticTrackingObject'] = n;
+      w[n] = w[n] || function () { (w[n].q = w[n].q || []).push(arguments) }, a = d.createElement(t),
+        m = d.getElementsByTagName(t)[0]; a.async = 1; a.src = u; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://ma.parcelx.io/mtc.js', 'mt');
+
+    mt('send', 'pageview');
+    </script>
+    <!-- End Sendlane Site Tracking Site Tracking -->
+    <!--  
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+    -->
+   </div>
+  </section>
+ </body>
+</html>

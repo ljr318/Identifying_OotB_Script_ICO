@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>
+   FundRequest - Requests
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A decentralized marketplace for open source collaboration. FundRequest is a system for custom support that will boost the Open Source community as a whole – from developer to end user." name="description"/>
+  <meta content="FundRequest" name="application-name"/>
+  <meta content="fundrequest, ico, github funding, issue funding, funding, ethereum, eth" name="keywords"/>
+  <meta content="index, follow" name="robots"/>
+  <meta content="0x4DF47B4969B2911C966506E3592c41389493953b" name="contracts:FundRequestToken"/>
+  <meta content="0x9582627919D8c0643af2f81A9cB2193a4cb993d4" name="contracts:FundRequestContract"/>
+  <meta content="1" name="ethereum:network"/>
+  <meta content="https://ethereum.arkane.network" name="ethereum:endpointUrl"/>
+  <meta content="46ff432d-1d2a-449c-a9e2-6a8ae6a72f2d" id="_csrf" name="_csrf"/>
+  <meta content="X-CSRF-TOKEN" id="_csrf_header" name="_csrf_header"/>
+  <link href="/assets/vendors/bootstrap/css/bootstrap.min-fc6bd42aa2640c9b58cfed83d4e1a458.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/vendors/mdbootstrap/css/mdb.min-26fdbb0e81934d07670e37270a6f8a0f.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/css/core.min-577a8cb7f1663602cd5f0ce73a4b8e98.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/fonts/fontawesome/css/fontawesome-all.min-797600b9179920a202ada4a4756f0457.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/fonts/typekit-jaf-domus/typekit-a7459deba58f9f57c4034fc4ecce379f.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="@fundrequest_io" name="twitter:site"/>
+  <meta content="Boosting Open Source by rewarding contributions." name="twitter:title"/>
+  <meta content="A decentralized marketplace for open source collaboration. FundRequest is a system for custom support that will boost the Open Source community as a whole – from developer to end user." name="twitter:description"/>
+  <meta content="/assets/img/og-image-713cc929ff0ee5d7b0f40493a57154db.png" name="twitter:image"/>
+  <meta content="https://fundrequest.io" name="twitter:url"/>
+  <meta content="Boosting Open Source by rewarding contributions." property="og:title"/>
+  <meta content="FundRequest.io" property="og:site_name"/>
+  <meta content="https://fundrequest.io" property="og:url"/>
+  <meta content="A decentralized marketplace for open source collaboration. FundRequest is a system for custom support that will boost the Open Source community as a whole – from developer to end user." property="og:description"/>
+  <meta content="/assets/img/og-image-713cc929ff0ee5d7b0f40493a57154db.png" property="og:image"/>
+  <link href="/assets/img/logo-single180-3fefc1987619fd461a2aedecf563cbf7.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/assets/img/logo-single32-ca4ff0089abfc21d15a9be650f446a1e.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/assets/img/logo-single16-dd4721a6789a080762150fae2a8c92fa.png" rel="icon" sizes="16x16" type="image/png"/>
+ </head>
+ <body class="preload" data-spy="scroll" data-target="#primary-menu">
+  <div class="alert alert-success alert--top">
+   <div class="container">
+    To follow our development updates, subscribe
+    <a class="alert-link" href="https://blog.fundrequest.io/tagged/dev-update" rel="noopener noreferrer" target="_blank">
+     here
+    </a>
+    .
+   </div>
+  </div>
+  <div class="alert-container" id="alert-container" style="position: fixed; margin: 1rem auto;">
+  </div>
+  <div class="progress primary-color fixed-top d-none" data-page-loader="true">
+   <div class="indeterminate">
+   </div>
+  </div>
+  <div class="fnd-page-container" id="vue-app">
+   <nav class="fnd-header navbar navbar-dark navbar-expand-md bg bg--blue bg--no-rect">
+    <div class="container">
+     <a class="navbar-brand navbar-brand--fnd" href="/">
+      <img alt="Fundrequest logo" class="d-md-none" src="/assets/img/logo-single180-3fefc1987619fd461a2aedecf563cbf7.png"/>
+      <img alt="Fundrequest logo" class="d-none d-md-block" src="/assets/img/Fundrequest-title-white-f88ee41075cbf0e45d9ce46ecbb2c65f.png"/>
+     </a>
+     <button aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle primary menu" class="navbar-toggler" data-target="#primary-menu" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse navbar--fnd-primary" id="primary-menu">
+      <ul class="navbar-nav text-center mr-md-auto">
+       <!--li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Developers</a>
+                </li-->
+       <li class="nav-item">
+        <a class="nav-link" href="/requests">
+         Browse
+        </a>
+       </li>
+      </ul>
+      <ul class="navbar-nav text-center ml-md-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="/about">
+         About
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="https://help.fundrequest.io">
+         Help needed?
+        </a>
+       </li>
+       <!--li class="nav-item">
+                    <a class="nav-link" th:href="@{/requests}">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li-->
+       <li class="nav-item">
+        <a class="nav-link" href="/user/login">
+         Login
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </nav>
+   <div class="fnd-ribbon">
+   </div>
+   <section class="section section--main">
+    <div class="container">
+     <div class="fnd-bg">
+      <section class="section section--header mb-5">
+       <div class="media">
+        <div class="d-none d-md-flex header-image">
+         <i class="fa fa-list fa-10x text-secondary">
+         </i>
+        </div>
+        <div class="media-body">
+         <h1 class="page-title">
+          <span class="d-inline-block d-md-none">
+           <i class="fa fa-list fa-1x text-secondary">
+           </i>
+          </span>
+          Browse all requests
+         </h1>
+         <p class="page-description">
+          The best way to deep dive into all requests.
+                    Filter on technology or on a specific project so you can find the perfect request that fits your
+                    needs.
+         </p>
+         <div class="d-flex justify-content-between">
+          <a class="btn btn-link text-secondary" href="#faq">
+           How it works...
+          </a>
+          <a class="btn btn-secondary" href="/fund/github">
+           Start new
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="mb-5">
+       <request-list :phase-filter-default="'open'" v-bind:filters='[
+                    { value: "open", count: null, title: "Open", description: "Showing an overview of all open requests." },
+                    { value: "resolved", count: null, title: "Resolved", description: "Showing an overview of all resolved requests." },
+                    { value: "closed", count: null, title: "Closed", description: "Showing an overview of all closed requests." },
+                 ]' v-bind:is-authenticated="false" v-bind:projects='["FundRequest","TrustWallet","Cindercloud","ethereum","trufflesuite","walleth","MetaMask","nayafia","poanetwork","golemfactory","nebulasio","brave","RocketChat","aragon","ExchangeUnion","chenqingspring","utix-protocol","Zilliqa","smartcontractkit","decentraland","ArkaneNetwork"]' v-bind:requests="[{&quot;id&quot;:1,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;contracts&quot;,&quot;issueNumber&quot;:&quot;50&quot;,&quot;title&quot;:&quot;Incorrect db key in the ClaimRepository contract&quot;,&quot;status&quot;:&quot;Claimable&quot;,&quot;phase&quot;:&quot;Resolved&quot;,&quot;technologies&quot;:[&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:200.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-05-31T15:14:34Z&quot;,&quot;lastModifiedDate&quot;:&quot;2019-10-01T08:56:06Z&quot;},{&quot;id&quot;:2,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;322&quot;,&quot;title&quot;:&quot;As a user I want to be able to search on the Github issue and Request id in the global overview&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:200.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-05-31T15:14:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-12T13:29:09Z&quot;},{&quot;id&quot;:3,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;375&quot;,&quot;title&quot;:&quot;Username can go out of its container on the comments section of a request&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:150.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-05-31T15:16:31Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-20T08:10:45Z&quot;},{&quot;id&quot;:4,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;377&quot;,&quot;title&quot;:&quot;The info message should not be split over multiple line&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:225.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-05-31T15:18:31Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-19T14:29:15Z&quot;},{&quot;id&quot;:5,&quot;icon&quot;:&quot;https://github.com/TrustWallet.png&quot;,&quot;owner&quot;:&quot;TrustWallet&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;trust-wallet-ios&quot;,&quot;issueNumber&quot;:&quot;720&quot;,&quot;title&quot;:&quot;Add screen to export Seed Phrase&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Shell&quot;,&quot;Makefile&quot;,&quot;Swift&quot;,&quot;Ruby&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:700.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-05-31T15:34:32Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-28T12:49:01Z&quot;},{&quot;id&quot;:8,&quot;icon&quot;:&quot;https://github.com/Cindercloud.png&quot;,&quot;owner&quot;:&quot;Cindercloud&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;Cindercloud&quot;,&quot;issueNumber&quot;:&quot;107&quot;,&quot;title&quot;:&quot;Create a new logo for Cindercloud&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-05-31T19:15:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-15T06:11:29Z&quot;},{&quot;id&quot;:9,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;contracts&quot;,&quot;issueNumber&quot;:&quot;45&quot;,&quot;title&quot;:&quot;Old issues (solved)&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1350.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-01T07:45:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-07T11:53:54Z&quot;},{&quot;id&quot;:10,&quot;icon&quot;:&quot;https://github.com/ethereum.png&quot;,&quot;owner&quot;:&quot;ethereum&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;solidity&quot;,&quot;issueNumber&quot;:&quot;4188&quot;,&quot;title&quot;:&quot;Documentation: Move `bytes` and `strings` out of \&quot;value types\&quot; section&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;C++&quot;,&quot;Shell&quot;,&quot;Solidity&quot;,&quot;CMake&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:130.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-01T09:46:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-07T11:48:51Z&quot;},{&quot;id&quot;:15,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;403&quot;,&quot;title&quot;:&quot;Add starring of request in the global overview and personal overview&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:950.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-05T07:51:01Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-16T09:13:59Z&quot;},{&quot;id&quot;:17,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;contracts&quot;,&quot;issueNumber&quot;:&quot;48&quot;,&quot;title&quot;:&quot;Using delete on an array leaves a gap&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1800.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-05T14:58:16Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-15T09:40:59Z&quot;},{&quot;id&quot;:18,&quot;icon&quot;:&quot;https://github.com/poanetwork.png&quot;,&quot;owner&quot;:&quot;poanetwork&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;poa-explorer&quot;,&quot;issueNumber&quot;:&quot;237&quot;,&quot;title&quot;:&quot;UI Bug - Contract icon should only appear on contracts&quot;,&quot;status&quot;:&quot;Claimable&quot;,&quot;phase&quot;:&quot;Resolved&quot;,&quot;technologies&quot;:[&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;,&quot;Elixir&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:200.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-07T10:56:47Z&quot;,&quot;lastModifiedDate&quot;:&quot;2019-09-30T19:48:27Z&quot;},{&quot;id&quot;:19,&quot;icon&quot;:&quot;https://github.com/poanetwork.png&quot;,&quot;owner&quot;:&quot;poanetwork&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;poa-explorer&quot;,&quot;issueNumber&quot;:&quot;236&quot;,&quot;title&quot;:&quot;UI Bug - Font size and color of links&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;,&quot;Elixir&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:200.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-07T10:57:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-15T20:03:15Z&quot;},{&quot;id&quot;:20,&quot;icon&quot;:&quot;https://github.com/golemfactory.png&quot;,&quot;owner&quot;:&quot;golemfactory&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;golem&quot;,&quot;issueNumber&quot;:&quot;2813&quot;,&quot;title&quot;:&quot;Golem version contains '\\n' at the end.&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Shell&quot;,&quot;C&quot;,&quot;HTML&quot;,&quot;Python&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:300.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-07T11:04:01Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-11T14:43:58Z&quot;},{&quot;id&quot;:24,&quot;icon&quot;:&quot;https://github.com/brave.png&quot;,&quot;owner&quot;:&quot;brave&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;brave-browser&quot;,&quot;issueNumber&quot;:&quot;240&quot;,&quot;title&quot;:&quot;Shields shows enabled icon even when disabled&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:600.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-28T12:52:37Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-23T09:59:30Z&quot;},{&quot;id&quot;:26,&quot;icon&quot;:&quot;https://github.com/RocketChat.png&quot;,&quot;owner&quot;:&quot;RocketChat&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;Rocket.Chat&quot;,&quot;issueNumber&quot;:&quot;11007&quot;,&quot;title&quot;:&quot;Clicking a user mention on a direct message should enable you to open a new direct message with that user&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;CSS&quot;,&quot;Shell&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:222.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-07T14:59:40Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-14T10:32:59Z&quot;},{&quot;id&quot;:28,&quot;icon&quot;:&quot;https://github.com/poanetwork.png&quot;,&quot;owner&quot;:&quot;poanetwork&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;poa-explorer&quot;,&quot;issueNumber&quot;:&quot;266&quot;,&quot;title&quot;:&quot;Account details transactions are ordered wrong&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;,&quot;Elixir&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-12T13:35:55Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-20T14:00:31Z&quot;},{&quot;id&quot;:30,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;431&quot;,&quot;title&quot;:&quot;Homepage improvements : Help section &quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1200.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-18T12:54:01Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-06-27T09:18:46Z&quot;},{&quot;id&quot;:31,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;432&quot;,&quot;title&quot;:&quot;Requests overviews should be able to accept request parameters&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1320.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-18T13:35:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-10T15:42:58Z&quot;},{&quot;id&quot;:32,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;441&quot;,&quot;title&quot;:&quot;Homepage improvements : Project section&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:4100.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-19T14:12:16Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-10-09T08:38:17Z&quot;},{&quot;id&quot;:33,&quot;icon&quot;:&quot;https://github.com/poanetwork.png&quot;,&quot;owner&quot;:&quot;poanetwork&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;poa-explorer&quot;,&quot;issueNumber&quot;:&quot;312&quot;,&quot;title&quot;:&quot;When a new Internal Transaction is created the associated Address Pages should be updated&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;,&quot;Elixir&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1420.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-06-21T08:31:16Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-09-25T19:47:16Z&quot;},{&quot;id&quot;:34,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;chrome-browser-plugin&quot;,&quot;issueNumber&quot;:&quot;20&quot;,&quot;title&quot;:&quot;Browser extension doesn't display the request information of each issue url&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;Vue&quot;,&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:700.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-08T06:35:17Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-11T15:34:58Z&quot;},{&quot;id&quot;:35,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;474&quot;,&quot;title&quot;:&quot;The example value should be more greyed out&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:400.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-08T06:37:17Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-10T15:49:28Z&quot;},{&quot;id&quot;:36,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;chrome-browser-plugin&quot;,&quot;issueNumber&quot;:&quot;24&quot;,&quot;title&quot;:&quot;Currently it's impossible to show funds per issue in a milestone overview &quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;Vue&quot;,&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:700.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-09T10:59:31Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-11T15:33:43Z&quot;},{&quot;id&quot;:37,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;481&quot;,&quot;title&quot;:&quot;The tooltip of the claim button should indicate if a user is not logged in when trying to claim a reward.&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:650.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-09T14:39:46Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-10T15:52:43Z&quot;},{&quot;id&quot;:39,&quot;icon&quot;:&quot;https://github.com/ExchangeUnion.png&quot;,&quot;owner&quot;:&quot;ExchangeUnion&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;xud&quot;,&quot;issueNumber&quot;:&quot;46&quot;,&quot;title&quot;:&quot;Auto-restart support&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;Shell&quot;,&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:null,&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0xc324a2f6b05880503444451b8b27e6f9e63287cb&quot;,&quot;tokenSymbol&quot;:&quot;XUC&quot;,&quot;totalAmount&quot;:25.000000,&quot;tokenImage&quot;:&quot;xuc.png&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-11T09:01:59Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-08-02T07:42:22Z&quot;},{&quot;id&quot;:41,&quot;icon&quot;:&quot;https://github.com/ExchangeUnion.png&quot;,&quot;owner&quot;:&quot;ExchangeUnion&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;xud&quot;,&quot;issueNumber&quot;:&quot;116&quot;,&quot;title&quot;:&quot;Improve gRPC error handling and status code&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;Shell&quot;,&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:null,&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0xc324a2f6b05880503444451b8b27e6f9e63287cb&quot;,&quot;tokenSymbol&quot;:&quot;XUC&quot;,&quot;totalAmount&quot;:50.000000,&quot;tokenImage&quot;:&quot;xuc.png&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-11T10:35:58Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-08-21T06:39:41Z&quot;},{&quot;id&quot;:42,&quot;icon&quot;:&quot;https://github.com/ExchangeUnion.png&quot;,&quot;owner&quot;:&quot;ExchangeUnion&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;xud&quot;,&quot;issueNumber&quot;:&quot;52&quot;,&quot;title&quot;:&quot;Verify connection to lnd&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;Shell&quot;,&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:null,&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0xc324a2f6b05880503444451b8b27e6f9e63287cb&quot;,&quot;tokenSymbol&quot;:&quot;XUC&quot;,&quot;totalAmount&quot;:25.000000,&quot;tokenImage&quot;:&quot;xuc.png&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-24T06:46:49Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-24T06:17:19Z&quot;},{&quot;id&quot;:45,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;496&quot;,&quot;title&quot;:&quot;On request detail, move comment tabs under the info tab&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:800.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-07-11T11:22:00Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-07-17T19:51:44Z&quot;},{&quot;id&quot;:46,&quot;icon&quot;:&quot;https://github.com/chenqingspring.png&quot;,&quot;owner&quot;:&quot;chenqingspring&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;react-lottie&quot;,&quot;issueNumber&quot;:&quot;11&quot;,&quot;title&quot;:&quot;Set animation progress&quot;,&quot;status&quot;:&quot;Funded&quot;,&quot;phase&quot;:&quot;Open&quot;,&quot;technologies&quot;:[&quot;Shell&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:2389.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-08-01T02:52:37Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-08-01T20:46:37Z&quot;},{&quot;id&quot;:47,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;515&quot;,&quot;title&quot;:&quot;As Exchange Union I want to track the payment of funded issues&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:1000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-08-01T20:41:52Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-08-13T06:59:20Z&quot;},{&quot;id&quot;:48,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;chrome-browser-plugin&quot;,&quot;issueNumber&quot;:&quot;18&quot;,&quot;title&quot;:&quot;As a user, I want to be able to Firefox. Port the current chrome extension to firefox&quot;,&quot;status&quot;:&quot;Funded&quot;,&quot;phase&quot;:&quot;Open&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;Vue&quot;,&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:10000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-08-16T09:46:56Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-08-16T09:46:56Z&quot;},{&quot;id&quot;:50,&quot;icon&quot;:&quot;https://github.com/utix-protocol.png&quot;,&quot;owner&quot;:&quot;utix-protocol&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;UtixSmartContracts&quot;,&quot;issueNumber&quot;:&quot;2&quot;,&quot;title&quot;:&quot;As a security auditor I log a major security breach in the Utix Smart Contracts #1&quot;,&quot;status&quot;:&quot;Funded&quot;,&quot;phase&quot;:&quot;Open&quot;,&quot;technologies&quot;:[&quot;TypeScript&quot;,&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:40000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-08-20T09:08:26Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-09-12T12:34:41Z&quot;},{&quot;id&quot;:51,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;537&quot;,&quot;title&quot;:&quot;As a security auditor I log a medium security breach in FundRequest platform&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:30000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359&quot;,&quot;tokenSymbol&quot;:&quot;DAI&quot;,&quot;totalAmount&quot;:500.000000,&quot;tokenImage&quot;:&quot;dai.png&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-09-21T13:13:58Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-09-26T12:26:45Z&quot;},{&quot;id&quot;:52,&quot;icon&quot;:&quot;https://github.com/Zilliqa.png&quot;,&quot;owner&quot;:&quot;Zilliqa&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;kaya&quot;,&quot;issueNumber&quot;:&quot;31&quot;,&quot;title&quot;:&quot;Build Docker Image for Kaya RPC&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:null,&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27&quot;,&quot;tokenSymbol&quot;:&quot;&quot;,&quot;totalAmount&quot;:1500.000000,&quot;tokenImage&quot;:&quot;&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-09-26T14:46:32Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-10-07T06:34:13Z&quot;},{&quot;id&quot;:53,&quot;icon&quot;:&quot;https://github.com/Zilliqa.png&quot;,&quot;owner&quot;:&quot;Zilliqa&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;kaya&quot;,&quot;issueNumber&quot;:&quot;43&quot;,&quot;title&quot;:&quot;Improve test coverage of kayaRPC&quot;,&quot;status&quot;:&quot;Funded&quot;,&quot;phase&quot;:&quot;Open&quot;,&quot;technologies&quot;:[&quot;JavaScript&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:null,&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27&quot;,&quot;tokenSymbol&quot;:&quot;&quot;,&quot;totalAmount&quot;:1500.000000,&quot;tokenImage&quot;:&quot;&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-10-20T09:31:20Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-10-20T09:31:20Z&quot;},{&quot;id&quot;:54,&quot;icon&quot;:&quot;https://github.com/FundRequest.png&quot;,&quot;owner&quot;:&quot;FundRequest&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;platform&quot;,&quot;issueNumber&quot;:&quot;562&quot;,&quot;title&quot;:&quot;As fundrequest I want to show Zilliqa logo on the home screen&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;,&quot;CSS&quot;,&quot;Vue&quot;,&quot;HTML&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:10000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-11-10T18:24:30Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-11-20T11:03:31Z&quot;},{&quot;id&quot;:55,&quot;icon&quot;:&quot;https://github.com/smartcontractkit.png&quot;,&quot;owner&quot;:&quot;smartcontractkit&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;chainlink&quot;,&quot;issueNumber&quot;:&quot;709&quot;,&quot;title&quot;:&quot;CL GUI bugs out on return from Runs list&quot;,&quot;status&quot;:&quot;Funded&quot;,&quot;phase&quot;:&quot;Open&quot;,&quot;technologies&quot;:[&quot;Shell&quot;,&quot;Rust&quot;,&quot;JavaScript&quot;,&quot;Go&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:200.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-11-14T20:26:32Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-11-14T20:26:32Z&quot;},{&quot;id&quot;:56,&quot;icon&quot;:&quot;https://github.com/decentraland.png&quot;,&quot;owner&quot;:&quot;decentraland&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;marketplace&quot;,&quot;issueNumber&quot;:&quot;677&quot;,&quot;title&quot;:&quot;Include add to estate events to Parcel history&quot;,&quot;status&quot;:&quot;Funded&quot;,&quot;phase&quot;:&quot;Open&quot;,&quot;technologies&quot;:[&quot;CSS&quot;,&quot;JavaScript&quot;,&quot;HTML&quot;,&quot;SQLPL&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x4df47b4969b2911c966506e3592c41389493953b&quot;,&quot;tokenSymbol&quot;:&quot;FND&quot;,&quot;totalAmount&quot;:2000.000000,&quot;tokenImage&quot;:&quot;fnd.png&quot;},&quot;otherFunds&quot;:null,&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2018-11-23T08:53:00Z&quot;,&quot;lastModifiedDate&quot;:&quot;2018-11-23T08:53:01Z&quot;},{&quot;id&quot;:57,&quot;icon&quot;:&quot;https://github.com/ArkaneNetwork.png&quot;,&quot;owner&quot;:&quot;ArkaneNetwork&quot;,&quot;platform&quot;:&quot;GITHUB&quot;,&quot;repo&quot;:&quot;blockchain-providers&quot;,&quot;issueNumber&quot;:&quot;9&quot;,&quot;title&quot;:&quot;Create a GoChain provider in Java for Arkane Network&quot;,&quot;status&quot;:&quot;Claimed&quot;,&quot;phase&quot;:&quot;Closed&quot;,&quot;technologies&quot;:[&quot;Java&quot;],&quot;funds&quot;:{&quot;fndFunds&quot;:null,&quot;otherFunds&quot;:{&quot;tokenAddress&quot;:&quot;0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359&quot;,&quot;tokenSymbol&quot;:&quot;DAI&quot;,&quot;totalAmount&quot;:500.000000,&quot;tokenImage&quot;:&quot;dai.png&quot;},&quot;usdFunds&quot;:0.0},&quot;starred&quot;:false,&quot;creationDate&quot;:&quot;2019-02-07T12:56:02Z&quot;,&quot;lastModifiedDate&quot;:&quot;2019-02-13T15:34:13Z&quot;}]" v-bind:technologies='["JavaScript","CSS","HTML","Java","Vue","Makefile","Ruby","Shell","Swift","C++","CMake","Solidity","Kotlin","Elixir","C","Python","PHP","NSIS","TypeScript","Go","Rust","SQLPL"]'>
+        <template slot-scope="{phaseFilter}">
+         <div class="card mb-5" v-if="phaseFilter === 'open'">
+          <div class="card-body">
+           <div class="row request-list__statistics">
+            <div class="col-12 col-md-4 request-list__statistic">
+             <div class="request-list__statistic-title">
+              Total funding
+             </div>
+             <div class="request-list__statistic-value">
+              <span>
+               $
+              </span>
+              <span>
+               0.00
+              </span>
+              <span class="disclaimer-asterix">
+               *
+              </span>
+             </div>
+            </div>
+            <div class="col-12 col-md-4 request-list__statistic">
+             <div class="request-list__statistic-title">
+              Most funded project
+             </div>
+             <div class="request-list__statistic-value">
+              <span>
+               FundRequest
+              </span>
+             </div>
+            </div>
+            <div class="col-12 col-md-4 request-list__statistic">
+             <div class="request-list__statistic-title">
+              Most funded technology
+             </div>
+             <div class="request-list__statistic-value">
+              <span>
+               TypeScript
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </template>
+       </request-list>
+      </section>
+      <section class="mb-2" id="faq" ref="faq">
+       <faq v-bind:location="'/rest/faq/requests'">
+       </faq>
+      </section>
+      <div class="modal" id="fund-request" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog--with-tabs" role="document">
+        <div class="modal-content">
+         <div class="media">
+          <div class="modal-sidebar mr-2">
+           <div class="modal-select-tabs">
+            <div class="modal-sidebar__close">
+             <a aria-label="Close" data-dismiss="modal">
+              <span aria-hidden="true">
+               ×
+              </span>
+             </a>
+            </div>
+            <div class="modal-sidebar__options">
+             <a class="modal-tab-option active">
+              <div class="modal-tab-option__image modal-tab-option__image--metamask">
+              </div>
+              <div class="modal-tab-option__text">
+               Metamask
+              </div>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="media-body">
+           <div class="modal-header">
+            <h4 class="modal-title text-center">
+             Fund
+             <a href="#issue-link" target="_blank">
+              Issue title
+             </a>
+            </h4>
+           </div>
+           <div class="modal-tabs">
+            <div class="modal-tab d-block">
+             <div class="modal-body modal-body--form">
+              <div class="row">
+               <div class="col-12">
+                <div class="form-horizontal form-horizontal--border">
+                 <div class="form-heading">
+                  <span class="form-heading__number">
+                   1
+                  </span>
+                  <span class="form-heading__text">
+                   Enable metamask
+                  </span>
+                 </div>
+                </div>
+                <div class="form-horizontal form-horizontal--border">
+                 <div class="form-heading">
+                  <span class="form-heading__number">
+                   2
+                  </span>
+                  <span class="form-heading__text">
+                   Enter funding amount
+                  </span>
+                 </div>
+                 <div class="form-group row">
+                  <label class="col-4 control-label control-label--token-type" for="fund-amount">
+                   <select class="form-control">
+                    <option>
+                     FND
+                    </option>
+                    <option>
+                     XYZ
+                    </option>
+                   </select>
+                  </label>
+                  <div class="col-8 form-control-static form-control--fnd">
+                   <input class="form-control" id="fund-amount" placeholder="ex: 15.00" type="number"/>
+                  </div>
+                 </div>
+                 <div class="form-group row">
+                  <div class="col-12 col-md-8 offset-md-4 form-control-static">
+                   <label class="text-danger">
+                    Funding amount needs to be bigger then 0.
+                   </label>
+                  </div>
+                 </div>
+                 <div class="form-group row">
+                  <div class="col-8 offset-4 form-control-static">
+                   <button class="btn btn-primary mb-0" type="button">
+                    Fund
+                   </button>
+                  </div>
+                 </div>
+                </div>
+                <div class="form-horizontal form-horizontal--border">
+                 <div class="form-heading">
+                  <span class="form-heading__number">
+                   3
+                  </span>
+                  <span class="form-heading__text">
+                   Approve transaction
+                  </span>
+                  <span class="form-heading__info">
+                   <span class="form-heading__info-text">
+                    Do following actions in metamask
+                   </span>
+                   <a class="form-heading__logo form-heading__logo--metamask" href="https://metamask.io" target="_blank">
+                   </a>
+                  </span>
+                 </div>
+                 <div class="form-group row">
+                  <label class="col-4 control-label control-label--image" for="fund-amount">
+                   Click
+                  </label>
+                  <div class="col-8 form-control-static">
+                   <img alt="click submit in metamask" height="30" src="/assets/img/metamask-submit-edbdc0d17d5bfb1c3446e2e7bda52ef5.png"/>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <section class="w-100 mt-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-12">
+      <small class="disclaimer-footer">
+       <span class="disclaimer-asterix">
+        *
+       </span>
+       <span class="disclaimer-text">
+        Disclaimer: All USD prices shown are an estimation of the token values. Token values are fetched from
+        <strong>
+         CryptoCompare
+        </strong>
+       </span>
+      </small>
+     </div>
+    </div>
+   </div>
+   <div class="fnd-footer section section--blue section--compact section--end mt-1">
+    <div class="container">
+     <div class="row">
+      <div class="fnd-footer__left col-12 mb-1 col-lg-6">
+       © 2018 FundRequest OÜ - 0.1
+      </div>
+      <div class="fnd-footer__right mb-1 col-lg-6">
+       <a class="btn btn-link btn--social-link pl-0" href="https://github.com/fundrequest/" rel="noopener noreferrer" target="_blank">
+        <span class="sr-only">
+         Github
+        </span>
+        <i class="fab fa-github">
+        </i>
+       </a>
+       <a class="btn btn-link btn--social-link" href="https://twitter.com/fundrequest_io" rel="noopener noreferrer" target="_blank">
+        <span class="sr-only">
+         Twitter
+        </span>
+        <i class="fab fa-twitter">
+        </i>
+       </a>
+       <a class="btn btn-link btn--social-link pr-0" href="https://t.me/fundrequestofficial" rel="noopener noreferrer" target="_blank">
+        <span class="sr-only">
+         Telegram
+        </span>
+        <i class="fab fa-telegram">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script src="/assets/vendors/jquery/jquery.min-a09e13ee94d51c524b7e2a728c7d4039.js">
+  </script>
+  <script src="/assets/js/bundle-26f4a045fa6b2956c754ae20e99b74be.js">
+  </script>
+  <script src="/assets/vendors/mdbootstrap/js/mdb.min-883061cb25982b70de9512e38a1bba80.js">
+  </script>
+  <script>
+   /*<![CDATA[*/
+
+  window.intercomSettings = {
+    app_id: "u88cl7tr",
+    name: null,
+    email: null,
+    created_at: null,
+    user_hash: null
+  };
+
+  /*]]>*/
+  </script>
+  <script defer="defer">
+   (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/u88cl7tr';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+  </script>
+ </body>
+</html>

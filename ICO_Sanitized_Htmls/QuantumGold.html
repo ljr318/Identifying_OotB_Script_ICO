@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="-1" http-equiv="expires"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+  <meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" name="viewport"/>
+  <title>
+   Quantum Gold
+  </title>
+  <link href="assets/css/core.min.css" rel="stylesheet"/>
+  <link href="assets/css/thesaas1.css" rel="stylesheet"/>
+  <link href="assets/imges/quantum-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="assets/imges/quantum-touch-icon.png" rel="icon"/>
+  <link href="https://qtg.io/" rel="prerender"/>
+  <link href="https://qtg.io/" rel="prefetch"/>
+  <!--[if lte IE 9]>
+<p class="browsehappy">ä½ æ­£å¨ä½¿ç¨<strong>è¿æ¶</strong>çæµè§å¨ï¼QTG æä¸æ¯æã è¯· <a href="https://www.baidu.com/s?wd=IE%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95&rsv_spt=1&rsv_iqid=0xc96caf4b00002804&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=93288332_hao_pg&rsv_enter=1&oq=I%2526gt%253B8%25E5%258D%2587%25E7%25BA%25A7&rsv_t=088dmbh1jrkKLuUtyUAnk60fNxkwV22rpm0XQcealYiy30sYXrJDS0GkwTqp209AaH%2BqzaNt&inputT=13924&rsv_pq=df7d167200000a49&rsv_sug3=28&rsv_sug1=24&rsv_sug7=100&rsv_sug2=0&rsv_sug4=13925" target="_blank">åçº§æµè§å¨</a>
+  ä»¥è·å¾æ´å¥½çä½éªï¼</p>
+<![endif]-->
+  <script defer="defer" type="eb592ee9765c68c84e750aab-text/javascript">
+   var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?2b3aca1445d5f1187f35627e9f3b4f8f";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+  </script>
+ </head>
+ <body ng-app="myApp" ng-controller="myCtr">
+  <nav class="topbar qtgtwo_topbar topbar-expand-md">
+   <div class="container">
+    <div class="topbar-left">
+     <button class="topbar-toggler">
+      ☰
+     </button>
+     <div class="nav_logo2">
+      <img src="assets/imges/logo2.png"/>
+     </div>
+     <a class="qtg_topbar_brand" href="header-color.html">
+      <img src="assets/imges/logotwo.png"/>
+     </a>
+     <p class="header_title" translate="10109">
+     </p>
+    </div>
+    <div class="topbar-right">
+     <ul class="topbar-nav nav">
+      <li class="nav-item" ng-click="closes()">
+       <a class="nav_link" href="#" ng-click="AboutSkip()" translate="10001">
+        ABOUT QTG
+       </a>
+      </li>
+      <li class="nav-item" ng-click="closes()">
+       <a class="nav_link" href="#" ng-click="tops()" translate="10002">
+        WHITEPAPER
+       </a>
+      </li>
+      <li class="nav-item" ng-click="closes()">
+       <a class="nav_link" href="#" ng-click="TeamSkip()" translate="10003">
+        TEAM
+       </a>
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item">
+       <a class="nav-link nav-language" href="#">
+        Language
+        <i class="fa fa-caret-down">
+        </i>
+       </a>
+       <div class="nav-submenu">
+        <a class="nav-link nav_cursor" ng-click="changeLanguage('en')" style="color:#535353" translate="10006">
+         English
+        </a>
+        <a class="nav-link nav_cursor" ng-click="changeLanguage('fn')" style="color:#535353" translate="10007">
+         Chinese
+        </a>
+       </div>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <header class="header qtgtwo_header-inverse">
+   <canvas class="constellation">
+   </canvas>
+   <div class="qtgtwo_header_cnt">
+    <div class="row qtgtwo_fncolor">
+     <div class="col-12 text-center">
+      <h1 class="header-cn">
+       <img src="assets/imges/logotwo.png"/>
+      </h1>
+      <p class="qtgtwo_fnitalic mx-auto text-center" translate="20001">
+      </p>
+      <h2 class="QTGtitle" ng-if='Announcement!=""'>
+       <span translate="10165">
+        Corporate Announcements
+       </span>
+       <em>
+       </em>
+      </h2>
+     </div>
+     <div class="QTGtips" ng-repeat="items in Announcement track by $index">
+      <h2 ng-bind-html="items.title|trustHtml">
+      </h2>
+      <p ng-bind-html="items.content|trustHtml">
+      </p>
+     </div>
+     <div class="col-lg-8 col-md-12 col-sm-12">
+      <div class="progress_banxin">
+       <div class="qtgtwo_vip">
+        <h3>
+        </h3>
+        <p translate="10143">
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="qtgtwo_btn_banxin">
+      <div class="qtgtwo_btn">
+       <div class="qtgtwo_bg" ng-click="whitepapers()" translate="10009">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="trasnform_token">
+    <div class="token_title">
+     <div>
+      <span translate="10132">
+      </span>
+     </div>
+    </div>
+    <div class="token_cnt">
+     <div>
+      <span>
+       1ETH:
+       <b ng-bind="qtgPrice">
+       </b>
+       QTG
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="token_down">
+    <i class="fa fa-angle-down fa-3x" ng-click="AboutSkip()">
+    </i>
+   </div>
+  </header>
+  <div class="qtgtwo_warn">
+   <div>
+    <h2 translate="10103">
+     Download the WHITEPAPER?
+    </h2>
+    <p translate="10104">
+     Choose to download, please click here to download
+    </p>
+   </div>
+   <span ng-click="closewarns()">
+    Ã
+   </span>
+   <a class="qtgtwo_warn_btn" href="#" translate="10105">
+    DOWNLOAD
+   </a>
+  </div>
+  <section class="section">
+   <div class="about-qtg">
+    <div class="container">
+     <div class="row text-center">
+      <div class="col-md-12">
+       <h1 translate="10010">
+        ABOUT QTG
+       </h1>
+       <h3 h3="" translate="20012">
+       </h3>
+      </div>
+      <div class="col-md-6 aos-init about-qtg-gold" data-aos="fade-up" data-aos-delay="0">
+       <p translate="10011">
+       </p>
+       <em class="hidden-sm-down">
+       </em>
+       <span class="hidden-sm-down">
+       </span>
+       <b class="hidden-sm-down">
+       </b>
+      </div>
+      <div class="col-md-6 aos-init about-qtg-gold" data-aos="fade-up" data-aos-delay="0">
+       <img src="assets/imges/gold.jpg"/>
+       <div>
+        <h2 translate="20010">
+         Gold
+        </h2>
+        <p translate="20011">
+         Gold has been revered as a symbol of wealth and pros-perity formillennia and is the proven,quality,long-term wealth store
+        </p>
+       </div>
+      </div>
+      <div class="col-sm-12 text-center aos-init mb-20" data-aos="fade-up" data-aos-delay="0">
+       <div class="btn whitepaper" ng-click="whitepapers()" translate="10009">
+        WHITEPAPER
+       </div>
+      </div>
+      <div class="about-movie">
+       <div id="id_video_container_4564972819117846302" style="width:100%;height:auto;">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="unlimited-upsides aos-init" data-aos="fade-up" data-aos-delay="50	0">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-12 text-center">
+       <h1 translate="10108">
+        Our Gold Reserve
+       </h1>
+       <h2 translate="10012">
+        UNLIMITED UPSIDE AND MINIUM DOWNSIDE
+       </h2>
+      </div>
+      <div class="unlimited-upsides-cnt">
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10013">
+        </span>
+        <label translate="20013">
+        </label>
+       </div>
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10014">
+        </span>
+        <label translate="20014">
+        </label>
+       </div>
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10015">
+        </span>
+        <label translate="20015">
+        </label>
+       </div>
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10016">
+        </span>
+        <label translate="20016">
+        </label>
+       </div>
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10017">
+        </span>
+        <label translate="20017">
+        </label>
+       </div>
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10018">
+        </span>
+        <label translate="20018">
+        </label>
+       </div>
+       <div class="upside-box-banxin">
+        <em>
+        </em>
+        <span translate="10019">
+        </span>
+        <label translate="20019">
+        </label>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="report">
+    <div class="container">
+     <div class="row">
+      <div class="report_title col-md-12 text-center">
+       <h2 translate="20020">
+       </h2>
+       <h3>
+       </h3>
+      </div>
+      <div class="reports col-md-4" ng-repeat="data in newsList track by $index">
+       <div class="report_cnt">
+        <img ng-src="{{data.newsImg}}"/>
+        <div>
+         <h2>
+          {{data.newsDate}}
+         </h2>
+         <h3>
+          {{data.title}}
+         </h3>
+         <p>
+          {{data.content}}
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container hidden-sm-down">
+    <div class="roadmap row">
+     <div class="roadmap_banxin col-md-12 text-center">
+      <h2 translate="10020">
+      </h2>
+      <h3>
+      </h3>
+     </div>
+     <div class="col-12">
+      <div class="roadmap_cnt">
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10029">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10021">
+         </h3>
+        </div>
+       </b>
+       <b class="aos-init" data-aos="fade-up" data-aos-delay="0">
+        <div class="roadmap_tag_left">
+         <p translate="10030">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10022">
+         </h3>
+        </div>
+       </b>
+       <b class="aos-init" data-aos="fade-up" data-aos-delay="200">
+        <div class="roadmap_tag_right roadmap_DEC">
+         <p translate="10032">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10024">
+         </h3>
+        </div>
+       </b>
+       <b class="aos-init" data-aos="fade-up" data-aos-delay="300">
+        <div class="roadmap_tag_left">
+         <p translate="10033">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10025">
+         </h3>
+        </div>
+       </b>
+       <b class="aos-init" data-aos="fade-up" data-aos-delay="400">
+        <div class="roadmap_tag_right">
+         <p translate="10034">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10026">
+         </h3>
+        </div>
+       </b>
+       <b class="aos-init" data-aos="fade-up" data-aos-delay="500">
+        <div class="roadmap_tag_leftTwo">
+         <p translate="10035">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10027">
+         </h3>
+        </div>
+       </b>
+       <b class="aos-init" data-aos="fade-up" data-aos-delay="600">
+        <div class="roadmap_tag_right">
+         <p translate="10036">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10028">
+         </h3>
+        </div>
+       </b>
+       <label>
+       </label>
+       <label>
+       </label>
+       <label>
+       </label>
+       <label>
+       </label>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container hidden-md-up">
+    <div class="roadmap row">
+     <div class="roadmap_banxin col-md-12 text-center">
+      <h2 translate="10020">
+      </h2>
+      <h3 translate="20020">
+      </h3>
+     </div>
+     <div class="col-12">
+      <div class="roadmap_cnt">
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10029">
+         </p>
+         <em>
+         </em>
+         <span>
+         </span>
+         <h3 translate="10021">
+         </h3>
+        </div>
+       </b>
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10030">
+         </p>
+         <h3 translate="10022">
+         </h3>
+        </div>
+       </b>
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10032">
+         </p>
+         <h3 translate="10024">
+         </h3>
+        </div>
+       </b>
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10033">
+         </p>
+         <h3 translate="10025">
+         </h3>
+        </div>
+       </b>
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10034">
+         </p>
+         <h3 translate="10026">
+         </h3>
+        </div>
+       </b>
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10035">
+         </p>
+         <h3 translate="10027">
+         </h3>
+        </div>
+       </b>
+       <b>
+        <div class="roadmap_tag">
+         <p translate="10036">
+         </p>
+         <h3 translate="10028">
+         </h3>
+        </div>
+       </b>
+       <label>
+       </label>
+       <label>
+       </label>
+       <label>
+       </label>
+       <label>
+       </label>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="teams">
+    <div class="teams_mask">
+     <div class="teams_mask_cnt">
+      <label>
+       Ã
+      </label>
+      <div class="teams_mask_banxin">
+       <div class="teams_mask_img">
+        <img src=""/>
+       </div>
+       <div class="teams_mask_cnts">
+        <h4>
+        </h4>
+        <span>
+        </span>
+       </div>
+      </div>
+      <p>
+      </p>
+     </div>
+    </div>
+    <div class="container">
+     <div class="row aos-init">
+      <div class="col-md-12 text-center">
+       <h2 translate="10044">
+        OUR AMAZING TEAM
+       </h2>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg1" name="assets/imges/person_1.jpg">
+       </b>
+       <h4 translate="10045">
+       </h4>
+       <span translate="10054">
+       </span>
+       <p translate="10077">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg2" name="assets/imges/person_2.jpg">
+       </b>
+       <h4 translate="10046">
+       </h4>
+       <span translate="10055">
+       </span>
+       <p translate="10078">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg3" name="assets/imges/person_3.jpg">
+       </b>
+       <h4 translate="10047">
+       </h4>
+       <span translate="10056">
+       </span>
+       <p translate="10079">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg4" name="assets/imges/person_4.jpg">
+       </b>
+       <h4 translate="10048">
+       </h4>
+       <span translate="10057">
+       </span>
+       <p translate="10080">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg5" name="assets/imges/person_5.jpg">
+       </b>
+       <h4 translate="10049">
+       </h4>
+       <span translate="10058">
+       </span>
+       <p translate="10081">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg6" name="assets/imges/person_6.jpg">
+       </b>
+       <h4 translate="10050">
+       </h4>
+       <span translate="10059">
+       </span>
+       <p translate="10082">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg7" name="assets/imges/person_9.jpg">
+       </b>
+       <h4 translate="10112">
+       </h4>
+       <span translate="10111">
+       </span>
+       <p translate="10110">
+       </p>
+      </div>
+      <div class="col-md-4 col-lg-3 text-center person">
+       <b class="personImg10" name="assets/imges/person_17.png">
+       </b>
+       <h4 translate="10162">
+       </h4>
+       <span translate="10164">
+       </span>
+       <p translate="10160">
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <div class="Advisory">
+   <div class="Advisory_mask">
+    <div class="Advisory_mask_cnt">
+     <label>
+      Ã
+     </label>
+     <div class="Advisory_mask_img">
+      <img src=""/>
+     </div>
+     <div class="Advisory_mask_cnts">
+      <h4 translate="10045">
+      </h4>
+      <span translate="10054">
+      </span>
+     </div>
+     <p translate="10077">
+     </p>
+    </div>
+   </div>
+   <div class="container">
+    <div class="row aos-init">
+     <div class="col-md-12 text-center">
+      <h2 translate="10144">
+      </h2>
+     </div>
+     <div class="col-md-6 col-lg-4 text-center Advisory_person">
+      <div>
+       <b class="Advisory_Img1" name="assets/imges/person_15.jpg">
+       </b>
+       <h4 translate="10152">
+       </h4>
+       <span translate="10153">
+       </span>
+       <p translate="10154">
+       </p>
+      </div>
+     </div>
+     <div class="col-md-6 col-lg-4 text-center Advisory_person">
+      <div>
+       <b class="Advisory_Img3" name="assets/imges/person_10.jpg">
+       </b>
+       <h4 translate="10115">
+       </h4>
+       <span translate="10114">
+       </span>
+       <p translate="10113">
+       </p>
+      </div>
+     </div>
+     <div class="col-md-6 col-lg-4 text-center Advisory_person">
+      <div>
+       <b class="Advisory_Img5" name="assets/imges/person_12.jpg">
+       </b>
+       <h4 translate="10124">
+       </h4>
+       <span translate="10123">
+       </span>
+       <p translate="10122">
+       </p>
+      </div>
+     </div>
+     <div class="col-md-6 col-lg-4 text-center Advisory_person">
+      <div>
+       <b class="Advisory_Img6" name="assets/imges/person_13.jpg">
+       </b>
+       <h4 translate="10121">
+       </h4>
+       <span translate="10120">
+       </span>
+       <p translate="10119">
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="footers" style="background: rgba(44,36,16,0.9);">
+   <div class="container">
+    <div class="row gap-y align-items-center">
+     <div class="col-sm-6 col-lg-3 text-center">
+      <h2 translate="10063">
+      </h2>
+      <a>
+       <p ng-click="AboutSkip()" translate="10064">
+       </p>
+      </a>
+      <a href="QTG-Terms of Use.pdf">
+       <p translate="10065">
+       </p>
+      </a>
+     </div>
+     <div class="col-sm-6 col-lg-3 text-center">
+      <h2 translate="10066">
+      </h2>
+      <a href="" id="userGuide" target="_blank">
+       <p translate="10067">
+       </p>
+      </a>
+      <a href="PrivacyPolicy.html" target="_blank">
+       <p translate="10068">
+       </p>
+      </a>
+     </div>
+     <div class="col-12 col-lg-6">
+      <h3 class="footers_logo" translate="10069">
+      </h3>
+      <div class="social text-center text-lg-right">
+       <a>
+       </a>
+       <a href="https://t.me/joinchat/CEdSyw7bEppUlmD5e-WRbg">
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=2382929.new#new">
+       </a>
+       <a class="footer_medium" href="https://medium.com/@qtumgold">
+       </a>
+       <a class="social-dribbble" href="https://twitter.com/qtumgold">
+       </a>
+       <a>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div class="abstract">
+   <div class="container">
+    <div class="row">
+     <div class="col-12">
+      <p translate="10131">
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="assets/js/core.min.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script src="assets/js/angular.min.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script src="assets/js/angular-translate.min.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script src="assets/js/angular-translate-loader-static-files.min.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script src="assets/js/angular-sanitize.min.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script src="assets/js/quantum.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script charset="utf-8" src="https://imgcache.qq.com/open/qcloud/video/h5/h5connect.js" type="eb592ee9765c68c84e750aab-text/javascript">
+  </script>
+  <script type="eb592ee9765c68c84e750aab-text/javascript">
+   (function(){
+			var option ={
+				"auto_play":"0",
+				"file_id":"4564972819117846302",
+				"app_id":"1252813154",
+				"width":1920,
+				"height":1080,
+				"https":1
+			}; /*è°ç¨æ­æ¾å¨è¿è¡æ­æ¾*/ 
+			new qcVideo.Player( /*ä»£ç ä¸­çid_video_containerå°ä¼ä½ä¸ºæ­æ¾å¨æ¾ç½®çå®¹å¨ä½¿ç¨,å¯èªè¡æ¿æ¢*/ "id_video_container_4564972819117846302", option );
+			})()
+  </script>
+  <script type="eb592ee9765c68c84e750aab-text/javascript">
+   //å¤éæ¡æ ·å¼
+    function changeState(el) {
+        if (el.readOnly) el.checked=el.readOnly=false;
+        else if (!el.checked) el.readOnly=el.indeterminate=true;
+    }
+  </script>
+  <script data-cf-settings="eb592ee9765c68c84e750aab-|49" defer="" src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js">
+  </script>
+ </body>
+</html>

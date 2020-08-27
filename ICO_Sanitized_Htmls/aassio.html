@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script type="text/javascript">
+   var _rollbarConfig = {"accessToken":"2b2f39200580424a8d087aee6841cfd8","captureUncaught":true,"ignoredMessages":["Cannot read property 'stamp' of undefined"],"payload":{"environment":"production"}};
+  </script>
+  <script type="text/javascript">
+   !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.4/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  </script>
+  <title>
+   aassio | real estate tokenization | crypto exchange
+  </title>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="aassio | real estate tokenization | crypto exchange" name="twitter:title"/>
+  <meta content="A blockchain technology based platform providing effortless access to the real estate market to buy, sell and hold real estate in cryptocurrencies" name="twitter:description"/>
+  <meta content="@aass_io" name="twitter:creator"/>
+  <meta content="@aass_io" name="twitter:site"/>
+  <meta content="aass.io" name="twitter:domain"/>
+  <meta content="aassio | real estate tokenization | crypto exchange" property="og:site_name"/>
+  <meta content="aassio | real estate tokenization | crypto exchange" property="og:title"/>
+  <meta content="A blockchain technology based platform providing effortless access to the real estate market to buy, sell and hold real estate in cryptocurrencies" property="og:description"/>
+  <title>
+   aassio | real estate tokenization | crypto exchange
+  </title>
+  <meta content="A blockchain technology based platform providing effortless access to the real estate market to buy, sell and hold real estate in cryptocurrencies" name="description"/>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="xqxbX0mRBOjN7lVpkK+GUBggDWRgFS9ovTwQuVN20JNPo7TiAhhy/K0TX2U9h1xZYO6bS2F5HcUSFIm1+O7KFw==" name="csrf-token"/>
+  <link href="/favicon.png" rel="icon"/>
+  <link href="/assets/application-17854ec0c3570e598bb248bb34f4423e0b15237376074ab32d5bcac538fbd6eb.css" media="all" rel="stylesheet"/>
+  <script src="/assets/application-f2e36497e82d1a647757ff28df70151e6d42378c0f1f137e6251cf6eabc73d7b.js">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"/>
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-123490664-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-123490664-1');
+  </script>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <a class="navbar-brand" href="/">
+    <img data-interchange="/assets/logo@2x-68d2ee0d74e3481147cccb905be1a6994a81a906bb5815518a007ec8d224cc11.png" src="/assets/logo-5111356b68afdbadc177f8d6ab3cbc09bcfc3199d278f37d8b53ff2b505b4f95.png" style="height: 50px"/>
+   </a>
+   <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon">
+    </span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     <li class="nav-item">
+      <a class="nav-link active" href="/">
+       welcome
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/sale">
+       token details
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/ecosystem">
+       ecosystem
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/exchange">
+       aassio
+       <span class="font-italic">
+        X
+       </span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/home">
+       aassio
+       <span class="font-italic">
+        Home
+       </span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/life">
+       aassio
+       <span class="font-italic">
+        Life
+       </span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="https://medium.com/@aassio" target="_blank">
+       blog
+      </a>
+     </li>
+     <li class="nav-item mr-3">
+      <a class="nav-link" href="/faq">
+       faq
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <div class="hero hero__welcome">
+   <div class="container py-5">
+    <div class="row py-5">
+     <div class="col-lg-7 col-md-12">
+      <div class="mt-3 mb-4">
+       <img alt="aassio - real estate tokenization platform" class="img-fluid" data-interchange="/assets/logo@2x-68d2ee0d74e3481147cccb905be1a6994a81a906bb5815518a007ec8d224cc11.png" src="/assets/logo-5111356b68afdbadc177f8d6ab3cbc09bcfc3199d278f37d8b53ff2b505b4f95.png"/>
+      </div>
+      <p class="lead__hero mb-4">
+       A blockchain technology based platform providing effortless access to the real estate market to buy, sell and hold real estate in cryptocurrencies
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section py-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 offset-lg-2 text-center">
+      <h3 class="mb-4">
+       The
+       <span class="text-primary">
+        Announcement
+       </span>
+      </h3>
+      <hr class="short mb-4"/>
+     </div>
+    </div>
+    <div class="row mt-5 mb-5">
+     <div class="col">
+      <p>
+       Dear friends of aassio,
+      </p>
+      <p>
+       We want to thank you for the support you have shown in helping to launch aassio as a startup. While believing in the vision and that the concept behind the company is great, we also have come to see that this is not the best timing for our ICO. Many people have temporarily lost faith in cryptocurrencies and blockchain based token economy. The process has been filled with ups and downs and we are thankful for the high points along the way.
+      </p>
+      <p>
+       We hope you will keep the belief with us that real estate should be shared and redistributed so more people have the opportunity to benefit from these assets. As a collective, we have agreed to pause the project and allow the company to hibernate until there is a more favorable environment for its existence. The founders continue to believe in the future of the token economy and are looking forward to continuing the journey with a great timing.
+      </p>
+      <p>
+       As we all love about innovation process, the only thing stays unchanged is “changing”. From now on, we will look forward to meeting extremely well qualified business leader(s) to prepare for relaunch of the aassio project. So if you are a passionate aassio believer and born as an entrepreneurial leader with the nerve and guts for a real business adventure, don’t hesitate to contact us. The founders are ready to stay behind the scene and support the new life of aassio.
+      </p>
+      <p>
+       For those who purchased aassio tokens during the ICO pre-sale, we are ready to help you redeem your contribution and send back your ETH (Ethereum gas / fees could reduce your original amount a bit).
+      </p>
+      <p>
+       We won’t dismiss the community as members might want to exchange ideas with each other. But we won't moderate the groups any more on Telegram, Twitter, Facebook, LinkedIn and other places, until the hibernation period comes to an end. In case of contact for “leadership” and “redemption”, please note that the only way to contact will be email at info(at)aass.io with those keywords in the email subject. No other requests would get our response, so please do not try to send any other offers in any kind.
+      </p>
+      <p>
+       May our paths cross again soon. Until then, stay hungry, stay foolish!
+      </p>
+      <p>
+       aassio team
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section section__darken_gray py-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 offset-lg-2 text-center">
+      <h3 class="mb-4">
+       Our
+       <span class="text-primary">
+        Partners
+       </span>
+      </h3>
+      <hr class="short mb-4"/>
+     </div>
+    </div>
+    <div class="row mt-5 mb-5">
+     <div class="col-sm-6 col-md-6 text-center">
+      <img alt="KreaIT" class="mb-5 img-fluid" data-interchange="/assets/partners/kreait@2x-3a37d035bdd70b02826d23931cb60c33d206fe341200afdba739b50c2dd56589.png" src="/assets/partners/kreait-638e72f5a61417791a842d791a1df5fff424d8fae022ec1a80809228bd1400fd.png"/>
+     </div>
+     <div class="col-sm-6 col-md-6 text-center">
+      <img alt="Code&amp;Care" class="mb-5 img-fluid" data-interchange="/assets/partners/code-care@2x-576afc32cf9d5447989023e3baa142ca5f2a4e6addbe58da1e49d286f72b5c27.png" src="/assets/partners/code-care-08eff344eae6b7894f35db55b704020bba6fc17719c6c2374b478d641bf9d1f0.png"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section section__gray py-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 offset-lg-2 text-center">
+      <h3 class="mb-4">
+       ICO
+       <span class="text-primary">
+        Listings
+       </span>
+      </h3>
+      <hr class="short mb-4"/>
+     </div>
+    </div>
+    <div class="row mt-5 mb-5">
+     <div class="col-sm text-center">
+      <a href="https://icopulse.com/ico/aassio" target="_blank">
+       <img alt="aassio" border="0" class="mb-5 img-fluid" height="80px" src="https://icopulse.com/widget/h/aa/aassio.svg" width="270px"/>
+      </a>
+     </div>
+     <div class="col-sm text-center">
+      <a href="https://icobench.com/ico/aassio" target="_blank" title="aassio on ICObench">
+       <img alt="aassio ICObench" border="0" class="mb-5" height="100" src="https://icobench.com/rated/aassio?shape=square&amp;size=m" width="100"/>
+      </a>
+     </div>
+     <div class="col-sm text-center">
+      <a href="https://foundico.com/ico/assio.html" target="_blank" title="aassio on Foundico.com">
+       <img alt="aassio Foundico.com" border="0" class="mb-5" height="100" src="https://foundico.com/widget/?p=25945&amp;f=s" width="100"/>
+      </a>
+     </div>
+     <div class="col-sm text-center">
+      <a href="https://icomarks.com/ico/aassio" target="_blank" title="aassio ICO Rating">
+       <img alt="aassio ICO Rating" border="0" class="mb-5" height="100" src="https://icomarks.com/widget/a/aassio/square.svg" width="100"/>
+      </a>
+     </div>
+     <div class="col-sm text-center">
+      <a href="https://www.trackico.io/ico/aassio/" target="_blank" title="aassio on TrackICO">
+       <img alt="aassio TrackICO rating" border="0" class="mb-5 img-fluid" height="66px" src="https://www.trackico.io/widget/horizontal/aassio/240.png" width="240px"/>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <a name="description">
+  </a>
+  <div class="section py-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 offset-lg-2 text-center">
+      <h3 class="mb-4">
+       We Want to Create a
+       <span class="text-primary">
+        Better Life
+       </span>
+       with Real Estate
+      </h3>
+      <hr class="short mb-4"/>
+      <p class="lead text-left">
+       We strongly believe that blockchain will fundamentally change the way people own and trade real estate.
+      </p>
+      <p class="lead text-left">
+       In the future, everyone could be an owner of real estate, everyone could benefit from investing, holding and trading real estate in token form.
+      </p>
+      <p class="lead text-left">
+       aassio is a blockchain technology based platform providing effortless access to the real estate market to buy, sell and hold real estate in cryptocurrencies from the convenience of your own home or office. Real estate investment has never been easier or more accessible!
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section section__blue py-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-6 offset-lg-3 text-center">
+      <p class="lead">
+       佐佑 - The ancient Chinese characters stand for assistance from both left and right sides.
+      </p>
+      <div class="lead">
+       <strong>
+        aassio
+       </strong>
+       = assistance to access
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section section__gray">
+   <div class="container">
+    <a name="community">
+    </a>
+    <div class="row pt-5">
+     <div class="col text-center">
+      <div class="mb-4">
+       <img data-interchange="/assets/icons/community@2x-cabc6f501464d12325bc993041186cbf9f5707d1027d7ec481908befc4b17297.png" src="/assets/icons/community-15f224d3b9bcf02391e9a56d643826d895901d7a0bca9a61bdf9fa975a958aea.png"/>
+      </div>
+      <h3 class="mb-4">
+       Join Our
+       <div class="text-primary">
+        Community
+       </div>
+      </h3>
+      <hr class="short mb-4"/>
+     </div>
+    </div>
+    <div class="row pb-5">
+     <div class="col d-flex justify-content-center flex-wrap">
+      <a class="mx-2 social-icon" href="https://twitter.com/aass_io" target="_blank">
+       <img data-interchange="/assets/socials/twitter@2x-88e3d98ba76e820a21a48deb6107b9e6de8cbedf023bb1bb11a7c61d07d81a82.png" src="/assets/socials/twitter-61ceb815aad785dfa4ada36fff1c4a9ea07db1427121358cc48645c39b6f60ed.png"/>
+      </a>
+      <a class="mx-2 social-icon" href="https://medium.com/@aassio" target="_blank">
+       <img data-interchange="/assets/socials/medium@2x-0d96f5e5a95da1f4122d0fda018483344acca010b37b994adf0ac739283cf0d3.png" src="/assets/socials/medium-e5d47aac5b948c0a7809722ad3277a430d0843a788b709256ce58281d91fd676.png"/>
+      </a>
+      <a class="mx-2 social-icon" href="https://t.me/aassionews" target="_blank">
+       <img data-interchange="/assets/socials/telegram@2x-958c689ef4bf2840811153a054456ad6e6762b87f3e07eb63cb400553dec7c90.png" src="/assets/socials/telegram-d93cb4687b21351f2780a1b0e36a7f9e162d74f7d001801edd053cac594a9bdd.png"/>
+      </a>
+      <a class="mx-2 social-icon" href="https://www.facebook.com/aassiorocks/" target="_blank">
+       <img data-interchange="/assets/socials/facebook@2x-1f9553ac513987bbe1159b68044ef7a86350ff2aa411723d89d00c3b071d0b74.png" src="/assets/socials/facebook-ce720924a6c5d3dd66f6bf940543842056ea000e41b5199fada67c0939ae6e4a.png"/>
+      </a>
+      <a class="mx-2 social-icon" href="https://www.linkedin.com/company/aassio/" target="_blank">
+       <img data-interchange="/assets/socials/linkedin@2x-ae94e14ae9035ac6608306527a472f7f56a9c815a77fdb1a99b46ca4938828c7.png" src="/assets/socials/linkedin-ee1c7a7d553b094c21fafb642c4f2d1f36243182b5da04816e992225c3c5129d.png"/>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+  </div>
+  <footer class="py-5">
+   <div class="container">
+    <div class="row pb-3">
+     <div class="col d-flex justify-content-center">
+      <a class="social-icon" href="https://twitter.com/aass_io" target="_blank">
+       <img data-interchange="/assets/socials/footer/twitter@2x-197372d768a2ada4ddecc75b554e96a694d3688f14c9deb7ea1c01977f5febb5.png" src="/assets/socials/footer/twitter-fe27c8eaa51d42ee039011456583c331a6c698ea050e4c3965df16f7016eccf5.png"/>
+      </a>
+      <a class="social-icon" href="https://medium.com/@aassio" target="_blank">
+       <img data-interchange="/assets/socials/footer/medium@2x-79c579887c3a51510ab97a9abd246916c7ec631e7b2440e31bd4626c43cf05cb.png" src="/assets/socials/footer/medium-4a86667f46ce81118f2127f8fb057e56983469bc2b64b3649b6aec16a8e19033.png"/>
+      </a>
+      <a class="social-icon" href="https://t.me/aassionews" target="_blank">
+       <img data-interchange="/assets/socials/footer/telegram@2x-d98dec9747028ed759863bcc059b8cb1eb2f77f82c5ba3585560b9be4ed9c3c2.png" src="/assets/socials/footer/telegram-ca240255d1b414e6635f38c5e8cc219de298d6281f64c6e8538e02280cf34010.png"/>
+      </a>
+      <a class="social-icon" href="https://www.facebook.com/aassiorocks/" target="_blank">
+       <img data-interchange="/assets/socials/footer/facebook@2x-a398484bc22574352a830291e665f0f6cc6a12eac14522da61912ae17396c523.png" src="/assets/socials/footer/facebook-2c757f90378da707f6ba4f1a297a35ef98fc7f630c55a60803ce9132efeb24be.png"/>
+      </a>
+      <a class="social-icon" href="https://www.linkedin.com/company/aassio/" target="_blank">
+       <img data-interchange="/assets/socials/footer/linkedin@2x-119059b582c47a058c11056c3c604f447ee8c3209f5ca8f6f74dfd1840cf32e2.png" src="/assets/socials/footer/linkedin-22e7fa1b4f6b448e7f48b96294acb69a94c5a99bb1b9c6e61e969896c5ae107c.png"/>
+      </a>
+      <a class="social-icon" href="https://www.youtube.com/channel/UCgI0BkB4jiR8UjHr9JQMdzA" target="_blank">
+       <img data-interchange="/assets/socials/footer/youtube@2x-3c0fc547d7c20029ee3ac31203f27b3acf73d343b6f514caf6ec6c3f740a70a1.png" src="/assets/socials/footer/youtube-26e131003c1ca2fb4757a9e171f4461ba20cca7f5751b55eed44703808f74621.png"/>
+      </a>
+      <a class="social-icon" href="https://www.instagram.com/aassio.global/" target="_blank">
+       <img data-interchange="/assets/socials/footer/instagram@2x-5fa2bdf9b25474a4d01948bb5ef2be09be68c6c449b042ac7486697b24124a78.png" src="/assets/socials/footer/instagram-1884419b5ca92bc02615f13293f7fec07d49c5521081567cf5e403342fec24df.png"/>
+      </a>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col text-center">
+      <div>
+       © aass.io, 2018
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

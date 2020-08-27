@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html ng-app="Exchanger">
+ <head>
+  <meta content="text/html; charset=UTF-8" http-equiv='1"Content-Type"'/>
+  <meta charset="utf-8"/>
+  <meta content="!" name="fragment"/>
+  <meta content="Skincoin Exchange" name="description"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport"/>
+  <base href="/"/>
+  <title>
+   Skincoin trade - Fast trading platform for CSGO, DOTA2, PUBG items
+  </title>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KG95XPD');
+  </script>
+  <!-- End Google Tag Manager -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700&amp;subset=latin-ext" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin-ext" rel="stylesheet"/>
+  <link href="/resources/img/favicon.png" rel="icon" type="image/png"/>
+  <script async="" defer="" src="https://www.google.com/recaptcha/api.js">
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js">
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+  </script>
+  <!-- new files -->
+  <link href="resources/css/main.css?v=11209" rel="stylesheet" type="text/css"/>
+  <script src="resources/js/jcf.js">
+  </script>
+  <script src="resources/js/jcf.angular.js">
+  </script>
+  <script src="resources/js/nouislider.min.js">
+  </script>
+  <script src="resources/js/main.js?v=1116">
+  </script>
+  <!-- end new files -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js">
+  </script>
+  <script src="/resources/js/sockjs-1.1.0.js?v=1111">
+  </script>
+  <script src="/resources/js/dygraph-combined.js?v=1111">
+  </script>
+  <script src="resources/js/chosen.jquery.js">
+  </script>
+  <script src="resources/js/angular-ui-router.js">
+  </script>
+  <script src="resources/js/angular-translate.min.js?v=1111">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-storage-cookie/2.8.1/angular-translate-storage-cookie.js">
+  </script>
+  <script src="resources/js/ngStorage.min.js">
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.min.js">
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.min.js">
+  </script>
+  <script src="app/localization.js?v=1128">
+  </script>
+  <script src="app/constants.js?v=1113">
+  </script>
+  <script src="app/app.js?v=1120">
+  </script>
+  <script src="app/filters.js?v=1120">
+  </script>
+  <script src="app/directives/directives.js?v=1112">
+  </script>
+  <script src="app/controllers/main.js?v=1121">
+  </script>
+  <script src="app/controllers/home.js?v=1113">
+  </script>
+  <script src="app/controllers/buy.js?v=1114">
+  </script>
+  <script src="app/controllers/cart.js?v=11110">
+  </script>
+  <script src="app/controllers/sell.js?v=11114">
+  </script>
+  <script src="app/controllers/balance.js?v=1114">
+  </script>
+  <script src="app/controllers/trades.js?v=1114">
+  </script>
+  <script src="app/controllers/settings.js?v=1112">
+  </script>
+  <script src="app/controllers/support.js?v=1113">
+  </script>
+  <script src="app/controllers/item.js?v=1114">
+  </script>
+  <script src="app/controllers/faq.js?v=1113">
+  </script>
+  <script src="app/services/common.js?v=1118">
+  </script>
+  <script src="app/services/services.js?v=1120">
+  </script>
+ </head>
+ <body ng-class="{'overlayed' : isLoading == true, 'dota-bg' : stateParams.game == 'dota2', 'pubg-bg' : stateParams.game == 'pubg'}" ng-controller="mainController">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KG95XPD" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="overlay" ng-class="{'visible' : extendedFilter}">
+  </div>
+  <header class="header" id="header">
+   <!-- <div class="header-notification-bl shadow-rad-bl">
+      <div class="h-notification-tt">Balance withdrawal</div>
+      <div class="h-notification-info">Your balance has been successful done!</div>
+    </div> -->
+   <div class="container group head-panel-flex">
+    <div class="logo hearer__logo">
+     <a href="/">
+      <img alt="" src="/resources/img/logo.png"/>
+     </a>
+    </div>
+    <nav class="header__menu">
+     <div class="burger-menu">
+      <div class="burger-menu-box">
+       <div class="burger-menu-inner">
+       </div>
+      </div>
+     </div>
+     <ul class="menu">
+      <li ui-sref-active="active">
+       <a ui-sref="root_state">
+        {{'HOME' | translate}}
+       </a>
+      </li>
+      <li ui-sref-active="active">
+       <a ui-sref="buy_state({game: 'dota2', page : 1})">
+        {{'BUY' | translate}}
+       </a>
+      </li>
+      <li ui-sref-active="active">
+       <a ui-sref="sell_state">
+        {{'SELL' | translate}}
+       </a>
+      </li>
+      <li ui-sref-active="active">
+       <a ui-sref="trades_state">
+        {{'TRADES' | translate}}
+       </a>
+      </li>
+      <li ui-sref-active="active">
+       <a ui-sref="balance_state">
+        {{'BALANCE' | translate}}
+       </a>
+      </li>
+      <li ui-sref-active="active">
+       <a ui-sref="support_state" ui-sref-opts="{reload:true}">
+        {{'SUPPORT' | translate}}
+       </a>
+      </li>
+      <li ui-sref-active="active">
+       <a ui-sref="faq_state">
+        FAQ
+       </a>
+      </li>
+      <li class="show-menu-only-burger">
+       <a ui-sref="settings_state">
+        {{'SETTINGS' | translate}}
+       </a>
+      </li>
+      <li class="show-menu-only-burger">
+       <a href="#" ng-click="logoutHandler()">
+        {{'LOGOUT' | translate}}
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <div class="head-panel header__aside">
+     <div class="head-user-info" ng-show="currentUser">
+      <div class="head-user-balance">
+       <span>
+        {{'BALANCE' | translate}}
+        <span class="text--s-color">
+         SKIN
+        </span>
+        :
+       </span>
+       <a ui-sref="balance_state">
+        {{currentUser.wallets[0].balance &gt; 0 ? (currentUser.wallets[0].balance | skincoin:6) : 0}}
+       </a>
+      </div>
+      <div class="head-user">
+       <div class="head-user__photo">
+        <img alt="{{currentUser.username}}" ng-click="showLangPanel = true" ng-src="{{currentUser.profile_url}}"/>
+       </div>
+       <div class="head-user__name">
+        <span ng-bind="currentUser.username">
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="head-login" ng-show="!currentUser">
+      <a href="#" ng-click="loginWindow()">
+       <img alt="{{'SIGN_TROUGHT_STEAM' | translate}}" src="resources/img/login.png" title="{{'SIGN_TROUGHT_STEAM' | translate}}"/>
+      </a>
+     </div>
+     <div class="head-icons">
+      <div class="head-icons__item hidden-devices" ng-show="currentUser">
+       <a href="/settings">
+        <svg class="icon icon-gear">
+         <use xlink:href="/resources/img/icons/sprite.svg?v=115#gear">
+         </use>
+        </svg>
+       </a>
+      </div>
+      <div class="head-icons__item">
+       <a ui-sref="cart_state">
+        <span class="head-icon-notf st-notf-color st-notf-cart" ng-bind="cartNumber" ng-show="cartNumber &gt; 0">
+        </span>
+        <svg class="icon icon-cart">
+         <use xlink:href="/resources/img/icons/sprite.svg?v=115#cart">
+         </use>
+        </svg>
+       </a>
+      </div>
+      <div class="head-icons__item">
+       <div class="hb-lang">
+        <div class="lang-act" id="language" ng-click="showLangPopup = !showLangPopup">
+         <img src="resources/img/lang/{{currentLang}}.png"/>
+        </div>
+        <div class="lang-popup" id="lang-popup" ng-click="showLangPopup = !showLangPopup;" ng-show="showLangPopup">
+         <a href="#" ng-click="changeLanguage('ru')">
+          <img alt="Russian" src="resources/img/lang/ru.png" title="Русский"/>
+         </a>
+         <a href="#" ng-click="changeLanguage('en')">
+          <img alt="English" src="resources/img/lang/en.png" title="English"/>
+         </a>
+         <a href="#" ng-click="changeLanguage('es')">
+          <img alt="Spanish" src="resources/img/lang/es.png" title="Español"/>
+         </a>
+         <a href="#" ng-click="changeLanguage('fr')">
+          <img alt="French" src="resources/img/lang/fr.png" title="Français"/>
+         </a>
+         <a href="#" ng-click="changeLanguage('de')">
+          <img alt="German" src="resources/img/lang/de.png" title="Deutsch"/>
+         </a>
+         <a href="#" ng-click="changeLanguage('pl')">
+          <img alt="Polish" src="resources/img/lang/pl.png" title="Polski"/>
+         </a>
+         <a href="#" ng-click="changeLanguage('pt')">
+          <img alt="Portugese" src="resources/img/lang/pt.png" title="Português"/>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="head-icons__item hidden-devices" ng-show="currentUser">
+       <a href="#" ng-click="logoutHandler()">
+        <span class="icon-text hidden-mobile">
+         {{'LOGOUT' | translate}}
+        </span>
+        <svg class="icon icon-log-out">
+         <use xlink:href="/resources/img/icons/sprite.svg?v=115#logOut">
+         </use>
+        </svg>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="inform-window" ng-show="systemStatus">
+   <div class="container">
+    <div class="shadow-rad-bl">
+     {{systemStatus}}
+    </div>
+   </div>
+  </div>
+  <div class="workarea" ui-view="">
+  </div>
+  <div class="st-modal-overlay" ng-show="activateBonusFlag || popup">
+   <div class="st-modal st-modal-min" ng-show="!bonusActivated &amp;&amp; activateBonusFlag">
+    <a class="st-modal__close" href="#" ng-click="activateBonusFlag = !activateBonusFlag; captchaErr = ''; bonusCode = ''; refreshCaptcha();">
+     <svg class="icon icon-cldel">
+      <use xlink:href="/resources/img/icons/sprite.svg?v=115#cldel">
+      </use>
+     </svg>
+    </a>
+    <div class="st-modal__head">
+     {{'ACTIVATE_BONUS_CODE' | translate}}
+    </div>
+    <div class="st-modal__inner">
+     <span style="font-size: 13px; font-weight: bold; display: block; margin:10px 0; margin-bottom: 20px;">
+      {{'SUBSCRIBE_SERVICES' | translate}}
+     </span>
+     <div class="modal-soc-inline">
+      <a class="soc-inline__item soc-fb" href="https://www.facebook.com/skincoin/" target="_blank">
+       <svg class="icon icon-fb">
+        <use xlink:href="/resources/img/icons/sprite.svg#facebook">
+        </use>
+       </svg>
+      </a>
+      <a class="soc-inline__item soc-tw" href="https://twitter.com/skincoin_org" target="_blank">
+       <svg class="icon icon-tw">
+        <use xlink:href="/resources/img/icons/sprite.svg#twitter">
+        </use>
+       </svg>
+      </a>
+      <a class="soc-inline__item soc-sl" href="https://skincoin.slack.com/" target="_blank">
+       <svg class="icon icon-sl">
+        <use xlink:href="/resources/img/icons/sprite.svg#slack">
+        </use>
+       </svg>
+      </a>
+      <a class="soc-inline__item soc-ds" href="https://discordapp.com/invite/PjSwEgu" target="_blank">
+       <svg class="icon icon-ds">
+        <use xlink:href="/resources/img/icons/sprite.svg#discord">
+        </use>
+       </svg>
+      </a>
+      <a class="soc-inline__item soc-vk" href="https://vk.com/skincoin" target="_blank">
+       <svg class="icon icon-vk">
+        <use xlink:href="/resources/img/icons/sprite.svg?v=12#vk">
+        </use>
+       </svg>
+      </a>
+      <a class="soc-inline__item soc-steam" href="https://steamcommunity.com/groups/Skincoin" target="_blank">
+       <svg class="icon icon-steam">
+        <use xlink:href="/resources/img/icons/sprite.svg?v=13#steam">
+        </use>
+       </svg>
+      </a>
+     </div>
+     <form class="form-bonus">
+      <div class="form-bonus__group">
+       <input class="sh-input" id="bonusCode" maxlength="10" ng-change="captchaErr = ''" ng-class="{'input-st--failed' : captchaErr == 'code'}" ng-model="bonusCode" type="text"/>
+       <div ng-show="captchaErr == 'code'" style="font-size: 12px; color: #d9534f; margin-top: 5px;">
+        {{'BONUS_CODE_NOT_FOUND' | translate}}
+       </div>
+       <span class="form-bonus-text">
+        {{'IF_CODE_CORRECT' | translate}}
+       </span>
+      </div>
+      <div class="form-bonus__group">
+       <div class="capcha-bl">
+        <form action="?" method="POST">
+         <div class="g-recaptcha" data-callback="recaptchaDone" data-error-callback="recaptchaFailed" data-sitekey="6LfrcU4UAAAAACASFGFH4af0FmlOSu7IiiCpp0Cu">
+         </div>
+        </form>
+        <div ng-show="captchaErr == 'captcha'" style="font-size: 12px; color: #d9534f; margin-top: 5px;">
+         {{'RECAPTCHA_VERIFY_ERROR' | translate}}
+        </div>
+       </div>
+      </div>
+      <button class="btn-st btn-st--md btn-st--modal-size" disabled="disabled" id="recaptchaModal" ng-class="{'btn-st--disabled' : !bonusCode}" ng-click="sendBonusCode(bonusCode)">
+       {{'ACTIVATE' | translate}}
+      </button>
+      <input hidden="hidden" id="recaptchaInput" ng-model="recaptchaInput"/>
+     </form>
+    </div>
+   </div>
+   <div class="st-modal st-modal-min" ng-show="bonusActivated &amp;&amp; activateBonusFlag">
+    <div class="bonus-activated text--center">
+     <div class="bonus-activated__icon">
+      <svg class="icon icon-done">
+       <use xlink:href="/resources/img/icons/sprite.svg?v=115#done">
+       </use>
+      </svg>
+     </div>
+     <span class="bonus-activated__tt">
+      {{'BONUS_CODE_ACTIVATED' | translate}}!
+     </span>
+     <span class="bonus-activated__text">
+      {{'BONUS_CODE_ACTIVATED2' | translate}}
+     </span>
+     <a class="btn-st btn-st--md btn-st--modal-size" href="#" ng-click="activateBonusFlag = !activateBonusFlag; bonusActivated = !bonusActivated; captchaErr = ''; bonusCode = '';">
+      {{'RETURN_TO_TRADE' | translate}}
+     </a>
+    </div>
+   </div>
+   <div class="st-modal st-modal-min" ng-class="popup.class" ng-show="popup">
+    <div class="auth-required text--center">
+     <div class="st-modal-c__icon" ng-class="{'st-modal-c__icon--error' : popup.class == 'error'}">
+      <svg class="icon" ng-class="{'icon-error' : popup.class == 'error', 'icon-done' : popup.class != 'error'}">
+       <use ng-show="popup.class == 'error'" xlink:href="/resources/img/icons/sprite.svg?v=115#cldel">
+       </use>
+       <use ng-show="popup.class != 'error'" xlink:href="/resources/img/icons/sprite.svg?v=115#done">
+       </use>
+      </svg>
+     </div>
+     <span class="st-modal-c__tt" translate="{{popup.title}}">
+      <!-- Upsss… Unexpected error -->
+     </span>
+     <span class="st-modal-c__text" translate="{{popup.body}}">
+      <!-- Something goes wrong. Try to do the action again. If it doesn't help write to our support team. We'll try to assist you asap! -->
+     </span>
+     <a class="btn-st btn-st--md" href="#" ng-class="{'btn-st--error' : button.class == 'red'}" ng-click="button.func(button.args);" ng-hide="button.hide" ng-repeat="button in popup.buttons" translate="{{button.text}}">
+     </a>
+     <a class="btn-st btn-st--md" href="#" ng-click="applicationUtils.closePopup();" ng-show="!popup.buttons">
+      OK
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

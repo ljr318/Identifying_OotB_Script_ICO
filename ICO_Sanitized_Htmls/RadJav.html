@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   RadJav
+  </title>
+  <meta content="width=device-width, initial-scale=0.9" name="viewport"/>
+  <link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="css/themify-icons.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="css/flexslider.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="css/lightbox.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="css/ytplayer.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="css/theme-startup.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,600,700" rel="stylesheet" type="text/css"/>
+  <link href="css/font-roboto.css" rel="stylesheet" type="text/css"/>
+  <link href="img/favicon.png" rel="shortcut icon"/>
+  <style type="text/css">
+   .countdownBar
+			{
+				background-color: rgba(190, 190, 190, 1);
+				padding-top: 10px;
+				height: 80px;
+				border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+			}
+
+			.saleClock
+			{
+				font-size: 32px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+
+			.socialMediaIcon
+			{
+				width: 104px;
+				height: 79px;
+			}
+
+			.socialMediaIcon2
+			{
+				width: 80px;
+				height: 60px;
+			}
+
+			.papers
+			{
+				width: 107px;
+				height: 174px;
+			}
+
+			.vcenter
+			{
+				display: inline-block;
+				vertical-align: middle;
+				float: none;
+			}
+
+			.teamTitles
+			{
+				color: #000000 !important;
+				font-size: 12px;
+				padding-top: 10px;
+				margin-bottom: 1px;
+			}
+  </style>
+  <script type="text/javascript">
+   function showPerson (initials)
+			{
+				$("#personPic").attr ("width", 175);
+				$("#personPic").attr ("height", 175);
+				$("#personLinkedIn").hide ();
+				$("#personGitHub").hide ();
+
+				if (initials == "nc")
+				{
+					$("#personName").html ("Nathanael Coonrod");
+					$("#personTitle").html ("Managing Member/Lead Developer");
+					$("#personPic").attr ("src", "./img/nathan.jpg");
+					$("#personPic").attr ("width", 175);
+					$("#personPic").attr ("height", 147);
+					$("#personLinkedIn").show ();
+					$("#personGitHub").show ();
+					$("#personLinkedIn").attr ("href", "https://www.linkedin.com/in/nathanael-coonrod-71692a70/");
+					$("#personGitHub").attr ("href", "https://www.github.com/ncoonrod/");
+					$("#personBio").html ("With over 13 years experience in desktop application and web development, he has developed dozens of applications ranging anywhere from video games, office productivity software to programming languages. Nathanael has worked on everything from embedded security systems to medical devices and mobile application development projects as a full-stack developer and trained electrical engineer.");
+				}
+
+				if (initials == "ck")
+				{
+					$("#personName").html ("Chris Kern");
+					$("#personTitle").html ("Strategic Adviser");
+					$("#personPic").attr ("src", "./img/ChrisKern.jpg");
+					$("#personPic").attr ("width", 147);
+					$("#personPic").attr ("height", 147);
+					$("#personLinkedIn").show ();
+					$("#personLinkedIn").attr ("href", "https://www.linkedin.com/in/chriskern/");
+					$("#personBio").html ("20+ year technology investment banker and financer with over $650 million in total transaction volume. Specialization in Enterprise Software, Financial Services, Telecommunications and Internet Services. Previously worked with $40 Billion hedge fund manger Fisher Francis Trees & Watts, Lehman Brothers, and Technology Investment Banking Firm – New Century Capital Partners. Strong background in identifying and growing cutting edge technology companies that have the capability to dynamically change an entire industry.");
+				}
+
+				if (initials == "kj")
+				{
+					$("#personName").html ("Krzysztof Jagiello");
+					$("#personTitle").html ("Blockchain Developer");
+					$("#personPic").attr ("src", "./img/KrzysztofJagiello.jpg");
+					$("#personLinkedIn").show ();
+					$("#personGitHub").show ();
+					$("#personLinkedIn").attr ("href", "https://www.linkedin.com/in/kris-jagiello-965a057");
+					$("#personGitHub").attr ("href", "https://github.com/krisjagiello");
+					$("#personBio").html ("Technology enthusiast, software architecture and development veteran with 20+ years of experience. With the background in computer science, electrical engineering and math, Kris has worked on software systems for industrial, consumer/commercial and scientific domains. In recent years involved in creating cybersecurity solutions that combine biometrics, Public Key Infrastructure, blockchain, and applied cryptography in general.");
+				}
+
+				if (initials == "mb")
+				{
+					$("#personName").html ("Matthew Butler");
+					$("#personTitle").html ("Developer");
+					$("#personPic").attr ("src", "./img/MatthewButler.jpg");
+					$("#personGitHub").show ();
+					$("#personGitHub").attr ("href", "https://github.com/mbutler4096");
+					$("#personBio").html ("Matthew Butler has spent nearly three decades as a systems architect and software engineer developing systems for network security, law enforcement and the military. He primarily works in C/C++ and Modern C++ along with Java and Python running on dozens of hardware platforms ranging from embedded micro-controllers to large-scale airborne platforms performing real-time signal analysis.");
+				}
+
+				if (initials == "mt")
+				{
+					$("#personName").html ("Mikalai Turankou");
+					$("#personTitle").html ("Blockchain Developer");
+					$("#personPic").attr ("src", "./img/MikalaiTurankou.jpg");
+					$("#personLinkedIn").show ();
+					$("#personGitHub").show ();
+					$("#personLinkedIn").attr ("href", "http://www.linkedin.com/in/mikalai-turankou");
+					$("#personGitHub").attr ("href", "https://github.com/mikalai-turankou");
+					$("#personBio").html ("Mikalai has 12+ years of experience in programming had a chance to work with a variety of operating systems like Windows CE, Palm, Symbian, Linux, MacOSX. Participated on different exiting projects with non-overlapped domains like embedded devices, measurement devices, point of sale devices video games and voice over IP/messaging. Beside that as a hobby Mikalai has experience with 3D modelling/engine software to expose his ideas.");
+				}
+
+				if (initials == "ap")
+				{
+					$("#personName").html ("Aliaksei Parkalau");
+					$("#personTitle").html ("Developer");
+					$("#personPic").attr ("src", "./img/AliakseiParkalau.jpg");
+					$("#personLinkedIn").show ();
+					$("#personGitHub").show ();
+					$("#personLinkedIn").attr ("href", "http://www.linkedin.com/in/aliaksei-parkalau");
+					$("#personGitHub").attr ("href", "https://github.com/aparkalov");
+					$("#personBio").html ("Alex has over than 6 years of experience in IT field, including desktop and embedded development, R&D of image processing algorithms and software tools for mathematical modeling. His professional experience includes testing Linux-based hardware, creating automation tools and frameworks, working with microservice modules, as well as university teaching and mentoring juniors.");
+				}
+
+				if (initials == "vf")
+				{
+					$("#personName").html ("Vinnie Falco");
+					$("#personTitle").html ("Technical Adviser");
+					$("#personPic").attr ("src", "./img/VinnieFalco.jpg");
+					$("#personLinkedIn").show ();
+					$("#personGitHub").show ();
+					$("#personLinkedIn").attr ("href", "https://www.linkedin.com/in/vinnie-falco-a3397339");
+					$("#personGitHub").attr ("href", "https://github.com/vinniefalco");
+					$("#personBio").html ("Vinnie Falco is the author of Boost.Beast, NuDB, and president of the C++ Alliance. His previous work includes Ripple, BearShare, and many others.<br /><br /><br />");
+				}
+
+				$("#personModal").modal ();
+			}
+  </script>
+ </head>
+ <body class="btn-rounded">
+  <div class="modal fade" id="personModal">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h4 class="modal-title" id="personName">
+       Name
+      </h4>
+     </div>
+     <div class="modal-body">
+      <img class="pull-left" height="175" id="personPic" src="" style="padding-right: 10px;" width="175"/>
+      <p class="bold" id="personTitle">
+      </p>
+      <p id="personBio">
+      </p>
+     </div>
+     <div class="modal-footer">
+      <div class="pull-left">
+       <a href="https://www.linkedin.com/in/nathanael-coonrod-71692a70/" id="personLinkedIn" style="color: #000000;" target="_blank">
+        <img src="./img/In-2C-66px-TM.png"/>
+       </a>
+      </div>
+      <div class="pull-left">
+       <a href="https://www.github.com/ncoonrod/" id="personGitHub" style="color: #000000;" target="_blank">
+        <img src="./img/GitHub-Mark-64px.png"/>
+       </a>
+      </div>
+      <div class="pull-right">
+       <button class="btn btn-default" data-dismiss="modal" type="button">
+        Close
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="nav-container">
+   <a id="top">
+   </a>
+   <nav class="absolute transparent">
+    <div class="nav-bar">
+     <div class="module left">
+      <a href="./">
+       <img alt="Foundry" class="logo logo-light" src="./img/logo-light.png"/>
+       <img alt="Foundry" class="logo logo-dark" src="./img/logo-dark.png"/>
+      </a>
+     </div>
+     <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+      <i class="ti-menu">
+      </i>
+     </div>
+     <div class="module-group right">
+      <div class="module left">
+       <ul class="menu">
+        <li>
+         <a href="./#radjav">
+          WHAT IS RADJAV?
+         </a>
+        </li>
+        <li>
+         <a href="https://medium.com/@RadJavXRJ">
+          BLOG
+         </a>
+        </li>
+        <li>
+         <a href="./FAQ.pdf" target="_blank">
+          FAQ
+         </a>
+        </li>
+        <li>
+         <a href="./whitepaper.pdf">
+          WHITEPAPER
+         </a>
+        </li>
+        <!--<li>
+                                    <a href="./#aboutUs">
+                                        TEAM
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="./#join">
+                                        CROWDSALE
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="./job-board">
+                                        JOBS
+                                    </a>
+                                </li>-->
+        <li>
+         <a href="./#download">
+          DOWNLOAD
+         </a>
+        </li>
+        <li>
+         <a href="https://github.com/HigherEdgeSoftware/RadJav/wiki">
+          DOCUMENTATION
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!--end of menu module-->
+     </div>
+     <!--end of module group-->
+    </div>
+   </nav>
+  </div>
+  <div class="main-container">
+   <section class="image-bg parallax pt240 pb180 pt-xs-80 pb-xs-80">
+    <div class="background-image-holder">
+     <img alt="image" class="background-image" src="img/banner.jpg"/>
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="col-md-10 col-sm-12 seeText">
+       <h1>
+        The future of software development
+       </h1>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-5 col-sm-12">
+       <p class="lead mb48 mb-xs-32 seeText">
+        RadJav is a software development platform and decentralized datacenter. The goal of RadJav is to simplify app, dapp, and smart contract development and how these applications are deployed. With RadJav developers can create nearly any app that can easily scale and deploy across multiple platforms. More importantly, they can create their apps or games quickly while improving their security significantly.
+       </p>
+       <a href="https://github.com/FogChainInc/RadJav/releases/tag/v0.25" target="_blank">
+        <img alt="download" class="image-xs" src="img/download.png"/>
+       </a>
+       <br/>
+       <br/>
+       <a href="https://www.facebook.com/radjavxrj/" target="_blank">
+        <img alt="Facebook" class="socialMediaIcon" src="img/facebook.png"/>
+       </a>
+       <a href="https://twitter.com/radjavxrj" target="_blank">
+        <img alt="Twitter" class="socialMediaIcon" src="img/twitter.png"/>
+       </a>
+       <a href="https://t.me/radjav" target="_blank">
+        <img alt="Telegram" height="48" src="img/telegram.png" width="48"/>
+       </a>
+       <a href="https://radjav-slack-invite.herokuapp.com/" target="_blank">
+        <img alt="Slack" height="48" src="img/slack.png" width="48"/>
+       </a>
+      </div>
+      <div class="col-md-5 col-sm-12">
+       <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/yYv45mGwUQo" width="560">
+       </iframe>
+       <br/>
+      </div>
+     </div>
+     <!--end of row-->
+    </div>
+    <!--end of container-->
+   </section>
+   <section>
+    <div class="container">
+     <div class="row v-align-children">
+      <div class="col-sm-5 col-md-offset-1 mb-xs-24">
+       <h2 class="mb64 mb-xs-32">
+        A REVOLUTIONARY BLOCKCHAIN
+       </h2>
+       <div class="mb40 mb-xs-24">
+        <p class="mb48 mb-xs-32">
+         We are introducing Proof-of-Competition, the most revolutionary blockchain consensus the world has ever seen. By splitting our blockchain up into teams, then forcing the nodes to compete over who has the best latency, up-time, and more, we can create the fastest and most scalable network ever.
+        </p>
+        <p class="mb48 mb-xs-32">
+         On top of this, the network will be able to defend itself from hostile attackers, security vulnerabilities, DDOS attacks, and defend itself through legal representation anywhere in the world.
+        </p>
+        <a href="./whitepaper.pdf" target="_blank">
+         <img alt="Whitepaper" class="papers" src="img/whitepaper.png"/>
+         Whitepaper
+        </a>
+        <a href="./technical-dossier.pdf" target="_blank">
+         <img alt="Technical Dossier" class="papers" src="img/technical-dossier.png"/>
+         Technical Dossier
+        </a>
+        <br/>
+        <br/>
+        <a href="./deck.pptx">
+         <img alt="Deck" src="img/deck.jpg" style="width: 300px; height: 174px;"/>
+         <br/>
+        </a>
+        <a href="./deck.pptx">
+         Pitch Deck (PowerPoint)
+        </a>
+        <a href="./deck.pdf">
+         (PDF)
+        </a>
+       </div>
+      </div>
+      <div class="col-sm-5 col-sm-6 col-sm-offset-1 text-center">
+       <img alt="Screenshot" src="img/javman.png"/>
+      </div>
+     </div>
+     <!--end of row-->
+    </div>
+    <!--end of container-->
+   </section>
+   <section class="image-bg overlay parallax pt180 pb180 pt-xs-80 pb-xs-80" id="download">
+    <div class="background-image-holder">
+     <img alt="image" class="background-image" src="img/banner2.jpg"/>
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="col-md-4">
+       <img class="img-thumbnail" src="./img/chat-win.jpg"/>
+       <p class="text-center" style="font-size: 25px;">
+        Windows 10
+       </p>
+      </div>
+      <div class="col-md-4">
+       <img class="img-thumbnail" src="./img/chat-html5.jpg"/>
+       <p class="text-center" style="font-size: 25px;">
+        HTML5
+       </p>
+      </div>
+      <div class="col-md-4">
+       <h2>
+        Download RadJav
+       </h2>
+       <p class="lead mb48 mb-xs-32">
+        It may not be the prettiest thing to look at right now, but download and 
+								try RadJav today and see what the future can look like.
+        <br/>
+        <br/>
+        The Windows version of RadJavVM contains the RadJav GUI Wallet.
+       </p>
+       <a class="btn btn-lg btn-filled" href="https://github.com/HigherEdgeSoftware/RadJav/releases" target="_blank">
+        Download
+       </a>
+      </div>
+     </div>
+     <!--end of row-->
+    </div>
+    <!--end of container-->
+   </section>
+   <section id="radjav">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6 col-md-push-3 text-center">
+       <div class="image-slider slider-paging-controls controls-outside">
+        <h1>
+         What is RadJav?
+        </h1>
+        <p>
+         With RadJav's four main aspects, developers can create nearly any kind of app quickly and securely.
+        </p>
+        <img src="img/radjav.png"/>
+       </div>
+      </div>
+      <div class="col-md-3 col-md-pull-6">
+       <div class="mt80 mt-xs-80 text-right text-left-xs">
+        <h5 class="uppercase bold mb16">
+         GUI
+        </h5>
+        <p class="fade-1-4">
+         Create desktop and HTML5 applications using the same code.
+        </p>
+        <p class="fade-1-4">
+         Create and use custom themes. This is available only on HTML5 as of right now. Desktop support is coming soon.
+        </p>
+        <p class="fade-1-4">
+         Currently supported on Windows and HTML5, with many more platforms coming soon.
+        </p>
+       </div>
+       <div class="mt80 mt-xs-0 text-right text-left-xs">
+        <h5 class="uppercase bold mb16">
+         Decentralized Datacenter
+        </h5>
+        <p class="fade-1-4">
+         Blockchain V1: Securely mine and transfer XRJ coins. Uses a slightly modified and thoroughly tested Bitcoin source code.
+        </p>
+        <p class="fade-1-4">
+         Coming soon is Blockchain V2 and V3, the fastest and most scalable blockchain ever created.
+        </p>
+        <p class="fade-1-4">
+         V2 and V3 will be able to host smart contracts, dapps, and server apps.
+        </p>
+       </div>
+      </div>
+      <div class="col-md-3">
+       <div class="mt80 mt-xs-0">
+        <h5 class="uppercase bold mb16">
+         Server
+        </h5>
+        <p class="fade-1-4">
+         Coming soon you'll be able to setup your own HTTP/HTTPS server.
+        </p>
+        <p class="fade-1-4">
+         Websocket server and client support is coming soon.
+        </p>
+        <p class="fade-1-4">
+         Support coming soon for raw TCP/UDP socket communications over IPv4 and IPv6.
+        </p>
+        <p class="fade-1-4">
+         Can currently make HTTP GET requests.
+        </p>
+       </div>
+       <div class="mt80 mt-xs-0">
+        <h5 class="uppercase bold mb16">
+         3D Engine
+        </h5>
+        <p class="fade-1-4">
+         Quickly create video games that run on multiple platforms.
+        </p>
+        <p class="fade-1-4">
+         Create multiplayer games with WebSocket support.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-6 col-md-push-3 text-center">
+       <h3>
+        These will allow developers to make
+       </h3>
+      </div>
+      <div class="col-md-12">
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Desktop Apps
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Mobile Apps
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Web Apps
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Desktop Games
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Mobile Games
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Web Games
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Server Apps
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Smart Contracts
+        </h6>
+       </div>
+       <div class="col-md-2 bountyGrid text-center">
+        <h6 class="uppercase bold mb16">
+         Dapps
+        </h6>
+       </div>
+      </div>
+     </div>
+     <br/>
+     <br/>
+     <div class="row">
+      <div class="col-md-6 col-md-push-3 text-center">
+       <h2>
+        All using the same code!
+       </h2>
+      </div>
+     </div>
+    </div>
+    <!--end of container-->
+   </section>
+   <section id="newsletter" style="background-color: #CCCCCC;">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-8 col-md-push-2 text-center">
+       <div class="image-slider slider-paging-controls controls-outside">
+        <h1>
+         Social Media
+        </h1>
+        <br/>
+        <a href="https://www.facebook.com/radjavxrj/" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/facebook.png"/>
+        </a>
+        <a href="https://twitter.com/radjavxrj" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/twitter.png"/>
+        </a>
+        <a href="https://www.linkedin.com/company/25013916/" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/linkedin.png"/>
+        </a>
+        <a href="https://medium.com/@RadJavXRJ/" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/medium.png"/>
+        </a>
+        <a href="https://github.com/HigherEdgeSoftware/RadJav/" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/github.png"/>
+        </a>
+        <a href="https://radjav-slack-invite.herokuapp.com/" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/slack.png"/>
+        </a>
+        <a href="https://www.youtube.com/channel/UCHqvsZCqPkSTcXWU2hTdxCg" target="_blank">
+         <img alt="" border="0" src="https://radjav.com/en_us/images/btcthread/youtube.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+     <!--end of row-->
+    </div>
+    <!--end of container-->
+   </section>
+   <footer class="footer-2 bg-dark pt0 pb40">
+    <div class="container">
+     <div class="row">
+      <hr class="mt0 mb40"/>
+     </div>
+     <!--end of row-->
+     <div class="row">
+      <div class="col-sm-4">
+       <a href="#">
+        <img alt="Pic" class="image-xxs fade-half" src="img/logo-light.png"/>
+       </a>
+      </div>
+      <div class="col-sm-4 text-center">
+       <span class="fade-half">
+        <a href="https://www.fogchaininc.com/privacy" target="_blank">
+         Privacy Policy
+        </a>
+        <br/>
+        <br/>
+        © Copyright 2020
+        <a href="https://www.fogchaininc.com/">
+         FogChain, Corp
+        </a>
+        - All Rights Reserved
+        <br/>
+        <a href="./pgp-public-key" target="_blank">
+         Official PGP Public Key Information
+        </a>
+       </span>
+      </div>
+      <div class="col-sm-4 text-right">
+       <ul class="list-inline social-list">
+        <li>
+         <a href="https://www.facebook.com/radjavxrj/" target="_blank">
+          <img alt="Facebook" class="socialMediaIcon2" src="img/facebook.png"/>
+         </a>
+        </li>
+        <li>
+         <a href="https://twitter.com/radjavxrj" target="_blank">
+          <img alt="Twitter" class="socialMediaIcon2" src="img/twitter.png"/>
+         </a>
+        </li>
+        <li>
+         <a href="https://t.me/radjav" target="_blank">
+          <img alt="Telegram" height="32" src="img/telegram.png" width="32"/>
+         </a>
+        </li>
+        <li>
+         <a href="https://radjav-slack-invite.herokuapp.com/" target="_blank">
+          <img alt="Slack" height="32" src="img/slack.png" width="32"/>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!--end of row-->
+    </div>
+    <!--end of container-->
+   </footer>
+  </div>
+  <script src="js/jquery.min.js">
+  </script>
+  <script src="js/bootstrap.min.js">
+  </script>
+  <script src="js/flickr.js">
+  </script>
+  <script src="js/flexslider.min.js">
+  </script>
+  <script src="js/lightbox.min.js">
+  </script>
+  <script src="js/masonry.min.js">
+  </script>
+  <script src="js/twitterfetcher.min.js">
+  </script>
+  <script src="js/spectragram.min.js">
+  </script>
+  <script src="js/ytplayer.min.js">
+  </script>
+  <script src="js/countdown.min.js">
+  </script>
+  <script src="js/smooth-scroll.min.js">
+  </script>
+  <script src="js/parallax.js">
+  </script>
+  <script src="js/jquery.countdown.min.js">
+  </script>
+  <script src="js/scripts.js">
+  </script>
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-9528300-12', 'auto');
+		  ga('send', 'pageview');
+  </script>
+  <script type="text/javascript">
+   $(document).ready (function ()
+				{
+					$(".row-click").click (function ()
+						{
+							var pack = $(this).data ("pack");
+							var itemName = "$" + pack[0].toLocaleString () + ".00 USD for " + 
+								pack[1].toLocaleString () + " XRJ";
+
+							$("#selectedPack").show ();
+							$("#pack").html (itemName);
+
+							$("#amountf").val (pack[0]);
+							$("#item_name").val (itemName);
+							$("#pp_amountf").val (pack[0]);
+							$("#pp_item_name").val (itemName);
+						});
+					$(".clock").countdown ("2017/9/25", function (evt)
+						{
+							$(this).text (evt.strftime ("%D days %H hours %M minutes %S seconds"));
+						}).on ("finish.countdown", function ()
+							{
+								window.location.reload ();
+							});
+					/*$(".clock").FlipClock (new Date (1506297600000), {
+											clockFace: "DailyCounter", 
+											countdown: true, 
+											callbacks: {
+												stop: function ()
+													{
+														window.location.reload ();
+													}
+												}
+										});*/
+				});
+  </script>
+ </body>
+</html>

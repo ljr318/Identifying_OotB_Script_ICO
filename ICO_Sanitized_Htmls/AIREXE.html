@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <script>
+   var userLang = '';
+    if (localStorage.getItem('userLang') == undefined) {
+    var lng = navigator.language || navigator.userLanguage;
+    lng = lng.substr(0,2);
+      switch(lng) {
+          case 'ru' || 'be' || 'uk' || 'ky' || 'ab' || 'mo' || 'et' || 'lv':
+            userLang = 'ru';
+            break;
+          case 'zh':
+            userLang = 'zh';
+            break;
+          case 'id':
+            userLang = 'id';
+            break;
+          case 'vi':
+            userLang = 'vi';
+            break;
+          case 'ms':
+            userLang = 'ms';
+            break;
+          case 'kk':
+            userLang = 'kk';
+            break;
+          case 'tr':
+            userLang = 'tr';
+            break;
+          case 'pt':
+            userLang = 'pt';
+            break;
+          case 'ko':
+            userLang = 'ko';
+            break;
+          default:
+            userLang = 'en';
+      };
+      localStorage.setItem('userLang', userLang);
+      userLang != 'en' ? window.location.replace('/' + userLang + '/') : window.location.replace('/');
+    } else {
+      if (localStorage.getItem('userLang') != 'en') {
+        userLang = localStorage.getItem('userLang');
+        window.location.replace('/' + userLang + '/');
+      }
+    };
+  </script>
+  <title>
+   AIREXE Crypto-Fiat Exchange ICO
+  </title>
+  <meta content="AIREXE cryptocurrency fiat exchange" name="description"/>
+  <meta content="AIREXE" name="author"/>
+  <meta content="AIREXE.IO" name="Copyright"/>
+  <meta content="." name="Keywords"/>
+  <meta content="AIREXE Crypto-Fiat Exchange ICO" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://airexe.io/" property="og:url"/>
+  <meta content="https://airexe.io/img/AIREXE_968_504.jpg" property="og:image"/>
+  <meta content="AIREXE cryptocurrency fiat exchange" property="og:description"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <!-- Fav and touch icons -->
+  <link href="https://airexe.io/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="https://airexe.io/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="https://airexe.io/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="https://airexe.io/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="https://airexe.io/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="https://airexe.io/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="https://airexe.io/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="https://airexe.io/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="https://airexe.io/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="https://airexe.io/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="https://airexe.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="https://airexe.io/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="https://airexe.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="https://airexe.io/manifest.json" rel="manifest"/>
+  <meta content="#0a5492" name="msapplication-TileColor"/>
+  <meta content="/ms-icon-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#0a5492" name="theme-color"/>
+  <link href="https://airexe.io/apple-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144"/>
+  <link href="https://airexe.io/apple-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
+  <link href="https://airexe.io/images/fav-72.png" rel="apple-touch-icon-precomposed" sizes="72x72"/>
+  <link href="https://airexe.io/apple-icon-76x76.png" rel="apple-touch-icon-precomposed"/>
+  <link href="https://airexe.io/apple-icon-152x152.png" rel="shortcut icon"/>
+  <style>
+   .preloader {
+      z-index: 10000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0a5492;
+    }
+    .preloader__logo {
+      position: absolute;
+      top: calc(50% - 4rem);
+      left: calc(50% - 5.11rem);
+      width: 10rem;
+      height: 8.22rem;
+    }
+    .preloader__prel {
+      position: absolute;
+      top: calc(50% - 10rem);
+      left: calc(50% - 10rem);
+      width: 20rem;
+      height: 20rem;
+    }
+  </style>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="https://airexe.io/css/main.css" rel="stylesheet"/>
+  <link href="https://airexe.io/index.html" hreflang="en" rel="alternate"/>
+  <link href="https://airexe.io/ru/index.html" hreflang="ru" rel="alternate"/>
+  <link href="https://airexe.io/zh/index.html" hreflang="zh" rel="alternate"/>
+  <link href="https://airexe.io/vi/index.html" hreflang="vi" rel="alternate"/>
+  <link href="https://airexe.io/ms/index.html" hreflang="ms" rel="alternate"/>
+  <link href="https://airexe.io/kk/index.html" hreflang="kk" rel="alternate"/>
+  <link href="https://airexe.io/id/index.html" hreflang="id" rel="alternate"/>
+  <link href="https://airexe.io/tr/index.html" hreflang="tr" rel="alternate"/>
+  <link href="https://airexe.io/pt/index.html" hreflang="pt" rel="alternate"/>
+  <link href="https://airexe.io/ko/index.html" hreflang="ko" rel="alternate"/>
+  <link href="https://airexe.io/index.html" hreflang="x-default" rel="alternate"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <script>
+   /**
+  * Function that tracks a click on an outbound link in Analytics.
+  * This function takes a valid URL string as an argument, and uses that URL string
+  * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+  * using 'navigator.sendBeacon' in browser that support it.
+  */
+ 
+  }
+  </script>
+ </head>
+ <body>
+  <!-- div id="preloader" class="preloader">
+    <div class="preloader__animation">
+      <img class="preloader__logo" src="https://airexe.io/img/airexe-logo.svg" alt="Airexe ICO Logo">
+      <img class="preloader__prel" src="https://airexe.io/img/preloader.svg" alt=".">
+    </div>
+  </div -->
+  <nav class="nav-top">
+   <div class="container nav-top__fix">
+    <div class="row">
+     <!-- div class="nav-top__logo"><a href="/"><img class="nav-top__logo-img" src="https://airexe.io/img/airexe-logo.svg" alt="."></a></div>
+        <div id="burger-button" class="nav-top__burger-button">
+          <div class="nav-top__burger-box">
+            <div class="nav-top__burger-inner"></div>
+          </div>
+        </div -->
+     <ul class="nav-top__list" id="burger-menu">
+      <li class="nav-top__item">
+       <a class="nav-top__link nav-top__link_active" href="/">
+        Home
+       </a>
+      </li>
+      <li class="nav-top__item">
+       <a class="nav-top__link" href="/" target="_blank">
+        Buy AIRX Tokens
+       </a>
+      </li>
+      <li class="nav-top__item">
+       <a class="nav-top__link" href="/" target="_blank">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-top__item">
+       <a class="nav-top__link" href="/" target="_blank">
+        Pre-Registration
+       </a>
+      </li>
+      <li class="nav-top__item nav-top__item_langs" id="nav-langs-button">
+       Language
+      </li>
+      <!-- ul id="nav-langs" class="nav-top__langs">
+            <li class="nav-top__langs-item nav-top__langs-item_back">ðBack</li>
+         </ul -->
+     </ul>
+    </div>
+   </div>
+   <div class="nav-top__line">
+    <div class="nav-top__start-line">
+    </div>
+    <div class="nav-top__center-line">
+    </div>
+    <div class="nav-top__end-line">
+    </div>
+   </div>
+  </nav>
+  <nav class="nav-right" id="vert-nav">
+  </nav>
+  <header class="header" id="header">
+   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+   <!-- video id="header-video" autoplay muted loop class="header__video">
+      <script>
+        var a=Math.round(0.5+Math.random()*21);
+        document.write('<source src="/video/video_'+a+'.mp4" type="video/mp4"');
+      </script>
+      <source src="video/video_1.mp4" type="video/mp4">
+    </video -->
+   <div class="header__overlay">
+   </div>
+   <div class="header__overlay-2">
+   </div>
+   <div class="container">
+    <div class="row">
+     <div class="header__container">
+      <h1 class="header__heading wow" data-wow-duration="1s">
+       Airexe
+       <br/>
+       <span class="header__tao">
+        <span class="header__tao-letter">
+         T
+        </span>
+        okenized
+        <span class="header__tao-letter">
+         A
+        </span>
+        sset
+        <span class="header__tao-letter">
+         O
+        </span>
+        ffering
+       </span>
+      </h1>
+      <span class="header__slogan wow" data-wow-duration="1s">
+       For people who believe in cryptocurrency
+      </span>
+      <div class="header__time">
+       <div class="header__time-text">
+        <span class="header__time-letter">
+         S
+        </span>
+        ale of
+        <span class="header__time-letter">
+         Airexe AIRX
+        </span>
+        tokens starts in
+        <span class="header__time-colon">
+         :
+        </span>
+       </div>
+       <div class="header__time-bar">
+        <div class="header__time-progress" id="progress-bar">
+         <div class="header__progress-counter" id="progress-timer">
+         </div>
+        </div>
+       </div>
+       <div class="header__time-counter">
+        <div class="header__counter-wrapper" id="header-timer">
+         <div class="header__counter-container">
+          <div class="header__counter-digit header__days">
+          </div>
+          <div class="header__counter-words">
+           Days
+          </div>
+         </div>
+         <div class="header__counter-container">
+          <div class="header__counter-digit header__hours">
+          </div>
+          <div class="header__counter-words">
+           Hours
+          </div>
+         </div>
+         <div class="header__counter-container">
+          <div class="header__counter-digit header__minutes">
+          </div>
+          <div class="header__counter-words">
+           Minutes
+          </div>
+         </div>
+         <div class="header__counter-container">
+          <div class="header__counter-digit header__seconds">
+          </div>
+          <div class="header__counter-words">
+           Seconds
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="header__money" id="money-collected">
+       <span>
+        Money Collected:
+        <br/>
+       </span>
+       <span class="header__money-eth">
+        1 ETH
+       </span>
+       <span class="header__money-others">
+        715 USD
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <section class="about" id="about">
+   <!-- div class="about__overlay"></div>
+      <div id="about-circles" class="about__rellax-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 459.23 220" class="rellax about__rellax" data-rellax-speed="-6">
+          <circle class="about__circle" cx="410.93" cy="147.25" r="9.79"/>
+          <circle id="main-circle" class="about__circle" cx="268.99" cy="25.14" r="15.08"/>
+          <circle class="about__circle" cx="124.81" cy="61.99" r="6.46"/>
+          <circle class="about__circle" cx="328.27" cy="50.15" r="6.46"/>
+          <circle class="about__circle" cx="185.82" cy="6.46" r="6.46"/>
+          <circle class="about__circle" cx="407.39" cy="170.93" r="2.65"/>
+          <circle class="about__circle" cx="325.23" cy="4.47" r="1.99"/>
+          <circle class="about__circle" cx="127.37" cy="14.39" r="2.59"/>
+          <circle class="about__circle" cx="3.45" cy="101.22" r="3.45"/>
+          <circle class="about__circle" cx="433.68" cy="97.5" r="3.45"/>
+          <circle class="about__circle" cx="74.16" cy="58.31" r="14.61"/>
+          <circle class="about__circle" cx="31.14" cy="164.87" r="3.45"/>
+          <circle class="about__circle" cx="401.14" cy="61.99" r="14.17"/>
+          <circle class="about__circle" cx="31.14" cy="126" r="13.92"/>
+        </svg>
+      </div -->
+   <!-- div class="about__bg-wrapper">
+        <img class="about__bg" src="https://airexe.io/img/about_bg.svg" alt="About AIREXE">
+        <svg class="about__bg-animated" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 355 355">
+          <path class="a" d="M343,214a49,49,0,0,1-38,80H295a172,172,0,0,1-36,25,44,44,0,0,1-68,20H178a171,171,0,0,1-92-27l-16,2a54,54,0,0,1-49-78C12,215,7,199,7,174l4-41A49,49,0,0,1,49,53H60A172,172,0,0,1,96,28,44,44,0,0,1,164,9h13a171,171,0,0,1,92,27l16-2a54,54,0,0,1,49,78c10,21,14,38,14,63Z"/>
+        </svg>
+      </div -->
+   <div class="container">
+    <h2 class="about__heading">
+     About AIREXE
+    </h2>
+    <div class="col-lg-10 offset-lg-1 col-12">
+     <p class="about__text">
+      AIREXE is new modern crypto-fiat currency exchange. We bring the new cryptocurrency exchange, which we are sure you will
+      <i>
+       love
+      </i>
+      .
+     </p>
+     <p class="about__text">
+      AIREXE focused on ensuring the increased
+      <i>
+       security
+      </i>
+      of clients' funds, providing live responsive
+      <i>
+       customer support
+      </i>
+      ,
+      <i>
+       high availability
+      </i>
+      and
+      <i>
+       accessibility
+      </i>
+      . AIREXE will strictly follow and comply with
+      <i>
+       government regulations
+      </i>
+      ,
+      <i>
+       licensing
+      </i>
+      requirements, taxation and will operate completely legally. Our target is to be most convenient exchange for the beginners and for professional traders by providing both functionalities - professional with all the features available, and simplified, for those who is novice in cryptocurrency and trading.
+     </p>
+     <p class="about__text">
+      Buy AIRX tokens and get lots of benefits at AIREXE exchange.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="problem" id="problem">
+   <div class="container">
+    <h2 class="problem__heading">
+     <span class="problem__heading-bold">
+      Problems
+     </span>
+     &amp;
+     <span class="problem__heading-light">
+      Solutions
+     </span>
+    </h2>
+    <div class="problem__wrapper">
+     <div class="problem__navigation" id="problem-nav">
+      <div>
+       1. Security
+      </div>
+      <div>
+       2. Compliance
+      </div>
+      <div>
+       3. Customer Support
+      </div>
+      <div>
+       4. Broad Liquidity
+      </div>
+      <div>
+       5. Simplicity
+      </div>
+      <div>
+       6. Transparency
+      </div>
+      <div>
+       7. Mobility
+      </div>
+     </div>
+     <div class="problem__slider-left" id="problem-img">
+      <div class="problem__image">
+       <img alt="Highest security measures" class="problem__fix problem__shield" id="problem-shield" src="https://airexe.io/img/problems/problem-shield.svg"/>
+       <div class="problem__fix problem__shield-shadow">
+       </div>
+      </div>
+      <div class="problem__image">
+       <img alt="Lack or weak cooperation with governments and regulators" class="problem__fix problem__document" src="https://airexe.io/img/problems/document.svg"/>
+       <img alt="." class="problem__fix problem__sign" src="https://airexe.io/img/problems/sign.svg"/>
+      </div>
+      <div class="problem__image">
+       <img alt="Good customer service" class="problem__fix problem__man" src="https://airexe.io/img/problems/man.svg"/>
+       <img alt="Good customer service" class="problem__fix problem__girl" src="https://airexe.io/img/problems/girl.svg"/>
+      </div>
+      <div class="problem__image">
+       <img alt="New coins addition" class="problem__fix problem__box" src="https://airexe.io/img/problems/box.svg"/>
+       <img alt="Coin" class="problem__fix problem__coin problem__coin_1" src="https://airexe.io/img/problems/coin_1.svg"/>
+       <img alt="Coin" class="problem__fix problem__coin problem__coin_2" src="https://airexe.io/img/problems/coin_2.svg"/>
+       <img alt="Coin" class="problem__fix problem__coin problem__coin_3" src="https://airexe.io/img/problems/coin_3.svg"/>
+       <div class="problem__fix problem__bridge">
+       </div>
+      </div>
+      <div class="problem__image">
+       <img alt="Simply interface" class="problem__fix problem__book" src="https://airexe.io/img/problems/book.svg"/>
+      </div>
+      <div class="problem__image">
+       <img alt="Transparency of project ownership" class="problem__fix problem__fotos" src="https://airexe.io/img/problems/fotos.svg"/>
+      </div>
+      <div class="problem__image">
+       <img alt="Mobile friendly" class="problem__fix problem__phone" src="https://airexe.io/img/problems/phone.svg"/>
+       <img alt="Mobile friendly" class="problem__fix problem__247" src="https://airexe.io/img/problems/24-7.svg"/>
+       <img alt="Mobile friendly" class="problem__fix problem__ae" src="https://airexe.io/img/problems/ae.svg"/>
+      </div>
+     </div>
+     <span class="problem__numeration" id="problem-num">
+      01 of 07
+     </span>
+     <div class="problem__slider-right" id="problem-text">
+      <div class="problem__right-wrapper">
+       <span class="problem__problem problem__problem_animated">
+        Problem: Security of customersâ funds
+       </span>
+       <h3 class="problem__solution wow" data-wow-duration="1s">
+        AIREXE: The highest security measures
+       </h3>
+       <p class="problem__text">
+        The most important task for an exchange is to secure its clientsâ funds so that under no circumstances it could be lost, or stolen. Many stories tell us about crypto assets that were stolen from exchanges, and the situations like this lead to bankruptcy and closure of the exchanges. This also leads to the loss of clientsâ funds and assets, and it all happens due to exchangesâ insufficient measures to ensure the safety of funds. Other type of security issues is related to clientsâ authentication processes and currency withdrawal processes.
+       </p>
+      </div>
+      <div class="problem__right-wrapper">
+       <span class="problem__problem">
+        Problem: No cooperation with regulators
+       </span>
+       <h3 class="problem__solution">
+        AIREXE: Compliance with the regulators
+       </h3>
+       <p class="problem__text">
+        Let's be honest â financial regulators and governments will not let cryptocurrency world play games on its own. Governments have to regulate financial markets, including cryptocurrency market. Collaboration with regulators is vitally important. Applying KYC, AML and CTF processes, following regulatorsâ directives, as well as having roundtables with them is a must. Market regulation is aimed to eradicate scams, frauds and criminal activities. A company can have the latest technology and the most secure software, however, if a company doesnât comply with the regulators, itâs vulnerable to regulatory risk, and it carries such risk to all of its clients. Many examples of regulatory risks were present in cases (BTCe, BitConnect, MtGox,...), when exchanges were closed or their activities were halted due to the compliance reasons.
+       </p>
+      </div>
+      <div class="problem__right-wrapper">
+       <span class="problem__problem">
+        Problem: Terrible Customer Support
+       </span>
+       <h3 class="problem__solution">
+        AIREXE: Responsive 24/7 Customer Service
+       </h3>
+       <p class="problem__text">
+        The vast majority of exchanges are notably lacking of proper customer support service. Issues and problems occur and happen in real life, in real time. It is very important to provide fast response to any customer request and solve their issues in a timely manner. The current customer support service provided by the majority of the exchanges is often very slow and hardly responsive, or even absent.
+       </p>
+      </div>
+      <div class="problem__right-wrapper">
+       <span class="problem__problem">
+        Problem: Long period waiting new coins, tokens
+       </span>
+       <h3 class="problem__solution">
+        AIREXE: Integration with new blockchains, coins, tokens
+       </h3>
+       <p class="problem__text">
+        Exchanges are made to trade. If some cryptocurrency or tokens are missing on exchange, people will use another exchange to trade. Sometimes customers ask exchanges to add new trading pairs of new famous coins or tokens, but exchanges ignore. It leads to customer dissatisfaction and eventually the loss of business.
+       </p>
+      </div>
+      <div class="problem__right-wrapper">
+       <span class="problem__problem">
+        Problem: Lack of simplicity
+       </span>
+       <h3 class="problem__solution">
+        AIREXE: Fast start and tutorials for newbies traders
+       </h3>
+       <p class="problem__text">
+        Weâve completed our own survey among potential clients, who don't trade cryptocurrency at this moment, but would like to start doing it. The results show that so called ânewbiesâ are in need of simplified customer interface and walk-through tutorials, which could explain the process of entering the market. Of course, for experienced traders exchanges must provide fully-fledged interfaces and trading functionalities. For those completely new to Crytocurrency trading, one option we provide is to investigate and look to automated trading robots based on algorithms. There are many of these in the marketplace with differing success rates so we suggest you read
+        <a href="https://aktien-blog.com/news-spy">
+         The News Spy
+        </a>
+        blog for reviews and see which matches your aspirations.
+       </p>
+       <p class="problem__text">
+        Alternatively, those beginners who would prefer to skip any investment, however small, for now and do more research on
+        <a href="https://blockgeeks.com/guides/what-is-bitcoin/">
+         Blockchain, Bitcoin and the Wider Cryptocurrency
+        </a>
+        sphere there are many avenues online to utlise.
+       </p>
+      </div>
+      <div class="problem__right-wrapper">
+       <span class="problem__problem">
+        Problem: Transparency of ownerships
+       </span>
+       <h3 class="problem__solution">
+        AIREXE: Transparency of the project ownership
+       </h3>
+       <p class="problem__text">
+        Some of the exchanges have rapidly gain popularity, however, they were setup for completely different purposes, very often illegal. Often, the ownership of the exchanges is not transparent and is hidden through elaborately structured offshore companies, which provide no guarantee or security to the customers. This leads to a high regulatory or even criminal risk to the customers of the exchange, which eventually could lead to the loss of assets or disruption of provided services. We are witnessing that regulators and law enforcement authorities from different countries have put a lot of work and pressure on such enterprises, by arresting alleged owners and closing down the exchanges.
+       </p>
+      </div>
+      <div class="problem__right-wrapper">
+       <span class="problem__problem">
+        Problem: Lack of mobility
+       </span>
+       <h3 class="problem__solution">
+        AIREXE: Attention to mobile users, a truly device-neutral exchange
+       </h3>
+       <p class="problem__text">
+        In the 21
+        <sup>
+         st
+        </sup>
+        century, people rely on their smartphones and tablets more than on their desktop devices. Especially in relation to cryptocurrency, when trading never stops and one has to have an access to the exchange and oneâs account 24/7, and often on the go. However, most of the exchanges do not provide this essential feature to their customers. Furthermore, non-professional traders, who are eager to enter a new market, complain about the absence of mobile versions of some exchanges. We believe that customer must have an instant access to its account or exchange with any device that he/she prefers, a truly device neutral exchange.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="documents" id="documents">
+   <div class="documents__overlay">
+   </div>
+   <div class="container">
+    <h2 class="documents__header">
+     Documents
+    </h2>
+    <p class="documents__text">
+     Want to know more about AIREXE? Read our documents with all details provided
+    </p>
+   </div>
+  </section>
+  <section class="use" id="use">
+   <div class="container">
+    <h2 class="use__heading">
+     Use of AIRX Tokens
+    </h2>
+    <p class="use__pre-text">
+     AIREXE.io issuing
+     <b>
+      AIRX
+     </b>
+     tokens during its crowd-funding ICO.
+     <br/>
+     Once AIREXE crypto-fiat exchange has launched its operations, the AIRX token will be traded on exchange from the day one.
+     <br/>
+     The following ways of AIRX utilization guaranteed by AIREXE:
+    </p>
+    <div class="row">
+     <div class="col-lg-4 col-sm-6 col-12">
+      <div class="use__wrapper" id="use-sample">
+       <div class="use__face">
+        <h3 class="use__face-header">
+         AIREXE exchange will accept trading fee in AIRX
+        </h3>
+        <p class="use__text">
+         Paying trading fee in AIRX tokens will be significantly cheaper than in other cryptocurrency.
+        </p>
+       </div>
+       <div class="use__back">
+        <span class="use__back-text">
+         Trading Fees
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 col-12">
+      <div class="use__wrapper">
+       <div class="use__face">
+        <h3 class="use__face-header">
+         Purchase time for total 0%-fee trading at AIREXE
+        </h3>
+        <p class="use__text">
+         Purchase a zero commission period for your needs â one week, one month, three months or more. Save on day trading commissions by purchasing commission free period with AIRX tokens.
+        </p>
+       </div>
+       <div class="use__back">
+        <span class="use__back-text">
+         Zero Fee Trading
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 col-12">
+      <div class="use__wrapper">
+       <div class="use__face">
+        <h3 class="use__face-header">
+         Use AIRX to access advanced and Professional functionality
+        </h3>
+        <p class="use__text">
+         For large or professional traders AIREXE will have advanced Professional functionality. Access to this functionality will be provided for additional fees. The best way is to pay with AIRX tokens for Pro functionality, as it will be much cheaper than paying in any other cryptocurrency.
+        </p>
+       </div>
+       <div class="use__back">
+        <span class="use__back-text">
+         Professional Functions
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 col-12">
+      <div class="use__wrapper">
+       <div class="use__face">
+        <h3 class="use__face-header">
+         Payment for listing at AIREXE
+        </h3>
+        <p class="use__text">
+         Projects - ICOs, ITOs, TGEs, TAOs or cryptocurrency blockchains and forks can pay AIRX for listing of its tokens and coins. Projects paid AIRX for listings will be (a) taken into high priority for listing request processing and (b) assigned personal manager to proceed with listing process and supporting listing afterwards.
+        </p>
+       </div>
+       <div class="use__back">
+        <span class="use__back-text">
+         Get listed at AIREXE
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 col-12">
+      <div class="use__wrapper">
+       <div class="use__face">
+        <h3 class="use__face-header">
+         Payment to access advanced Projects Rating Agency function
+        </h3>
+        <p class="use__text">
+         Purchase our research on listed cryptocurrencies or on the project that is conducting cryptocurrency fundraising. The research would be based on the fundamental indicators of the company and combine methodologies from classic rating agencies (Fitch, Moodyâs, S&amp;P) and crypto community activities.
+        </p>
+       </div>
+       <div class="use__back">
+        <span class="use__back-text">
+         Rating Agency
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 col-12">
+      <div class="use__wrapper">
+       <div class="use__face">
+        <h3 class="use__face-header">
+         Sell AIRX tokens at exchange
+        </h3>
+        <p class="use__text">
+         Sell and buy AIRX tokens at exchange.
+        </p>
+       </div>
+       <div class="use__back">
+        <span class="use__back-text">
+         Sell/Buy at Exchanges
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="roadmap" id="roadmap">
+   <div class="roadmap__overlay rellaxR" data-rellax-speed="-12" id="roadmap-bg">
+   </div>
+   <div class="container">
+    <h2 class="roadmap__heading">
+     Roadmap
+    </h2>
+    <div class="col-lg-12" id="roadmap-track">
+     <div class="roadmap__block-left">
+      <p class="roadmap__text">
+       Market study, surveys, practical experience gathering. Researches and analysis of problem solution methods
+      </p>
+      <span class="roadmap__left-dates">
+       Q3-4 2017
+      </span>
+     </div>
+     <div class="roadmap__block-right roadmap__block-right_current">
+      <p class="roadmap__text">
+       AIREXE Tokenized Assets Offering (ICO) crowdfunding. Sale of AIRX tokens. Pre-Registration and PreVerification at exchange
+      </p>
+      <span class="roadmap__right-dates">
+       Q1 2018
+      </span>
+     </div>
+     <div class="roadmap__block-left roadmap__block-left_inactive">
+      <p class="roadmap__text">
+       AIREXE exchange development. Collaboration with regulators and financial institutions. Obtaining licenses, connection to financial institutions
+      </p>
+      <span class="roadmap__left-dates">
+       Q2-3 2018
+      </span>
+     </div>
+     <div class="roadmap__block-right roadmap__block-right_inactive">
+      <p class="roadmap__text">
+       AIREXE exchange launching, trading for pre-registered users. AIREXE trading launching for new users. Launch of the mobile application
+      </p>
+      <span class="roadmap__right-dates">
+       Q4 2018 â Q1 2019
+      </span>
+     </div>
+     <div class="roadmap__block-left roadmap__block-left_inactive">
+      <p class="roadmap__text">
+       Expanding AIREXE geographical coverage and collaboration with regulators in more jurisdictions. Implementation of PSD2 in EU and adopting similar in other regions and opening, launching payment service provider line of business. Launching Rating Agency analytical portal and reporting service
+      </p>
+      <span class="roadmap__left-dates">
+       Q1-4 2019
+      </span>
+     </div>
+     <div class="roadmap__block-right roadmap__block-right_inactive">
+      <p class="roadmap__text">
+       Cross-countries mobile payments provider. Integration of several mobile/blockchain providers for unified payment processing. Rating Agency business expansion
+      </p>
+      <span class="roadmap__right-dates">
+       Q1-4 2020
+      </span>
+     </div>
+     <div class="roadmap__path" id="roadmap-road">
+      <div id="roadmap-circle">
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="offer" id="offer">
+   <div class="offer__overlay">
+   </div>
+   <div class="container">
+    <h2 class="offer__heading">
+     Buy AIRX tokens
+    </h2>
+    <p class="offer__text">
+     You can buy tokens with ETH, or, optionally, with some other cryptocurrencies (BTC, LTC, BCH or ETC).
+     <br/>
+     See Buy AIRX Tokens page for prices and all details how to buy
+    </p>
+   </div>
+  </section>
+  <section class="team" id="team">
+   <div class="team__bg">
+   </div>
+   <div class="container">
+    <h2 class="team__heading">
+     The Team
+    </h2>
+    <p class="team__pre-text">
+     This is AIREXE committed project Core Team. The AIREXE project team consists of total 25 people for the development, launching and operation.
+     <br/>
+     Additional team members will be hired for the customer support and some other parts of the project.
+     <br/>
+     AIREXE will use several professional subcontractor companies for some types of works and services (as for security services and audit, smart contract and blockchain audits, optimization, etc).
+    </p>
+    <div class="team__slider" id="team-slider">
+     <div class="team__slide">
+      <div class="team__name">
+       Sergey Zubkov
+      </div>
+      <div class="team__role">
+       General management
+      </div>
+      <p class="team__text">
+       Professional manager. CEO and CxO at several large telecom and IT companies. Successfully launched 3 startup telecom mobile operations. Roots from software development and IT. Active follower of blockchain technology and cryptocurrency.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 24 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Alexey Kuzmin
+      </div>
+      <div class="team__role">
+       Software development head
+      </div>
+      <p class="team__text">
+       Management of large software development, deployment and implementation projects for several large companies, including billing and CRM systems, Olympic Games live IT solutions, transport logistics and other. Deep knowledge and experience in software development.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 15 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Aleksey Gordienko
+      </div>
+      <div class="team__role">
+       International business development
+      </div>
+      <p class="team__text">
+       Great experience in finance management, stocks trading, real estate and telecoms. A success-driven businessman with an entrepreneurial mindset, has ample experience in start-ups, joint ventures and launching new businesses.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 13 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Alex Xu
+      </div>
+      <div class="team__role">
+       Crypto-assets trading expertize
+      </div>
+      <p class="team__text">
+       10+ years working in the Fortune 500 global companies, 5+ years experience in blockchain and cryptocurrency investments.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 12 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Alex Belko
+      </div>
+      <div class="team__role">
+       Front-End Developer
+      </div>
+      <p class="team__text">
+       Web front-end development guru. Professional knowledge of several development frameworks and languages. Participated as senior web front-end developer in projects of several very various types.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 8 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Ivan Lisenkov
+      </div>
+      <div class="team__role">
+       Risk management and trading expertise
+      </div>
+      <p class="team__text">
+       Professional in risk assessment, management, mitigation. Deep experience in analytics for stock markets and classic exchanges. Fluency in rating and scoring methodologies. Large number of projects were executed for major banks and financial institutions.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 21 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Artem Marko
+      </div>
+      <div class="team__role">
+       Content management
+      </div>
+      <p class="team__text">
+       Content management for several projects. Experience in social media content management and promotions. Good experience in testing and quality assurance for software projects.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 6 years
+       </span>
+      </p>
+     </div>
+     <div class="team__slide">
+      <div class="team__name">
+       Vladislav Kirilenok
+      </div>
+      <div class="team__role">
+       Web Front-End
+      </div>
+      <p class="team__text">
+       Professional development of responsive web front end. Rich usage of JS, CSS and other techniques at mastery level. Developed plenty of websites, including design, layout, animations, programming.
+       <br/>
+       <span class="team__exp">
+        Professional experience: 5 years
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="advisors" id="advisors">
+   <div class="container">
+    <h2 class="advisors__heading">
+     AIREXE Advisors
+    </h2>
+    <div class="row justify-content-center">
+     <div class="col-md-3 col-6">
+      <div class="advisors__wrapper">
+       <div class="advisors__name">
+        Krzysztof Kluszczynski
+       </div>
+       <div class="advisors__role">
+        Software architecture design
+       </div>
+       <p class="advisors__about">
+        CEO at Blunovation LLC
+        <br/>
+        <span class="advisors__exp">
+         Professional experience: 24 years
+        </span>
+       </p>
+      </div>
+     </div>
+     <div class="col-md-3 col-6">
+      <div class="advisors__wrapper">
+       <div class="advisors__name">
+        Valery Matulenko
+       </div>
+       <div class="advisors__role">
+        Governments, Regulators and Licensors relations
+       </div>
+       <p class="advisors__about">
+        Board of Directors, International Decentralized Association of Cryptocurrency and Blockchain (IDACB), President of Latvian Blockchain and Cryptocurrency Union
+        <br/>
+        <span class="advisors__exp">
+         Professional experience: 15 years
+        </span>
+       </p>
+      </div>
+     </div>
+     <div class="col-md-3 col-6">
+      <div class="advisors__wrapper">
+       <div class="advisors__name">
+        Oleg Micewicz
+       </div>
+       <div class="advisors__role">
+        Building high-load solutions and databases for large systems
+       </div>
+       <p class="advisors__about">
+        Head of Information Infrastructure group
+        <br/>
+        <span class="advisors__exp">
+         Professional experience: 20 years
+        </span>
+       </p>
+      </div>
+     </div>
+     <div class="col-md-3 col-6">
+      <div class="advisors__wrapper">
+       <div class="advisors__name">
+        Aleksey Dyatlov
+       </div>
+       <div class="advisors__role">
+        Infrastructure and high-load software solutions
+       </div>
+       <p class="advisors__about">
+        Head of software infrastructure
+        <br/>
+        <span class="advisors__exp">
+         Professional experience: 23 years
+        </span>
+       </p>
+      </div>
+     </div>
+     <div class="col-md-3 col-6">
+      <div class="advisors__wrapper">
+       <div class="advisors__name">
+        Alexey Stankus
+       </div>
+       <div class="advisors__role">
+        IT Security Expert
+       </div>
+       <p class="advisors__about">
+        CEO at Forge8 LLC. Winner of Skolkovo Cyber Security challenge 2015
+        <br/>
+        <span class="advisors__exp">
+         Professional experience: 18 years
+        </span>
+       </p>
+      </div>
+     </div>
+     <div class="col-md-3 col-6">
+      <div class="advisors__wrapper">
+       <div class="advisors__name">
+        Andrey Zolin
+       </div>
+       <div class="advisors__role">
+        Smart Contracts and Blockchain development
+       </div>
+       <p class="advisors__about">
+        Solidity and smart contracts expert, enterprise developments, more than 10 ICO technical part preparation
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="partners" id="partners">
+   <div class="container">
+    <h2 class="partners__heading">
+     Our Media Partners
+    </h2>
+    <div class="partners__wrapper">
+     <a href="https://www.trackico.io/ico/airexe/" target="_blank" title="AIREXE at TrackICO">
+     </a>
+     <a href="https://zonto.world/" target="_blank" title="AIREXE at zonto">
+     </a>
+     <a href="http://www.kryptovergleich.org/" target="_blank" title="AIREXE at Kryptovergleich.org">
+     </a>
+     <a href="https://www.coinhills.com/ico/view/airexe/" target="_blank" title="AIREXE at Coinhills">
+     </a>
+     <a href="https://concourseq.io/Q/Airexe" target="_blank" title="AIREXE at concourseq.io">
+     </a>
+     <a href="https://icoranker.com/ico/airexe/" target="_blank" title="AIREXE at ICO Ranker">
+     </a>
+     <a href="https://icobench.com/ico/airexe" target="_blank" title="AIREXE at icobench.com">
+     </a>
+     <a href="https://www.tokendesk.io/ico/airexe/" target="_blank" title="AIREXE at tokendesk.io">
+     </a>
+     <a href="https://www.unlock-bc.com/project/airexe" target="_blank" title="AIREXE at unlock-bc.com">
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="subscribe" id="subscribe">
+   <div class="subscribe__overlay">
+   </div>
+   <div class="container">
+    <h2 class="subscribe__heading">
+     Subscribe now
+    </h2>
+    <p class="subscribe__text">
+     Subscribe to our newsletter, and you'll be the first to know the AIREXE important news, updates and ICO crowd-funding progress
+    </p>
+    <form action="https://airexe.us17.list-manage.com/subscribe/post?u=76cf50e509068adebd53c3d64&amp;id=ef5d75df7d" class="subscribe__form" method="post" target="_blank">
+     <input class="subscribe__input" id="mce-FNAME" name="FNAME" placeholder="Enter your name.." required="" type="text"/>
+     <input class="subscribe__input" id="mce-EMAIL" name="EMAIL" placeholder="Enter your email.." required="" type="email"/>
+    </form>
+   </div>
+  </section>
+  <footer class="footer" id="footer">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-2 col-0">
+      <ul class="footer__nav">
+       <li>
+        <a href="/">
+         Main page
+        </a>
+       </li>
+       <li>
+        <a href="/" target="_blank">
+         Buy tokens
+        </a>
+       </li>
+       <li>
+        <a href="/" target="_blank">
+         FAQ
+        </a>
+       </li>
+       <li>
+        <a href="/" target="_blank">
+         Pre-registration
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xl-6 col-lg-7 col-md-7 col-sm-8 col-12 offset-xl-1">
+      <span class="footer__follow">
+       Join and follow us:
+      </span>
+      <ul class="footer__socials">
+       <li>
+        <a href="https://fb.me/airexeofficial" target="_blank">
+         <img alt="Our facebook group" src="images/facebook.svg"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/airexe" target="_blank">
+         <img alt="Our telegram group" class="footer__logo-wider" src="images/group_work.svg"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://t.me/airexe_channel" target="_blank">
+         <img alt="Our telegram channel" class="footer__logo-wider" src="images/telegram.svg"/>
+        </a>
+       </li>
+       <li>
+        <img alt="Our linkedIn" src="images/linkedin.svg"/>
+       </li>
+       <li>
+        <a href="https://twitter.com/Airexe_official" target="_blank">
+         <img alt="Our twitter" src="images/twitter.svg"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://medium.com/@airexe" target="_blank">
+         <img alt="Our medium" src="images/medium.svg"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://bitcointalk.org/index.php?topic=3103400.0" target="_blank">
+         <img alt="Our bitcointalk thread" src="images/bitcoin.svg"/>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-md-3 col-sm-4 col-12">
+      <div class="footer__contact">
+       Contact us with any questions
+       <a href="/cdn-cgi/l/email-protection#0a797f7a7a65787e4a6b63786f726f246365">
+        <span class="__cf_email__" data-cfemail="a4d7d1d4d4cbd6d0e4c5cdd6c1dcc18acdcb">
+         [email protected]
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script src="ajax/libs/jquery/3-3-1/jquery.min.js">
+  </script>
+  <script>
+   window.onload = function() {
+      $('#preloader').fadeOut();
+    }
+  </script>
+ </body>
+</html>

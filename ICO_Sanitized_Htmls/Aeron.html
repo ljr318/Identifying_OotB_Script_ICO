@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="" name="description"/>
+  <meta content="aeron.aero" name="author"/>
+  <title>
+   Aeron - Blockchain for Aviation Safety
+  </title>
+  <link href="//i.aeron.aero" rel="dns-prefetch"/>
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+  <link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+  <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" integrity="sha256-ebN46PPB/s45oUcqLn2SCrgOtYgVJaFiLZ26qVSqI8M=" rel="stylesheet"/>
+  <link href="css/app.new.css?v=201905091" rel="stylesheet"/>
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+  <script crossorigin="anonymous" integrity="sha256-y0EpKQP2vZljM73+b7xY4dvbYQkHRQXuPqRjc7sjvnA=" src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js">
+  </script>
+  <script>
+   window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "rgba(15, 109, 204, 0.8)"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "rgba(15, 109, 204, 0.8)"
+        }
+      },
+      "theme": "classic",
+      "position": "bottom-left",
+      "type": "opt-out",
+      "revokeBtn": "<div></div>",
+      "content": {
+        "href": "https://aeron.aero/privacy.html"
+      }
+    })});
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102742218-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-102742218-1');
+  </script>
+ </head>
+ <body class="index" id="page-top">
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+    <symbol id="icon-plane" viewbox="0 0 19 20">
+     <path d="M0,6l0,2l8,5v5c0,0.6,0.5,1,1,1c0.4,0,1-0.4,1-1v-5l8-5V6l-8,2.5V3l2-1.5V0L9,1L6,0v1.5L8,3v5.5L0,6z" fill="currentColor">
+     </path>
+    </symbol>
+   </defs>
+  </svg>
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="mainNav">
+   <div class="container">
+    <div class="navbar-header page-scroll">
+     <button class="navbar-toggle" data-target="#lang_switch" data-toggle="collapse" type="button">
+      <i class="fa fa-angle-down">
+      </i>
+      <span class="active_lang">
+       <img src="img/en.png"/>
+      </span>
+     </button>
+     <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+      <span class="sr-only">
+       Toggle navigation
+      </span>
+      <span lang="en">
+       Menu
+      </span>
+      <i class="fa fa-bars">
+      </i>
+     </button>
+     <a class="navbar-custom page-scroll" href="#page-top">
+      <img alt="Aeron logo" height="40" src="img/logos/logo.svg"/>
+     </a>
+    </div>
+    <div class="collapse" id="lang_switch">
+     <ul class="nav navbar-nav navbar-right">
+      <li>
+       <a class="" href="#en" onclick="lang_change('en');">
+        EN
+        <img src="img/en.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#ar" onclick="lang_change('ar');">
+        AR
+        <img src="img/ar.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#cn" onclick="lang_change('cn');">
+        CN
+        <img src="img/cn.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#de" onclick="lang_change('de');">
+        DE
+        <img src="img/de.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#es" onclick="lang_change('es');">
+        ES
+        <img src="img/es.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#fr" onclick="lang_change('fr');">
+        FR
+        <img src="img/fr.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#jp" onclick="lang_change('jp');">
+        JP
+        <img src="img/jp.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#kr" onclick="lang_change('kr');">
+        KR
+        <img src="img/kr.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#pt" onclick="lang_change('pt');">
+        PT
+        <img src="img/pt.png"/>
+       </a>
+      </li>
+      <li>
+       <a class="" href="#ru" onclick="lang_change('ru');">
+        RU
+        <img src="img/ru.png"/>
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <li class="hidden">
+       <a href="#page-top">
+       </a>
+      </li>
+      <li>
+       <a class="page-scroll whitepaper_link" href="https://aeron.aero/AeronWhitepaper.pdf">
+        <span lang="en">
+         Whitepaper
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="page-scroll" href="#keydates">
+        <span lang="en">
+         Roadmap
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="page-scroll" href="#team">
+        <span lang="en">
+         Team
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="page-scroll" href="#news">
+        <span lang="en">
+         Press
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="page-scroll" href="https://medium.com/@aeronaero" target="_blank">
+        <span lang="en">
+         Blog
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="page-scroll" href="https://aeron.aero/faq.html">
+        <span lang="en">
+         FAQ
+        </span>
+       </a>
+      </li>
+      <li class="dropdown">
+       <a aria-expanded="true" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-angle-down">
+        </i>
+        <span class="active_lang">
+         EN
+         <img src="img/en.png"/>
+        </span>
+       </a>
+       <ul class="dropdown-menu">
+        <li>
+         <a class="" href="#en" onclick="lang_change('en');">
+          EN
+          <img src="img/en.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#ar" onclick="lang_change('ar');">
+          AR
+          <img src="img/ar.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#cn" onclick="lang_change('cn');">
+          CN
+          <img src="img/cn.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#de" onclick="lang_change('de');">
+          DE
+          <img src="img/de.png" style="margin-left: 8px;"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#es" onclick="lang_change('es');">
+          ES
+          <img src="img/es.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#fr" onclick="lang_change('fr');">
+          FR
+          <img src="img/fr.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#jp" onclick="lang_change('jp');">
+          JP
+          <img src="img/jp.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#kr" onclick="lang_change('kr');">
+          KR
+          <img src="img/kr.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#pt" onclick="lang_change('pt');">
+          PT
+          <img src="img/pt.png"/>
+         </a>
+        </li>
+        <li>
+         <a class="" href="#ru" onclick="lang_change('ru');">
+          RU
+          <img src="img/ru.png"/>
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <header>
+   <div class="container">
+    <div class="intro-text">
+     <div class="intro-heading" lang="en">
+      Saving People's Lives
+     </div>
+     <div class="intro-lead-in" lang="en">
+      Blockchain for Aviation Safety
+     </div>
+     <div class="block-join">
+      <div class="block-join__inner">
+       <div class="block-join__top">
+        <div class="block-join__header">
+         <span lang="en">
+          Install and try the newly released Aeron Pilot Log application with blockchain recording
+         </span>
+         (
+         <a href="https://aeron.aero/Aeron_Pilot_QSG_v1.pdf" style="white-space: nowrap;">
+          <span lang="en">
+           Quick Start Guide
+          </span>
+         </a>
+         )
+        </div>
+        <div class="app_links">
+         <a href="https://itunes.apple.com/us/app/aeron-pilot/id1352338215">
+          <img alt="" height="80" src="img/logos/App_Store.svg" style="padding:15px 0"/>
+         </a>
+         <a href="https://play.google.com/store/apps/details?id=aero.aeron.android">
+          <img alt="" height="72" src="img/logos/google-play-badge.svg"/>
+         </a>
+         <a href="https://galaxystore.samsung.com/detail/aero.aeron.android">
+          <div style="border-radius: 7px; margin-right:10px;
+					  border-color: rgba(255, 255, 255, 0.52); 
+					  border-width: 1px; 
+  					  border-style: solid;display: inline-block;">
+           <img alt="" height="46" src="img/logos/galaxy-store-badge.png"/>
+          </div>
+         </a>
+         <a href="https://i.aeron.aero/storage/Aeron_Pilot.apk">
+          <div style="
+					  border-radius: 7px;  margin-right:15px;
+					  border-color: rgba(255, 255, 255, 0.52);
+					  border-width: 1px;
+					  border-style: solid;
+					  display: inline-block;
+					  ">
+           <img alt="" height="46" src="/img/apk-button.svg"/>
+          </div>
+         </a>
+        </div>
+        <div class="block-accept">
+         <div>
+          <span lang="en">
+           Aeron (ARN) token ERC20 contract:
+          </span>
+          <nobr>
+           <a href="https://etherscan.io/token/0xBA5F11b16B155792Cf3B2E6880E8706859A8AEB6">
+            <span lang="en">
+             View at etherscan.io
+            </span>
+           </a>
+          </nobr>
+         </div>
+         <div>
+          <span lang="en">
+           Aeron (ARN) token BEP2 contract:
+          </span>
+          <nobr>
+           <a href="https://explorer.binance.org/asset/ARN-71B">
+            View at binance.org
+           </a>
+          </nobr>
+         </div>
+         <div>
+          <span lang="en">
+           CryptoBonusMiles (CBM) token ERC20 contract:
+          </span>
+          <nobr>
+           <a href="https://etherscan.io/token/0x95eFD1Fe6099F65a7ED524DEF487483221094947">
+            <span lang="en">
+             View at etherscan.io
+            </span>
+           </a>
+          </nobr>
+         </div>
+         <div>
+          <span lang="en">
+           CryptoBonusMiles (CBM) token BEP2 contract:
+          </span>
+          <nobr>
+           <a href="https://explorer.binance.org/asset/CBM-4B2">
+            <span lang="en">
+             View at binance.org
+            </span>
+           </a>
+          </nobr>
+         </div>
+         <br/>
+         <div>
+          <span lang="en">
+           For the list of compatible wallets and questions on how to handle the tokens,
+          </span>
+          <nobr>
+           <a href="https://aeron.aero/faq.html">
+            <span lang="en">
+             please refer to FAQ
+            </span>
+           </a>
+          </nobr>
+         </div>
+        </div>
+        <br/>
+       </div>
+       <div class="block-total total" style="padding-bottom: 0;">
+        <div class="total-values">
+         <div class="total-title">
+          <br/>
+          <span lang="en">
+           Aeron (ARN) is listed on major exchanges: See details at
+          </span>
+          <nobr>
+           <a href="https://coinmarketcap.com/currencies/aeron/#markets">
+            CoinMarketCap
+           </a>
+          </nobr>
+         </div>
+         <ul class="total-list" id="links-exchange">
+         </ul>
+        </div>
+       </div>
+       <div class="block-total total" style="padding-top: 0;padding-bottom: 0;">
+        <div class="total-values">
+         <div class="total-title">
+          <br/>
+          <span lang="en">
+           Instant exchanges and multi-asset wallets supporting ARN token:
+          </span>
+         </div>
+         <ul class="total-list" id="links-wallet">
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="plane-wrap">
+       <div class="plane-arrow">
+        <img alt="" src="img/line.svg"/>
+       </div>
+       <div class="plane-info">
+        <span class="hblock">
+         AWE1549
+        </span>
+        <div class="plane-icon">
+         <img alt="" src="img/ic-check.svg"/>
+         <span lang="en">
+          verified
+         </span>
+        </div>
+       </div>
+      </div>
+      <img alt="" class="plane" src="img/plane.png"/>
+     </div>
+    </div>
+   </div>
+   <div class="landing__join-wrap">
+    <div class="container">
+     <div class="landing__join">
+      <div class="landing__join__header" lang="en">
+       Join our communities:
+      </div>
+      <div class="landing__join__list">
+       <a class="landing__join__item" href="https://t.me/aeronaero" target="_blank">
+        <i class="fa fa-telegram">
+        </i>
+        <span class="hblock">
+         Telegram
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://twitter.com/aeron_aero" target="_blank">
+        <i class="fa fa-twitter">
+        </i>
+        <span class="hblock">
+         Twitter
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://www.facebook.com/aeronpublic" target="_blank">
+        <i class="fa fa-facebook-square">
+        </i>
+        <span class="hblock">
+         Facebook
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://www.reddit.com/r/AeronAero/" target="_blank">
+        <i class="fa fa-reddit">
+        </i>
+        <span class="hblock">
+         Reddit
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://github.com/aeronaero/aeron" target="_blank">
+        <i class="fa fa-github">
+        </i>
+        <span class="hblock">
+         GitHub
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://medium.com/@aeronaero" target="_blank">
+        <i class="fa fa-medium">
+        </i>
+        <span class="hblock">
+         Medium
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://bitcointalk.org/index.php?topic=2078239.0" target="_blank">
+        <i class="fa fa-btc">
+        </i>
+        <span class="hblock">
+         BitcoinTalk
+        </span>
+       </a>
+       <a class="landing__join__item" href="https://aeron.aero/img/wechat.jpg" target="_blank">
+        <i class="fa fa-weixin">
+        </i>
+        <span class="hblock">
+         WeChat
+        </span>
+       </a>
+       <a class="landing__join__item" href="" target="_blank">
+        <i class="">
+        </i>
+        <span class="hblock">
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <section class="block-twitter">
+   <div class="container">
+    <div class="tweet" id="tweet">
+    </div>
+   </div>
+  </section>
+  <section class="block-problem" id="block-problem">
+   <div class="container ar_align">
+    <h2 class="section-heading" lang="en">
+     Problem
+    </h2>
+    <div class="description">
+     <div class="row">
+      <div class="col-lg-6">
+       <p>
+        <span lang="en">
+         Aviation unites the world. Today it has become an irreplaceable part of our lives, our business, and more importantly — it brings us back home to spend time with our family.
+        </span>
+       </p>
+       <p>
+        <span lang="en">
+         There are over
+        </span>
+        <b lang="en">
+         100,000 flights
+        </b>
+        <span lang="en">
+         worldwide made daily, serving over
+        </span>
+        <b lang="en">
+         2 million people
+        </b>
+        .
+        <span lang="en">
+         Despite the fact that aviation is considered as one of the safest types of transportation, the number of accidents related to air transport averages to about 3302 yearly.
+        </span>
+        <b lang="en">
+         The main reason is the human factor
+        </b>
+        .
+       </p>
+       <div class="diagram">
+        <div class="row">
+         <div class="col-sm-6">
+          <div class="image">
+           <img alt="" src="img/pie.svg"/>
+          </div>
+         </div>
+         <div class="col-sm-6">
+          <div class="list-wrap">
+           <div class="list-title" lang="en">
+            Main reasons of aviation accidents
+           </div>
+           <ul class="list">
+            <li>
+             <span class="list-value">
+              57%
+             </span>
+             <span class="list-desc red">
+              <span lang="en">
+               Human factor
+              </span>
+              <sup>
+               <img alt="" src="img/ic-pliot.svg"/>
+              </sup>
+             </span>
+            </li>
+            <li>
+             <span class="list-value">
+              22%
+             </span>
+             <span class="list-desc green" lang="en">
+              Technical problems
+             </span>
+            </li>
+            <li>
+             <span class="list-value">
+              12%
+             </span>
+             <span class="list-desc yellow" lang="en">
+              Weather conditions
+             </span>
+            </li>
+            <li>
+             <span class="list-value">
+              9%
+             </span>
+             <span class="list-desc blue" lang="en">
+              Other
+             </span>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-5 col-lg-offset-1">
+       <div class="list-wrap list-icon-wrap">
+        <div class="list-title" lang="en">
+         Key issues
+        </div>
+        <ul class="list">
+         <li>
+          <i class="fa fa-exclamation-triangle">
+          </i>
+          <span lang="en">
+           Pilots may lack experience they claim — flight log records can be easily forged.
+          </span>
+         </li>
+         <li>
+          <i class="fa fa-exclamation-triangle">
+          </i>
+          <span lang="en">
+           Flight schools may be corrupt — they have an incentive to “fake” pilot experience.
+          </span>
+         </li>
+         <li>
+          <i class="fa fa-exclamation-triangle">
+          </i>
+          <span lang="en">
+           Aircraft operators may underreport the flight hours — saving considerable maintenance costs.
+          </span>
+         </li>
+         <li>
+          <i class="fa fa-exclamation-triangle">
+          </i>
+          <span lang="en">
+           Lack of a common solution that would prevent any modification or distortion of log data.
+          </span>
+         </li>
+         <li>
+          <i class="fa fa-exclamation-triangle">
+          </i>
+          <span lang="en">
+           Aviation has high demand for replacing old-fashioned solutions with new technologies.
+          </span>
+         </li>
+         <li>
+          <i class="fa fa-exclamation-triangle">
+          </i>
+          <span lang="en">
+           Flight schools need more sophisticated tools to manage student records and aircraft fleet.
+          </span>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <a class="link-sm" href="https://rblaw.net/5-most-common-causes-of-plane-crashes/" target="_blank">
+      https://rblaw.net/5-most-common-causes-of-plane-crashes/
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="block-solution" id="aeron">
+   <div class="container ar_align">
+    <h2 class="section-heading" lang="en">
+     Solution
+    </h2>
+    <div class="description">
+     <div class="row">
+      <div class="col-lg-6">
+       <p class="description-width" lang="en">
+        The improvement in aviation safety today can be achieved by using blockchain technology. It will exclude the possibility of loss, distortion or forgery of vital log data, therefore significantly reducing the risk of fatal accidents. Information should be transparent and available for the authorities to improve safety.
+       </p>
+       <div class="video">
+        <div class="embed-responsive embed-responsive-16by9">
+         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E7i3C_5PvLM">
+         </iframe>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-5 col-lg-offset-1">
+       <div class="list-wrap list-icon-wrap">
+        <div class="list-title" lang="en">
+         Advantages of Aeron blockchain solution for aviation
+        </div>
+        <ul class="list">
+         <li>
+          <i class="icon">
+           <img alt="" src="img/ic-check.svg"/>
+          </i>
+          <span lang="en">
+           Blockchain technology ensures that vital log data cannot be altered.
+          </span>
+         </li>
+         <li>
+          <i class="icon">
+           <img alt="" src="img/ic-check.svg"/>
+          </i>
+          <span lang="en">
+           Multi-sig authentication system provides data security.
+          </span>
+         </li>
+         <li>
+          <i class="icon">
+           <img alt="" src="img/ic-check.svg"/>
+          </i>
+          <span lang="en">
+           Information is stored in the blockchain, transactions are transparent and can be viewed by all users.
+          </span>
+         </li>
+        </ul>
+       </div>
+       <div class="image-link">
+        <a class="image-link-item onepager_link" href="https://aeron.aero/Aeron_OnePager.pdf">
+         <img alt="" src="img/one-paper.png"/>
+         <span lang="en">
+          One Pager
+         </span>
+        </a>
+        <a class="image-link-item whitepaper_link" href="https://aeron.aero/AeronWhitepaper.pdf">
+         <img alt="" src="img/wp.png"/>
+         <span lang="en">
+          Whitepaper
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="solution">
+     <div class="solution-title">
+      <span class="hblock">
+       Aeron
+      </span>
+      <span lang="en">
+       is the new standard of aviation safety, embodied in a line of innovative products:
+      </span>
+     </div>
+     <div class="solution-scheme">
+      <div class="scheme">
+       <div class="scheme-item">
+        <div class="scheme-img">
+         <img alt="" src="img/pilot-app.svg"/>
+        </div>
+        <div class="scheme-content">
+         <div class="scheme-title">
+          <span lang="en">
+           Pilot App
+          </span>
+          <span class="hblock" lang="en">
+           mobile / web
+          </span>
+         </div>
+         <div class="scheme-desc" lang="en">
+          Application for the pilot’s personal use to log the flight hours.
+         </div>
+        </div>
+       </div>
+       <div class="scheme-item scheme-item-lg">
+        <div class="scheme-img">
+         <div class="scheme-subtitle">
+          <span lang="en">
+           Global Aviation Register with
+          </span>
+          <span class="hblock" lang="en">
+           Decentralized Record System
+          </span>
+         </div>
+         <img alt="" src="img/aeron-app.svg"/>
+        </div>
+        <div class="scheme-content">
+         <div class="scheme-title">
+          aerotrips.com
+          <span lang="en">
+           web portal
+          </span>
+         </div>
+         <div class="scheme-desc" lang="en">
+          Blockchain powered global database of aviation services available to prospective passengers or flight school students.
+         </div>
+        </div>
+       </div>
+       <div class="scheme-item">
+        <div class="scheme-img">
+         <img alt="" src="img/avia-app.svg"/>
+        </div>
+        <div class="scheme-content">
+         <div class="scheme-title">
+          <span lang="en">
+           Aviation Company App
+          </span>
+          <span class="hblock" lang="en">
+           mobile / web
+          </span>
+         </div>
+         <div class="scheme-desc" lang="en">
+          Corporate application to log and cross-verify data from flight schools, aircraft operators, maintenance organizations and other sources.
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="block-work-wrap ar_align" id="works">
+   <div class="sun">
+   </div>
+   <div class="block-work">
+    <div class="container">
+     <h2 class="section-heading" lang="en">
+      How it Works
+     </h2>
+     <h3 class="section-subheading" lang="en">
+      In case of any mismatch in data between any Aeron data source with either the ATC, pilot, or operator, aviation authorities can quickly detect and eliminate the problem. Aviation authorities can also detect any pilots operating with an expired license.
+     </h3>
+    </div>
+   </div>
+   <div class="work-list-wrap">
+    <div class="container">
+     <div class="work-list">
+      <div class="work-list-left">
+       <div class="work-list-item">
+        <div class="work-list-title color-blue" lang="en">
+         Pilot Application
+        </div>
+        <div class="work-list-desc" lang="en">
+         Pilots are able to log flight hours and submit data. The pilot app also offers a loyalty program and gives access to the best curated offers.
+        </div>
+       </div>
+       <div class="work-list-item">
+        <div class="work-list-title color-blue" lang="en">
+         Consumer
+        </div>
+        <div class="work-list-desc">
+         <span lang="en">
+          Passengers and flight school students can access validated global database of aviation services through
+         </span>
+         <a href="https://aerotrips.com">
+          aerotrips.com
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="work-list-right">
+       <div class="work-list-item">
+        <div class="work-list-title color-green" lang="en">
+         Air Traffic Control
+        </div>
+        <div class="work-list-desc" lang="en">
+         In select locations, Air Traffic Control data is processed through Data Hub automatically and verifies log entries made by Pilots and Companies (to confirm the actual flight took place).
+        </div>
+       </div>
+       <div class="work-list-item">
+        <div class="work-list-title color-red" lang="en">
+         Company Application
+        </div>
+        <div class="work-list-desc">
+         <p lang="en">
+          Maintenance Organizations log service data and submit to blockchain through the company application.
+         </p>
+         <p lang="en">
+          Aircraft Operators log flight data and submit to blockchain through the company application.
+         </p>
+         <p lang="en">
+          Fixed Base Operators submit airport services data to blockchain through the company application.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="roadmap" id="keydates">
+   <div class="container">
+    <h2 class="section-heading ar_align" lang="en">
+     Roadmap
+    </h2>
+    <div class="timeline__wrap collapse" id="timeline">
+     <div class="timeline-info">
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2016
+        </span>
+        <span lang="en">
+         May
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span class="fix30" lang="en">
+         Global aviation market research
+        </span>
+       </div>
+       <div class="timeline-plane blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2016
+        </span>
+        <span lang="en">
+         August
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Concept development for Aeron ecosystem
+        </span>
+       </div>
+       <div class="timeline-plane blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2016
+        </span>
+        <span lang="en">
+         October
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <a href="https://aerotrips.com">
+         aerotrips.com
+        </a>
+        <span lang="en">
+         consumer portal development
+        </span>
+       </div>
+       <div class="timeline-plane blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2017
+        </span>
+        <span lang="en">
+         March
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Building global flight school, AM and FBO database
+       </div>
+       <div class="timeline-plane blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2017
+        </span>
+        <span lang="en">
+         June
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <a href="https://aeron.aero">
+         aeron.aero
+        </a>
+        <span lang="en">
+         public presentation
+        </span>
+       </div>
+       <div class="timeline-plane blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2017
+        </span>
+        <span lang="en">
+         September
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Aeron token sale
+       </div>
+       <div class="timeline-plane dark-blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2017
+        </span>
+        <span lang="en">
+         October
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Pilot and Company applications MVP development
+       </div>
+       <div class="timeline-plane dark-blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2017
+        </span>
+        <span lang="en">
+         November
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <a href="https://aerotrips.com">
+         aerotrips.com
+        </a>
+        <span lang="en">
+         consumer portal for aviation launch
+        </span>
+       </div>
+       <div class="timeline-plane dark-blue">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2017
+        </span>
+        <span lang="en">
+         December
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Pilot and Company applications blockchain integration
+       </div>
+       <div class="timeline-plane violet">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         February
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Lobbying with Aviation Authorities
+       </div>
+       <div class="timeline-plane violet">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         March
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Pilot and Company applications public launch
+       </div>
+       <div class="timeline-plane violet">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         April
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <a href="https://aerotrips.com/">
+         aerotrips.com
+        </a>
+        <span lang="en">
+         integration with blockchain
+        </span>
+       </div>
+       <div class="timeline-plane violet">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         June
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Token payments for
+        </span>
+        <a href="https://aerotrips.com/">
+         aerotrips.com
+        </a>
+        <span lang="en">
+         services
+        </span>
+       </div>
+       <div class="timeline-plane magenta">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         August
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Movement of database to decentralized and encrypted storage
+       </div>
+       <div class="timeline-plane magenta">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         September
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Aviation Authority
+        </span>
+        <br/>
+        <span lang="en">
+         portal development
+        </span>
+       </div>
+       <div class="timeline-plane magenta">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         November
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Aeron API public launch
+       </div>
+       <div class="timeline-plane magenta">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2018
+        </span>
+        <span lang="en">
+         December
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Data Hub for automated data processing development
+       </div>
+       <div class="timeline-plane light-red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         January
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Aeron Salesforce integration
+       </div>
+       <div class="timeline-plane light-red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         March
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Business development EMEA: negotiation &amp; deals with Authorities
+       </div>
+       <div class="timeline-plane light-red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item active">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         April
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Aeron Membership program
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         Q2
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Binance Chain
+        </span>
+        <br/>
+        <span lang="en">
+         ARN token migration
+        </span>
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         Q2
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Token integration with
+        </span>
+        <a href="https://cryptobonusmiles.com/">
+         CryptoBonusMiles
+        </a>
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         Q3
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Aeron Games
+        </span>
+        <br/>
+        <span lang="en">
+         launch
+        </span>
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         Q3
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Application for Garmin pilot smartwatches
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         Q4
+        </span>
+       </div>
+       <div class="timeline-info__point">
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Aircraft owner &amp; Pilot module launch
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2019
+        </span>
+        <span lang="en">
+         Q4
+        </span>
+       </div>
+       <div class="timeline-info__point">
+        <img alt="" src="img/check.svg"/>
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Professional flight excursions at
+        </span>
+        <a href="https://aerotrips.com/">
+         aerotrips.com
+        </a>
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2020
+        </span>
+        <span lang="en">
+         Q1
+        </span>
+       </div>
+       <div class="timeline-info__point">
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Aviation Authority
+        </span>
+        <br/>
+        <span lang="en">
+         portal launch
+        </span>
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock">
+         2020
+        </span>
+        <span lang="en">
+         Q1
+        </span>
+       </div>
+       <div class="timeline-info__point">
+       </div>
+       <div class="timeline-info__descr">
+        <span lang="en">
+         Light aircraft and
+        </span>
+        <br/>
+        <span lang="en">
+         aircraft kits marketplace
+        </span>
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock" lang="en">
+         Future
+        </span>
+       </div>
+       <div class="timeline-info__point">
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Further growth of ecosystem: addition of miscellaneous services
+       </div>
+       <div class="timeline-plane red">
+        <svg class="icon icon-plane">
+         <use xlink:href="#icon-plane">
+         </use>
+        </svg>
+       </div>
+      </div>
+      <div class="timeline-info__item">
+       <div class="timeline-info__date">
+        <span class="hblock" lang="en">
+         Future
+        </span>
+       </div>
+       <div class="timeline-info__point">
+       </div>
+       <div class="timeline-info__descr" lang="en">
+        Regional expansion: Aeron applications adopted globally
+       </div>
+      </div>
+     </div>
+     <div class="timeline-info__bar">
+      <div class="timeline-info__bar__progress">
+      </div>
+     </div>
+    </div>
+    <div class="btn-wrap">
+     <a class="btn btn-brand" data-toggle="collapse" href="#timeline">
+      <span class="more" lang="en">
+       Show more
+      </span>
+      <span class="less" lang="en">
+       Show less
+      </span>
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="team-wrap" id="team">
+   <div class="container">
+    <h2 class="section-heading ar_align" lang="en">
+     Our Team
+    </h2>
+    <h3 class="section-subheading ar_align" lang="en">
+     Our core team has extensive flying experience and includes certified pilots, aviation engineers and aviation enthusiasts. Together with professional Solidity developers, UX/UI designers and marketing experts we are building a robust solution for safer aviation practices.
+    </h3>
+    <div class="row">
+     <div class="col-sm-6 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive" src="https://i.aeron.aero/storage/team/1.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4 class="team-member-name">
+         Artem Orange
+        </h4>
+        <p class="team-member-role" lang="en">
+         CEO
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Artem has more than 15 years of experience in telecoms and finance. Ex-CEO of two national cellular operators and a serial entrepreneur in hi-tech industries. Aviation enthusiast and a Chartered Financial Analyst (CFA) charterholder since 2009.
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/artemorange">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-6 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive" src="https://i.aeron.aero/storage/team/2.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4 class="team-member-name">
+         Nadezhda Barkanova
+        </h4>
+        <p class="team-member-role" lang="en">
+         CTO
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Nadezhda is an aircraft operation and air traffic management engineer with over 11 years of experience, specializing in full cycle of production aeronautical databases, flight crew training programs, flight simulators and computer based training development. EASA PPL(A) holder since 2013.
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/nadezhda-barkanova-33b83a1b">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-6 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive" src="https://i.aeron.aero/storage/team/3.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4 class="team-member-name">
+         Konstantin Gertman
+        </h4>
+        <p class="team-member-role" lang="en">
+         CDO
+        </p>
+        <p class="team-member-desc ar_align">
+         <span lang="en">
+          Konstantin has 14 years of experience in consulting, market research and financial businesses. Master of Science in Banking and Finance. A passionate small aviation enthusiast and Co-founder of
+         </span>
+         <a href="https://aerotrips.com/">
+          aerotrips.com
+         </a>
+         ,
+         <span lang="en">
+          EASA certified pilot since 2013.
+         </span>
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/konstantin-g-3684891">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-6 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive" src="https://i.aeron.aero/storage/team/6.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4 class="team-member-name">
+         Dmitri Prokopenko
+        </h4>
+        <p class="team-member-role" lang="en">
+         Business Development China
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Dmitri is a long term resident of China. Fluent in Mandarin, founder of several language schools and ex-CEO of Water Energy, a new energy startup in Xiamen. Crypto analyst and investor, supporting projects like TenX, IOTA, LBC and Steem.
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/dmitri-prokopenko-863a35104">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-6 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive" src="https://i.aeron.aero/storage/team/14.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4 class="team-member-name">
+         Andrii Bulavinov
+        </h4>
+        <p class="team-member-role" lang="en">
+         Blockchain Lead
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Andrii is a software developer and manager with over 15 years hands-on experience. Blockchain researcher, responsible for implementation on Ethereum and Stellar platforms as storage infrastructure and smart contracts transaction protocol.
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/andriibulavinov">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-6 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive" src="https://i.aeron.aero/storage/team/13.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4 class="team-member-name">
+         Dmitry Bezkorovainyi
+        </h4>
+        <p class="team-member-role" lang="en">
+         Application Lead
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Dmitry offers 10 years experience in web services and mobile app development. With background in financial web services development and integration, Dmitry has a particuar focus on driving mobile application lifecycle for Aeron.
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/dbezkorovainy">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="team-board-wrap">
+   <div class="container">
+    <h2 class="section-heading ar_align" lang="en">
+     Advisory Board
+    </h2>
+    <div class="row">
+     <div class="col-sm-4 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive img-circle" src="https://i.aeron.aero/storage/team/a3.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4>
+         Constantinos Kozakos,
+         <span lang="en">
+          Limassol, Cyprus
+         </span>
+        </h4>
+        <p class="team-member-role" lang="en">
+         Aviation Advisor
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Constantinos is a Managing Director at Griffon Aviation, the first licensed flight school on Cyprus offering complete range of pilot courses: from basic to advanced Flight Instructor ratings. A Chartered Accountant (FCCA) and Auditor by profession, Constantinos offers a unique angle, combining extensive knowledge in accountancy and compliance with his passion in aviation.
+        </p>
+        <p class="team-member-desc ar_align">
+         <b lang="en">
+          Constantinos supports Aeron in liaison with flight schools worldwide, to build awareness and ensure recognition of Aeron solution
+         </b>
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/constantinos-kozakos-316b2a25">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive img-circle" src="https://i.aeron.aero/storage/team/a5.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4>
+         Dmitrijs Kasjarums,
+         <br/>
+         <span lang="en">
+          Riga, Latvia
+         </span>
+        </h4>
+        <p class="team-member-role" lang="en">
+         Legal Advisor
+        </p>
+        <p class="team-member-desc ar_align">
+         <span lang="en">
+          Dmitrijs a partner of an International consulting company
+         </span>
+         <a href="http://www.baltconsult.eu/eng/">
+          Baltconsult
+         </a>
+         .
+         <span lang="en">
+          He has more than 12 years experience in legal practice: corporate disputes, tax risk prevention, immigration law, registration and licensing of payment systems, representation of interests of investors engaged in a work with startups in the field of information technology.
+         </span>
+        </p>
+        <p class="team-member-desc ar_align">
+         <b lang="en">
+          Dmitrijs supports Aeron in legal aspects of the Token Sale to ensure compliance and design the robust legal platform for Aeron application worldwide.
+         </b>
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/dmitrijs-kasjarums-882440134">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive img-circle" src="https://i.aeron.aero/storage/team/a6.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4>
+         Vladimir Feoktistov,
+         <span lang="en">
+          Limassol, Cyprus
+         </span>
+        </h4>
+        <p class="team-member-role" lang="en">
+         Blockchain Tech Advisor
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Vladimir has a master's degree in physics. He has been working as a lead programmer in financial, aerospace and data analysis sectors. His biggest project was development of the derivatives matching engine and risk management systems for Moscow Exchange. Vladimir was a CTO of trueflip.io leading a successful ICO and developed many other projects related to cryptocurrencies and blockchain.
+        </p>
+        <p class="team-member-desc ar_align">
+         <b lang="en">
+          Vladimir helps Aeron to drive technical strategy and design architecture of the blockchain based database for aviation.
+         </b>
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/vladimir-feoktistov-18b53547">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive img-circle" src="https://i.aeron.aero/storage/team/a7.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4>
+         Eric Ross,
+         <br/>
+         <span lang="en">
+          Orlando, USA
+         </span>
+        </h4>
+        <p class="team-member-role" lang="en">
+         Technical Advisor
+        </p>
+        <p class="team-member-desc ar_align" lang="en">
+         Eric brings 32 years experience in the defence and commercial industries specializing in RF communications and electronics systems integration, testing and fielding in airborne, land and sea based environments.
+        </p>
+        <p class="team-member-desc ar_align">
+         <b lang="en">
+          With 10 years management of a Preventive and Corrective Maintenance facility providing customers flightline and backshop services, Eric assists Aeron as a Technical Advisor.
+         </b>
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive img-circle" src="https://i.aeron.aero/storage/team/a8.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4>
+         Philip McMaster (大龙),
+         <span lang="en">
+          Beijing, China
+         </span>
+        </h4>
+        <p class="team-member-role" lang="en">
+         Brand Ambassador
+        </p>
+        <p class="team-member-desc ar_align">
+         <span lang="en">
+          Philip is well known in the Chinese and world blockchain space as the creator of the
+         </span>
+         <a href="http://www.republicofconscience.com/">
+          Republic Of Conscience
+         </a>
+         .
+         <span lang="en">
+          He advises on Corporate Social Responsibility (CSR) strategy and compliance as well as human transportation efficiency. Former MBA lecturer in top Canadian and Hong Kong business schools, publisher and executive in the aerospace and media industry as well as certification program developer for governments and tourism companies.
+         </span>
+        </p>
+        <p class="team-member-desc ar_align">
+         <b lang="en">
+          Philip is concerned with helping Aeron lead the general aviation industry in setting the immutable standard in safety and sustainability.
+         </b>
+        </p>
+        <a class="team-member-link" href="https://www.linkedin.com/in/philipmcmaster">
+         <i class="fa fa-linkedin-square">
+         </i>
+         LinkedIn
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4 matchHeight">
+      <div class="team-member">
+       <div class="team-member-img">
+        <img alt="" class="img-responsive img-circle" src="https://i.aeron.aero/storage/team/a9.jpg"/>
+       </div>
+       <div class="team-member-content">
+        <h4>
+         Alexander Jiung (江志杰),
+         <span lang="en">
+          Xiamen, China
+         </span>
+        </h4>
+        <p class="team-member-role" lang="en">
+         Advisor Greater China
+        </p>
+        <p class="team-member-desc ar_align">
+         <span lang="en">
+          Alexander is an active blockchain evangelist and promoter. With deep knowledge of local blockchain enthusiast communities, he is the regular visitor at conferences and blockchain related events across Greater China and globally. Strong communication skills and international exposure help Alexander in fostering lasting partnerships.
+         </span>
+        </p>
+        <p class="team-member-desc ar_align">
+         <b lang="en">
+          Alexander is helping Aeron in liaison with local Blockchain Clubs across China and in building relevant communication strategy.
+         </b>
+        </p>
+        <a class="team-member-link" href="weixin://contacts/profile/crazybug2010">
+         <i class="fa fa-wechat">
+         </i>
+         WeChat
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="news collapse" id="news">
+   <div class="container">
+    <h2 class="section-heading ar_align" lang="en">
+     Aeron in Press
+    </h2>
+    <div class="news-inner collapse" id="news-collapse">
+     <div class="row" id="news-feed">
+     </div>
+    </div>
+    <div class="btn-wrap">
+     <a class="btn btn-brand" data-toggle="collapse" href="#news-collapse">
+      <span class="more" lang="en">
+       Show more
+      </span>
+      <span class="less" lang="en">
+       Show less
+      </span>
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="subscribe" id="subscription">
+   <div class="container">
+    <div class="subscribe-desc">
+     <span lang="en">
+      Aeron’s ambition is to make flying safer with the latest blockchain technology. That will take experience, connections, and resources.
+     </span>
+     <span class="hblock" lang="en">
+      We welcome your interest and support!
+     </span>
+    </div>
+    <div class="row">
+     <div class="col-lg-12 text-center">
+      <div class="subscribe-title" lang="en">
+       Be the first to receive our updates:
+      </div>
+      <form class="form-inline" id="contactForm__footer" name="sentMessage" novalidate="">
+       <div id="success__footer">
+        <p class="help-block text-danger collapse" lang="en">
+         Please enter a valid Email address!
+        </p>
+        <div class="alert alert-success collapse">
+         <strong lang="en">
+          Thank you! We will keep you informed by email.
+         </strong>
+        </div>
+        <div class="alert alert-danger collapse">
+         <strong lang="en">
+          Sorry, it seems that mail server is not responding. Please try again later!
+         </strong>
+        </div>
+       </div>
+       <div class="form-group">
+        <input class="form-control form-control-xl" data-validation-required-message="Please enter your email address" id="email__footer" placeholder="Email address" required="" type="email"/>
+        <button class="btn btn-xl" id="contactForm__button__footer" lang="en" type="submit">
+         Subscribe
+        </button>
+        <p class="help-block text-danger">
+        </p>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer>
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-7 col-md-6">
+      <div class="footer-left">
+       <ul class="list-inline quicklinks">
+        <li>
+         <a href="https://aeron.aero/privacy.html">
+          <span lang="en">
+           Privacy Policy
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="https://aeron.aero/terms.html">
+          <span lang="en">
+           Terms and Conditions
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="https://aeron.aero/Aeron_MediaKit.zip">
+          <span lang="en">
+           Media Kit
+          </span>
+         </a>
+        </li>
+       </ul>
+       <div class="app_links">
+        <a href="https://itunes.apple.com/us/app/aeron-pilot/id1352338215">
+         <img alt="" height="60" src="img/logos/App_Store.svg" style="padding:15px 0"/>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=aero.aeron.android">
+         <img alt="" height="44" src="img/logos/google-play-badge.svg"/>
+        </a>
+        <a href="https://galaxystore.samsung.com/detail/aero.aeron.android">
+         <div style="border-radius: 3px;
+					  border-color: rgba(255, 255, 255, 0.52); 
+					  border-width: 1px; 
+  					  border-style: solid;display: inline-block;">
+          <img alt="" height="26" src="img/logos/galaxy-store-badge.png"/>
+         </div>
+        </a>
+       </div>
+       <span class="hide-mobile">
+        <span class="copyright">
+         © Aeron Labs 2017-2020
+        </span>
+        <span class="address">
+         #7 New Road, Belize City, Belize (Registration No. 167,902)
+        </span>
+       </span>
+      </div>
+     </div>
+     <div class="col-lg-5 col-md-6">
+      <div class="footer-right">
+       <a class="footer-mail" href="/cdn-cgi/l/email-protection#355c5b535a755450475a5b1b5450475a">
+        <span class="__cf_email__" data-cfemail="670e0901082706021508094906021508">
+         [email protected]
+        </span>
+       </a>
+       <ul class="list-inline social-buttons">
+        <li>
+         <a href="https://t.me/aeronaero" target="_blank">
+          <i class="fa fa-telegram">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://twitter.com/aeron_aero">
+          <i class="fa fa-twitter">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://www.facebook.com/aeronpublic">
+          <i class="fa fa-facebook-square">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://www.reddit.com/r/AeronAero/">
+          <i class="fa fa-reddit">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://github.com/aeronaero/aeron">
+          <i class="fa fa-github">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://medium.com/@aeronaero">
+          <i class="fa fa-medium">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://bitcointalk.org/index.php?topic=2078239.0">
+          <i class="fa fa-btc">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="https://aeron.aero/img/wechat.jpg">
+          <i class="fa fa-weixin">
+          </i>
+         </a>
+        </li>
+       </ul>
+       <span class="show-mobile">
+        <span class="copyright">
+         © Aeron Labs 2017-2020
+        </span>
+        <span class="address">
+         #7 New Road, Belize City, Belize (Registration No. 167,902)
+        </span>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div class="arrow-up-wrap">
+   <a class="arrow-up" href="#page-top">
+    <svg height="18" viewbox="0 0 28 18" width="28" xmlns="http://www.w3.org/2000/svg">
+     <path d="M14 .703l14 14-3.281 3.281L14 7.266 3.281 17.984 0 14.704z" fill="currentColor" fill-rule="evenodd" opacity=".8">
+     </path>
+    </svg>
+   </a>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js">
+  </script>
+  <script src="js/jqBootstrapValidation.js">
+  </script>
+  <script src="js/subscribe.js">
+  </script>
+  <script src="js/jquery.matchHeight.js">
+  </script>
+  <script src="js/twitterFetcher.js">
+  </script>
+  <script src="js/tweet-init.js">
+  </script>
+  <script src="js/jquery-lang.js">
+  </script>
+  <script src="js/app.js">
+  </script>
+ </body>
+</html>

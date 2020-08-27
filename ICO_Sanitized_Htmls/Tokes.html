@@ -1,0 +1,2349 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <!-- Meta tags -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="Accept Cryptocurrency. Bitcoin, Tokes, Altcoins, KYC/AML Compliance. Integrate crypto payments into your software through our Payments API. Free setup and only a 0.25% fee per transaction!" name="description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Tokes Payments API" name="author"/>
+  <meta content="crypto pos, cryptocurrency point of sale, crypto ecommerce, cryptocurrency ecommerce, supply chain visibility, blockchain supply chain, blockchain gs1, blockchain epcis, crypto merchant processing, white-label crypto" name="keywords"/>
+  <link href="favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <!-- Open Graph Meta Data -->
+  <meta content="Accept Cryptocurrency. Bitcoin, Tokes, Altcoins, KYC/AML Compliance. Integrate crypto payments into your software through our Payments API. Free setup and only a 0.25% fee per transaction!" property="og:description"/>
+  <meta content="https://tokes.io/preview_image.png" property="og:image"/>
+  <meta content="Tokes Payments API" property="og:site_name"/>
+  <meta content="Tokes Payments API" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://tokes.io" property="og:url"/>
+  <!-- Twitter Card Meta Data -->
+  <meta content="summary" name="twitter:card"/>
+  <meta content="@Multichain_Vent" name="twitter:site"/>
+  <meta content="@Multichain_Vent" name="twitter:creator"/>
+  <meta content="Tokes Payments API" name="twitter:title"/>
+  <meta content="Accept Cryptocurrency. Bitcoin, Tokes, Altcoins, KYC/AML Compliance. Integrate crypto payments into your software through our Payments API. Free setup and only a 0.25% fee per transaction!" name="twitter:description"/>
+  <meta content="https://tokes.io/preview_image.png" name="twitter:image"/>
+  <!-- Apple Touch Icons -->
+  <link href="https://tokes.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <!-- Page title -->
+  <title>
+   Tokes Payments API - Accept Cryptocurrency Payments
+  </title>
+  <!-- CSS FILES -->
+  <link href="css/fontawesome-icons/css/all.min.css" rel="stylesheet"/>
+  <link href="css/bootsnav.css" rel="stylesheet"/>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="style/other/aos.css" rel="stylesheet"/>
+  <link href="style/other/animate.css" rel="stylesheet"/>
+  <!-- Main css style -->
+  <link href="style/style.css" rel="stylesheet"/>
+  <!-- main responsive css file -->
+  <link href="style/responsive.css" rel="stylesheet"/>
+  <!-- CSS FILES end -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(document).ready(function() {
+    var $tabContent = $(".tab-content"),
+        $tabs = $("ul.tabs li"),
+        tabId;
+
+    /* $tabContent.hide();
+    $("ul.tabs li:first").addClass("active").show();
+    $tabContent.first().show(); */
+
+    $tabs.click(function() {
+        var $this = $(this);
+        $tabs.removeClass("active");
+        $this.addClass("active");
+        $tabContent.hide();
+        var activeTab = $this.find("a").attr("href");
+        $(activeTab).fadeIn();
+        //return false;
+    });
+
+    // Grab the ID of the .tab-content that the hash is referring to
+    tabId = $(window.location.hash).closest('.tab-content').attr('id');
+
+    // Find the anchor element to "click", and click it
+    $tabs.find('a[href=#' + tabId + ']').click();
+
+    $('#tokesLink1,#tokesLink2,#tokesLink3,#tokesLink4,#tokesLink5,#tokesLink6').click(() => {
+        $('html, body').animate({
+            scrollTop: $('#tokesTab').offset().top
+        });
+        $('#tokesTab').click();
+    });
+	$('#cubedLink1,#cubedLink2,#cubedLink3,#cubedLink4,#cubedLink5').click(() => {
+        $('html, body').animate({
+            scrollTop: $('#cubedTab').offset().top
+        });
+        $('#cubedTab').click();
+    });
+	$('#kycLink1,#kycLink2,#kycLink3,#kycLink4,#kycLink5').click(() => {
+        $('html, body').animate({
+            scrollTop: $('#kycTab').offset().top
+        });
+        $('#kycTab').click();
+    });
+	$('#howitLink').click(() => {
+        $('html, body').animate({
+            scrollTop: $('#howitTab').offset().top
+        });
+        $('#howitTab').click();
+    });
+});
+
+$(function() {
+    $('a.refresh').live("click", function() {
+        location.reload();
+    });
+});
+  </script>
+ </head>
+ <body>
+  <div id="fakeLoader">
+  </div>
+  <!-- Start of topbar -->
+  <div class="top-bar margin-for-home">
+   <div class="custom-width">
+    <div class="left-topbar aligment-for-home">
+     <p>
+      Welcome to Tokes Payments API
+     </p>
+    </div>
+    <div class="right-topbar">
+     <a class="topbar-link" href="#">
+      <i class="fa fa-envelope">
+      </i>
+      contact@tokes.io
+     </a>
+     <a class="topbar-link hidden-xs" href="#">
+      <i class="fa fa-phone">
+      </i>
+      1 (800) 201-1589
+     </a>
+     <a class="topbar-link" href="#" onclick="goToRegistration(); return false;">
+      <i class="fa fa-user">
+      </i>
+      LOGIN
+     </a>
+    </div>
+   </div>
+  </div>
+  <!-- End of topbar -->
+  <!-- Navbar content -->
+  <nav class="navbar navbar-default dark navbar-sticky bootsnav">
+   <!-- Start Top Search -->
+   <div class="top-search">
+    <div class="container">
+     <div class="input-group">
+      <span class="input-group-addon">
+       <i class="fa fa-search">
+       </i>
+      </span>
+      <input class="form-control" placeholder="Search" type="text"/>
+      <span class="input-group-addon close-search">
+       <i class="fa fa-times">
+       </i>
+      </span>
+     </div>
+    </div>
+   </div>
+   <!-- End Top Search -->
+   <div class="custom-width">
+    <!-- Start Atribute Navigation -->
+    <div class="attr-nav">
+     <ul>
+      <li class="dropdown">
+       <ul class="dropdown-menu cart-list">
+        <li>
+         <h6>
+          <a href="#">
+           Dedicated Servers
+          </a>
+         </h6>
+         <p>
+          2x -
+          <span class="price">
+           $79.99
+          </span>
+         </p>
+        </li>
+        <li>
+         <h6>
+          <a href="#">
+           Shared Hosting
+          </a>
+         </h6>
+         <p>
+          1x -
+          <span class="price">
+           $2.95
+          </span>
+         </p>
+        </li>
+        <li>
+         <h6>
+          <a href="#">
+           Dedicated Server 2
+          </a>
+         </h6>
+         <p>
+          2x -
+          <span class="price">
+           $99.99
+          </span>
+         </p>
+        </li>
+        <li class="total">
+         <span class="pull-right">
+          <strong>
+           Total
+          </strong>
+          : $0.00
+         </span>
+         <a class="btn btn-default btn-cart" href="../whmcs/cart.php?a=view" target="_blank">
+          Cart
+         </a>
+        </li>
+       </ul>
+      </li>
+      <!--  <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
+      <li class="side-menu">
+       <a href="#">
+        <i class="fa fa-bars">
+        </i>
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!-- End Atribute Navigation -->
+    <!-- Start Header Navigation -->
+    <div class="navbar-header">
+     <button class="navbar-toggle" data-target="#navbar-menu" data-toggle="collapse" type="button">
+      <i class="fa fa-bars">
+      </i>
+     </button>
+     <a class="navbar-brand aligment-for-home" href="index.html">
+      <img alt="" class="logo" src="images/logo/payments-api-logo.svg"/>
+     </a>
+    </div>
+    <!-- End Header Navigation -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
+     <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
+      <li class="dropdown">
+       <a href="#api-features">
+        API Features
+       </a>
+      </li>
+      <li class="dropdown megamenu-fw">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Business Cases
+       </a>
+       <ul class="dropdown-menu megamenu-content" role="menu">
+        <li>
+         <div class="row">
+          <div class="col-menu col-md-4 col-lg-4">
+           <h6 class="title">
+            <i class="fa fa-shopping-cart">
+            </i>
+            Pricing Plans
+           </h6>
+           <div class="content">
+            <p>
+             Get Full Access API Key for FREE when you Register Now. Extra assistance available.
+            </p>
+            <h4 class="menu-price">
+             Starting fee of 0.25% per tx
+            </h4>
+            <a class="navbar-btn" href="#pricing-plans">
+             See all offers
+            </a>
+           </div>
+          </div>
+          <!-- end col-3 -->
+          <div class="col-menu col-md-3 col-lg-4">
+           <h6 class="title">
+            <i class="fas fa-shopping-bag">
+            </i>
+            Merchant Point-of-Sale
+           </h6>
+           <div class="content">
+            <ul class="menu-col">
+             <li>
+              <a href="https://cubedpay.io" target="_blank">
+               Cubedpay.io
+               <span class="badge-link">
+                Hot
+               </span>
+              </a>
+             </li>
+             <li>
+              <a href="https://tokesplatform.org" target="_blank">
+               Tokes Platform
+              </a>
+             </li>
+             <li>
+              <a href="https://multichainventures.com/#wallet" target="_blank">
+               Multichain Ventures Wallet
+              </a>
+             </li>
+             <li>
+              <a href="https://cubedpay.io/#features-1" target="_blank">
+               eCommerce Web Component
+              </a>
+             </li>
+             <li>
+              <a href="#" target="_blank">
+               Shopify Integration
+               <span class="badge-link">
+                Upcoming
+               </span>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- end col-3 -->
+          <div class="col-menu col-md-3 col-lg-4">
+           <h6 class="title">
+            <i class="fas fa-cube">
+            </i>
+            Full Payments Ecosystem
+           </h6>
+           <div class="content">
+            <ul class="menu-col">
+             <li>
+              <a href="#features">
+               Physical Kiosk
+              </a>
+             </li>
+             <li>
+              <a href="#features">
+               Trade Processing
+              </a>
+             </li>
+             <li>
+              <a href="#features">
+               Price Conversion
+              </a>
+             </li>
+             <li>
+              <a href="#features">
+               Know Your Customer (KYC)
+               <span class="badge-link">
+                Offer
+               </span>
+              </a>
+             </li>
+             <li>
+              <a href="#features">
+               Custodianship
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- end col-3 -->
+         </div>
+         <!-- end row -->
+        </li>
+       </ul>
+      </li>
+      <li class="dropdown megamenu-fw">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Developers
+       </a>
+       <ul class="dropdown-menu megamenu-content" role="menu">
+        <li>
+         <div class="row">
+          <div class="col-menu col-md-3 col-lg-4">
+           <img alt="Wordpress Hosting" class="img-responsive animated fadeInLeft" src="images/other/ui.svg"/>
+          </div>
+          <!-- end col-3 -->
+          <div class="col-menu col-md-3 col-lg-4">
+           <h6 class="title">
+            <i class="fas fa-book">
+            </i>
+            EXPLORE
+           </h6>
+           <div class="content">
+            <ul class="menu-col">
+             <li>
+              <a href="#how-it-works">
+               Integrate Tokes Payments
+              </a>
+             </li>
+             <li>
+              <a href="#pricing-plans">
+               Guided Setup
+               <span class="badge-link">
+                NEW
+               </span>
+              </a>
+             </li>
+             <li>
+              <a href="#">
+               Webstore Integration
+              </a>
+             </li>
+             <li>
+              <a href="https://reli.cloud">
+               App Hosting on Reli
+               <span class="badge-link">
+                Offer
+               </span>
+              </a>
+             </li>
+             <li>
+              <a href="#">
+               Tokes Tokenomics
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- end col-3 -->
+          <div class="col-menu col-md-3 col-lg-4">
+           <h6 class="title">
+            <i class="fas fa-cube">
+            </i>
+            Tokes Ecosystem
+           </h6>
+           <div class="content">
+            <ul class="menu-col">
+             <li>
+              <a href="#tokenomics" id="tokesLink1">
+               Mint &amp; Burn Protocol
+              </a>
+             </li>
+             <li>
+              <a href="#tokenomics" id="tokesLink2">
+               Waves Blockchain
+              </a>
+             </li>
+             <li>
+              <a href="#tokenomics" id="cubedLink1">
+               Merchant App Ecosystem
+              </a>
+             </li>
+             <li>
+              <a id="cubedLink2">
+               Cubed™ Merchant Whitelabeling
+               <span class="badge-link">
+                Offer
+               </span>
+              </a>
+             </li>
+             <li>
+              <a href="#tokenomics" id="tokesLink3">
+               On-site Smart ATMs
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- end col-3 -->
+          <!-- end col-3 -->
+         </div>
+         <!-- end row -->
+        </li>
+       </ul>
+      </li>
+      <li class="dropdown">
+       <ul class="dropdown-menu">
+        <li>
+         <a href="domain.html">
+          Domain Page
+         </a>
+        </li>
+        <li>
+         <a href="ssl.html">
+          SSL Page
+         </a>
+        </li>
+        <li>
+         <a href="shared.html">
+          Shared Hosting
+         </a>
+        </li>
+        <li>
+         <a href="cloud.html">
+          Cloud Hosting
+         </a>
+        </li>
+        <li>
+         <a href="wordpress.html">
+          Wordpress Hosting
+         </a>
+        </li>
+        <li>
+         <a href="dedicated.html">
+          Dedicated Hosting
+         </a>
+        </li>
+        <li>
+         <a href="about.html">
+          About Us
+         </a>
+        </li>
+        <li>
+         <a href="contact.html">
+          Contact Us
+         </a>
+        </li>
+        <li>
+         <a href="error-404.html">
+          Error 404
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="dropdown">
+       <ul class="dropdown-menu">
+        <li>
+         <a href="pricing.html">
+          Pricing Tables
+         </a>
+        </li>
+        <li>
+         <a href="boxes.html">
+          Text Boxes
+         </a>
+        </li>
+        <li>
+         <a href="layouts.html">
+          Other Layouts
+         </a>
+        </li>
+        <li>
+         <a href="testimonials.html">
+          Testimonials
+         </a>
+        </li>
+        <li>
+         <a href="call-action.html">
+          Call to action
+         </a>
+        </li>
+        <li>
+         <a href="footers.html">
+          Footers
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a href="#pricing-plans">
+        Pricing
+        <span class="badge-link">
+         NEW
+        </span>
+       </a>
+      </li>
+      <li>
+       <a href="#contact">
+        Contact Us
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+   </div>
+   <!-- Start Side Menu -->
+   <div class="side">
+    <a class="close-side" href="#">
+     <i class="fa fa-times">
+     </i>
+    </a>
+    <div class="widget">
+     <h6 class="title">
+      About Us
+     </h6>
+     <p>
+      We produce a number of blockchain focused products and services for payment processing, supply chain visibility, and DevOps infrastructure. We support the bleeding edge of open source technology to provide solutions for any industry vertical.
+     </p>
+    </div>
+    <div class="widget">
+     <h6 class="title">
+      Contact Us
+     </h6>
+     <ul class="link">
+      <li>
+       <i class="fa fa-envelope">
+       </i>
+       contact@tokes.io
+      </li>
+      <li>
+       <i class="fa fa-phone">
+       </i>
+       1 (800) 201-1589
+      </li>
+      <!--<li><a href="#"><i class="fa fa-comments"></i>Livechat</a></li>-->
+     </ul>
+    </div>
+    <div class="widget">
+     <h6 class="title">
+      Social Pages
+     </h6>
+     <div class="social-links">
+      <a href="https://www.facebook.com/multichainventures">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a href="https://twitter.com/Multichain_Vent">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+      <a href="https://www.instagram.com/multichainventures/">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a href="https://t.me/multichainventures">
+       <i class="fab fa-telegram-plane">
+       </i>
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- End Side Menu -->
+  </nav>
+  <!-- Navbar Content ends here -->
+  <!-- Home Page Carousel -->
+  <div class="home-carousel">
+   <!-- Left sidebar -->
+   <div class="left-sidebar">
+    <div class="contact-links link-style">
+     <a data-target="#myModal" data-toggle="modal">
+      <i class="fas fa-phone">
+      </i>
+     </a>
+     <a data-target="#myModal" data-toggle="modal">
+      <i class="far fa-envelope-open">
+      </i>
+     </a>
+     <a data-target="#myModal" data-toggle="modal">
+      <i class="far fa-comments">
+      </i>
+      <div class="notification">
+       +
+      </div>
+     </a>
+    </div>
+    <div class="sidebar-socials link-style">
+     <a href="https://www.facebook.com/multichainventures">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a href="https://twitter.com/Multichain_Vent">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+     <a href="https://www.instagram.com/multichainventures/">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a href="https://t.me/multichainventures">
+      <i class="fab fa-telegram-plane">
+      </i>
+     </a>
+    </div>
+   </div>
+   <!-- MODAL  -->
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header">
+       <button class="close" data-dismiss="modal" type="button">
+        ×
+       </button>
+       <h4 class="modal-title">
+        Please feel free to contact us
+       </h4>
+      </div>
+      <div class="modal-body">
+       <div class="modal-contact">
+        <i class="fa fa-phone">
+        </i>
+        <h4>
+         1 (800) 201-1589
+        </h4>
+       </div>
+       <div class="modal-contact">
+        <i class="fa fa-envelope">
+        </i>
+        <h4>
+         contact@tokes.io
+        </h4>
+       </div>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-blue btn-small" data-dismiss="modal" type="button">
+        Close
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- end of modal -->
+   <!-- Left Sidebar ends here -->
+   <div class="custom-width">
+    <div class="row">
+     <div class="tab-content">
+      <div class="tab-pane fade in active" id="wordpress">
+       <div class="col-sm-1">
+       </div>
+       <div class="col-sm-7 col-lg-6">
+        <div class="text-container">
+         <div class="home-title animated fadeInLeft">
+          <h2>
+           Accept Cryptocurrency
+          </h2>
+          <h4 class="animation-text">
+           Bitcoin,  Tokes, Altcoins, KYC/AML Compliance
+          </h4>
+          <p>
+           Integrate crypto payments into your software through our Payments API.
+           <br/>
+           Free setup and only a
+           <span class="green-color">
+            0.25% fee
+           </span>
+           per transaction!
+           <br/>
+          </p>
+          <p>
+          </p>
+          <p>
+           Fully Compliant KYC/AML Infrastructure.
+          </p>
+         </div>
+         <div class="tabs-switcher animated fadeInUp">
+          <ul class="nav nav-tabs">
+           <li>
+            <a class="green-color" href="https://documenter.getpostman.com/view/3333316/RVu2nqbn?version=latest">
+             View API Documentation
+            </a>
+           </li>
+           <li>
+            <a href="#howitTab" id="howitLink">
+             How it Works
+            </a>
+           </li>
+           <li>
+            <a href="#kycTab1" id="kycLink1">
+             KYC &amp; Custody
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <img alt="" class="img-absolute" src="images/png-images/world2.png"/>
+       </div>
+       <div class="col-sm-4">
+        <h4 class="padding-bottom10 green-color padding-top10">
+         <strong>
+          <i class="fa fa-coins">
+          </i>
+          ACCEPT CRYPTO PAYMENTS NOW
+         </strong>
+        </h4>
+        <form action="javascript:goToRegistration()" id="registration-form">
+         <div class="messages">
+         </div>
+         <div class="form-group" data-aos="fade-up">
+          <input class="form-control" data-error="Valid email is required" id="emailRegistration" name="email" placeholder="Your Email*" required="required" type="email"/>
+         </div>
+         <div class="form-group form_left" data-aos="fade-up" data-aos-delay="100">
+          <div class="help-block with-errors">
+          </div>
+         </div>
+         <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+         </div>
+         <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+          <div class="help-block with-errors">
+          </div>
+          <br/>
+          <button class="btn btn-green btn-large center-block bold-text" style="width:80%;" type="submit">
+           <span class="fa fa-sign-in-alt">
+           </span>
+           Register Now
+          </button>
+          <p class="text-center" style="color:white; padding:10px 0px 13px 0px">
+           or sign up with
+          </p>
+          <button class="btn btn-large center-block btn-blue" onclick="goToRegistration()" style="width:80%;">
+           <span class="fab fa-google">
+           </span>
+           <span class="fab fa-facebook-f">
+           </span>
+           <span class="fab fa-github-alt">
+           </span>
+          </button>
+         </div>
+        </form>
+       </div>
+      </div>
+      <div class="tab-pane" id="cloud">
+       <div class="col-sm-6">
+        <div class="text-container">
+         <div class="home-title animated fadeInLeft">
+          <h2>
+           Cloud Computing Services
+          </h2>
+          <h4 class="animation-text">
+           Starting at $19.99/monthly
+          </h4>
+          <p>
+           It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                        that it a more-or-less normal point of using Lorem Ipsum.
+          </p>
+          <div class="buttons">
+           <a class="btn btn-medium btn-green" href="#">
+            Start a free trial
+           </a>
+           <p>
+            *No Credit Card Rquired
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="img-container">
+         <img alt="" class="img-responsive animated fadeInRight" src="images/png-images/green-energy.png"/>
+        </div>
+       </div>
+      </div>
+      <div class="tab-pane fade" id="dedicated">
+       <div class="col-sm-6">
+        <div class="text-container">
+         <div class="home-title animated fadeInLeft">
+          <h2>
+           Business Shared Hosting
+          </h2>
+          <h4 class="animation-text">
+           Starting at $19.99/monthly
+          </h4>
+          <p>
+           It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                        that it a more-or-less normal point of using Lorem Ipsum.
+          </p>
+          <div class="buttons">
+           <a class="btn btn-medium btn-green" href="#">
+            Start a free trial
+           </a>
+           <p>
+            *No Credit Card Rquired
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="img-container">
+         <img alt="" class="img-responsive animated fadeInRight" src="images/png-images/home-carousel.png"/>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-12">
+      </div>
+     </div>
+    </div>
+   </div>
+   <a name="api-features">
+   </a>
+  </div>
+  <!-- Home Page Carousel -->
+  <!-- Separated Section -->
+  <div class="dual-section lighter-bg padding-top50 padding-bottom50">
+   <div class="custom-width">
+    <div class="row">
+     <div class="main-title title-white text-center">
+      <h2>
+       Tokes Payments API Features
+      </h2>
+      <p>
+       Quickly accept all major forms of cryptocurrency in whatever software package you need. Web, mobile, or other types of merchant software can be integrated rapidly.
+      </p>
+     </div>
+     <div class="col-sm-6">
+      <div class="left-content">
+       <div class="features">
+        <i class="fa fa-shopping-cart pull-left" data-aos="zoom-in">
+        </i>
+        <div class="text">
+         <h4>
+          Full Access to Crypto Payments API
+         </h4>
+         <p>
+          Easy to integrate into any type of app. Web, mobile, or other merchant software packages are all compatible using Tokes Payments API.
+         </p>
+        </div>
+       </div>
+       <div class="features">
+        <i class="fa fa-coins pull-left" data-aos="zoom-in" data-aos-delay="100">
+        </i>
+        <div class="text">
+         <h4>
+          Accept Bitcoin,  Tokes, and Many Altcoins
+         </h4>
+         <p>
+          Instantly begin accepting all major cryptocurrencies within your merchant software package.
+         </p>
+        </div>
+       </div>
+       <div class="features">
+        <i class="fa fa-shopping-bag pull-left" data-aos="zoom-in" data-aos-delay="200">
+        </i>
+        <div class="text">
+         <h4>
+          Active Merchant Software Point-of-Sale &amp; More...
+         </h4>
+         <p>
+          Tokes Payments API is at the backbone of several first-party developed merchant applications. For more information about Cubed™
+          <a class="green-color" href="https://cubedpay.io" target="_blank">
+           Click Here
+          </a>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-6">
+      <div class="right-content">
+       <div class="features">
+        <i class="fa fa-money-bill-wave pull-left" data-aos="zoom-in">
+        </i>
+        <div class="text">
+         <h4>
+          Trade Processing &amp; Price Conversion
+         </h4>
+         <p>
+          Trade Processing &amp; Price Conversion is built-in on all supported cryptocurrencies.  This allows security and stability over market volatility.
+         </p>
+        </div>
+       </div>
+       <div class="features">
+        <i class="fa fa-rocket pull-left" data-aos="zoom-in" data-aos-delay="100">
+        </i>
+        <div class="text">
+         <h4>
+          KYC/AML &amp; Custodianship
+         </h4>
+         <p>
+          Know Your Customer(KYC) &amp; Anti-Money Laundering(AML) Compliance is paramount for legal money handling and is fully covered in Tokes Payments.
+         </p>
+        </div>
+       </div>
+       <div class="features">
+        <i class="fa fa-shield-alt pull-left" data-aos="zoom-in" data-aos-delay="200">
+        </i>
+        <div class="text">
+         <h4>
+          Physical Kiosk
+         </h4>
+         <p>
+          Expand your customer's reach and ease of access to cryptocurrency by using a physical kiosk to accept cryptocurrencies and process orders.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <a name="pricing-plans">
+   </a>
+  </div>
+  <!-- Separated Section ends here-->
+  <!-- Pricing Tables -->
+  <div class="pricing-tables padding-top50 padding-bottom50">
+   <div class="custom-width">
+    <div class="row">
+     <div class="main-title text-center">
+      <h2>
+       Tokes Payments API Pricing Plans
+      </h2>
+      <p>
+       Our premium plan provides a guide to help you through the setup process and ongoing technical support for your team.
+      </p>
+     </div>
+     <div class="col-xs-12 col-lg-1 col-md-1 col-sm-3">
+     </div>
+     <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+      <div class="price green-bg mobile-margin-top">
+       0.25% fee
+      </div>
+      <div class="table">
+       <div class="table-img">
+        <img alt="Wordpress Hosting" class="img-center img-responsive" data-aos="fade-up" data-aos-delay="100" src="images/other/plan-silvertrophy.svg"/>
+       </div>
+       <div class="table-content">
+        <h4>
+         FREE API Only Plan
+        </h4>
+        <p>
+         Free API Access when you setup and integrate on your own.
+        </p>
+        <div class="table-list">
+         <ul>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in">
+           </i>
+           Full API Access Key
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="50">
+           </i>
+           Ultra-Low Transaction Fee
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           Accept Cryptocurrencies
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           Auto-trade Processing
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           Price Conversion
+          </li>
+         </ul>
+        </div>
+        <div class="buttons">
+         <a class="btn btn-green btn-medium" href="#">
+          Register Now
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="price price-margin-top">
+       $1,750/month
+      </div>
+      <div class="table">
+       <div class="table-img">
+        <img alt="Wordpress Hosting" class="img-center img-responsive" data-aos="fade-up" data-aos-delay="200" src="images/other/plan-goldtrophy.svg"/>
+       </div>
+       <div class="table-content">
+        <h4>
+         Premium Plan
+        </h4>
+        <p>
+         Guided Setup with your software of choice.
+        </p>
+        <div class="table-list">
+         <ul>
+          <li class="green-color">
+           <i class="fa fa-plus" data-aos="zoom-in">
+           </i>
+           All FREE Plan Features
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="50">
+           </i>
+           Personal Developer Support
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           Integration Consultancy
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="150">
+           </i>
+           Full KYC/AML Compliance
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           Full Custodianship
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           Ongoing Maintenance
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           App Hosting via
+           <a class="green-color" href="https://reli.cloud">
+            Reli
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="buttons">
+         <a class="btn btn-green btn-medium" href="#">
+          Purchase Now
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="price price-margin-top">
+       Contact Us
+      </div>
+      <div class="table">
+       <div class="table-img">
+        <img alt="Wordpress Hosting" class="img-center img-responsive" data-aos="fade-up" data-aos-delay="200" src="images/other/plan-cubed.svg"/>
+       </div>
+       <div class="table-content">
+        <h4>
+         Cubed™ Package
+        </h4>
+        <p>
+         Powerful, User-friendly Merchant Software Package.
+        </p>
+        <div class="table-list">
+         <ul>
+          <li class="green-color">
+           <i class="fa fa-plus" data-aos="zoom-in">
+           </i>
+           All Premium Plan Features
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="50">
+           </i>
+           Point-of-Sale Physical Kiosk
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           Mobile Wallet on iOS &amp; Android
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="150">
+           </i>
+           App Hosting Platform via Reli
+          </li>
+          <li>
+           <i class="fa fa-plus" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           Whitelabeling Options
+          </li>
+         </ul>
+        </div>
+        <div class="buttons">
+         <a class="btn btn-green btn-medium" href="#contact">
+          Contact Us Now
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Pricing Tables content ends here -->
+  <!-- Domain Search section -->
+  <div class="search-domain">
+   <div class="custom-width">
+    <div class="row">
+     <div class="col-sm-5">
+      <div class="text">
+       <h4>
+        Accept Crypto Payments Easily
+       </h4>
+       <p>
+        Free setup and only a
+        <span class="green-color">
+         0.25%
+        </span>
+        fee. See our Premium Guided Setup Plan to ensure the easiest and most stable options for you.
+       </p>
+      </div>
+     </div>
+     <div class="col-sm-7">
+      <div class="domain-input">
+       <form action="javascript:goToRegistration()">
+        <div class="form-group">
+         <input class="form-control" id="subEmailRegistration" placeholder="Enter your email to get started..." style="padding-left:12px"/>
+         <button class="btn btn-domain" type="submit">
+          Register Now
+         </button>
+        </div>
+        <div class="ltds">
+         <p>
+          BTC LTC DASH WAVES TKS
+         </p>
+        </div>
+       </form>
+       <script>
+        function goToRegistration() {
+                                const email = $('#emailRegistration').val() || $('#subEmailRegistration').val();
+                                window.location.assign(`https://control-panel.payments.tokesplatform.org/login?emailRegistration=${email || 'sso'}`);
+                            }
+       </script>
+      </div>
+     </div>
+    </div>
+   </div>
+   <a name="how-it-works">
+   </a>
+   <a name="menu2">
+   </a>
+  </div>
+  <!-- Domain Search section ends here -->
+  <!-- Tab switcher -->
+  <div class="tabs padding-bottom30">
+   <div class="hosting-tabs">
+    <ul class="nav nav-tabs">
+     <li class="active">
+      <div class="arrow-down">
+       <div class="arrow-down-inner">
+       </div>
+      </div>
+      <a data-toggle="tab" href="#home" id="howitTab">
+       How It Works
+      </a>
+     </li>
+     <li>
+      <a data-toggle="tab" href="#menu1" id="cubedTab">
+       Cubed™ Point-of-Sale
+      </a>
+     </li>
+     <li>
+      <a data-toggle="tab" href="#menu2" id="kycTab">
+       KYC &amp; Custodianship
+      </a>
+     </li>
+     <li>
+      <a data-toggle="tab" href="#menu3" id="tokesTab">
+       Tokes (TKS)
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="custom-width">
+    <div class="row">
+     <div class="tab-content">
+      <div class="tab-pane in active" id="home">
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img alt="Wordpress Hosting" class="img-responsive animated fadeInLeft" src="images/other/howitworks.svg"/>
+       </div>
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="text animated fadeInRight">
+         <div class="tab-title">
+          <h3>
+           How it Works...
+          </h3>
+          <p>
+           Developers familiar with API Integrations will find the setup process straightforward. See the setup process below to get started now!
+          </p>
+         </div>
+         <div class="tab-lists">
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in">
+           </i>
+           <div class="text">
+            <h4>
+             Register to begin the FREE setup process
+            </h4>
+            <p>
+             <a class="green-color" href="#">
+              Click here to Register Now
+             </a>
+             and begin your integration for FREE.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           <div class="text">
+            <h4>
+             Receive an API Access Key
+            </h4>
+            <p>
+             Once registered, your API Key is granted immediately.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             Create API Queries  for crypto payments
+            </h4>
+            <p>
+             Code the queries from our
+             <a class="green-color" href="#">
+              API Documentation
+             </a>
+             to begin accepting cyrptocurrencies right away!
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="tab-pane" id="menu1">
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img alt="Wordpress Hosting" class="img-responsive animated fadeInLeft" src="images/other/cubed-devices-flat.png"/>
+       </div>
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="text animated fadeInRight">
+         <div class="tab-title">
+          <h3>
+           Cubed™ Merchant Services Platform
+          </h3>
+          <p>
+           Built for cryptocurrency from the ground up, Cubed™ offers a full range of merchant services and apps to get you transacting in crypto immediately.
+          </p>
+         </div>
+         <div class="tab-lists">
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in">
+           </i>
+           <div class="text">
+            <h4>
+             Point-of-Sale for Brick-and-Mortar &amp; eCommerce
+            </h4>
+            <p>
+             All of your storefronts are covered in person and on the web.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           <div class="text">
+            <h4>
+             Physical Kiosk &amp; Consumer Mobile Wallet
+            </h4>
+            <p>
+             Full convenience for consumers able to pay at a physical kiosk using the mobile wallet for iOS or Android.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             Whitelabeling Options Available
+            </h4>
+            <p>
+             Get your brand out there backed by powerful merchant software through whitelabeling with our
+             <a class="green-color" href="#pricing-plans">
+              Cubed™ Merchant Software Package.
+             </a>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="tab-pane" id="menu2">
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img alt="Wordpress Hosting" class="img-responsive animated fadeInLeft" src="images/other/kyc.svg"/>
+       </div>
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="text animated fadeInRight">
+         <div class="tab-title">
+          <h3>
+           Know Your Customer (KYC) &amp; Custody
+          </h3>
+          <p>
+           Take the guess work out of KYC/AML Compliance. Our system conforms to all required laws for all 50 US states and abroad.
+          </p>
+         </div>
+         <div class="tab-lists">
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in">
+           </i>
+           <div class="text">
+            <h4>
+             Full KYC Compliance
+            </h4>
+            <p>
+             Built in KYC user flow to ensure full legal compliance for all parties.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           <div class="text">
+            <h4>
+             Optional Custodianship
+            </h4>
+            <p>
+             Feel secure with cryptocurrency storage using our optional custody.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             Ongoing AML Compliance
+            </h4>
+            <p>
+             As long as you have an active account your transactions will be legal in all 50 US states and internationally.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="tab-pane" id="menu3">
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img alt="Wordpress Hosting" class="img-responsive animated fadeInLeft" src="images/other/mv-tokenomics.svg"/>
+       </div>
+       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="text animated fadeInRight">
+         <div class="tab-title">
+          <a name="tokenomics">
+          </a>
+          <h3>
+           Toke (TKS) and the Tokes Ecosystem
+          </h3>
+          <p>
+           Tokes(TKS) is the fundamental cryptocurrency that binds all of these products together. The ubiquituous reliance on Tokes creates a stable and thriving ecosystem.
+          </p>
+         </div>
+         <div class="tab-lists">
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in">
+           </i>
+           <div class="text">
+            <h4>
+             Tokenomics
+            </h4>
+            <p>
+             Receive discounts when paying and holding Tokes through the Tokes Loyalty Program. Mint &amp; Burn Protocols ensures the stability and establishes value for all merchants and customers.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="100">
+           </i>
+           <div class="text">
+            <h4>
+             Waves Blockchain
+            </h4>
+            <p>
+             Tokes is an asset of the Waves Blockchain. The Waves Blockchain is a state-of-the-art blockchain with instant transfers. Learn more about the
+             <a class="green-color" href="https://wavesplatform.com/" target="_blank">
+              Waves Platform
+             </a>
+             here.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             Mulitchain Ventures Merchant App Ecosystem
+            </h4>
+            <p>
+             Tokes is the root cryptocurrency in all Apps developed by Multichain Ventures. Learn more about
+             <a class="green-color" href="https://multichainventures.com/" target="_blank">
+              Multichain Ventures
+             </a>
+             here.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             EPCIS Compatible Blockchain
+            </h4>
+            <p>
+             EDEN Blockchain is an EPCIS compatible blockchain and inherently uses Tokes. Learn more about
+             <a class="green-color" href="https://eden.software/" target="_blank">
+              EDEN and EPCIS
+             </a>
+             here.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             Cubed™ Merchant Whitelabeling
+            </h4>
+            <p>
+             The Cubed™ Suite of Merchant Apps can be used in their default state or whitelabeled to suit your branding needs. Learn more about
+             <a class="green-color" href="https://cubedpay.io/" target="_blank">
+              Cubed™
+             </a>
+             here.
+            </p>
+           </div>
+          </div>
+          <div class="host-feature">
+           <i class="fa fa-check pull-left" data-aos="zoom-in" data-aos-delay="200">
+           </i>
+           <div class="text">
+            <h4>
+             On-site Smart ATMs
+            </h4>
+            <p>
+             Tokes is natively accessible to buy and sell through ATMs built by Vault Logic. Learn more about
+             <a class="green-color" href="https://vaultlogic.com/" target="_blank">
+              Vault Logic
+             </a>
+             here.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Tab Switcher ends here-->
+  <!-- Boxes style two -->
+  <div class="boxes-two lighter-bg padding-bottom50 padding-top50">
+   <div class="container">
+    <div class="row">
+     <div class="main-title text-center">
+      <h2>
+       Multi-tiered Crypto Options Available
+      </h2>
+      <p>
+       Tokes Payments provides all needed solutions for merchants and software developers seeking to integrate or accept cryptocurrencies.
+      </p>
+     </div>
+     <div class="col-sm-4">
+      <div class="box-container">
+       <div class="box-title">
+        <h4>
+         <i class="fa fa-plus">
+         </i>
+         API Integration Only
+        </h4>
+       </div>
+       <ul>
+        <li>
+         FREE API Access Key
+        </li>
+        <li>
+         Ultra-Low Transaction Fee - 0.25%
+        </li>
+        <li>
+         Accept Cryptocurrencies
+        </li>
+        <li>
+         Auto-trade Processing
+        </li>
+        <li>
+         Price Conversion
+        </li>
+       </ul>
+       <div class="buttons">
+        <a class="btn btn-green btn-small" href="#pricing-plans">
+         See offers
+         <i class="fa fa-long-arrow-alt-right">
+         </i>
+        </a>
+        <a class="btn btn-outline btn-small" href="how-it-works">
+         Read More
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4">
+      <div class="box-container">
+       <div class="box-title">
+        <h4>
+         <i class="fa fa-cloud">
+         </i>
+         Guided API Integration
+        </h4>
+       </div>
+       <ul>
+        <li>
+         All FREE Plan Features
+        </li>
+        <li>
+         Personal Developer Support
+        </li>
+        <li>
+         Integration Consultancy
+        </li>
+        <li>
+         Full KYC/AML Compliance
+        </li>
+        <li>
+         Full Custodianship
+        </li>
+       </ul>
+       <div class="buttons">
+        <a class="btn btn-green btn-small" href="#pricing-plans">
+         See offers
+         <i class="fa fa-long-arrow-alt-right">
+         </i>
+        </a>
+        <a class="btn btn-outline btn-small" href="#pricing-plans">
+         Read More
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-sm-4">
+      <div class="box-container">
+       <div class="box-title">
+        <h4>
+         <i class="fa fa-server">
+         </i>
+         Crypto-based Merchant App Suite
+        </h4>
+       </div>
+       <ul>
+        <li>
+         Cubed™ Merchant App Suite
+        </li>
+        <li>
+         Point-of-Sale Physical Kiosk
+        </li>
+        <li>
+         Mobile Wallet on iOS &amp; Android
+        </li>
+        <li>
+         Point-of-Sale &amp; eCommerce
+        </li>
+        <li>
+         Whitelabeling &amp; Hosting Available
+        </li>
+       </ul>
+       <div class="buttons">
+        <a class="btn btn-green btn-small" href="#pricing-plans">
+         See offers
+         <i class="fa fa-long-arrow-alt-right">
+         </i>
+        </a>
+        <a class="btn btn-outline btn-small" href="https://cubedpay.io" target="_blank">
+         Read More
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Boxes style two ends here -->
+  <!-- Boxes style one -->
+  <div class="boxes-one padding-top50 padding-bottom50">
+   <div class="custom-width">
+    <div class="main-title text-center">
+     <h2>
+      Cubed™ Merchant Apps &amp; Services
+     </h2>
+     <p>
+      Built for cryptocurrency from the ground up, Cubed™ offers a full range of merchant services and apps to get you transacting in crypto immediately.
+     </p>
+    </div>
+    <div class="row">
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="box">
+       <img alt="Hosting" class="img-responsive img-center" data-aos="zoom-in" src="images/other/pointofsale.svg"/>
+       <h4>
+        Cubed™ Point-of-Sale
+       </h4>
+       <p>
+        Accept cryptocurrency alongside conventional cash and credit payment options.
+       </p>
+       <a class="btn btn-green btn-small" href="https://cubedpay.io" target="_blank">
+        Get Cubed™
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="box">
+       <img alt="Hosting" class="img-responsive img-center" data-aos="zoom-in" data-aos-delay="100" src="images/other/wallet.svg"/>
+       <h4>
+        Cubed™ Consumer Wallet
+       </h4>
+       <p>
+        Cubed™ provides an easy onramp for user acquisition of digital currencies to their mobile wallet.
+       </p>
+       <a class="btn btn-green btn-small" href="https://cubedpay.io" target="_blank">
+        Get Cubed™
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="box">
+       <img alt="Hosting" class="img-responsive img-center" data-aos="zoom-in" data-aos-delay="200" src="images/other/kiosk.svg"/>
+       <h4>
+        Physical Kiosk
+       </h4>
+       <p>
+        Our software is compatible with typical kiosk hardware. iOS, Android and Desktop supported.
+       </p>
+       <a class="btn btn-green btn-small" href="https://cubedpay.io" target="_blank">
+        Get Cubed™
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="box">
+       <img alt="Hosting" class="img-responsive img-center" data-aos="zoom-in" data-aos-delay="300" src="images/other/whitelabel.svg"/>
+       <h4>
+        Whitelabeling Options
+       </h4>
+       <p>
+        We can build a white-label version for any of our software products for your business to deploy.
+       </p>
+       <a class="btn btn-green btn-small" href="https://cubedpay.io" target="_blank">
+        Get Cubed™
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Boxes style one ends here-->
+  <!-- section with image bg -->
+  <div class="img-section custom-width margin-top60 margin-bottom60">
+   <div class="row">
+    <div class="col-sm-8">
+     <div class="text">
+      <h2>
+       Need help? Contact our knowledgable support team
+      </h2>
+      <p>
+       For any questions you may have regarding clarification of the API documentation or regarding our pricing plans, do not hesitate to contact us directly with the form below. We are happy to hear from you and ready to help!
+      </p>
+      <a class="btn btn-blue btn-medium" href="#contact">
+       Contact us now
+       <i class="fas fa-long-arrow-alt-right">
+       </i>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- section with image bg ends here -->
+  <!-- Testimonials slider
+    <section class="testimonials lighter-bg" id="carousel">
+        <div class="custom-width">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="4000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-sm-4">
+                                    <div class="text-left">
+                                        <h2>What our clients are saying?</h2>
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable content of a page
+                                            when looking at its layout. </p>
+                                        <div class="buttons">
+                                            <a href="#" class="btn btn-small btn-green">Check out all
+                                                reviews <i class="fas fa-long-arrow-alt-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="profile-circle"><img src="images/other/testimonial1.jpg" class="img-responsive"
+                                            alt="">
+                                    </div>
+                                    <blockquote>
+                                        <p><i class="fa quote fa-quote-right fa-sm pull-left"></i>
+                                            <br>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis
+                                            nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos
+                                            eaque
+                                            molestias.<i class="fa quote fa-quote-right fa-sm "></i></p>
+                                        <small>www.domainname.com</small>
+                                    </blockquote>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="profile-circle"><img src="images/other/testimonial2.jpg" class="img-responsive"
+                                            alt="">
+                                    </div>
+                                    <blockquote>
+                                        <p><i class="fa quote fa-quote-right fa-sm pull-left"></i>
+                                            <br>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis
+                                            nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos
+                                            eaque
+                                            molestias.<i class="fa quote fa-quote-right fa-sm "></i></p>
+                                        <small>www.domainname.com</small>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-sm-4">
+                                    <div class="text-left">
+                                        <h2>What our clients are saying?</h2>
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable content of a page
+                                            when looking at its layout. </p>
+                                        <div class="buttons">
+                                            <a href="#" class="btn btn-small btn-green">Check out all
+                                                reviews <i class="fas fa-long-arrow-alt-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="profile-circle"><img src="images/other/testimonial1.jpg" class="img-responsive"
+                                            alt="">
+                                    </div>
+                                    <blockquote>
+                                        <p><i class="fa quote fa-quote-right fa-sm pull-left"></i>
+                                            <br>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis
+                                            nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos
+                                            eaque
+                                            molestias.<i class="fa quote fa-quote-right fa-sm "></i></p>
+                                        <small>www.domainname.com</small>
+                                    </blockquote>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="profile-circle"><img src="images/other/testimonial2.jpg" class="img-responsive"
+                                            alt="">
+                                    </div>
+                                    <blockquote>
+                                        <p><i class="fa quote fa-quote-right fa-sm pull-left"></i>
+                                            <br>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis
+                                            nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos
+                                            eaque
+                                            molestias.<i class="fa quote fa-quote-right fa-sm "></i></p>
+                                        <small>www.domainname.com</small>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  Testimonials slider ends here -->
+  <!-- Faq -->
+  <div class="faq padding-bottom50 padding-top50" style="background-color:#19233f">
+   <div class="custom-width">
+    <h3>
+     Frequently Aksed Questions
+    </h3>
+    <div class="accordion">
+     <div class="accordion-item">
+      <a>
+       What are some tips when choosing the right crypto package?
+      </a>
+      <div class="content">
+       <p>
+        If you are only looking for the API to integrate into your existing your software, then signup with the free plan and get started right away! If you want the easiest solution to have one of our experience developers to guide you through the setup and integration process, then choose our premium plan! If you don't have any software of your own and would like to license or whitelabel merchant software, then sign up for our Cubed™ package now!
+       </p>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <a>
+       Which cryptocurrencies are supported?
+      </a>
+      <div class="content">
+       <p>
+        Bitcoin, Tokes, Waves, Litecoin and Dash are all natively supported with many more on the way!
+       </p>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <a>
+       What is an API?
+      </a>
+      <div class="content">
+       <p>
+        API stands for Application Programming Interface. It is a set of functions and procedures allowing the creation of applications that access the features or data of an operating system, application, or other service. In this case our service is the Tokes Payments API that provides you with the ability to accept cryptocurrency payments.
+       </p>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <a>
+       How can I contact your technical team?
+      </a>
+      <div class="content">
+       <p>
+        Fill out the contact form above or contact us through email/phone below. We're ready to hear from you now!
+       </p>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <a>
+       Differences between Bitcoin and Altcoins?
+      </a>
+      <div class="content">
+       <p>
+        While Bitcoin is the most well-known cryptocurrency, altcoins with differing technology could be a better option for you. So, we are crypto-agnostic to allow support of cutting edge blockchain and cryptocurrency technology.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Faq ends here -->
+  <!-- Call to action -->
+  <div class="call-to-action cta-green">
+   <div class="custom-width">
+    <div class="row">
+     <div class="col-sm-6">
+      <h3>
+       Ready to Get Started? Register Now!
+      </h3>
+      <p>
+       Check out our FREE Plan to get started or get the Premium Plan to have all your development and merchant needs met immediately.
+      </p>
+     </div>
+     <div class="col-sm-6">
+      <div class="buttons">
+       <a class="btn btn-outline btn-large" href="#">
+        Register Now
+        <i class="fas fa-long-arrow-alt-right">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <a name="contact">
+   </a>
+  </div>
+  <!-- Call to action ends here -->
+  <!-- Dark Footer -->
+  <footer class="light-footer dark-footer">
+   <div class="custom-width">
+    <div class="row margin-bottom50">
+     <div class="main-title text-center">
+      <h2>
+       Contact Us
+      </h2>
+      <p>
+       We're ready to hear from you! Fill out the Contact Form below and someone from our team will respond right away!
+      </p>
+     </div>
+     <div>
+      <form action="javascript:submitContact()" id="contact-info-form">
+       <div class="form-group" data-aos="fade-up">
+        <input class="form-control name input-dark" data-error="Firstname is required" id="form_name" name="name" placeholder="Your First Name *" required="required" type="text"/>
+       </div>
+       <div class="form-group form_left" data-aos="fade-up" data-aos-delay="100">
+        <input class="form-control input-dark" data-error="Valid email is required" id="form_email" name="email" placeholder="Your Email *" required="required" type="email"/>
+        <div class="help-block with-errors">
+        </div>
+       </div>
+       <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+        <input class="form-control input-dark" id="form_web" name="name" placeholder="Your Website " type="text"/>
+       </div>
+       <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+        <textarea class="form-control input-dark" data-error="Please leave us a message.." id="form_message" name="message" placeholder="Message for Us *" required="required" rows="4"></textarea>
+        <div class="help-block with-errors">
+        </div>
+        <br/>
+        <button class="btn btn-green btn-large">
+         <span class="fa fa-envelope">
+         </span>
+         Send your
+                            Message
+        </button>
+       </div>
+       <div class="messages" id="form_notification">
+       </div>
+      </form>
+      <script>
+       function submitContact(e) {
+                        $.ajax({
+                            url:'https://formspree.io/xbjzjebq',
+                            method:'POST',
+                            data:{
+                                name: $('#form_name').val(),
+                                _replyto: $('#form_email').val(),
+                                website: $('#form_web').val(),
+                                message: $('#form_message').val(),
+                                source: 'Tokes Payments API Landing Page'
+                            },
+                            dataType:"json",
+                            error: () => {
+                                $('#form_notification').html("Something went wrong, try again later!")
+                            },
+                            success: () => {
+                                $('#form_name').val(''),
+                                $('#form_email').val(''),
+                                $('#form_web').val(''),
+                                $('#form_message').val(''),
+                                $('#form_notification').html("We've received the information you entered.  Thank you!")
+                            }	
+                        });
+                    }
+      </script>
+     </div>
+    </div>
+    <div class="row">
+     <div class="partners">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+       <img alt="" class="img-responsive" src="images/other/crypto.svg"/>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+       <img alt="" class="img-responsive" src="images/other/pricing.svg"/>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+       <img alt="" class="img-responsive" src="images/other/business.svg"/>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+       <img alt="" class="img-responsive" src="images/other/developers.svg"/>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+       <img alt="" class="img-responsive" src="images/other/contact.svg"/>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+       <img alt="" class="img-responsive" src="images/other/socialmedia.svg"/>
+      </div>
+     </div>
+     <div class="col-sm-2">
+      <h4>
+       CRYPTO Payments API
+      </h4>
+      <ul>
+       <li>
+        <a href="https://documenter.getpostman.com/view/3333316/RVu2nqbn?version=latest" target="_blank">
+         View API Documentation
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Register Account NOW
+        </a>
+       </li>
+       <li>
+        <a href="#features">
+         Accept Bitcoin, Tokes, Alts
+        </a>
+       </li>
+       <li>
+        <a href="#" id="cubedLink3">
+         Merchant Point-of-Sale
+        </a>
+       </li>
+       <li>
+        <a href="#" id="kycLink2">
+         KYC/AML Compliance
+        </a>
+       </li>
+       <li>
+        <a href="#" id="kycLink3">
+         Optional Custodianship
+        </a>
+       </li>
+       <li>
+        <a href="#features">
+         Trade Processing
+        </a>
+       </li>
+       <li>
+        <a href="#features">
+         Price Conversion
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-sm-2">
+      <h4>
+       Pricing Plans
+      </h4>
+      <ul>
+       <li>
+        <a href="#pricing-plans">
+         FREE API Only Plan
+        </a>
+       </li>
+       <li>
+        <a href="#pricing-plans">
+         Premium Plan
+        </a>
+       </li>
+       <li>
+        <a href="#pricing-plans">
+         Cubed™ Package
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-sm-2">
+      <h4>
+       Business Cases
+      </h4>
+      <ul>
+       <li>
+        <a href="https://cubedpay.io" target="_blank">
+         Cubedpay.io
+        </a>
+       </li>
+       <li>
+        <a href="https://tokesplatform.org" target="_blank">
+         Tokes Platform
+        </a>
+       </li>
+       <li>
+        <a href="https://multichainventures.com/index.html#wallet" target="_blank">
+         Multichain Ventures Wallet
+        </a>
+       </li>
+       <li>
+        <a href="https://tokes.io" target="_blank">
+         Tokes.io
+        </a>
+       </li>
+       <li>
+        <a href="https://cubedpay.io/#features-1" target="_blank">
+         eCommerce Web Plugin
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Shopify Integration
+         <span class="badge-link">
+          TBA
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-sm-2">
+      <h4>
+       Developers
+      </h4>
+      <ul>
+       <li>
+        <a href="https://documenter.getpostman.com/view/3333316/RVu2nqbn?version=latest" target="_blank">
+         Integrate Tokes Payments
+        </a>
+       </li>
+       <li>
+        <a href="#pricing-plans">
+         Dev Guided Setup
+        </a>
+       </li>
+       <li>
+        <a href="https://cubedpay.io/#features-1" target="_blank">
+         Webstore Integration
+        </a>
+       </li>
+       <li>
+        <a href="https://reli.cloud" target="_blank">
+         App Hosting via Reli
+        </a>
+       </li>
+       <li>
+        <a href="#" id="tokesLink4">
+         Tokes Tokenomics
+        </a>
+       </li>
+       <li>
+        <a href="#" id="tokesLink5">
+         On-site Smart ATMs
+        </a>
+       </li>
+       <li>
+        <a href="#" id="cubedLink4">
+         Software Whitelableing
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-sm-2">
+      <h4>
+       Contact InformatioN
+      </h4>
+      <div class="location-info">
+       <h5>
+        United States, US
+       </h5>
+       <h5>
+        Las Vegas, NV 89135
+       </h5>
+       <h5>
+        10845 Griffith Peak Dr. STE 2
+       </h5>
+       <h5>
+        <i class="fa fa-envelope">
+        </i>
+        contact@tokes.io
+       </h5>
+       <h5>
+        <i class="fa fa-phone">
+        </i>
+        1 (800) 201-1589
+       </h5>
+      </div>
+     </div>
+     <div class="col-sm-2">
+      <h4>
+       Social Media
+      </h4>
+      <div class="social-media">
+       <a href="https://www.facebook.com/multichainventures">
+        <i class="fab fa-facebook-f">
+        </i>
+       </a>
+       <a href="https://twitter.com/Multichain_Vent">
+        <i class="fab fa-twitter">
+        </i>
+       </a>
+       <a href="https://www.instagram.com/multichainventures/">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+       <a href="https://t.me/multichainventures">
+        <i class="fab fa-telegram-plane">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="col-sm-12">
+      <div class="quick-links">
+       <div class="qucik-links-title">
+        <h4>
+         Quick Links
+        </h4>
+       </div>
+       <ul>
+        <li>
+         <a href="https://documenter.getpostman.com/view/3333316/RVu2nqbn?version=latest" target="_blank">
+          API Documentation
+         </a>
+        </li>
+        <li>
+         <a href="https://cubedpay.io/" target="_blank">
+          Cubed™
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          Register NOW
+         </a>
+        </li>
+        <li>
+         <a href="#pricing-plans">
+          Pricing Plans
+         </a>
+        </li>
+        <li>
+         <a href="#" id="tokesLink6">
+          Tokes Tokenomics
+         </a>
+        </li>
+        <li>
+         <a href="https://multichain.ventures/" target="_blank">
+          Multichain Ventures
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- Daek Footer ends here -->
+  <!-- under footer -->
+  <div class="under-footer">
+   <div class="custom-width">
+    <div class="row">
+     <div class="col-sm-8">
+      <div class="under_footer_links">
+       <a href="https://multichain.ventures/" target="_blank">
+        About Us
+       </a>
+       <a href="#contact">
+        Contact Us
+       </a>
+       <a href="docs/mv-terms.pdf" target="_blank">
+        Terms of Services
+       </a>
+       <a href="docs/tks-privacy-notice.pdf" target="_blank">
+        Privacy Policy
+       </a>
+      </div>
+     </div>
+     <div class="col-sm-4 un_img">
+      <div class="col-sm-4">
+       <a href="https://multichain.ventures/" target="_blank">
+        <img alt="" class="img-responsive" src="images/logo/mv-footer.svg"/>
+       </a>
+      </div>
+      <div class="col-sm-4">
+       <a href="https://cubedpay.io/" target="_blank">
+        <img alt="" class="img-responsive" src="images/logo/cubed-footer.svg"/>
+       </a>
+      </div>
+      <div class="col-sm-4">
+       <a href="https://reli.cloud/" target="_blank">
+        <img alt="" class="img-responsive" src="images/logo/reli-footer.svg"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="under-footer2">
+   <div class="custom-width">
+    <div class="row">
+     <p>
+      Use of this site is subject to express terms of use. By using this site, you signify that you agree
+                to be bound by these terms.
+     </p>
+    </div>
+   </div>
+  </div>
+  <!-- under footer section ends here-->
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/jquery.js">
+  </script>
+  <!--Fake Loader -->
+  <script src="js/fakeLoader.min.js">
+  </script>
+  <!-- contact form -->
+  <script src="js/validator.js">
+  </script>
+  <script src="js/contact.js">
+  </script>
+  <!-- bootstrap-->
+  <script src="js/bootsnav.js">
+  </script>
+  <script src="js/bootstrap.min.js">
+  </script>
+  <!-- AOS animation -->
+  <script src="js/aos.js">
+  </script>
+  <!-- custom javascript file -->
+  <script src="js/custom.js">
+  </script>
+ </body>
+</html>

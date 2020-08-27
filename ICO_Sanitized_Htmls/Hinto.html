@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Hinto - be smart to bet smart
+  </title>
+  <meta content="Hinto使用大数据和人工智能以一种全新的方式读取体育数据。提示基于独特的算法，可确保您获胜的机会" name="description"/>
+  <meta content="Hinto - be smart to bet smart" property="og:title"/>
+  <meta content="Hinto使用大数据和人工智能以一种全新的方式读取体育数据。提示基于独特的算法，可确保您获胜的机会" property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://hinto.win/" property="og:url"/>
+  <meta content="https://hinto.win/hinto-meta.jpg" property="og:image"/>
+  <meta content="summary" property="twitter:card"/>
+  <meta content="@HintoWin" property="twitter:site"/>
+  <meta content="Hinto - be smart to bet smart" property="twitter:title"/>
+  <meta content="Hinto使用大数据和人工智能以一种全新的方式读取体育数据。提示基于独特的算法，可确保您获胜的机会" property="twitter:description"/>
+  <meta content="https://hinto.win/hinto-meta.jpg" property="twitter:image"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="2530150693965042" property="fb:app_id"/>
+  <meta content="#1cc775" name="theme-color"/>
+  <meta content="#1cc775" name="apple-mobile-web-app-status-bar"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="#1cc775" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="Live4You" name="apple-mobile-web-app-title"/>
+  <meta content="/app-icons/hinto-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#1cc775" name="msapplication-TileColor"/>
+  <link href="/app-icons/hinto-96x96.png" rel="apple-touch-icon" sizes="96x96"/>
+  <link href="/manifest.json" rel="manifest"/>
+  <link href="/favicon.svg" rel="icon"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+  <script src="https://js.stripe.com/v3/">
+  </script>
+  <link data-turbolinks-track="reload" href="/assets/application-dfd0d35d6537666a22d6161c208726e7fe253b1d00b7d46faecdf85191f15f0a.css" media="screen" rel="stylesheet"/>
+  <script data-turbolinks-track="reload" src="/assets/application-c4d098f3a15add060dd05abbd09353b3de79f8c1120fce57539666171e905afb.js">
+  </script>
+  <script>
+   I18n.defaultLocale = "en";
+  I18n.locale = "zh";
+  </script>
+  <script>
+   (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:1926811,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="rIec3aFbCp6oOoeNd4ijm2qNdpoX0WWZVpfYyAqfWhg9MIQj8K2N21tkwaK0Fnn6bcugw9zrkakHwubTD92w0g==" name="csrf-token"/>
+ </head>
+ <body data-stripe-key="pk_live_mbNMS3pQjCqA0M0lmFYlgBPJ00xYpU4aSB">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-108803536-3">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-108803536-3');
+  </script>
+  <div aria-hidden="true" aria-labelledby="modal_payments" class="modal payments-modal fade" id="modal_payments" role="dialog" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="payments-modal__header">
+      <img alt="Logo dark" src="/assets/redesign/common/logo_dark-19abfaaa6bc7a898a3b0736be6f4bf181a35255a112523ac38a666cee4d8d5db.svg"/>
+      <button class="payments-modal__header_exit" data-dismiss="modal" type="button">
+       <span aria-hidden="true">
+        ×
+       </span>
+      </button>
+     </div>
+     <div class="payments-modal__body">
+      <form accept-charset="UTF-8" action="/memberships" class="custom-form" data-remote="true" id="modal_payments_form" method="post">
+       <input name="utf8" type="hidden" value="✓"/>
+       <div class="row">
+        <div class="col-lg-6 pt-5 pr-5">
+         <div class="form-group mb-5">
+          <input class="form-control" id="payment-form_email" name="payment-form[email]" placeholder="电子邮件地址" required="required" type="email"/>
+          <label class="custom-label" for="payment-form_email" style="z-index: 11">
+           E-mail address
+          </label>
+         </div>
+         <div class="custom-control custom-checkbox mb-4">
+          <input name="payment-form[adult]" type="hidden" value="0"/>
+          <input class="custom-control-input" id="payment-form_adult" name="payment-form[adult]" required="required" type="checkbox" value="1"/>
+          <label class="custom-control-label" for="payment-form_adult">
+           * 我年满 18 岁了
+          </label>
+         </div>
+         <div class="custom-control custom-checkbox mb-4">
+          <input name="payment-form[rodo_accepted]" type="hidden" value="0"/>
+          <input class="custom-control-input" id="payment-form_rodo_accepted" name="payment-form[rodo_accepted]" required="required" type="checkbox" value="1"/>
+          <label class="custom-control-label" for="payment-form_rodo_accepted">
+           * 勾选该框后，即确认您已阅读和同意我们，
+           <a class="font-semi-bold" href="/terms.pdf" target="_blank">
+            的服务条款
+           </a>
+           且您已阅读
+           <a class="font-semi-bold" href="/privacy.pdf" target="_blank">
+            隐私政策
+           </a>
+          </label>
+         </div>
+         <div class="custom-control custom-checkbox mb-4">
+          <input name="payment-form[emails_accepted]" type="hidden" value="0"/>
+          <input class="custom-control-input" id="payment-form_emails_accepted" name="payment-form[emails_accepted]" type="checkbox" value="1"/>
+          <label class="custom-control-label" for="payment-form_emails_accepted">
+           勾选该框后，表示您愿意通过电子邮件接收关于 Hinto 的最新足球比赛更新信息
+          </label>
+         </div>
+         <p style="font-size: 10px">
+          个人数据管理员是 帕维尔·波伦斯基，他是位于华盛顿州华沙市（总部设在邮政编码ul。的Space Digital Group的总部）的所有者。 Czarodzieja 16，03-116，KRS：0000697174，NIP：5242840752，REGON：368437335。收集到的数据是为了向用户提供Hinto网站的服务，如果同意新闻通讯，则发送电子邮件更新以及Hinto网站上提供的最新足球比赛技巧。阅读我们的
+          <a href="/privacy.pdf" target="_blank">
+           隐私政策
+          </a>
+          以了解我们如何保护和管理您的数据。
+         </p>
+        </div>
+        <input id="selected-plan" name="payment-form[selected-plan]" type="hidden" value=""/>
+        <div class="col-lg-6 payments-modal__methods mx-auto ml-xl-auto mt-4 mt-lg-0">
+         <h2 class="payments-modal__methods_title">
+          选择付款方式
+         </h2>
+         <div>
+          <input id="google_pay" name="payment-form[payment_method]" type="radio" value="stripe"/>
+          <label for="google_pay">
+           <span class="payments-modal__methods_name">
+            Google Pay
+           </span>
+           <img alt="Gpay" class="payments-modal__methods_logo" src="/assets/redesign/payment-methods/gpay-93a16c9c6584c11d23fe1e9482350e1a8436513361f789e239bf9afcb3bc4c39.png"/>
+          </label>
+         </div>
+         <div>
+          <input id="blik" name="payment-form[payment_method]" type="radio" value="tpay"/>
+          <label for="blik">
+           <span class="payments-modal__methods_name">
+            Blik
+           </span>
+           <img alt="Blik" class="payments-modal__methods_logo" src="/assets/redesign/payment-methods/blik-f58fa351ae3de8ca8f4c1a0f42bcda904bb1f790669eddc6407909c2684a21fe.png"/>
+          </label>
+         </div>
+         <div class="disabled-payment">
+          <input id="skrill" name="payment-form[payment_method]" type="radio" value="skrill"/>
+          <label for="skrill">
+           <span class="payments-modal__methods_name">
+            Skrill
+           </span>
+           <img alt="Skrill" class="payments-modal__methods_logo" src="/assets/redesign/payment-methods/skrill-370af3023dfdfdcfafde847c0a26d0815ba930996589f738630a92353dad810a.png"/>
+          </label>
+         </div>
+         <div>
+          <input id="stripe" name="payment-form[payment_method]" type="radio" value="stripe"/>
+          <label for="stripe">
+           <span class="payments-modal__methods_name">
+            Stripe
+           </span>
+           <img alt="Stripe" class="payments-modal__methods_logo" src="/assets/redesign/payment-methods/stripe-b83e05dc0464d04ccb38b051895e661dc81a76ca004a5db31bba770879134a79.png"/>
+          </label>
+         </div>
+         <div>
+          <input id="paypal" name="payment-form[payment_method]" type="radio" value="tpay"/>
+          <label for="paypal">
+           <span class="payments-modal__methods_name">
+            Paypal
+           </span>
+           <img alt="Paypal" class="payments-modal__methods_logo" src="/assets/redesign/payment-methods/paypal-dc0efd86451b6bf4d0c0db3639eced90d1a4ad169b2a5dda53e229171ec12e43.png"/>
+          </label>
+         </div>
+         <div>
+          <input id="transfer_online" name="payment-form[payment_method]" type="radio" value="tpay"/>
+          <label for="transfer_online">
+           <span class="payments-modal__methods_name">
+            Transfer online
+           </span>
+          </label>
+         </div>
+        </div>
+       </div>
+       <button class="btn-secondary--2 d-block mx-auto mt-5" data-disable-with='&lt;div class="spinner"&gt;&lt;/div&gt;' type="submit">
+        现在购买
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <nav class="navbar">
+   <div class="container--1400 px-0">
+    <div class="d-flex align-items-center flex-wrap w-100">
+     <a class="navbar__brand" href="/">
+      <img alt="Logo white" src="/assets/redesign/common/logo_white-4032ff5c83b98c992922bf03e11b051015baf535aae24938c98de04f5eff9bea.svg"/>
+     </a>
+     <button class="navbar__toggler navbar__toggler--slider" data-target="#sidebar" type="button">
+      <span class="navbar__toggler_box">
+       <span class="navbar__toggler_box__inner">
+       </span>
+      </span>
+     </button>
+     <ul class="navbar__list ml-auto" id="nav">
+      <li class="navbar__list_item d-xl-none">
+       <a class="navbar__list_link mb-5" href="/">
+        <img alt="Logo white" src="/assets/redesign/common/logo_white-4032ff5c83b98c992922bf03e11b051015baf535aae24938c98de04f5eff9bea.svg"/>
+       </a>
+      </li>
+      <li class="active navbar__list_item">
+       <a class="navbar__list_link" href="/">
+        开始
+       </a>
+      </li>
+      <li class="navbar__list_item">
+       <a class="navbar__list_link" href="/how-it-works">
+        怎么运行的
+       </a>
+      </li>
+      <li class="navbar__list_item">
+       <span class="navbar__list_item--highlight">
+        新
+       </span>
+       <a class="navbar__list_link" href="/buy-token">
+        购买代币
+       </a>
+      </li>
+      <li class="navbar__list_item">
+       <a class="navbar__list_link" href="/team">
+        球队
+       </a>
+      </li>
+      <li class="navbar__list_item">
+       <a class="navbar__list_link" href="/blog">
+        博客
+       </a>
+      </li>
+      <li class="navbar__list_item order-last mt-4 mt-xl-0">
+       <a class="navbar__list_link btn-info" href="/users/sign_in">
+        注册
+       </a>
+      </li>
+      <li class="language-toggle navbar__list_item order-xl-last" id="language_toggle">
+       <span class="language-toggle__lang">
+        ZH
+        <span class="icon-chevron-down ml-1">
+        </span>
+       </span>
+       <ul class="language-dropdown" id="language_dropdown">
+        <li class="language-dropdown__item">
+         <a class="language-dropdown__link" href="/?locale=en">
+          <img alt="United Kingdom" class="language-dropdown__flag" src="/assets/redesign/icons/united-kingdom-00b6fc7a3ab3ecdc32a36aeda7fdf1086ba0785ee31f6219f7fbdc0107d7600f.png"/>
+          English
+         </a>
+        </li>
+        <li class="language-dropdown__item">
+         <a class="language-dropdown__link" href="/?locale=ru">
+          <img alt="Russia" class="language-dropdown__flag" src="/assets/redesign/icons/russia-b6b495b5ea65e992bae1c8b574dbbd124ddf92bdf3f1a550d43fe28d2830dec2.png"/>
+          Russian
+         </a>
+        </li>
+        <li class="active language-dropdown__item">
+         <a class="language-dropdown__link" href="/?locale=zh">
+          <img alt="China" class="language-dropdown__flag" src="/assets/redesign/icons/china-839cbcc5e6162b2ba421d32891f43fb589d99781aadc412f11c3708913fd7941.png"/>
+          Chinese
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <div class="overlay">
+  </div>
+  <main class="main">
+   <img alt="Background mask" class="main__background_mask" src="/assets/redesign/homepage/background-mask-255387bc4f9ac57a0a36aa1e76801e4005e8d01f58279b7a6adaf91e3fbcc923.svg"/>
+   <div>
+    <h1 class="main__title text-center">
+     我们告诉你
+     <br/>
+     <strong>
+      如何下注。
+     </strong>
+    </h1>
+    <p class="main__subtitle text-center">
+     Hinto平台通过遵循生成的提示帮助您每月赚钱。
+    </p>
+   </div>
+   <div class="main__cta">
+    <a href="/users/sign_up">
+     <button class="btn-primary mx-2 mb-3">
+      注册
+     </button>
+    </a>
+    <a href="/users/sign_in">
+     <button class="btn-primary--outline mx-2 mb-3">
+      注册
+     </button>
+    </a>
+   </div>
+  </main>
+  <div class="overview">
+   <div class="overview__left">
+    <div class="hint">
+     一日免费小费
+     <span class="icon-arrow-curve">
+     </span>
+    </div>
+    <div class="free-tip order-lg-first">
+     <div class="match__league">
+      <img alt="Download" src="/uploads/tournament_template/photo/43/download.png"/>
+     </div>
+     <div class="match__data">
+      <span class="match__data_highlight">
+      </span>
+      <div class="match__data_team">
+       <div class="d-flex align-items-center">
+        <img alt="Small 8558" class="match__data_team_logo" src="/uploads/team/photo/208/small_8558.png"/>
+        <span class="match__data_team_name">
+         Espanyol
+        </span>
+       </div>
+       <div class="match__data_team_score">
+        0
+       </div>
+      </div>
+      <div class="match__data_team">
+       <div class="d-flex align-items-center">
+        <img alt="Small 9910" class="match__data_team_logo" src="/uploads/team/photo/243/small_9910.png"/>
+        <span class="match__data_team_name">
+         Celta Vigo
+        </span>
+       </div>
+       <div class="match__data_team_score">
+        0
+       </div>
+      </div>
+     </div>
+     <div class="d-block failed match__bet mb-2 mt-4 mx-auto">
+      over 1,5
+     </div>
+     <div class="match__location mt-3">
+      <span class="icon-location mr-1">
+      </span>
+      <span class="match__location_stadium">
+       <strong class="font-semi-bold">
+        RCDE Stadium
+       </strong>
+      </span>
+     </div>
+    </div>
+    <div class="blockchain">
+     <div class="blockchain__logo">
+      <span class="icon-blockchain">
+      </span>
+     </div>
+     <p class="blockchain__caption">
+      证明
+      <br/>
+      <strong>
+       区块链
+      </strong>
+     </p>
+     <a class="blockchain__link" href="https://blockscout.com/poa/core/address/0x2aba88B4F87d45F9582EC4eeC28998218A527590/transactions">
+      <span class="icon-arrow-right-bold">
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="overview__middle d-none d-xl-block">
+    <img alt="Dashboard" src="/assets/redesign/homepage/dashboard-2503fa52faa36856b93ec737f0b501a4f8ebc232dc1fcda2e962c5d955c8c017.svg"/>
+   </div>
+   <div class="overview__right last-month-stats">
+    <dl class="mb-4 px-4">
+     <dt class="font-normal mb-3">
+      利润统计
+     </dt>
+     <dd class="font-bold color-black">
+      八月 2020
+     </dd>
+    </dl>
+    <dl class="mb-4 px-4">
+     <dt class="font-normal mb-3">
+      提示数
+     </dt>
+     <dd class="font-bold color-black">
+      1
+     </dd>
+    </dl>
+    <dl class="mb-4 px-4">
+     <dt class="font-normal mb-3">
+      上个月获利
+     </dt>
+     <dd class="font-bold color-black">
+      0%
+     </dd>
+    </dl>
+    <dl class="mb-4 px-4">
+     <dt class="font-normal mb-3">
+      上个月的利润
+     </dt>
+     <dd class="color-black">
+      <span class="font-bold color-green">
+       0
+      </span>
+      单位
+     </dd>
+    </dl>
+    <canvas height="200px" id="chart_last_month" width="200px">
+    </canvas>
+   </div>
+  </div>
+  <script>
+   var accountBalanceProfitMobile = [2000, 2245.2, 2416.1, 2737.6, 2802.7, 2820.3, 2982.8, 2915.2, 2915.2, 3058.7, 3175.1, 3267.3, 3267.3, 3417.3]
+  </script>
+  <section class="report section-padding pt-0">
+   <div class="container--1400">
+    <div class="position-relative text-center">
+     <h2 class="section__title">
+      利润报告
+     </h2>
+     <h3 class="section__subtitle">
+      我们就是这样做的
+     </h3>
+    </div>
+    <div class="report-stats">
+     <p class="text-center color-black">
+      我們開始遊戲的數量
+     </p>
+     <p class="font-bold text-center color-black">
+      首付款：2000
+      <span class="font-normal">
+       (£)
+      </span>
+     </p>
+     <ul class="report-stats__list">
+      <li class="report-stats__list_tile">
+       <span class="point-lime">
+       </span>
+       <p>
+        提示
+       </p>
+       <span class="font-bold">
+        827
+       </span>
+      </li>
+      <li class="report-stats__list_tile">
+       <span class="point-mint">
+       </span>
+       <p>
+        平均每月利润
+       </p>
+       <span class="font-bold">
+        13.6%
+       </span>
+      </li>
+      <li class="report-stats__list_tile">
+       <span class="point-blue">
+       </span>
+       <p>
+        年度利润百分比
+       </p>
+       <span class="font-bold">
+        163.4%
+       </span>
+      </li>
+      <li class="report-stats__list_tile">
+       <span class="point-purple">
+       </span>
+       <p>
+        年收益
+       </p>
+       <span class="font-bold">
+        1267.3
+       </span>
+      </li>
+     </ul>
+    </div>
+    <div class="chart-wrapper">
+     <canvas class="w-100" id="chart_annual_profit">
+     </canvas>
+     <div class="chartjs-tooltip" id="chartjs_tooltip">
+      <div class="chartjs-tooltip__title">
+       01 3月 2020 - 31 3月 2020
+      </div>
+      <div class="chartjs-tooltip__content">
+       <ul class="data-list">
+        <li class="data-list__item">
+         <div>
+          <span class="point-lime">
+          </span>
+          <span class="data-list__item_title">
+           每月获利
+          </span>
+         </div>
+         <div>
+          <span class="icon-chevron-up">
+          </span>
+          +
+-67.60
+         </div>
+        </li>
+        <li class="data-list__item">
+         <div>
+          <span class="point-orange">
+          </span>
+          <span class="data-list__item_title">
+           投资
+          </span>
+         </div>
+         <div>
+          <span>
+          </span>
+          + 2000,00
+         </div>
+        </li>
+        <li class="data-list__item">
+         <div>
+          <span class="point-green">
+          </span>
+          <span class="data-list__item_title">
+           账户余额
+          </span>
+         </div>
+         <div class="font-bold">
+          <span>
+           <span class="icon-chevron-up">
+           </span>
+           2875.20
+          </span>
+         </div>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <span class="chartjs-tooltip__arrow" id="chartjs_tooltip_arrow">
+     </span>
+     <div class="percentage-rate">
+      <h5 class="percentage-rate__title">
+       月利润
+      </h5>
+      <span class="percentage-rate__number" id="percentage_rate">
+       -3,4
+      </span>
+      <span class="percentage-rate__percent">
+       %
+      </span>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script>
+   var toolTipTitles = ["初始状态", "01 9月 2019 - 30 9月 2019", "01 10月 2019 - 31 10月 2019", "01 11月 2019 - 30 11月 2019", "01 12月 2019 - 31 12月 2019", "01 1月 2020 - 31 1月 2020", "01 2月 2020 - 29 2月 2020", "01 3月 2020 - 31 3月 2020", "01 4月 2020 - 30 4月 2020", "01 5月 2020 - 31 5月 2020", "01 6月 2020 - 30 6月 2020", "01 7月 2020 - 31 7月 2020", "01 8月 2020 - 31 8月 2020"]
+  var monthlyProfitPercentages = ["", "12,3", "8,5", "16,1", "3,3", "0,9", "8,1", "-3,4", "0", "7,2", "5,8", "4,6", "0"]
+  var dataLabels = ["09.2019", "10.2019", "11.2019", "12.2019", "01.2020", "02.2020", "03.2020", "04.2020", "05.2020", "06.2020", "07.2020", "08.2020", "09.2020"]
+  var accountBalance = [2000, 2205.2, 2376.1, 2697.6, 2762.7, 2780.3, 2942.8, 2875.2, 2875.2, 3018.7, 3135.1, 3227.3, 3227.3]
+  var maxChart = 4000
+  var profitMonthly = "每月获利"
+  var investment = "投资"
+  var accountsBalance = "账户余额"
+  </script>
+  <section class="section pricing">
+   <div class="container--1400 py-5">
+    <div class="position-relative text-center">
+     <h2 class="section__title d-none d-xl-inline-block">
+      选择您的保费
+     </h2>
+     <h2 class="section__title d-xl-none">
+      计划和定价
+     </h2>
+     <h3 class="section__subtitle">
+      买最好的计划
+     </h3>
+    </div>
+    <p class="text-center">
+     选择适合您的计划。
+    </p>
+    <p class="text-center">
+     您可随时更改计划。
+    </p>
+    <div class="switch">
+     <div class="hint">
+      选择你的
+      <br/>
+      付款方法
+      <br/>
+      <img alt="Arrow curved" src="/assets/redesign/icons/arrow-curved-5cb6a5e089c83156b2b879d3536087d4421a4d16c2345a1a2e03d705d513434c.svg"/>
+     </div>
+     <span class="switch__highlight">
+     </span>
+     <input checked="" id="stripe_method" name="payment_method" type="radio"/>
+     <label class="switch__method" for="stripe_method">
+      标准
+     </label>
+     <input id="coxi_method" name="payment_method" type="radio"/>
+     <label class="switch__method" for="coxi_method">
+      Coxi pay
+     </label>
+    </div>
+    <div class="pricing-wrapper">
+     <div class="owl-carousel pricing-carousel" id="pricing">
+      <div class="pricing-plan">
+       <div class="pricing-plan__header">
+        <p class="pricing-plan__header_title">
+         标准
+        </p>
+        <p class="pricing-plan__header_price">
+         <span class="pricing-plan__header_price_currency">
+          £
+         </span>
+         <span class="current" data-payment-method="stripe">
+          19.99
+         </span>
+         <span data-payment-method="coxi">
+          9.99
+         </span>
+        </p>
+        <p class="pricing-plan__header_caption">
+         /每月（含增值税）
+        </p>
+        <p class="pricing-plan__header_token">
+         Hinto 令牌
+         <strong>
+          (9.99 GBP)
+         </strong>
+        </p>
+       </div>
+       <div class="pricing-plan__body">
+        <ul class="pricing-plan__benefits">
+         <li class="pricing-plan__benefits_item">
+          5个联赛
+         </li>
+         <li class="pricing-plan__benefits_item">
+          每周至少10条提示
+         </li>
+        </ul>
+       </div>
+       <div class="pricing-plan__footer">
+        <button class="btn-secondary--outline current" data-payment-method="stripe" data-plan="basic" data-target="#modal_payments" data-toggle="modal">
+         现在购买
+        </button>
+        <a href="/users/sign_up">
+         <button class="btn-secondary--outline" data-payment-method="coxi">
+          现在购买
+         </button>
+        </a>
+       </div>
+      </div>
+      <div class="pricing-plan">
+       <div class="pricing-plan__header">
+        <p class="pricing-plan__header_title">
+         高级会员
+        </p>
+        <p class="pricing-plan__header_price">
+         <span class="pricing-plan__header_price_currency">
+          £
+         </span>
+         <span class="current" data-payment-method="stripe">
+          99.99
+         </span>
+         <span data-payment-method="coxi">
+          69.99
+         </span>
+        </p>
+        <p class="pricing-plan__header_caption">
+         /每月（含增值税）
+        </p>
+        <p class="pricing-plan__header_token">
+         Hinto 令牌
+         <strong>
+          (69.99 GBP)
+         </strong>
+        </p>
+       </div>
+       <div class="pricing-plan__body">
+        <ul class="pricing-plan__benefits">
+         <li class="pricing-plan__benefits_item">
+          10个联赛
+         </li>
+         <li class="pricing-plan__benefits_item">
+          每周至少20条提示
+         </li>
+         <li class="pricing-plan__benefits_item">
+          每场比赛平均赔率较高
+         </li>
+        </ul>
+       </div>
+       <div class="pricing-plan__footer">
+        <button class="btn-secondary--outline current" data-payment-method="stripe" data-plan="premium" data-target="#modal_payments" data-toggle="modal">
+         现在购买
+        </button>
+        <a href="/users/sign_up">
+         <button class="btn-secondary--outline" data-payment-method="coxi">
+          现在购买
+         </button>
+        </a>
+       </div>
+      </div>
+      <div class="pricing-plan">
+       <div class="pricing-plan__header">
+        <img alt="Crown" class="vip-icon" src="/assets/redesign/icons/crown-1c357a00a38effdd3dbbf6f5aaa021ea49946f185ae45efe91185d74e90dec73.svg"/>
+        <p class="pricing-plan__header_title">
+         贵宾
+        </p>
+        <p class="pricing-plan__header_price">
+         <span class="pricing-plan__header_price_currency">
+          £
+         </span>
+         <span class="current" data-payment-method="stripe" data-target="#registration" data-toggle="modal">
+          149.99
+         </span>
+         <span data-payment-method="coxi" data-target="#registration" data-toggle="modal">
+          104.99
+         </span>
+        </p>
+        <p class="pricing-plan__header_caption">
+         /每月（含增值税）
+        </p>
+        <p class="pricing-plan__header_token">
+         Hinto 令牌
+         <strong>
+          (104.99 GBP)
+         </strong>
+        </p>
+       </div>
+       <div class="pricing-plan__body">
+        <ul class="pricing-plan__benefits">
+         <li class="pricing-plan__benefits_item">
+          无限联赛
+         </li>
+         <li class="pricing-plan__benefits_item">
+          每场比赛平均赔率较高
+         </li>
+         <li class="pricing-plan__benefits_item">
+          每周至少30条提示
+         </li>
+         <li class="pricing-plan__benefits_item">
+          生成实时提示
+         </li>
+        </ul>
+       </div>
+       <div class="pricing-plan__footer">
+        <button class="btn-secondary--outline current" data-payment-method="stripe" data-plan="vip" data-target="#modal_payments" data-toggle="modal">
+         现在购买
+        </button>
+        <a href="/users/sign_up">
+         <button class="btn-secondary--outline" data-payment-method="coxi">
+          现在购买
+         </button>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <ul class="payment-methods">
+     <li class="payment-methods__method">
+      <img alt="Visa" src="/assets/redesign/payment-methods/visa-9dfa10ffa318a483c61816f098772d9a914994972d637ebe0b7c1103db3f50c7.png"/>
+     </li>
+     <li class="payment-methods__method">
+      <img alt="Mastercard" src="/assets/redesign/payment-methods/mastercard-68f438963bf11a5a137fe4a511e35077c32df33739a47cf99488c7ea2f51aaea.png"/>
+     </li>
+     <li class="payment-methods__method">
+      <img alt="Blik" src="/assets/redesign/payment-methods/blik-f58fa351ae3de8ca8f4c1a0f42bcda904bb1f790669eddc6407909c2684a21fe.png"/>
+     </li>
+     <li class="payment-methods__method">
+      <img alt="Gpay" src="/assets/redesign/payment-methods/gpay-93a16c9c6584c11d23fe1e9482350e1a8436513361f789e239bf9afcb3bc4c39.png"/>
+     </li>
+     <li class="payment-methods__method">
+      <img alt="Paypal" src="/assets/redesign/payment-methods/paypal-dc0efd86451b6bf4d0c0db3639eced90d1a4ad169b2a5dda53e229171ec12e43.png"/>
+     </li>
+     <li class="payment-methods__method">
+      <img alt="Stripe" src="/assets/redesign/payment-methods/stripe-b83e05dc0464d04ccb38b051895e661dc81a76ca004a5db31bba770879134a79.png"/>
+     </li>
+     <li class="payment-methods__method">
+      <img alt="Skrill" src="/assets/redesign/payment-methods/skrill-370af3023dfdfdcfafde847c0a26d0815ba930996589f738630a92353dad810a.png"/>
+     </li>
+    </ul>
+   </div>
+  </section>
+  <footer class="footer">
+   <div class="container--1400">
+    <div class="footer__row">
+     <a class="navbar__brand" href="/">
+      <img alt="Logo white" src="/assets/redesign/common/logo_white-4032ff5c83b98c992922bf03e11b051015baf535aae24938c98de04f5eff9bea.svg"/>
+     </a>
+     <ul class="footer__links">
+      <li class="footer__links_item">
+       <a class="footer__links_link" href="/privacy.pdf">
+        隐私政策
+       </a>
+      </li>
+      <li class="footer__links_item">
+       <a class="footer__links_link" href="/terms.pdf">
+        条款
+       </a>
+      </li>
+      <li class="footer__links_item">
+       <a class="footer__links_link" href="mailto:contact@hinto.win">
+        contact@hinto.win
+       </a>
+      </li>
+      <li class="footer__links_item">
+       <a class="footer__links_link" download="" href="hinto-white-paper.pdf">
+        <div class="footer__links_arrow_down">
+         <span class="icon-arrow-down">
+         </span>
+        </div>
+        <div class="file" style="display: inline-block; padding-top: 12px; font-size: 11px;">
+         下载 PDF 格式白皮书
+         <br/>
+         <span>
+          (807 KB)
+         </span>
+        </div>
+       </a>
+      </li>
+     </ul>
+     <ul class="footer__social-media">
+      <li class="footer__social-media_item">
+       <a class="footer__social-media_link" href="https://www.linkedin.com/company/hinto/" target="_blank">
+        <span class="icon-linkedin">
+        </span>
+       </a>
+      </li>
+      <li class="footer__social-media_item">
+       <a class="footer__social-media_link" href="https://www.facebook.com/Hinto-104838640864149/?modal=admin_todo_tour" target="_blank">
+        <span class="icon-facebook">
+        </span>
+       </a>
+      </li>
+      <li class="footer__social-media_item">
+       <a class="footer__social-media_link" href="https://www.youtube.com/channel/UCDWsvkhZI_R5smjiFnTgKSg/videos?view_as=subscriber" target="_blank">
+        <span class="icon-youtube">
+        </span>
+       </a>
+      </li>
+      <li class="footer__social-media_item">
+       <a class="footer__social-media_link" href="https://twitter.com/HintoWin" target="_blank">
+        <span class="icon-twitter">
+        </span>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

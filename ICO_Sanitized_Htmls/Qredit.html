@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Qredit
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet"/>
+  <!-- CSS FILES -->
+  <link href="./css/main.min.css" rel="stylesheet"/>
+  <link href="./css/main.css" rel="stylesheet"/>
+  <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&amp;display=swap" rel="stylesheet"/>
+  <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="./css/plugins.css" rel="stylesheet" type="text/css"/>
+  <link href="./css/loader.css" rel="stylesheet" type="text/css"/>
+  <!-- CSS FILES end -->
+  <!-- Scripts -->
+  <script src="./js/libs/jquery.min.js">
+  </script>
+  <script src="./js/socket.io.slim.js">
+  </script>
+  <!-- END GLOBAL MANDATORY SCRIPTS -->
+  <!-- Favicon-->
+  <link href="/img/favicon.png" rel="icon" type="/image/png"/>
+ </head>
+ <body class="text-left">
+  <!-- ============ header menu ============= -->
+  <!-- ============ end of header menu ============= -->
+  <!-- ============ Body content start ============= -->
+  <div class="main-content-wrap sidenav-open d-flex flex-column">
+   <div class="main-content">
+    <!-- start preloader -->
+    <div class="preloader">
+     <div class="preloader-container">
+      <svg enable-background="new 0 0 0 0" id="L5" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+       <circle cx="6" cy="50" fill="#675cda" r="6" stroke="none">
+        <animatetransform attributename="transform" begin="0.1" dur="1s" repeatcount="indefinite" type="translate" values="0 15 ; 0 -15; 0 15">
+        </animatetransform>
+       </circle>
+       <circle cx="30" cy="50" fill="#675cda" r="6" stroke="none">
+        <animatetransform attributename="transform" begin="0.2" dur="1s" repeatcount="indefinite" type="translate" values="0 10 ; 0 -10; 0 10">
+        </animatetransform>
+       </circle>
+       <circle cx="54" cy="50" fill="#675cda" r="6" stroke="none">
+        <animatetransform attributename="transform" begin="0.3" dur="1s" repeatcount="indefinite" type="translate" values="0 5 ; 0 -5; 0 5">
+        </animatetransform>
+       </circle>
+      </svg>
+      <span>
+       loading
+      </span>
+     </div>
+    </div>
+    <!-- end preloader -->
+    <div class="d-flex mx-auto flex-column moon-edition" id="coodiv-header">
+     <!-- start header -->
+     <div class="bg_overlay_header">
+      <div id="particles-bg">
+      </div>
+      <img alt="img-bg" src="img/header/h_bg_02.svg"/>
+     </div>
+     <!-- Fixed navbar  -->
+     <nav class="navbar navbar-expand-md fixed-header-layout" id="coodiv-navbar-header">
+      <div class="container main-header-coodiv-s">
+       <a class="navbar-brand" href="/">
+        <img alt="" class="w-logo" src="img/header/logo-navbar-light.png"/>
+        <img alt="" class="b-logo" src="img/header/logo-navbar-dark.png"/>
+       </a>
+       <button class="navbar-toggle offcanvas-toggle menu-btn-span-bar ml-auto" data-target="#offcanvas-menu-home" data-toggle="offcanvas">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+       </button>
+       <div class="collapse navbar-collapse navbar-offcanvas" id="offcanvas-menu-home">
+        <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+          <a class="nav-link" href="/">
+           Home
+          </a>
+         </li>
+         <li class="nav-item megamenu dropdown">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="services-megamenu" role="button">
+           Products &amp; Services
+           <span class="megamenu-toggle">
+           </span>
+          </a>
+          <div aria-labelledby="services-megamenu" class="dropdown-menu coodiv-dropdown-megamnu default-megamenu">
+           <div class="d-flex justify-content-center bd-highlight mb-3 megamenu-items-header">
+            <div class="p-2 bd-highlight">
+             <a href="/persona">
+              <img alt="" src="/img/qredit-persona-trans.png" style="max-height:50px; border-radius:10px; background-color:#d3d8ff;"/>
+              <h5>
+               Persona
+              </h5>
+              <p>
+               The all-in-one KYC toolkit for software implementation.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="/motion">
+              <img alt="" src="/img/motion-2.png" style="max-height:50px; border-radius:10px; background-color:#d3d8ff;"/>
+              <h5>
+               Qredit Motion
+              </h5>
+              <p>
+               A multicurrency fiat and crypto wallet with QAE functionalities.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="/altilly">
+              <img alt="" src="/img/altilly.png" style="max-height:50px; border-radius:10px;"/>
+              <h5>
+               Altilly
+              </h5>
+              <p>
+               Digital Asset Exchange with Qredit as the base currency.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="/wallets">
+              <img alt="" src="/img/qredit-square.png" style="max-height:50px; border-radius:10px;"/>
+              <h5>
+               Wallets
+              </h5>
+              <p>
+               Native Cryptocurrency Wallets to manage your Qredit coins.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="/qae">
+              <img alt="" src="/img/qredit-square.png" style="max-height:50px; border-radius:10px; background-color:#d3d8ff;"/>
+              <h5>
+               QAE Smart Contracts
+              </h5>
+              <p>
+               Create your dApps with QAE Smart Contracts.
+              </p>
+             </a>
+            </div>
+           </div>
+          </div>
+         </li>
+         <li class="nav-item megamenu dropdown">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="services-megamenu" role="button">
+           Blockchain
+           <span class="megamenu-toggle">
+           </span>
+          </a>
+          <div aria-labelledby="services-megamenu" class="dropdown-menu coodiv-dropdown-megamnu default-megamenu">
+           <div class="d-flex justify-content-center bd-highlight mb-3 megamenu-items-header">
+            <div class="p-2 bd-highlight">
+             <a href="/delegatemonitor">
+              <img alt="#" src="img/svgs/peers.svg" style="max-height:50px;"/>
+              <h5>
+               Delegate Monitor
+              </h5>
+              <p>
+               Monitor the Qredit Blockchain.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="/transactions">
+              <img alt="#" src="img/svgs/transactions.svg" style="max-height:50px;"/>
+              <h5>
+               Explorer
+              </h5>
+              <p>
+               Qredit Blockchain Explorer.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="https://xqr-exp.geops.net">
+              <img alt="#" src="img/svgs/tokens.svg" style="max-height:50px;"/>
+              <h5>
+               Backup Explorer
+              </h5>
+              <p>
+               Qredit Blockchain Explorer.
+              </p>
+             </a>
+            </div>
+            <div class="p-2 bd-highlight">
+             <a href="http://docs.qredit.network">
+              <img alt="#" src="img/svgs/web.svg" style="max-height:50px;"/>
+              <h5>
+               Tools &amp; API
+              </h5>
+              <p>
+               Qredit Blockchain Tools and API Documentation.
+              </p>
+             </a>
+            </div>
+           </div>
+          </div>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/contact">
+           Contact us
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </nav>
+     <div class="mt-auto header-top-height">
+     </div>
+     <main class="container mb-auto">
+      <h3 class="mt-3 main-header-text-title">
+       <img alt="" class="header-logo" src="/img/header/xqr-dark-wide-980x225.png"/>
+       <span class="sub-page-breadcrumb">
+        The Enhanced Blockchain Suite
+       </span>
+      </h3>
+      <div class="contact-us-social-icons" style="text-align:center;">
+       <a class="fb" href="https://www.facebook.com/qredit.io/">
+        <i class="fab fa-facebook-f">
+        </i>
+       </a>
+       <a class="tw" href="https://t.me/qredit">
+        <i class="fab fa-telegram">
+        </i>
+       </a>
+       <a class="yb" href="https://twitter.com/Qredit_io">
+        <i class="fab fa-twitter">
+        </i>
+       </a>
+       <a class="yb" href="https://discord.com/invite/k3m9Mgy">
+        <i class="fab fa-discord">
+        </i>
+       </a>
+       <a class="yb" href="https://www.instagram.com/qredit_team/">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+      </div>
+     </main>
+     <div class="mt-auto">
+     </div>
+    </div>
+    <!-- end header -->
+    <!-- header top menu end -->
+    <div class="container" style="margin-top:50px;margin-bottom:50px;">
+     <div class="row justify-content-between">
+      <div class="col-md-12 side-text-right-container d-flex mx-auto flex-column" style="text-align:center;">
+       <div class="mb-auto">
+       </div>
+       <h2 class="side-text-right-title f-size25">
+        The Enhanced Blockchain Suite.
+       </h2>
+       <p class="side-text-right-text f-size16" style="color:#000;">
+        Qredit is a complete enhanced blockchain suite for enterprises, developers and individuals.
+        <br/>
+        Integrate Qredit in your business using our
+        <b>
+         Persona
+        </b>
+        toolkit for KYC verifications.
+        <br/>
+        Create your own dApps with the
+        <b>
+         QAE Smart Contracts
+        </b>
+        toolkit or use
+        <b>
+         Qredit Motion
+        </b>
+        as a payment gateway.
+       </p>
+       <div class="mt-auto">
+       </div>
+      </div>
+     </div>
+     <div class="col-md-12 side-text-right-container d-flex mx-auto flex-column" style="text-align:center;margin-top:40px;">
+      <div class="mb-auto">
+      </div>
+      <h2 class="side-text-right-title f-size25">
+       Fast. Reliable. Efficient.
+      </h2>
+      <p class="side-text-right-text f-size16" style="color:#000;">
+       With 8 seconds blocktime and +250 transactions per block, Qredit is one of the fastest decentralized blockchains.
+       <br/>
+       Qredit utilizes the Delegated Proof of Stake consensus, insuring a stable and reliable network for all users.
+       <br/>
+       With only 51 forging nodes, the Qredit blockchain is one of the most energy and cost-efficient blockchains in the world.
+       <br/>
+      </p>
+      <div class="mt-auto">
+      </div>
+     </div>
+    </div>
+    <!-- Footer Start -->
+    <!--
+<section class="footer-section-banner">
+	<div class="container">
+		<div class="row free-trial-footer-banner">
+			<div class="col-md-8">
+				<h5 class="free-trial-footer-banner-title" style="color:#fff;">Under Construction</h5>
+				<p class="free-trial-footer-banner-text">The Qredit homepage, including tools, the block explorer and some core functions are currently under live maintenance. We apologize for the inconvenience.</p>
+				<p class="free-trial-footer-banner-text">Please use the back-up explorer to view transactions.</p>
+			</div>
+
+			<div class="col-md-4 free-trial-footer-links d-flex mx-auto flex-column">
+				<div class="mb-auto"></div>
+				<div class="mb-auto">
+					<a class="sign-btn" href="https://xqr-exp.geops.net">backup explorer</a>
+				
+				</div>
+				<div class="mt-auto"></div>
+			</div>
+		</div>
+	</div>
+</section>
+-->
+    <section class="footer-section">
+     <div class="container">
+      <div class="mr-tp-40 row justify-content-between footer-area-under">
+       <div class="col-md-4">
+        <a href="#">
+         <img alt="" class="footer-logo-blue" src="img/header/logo-footer-light.png"/>
+        </a>
+        <div class="footer-social-icons">
+         <a href="https://www.facebook.com/qredit.io/">
+          <i class="fab fa-facebook-f">
+          </i>
+         </a>
+         <a href="https://t.me/qredit">
+          <i class="fab fa-telegram">
+          </i>
+         </a>
+         <a href="https://twitter.com/Qredit_io">
+          <i class="fab fa-twitter">
+          </i>
+         </a>
+         <a href="https://discord.com/invite/k3m9Mgy">
+          <i class="fab fa-discord">
+          </i>
+         </a>
+         <a href="https://www.instagram.com/qredit_team/">
+          <i class="fab fa-instagram">
+          </i>
+         </a>
+        </div>
+       </div>
+       <div class="col-md-4 row">
+        <ul class="col-md-6 under-footer-ullist">
+         <li>
+          <a href="/transactions">
+           explorer
+          </a>
+         </li>
+         <li>
+          <a href="/contact">
+           contact us
+          </a>
+         </li>
+        </ul>
+        <ul class="col-md-6 under-footer-ullist text-right">
+         <li>
+          <a href="/privacypolicy">
+           privacy policy
+          </a>
+         </li>
+         <li>
+          <a href="/terms">
+           terms of sevice
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="row justify-content-between final-footer-area mr-tp-40">
+       <div class="final-footer-area-text">
+        © Copyright 2020 | Qredit Technologies Inc. | Tågsjöberg 109 - 88037 - Junsele, Sweden.
+       </div>
+       <div class="made-with-love">
+        <p>
+         Made with
+         <svg class="feather feather-heart" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:red;" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+          </path>
+         </svg>
+         by Qredit
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <!-- footer end -->
+   </div>
+  </div>
+  <!-- ============ Scripts ============= -->
+  <!-- <script>$(document).ready(function () {
+App.init();
+});</script> -->
+  <!--<script src="js/libs/jquery-3.1.1.min.js"></script> -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/5eaec39810362a7578be91cc/default';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+  </script>
+  <!--End of Tawk.to Script-->
+  <script src="./js/aos.js">
+  </script>
+  <script src="./js/contact.js">
+  </script>
+  <script src="./js/tooltip.script.js">
+  </script>
+  <script src="./js/fakeLoader.min.js">
+  </script>
+  <script src="./js/bootstrap.min.js">
+  </script>
+  <script src="./plugins/perfect-scrollbar/perfect-scrollbar.min.js">
+  </script>
+  <script src="./js/app.js">
+  </script>
+  <script src="./js/custom.js">
+   <script src="./plugins/custom-jstree.js">
+<script src="./js/demo.js">
+  </script>
+  <script src="./js/validator.js">
+  </script>
+  <script src="./js/popper.min.js">
+  </script>
+  <script src="./js/template-scripts.js">
+  </script>
+  <script src="./js/flickity.pkgd.min.js">
+  </script>
+  <script src="./owlcarousel/owl.carousel.min.js">
+  </script>
+  <script src="./js/parallax.min.js">
+  </script>
+  <script src="./js/mailchamp.js">
+  </script>
+  <script src="./js/bootstrap.offcanvas.min.js">
+  </script>
+  <script src="./js/jquery.touchSwipe.min.js">
+  </script>
+  <script src="./js/particles-code.js">
+  </script>
+  <script src="./js/particles.js">
+  </script>
+  <script src="./js/smoothscroll.js">
+  </script>
+  <script src="./js/script.js">
+  </script>
+ </body>
+</html>

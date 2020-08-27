@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template avada-header-color-not-opaque" lang="it-IT" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+ <head>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   ROCATI – La prima criptovaluta italiana
+  </title>
+  <style>
+   .wpcf7-submit{
+			display:none;
+		}
+		.recaptcha-btn{
+			display:block;
+		}
+		.grecaptcha-badge {display: none;}
+  </style>
+  <script type="text/javascript">
+   var contactform = [];
+		var checkIfCalled = true;
+		var renderGoogleInvisibleRecaptchaFront = function() {
+			// prevent form submit from enter key
+			jQuery("input[name=_wpcf7]").attr("class","formid");
+				jQuery('.wpcf7-form').on('keyup keypress', "input", function(e) {
+				  var keyCode = e.keyCode || e.which;
+				  if (keyCode === 13) {
+					e.preventDefault();
+					return false;
+				  }
+				});
+
+			jQuery('.wpcf7-submit').each(function(index){
+
+				var checkexclude = 0;
+				var form = jQuery(this).closest('.wpcf7-form');
+				var value = jQuery(form).find(".formid").val();
+				// check form exclude from invisible recaptcha
+								if(checkexclude == 0){
+					// Hide the form orig submit button
+					form.find('.wpcf7-submit').hide();
+
+					// Fetch class and value of orig submit button
+					btnClasses = form.find('.wpcf7-submit').attr('class');
+					btnValue = form.find('.wpcf7-submit').attr('value');
+
+					// Add custom button and recaptcha holder
+
+					form.find('.wpcf7-submit').after('<input type="button" id="wpcf-custom-btn-'+index+'" class="'+btnClasses+'  recaptcha-btn recaptcha-btn-type-css" value="'+btnValue+'" title="'+btnValue+'" >');
+					form.append('<div class="recaptcha-holder" id="recaptcha-holder-'+index+'"></div>');
+					// Recaptcha rendenr from here
+					var holderId = grecaptcha.render('recaptcha-holder-'+index,{
+								'sitekey':'6LczvE8UAAAAAIHFXwIfMqLJN5Ujdvz2QBNQemu5',
+								'size': 'invisible',
+								'badge' : 'bottomright', // possible values: bottomright, bottomleft, inline
+								'callback' : function (recaptchaToken) {
+									//console.log(recaptchaToken);
+									var response=jQuery('#recaptcha-holder-'+index).find('.g-recaptcha-response').val();
+									//console.log(response);
+									//Remove old response and store new respone
+									jQuery('#recaptcha-holder-'+index).parent().find(".respose_post").remove();
+									jQuery('#recaptcha-holder-'+index).after('<input type="hidden" name="g-recaptcha-response"  value="'+response+'" class="respose_post">')
+									grecaptcha.reset(holderId);
+
+									if(typeof customCF7Validator !== 'undefined'){
+										if(!customCF7Validator(form)){
+											return;
+										}
+									}
+									// Call default Validator function
+									else if(contactFormDefaultValidator(form)){
+										return;
+									}
+									else{
+										// hide the custom button and show orig submit button again and submit the form
+										jQuery('#wpcf-custom-btn-'+index).hide();
+										form.find('input[type=submit]').show();
+										form.find("input[type=submit]").click();
+										form.find('input[type=submit]').hide();
+										jQuery('#wpcf-custom-btn-'+index).attr('style','');
+									}
+								}
+						},false);
+
+					// action call when click on custom button
+					jQuery('#wpcf-custom-btn-'+index).click(function(event){
+						event.preventDefault();
+						// Call custom validator function
+						if(typeof customCF7Validator == 'function'){
+							if(!customCF7Validator(form)){
+								return false;
+							}
+						}
+						// Call default Validator function
+						else if(contactFormDefaultValidator(form)){
+							return false;
+						}
+						else if(grecaptcha.getResponse(holderId) != ''){
+							grecaptcha.reset(holderId);
+						}
+						else{
+							// execute the recaptcha challenge
+							grecaptcha.execute(holderId);
+						}
+					});
+				}
+			});
+		}
+  </script>
+  <script async="" defer="" src="https://www.google.com/recaptcha/api.js?onload=renderGoogleInvisibleRecaptchaFront&amp;render=explicit">
+  </script>
+  <link href="https://www.rocati.net" hreflang="it" rel="alternate"/>
+  <link href="https://www.rocati.net/en/" hreflang="en" rel="alternate"/>
+  <link href="//www.rocati.net" rel="dns-prefetch"/>
+  <link href="//s.w.org" rel="dns-prefetch"/>
+  <link href="https://www.rocati.net/feed/" rel="alternate" title="ROCATI » Feed" type="application/rss+xml"/>
+  <link href="https://www.rocati.net/comments/feed/" rel="alternate" title="ROCATI » Feed dei commenti" type="application/rss+xml"/>
+  <link href="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-icon-25.png" rel="shortcut icon" type="image/x-icon"/>
+  <!-- For iPhone -->
+  <link href="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-icon-25.png" rel="apple-touch-icon"/>
+  <!-- For iPhone Retina display -->
+  <link href="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-icon-120.png" rel="apple-touch-icon" sizes="114x114"/>
+  <!-- For iPad -->
+  <link href="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-icon-120.png" rel="apple-touch-icon" sizes="72x72"/>
+  <meta content="HOME" property="og:title"/>
+  <meta content="article" property="og:type"/>
+  <meta content="https://www.rocati.net/" property="og:url"/>
+  <meta content="ROCATI" property="og:site_name"/>
+  <meta content="“Rocati nasce per non far spegnere le luci dei negozi e mantenere saldo il valore degli immobili vero rifugio del risparmio italiano." property="og:description"/>
+  <meta content="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png" property="og:image"/>
+  <script type="text/javascript">
+   window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.rocati.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+  </style>
+  <link href="https://www.rocati.net/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.4.2" id="cookie-notice-front-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://www.rocati.net/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.15" id="rs-plugin-settings-css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="rs-plugin-settings-inline-css" type="text/css">
+   #rs-demo-id {}
+  </style>
+  <link href="//www.rocati.net/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.css?ver=1" id="wpml-menu-item-0-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://www.rocati.net/wp-content/themes/Avada/assets/css/style.min.css?ver=6.2.3" id="avada-stylesheet-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://www.rocati.net/wp-content/themes/Avada-Child-Theme/style.css?ver=5.4.2" id="child-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <!--[if IE]>
+<link rel='stylesheet' id='avada-IE-css'  href='https://www.rocati.net/wp-content/themes/Avada/assets/css/ie.min.css?ver=6.2.3' type='text/css' media='all' />
+<style id='avada-IE-inline-css' type='text/css'>
+.avada-select-parent .select-arrow{background-color:rgba(255,255,255,0.69)}
+.select-arrow{background-color:rgba(255,255,255,0.69)}
+</style>
+<![endif]-->
+  <link href="https://www.rocati.net/wp-content/uploads/fusion-styles/b67a5d0f2071dd7f1c7109ea273960e4.min.css?ver=2.2.3" id="fusion-dynamic-css-css" media="all" rel="stylesheet" type="text/css"/>
+  <script src="https://www.rocati.net/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" type="text/javascript">
+  </script>
+  <script src="https://www.rocati.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1" type="text/javascript">
+  </script>
+  <script src="https://www.rocati.net/wp-content/plugins/cf7-invisible-recaptcha/js/cf7_invisible_recaptcha.js?ver=1.2.3" type="text/javascript">
+  </script>
+  <script src="https://www.rocati.net/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.2.15" type="text/javascript">
+  </script>
+  <script src="https://www.rocati.net/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.15" type="text/javascript">
+  </script>
+  <link href="https://www.rocati.net/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://www.rocati.net/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://www.rocati.net/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress 5.4.2" name="generator"/>
+  <link href="https://www.rocati.net/" rel="canonical"/>
+  <link href="https://www.rocati.net/" rel="shortlink"/>
+  <link href="https://www.rocati.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.rocati.net%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://www.rocati.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.rocati.net%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <meta content="WPML ver:4.3.16 stt:1,27;" name="generator"/>
+  <style id="css-fb-visibility" type="text/css">
+   @media screen and (max-width: 640px){body:not(.fusion-builder-ui-wireframe) .fusion-no-small-visibility{display:none !important;}}@media screen and (min-width: 641px) and (max-width: 1024px){body:not(.fusion-builder-ui-wireframe) .fusion-no-medium-visibility{display:none !important;}}@media screen and (min-width: 1025px){body:not(.fusion-builder-ui-wireframe) .fusion-no-large-visibility{display:none !important;}}
+  </style>
+  <meta content="Powered by Slider Revolution 6.2.15 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." name="generator"/>
+  <script type="text/javascript">
+   function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };
+  </script>
+  <script type="text/javascript">
+   var doc = document.documentElement;
+			doc.setAttribute( 'data-useragent', navigator.userAgent );
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-116295175-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116295175-1');
+  </script>
+ </head>
+ <body class="home page-template page-template-100-width page-template-100-width-php page page-id-974 cookies-not-set fusion-image-hovers fusion-pagination-sizing fusion-button_size-xlarge fusion-button_type-flat fusion-button_span-yes avada-image-rollover-circle-yes avada-image-rollover-no fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v1 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-clean fusion-main-menu-search-overlay fusion-avatar-circle avada-dropdown-styles avada-blog-layout-medium avada-blog-archive-layout-medium avada-header-shadow-no avada-menu-icon-position-left avada-has-header-100-width avada-has-breadcrumb-mobile-hidden avada-has-titlebar-hide avada-has-pagination-padding avada-flyout-menu-direction-fade avada-ec-views-v1">
+  <a class="skip-link screen-reader-text" href="#content">
+   Salta al contenuto
+  </a>
+  <div id="boxed-wrapper">
+   <div class="fusion-sides-frame">
+   </div>
+   <div class="fusion-wrapper" id="wrapper">
+    <div id="home" style="position:relative;top:-1px;">
+    </div>
+    <header class="fusion-header-wrapper">
+     <div class="fusion-header-v1 fusion-logo-alignment fusion-logo-left fusion-sticky-menu-1 fusion-sticky-logo-1 fusion-mobile-logo- fusion-mobile-menu-design-modern">
+      <div class="fusion-header-sticky-height">
+      </div>
+      <div class="fusion-header">
+       <div class="fusion-row">
+        <div class="fusion-logo" data-margin-bottom="30px" data-margin-left="0px" data-margin-right="0px" data-margin-top="24px">
+         <a class="fusion-logo-link" href="https://www.rocati.net/">
+          <!-- standard logo -->
+          <img alt="ROCATI Logo" class="fusion-standard-logo" data-retina_logo_url="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png" height="39" src="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png" srcset="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png 1x, https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png 2x" style="max-height:39px;height:auto;" width="300"/>
+          <!-- sticky header logo -->
+          <img alt="ROCATI Logo" class="fusion-sticky-logo" data-retina_logo_url="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png" height="39" src="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png" srcset="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png 1x, https://www.rocati.net/wp-content/uploads/2018/01/Rocati-white-300.png 2x" style="max-height:39px;height:auto;" width="300"/>
+         </a>
+        </div>
+        <nav aria-label="Menu Principale" class="fusion-main-menu">
+         <div class="fusion-overlay-search">
+          <form action="https://www.rocati.net/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+           <div class="fusion-search-form-content">
+            <div class="fusion-search-field search-field">
+             <label>
+              <span class="screen-reader-text">
+               Cerca per:
+              </span>
+              <input aria-label="" aria-required="true" class="s" name="s" placeholder="Cerca..." required="" type="search" value=""/>
+             </label>
+            </div>
+            <div class="fusion-search-button search-button">
+             <input class="fusion-search-submit searchsubmit" type="submit" value=""/>
+            </div>
+           </div>
+          </form>
+          <div class="fusion-search-spacer">
+          </div>
+          <a class="fusion-close-search" href="#">
+          </a>
+         </div>
+         <ul class="fusion-menu" id="menu-rocati-it">
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-974 current_page_item menu-item-1704" data-item-id="1704" id="menu-item-1704">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/">
+            <span class="menu-text">
+             HOME
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1163" data-item-id="1163" id="menu-item-1163">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/about/">
+            <span class="menu-text">
+             ABOUT
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1066" data-item-id="1066" id="menu-item-1066">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/faq-italiano/">
+            <span class="menu-text">
+             FAQ
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2133 fusion-menu-item-button" data-item-id="2133" id="menu-item-2133">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/buy-token/">
+            <span class="menu-text fusion-button button-default button-medium">
+             BUY TOKEN
+            </span>
+           </a>
+          </li>
+          <li class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-it wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-9-it fusion-dropdown-menu" data-classes="menu-item" data-item-id="wpml-ls-9-it" id="menu-item-wpml-ls-9-it">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net" title="ITALIANO">
+            <span class="menu-text">
+             <span class="wpml-ls-native" lang="it">
+              ITALIANO
+             </span>
+            </span>
+            <span class="fusion-caret">
+             <i class="fusion-dropdown-indicator">
+             </i>
+            </span>
+           </a>
+           <ul class="sub-menu">
+            <li class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-en fusion-dropdown-submenu" data-classes="menu-item" id="menu-item-wpml-ls-9-en">
+             <a class="fusion-bar-highlight" href="https://www.rocati.net/en/" title="ENGLISH">
+              <span>
+               <span class="wpml-ls-native" lang="en">
+                ENGLISH
+               </span>
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </nav>
+        <nav aria-label="Menu principale scorrevole" class="fusion-main-menu fusion-sticky-menu">
+         <div class="fusion-overlay-search">
+          <form action="https://www.rocati.net/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+           <div class="fusion-search-form-content">
+            <div class="fusion-search-field search-field">
+             <label>
+              <span class="screen-reader-text">
+               Cerca per:
+              </span>
+              <input aria-label="" aria-required="true" class="s" name="s" placeholder="Cerca..." required="" type="search" value=""/>
+             </label>
+            </div>
+            <div class="fusion-search-button search-button">
+             <input class="fusion-search-submit searchsubmit" type="submit" value=""/>
+            </div>
+           </div>
+          </form>
+          <div class="fusion-search-spacer">
+          </div>
+          <a class="fusion-close-search" href="#">
+          </a>
+         </div>
+         <ul class="fusion-menu" id="menu-rocati-it-1">
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-974 current_page_item menu-item-1704" data-item-id="1704">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/">
+            <span class="menu-text">
+             HOME
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1163" data-item-id="1163">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/about/">
+            <span class="menu-text">
+             ABOUT
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1066" data-item-id="1066">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/faq-italiano/">
+            <span class="menu-text">
+             FAQ
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2133 fusion-menu-item-button" data-item-id="2133">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net/buy-token/">
+            <span class="menu-text fusion-button button-default button-medium">
+             BUY TOKEN
+            </span>
+           </a>
+          </li>
+          <li class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-it wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-9-it fusion-dropdown-menu" data-classes="menu-item" data-item-id="wpml-ls-9-it">
+           <a class="fusion-bar-highlight" href="https://www.rocati.net" title="ITALIANO">
+            <span class="menu-text">
+             <span class="wpml-ls-native" lang="it">
+              ITALIANO
+             </span>
+            </span>
+            <span class="fusion-caret">
+             <i class="fusion-dropdown-indicator">
+             </i>
+            </span>
+           </a>
+           <ul class="sub-menu">
+            <li class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-en fusion-dropdown-submenu" data-classes="menu-item">
+             <a class="fusion-bar-highlight" href="https://www.rocati.net/en/" title="ENGLISH">
+              <span>
+               <span class="wpml-ls-native" lang="en">
+                ENGLISH
+               </span>
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </nav>
+        <div class="fusion-mobile-menu-icons">
+         <a aria-expanded="false" aria-label="Attiva/Disattiva menu mobile" class="fusion-icon fusion-icon-bars" href="#">
+         </a>
+        </div>
+        <nav aria-label="Menu Mobile Principale" class="fusion-mobile-nav-holder fusion-mobile-menu-text-align-left">
+        </nav>
+        <nav aria-label="Menu Principale mobile, appeso" class="fusion-mobile-nav-holder fusion-mobile-menu-text-align-left fusion-mobile-sticky-nav-holder">
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="fusion-clearfix">
+     </div>
+    </header>
+    <div id="sliders-container">
+     <div class="fusion-slider-container fusion-slider-974" data-id="17" id="fusion-slider-17" style="height:400px;max-width:100%;">
+      <style type="text/css">
+       #fusion-slider-17 .flex-direction-nav a {width:63px;height:63px;line-height:63px;font-size:25px;}
+      </style>
+      <div class="fusion-slider-loading">
+       Caricamento...
+      </div>
+      <div class="tfs-slider flexslider main-flex" data-animation="fade" data-animation_speed="600" data-autoplay="1" data-full_screen="1" data-loop="0" data-nav_arrow_size="25px" data-nav_arrows="0" data-nav_box_height="63px" data-nav_box_width="63px" data-order="DESC" data-orderby="date" data-pagination_circles="0" data-parallax="1" data-slider_height="400px" data-slider_indicator="" data-slider_indicator_color="#ffffff" data-slider_width="100%" data-slideshow_speed="7000" data-typo_factor="1.5" data-typo_sensitivity="1.5" style="max-width:100%;--typography_sensitivity:1.5;">
+       <ul class="slides" style="max-width:100%;">
+        <li class="slide-id-1144" data-autoplay="yes" data-loop="yes" data-mute="yes">
+         <div class="slide-content-container slide-content-center" style="display: none;">
+          <div class="slide-content" style="">
+           <div class="heading">
+            <div class="fusion-title-sc-wrapper" style="">
+             <style type="text/css">
+              @media only screen and (max-width:800px) {.fusion-title.fusion-title-1{margin-top:10px!important;margin-bottom:10px!important;}}
+             </style>
+             <div class="fusion-title title fusion-title-1 fusion-sep-none fusion-title-center fusion-title-text fusion-title-size-two" style="margin-top:0px;margin-bottom:0px;">
+              <h2 class="title-heading-center" style="margin:0;color:#fff;font-size:26px;line-height:31.2px;">
+               <div class="imageframe-align-center">
+                <span class="fusion-imageframe imageframe-none imageframe-1 hover-type-none">
+                 <img alt="" class="img-responsive wp-image-1434" height="116" src="https://www.rocati.net/wp-content/uploads/2018/03/Logo-R-150.png" title="Logo-R-150" width="150"/>
+                </span>
+               </div>
+               Rocati è il primo bonus d'acquisto digitale che sostiene l'economia reale
+               <br/>
+              </h2>
+             </div>
+            </div>
+           </div>
+           <div class="buttons">
+           </div>
+          </div>
+         </div>
+         <div class="background background-image" data-imgwidth="1900" style="background-image: url(https://www.rocati.net/wp-content/uploads/2018/01/4965331_dark_2.jpg);max-width:100%;height:400px;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://www.rocati.net/wp-content/uploads/2018/01/4965331_dark_2.jpg', sizingMethod='scale');">
+         </div>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="avada-page-titlebar-wrapper">
+    </div>
+    <main class="clearfix width-100" id="main">
+     <div class="fusion-row" style="max-width:100%;">
+      <section class="full-width" id="content">
+       <div class="post-974 page type-page status-publish hentry" id="post-974">
+        <span class="entry-title rich-snippet-hidden">
+         HOME
+        </span>
+        <span class="vcard rich-snippet-hidden">
+         <span class="fn">
+          <a href="https://www.rocati.net/author/save_ha9l7084/" rel="author" title="Articoli scritti da admin">
+           admin
+          </a>
+         </span>
+        </span>
+        <span class="updated rich-snippet-hidden">
+         2020-07-29T14:01:48+00:00
+        </span>
+        <div class="post-content">
+         <div class="fusion-fullwidth fullwidth-box fusion-builder-row-1 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-equal-height-columns" style="background-color: rgba(255,255,255,0);background-position: left top;background-repeat: no-repeat;padding-top:20px;padding-right:30px;padding-bottom:30px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;">
+          <div class="fusion-builder-row fusion-row">
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-0 fusion-one-half fusion-column-first 1_2" style="margin-top:0px;margin-bottom:20px;width:48%; margin-right: 4%;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 40px 50px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-column-content-centered">
+              <div class="fusion-column-content">
+               <div class="fusion-text">
+                <p>
+                 <span style="font-family: 'playfair'; font-size: 90px; line-height: 30px; vertical-align: middle; margin-bottom: -20px; margin-right: 20px;">
+                  “
+                 </span>
+                 <span style="font-family: 'playfair'; font-size: 30px; line-height: 60px; font-weight: 400; font-style: normal;">
+                  Rocati nasce per non far spegnere le luci dei negozi e mantenere saldo il valore degli immobili vero rifugio del risparmio italiano.
+                 </span>
+                 <span style="font-family: 'playfair'; font-size: 90px; line-height: 30px; vertical-align: middle; margin-bottom: -20px; margin-right: 20px;">
+                  ”
+                 </span>
+                </p>
+               </div>
+               <div class="fusion-sep-clear">
+               </div>
+               <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:20px;margin-bottom:20px;">
+               </div>
+               <div class="imageframe-align-center">
+                <span class="fusion-imageframe imageframe-none imageframe-2 hover-type-none">
+                 <img alt="" class="img-responsive wp-image-1459" height="400" sizes="(max-width: 800px) 100vw, 600px" src="https://www.rocati.net/wp-content/uploads/2018/03/062157593-parents-and-kids-sitting-sofa--600x400.jpeg" srcset="https://www.rocati.net/wp-content/uploads/2018/03/062157593-parents-and-kids-sitting-sofa--200x133.jpeg 200w, https://www.rocati.net/wp-content/uploads/2018/03/062157593-parents-and-kids-sitting-sofa--400x267.jpeg 400w, https://www.rocati.net/wp-content/uploads/2018/03/062157593-parents-and-kids-sitting-sofa--600x400.jpeg 600w, https://www.rocati.net/wp-content/uploads/2018/03/062157593-parents-and-kids-sitting-sofa--800x533.jpeg 800w, https://www.rocati.net/wp-content/uploads/2018/03/062157593-parents-and-kids-sitting-sofa-.jpeg 960w" title="Parents and kids sitting on sofa in living room at home" width="600"/>
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-1 fusion-one-half fusion-column-last 1_2" style="margin-top:0px;margin-bottom:20px;width:48%">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 50px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-column-content-centered">
+              <div class="fusion-column-content">
+               <div class="fusion-text">
+                <h2>
+                 Our vision
+                </h2>
+               </div>
+               <div class="fusion-sep-clear">
+               </div>
+               <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+               </div>
+               <span class="fusion-imageframe imageframe-none imageframe-3 hover-type-none">
+                <img alt="" class="img-responsive wp-image-1132" height="20" src="https://www.rocati.net/wp-content/uploads/2018/01/brick-g.png" title="brick-g" width="44"/>
+               </span>
+               <div class="fusion-sep-clear">
+               </div>
+               <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:20px;">
+               </div>
+               <div class="fusion-text">
+                <p>
+                 Con i bonus Rocati intendiamo difendere il commercio dai colossi dell’online fornendo una leva strategica utile compensare le differenze che esistono tra domanda e offerta.
+                </p>
+                <p>
+                 Il bonus Rocati nasce puntando alla concretezza e non alla speculazione fornendo ai negozi dei bonus promozionali che potranno essere utilizzati tutto l’anno su qualsiasi tipologia di prodotto.
+                </p>
+                <p>
+                 La strategia Rocati promuove un naturale aumento delle vendite, offre soluzioni comode, sicure e affidabili riconducendo il consumatore a rivivere con piacere i suoi acquisti.
+                 <br/>
+                 La solidarietà, l’innovazione e l’aumento della capacità di spesa sono gli elementi portanti del sistema Rocati.
+                 <br/>
+                 Chi entra a far parte del nostro circuito qualifica la propria attività fidelizzando la clientela.
+                </p>
+                <p>
+                 L’innovazione tecnologica di Rocati non stravolgerà le abitudini consolidate delle attività aderenti perché verranno dotate di strumenti già ampiamente utilizzati come i Pos e le fidelity card.
+                 <br/>
+                 L’obbiettivo è quello di contrastare il dumping senza fine dei prezzi e il consumatore potrà utilizzare questi bonus digitali per qualsiasi tipo di acquisto, dall’alimentare alla moda, in tutto il circuito nazionale dei negozi Rocati.
+                </p>
+               </div>
+               <div class="fusion-sep-clear">
+               </div>
+               <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:20px;">
+               </div>
+               <div class="fusion-button-wrapper fusion-aligncenter">
+                <style type="text/css">
+                 .fusion-button.button-1 {border-radius:2px;}
+                </style>
+                <a class="fusion-button button-flat button-large button-default button-1 fusion-button-span-no fusion-button-default-type fusion-animated" data-animationduration="1.0" data-animationoffset="100%" data-animationtype="bounce" href="about/?lang=it" target="_self">
+                 <span class="fusion-button-text">
+                  Approfondisci
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div id="videoit">
+          <div class="fusion-bg-parallax" data-bg-align="center center" data-bg-height="" data-bg-image="https://www.rocati.net/wp-content/uploads/2018/01/526.jpg" data-bg-repeat="false" data-bg-width="" data-break_parents="0" data-direction="left" data-mobile-enabled="false" data-mute="false" data-opacity="100" data-velocity="-0.5">
+          </div>
+          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-parallax-left nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-equal-height-columns" style='background-color: rgba(255,255,255,0);background-image: url("https://www.rocati.net/wp-content/uploads/2018/01/526.jpg");background-position: center center;background-repeat: no-repeat;padding-top:0px;padding-right:30px;padding-bottom:0px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;'>
+           <div class="fusion-builder-row fusion-row">
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 5% 0px 5% 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="fusion-column-content-centered">
+               <div class="fusion-column-content">
+                <div class="imageframe-align-center">
+                 <span class="fusion-imageframe imageframe-none imageframe-4 hover-type-none">
+                  <img alt="" class="img-responsive wp-image-1025" height="126" src="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-logo-w.png" title="Rocati-logo-w" width="180"/>
+                 </span>
+                </div>
+                <div class="fusion-sep-clear">
+                </div>
+                <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+                </div>
+                <div class="fusion-text">
+                 <p style="font-weight: 300; text-align: center; color: #fff; letter-spacing: 2px;">
+                  GUARDA IL VIDEO
+                 </p>
+                </div>
+                <div class="fusion-sep-clear">
+                </div>
+                <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+                </div>
+                <div class="fusion-video fusion-youtube fusion-aligncenter" style="max-width:1110px;max-height:630px; width:100%">
+                 <div class="video-shortcode">
+                  <iframe allow="autoplay; fullscreen" allowfullscreen="" height="630" src="https://www.youtube.com/embed/KlcSoQxIQNk?wmode=transparent&amp;autoplay=0" title="YouTube video player" width="1110">
+                  </iframe>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div id="work">
+          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-3 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-equal-height-columns" id="our-work" style="background-color: rgba(255,255,255,0);background-position: left top;background-repeat: no-repeat;padding-top:80px;padding-right:30px;padding-bottom:20px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;">
+           <div class="fusion-builder-row fusion-row">
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_2_3 fusion-builder-column-3 fusion-two-third fusion-column-first 2_3" style="margin-top:0px;margin-bottom:20px;width:65.3333%; margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="fusion-column-content-centered">
+               <div class="fusion-column-content">
+                <div class="fusion-text">
+                 <h2>
+                  Parlano di noi…
+                 </h2>
+                </div>
+                <div class="fusion-sep-clear">
+                </div>
+                <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+                </div>
+                <span class="fusion-imageframe imageframe-none imageframe-5 hover-type-none">
+                 <img alt="" class="img-responsive wp-image-1132" height="20" src="https://www.rocati.net/wp-content/uploads/2018/01/brick-g.png" title="brick-g" width="44"/>
+                </span>
+                <div class="fusion-sep-clear">
+                </div>
+                <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:30px;">
+                </div>
+               </div>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-column-4 fusion-one-third fusion-column-last mobile-left-align 1_3" style="margin-top:0px;margin-bottom:20px;width:30.6666%">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="fusion-column-content-centered">
+               <div class="fusion-column-content">
+               </div>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-5 fusion-one-fifth fusion-column-first 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-6">
+                <a aria-label="url_59e602ecbc193031d210de28" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/wall-street-italia/" target="_self">
+                 <img alt="" class="img-responsive wp-image-2094" height="42" sizes="(max-width: 800px) 100vw, 200px" src="https://www.rocati.net/wp-content/uploads/2018/09/url_59e602ecbc193031d210de28-200x42.png" srcset="https://www.rocati.net/wp-content/uploads/2018/09/url_59e602ecbc193031d210de28-200x42.png 200w, https://www.rocati.net/wp-content/uploads/2018/09/url_59e602ecbc193031d210de28.png 331w" width="200"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-6 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-7">
+                <a aria-label="Russia-News-Grey" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/russia-news/" target="_self">
+                 <img alt="" class="img-responsive wp-image-2063" height="100" sizes="(max-width: 800px) 100vw, 320px" src="https://www.rocati.net/wp-content/uploads/2018/06/Russia-News-Grey.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/06/Russia-News-Grey-200x63.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/06/Russia-News-Grey.jpg 320w" width="320"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-7 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-8">
+                <a aria-label="Avvenire-logo-grey" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/avvenire/" target="_self">
+                 <img alt="" class="img-responsive wp-image-2025" height="120" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/06/Avvenire-logo-grey-400x120.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/06/Avvenire-logo-grey-200x60.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/06/Avvenire-logo-grey-400x120.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/06/Avvenire-logo-grey.jpg 600w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-8 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-9">
+                <a aria-label="il-giornale-grey" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/il-giornale/" target="_self">
+                 <img alt="" class="img-responsive wp-image-2000" height="62" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/05/il-giornale-grey.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/05/il-giornale-grey-200x31.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/05/il-giornale-grey.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-9 fusion-one-fifth fusion-column-last 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-10">
+                <a aria-label="italiaoggi-grey" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/italiaoggi/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1990" height="74" sizes="(max-width: 800px) 100vw, 313px" src="https://www.rocati.net/wp-content/uploads/2018/05/italiaoggi-grey.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/05/italiaoggi-grey-200x47.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/05/italiaoggi-grey.jpg 313w" width="313"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-10 fusion-one-fifth fusion-column-first 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-11">
+                <a aria-label="investing-com-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/investing-com/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1954" height="96" sizes="(max-width: 800px) 100vw, 399px" src="https://www.rocati.net/wp-content/uploads/2018/04/investing-com-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/investing-com-g-200x48.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/investing-com-g.jpg 399w" width="399"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-11 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-12">
+                <a aria-label="MilanoFinanza" class="fusion-no-lightbox" href="https://www.rocati.net/stampa/milano-finanza/?lang=it" target="_self">
+                 <img alt="" class="img-responsive wp-image-1043" height="100" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/01/MilanoFinanza-300x100.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/01/MilanoFinanza-200x67.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/01/MilanoFinanza-400x133.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/01/MilanoFinanza.jpg 600w" width="300"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-12 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-13">
+                <a aria-label="industria-e-finanza-logo-grey" class="fusion-no-lightbox" href="https://www.rocati.net/stampa/industria-e-finanza/?lang=it" target="_self">
+                 <img alt="" class="img-responsive wp-image-1577" height="56" src="https://www.rocati.net/wp-content/uploads/2018/03/industria-e-finanza-logo-grey.jpg" width="200"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-13 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-14">
+                <a aria-label="arena-grey" class="fusion-no-lightbox" href="https://www.rocati.net/stampa/arena-giornale-di-verona/?lang=it" target="_self">
+                 <img alt="" class="img-responsive wp-image-1632" height="76" sizes="(max-width: 800px) 100vw, 250px" src="https://www.rocati.net/wp-content/uploads/2018/04/arena-grey.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/arena-grey-200x61.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/arena-grey.jpg 250w" width="250"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-14 fusion-one-fifth fusion-column-last 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-15">
+                <a aria-label="BNT" class="fusion-no-lightbox" href="https://www.rocati.net/stampa/bnt-bitnews-today/?lang=it" target="_self">
+                 <img alt="" class="img-responsive wp-image-1687" height="60" sizes="(max-width: 800px) 100vw, 223px" src="https://www.rocati.net/wp-content/uploads/2018/04/BNT.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/BNT-200x54.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/BNT.jpg 223w" width="223"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-15 fusion-one-fifth fusion-column-first 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-16">
+                <a aria-label="NB05" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/news-btc/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1724" height="118" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/NB05-600x118.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/NB05-200x39.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/NB05-400x79.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/04/NB05.jpg 600w" width="600"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-16 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-17">
+                <a aria-label="bitcoin-genie" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/news-btc/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1729" height="105" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/bitcoin-genie.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/bitcoin-genie-200x50.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/bitcoin-genie-400x99.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/04/bitcoin-genie.jpg 423w" width="423"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-17 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-18">
+                <a aria-label="CCN-Logog" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/ccn/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1758" height="128" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/CCN-Logog-400x128.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/CCN-Logog-200x64.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/CCN-Logog.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-18 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-19">
+                <a aria-label="Coinvedi-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/coinvedi-daily-crypto-currency-news/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1773" height="106" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/Coinvedi-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/Coinvedi-g-200x53.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/Coinvedi-g.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-19 fusion-one-fifth fusion-column-last 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-20">
+                <a aria-label="Crypto-Valley-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/crypto-valley/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1784" height="85" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/Crypto-Valley-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/Crypto-Valley-g-200x43.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/Crypto-Valley-g.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-20 fusion-one-fifth fusion-column-first 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-21">
+                <a aria-label="CryptoTonic-gg" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/crypto-tonic/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1810" height="67" sizes="(max-width: 800px) 100vw, 317px" src="https://www.rocati.net/wp-content/uploads/2018/04/CryptoTonic-gg.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/CryptoTonic-gg-200x42.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/CryptoTonic-gg.jpg 317w" width="317"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-21 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-22">
+                <a aria-label="Follownews-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/follownews/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1815" height="88" sizes="(max-width: 800px) 100vw, 388px" src="https://www.rocati.net/wp-content/uploads/2018/04/Follownews-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/Follownews-g-200x45.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/Follownews-g.jpg 388w" width="388"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-22 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-23">
+                <a aria-label="News-Locker-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/news-locker/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1839" height="76" sizes="(max-width: 800px) 100vw, 357px" src="https://www.rocati.net/wp-content/uploads/2018/04/News-Locker-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/News-Locker-g-200x43.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/News-Locker-g.jpg 357w" width="357"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-23 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-24">
+                <a aria-label="About-Bitcoin-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/about-bitcoin/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1873" height="97" sizes="(max-width: 800px) 100vw, 373px" src="https://www.rocati.net/wp-content/uploads/2018/04/About-Bitcoin-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/About-Bitcoin-g-200x52.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/About-Bitcoin-g.jpg 373w" width="373"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-24 fusion-one-fifth fusion-column-last 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-25">
+                <a aria-label="bitt-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/bit-tale/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1861" height="85" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/bitt-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/bitt-g-200x43.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/bitt-g.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-25 fusion-one-fifth fusion-column-first 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-26">
+                <a aria-label="gazzetta-di-parma-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/gazzetta-di-parma/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1914" height="35" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/gazzetta-di-parma-g-400x35.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/gazzetta-di-parma-g-200x17.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/gazzetta-di-parma-g-400x35.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/04/gazzetta-di-parma-g.jpg 600w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-26 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-27">
+                <a aria-label="Bitcoin-News-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/bitcoin-news/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1827" height="129" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/Bitcoin-News-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/Bitcoin-News-g-200x65.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/Bitcoin-News-g.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-27 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-28">
+                <a aria-label="Inside-Bitcoins-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/inside-bitcoin/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1851" height="113" sizes="(max-width: 800px) 100vw, 400px" src="https://www.rocati.net/wp-content/uploads/2018/04/Inside-Bitcoins-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/Inside-Bitcoins-g-200x57.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/Inside-Bitcoins-g.jpg 400w" width="400"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-28 fusion-one-fifth 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="imageframe-liftup">
+               <span class="fusion-imageframe imageframe-none imageframe-29">
+                <a aria-label="omagazine-g" class="fusion-no-lightbox" href="https://www.rocati.net/it/stampa/omagazine/" target="_self">
+                 <img alt="" class="img-responsive wp-image-1974" height="84" sizes="(max-width: 800px) 100vw, 296px" src="https://www.rocati.net/wp-content/uploads/2018/04/omagazine-g.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/04/omagazine-g-200x57.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/04/omagazine-g.jpg 296w" width="296"/>
+                </a>
+               </span>
+              </div>
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-29 fusion-one-fifth fusion-column-last 1_5" style="margin-top:0px;margin-bottom:20px;width:20%;width:calc(20% - ( ( 4% + 4% + 4% + 4% ) * 0.2 ) );">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+            <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_5 fusion-builder-column-30 fusion-one-fifth fusion-column-first 1_5" style="margin-top:0px;margin-bottom:20px;width:16.8%; margin-right: 4%;">
+             <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+              <div class="fusion-clearfix">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="fusion-fullwidth fullwidth-box fusion-builder-row-4 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #303745;background-position: center center;background-repeat: no-repeat;padding-top:80px;padding-right:30px;padding-bottom:60px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;">
+          <div class="fusion-builder-row fusion-row">
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_6 fusion-builder-column-31 fusion-one-sixth fusion-column-first fusion-no-small-visibility 1_6" style="margin-top:0px;margin-bottom:20px;width:13.3333%; margin-right: 4%;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_2_3 fusion-builder-column-32 fusion-two-third 2_3" style="margin-top:0px;margin-bottom:20px;width:65.3333%; margin-right: 4%;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-text">
+              <h2 style="text-align: center; color: #fff;">
+               Roadmap
+              </h2>
+             </div>
+             <div class="fusion-sep-clear">
+             </div>
+             <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+             </div>
+             <div class="imageframe-align-center">
+              <span class="fusion-imageframe imageframe-none imageframe-30 hover-type-none">
+               <img alt="" class="img-responsive wp-image-1130" height="20" src="https://www.rocati.net/wp-content/uploads/2018/01/brick-w.png" title="brick-w" width="44"/>
+              </span>
+             </div>
+             <div class="fusion-sep-clear">
+             </div>
+             <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:55px;">
+             </div>
+             <div class="imageframe-align-center">
+              <span class="fusion-imageframe imageframe-none imageframe-31 hover-type-none">
+               <img alt="" class="img-responsive wp-image-2107" height="933" sizes="(max-width: 800px) 100vw, 800px" src="https://www.rocati.net/wp-content/uploads/2019/06/roadmap_ita.png" srcset="https://www.rocati.net/wp-content/uploads/2019/06/roadmap_ita-200x233.png 200w, https://www.rocati.net/wp-content/uploads/2019/06/roadmap_ita-400x467.png 400w, https://www.rocati.net/wp-content/uploads/2019/06/roadmap_ita-600x700.png 600w, https://www.rocati.net/wp-content/uploads/2019/06/roadmap_ita.png 800w" title="roadmap_ita" width="800"/>
+              </span>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_6 fusion-builder-column-33 fusion-one-sixth fusion-column-last fusion-no-small-visibility 1_6" style="margin-top:0px;margin-bottom:20px;width:13.3333%">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="fusion-fullwidth fullwidth-box fusion-builder-row-5 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: rgba(255,255,255,0);background-position: left top;background-repeat: no-repeat;padding-top:0px;padding-right:30px;padding-bottom:20px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;">
+          <div class="fusion-builder-row fusion-row">
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-34 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-sep-clear">
+             </div>
+             <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:20px;margin-bottom:20px;">
+             </div>
+             <div class="fusion-text">
+              <h1 style="text-align: center;">
+               Patrimonio Real estate nel mondo
+              </h1>
+             </div>
+             <div class="imageframe-align-center">
+              <span class="fusion-imageframe imageframe-none imageframe-32 hover-type-none fusion-animated" data-animationduration="0.3" data-animationoffset="100%" data-animationtype="slideInLeft">
+               <img alt="" class="img-responsive wp-image-1275" height="384" sizes="(max-width: 800px) 100vw, 1024px" src="https://www.rocati.net/wp-content/uploads/2018/02/grafico-ita-1024x384.png" srcset="https://www.rocati.net/wp-content/uploads/2018/02/grafico-ita-200x75.png 200w, https://www.rocati.net/wp-content/uploads/2018/02/grafico-ita-400x150.png 400w, https://www.rocati.net/wp-content/uploads/2018/02/grafico-ita-600x225.png 600w, https://www.rocati.net/wp-content/uploads/2018/02/grafico-ita-800x300.png 800w, https://www.rocati.net/wp-content/uploads/2018/02/grafico-ita-1200x450.png 1200w" title="grafico-ita" width="1024"/>
+              </span>
+             </div>
+             <div class="fusion-sep-clear">
+             </div>
+             <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:10px;margin-bottom:10px;">
+             </div>
+             <div class="fusion-text">
+              <p style="text-align: center;">
+               <em>
+                Fonte:
+                <a href="http://fortune.com/2016/01/26/rea-estate-global-economy/" rel="noopener noreferrer" target="_blank">
+                 Fortune.com
+                </a>
+               </em>
+              </p>
+             </div>
+             <div class="fusion-sep-clear">
+             </div>
+             <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:20px;margin-bottom:20px;">
+             </div>
+             <div class="fusion-sep-clear">
+             </div>
+             <div class="fusion-separator fusion-full-width-sep sep-single sep-solid" style="border-color:#809f80;border-top-width:1px;margin-left: auto;margin-right: auto;margin-top:;">
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="fusion-fullwidth fullwidth-box fusion-builder-row-6 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: rgba(255,255,255,0);background-position: left top;background-repeat: no-repeat;padding-top:80px;padding-right:30px;padding-bottom:60px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;">
+          <div class="fusion-builder-row fusion-row">
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-column-35 fusion-one-third fusion-column-first fusion-no-small-visibility 1_3" style="margin-top:0px;margin-bottom:20px;width:30.6666%; margin-right: 4%;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="imageframe-align-center">
+              <span class="fusion-imageframe imageframe-none imageframe-33 hover-type-none">
+               <img alt="" class="img-responsive wp-image-1132" height="20" src="https://www.rocati.net/wp-content/uploads/2018/01/brick-g.png" title="brick-g" width="44"/>
+              </span>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-column-36 fusion-one-third 1_3" style="margin-top:0px;margin-bottom:20px;width:30.6666%; margin-right: 4%;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-text">
+              <h2 style="text-align: center;">
+               La rivoluzione della customers sharing
+              </h2>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-column-37 fusion-one-third fusion-column-last fusion-no-small-visibility 1_3" style="margin-top:0px;margin-bottom:20px;width:30.6666%">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="imageframe-align-center">
+              <span class="fusion-imageframe imageframe-none imageframe-34 hover-type-none">
+               <img alt="" class="img-responsive wp-image-1132" height="20" src="https://www.rocati.net/wp-content/uploads/2018/01/brick-g.png" title="brick-g" width="44"/>
+              </span>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-38 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-builder-row fusion-builder-row-inner fusion-row">
+              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-nested-column-1 fusion-one-third fusion-column-first 1_3" style="margin-top: 0px;margin-bottom: 50px;width:33.33%;width:calc(33.33% - ( ( 4% + 4% ) * 0.3333 ) );margin-right:4%;">
+               <div class="fusion-column-wrapper fusion-column-wrapper-1" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+                <span class="fusion-imageframe imageframe-none imageframe-35 hover-type-none fusion-animated" data-animationduration="0.6" data-animationoffset="100%" data-animationtype="slideInLeft">
+                 <img alt="" class="img-responsive wp-image-1150" height="800" sizes="(max-width: 800px) 100vw, 800px" src="https://www.rocati.net/wp-content/uploads/2018/01/13961892-800.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/01/13961892-800-200x200.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/01/13961892-800-400x400.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/01/13961892-800-600x600.jpg 600w, https://www.rocati.net/wp-content/uploads/2018/01/13961892-800.jpg 800w" title="13961892-800" width="800"/>
+                </span>
+               </div>
+              </div>
+              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-nested-column-2 fusion-one-third 1_3" style="margin-top: 0px;margin-bottom: 50px;width:33.33%;width:calc(33.33% - ( ( 4% + 4% ) * 0.3333 ) );margin-right:4%;">
+               <div class="fusion-column-wrapper fusion-column-wrapper-2" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+                <div class="fusion-text">
+                 <p style="text-align: center;">
+                  Il metodo migliore per ottenere un sicuro aumento della clientela è quello di condividere tra gli esercenti un unico bonus di acquisto trasmettendo alla propria clientela il piacere di spendere di più senza vincoli territoriali o di brand.
+                 </p>
+                </div>
+                <div class="fusion-sep-clear">
+                </div>
+                <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+                </div>
+                <div class="fusion-button-wrapper fusion-aligncenter">
+                 <style type="text/css">
+                  .fusion-button.button-2 {border-radius:0px;}
+                 </style>
+                 <a class="fusion-button button-flat button-large button-default button-2 fusion-button-span-no fusion-button-default-type" href="https://cryptonote.exchange/" rel="noopener noreferrer" target="_blank">
+                  <span class="fusion-button-icon-divider button-icon-divider-left">
+                   <i class="fa fa-download">
+                   </i>
+                  </span>
+                  <span class="fusion-button-text fusion-button-text-left">
+                   BUY TOKEN
+                  </span>
+                 </a>
+                </div>
+               </div>
+              </div>
+              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_3 fusion-builder-nested-column-3 fusion-one-third fusion-column-last 1_3" style="margin-top: 0px;margin-bottom: 50px;width:33.33%;width:calc(33.33% - ( ( 4% + 4% ) * 0.3333 ) );">
+               <div class="fusion-column-wrapper fusion-column-wrapper-3" data-bg-url="" style="padding: 0px 0px 0px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+                <span class="fusion-imageframe imageframe-none imageframe-36 hover-type-none fusion-animated" data-animationduration="0.6" data-animationoffset="100%" data-animationtype="slideInRight">
+                 <img alt="" class="img-responsive wp-image-1138" height="800" sizes="(max-width: 800px) 100vw, 800px" src="https://www.rocati.net/wp-content/uploads/2018/01/10825758-800.jpg" srcset="https://www.rocati.net/wp-content/uploads/2018/01/10825758-800-200x200.jpg 200w, https://www.rocati.net/wp-content/uploads/2018/01/10825758-800-400x400.jpg 400w, https://www.rocati.net/wp-content/uploads/2018/01/10825758-800-600x600.jpg 600w, https://www.rocati.net/wp-content/uploads/2018/01/10825758-800.jpg 800w" title="10825758-800" width="800"/>
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="fusion-bg-parallax" data-bg-align="center center" data-bg-height="" data-bg-image="https://www.rocati.net/wp-content/uploads/2018/01/sfondo-1-300x185.jpg" data-bg-repeat="false" data-bg-width="" data-break_parents="0" data-direction="left" data-mobile-enabled="false" data-mute="false" data-opacity="100" data-velocity="-0.5">
+         </div>
+         <div class="fusion-fullwidth fullwidth-box fusion-builder-row-7 fusion-parallax-left nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-equal-height-columns" style='background-color: rgba(255,255,255,0);background-image: url("https://www.rocati.net/wp-content/uploads/2018/01/sfondo-1-300x185.jpg");background-position: center center;background-repeat: no-repeat;padding-top:0px;padding-right:30px;padding-bottom:0px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;'>
+          <div class="fusion-builder-row fusion-row">
+           <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-39 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">
+            <div class="fusion-column-wrapper" data-bg-url="" style="padding: 18% 0px 18% 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;">
+             <div class="fusion-column-content-centered">
+              <div class="fusion-column-content">
+               <div class="imageframe-align-center">
+                <span class="fusion-imageframe imageframe-none imageframe-37 hover-type-none">
+                 <img alt="" class="img-responsive wp-image-1025" height="126" src="https://www.rocati.net/wp-content/uploads/2018/01/Rocati-logo-w.png" title="Rocati-logo-w" width="180"/>
+                </span>
+               </div>
+               <div class="fusion-text">
+                <h1 data-fontsize="84" data-inline-fontsize="true" data-inline-lineheight="true" data-lineheight="60" style="text-align: center;">
+                 <span style="color: #ffffff;">
+                  Ready to Talk?
+                 </span>
+                </h1>
+               </div>
+               <div class="fusion-sep-clear">
+               </div>
+               <div class="fusion-separator fusion-full-width-sep sep-none" style="margin-left: auto;margin-right: auto;margin-top:5px;">
+               </div>
+               <div class="fusion-button-wrapper fusion-align-block">
+                <style type="text/css">
+                 .fusion-button.button-3 .fusion-button-text, .fusion-button.button-3 i {color:#1f1f27;}.fusion-button.button-3 .fusion-button-icon-divider{border-color:#1f1f27;}.fusion-button.button-3:hover .fusion-button-text, .fusion-button.button-3:hover i,.fusion-button.button-3:focus .fusion-button-text, .fusion-button.button-3:focus i,.fusion-button.button-3:active .fusion-button-text, .fusion-button.button-3:active{color:#ffffff;}.fusion-button.button-3:hover .fusion-button-icon-divider, .fusion-button.button-3:hover .fusion-button-icon-divider, .fusion-button.button-3:active .fusion-button-icon-divider{border-color:#ffffff;}.fusion-button.button-3:hover, .fusion-button.button-3:focus, .fusion-button.button-3:active{border-color:#ffffff;}.fusion-button.button-3 {border-color:#1f1f27;border-radius:2px;}.fusion-button.button-3{background: #ffffff;}.fusion-button.button-3:hover,.button-3:focus,.fusion-button.button-3:active{background: #607c68;}
+                </style>
+                <a class="fusion-button button-flat fusion-button-default-size button-custom button-3 fusion-button-default-span fusion-button-default-type" href="/contact-us/" target="_self">
+                 <i class="fa fa-envelope button-icon-left">
+                 </i>
+                 <span class="fusion-button-text">
+                  Contattaci
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+             <div class="fusion-clearfix">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <!-- fusion-row -->
+    </main>
+    <!-- #main -->
+    <div class="fusion-footer">
+     <footer class="fusion-footer-copyright-area fusion-footer-copyright-center" id="footer">
+      <div class="fusion-row">
+       <div class="fusion-copyright-content">
+        <div class="fusion-copyright-notice">
+         <div>
+          © Copyright
+          <script>
+           document.write(new Date().getFullYear());
+          </script>
+          Rocati Limited C 85246     |    All Rights Reserved     |
+          <a href="/terms-and-conditions/">
+           Terms and Conditions
+          </a>
+          |
+          <a href="/cookie-policy/?lang=it">
+           Cookie policy
+          </a>
+         </div>
+        </div>
+        <div class="fusion-social-links-footer">
+        </div>
+       </div>
+       <!-- fusion-fusion-copyright-content -->
+      </div>
+      <!-- fusion-row -->
+     </footer>
+     <!-- #footer -->
+    </div>
+    <!-- fusion-footer -->
+    <div class="fusion-sliding-bar-wrapper">
+    </div>
+   </div>
+   <!-- wrapper -->
+  </div>
+  <!-- #boxed-wrapper -->
+  <div class="fusion-top-frame">
+  </div>
+  <div class="fusion-bottom-frame">
+  </div>
+  <div class="fusion-boxed-shadow">
+  </div>
+  <a class="fusion-one-page-text-link fusion-page-load-link">
+  </a>
+  <div class="avada-footer-scripts">
+   <div class="fusion-privacy-bar fusion-privacy-bar-bottom">
+    <div class="fusion-privacy-bar-main">
+     <span>
+     </span>
+     <a class="fusion-privacy-bar-acceptance fusion-button fusion-button-default fusion-button-default-size fusion-button-span-no" data-alt-text="Aggiorna Impostazioni" data-orig-text="" href="#">
+     </a>
+    </div>
+   </div>
+   <link href="https://www.rocati.net/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.rocati.net/wp-includes/css/dist/block-library/theme.min.css?ver=5.4.2" id="wp-block-library-theme-css" media="all" rel="stylesheet" type="text/css"/>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.rocati.net\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.9" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/www.rocati.net\/wp-admin\/admin-ajax.php","nonce":"50f6ab3895","hideEffect":"fade","position":"bottom","onScroll":"0","onScrollOffset":"100","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"0","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"1","coronabarActive":"0"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/cookie-notice/js/front.min.js?ver=1.3.2" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/isotope.js?ver=3.0.4" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.infinitescroll.js?ver=2.1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-core/js/min/avada-faqs.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/modernizr.js?ver=3.3.1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fitvids.js?ver=1.1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionVideoGeneralVars = {"status_vimeo":"1","status_yt":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-video-general.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionLightboxVideoVars = {"lightbox_video_width":"1280","lightbox_video_height":"720"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.ilightbox.js?ver=2.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.mousewheel.js?ver=3.0.6" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionLightboxVars = {"status_lightbox":"1","lightbox_gallery":"1","lightbox_skin":"metro-black","lightbox_title":"1","lightbox_arrows":"1","lightbox_slideshow_speed":"5000","lightbox_autoplay":"","lightbox_opacity":"0.92","lightbox_desc":"1","lightbox_social":"1","lightbox_deeplinking":"1","lightbox_path":"vertical","lightbox_post_images":"1","lightbox_animation_speed":"normal","l10n":{"close":"Press Esc to close","enterFullscreen":"Enter Fullscreen (Shift+Enter)","exitFullscreen":"Exit Fullscreen (Shift+Enter)","slideShow":"Slideshow","next":"Prossimo","previous":"Precedente"}};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-lightbox.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/imagesLoaded.js?ver=3.1.8" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/packery.js?ver=2.0.0" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaPortfolioVars = {"lightbox_behavior":"all","infinite_finished_msg":"<em>Tutti gli elementi sono caricati.<\/em>","infinite_blog_text":"<em>Caricamento del successivo gruppo di post...<\/em>","content_break_point":"800"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-core/js/min/avada-portfolio.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/library/Chart.js?ver=2.7.1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-chart.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionBgImageVars = {"content_break_point":"800"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-column-bg-image.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/cssua.js?ver=2.1.28" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.waypoints.js?ver=2.0.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-waypoints.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionAnimationsVars = {"status_css_animations":"desktop"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-animations.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionEqualHeightVars = {"content_break_point":"800"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-equal-heights.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-column.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fade.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.requestAnimationFrame.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-parallax.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionVideoBgVars = {"status_vimeo":"1","status_yt":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-video-bg.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionContainerVars = {"content_break_point":"800","container_hundred_percent_height_mobile":"0","is_sticky_header_transparent":"1","hundred_percent_scroll_sensitivity":"450"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-container.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-content-boxes.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/library/jquery.countdown.js?ver=1.0" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-countdown.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/library/jquery.countTo.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.appear.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionCountersBox = {"counter_box_speed":"1000"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-counters-box.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.easyPieChart.js?ver=2.1.7" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-counters-circle.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-flip-boxes.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-gallery.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionMapsVars = {"admin_ajax":"https:\/\/www.rocati.net\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fusion_maps.js?ver=2.2.2" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-google-map.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/library/jquery.event.move.js?ver=2.0" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-image-before-after.js?ver=1.0" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.modal.js?ver=3.1.1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-modal.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-progress.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionRecentPostsVars = {"infinite_loading_text":"<em>Caricamento del successivo gruppo di post...<\/em>","infinite_finished_msg":"<em>Tutti gli elementi sono caricati.<\/em>"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-recent-posts.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-syntax-highlighter.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.transition.js?ver=3.3.6" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.tab.js?ver=3.1.1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionTabVars = {"content_break_point":"800"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-tabs.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.cycle.js?ver=3.0.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionTestimonialVars = {"testimonials_speed":"4000"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-testimonials.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/library/jquery.textillate.js?ver=2.0" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-title.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.collapse.js?ver=3.1.1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-toggles.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/vimeoPlayer.js?ver=2.2.1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionVideoVars = {"status_vimeo":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-video.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.hoverintent.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-core/js/min/fusion-vertical-menu-widget.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/lazysizes.js?ver=4.1.5" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.tooltip.js?ver=3.3.5" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.popover.js?ver=3.3.5" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.carouFredSel.js?ver=6.2.1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.easing.js?ver=1.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.flexslider.js?ver=2.2.2" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.hoverflow.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.placeholder.js?ver=2.0.7" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.touchSwipe.js?ver=1.6.6" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-alert.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionCarouselVars = {"related_posts_speed":"2500","carousel_speed":"2500"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-carousel.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionFlexSliderVars = {"status_vimeo":"1","slideshow_autoplay":"1","slideshow_speed":"7000","pagination_video_slide":"","status_yt":"1","flex_smoothHeight":"false"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-flexslider.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-popover.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-tooltip.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-sharing-box.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionBlogVars = {"infinite_blog_text":"<em>Caricamento del successivo gruppo di articoli...<\/em>","infinite_finished_msg":"<em>Tutti gli elementi sono caricati.<\/em>","slideshow_autoplay":"1","lightbox_behavior":"all","blog_pagination_type":"infinite_scroll"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-blog.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-button.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-general-global.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion.js?ver=2.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaHeaderVars = {"header_position":"top","header_sticky":"1","header_sticky_type2_layout":"menu_only","header_sticky_shadow":"1","side_header_break_point":"800","header_sticky_mobile":"","header_sticky_tablet":"1","mobile_menu_design":"modern","sticky_header_shrinkage":"","nav_height":"90","nav_highlight_border":"3","nav_highlight_style":"bar","logo_margin_top":"24px","logo_margin_bottom":"30px","layout_mode":"wide","header_padding_top":"0px","header_padding_bottom":"0px","scroll_offset":"full"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-header.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaMenuVars = {"site_layout":"wide","header_position":"top","logo_alignment":"left","header_sticky":"1","header_sticky_mobile":"","header_sticky_tablet":"1","side_header_break_point":"800","megamenu_base_width":"custom_width","mobile_menu_design":"modern","dropdown_goto":"Vai a...","mobile_nav_cart":"Carrello","mobile_submenu_open":"Open submenu of %s","mobile_submenu_close":"Close submenu of %s","submenu_slideout":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-menu.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionScrollToAnchorVars = {"content_break_point":"800","container_hundred_percent_height_mobile":"0","hundred_percent_scroll_sensitivity":"450"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-scroll-to-anchor.js?ver=1" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var fusionTypographyVars = {"site_width":"1200px","typography_sensitivity":"1","typography_factor":"1.5","elements":"h1, h2, h3, h4, h5, h6"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-responsive-typography.js?ver=1" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-skip-link-focus-fix.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/library/bootstrap.scrollspy.js?ver=3.3.2" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaCommentVars = {"title_style_type":"double solid","title_margin_top":"0px","title_margin_bottom":"31px"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-comments.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-general-footer.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-quantity.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-scrollspy.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-select.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaSidebarsVars = {"header_position":"top","header_layout":"v1","header_sticky":"1","header_sticky_type2_layout":"menu_only","side_header_break_point":"800","header_sticky_tablet":"1","sticky_header_shrinkage":"","nav_height":"90","sidebar_break_point":"800"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-sidebars.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/library/jquery.sticky-kit.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-tabs-widget.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaLanguageVars = {"language_flag":"it"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-wpml.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var toTopscreenReaderText = {"label":"Torna in cima"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/library/jquery.toTop.js?ver=1.2" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaToTopVars = {"status_totop":"desktop","totop_position":"right","totop_scroll_down_only":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-to-top.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaSelectVars = {"avada_drop_down":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-drop-down.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaRevVars = {"avada_rev_styles":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-rev-styles.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-contact-form-7.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/library/jquery.elasticslider.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaElasticSliderVars = {"tfes_autoplay":"1","tfes_animation":"sides","tfes_interval":"3000","tfes_speed":"800","tfes_width":"150"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-elastic-slider.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaLiveSearchVars = {"live_search":"1","ajaxurl":"https:\/\/www.rocati.net\/wp-admin\/admin-ajax.php","no_search_results":"Nessun risultato di ricerca corrisponde alla tua richiesta. Per favore, riprova","min_char_count":"4","per_page":"100","show_feat_img":"1","display_post_type":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/themes/Avada/assets/min/js/general/avada-live-search.js?ver=6.2.3" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    /* <![CDATA[ */
+var avadaFusionSliderVars = {"side_header_break_point":"800","slider_position":"below","header_transparency":"1","mobile_header_transparency":"0","header_position":"top","content_break_point":"800","status_vimeo":"1"};
+/* ]]> */
+   </script>
+   <script src="https://www.rocati.net/wp-content/plugins/fusion-core/js/min/avada-fusion-slider.js?ver=4.2.3" type="text/javascript">
+   </script>
+   <script src="https://www.rocati.net/wp-includes/js/wp-embed.min.js?ver=5.4.2" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    jQuery( document ).ready( function() {
+					var ajaxurl = 'https://www.rocati.net/wp-admin/admin-ajax.php';
+					if ( 0 < jQuery( '.fusion-login-nonce' ).length ) {
+						jQuery.get( ajaxurl, { 'action': 'fusion_login_nonce' }, function( response ) {
+							jQuery( '.fusion-login-nonce' ).html( response );
+						});
+					}
+				});
+   </script>
+   <!-- Cookie Notice plugin v1.3.2 by Digital Factory https://dfactory.eu/ -->
+   <div aria-label="Cookie Notice" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" id="cookie-notice" role="banner" style="background-color: rgba(58,58,58,1);">
+    <div class="cookie-notice-container" style="color: #fff;">
+     <span class="cn-text-container" id="cn-notice-text">
+      This site uses cookies. Click accept if you want to continue browsing, click on information to learn more.
+     </span>
+     <span class="cn-buttons-container" id="cn-notice-buttons">
+      <a aria-label="Accept" class="cn-set-cookie cn-button" data-cookie-set="accept" href="#" id="cn-accept-cookie">
+       Accept
+      </a>
+      <a aria-label="Information" class="cn-more-info cn-button" href="/cookie-policy/?lang=it" id="cn-more-info" target="_blank">
+       Information
+      </a>
+     </span>
+     <a aria-label="Accept" class="cn-close-icon" data-cookie-set="accept" href="javascript:void(0);" id="cn-close-notice">
+     </a>
+    </div>
+   </div>
+   <!-- / Cookie Notice plugin -->
+  </div>
+ </body>
+</html>

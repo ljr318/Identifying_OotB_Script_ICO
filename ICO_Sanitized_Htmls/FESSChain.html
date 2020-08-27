@@ -1,0 +1,1819 @@
+<html>
+ <body>
+  <p>
+   ï»¿
+   <!DOCTYPE html>
+  </p>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>
+   FESSChain- Fast, Scalable and Secured Blockchain Solutions
+  </title>
+  <meta content="FESSChain is a blockchain powered decentralised ecosystem. We are focusing on building robust business solutions, services and DApps platform." name="description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="site.webmanifest" rel="manifest"/>
+  <link href="assets/img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/css/owl.carousel.min.css" rel="stylesheet"/>
+  <link href="assets/css/flaticon.css" rel="stylesheet"/>
+  <link href="assets/css/slicknav.css" rel="stylesheet"/>
+  <link href="assets/css/animate.min.css" rel="stylesheet"/>
+  <link href="assets/css/magnific-popup.css" rel="stylesheet"/>
+  <link href="assets/css/fontawesome-all.min.css" rel="stylesheet"/>
+  <link href="assets/css/themify-icons.css" rel="stylesheet"/>
+  <link href="assets/css/slick.css" rel="stylesheet"/>
+  <link href="assets/css/nice-select.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet"/>
+  <link href="./style1.css" rel="stylesheet"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-170499153-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144549942-1');
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+  </script>
+  <script type="text/javascript">
+   var timeout;
+        // parallax on mousemove event
+        $(".parallax-it").mousemove(function (e) {
+            if (timeout) clearTimeout(timeout);
+            setTimeout(callParallax.bind(null, e), 200);
+        });
+
+        // parallax on scroll event
+        window.addEventListener("scroll", throttle(callParallax, 200));
+
+        // throttle every ... millisecond
+        function throttle(fn, wait) {
+            var time = Date.now();
+            return function () {
+                if (time + wait - Date.now() < 0) {
+                    fn();
+                    time = Date.now();
+                }
+            };
+        }
+
+        // set parallax images
+        function callParallax(e) {
+            parallaxIt(e, ".parallax-element.element-1", -100);
+            parallaxIt(e, ".parallax-element.element-2", -200);
+            parallaxIt(e, ".parallax-background", -50);
+        }
+
+        // parallax it
+        function parallaxIt(e, target, movement) {
+            if (e !== undefined) {
+                var $this = $(".parallax-it");
+                var relX = e.pageX - $this.offset().left;
+                var relY = e.pageY - $this.offset().top;
+
+                $(".parallax-background").css({
+                    transition: "all ease 0s"
+                });
+
+                TweenMax.to(target, 1, {
+                    x: ((relX - $this.width() / 2) / $this.width()) * movement,
+                    y: ((relY - $this.height() / 2) / $this.height()) * movement,
+                    ease: Power2.easeOut
+                });
+            } else {
+                var scrollTop = $(window).scrollTop(),
+                    imgPercent = 0;
+
+                if (imgPercent <= 50) imgPercent = scrollTop / 100;
+
+                $(".parallax-background").each(function () {
+                    var top = $(this).css("top");
+                    var calc = "calc(" + imgPercent + "% +" + top + ")";
+
+                    $(this).css({
+                        top: calc,
+                        transition: "all ease 0.6s",
+                        transform: "translate(0%, -" + imgPercent + "%)"
+                    });
+
+                    var target = document.getElementById("target");
+                    target.textContent += " 1";
+                });
+            }
+        }
+  </script>
+  <style type="text/css">
+   h1 {
+            font-family: "poppins",sans-serif !important;
+        }
+
+        .coins {
+            width: 75%;
+        }
+
+        #bannerh1 {
+            font-size: 3rem;
+            color: rgba(234, 245, 201, 0.8);
+            padding-top: 10%;
+        }
+
+        .types {
+            color: #4043bc;
+            font-size: 14px;
+        }
+
+        .typesli {
+            margin-bottom: 0px !important;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .card {
+            border: none;
+            background-color: #eee;
+        }
+
+        .card-text {
+            font-size: 15px;
+        }
+
+        .blog {
+            background-color: white;
+            border: 1px solid rgba(0,0,0,0.125);
+            border-radius: 0.25rem;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .card-link {
+            color: #21d397;
+            float: left;
+            font-size: 12px;
+            padding-top: 3%;
+            padding-bottom: 2%;
+        }
+
+        .bloghead {
+            text-transform: uppercase;
+        }
+
+        .card-link:hover {
+            color: #7450fe;
+        }
+
+        .card-title {
+            margin-top: 0.75rem;
+        }
+
+        .featuredinhead {
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .mycard {
+            background-image: linear-gradient(#f6f5ff,#f7fff5);
+            box-shadow: 0px 5px 5px #a843fd;
+        }
+
+            .mycard:hover {
+                box-shadow: 0px 5px 5px #21d397;
+            }
+
+        .vertical-social {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1%;
+            background: #0d003b;
+            height: 340px !important;
+            margin-left: 30px;
+            border-radius: 40px;
+            padding: 30px 15px;
+            z-index: 999;
+            transition: 1s;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            box-shadow: 0px 4px 13px 0 rgba(168,67,253,.3);
+            overflow: hidden;
+            border-bottom: 3px solid #a843fd;
+        }
+
+            .vertical-social li {
+                padding: 7px 0;
+                text-align: center;
+            }
+
+        #a {
+            color: #fff;
+            opacity: 0.6;
+            font-size: 22px;
+        }
+
+            #a:hover {
+                opacity: 1;
+            }
+
+        .buttons {
+            text-align: center;
+        }
+
+        #bannerp {
+            font-size: 1.2rem;
+            color: #a5b8d8;
+        }
+
+        #bannerp1 {
+            display: none;
+        }
+
+        .btn-hover {
+            width: 200px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 20px;
+            height: 55px;
+            text-align: center;
+            border: none;
+            background-size: 300% 100%;
+            border-radius: 50px;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+
+            .btn-hover:hover {
+                background-position: 100% 0;
+                moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            .btn-hover:focus {
+                outline: none;
+            }
+
+            .btn-hover.color-1 {
+                background-image: linear-gradient(to right, #feba82 0%, #ff687a 51%, #ff1572 100%);
+            }
+
+        .main-header .main-menu ul li a {
+            color: white;
+        }
+
+        .header-sticky.sticky-bar.sticky .main-menu ul > li > a {
+            color: purple;
+        }
+
+            .header-sticky.sticky-bar.sticky .main-menu ul > li > a:hover {
+                color: #ff687a;
+            }
+
+        .sticky-bar .sticky {
+            background-color: red;
+        }
+
+        .card-img-top {
+            width: 100% !important;
+        }
+
+        #footer-solcial {
+            display: none;
+        }
+
+        #padd {
+            padding-right: 0.5em;
+            padding-left: 0.5em;
+            padding-top: 0.1em;
+        }
+
+        #feature {
+            text-transform: uppercase;
+            color: white;
+        }
+
+        #featurepadd {
+            background-color: #4f27a6;
+            padding-right: 5em;
+            padding-left: 5em;
+        }
+
+        #phonebanner {
+            display: none;
+        }
+.header-transparrent{
+        	background-image:url(assets/img/logo/light.png);
+        	background-repeat: no-repeat;
+        	background-position: left;
+        	background-position-x: 4%; 
+		
+			background-size: 22%;
+			
+        }
+        .sticky{
+        	background-image:url(assets/img/logo/logo.png);
+        	background-repeat: no-repeat;	
+        	background-position: left;
+        	background-position-x: 4%; 
+			background-size: 22%;
+        }
+        @media only screen and (max-width: 768px) {
+            #hide {
+                display: none;
+            }
+
+            .header-area .slicknav_btn {
+                top: -25px;
+            }
+
+            .slicknav_btn {
+                margin-top: -50px;
+            }
+
+            .featuredinhead {
+                font-size: 28px;
+            }
+
+            #footer-social {
+                display: none;
+            }
+
+            #padd {
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+            }
+
+            #feature {
+                padding-top: 0%;
+                font-size: 200%;
+            }
+
+            #featurepadd {
+                padding-right: 1.5em;
+                padding-left: 1.5em;
+            }
+
+            #bannerp1 {
+                display: none;
+            }
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .bloghead {
+                text-align: center;
+                margin-bottom: 20px !important;
+            }
+
+            #bannerh1 {
+                font-size: 2rem;
+                color: rgba(234, 245, 201, 0.8);
+                padding-top: 20%;
+            }
+
+            #pcbanner {
+                display: none;
+            }
+
+            #phonebanner {
+                display: block;
+            }
+
+            #bannerp {
+                display: none;
+            }
+
+            .head {
+                font-size: 26px;
+                text-align: center;
+                padding-top: 4%;
+            }
+
+            .do-icon {
+                margin-left: -5%;
+            }
+
+            .we-padding {
+                padding-top: 0px;
+            }
+
+            .vertical-social {
+                display: none;
+            }
+
+            #i1 {
+                padding-top: 5%;
+            }
+
+            #explore {
+                margin-bottom: 5%;
+            }
+
+            #footer-social {
+                display: flex;
+                background: #0d003b;
+                width: 40%;
+                position: fixed;
+                z-index: 999;
+                bottom: 2%;
+                box-shadow: 0px 4px 13px 0 rgba(168,67,253,.3);
+                border-bottom: 2px solid #a843fd;
+                border-right: 2px solid #a843fd;
+                overflow: hidden;
+            }
+
+            #b {
+                padding: 2%;
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+
+            #feature {
+                padding-top: 12%;
+            }
+
+            #featurepadd {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .section-tittle h2 {
+                margin-bottom: 0px;
+            }
+
+            .phonebtn {
+                margin: 5px;
+                width: 155px;
+            }
+
+            #btn {
+                display: inline-flex;
+                padding-top: 50%;
+            }
+        }
+  </style>
+  <style type="text/css">
+   @media only screen and (max-width: 768px) {
+		#hamburger{
+                height: 68px;
+            }
+		
+
+            .header-transparrent{
+                background-size: 30%;
+            }
+            .slicknav_btn {
+               /* margin-top: -50px;*/
+            }
+	}
+	
+		@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .main-header {
+    padding: 30px 0 !important;
+} 
+.sticky{
+padding: 30px 0 !important;
+			}
+
+}
+	
+	        @media only screen and (max-width: 600px) {
+
+	        	#hamburger{
+                height: 64px;
+            }
+			.header-transparrent{
+                background-size: 80%;
+            }
+			.sticky{
+			    background-size: 80%;
+			}
+}
+  </style>
+  <script>
+   function AutoRefresh( ) {
+$(document).ready(function() {
+    $.ajax({
+        url: "https://openapi.digifinex.com/v3/ticker?symbol=fess_usdt&temp="+ Math.random()
+    }).then(function(data) {
+	var a = 'FESS\xa0:\xa0Price\xa0\xa0$' + data.ticker[0].last+ '\xa0\xa0\xa0|\xa0\xa0\xa024h\xa0Volume\xa0\xa0'
+	+ data.ticker[0].vol+ '\xa0\xa0\xa0|\xa0\xa0\xa0Bid\xa0\xa0$' + data.ticker[0].buy+'\xa0\xa0\xa0|\xa0\xa0\xa0Ask\xa0\xa0$'
+	+ data.ticker[0].sell 
+	+'\xa0\xa0\xa0|\xa0\xa0\xa0High\xa0\xa0$'+ data.ticker[0].high+ '\xa0\xa0\xa0|\xa0\xa0\xa0Low\xa0\xa0$' + data.ticker[0].low+'\xa0\xa0';
+       $('.vol').text(a.toString());
+    });
+});               
+}
+			setInterval(AutoRefresh,5000);
+
+AutoRefresh();
+  </script>
+  <!-- Preloader Start -->
+  <!--<div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/logo2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>-->
+  <!-- Preloader Start -->
+  <div style="background:#0d003b;color:white;">
+   <marquee class="vol" onmouseout="start()" onmouseover="stop()" style="font-style:bold;font-size:1em;">
+   </marquee>
+  </div>
+  <header>
+   <!-- Header Start -->
+   <div class="header-area header-transparrent" style="margin-top:1em;">
+    <div class="main-header header-sticky">
+     <div class="container">
+      <div class="row align-items-center">
+       <!-- Logo -->
+       <div class="col-xl-2 col-lg-2 col-md-1" id="hamburger">
+        <!-- <div class="logo"> -->
+        <!-- <a href="index.html"><img src="assets/img/logo/logo.png" alt="" style="height: none; max-width: none;"></a> -->
+        <!-- </div> coment this 
+							   
+							  
+							   -->
+       </div>
+       <div class="col-xl-10 col-lg-10 col-md-10">
+        <!-- Main-menu -->
+        <div class="main-menu f-right d-none d-lg-block">
+         <nav>
+          <ul id="navigation">
+           <li>
+            <a href="https://fesschain.live/">
+             Home
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             About
+            </a>
+            <ul class="submenu">
+             <li>
+              <a href="about.html">
+               About Us
+              </a>
+             </li>
+             <li>
+              <a href="team.html">
+               Team
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="bithind.html">
+             Products
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Updates
+            </a>
+            <ul class="submenu">
+             <li>
+              <a href="announcement.html">
+               Announcements
+              </a>
+             </li>
+             <li>
+              <a href="video.html">
+               Videos
+              </a>
+             </li>
+             <li>
+              <a href="timeline.html">
+               Timeline
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="#">
+             Resources
+            </a>
+            <ul class="submenu">
+             <li>
+              <a href="document.html">
+               Documents
+              </a>
+             </li>
+             <li>
+              <a href="token.html">
+               Tokenomics
+              </a>
+             </li>
+             <li>
+              <a href="Tokensale.html">
+               Token Sale
+              </a>
+             </li>
+             <li>
+              <a href="faq.html">
+               FAQs
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="https://fesschain.blog/">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a href="https://fess.network/explorer" target="_blank">
+             Explorer
+            </a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <!--  <div class="col-xl-2 col-lg-2 col-md-3" id="hide">
+                                 <div class="buttons">
+                                             <a href="#">
+                                              <button class="btn-hover color-1" data-animation="fadeInLeft" data-delay=".8s" id="hide">Contact Us</button>
+                                              </a>
+                                  </div>
+                               <div class="header-right-btn f-right d-none d-lg-block">
+                                  <a href="#" class="btn header-btn">Contact Us</a>
+                              </div>
+                          </div>-->
+       <!-- Mobile Menu -->
+       <div class="col-12">
+        <div class="mobile_menu d-block d-lg-none" style="margin-top:1em;">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Header End -->
+  </header>
+  <main>
+   <div class="vertical-social">
+    <ul>
+     <a a="" href="https://www.facebook.com/fesschain/" target="_blank id=">
+      <li>
+       <i class="fa fa-facebook">
+       </i>
+      </li>
+     </a>
+     <a a="" href="https://twitter.com/fesschain" target="_blank id=">
+      <li>
+       <i class="fa fa-twitter">
+       </i>
+      </li>
+     </a>
+     <a a="" href="https://www.instagram.com/officialfess/" target="_blank id=">
+      <li>
+       <i class="fa fa-instagram">
+       </i>
+      </li>
+     </a>
+     <a a="" href="https://www.linkedin.com/company/fesschain" target="_blank id=">
+      <li>
+       <i class="fa fa-linkedin">
+       </i>
+      </li>
+     </a>
+     <a a="" href="https://t.me/fesschain" target="_blank id=">
+      <li>
+       <i class="fa fa-envelope-o">
+       </i>
+      </li>
+     </a>
+    </ul>
+   </div>
+   <!-- Slider Area Start-->
+   <div class="section-2 slider-area" id="pcbanner">
+    <div class="parallax-it slider-active">
+     <div class="parallax-background single-slider slider-height d-flex align-items-center" style="background-image: url('assets/img/hero/hero_right.png');">
+      <div class="container">
+       <div class="row d-flex align-items-center">
+        <div class="col-lg-7 col-md-9" style="padding-top: 10%;">
+         <div class="hero__caption">
+          <h1 data-animation="fadeInLeft" data-delay=".4s" id="bannerh1">
+           FUTURE OF ELECTRONIC SETTLEMENT
+           <br/>
+           SYSTEMS
+          </h1>
+          <p data-animation="fadeInLeft" data-delay=".6s" id="bannerp">
+           With Blockchain Powered Scalable Solutions to offer
+           <br/>
+           a secured and sustainable ecosystem.
+          </p>
+          <div id="btn">
+           <a href="Login.aspx">
+            <button class="btn-hover color-1 phonebtn" data-animation="fadeInLeft" data-delay=".8s">
+             Sign In
+            </button>
+           </a>
+           <!-- <a href="Signup.aspx"> -->
+           <!-- <button class="btn-hover color-1 phonebtn" data-animation="fadeInLeft" data-delay=".8s">Register</button> -->
+           <!-- </a> -->
+          </div>
+          <!-- Hero-btn -->
+          <!--<div class="buttons">
+                                           <a href="#">
+                                            <button class="btn-hover color-1" data-animation="fadeInLeft" data-delay=".8s">Sign In</button>
+                                            </a>
+                                    </div>-->
+         </div>
+        </div>
+        <!--    <div class="col-lg-5 section-2" style="padding-right: 0px; padding-left: 0px;">
+
+                               <div class="parallax-it">
+                                   <img class="parallax-background" src="assets/img/hero/hero_right.png" style="width: 140%;">
+
+
+                               </div>
+
+                               </div> -->
+       </div>
+      </div>
+     </div>
+    </div>
+    <!--          <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.png">
+                     <div class="container">
+                         <div class="row d-flex align-items-center">
+                             <div class="col-lg-7 col-md-9 ">
+                                 <div class="hero__caption">
+                                     <h1 data-animation="fadeInLeft" data-delay=".4s">We Collect<br> High Quality Leads</h1>
+                                     <p data-animation="fadeInLeft" data-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi.</p>
+                                                                      <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
+                                         <a href="industries.html" class="btn hero-btn">Contact Us</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-5">
+                                 <div class="hero__img d-none d-lg-block" data-animation="fadeInRight" data-delay="1s">
+                                     <img src="assets/img/hero/hero_right.png" alt="">
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div> -->
+   </div>
+   <div class="section-2 slider-area" id="phonebanner">
+    <div class="parallax-it slider-active">
+     <div class="parallax-background single-slider slider-height d-flex align-items-center" style="background-image: url('assets/img/hero/hero_right1.png');">
+      <div class="container">
+       <div class="row d-flex align-items-center">
+        <div class="col-lg-7 col-md-9" style="padding-top: 10%;">
+         <div class="hero__caption">
+          <h1 data-animation="fadeInLeft" data-delay=".4s" id="bannerh1" style="font-size: 160%; text-align: center;">
+           FUTURE OF ELECTRONIC SETTLEMENT SYSTEMS
+          </h1>
+          <div id="btn">
+           <a href="Login.aspx">
+            <button class="btn-hover color-1 phonebtn" data-animation="fadeInLeft" data-delay=".8s">
+             Sign In
+            </button>
+           </a>
+           <!-- <a href="Signup.aspx"> -->
+           <!-- <button class="btn-hover color-1 phonebtn" data-animation="fadeInLeft" data-delay=".8s">Register</button> -->
+           <!-- </a> -->
+          </div>
+          <!-- Hero-btn -->
+          <!--<div class="buttons">
+                                           <a href="#">
+                                            <button class="btn-hover color-1" data-animation="fadeInLeft" data-delay=".8s">Sign In</button>
+                                            </a>
+                                    </div>-->
+         </div>
+        </div>
+        <!--    <div class="col-lg-5 section-2" style="padding-right: 0px; padding-left: 0px;">
+
+                               <div class="parallax-it">
+                                   <img class="parallax-background" src="assets/img/hero/hero_right.png" style="width: 140%;">
+
+
+                               </div>
+
+                               </div> -->
+       </div>
+      </div>
+     </div>
+    </div>
+    <!--          <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.png">
+                     <div class="container">
+                         <div class="row d-flex align-items-center">
+                             <div class="col-lg-7 col-md-9 ">
+                                 <div class="hero__caption">
+                                     <h1 data-animation="fadeInLeft" data-delay=".4s">We Collect<br> High Quality Leads</h1>
+                                     <p data-animation="fadeInLeft" data-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi.</p>
+                                                                      <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
+                                         <a href="industries.html" class="btn hero-btn">Contact Us</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-5">
+                                 <div class="hero__img d-none d-lg-block" data-animation="fadeInRight" data-delay="1s">
+                                     <img src="assets/img/hero/hero_right.png" alt="">
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div> -->
+   </div>
+   <!-- Slider Area End-->
+   <div id="footer-social">
+    <a href="https://www.facebook.com/fesschain/" id="b">
+     <li>
+      <i class="fa fa-facebook">
+      </i>
+     </li>
+    </a>
+    <a href="https://twitter.com/fesschain" id="b">
+     <li>
+      <i class="fa fa-twitter">
+      </i>
+     </li>
+    </a>
+    <a href="https://www.instagram.com/officialfess/" id="b">
+     <li>
+      <i class="fa fa-instagram">
+      </i>
+     </li>
+    </a>
+    <a href="https://www.linkedin.com/company/fesschain" id="b">
+     <li>
+      <i class="fa fa-linkedin">
+      </i>
+     </li>
+    </a>
+    <a href="https://t.me/fesschain" id="b">
+     <li>
+      <i class="fa fa-envelope-o">
+      </i>
+     </li>
+    </a>
+   </div>
+   <div style="background: url(assets/img/benefits-bg.svg) no-repeat left; padding-top: 1em; ">
+    <div class="what-we-do">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-6 col-md-6 text-center">
+        <div class="do-caption">
+         <img alt="FESSChain- A Blockchain Company grown in India" class="coins" id="i1" src="assets/img/fesschainforyou.png"/>
+        </div>
+       </div>
+       <div class="col-lg-6 col-md-6" id="padd">
+        <!--  <div class="do-icon">
+                                 <span  class="flaticon-tasks"></span>
+                             </div> -->
+        <h2 class="head">
+         FESSChain for you
+        </h2>
+        <p>
+         Fesschain is a blockchain based platform. It is diligently designed by integrating the versatility of Artificial Intelligence into the current tech development space. The architecture of Fessâ blockchain aims to power an array of services with its unique Neutrino Framework.
+         <br/>
+         <br/>
+         At FESSChain, we are committed for developing a promising conjuncture. The technology helps us to solve the real-world problems with the effective blockchain based solutions.
+        </p>
+        <a href="assets/img/white_paper_V2.pdf" target="_tab">
+         <h6>
+          Read More
+         </h6>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="what-we-do we-padding">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-6 col-md-6" id="padd">
+        <!--  <div class="do-icon">
+                                <span  class="flaticon-tasks"></span>
+                            </div> -->
+        <h2 class="head">
+         TECHNOLOGICAL FRAMEWORK
+        </h2>
+        <p>
+         The technological architecture lies within the unique âNeutrino Frameworkâ, powering the fesschain ecosystem. With this Fess will improvise the way DApps till date are being developed and run. In fact, it is also one of the major reasons which made way for the existence of fesschain.
+         <br/>
+         <br/>
+         FESS does not only suggest a way to harness the true potential of blockchain but also put the best steps forward to make it suitable for implementation at all scales.
+        </p>
+        <a download="" href="assets/img/white_paper_1.pdf" target="_blank">
+         <h6>
+          Read More
+         </h6>
+        </a>
+       </div>
+       <div class="col-lg-6 col-md-6 text-center">
+        <div class="do-caption">
+         <img alt="FESSChain- A Blockchain Company grown in India" class="coins" src="assets/img/howitworks.png"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- What We do start-->
+   </div>
+   <div class="have-project" id="featurepadd">
+    <div class="container" style="padding-top:2em;">
+     <!--<div class="row d-flex justify-content-center we-padding">-->
+     <div class="col-lg-12">
+      <div class="section-tittle text-center">
+       <h2 id="feature">
+        Features
+       </h2>
+      </div>
+     </div>
+     <!--</div>-->
+     <div class="row">
+      <div class="col-sm-4">
+       <div class="">
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/icons/1.png"/>
+         <h5 class="card-title" style="color: #ff5c97;">
+          Secured
+         </h5>
+         <p class="card-text" style="color: white;">
+          Multi-layered technical architecture and Proof of Proof (PoP) for a high-level protection layer for DApps.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-4">
+       <div>
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/icons/2.png"/>
+         <h5 class="card-title" style="color: #ff5c97;">
+          Scalable
+         </h5>
+         <p class="card-text" style="color: white;">
+          One Fess main chain recording only relevant data by verifying itself from the bitcoin blockchain and/or the timestamp. distributes the coreâs power into fragments.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-4">
+       <div>
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/icons/3.png"/>
+         <h5 class="card-title" style="color: #ff5c97;">
+          Fast
+         </h5>
+         <p class="card-text" style="color: white;">
+          With increasing data and nodes to be implemented, the TPS of FESS main chain goes upwards instead of falling down.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-sm-4">
+       <div>
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/icons/4.png"/>
+         <h5 class="card-title" style="color: #ff5c97;">
+          Transparent
+         </h5>
+         <p class="card-text" style="color: white;">
+          We strongly support the data privacy and with the help of the blockchain technology, FESSChain confidently keeps the promise.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-4">
+       <div>
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/icons/5.png"/>
+         <h5 class="card-title" style="color: #ff5c97;">
+          Diversity
+         </h5>
+         <p class="card-text" style="color: white;">
+          Designed to stay relevant for all business arena and use cases. The versatility of tech framework makes the fess blockchain obvious as a perfect business solution.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-4">
+       <div>
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/icons/6.png"/>
+         <h5 class="card-title" style="color: #ff5c97;">
+          Decentralised
+         </h5>
+         <p class="card-text" style="color: white;">
+          FESSChain is working an ecosystem which is distributed in nature and non-centralised in functionality.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- have-project Start-->
+   <!-- have-project End -->
+   <div class="col-12 col-xxl-12 col-lg-12 container" style="text-align:center;padding-top:2em;">
+    <!--<div class="row d-flex justify-content-center">-->
+    <div class="col-lg-12">
+     <div class="section-tittle text-center">
+      <h2>
+       FEATURED IN
+      </h2>
+     </div>
+    </div>
+    <!--</div>-->
+    <!--<h1 class="featuredinhead"> FEATURED IN </h1>-->
+    <marquee behaviour="" direction="left" onmouseout="this.start()" onmouseover="this.stop()">
+     <ul style="display:inline">
+      <li style="display:inline">
+       <a href="https://in.investing.com/analysis/what-should-we-know-about-durga-prasad-tripathi-200431234" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/investing.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="http://www.uniindia.com/fesschain-indian-startup-trying-to-solve-issues-plaguing-blockchain/newsvoir/news/1689182.html" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/uni.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://m.dailyhunt.in/news/india/english/newsvoir-epaper-newsvoir/fesschain+indian+startup+trying+to+solve+issues+plaguing+blockchain-newsid-129103442" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/dailyhunt.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.business-standard.com/article/news-ani/fesschain-indian-start-up-trying-to-solve-issues-plaguing-block-chain-119080501293_1.html" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/bussinessstenderd.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.aninews.in/news/business/fesschain-indian-start-up-trying-to-solve-issues-plaguing-block-chain20190805180639/" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/ani.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.coinwire.com/fesschain" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/coinwire.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://in.news.yahoo.com/fesschain-indian-start-trying-solve-issues-plaguing-block-123639025.html" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/yahooNews.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.indiainfoline.com/newsvoir?c_article_id=12234&amp;c_author_id=9813&amp;originurl=https%3A%2F%2Fwww.indiainfoline.com%2Fnewsvoir" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/iifl.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.newdelhitimes.com/press-release-section/?c_article_id=12234&amp;c_author_id=9813" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/newdelhitimes.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.indiannewsnetwork.net/news/fesschain-indian-start-up-trying-to-solve-issues-plaguing-block-chain20190805180639/" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/inn.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://www.netindia123.com/articles/showdetails.asp?id=3579595&amp;n_date=20190805&amp;cat=Business" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/netindia.png"/>
+       </a>
+      </li>
+      <li style="display:inline">
+       <a href="https://thesmetimes.com/fesschain-indian-startup-trying-to-solve-issues-plaguing-blockchain/" target="_blank">
+        <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/smetimes.png"/>
+       </a>
+      </li>
+     </ul>
+    </marquee>
+   </div>
+   <!--TESSt-->
+   <!--<div class="have-project" style="background-image: -webkit-linear-gradient(0deg, #e9ecef 0%, #999999 100%);  padding-right: 5em; padding-left: 5em;;">-->
+   <div class="have-project" style="background-color:  #999999 ;  padding-right: 5em; padding-left: 5em;;">
+    <div>
+     <div>
+      <div class="row d-flex align-items-center">
+       <div class="col-xl-12 col-lg-12 col-md-12">
+        <div style="text-align:center">
+         <a href="https://crypto-potential.com/project/fesschain" target="_blank" title="We are part of the crypto elite">
+          <div id="widgetBorder" style="text-align: center;display: inline-block; padding: 10px 0px 10px 0px; line-height: 1 !important; border-top: 2px solid transparent;border-bottom: 2px solid transparent;">
+           <svg class="labelCompetitionBasicBadge invertedSVG" height="128px" viewbox="0 0 639.107 757.04" width="128px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M172.798 645.6L26.22 560.93V222.373l183.562-106.04.6 7.1.383 3.888.13.83-173.84 100.41v326.202l141.144 81.492 141.44 81.492c.162 0 63.805-36.67 141.428-81.492l141.133-81.492V228.55L428.684 128.3c-.23-.147-.218-.927.052-3.703l.525-5.894.184-2.377L612.89 222.3v338.722l-293.362 169.28c-.082-.014-66.1-38.126-146.728-84.694zm27.107-39.753c-.056-.162-2.848-11.46-6.205-25.106l-6.43-26.106h11.096l.124.53c.068.29 1.82 8.52 3.89 18.286l3.962 18.227.195.47.142-.47c.078-.26 2.004-8.25 4.28-17.756l4.64-19.285h5.29c4.155 0 5.265.063 5.175.296-.063.163-2.993 11.196-6.512 24.518l-6.75 25.457-.35 1.235h-6.223c-4.768 0-6.247-.07-6.324-.294zm31.16-25.46v-25.753h27.987v7.76h-17.404v12.935h15.993v7.76h-15.993v15.052h17.874v7.996h-28.457zm35.513 0v-25.753l10.642.004c8.264.003 10.993.078 12.212.337 5.852 1.24 8.904 5.652 8.956 12.947.03 4.136-1.018 7.535-2.997 9.726-.78.863-3.756 2.62-4.444 2.623-.144 0-.686.123-1.203.27l-.94.27 1.646.31c3.514.66 6.033 2.645 7.174 5.652.465 1.227.543 2.04.725 7.607.19 5.84.44 9.193.82 11l.16.77-10.496-.127-.473-1.294c-.42-1.15-.488-2.067-.603-8.23l-.13-6.938-.665-1.354c-1.214-2.472-2.787-3.248-6.92-3.415l-2.88-.116v21.465h-10.583v-25.753zm16.537-3.63c2.98-.692 4.67-4.08 4.323-8.67-.177-2.347-.87-3.7-2.392-4.63-1.11-.688-1.238-.7-4.514-.784l-3.37-.076v7.034c0 3.87.07 7.104.157 7.2.23.23 4.748.18 5.797-.063zm23.21 3.63v-25.753h10.583v51.506h-10.583zm19.52 0v-25.753h26.822l-.128 7.88-15.875.124V575.8h15.287v7.76h-15.287v22.578h-10.818zm31.985 0v-25.753h10.583v51.506H357.83zm19.756 0v-25.753h27.987v7.76h-17.168v12.935h15.993v7.76h-15.993v15.052h17.874v7.996h-28.693zm35.748.004v-25.786l11.23.09c9.866.08 11.402.14 12.64.505 5.895 1.733 9.137 6.124 10.4 14.083.35 2.198.418 4.162.418 11.81 0 8.068-.053 9.413-.437 11.17-1.348 6.16-3.906 9.875-8.264 12-3.43 1.67-3.69 1.7-15.463 1.814l-10.525.1zm18.713 17.405c2-.6 3.318-2.225 4.077-5.063.832-3.11 1.006-5.474.986-13.406-.017-6.534-.084-7.953-.463-9.774-.715-3.43-1.884-5.36-3.865-6.386-1.166-.603-1.383-.632-4.865-.643l-3.645-.012-.12 35.63h3.37c2.287 0 3.742-.11 4.53-.347zM167.9 539.112c-4.273-.442-7.26-1.733-9.776-4.224-2.673-2.647-4.183-6.6-4.675-12.238-.308-3.534-.303-16.748.01-20.297.658-7.497 3.232-12.22 7.945-14.577 2.698-1.35 4.656-1.697 9.563-1.697 4.912 0 6.864.347 9.575 1.703 2.31 1.155 4.54 3.403 5.68 5.722 1.925 3.916 2.5 8.285 2.5 19.044.001 10.63-.57 14.987-2.483 18.966-1.722 3.58-5.53 6.403-9.746 7.22-2.32.45-6.236.622-8.592.378zm6.28-8.593c2.9-2.033 3.64-6.455 3.417-20.452-.107-6.723-.2-8.335-.588-10.124-1.01-4.666-2.584-6.225-6.28-6.215-3.93.01-5.614 2.51-6.25 9.284-.318 3.382-.147 19.576.227 21.5.678 3.502 1.733 5.376 3.557 6.315.898.462 1.34.532 2.975.47 1.696-.064 2.04-.156 2.94-.787zm-46.958 8.35c-8.286-1.277-12.42-6.325-13.283-16.22-.303-3.467-.306-16.964 0-20.362.843-9.518 4.68-14.402 12.465-15.87.84-.16 3.063-.283 4.94-.277 3.913.013 6.107.464 8.528 1.755 4.32 2.303 6.53 7.327 6.316 14.353l-.027.882H135.89l-.14-2.528c-.286-5.147-1.506-6.954-4.664-6.91-2.52.035-3.967 1.005-5.028 3.37-1.14 2.542-1.325 4.268-1.457 13.642-.154 10.98.137 14.466 1.46 17.474.987 2.244 2.74 3.397 5.172 3.404 3.224.01 4.704-2.274 4.988-7.696l.14-2.646h10.514v.882c-.01 3.43-.887 7.698-2.122 10.297-1.475 3.104-3.93 5.09-7.422 6.007-2.14.56-7.74.808-10.093.446zm328.632.016c-3.537-.643-5.933-1.79-8.203-3.933-2.6-2.453-4.017-5.838-4.718-11.275-.39-3.012-.405-19.07-.023-22.196.66-5.396 2.112-8.883 4.728-11.35 2.8-2.65 5.73-3.745 10.873-4.074 4.806-.307 9.58.6 12.327 2.368 4.486 2.87 6.383 7.163 6.963 15.757.337 5 .11 17.563-.37 20.64-1.214 7.754-4.605 11.992-10.954 13.69-1.737.465-8.756.7-10.623.37zm5.92-7.553c2.27-.518 3.816-2.427 4.578-5.65.897-3.795 1.05-19.43.244-24.77-.5-3.306-1.742-5.866-3.216-6.628-1.806-.934-4.962-.818-6.562.24-1.086.718-2.186 2.843-2.69 5.2-.876 4.088-.884 21.522-.012 25.57 1.045 4.854 3.698 6.947 7.658 6.044zm-205.08-18.68V486.9l10.995.004c13.384.005 13.954.088 17.28 2.5 4.04 2.942 5.865 10.867 4.174 18.12-.928 3.98-3.08 6.8-6.395 8.382-2.36 1.126-3.722 1.332-9.884 1.49l-5.35.138v20.86H256.7v-25.753zm18.11-3.407c1.854-.516 3.545-2.738 4.014-5.274.275-1.5-.055-4.624-.635-6-.467-1.118-1.417-2.092-2.556-2.62-.784-.363-1.54-.436-4.527-.44l-3.587-.005v14.58l3.234-.002c1.78 0 3.604-.104 4.057-.23zm65.146 7.644v-21.524H327.96V486.9h34.807v8.467h-11.992l-.12 42.92-10.7.126zm27.752-4.233V486.9h10.82l-.12 51.388-10.7.126zm27.752 4.233v-21.524h-11.995V486.9h34.807v8.467H406.28l-.12 42.92-10.7.126zm27.752-4.233V486.9h10.82l-.12 51.388-10.7.126zm63.5 0V486.9h14.523l6.774 17.65 6.967 17.77c.106.066.193-7.877.193-17.65V486.9h9.878v51.506h-14.07l-.69-1.823-13.346-35.79-.235 37.494-9.995.127zm-289.513-.122V486.9h8.584l8.584.08c0 .306 8.022 34.83 8.115 34.923.064.064.127.073.14.02s1.946-7.93 4.296-17.502l4.273-17.404 16.574-.124v51.276h-10.348v-19.795l-.153-19.642c-.084.084-2.337 8.965-5.005 19.736l-4.852 19.583h-10.287l-4.626-19.52-4.767-19.873c-.078-.194-.15 8.617-.16 19.58l-.02 19.932h-10.348zm99.248 0V486.9h27.987v7.76h-17.41l.126 12.818 15.875.124v7.755H307.03V530.4h17.874v7.76h-28.457zm56.048-66.173l-4.18-3.233c-.2-.206 152.25-199.53 152.61-199.53.164 0 2.098 1.376 4.3 3.057l4 3.057-152.66 199.704c-.015.017-1.846-1.358-4.068-3.057zm-37.47-.14c-2.134-1.654-3.88-3.118-3.88-3.254s34.278-45.08 76.174-99.88l76.498-99.508c.387.15 8.077 6.024 8.077 6.17 0 .3-152.514 199.514-152.73 199.497-.142-.01-2.004-1.373-4.138-3.027zM234.702 392.1l-49.91-56.64c-.262-.37.142-.798 3.638-3.866 3.096-2.718 3.992-3.39 4.212-3.158.154.16 20.67 23.418 45.595 51.68l45.493 51.454c.13.048 147.702-192.773 148.687-194.277.204-.312 8.44 5.985 8.315 6.356-.106.3-155.348 203.552-156.02 204.26-.37.4-3.205-2.774-50.008-55.81zm3.83-39.915l-47.743-54.16c-.032-.072 1.423-1.44 3.234-3.037l3.914-3.475.62-.57 95.536 108.33c0 .115-7.678 6.953-7.8 6.947-.043-.002-21.536-24.317-47.763-54.034zm63.013 25.522l-92.062-104.645c.088-.263 7.482-6.775 7.693-6.775.175 0 95.342 107.835 95.45 108.153.037.11-1.68 1.75-3.814 3.645l-3.88 3.443zm11.6-177.88l-3.293-.352c-5.62-.594-12.934-2.242-18.462-4.158-29.898-10.363-51.864-36.198-57.14-67.2-.938-5.515-1.17-8.417-1.17-14.7 0-8.116.747-14.293 2.597-21.477 10.95-42.52 51.744-70.14 95.222-64.468 32.523 4.242 60.078 26.797 70.664 57.84 12.397 36.354-.447 76.268-31.747 98.66-11.535 8.253-24.65 13.372-39.505 15.423-2.55.352-15.04.667-17.17.433zm15.287-7.53c16.773-1.855 33.175-9.374 45.207-20.725 13.898-13.11 22.064-29.017 24.796-48.3.586-4.138.59-15.563.01-19.71-1.318-9.375-3.525-16.802-7.3-24.603-6.34-13.068-15.26-23.405-27.07-31.37-19.434-13.107-43.15-16.96-65.852-10.7-13.998 3.86-27.262 12.008-37.096 22.785-9.673 10.602-16.505 23.92-19.234 37.5-1.313 6.535-1.515 8.697-1.5 16.238 0 7.566.22 9.876 1.518 16.228 4.816 23.563 20.58 43.982 42.323 54.82 13.76 6.86 28.856 9.533 44.22 7.834zm26.106-24.24l-3.13-.448c-3.682-.515-5.935-1.155-17.332-4.92-13.52-4.468-16.067-5.15-19.285-5.164-2.79-.012-2.776-.017-7.937 2.902-3.153 1.783-3.352 1.75-3.352-.585v-1.495l1.587-1.316c2.492-2.066 8.384-5.905 11.15-7.266l2.52-1.24-3.22-.164c-14.338-.73-23.57-4.563-30.742-12.767-6.047-6.917-9.794-15.95-10.936-26.364-.42-3.837-.183-11.373.47-14.865 1.773-9.494 5.734-16.94 12.386-23.286 9.13-8.707 20.948-12.827 35.568-12.398 5.112.15 8.53.6 12.86 1.69 12.296 3.097 21.313 10.108 26.33 20.47 2.802 5.79 4.104 11.917 4.113 19.353.01 8.976-1.588 16.136-5.21 23.333-4.026 7.998-9.445 13.717-17.282 18.242-6 3.458-13.687 6-20.03 6.59l-1.724.163 2.64.665c3.408.86 5.5 1.556 10.686 3.558 14.5 5.595 19.385 6.93 24.57 6.7 1.492-.066 3.377-.3 4.2-.52 1.734-.47 2.168-.28 2.168.953 0 1.52-.3 1.822-3.702 3.84-1.8 1.065-4.03 2.512-4.955 3.216s-1.71 1.266-1.744 1.248-.33-.074-.652-.125zm-29.004-25.486c13.716-1.812 22.125-9.806 25.696-24.427 1.054-4.317 1.473-8.18 1.468-13.547-.01-6.6-.875-12.46-2.602-17.553-3.677-10.838-9.016-16.98-17.897-20.587-5.078-2.063-9.43-2.79-15.526-2.6-9.298.303-15.824 2.962-21.32 8.688-4.614 4.806-7.138 10.464-8.473 18.99-.328 2.095-.42 4.003-.405 8.467.016 5.14.085 6.13.634 9.172 1.843 10.218 5.334 18.11 10.414 23.552 5.688 6.09 11.3 8.912 19.74 9.925 1.597.19 6.557.14 8.273-.088z" fill="#ffffff">
+            </path>
+           </svg>
+          </div>
+         </a>
+        </div>
+        <div style="text-align: center">
+         <a href="https://icopulse.com/ico/fess-chain" target="_blank" title="FESS Chain">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" height="50" src="https://icopulse.com/widget/h/fe/fess-chain.svg" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+         </a>
+         <a href="https://icoholder.com/en/fesschain-29201" target="_blank" title="FESS Chain">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" height="50" src="assets/img/a2.png" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+         </a>
+         <a href="https://icomarks.com/ico/fess-chain" rel="nofollow" target="_blank" title="FESS Chain ICO">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" height="50" src="https://icomarks.com/widget/f/fess-chain/horizontal.svg" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+         </a>
+         <a href="https://icobench.com/ico/fess-chain" target="_blank" title="FESS Chain">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" height="50" src="assets/img/a4.png" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+         </a>
+         <a href="https://cryptototem.com/fesschain-fess/" target="_blank" title="FessChain (FESS) IEO rating on CryptoTotem">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" height="50" src="https://cryptototem.com/widgets/imggen.php?w=208&amp;h=65&amp;format=0&amp;color=1&amp;ico_id=20914" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+         </a>
+         <br/>
+         <a href="https://coincodex.com/crypto/fesschain/" target="_blank">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" src="assets/img/coincodex.png" style=" padding-top:20px;padding-bottom:20px;height:70px;"/>
+         </a>
+         <a href="https://www.coinhills.com/ico/view/fess-chain/" target="_blank">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" src="assets/img/coinhills.png" style="padding-top:20px;padding-bottom:20px;height:70px;"/>
+         </a>
+         <a href="https://www.coingecko.com/en/ico/fess-chain" target="_blank">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" src="assets/img/CoinGeco.png" style="padding-top:20px;padding-bottom:20px;height:70px;"/>
+         </a>
+         <a href="https://foundico.com/ico/fesschain.html" rel="nofollow" target="_blank" title="FessChain on Foundico.com">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" src="https://foundico.com/widget/?p=30162&amp;f=h" style="padding-top:20px;padding-bottom:20px;height:70px;"/>
+         </a>
+         <a href="https://findico.io" target="_blank" title="Find ICO">
+          <img alt="FESSChain- A Blockchain Company grown in India" border="0" src="assets/img/findico.png" style="padding-top:20px;padding-bottom:20px;height:80px;"/>
+         </a>
+        </div>
+       </div>
+       <!--<div class="col-xl-5 col-lg-3 col-md-12">
+                            <div class="wantToWork-btn f-right">
+                                <a href="#" class="btn btn-ans">Contact Us</a>
+                            </div>
+                        </div>-->
+      </div>
+     </div>
+    </div>
+   </div>
+   <br/>
+   <br/>
+   <div class="generating-area">
+    <div class="container">
+     <!-- Section-tittle -->
+     <div class="row d-flex justify-content-center">
+      <div class="col-lg-8">
+       <div class="section-tittle text-center">
+        <h2>
+         PARTNERS
+        </h2>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-lg-2 col-md-2">
+       <a href="https://www.quillhash.com/" target="_blank">
+        <div class="single-generating d-flex mb-30 justify-content-center">
+         <div class="generating-icon">
+          <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/partner/hashcoin.png" width="100"/>
+         </div>
+         <!--<div class="generating-cap">
+                                    <h4>Quillhash</h4>
+                                    <p>
+                                        Seddo eiusmod tempor incididunt labore lore magna aliqua uisipsum suspendis incididun
+                                        se ultrices gravida.
+                                    </p>
+                                </div>-->
+        </div>
+       </a>
+      </div>
+      <div class="col-lg-2 col-md-2" style="text-align:center;">
+       <a href="https://www.block-cloud.io/" target="_blank">
+        <div class="single-generating d-flex mb-30 justify-content-center">
+         <div class="generating-icon">
+          <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/partner/blockcloud.jpg" width="100"/>
+          <!-- <p style="color:black;">Blockcloud</p> -->
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-lg-2 col-md-2" style="text-align:center;">
+       <a href="https://www.asiablockchainreview.com/" target="_blank">
+        <div class="single-generating d-flex mb-30 justify-content-center">
+         <div class="generating-icon">
+          <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/partner/abc.png" width="100"/>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-lg-2 col-md-2" style="text-align:center;">
+       <a href="https://bitcoinus.com/" target="_blank">
+        <div class="single-generating d-flex mb-30 justify-content-center">
+         <div class="generating-icon">
+          <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/partner/bitcoinus.png" width="100"/>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-lg-2 col-md-2" style="text-align:center;">
+       <a href="https://z-pay.io/" target="_blank">
+        <div class="single-generating d-flex mb-30 justify-content-center">
+         <div class="generating-icon">
+          <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/partner/z.png" width="100"/>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-lg-2 col-md-2" style="text-align:center;">
+       <a href="https://www.spectrummetro.com/" target="_blank">
+        <div class="single-generating d-flex mb-30 justify-content-center">
+         <div class="generating-icon">
+          <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/partner/topnewlogo.png" width="100"/>
+         </div>
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--Roadmap-->
+   <div class="swiper-container have-project container-fluid" style="background-color: #e8eeff; padding-right: 2em;padding-left:2em;padding-top:0.1em; height:auto;">
+    <br/>
+    <br/>
+    <div class="col-lg-12">
+     <div class="section-tittle text-center" style="padding-top:0.1em;">
+      <h2>
+       ROADMAP
+      </h2>
+     </div>
+    </div>
+    <div class="swiper-wrapper timeline" style="padding-right: 2em; padding-left: 2em; padding-top: 0.1em;">
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        MAY 2019
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Pre-Private Sale  One Pager Launch 
+                            Bounty Program
+       </span>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        JUNE 2019
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Prototype Launch 
+                            Whitepaper launch 
+                            Private Sale
+       </span>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        JULY 2019
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Pre-IEO Announcement
+       </span>
+       <br/>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        AUGUST 2019
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Pre-IEO Sale on 3 Exchanges
+       </span>
+       <br/>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        FEB 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Digi Super Sale (IEO) Announcement
+       </span>
+       <br/>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        March 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Super Sale (IEO) Launched
+       </span>
+       <br/>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        April 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        First Product Announcement
+       </span>
+       <br/>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        May 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        First Product Launch
+        <br/>
+        FESS Token Listing on DigiFinex Exchange
+       </span>
+       <br/>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        June 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Whitepaper 2.0
+        <br/>
+        Testnet
+       </span>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        August 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span style="font-size:1em;">
+        In-house Supply Chain Implementation
+        <br/>
+        Second Product Launch
+       </span>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        Sept 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Test net Public Bounty
+       </span>
+      </div>
+     </div>
+     <div class="swiper-slide" v-for="item in steps">
+      <div class="timestamp">
+       <span class="date">
+        Oct 2020
+        <span>
+        </span>
+       </span>
+      </div>
+      <div class="status">
+       <span>
+        Main net launch
+       </span>
+      </div>
+     </div>
+    </div>
+    <p class="swiper-control" style="text-align: center;">
+     <button class="btn btn-default btn-sm prev-slide genric-btn info-border circle mt-10" style="" type="button">
+      <i aria-hidden="true" class="fa fa-chevron-left">
+      </i>
+     </button>
+     <button class="btn btn-default btn-sm next-slide genric-btn info-border circle mt-10" style="" type="button">
+      <i aria-hidden="true" class="fa fa-chevron-right">
+      </i>
+     </button>
+    </p>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination">
+    </div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js">
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js">
+   </script>
+   <script src="./script1.js">
+   </script>
+   <div class="what-we-do" style="background-image: url(assets/img/blogbg.png); background-repeat: no-repeat; background-position: center right;display:none;">
+    <div class="container">
+     <div class="col-lg-12">
+      <div class="section-tittle text-center" style="padding-top:0.1em;">
+       <h2>
+        BLOG
+       </h2>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-sm-4">
+       <div class="blog card">
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" class="card-img-top" src="assets/img/blog_1.jpg"/>
+         <div>
+          <a class="card-link" href="#">
+           Card link
+          </a>
+          <br/>
+         </div>
+         <h5 class="card-title text-left">
+          Blog Title
+         </h5>
+         <p class="card-text">
+          With supporting text below as a natural lead-in to additional content. With supporting text belo...
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-4">
+       <div class="blog card">
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" class="card-img-top" src="assets/img/blog_2.jpg"/>
+         <div>
+          <a class="card-link" href="#">
+           Card link
+          </a>
+          <br/>
+         </div>
+         <h5 class="card-title text-left">
+          Blog Title
+         </h5>
+         <p class="card-text">
+          With supporting text below as a natural lead-in to additional content. With supporting text belo...
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-4">
+       <div class="blog card">
+        <div class="card-body text-center">
+         <img alt="FESSChain- A Blockchain Company grown in India" class="card-img-top" src="assets/img/blog_3.jpg"/>
+         <div>
+          <a class="card-link" href="#">
+           Card link
+          </a>
+          <br/>
+         </div>
+         <h5 class="card-title text-left">
+          Blog Title
+         </h5>
+         <p class="card-text">
+          With supporting text below as a natural lead-in to additional content. With supporting text belo...
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <br/>
+     <div class="row d-flex justify-content-center">
+      <div class="col-lg-8">
+       <div class="section-tittle text-center">
+        <a href="https://fesschain.blog/" target="_blank">
+         <button class="btn-hover color-1" data-animation="fadeInLeft" data-delay=".8s" style="margin: 0px;">
+          Explore All Blogs
+         </button>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer>
+   <!-- Footer Start-->
+   <div class="footer-main" data-background="assets/img/shape/footer_bg.png">
+    <div class="footer-area footer-padding">
+     <div class="container">
+      <div class="row d-flex justify-content-between">
+       <div class="col-sm">
+        <div class="single-footer-caption mb-50">
+         <div class="single-footer-caption mb-30">
+          <!-- logo -->
+          <div class="footer-logo">
+           <a href="https://fesschain.live/">
+            <img alt="FESSChain- A Blockchain Company grown in India" src="assets/img/logo/logo2.png"/>
+           </a>
+          </div>
+          <!--<div class="footer-tittle">
+                                        <div class="footer-pera">
+                                            <p class="info1">221B Baker Street, P.O Box 353 Park <br> Road, USA - 215431</p>
+                                            <p class="info2">info@yourdomain.com</p>
+                                       </div>
+                                    </div>-->
+          <!--<div id="footer-social">
+                                        <a href="https://www.facebook.com/fesschain/" id="b">
+
+                                            <i class="fa fa-facebook"></i>
+
+                                        </a>
+                                        <a href="https://twitter.com/fesschain" id="b">
+
+                                            <i class="fa fa-twitter"></i>
+
+                                        </a>
+                                        <a href="https://www.instagram.com/officialfess/" id="b">
+
+                                            <i class="fa fa-instagram"></i>
+
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/fesschain" id="b">
+
+                                            <i class="fa fa-linkedin"></i>
+
+                                        </a>
+                                        <a href="https://t.me/fesschain" id="b">
+
+                                            <i class="fa fa-envelope-o"></i>
+
+                                        </a>
+
+                                    </div>-->
+         </div>
+        </div>
+       </div>
+       <div class="col-sm">
+        <div class="single-footer-caption mb-50">
+         <div class="footer-tittle">
+          <h4>
+           About
+          </h4>
+          <ul>
+           <li>
+            <a href="about.html">
+             About Us
+            </a>
+           </li>
+           <li>
+            <a href="team.html">
+             Team
+            </a>
+           </li>
+           <li>
+            <a href="bithind.html">
+             Products
+            </a>
+           </li>
+           <li>
+            <a href="https://fesschain.blog/" target="_blank">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a href="http://careers.fesschain.live/" target="_blank">
+             Careers
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm">
+        <div class="single-footer-caption mb-50">
+         <div class="footer-tittle">
+          <h4>
+           Resources
+          </h4>
+          <ul>
+           <li>
+            <a href="assets/img/One_pager-1.pdf">
+             Onepager
+            </a>
+           </li>
+           <li>
+            <a href="assets/img/Litepaper-low.pdf">
+             Litepaper
+            </a>
+           </li>
+           <li>
+            <a href="assets/img/white_paper_1.pdf">
+             Whitepaper
+            </a>
+           </li>
+           <li>
+            <a href="faq.html">
+             FAQs
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm">
+        <div class="single-footer-caption mb-50">
+         <div class="footer-tittle">
+          <h4>
+           Support
+          </h4>
+          <ul>
+           <li>
+            <a href="#">
+             Contact Us
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Privacy Policy
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm">
+        <div class="single-footer-caption mb-50">
+         <div class="footer-tittle">
+          <h4>
+           Social Media
+          </h4>
+          <ul>
+           <li>
+            <a href="https://www.instagram.com/officialfess/" target="_blank">
+             Instagram
+            </a>
+           </li>
+           <li>
+            <a href="https://twitter.com/fesschain" target="_blank">
+             Twitter
+            </a>
+           </li>
+           <li>
+            <a href="https://www.facebook.com/fesschain/" target="_blank">
+             Facebook
+            </a>
+           </li>
+           <li>
+            <a href="https://www.linkedin.com/company/fesschain" target="_blank">
+             Linked In
+            </a>
+           </li>
+           <li>
+            <a href="https://www.youtube.com/channel/UCwxzGn-MGmJl2Lf8cPhRzwA" target="_blank">
+             Youtube
+            </a>
+           </li>
+           <li>
+            <a href="https://medium.com/fesschain" target="_blank">
+             Medium
+            </a>
+           </li>
+           <li>
+            <a href="https://t.me/fesschain" target="_blank">
+             Telegram
+            </a>
+           </li>
+           <li>
+            <a href="https://github.com/fesschain" target="_blank">
+             Github
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- footer-bottom aera -->
+    <div class="footer-bottom-area footer-bg">
+     <div class="container">
+      <div class="footer-border">
+       <div class="row d-flex align-items-center">
+        <div class="col-xl-12">
+         <div class="footer-copy-right text-center">
+          <p>
+           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+           Copyright ©
+           <script>
+            document.write(new Date().getFullYear());
+           </script>
+           All rights reserved by FESSChain
+           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Footer End-->
+  </footer>
+  <!-- JS here -->
+  <!-- All JS Custom Plugins Link Here here -->
+  <script src="./assets/js/vendor/modernizr-3.5.0.min.js">
+  </script>
+  <!-- Jquery, Popper, Bootstrap -->
+  <script src="./assets/js/vendor/jquery-1.12.4.min.js">
+  </script>
+  <script src="./assets/js/popper.min.js">
+  </script>
+  <script src="./assets/js/bootstrap.min.js">
+  </script>
+  <!-- Jquery Mobile Menu -->
+  <script src="./assets/js/jquery.slicknav.min.js">
+  </script>
+  <!-- Jquery Slick , Owl-Carousel Plugins -->
+  <script src="./assets/js/owl.carousel.min.js">
+  </script>
+  <script src="./assets/js/slick.min.js">
+  </script>
+  <!-- Date Picker -->
+  <script src="./assets/js/gijgo.min.js">
+  </script>
+  <!-- One Page, Animated-HeadLin -->
+  <script src="./assets/js/wow.min.js">
+  </script>
+  <script src="./assets/js/animated.headline.js">
+  </script>
+  <script src="./assets/js/jquery.magnific-popup.js">
+  </script>
+  <!-- Scrollup, nice-select, sticky -->
+  <script src="./assets/js/jquery.scrollUp.min.js">
+  </script>
+  <script src="./assets/js/jquery.nice-select.min.js">
+  </script>
+  <script src="./assets/js/jquery.sticky.js">
+  </script>
+  <!-- contact js -->
+  <script src="./assets/js/contact.js">
+  </script>
+  <script src="./assets/js/jquery.form.js">
+  </script>
+  <script src="./assets/js/jquery.validate.min.js">
+  </script>
+  <script src="./assets/js/mail-script.js">
+  </script>
+  <script src="./assets/js/jquery.ajaxchimp.min.js">
+  </script>
+  <!-- Jquery Plugins, main Jquery -->
+  <script src="./assets/js/plugins.js">
+  </script>
+  <script src="./assets/js/main.js">
+  </script>
+ </body>
+</html>

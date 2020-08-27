@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="blockonomics-index">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <!-- validation for mellowads -->
+  <meta content="09b49d7067973025568748e817104e44" name="maValidation"/>
+  <meta content="c095d96dd4fe22b2ca8d57bcb5da1f00" name="p:domain_verify"/>
+  <title>
+   Bitcoin Address Balance | Block Explorer - Blockonomics
+  </title>
+  <meta content="Bitcoin Address Balance | Block Explorer - Blockonomics" property="og:title"/>
+  <meta content="Check Bitcoin addresses, lookup transactions &amp; monitor wallet balances with our block explorer &amp; BTC address finder. No signup required, free to use!" name="description"/>
+  <meta content="Check Bitcoin addresses, lookup transactions &amp; monitor wallet balances with our block explorer &amp; BTC address finder. No signup required, free to use!" property="og:description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="/css/A.bootstrap.min.css.pagespeed.cf.iiQlPsbREn.css" rel="stylesheet"/>
+  <link href="/css/A.style.css+font-awesome.min.css+intlTelInput.css+loading-bar.css+toastr.css,Mcc.o9OlnfWzeT.css.pagespeed.cf.ps1Am4tWjU.css" rel="stylesheet"/>
+  <link href="/views/manifest.json" rel="manifest"/>
+  <script src="/js/header-footer.js.pagespeed.jm.brnZy9IRFy.js">
+  </script>
+  <!--[if lt IE 9]>
+    <script src="/js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+  <![endif]-->
+ </head>
+ <body class="no-padding shade2 main-page" ng-controller="SearchController">
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <script>
+   printHeader();
+  </script>
+  <div class="main-page-margin" id="header-and-search">
+   <div id="magnifying-bg">
+   </div>
+   <h1>
+    <b>
+     Lookup your bitcoin address / wallet
+    </b>
+   </h1>
+   <h2>
+    Bitcoin Invoice + Search
+   </h2>
+   <div class="clear">
+   </div>
+   <div id="search-box-wrapper">
+    <form accept-charset="utf-8" autocomplete="off" id="search-section-form" ng-submit="doSearch()">
+     <span class="glyphicon glyphicon-search">
+     </span>
+     <input id="search-box" ng-model="search_input" ng-model-options="{debounce: 500}" placeholder="Bitcoin Addresses / Transaction ID" type="text"/>
+    </form>
+   </div>
+  </div>
+  <section class="main-search" ng-class="{'instant-search-section':search_results}">
+   <div class="table-responsive generic-responsive-table-container search-results-table" ng-cloak="" ng-show="search_results">
+    <table class="table generic-responsive-table">
+     <thead>
+      <tr>
+       <th>
+        Address
+       </th>
+       <th>
+        Balance
+       </th>
+       <th>
+        Unconfirmed Amount
+        <div class="glyphicon glyphicon-question-sign" data-container="body" data-content="Pending Amount awaiting 2 confirmations" data-placement="bottom" data-toggle="popover">
+        </div>
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr ng-repeat="result in search_results">
+       <td>
+        <span class="table-heading-hidden">
+         Address:
+        </span>
+        {{result.addr}}
+       </td>
+       <td>
+        <span class="table-heading-hidden">
+         Balance:
+        </span>
+        {{result.confirmed / 1.0E8 }} BTC
+       </td>
+       <td>
+        <span class="table-heading-hidden">
+         Unconfirmed Amount:
+        </span>
+        {{result.unconfirmed / 1.0E8 }} BTC
+       </td>
+      </tr>
+     </tbody>
+     <tfoot>
+      <tr>
+       <td align="right" class="mobile-hidden-td">
+        Total Balance:
+       </td>
+       <td>
+        <span class="table-heading-hidden">
+         Total Balance:
+        </span>
+        {{total_confirmed / 1.0E8 }} BTC
+       </td>
+       <td>
+        <span class="table-heading-hidden">
+         Total Unconfirmed:
+        </span>
+        {{total_unconfirmed/ 1.0E8 }} BTC
+       </td>
+      </tr>
+     </tfoot>
+    </table>
+    <div class="visible-xs unconf-info-mobile">
+     <em>
+      Unconfirmed amount is the Pending Amount awaiting 2 confirmations
+     </em>
+    </div>
+   </div>
+   <div class="view-trans" ng-cloak="" ng-show="search_results">
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-12">
+       <div class="wrapper">
+        <a class="collapsed" href="" ng-click="toggleviewTransactions()">
+         <span>
+          {{ viewtxs ? '-Hide Transactions' : '+ View Transactions' }}
+         </span>
+        </a>
+        <a class="collapsed" href="/invoicecreate/#/?addr={{invoice_address}}" ng-show="invoice_address">
+         <span>
+          Create P2P Invoice
+         </span>
+        </a>
+        <a class="collapsed" href="" ng-click="monitorTx()">
+         <span id="monitor_link">
+          Monitor
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="trans-history" id="collapsedTrans" ng-cloak="" ng-show="viewtxs">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12">
+      <ul class="nav nav-tabs">
+       <li ng-class="{'active':!show_pending}">
+        <a href="" ng-click="show_pending=false">
+         Transaction History
+        </a>
+       </li>
+       <li ng-class="{'active': show_pending}">
+        <a href="" ng-click="show_pending=true">
+         Pending Transactions
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="tab-content">
+       <div class="tab-pane active" ng-cloak="" ng-hide="show_pending">
+        <div class="big-screen-table-cards table-responsive" style="width: 100%;">
+         <table class="table table-striped sortable responsive-card">
+          <thead>
+          </thead>
+          <tfoot>
+           <tr ng-show="tx_history.length == 200">
+            <td>
+             * Showing only last 200 transactions
+            </td>
+           </tr>
+           <tr ng-show="tx_history.length == 0">
+            <td>
+             No transactions
+            </td>
+           </tr>
+          </tfoot>
+          <tbody>
+           <tr ng-class="['dataRow', row.value&lt; 0? 'red' : 'green']" ng-click="showTx(row.link)" ng-repeat="row in tx_history" table-selection="">
+            <td class="date">
+             {{row.time * 1000 | date: 'MMM dd,yyyy HH:mm:ss'}}
+            </td>
+            <td align="right" class="dataValue">
+             {{row.value/ 1.0E8 }} BTC
+            </td>
+            <td class="link">
+             <a href="">
+              <span class="glyphicon glyphicon-file">
+              </span>
+              Tx
+             </a>
+            </td>
+            <td class="tags">
+             {{row.label}}
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="tab-pane active" ng-cloak="" ng-show="show_pending">
+        <div class="big-screen-table-cards table-responsive" style="width: 100%;">
+         <table class="table table-striped sortable responsive-card">
+          <thead>
+          </thead>
+          <tfoot>
+           <tr ng-show="pending_tx.length == 0">
+            <td>
+             No pending transactions
+            </td>
+           </tr>
+          </tfoot>
+          <tbody>
+           <tr ng-class="['dataRow', row.value&lt; 0? 'red' : 'green']" ng-click="showTx(row.link)" ng-repeat="row in pending_tx" table-selection="">
+            <td class="date">
+             {{row.time * 1000 | date: 'MMM dd,yyyy HH:mm:ss'}}
+            </td>
+            <td align="right" class="dataValue">
+             {{row.value/ 1.0E8 }} BTC
+            </td>
+            <td class="link">
+             <a href="">
+              <span class="glyphicon glyphicon-file">
+              </span>
+              Tx
+             </a>
+            </td>
+            <td class="tags">
+             {{row.label}}
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <div class="main-page-margin" id="how-to" ng-cloak="" ng-hide="search_results">
+   <div id="selector-wrapper">
+    <h3>
+     <b>
+      How to
+     </b>
+    </h3>
+    <button ng-class="{active: selectedGif=='invoice'}" ng-click="selectGif('invoice')">
+     Create Invoice
+    </button>
+    <button ng-class="{active: selectedGif=='xpub'}" ng-click="selectGif('xpub')">
+     Check Wallet
+    </button>
+   </div>
+   <div class="clear">
+   </div>
+   <video autoplay="autoplay" id="invoiceVideo" loop="loop" muted="muted" ng-hide="selectedGif!='invoice'" onclick="this.play();" poster="img/invoice_first_frame.jpg.pagespeed.ce.esdFCJzBy-.jpg">
+    <source src="img/invoice.mp4" type="video/mp4">
+     <source src="img/invoice.webm" type="video/webm">
+      Your browser doesn't support HTML5 video in WebM or MP4
+     </source>
+    </source>
+   </video>
+   <video autoplay="autoplay" id="xpubVideo" loop="loop" muted="muted" ng-hide="selectedGif!='xpub'" onclick="this.play();" poster="img/xpub_first_frame.jpg.pagespeed.ce.qxeKR2StQ1.jpg">
+    <source src="img/xpub.mp4" type="video/mp4">
+     <source src="img/xpub.webm" type="video/webm">
+      Your browser doesn't support HTML5 video in WebM or MP4
+     </source>
+    </source>
+   </video>
+   <p ng-cloak="" ng-show="selectedGif=='invoice'">
+    You want to bill your client
+    say 100USD in bitcoin. How to make sure sender paid the correct BTC amount
+    with the constantly fluctuating BTC price?  Start by searching your bitcoin address and clicking on Create P2P invoice
+    <a href="https://blog.blockonomics.co/peer-to-peer-no-signups-invoice-in-fiat-get-paid-in-bitcoin-f77772e4308b#.kayu1h1k0" target="_blank">
+     [More Details]
+    </a>
+   </p>
+   <p ng-cloak="" ng-show="selectedGif=='xpub'">
+    Your can check your complete wallet balance/history by searching your
+    <a href="//help.blockonomics.co/support/solutions/articles/33000248743-bitcoin-wallet-and-xpub" target="_blank">
+     wallet xpub
+    </a>
+    . You
+    can also search multiple bitcoin addresses seperated by space
+   </p>
+   <hr/>
+   <div id="why-choose">
+    <h3>
+     <b>
+      Why choose us?
+     </b>
+    </h3>
+    <div class="clear">
+    </div>
+    <div class="img-and-text">
+     <div class="img-sphere">
+      <img src="img/magnifying-icon.png.pagespeed.ce.yRx5gZRFg4.png"/>
+     </div>
+     <p>
+      Fast and Segwit Friendly
+     </p>
+    </div>
+    <div class="img-and-text">
+     <div class="img-sphere">
+      <img src="img/eye-with-hands-icon.png.pagespeed.ce.hKWg1e-V2P.png"/>
+     </div>
+     <p>
+      Zero Documentation requirements
+     </p>
+    </div>
+    <br class="choose-visible-xs"/>
+    <div class="img-and-text">
+     <div class="img-sphere">
+      <img src="img/xmoney-bag-icon.png.pagespeed.ic.qo8A5BMrRU.png"/>
+     </div>
+     <p>
+      Direct to wallet
+     </p>
+    </div>
+    <div class="img-and-text">
+     <div class="img-sphere">
+      <img src="img/idea-icon.png.pagespeed.ce.cHSy0kJ26k.png"/>
+     </div>
+     <p>
+      24x7 customer support
+     </p>
+    </div>
+   </div>
+  </div>
+  <div id="services" ng-cloak="" ng-hide="search_results">
+   <h3>
+    <b>
+     Our BTC services
+    </b>
+   </h3>
+   <div class="clear">
+   </div>
+   <a href="/merchants">
+    <div class="service">
+     <div class="text-wrapper">
+      <h4>
+       <b>
+        Merchant Gateway
+       </b>
+      </h4>
+      <p>
+       Accept Bitcoin payments on your webshop
+      </p>
+     </div>
+     <img src="img/xbtc_payments.png.pagespeed.ic.XzcXNUG_Nm.png"/>
+     <div class="clear">
+     </div>
+    </div>
+   </a>
+   <a href="/blockonomics">
+    <div class="service">
+     <div class="text-wrapper">
+      <h4>
+       <b>
+        Wallet Watcher
+       </b>
+      </h4>
+      <p>
+       Monitor balances
+      </p>
+      <p>
+       Get email notifications on credits / debits
+      </p>
+     </div>
+     <img src="img/xonomic_btc.png.pagespeed.ic.1xEpZ95kLO.png"/>
+     <div class="clear">
+     </div>
+    </div>
+   </a>
+   <a href="/invoicecreate/#/">
+    <div class="service">
+     <div class="text-wrapper">
+      <h4>
+       <b>
+        Bitcoin Invoice
+       </b>
+      </h4>
+      <p>
+       Request Bitcoin payments to your wallet
+      </p>
+     </div>
+     <img src="img/xbtc,P20invoice.png.pagespeed.ic.1u6rbFt03l.png"/>
+     <div class="clear">
+     </div>
+    </div>
+   </a>
+  </div>
+  <div class="clear">
+  </div>
+  <div class="main-page-margin" id="news-and-pub" ng-cloak="" ng-hide="search_results">
+   <h3>
+    <b>
+     Best from our Blog
+    </b>
+   </h3>
+   <div class="clear">
+   </div>
+   <a href="https://blog.blockonomics.co/the-ultimate-bitcoin-marketing-guide-part-1-reddit-8b56df299055" target="_blank">
+    <div class="news-item">
+     <h4>
+      Bitcoin Marketing Guide - Reddit
+     </h4>
+     <div class="clear">
+     </div>
+     <p>
+      A guide on using reddit to gain traction for your BTC business
+     </p>
+     <span class="news-item-date">
+      Jan 24, 2020
+     </span>
+    </div>
+   </a>
+   <a href="https://blog.blockonomics.co/how-to-sell-ebooks-for-bitcoin-3d2b06567db8" target="_blank">
+    <div class="news-item">
+     <h4>
+      How to sell ebooks for bitcoin?
+     </h4>
+     <div class="clear">
+     </div>
+     <p>
+      Easy Instructions on how to setup a BTC shop selling digital goods
+     </p>
+     <span class="news-item-date">
+      Jul 30, 2019
+     </span>
+    </div>
+   </a>
+   <a href="https://blog.blockonomics.co/saving-transaction-fee-using-segwit-how-to-be-a-bitcoin-ninja-78d8416375db" target="_blank">
+    <div class="news-item last">
+     <h4>
+      Saving Transaction Fee - Be a bitcoin ninja
+     </h4>
+     <div class="clear">
+     </div>
+     <p>
+      How to leverage segwit wallets to pay less bitcoin transaction fee?
+     </p>
+     <span class="news-item-date">
+      Feb 19, 2018
+     </span>
+    </div>
+   </a>
+  </div>
+  <div class="clear">
+  </div>
+  <div id="statistics" ng-cloak="" ng-hide="search_results">
+   <div class="statistic">
+    <img src="img/bull-market-icon.png.pagespeed.ce.4ZfuhqnWY1.png"/>
+    <p>
+     Monitoring
+    </p>
+    <p class="large-font">
+     300,000 +
+    </p>
+    <p>
+     addresses
+    </p>
+   </div>
+   <div class="statistic">
+    <img src="img/bull-market-icon.png.pagespeed.ce.4ZfuhqnWY1.png"/>
+    <p>
+     Processed
+    </p>
+    <p class="large-font">
+     140,000 +
+    </p>
+    <p>
+     payments
+    </p>
+   </div>
+   <div class="statistic">
+    <img src="img/bull-market-icon.png.pagespeed.ce.4ZfuhqnWY1.png"/>
+    <p>
+     Created
+    </p>
+    <p class="large-font">
+     6,500 +
+    </p>
+    <p>
+     P2P invoices
+    </p>
+   </div>
+  </div>
+  <div id="info-footer" ng-cloak="" ng-hide="search_results">
+   <div id="info-footer-content-wrap">
+    <h2>
+     Blockonomics is a decentralized and permissionless Bitcoin payment solution
+    </h2>
+    <a href="https://www.blockonomics.co/docs/blockonomics-brochure.pdf" id="whitepaper">
+     <div id="whitepaper-text">
+      To know more
+      <br/>
+      View Whitepaper
+     </div>
+    </a>
+   </div>
+  </div>
+  <script>
+   printFooter();
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+  </script>
+  <script>
+   window.jQuery||document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')
+  </script>
+  <script src="/js/vendor/bootstrap.min.js.pagespeed.jm._71g7qV96k.js">
+  </script>
+  <script src="/js/moment.js.pagespeed.jm.A39iSInAUe.js">
+  </script>
+  <script src="/js/vendor,_sorttable.js+vendor,_intlTelInput.min.js+main.js.pagespeed.jc.2A-CU-halG.js">
+  </script>
+  <script>
+   eval(mod_pagespeed_wnFijpqA7S);
+  </script>
+  <script>
+   eval(mod_pagespeed_lAgUld5klU);
+  </script>
+  <script>
+   eval(mod_pagespeed_XYXCDI$GL5);
+  </script>
+  <script src="/js/angular.js.pagespeed.jm.CYk6mdkM7X.js">
+  </script>
+  <script src="/js/angular-route.js+angular-resource.js+angular-cookies.js.pagespeed.jc.1_QM8c-8or.js">
+  </script>
+  <script>
+   eval(mod_pagespeed_DNJb2YgKST);
+  </script>
+  <script>
+   eval(mod_pagespeed_L01OSOHFO2);
+  </script>
+  <script>
+   eval(mod_pagespeed_twvKNTvTgB);
+  </script>
+  <script src="/js/vendor/ui-bootstrap-tpls-0.13.3.js.pagespeed.jm._haHE1FLFt.js">
+  </script>
+  <script src="/js/loading-bar.js+toastr.js.pagespeed.jc.EFzb3ZD6QQ.js">
+  </script>
+  <script>
+   eval(mod_pagespeed_lhWGTq_290);
+  </script>
+  <script>
+   eval(mod_pagespeed_LNHNA22wvQ);
+  </script>
+  <script src="/js/push-notify.js.pagespeed.jm.1KaC_qHnFE.js">
+  </script>
+  <script src="/js/vendor/vendors.min.js">
+  </script>
+  <script src="/js/angular-qrcode.js+indexapp.js+client-challenge.js.pagespeed.jc.GomQptJuQj.js">
+  </script>
+  <script>
+   eval(mod_pagespeed_n7Ig5fpIqt);
+  </script>
+  <script>
+   eval(mod_pagespeed_9z1zU1Calk);
+  </script>
+  <script>
+   eval(mod_pagespeed_$ZnM8mRaOg);
+  </script>
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-60586984-1','auto');ga('send','pageview');
+  </script>
+  <!-- deskmoz.com chat -->
+  <script async="" src="https://121chatagent.com/55050240" type="text/javascript">
+  </script>
+ </body>
+</html>

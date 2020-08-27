@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <title>
+   Cryptocean - Ecosystem &amp; Platform unifying Fiat &amp; Crypto worlds
+  </title>
+  <meta content="Is ecosystem, which unites financial and technological services for work with crypto currencies, digital financial actives and traditional fiat" name="description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="css/vendor.min.css?5635863" rel="stylesheet"/>
+  <link href="css/styles.css?1986337" rel="stylesheet"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <script src="https://wchat.freshchat.com/js/widget.js">
+  </script>
+  <script type="text/javascript">
+   var _rollbarConfig = {
+          accessToken: "e0bb570e814d468cb2fed5af373b17cb",
+          captureUncaught: true,
+          captureUnhandledRejections: true,
+          payload: {
+              environment: "production"
+          }
+      };
+      // Rollbar Snippet
+      !function (r) {
+          function e(n) {
+              if (o[n]) return o[n].exports;
+              var t = o[n] = {exports: {}, id: n, loaded: !1};
+              return r[n].call(t.exports, t, t.exports, e), t.loaded = !0, t.exports
+          }
+
+          var o = {};
+          return e.m = r, e.c = o, e.p = "", e(0)
+      }([function (r, e, o) {
+          "use strict";
+          var n = o(1), t = o(4);
+          _rollbarConfig = _rollbarConfig || {}, _rollbarConfig.rollbarJsUrl = _rollbarConfig.rollbarJsUrl || "https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.1/rollbar.min.js", _rollbarConfig.async = void 0 === _rollbarConfig.async || _rollbarConfig.async;
+          var a = n.setupShim(window, _rollbarConfig), l = t(_rollbarConfig);
+          window.rollbar = n.Rollbar, a.loadFull(window, document, !_rollbarConfig.async, _rollbarConfig, l)
+      }, function (r, e, o) {
+          "use strict";
+
+          function n(r) {
+              return function () {
+                  try {
+                      return r.apply(this, arguments)
+                  } catch (r) {
+                      try {
+                          console.error("[Rollbar]: Internal error", r)
+                      } catch (r) {
+                      }
+                  }
+              }
+          }
+
+          function t(r, e) {
+              this.options = r, this._rollbarOldOnError = null;
+              var o = s++;
+              this.shimId = function () {
+                  return o
+              }, "undefined" != typeof window && window._rollbarShims && (window._rollbarShims[o] = {
+                  handler: e,
+                  messages: []
+              })
+          }
+
+          function a(r, e) {
+              if (r) {
+                  var o = e.globalAlias || "Rollbar";
+                  if ("object" == typeof r[o]) return r[o];
+                  r._rollbarShims = {}, r._rollbarWrappedError = null;
+                  var t = new p(e);
+                  return n(function () {
+                      e.captureUncaught && (t._rollbarOldOnError = r.onerror, i.captureUncaughtExceptions(r, t, !0), i.wrapGlobals(r, t, !0)), e.captureUnhandledRejections && i.captureUnhandledRejections(r, t, !0);
+                      var n = e.autoInstrument;
+                      return e.enabled !== !1 && (void 0 === n || n === !0 || "object" == typeof n && n.network) && r.addEventListener && (r.addEventListener("load", t.captureLoad.bind(t)), r.addEventListener("DOMContentLoaded", t.captureDomContentLoaded.bind(t))), r[o] = t, t
+                  })()
+              }
+          }
+
+          function l(r) {
+              return n(function () {
+                  var e = this, o = Array.prototype.slice.call(arguments, 0),
+                      n = {shim: e, method: r, args: o, ts: new Date};
+                  window._rollbarShims[this.shimId()].messages.push(n)
+              })
+          }
+
+          var i = o(2), s = 0, d = o(3), c = function (r, e) {
+              return new t(r, e)
+          }, p = d.bind(null, c);
+          t.prototype.loadFull = function (r, e, o, t, a) {
+              var l = function () {
+                  var e;
+                  if (void 0 === r._rollbarDidLoad) {
+                      e = new Error("rollbar.js did not load");
+                      for (var o, n, t, l, i = 0; o = r._rollbarShims[i++];) for (o = o.messages || []; n = o.shift();) for (t = n.args || [], i = 0; i < t.length; ++i) if (l = t[i], "function" == typeof l) {
+                          l(e);
+                          break
+                      }
+                  }
+                  "function" == typeof a && a(e)
+              }, i = !1, s = e.createElement("script"), d = e.getElementsByTagName("script")[0], c = d.parentNode;
+              s.crossOrigin = "", s.src = t.rollbarJsUrl, o || (s.async = !0), s.onload = s.onreadystatechange = n(function () {
+                  if (!(i || this.readyState && "loaded" !== this.readyState && "complete" !== this.readyState)) {
+                      s.onload = s.onreadystatechange = null;
+                      try {
+                          c.removeChild(s)
+                      } catch (r) {
+                      }
+                      i = !0, l()
+                  }
+              }), c.insertBefore(s, d)
+          }, t.prototype.wrap = function (r, e, o) {
+              try {
+                  var n;
+                  if (n = "function" == typeof e ? e : function () {
+                      return e || {}
+                  }, "function" != typeof r) return r;
+                  if (r._isWrap) return r;
+                  if (!r._rollbar_wrapped && (r._rollbar_wrapped = function () {
+                      o && "function" == typeof o && o.apply(this, arguments);
+                      try {
+                          return r.apply(this, arguments)
+                      } catch (o) {
+                          var e = o;
+                          throw e && ("string" == typeof e && (e = new String(e)), e._rollbarContext = n() || {}, e._rollbarContext._wrappedSource = r.toString(), window._rollbarWrappedError = e), e
+                      }
+                  }, r._rollbar_wrapped._isWrap = !0, r.hasOwnProperty)) for (var t in r) r.hasOwnProperty(t) && (r._rollbar_wrapped[t] = r[t]);
+                  return r._rollbar_wrapped
+              } catch (e) {
+                  return r
+              }
+          };
+          for (var u = "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","), f = 0; f < u.length; ++f) t.prototype[u[f]] = l(u[f]);
+          r.exports = {setupShim: a, Rollbar: p}
+      }, function (r, e) {
+          "use strict";
+
+          function o(r, e, o) {
+              if (r) {
+                  var t;
+                  "function" == typeof e._rollbarOldOnError ? t = e._rollbarOldOnError : r.onerror && !r.onerror.belongsToShim && (t = r.onerror, e._rollbarOldOnError = t);
+                  var a = function () {
+                      var o = Array.prototype.slice.call(arguments, 0);
+                      n(r, e, t, o)
+                  };
+                  a.belongsToShim = o, r.onerror = a
+              }
+          }
+
+          function n(r, e, o, n) {
+              r._rollbarWrappedError && (n[4] || (n[4] = r._rollbarWrappedError), n[5] || (n[5] = r._rollbarWrappedError._rollbarContext), r._rollbarWrappedError = null), e.handleUncaughtException.apply(e, n), o && o.apply(r, n)
+          }
+
+          function t(r, e, o) {
+              if (r) {
+                  "function" == typeof r._rollbarURH && r._rollbarURH.belongsToShim && r.removeEventListener("unhandledrejection", r._rollbarURH);
+                  var n = function (r) {
+                      var o, n, t;
+                      try {
+                          o = r.reason
+                      } catch (r) {
+                          o = void 0
+                      }
+                      try {
+                          n = r.promise
+                      } catch (r) {
+                          n = "[unhandledrejection] error getting `promise` from event"
+                      }
+                      try {
+                          t = r.detail, !o && t && (o = t.reason, n = t.promise)
+                      } catch (r) {
+                          t = "[unhandledrejection] error getting `detail` from event"
+                      }
+                      o || (o = "[unhandledrejection] error getting `reason` from event"), e && e.handleUnhandledRejection && e.handleUnhandledRejection(o, n)
+                  };
+                  n.belongsToShim = o, r._rollbarURH = n, r.addEventListener("unhandledrejection", n)
+              }
+          }
+
+          function a(r, e, o) {
+              if (r) {
+                  var n, t,
+                      a = "EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");
+                  for (n = 0; n < a.length; ++n) t = a[n], r[t] && r[t].prototype && l(e, r[t].prototype, o)
+              }
+          }
+
+          function l(r, e, o) {
+              if (e.hasOwnProperty && e.hasOwnProperty("addEventListener")) {
+                  for (var n = e.addEventListener; n._rollbarOldAdd && n.belongsToShim;) n = n._rollbarOldAdd;
+                  var t = function (e, o, t) {
+                      n.call(this, e, r.wrap(o), t)
+                  };
+                  t._rollbarOldAdd = n, t.belongsToShim = o, e.addEventListener = t;
+                  for (var a = e.removeEventListener; a._rollbarOldRemove && a.belongsToShim;) a = a._rollbarOldRemove;
+                  var l = function (r, e, o) {
+                      a.call(this, r, e && e._rollbar_wrapped || e, o)
+                  };
+                  l._rollbarOldRemove = a, l.belongsToShim = o, e.removeEventListener = l
+              }
+          }
+
+          r.exports = {captureUncaughtExceptions: o, captureUnhandledRejections: t, wrapGlobals: a}
+      }, function (r, e) {
+          "use strict";
+
+          function o(r, e) {
+              this.impl = r(e, this), this.options = e, n(o.prototype)
+          }
+
+          function n(r) {
+              for (var e = function (r) {
+                  return function () {
+                      var e = Array.prototype.slice.call(arguments, 0);
+                      if (this.impl[r]) return this.impl[r].apply(this.impl, e)
+                  }
+              }, o = "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","), n = 0; n < o.length; n++) r[o[n]] = e(o[n])
+          }
+
+          o.prototype._swapAndProcessMessages = function (r, e) {
+              this.impl = r(this.options);
+              for (var o, n, t; o = e.shift();) n = o.method, t = o.args, this[n] && "function" == typeof this[n] && ("captureDomContentLoaded" === n || "captureLoad" === n ? this[n].apply(this, [t[0], o.ts]) : this[n].apply(this, t));
+              return this
+          }, r.exports = o
+      }, function (r, e) {
+          "use strict";
+          r.exports = function (r) {
+              return function (e) {
+                  if (!e && !window._rollbarInitialized) {
+                      r = r || {};
+                      for (var o, n, t = r.globalAlias || "Rollbar", a = window.rollbar, l = function (r) {
+                          return new a(r)
+                      }, i = 0; o = window._rollbarShims[i++];) n || (n = o.handler), o.handler._swapAndProcessMessages(l, o.messages);
+                      window[t] = n, window._rollbarInitialized = !0
+                  }
+              }
+          }
+      }]);
+      // End Rollbar Snippet
+  </script>
+  <script type="text/javascript">
+   !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?166",t.onload=function(){VK.Retargeting.Init("VK-RTRG-389154-bcJ8O"),VK.Retargeting.Hit()},document.head.appendChild(t)}();
+  </script>
+  <noscript>
+   <img alt="" src="https://vk.com/rtrg?p=VK-RTRG-389154-bcJ8O" style="position:fixed; left:-999px;"/>
+  </noscript>
+  <script>
+   !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '523220214724865');
+      fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=523220214724865&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+  </noscript>
+  <script type="text/javascript">
+   var _tmr = window._tmr || (window._tmr = []);
+      _tmr.push({id: "3132472", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
+      (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+        ts.src = "https://top-fwz1.mail.ru/js/code.js";
+        var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+        if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+      })(document, window, "topmailru-code");
+  </script>
+  <noscript>
+   <div>
+    <img alt="Top.Mail.Ru" src="https://top-fwz1.mail.ru/counter?id=3132472;js=na" style="border:0;position:absolute;left:-9999px;"/>
+   </div>
+  </noscript>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-157822809-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-157822809-1');
+  </script>
+  <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(57390409, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+  </script>
+  <noscript>
+   <div>
+    <img alt="" src="https://mc.yandex.ru/watch/57390409" style="position:absolute; left:-9999px;"/>
+   </div>
+  </noscript>
+ </head>
+ <body class="en">
+  <section class="cover" style="background: url(img/frankfurt-bg.jpg); background-size: cover">
+   <div class="menu">
+    <div class="container">
+     <div class="content">
+      <img src="img/logo.svg"/>
+      <div class="menu-icon">
+       <img class="open" src="img/menu.png"/>
+       <img class="close" src="img/close.png"/>
+      </div>
+      <div class="items">
+       <a class="item" href="#benefits">
+        Benefits
+       </a>
+       <a class="item" href="#contact">
+        Contact us
+       </a>
+       <div class="item localization">
+        <div class="main">
+         <img src="img/en.png"/>
+         <span>
+          Eng
+         </span>
+        </div>
+        <div class="rest">
+         <a class="rest-item" data-lang="ru" href="/ru">
+          <img src="img/ru.png"/>
+          <span>
+           Рус
+          </span>
+         </a>
+         <a class="rest-item" data-lang="zh" href="/zh">
+          <img src="img/zh.png"/>
+          <span>
+           中国
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="item social-networks">
+        <a href="https://t.me/cryptocean_en" target="_blank">
+         <svg height="32px" version="1.1" viewbox="0 0 32 32" width="32px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="surface1">
+           <path d="M 26.070313 3.996094 C 25.734375 4.011719 25.417969 4.109375 25.136719 4.21875 L 25.132813 4.21875 C 24.847656 4.332031 23.492188 4.902344 21.433594 5.765625 C 19.375 6.632813 16.703125 7.757813 14.050781 8.875 C 8.753906 11.105469 3.546875 13.300781 3.546875 13.300781 L 3.609375 13.277344 C 3.609375 13.277344 3.25 13.394531 2.875 13.652344 C 2.683594 13.777344 2.472656 13.949219 2.289063 14.21875 C 2.105469 14.488281 1.957031 14.902344 2.011719 15.328125 C 2.101563 16.050781 2.570313 16.484375 2.90625 16.722656 C 3.246094 16.964844 3.570313 17.078125 3.570313 17.078125 L 3.578125 17.078125 L 8.460938 18.722656 C 8.679688 19.425781 9.949219 23.597656 10.253906 24.558594 C 10.433594 25.132813 10.609375 25.492188 10.828125 25.765625 C 10.933594 25.90625 11.058594 26.023438 11.207031 26.117188 C 11.265625 26.152344 11.328125 26.179688 11.390625 26.203125 C 11.410156 26.214844 11.429688 26.21875 11.453125 26.222656 L 11.402344 26.210938 C 11.417969 26.214844 11.429688 26.226563 11.441406 26.230469 C 11.480469 26.242188 11.507813 26.246094 11.558594 26.253906 C 12.332031 26.488281 12.953125 26.007813 12.953125 26.007813 L 12.988281 25.980469 L 15.871094 23.355469 L 20.703125 27.0625 L 20.8125 27.109375 C 21.820313 27.550781 22.839844 27.304688 23.378906 26.871094 C 23.921875 26.433594 24.132813 25.875 24.132813 25.875 L 24.167969 25.785156 L 27.902344 6.65625 C 28.007813 6.183594 28.035156 5.742188 27.917969 5.3125 C 27.800781 4.882813 27.5 4.480469 27.136719 4.265625 C 26.769531 4.046875 26.40625 3.980469 26.070313 3.996094 Z M 25.96875 6.046875 C 25.964844 6.109375 25.976563 6.101563 25.949219 6.222656 L 25.949219 6.234375 L 22.25 25.164063 C 22.234375 25.191406 22.207031 25.25 22.132813 25.308594 C 22.054688 25.371094 21.992188 25.410156 21.667969 25.28125 L 15.757813 20.75 L 12.1875 24.003906 L 12.9375 19.214844 C 12.9375 19.214844 22.195313 10.585938 22.59375 10.214844 C 22.992188 9.84375 22.859375 9.765625 22.859375 9.765625 C 22.886719 9.3125 22.257813 9.632813 22.257813 9.632813 L 10.082031 17.175781 L 10.078125 17.15625 L 4.242188 15.191406 L 4.242188 15.1875 C 4.238281 15.1875 4.230469 15.183594 4.226563 15.183594 C 4.230469 15.183594 4.257813 15.171875 4.257813 15.171875 L 4.289063 15.15625 L 4.320313 15.144531 C 4.320313 15.144531 9.53125 12.949219 14.828125 10.71875 C 17.480469 9.601563 20.152344 8.476563 22.207031 7.609375 C 24.261719 6.746094 25.78125 6.113281 25.867188 6.078125 C 25.949219 6.046875 25.910156 6.046875 25.96875 6.046875 Z " style=" ">
+           </path>
+          </g>
+         </svg>
+        </a>
+        <a href="https://www.reddit.com/r/Cryptocean/" target="_blank">
+         <svg height="26px" version="1.1" viewbox="0 0 26 26" width="26px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="surface1">
+           <path d="M 15.5 2 C 14.675781 2 13.902344 2.371094 13.40625 2.90625 C 12.910156 3.441406 12.636719 4.09375 12.4375 4.78125 C 12.121094 5.886719 12.023438 7.113281 12 8.21875 C 9.683594 8.355469 7.585938 8.964844 5.84375 9.90625 C 5.136719 9.378906 4.285156 9.085938 3.46875 9.09375 C 2.539063 9.101563 1.65625 9.457031 1 10.1875 C -0.253906 11.582031 -0.109375 13.863281 1.34375 15.21875 C 1.253906 15.636719 1.1875 16.066406 1.1875 16.5 C 1.1875 21.09375 6.476563 24.8125 13 24.8125 C 19.523438 24.8125 24.8125 21.089844 24.8125 16.5 C 24.8125 16.066406 24.746094 15.636719 24.65625 15.21875 C 26.109375 13.863281 26.253906 11.582031 25 10.1875 C 24.34375 9.457031 23.460938 9.101563 22.53125 9.09375 C 21.714844 9.085938 20.863281 9.378906 20.15625 9.90625 C 18.421875 8.96875 16.335938 8.359375 14.03125 8.21875 C 14.0625 7.199219 14.144531 6.140625 14.375 5.34375 C 14.519531 4.84375 14.691406 4.480469 14.875 4.28125 C 15.058594 4.082031 15.191406 4 15.5 4 C 16.167969 4 16.253906 4.191406 16.65625 4.65625 C 16.859375 4.890625 17.09375 5.183594 17.46875 5.46875 C 17.84375 5.753906 18.398438 6 19 6 L 19 4 C 18.832031 4 18.800781 3.996094 18.6875 3.90625 C 18.574219 3.816406 18.417969 3.609375 18.1875 3.34375 C 17.726563 2.808594 16.832031 2 15.5 2 Z M 22 2.1875 C 20.445313 2.1875 19.1875 3.445313 19.1875 5 C 19.1875 6.554688 20.445313 7.8125 22 7.8125 C 23.554688 7.8125 24.8125 6.554688 24.8125 5 C 24.8125 3.445313 23.554688 2.1875 22 2.1875 Z M 22 3.1875 C 23 3.1875 23.8125 4 23.8125 5 C 23.8125 6 23 6.8125 22 6.8125 C 21 6.8125 20.1875 6 20.1875 5 C 20.1875 4 21 3.1875 22 3.1875 Z M 13 9.78125 C 18.535156 9.78125 23.21875 12.863281 23.21875 16.5 C 23.21875 20.140625 18.535156 23.21875 13 23.21875 C 7.464844 23.21875 2.78125 20.140625 2.78125 16.5 C 2.78125 12.863281 7.464844 9.78125 13 9.78125 Z M 3.5 10.6875 C 3.777344 10.691406 4.066406 10.753906 4.34375 10.875 C 3.339844 11.636719 2.542969 12.511719 2 13.5 C 1.625 12.726563 1.726563 11.761719 2.1875 11.25 C 2.523438 10.875 2.988281 10.683594 3.5 10.6875 Z M 22.5 10.6875 C 23.011719 10.683594 23.476563 10.875 23.8125 11.25 C 24.273438 11.761719 24.375 12.726563 24 13.5 C 23.457031 12.511719 22.660156 11.636719 21.65625 10.875 C 21.933594 10.753906 22.222656 10.691406 22.5 10.6875 Z M 9 13.1875 C 8 13.1875 7.1875 14 7.1875 15 C 7.1875 16 8 16.8125 9 16.8125 C 10 16.8125 10.8125 16 10.8125 15 C 10.8125 14 10 13.1875 9 13.1875 Z M 17 13.1875 C 16 13.1875 15.1875 14 15.1875 15 C 15.1875 16 16 16.8125 17 16.8125 C 18 16.8125 18.8125 16 18.8125 15 C 18.8125 14 18 13.1875 17 13.1875 Z M 8.03125 19.34375 C 8.667969 20.660156 10.636719 21.9375 13 21.9375 C 15.363281 21.9375 17.363281 20.660156 18 19.34375 C 16.84375 20.089844 15.019531 20.59375 13 20.59375 C 10.980469 20.59375 9.1875 20.089844 8.03125 19.34375 Z " style=" ">
+           </path>
+          </g>
+         </svg>
+        </a>
+        <a href="https://bitcointalk.org/index.php?topic=3643073" target="_blank">
+         <svg height="26px" version="1.1" viewbox="0 0 26 26" width="26px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="surface1">
+           <path d="M 9 5 L 9 7 L 7 7 L 7 20 L 9 20 L 9 22 L 11 22 L 11 20 L 13 20 L 13 22 L 15 22 L 15 19.90625 C 15.265625 19.871094 15.554688 19.855469 15.8125 19.8125 C 16.414063 19.613281 16.90625 19.394531 17.40625 19.09375 C 17.804688 18.792969 18.199219 18.40625 18.5 17.90625 C 18.800781 17.40625 18.90625 16.886719 18.90625 16.1875 C 18.90625 15.386719 18.585938 14.695313 18.1875 14.09375 C 17.6875 13.492188 17.085938 13.105469 16.1875 12.90625 C 16.886719 12.605469 17.386719 12.210938 17.6875 11.8125 C 17.988281 11.414063 18.1875 10.886719 18.1875 10.1875 C 18.1875 9.585938 18.105469 9.085938 17.90625 8.6875 C 17.707031 8.289063 17.398438 7.886719 17 7.6875 C 16.601563 7.488281 16.195313 7.289063 15.59375 7.1875 C 15.398438 7.15625 15.199219 7.125 15 7.09375 L 15 5 L 13 5 L 13 7 L 11 7 L 11 5 Z M 10 9 L 12.90625 9 C 13.207031 9 13.488281 8.992188 13.6875 9.09375 C 13.988281 9.09375 14.207031 9.210938 14.40625 9.3125 C 14.605469 9.414063 14.804688 9.488281 14.90625 9.6875 C 15.007813 9.886719 15.09375 10.105469 15.09375 10.40625 C 15.09375 11.007813 14.992188 11.394531 14.59375 11.59375 C 14.195313 11.894531 13.789063 12 13.1875 12 L 10 12 Z M 10 14 L 13.5 14 C 14.199219 14 14.8125 14.199219 15.3125 14.5 C 15.8125 14.800781 16 15.394531 16 16.09375 C 16 16.394531 15.914063 16.800781 15.8125 17 C 15.613281 17.300781 15.386719 17.492188 15.1875 17.59375 C 14.988281 17.695313 14.707031 17.804688 14.40625 17.90625 C 14.105469 18.007813 13.707031 18 13.40625 18 L 10 18 Z " style=" ">
+           </path>
+          </g>
+         </svg>
+        </a>
+       </div>
+       <a class="item lk" href="https://bitchange.online/" rel="noreferrer noopener" target="_blank">
+        Buy CRON
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="main-wrapper">
+     <div class="main-content">
+      <div class="left-side" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="100">
+       <div class="title">
+        Cryptocean
+       </div>
+       <div class="description">
+        Bring traditional business to the world of blockchain
+       </div>
+       <div class="buttons">
+        <a class="watchVideo youtube-modal" href="https://www.youtube.com/watch?v=Mpz-NCU4tcA" onclick="gtag('event', 'Watch Video', { event_category: 'Btn', event_label: 'Screen-1' });">
+         <img src="img/videoPreview.jpg"/>
+        </a>
+       </div>
+      </div>
+      <div class="right-side" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="100">
+       <a class="counter-btn buy-cron-btn" href="https://bitchange.online/" rel="noreferrer noopener" target="_blank">
+        Buy CRON
+       </a>
+       <a class="counter-btn order-cart-btn" href="https://order.cron.global/" rel="noreferrer noopener" target="_blank">
+        Order Cryptocean card
+       </a>
+      </div>
+     </div>
+     <div class="c-instructions">
+      <div class="c-instructions-offset">
+      </div>
+      <div class="c-instructions-inner">
+       <div class="c-instructions__title">
+        Card order manual
+       </div>
+       <div class="c-instructions__videos">
+        <div class="c-instructions__videos-item">
+         <a class="c-instructions__videos-item__video youtube-modal" href="https://www.youtube.com/watch?v=Yfom8HQAb74">
+          <img alt="" src="//img.youtube.com/vi/Yfom8HQAb74/mq2.jpg"/>
+         </a>
+        </div>
+        <div class="c-instructions__videos-item">
+         <a class="c-instructions__videos-item__video youtube-modal" href="https://www.youtube.com/watch?v=KvsOKk746Kc">
+          <img alt="" src="//img.youtube.com/vi/KvsOKk746Kc/mq2.jpg"/>
+         </a>
+        </div>
+       </div>
+       <a class="c-instructions__videos-item__manual" href="https://docs.google.com/document/d/1qSHZId8vvcVmCrD2GhWfpCfqhbwFb84I28AjEVPdjpk/edit?usp=sharing" rel="noopener noreferrer" target="_blank">
+        Instructions
+       </a>
+      </div>
+     </div>
+     <div class="files" data-aos="fade-down" data-aos-delay="700" data-aos-duration="700" data-aos-offset="-500">
+      <a class="file" download="Cryptocean.Brief Presentation EN.pdf" href="files/EN/Cryptocean.Brief Presentation EN.pdf" onclick="gtag('event', 'Brief Presentation',{ event_category: 'Link PDF', event_label: 'Screen-1' });" target="_blank">
+       <div class="title">
+        Brief Presentation
+       </div>
+       <div class="last-edited">
+        Last edited: 07.08.2018
+       </div>
+      </a>
+      <a class="file" download="Cryptocean.Full Presentation EN.pdf" href="files/EN/Cryptocean.Full Presentation EN.pdf" onclick="gtag('event', 'Full Presentaion',{ event_category: 'Link PDF', event_label: 'Screen-1' });" target="_blank">
+       <div class="title">
+        Full Presentation
+       </div>
+       <div class="last-edited">
+        Last edited: 07.08.2018
+       </div>
+      </a>
+      <a class="file" download="Cryptocean.White Paper EN.pdf" href="files/EN/Cryptocean.White Paper EN.pdf" onclick="gtag('event', 'White Paper',{ event_category: 'Link PDF', event_label: 'Screen-1' });" target="_blank">
+       <div class="title">
+        White Paper
+       </div>
+       <div class="last-edited">
+        Last edited: 24.07.2018
+       </div>
+      </a>
+      <a class="file" download="One-pager-cryptocean-eng.jpg" href="files/EN/One-pager-cryptocean-eng.jpg" onclick="gtag('event', 'One Pager',{ event_category: 'Link PDF', event_label: 'Screen-1' });" target="_blank">
+       <div class="title">
+        One Pager
+       </div>
+       <div class="last-edited">
+        Last edited: 03.09.2018
+       </div>
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="buy-tokens">
+   <div class="header" data-aos="fade-down">
+    <div class="container">
+     <div class="title">
+      Trade CRON on
+     </div>
+     <div class="trades">
+      <a class="trades__item" href="https://exmo.com/en/trade/CRON_BTC" rel="noopener noreferrer" target="_blank">
+       <span class="trades__item__img">
+        <img alt="" src="img/trades/logoexmo.png"/>
+       </span>
+       <span class="trades__item__text">
+        <span class="trades__item__title">
+         EXMO
+        </span>
+        <span class="trades__item__listed">
+         Trading CRON/ETH/USD/BTC
+        </span>
+        <span class="trades__item__recommend">
+         We recommend use this Exchange as more powerful
+        </span>
+       </span>
+      </a>
+      <a class="trades__item" href="https://p2pb2b.io/trade/CRON_BTC" rel="noopener noreferrer" target="_blank">
+       <span class="trades__item__img">
+        <img alt="" src="img/trades/logop2pb2b.svg"/>
+       </span>
+       <span class="trades__item__text">
+        <span class="trades__item__title">
+         p2pb2b
+        </span>
+        <span class="trades__item__listed">
+         Trading CRON/ETH/USD/BTC
+        </span>
+       </span>
+      </a>
+      <a class="trades__item" href="https://exrates.me/dashboard" rel="noopener noreferrer" target="_blank">
+       <span class="trades__item__img">
+        <img alt="" src="img/trades/logoexrates.png"/>
+       </span>
+       <span class="trades__item__text">
+        <span class="trades__item__title">
+         Exrates
+        </span>
+        <span class="trades__item__listed">
+         Trading CRON/ETH/USD/BTC
+        </span>
+       </span>
+      </a>
+      <a class="trades__item" href="https://coinsbit.io/trade/CRON_BTC" rel="noopener noreferrer" target="_blank">
+       <span class="trades__item__img">
+        <img alt="" src="img/trades/logocoinsbit.png"/>
+       </span>
+       <span class="trades__item__text">
+        <span class="trades__item__title">
+         Coinsbit
+        </span>
+        <span class="trades__item__listed">
+         Trading CRON/ETH/USD/BTC
+        </span>
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="c-description" data-aos="fade-down">
+   <div class="container">
+    <div class="c-description__title">
+     Cryptocean Card is your universal service with a full banking card functionality
+    </div>
+    <div>
+     <div>
+      <div class="c-description__text">
+       Pay with cryptocurrency or fiat money wherever cards are accepted. Choose conversion rates that suit you and see transactions in the private area of your personal account. Wire money to your friends and between your accounts, and many more.
+      </div>
+     </div>
+    </div>
+    <div class="c-description__order-card">
+     <a class="c-description__order-card__btn" href="https://order.cron.global/card-preorder.html" rel="noreferrer noopener" target="_blank">
+      <img alt="" src="./img/c-description/cards.svg"/>
+      <span>
+       Order card
+      </span>
+     </a>
+     <a class="c-description__order-card__tariffs" href="https://order.cron.global" rel="noreferrer noopener" target="_blank">
+      Terms of use and fees
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="services">
+   <div class="container">
+    <div class="c-products__center">
+     <div class="c-products__center__img">
+      <img alt="" class="c-products__center__img--lg" src="./img/c-products/products-gen.png"/>
+      <img alt="" class="c-products__center__img--md c-products__center__img--ru" src="./img/c-products/products-md.png"/>
+      <img alt="" class="c-products__center__img--md c-products__center__img--en" src="./img/c-products/products-en.png"/>
+     </div>
+     <div class="c-products__items">
+      <div class="c-products__items-item block-link" data-aos="fade-left">
+       <a href="https://order.cron.global" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-cron-cards.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        CryptOcean crypto card
+       </div>
+       <div class="c-products__items-item__desc">
+        Pay by crypto currency or by fiat money at any place where cards
+       </div>
+      </div>
+      <div class="c-products__items-item block-link" data-aos="fade-left">
+       <a href="https://play.google.com/store/apps/details?id=ru.cryptowallet.android.release" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-android.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        Android Wallet
+       </div>
+       <div class="c-products__items-item__desc">
+        Mobile application
+       </div>
+      </div>
+      <div class="c-products__items-item block-link" data-aos="fade-left">
+       <a href="https://wallet.cron.global" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-cron-coin.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        Cryptocean wallet
+       </div>
+       <div class="c-products__items-item__desc">
+        CRON online wallet enabling instant transfers without
+       </div>
+      </div>
+      <div class="c-products__items-item block-link" data-aos="fade-left">
+       <a href="https://t.me/CronVpnBot" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-cron-vpn.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        CRON.VPN
+       </div>
+       <div class="c-products__items-item__desc">
+        Secure VPN connection. Make your Internet surfing secure and protected when using public access points
+       </div>
+      </div>
+      <div class="c-products__items-item block-link" data-aos="fade-right">
+       <a href="https://multipass-new.wdia.org" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-multipass.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        <span class="item-title-1">
+         multi
+        </span>
+        <span class="item-title-2">
+         pass
+        </span>
+       </div>
+       <div class="c-products__items-item__desc">
+        Unique technology enabling single-time secure identification of a user in online and offline services
+       </div>
+      </div>
+      <div class="c-products__items-item block-link" data-aos="fade-right">
+       <a href="https://cron.global/" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-blockchain.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        CRON blockchain
+       </div>
+       <div class="c-products__items-item__desc">
+        Associated fast blockchain
+       </div>
+      </div>
+      <div class="c-products__items-item block-link" data-aos="fade-right">
+       <a href="https://bitchange.online" rel="noreferrer noopener" target="_blank">
+       </a>
+       <div class="c-products__items-item__img">
+        <img alt="" src="./img/c-products/product-bitchange.svg"/>
+       </div>
+       <div class="c-products__items-item__title">
+        Bitchange CryptoBank
+       </div>
+       <div class="c-products__items-item__desc">
+        Buy and sell crypto currency with your credit or debit card
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="container" data-aos="fade" data-aos-duration="1000">
+     <div class="title">
+      CRYPTOCEAN abilities
+     </div>
+     <a class="video youtube-modal" href="https://www.youtube.com/watch?v=nG2vhkbPOn8" onclick="gtag('event', 'Watch Video', { event_category: 'Btn', event_label: 'Screen-2' });">
+      <img src="img/video-preview.jpg"/>
+     </a>
+    </div>
+    <div class="videos" data-aos="fade" data-aos-duration="1000">
+     <div class="prevButton">
+     </div>
+     <div class="nextButton">
+     </div>
+     <div class="carousel">
+      <div>
+       <a class="youtube-modal item" href="https://www.youtube.com/watch?v=0u9OIYrEZmo" style="background: url(https://i.ytimg.com/vi/0u9OIYrEZmo/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&amp;rs=AOn4CLAdOVvN01D4NjecIHr3PG6PjLIgUw); background-size: cover">
+        <div class="title">
+         Описание сути Cryptocean (КриптОушен) для Blockchain Week Russia 2018
+        </div>
+       </a>
+      </div>
+      <div>
+       <a class="youtube-modal item" href="https://www.youtube.com/watch?v=t3_BT4o2xnA" style="background: url(https://i.ytimg.com/vi/t3_BT4o2xnA/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&amp;rs=AOn4CLAgSZxmZRnmvdrhIzMLhb4Qx6iL3g); background-size: cover">
+        <div class="title">
+         RBW-2018. Юрий Мышинский, Преимущества использования криптокарт
+        </div>
+       </a>
+      </div>
+      <div>
+       <a class="youtube-modal item" href="https://www.youtube.com/watch?v=x3Mm7z6mOCo" style="background: url(https://i.ytimg.com/vi/x3Mm7z6mOCo/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&amp;rs=AOn4CLBrBWaRzqrUTiWkg20AL35jSUKoew); background-size: cover">
+        <div class="title">
+         Like &amp; Dislike: Cryptocean
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="fuq">
+   <div class="container">
+    <div class="title">
+     Frequently asked Questions
+    </div>
+    <div class="content">
+     <div class="item" data-aos="fade-down">
+      <lable class="fuq-title title">
+       Is Cryptocean a bank?
+       <div class="toggler">
+        <div class="plus">
+         +
+        </div>
+        <div class="minus">
+         –
+        </div>
+       </div>
+      </lable>
+      <div class="description">
+       We are not a bank, but we render a lot of services that traditional banks offer. We also give banks the opportunity to join our ecosystem. You can: - Make payments - Accept payments - Convert funds into various currencies - Put fiat and crypto currencies onto debit and credit cards accounts - Pay salaries - Pay bills - Make automatic transfers and may other operations
+      </div>
+     </div>
+     <div class="item" data-aos="fade-down">
+      <lable class="fuq-title title">
+       Is Cryptocean a crypto exchange?
+       <div class="toggler">
+        <div class="plus">
+         +
+        </div>
+        <div class="minus">
+         –
+        </div>
+       </div>
+      </lable>
+      <div class="description">
+       No, Cryptocean differs from typical crypto exchanges. Security: Cryptocean only uses established decentralised accounts and wallets. You control your funds, passes and keys until you decide to send them to somebody or to use them somehow else. Regulation: The majority of crypto exchanges do not operate fully legally. It means that they may disappear at any moment and there will be nobody to bring claims to. It has happened before. We are aiming at making our business fully legal and regulated which will allow our clients to be sure that we are rendering legally safe long-term services. Simplicity: Cryptocean will provide you with one account for the fiat funds and cryptocurrencies, which means that you will not need to open separate accounts in banks and crypto exchanges.
+      </div>
+     </div>
+     <div class="item" data-aos="fade-down">
+      <lable class="fuq-title title">
+       OK, Cryptocean is neither a bank, nor an exchange. Is it a wallet? Or a payment system?
+       <div class="toggler">
+        <div class="plus">
+         +
+        </div>
+        <div class="minus">
+         –
+        </div>
+       </div>
+      </lable>
+      <div class="description">
+       We compare Cryptocean with the house that has a solid foundation. In the ecosystem's foundation there are services for business, exchanges and banks. It means that any bank or an exchange or a company may join the ecosystem and see all requests on purchasing or selling of crypto currencies, on making money transfers or requests and offers of certain financial services, for example a requests on purchasing 10 coins at the price of 10 dollars and place your own offer, or fulfill the request at the offered price. It creates the unprecedented level of liquidity and will allow Cryptocean to use the strategy of partnership insted of competetiveness. We will not have competitors - with this approach it will be more profitable for them to become our partners. Services to individuals, retailers and others, like wallets, plastic crypto cards, escrow accounts will work on a higher level. Such architecture will allow us to offer the best terms for out clients and partners.
+      </div>
+     </div>
+     <div class="item" data-aos="fade-down">
+      <lable class="fuq-title title">
+       How do my operations with accounts in Cryptocean differ from those in the traditional bank?
+       <div class="toggler">
+        <div class="plus">
+         +
+        </div>
+        <div class="minus">
+         –
+        </div>
+       </div>
+      </lable>
+      <div class="description">
+       The majority of traditional banks allow operations with traditional currencies only. Cryptocean allows you to operate both in the traditional way and in crypto currencies by creating the unusual combination of services, for example plastic cards linked to crypto currencies.
+      </div>
+     </div>
+     <div class="item" data-aos="fade-down">
+      <lable class="fuq-title title">
+       Why do you think that such a young team like yours will be able to solve the tasks that serious grey-haired bankers who sit in their multi-billion skyscripers could not?
+       <div class="toggler">
+        <div class="plus">
+         +
+        </div>
+        <div class="minus">
+         –
+        </div>
+       </div>
+      </lable>
+      <div class="description">
+       One does not have to be an old grey-haired man to understand that the present situation with crypto currencies will have to change. Crypto currencies have a lot of positive things about them, they are convinient for people. That's why we decided to be on the "good side" and instead of semi-legal activity we registered a company and received all the necessary licences for rendereing these services. We have a legal foundation for implementing our services. As for technological solutions, all of them are already present on the market, in one form or the other. The question is in their correct combinations and tuning. By all means we do have our own know-how, for example we have come up with the method of identifying clients which, on the one hand, will provide the security of the personal data, and on the other hand, it will be complient with all the demands of banking and financial institutions to be transparent. That's why we are confident that we will succede in our aim - to legally unite the world of crypto currencies and fiat.
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="interested">
+   <div class="container">
+    <div class="title">
+     The Interested Parties
+    </div>
+    <div class="wrapper">
+     <div class="left-side">
+      <div class="item title" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Players
+       </div>
+       <div class="description">
+        Who
+is interested
+in Cryptocean
+       </div>
+      </div>
+      <div class="item title" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Interest
+       </div>
+       <div class="description">
+        What
+they can
+get
+       </div>
+      </div>
+      <div class="item title" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Result
+       </div>
+       <div class="description">
+        What
+we can
+offer
+       </div>
+      </div>
+     </div>
+     <div class="content">
+      <div class="item icon" data-aos="fade-down" data-aos-duration="700">
+       <img src="img/users.png"/>
+      </div>
+      <div class="item icon" data-aos="fade-down" data-aos-duration="700">
+       <img src="img/sellers.png"/>
+      </div>
+      <div class="item icon" data-aos="fade-down" data-aos-duration="700">
+       <img src="img/banks.png"/>
+      </div>
+      <div class="item icon" data-aos="fade-down" data-aos-duration="700">
+       <img src="img/gateways.png"/>
+      </div>
+      <div class="item icon" data-aos="fade-down" data-aos-duration="700">
+       <img src="img/banks.png"/>
+      </div>
+      <div class="item icon" data-aos="fade-down" data-aos-duration="700">
+       <img src="img/partners.png"/>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Users
+       </div>
+       <div class="description">
+        Owners of cryptocurrency
+and digital assets
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Retailers
+       </div>
+       <div class="description">
+        Interested
+in accepting
+cryptocurrency payments
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Banks
+       </div>
+       <div class="description">
+        Issuers of plastic
+and virtual cards
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Gateways
+       </div>
+       <div class="description">
+        Payments and transfers
+of electronic money
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Exchanges
+       </div>
+       <div class="description">
+        Cryptocurrency
+and digital assets
+pair trade
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Partners
+       </div>
+       <div class="description">
+        Fintech and on-line
+services
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Services
+       </div>
+       <div class="description">
+        Legal payments
+with cryptocurrency, transfers
+and fiat exchange
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Sales
+       </div>
+       <div class="description">
+        Increased volume sales
+and extended data
+base
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Commission
+       </div>
+       <div class="description">
+        For card operations,
+transfers, payments,
+exchange
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Commission
+       </div>
+       <div class="description">
+        For payments and transfers
+of electronic money
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Commission
+       </div>
+       <div class="description">
+        For cryptocurrency
+and digital assets
+exchange
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Clients
+       </div>
+       <div class="description">
+        For cryptocurrency
+fintech services
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Convenience
+       </div>
+       <div class="description">
+        Easy acsess, reliability,
+legality and low
+commissions
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Payments
+       </div>
+       <div class="description">
+        The legal opportunity to accept
+payments for goods and service
+in cryptocurrencies
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Income
+       </div>
+       <div class="description">
+        Commissions
+for payments and transfers
+and issuing of cards
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Cash flow
+       </div>
+       <div class="description">
+        Fiat deposit
+and withdrawal,
+liquidity growth
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Increased Turnover
+       </div>
+       <div class="description">
+        Increased volume,
+outsourcing KYC &amp; AML,
+expanded client database
+       </div>
+      </div>
+      <div class="item" data-aos="fade-down" data-aos-duration="700">
+       <div class="name">
+        Profit
+       </div>
+       <div class="description">
+        For services rendered
+by partners while
+making payments and transfers
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="benefits" id="benefits">
+   <div class="container">
+    <div class="title">
+     CRYPTOCEAN advantages
+    </div>
+    <div class="list">
+     <div class="content">
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/1-01.svg"/>
+       </div>
+       <span>
+        Issue of plastic and virtual crypto cards
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/2-01.svg"/>
+       </div>
+       <span>
+        Deposit of fiat to the personal account or card of the user
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/3-01.svg"/>
+       </div>
+       <span>
+        Usage of cards with fiat, cryptocurrency or Smart accounts
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/4-01.svg"/>
+       </div>
+       <span>
+        Funds withdrawal from the ecosystem to the bank account/ or by 3rd party plastic cards
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/5-01.svg"/>
+       </div>
+       <span>
+        Instant exchange of cryptocurrencies / fiat / digital assets
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/6-01.svg"/>
+       </div>
+       <span>
+        Legal payments of goods and services by the cryptocurrency (including exchanging to fiat)
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/7-01.svg"/>
+       </div>
+       <span>
+        Legality and compliance of KYC &amp; AML procedures
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/8-01.svg"/>
+       </div>
+       <span>
+        Payments and transfers via mobile, desk top and internet Apps
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/9-01.svg"/>
+       </div>
+       <span>
+        Payments and transfers via popular electronic messenger services (WhatsApp, Viber, …)
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/10-01.svg"/>
+       </div>
+       <span>
+        Regular automatic payments according to schedules and invoices
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/11-01.svg"/>
+       </div>
+       <span>
+        Management of crypto-wallets, accounts and associated keys
+       </span>
+      </div>
+      <div class="benefit" data-aos="zoom-in">
+       <div>
+        <img src="img/12-01.svg"/>
+       </div>
+       <span>
+        Contactless payments via mobile devices (PayPass)
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="buy-tokens" id="tokens">
+   <div class="container">
+    <div class="wrapper">
+     <a class="button" href="https://bitchange.online/" rel="noreferrer noopener" target="_blank">
+      Buy CRON
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="participants" id="team">
+   <div class="container" id="partners">
+    <div class="title">
+     CRYPTOCEAN Partners
+    </div>
+    <div class="description">
+     WE WORK WITH LEADERS AND PERSPECTIVE PROJECTS
+    </div>
+    <div class="content content_partners">
+     <div class="participant" data-aos="zoom-in">
+      <div class="photo photo-container">
+       <img src="img/crypto.jpg"/>
+      </div>
+      <div class="name">
+       CryptoWorkPlace
+      </div>
+      <div class="position">
+       Japan
+      </div>
+      <div class="description">
+       Team of experienced experts in the information security with the extensive experience in banking and financial systems protection, and in protecting crypto wallets and keys to them. They are the developers of the unique technology of the cryptocomputer in the pocket, providing a new level of protection for crypto wallets
+      </div>
+     </div>
+     <div class="participant" data-aos="zoom-in">
+      <div class="photo photo-container">
+       <img src="img/paymon.jpg"/>
+      </div>
+      <div class="name">
+       Paymon
+      </div>
+      <div class="position">
+       Worldwide
+      </div>
+      <div class="description">
+       A multicurrency crypto wallet service with the opportunity of the profitable conversion of the cryptocurrency and the fiat. Organically fits into the ecosystem of CRYPTOCEAN, naturally complementing and expanding it. From CRYPTOCEAN the service receives an additional flow of liquidity and the opportunity to complete transactions at the highest rate, our users is another channel to transfer the cryptocurrency and the fiat funds
+      </div>
+     </div>
+     <div class="participant" data-aos="zoom-in">
+      <div class="photo photo-container">
+       <img src="img/elite.jpg"/>
+      </div>
+      <div class="name">
+       Elite Consulting
+      </div>
+      <div class="position">
+       Cyprus
+      </div>
+      <div class="description">
+       Is an international legal company specialising in the hedge capital, international financial deals, venture capital and investments, cross-border investment transactions. The founder of the company is Tarlan Kornilov, he has a LLV Degree from the Cambridge University and a Strategic Negotiations Degree from the Yale School of Management
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="social">
+   <div class="container">
+    <div class="content">
+     <div class="left-side" data-aos="fade-right">
+      <div class="title">
+       We are
+in networks
+      </div>
+      <div class="social-networks">
+       <a href="https://www.facebook.com/Cryptoceanio-358733677957437" target="_blank">
+        <img src="img/facebook.png?5619832"/>
+       </a>
+       <a href="https://www.reddit.com/r/Cryptocean/" target="_blank">
+        <img src="img/reddit.png?4429642"/>
+       </a>
+       <a href="https://t.me/cryptocean_en" target="_blank">
+        <img src="img/telegram.png?5251912"/>
+       </a>
+       <a href="https://twitter.com/Cryptocean1" target="_blank">
+        <img src="img/twitter.png?5649582"/>
+       </a>
+       <a href="https://www.youtube.com/watch?v=nG2vhkbPOn8" target="_blank">
+        <img src="img/youtube.png?2812292"/>
+       </a>
+       <a href="https://bitcointalk.org/index.php?topic=3643073" target="_blank">
+        <img src="img/bitcoin.png?5293542"/>
+       </a>
+      </div>
+     </div>
+     <div class="right-side" data-aos="fade-left">
+      <a class="file" download="Cryptocean.Brief Presentation EN.pdf" href="files/EN/Cryptocean.Brief Presentation EN.pdf" onclick="gtag('event', 'Brief Presentation',{event_category:'Link PDF', event_label: 'Footer' });" target="_blank">
+       <div class="title">
+        Brief Presentation
+       </div>
+       <div class="last-edited">
+        Last edited: 07.08.2018
+       </div>
+      </a>
+      <a class="file" download="Cryptocean.Full Presentation EN.pdf" href="files/EN/Cryptocean.Full Presentation EN.pdf" onclick="gtag('event', 'Full Presentaion',{event_category:'Link PDF', event_label: 'Footer' });" target="_blank">
+       <div class="title">
+        Full Presentation
+       </div>
+       <div class="last-edited">
+        Last edited: 07.08.2018
+       </div>
+      </a>
+      <a class="file" download="Cryptocean.White Paper EN.pdf" href="files/EN/Cryptocean.White Paper EN.pdf" onclick="gtag('event', 'White Paper',{event_category:'Link PDF', event_label: 'Footer' });" target="_blank">
+       <div class="title">
+        White Paper
+       </div>
+       <div class="last-edited">
+        Last edited: 24.07.2018
+       </div>
+      </a>
+      <a class="file" download="One-pager-cryptocean-eng.jpg" href="files/EN/One-pager-cryptocean-eng.jpg" onclick="gtag('event', 'One Pager',{event_category:'Link PDF', event_label: 'Footer' });" target="_blank">
+       <div class="title">
+        One Pager
+       </div>
+       <div class="last-edited">
+        Last edited: 03.09.2018
+       </div>
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <div class="mediaAboutUs">
+   <div class="container">
+    <div class="title">
+     Media about us
+    </div>
+    <div class="items">
+     <a class="item" data-aos="zoom-in" href="https://nulltx.com/cryptomarket-is-anxious-of-what-cryptocean-has-to-offer/" target="_blank">
+      <div class="logo">
+       <img src="img/nulltx-logo-white-short.png"/>
+      </div>
+      <span class="sourceName">
+       NullTX
+      </span>
+      <span class="title">
+       Cryptomarket Is Anxious Of What Cryptocean Has To Offer
+      </span>
+     </a>
+     <a class="item" data-aos="zoom-in" href="http://www.livebitcoinnews.com/cryptocean-pre-ico-gaining-huge-trust-with-ico-expected-to-be-a-success/" target="_blank">
+      <div class="logo">
+       <img src="img/lbt-logo.png"/>
+      </div>
+      <span class="sourceName">
+       Live bitcoin news
+      </span>
+      <span class="title">
+       Cryptocean’s Pre-ICO Gaining Huge Trust With ICO Expected To Be A Success
+      </span>
+     </a>
+     <a class="item" data-aos="zoom-in" href="https://www.bitcoinmag.de/ico/cryptocean-ico" target="_blank">
+      <div class="logo">
+       <img src="img/bitcoinmag.png"/>
+      </div>
+      <span class="sourceName">
+       BitcoinMag
+      </span>
+      <span class="title">
+       Cryptocean Pre-ICO Signale: Ein erfolgreicher ICO
+      </span>
+     </a>
+     <a class="item" data-aos="zoom-in" href="http://cryptoceanio.prnews.io/61946-Cryptocean-Captures-Market-Legitimacy-And-Expects-Successful-ICO.html" target="_blank">
+      <div class="logo">
+       <img src="img/prnews.png"/>
+      </div>
+      <span class="sourceName">
+       PRNEWS
+      </span>
+      <span class="title">
+       Cryptocean Captures Market Legitimacy And Expects Successful ICO
+      </span>
+     </a>
+     <a class="item" data-aos="zoom-in" href="https://thebitcoinnews.com/cryptocean-spreads-a-positive-light-in-the-crypto-community/" target="_blank">
+      <div class="logo">
+       <img src="img/bitcoinnews.png"/>
+      </div>
+      <span class="sourceName">
+       The bitcoin news
+      </span>
+      <span class="title">
+       Cryptocean Spreads A Positive Light in The Crypto Community
+      </span>
+     </a>
+    </div>
+   </div>
+  </div>
+  <section class="contact" id="contact">
+   <div class="footer">
+    <div class="container">
+     <div>
+      <div class="title" data-aos="fade-right">
+       CRYPTOCEAN.IO
+      </div>
+      <div class="content">
+       <div class="person" data-aos="zoom-in">
+        <div class="photo">
+         <img src="img/footer.jpg"/>
+        </div>
+        <div class="person-info">
+         <div class="name">
+          Yury Myshinskiy
+         </div>
+         <div class="position">
+          Founder &amp; CEO
+         </div>
+         <a class="mail" href="/cdn-cgi/l/email-protection#3059535f7053424940445f5355515e1e595f">
+          E-mail:
+          <span class="__cf_email__" data-cfemail="b1d8d2def1d2c3c8c1c5ded2d4d0df9fd8de">
+           [email protected]
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="extra-contact" data-aos="zoom-in">
+        <div class="phone">
+         Tel: +372 5829 16 90
+        </div>
+        <div class="working-time">
+         Working Time: mo-fr 09:00-18:00 (MSK)
+        </div>
+       </div>
+       <div class="links" data-aos="zoom-in">
+        <a download="Cryptocean Privacy Policy" href="files/EN/CRYPTOCEAN_Privacy_Policy.docx">
+         Cryptocean Privacy Policy
+        </a>
+        <a download="Cryptocean Terms &amp; Conditions" href="files/EN/CRYPTOCEAN-T-C.pdf">
+         Cryptocean Terms &amp; Conditions
+        </a>
+        <a download="SAFT for US Citizens (Series D)" href="files/EN/SAFT-CRYPTOCEAN-Series-D.pdf">
+         SAFT for US Citizens (Series D)
+        </a>
+        <a download="SAFT for non-US Citizens" href="files/EN/SAFT-CRYPTOCEAN-Series-S.pdf">
+         SAFT for non-US Citizens
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script type="text/javascript">
+   var tokensData = {
+    "success": true,
+    "rates": {
+        "usd": 1,
+        "rub": 0.013619135430045,
+        "eur": 1.1887993506396,
+        "cron": 0.01
+    },
+    "fees": {
+        "usd": 14230792.896137,
+        "tokens": 1413554978.0812
+    }
+}
+      function checkLang() {
+       var userSwitchedLanguage = localStorage.getItem('userSwitchedLanguage');
+       var href = window.location.href;
+       var isRootLocation = location.pathname === '/';
+
+       // Если пользователь ранее сам переключал язык
+       if (userSwitchedLanguage) {
+         if (userSwitchedLanguage === 'en' && isRootLocation) {
+           return
+         }
+
+         if (userSwitchedLanguage === 'en' && !isRootLocation) {
+           return window.location.href = '/'
+         }
+
+         if (userSwitchedLanguage !== 'en' && (href.indexOf(userSwitchedLanguage) < 0)) {
+           return window.location.href = '/' + userSwitchedLanguage
+         }
+
+         if (href.indexOf(userSwitchedLanguage) >= 0) {
+             return
+         }
+
+       }
+
+       var lang = navigator.language || navigator.userLanguage;
+
+       if (lang.indexOf('-') !== -1) {
+         lang = lang.split('-')[0];
+       }
+
+       if (lang.indexOf('_') !== -1) {
+         lang = lang.split('_')[0];
+       }
+
+       var isRussian = lang === 'ru';
+       var isChinese = lang === 'zh';
+       // var isKorean = lang === 'ko';
+       // var isJapanese = lang === 'ja';
+
+       if ((!isRussian && !isChinese) && isRootLocation) {
+         return
+       }
+
+       if (isRussian && href.indexOf('ru') < 0) {
+         return window.location.href = '/ru'
+       }
+
+       if (isChinese && href.indexOf('zh') < 0) {
+         return window.location.href = '/zh'
+       }
+
+       // if (isKorean && href.indexOf('kor') < 0) {
+       //   return window.location.href = '/kor'
+       // }
+       //
+       // if (isJapanese) {
+       //   return window.location.href = '/ja'
+       // }
+
+      };
+
+      checkLang()
+  </script>
+  <script src="js/vendor-min.js?4781152" type="text/javascript">
+  </script>
+  <script src="js/app.min-min.js?1444272" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   (function (d, w, c) {
+          (w[c] = w[c] || []).push(function() {
+              try {
+                  w.yaCounter48362978 = new Ya.Metrika({
+                      id:48362978,
+                      clickmap:true,
+                      trackLinks:true,
+                      accurateTrackBounce:true,
+                      webvisor:true
+                  });
+              } catch(e) { }
+          });
+
+          var n = d.getElementsByTagName("script")[0],
+              s = d.createElement("script"),
+              f = function () { n.parentNode.insertBefore(s, n); };
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+          if (w.opera == "[object Opera]") {
+              d.addEventListener("DOMContentLoaded", f, false);
+          } else { f(); }
+      })(document, window, "yandex_metrika_callbacks");
+  </script>
+ </body>
+ <script type="text/javascript">
+  window.fcWidget.init({
+    token: "8e3ec343-f965-48c5-9c22-a65f4f9daec4",
+    host: "https://wchat.freshchat.com",
+    siteId: "cryptocean.io"
+  });
+  function gtag() {}
+ </script>
+ <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-117922562-1">
+ </script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-117922562-1');
+ </script>
+ <noscript>
+  <div>
+   <img src="https://mc.yandex.ru/watch/48362978" style="position: absolute; left:-9999px;"/>
+  </div>
+ </noscript>
+</html>

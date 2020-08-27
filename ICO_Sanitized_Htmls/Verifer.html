@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html class="d-flex flex-column" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="Verifer" name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Verifer" property="og:title"/>
+  <meta content="verifer.io – ICO certificate service" property="og:description"/>
+  <!-- Project-specific CSS -->
+  <link href="/static/css/style.css?v=8" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"/>
+  <!-- Favicons -->
+  <link href="/static/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/static/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/static/img/favicon-64x64.png" rel="icon" sizes="64x64" type="image/png"/>
+  <!-- Web app manifest -->
+  <link href="/static/js/manifest.json" rel="manifest"/>
+  <title>
+   Verifer
+  </title>
+  <script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js">
+  </script>
+  <script src="/static/js/bootstrap_form_fields.js">
+  </script>
+  <script src="/static/js/navbar.js">
+  </script>
+  <script src="/static/js/auto_disable_buttons.js">
+  </script>
+  <!-- Bootstrap -->
+  <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+  </script>
+  <!-- Django content edit -->
+  <script src="/static/ckeditor/ckeditor/ckeditor.js" type="text/javascript">
+  </script>
+  <script src="/static/content_edit/content_edit.js" type="text/javascript">
+  </script>
+  <!-- Toastr -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
+  </script>
+  <script src="/static/js/toastr_options.js">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-125420575-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125420575-1');
+  </script>
+  <script>
+   $(document).ready(function () {
+            function setNavbarBackground() {
+                if($(window).scrollTop() < 50 && !navbar.hasClass('ee-navbar-expanded')){
+                    navbar.addClass('ee-navbar-top');
+                    $('#navbar-logo').attr("src", "/static/img/verifer_logo_white.svg");
+                } else {
+                    navbar.removeClass('ee-navbar-top');
+                    $('#navbar-logo').attr("src", "/static/img/verifer_logo.svg");
+                }
+            }
+
+            var navbar = $('#ee-navbar');
+
+            setNavbarBackground();
+            $('#navbar-collapse').on('show.bs.collapse', function () {
+                navbar.addClass('ee-navbar-expanded');
+                setNavbarBackground();
+            });
+            $('#navbar-collapse').on('hide.bs.collapse', function () {
+                navbar.removeClass('ee-navbar-expanded').addClass('ee-navbar-collapsing');
+            });
+            $('#navbar-collapse').on('hidden.bs.collapse', function () {
+                navbar.removeClass('ee-navbar-collapsing');
+                setNavbarBackground();
+            });
+
+            $(document).scroll(setNavbarBackground);
+        });
+  </script>
+ </head>
+ <body class="d-flex flex-column flex-shrink ee-index-body">
+  <header>
+   <nav class="navbar navbar-expand-md navbar-light fixed-top ee-navbar-top" id="ee-navbar">
+    <div class="container my-0">
+     <a class="navbar-brand" href="/">
+      <img alt="Verifer" class="ee-navbar-logo mr-2" id="navbar-logo" src="/static/img/verifer_logo_white.svg"/>
+     </a>
+     <button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler my-0" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="/">
+         Home
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/ico">
+         Verifer-ICO
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/products">
+         Products
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/about">
+         About Us
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/login/">
+         Log In
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="flex-grow-1">
+   <div class="container-fluid ee-container-gradient px-0">
+    <div class="ee-verifer-header text-center px-3" id="index-header">
+     <h1>
+      Verifer
+     </h1>
+     <h2>
+      Licensed Global Verifier
+     </h2>
+     <h3>
+      A Global player in providing
+      <br/>
+      AML, PEP, KYC and compliance verifications
+     </h3>
+     <a class="btn btn-lg ee-btn-highlight mt-5" href="/kyc_1month_campaign">
+      Try one month free KYCs
+     </a>
+    </div>
+   </div>
+   <div class="container ee-container-narrow">
+    <h1>
+     Fully Automated Platform
+    </h1>
+    <p>
+     All of our activities are licensed and approved by authorities, and the Platform's operations will automatically change depending on which country's laws the client has to comply with. In countries where no license is required, the laws of the country concerned will be followed.
+    </p>
+    <p>
+     The platform accelerates the work of our verifiers and we are able to provide thousands of verifications on a daily basis through the platform. We will also integrate our existing activities with platform, such as the video-kyc and our software to detect photo/image manipulations.
+    </p>
+   </div>
+   <div class="container-fluid ee-container-gray">
+    <div class="container">
+     <h1>
+      Why to Choose Verifer
+     </h1>
+     <div class="row text-sm-center">
+      <div class="col-sm-6 col-lg-3 mt-2">
+       <h3>
+        Reliability
+       </h3>
+       <p>
+        Verification certificate is stored on our platform after verification. So if issue began, our client can always prove that their KYCs are done correctly.
+       </p>
+      </div>
+      <div class="col-sm-6 col-lg-3 mt-2">
+       <h3>
+        Fast Delivery
+       </h3>
+       <p>
+        Our delivery time is fastest on market comparing all licenced KYC companies.
+       </p>
+      </div>
+      <div class="col-sm-6 col-lg-3 mt-2">
+       <h3>
+        High Capacity
+       </h3>
+       <p>
+        We have capacity to process 10.000pcs. of KYC/PEP-verifications daily. With our coming verification center we will double our capacity.
+       </p>
+      </div>
+      <div class="col-sm-6 col-lg-3 mt-2">
+       <h3>
+        Flexibility
+       </h3>
+       <p>
+        We will send verification-link to person who is verified as well. So they don't have to do KYC anymore to another service providers who accept our verification.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-gradient">
+    <div class="container ee-container-medium text-center">
+     <h1>
+      Customer Experience
+     </h1>
+     <p>
+      We have measured our customer experiences constantly and our client has given us a rate of 9.4/10 as follow:
+     </p>
+     <div class="row text-sm-center align-items-end">
+      <div class="col-sm-4 mt-sm-4">
+       Customer service
+       <span class="sr-only">
+        9/10
+       </span>
+       <div>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-half">
+        </span>
+       </div>
+      </div>
+      <div class="col-sm-4 mt-4">
+       User-friendliness of the verification platform
+       <span class="sr-only">
+        10/10
+       </span>
+       <div>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+       </div>
+      </div>
+      <div class="col-sm-4 mt-4">
+       Verification delivery times
+       <span class="sr-only">
+        9/10
+       </span>
+       <div>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-half">
+        </span>
+       </div>
+      </div>
+      <div class="col-sm-4 mt-4">
+       Prices
+       <span class="sr-only">
+        9/10
+       </span>
+       <div>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-half">
+        </span>
+       </div>
+      </div>
+      <div class="col-sm-4 mt-4">
+       Professionalism and innovativity
+       <span class="sr-only">
+        10/10
+       </span>
+       <div>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+        <span class="ee-star ee-star-full">
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container-fluid">
+    <div class="container ee-container-narrow">
+     <h1>
+      News
+     </h1>
+     <a class="twitter-grid" data-chrome="noheader nofooter" data-limit="3" data-partner="tweetdeck" href=" https://twitter.com/Verifer_io/timelines/1063758502475284485">
+      Website
+     </a>
+     <script async="" charset="utf-8" src=" https://platform.twitter.com/widgets.js">
+     </script>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-gray">
+    <div class="container">
+     <h1>
+      Products
+     </h1>
+     <div class="card-deck ee-product-card-deck">
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         KYC
+        </h2>
+        <div class="card-text">
+         <p>
+          The KYC services we offer are licensed and our platform automatically changes its functionality to match the laws of each country. Verification always corresponds to both the subscriber and the legislation of person who is examined.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         AML
+        </h2>
+        <div class="card-text">
+         <p>
+          The Licenced Anti-Money Laundering Specialist examination tests for aptitude and expertise in anti-money laundering (AML) detection, prevention and enforcement. We help you build the support you need for your AML compliance and financial crime prevention efforts. We also guide our customers to identify the limits as AML checks are required.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         PEP
+        </h2>
+        <div class="card-text">
+         <p>
+          Financial Institutions are required to perform due diligence in transactions involving Politically Exposed Persons (PEPs). We have access to a costantly updated list of PEPs from multiple countries and we can quickly and reliably review the political connections. PEP services are usually free of charge for our clients who order AML and/or KYC verifications.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         Compliance
+        </h2>
+        <div class="card-text">
+         <p>
+          Our company employs several international law firms. We offer a variety of legality verifications quickly and cost-effectively.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         Company/Product Background Researches
+        </h2>
+        <div class="card-text">
+         <p>
+          We have eight years of experience in examining the backgrounds of companies, suppliers and ICOs. Our expert staff will provide you with a complete report of your desired company or supplier. With our upcoming platform, you can also resell different reports, with reducing your costs or even generating profits.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         ICO Verification Program
+        </h2>
+        <div class="card-text">
+         <p>
+          We have created a product named ICO Verification Program. We are conducting an extensive investigation into ICO that ICO can prove to be exactly like it shown in its documents. The ICO Verification Program includes a complete review of the ICO company, staff, history and legality. After reviewing our customer, we have a full report of the authenticity we assure.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         Verifer as a Subcontractor
+        </h2>
+        <div class="card-text">
+         <p>
+          We undertake inquiries and verifications for several operators and dealers. All of our subcontracting products are made by us with the same quality as all our own products. Our customers can use their own logos and certificates as proof of verification, and may, if they so wish, mention that verifications are provided by Verifer.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h2 class="card-title">
+         Buy and Sell Investigations
+        </h2>
+        <div class="card-text">
+         <p>
+          Our platform allows you to purchase background investigations of companies, ICOs and products and sell them further. The platform will be a good tool for, for example, customers who invest in ICOs or products, so high quality background research is needed and if it wishes to sell it to other investors.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-gradient">
+    <div class="container">
+     <h1>
+      Our crowdfunding campaign is now open
+      <br/>
+      Why to invest in verifer
+     </h1>
+     <p>
+      We are a rapidly growing company and also the demand for remote verifications is expanding rapidly.  We are already one of the leading players in the world and with our latest tools and we are a forerunner in capacity and user-frendliness. With crowdfunding, we will expand our verification centers around the world and we will be able to further develop our tools and practices. We are developing multi functional platform which offers not only KYC, AML and PEP services but also secured and automated signing processes to our clients. If you are interested to join our campaign please contact at
+      <a href="mailto:sales@verifer.io">
+       sales@verifer.io
+      </a>
+     </p>
+     <div class="text-center">
+      <a class="btn btn-lg ee-btn-highlight mt-3" href="/ico">
+       Join Verifer-ICO
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-gray">
+    <div class="container ee-container-narrow">
+     <h1>
+      What is Verifer
+     </h1>
+     <p>
+      Verifer.io has been a successful and multi-faceted industry leading verification company since its inception, displaying a consistently stellar rate of growth. The truly global company consists of an expanding base of sixteen employees based in Finland, Switzerland, USA, China and the Philippines, with offices located in Finland and Estonia. We are just opening new verification center in Philippines which contains eight new employees.
+     </p>
+     <p>
+      We utilise our expertise to provide an array of verification solutions mainly centred around the business, banking and casino industries. Throughout their years of operation, the company have refined, optimised and standardised their investigation processes to provide an efficient and consistently high-quality solution in these areas. Verifer’s success has seen them grow to become one of the largest providers of AML, PEP, KYC- and various other Compliance verification- worldwide, demonstrating a rich previous history of thorough vetting and verifying of companies and people.
+     </p>
+     <p>
+      Verifer has now set its sights on the blockchain space, and is looking to transform the critically problematic ICO market environment through their blockchain-based platform focused on delivering quality, reliable and transparent investigative data.
+     </p>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-">
+    <div class="container mb-3">
+     <h1 class="text-center">
+      Team
+     </h1>
+     <div class="d-flex flex-wrap justify-content-center justify-content-sm-start">
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/42906aeee95148c38465ff5211999232.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          CEO
+         </div>
+         <div class="ee-team-member-name">
+          Jori Falkstedt
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-1-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-1-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/42906aeee95148c38465ff5211999232.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Jori Falkstedt
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Jori started his importing business in 1999. His company is now one of leading importer of garden machines with leading brands like Briggs &amp; Stratton and Ambrogio amongst others in Finland. Importing products from all over the world requires careful investigation of sellers, and until 2005 he bought the information from another investigation company. During 2005 he hired the first investigators for his company`s purposes and 2012 the investigations was separated to its own company J2P2-Invest Ltd.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/2ca6794c95c24c02bb22a82120d9c621.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          CTO
+         </div>
+         <div class="ee-team-member-name">
+          Pasi Kemppinen
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-2-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-2-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/2ca6794c95c24c02bb22a82120d9c621.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Pasi Kemppinen
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Pasi has a long history of global engineering projects mostly in the building industry. After J2P2- Invest was founded in 2012 Pasi has been focused on investigations. Pasi is focused on deep investigations which need personal visits and deeper analyzing of target company. At a moment he is focused to work in countries where we don't have a country-specific investigator yet.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/01d0247b462b4b719e13c9deba615060.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          CTO
+         </div>
+         <div class="ee-team-member-name">
+          Pasi Suominen
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-3-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-3-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/01d0247b462b4b719e13c9deba615060.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Pasi Suominen
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Pasi is robust full stack developer and systems administrator. First experience in programming with 6508, embedded development over a decade. Has deep understanding in cryptocurrencies and encryption algorithms. Pasi will lead the development of the Global Spy Platform and cloud technology. Strong background in open source technology.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/ee19bb2acc284e9ca9d9f50d3b805bee.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Area Manager
+         </div>
+         <div class="ee-team-member-name">
+          David Mc Dade
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-4-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-4-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/ee19bb2acc284e9ca9d9f50d3b805bee.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            David Mc Dade
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Before David joined our team, he had been working as a police officer, and he has a long history in military police on West Point NY and South Korea. Currently David is living half of the time at Arizona and half at the Philippines. That's why David has an opportunity to handle two areas. After Police officer training he had special training from enforcing the law as well as providing security to Army Personnel, completed formal Military Police training including self-defense, Special Weapons and Tactics (S.W.A.T.), FBI survival training.
+Inspector Supervisor
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/7cfcf62ab9374066bef29807987d23a6.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Inspector Supervisor
+         </div>
+         <div class="ee-team-member-name">
+          Kaiyang Jiang
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-5-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-5-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/7cfcf62ab9374066bef29807987d23a6.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Kaiyang Jiang "Sunny"
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Sunny has over 18 years of business investigation experience in importing and exporting business. From 2005 Sunny has provided all inspections to our purposes which was related to China. Sunny will lead the reporting team.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/2e349484e72c4b5484629d5e2177b2c8.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Area Manager
+         </div>
+         <div class="ee-team-member-name">
+          Han Jia
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-6-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-6-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/2e349484e72c4b5484629d5e2177b2c8.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Han Jia
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Han has been doing investigations on both people and companies in China for over ten years. Since 2016 he has been sharing his knowledge with our team. Han has been working as an export manager for over ten years and he have been running his own company on product trading.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/a7c3723bab9b4c55b7ef136c15d27db2.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Advisor
+         </div>
+         <div class="ee-team-member-name">
+          Simon Cocking
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-7-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-7-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/a7c3723bab9b4c55b7ef136c15d27db2.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Simon Cocking
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Simon Cocking is Senior Editor at Irish Tech News - with over 726,000 unique monthly views, Editor in Chief at CryptoCoinNews, and freelances for Sunday Business Post, Irish Times, Southern Star, IBM, G+D, and others. He is a top ranked member of the ‘People of Blockchain’ (currently ranked at #1 / 23,000). He is also a business mentor and advisor working with 100+ successful ICOs to date. He also been named many global Twitter influencer lists in the last 12 months. He is an accomplished public speaker at events including TEDx, Web Summit, Dublin Tech Summit, and overseas in Dubai, Singapore, Moscow, Tel Aviv, Madrid, Tbilisi, Riga, Porto, Dublin and Helsinki in the last 12 months. He has been based in Ireland for over 22 years and has cofounded or founded seven successful companies.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/a4169240c19f47c6a9b789f3061f4241.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Advisor
+         </div>
+         <div class="ee-team-member-name">
+          David Drake
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-8-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-8-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/a4169240c19f47c6a9b789f3061f4241.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            David Drake
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          David Drake is the chairman and founder of LDJ Capital. This is a fund that is structured as a multi-family fund with over 50 different directors and family office partners. He is also the founder of Victoria Partners, a London-based family office network and the Soho Loft Media group that set up the crowdfunding meeting between industry stakeholders, FINRA and the SEC back in 2002. The deliberation during that meeting set the groundwork for most of the existing crowdfunding laws that influence the ICO sphere.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/609838719ac5418ab44c90d02dc01854.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Advisor
+         </div>
+         <div class="ee-team-member-name">
+          Shaf Zaman
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-9-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-9-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/609838719ac5418ab44c90d02dc01854.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Shaf Zaman
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Aged 26, a young and early riser in the crypto world who has created a reputable profile and discovered the potential of BTC, XRP &amp; ETH long before they shook the whole financial industry. His background includes more than 3 years of experience trading currencies, in both the Forex &amp; Crypto markets. Shaf, has over 5 years of experience in the digital advertising industry. He is CEO and Co-Founder of Crypto Society, analyst with ICObench and Marketing Advisor for Multiple successful ICOs.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/aba50e77208147378efce884a3861a05.jpg')">
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+          Legal Advisor
+         </div>
+         <div class="ee-team-member-name">
+          Artem Kobrin
+         </div>
+        </div>
+       </div>
+       <div>
+        <button class="btn ee-btn-ghost" data-target="#team-member-10-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+      <div class="ee-team-member-modal modal fade" id="team-member-10-modal" role="dialog" tabindex="-1">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+          <div class="d-flex align-items-center mb-4">
+           <div class="ee-team-member-image rounded-circle flex-shrink-0" style="background-image: url('/media/team_member_images/aba50e77208147378efce884a3861a05.jpg')">
+           </div>
+           <h3 class="pl-4 mb-0">
+            Artem Kobrin
+           </h3>
+          </div>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+         </div>
+         <div class="modal-body">
+          Artem acts as a lawyer and entrepreneur at the law firm Test Pilot. Artem has a unique experience of ICO legislation and has been involved in the necessary approvals and documentation at dozens of ICOs. Artem is our leagal advisor.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="ee-team-member d-flex flex-column mb-5 px-3">
+       <div class="d-flex align-items-center flex-grow-1 mb-3">
+        <div class="ee-team-member-image rounded-circle flex-shrink-0">
+         <i class="material-icons">
+          person
+         </i>
+        </div>
+        <div class="pl-3">
+         <div class="ee-team-member-title">
+         </div>
+         <div class="ee-team-member-name">
+          9 hired verifiers + 13 by sub-contractors
+         </div>
+        </div>
+       </div>
+       <div class="invisible">
+        <button class="btn ee-btn-ghost" data-target="#team-member-11-modal" data-toggle="modal">
+         Show profile
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-gradient">
+    <div class="container ee-container-narrow text-center">
+     <h1>
+      Now Hiring
+     </h1>
+     <p>
+      verifer.io now hires more employees to grow our sales team. If you are sales-minded and want to create career in our rapidly growing company, please contact
+      <a href="mailto:jori.falkstedt@verifer.io">
+       jori.falkstedt@verifer.io
+      </a>
+     </p>
+    </div>
+   </div>
+   <div class="container-fluid ee-container-gray">
+    <div class="container ee-container-narrow">
+     <h1 class="text-center">
+      Frequently Asked Questions
+     </h1>
+     <div class="ee-accordion" id="faq-accordion">
+      <div class="card">
+       <div class="card-header" id="question-1">
+        <a aria-controls="answer-1" aria-expanded="false" data-toggle="collapse" href="#answer-1" role="button">
+         How is it possible that you can process thousands of verifications daily with high quality and by following regulations of each country?
+        </a>
+       </div>
+       <div aria-labelledby="question-1" class="collapse" data-parent="#faq-accordion" id="answer-1">
+        <div class="card-body">
+         Our platform makes whole process easier and faster for our verifiers. With our web service thousands of clients can answer the required questions and download their documents at the same time. After platform is ready it will also automatically detect the origin of client and ask questions and documents to comply with the laws of the right countries. Also photos/images are automatically analyzed to detect manipulations.
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header" id="question-2">
+        <a aria-controls="answer-2" aria-expanded="false" data-toggle="collapse" href="#answer-2" role="button">
+         How can you say that your verifications are valid in many countries when the legislation differs between countries?
+        </a>
+       </div>
+       <div aria-labelledby="question-2" class="collapse" data-parent="#faq-accordion" id="answer-2">
+        <div class="card-body">
+         We use a number of law offices in different countries and we are constantly following legislation. All our verifications are following both regulations, the law of verification subscriber (such as the stock exchange, etc.) and the laws of the origin of person who is under verification.
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header" id="question-3">
+        <a aria-controls="answer-3" aria-expanded="false" data-toggle="collapse" href="#answer-3" role="button">
+         Can I buy an investigation on my own business or ICO to make it more reliable?
+        </a>
+       </div>
+       <div aria-labelledby="question-3" class="collapse" data-parent="#faq-accordion" id="answer-3">
+        <div class="card-body">
+         Yes you can.
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header" id="question-4">
+        <a aria-controls="answer-4" aria-expanded="false" data-toggle="collapse" href="#answer-4" role="button">
+         Who is responsible if the result of the research is not accurate and causes damage to its buyer or investigated target?
+        </a>
+       </div>
+       <div aria-labelledby="question-4" class="collapse" data-parent="#faq-accordion" id="answer-4">
+        <div class="card-body">
+         The report always mentions sources of information, evidence and witnesses. 99.9% of the investigations are completely accurate. We also give the investigated target an opportunity to respond if faults are found and responses are included in the report. However, the subscriber makes the final conclusion on the content of the report.
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-header" id="question-5">
+        <a aria-controls="answer-5" aria-expanded="false" data-toggle="collapse" href="#answer-5" role="button">
+         What do you mean "Licensed"? Is the operation licensed in all countries of the world?
+        </a>
+       </div>
+       <div aria-labelledby="question-5" class="collapse" data-parent="#faq-accordion" id="answer-5">
+        <div class="card-body">
+         The demands of the EU region have been confirmed by financial supervisory authority. In many countries, licensing is not required and in these countries, we follow country-specific guidelines. However, the legislation changes rapidly so we are constantly following changing legislation in each country.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+   <div class="container my-0 py-3">
+    <ul class="nav justify-content-center">
+     <li class="nav-item">
+      <a class="nav-link" href="/media/legal/disclaimers.pdf" target="_blank">
+       Disclaimers
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/media/legal/legal_letter.pdf" target="_blank">
+       Legal Letter
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/media/legal/privacy_policy.pdf" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/media/legal/terms_of_use.pdf" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/media/legal/token_sale_agreement.pdf" target="_blank">
+       Token Sale Agreement
+      </a>
+     </li>
+    </ul>
+    <p class="ee-copyright-text text-center mt-3 mb-0">
+     © 2020 Verifer
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

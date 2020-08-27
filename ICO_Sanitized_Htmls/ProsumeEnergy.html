@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html class="html_stretched responsive av-preloader-disabled av-default-lightbox html_header_top html_logo_left html_main_nav_header html_menu_right html_slim html_header_sticky html_header_shrinking_disabled html_header_transparency html_mobile_menu_tablet html_header_searchicon_disabled html_content_align_center html_header_unstick_top_disabled html_header_stretch html_minimal_header html_minimal_header_shadow html_av-overlay-side html_av-overlay-side-minimal html_av-submenu-noclone html_entry_id_2 av-no-preview html_text_menu_active" lang="en-US">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta content="#07405e" name="theme-color"/>
+  <!-- Windows Phone -->
+  <meta content="#07405e" name="msapplication-navbutton-color"/>
+  <!-- iOS Safari -->
+  <meta content="#07405e" name="apple-mobile-web-app-status-bar-style"/>
+  <!--Modals-->
+  <script src="https://code.jquery.com/jquery-1.12.4.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+  </script>
+  <script type="text/javascript">
+   var player;
+	var tag;
+
+	tag = document.createElement('script');
+	tag.id = 'iframe-demo';
+	tag.src = 'https://www.youtube.com/iframe_api';
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+	function onYouTubeIframeAPIReady() {
+		console.log('onYouTubeIframeAPIReady');
+		player = new YT.Player('videoplayer', {
+		    events: {
+		      'onReady': onReadyReady,
+		      'onStateChange': onPlayerStateChange
+		    }
+		});
+	}
+
+	function onPlayerStateChange(event) {
+		console.log("onPlayerStateChange", event);
+		// event.target.stopVideo();
+	}
+
+	function onReadyReady(evt) {
+		console.log(onReadyReady, evt);
+	}
+
+	function stopVid(){
+    	player.stopVideo();
+	}
+
+	$(function() {
+		 //----- OPEN
+		  $('[data-popup-open]').on('click', function(e)  {
+		      var targeted_popup_class = jQuery(this).attr('data-popup-open');
+		      $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+		      	$('#videoplayer')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+		        // e.target.playVideo();
+		      e.preventDefault();
+		  });
+
+		  //----- CLOSE
+		  $('[data-popup-close]').on('click', function(e)  {
+		      var targeted_popup_class = jQuery(this).attr('data-popup-close');
+		      $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+			  console.log(player);
+			  $('#videoplayer')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+		      //player.stopVideo();
+		      e.preventDefault();
+		  });
+	});
+  </script>
+  <!-- mobile setting -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+  <!-- Scripts/CSS and wp_head hook -->
+  <!-- Author Meta Tags by Molongui Authorship 4.1.0, visit: https://wordpress.org/plugins/molongui-authorship/ -->
+  <meta content="Giovanni" name="author"/>
+  <!-- /Molongui Authorship -->
+  <style type="text/css">
+   @import url('https://fonts.googleapis.com/css?family=Ruda' );body #gform_wrapper_9 {border-width: 0; border-style: solid;font-family:"Ruda";}body #gform_wrapper_9 .gform_footer .gform_button {border-style: solid;font-weight: normal; font-weight: bold; border-radius:3px;-web-border-radius:3px;-moz-border-radius:3px;border-width: 0px;}body #gform_wrapper_9 .gform_page_footer .gform_button{border-style: solid;font-weight: normal; font-weight: bold; border-radius:3px;-web-border-radius:3px;-moz-border-radius:3px;border-width: 0px;}body #gform_wrapper_9 .gform_page_footer .gform_button:hover {border-style: solid;}body #gform_wrapper_9 .gform_footer .gform_button:hover {border-style: solid;}body #gform_wrapper_9 .gform_footer button.mdc-button {font-weight: normal; font-weight: bold; border-radius:3px;-web-border-radius:3px;-moz-border-radius:3px;border-width: 0px;}body #gform_wrapper_9 .gform_footer button.mdc-button:hover {}body #gform_wrapper_9 .gform_footer {}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_next_button {border-style: solid;border-radius: 3px;-web-border-radius: 3px;-moz-border-radius: 3px;}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_next_button:hover {}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_previous_button {border-radius: 3px;-web-border-radius: 3px;-moz-border-radius: 3px;}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_previous_button:hover {}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_button {border-radius: 3px;-web-border-radius: 3px;-moz-border-radius: 3px;}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_button:hover {}/* Styling for Tablets */@media only screen and ( max-width: 800px ) and ( min-width:481px ) {}/* Styling for phones */@media only screen and ( max-width: 480px ) {}/*Option to add custom CSS */
+  </style>
+  <link href="https://prosume.io" hreflang="en" rel="alternate"/>
+  <link href="https://prosume.io/de/" hreflang="de" rel="alternate"/>
+  <link href="https://prosume.io/es/" hreflang="es" rel="alternate"/>
+  <!-- This site is optimized with the Yoast SEO plugin v14.5 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>
+   Prosume | Decentralizing Power
+  </title>
+  <meta content="Blockchain &amp; DLT solutions to decentralize and automate the secure management &amp; exchange of energy data interactions." name="description"/>
+  <meta content="index, follow" name="robots"/>
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot"/>
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot"/>
+  <link href="https://prosume.io/" rel="canonical"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Prosume | Decentralizing Power" name="twitter:title"/>
+  <meta content="Blockchain &amp; DLT solutions to decentralize and automate the secure management &amp; exchange of energy data interactions." name="twitter:description"/>
+  <meta content="https://prosume.io/wp-content/uploads/Barcelona-Energia_logo.png" name="twitter:image"/>
+  <meta content="@ProsumeEnergy" name="twitter:creator"/>
+  <meta content="@ProsumeEnergy" name="twitter:site"/>
+  <script class="yoast-schema-graph" type="application/ld+json">
+   {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://prosume.io/#organization","name":"PROSUME S.r.l.","url":"https://prosume.io/","sameAs":["https://www.linkedin.com/company/prosumeenergy/","https://www.youtube.com/channel/UCQZrZLY9XLfy28QTNhwc11g","https://twitter.com/ProsumeEnergy"],"logo":{"@type":"ImageObject","@id":"https://prosume.io/#logo","inLanguage":"en-US","url":"https://prosume.io/wp-content/uploads/2017/09/team_prosume.png","width":480,"height":480,"caption":"PROSUME S.r.l."},"image":{"@id":"https://prosume.io/#logo"}},{"@type":"WebSite","@id":"https://prosume.io/#website","url":"https://prosume.io/","name":"Prosume","description":"Decentralizing Power","publisher":{"@id":"https://prosume.io/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://prosume.io/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://prosume.io/#primaryimage","inLanguage":"en-US","url":"https://prosume.io/wp-content/uploads/Barcelona-Energia_logo.png","width":794,"height":183},{"@type":"WebPage","@id":"https://prosume.io/#webpage","url":"https://prosume.io/","name":"Prosume | Decentralizing Power","isPartOf":{"@id":"https://prosume.io/#website"},"about":{"@id":"https://prosume.io/#organization"},"primaryImageOfPage":{"@id":"https://prosume.io/#primaryimage"},"datePublished":"2016-05-18T20:54:38+00:00","dateModified":"2020-01-17T15:53:12+00:00","description":"Blockchain & DLT solutions to decentralize and automate the secure management & exchange of energy data interactions.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://prosume.io/"]}]}]}
+  </script>
+  <meta content="iDtseU3gCZGkR42GyH23ABw7M7Hzi2ZJBQykD4Q2XDI" name="google-site-verification"/>
+  <!-- / Yoast SEO plugin. -->
+  <link href="//maxcdn.bootstrapcdn.com" rel="dns-prefetch"/>
+  <link href="//s.w.org" rel="dns-prefetch"/>
+  <link href="https://prosume.io/feed/" rel="alternate" title="Prosume » Feed" type="application/rss+xml"/>
+  <link href="https://prosume.io/comments/feed/" rel="alternate" title="Prosume » Comments Feed" type="application/rss+xml"/>
+  <!-- google webfont font replacement -->
+  <script type="text/javascript">
+   if(!document.cookie.match(/aviaPrivacyGoogleWebfontsDisabled/)){
+				(function() {
+					var f = document.createElement('link');
+					
+					f.type 	= 'text/css';
+					f.rel 	= 'stylesheet';
+					f.href 	= '//fonts.googleapis.com/css?family=Ruda:400,700,900';
+					f.id 	= 'avia-google-webfont';
+					
+					document.getElementsByTagName('head')[0].appendChild(f);
+				})();
+			}
+  </script>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/grid.css?ver=4.4.1" id="avia-grid-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/base.css?ver=4.4.1" id="avia-base-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/layout.css?ver=4.4.1" id="avia-layout-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/audio-player/audio-player.css?ver=5.4.2" id="avia-module-audioplayer-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/blog/blog.css?ver=5.4.2" id="avia-module-blog-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/postslider/postslider.css?ver=5.4.2" id="avia-module-postslider-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/buttons/buttons.css?ver=5.4.2" id="avia-module-button-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/buttonrow/buttonrow.css?ver=5.4.2" id="avia-module-buttonrow-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/buttons_fullwidth/buttons_fullwidth.css?ver=5.4.2" id="avia-module-button-fullwidth-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/catalogue/catalogue.css?ver=5.4.2" id="avia-module-catalogue-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/comments/comments.css?ver=5.4.2" id="avia-module-comments-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/contact/contact.css?ver=5.4.2" id="avia-module-contact-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow/slideshow.css?ver=5.4.2" id="avia-module-slideshow-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/contentslider/contentslider.css?ver=5.4.2" id="avia-module-slideshow-contentpartner-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/countdown/countdown.css?ver=5.4.2" id="avia-module-countdown-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/gallery/gallery.css?ver=5.4.2" id="avia-module-gallery-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/gallery_horizontal/gallery_horizontal.css?ver=5.4.2" id="avia-module-gallery-hor-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/google_maps/google_maps.css?ver=5.4.2" id="avia-module-maps-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/grid_row/grid_row.css?ver=5.4.2" id="avia-module-gridrow-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/heading/heading.css?ver=5.4.2" id="avia-module-heading-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/headline_rotator/headline_rotator.css?ver=5.4.2" id="avia-module-rotator-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/hr/hr.css?ver=5.4.2" id="avia-module-hr-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/icon/icon.css?ver=5.4.2" id="avia-module-icon-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/iconbox/iconbox.css?ver=5.4.2" id="avia-module-iconbox-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/iconlist/iconlist.css?ver=5.4.2" id="avia-module-iconlist-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/image/image.css?ver=5.4.2" id="avia-module-image-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/image_hotspots/image_hotspots.css?ver=5.4.2" id="avia-module-hotspot-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/magazine/magazine.css?ver=5.4.2" id="avia-module-magazine-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/masonry_entries/masonry_entries.css?ver=5.4.2" id="avia-module-masonry-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/avia-snippet-site-preloader.css?ver=5.4.2" id="avia-siteloader-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/menu/menu.css?ver=5.4.2" id="avia-module-menu-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/notification/notification.css?ver=5.4.2" id="avia-modfule-notification-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/numbers/numbers.css?ver=5.4.2" id="avia-module-numbers-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/portfolio/portfolio.css?ver=5.4.2" id="avia-module-portfolio-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/progressbar/progressbar.css?ver=5.4.2" id="avia-module-progress-bar-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/promobox/promobox.css?ver=5.4.2" id="avia-module-promobox-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_accordion/slideshow_accordion.css?ver=5.4.2" id="avia-module-slideshow-accordion-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_feature_image/slideshow_feature_image.css?ver=5.4.2" id="avia-module-slideshow-feature-image-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_fullsize/slideshow_fullsize.css?ver=5.4.2" id="avia-module-slideshow-fullsize-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_fullscreen/slideshow_fullscreen.css?ver=5.4.2" id="avia-module-slideshow-fullscreen-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_layerslider/slideshow_layerslider.css?ver=5.4.2" id="avia-module-slideshow-ls-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/social_share/social_share.css?ver=5.4.2" id="avia-module-social-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/tab_section/tab_section.css?ver=5.4.2" id="avia-module-tabsection-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/table/table.css?ver=5.4.2" id="avia-module-table-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/tabs/tabs.css?ver=5.4.2" id="avia-module-tabs-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/team/team.css?ver=5.4.2" id="avia-module-team-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/testimonials/testimonials.css?ver=5.4.2" id="avia-module-testimonials-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/timeline/timeline.css?ver=5.4.2" id="avia-module-timeline-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/toggles/toggles.css?ver=5.4.2" id="avia-module-toggles-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/video/video.css?ver=5.4.2" id="avia-module-video-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/awsm-team-pro/css/team.min.css?ver=1.1.3" id="awsm-team-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/css/frst_main_css.css?ver=5.4.2" id="first_timeline_style_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/css/demo/reset.css?ver=5.4.2" id="first_timeline_reset_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css?ver=5.4.2" id="first_timeline_fontawesome_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/css/plugins/animate.min.css?ver=5.4.2" id="first_timeline_animate_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/css/default.css?ver=5.4.2" id="first_timeline_default_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.2" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.4.2" id="cookie-notice-front-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/custom-twitter-feeds/css/ctf-styles.min.css?ver=1.5.1" id="ctf_styles-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.981" id="events-manager-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/molongui-authorship/public/css/molongui-authorship.cbbf.min.css?ver=4.1.0" id="molongui-authorship-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.4.5.2" id="rs-plugin-settings-css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="rs-plugin-settings-inline-css" type="text/css">
+   #rs-demo-id {}
+  </style>
+  <link href="//prosume.io/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-list-vertical/style.css?ver=1" id="wpml-legacy-vertical-list-0-css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="wpml-legacy-vertical-list-0-inline-css" type="text/css">
+   #lang_sel img, #lang_sel_list img, #lang_sel_footer img { display: inline; }
+  </style>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-wpml/wpml-mod.css?ver=4.4.1" id="avia-wpml-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/shortcodes.css?ver=4.4.1" id="avia-scs-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/avia-snippet-widget.css?ver=4.4.1" id="avia-widget-css-css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/uploads/dynamic_avia/prosume.css?ver=5f10409890ed9" id="avia-dynamic-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/css/custom.css?ver=4.4.1" id="avia-custom-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold-child/style.css?ver=4.4.1" id="avia-style-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/gravityforms/css/formreset.min.css?ver=2.4.19" id="gforms_reset_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=2.4.19" id="gforms_formsmain_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=2.4.19" id="gforms_ready_class_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/gravityforms/css/browsers.min.css?ver=2.4.19" id="gforms_browsers_css-css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/themes/enfold/config-gravityforms/gravity-mod.css?ver=4.4.1" id="avia-gravity-css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://prosume.io/wp-content/plugins/wp-gdpr-compliance/assets/css/front.min.css?ver=1594898582" id="wpgdprc.css-css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="wpgdprc.css-inline-css" type="text/css">
+   div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:before { content: 'Yes'; }
+            div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:after { content: 'No'; }
+  </style>
+  <script>
+   if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/js/modernizr.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/js/frst-timeline.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/codecanyon-19813552-firstresponsive-wordpress-timeline-plugin/includes/../assets/js/frst-scale-effect.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"d MM yy","firstDay":1,"isRTL":false});});
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   ( 'fetch' in window ) || document.write( '<script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://prosume.io/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
+  </script>
+  <script src="https://prosume.io/wp-includes/js/dist/dom-ready.min.js?ver=91fc8f05178d5c6365aec778f840ae17" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/dist/a11y.min.js?ver=45f739d280d1244f6cb498ed8f1bf042" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/prosume.io\/wp-admin\/admin-ajax.php?em_lang=en_US&lang=en","locationajaxurl":"https:\/\/prosume.io\/wp-admin\/admin-ajax.php?action=locations_search&em_lang=en_US&lang=en","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/prosume.io\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","bookingInProgress":"Please wait while the booking is being submitted.","tickets_save":"Save Ticket","bookingajaxurl":"https:\/\/prosume.io\/wp-admin\/admin-ajax.php?em_lang=en_US&lang=en","bookings_export_save":"Export Bookings","bookings_settings_save":"Save Settings","booking_delete":"Are you sure you want to delete?","booking_offset":"30","bb_full":"Sold Out","bb_book":"Book Now","bb_booking":"Booking...","bb_booked":"Booking Submitted","bb_error":"Booking Error. Try again?","bb_cancel":"Cancel","bb_canceling":"Canceling...","bb_cancelled":"Cancelled","bb_cancel_error":"Cancellation Error. Try again?","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading...","event_detach_warning":"Are you sure you want to detach this event? By doing so, this event will be independent of the recurring set of events.\n\nAll translations of this event will be detached from the recurring event.","delete_recurrence_warning":"Are you sure you want to delete all recurrences of this event? All events will be moved to trash.","disable_bookings_warning":"Are you sure you want to disable bookings? If you do this and save, you will lose all previous bookings. If you wish to prevent further bookings, reduce the number of spaces available to the amount of bookings you currently have","booking_warning_cancel":"Are you sure you want to cancel your booking?"};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.981" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4.5.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.5.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-wpml/wpml-mod.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/js/avia-compat.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.4.19" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2},"base_url":"https:\/\/prosume.io\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/prosume.io\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.4.19" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.4.19" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.4.19" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=6.5.4" type="text/javascript">
+  </script>
+  <link href="https://prosume.io/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://prosume.io/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://prosume.io/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress 5.4.2" name="generator"/>
+  <link href="https://prosume.io/" rel="shortlink"/>
+  <link href="https://prosume.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprosume.io%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://prosume.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprosume.io%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <meta content="WPML ver:4.3.5 stt:1,3,2;" name="generator"/>
+  <!-- AWSM team pro custom CSS - begin  -->
+  <style type="text/css">
+   .awsm-grid-wrapper figure{border: 0!important;}
+  </style>
+  <!-- AWSM team pro custom CSS - end  -->
+  <script>
+   document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+  </script>
+  <style>
+   .no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+  </style>
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <link href="https://prosume.io/feed/" rel="alternate" title="Prosume RSS2 Feed" type="application/rss+xml"/>
+  <link href="https://prosume.io/xmlrpc.php" rel="pingback"/>
+  <!--[if lt IE 9]><script src="https://prosume.io/wp-content/themes/enfold/js/html5shiv.js"></script><![endif]-->
+  <link href="https://prosume.io/wp-content/uploads/2017/09/favicon-prosume.png" rel="icon" type="image/png"/>
+  <meta content="Powered by Slider Revolution 5.4.5.2 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." name="generator"/>
+  <!-- Google Analytics Tracking by Google Analyticator 6.5.4: http://www.videousermanuals.com/google-analyticator/ -->
+  <script type="text/javascript">
+   var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+  </script>
+  <script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-106884076-1', 'auto');
+ 
+	ga('send', 'pageview');
+  </script>
+  <script type="text/javascript">
+   function setREVStartSize(e){
+				try{ var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;					
+					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+				}catch(d){console.log("Failure at Presize of Slider:"+d)}
+			};
+  </script>
+  <style type="text/css">
+   @font-face {font-family: 'entypo-fontello'; font-weight: normal; font-style: normal;
+src: url('https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.eot');
+src: url('https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.eot?#iefix') format('embedded-opentype'), 
+url('https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.woff') format('woff'), 
+url('https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.ttf') format('truetype'), 
+url('https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.svg#entypo-fontello') format('svg');
+} #top .avia-font-entypo-fontello, body .avia-font-entypo-fontello, html body [data-av_iconfont='entypo-fontello']:before{ font-family: 'entypo-fontello'; }
+
+@font-face {font-family: 'prosume-v1'; font-weight: normal; font-style: normal;
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-v1/prosume-v1.eot');
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-v1/prosume-v1.eot?#iefix') format('embedded-opentype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-v1/prosume-v1.woff') format('woff'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-v1/prosume-v1.ttf') format('truetype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-v1/prosume-v1.svg#prosume-v1') format('svg');
+} #top .avia-font-prosume-v1, body .avia-font-prosume-v1, html body [data-av_iconfont='prosume-v1']:before{ font-family: 'prosume-v1'; }
+
+@font-face {font-family: 'linecons'; font-weight: normal; font-style: normal;
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/linecons/linecons.eot');
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/linecons/linecons.eot?#iefix') format('embedded-opentype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/linecons/linecons.woff') format('woff'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/linecons/linecons.ttf') format('truetype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/linecons/linecons.svg#linecons') format('svg');
+} #top .avia-font-linecons, body .avia-font-linecons, html body [data-av_iconfont='linecons']:before{ font-family: 'linecons'; }
+
+@font-face {font-family: 'prosume-logo'; font-weight: normal; font-style: normal;
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-logo/prosume-logo.eot');
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-logo/prosume-logo.eot?#iefix') format('embedded-opentype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-logo/prosume-logo.woff') format('woff'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-logo/prosume-logo.ttf') format('truetype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-logo/prosume-logo.svg#prosume-logo') format('svg');
+} #top .avia-font-prosume-logo, body .avia-font-prosume-logo, html body [data-av_iconfont='prosume-logo']:before{ font-family: 'prosume-logo'; }
+
+@font-face {font-family: 'prosume-download'; font-weight: normal; font-style: normal;
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-download/prosume-download.eot');
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-download/prosume-download.eot?#iefix') format('embedded-opentype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-download/prosume-download.woff') format('woff'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-download/prosume-download.ttf') format('truetype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-download/prosume-download.svg#prosume-download') format('svg');
+} #top .avia-font-prosume-download, body .avia-font-prosume-download, html body [data-av_iconfont='prosume-download']:before{ font-family: 'prosume-download'; }
+
+@font-face {font-family: 'prosume-steemit'; font-weight: normal; font-style: normal;
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-steemit/prosume-steemit.eot');
+src: url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-steemit/prosume-steemit.eot?#iefix') format('embedded-opentype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-steemit/prosume-steemit.woff') format('woff'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-steemit/prosume-steemit.ttf') format('truetype'), 
+url('https://prosume.io/wp-content/uploads/avia_fonts/prosume-steemit/prosume-steemit.svg#prosume-steemit') format('svg');
+} #top .avia-font-prosume-steemit, body .avia-font-prosume-steemit, html body [data-av_iconfont='prosume-steemit']:before{ font-family: 'prosume-steemit'; }
+  </style>
+  <!--
+Debugging Info for Theme support: 
+
+Theme: Enfold
+Version: 4.4.1
+Installed: enfold
+AviaFramework Version: 4.7
+AviaBuilder Version: 0.9.5
+aviaElementManager Version: 1.0.1
+- - - - - - - - - - -
+ChildTheme: Prosume
+ChildTheme Version: 1.0
+ChildTheme Installed: enfold
+
+ML:256-PU:47-PLA:29
+WP:5.4.2
+Compress: CSS:disabled - JS:disabled
+Updates: enabled
+PLAu:27
+-->
+ </head>
+ <body class="home page-template-default page page-id-2 stretched ruda no_sidebar_border cookies-not-set" data-rsssl="1" id="top" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+  <div id="wrap_all">
+   <header class="all_colors header_color light_bg_color av_header_top av_logo_left av_main_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking_disabled av_header_stretch av_mobile_menu_tablet av_header_transparency av_header_searchicon_disabled av_header_unstick_top_disabled av_minimal_header av_minimal_header_shadow av_bottom_nav_disabled av_alternate_logo_active av_header_border_disabled" id="header" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
+    <div class="container_wrap container_wrap_logo" id="header_main">
+     <div class="container av-logo-container">
+      <div class="inner-container">
+       <span class="logo">
+        <a href="https://prosume.io/">
+         <img alt="Prosume" class="lazyload" data-src="https://prosume.io/wp-content/uploads/2017/09/logo-prosume.png" height="100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+         <noscript>
+          <img alt="Prosume" height="100" src="https://prosume.io/wp-content/uploads/2017/09/logo-prosume.png" width="300"/>
+         </noscript>
+         <span class="subtext">
+          <img alt="" class="alternate lazyload" data-src="https://prosume.io/wp-content/uploads/2017/09/logo-prosume-alpha.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title=""/>
+          <noscript>
+           <img alt="" class="alternate" src="https://prosume.io/wp-content/uploads/2017/09/logo-prosume-alpha.png" title=""/>
+          </noscript>
+         </span>
+        </a>
+       </span>
+       <nav class="main_menu" data-selectname="Select a page" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+        <div class="avia-menu av-main-nav-wrap">
+         <ul class="menu av-main-nav" id="avia-menu">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-top-level menu-item-top-level-1" id="menu-item-2426">
+           <a href="https://prosume.io" itemprop="url">
+            <span class="avia-bullet">
+            </span>
+            <span class="avia-menu-text">
+             Home
+            </span>
+            <span class="avia-menu-fx">
+             <span class="avia-arrow-wrap">
+              <span class="avia-arrow">
+              </span>
+             </span>
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-top-level menu-item-top-level-2" id="menu-item-474">
+           <a href="/#about" itemprop="url">
+            <span class="avia-bullet">
+            </span>
+            <span class="avia-menu-text">
+             About
+            </span>
+            <span class="avia-menu-fx">
+             <span class="avia-arrow-wrap">
+              <span class="avia-arrow">
+              </span>
+             </span>
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-top-level menu-item-top-level-3" id="menu-item-28">
+           <a href="/#applications" itemprop="url">
+            <span class="avia-bullet">
+            </span>
+            <span class="avia-menu-text">
+             Services
+            </span>
+            <span class="avia-menu-fx">
+             <span class="avia-arrow-wrap">
+              <span class="avia-arrow">
+              </span>
+             </span>
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-4" id="menu-item-2425">
+           <a href="https://prosume.io/team/" itemprop="url">
+            <span class="avia-bullet">
+            </span>
+            <span class="avia-menu-text">
+             Team
+            </span>
+            <span class="avia-menu-fx">
+             <span class="avia-arrow-wrap">
+              <span class="avia-arrow">
+              </span>
+             </span>
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-top-level menu-item-top-level-5" id="menu-item-2508">
+           <a href="#" itemprop="url">
+            <span class="avia-bullet">
+            </span>
+            <span class="avia-menu-text">
+             Media
+            </span>
+            <span class="avia-menu-fx">
+             <span class="avia-arrow-wrap">
+              <span class="avia-arrow">
+              </span>
+             </span>
+            </span>
+           </a>
+           <ul class="sub-menu">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-2418">
+             <a href="https://prosume.io/news/" itemprop="url">
+              <span class="avia-bullet">
+              </span>
+              <span class="avia-menu-text">
+               News
+              </span>
+             </a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom" id="menu-item-2509">
+             <a href="https://prosume.io/events" itemprop="url">
+              <span class="avia-bullet">
+              </span>
+              <span class="avia-menu-text">
+               Events
+              </span>
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item av-menu-button av-menu-button-colored menu-item-top-level menu-item-top-level-6" id="menu-item-32">
+           <a href="/#contact" itemprop="url">
+            <span class="avia-bullet">
+            </span>
+            <span class="avia-menu-text">
+             Contacts
+            </span>
+            <span class="avia-menu-fx">
+             <span class="avia-arrow-wrap">
+              <span class="avia-arrow">
+              </span>
+             </span>
+            </span>
+           </a>
+          </li>
+          <li class="av-language-switch-item language_en avia_current_lang">
+           <a href="https://prosume.io">
+            <span class="language_flag">
+             <img class="lazyload" data-src="https://prosume.io/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="English"/>
+             <noscript>
+              <img src="https://prosume.io/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" title="English"/>
+             </noscript>
+            </span>
+           </a>
+          </li>
+          <li class="av-language-switch-item language_de">
+           <a href="https://prosume.io/de/">
+            <span class="language_flag">
+             <img class="lazyload" data-src="https://prosume.io/wp-content/plugins/sitepress-multilingual-cms/res/flags/de.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Deutsch"/>
+             <noscript>
+              <img src="https://prosume.io/wp-content/plugins/sitepress-multilingual-cms/res/flags/de.png" title="Deutsch"/>
+             </noscript>
+            </span>
+           </a>
+          </li>
+          <li class="av-language-switch-item language_es">
+           <a href="https://prosume.io/es/">
+            <span class="language_flag">
+             <img class="lazyload" data-src="https://prosume.io/wp-content/plugins/sitepress-multilingual-cms/res/flags/es.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Español"/>
+             <noscript>
+              <img src="https://prosume.io/wp-content/plugins/sitepress-multilingual-cms/res/flags/es.png" title="Español"/>
+             </noscript>
+            </span>
+           </a>
+          </li>
+          <li class="av-burger-menu-main menu-item-avia-special av-small-burger-icon">
+           <a href="#">
+            <span class="av-hamburger av-hamburger--spin av-js-hamburger">
+             <span class="av-hamburger-box">
+              <span class="av-hamburger-inner">
+              </span>
+              <strong>
+               Menu
+              </strong>
+             </span>
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </nav>
+      </div>
+     </div>
+     <!-- end container_wrap-->
+    </div>
+    <div class="header_bg">
+    </div>
+    <!-- end header -->
+   </header>
+   <div class="all_colors" data-scroll-offset="88" id="main">
+    <style type="text/css">
+     @import url('https://fonts.googleapis.com/css?family=Ruda' );body #gform_wrapper_9 {border-width: 0; border-style: solid;font-family:"Ruda";}body #gform_wrapper_9 .gform_footer .gform_button {border-style: solid;font-weight: normal; font-weight: bold; border-radius:3px;-web-border-radius:3px;-moz-border-radius:3px;border-width: 0px;}body #gform_wrapper_9 .gform_page_footer .gform_button{border-style: solid;font-weight: normal; font-weight: bold; border-radius:3px;-web-border-radius:3px;-moz-border-radius:3px;border-width: 0px;}body #gform_wrapper_9 .gform_page_footer .gform_button:hover {border-style: solid;}body #gform_wrapper_9 .gform_footer .gform_button:hover {border-style: solid;}body #gform_wrapper_9 .gform_footer button.mdc-button {font-weight: normal; font-weight: bold; border-radius:3px;-web-border-radius:3px;-moz-border-radius:3px;border-width: 0px;}body #gform_wrapper_9 .gform_footer button.mdc-button:hover {}body #gform_wrapper_9 .gform_footer {}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_next_button {border-style: solid;border-radius: 3px;-web-border-radius: 3px;-moz-border-radius: 3px;}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_next_button:hover {}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_previous_button {border-radius: 3px;-web-border-radius: 3px;-moz-border-radius: 3px;}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_previous_button:hover {}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_button {border-radius: 3px;-web-border-radius: 3px;-moz-border-radius: 3px;}body #gform_wrapper_9 .gform_body .gform_page_footer .gform_button:hover {}/* Styling for Tablets */@media only screen and ( max-width: 800px ) and ( min-width:481px ) {}/* Styling for phones */@media only screen and ( max-width: 480px ) {}/*Option to add custom CSS */
+    </style>
+    <div class="avia-layerslider main_color avia-shadow avia-builder-el-0 el_before_av_section avia-builder-el-first container_wrap fullsize" id="layer_slider_1" style="height: 751px;">
+     <link href="https://fonts.googleapis.com/css?family=Ruda:400%2C900%2C700%7COpen+Sans:400" media="all" property="stylesheet" rel="stylesheet" type="text/css"/>
+     <div class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" id="rev_slider_1_1_wrapper" style="margin:0px auto;background:#07405e;padding:0px;margin-top:0px;margin-bottom:0px;">
+      <!-- START REVOLUTION SLIDER 5.4.5.2 fullwidth mode -->
+      <div class="rev_slider fullwidthabanner" data-version="5.4.5.2" id="rev_slider_1_1" style="display:none;">
+       <ul>
+        <!-- SLIDE  -->
+        <li data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-4" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
+         <!-- MAIN IMAGE -->
+         <img alt="" class="rev-slidebg" data-bgparallax="off" data-bgposition="center center" data-blurend="0" data-blurstart="0" data-duration="10000" data-ease="Linear.easeNone" data-kenburns="on" data-lazyload="https://prosume.io/wp-content/uploads/2017/09/tomasz-bazylinski-24593-2.jpg" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="106" data-scalestart="100" height="1278" src="https://prosume.io/wp-content/plugins/revslider/admin/assets/images/dummy.png" title="tomasz-bazylinski-24593" width="1920"/>
+         <!-- LAYERS -->
+         <!-- LAYER NR. 1 -->
+         <div class="tp-caption tp-resizeme" data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeOut"}]' data-height="none" data-hoffset="['0','0','0','0']" data-letterspacing="['0','0','-2','-2']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','center']" data-type="text" data-voffset="['-20','-20','0','-70']" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-width="['none','none','none','440']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slide-4-layer-1" style="z-index: 5; white-space: nowrap; font-size: 52px; line-height: 56px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         </div>
+        </li>
+        <!-- SLIDE  -->
+        <li data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1" data-masterspeed="666" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
+         <!-- MAIN IMAGE -->
+         <img alt="" class="rev-slidebg" data-bgparallax="off" data-bgposition="center center" data-blurend="0" data-blurstart="0" data-duration="10000" data-ease="Linear.easeNone" data-kenburns="on" data-lazyload="https://prosume.io/wp-content/uploads/2017/09/karsten-wurth-inf1783-206005.jpg" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="106" data-scalestart="100" height="1280" src="https://prosume.io/wp-content/plugins/revslider/admin/assets/images/dummy.png" title="karsten-wurth-inf1783-206005" width="1920"/>
+         <!-- LAYERS -->
+         <!-- LAYER NR. 2 -->
+         <div class="tp-caption tp-resizeme" data-basealign="slide" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="100%" data-hoffset="['0','0','0','0']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','inherit']" data-type="text" data-voffset="['0','0','0','0']" data-whitespace="nowrap" data-width="100%" data-x="['center','center','center','center']" data-y="['top','top','top','top']" id="slide-1-layer-1" style="z-index: 5; min-width: 100%px; max-width: 100%px; max-width: 100%px; max-width: 100%px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;">
+          <div id="particles-js">
+          </div>
+         </div>
+         <!-- LAYER NR. 3 -->
+         <div class="tp-caption tp-resizeme" data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeIn"}]' data-height="none" data-hoffset="['0','0','0','0']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','center']" data-type="text" data-voffset="['-20','-20','-20','-70']" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-width="['none','none','none','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slide-1-layer-3" style="z-index: 6; white-space: nowrap; font-size: 52px; line-height: 56px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         </div>
+        </li>
+        <!-- SLIDE  -->
+        <li data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-5" data-masterspeed="666" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
+         <!-- MAIN IMAGE -->
+         <img alt="" class="rev-slidebg" data-bgparallax="off" data-bgposition="center center" data-blurend="0" data-blurstart="0" data-duration="10000" data-ease="Linear.easeNone" data-kenburns="on" data-lazyload="https://prosume.io/wp-content/uploads/2017/09/gaddafi-rusli-368634-1.jpg" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="106" data-scalestart="100" height="1285" src="https://prosume.io/wp-content/plugins/revslider/admin/assets/images/dummy.png" title="gaddafi-rusli-368634" width="1920"/>
+         <!-- LAYERS -->
+         <!-- LAYER NR. 4 -->
+         <div class="tp-caption tp-resizeme" data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeOut"}]' data-height="none" data-hoffset="['-1','-1','0','0']" data-letterspacing="['0','0','-2','0']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','center']" data-type="text" data-voffset="['-20','-20','0','-70']" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-width="['none','none','none','440']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slide-5-layer-1" style="z-index: 5; white-space: nowrap; font-size: 52px; line-height: 56px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         </div>
+        </li>
+        <!-- SLIDE  -->
+        <li data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-2" data-masterspeed="666" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
+         <!-- MAIN IMAGE -->
+         <img alt="" class="rev-slidebg" data-bgparallax="off" data-bgposition="center center" data-blurend="0" data-blurstart="0" data-duration="10000" data-ease="Linear.easeNone" data-kenburns="on" data-lazyload="https://prosume.io/wp-content/uploads/2017/09/annie-spratt-80671-1.jpg" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="106" data-scalestart="100" height="1280" src="https://prosume.io/wp-content/plugins/revslider/admin/assets/images/dummy.png" title="annie-spratt-80671" width="1920"/>
+         <!-- LAYERS -->
+         <!-- LAYER NR. 5 -->
+         <div class="tp-caption tp-resizeme" data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeOut"}]' data-height="none" data-hoffset="['0','0','0','0']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','center']" data-type="text" data-voffset="['-20','-20','-20','-70']" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-width="['none','none','none','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slide-2-layer-1" style="z-index: 5; white-space: nowrap; font-size: 52px; line-height: 56px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         </div>
+        </li>
+        <!-- SLIDE  -->
+        <li data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-6" data-masterspeed="666" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
+         <!-- MAIN IMAGE -->
+         <img alt="blockchain solution for energy industry" class="rev-slidebg" data-bgparallax="off" data-bgposition="center center" data-blurend="0" data-blurstart="0" data-duration="10000" data-ease="Linear.easeNone" data-kenburns="on" data-lazyload="https://prosume.io/wp-content/uploads/2017/09/blockchain.jpg" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="106" data-scalestart="100" height="1280" src="https://prosume.io/wp-content/plugins/revslider/admin/assets/images/dummy.png" title="blockchain solution for energy industry" width="1920"/>
+         <!-- LAYERS -->
+         <!-- LAYER NR. 6 -->
+         <div class="tp-caption tp-resizeme" data-basealign="slide" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="100%" data-hoffset="['0','0','0','0']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','inherit']" data-type="text" data-voffset="['-1','-1','-1','-1']" data-whitespace="nowrap" data-width="100%" data-x="['center','center','center','center']" data-y="['top','top','top','top']" id="slide-6-layer-1" style="z-index: 5; min-width: 100%px; max-width: 100%px; max-width: 100%px; max-width: 100%px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;">
+          <div id="particles-js">
+          </div>
+         </div>
+         <!-- LAYER NR. 7 -->
+         <div class="tp-caption tp-resizeme" data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeIn"}]' data-height="none" data-hoffset="['0','0','0','0']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-textalign="['inherit','inherit','inherit','center']" data-type="text" data-voffset="['-20','-20','-20','-70']" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-width="['none','none','none','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slide-6-layer-3" style="z-index: 6; white-space: nowrap; font-size: 52px; line-height: 56px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         </div>
+        </li>
+       </ul>
+       <div class="tp-static-layers" style="">
+        <!-- LAYER NR. 8 -->
+        <div class="tp-caption tp-resizeme rs-parallaxlevel-12 tp-static-layer" data-actions='[{"event":"click","action":"scrollbelow","offset":"-80px","delay":"0","speed":"1000","ease":"Power4.easeOut"}]' data-basealign="slide" data-endslide="4" data-frames='[{"delay":2000.0003051758,"speed":330,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255,255,255,0.76);br:0px 0px 0px 0px;"}]' data-height="none" data-hoffset="['-1','-1','-1','0']" data-paddingbottom="[4,4,4,4]" data-paddingleft="[12,12,12,12]" data-paddingright="[12,12,12,12]" data-paddingtop="[4,4,4,4]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','inherit','inherit']" data-type="text" data-voffset="['36','36','36','24']" data-whitespace="nowrap" data-width="none" data-x="['center','center','center','center']" data-y="['bottom','bottom','bottom','bottom']" id="slider-1-layer-12" style="z-index: 12; white-space: nowrap; font-size: 36px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;cursor:pointer;">
+         <div class="rs-looped rs-slideloop" data-easing="Bounce.easeOut" data-speed="2" data-xe="0" data-xs="0" data-ye="12" data-ys="-12">
+          <i class="fa-icon-angle-down">
+          </i>
+         </div>
+        </div>
+        <!-- LAYER NR. 9 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-fontsize="['32','32','34','28']" data-frames='[{"delay":250.00030517578,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','0','0']" data-lineheight="['36','36','42','36']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','center','center']" data-type="text" data-voffset="['-276','-276','97','91']" data-whitespace="['nowrap','nowrap','normal','normal']" data-width="['none','none','560','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slider-1-layer-19" style="z-index: 13; white-space: nowrap; font-size: 32px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+        </div>
+        <!-- LAYER NR. 10 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-fontsize="['22','22','34','28']" data-frames='[{"delay":250.00030517578,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','-1','0']" data-lineheight="['36','36','42','36']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','center','center']" data-type="text" data-voffset="['-152','-152','83','64']" data-whitespace="['nowrap','nowrap','normal','normal']" data-width="['none','none','560','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slider-1-layer-21" style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+        </div>
+        <!-- LAYER NR. 11 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','0','1']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','inherit','inherit']" data-type="text" data-voffset="['463','463','473','60']" data-whitespace="nowrap" data-width="none" data-x="['center','center','center','center']" data-y="['top','top','top','middle']" id="slider-1-layer-23" style="z-index: 15; white-space: nowrap; font-size: 23px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+        </div>
+        <!-- LAYER NR. 12 -->
+        <div class="tp-caption tp-resizeme rs-parallaxlevel-12 tp-static-layer" data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":"0","speed":"1000","ease":"Power4.easeOut"}]' data-basealign="slide" data-endslide="4" data-frames='[{"delay":2000.0003051758,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255,255,255,0.76);br:0px 0px 0px 0px;"}]' data-height="none" data-hoffset="['0','0','0','0']" data-paddingbottom="[4,4,4,4]" data-paddingleft="[12,12,12,12]" data-paddingright="[12,12,12,12]" data-paddingtop="[4,4,4,4]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','inherit','inherit']" data-type="text" data-voffset="['36','36','36','36']" data-whitespace="nowrap" data-width="none" data-x="['center','center','center','center']" data-y="['bottom','bottom','bottom','bottom']" id="slider-1-layer-37" style="z-index: 16; white-space: nowrap; font-size: 36px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;cursor:pointer;">
+         <div class="rs-looped rs-slideloop" data-easing="Bounce.easeOut" data-speed="2" data-xe="0" data-xs="0" data-ye="12" data-ys="-12">
+          <i class="fa-icon-angle-down">
+          </i>
+         </div>
+        </div>
+        <!-- LAYER NR. 13 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-fontsize="['32','32','34','28']" data-frames='[{"delay":250.00030517578,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','0','0']" data-lineheight="['36','36','42','36']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','center','center']" data-type="text" data-voffset="['-276','-276','97','91']" data-whitespace="['nowrap','nowrap','normal','normal']" data-width="['none','none','560','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slider-1-layer-39" style="z-index: 17; white-space: nowrap; font-size: 32px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+        </div>
+        <!-- LAYER NR. 14 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-fontsize="['22','22','34','28']" data-frames='[{"delay":250.00030517578,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','-1','0']" data-lineheight="['36','36','42','36']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','center','center']" data-type="text" data-voffset="['-152','-152','83','64']" data-whitespace="['nowrap','nowrap','normal','normal']" data-width="['none','none','560','400']" data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']" id="slider-1-layer-40" style="z-index: 18; white-space: nowrap; font-size: 22px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+        </div>
+        <!-- LAYER NR. 15 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','0','1']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','inherit','inherit']" data-type="text" data-voffset="['463','463','473','60']" data-whitespace="nowrap" data-width="none" data-x="['center','center','center','center']" data-y="['top','top','top','middle']" id="slider-1-layer-41" style="z-index: 19; white-space: nowrap; font-size: 23px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+        </div>
+        <!-- LAYER NR. 16 -->
+        <span class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-fontsize="['29','29','44','28']" data-frames='[{"delay":250.00030517578,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="['110','110','none','none']" data-hoffset="['130','130','115','50']" data-lineheight="['36','36','42','36']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','left','left']" data-type="text" data-voffset="['152','152','-322','-264']" data-whitespace="normal" data-width="['401','401','554','400']" data-x="['left','left','left','left']" data-y="['top','top','middle','middle']" id="slider-1-layer-42" style="z-index: 20; min-width: 401px; max-width: 401px; max-width: 110px; max-width: 110px; white-space: normal; font-size: 29px; line-height: 36px; font-weight: 900; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         Are you ready for the next energy revolution?
+        </span>
+        <!-- LAYER NR. 17 -->
+        <div class="tp-caption tp-resizeme tp-static-layer" data-endslide="4" data-fontsize="['19','19','17','17']" data-frames='[{"delay":250.00030517578,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['131','131','6','50']" data-lineheight="['23','23','23','20']" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-startslide="0" data-textalign="['left','left','left','left']" data-type="text" data-voffset="['-34','-34','-185','-148']" data-whitespace="normal" data-width="['400','400','560','400']" data-x="['left','left','center','left']" data-y="['middle','middle','middle','middle']" id="slider-1-layer-43" style="z-index: 21; min-width: 400px; max-width: 400px; white-space: normal; font-size: 19px; line-height: 23px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Ruda;">
+         The future is PROSUMErs – individual consumers, energy communities, businesses will exchange and sell energy at a cheaper price and in a more sustainable way, maximizing the use of renewable sources locally produced. Decentralized, decarbonized, digitalized prosumed policy is the only possible future for energy!
+        </div>
+        <!-- LAYER NR. 18 -->
+        <div class="tp-caption rev-btn tp-static-layer" data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"#contact","delay":""}]' data-endslide="4" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(68,180,79);bs:solid;bw:0 0 0 0;"}]' data-height="none" data-hoffset="['130','130','130','130']" data-paddingbottom="[12,12,12,12]" data-paddingleft="[35,35,35,35]" data-paddingright="[35,35,35,35]" data-paddingtop="[12,12,12,12]" data-responsive="off" data-responsive_offset="on" data-startslide="0" data-textalign="['inherit','inherit','inherit','inherit']" data-type="button" data-voffset="['470','470','470','470']" data-whitespace="nowrap" data-width="none" data-x="['left','left','left','left']" data-y="['top','top','top','top']" id="slider-1-layer-47" style="z-index: 22; white-space: nowrap; font-size: 17px; line-height: 17px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: px;font-family:Ruda;background-color:rgba(83,144,163,0.75);border-color:rgba(0,0,0,1);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+         CONTACT US
+        </div>
+       </div>
+       <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;">
+       </div>
+      </div>
+      <script>
+       var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+      </script>
+      <script type="text/javascript">
+       setREVStartSize({c: jQuery('#rev_slider_1_1'), responsiveLevels: [1240,1240,778,480], gridwidth: [1240,1240,778,480], gridheight: [750,750,960,720], sliderLayout: 'fullwidth'});
+			
+var revapi1,
+	tpj=jQuery;
+			
+tpj(document).ready(function() {
+	if(tpj("#rev_slider_1_1").revolution == undefined){
+		revslider_showDoubleJqueryError("#rev_slider_1_1");
+	}else{
+		revapi1 = tpj("#rev_slider_1_1").show().revolution({
+			sliderType:"standard",
+			jsFileLocation:"//prosume.io/wp-content/plugins/revslider/public/assets/js/",
+			sliderLayout:"fullwidth",
+			dottedOverlay:"none",
+			delay:4000,
+			navigation: {
+				keyboardNavigation:"on",
+				keyboard_direction: "horizontal",
+				mouseScrollNavigation:"off",
+ 							mouseScrollReverse:"default",
+				onHoverStop:"off",
+			},
+			responsiveLevels:[1240,1240,778,480],
+			visibilityLevels:[1240,1240,778,480],
+			gridwidth:[1240,1240,778,480],
+			gridheight:[750,750,960,720],
+			lazyType:"smart",
+			scrolleffect: {
+				fade:"on",
+				on_slidebg:"on",
+			},
+			parallax: {
+				type:"scroll",
+				origo:"enterpoint",
+				speed:400,
+				speedbg:0,
+				speedls:0,
+				levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+				disable_onmobile:"on"
+			},
+			shadow:0,
+			spinner:"spinner4",
+			stopLoop:"off",
+			stopAfterLoops:-1,
+			stopAtSlide:-1,
+			shuffle:"off",
+			autoHeight:"off",
+			disableProgressBar:"on",
+			hideThumbsOnMobile:"off",
+			hideSliderAtLimit:0,
+			hideCaptionAtLimit:0,
+			hideAllCaptionAtLilmit:0,
+			debugMode:false,
+			fallbacks: {
+				simplifyAll:"on",
+				nextSlideOnWindowFocus:"off",
+				disableFocusListener:false,
+			panZoomDisableOnMobile:"on",
+			}
+		});
+	}
+	
+});	/*ready*/
+      </script>
+      <script>
+       var htmlDivCss = '	#rev_slider_1_1_wrapper .tp-loader.spinner4 div { background-color: #277f9f !important; } ';
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}
+					else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+      </script>
+     </div>
+     <!-- END REVOLUTION SLIDER -->
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-1 el_after_av_revolutionslider el_before_av_section container_wrap fullsize" id="about" style="background-color: #ffffff; background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="av-special-heading av-special-heading-h2 blockquote modern-quote modern-centered avia-builder-el-2 el_before_av_hr avia-builder-el-first" style="padding-bottom:10px; ">
+          <h2 class="av-special-heading-tag" itemprop="headline">
+           WHAT IS PROSUME
+          </h2>
+          <div class="special-heading-border">
+           <div class="special-heading-inner-border">
+           </div>
+          </div>
+         </div>
+         <div class="hr hr-custom hr-center hr-icon-no avia-builder-el-3 el_after_av_heading el_before_av_one_third" style=" margin-top:12px; margin-bottom:8px;">
+          <span class="hr-inner inner-border-av-border-thin" style=" width:46px; border-color:#e1e1e1;">
+           <span class="hr-inner-style">
+           </span>
+          </span>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding first avia-builder-el-4 el_after_av_hr el_before_av_one_third" style="border-radius:0px; ">
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: left;">
+             <a href="https://prosume.io/white-paper/" style="color: #44b44f; font-weight: bold; text-decoration: underline;">
+              PROSUME
+             </a>
+             is a
+             <b>
+              blockchain-based platform
+             </b>
+             that, thanks to its own decentralized and self-regulated monitoring system, guarantees an autonomous, independent and digitized smart place that allows users to energy coming from green or traditional energy sources, promoting and accelerating new energy community models.
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding avia-builder-el-6 el_after_av_one_third el_before_av_one_third" style="border-radius:0px; ">
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: left;">
+             <strong>
+              PROSUME Platform Keypoints
+             </strong>
+            </p>
+            <ul>
+             <li>
+              Decentralized decision-making
+             </li>
+             <li>
+              Renewable energy sources prioritization
+             </li>
+             <li>
+              Energy Exchange
+             </li>
+             <li>
+              Transparency
+             </li>
+             <li>
+              Traceability
+             </li>
+            </ul>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding avia-builder-el-8 el_after_av_one_third avia-builder-el-last" style="border-radius:0px; ">
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: left;">
+             <strong>
+              PROSUME Platform Benefits
+             </strong>
+            </p>
+            <ul>
+             <li>
+              Flexibility to choose power sources
+             </li>
+             <li>
+              More convenient to store energy
+             </li>
+             <li>
+              Co-ownership of power plants
+             </li>
+             <li>
+              Real-time costs control
+             </li>
+             <li>
+              Traceability and trustworthiness
+             </li>
+             <li>
+              Better Grid Operating &amp; Maintenance
+             </li>
+            </ul>
+           </div>
+          </section>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-10 el_after_av_section el_before_av_section av-desktop-hide av-medium-hide av-small-hide av-mini-hide container_wrap fullsize" id="why-prosume" style="background-color: #ffffff; background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="av-special-heading av-special-heading-h2 blockquote modern-quote modern-centered avia-builder-el-11 el_before_av_hr avia-builder-el-first" style="padding-bottom:10px; ">
+          <h2 class="av-special-heading-tag" itemprop="headline">
+           WHY PROSUME
+          </h2>
+          <div class="special-heading-border">
+           <div class="special-heading-inner-border">
+           </div>
+          </div>
+         </div>
+         <div class="hr hr-custom hr-center hr-icon-no avia-builder-el-12 el_after_av_heading el_before_av_one_fifth" style=" margin-top:12px; margin-bottom:8px;">
+          <span class="hr-inner inner-border-av-border-thin" style=" width:46px; border-color:#e1e1e1;">
+           <span class="hr-inner-style">
+           </span>
+          </span>
+         </div>
+         <div class="flex_column av_one_fifth flex_column_div av-zero-column-padding first avia-builder-el-13 el_after_av_hr el_before_av_three_fifth" style="border-radius:0px; ">
+         </div>
+         <div class="flex_column av_three_fifth flex_column_div av-zero-column-padding avia-builder-el-14 el_after_av_one_fifth el_before_av_one_fifth" style="border-radius:0px; ">
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: left;">
+             <i>
+              “We strongly believe in the sharing energy model based on the peer to peer exchange system, for this reason
+              <a href="https://prosume.io/white-paper/" style="color: #44b44f; font-weight: bold; text-decoration: underline;">
+               PROSUME
+              </a>
+              platform has as its main goal to be the
+             </i>
+             <b>
+              <i>
+               most innovative place to develop energy communities
+              </i>
+             </b>
+             <i>
+              , in order to give everyone the possibility to
+             </i>
+             <b>
+              <i>
+               exchange energy
+              </i>
+             </b>
+             <i>
+              in a more transparent
+             </i>
+             <b>
+              <i>
+               ,
+              </i>
+             </b>
+             <i>
+              t
+             </i>
+             <i>
+              raceable, accessible, flexible, resilient and sustainable way”.
+             </i>
+            </p>
+            <p style="text-align: left;">
+             <i>
+             </i>
+             <em>
+              Alfredo Giardina
+             </em>
+             ,
+             <b>
+              <br/>
+             </b>
+             Co-founder PROSUME ENERGY FOUNDATION
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_fifth flex_column_div av-zero-column-padding avia-builder-el-16 el_after_av_three_fifth avia-builder-el-last" style="border-radius:0px; ">
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-17 el_after_av_section el_before_av_section container_wrap fullsize" id="quick-links" style="background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="av-special-heading av-special-heading-h2 blockquote modern-quote modern-centered avia-builder-el-18 el_before_av_hr avia-builder-el-first" style="padding-bottom:10px; ">
+          <h2 class="av-special-heading-tag" itemprop="headline">
+           QUICK LINKS
+          </h2>
+          <div class="special-heading-border">
+           <div class="special-heading-inner-border">
+           </div>
+          </div>
+         </div>
+         <div class="hr hr-custom hr-center hr-icon-no avia-builder-el-19 el_after_av_heading el_before_av_one_third" style=" margin-top:12px; margin-bottom:16px;">
+          <span class="hr-inner inner-border-av-border-thin" style=" width:46px; border-color:#e1e1e1;">
+           <span class="hr-inner-style">
+           </span>
+          </span>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding first avia-builder-el-20 el_after_av_hr el_before_av_one_third" style="border-radius:0px; ">
+          <div class="avia-button-wrap avia-button-center avia-builder-el-21 avia-builder-el-no-sibling">
+           <a class="avia-button avia-icon_select-yes-left-icon avia-color-theme-color-subtle avia-size-medium avia-position-center" href="https://prosume.io/wp-content/uploads/PROSUME_Commercial-Deck_17012020.pdf" target="_blank">
+            <span aria-hidden="true" class="avia_button_icon avia_button_icon_left" data-av_icon="" data-av_iconfont="entypo-fontello">
+            </span>
+            <span class="avia_iconbox_title">
+             Download the Deck
+            </span>
+           </a>
+          </div>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding avia-builder-el-22 el_after_av_one_third el_before_av_one_third" style="border-radius:0px; ">
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: center;">
+             <a class="button-video-alpha" data-popup-open="popup-video" href="#" style="text-decoration: none;">
+              <i class="fa-icon-play-circle">
+              </i>
+              Watch the Video
+             </a>
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding avia-builder-el-24 el_after_av_one_third avia-builder-el-last" style="border-radius:0px; ">
+          <div class="avia-button-wrap avia-button-center avia-builder-el-25 avia-builder-el-no-sibling">
+           <a class="avia-button avia-icon_select-yes-left-icon avia-color-theme-color-highlight avia-size-medium avia-position-center" href="#contact">
+            <span aria-hidden="true" class="avia_button_icon avia_button_icon_left" data-av_icon="" data-av_iconfont="entypo-fontello">
+            </span>
+            <span class="avia_iconbox_title">
+             Contact Us
+            </span>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-26 el_after_av_section el_before_av_section container_wrap fullsize" id="applications" style="background-color: #ffffff; background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="av-special-heading av-special-heading-h2 blockquote modern-quote modern-centered avia-builder-el-27 el_before_av_hr avia-builder-el-first" style="padding-bottom:10px; ">
+          <h2 class="av-special-heading-tag" itemprop="headline">
+           OUR APPLICATIONS
+          </h2>
+          <div class="special-heading-border">
+           <div class="special-heading-inner-border">
+           </div>
+          </div>
+         </div>
+         <div class="hr hr-custom hr-center hr-icon-no avia-builder-el-28 el_after_av_heading el_before_av_one_fifth" style=" margin-top:12px; margin-bottom:8px;">
+          <span class="hr-inner inner-border-av-border-thin" style=" width:46px; border-color:#e1e1e1;">
+           <span class="hr-inner-style">
+           </span>
+          </span>
+         </div>
+         <div class="flex_column av_one_fifth flex_column_div av-zero-column-padding first avia-builder-el-29 el_after_av_hr el_before_av_three_fifth" style="border-radius:0px; ">
+         </div>
+         <div class="flex_column av_three_fifth flex_column_div av-zero-column-padding avia-builder-el-30 el_after_av_one_fifth el_before_av_one_fifth" style="border-radius:0px; ">
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p>
+             <strong>
+              PROSUME Platform
+             </strong>
+             is flexible enough to integrate the operator application needs. Our applications are provided on a B2B model to the partners managing the local infrastructures and installed capacity.
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_fifth flex_column_div av-zero-column-padding avia-builder-el-32 el_after_av_three_fifth el_before_av_one_half" style="border-radius:0px; ">
+         </div>
+         <div class="flex_column av_one_half flex_column_div av-zero-column-padding first avia-builder-el-33 el_after_av_one_fifth el_before_av_one_half column-top-margin" style="border-radius:0px; ">
+          <span class="av_font_icon avia_animate_when_visible av-icon-style- av-no-color avia-icon-pos-center" style="">
+           <span aria-hidden="true" class="av-icon-char" data-av_icon="" data-av_iconfont="entypo-fontello" style="font-size:46px;line-height:46px;">
+           </span>
+          </span>
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-35 el_after_av_font_icon el_before_av_textblock" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            P2P ENERGY EXCHANGE
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text">
+            <p style="text-align: center;">
+             Validated energy players and their data use their unique blockchain IDs to automatically seek out the best solution, allowing multiple permissioned blockchains to be interconnected. The platform also encourages communities to adopt storage solutions in order to maximise local self-consumption, balance the system and best take advantage of aggregated capacity.
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_half flex_column_div av-zero-column-padding avia-builder-el-37 el_after_av_one_half el_before_av_one_third column-top-margin" style="border-radius:0px; ">
+          <span class="av_font_icon avia_animate_when_visible av-icon-style- av-no-color avia-icon-pos-center" style="">
+           <span aria-hidden="true" class="av-icon-char" data-av_icon="" data-av_iconfont="entypo-fontello" style="font-size:46px;line-height:46px;">
+           </span>
+          </span>
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-39 el_after_av_font_icon el_before_av_textblock" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            GRID BALANCING
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text">
+            <p style="text-align: center;">
+             Algorithms constantly profile and schedule identified players and their levels of energy production and consumption in a demand-side management tool, allowing grid operators to keep the grid balanced. Our solution allows significant demand-response functions, providing balancing tools to TSOs/DSOs in order to ease the transition towards decentralized energy systems and reduce overall grid operation costs.
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding first avia-builder-el-41 el_after_av_one_half el_before_av_one_third column-top-margin" style="border-radius:0px; ">
+          <span class="av_font_icon avia_animate_when_visible av-icon-style- av-no-color avia-icon-pos-center" style="">
+           <span aria-hidden="true" class="av-icon-char" data-av_icon="" data-av_iconfont="entypo-fontello" style="font-size:46px;line-height:46px;">
+           </span>
+          </span>
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-43 el_after_av_font_icon el_before_av_textblock" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            TRADING PROCESSES OPTIMIZATION
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text">
+            <p style="text-align: center;">
+             Adopting blockchain technology,
+             <strong>
+              energy traders and market stakeholders can integrate processes and data
+             </strong>
+             (i.e. deals) coming from market exchanges or legacy systems on to a shared platform on which every entity can manage its own data, and share such information with counterparts, grid operators, regulators and authorities.
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding avia-builder-el-45 el_after_av_one_third el_before_av_one_third column-top-margin" style="border-radius:0px; ">
+          <span class="av_font_icon avia_animate_when_visible av-icon-style- av-no-color avia-icon-pos-center" style="">
+           <span aria-hidden="true" class="av-icon-char" data-av_icon="" data-av_iconfont="entypo-fontello" style="font-size:46px;line-height:46px;">
+           </span>
+          </span>
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-47 el_after_av_font_icon el_before_av_textblock" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            SMART BILLING
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text">
+            <p style="text-align: center;">
+             Prosume allows each user to
+             <strong>
+              precisely and instantly monitor
+             </strong>
+             their energy consumption and expenditure, providing each load’s data, encouraging sustainable habits and generating energy savings while preserving comfort and choice.
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_third flex_column_div av-zero-column-padding avia-builder-el-49 el_after_av_one_third avia-builder-el-last column-top-margin" style="border-radius:0px; ">
+          <span class="av_font_icon avia_animate_when_visible av-icon-style- av-no-color avia-icon-pos-center" style="">
+           <span aria-hidden="true" class="av-icon-char" data-av_icon="" data-av_iconfont="entypo-fontello" style="font-size:46px;line-height:46px;">
+           </span>
+          </span>
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-51 el_after_av_font_icon el_before_av_textblock" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            AUTOMATED PAYMENTS
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text">
+            <p style="text-align: center;">
+             Thanks to smart-contracts, Prosume provides
+             <strong>
+              user-friendly, reliable payment methods
+             </strong>
+             , ensuring energy providers benefit from daily, automatic and precisely measured utility bill payments from offtakers, minimising delays and collection costs.
+            </p>
+           </div>
+          </section>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-53 el_after_av_section el_before_av_section av-desktop-hide av-medium-hide av-small-hide av-mini-hide container_wrap fullsize" id="roadmap" style="background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="av-special-heading av-special-heading-h2 blockquote modern-quote modern-centered avia-builder-el-54 el_before_av_hr avia-builder-el-first" style="padding-bottom:16px; ">
+          <h2 class="av-special-heading-tag" itemprop="headline">
+           ROADMAP
+          </h2>
+          <div class="special-heading-border">
+           <div class="special-heading-inner-border">
+           </div>
+          </div>
+         </div>
+         <div class="hr hr-custom hr-center hr-icon-no avia-builder-el-55 el_after_av_heading el_before_av_one_full" style=" margin-top:12px; margin-bottom:46px;">
+          <span class="hr-inner inner-border-av-border-thin" style=" width:46px; border-color:#e1e1e1;">
+           <span class="hr-inner-style">
+           </span>
+          </span>
+         </div>
+         <div class="flex_column av_one_full flex_column_div av-zero-column-padding first avia-builder-el-56 el_after_av_hr avia-builder-el-last" style="border-radius:0px; ">
+          <section class="avia_codeblock_section avia_code_block_0" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_codeblock" itemprop="text">
+            <div class="frst-container" data-animation-name="fadeInUp" id="" style="">
+             <!-- frst-left-align/frst-right-align/frst-alternate/frst-date-opposite/frst-responsive-right-->
+             <div class="frst-timeline frst-timeline-style-12 frst-alternate frst-date-opposite" id="">
+              <div class="frst-timeline-block frst-timeline-block-id-1 frst-odd-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  September 2016
+                 </h2>
+                 <p>
+                  Developing of the Exchange Platform Concept
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-2 frst-even-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  January 2017
+                 </h2>
+                 <p>
+                  Utility and Energy Community
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-3 frst-odd-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  MARCH 2017
+                 </h2>
+                 <p>
+                  First Pilot Project with E-Steiermark (Austria) in Europe
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-4 frst-even-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  JUNE 2017
+                 </h2>
+                 <p>
+                  Delivery First Pilot Test Project
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-5 frst-odd-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  February 2018
+                 </h2>
+                 <p>
+                  Completion of the Pilot Project
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-6 frst-even-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  June 2018
+                 </h2>
+                 <p>
+                  e-Prosume: JV between Evolvere &amp; Prosume
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-7 frst-odd-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  January 2019
+                 </h2>
+                 <p>
+                  Beta Release of the Private Unlocked Trading Platform
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+              <div class="frst-timeline-block frst-timeline-block-id-8 frst-even-item" data-animation="">
+               <div class="frst-timeline-img">
+                <span>
+                 <i aria-hidden="true" class="fa">
+                 </i>
+                </span>
+               </div>
+               <!-- frst-timeline-img -->
+               <div class="frst-timeline-content">
+                <div class="frst-timeline-content-inner">
+                 <span class="frst-date">
+                  <br/>
+                 </span>
+                 <h2>
+                  Q1 2020
+                 </h2>
+                 <p>
+                  Beta Release of the Public Trading Platform
+                 </p>
+                </div>
+                <!-- frst-timeline-content-inner -->
+               </div>
+               <!-- frst-timeline-content -->
+               <style type="text/css">
+               </style>
+              </div>
+             </div>
+            </div>
+           </div>
+          </section>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-58 el_after_av_section el_before_av_section av-desktop-hide av-medium-hide av-small-hide av-mini-hide container_wrap fullsize" id="team" style="background-color: #ffffff; background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="av-special-heading av-special-heading-h2 blockquote modern-quote modern-centered avia-builder-el-59 el_before_av_hr avia-builder-el-first" style="padding-bottom:16px; ">
+          <h2 class="av-special-heading-tag" itemprop="headline">
+           OUR TEAM
+          </h2>
+          <div class="special-heading-border">
+           <div class="special-heading-inner-border">
+           </div>
+          </div>
+         </div>
+         <div class="hr hr-custom hr-center hr-icon-no avia-builder-el-60 el_after_av_heading el_before_av_one_full" style=" margin-top:12px; margin-bottom:32px;">
+          <span class="hr-inner inner-border-av-border-thin" style=" width:46px; border-color:#e1e1e1;">
+           <span class="hr-inner-style">
+           </span>
+          </span>
+         </div>
+         <div class="flex_column av_one_full flex_column_div av-zero-column-padding first avia-builder-el-61 el_after_av_hr avia-builder-el-last" style="border-radius:0px; ">
+          <section class="avia_codeblock_section avia_code_block_1" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_codeblock" itemprop="text">
+            <div class="awsm-grid-wrapper" id="awsm-team-51">
+             <div class="awsm-grid cards-style style-1 grid-5-col">
+              <div class="awsm-grid-card" id="awsm-member-51-1199">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Mattia De Vecchi" class="lazyload" data-src="https://prosume.io/wp-content/uploads/2018/10/PROSUME_Image-Profilo_Mattia-De-Vecchi-e1565090235860-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Mattia De Vecchi" src="https://prosume.io/wp-content/uploads/2018/10/PROSUME_Image-Profilo_Mattia-De-Vecchi-e1565090235860-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Mattia De Vecchi
+                  </h3>
+                  <span>
+                   CEO
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/mattia-de-vecchi-233b095" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-172">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Alex D’Elia" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Alex-DElia-e1564137143488-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Alex D’Elia" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Alex-DElia-e1564137143488-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Alex D’Elia
+                  </h3>
+                  <span>
+                   CIO
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/acmesh" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2047">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Pierluigi Maori" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Pierluigi-Maori-e1565090024612-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Pierluigi Maori" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Pierluigi-Maori-e1565090024612-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Pierluigi Maori
+                  </h3>
+                  <span>
+                   CTO
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/newmark/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-150">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Massimo Ferronato" class="lazyload" data-src="https://prosume.io/wp-content/uploads/Massimo-e1565089652534-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Massimo Ferronato" src="https://prosume.io/wp-content/uploads/Massimo-e1565089652534-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Massimo Ferronato
+                  </h3>
+                  <span>
+                   CTO
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/eibit/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2054">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Daniele Morisco" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Daniele-Morisco-e1565090054895-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Daniele Morisco" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Daniele-Morisco-e1565090054895-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Daniele Morisco
+                  </h3>
+                  <span>
+                   CFO
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/daniele-morisco-63221a25/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-1204">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Giovanni Quaglino" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Giovanni-Quaglino-e1565089986582-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Giovanni Quaglino" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Giovanni-Quaglino-e1565089986582-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Giovanni Quaglino
+                  </h3>
+                  <span>
+                   Marketing &amp; Product Strategy
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/giovanniquaglino/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-180">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Giacomo Beretta" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Giacomo-Beretta-e1565089942764-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Giacomo Beretta" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Giacomo-Beretta-e1565089942764-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Giacomo Beretta
+                  </h3>
+                  <span>
+                   Business Developer
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/gjberetta/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-298">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Alessia Borge" class="lazyload" data-src="https://prosume.io/wp-content/uploads/Alessia-e1565089842887-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Alessia Borge" src="https://prosume.io/wp-content/uploads/Alessia-e1565089842887-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Alessia Borge
+                  </h3>
+                  <span>
+                   Country Manager Spain
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/alessiaborge/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2037">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Luise Müller-Hofstede" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Luise-Müller-Hofstede-500x500.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Luise Müller-Hofstede" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Luise-Müller-Hofstede-500x500.png"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Luise Müller-Hofstede
+                  </h3>
+                  <span>
+                   DACH Business Developer
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/luise-m%C3%BCller-hofstede-130040174/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2042">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Karolin Langfeldt" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Karolin-Langfeldt-500x500.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Karolin Langfeldt" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Karolin-Langfeldt-500x500.png"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Karolin Langfeldt
+                  </h3>
+                  <span>
+                   DACH Business Developer
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/karolinlangfeldt/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-610">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Carlo Riganti" class="lazyload" data-src="https://prosume.io/wp-content/uploads/2017/09/PROSUME_Carlo-Riganti.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Carlo Riganti" src="https://prosume.io/wp-content/uploads/2017/09/PROSUME_Carlo-Riganti.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Carlo Riganti
+                  </h3>
+                  <span>
+                   Legal
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/carlo-riganti-67955b33/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2052">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Fabio Cedronio" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Fabio-Cedronio-e1565089908454-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Fabio Cedronio" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Fabio-Cedronio-e1565089908454-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Fabio Cedronio
+                  </h3>
+                  <span>
+                   Business Developer Italy
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="https://www.linkedin.com/in/fabio-cedronio-9606456/" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2059">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Amanda Lim" class="lazyload" data-src="https://prosume.io/wp-content/uploads/Amanda-e1565089804507-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Amanda Lim" src="https://prosume.io/wp-content/uploads/Amanda-e1565089804507-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Amanda Lim
+                  </h3>
+                  <span>
+                   Communications &amp; Branding
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                  <div class="awsm-social-icons">
+                   <span>
+                    <a href="http://linkedin.com/in/limamanda1" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-linkedin">
+                     </i>
+                    </a>
+                   </span>
+                   <span>
+                    <a href="http://twitter.com/shoepergirl" target="_blank">
+                     <i aria-hidden="true" class="awsm-icon-twitter">
+                     </i>
+                    </a>
+                   </span>
+                  </div>
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+              <div class="awsm-grid-card" id="awsm-member-51-2259">
+               <figure>
+                <!-- <span class="awsm-grid-holder"> -->
+                <img alt="Giovanni Gelpi" class="lazyload" data-src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Giovanni-Gelpi-e1565089752892-500x500.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                <noscript>
+                 <img alt="Giovanni Gelpi" src="https://prosume.io/wp-content/uploads/MBS_Team_Image_Giovanni-Gelpi-e1565089752892-500x500.jpg"/>
+                </noscript>
+                <figcaption class="awsm-figcaption">
+                 <div class="awsm-personal-info">
+                  <h3>
+                   Giovanni Gelpi
+                  </h3>
+                  <span>
+                   Business Development
+                  </span>
+                 </div>
+                 <!-- .awsm-personal-info -->
+                 <div class="awsm-contact-info">
+                 </div>
+                 <!-- .awsm-contact-info -->
+                </figcaption>
+                <!-- </span> -->
+                <!-- .awsm-grid-holder -->
+               </figure>
+              </div>
+             </div>
+             <!-- .grid -->
+            </div>
+           </div>
+          </section>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-full-stretch av-parallax-section av-section-color-overlay-active avia-bg-style-parallax avia-builder-el-63 el_after_av_section el_before_av_section container_wrap fullsize" data-section-bg-repeat="stretch" id="cases">
+     <div class="av-parallax" data-avia-parallax-ratio="0.3">
+      <div class="av-parallax-inner main_color avia-full-stretch" style="background-repeat: no-repeat; background-image: url(https://prosume.io/wp-content/uploads/2017/09/amir-saboury-253166.jpg);background-attachment: scroll; background-position: center center; ">
+      </div>
+     </div>
+     <div class="av-section-color-overlay-wrap">
+      <div class="av-section-color-overlay" style="opacity: 0.7; background-color: #07405e; ">
+      </div>
+      <div class="container">
+       <div class="template-page content av-content-full alpha units">
+        <div class="post-entry post-entry-type-page post-entry-2">
+         <div class="entry-content-wrapper clearfix">
+          <div class="flex_column_table av-equal-height-column-flextable -flextable">
+           <div class="flex_column av_two_third flex_column_table_cell av-equal-height-column av-align-middle av-zero-column-padding first avia-builder-el-64 el_before_av_one_third avia-builder-el-first" style="border-radius:0px; ">
+            <div class="avia-content-slider-element-container avia-content-slider-element-slider avia-content-slider avia-smallarrow-slider avia-content-slider-active avia-content-slider1 avia-content-slider-odd avia-builder-el-65 avia-builder-el-no-sibling av_inherit_color" data-animation="slide" data-autoplay="true" data-interval="10" data-show_slide_delay="30" style=" color:#ffffff; ">
+             <div class="avia-smallarrow-slider-heading no-content-slider-heading">
+              <div class="new-special-heading">
+              </div>
+              <div class="avia-slideshow-dots avia-slideshow-controls">
+               <a class="goto-slide active" href="#1">
+                1
+               </a>
+               <a class="goto-slide" href="#2">
+                2
+               </a>
+               <a class="goto-slide" href="#3">
+                3
+               </a>
+              </div>
+             </div>
+             <div class="avia-content-slider-inner">
+              <div class="slide-entry-wrap">
+               <section class="slide-entry flex_column post-entry slide-entry-overview slide-loop-1 slide-parity-odd av_fullwidth first" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                <h3 class="slide-entry-title entry-title" itemprop="headline">
+                 Barcelona Energy Community
+                </h3>
+                <div class="slide-entry-excerpt entry-content" itemprop="text">
+                 <h2>
+                  Energy data exchange for real people
+                 </h2>
+                 <p>
+                  <img alt="" class="alignright size-medium wp-image-2561 lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-300x69.png" data-srcset="https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-300x69.png 300w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-768x177.png 768w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-705x162.png 705w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-450x104.png 450w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo.png 794w" height="69" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+                 </p>
+                 <noscript>
+                  <img alt="" class="alignright size-medium wp-image-2561" height="69" sizes="(max-width: 300px) 100vw, 300px" src="https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-300x69.png" srcset="https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-300x69.png 300w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-768x177.png 768w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-705x162.png 705w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo-450x104.png 450w, https://prosume.io/wp-content/uploads/Barcelona-Energia_logo.png 794w" width="300"/>
+                 </noscript>
+                 In Q4 2018 we won a grant from the city council of Barcelona to develop
+                 <strong>
+                  Barcelona Energy Community
+                 </strong>
+                 , a pilot project for its community, focused on the blockchain registration of data related to consumption, production and energy storage of the town buildings.
+                 <p>
+                  <span style="text-decoration: underline;">
+                   <strong>
+                    FILL THE FORM TO GET THE CASE
+                   </strong>
+                  </span>
+                 </p>
+                </div>
+               </section>
+              </div>
+              <div class="slide-entry-wrap">
+               <section class="slide-entry flex_column post-entry slide-entry-overview slide-loop-2 slide-parity-odd av_fullwidth first" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                <h3 class="slide-entry-title entry-title" itemprop="headline">
+                 e-Prosume
+                </h3>
+                <div class="slide-entry-excerpt entry-content" itemprop="text">
+                 <h2>
+                  Integrating blockchain with smart home gateways
+                 </h2>
+                 <p>
+                  <img alt="" class="alignright size-medium wp-image-2569 lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://prosume.io/wp-content/uploads/Evolvere_logo-300x123.png" data-srcset="https://prosume.io/wp-content/uploads/Evolvere_logo-300x123.png 300w, https://prosume.io/wp-content/uploads/Evolvere_logo.png 413w" height="123" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+                 </p>
+                 <noscript>
+                  <img alt="" class="alignright size-medium wp-image-2569" height="123" sizes="(max-width: 300px) 100vw, 300px" src="https://prosume.io/wp-content/uploads/Evolvere_logo-300x123.png" srcset="https://prosume.io/wp-content/uploads/Evolvere_logo-300x123.png 300w, https://prosume.io/wp-content/uploads/Evolvere_logo.png 413w" width="300"/>
+                 </noscript>
+                 Italian energy aggregator
+                 <strong>
+                  Evolvere
+                 </strong>
+                 has allied with
+                 <strong>
+                  Prosume
+                 </strong>
+                 in an unprecedented partnership between a leader in the distributed generation sector and a blockchain solutions provider.
+                 <p>
+                  <span style="text-decoration: underline;">
+                   <strong>
+                    FILL THE FORM TO GET THE CASE
+                   </strong>
+                  </span>
+                 </p>
+                </div>
+               </section>
+              </div>
+              <div class="slide-entry-wrap">
+               <section class="slide-entry flex_column post-entry slide-entry-overview slide-loop-3 slide-parity-odd post-entry-last av_fullwidth first" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                <h3 class="slide-entry-title entry-title" itemprop="headline">
+                 Energy Commons Protocol
+                </h3>
+                <div class="slide-entry-excerpt entry-content" itemprop="text">
+                 <h2>
+                  Interoperability between and within energy systems
+                 </h2>
+                 <p>
+                  <img alt="" class="alignright size-medium wp-image-2565 lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://prosume.io/wp-content/uploads/Ledger_logo-300x80.png" data-srcset="https://prosume.io/wp-content/uploads/Ledger_logo-300x80.png 300w, https://prosume.io/wp-content/uploads/Ledger_logo-450x120.png 450w, https://prosume.io/wp-content/uploads/Ledger_logo.png 584w" height="80" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+                 </p>
+                 <noscript>
+                  <img alt="" class="alignright size-medium wp-image-2565" height="80" sizes="(max-width: 300px) 100vw, 300px" src="https://prosume.io/wp-content/uploads/Ledger_logo-300x80.png" srcset="https://prosume.io/wp-content/uploads/Ledger_logo-300x80.png 300w, https://prosume.io/wp-content/uploads/Ledger_logo-450x120.png 450w, https://prosume.io/wp-content/uploads/Ledger_logo.png 584w" width="300"/>
+                 </noscript>
+                 The Energy Commons Protocol (ECP) leverages DLTs to break data silos and centralisation in the energy sector. ECP completes our offering by allowing the interoperability between them and with the energy infrastructure.
+                 <p>
+                  <span style="text-decoration: underline;">
+                   <strong>
+                    FILL THE FORM TO GET THE CASE
+                   </strong>
+                  </span>
+                 </p>
+                </div>
+               </section>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="av-flex-placeholder">
+           </div>
+           <div class="flex_column av_one_third flex_column_table_cell av-equal-height-column av-align-middle av-zero-column-padding avia-builder-el-66 el_after_av_two_third avia-builder-el-last" style="border-radius:0px; ">
+            <form action="https://prosume.io/" class="avia_ajax_form av-form-labels-hidden avia-builder-el-67 avia-builder-el-no-sibling av-custom-form-color av-light-form" data-avia-form-id="1" data-avia-redirect="https://prosume.io/cases/" method="post">
+             <fieldset>
+              <p class="first_form form_element form_fullwidth" id="element_avia_1_1">
+               <input class="text_input is_empty" id="avia_1_1" name="avia_1_1" placeholder="Name*" type="text" value=""/>
+              </p>
+              <p class="first_form form_element form_fullwidth" id="element_avia_2_1">
+               <input class="text_input is_email" id="avia_2_1" name="avia_2_1" placeholder="Email*" type="text" value=""/>
+              </p>
+              <p class="hidden">
+               <input class="hidden" id="avia_3_1" name="avia_3_1" type="text" value=""/>
+              </p>
+              <p class="av_form_privacy_check av_contact_privacy_check first_form form_element form_fullwidth" id="element_avia_4_1">
+               <input class="input_checkbox is_empty" id="avia_4_1" name="avia_4_1" type="checkbox" value="true"/>
+               <label class="input_checkbox_label" for="avia_4_1">
+                I agree to the
+                <a href="https://prosume.io/privacy-terms/">
+                 Privacy Policy
+                </a>
+                <abbr class="required" title="required">
+                 *
+                </abbr>
+               </label>
+              </p>
+              <p class="form_element">
+               <input name="avia_generated_form1" type="hidden" value="1"/>
+               <input class="button" data-sending-label="Sending" type="submit" value="DOWNLOAD"/>
+              </p>
+             </fieldset>
+            </form>
+            <div class="ajaxresponse ajaxresponse_1 hidden" id="ajaxresponse_1">
+            </div>
+           </div>
+          </div>
+          <!--close column table wrapper. Autoclose: 1 -->
+         </div>
+        </div>
+       </div>
+       <!-- close content main div -->
+      </div>
+     </div>
+    </div>
+    <div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-68 el_after_av_section el_before_av_section container_wrap fullsize" id="contact" style="background-color: #f1f1f1; background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="flex_column av_one_full flex_column_div av-zero-column-padding first avia-builder-el-69 avia-builder-el-no-sibling" style="border-radius:0px; ">
+          <div class="av-special-heading av-special-heading-h3 blockquote modern-quote modern-centered avia-builder-el-70 el_before_av_textblock avia-builder-el-first" style="padding-bottom:16px; ">
+           <h3 class="av-special-heading-tag" itemprop="headline">
+            QUESTIONS? CONTACT US…
+           </h3>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text">
+            <p style="text-align: center;">
+            </p>
+            <div class="gf_browser_chrome gform_wrapper" id="gform_wrapper_9" style="display:none">
+             <div class="gform_anchor" id="gf_9" tabindex="-1">
+             </div>
+             <form action="/#gf_9" enctype="multipart/form-data" id="gform_9" method="post" target="gform_ajax_frame_9">
+              <div class="gform_body">
+               <ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_9">
+                <li class="gfield gfield_contains_required field_sublabel_hidden_label field_description_below hidden_label gfield_visibility_visible" id="field_9_1">
+                 <label class="gfield_label gfield_label_before_complex">
+                  Name
+                  <span class="gfield_required">
+                   *
+                  </span>
+                 </label>
+                 <div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_9_1">
+                  <span class="name_first" id="input_9_1_3_container">
+                   <input aria-invalid="false" aria-label="First name" aria-required="true" id="input_9_1_3" name="input_1.3" placeholder="Name" type="text" value=""/>
+                   <label class="hidden_sub_label screen-reader-text" for="input_9_1_3">
+                    First
+                   </label>
+                  </span>
+                  <span class="name_last" id="input_9_1_6_container">
+                   <input aria-invalid="false" aria-label="Last name" aria-required="true" id="input_9_1_6" name="input_1.6" placeholder="Surname" type="text" value=""/>
+                   <label class="hidden_sub_label screen-reader-text" for="input_9_1_6">
+                    Last
+                   </label>
+                  </span>
+                 </div>
+                </li>
+                <li class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_2">
+                 <label class="gfield_label" for="input_9_2">
+                  Organization
+                 </label>
+                 <div class="ginput_container ginput_container_text">
+                  <input aria-invalid="false" class="large" id="input_9_2" name="input_2" placeholder="Organization" type="text" value=""/>
+                 </div>
+                </li>
+                <li class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_3">
+                 <label class="gfield_label" for="input_9_3">
+                  Role
+                 </label>
+                 <div class="ginput_container ginput_container_text">
+                  <input aria-invalid="false" class="large" id="input_9_3" name="input_3" placeholder="Role" type="text" value=""/>
+                 </div>
+                </li>
+                <li class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_4">
+                 <label class="gfield_label" for="input_9_4">
+                  Phone
+                 </label>
+                 <div class="ginput_container ginput_container_phone">
+                  <input aria-invalid="false" class="large" id="input_9_4" name="input_4" placeholder="Phone" type="tel" value=""/>
+                 </div>
+                </li>
+                <li class="gfield gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_5">
+                 <label class="gfield_label" for="input_9_5">
+                  Email
+                  <span class="gfield_required">
+                   *
+                  </span>
+                 </label>
+                 <div class="ginput_container ginput_container_email">
+                  <input aria-invalid="false" aria-required="true" class="large" id="input_9_5" name="input_5" placeholder="Email" type="email" value=""/>
+                 </div>
+                </li>
+                <li class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_8">
+                 <label class="gfield_label" for="input_9_8">
+                  Untitled
+                 </label>
+                 <div class="ginput_container ginput_container_textarea">
+                  <textarea aria-invalid="false" class="textarea large" cols="50" id="input_9_8" name="input_8" placeholder="Message" rows="10"></textarea>
+                 </div>
+                </li>
+                <li class="gfield gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_6">
+                 <label class="gfield_label">
+                  Consent
+                  <span class="gfield_required">
+                   *
+                  </span>
+                 </label>
+                 <div class="ginput_container ginput_container_consent">
+                  <input aria-invalid="false" aria-required="true" id="input_9_6_1" name="input_6.1" type="checkbox" value="1"/>
+                  <label class="gfield_consent_label" for="input_9_6_1">
+                   I agree to the
+                   <a href="https://prosume.io/privacy-terms/" style="color:#5390a3; text-decoration:underline;">
+                    privacy policy
+                   </a>
+                   .
+                  </label>
+                  <span class="gfield_required">
+                   *
+                  </span>
+                  <input class="gform_hidden" name="input_6.2" type="hidden" value='I agree to the &lt;a href="https://prosume.io/privacy-terms/" style="color:#5390a3; text-decoration:underline;"&gt;privacy policy&lt;/a&gt;.'/>
+                  <input class="gform_hidden" name="input_6.3" type="hidden" value="3"/>
+                 </div>
+                </li>
+                <li class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_9_7">
+                 <label class="gfield_label" for="input_9_7">
+                  CAPTCHA
+                 </label>
+                 <div class="ginput_container ginput_recaptcha" data-badge="" data-sitekey="6LdfNzQUAAAAAKCC2N1jhYD23lezlu0U1QSZPgWc" data-tabindex="0" data-theme="light" id="input_9_7">
+                 </div>
+                </li>
+               </ul>
+              </div>
+              <div class="gform_footer top_label">
+               <input class="gform_button button" id="gform_submit_button_9" onclick='if(window["gf_submitting_9"]){return false;}  if( !jQuery("#gform_9")[0].checkValidity || jQuery("#gform_9")[0].checkValidity()){window["gf_submitting_9"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_9"]){return false;} if( !jQuery("#gform_9")[0].checkValidity || jQuery("#gform_9")[0].checkValidity()){window["gf_submitting_9"]=true;}  jQuery("#gform_9").trigger("submit",[true]); }' type="submit" value="SEND MESSAGE"/>
+               <input name="gform_ajax" type="hidden" value="form_id=9&amp;title=&amp;description=&amp;tabindex=0"/>
+               <input class="gform_hidden" name="is_submit_9" type="hidden" value="1"/>
+               <input class="gform_hidden" name="gform_submit" type="hidden" value="9"/>
+               <input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+               <input class="gform_hidden" name="state_9" type="hidden" value="WyJ7XCI2LjFcIjpcIjVmZmI1NWJiYTY5ODdkZTdkOTlmMjg3NmU0Yzc4ZDNiXCIsXCI2LjJcIjpcImVmOTc3NWQwYzljMmY3ZjZjY2U2YWRjN2RhMTY0MGFiXCIsXCI2LjNcIjpcImY1ZDM5Y2RiZjg0NjI2OWVlZDMwNTJlODQxNDExMGQ5XCJ9IiwiNGMyNzkxMDZlZmFmNWE4Mzc4MmI5MDc4MTc3NjcwNzkiXQ=="/>
+               <input class="gform_hidden" id="gform_target_page_number_9" name="gform_target_page_number_9" type="hidden" value="0"/>
+               <input class="gform_hidden" id="gform_source_page_number_9" name="gform_source_page_number_9" type="hidden" value="1"/>
+               <input name="gform_field_values" type="hidden" value=""/>
+              </div>
+             </form>
+            </div>
+            <iframe class="lazyload" data-src="about:blank" id="gform_ajax_frame_9" name="gform_ajax_frame_9" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms.">
+            </iframe>
+            <script type="text/javascript">
+             jQuery(document).ready(function($){gformInitSpinner( 9, 'https://prosume.io/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery('#gform_ajax_frame_9').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_9');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_9').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_9').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_9').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_9').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_9').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_9').val();gformInitSpinner( 9, 'https://prosume.io/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery(document).trigger('gform_page_loaded', [9, current_page]);window['gf_submitting_9'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_9').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_9').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [9]);window['gf_submitting_9'] = false;}, 50);}else{jQuery('#gform_9').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [9, current_page]);} );} );
+            </script>
+            <script type="text/javascript">
+             jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 9) {gf_global["number_formats"][9] = {"1":{"price":false,"value":false},"2":{"price":false,"value":false},"3":{"price":false,"value":false},"4":{"price":false,"value":false},"5":{"price":false,"value":false},"8":{"price":false,"value":false},"6":{"price":false,"value":false},"7":{"price":false,"value":false}};if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][9] = { logic: { 3: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"isnot","value":""}]},"nextButton":null,"section":null},7: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"6","operator":"is","value":"1"}]},"nextButton":null,"section":null} }, dependents: { 3: [3],7: [7] }, animation: 0, defaults: {"1":{"1.2":"","1.3":"","1.4":"","1.6":"","1.8":""}}, fields: {"1":[],"2":[3],"3":[],"4":[],"5":[],"8":[],"6":[7],"7":[]} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){gf_apply_rules(9, [3,7], true);jQuery('#gform_wrapper_9').show();jQuery(document).trigger('gform_post_conditional_logic', [9, null, true]);} );} if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );
+            </script>
+            <script type="text/javascript">
+             jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [9, 1]) } );
+            </script>
+           </div>
+          </section>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: center;">
+             Alternatively, you can join our 24/7
+             <a href="https://t.me/ProsumeEnergy/" rel="noopener noreferrer" target="_blank">
+              Telegram
+             </a>
+             or email us to
+             <a href="mailto:info@prosume.io">
+              info@prosume.io
+             </a>
+            </p>
+           </div>
+          </section>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+     </div>
+    </div>
+    <div class="avia-section alternate_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-73 el_after_av_section avia-builder-el-last container_wrap fullsize" id="join" style="background-image: ">
+     <div class="container">
+      <div class="template-page content av-content-full alpha units">
+       <div class="post-entry post-entry-type-page post-entry-2">
+        <div class="entry-content-wrapper clearfix">
+         <div class="flex_column av_one_fourth flex_column_div av-zero-column-padding first avia-builder-el-74 el_before_av_one_fourth avia-builder-el-first" style="border-radius:0px; ">
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-75 el_before_av_textblock avia-builder-el-first" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            CONTACTS
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_textblock" itemprop="text" style="font-size:16px; ">
+            <p style="text-align: center;">
+             <strong>
+              Prosume S.r.l.
+             </strong>
+             <br/>
+             Corso Venezia, 54
+             <br/>
+             20122 Milano – Italy
+             <br/>
+             <a href="mailto:info@prosume.io" style="text-decoration: none;">
+              <i class="fa fa-envelope-o">
+              </i>
+              info@prosume.io
+             </a>
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_fourth flex_column_div av-zero-column-padding avia-builder-el-77 el_after_av_one_fourth el_before_av_one_fourth" style="border-radius:0px; ">
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-78 el_before_av_codeblock avia-builder-el-first" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            KEEP IN TOUCH
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="avia_codeblock_section avia_code_block_2" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_codeblock" itemprop="text">
+            <!-- Begin MailChimp Signup Form -->
+            <p style="text-align: center;">
+             <style type="text/css">
+              #mc_embed_signup{background:transparent; clear:left; font:14px 'Ruda'; }<br />
+             </style>
+            </p>
+            <div id="mc_embed_signup">
+             <form action="//prosume.us16.list-manage.com/subscribe/post?u=3b2c1c625be6d8a6bc7df7357&amp;id=16b446d1b0" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+              <div style="display: block; margin-top: 8px;">
+               <input class="email" id="mce-EMAIL" name="EMAIL" placeholder="Keep updated, insert email address" required="" style="border: 2px solid #277f9f; border-radius: 6px; padding: 18px; width: 100%; background-color: transparent; font-family: 'Ruda', sans-serif; font-size: 14px; font-weight: bold; text-align: center; color: #277f9f; margin-bottom: 3px;" type="email" value=""/>
+              </div>
+             </form>
+            </div>
+            <div>
+             <input class="button-video-alpha" id="mc-embedded-subscribe" name="subscribe" style="background-color: #277f9f; border: none; color: #ffffff; width: 100%; padding: 21px 16px; margin-top: 3px; font-weight: bold; font-family: 'Ruda'; font-size: 14px; border-radius: 6px; text-align: center;" type="submit" value="Subscribe"/>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+             <input name="b_3b2c1c625be6d8a6bc7df7357_16b446d1b0" tabindex="-1" type="text" value=""/>
+            </div>
+            <!--End mc_embed_signup-->
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_fourth flex_column_div av-zero-column-padding avia-builder-el-80 el_after_av_one_fourth el_before_av_one_fourth" style="border-radius:0px; ">
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-81 el_before_av_codeblock avia-builder-el-first" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            FOLLOW US
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <section class="avia_codeblock_section avia_code_block_3" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+           <div class="avia_codeblock" itemprop="text">
+            <p style="text-align: center;">
+             <a href="https://twitter.com/ProsumeEnergy" rel="noopener noreferrer" style="text-decoration: none;" target="new">
+              <i class="fa fa-twitter fa-2x" style="margin: 0 5px 0 5px;">
+              </i>
+             </a>
+             <a href="https://it.linkedin.com/company/prosumeenergy" rel="noopener noreferrer" style="text-decoration: none;" target="new">
+              <i class="fa fa-linkedin fa-2x" style="margin: 0 5px 0 5px;">
+              </i>
+             </a>
+             <a href="https://t.me/ProsumeEnergy/" rel="noopener noreferrer" style="text-decoration: none;" target="new">
+              <i class="fa fa-paper-plane fa-2x" style="margin: 0 5px 0 5px;">
+              </i>
+             </a>
+            </p>
+            <p style="text-align: center;">
+             <a href="https://www.reddit.com/user/ProsumeEnergy" rel="noopener noreferrer" style="text-decoration: none;" target="new">
+              <i class="fa fa-reddit-alien fa-2x" style="margin: 0 5px 0 5px;">
+              </i>
+             </a>
+             <a href="https://www.youtube.com/channel/UCQZrZLY9XLfy28QTNhwc11g?view_as=subscribe" rel="noopener noreferrer" style="text-decoration: none;" target="new">
+              <i class="fa fa-youtube fa-2x" style="margin: 0 5px 0 5px;">
+              </i>
+             </a>
+             <a href="https://prosume.io/#contact" style="text-decoration: none;">
+              <i class="fa fa-envelope fa-2x" style="margin: 0 5px 0 5px;">
+              </i>
+             </a>
+            </p>
+           </div>
+          </section>
+         </div>
+         <div class="flex_column av_one_fourth flex_column_div av-zero-column-padding avia-builder-el-83 el_after_av_one_fourth avia-builder-el-last" style="border-radius:0px; ">
+          <div class="av-special-heading av-special-heading-h4 blockquote modern-quote modern-centered avia-builder-el-84 el_before_av_image avia-builder-el-first" style="padding-bottom:22px; ">
+           <h4 class="av-special-heading-tag" itemprop="headline">
+            MEMBERS OF
+           </h4>
+           <div class="special-heading-border">
+            <div class="special-heading-inner-border">
+            </div>
+           </div>
+          </div>
+          <div class="avia-image-container av-styling-no-styling avia-builder-el-85 el_after_av_heading el_before_av_image avia-align-center" itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+           <div class="avia-image-container-inner">
+            <div class="avia-image-overlay-wrap">
+             <a class="avia_image" href="https://inatba.org/" target="_blank">
+              <img alt="" class="avia_image lazyload" data-src="https://prosume.io/wp-content/uploads/INATBA_logo-80x80.png" itemprop="thumbnailUrl" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="INATBA_logo"/>
+              <noscript>
+               <img alt="" class="avia_image" itemprop="thumbnailUrl" src="https://prosume.io/wp-content/uploads/INATBA_logo-80x80.png" title="INATBA_logo"/>
+              </noscript>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="avia-image-container av-styling-no-styling avia-builder-el-86 el_after_av_image avia-builder-el-last avia-align-center" itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+           <div class="avia-image-container-inner">
+            <div class="avia-image-overlay-wrap">
+             <a class="avia_image" href="https://www.etsi.org/" target="_blank">
+              <img alt="" class="avia_image lazyload" data-src="https://prosume.io/wp-content/uploads/ETSI_Logo_Mini1.gif" itemprop="thumbnailUrl" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title=""/>
+              <noscript>
+               <img alt="" class="avia_image" itemprop="thumbnailUrl" src="https://prosume.io/wp-content/uploads/ETSI_Logo_Mini1.gif" title=""/>
+              </noscript>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- close content main div -->
+      <!-- section close by builder template -->
+     </div>
+     <!--end builder template-->
+    </div>
+    <!-- close default .container_wrap element -->
+    <footer class="container_wrap socket_color" id="socket" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+     <div class="container">
+      <span class="copyright">
+       © Copyright -
+       <strong>
+        PROSUME S.r.l.
+       </strong>
+      </span>
+      <ul class="noLightbox social_bookmarks icon_count_5">
+       <li class="social_bookmarks_linkedin av-social-link-linkedin social_icon_1">
+        <a aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello" href="https://www.linkedin.com/company/prosumeenergy/" target="_blank" title="Linkedin">
+         <span class="avia_hidden_link_text">
+          Linkedin
+         </span>
+        </a>
+       </li>
+       <li class="social_bookmarks_twitter av-social-link-twitter social_icon_2">
+        <a aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello" href="https://twitter.com/ProsumeEnergy" target="_blank" title="Twitter">
+         <span class="avia_hidden_link_text">
+          Twitter
+         </span>
+        </a>
+       </li>
+       <li class="social_bookmarks_youtube av-social-link-youtube social_icon_3">
+        <a aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello" href="https://www.youtube.com/channel/UCQZrZLY9XLfy28QTNhwc11g?view_as=subscriber" target="_blank" title="Youtube">
+         <span class="avia_hidden_link_text">
+          Youtube
+         </span>
+        </a>
+       </li>
+       <li class="social_bookmarks_reddit av-social-link-reddit social_icon_4">
+        <a aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello" href="https://www.reddit.com/user/ProsumeEnergy" target="_blank" title="Reddit">
+         <span class="avia_hidden_link_text">
+          Reddit
+         </span>
+        </a>
+       </li>
+       <li class="social_bookmarks_mail av-social-link-mail social_icon_5">
+        <a aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello" href="info@prosume.io" title="Mail">
+         <span class="avia_hidden_link_text">
+          Mail
+         </span>
+        </a>
+       </li>
+      </ul>
+      <nav class="sub_menu_socket" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+       <div class="avia3-menu">
+        <ul class="menu" id="avia3-menu">
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-1" id="menu-item-774">
+          <a href="https://prosume.io/privacy-terms/" itemprop="url">
+           <span class="avia-bullet">
+           </span>
+           <span class="avia-menu-text">
+            Privacy Policy
+           </span>
+           <span class="avia-menu-fx">
+            <span class="avia-arrow-wrap">
+             <span class="avia-arrow">
+             </span>
+            </span>
+           </span>
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2" id="menu-item-202">
+          <a href="https://prosume.io/cookie-policy/" itemprop="url">
+           <span class="avia-bullet">
+           </span>
+           <span class="avia-menu-text">
+            Cookie Policy
+           </span>
+           <span class="avia-menu-fx">
+            <span class="avia-arrow-wrap">
+             <span class="avia-arrow">
+             </span>
+            </span>
+           </span>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </nav>
+     </div>
+     <!-- ####### END SOCKET CONTAINER ####### -->
+    </footer>
+    <!-- end main -->
+   </div>
+   <!-- end wrap_all -->
+  </div>
+  <script type="text/javascript">
+   /* <![CDATA[ */  
+var avia_framework_globals = avia_framework_globals || {};
+    avia_framework_globals.frameworkUrl = 'https://prosume.io/wp-content/themes/enfold/framework/';
+    avia_framework_globals.installedAt = 'https://prosume.io/wp-content/themes/enfold/';
+    avia_framework_globals.ajaxurl = 'https://prosume.io/wp-admin/admin-ajax.php?lang=en';
+/* ]]> */
+  </script>
+  <link href="https://prosume.io/wp-content/plugins/revslider/public/assets/fonts/font-awesome/css/font-awesome.css" id="rs-icon-set-fa-icon-css" media="all" property="stylesheet" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript">
+   function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+						jQuery(sliderID).show().html(errorMessage);
+				}
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/js/avia.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/js/shortcodes.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/audio-player/audio-player.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/contact/contact.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow/slideshow.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/countdown/countdown.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/gallery/gallery.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/gallery_horizontal/gallery_horizontal.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/headline_rotator/headline_rotator.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/iconlist/iconlist.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/image_hotspots/image_hotspots.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/magazine/magazine.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/portfolio/isotope.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/masonry_entries/masonry_entries.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/menu/menu.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/notification/notification.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/numbers/numbers.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/portfolio/portfolio.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/progressbar/progressbar.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow/slideshow-video.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_accordion/slideshow_accordion.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_fullscreen/slideshow_fullscreen.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow_layerslider/slideshow_layerslider.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/tab_section/tab_section.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/tabs/tabs.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/testimonials/testimonials.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/timeline/timeline.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/toggles/toggles.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/video/video.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/awsm-team-pro/js/team.min.js?ver=1.1.3" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/prosume.io\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.2" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/prosume.io\/wp-admin\/admin-ajax.php","nonce":"207637cf08","hideEffect":"fade","position":"bottom","onScroll":"1","onScrollOffset":"666","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"7862400","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"0","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"1","coronabarActive":"0"};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/cookie-notice/js/front.min.js?ver=1.3.2" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var molongui_authorship = {"byline_prefix":"","byline_suffix":"","byline_separator":", ","byline_last_separator":" and ","byline_link_title":"View all posts by"};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/molongui-authorship/public/js/molongui-authorship.fb2d.min.js?ver=4.1.0" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js?ver=3.6.3" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   lazySizes.cfg.nativeLoading={setLoadingAttribute:false,disableListeners:{scroll:true}};lazySizes.init();
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/js/avia-snippet-megamenu.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/js/avia-snippet-sticky-header.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-content/themes/enfold/framework/js/conditional_load/avia_google_maps_front.js?ver=4.4.1" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var wpgdprcData = {"ajaxURL":"https:\/\/prosume.io\/wp-admin\/admin-ajax.php","ajaxSecurity":"da7abb4e8f","isMultisite":"","path":"\/","blogId":""};
+/* ]]> */
+  </script>
+  <script src="https://prosume.io/wp-content/plugins/wp-gdpr-compliance/assets/js/front.min.js?ver=1594898582" type="text/javascript">
+  </script>
+  <script src="https://prosume.io/wp-includes/js/wp-embed.min.js?ver=5.4.2" type="text/javascript">
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?hl=en&amp;render=explicit&amp;ver=5.4.2" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   ( function( $ ) {
+				$( document ).bind( 'gform_post_render', function() {
+					var gfRecaptchaPoller = setInterval( function() {
+						if( ! window.grecaptcha || ! window.grecaptcha.render ) {
+							return;
+						}
+						renderRecaptcha();
+						clearInterval( gfRecaptchaPoller );
+					}, 100 );
+				} );
+			} )( jQuery );
+  </script>
+  <script>
+   if(document.cookie.match(/aviaPrivacyGoogleTrackingDisabled/)){ window['ga-disable-UA-107375877-1'] = true; }
+  </script>
+  <!-- Insight Tag (gtag.js) - Linkedin -->
+  <script type="text/javascript">
+   _linkedin_partner_id = "628449";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+   (function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+   <img alt="" height="1" src="https://dc.ads.linkedin.com/collect/?pid=628449&amp;fmt=gif" style="display:none;" width="1"/>
+  </noscript>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-107375877-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107375877-1');
+  </script>
+  <!-- Mailchimp Script - Connect to Wordpress -->
+  <script id="mcjs">
+   !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/3b2c1c625be6d8a6bc7df7357/8107098fa8e216c0e39a3964d.js");
+  </script>
+  <!-- Cookie Notice plugin v1.3.2 by Digital Factory https://dfactory.eu/ -->
+  <div aria-label="Cookie Notice" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" id="cookie-notice" role="banner" style="background-color: rgba(241,241,241,1);">
+   <div class="cookie-notice-container" style="color: #5390a3;">
+    <span class="cn-text-container" id="cn-notice-text">
+     PROSUME™ website uses cookies to improve your navigation experience and to help us improve the site. By continuing to browse the site you are agreeing to our use of cookies.
+    </span>
+    <span class="cn-buttons-container" id="cn-notice-buttons">
+     <a aria-label="OK" class="cn-set-cookie cn-button bootstrap button" data-cookie-set="accept" href="#" id="cn-accept-cookie">
+      OK
+     </a>
+     <a aria-label="MORE INFO" class="cn-more-info cn-button bootstrap button" href="https://prosume.io/cookie-policy/" id="cn-more-info" target="_blank">
+      MORE INFO
+     </a>
+    </span>
+    <a aria-label="OK" class="cn-close-icon" data-cookie-set="accept" href="javascript:void(0);" id="cn-close-notice">
+    </a>
+   </div>
+  </div>
+  <!-- / Cookie Notice plugin -->
+  <div class="popup" data-popup="popup-video">
+   <div class="popup-inner">
+    <div class="embed-container">
+     <iframe allowfullscreen="true" allowscriptaccess="always" class="lazyload" data-src="https://www.youtube.com/embed/Nbjj0MjAYMk?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" frameborder="0" height="570" id="videoplayer" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="1024">
+     </iframe>
+    </div>
+    <a class="popup-close" data-popup-close="popup-video" href="#">
+     <i class="fa-icon-close">
+     </i>
+    </a>
+   </div>
+  </div>
+  <a aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello" href="#top" id="scroll-top-link" title="Scroll to top">
+   <span class="avia_hidden_link_text">
+    Scroll to top
+   </span>
+  </a>
+  <div id="fb-root">
+  </div>
+ </body>
+</html>

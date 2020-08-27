@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="CN">
+ <head>
+  <meta content="锇投资币 - OiCOiN" name="Title"/>
+  <meta content="" name="Description"/>
+  <meta content="CN" name="Content-language"/>
+  <meta content="" name="Page-type"/>
+  <meta content="INDEX,FOLLOW" name="Robots"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="/inc/design/templates/site/oicoin2/img/favicon.ico" rel="shortcut icon"/>
+  <meta content="https://www.oicoin.io/inc/design/templates/site/oicoin2/img/fb-preview.jpg" property="og:image"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   锇投资币 - OiCOiN
+  </title>
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"/>
+  <link href="/inc/jquery/lightbox/css/lightbox.css?v=3" rel="stylesheet"/>
+  <link href="/inc/design/templates/site/oicoin2/css/style.css?v=20180823" rel="stylesheet"/>
+  <link href="/inc/design/templates/site/oicoin2/css/mobile.css?v=20180823" rel="stylesheet"/>
+  <script src="/inc/class.db.js">
+  </script>
+  <script src="/inc/js.js">
+  </script>
+  <script src="/inc/cLoader.js">
+  </script>
+  <script src="/inc/jquery/jquery-1.9.1.min.js">
+  </script>
+  <script src="/inc/jquery/jquery-ui.min.js">
+  </script>
+  <script src="/inc/jquery/jquery.scrollTo.js">
+  </script>
+  <script src="/inc/jquery/jquery.ui.touch-punch.js">
+  </script>
+  <script src="/inc/jquery/lightbox/jquery.lightbox.js?v=1">
+  </script>
+  <script>
+   <!--
+				
+        dateFuture =new Date(2018,6,01,10,00,00);
+		
+        dateNow =new Date(2020,7,01,20,44,31);
+		
+		var dateI=0;
+			
+		function twoDigits(n){
+			if(n < 10) return "0"+ n;
+			return n;
+		}
+        function countdown_count(){
+		
+            amount =dateFuture.getTime() - dateNow.getTime() - dateI;
+			dateI+=1000;
+			
+           // delete dateNow;
+        
+            if(amount < 0){
+				//window.location.href='/cn/buy/?ts=1596307471';
+           		// time is already past
+            }
+            else{
+                days=0;hours=0;mins=0;secs=0;
+        
+                amount=Math.floor(amount/1000);
+                
+                days=Math.floor(amount/86400);
+                amount=amount%86400;
+        
+                hours=Math.floor(amount/3600);
+                amount=amount%3600;
+        
+                mins=Math.floor(amount/60);
+                amount=amount%60;
+        
+                secs=Math.floor(amount);
+				
+				getObj("countbox_d").innerHTML=twoDigits(days);
+				getObj("countbox_h").innerHTML=twoDigits(hours);
+				getObj("countbox_i").innerHTML=twoDigits(mins);
+				getObj("countbox_s").innerHTML=twoDigits(secs);
+        		
+                setTimeout("countdown_count()", 1000);
+            }
+        }
+    
+		//window.onload=function(){countdown_count();}
+	
+		
+		function calculateprofit()
+		{
+			var bonus=0;//;
+			var os_p=$("#os_price_v").html()*1;
+			var years=$("#soldout_v").html()*1;
+			$("#soldout_v2").html(years);
+			$("#invest").val(Math.round($("#coins").val()*0.001));
+			var eth=$("#invest").val().replace(",",".")*1;
+			
+			var eth_t_p=(36628/2/5/793)*os_p;//(eth_t/eth)*100;
+			var usd_t=((((93.72)*200)*eth)/793)*os_p;
+			
+			eth_t_p+=(eth_t_p/100)*bonus;
+			usd_t+=(usd_t/100)*bonus;
+			
+			
+			var usd_a=usd_t/years;
+			
+			
+			var eth_a_p=(eth_t_p)/years;
+			
+			if(eth<=0)
+			{
+				eth_t_p=0;
+				usd_t=0;
+				usd_a=0;
+				eth_a_p=0;
+			}
+			
+			
+			$("#profit_usd").html(number_format(Math.round(usd_a),0,",",""));
+			$("#profit_prozent").html(number_format(eth_a_p,0,",",""))+"%";
+			$("#profit_t_usd").html(number_format(Math.round(usd_t),0,",",""));
+			//$("#profit_t_eth").html(number_format(eth_t,2,",",""));
+			$("#profit_t_prozent").html(number_format(eth_t_p,0,",",""))+"%";
+			
+			//$("#oi_profit").html(number_format(oic_eth,2,",",""));
+			//$("#oi_profit_prozent").html(number_format(oic_prozent,0,",",""))+"%";
+			
+			//var coins=Math.round(eth/0.001);
+			var coins=Math.round($("#coins").val());
+			var coins_bonus=Math.round((coins/100)*bonus);
+			var coins_total=coins+coins_bonus;
+			
+			//$("#coins").html(number_format(coins,0,",",""));
+			$("#coins_bonus").html(number_format(coins_bonus,0,",",""));
+			$("#coins_total").html(number_format(coins_total,0,",",""));
+			
+			
+		}
+		$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			//hidemsg();
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top>80 ? target.offset().top-80 : 0
+	        }, 500);
+	        return false;
+	      }
+	    }
+	  });
+	});
+		function js_afterCloader()
+		{
+			
+		}
+		function checkheight()
+		{
+			if($(".body").height()<$(window).height())
+			{
+				$(".bx_bottom").css("position","fixed");
+				$(".bx_bottom").css("bottom","0px");
+			}
+			else
+			{
+				$(".bx_bottom").css("position","");
+				$(".bx_bottom").css("bottom","");
+			}
+		}
+		$( window ).resize(function() {
+			checkheight();
+		});
+		function cLoader_reloadContent_(xml,ret_text,readyState)
+		{
+			if(readyState==4)
+			{
+				if(ret_text!="")
+				{
+					msg(ret_text,"Fehler","");
+				}
+				reloadContent();
+			}
+		}
+		function cLoader_reloadContent_silent_hidemsg_(xml,ret_text,readyState)
+		{
+			if(readyState==4)
+			{
+				hidemsg();
+				reloadContent();
+			}
+		}
+		function reloadContent()
+		{
+			loadContentIC("/",getObj("bx_content"),false,false,true);
+		}
+		
+		
+		function exitPopupKey(e)
+		{
+			if (!e) e=window.event; // fr IE
+			if (e.keyCode==27) hidemsg();
+			
+		}
+		
+		$(document).ready(function(){
+				
+		countdown_count();
+		
+		calculateprofit();
+		
+			$("#os_price").slider({
+					min: 100,
+					max: 1500,
+					value: 100,
+					slide: function( event, ui ) {
+						$("#os_price_value").val(ui.value);
+						$("#os_price_v").html(ui.value);
+						calculateprofit();
+					}
+	  			});
+		  
+			$("#soldout").slider({
+					min: 10,
+					max: 15,
+					value: 10,
+					slide: function( event, ui ) {
+						$("#soldout_value").val(ui.value);
+						$("#soldout_v").html(ui.value);
+						calculateprofit();
+					}
+	  			});
+		  js_afterCloader();$(document).scroll(function() {
+			if($(document).scrollTop()>80) $("#bx_top").addClass("bx_top_scrolled");
+			else $("#bx_top").removeClass("bx_top_scrolled");
+		});
+					$(".lightbox").lightbox();
+					checkheight();areyousure();
+		$(".bx_content p img").not(".circleimg").not(".icon").css("max-width","100%");
+		$(".bx_content p img").not(".circleimg").not(".icon").attr("width","");
+		$(".bx_content p img").not(".circleimg").not(".icon").attr("height","");
+		$(".bx_content p img").not(".circleimg").not(".icon").css("width","100%");
+		$(".bx_content p img").not(".circleimg").not(".icon").css("height","auto");
+		//if($(window).width()>700)
+		$(".bx_content p img").not(".circleimg").not(".icon").css("max-width","600px");
+		
+		//$(".bx_left").css("min-height",$(".bx_content_c").css("height"));
+		//$(".bx_content_c").css("min-height",$(".bx_left").css("height"));
+		//$(".bx_content_c").css("min-height",Math.max($(".bx_content_c").css("height"),$(".bx_left").css("height")));
+		
+			});
+			-->
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-69488676-25">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69488676-25');
+  </script>
+  <style>
+   <!--
+	
+		#bx_mainContent_ { display:none; }
+		#bx_heading { display:none; }
+		.bx_content2_c  { background:none !important; padding:0px; }
+		#bx_content { padding-top:0px; padding-left:0px; padding-right:0px; }
+		.fpc p,.fpc p strong { font-family:Poppins !important; font-size:15px !important;line-height:23px !important; }
+
+		.box1 { }
+		.fpc .box1 p { background:url(/inc/design/templates/site/oicoin2/img/bxfp_bg.png) bottom left repeat-x; background-size:5px 750px; /*c8e9fd*/; padding:30px 20px 50px 20px; box-sizing:border-box; display:block; }
+		.fpc .box1,.fpc .box1 p,.fpc .box1 p strong { font-family:Dosis, sans-serif !important; font-size:16px !important; line-height:20px !important; }
+
+		.fpc .p0 p { display:block;max-width:600px; }
+		.fpc .p1 p,.fpc .p2 p { display:block;max-width:550px; }
+		.fpc .p0 h2,.fpc .p1 h2,.fpc .p2 h2 { text-align:left !important; background-position:left bottom !important; }
+		.fpc .p3 h2,.fpc .p4 h2 { text-align:center; }
+		
+		#c1751 h2.submitem { font-size:30px !important; line-height:normal; }
+
+
+		@media all and (max-width: 950px) {
+			.fpc .box1 p { background:none; padding:10px 20px 30px 20px; display:block; text-align:left !important; text-transform:none; }
+			.fpc .box1 p,.fpc .box1 p strong,.fpc .box1 p * {  text-align:left; font-size:25px !important; line-height:35px !important; }
+			.fpc .p0 p,.fpc .p1 p,.fpc .p2 p { display:block;max-width:850px; }
+			#c1725 h2 { margin-left:20px; }
+		}
+		
+		.teamContainer { max-width:1200px;margin:auto;text-align:center; }
+		.teamContainer_i p { font-size:12px !important; line-height:17px !important; margin:0px !important; }
+		
+
+				
+	
+-->
+  </style>
+  <!-- Facebook Pixel Code -->
+  <script>
+   !function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '278232702992320'); 
+fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=278232702992320&amp;ev=PageView
+&amp;noscript=1" width="1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+ </head>
+ <body class="body" id="site_body" onkeypress="exitPopupKey()">
+  <div class="bx_MainContainer bx_MainContainer_noadmin" id="siteId_home">
+   <div id="scrollbg">
+   </div>
+   <div id="main_bg">
+    <div class="lang_CN" id="main_site">
+     <div id="siteId_" style="text-align:center;margin:auto;">
+      <div id="bx_container">
+       <div id="bx_top">
+        <div id="bx_top_c">
+         <div class="bx_top_top" style="display:none;">
+          <div style="float:left;padding:13px 0px 13px 10px;">
+           Hotline:
+           <a href="tel:" style="color:#FFF;text-decoration:none;">
+           </a>
+          </div>
+          <div style="float:right;padding:13px 8px 13px 10px;">
+           <div id="topNav">
+            <ul>
+             <li class="end_left end_right">
+              <a href="/cn/impressum/">
+               Impressum
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div style="clear:both;line-height:1px;">
+           <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+          </div>
+         </div>
+         <div id="bx_logo">
+          <a class="logo1" href="/" title="OiCOiN">
+           <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/logo-big.png"/>
+          </a>
+          <a class="logo2" href="/" title="OiCOiN">
+           <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/logo.png"/>
+          </a>
+         </div>
+         <div class="main_nav_c" id="nav_main">
+          <ul>
+           <li class="navitem_1719 end_left">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="/cn/buy/" title="购买代币">
+               购买代币
+              </a>
+             </div>
+            </div>
+           </li>
+           <li class="navitem_1721">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="/#c1743" title="团队">
+               团队
+              </a>
+             </div>
+            </div>
+           </li>
+           <li class="navitem_1720">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="http://www.oicoin.io/oicoin_whitepaper.pdf" target="_blank" title="白皮书">
+               白皮书
+              </a>
+             </div>
+            </div>
+           </li>
+           <li class="navitem_1722">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="/cn/faq/" title="常见问题">
+               常见问题
+              </a>
+             </div>
+            </div>
+           </li>
+           <li class="navitem_1744">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="/cn/videos/" title="视频">
+               视频
+              </a>
+             </div>
+            </div>
+           </li>
+           <li class="navitem_1755">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="/cn/exchange/" title="Exchange listing">
+               Exchange
+              </a>
+             </div>
+            </div>
+           </li>
+           <li class="navitem_1733 end_right">
+            <div class="bxm_left">
+             <div class="bxm_right">
+              <a href="/cn/signin/" title="登录">
+               登录
+              </a>
+             </div>
+            </div>
+           </li>
+          </ul>
+          <div style="clear:both;line-height:1px;">
+           <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+          </div>
+          <div class="mobileonly">
+           <div style="background:rgba(255,255,255,1);padding:10px;text-align:center;margin:0px auto 0px auto;">
+            <a href="/de" style="color:#333;" title="German">
+             Deutsch
+            </a>
+            |
+            <a href="/es" style="color:#333;" title="Spanish">
+             Español
+            </a>
+            |
+            <a href="/nl" style="color:#333;" title="Dutch">
+             Nederlands
+            </a>
+            |
+            <a href="/en" style="color:#333;" title="Englisch">
+             English
+            </a>
+            |
+            <a href="/cn" style="font-weight:bold;text-decoration:underline;color:#000;" title="Chinese">
+             中文
+            </a>
+            |
+            <a href="/pt" style="color:#333;" title="Portuguese">
+             Português
+            </a>
+            |
+            <a href="/kr" style="color:#333;" title="Korean">
+             한국어
+            </a>
+            |
+            <a href="/it" style="color:#333;" title="Italian">
+             Italiano
+            </a>
+            |
+            <a href="/idn" style="color:#333;" title="Indonesian">
+             Indonesia
+            </a>
+            |
+            <a href="/ru" style="color:#333;" title="Russian">
+             русский
+            </a>
+            |
+            <a href="/vn" style="color:#333;" title="Vietnamese">
+             tiếng việt
+            </a>
+            |
+            <a href="/ar" style="color:#333;" title="Arabic">
+             العربية
+            </a>
+            |
+            <a href="/fr" style="color:#333;" title="French">
+             Français
+            </a>
+            |
+            <a href="/ur" style="color:#333;" title="Urdu">
+             اردو
+            </a>
+           </div>
+           <div style="clear:both;line-height:1px;">
+            <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+           </div>
+          </div>
+          <div class="shortinfo">
+           <p>
+            您投资的是一个
+            <strong>
+             现有业务
+            </strong>
+            。通过购买代币(ERC20代币)，您将参与晶体
+            <a href="/#c1723">
+             <strong>
+              锇
+             </strong>
+            </a>
+            (世界上最稀有的贵金属)的
+            <strong>
+             全球销售
+            </strong>
+            。
+           </p>
+          </div>
+          <div class="timetable" onclick="window.location.href='/cn/buy/'" style="cursor:pointer;display:none">
+           <div class="timetable_i">
+            <div style="padding-right:1px;">
+             <div class="timetable_i_" style="background:url(/inc/design/templates/site/oicoin2/img/bxbg1.gif) repeat;background-size:5px 53px;">
+              <span style="font-weight:bold;">
+               Private sale
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="timetable_i">
+            <div style="padding-right:1px;">
+             <div class="timetable_i_" style="background:url(/inc/design/templates/site/oicoin2/img/bxbg2.gif) repeat;background-size:5px 53px;">
+              <span style="font-weight:normal;">
+               Presale
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="timetable_i">
+            <div style="padding-right:1px;">
+             <div class="timetable_i_" style="background:url(/inc/design/templates/site/oicoin2/img/bxbg2.gif) repeat;background-size:5px 53px;">
+              <span style="font-weight:normal;">
+               ICO Round I
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="timetable_i">
+            <div style="padding-right:1px;">
+             <div class="timetable_i_" style="background:url(/inc/design/templates/site/oicoin2/img/bxbg2.gif) repeat;background-size:5px 53px;">
+              <span style="font-weight:normal;">
+               ICO Round II
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="timetable_i">
+            <div style="padding-right:1px;">
+             <div class="timetable_i_" style="background:url(/inc/design/templates/site/oicoin2/img/bxbg2.gif) repeat;background-size:5px 53px;">
+              <span style="font-weight:normal;">
+               ICO Round III
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="mobile_nav_ico">
+          <a href="javascript:void(0)" onclick="if($('.main_nav_c').hasClass('nav_visible'))  $('.main_nav_c').removeClass('nav_visible'); else $('.main_nav_c').addClass('nav_visible'); ">
+           <img alt="Navigation" src="/inc/design/templates/site/oicoin2/img/mobilenav1.png"/>
+          </a>
+         </div>
+         <div style="clear:both;line-height:1px;">
+          <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+         </div>
+        </div>
+       </div>
+       <div id="bx_mainContent">
+        <div id="bx_main">
+         <div id="bx_content">
+          <div id="bx_content_c">
+          </div>
+          <div id="bx_content2">
+           <div class="bx_content2_c">
+            <div class="table" style="width:100%;">
+             <div class="tr">
+              <div class="td" style="vertical-align:top;">
+               <div id="bx_heading">
+                <h1>
+                 主页
+                </h1>
+               </div>
+               <div class="fpc">
+                <div class="p0">
+                 <div class="">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="mobileonly" style="text-align:left">
+                     <a href="#c1724">
+                      <img alt="" class="icon" src="/img/upl/sitemap/fp1.jpg" style="width:85%;max-width:400px;"/>
+                     </a>
+                    </div>
+                    <div class="td fp_imgs" style="vertical-align:top;width:40%;text-align:left">
+                     <a href="#c1724">
+                      <img alt="OiCOiN" class="icon desktoponly" src="/img/upl/sitemap/fp1.jpg" style="width:100%;"/>
+                     </a>
+                    </div>
+                    <div class="td" style="vertical-align: top;">
+                     <div class="desktoponly">
+                      <br/>
+                      <br/>
+                      <br/>
+                      <br/>
+                      <br/>
+                     </div>
+                     <div class="box1 mobileonly">
+                      <p>
+                       您投资的是一个
+                       <strong>
+                        现有业务
+                       </strong>
+                       。通过购买代币(ERC20代币)，您将参与晶体
+                       <a href="/#c1723">
+                        <strong>
+                         锇
+                        </strong>
+                       </a>
+                       (世界上最稀有的贵金属)的
+                       <strong>
+                        全球销售
+                       </strong>
+                       。
+                      </p>
+                      <div style="padding-left:20px;padding-bottom:40px;">
+                       <a class="button button2 button_download" href="/oicoin_whitepaper.pdf" target="_blank">
+                        Whitepaper
+                       </a>
+                      </div>
+                     </div>
+                     <div style="clear:both;line-height:1px;">
+                      <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                     </div>
+                     <div class="desktoponly" style="margin-top:-20px;margin-bottom:0px;text-align:left;">
+                      <span>
+                       <a href="/de" title="Deutsch">
+                        Deutsch
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/es" title="Español">
+                        Español
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/nl" title="Nederlands">
+                        Nederlands
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/en" title="English">
+                        English
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/cn" style="font-weight:bold;text-decoration:underline;" title="中文">
+                        中文
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/pt" title="Português">
+                        Português
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/kr" title="한국어">
+                        한국어
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/it" title="Italiano">
+                        Italiano
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/idn" title="Indonesia">
+                        Indonesia
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/ru" title="русский">
+                        русский
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/vn" title="tiếng việt">
+                        tiếng việt
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/ar" title="العربية">
+                        العربية
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/fr" title="Français">
+                        Français
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/ur" title="اردو">
+                        اردو
+                       </a>
+                      </span>
+                     </div>
+                     <div class="mobileonly" style="margin-top:-15px;margin-bottom:0px;text-align:left;margin-left:20px;">
+                      <span>
+                       <a href="/de" title="Deutsch">
+                        Deutsch
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/es" title="Español">
+                        Español
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/nl" title="Nederlands">
+                        Nederlands
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/en" title="English">
+                        English
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/cn" style="font-weight:bold;text-decoration:underline;" title="中文">
+                        中文
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/pt" title="Português">
+                        Português
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/kr" title="한국어">
+                        한국어
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/it" title="Italiano">
+                        Italiano
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/idn" title="Indonesia">
+                        Indonesia
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/ru" title="русский">
+                        русский
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/vn" title="tiếng việt">
+                        tiếng việt
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/ar" title="العربية">
+                        العربية
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/fr" title="Français">
+                        Français
+                       </a>
+                       <span style="color:#777;padding:0px 3px;">
+                        |
+                       </span>
+                       <a href="/ur" title="اردو">
+                        اردو
+                       </a>
+                      </span>
+                     </div>
+                     <div style="max-width:400px;text-align:left;margin:0px;">
+                      <div onclick="window.location.href='/cn/buy/?ts=1596307471';" style="cursor:pointer;">
+                       <div style="clear:both;line-height:20px;">
+                        <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:20px;" title="OiCOiN"/>
+                       </div>
+                       <a class="button" href="/cn/buy/?ts=1596307471">
+                        购买代币
+                       </a>
+                      </div>
+                     </div>
+                     <div style="margin:0px 0px 15px 0px;text-align:left;">
+                      <video controls="" id="bgvid" poster="/media/osmium_oicoin_erklaerungsvideo.jpg" style="width:100%;max-width:600px;max-height:338px;overflow:hidden;background:#89d1fa;margin:0px;text-align:left;">
+                       <source src="/media/osmium_oicoin_teaser_subtitles.mp4" type="video/mp4">
+                       </source>
+                      </video>
+                     </div>
+                     <div id="c1723">
+                      <div style="padding-top:0px;padding-bottom:30px;">
+                       <h2 class="submitem" style="margin-top:0px;">
+                        什么是锇？
+                       </h2>
+                       <p style="font-style: italic;">
+                        锇是世界上最稀有，密度最高的贵金属。通过数十年的研究，专家已经开发出锇的晶化工序，使该元素失去其原始毒性。 因此，未来在珠宝行业同时作为投资资产，锇将建立起自己的深厚根基。它比金子稀少4000多倍！没有任何其它公司了解晶化工序，这就确保了任何想要进行晶体锇交易的人都只能在唯一一家公司购买，等同于在全球占领了垄断地位。
+                       </p>
+                       <p style="font-style: italic;">
+                       </p>
+                       <div class="mobileonly" style="width: 100%; margin: 15px 0px 20px 0px;">
+                        <div class="video_c">
+                         <div class="video">
+                          <iframe height="315" src="https://www.youtube.com/embed/SH0SQL4Eohg" style="border: 0px;" width="560">
+                          </iframe>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="desktoponly" style="width: 100%; max-width: 250px; float: left; margin: -35px 15px 20px 0px;">
+                        <div class="video_c">
+                         <div class="video">
+                          <iframe height="315" src="https://www.youtube.com/embed/3pUUsK7cx3k" style="border: 0px;" width="560">
+                          </iframe>
+                         </div>
+                        </div>
+                       </div>
+                       <p>
+                        <a class="button button_readmore" href="javascript:cLoader_msg('/cn/osmium/more/')">
+                         阅读更多
+                        </a>
+                       </p>
+                       <p>
+                        <a class="button button2" href="#c1724">
+                         什么是锇币
+                        </a>
+                       </p>
+                       <p>
+                        <br/>
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:left;margin-top:-40px;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp2_2.png" style="width:45%;max-width:646px;display:block;text-align:left;margin:0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p1">
+                 <div class="" style="background:#cbeeff;background-size:1px 400px;padding-left:20px;text-align:justify;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="mobileonly" style="text-align:right">
+                     <a href="#c1725">
+                      <img alt="" class="icon" src="/img/upl/sitemap/fp2_2-1.jpg" style="width:85%;max-width:400px;"/>
+                     </a>
+                    </div>
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1724">
+                      <div style="padding-top:30px;padding-bottom:30px;float:right;padding-right:50px;">
+                       <div class="desktoponly">
+                        <div style="clear:both;line-height:30px;">
+                         <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:30px;" title="OiCOiN"/>
+                        </div>
+                       </div>
+                       <h2 class="submitem" style="margin-top:0px;">
+                        什么是锇币？
+                       </h2>
+                       <p style="font-style: italic;">
+                        锇币是一种基于以太坊区块链的ERC20代币，其代币持有人参与晶体锇的全球销售（不是盈利！）。
+                       </p>
+                       <p style="font-style: italic;">
+                        <img alt="10% 10% of total revenue of sales crystallized Osmium / 250.000.000 * coins" src="/img/upl/content/coin-revenue-formel-cn.png" style="width: 100%; max-width: 340px;" title="Umsatzbeteiligung"/>
+                       </p>
+                       <p>
+                        <a href="/oicoin_whitepaper.pdf" target="_blank">
+                         下载Whitepaper白皮书
+                        </a>
+                        |
+                        <a href="/oicoin_lightpaper.pdf" target="_blank">
+                         下载Lightpaper愿景说明书
+                        </a>
+                        <br/>
+                       </p>
+                       <p>
+                        <a class="button button_readmore" href="javascript:cLoader_msg('/cn/oicoin/more/')">
+                         阅读更多
+                        </a>
+                       </p>
+                       <p>
+                        <a class="button button2" href="#c1725">
+                         利润计算器
+                        </a>
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="td fp_imgs" style="vertical-align:top;width:40%;text-align:right">
+                     <a href="#c1725">
+                      <img alt="OiCOiN" class="icon desktoponly" src="/img/upl/sitemap/fp2_2-1.jpg" style="width:100%;"/>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:right;background:#cceeff;margin-top:-7px;margin-bottom:-3px;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp3_2.png" style="width:65%;max-width:646px;text-align:right;margin:0px 0px 0px 0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p2">
+                 <div class="" style="background:#71d3ff;background-size:1px 400px;text-align:justify;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="mobileonly" style="text-align:left">
+                     <a href="#c1726">
+                      <img alt="" class="icon" src="/img/upl/sitemap/fp4_1.jpg" style="width:85%;max-width:400px;"/>
+                     </a>
+                    </div>
+                    <div class="td fp_imgs" style="vertical-align:top;width:40%;text-align:left">
+                     <a href="#c1726">
+                      <img alt="OiCOiN" class="icon desktoponly" src="/img/upl/sitemap/fp4_1.jpg" style="width:100%;"/>
+                     </a>
+                    </div>
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1725">
+                      <div style="padding-top:30px;padding-bottom:30px;">
+                       <div class="desktoponly">
+                        <div style="clear:both;line-height:30px;">
+                         <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:30px;" title="OiCOiN"/>
+                        </div>
+                       </div>
+                       <h2 class="submitem" style="margin-top:0px;">
+                        加入见证锇的崛起！
+                       </h2>
+                       <div style="text-align:left;margin:0px;">
+                        <table class="keeptable" style="text-align:left;margin:0px; border-spacing: 5px; border-collapse: separate;">
+                         <tr style="display:none;">
+                          <th style="text-align:right;">
+                           投资
+                          </th>
+                          <td style="text-align:right;min-width:70px;max-width:150px;width:150px;">
+                           <input id="invest" min="0.5" name="invest" onchange="calculateprofit()" onkeyup="calculateprofit()" step="0.5" style="width:100%;text-align:right;font-weight:normal;" type="number" value="10"/>
+                          </td>
+                          <td>
+                           ETH
+                          </td>
+                         </tr>
+                         <tr>
+                          <th style="text-align:right;">
+                           COINS
+                          </th>
+                          <td style="text-align:right;">
+                           <input id="coins" min="100" name="coins" onchange="calculateprofit()" onkeyup="calculateprofit()" onmouseup="calculateprofit()" step="100" style="width:100%;text-align:right;font-weight:normal;" type="number" value="10000"/>
+                          </td>
+                          <td>
+                           OiCOiN
+                          </td>
+                         </tr>
+                         <tr style="display:none;">
+                          <th style="text-align:right;">
+                          </th>
+                          <td style="text-align:right;color:#006017;font-size:16px;">
+                           +
+                           <strong>
+                            %
+                           </strong>
+                           Bonus:
+                           <span id="coins_bonus" style="font-weight:bold;">
+                           </span>
+                          </td>
+                          <td>
+                           OiCOiN
+                          </td>
+                         </tr>
+                         <tr style="display:none;">
+                          <th style="text-align:right;">
+                          </th>
+                          <td style="text-align:right;">
+                           =
+                           <strong id="coins_total" style="font-weight:bold;color:#000e1a;font-size:20px;">
+                           </strong>
+                          </td>
+                          <td>
+                           <strong>
+                            OiCOiN gesamt
+                           </strong>
+                          </td>
+                         </tr>
+                         <tr>
+                          <th style="text-align:right;">
+                           锇价格走势
+                          </th>
+                          <td>
+                           <div id="os_price" style="width:100%;">
+                           </div>
+                           <input name="os_price_value" type="hidden" value="100"/>
+                          </td>
+                          <td>
+                           <span id="os_price_v">
+                            100
+                           </span>
+                           % 在未来
+                           <span id="soldout_v2">
+                            10
+                           </span>
+                           年
+                          </td>
+                         </tr>
+                         <tr>
+                          <th style="text-align:right;">
+                           至售罄之日的年数
+                          </th>
+                          <td>
+                           <div id="soldout" style="width:100%;">
+                           </div>
+                           <input name="soldout_value" type="hidden" value="10"/>
+                          </td>
+                          <td>
+                           <span id="soldout_v">
+                            10
+                           </span>
+                           年
+                          </td>
+                         </tr>
+                        </table>
+                        <div style="width:100%;max-width:470px;">
+                         <div style="background:url(/inc/design/templates/site/oicoin2/img/calc_bg.png) repeat-y top left; background-size:100%; margin:10px 0px 0px 0px;padding:10px 5px 10px 35px;">
+                          <table class="keeptable" style="text-align:left;margin:0px; border-spacing: 10px; border-collapse: separate;">
+                           <tr style="display:none;">
+                            <th style="text-align:right;">
+                             投资
+                            </th>
+                            <td id="invest_usd" style="background:rgba(255,255,255,0.7);text-align:right;">
+                            </td>
+                            <td id="invest_prozent" style="background:rgba(255,255,255,0.7);text-align:right;">
+                            </td>
+                           </tr>
+                           <tr>
+                            <th style="text-align:right;">
+                             <strong>
+                              Ø 年利润
+                             </strong>
+                            </th>
+                            <td style="background:#FFF;text-align:right;padding-right:2px;">
+                             <span id="profit_usd" style="text-align:right;">
+                             </span>
+                             $
+                            </td>
+                            <td style="background:#FFF;text-align:right;padding-right:2px;">
+                             <span id="profit_prozent" style="text-align:right;">
+                             </span>
+                             %
+                            </td>
+                           </tr>
+                           <tr>
+                            <th style="text-align:right;">
+                             <strong>
+                              总利润
+                             </strong>
+                            </th>
+                            <td style="background:#FFF;text-align:right;color:#006017;font-size:20px;line-height:normal;padding:2px 4px 2px 0px;font-weight:bold;width:140px;">
+                             <span id="profit_t_usd">
+                             </span>
+                             $
+                            </td>
+                            <td style="background:#FFF;text-align:right;color:#006017;font-size:20px;line-height:normal;padding:2px 4px 2px 0px;font-weight:bold;width:90px;">
+                             <span id="profit_t_prozent">
+                             </span>
+                             %
+                            </td>
+                           </tr>
+                           <tr>
+                            <td>
+                            </td>
+                            <td colspan="2" style="color:#006017;font-size:16px;font-weight:bold;line-height:normal;text-align:center;">
+                             + % 奖励代币
+                            </td>
+                           </tr>
+                          </table>
+                         </div>
+                         <p style="font-size:11px !important;line-height:normal !important;margin:20px 0px 0px 0px;">
+                          免责声明：这不是收入保证，而是对未来可能收入的预测。
+                         </p>
+                         <div style="clear:both;line-height:20px;">
+                          <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:20px;" title="OiCOiN"/>
+                         </div>
+                         <div style="text-align:right;">
+                          <a class="button" href="/cn/buy/">
+                           购买代币
+                          </a>
+                         </div>
+                        </div>
+                       </div>
+                       <br/>
+                       <br/>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:center;margin:-44px auto auto auto;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp3_1.png" style="width:75%;max-width:646px;display:block;text-align:left;margin:0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p3">
+                 <div class="" style="background:#c0eaff url(/inc/design/templates/site/oicoin2/img/fp2_bg.png) top left repeat-x;background-size:1px 400px;padding-left:10px;padding-right:10px;text-align:center;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1726">
+                      <div style="padding-top:30px;padding-bottom:30px;">
+                       <p>
+                        <img alt="Token Distribution" src="/img/upl/content/token-distribution-cn.png" style="width: 100%; max-width: 800px; display: block; margin-left: auto; margin-right: auto;"/>
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:center;margin:-44px auto auto auto;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp3_1.png" style="width:75%;max-width:646px;display:block;text-align:left;margin:0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p4">
+                 <div class="" style="background:#c0eaff url(/inc/design/templates/site/oicoin2/img/fp2_bg.png) top left repeat-x;background-size:1px 400px;padding-left:10px;padding-right:10px;text-align:center;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1741">
+                      <div style="padding-top:30px;padding-bottom:30px;">
+                       <p>
+                        <img alt="Use of income" src="/img/upl/content/use-of-income-cn.png" style="width: 100%; max-width: 800px; display: block; margin-left: auto; margin-right: auto;"/>
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:center;margin:-44px auto auto auto;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp3_1.png" style="width:75%;max-width:646px;display:block;text-align:left;margin:0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p5">
+                 <div class="" style="background:#c0eaff url(/inc/design/templates/site/oicoin2/img/fp2_bg.png) top left repeat-x;background-size:1px 400px;padding-left:10px;padding-right:10px;text-align:center;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1743">
+                      <div style="padding-top:30px;padding-bottom:30px;">
+                       <div class="desktoponly">
+                        <div style="clear:both;line-height:30px;">
+                         <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:30px;" title="OiCOiN"/>
+                        </div>
+                       </div>
+                       <h2 class="submitem" style="margin-top:0px;">
+                        首次代币发行(ICO)管理团队
+                       </h2>
+                       <div class="teamContainer">
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Austria" src="/img/upl/flaggen/at.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Michael Karl Gasser, MBA MPA
+                            </strong>
+                            -
+                            <em>
+                             首次代币发行管理团队主管
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/michaelkarlgasser/" target="_blank" title="Michael Karl Gasser, MBA MPA">
+                              <img alt="" src="/img/upl/sitemap/4/Gasser_Michael_Karl.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Michael是加密市场的知名专家，他在奥地利商会以及其它各种教育机构讲授加密课题。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/michaelkarlgasser/" target="_blank" title="Michael Karl Gasser, MBA MPA">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Austria" src="/img/upl/flaggen/at.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Karl M. Walder, MBA
+                            </strong>
+                            -
+                            <em>
+                             项目开发专家
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/karl-walder-84a33987/" target="_blank" title="Karl M. Walder, MBA">
+                              <img alt="" src="/img/upl/sitemap/4/Karl-Walder2.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Karl多年来一直从事国际营销和知识产权项目，监管首次代币发行的法律和项目问题。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/karl-walder-84a33987/" target="_blank" title="Karl M. Walder, MBA">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Austria" src="/img/upl/flaggen/at.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Ulrich Zwirchmaier, MSc.
+                            </strong>
+                            -
+                            <em>
+                             营销主管
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/ulrich-zwirchmaier-msc-39101199/" target="_blank" title="Ulrich Zwirchmaier, MSc.">
+                              <img alt="" src="/img/upl/sitemap/4/Ulrich_Zwirchmaier2.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Ulrich负责监管首次代币发行的国际营销团队。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/ulrich-zwirchmaier-msc-39101199/" target="_blank" title="Ulrich Zwirchmaier, MSc.">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Austria" src="/img/upl/flaggen/at.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Barbara Pauer, MSc.
+                            </strong>
+                            -
+                            <em>
+                             传播主管
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/barbara-pauer/" target="_blank" title="Barbara Pauer, MSc.">
+                              <img alt="" src="/img/upl/sitemap/4/Barbara_Pauer2.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Barbara负责社交媒体业务，以及建立与首次代币发行领域意见领袖的联系。她是首次代币发行团队的代言人。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/barbara-pauer/" target="_blank" title="Barbara Pauer, MSc.">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Serbia" src="/img/upl/flaggen/rs.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Dipl.-Ing. Ljuba Jakic
+                            </strong>
+                            -
+                            <em>
+                             开发办公室主管
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/ljuba-jakic-337b6a99/" target="_blank" title="Dipl.-Ing. Ljuba Jakic">
+                              <img alt="" src="/img/upl/sitemap/4/ljuba_jakic.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Ljuba是塞尔维亚贝尔格莱德开发办公室的首席执行官兼主管。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/ljuba-jakic-337b6a99/" target="_blank" title="Dipl.-Ing. Ljuba Jakic">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Serbia" src="/img/upl/flaggen/rs.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Filip Ribarovic, BBA
+                            </strong>
+                            -
+                            <em>
+                             社交媒体专家
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/filip-ribarovic-97794888/" target="_blank" title="Filip Ribarovic, BBA">
+                              <img alt="" src="/img/upl/sitemap/4/Filip_Ribarovic.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Filip是社交媒体团队的成员，负责向全球投资团队提供信息。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/filip-ribarovic-97794888/" target="_blank" title="Filip Ribarovic, BBA">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Slovenia" src="/img/upl/flaggen/si.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Damir Srpcic
+                            </strong>
+                            -
+                            <em>
+                             区块链程序员
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/damirsrpcic/" target="_blank" title="Damir Srpcic">
+                              <img alt="" src="/img/upl/sitemap/4/damir.jpeg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Damir的专长是智能合约的编程。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/damirsrpcic/" target="_blank" title="Damir Srpcic">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div style="clear:both;line-height:30px;">
+                         <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:30px;" title="OiCOiN"/>
+                        </div>
+                        <h2>
+                         团队: 锇机构管理
+                        </h2>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Germany" src="/img/upl/flaggen/de.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Ingo Wolf
+                            </strong>
+                            -
+                            <em>
+                             创始人和总经理
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/ingo-wolf-bba29b114/" target="_blank" title="Ingo Wolf">
+                              <img alt="" src="/img/upl/sitemap/4/Ingo_Wolf_1.png" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Ingo是德国锇机构总部总经理，拥有晶体锇的所有全球分销权。他曾担任科学电视台主管，从事采矿业务和全球金属批发业务，拥有丰富的物理、化学和数学知识，也是金融专家。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/ingo-wolf-bba29b114/" target="_blank" title="Ingo Wolf">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Germany" src="/img/upl/flaggen/de.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Elisabeth Greischler
+                            </strong>
+                            -
+                            <em>
+                             国际合作伙伴管理
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/elisabeth-gleirscher-292ab9156/" target="_blank" title="Elisabeth Greischler">
+                              <img alt="" src="/img/upl/sitemap/4/Bild_Gleirscher.png" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Elisabeth监管全球锇机构设立方面的所有国际事务。她曾在律师事务所工作，熟知如何顺利协调总部和各国锇机构之间的协作关系。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/elisabeth-gleirscher-292ab9156/" target="_blank" title="Elisabeth Greischler">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Germany" src="/img/upl/flaggen/de.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Scarlett Clauss, BA
+                            </strong>
+                            -
+                            <em>
+                             公共关系总监
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/scarlett-clauss-270093150/" target="_blank" title="Scarlett Clauss, BA">
+                              <img alt="" src="/img/upl/sitemap/4/Scarlett_Clauss.JPG" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Scarlett在美国出生和长大，负责培训和组织欧洲以外的新锇机构。她常前往各国合作伙伴所在地，贯彻实施所有必要的结构搭建工作，同时她也负责公共和新闻关系。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/scarlett-clauss-270093150/" target="_blank" title="Scarlett Clauss, BA">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Germany" src="/img/upl/flaggen/de.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Denise Ludwig
+                            </strong>
+                            -
+                            <em>
+                             国际社交媒体
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/denise-ludwig-b54061118/" target="_blank" title="Denise Ludwig">
+                              <img alt="" src="/img/upl/sitemap/4/Denise_Ludwig.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Denise协调总部的社交媒体，她与锇市场的所有全球意见领袖保持联系。她曾在德国毕马威工作，担任“雇主品牌和社交媒体”经理。她将在未来两年内建立一支由30种语言的100多名意见领袖组成的团队。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/denise-ludwig-b54061118/" target="_blank" title="Denise Ludwig">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Austria" src="/img/upl/flaggen/at.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Michael Raupenstrauch
+                            </strong>
+                            -
+                            <em>
+                             信息技术主管
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="" target="_blank" title="Michael Raupenstrauch">
+                              <img alt="" src="/img/upl/sitemap/4/Raupenstrauch_Michael_0009R.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Michael多年来一直是计算机专业人士，他负责公司内部的所有信息技术问题。
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="China" src="/img/upl/flaggen/China.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Dr. Yingying Zhang
+                            </strong>
+                            -
+                            <em>
+                             中国地区合作伙伴
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/yingyinggniygniy/" target="_blank" title="Dr. Yingying Zhang">
+                              <img alt="" src="/img/upl/sitemap/4/Yingying_Zhang.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Yingying在澳大利亚锇机构与Jörg Saxler博士一起共事，基于其在澳洲和亚洲的优质人脉，同时协调中国市场的建设。她掌握多种语言，利用她的知识和经验给予亚洲锇团队大力支持。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/yingyinggniygniy/" target="_blank" title="Dr. Yingying Zhang">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="China" src="/img/upl/flaggen/China.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Matteo Fortin
+                            </strong>
+                            -
+                            <em>
+                             中国中南区锇机构首席执行官
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/matteo-fortin-9a490431" target="_blank" title="Matteo Fortin">
+                              <img alt="" src="/img/upl/sitemap/4/Matteo_Fortin.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Matteo主要在中国中南地区建立投资者网络。基于其卓越的人脉，他将成为整个中国市场的主力之一。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/matteo-fortin-9a490431" target="_blank" title="Matteo Fortin">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Spain" src="/img/upl/flaggen/es.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Marion Langenscheidt
+                            </strong>
+                            -
+                            <em>
+                             西班牙锇机构首席执行官
+                            </em>
+                           </p>
+                          </div>
+                          <div class="teamContainer_i" style="padding:0px 15px 0px 15px;text-align:left;">
+                           <div style="min-height:60px;">
+                            <div style="margin:0px 10px 0px 0px;float:left;">
+                             <a href="https://www.linkedin.com/in/marionlangenscheidt/" target="_blank" title="Marion Langenscheidt">
+                              <img alt="" src="/img/upl/sitemap/4/Marion_Langenscheidt.jpg" style="margin-bottom:5px;width:100%;max-width:149px"/>
+                             </a>
+                            </div>
+                            <p>
+                             Marion拥有多年的银行和房地产领域工作经验，她率先加入我们，在德国以外成立了第一家海外锇机构。
+                            </p>
+                            <p style="margin:8px 0px 0px 0px !important;">
+                             <a href="https://www.linkedin.com/in/marionlangenscheidt/" target="_blank" title="Marion Langenscheidt">
+                              <img alt="Linkedin" src="/inc/design/templates/site/oicoin2/img/social/linkedin.png" style="height:14px;"/>
+                             </a>
+                            </p>
+                            <div style="clear:both;line-height:1px;">
+                             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Bulgaria" src="/img/upl/flaggen/bg.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Stanislav Marinov
+                            </strong>
+                            -
+                            <em>
+                             保加利亚锇机构首席执行官
+                            </em>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="France" src="/img/upl/flaggen/fr.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute France in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Russia" src="/img/upl/flaggen/ru.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute Russia in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Switzerland" src="/img/upl/flaggen/ch.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute Switzerland in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="USA" src="/img/upl/flaggen/USA.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute USA in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Czech Republic" src="/img/upl/flaggen/cz.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute Czech Republic in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="Netherlands" src="/img/upl/flaggen/nl.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute Netherlands in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="col col2">
+                         <div style="border:1px solid #FFF;margin:10px;background:rgba(255,255,255,0.7);">
+                          <div style="padding:12px 15px 10px 15px;">
+                           <p style="margin:0px 0px 0px 0px;">
+                            <img alt="India" src="/img/upl/flaggen/in.png" style="float:left;margin:4px 6px 0px 0px;height:15px;"/>
+                            <strong>
+                             Osmium Institute India in preparation
+                            </strong>
+                           </p>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div style="clear:both;line-height:40px;">
+                        <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:40px;" title="OiCOiN"/>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:right;margin:-50px 0px -5px 0px;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp4_1.png" style="width:80%;max-width:546px;text-align:right;margin:0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p6">
+                 <div class="" style="margin-top:-10px;background:#72d3ff url(/inc/design/templates/site/oicoin2/img/fp4_bg.png) top left repeat-x;background-size:1px 170px;padding-left:0px;text-align:center;padding-top:50px;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1727">
+                      <div style="padding-top:30px;padding-bottom:30px;">
+                       <div class="desktoponly">
+                        <div style="clear:both;line-height:30px;">
+                         <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:30px;" title="OiCOiN"/>
+                        </div>
+                       </div>
+                       <h2 class="submitem" style="margin-top:0px;">
+                        发展历程
+                       </h2>
+                       <p>
+                        <br/>
+                        <br/>
+                        <img alt="" src="/img/upl/content/roadmap-cn.png" style="width: 90%; max-width: 500px; display: block; margin-left: auto; margin-right: auto;"/>
+                       </p>
+                       <p>
+                        <iframe height="240" src="https://www.buy-osmium.com/shop/insignitus" style="display: none; border: none; visibility: hidden;" width="320">
+                        </iframe>
+                       </p>
+                       <p>
+                        <iframe height="240" src="https://trade.coinexwo.com?ref=191908" style="display: none; border: none; visibility: hidden;" width="320">
+                        </iframe>
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+               <div style="text-align:center;margin:-44px auto auto auto;">
+                <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/fp3_1.png" style="width:75%;max-width:646px;display:block;text-align:left;margin:0px;"/>
+               </div>
+               <div class="fpc">
+                <div class="p7">
+                 <div class="" style="background:#c0eaff url(/inc/design/templates/site/oicoin2/img/fp2_bg.png) top left repeat-x;background-size:1px 400px;padding-left:10px;padding-right:10px;text-align:center;">
+                  <div class="table" style="width:100%;">
+                   <div class="tr">
+                    <div class="td" style="vertical-align: top;">
+                     <div id="c1751">
+                      <div style="padding-top:30px;padding-bottom:30px;">
+                       <div class="desktoponly">
+                        <div style="clear:both;line-height:30px;">
+                         <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:30px;" title="OiCOiN"/>
+                        </div>
+                       </div>
+                       <h2 class="submitem" style="margin-top:0px;">
+                        <span style="font-weight:bold;color:#32a6e9;">
+                         50.474
+                        </span>
+                        名注册用户
+                       </h2>
+                       <img alt="" src="/inc/design/templates/site/oicoin2/img/ico_user.png" style="margin:5px auto 20px auto !important;display:block;text-align:center;width:120px;"/>
+                       <h2>
+                        加入见证锇的崛起！
+                       </h2>
+                       <form action="/cn/register/" class="formular" method="post" name="signup">
+                        <div style="width:100%;max-width:300px;margin:auto;text-align:center;">
+                         <input class="helptext" id="email" name="email" onblur="if($(this).val()=='') { $(this).val('电子邮件') }" onfocus="if($(this).val()=='电子邮件') { $(this).val('') }" style="width:100%;font-size:20px;line-height:normal;padding:13px 10px;text-align:center;" title="电子邮件" type="text" value="电子邮件"/>
+                         <input class="button" name="send" style="width:100%;font-size:25px;line-height:normal;padding:12px 10px;" type="submit" value="现在注册！"/>
+                        </div>
+                       </form>
+                       <br/>
+                       <br/>
+                       <div style="text-align:center;margin:auto;">
+                        <a href="https://www.trackico.io/ico/osmium-investment-coin/" target="_blank" title="Osmium Investment Coin on TrackICO">
+                         <img alt="Osmium Investment Coin TrackICO rating" border="0" height="100px" src="https://www.trackico.io/widget/square/osmium-investment-coin/100.png" width="100px"/>
+                        </a>
+                        <a href="https://icomarks.com/ico/osmium-investment-coin" rel="nofollow" target="_blank" title="Osmium Investment Coin">
+                         <img alt="Osmium Investment Coin ICO rating" border="0" height="100px" src="https://icomarks.com/widget/o/osmium-investment-coin/square.svg" width="100px"/>
+                        </a>
+                        <a href="https://icobench.com/ico/osmium-investment-coin" rel="nofollow" target="_blank" title="Osmium Investment Coin on ICObench">
+                         <img alt="Osmium Investment Coin ICO rating" border="0" height="100px" src="https://icobench.com/rated/osmium-investment-coin?shape=square&amp;size=s" width="100px"/>
+                        </a>
+                        <a href="https://findico.io/ico/osmium-investment-coin" target="_blank" title="Osmium Investment Coin (OiCOiN) on FindICO">
+                         <img alt="Osmium Investment Coin (OiCOiN) FindICO rating" border="0" height="auto" src="https://findico.io/widget/square/osmium-investment-coin/100.png" width="100px"/>
+                        </a>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div style="clear:both;line-height:1px;">
+                <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div style="clear:both;line-height:1px;">
+             <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bx_bottom">
+      <div class="bx_bottom_c">
+       <div class="bx_bottom_c2">
+        <div class="bx_bottom_part">
+         <div class="bx_bottom_part_c bx_bottom_part_c_1">
+          <div class="nav_bottom">
+           <img alt="OiCOiN" src="/inc/design/templates/site/oicoin2/img/logo_bottom.png" style="width:135px;"/>
+          </div>
+         </div>
+        </div>
+        <div class="bx_bottom_part" style="padding-top:5px;">
+         <div class="bx_bottom_part_c bx_bottom_part_c_2">
+          <div style="margin-top:0px;margin-bottom:20px;text-align:center;">
+           <span>
+            <a href="/de" title="German">
+             Deutsch
+            </a>
+            |
+            <a href="/es" title="Spanish">
+             Español
+            </a>
+            |
+            <a href="/nl" title="Dutch">
+             Nederlands
+            </a>
+            |
+            <a href="/en" title="Englisch">
+             English
+            </a>
+            |
+            <a href="/cn" style="font-weight:bold;text-decoration:underline;" title="Chinese">
+             中文
+            </a>
+            |
+            <a href="/pt" title="Portuguese">
+             Português
+            </a>
+            |
+            <a href="/kr" title="Korean">
+             한국어
+            </a>
+            |
+            <a href="/it" title="Italian">
+             Italiano
+            </a>
+            |
+            <a href="/idn" title="Indonesian">
+             Indonesia
+            </a>
+            |
+            <a href="/ru" title="Russian">
+             русский
+            </a>
+            |
+            <a href="/vn" title="Vietnamese">
+             tiếng việt
+            </a>
+            |
+            <a href="/ar" title="Arabic">
+             العربية
+            </a>
+            |
+            <a href="/fr" title="French">
+             Français
+            </a>
+            |
+            <a href="/ur" title="Urdu">
+             اردو
+            </a>
+           </span>
+          </div>
+          <div style="line-height:5px;">
+           <a class="button button2 button_download" href="/oicoin_whitepaper.pdf?v=1" target="_blank">
+            Whitepaper
+           </a>
+           <a class="button button2" href="/cn/register/">
+            现在注册！
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="bx_bottom_part">
+         <div class="bx_bottom_part_c bx_bottom_part_c_3">
+          <div class="nav_bottom">
+           <a href="https://t.me/OiCOiNchat" target="_blank">
+            <img alt="Telegram" src="/inc/design/templates/site/oicoin2/img/social/telegram.png" style="height:25px;"/>
+           </a>
+           <a href="https://twitter.com/OICoinICO" target="_blank">
+            <img alt="Twitter" src="/inc/design/templates/site/oicoin2/img/social/twitter.png" style="height:25px;margin-left:10px;"/>
+           </a>
+           <a href="https://www.instagram.com/osmiuminvestmentcoin/" target="_blank">
+            <img alt="Instagram" src="/inc/design/templates/site/oicoin2/img/social/instagram.png" style="height:25px;margin-left:10px;"/>
+           </a>
+           <a href="https://bitcointalk.org/index.php?topic=4906117.0" target="_blank">
+            <img alt="Bitcointalk" src="/inc/design/templates/site/oicoin2/img/social/bitcointalk.png" style="height:25px;margin-left:10px;"/>
+           </a>
+           <a href="https://www.reddit.com/user/osmiuminvestmentcoin/" target="_blank">
+            <img alt="Reddit" src="/inc/design/templates/site/oicoin2/img/social/reddit.png" style="height:25px;margin-left:10px;"/>
+           </a>
+           <a href="https://github.com/OsmiumInvestmentCoin/oicoin" target="_blank">
+            <img alt="Github" src="/inc/design/templates/site/oicoin2/img/social/github.png" style="height:25px;margin-left:10px;"/>
+           </a>
+           <p style="margin:5px 0px 0px 0px;">
+            <a href="/cn/datenschutzerklaerung/">
+             隐私政策
+            </a>
+            <span style="color:#c1e5fa;">
+             |
+            </span>
+            <a href="/cn/agb/" style="color:#71d3ff;">
+             锇币发行文件
+            </a>
+            <br/>
+            <a href="/cn/legalnotice/" style="color:#71d3ff;">
+             版权说明
+            </a>
+            <span style="color:#c1e5fa;">
+             |
+            </span>
+            <a href="mailto:support@oicoin.io" style="color:#71d3ff;">
+             support@oicoin.io
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div style="clear:both;line-height:1px;">
+        <img alt="OiCOiN" src="/img/design/p.gif" style="width:1px;height:1px;" title="OiCOiN"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="pageDarkener" style="visibility:hidden;">
+   </div>
+   <div id="popupWin" style="text-align:center;margin-left:auto;margin-right:auto;">
+    <div class="popupWin_msg">
+     <div class="popupWin_close">
+      <a href="javascript:hidemsg();" title="Fenster schließen (ESC)">
+       <img alt="Fenster schließen" src="/img/buttons/ico_close_big.png" style="margin-right:1px;" title="Fenster schließen"/>
+      </a>
+     </div>
+     <div id="popupWin_msg">
+     </div>
+     <div id="popupWin_btn">
+     </div>
+    </div>
+    <div class="popupWin_btn" style="text-align:center;margin-left:auto;margin-right:auto;">
+     <img alt="OiCOiN" src="/img/design/p.gif" title="OiCOiN"/>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

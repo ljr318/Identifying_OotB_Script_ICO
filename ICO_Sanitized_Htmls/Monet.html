@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <link href="./images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="./css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://use.typekit.net/ikg2pzk.css" rel="stylesheet"/>
+  <link href="https://use.typekit.net/ikg2pzk.css" rel="stylesheet"/>
+  <link href="https://use.typekit.net/ikg2pzk.css" rel="stylesheet"/>
+  <link href="./css/style.css" rel="stylesheet"/>
+  <title>
+   MONET: infrastructure for distributed mobile peer-to-peer applications
+  </title>
+  <!-- Open Gr-->
+  <meta content="website" property="og:type"/>
+  <meta content="https://monet.network" property="og:url"/>
+  <meta content="MONET: infrastructure for distributed mobile peer-to-peer applications" property="og:title"/>
+  <meta content="MONET is an open source network architecture for mobile blockchains on demand. It enables users to launch temporary blockchains on their mobile devices and to run decentralized, serverless DApps at a high speed" property="og:description"/>
+  <meta content="./images/logo-social.png" property="og:image"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="400" property="og:image:width"/>
+  <meta content="300" property="og:image:height"/>
+  <meta content="MONET logo" property="og:image:alt"/>
+  <!-- Open End-->
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118758457-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-118758457-1');
+  </script>
+ </head>
+ <body>
+  <header class="container-fluid text-center">
+   <div class="row top-navbar main-navbar lg-navbar zindex-tooltip" style="margin-bottom: -50px;">
+    <div class="col-12" id="js-main-navbar">
+     <ul class="nav justify-content-center main-navbar top-navbar mb-5">
+      <li class="nav-item">
+       <a class="logo" href="/">
+        <img alt="Monet" height="17" src="./images/Monet_logo.svg"/>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./toolchain">
+        Toolchain
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./babble">
+        Babble Libraries
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./use-cases">
+        Use Cases
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./tenom">
+        Tenom
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./architecture">
+        Architecture
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./support">
+        Support
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="row top-navbar fixed-top secondary-navbar lg-navbar" id="js-secondary-navbar">
+    <div class="col-12">
+     <ul class="nav justify-content-center top-navbar">
+      <li class="nav-item">
+       <a class="logo" href="/">
+        <img alt="Monet" height="17" src="./images/Monet_logo.svg"/>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./toolchain">
+        Toolchain
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./babble">
+        Babble Libraries
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./use-cases">
+        Use Cases
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./tenom">
+        Tenom
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./architecture">
+        Architecture
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./support">
+        Support
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="pos-f-t fixed-top">
+    <nav class="navbar navbar-light bg-blue sm-navbar">
+     <div class="col-10 text-left">
+      <a href="/">
+       <img alt="" height="25" src="./images/Monet_logo.svg"/>
+      </a>
+     </div>
+     <div class="col-2">
+      <button aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarToggleExternalContent" data-toggle="collapse" type="button">
+       <i aria-hidden="true" class="fa fa-bars">
+       </i>
+       <i aria-hidden="true" class="fa fa-times" style="display: none;">
+       </i>
+      </button>
+     </div>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+     <ul class="sm-navbar-list bg-blue">
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./toolchain">
+        Toolchain
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./babble">
+        Babble Libraries
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./use-cases">
+        Use Cases
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./tenom">
+        Tenom
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./architecture">
+        Architecture
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link menu-item" href="./support">
+        Support
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid p-0 m-0">
+   <div class="row mb-4 text-left main-image">
+    <div class="col-xl-7 col-9 main-title" style="margin-top: 50px;">
+     <h1 class="page-header">
+      MOBILE AD-HOC BLOCKCHAINS
+     </h1>
+     <h3 class="pt-xl-2 mr-5" style="max-width: 380px;">
+      An open network architecture for mobile blockchains
+      <br/>
+      on demand
+     </h3>
+    </div>
+   </div>
+  </div>
+  <div class="container mt-4 mb-xl-4">
+   <div class="row">
+    <div class="col-12 text-xl-center text-left">
+     <h2>
+      MONET Explained
+     </h2>
+    </div>
+   </div>
+   <div class="row mt-xl-5">
+    <div class="col-md-1">
+     <h4 class="title-number text-xl-right text-left">
+      1
+     </h4>
+    </div>
+    <div class="col-md-5">
+     <div class="pt-xl-5 pt-2">
+      <h3>
+       Introduction
+      </h3>
+      <p class="regular-text">
+       MONET is an open network architecture for mobile blockchains on demand. A blockchain on demand means that participants of a certain activity can form a temporary network for the duration of their interaction without a need of any centralized third party.
+      </p>
+     </div>
+    </div>
+    <div class="col-md-6 text-center">
+     <img alt="" class="default-img" src="./images/illustration 1.svg"/>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-4 mt-less-5 order-xl-1 order-3">
+     <img alt="" class="default-img" src="./images/illustration 12.svg"/>
+    </div>
+    <div class="col-md-2 order-xl-2 order-1">
+     <h4 class="title-number text-xl-right text-left">
+      2
+     </h4>
+    </div>
+    <div class="col-md-5 order-xl-3 order-2">
+     <div class="row">
+      <h3>
+       Mission
+      </h3>
+      <p class="regular-text">
+       The core objective of MONET is to produce an open-source suite of modular software components that will allow the creation of ad-hoc, localized blockchains capable of running across multiple platforms, including mobile devices. This will provide the foundations for the next generation of purely Peer-to-Peer applications where consumers and producers interact directly with each other in a web of dynamic pockets of trust, without the need for third party intermediation.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="row mt-5">
+    <div class="col-md-2">
+     <h4 class="title-number text-xl-right text-left">
+      3
+     </h4>
+    </div>
+    <div class="col-md-6">
+     <div class="pt-xl-5">
+      <h3>
+       State of the industry
+      </h3>
+      <p class="regular-text">
+       Today, the Peer-to-Peer economy, where individuals are both consumers and providers of goods and services, relies almost exclusively on trusted third parties acting as orchestrators. Mobile devices only act as clients to the servers maintained by these intermediaries. While the system works well, it suffers from the inherent weakness of any centralized model; users are forfeiting privacy, transparency and control over their data and computation. Furthermore, the cost of mediation is ultimately passed on to the end-user.
+      </p>
+     </div>
+    </div>
+    <div class="col-md-4 text-center">
+     <img alt="" class="default-img" src="./images/illustration 13.svg" width="342"/>
+    </div>
+   </div>
+   <div class="row mt-5">
+    <div class="col-md-4 order-xl-1 order-3">
+     <img alt="" class="default-img" src="./images/illustration 4.svg"/>
+    </div>
+    <div class="col-md-2 order-xl-2 order-1">
+     <h4 class="title-number text-xl-right text-left">
+      4
+     </h4>
+    </div>
+    <div class="col-md-5 order-xl-3 order-2">
+     <div class="row">
+      <h3>
+       Peer-to-peer networking
+      </h3>
+      <p class="regular-text">
+       Systems built on Peer-to-Peer networking, consensus algorithms and cryptography (eg. Blockchains like Bitcoin and Ethereum), provide a framework for individuals to transact directly with each other without the need for a trusted third party. However, as currently implemented, such blockchains are not fulfilling their true potential due to how inefficient such schemes are to manage. Such schemes involve software which is is too computationally intensive to run on mobile thus leading to a concentration of power in the hands of a few network players and service providers.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="row mt-5">
+    <div class="col-md-2">
+     <h4 class="title-number text-xl-right text-left">
+      5
+     </h4>
+    </div>
+    <div class="col-md-6">
+     <div class="pt-xl-5">
+      <h3>
+       Vision
+      </h3>
+      <p class="regular-text">
+       MONET envisages a world where individuals are only ever engaging with parties they need to be connected to, based on location and service, in a constantly evolving, organic network topology. A patchwork of dynamic ad-hoc blockchains adapted to the urban and distributed nature of the sharing economy. Such blockchains could run in isolation, serving a specific community, but would also offer a mechanism for transacting beyond this circle via an inter-blockchain communication protocol.
+      </p>
+     </div>
+    </div>
+    <div class="col-md-4 text-center">
+     <img alt="" class="default-img" src="./images/illustration 14.svg" width="342"/>
+    </div>
+   </div>
+   <div class="row text-center mt-5">
+    <div class="col-lg-12">
+     <img alt="" src="./images/docs.svg"/>
+    </div>
+    <div class="col-lg-12 pt-3">
+     <a class="button" href="https://drive.google.com/file/d/1PcI69i_oJpWdsIsOciLliYEsFv9hHCVr/view">
+      Read Whitepaper
+      <i aria-hidden="true" class="fa fa-chevron-right">
+      </i>
+     </a>
+    </div>
+   </div>
+   <div class="row mt-5">
+    <div class="col-12 text-xl-center text-left">
+     <h2>
+      How does Monet work?
+     </h2>
+    </div>
+   </div>
+   <div class="row mt-4 mb-5 text-center">
+    <div class="col-lg-12">
+     <div class="video-center">
+      <div class="video-container">
+       <iframe align="middle" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/p56RWEU-r0o">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="row mt-5 text-xl-center text-left">
+    <div class="col-lg-12">
+     <h2>
+      Ecosystem
+     </h2>
+    </div>
+    <div class="col-lg-8 pt-2 offset-lg-2">
+     <p class="regular-text">
+      MONET is designed to solve issues of decentralization and scalability. Based on a powerful consensus system, Babble, with ad hoc blockchains MONET can process thousands of transactions per second with near instant finality. Since blockchains are ephemeral, any off-shelf device can participate in the blockchain. The result is no middlemen fees, no centralization risks, no sluggish blockchain speed and no cost compromise
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container-fluid pr-xl-0 pl-xl-0">
+   <div class="row mb-4 text-left">
+    <img alt="" src="./images/ecosystem.png" style="max-width: 100%;"/>
+   </div>
+  </div>
+  <div class="container">
+   <div class="row mt-xl-5 text-xl-center text-left">
+    <div class="col-lg-12">
+     <h2>
+      Applications
+     </h2>
+    </div>
+    <div class="col-lg-8 pt-2 offset-lg-2">
+     <p class="regular-text">
+      MONET is a framework which benefits mobile application development and implementation. MONET hub can be thought of as a public good that records system state. Applications of the technology stack span a variety of potential industry verticals.
+     </p>
+    </div>
+    <div class="col-lg-12 pt-5 pb-5 text-center">
+     <svg class="sm-d-none" height="350.905" viewbox="0 0 961.036 350.905" width="961.036" xmlns="http://www.w3.org/2000/svg">
+      <g data-name="Group 3062" id="Group_3062" transform="translate(-234.827 -4417)">
+       <g data-name="Group 3061" id="Group_3061">
+        <g data-name="Group 2830" id="Group_2830" transform="translate(549.658 4437.188)">
+         <path d="M32.115.12,6,0A5.666,5.666,0,0,0,.288,5.66L0,71.138a5.666,5.666,0,0,0,5.66,5.708l26.119.12a5.666,5.666,0,0,0,5.708-5.66l.288-65.477A5.681,5.681,0,0,0,32.115.12ZM35.785,70.3c0,2.207-1.8,4.705-4.005,4.681L5.708,74.86c-2.207,0-3.981-2.523-3.957-4.729L2.015,6.212A3.957,3.957,0,0,1,6.02,2.255l4.437.024h1.775a1.261,1.261,0,0,1,1.223,1.3v.911a1.261,1.261,0,0,0,1.223,1.3l9.882.048a1.255,1.255,0,0,0,1.223-1.271V3.646a1.239,1.239,0,0,1,1.223-1.271l5.061.024A3.957,3.957,0,0,1,36.025,6.4Z" data-name="Path 3713" fill="#8bffbc" id="Path_3713" transform="translate(0 0)">
+         </path>
+        </g>
+        <g data-name="Rectangle 1559" fill="none" id="Rectangle_1559" stroke="#8bffbc" stroke-width="2" transform="translate(677 4454)">
+         <path d="M3,0H85a3,3,0,0,1,3,3V56a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V3A3,3,0,0,1,3,0Z" stroke="none">
+         </path>
+         <path d="M3,1H85a2,2,0,0,1,2,2V54a1,1,0,0,1-1,1H2a1,1,0,0,1-1-1V3A2,2,0,0,1,3,1Z" fill="none">
+         </path>
+        </g>
+        <g data-name="Rectangle 1562" fill="none" id="Rectangle_1562" stroke="#8bffbc" stroke-width="2" transform="translate(832.065 4461)">
+         <rect height="49" rx="3" stroke="none" width="77">
+         </rect>
+         <rect fill="none" height="47" rx="2" width="75" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1585" fill="none" id="Rectangle_1585" stroke="#ddd" stroke-width="1" transform="translate(468 4417)">
+         <rect height="162" stroke="none" width="502">
+         </rect>
+         <rect fill="none" height="161" width="501" x="0.5" y="0.5">
+         </rect>
+        </g>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Phones" transform="translate(509 4526.08)">
+         <tspan x="33.397" y="16">
+          Phones
+         </tspan>
+        </text>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Laptops" transform="translate(661.065 4526.08)">
+         <tspan x="31.423" y="16">
+          Laptops
+         </tspan>
+        </text>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Tablets" transform="translate(811.131 4522.08)">
+         <tspan x="34.789" y="16">
+          Tablets
+         </tspan>
+        </text>
+        <g data-name="Rectangle 1560" fill="none" id="Rectangle_1560" stroke="#8bffbc" stroke-width="2" transform="translate(677 4507)">
+         <rect height="3" rx="1.5" stroke="none" width="88">
+         </rect>
+         <rect fill="none" height="1" rx="0.5" width="86" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1561" fill="none" id="Rectangle_1561" stroke="#8bffbc" stroke-width="2" transform="translate(669 4511)">
+         <rect height="3" stroke="none" width="104">
+         </rect>
+         <rect fill="none" height="1" width="102" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1563" fill="none" id="Rectangle_1563" stroke="#8bffbc" stroke-width="2" transform="translate(867.065 4505)">
+         <rect height="2" stroke="none" width="12">
+         </rect>
+         <rect fill="none" width="10" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1564" fill="none" id="Rectangle_1564" stroke="#8bffbc" stroke-width="2" transform="translate(872.065 4465)">
+         <rect height="2" stroke="none" width="2">
+         </rect>
+         <rect fill="none" x="1" y="1">
+         </rect>
+        </g>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Lending" transform="translate(450.44 4721)">
+         <tspan x="0" y="0">
+          Lending
+         </tspan>
+        </text>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Gaming" transform="translate(989.44 4705)">
+         <tspan x="0" y="0">
+          Gaming
+         </tspan>
+        </text>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Transportation" transform="translate(306 4642)">
+         <tspan x="0" y="0">
+          Transportation
+         </tspan>
+        </text>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Delivery" transform="translate(1077 4642)">
+         <tspan x="0" y="0">
+          Delivery
+         </tspan>
+        </text>
+        <g data-name="Group 3032" id="Group_3032" transform="matrix(0.719, -0.695, 0.695, 0.719, 234.827, 4634.714)">
+         <g data-name="Group 705" id="Group_705">
+          <path d="M50.673,60.6l-.839-2.844,3.357-5.4a3.861,3.861,0,0,0-.5-4.55l-5.2-4.834.839-.853a.768.768,0,0,0,0-1.137L28.684,21.638a1.156,1.156,0,0,0-1.343,0L12.4,36.425a.768.768,0,0,0,0,1.137l2.014,1.991a4.141,4.141,0,0,0,.5,5.4,4.733,4.733,0,0,0,5.707.569L33.384,58.037h0a4.141,4.141,0,0,0,.5,5.4,4.733,4.733,0,0,0,5.707.569l3.189,3.128a1.156,1.156,0,0,0,1.343,0l6.043-5.972C50.673,61.45,50.673,60.881,50.673,60.6ZM16.43,43.819a2.375,2.375,0,0,1,0-3.7,2.609,2.609,0,0,1,3.861,0,2.639,2.639,0,0,1,0,3.7A2.61,2.61,0,0,1,16.43,43.819Zm18.464,8.815-5.707-5.687a1.156,1.156,0,0,0-1.343,0,.768.768,0,0,0,0,1.137l5.707,5.687-1.007.853L21.969,44.388a4.141,4.141,0,0,0-.5-5.4,4.733,4.733,0,0,0-5.707-.569l-1.343-1.422,3.189-3.128L35.9,51.781l-1.007.853ZM45.469,42.4l-8.393,8.247L18.78,32.729l9.232-9.1,18.3,17.915Zm4.364,5.4,1.679,1.422a1.953,1.953,0,0,1,.336,2.275l-3.021,4.834-3.861-3.7L49.833,47.8ZM35.4,62.587a2.8,2.8,0,0,1-.168-3.7h.336a2.984,2.984,0,0,1,3.693,0,2.639,2.639,0,0,1,0,3.7A3.229,3.229,0,0,1,35.4,62.587Zm11.246.284L45.469,61.45l.671-.569,1.175,1.137Zm1.846-1.991-1.846-1.706a1.156,1.156,0,0,0-1.343,0l-1.846,1.991a.768.768,0,0,0,0,1.137L45.3,64.009l-1.679,1.706-2.686-2.559a4.141,4.141,0,0,0-.5-5.4,4.733,4.733,0,0,0-5.707-.569l-1.007-.853L45.973,44.388l2.35,2.275-5.539,5.4a.768.768,0,0,0,0,1.137l5.036,5.119.671,2.559Z" data-name="Path 1345" fill="#fba58a" id="Path_1345" transform="translate(-12.15 -21.425)">
+          </path>
+         </g>
+        </g>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Payments" transform="translate(619.44 4736)">
+         <tspan x="0" y="0">
+          Payments
+         </tspan>
+        </text>
+        <text fill="#9f9e9e" font-family="OpenSans, Open Sans" font-size="15" id="Messaging" transform="translate(803.44 4736)">
+         <tspan x="0" y="0">
+          Messaging
+         </tspan>
+        </text>
+        <g data-name="Group 3033" id="Group_3033" transform="matrix(0.719, -0.695, 0.695, 0.719, 538.699, 4727.142)">
+         <g data-name="Group 756" id="Group_756">
+          <g data-name="Group 755" id="Group_755">
+           <path d="M61.722,68.555,58.066,65.31l6.5-7.787a2.269,2.269,0,0,0-.406-3.244L33.7,32.217a2.219,2.219,0,0,0-2.031-.324,2.575,2.575,0,0,0-1.828.973L15.011,50.71a2.475,2.475,0,0,0,.2,3.244s.2,0,.2.324l2.031,1.3L13.387,59.47a2.471,2.471,0,0,0,0,3.569L40.8,87.7a2.653,2.653,0,0,0,3.656,0L61.722,71.8A2.108,2.108,0,0,0,61.722,68.555Zm-4.671-4.542L52.176,59.47l5.28,3.893ZM31.258,33.84a.6.6,0,0,1,.609-.324h.609L63.143,55.253a.661.661,0,0,1,.2.973l-1.625,1.947L29.837,35.462ZM18.87,54.279l-2.234-1.622a.661.661,0,0,1-.2-.973h0l8.936-10.706,4.468,3.244ZM31.461,42.924l-4.874-3.569,2.031-2.6L60.5,59.47l-1.219,1.622-.812.973L42.631,50.71l-8.124-7.462A2.63,2.63,0,0,0,31.461,42.924Zm11.779,43.8a.884.884,0,0,1-1.219,0L14.808,61.417a.843.843,0,0,1,0-1.3l17.263-15.9h0a.884.884,0,0,1,1.219,0L60.5,69.528a.843.843,0,0,1,0,1.3Z" data-name="Path 1382" fill="#fba58a" id="Path_1382" transform="translate(-12.625 -31.759)">
+           </path>
+           <path d="M29.683,47.617h1.053a3.353,3.353,0,0,0,3.16,3.847c2.107.275,4.038-1.1,4.214-2.748a3.349,3.349,0,0,0-1.053-3.022,3.416,3.416,0,0,0-3.16-.824,3.353,3.353,0,0,0-3.16-3.847c-2.107-.275-4.038,1.1-4.214,2.748A3.353,3.353,0,0,0,29.683,47.617Zm6.5-.824a2.063,2.063,0,0,1,0,3.022,2.329,2.329,0,0,1-3.16,0,2.063,2.063,0,0,1,0-3.022A2.326,2.326,0,0,1,36.18,46.792ZM31.79,42.946a2.063,2.063,0,0,1,0,3.022,2.329,2.329,0,0,1-3.16,0,2.063,2.063,0,0,1,0-3.022A2.329,2.329,0,0,1,31.79,42.946Z" data-name="Path 1383" fill="#fba58a" id="Path_1383" transform="translate(3.478 -10.647)">
+           </path>
+           <path d="M1.219,0,2.437.609l-1.219.812L0,.609Z" data-name="Path 1384" fill="#fba58a" id="Path_1384" transform="translate(19.094 17.792) rotate(11)">
+           </path>
+           <path d="M1.219,0,8.733,4.265l-1.219.609L0,.609Z" data-name="Path 1385" fill="#fba58a" id="Path_1385" transform="translate(20.518 21.29) rotate(11)">
+           </path>
+           <path d="M1.156.015,10.84,5.6l-1.149.533L.007.549Z" data-name="Path 1386" fill="#fba58a" id="Path_1386" transform="translate(16.26 20.621) rotate(11)">
+           </path>
+           <path d="M38.825,57.809,20.255,39.74a.7.7,0,0,0-1.013,0L16.2,42.895a.776.776,0,0,0,0,1.147l18.57,18.069a.7.7,0,0,0,1.013,0l3.039-3.155C39.163,58.382,39.163,58.1,38.825,57.809ZM35.28,60.1,17.723,42.895l2.026-2.008L37.306,58.1Z" data-name="Path 1387" fill="#fba58a" id="Path_1387" transform="translate(-4.503 -9.212)">
+           </path>
+          </g>
+         </g>
+        </g>
+        <g data-name="Group 3034" id="Group_3034" transform="translate(1132.78 4633.594) rotate(-42)">
+         <path d="M57.133,78.019c.182,0,.182-.345.182-.345.182-.345,0-.69-.182-1.035l-6.541-20.7c-.182-.345-.363-.69-.727-.69L30.969,48a1.381,1.381,0,0,0-1.09.345h0L14.435,65.252a.784.784,0,0,0-.182,1.035l6.723,20.7h0l19.078,7.246a1.381,1.381,0,0,0,1.09-.345L57.133,78.019Zm-8.358-20.7,5.814,17.942-6-2.415L42.779,54.9ZM38.055,69.048,32.241,51.105l7.813,3.105,5.814,17.942ZM30.242,51.105l5.814,18.287L22.248,84.575,16.434,66.287ZM23.7,86.3,37.51,71.118l7.813,3.105-3.634,3.8a1.476,1.476,0,0,0,0,1.725,1.15,1.15,0,0,0,1.454,0L47.5,74.913l6.723,2.415L40.6,92.856Z" data-name="Path 1341" fill="#fba58a" id="Path_1341" transform="translate(-14.134 -48)">
+         </path>
+        </g>
+        <g id="chat" transform="translate(888 4708.535)">
+         <path d="M9.773,25.011h10.05a.773.773,0,0,0,0-1.546H9.773a.773.773,0,1,0,0,1.546Z" data-name="Path 3952" fill="#fba58a" id="Path_3952" transform="translate(-2.042 -4.765)">
+         </path>
+         <path d="M29.873,29.465H9.773a.773.773,0,1,0,0,1.546h20.1a.773.773,0,0,0,0-1.546Z" data-name="Path 3953" fill="#fba58a" id="Path_3953" transform="translate(-2.042 -6.127)">
+         </path>
+         <path d="M29.873,35.465H9.773a.773.773,0,0,0,0,1.546h20.1a.773.773,0,0,0,0-1.546Z" data-name="Path 3954" fill="#fba58a" id="Path_3954" transform="translate(-2.042 -7.488)">
+         </path>
+         <path d="M41.8,2.519,15.407,2.465a4.589,4.589,0,0,0-4.584,4.584v3.961l-6.239.013A4.589,4.589,0,0,0,0,15.608V31.952a4.589,4.589,0,0,0,4.584,4.584H9.277v7.731a.773.773,0,0,0,1.345.52l7.5-8.253,12.853-.053A4.589,4.589,0,0,0,35.561,31.9V31.81l4.066,4.473a.773.773,0,0,0,1.345-.52V28.032H41.8a4.589,4.589,0,0,0,4.584-4.584V7.1A4.59,4.59,0,0,0,41.8,2.519ZM34.015,31.9a3.042,3.042,0,0,1-3.041,3.037l-13.2.054a.774.774,0,0,0-.569.253l-6.386,7.025v-6.5a.773.773,0,0,0-.773-.773H4.584a3.041,3.041,0,0,1-3.038-3.037V15.607a3.042,3.042,0,0,1,3.04-3.038l7.01-.015h0l19.379-.04a3.042,3.042,0,0,1,3.038,3.038V31.9Zm10.823-8.45A3.041,3.041,0,0,1,41.8,26.484H40.2a.773.773,0,0,0-.773.773v6.5L35.561,29.51V15.553a4.59,4.59,0,0,0-4.586-4.584l-18.606.038V7.049A3.041,3.041,0,0,1,15.406,4.01L41.8,4.064h0A3.042,3.042,0,0,1,44.839,7.1V23.447Z" data-name="Path 3955" fill="#fba58a" id="Path_3955" transform="translate(0 0)">
+         </path>
+        </g>
+        <g id="joystick" transform="translate(1052 4667.968)">
+         <g data-name="Group 2961" id="Group_2961" transform="translate(6.403 28.828)">
+          <g data-name="Group 2960" id="Group_2960">
+           <path d="M76.032,292.031h-3.2v-3.2a.8.8,0,0,0-.8-.8h-3.2a.8.8,0,0,0-.8.8v3.2h-3.2a.8.8,0,0,0-.8.8v3.2a.8.8,0,0,0,.8.8h3.2v3.2a.8.8,0,0,0,.8.8h3.2a.8.8,0,0,0,.8-.8v-3.2h3.2a.8.8,0,0,0,.8-.8v-3.2A.8.8,0,0,0,76.032,292.031Zm-.8,3.2h-3.2a.8.8,0,0,0-.8.8v3.2h-1.6v-3.2a.8.8,0,0,0-.8-.8h-3.2v-1.6h3.2a.8.8,0,0,0,.8-.8v-3.2h1.6v3.2a.8.8,0,0,0,.8.8h3.2Z" data-name="Path 3956" fill="#fba58a" id="Path_3956" transform="translate(-64.034 -288.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2963" id="Group_2963" transform="translate(0 0.032)">
+          <g data-name="Group 2962" id="Group_2962" transform="translate(0 0)">
+           <path d="M47.917,33.766A13.514,13.514,0,0,0,36.61,22.509a13.278,13.278,0,0,0-1.411-.08H26.4v-3.2H24.8v-1.6a3.2,3.2,0,0,0-3.2-3.2h-4a1.6,1.6,0,1,1,0-3.2H30.4a3.2,3.2,0,1,0,0-6.4h-4a1.6,1.6,0,0,1-1.6-1.6V.032H23.2v3.2a3.2,3.2,0,0,0,3.2,3.2h4a1.6,1.6,0,1,1,0,3.2H17.6a3.2,3.2,0,1,0,0,6.4h4a1.6,1.6,0,0,1,1.6,1.6v1.6H21.6v3.2H12.8a13.048,13.048,0,0,0-1.413.08A13.516,13.516,0,0,0,.084,33.77,12.8,12.8,0,0,0,19.538,46.106a7.834,7.834,0,0,1,3.511-1.241,12.337,12.337,0,0,1,1.86-.006,7.893,7.893,0,0,1,3.566,1.254A12.8,12.8,0,0,0,47.917,33.766ZM23.2,20.829h1.6v1.6H23.2ZM43.546,42.693a11.191,11.191,0,0,1-14.228,2.06,9.439,9.439,0,0,0-4.295-1.49q-.506-.037-1.022-.037c-.364,0-.72.015-1.078.043a9.409,9.409,0,0,0-4.23,1.477,11.2,11.2,0,0,1-17.018-10.8A11.991,11.991,0,0,1,11.561,24.1a11.506,11.506,0,0,1,1.241-.071H35.2a11.766,11.766,0,0,1,1.241.066,11.994,11.994,0,0,1,9.887,9.847A11.119,11.119,0,0,1,43.546,42.693Z" data-name="Path 3957" fill="#fba58a" id="Path_3957" transform="translate(0 -0.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2965" id="Group_2965" transform="translate(31.999 27.228)">
+          <g data-name="Group 2964" id="Group_2964">
+           <path d="M323.234,272.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,323.234,272.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,323.234,276.831Z" data-name="Path 3958" fill="#fba58a" id="Path_3958" transform="translate(-320.034 -272.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2967" id="Group_2967" transform="translate(31.999 36.827)">
+          <g data-name="Group 2966" id="Group_2966">
+           <path d="M323.234,368.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,323.234,368.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,323.234,372.831Z" data-name="Path 3959" fill="#fba58a" id="Path_3959" transform="translate(-320.034 -368.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2969" id="Group_2969" transform="translate(26.4 32.027)">
+          <g data-name="Group 2968" id="Group_2968">
+           <path d="M267.234,320.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,267.234,320.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,267.234,324.831Z" data-name="Path 3960" fill="#fba58a" id="Path_3960" transform="translate(-264.034 -320.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2971" id="Group_2971" transform="translate(37.598 32.027)">
+          <g data-name="Group 2970" id="Group_2970">
+           <path d="M379.234,320.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,379.234,320.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,379.234,324.831Z" data-name="Path 3961" fill="#fba58a" id="Path_3961" transform="translate(-376.034 -320.032)">
+           </path>
+          </g>
+         </g>
+        </g>
+        <g data-name="Peer to peer" id="Peer_to_peer" transform="translate(374.834 4687)">
+         <path d="M18.754,23H3.536A2.536,2.536,0,0,0,1,25.536V54.281a2.536,2.536,0,0,0,2.536,2.536H18.754a2.536,2.536,0,0,0,2.536-2.536V25.536A2.536,2.536,0,0,0,18.754,23Zm-4.465,1.691-.423,1.691H8.424L8,24.691Zm5.31,29.59a.845.845,0,0,1-.845.845H3.536a.845.845,0,0,1-.845-.845V25.536a.845.845,0,0,1,.845-.845H6.258l.686,2.742a.845.845,0,0,0,.82.64h6.763a.845.845,0,0,0,.82-.64l.686-2.742h2.721a.845.845,0,0,1,.845.845Z" data-name="Path 3962" fill="#fba58a" id="Path_3962" transform="translate(0 -8.817)">
+         </path>
+         <path d="M9.073,58H4.845a.845.845,0,1,0,0,1.691H9.073a.845.845,0,1,0,0-1.691Z" data-name="Path 3963" fill="#fba58a" id="Path_3963" transform="translate(-0.464 -14.227)">
+         </path>
+         <path d="M13.691,58h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,0,0,0-1.691Z" data-name="Path 3964" fill="#fba58a" id="Path_3964" transform="translate(-1.7 -14.227)">
+         </path>
+         <path d="M56.754,1H41.536A2.536,2.536,0,0,0,39,3.536V32.281a2.536,2.536,0,0,0,2.536,2.536H56.754a2.536,2.536,0,0,0,2.536-2.536V3.536A2.536,2.536,0,0,0,56.754,1ZM52.289,2.691l-.423,1.691H46.424L46,2.691Zm5.31,29.59a.845.845,0,0,1-.845.845H41.536a.845.845,0,0,1-.845-.845V3.536a.845.845,0,0,1,.845-.845h2.721l.686,2.742a.845.845,0,0,0,.82.64h6.763a.845.845,0,0,0,.82-.64l.686-2.742h2.721a.845.845,0,0,1,.845.845Z" data-name="Path 3965" fill="#fba58a" id="Path_3965" transform="translate(6.876 13)">
+         </path>
+         <path d="M47.073,36H42.845a.845.845,0,1,0,0,1.691h4.227a.845.845,0,1,0,0-1.691Z" data-name="Path 3966" fill="#fba58a" id="Path_3966" transform="translate(6.412 7.59)">
+         </path>
+         <path d="M51.691,36h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,1,0,0-1.691Z" data-name="Path 3967" fill="#fba58a" id="Path_3967" transform="translate(5.176 7.59)">
+         </path>
+         <path d="M46.884,46.78c-.819-.041-16.2,0-16.2,0a.845.845,0,1,0,0,1.691h16.2a.845.845,0,0,0,.845-.845A.873.873,0,0,0,46.884,46.78Z" data-name="Path 3968" fill="#fba58a" id="Path_3968" transform="translate(-3.042 -9.77)">
+         </path>
+         <path d="M46.884,46.78c-.819-.041-16.2,0-16.2,0a.845.845,0,1,0,0,1.691h16.2a.845.845,0,0,0,.845-.845A.873.873,0,0,0,46.884,46.78Z" data-name="Path 3973" fill="#fba58a" id="Path_3973" transform="translate(-7.292 -21.103)">
+         </path>
+         <path d="M27.691,50h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,1,0,0-1.691Z" data-name="Path 3970" fill="#fba58a" id="Path_3970" transform="translate(-2.448 -12.991)">
+         </path>
+         <path d="M27.691,50h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,1,0,0-1.691Z" data-name="Path 3974" fill="#fba58a" id="Path_3974" transform="translate(15.969 -24.324)">
+         </path>
+         <path d="M12.073,37a5.073,5.073,0,1,0,5.073,5.073A5.073,5.073,0,0,0,12.073,37Zm0,8.454a3.382,3.382,0,1,1,3.382-3.382A3.382,3.382,0,0,1,12.073,45.454Z" data-name="Path 3971" fill="#fba58a" id="Path_3971" transform="translate(-0.927 -10.981)">
+         </path>
+         <path d="M50.073,15a5.073,5.073,0,1,0,5.073,5.073A5.073,5.073,0,0,0,50.073,15Zm0,8.454a3.382,3.382,0,1,1,3.382-3.382A3.382,3.382,0,0,1,50.073,23.454Z" data-name="Path 3972" fill="#fba58a" id="Path_3972" transform="translate(5.948 10.836)">
+         </path>
+        </g>
+        <path d="M-4874.51-7450.055s5.227,58.842-29.473,58.842-261.94,1.819-261.94,1.819" data-name="Path 4089" fill="none" id="Path_4089" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5580 12028)">
+        </path>
+        <path d="M-4923.134-7494.381s4.9,69.119-34.461,77.457-208.328,39.415-208.328,39.415" data-name="Path 4090" fill="none" id="Path_4090" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5634.243 12072)">
+        </path>
+        <path d="M-5165.722-7494.381s-5.071,69.119,35.683,77.457,215.713,39.415,215.713,39.415" data-name="Path 4091" fill="none" id="Path_4091" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5896.801 12072)">
+        </path>
+        <path d="M-5165.722-7494.381s-4.782,61.333,25.157,81.775,95.823,51.184,95.823,51.184" data-name="Path 4092" fill="none" id="Path_4092" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5889.801 12073)">
+        </path>
+        <path d="M-5165.611-7450.055s-5.817,58.842,32.8,58.842,291.536,1.819,291.536,1.819" data-name="Path 4093" fill="none" id="Path_4093" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5902.694 12028)">
+        </path>
+        <path d="M-5059.326-7494.381s4.217,61.333-22.183,81.775S-5166-7361.421-5166-7361.421" data-name="Path 4094" fill="none" id="Path_4094" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5775.878 12073)">
+        </path>
+       </g>
+      </g>
+     </svg>
+     <svg class="xl-d-none" height="342" viewbox="0 0 314.131 342" width="314.131" xmlns="http://www.w3.org/2000/svg">
+      <g data-name="Group 3101" id="Group_3101" transform="translate(0 -5968)">
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="16" id="Phones" transform="translate(0 6077.08)">
+        <tspan x="35.379" y="17">
+         Phones
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="16" id="Laptops" transform="translate(92.065 6077.08)">
+        <tspan x="33.627" y="17">
+         Laptops
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="16" id="Tablets" transform="translate(195.131 6073.08)">
+        <tspan x="36.667" y="17">
+         Tablets
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="13" id="Payments" transform="translate(68.646 6307)">
+        <tspan x="0" y="0">
+         Payments
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="13" id="Transportation" transform="translate(15.655 6217)">
+        <tspan x="0" y="0">
+         Transportation
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="13" id="Messaging" transform="translate(242.96 6307)">
+        <tspan x="0" y="0">
+         Messaging
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="13" id="Gaming" transform="translate(164.441 6306)">
+        <tspan x="0" y="0">
+         Gaming
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="13" id="Delivery" transform="translate(213 6216)">
+        <tspan x="0" y="0">
+         Delivery
+        </tspan>
+       </text>
+       <text fill="#9f9e9e" font-family="HalyardDisplayBook, Halyard Display" font-size="13" id="Lending" transform="translate(121.606 6216)">
+        <tspan x="0" y="0">
+         Lending
+        </tspan>
+       </text>
+       <g data-name="Group 3100" id="Group_3100" transform="translate(0 -99)">
+        <g data-name="Group 2830" id="Group_2830" transform="translate(40.658 6087.188)">
+         <path d="M32.115.12,6,0A5.666,5.666,0,0,0,.288,5.66L0,71.138a5.666,5.666,0,0,0,5.66,5.708l26.119.12a5.666,5.666,0,0,0,5.708-5.66l.288-65.477A5.681,5.681,0,0,0,32.115.12ZM35.785,70.3c0,2.207-1.8,4.705-4.005,4.681L5.708,74.86c-2.207,0-3.981-2.523-3.957-4.729L2.015,6.212A3.957,3.957,0,0,1,6.02,2.255l4.437.024h1.775a1.261,1.261,0,0,1,1.223,1.3v.911a1.261,1.261,0,0,0,1.223,1.3l9.882.048a1.255,1.255,0,0,0,1.223-1.271V3.646a1.239,1.239,0,0,1,1.223-1.271l5.061.024A3.957,3.957,0,0,1,36.025,6.4Z" data-name="Path 3713" fill="#8bffbc" id="Path_3713" transform="translate(0 0)">
+         </path>
+        </g>
+        <g data-name="Rectangle 1559" fill="none" id="Rectangle_1559" stroke="#8bffbc" stroke-width="2" transform="translate(108 6104)">
+         <path d="M3,0H85a3,3,0,0,1,3,3V56a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V3A3,3,0,0,1,3,0Z" stroke="none">
+         </path>
+         <path d="M3,1H85a2,2,0,0,1,2,2V54a1,1,0,0,1-1,1H2a1,1,0,0,1-1-1V3A2,2,0,0,1,3,1Z" fill="none">
+         </path>
+        </g>
+        <g data-name="Rectangle 1562" fill="none" id="Rectangle_1562" stroke="#8bffbc" stroke-width="2" transform="translate(216.065 6111)">
+         <rect height="49" rx="3" stroke="none" width="77">
+         </rect>
+         <rect fill="none" height="47" rx="2" width="75" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1560" fill="none" id="Rectangle_1560" stroke="#8bffbc" stroke-width="2" transform="translate(108 6157)">
+         <rect height="3" rx="1.5" stroke="none" width="88">
+         </rect>
+         <rect fill="none" height="1" rx="0.5" width="86" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1561" fill="none" id="Rectangle_1561" stroke="#8bffbc" stroke-width="2" transform="translate(100 6161)">
+         <rect height="3" stroke="none" width="104">
+         </rect>
+         <rect fill="none" height="1" width="102" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1563" fill="none" id="Rectangle_1563" stroke="#8bffbc" stroke-width="2" transform="translate(251.065 6155)">
+         <rect height="2" stroke="none" width="12">
+         </rect>
+         <rect fill="none" width="10" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Rectangle 1564" fill="none" id="Rectangle_1564" stroke="#8bffbc" stroke-width="2" transform="translate(252.065 6129)">
+         <rect height="2" stroke="none" width="2">
+         </rect>
+         <rect fill="none" x="1" y="1">
+         </rect>
+        </g>
+        <g data-name="Group 3033" id="Group_3033" transform="matrix(0.719, -0.695, 0.695, 0.719, 54.912, 6367.142)">
+         <g data-name="Group 756" id="Group_756">
+          <g data-name="Group 755" id="Group_755">
+           <path d="M61.722,68.555,58.066,65.31l6.5-7.787a2.269,2.269,0,0,0-.406-3.244L33.7,32.217a2.219,2.219,0,0,0-2.031-.324,2.575,2.575,0,0,0-1.828.973L15.011,50.71a2.475,2.475,0,0,0,.2,3.244s.2,0,.2.324l2.031,1.3L13.387,59.47a2.471,2.471,0,0,0,0,3.569L40.8,87.7a2.653,2.653,0,0,0,3.656,0L61.722,71.8A2.108,2.108,0,0,0,61.722,68.555Zm-4.671-4.542L52.176,59.47l5.28,3.893ZM31.258,33.84a.6.6,0,0,1,.609-.324h.609L63.143,55.253a.661.661,0,0,1,.2.973l-1.625,1.947L29.837,35.462ZM18.87,54.279l-2.234-1.622a.661.661,0,0,1-.2-.973h0l8.936-10.706,4.468,3.244ZM31.461,42.924l-4.874-3.569,2.031-2.6L60.5,59.47l-1.219,1.622-.812.973L42.631,50.71l-8.124-7.462A2.63,2.63,0,0,0,31.461,42.924Zm11.779,43.8a.884.884,0,0,1-1.219,0L14.808,61.417a.843.843,0,0,1,0-1.3l17.263-15.9h0a.884.884,0,0,1,1.219,0L60.5,69.528a.843.843,0,0,1,0,1.3Z" data-name="Path 1382" fill="#fba58a" id="Path_1382" transform="translate(-12.625 -31.759)">
+           </path>
+           <path d="M29.683,47.617h1.053a3.353,3.353,0,0,0,3.16,3.847c2.107.275,4.038-1.1,4.214-2.748a3.349,3.349,0,0,0-1.053-3.022,3.416,3.416,0,0,0-3.16-.824,3.353,3.353,0,0,0-3.16-3.847c-2.107-.275-4.038,1.1-4.214,2.748A3.353,3.353,0,0,0,29.683,47.617Zm6.5-.824a2.063,2.063,0,0,1,0,3.022,2.329,2.329,0,0,1-3.16,0,2.063,2.063,0,0,1,0-3.022A2.326,2.326,0,0,1,36.18,46.792ZM31.79,42.946a2.063,2.063,0,0,1,0,3.022,2.329,2.329,0,0,1-3.16,0,2.063,2.063,0,0,1,0-3.022A2.329,2.329,0,0,1,31.79,42.946Z" data-name="Path 1383" fill="#fba58a" id="Path_1383" transform="translate(3.478 -10.647)">
+           </path>
+           <path d="M1.219,0,2.437.609l-1.219.812L0,.609Z" data-name="Path 1384" fill="#fba58a" id="Path_1384" transform="translate(19.094 17.792) rotate(11)">
+           </path>
+           <path d="M1.219,0,8.733,4.265l-1.219.609L0,.609Z" data-name="Path 1385" fill="#fba58a" id="Path_1385" transform="translate(20.518 21.29) rotate(11)">
+           </path>
+           <path d="M1.156.015,10.84,5.6l-1.149.533L.007.549Z" data-name="Path 1386" fill="#fba58a" id="Path_1386" transform="translate(16.26 20.621) rotate(11)">
+           </path>
+           <path d="M38.825,57.809,20.255,39.74a.7.7,0,0,0-1.013,0L16.2,42.895a.776.776,0,0,0,0,1.147l18.57,18.069a.7.7,0,0,0,1.013,0l3.039-3.155C39.163,58.382,39.163,58.1,38.825,57.809ZM35.28,60.1,17.723,42.895l2.026-2.008L37.306,58.1Z" data-name="Path 1387" fill="#fba58a" id="Path_1387" transform="translate(-4.503 -9.212)">
+           </path>
+          </g>
+         </g>
+        </g>
+        <g data-name="Group 3099" id="Group_3099">
+         <g data-name="Rectangle 1585" fill="none" id="Rectangle_1585" stroke="#ddd" stroke-width="1" transform="translate(6 6067)">
+          <rect height="162" stroke="none" width="308">
+          </rect>
+          <rect fill="none" height="161" width="307" x="0.5" y="0.5">
+          </rect>
+         </g>
+         <path d="M-5132.809-7284.437v-106.781" data-name="Path 4093" fill="none" id="Path_4093" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5413.809 13620.213)">
+         </path>
+         <path d="M-5132.809-7284.437v-106.781" data-name="Path 4176" fill="none" id="Path_4176" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5317.809 13620.213)">
+         </path>
+         <path d="M-5132.809-7284.437v-106.781" data-name="Path 4177" fill="none" id="Path_4177" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5231.809 13620.213)">
+         </path>
+         <path d="M-5120.809-7357.213v-34.006" data-name="Path 4178" fill="none" id="Path_4178" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5173.809 13620.213)">
+         </path>
+         <path d="M-5120.809-7357.213v-34.006" data-name="Path 4216" fill="none" id="Path_4216" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5353.809 13620.213)">
+         </path>
+         <path d="M-5120.809-7357.213v-34.006" data-name="Path 4179" fill="none" id="Path_4179" opacity="0.289" stroke="#707070" stroke-width="1" transform="translate(5265.809 13620.213)">
+         </path>
+        </g>
+        <g data-name="Group 3032" id="Group_3032" transform="matrix(0.719, -0.695, 0.695, 0.719, 22.198, 6279.714)">
+         <g data-name="Group 705" id="Group_705">
+          <path d="M50.673,60.6l-.839-2.844,3.357-5.4a3.861,3.861,0,0,0-.5-4.55l-5.2-4.834.839-.853a.768.768,0,0,0,0-1.137L28.684,21.638a1.156,1.156,0,0,0-1.343,0L12.4,36.425a.768.768,0,0,0,0,1.137l2.014,1.991a4.141,4.141,0,0,0,.5,5.4,4.733,4.733,0,0,0,5.707.569L33.384,58.037h0a4.141,4.141,0,0,0,.5,5.4,4.733,4.733,0,0,0,5.707.569l3.189,3.128a1.156,1.156,0,0,0,1.343,0l6.043-5.972C50.673,61.45,50.673,60.881,50.673,60.6ZM16.43,43.819a2.375,2.375,0,0,1,0-3.7,2.609,2.609,0,0,1,3.861,0,2.639,2.639,0,0,1,0,3.7A2.61,2.61,0,0,1,16.43,43.819Zm18.464,8.815-5.707-5.687a1.156,1.156,0,0,0-1.343,0,.768.768,0,0,0,0,1.137l5.707,5.687-1.007.853L21.969,44.388a4.141,4.141,0,0,0-.5-5.4,4.733,4.733,0,0,0-5.707-.569l-1.343-1.422,3.189-3.128L35.9,51.781l-1.007.853ZM45.469,42.4l-8.393,8.247L18.78,32.729l9.232-9.1,18.3,17.915Zm4.364,5.4,1.679,1.422a1.953,1.953,0,0,1,.336,2.275l-3.021,4.834-3.861-3.7L49.833,47.8ZM35.4,62.587a2.8,2.8,0,0,1-.168-3.7h.336a2.984,2.984,0,0,1,3.693,0,2.639,2.639,0,0,1,0,3.7A3.229,3.229,0,0,1,35.4,62.587Zm11.246.284L45.469,61.45l.671-.569,1.175,1.137Zm1.846-1.991-1.846-1.706a1.156,1.156,0,0,0-1.343,0l-1.846,1.991a.768.768,0,0,0,0,1.137L45.3,64.009l-1.679,1.706-2.686-2.559a4.141,4.141,0,0,0-.5-5.4,4.733,4.733,0,0,0-5.707-.569l-1.007-.853L45.973,44.388l2.35,2.275-5.539,5.4a.768.768,0,0,0,0,1.137l5.036,5.119.671,2.559Z" data-name="Path 1345" fill="#fba58a" id="Path_1345" transform="translate(-12.15 -21.425)">
+          </path>
+         </g>
+        </g>
+        <g id="chat" transform="translate(253.615 6345.535)">
+         <path d="M9.773,25.011h10.05a.773.773,0,0,0,0-1.546H9.773a.773.773,0,1,0,0,1.546Z" data-name="Path 3952" fill="#fba58a" id="Path_3952" transform="translate(-2.042 -4.765)">
+         </path>
+         <path d="M29.873,29.465H9.773a.773.773,0,1,0,0,1.546h20.1a.773.773,0,0,0,0-1.546Z" data-name="Path 3953" fill="#fba58a" id="Path_3953" transform="translate(-2.042 -6.127)">
+         </path>
+         <path d="M29.873,35.465H9.773a.773.773,0,0,0,0,1.546h20.1a.773.773,0,0,0,0-1.546Z" data-name="Path 3954" fill="#fba58a" id="Path_3954" transform="translate(-2.042 -7.488)">
+         </path>
+         <path d="M41.8,2.519,15.407,2.465a4.589,4.589,0,0,0-4.584,4.584v3.961l-6.239.013A4.589,4.589,0,0,0,0,15.608V31.952a4.589,4.589,0,0,0,4.584,4.584H9.277v7.731a.773.773,0,0,0,1.345.52l7.5-8.253,12.853-.053A4.589,4.589,0,0,0,35.561,31.9V31.81l4.066,4.473a.773.773,0,0,0,1.345-.52V28.032H41.8a4.589,4.589,0,0,0,4.584-4.584V7.1A4.59,4.59,0,0,0,41.8,2.519ZM34.015,31.9a3.042,3.042,0,0,1-3.041,3.037l-13.2.054a.774.774,0,0,0-.569.253l-6.386,7.025v-6.5a.773.773,0,0,0-.773-.773H4.584a3.041,3.041,0,0,1-3.038-3.037V15.607a3.042,3.042,0,0,1,3.04-3.038l7.01-.015h0l19.379-.04a3.042,3.042,0,0,1,3.038,3.038V31.9Zm10.823-8.45A3.041,3.041,0,0,1,41.8,26.484H40.2a.773.773,0,0,0-.773.773v6.5L35.561,29.51V15.553a4.59,4.59,0,0,0-4.586-4.584l-18.606.038V7.049A3.041,3.041,0,0,1,15.406,4.01L41.8,4.064h0A3.042,3.042,0,0,1,44.839,7.1V23.447Z" data-name="Path 3955" fill="#fba58a" id="Path_3955" transform="translate(0 0)">
+         </path>
+        </g>
+        <g id="joystick" transform="translate(161 6337.968)">
+         <g data-name="Group 2961" id="Group_2961" transform="translate(6.403 28.828)">
+          <g data-name="Group 2960" id="Group_2960">
+           <path d="M76.032,292.031h-3.2v-3.2a.8.8,0,0,0-.8-.8h-3.2a.8.8,0,0,0-.8.8v3.2h-3.2a.8.8,0,0,0-.8.8v3.2a.8.8,0,0,0,.8.8h3.2v3.2a.8.8,0,0,0,.8.8h3.2a.8.8,0,0,0,.8-.8v-3.2h3.2a.8.8,0,0,0,.8-.8v-3.2A.8.8,0,0,0,76.032,292.031Zm-.8,3.2h-3.2a.8.8,0,0,0-.8.8v3.2h-1.6v-3.2a.8.8,0,0,0-.8-.8h-3.2v-1.6h3.2a.8.8,0,0,0,.8-.8v-3.2h1.6v3.2a.8.8,0,0,0,.8.8h3.2Z" data-name="Path 3956" fill="#fba58a" id="Path_3956" transform="translate(-64.034 -288.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2963" id="Group_2963" transform="translate(0 0.032)">
+          <g data-name="Group 2962" id="Group_2962" transform="translate(0 0)">
+           <path d="M47.917,33.766A13.514,13.514,0,0,0,36.61,22.509a13.278,13.278,0,0,0-1.411-.08H26.4v-3.2H24.8v-1.6a3.2,3.2,0,0,0-3.2-3.2h-4a1.6,1.6,0,1,1,0-3.2H30.4a3.2,3.2,0,1,0,0-6.4h-4a1.6,1.6,0,0,1-1.6-1.6V.032H23.2v3.2a3.2,3.2,0,0,0,3.2,3.2h4a1.6,1.6,0,1,1,0,3.2H17.6a3.2,3.2,0,1,0,0,6.4h4a1.6,1.6,0,0,1,1.6,1.6v1.6H21.6v3.2H12.8a13.048,13.048,0,0,0-1.413.08A13.516,13.516,0,0,0,.084,33.77,12.8,12.8,0,0,0,19.538,46.106a7.834,7.834,0,0,1,3.511-1.241,12.337,12.337,0,0,1,1.86-.006,7.893,7.893,0,0,1,3.566,1.254A12.8,12.8,0,0,0,47.917,33.766ZM23.2,20.829h1.6v1.6H23.2ZM43.546,42.693a11.191,11.191,0,0,1-14.228,2.06,9.439,9.439,0,0,0-4.295-1.49q-.506-.037-1.022-.037c-.364,0-.72.015-1.078.043a9.409,9.409,0,0,0-4.23,1.477,11.2,11.2,0,0,1-17.018-10.8A11.991,11.991,0,0,1,11.561,24.1a11.506,11.506,0,0,1,1.241-.071H35.2a11.766,11.766,0,0,1,1.241.066,11.994,11.994,0,0,1,9.887,9.847A11.119,11.119,0,0,1,43.546,42.693Z" data-name="Path 3957" fill="#fba58a" id="Path_3957" transform="translate(0 -0.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2965" id="Group_2965" transform="translate(31.999 27.228)">
+          <g data-name="Group 2964" id="Group_2964">
+           <path d="M323.234,272.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,323.234,272.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,323.234,276.831Z" data-name="Path 3958" fill="#fba58a" id="Path_3958" transform="translate(-320.034 -272.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2967" id="Group_2967" transform="translate(31.999 36.827)">
+          <g data-name="Group 2966" id="Group_2966">
+           <path d="M323.234,368.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,323.234,368.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,323.234,372.831Z" data-name="Path 3959" fill="#fba58a" id="Path_3959" transform="translate(-320.034 -368.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2969" id="Group_2969" transform="translate(26.4 32.027)">
+          <g data-name="Group 2968" id="Group_2968">
+           <path d="M267.234,320.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,267.234,320.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,267.234,324.831Z" data-name="Path 3960" fill="#fba58a" id="Path_3960" transform="translate(-264.034 -320.032)">
+           </path>
+          </g>
+         </g>
+         <g data-name="Group 2971" id="Group_2971" transform="translate(37.598 32.027)">
+          <g data-name="Group 2970" id="Group_2970">
+           <path d="M379.234,320.032a3.2,3.2,0,1,0,3.2,3.2A3.2,3.2,0,0,0,379.234,320.032Zm0,4.8a1.6,1.6,0,1,1,1.6-1.6A1.6,1.6,0,0,1,379.234,324.831Z" data-name="Path 3961" fill="#fba58a" id="Path_3961" transform="translate(-376.034 -320.032)">
+           </path>
+          </g>
+         </g>
+        </g>
+        <g data-name="Group 3034" id="Group_3034" transform="translate(200.917 6279.594) rotate(-42)">
+         <path d="M57.133,78.019c.182,0,.182-.345.182-.345.182-.345,0-.69-.182-1.035l-6.541-20.7c-.182-.345-.363-.69-.727-.69L30.969,48a1.381,1.381,0,0,0-1.09.345h0L14.435,65.252a.784.784,0,0,0-.182,1.035l6.723,20.7h0l19.078,7.246a1.381,1.381,0,0,0,1.09-.345L57.133,78.019Zm-8.358-20.7,5.814,17.942-6-2.415L42.779,54.9ZM38.055,69.048,32.241,51.105l7.813,3.105,5.814,17.942ZM30.242,51.105l5.814,18.287L22.248,84.575,16.434,66.287ZM23.7,86.3,37.51,71.118l7.813,3.105-3.634,3.8a1.476,1.476,0,0,0,0,1.725,1.15,1.15,0,0,0,1.454,0L47.5,74.913l6.723,2.415L40.6,92.856Z" data-name="Path 1341" fill="#fba58a" id="Path_1341" transform="translate(-14.134 -48)">
+         </path>
+        </g>
+        <g data-name="Peer to peer" id="Peer_to_peer" transform="translate(107 6249)">
+         <path d="M18.754,23H3.536A2.536,2.536,0,0,0,1,25.536V54.281a2.536,2.536,0,0,0,2.536,2.536H18.754a2.536,2.536,0,0,0,2.536-2.536V25.536A2.536,2.536,0,0,0,18.754,23Zm-4.465,1.691-.423,1.691H8.424L8,24.691Zm5.31,29.59a.845.845,0,0,1-.845.845H3.536a.845.845,0,0,1-.845-.845V25.536a.845.845,0,0,1,.845-.845H6.258l.686,2.742a.845.845,0,0,0,.82.64h6.763a.845.845,0,0,0,.82-.64l.686-2.742h2.721a.845.845,0,0,1,.845.845Z" data-name="Path 3962" fill="#fba58a" id="Path_3962" transform="translate(0 -8.817)">
+         </path>
+         <path d="M9.073,58H4.845a.845.845,0,1,0,0,1.691H9.073a.845.845,0,1,0,0-1.691Z" data-name="Path 3963" fill="#fba58a" id="Path_3963" transform="translate(-0.464 -14.227)">
+         </path>
+         <path d="M13.691,58h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,0,0,0-1.691Z" data-name="Path 3964" fill="#fba58a" id="Path_3964" transform="translate(-1.7 -14.227)">
+         </path>
+         <path d="M56.754,1H41.536A2.536,2.536,0,0,0,39,3.536V32.281a2.536,2.536,0,0,0,2.536,2.536H56.754a2.536,2.536,0,0,0,2.536-2.536V3.536A2.536,2.536,0,0,0,56.754,1ZM52.289,2.691l-.423,1.691H46.424L46,2.691Zm5.31,29.59a.845.845,0,0,1-.845.845H41.536a.845.845,0,0,1-.845-.845V3.536a.845.845,0,0,1,.845-.845h2.721l.686,2.742a.845.845,0,0,0,.82.64h6.763a.845.845,0,0,0,.82-.64l.686-2.742h2.721a.845.845,0,0,1,.845.845Z" data-name="Path 3965" fill="#fba58a" id="Path_3965" transform="translate(6.876 13)">
+         </path>
+         <path d="M47.073,36H42.845a.845.845,0,1,0,0,1.691h4.227a.845.845,0,1,0,0-1.691Z" data-name="Path 3966" fill="#fba58a" id="Path_3966" transform="translate(6.412 7.59)">
+         </path>
+         <path d="M51.691,36h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,1,0,0-1.691Z" data-name="Path 3967" fill="#fba58a" id="Path_3967" transform="translate(5.176 7.59)">
+         </path>
+         <path d="M46.884,46.78c-.819-.041-16.2,0-16.2,0a.845.845,0,1,0,0,1.691h16.2a.845.845,0,0,0,.845-.845A.873.873,0,0,0,46.884,46.78Z" data-name="Path 3968" fill="#fba58a" id="Path_3968" transform="translate(-3.042 -9.77)">
+         </path>
+         <path d="M46.884,46.78c-.819-.041-16.2,0-16.2,0a.845.845,0,1,0,0,1.691h16.2a.845.845,0,0,0,.845-.845A.873.873,0,0,0,46.884,46.78Z" data-name="Path 3973" fill="#fba58a" id="Path_3973" transform="translate(-7.292 -21.103)">
+         </path>
+         <path d="M27.691,50h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,1,0,0-1.691Z" data-name="Path 3970" fill="#fba58a" id="Path_3970" transform="translate(-2.448 -12.991)">
+         </path>
+         <path d="M27.691,50h-.845a.845.845,0,1,0,0,1.691h.845a.845.845,0,1,0,0-1.691Z" data-name="Path 3974" fill="#fba58a" id="Path_3974" transform="translate(15.969 -24.324)">
+         </path>
+         <path d="M12.073,37a5.073,5.073,0,1,0,5.073,5.073A5.073,5.073,0,0,0,12.073,37Zm0,8.454a3.382,3.382,0,1,1,3.382-3.382A3.382,3.382,0,0,1,12.073,45.454Z" data-name="Path 3971" fill="#fba58a" id="Path_3971" transform="translate(-0.927 -10.981)">
+         </path>
+         <path d="M50.073,15a5.073,5.073,0,1,0,5.073,5.073A5.073,5.073,0,0,0,50.073,15Zm0,8.454a3.382,3.382,0,1,1,3.382-3.382A3.382,3.382,0,0,1,50.073,23.454Z" data-name="Path 3972" fill="#fba58a" id="Path_3972" transform="translate(5.948 10.836)">
+         </path>
+        </g>
+       </g>
+      </g>
+     </svg>
+    </div>
+   </div>
+  </div>
+  <div style="background-color: #D6E5F5;">
+   <footer class="container">
+    <div class="row footer d-flex justify-content-between pt-3">
+     <div class="col-xl-3 col-md-12 text-xl-left text-center pb-3">
+      <a class="logo" href="/">
+       <img alt="Monet" height="17" src="./images/Monet_logo.svg"/>
+      </a>
+     </div>
+     <div class="col-xl-5 col-md-12 text-xl-right text-center footer-icons-block">
+      <ul class="footer-icons-list">
+       <li>
+        <a aria-label="telegram-link" data-icon="j" href="https://t.me/MonetNetwork" rel="noopener" target="_blank">
+        </a>
+       </li>
+       <li>
+        <a aria-label="facebook-link" data-icon="d" href="https://www.facebook.com/MonetNetwork" rel="noopener" target="_blank">
+        </a>
+       </li>
+       <li>
+        <a aria-label="twitter-link" data-icon="r" href="https://twitter.com/MonetNetwork" rel="noopener" target="_blank">
+        </a>
+       </li>
+       <li>
+        <a aria-label="reddit-link" data-icon="m" href="https://www.reddit.com/r/Monet_Network/" rel="noopener" target="_blank">
+        </a>
+       </li>
+       <li>
+        <a aria-label="medium-link" data-icon="k" href="https://medium.com/@monet.network" rel="noopener" target="_blank">
+        </a>
+       </li>
+       <li>
+        <a aria-label="github-link" data-icon="f" href="https://github.com/mosaicnetworks" rel="noopener" target="_blank">
+        </a>
+       </li>
+       <li>
+        <a aria-label="youtube-link" data-icon="t" href="https://www.youtube.com/channel/UC91GwW00hAJx9tUHTWCKTvg" rel="noopener" target="_blank">
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script src="./js/jquery-3.4.1.min.js">
+  </script>
+  <script src="./js/bootstrap.bundle.js">
+  </script>
+  <script src="./js/main.js">
+  </script>
+ </body>
+</html>

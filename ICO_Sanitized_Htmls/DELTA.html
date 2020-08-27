@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "//www.w3.org/TR/html4/strict.dtd">
+<html xmlns="//www.w3.org/1999/xhtml">
+ <head>
+  <title>
+   Delta.money - AI-platform Semantic Contracts
+  </title>
+  <meta content="Delta.money - AI-platform Semantic Contracts" name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="9e4f5f1d1840bd1f6562ce55f44be7bd" name="p:domain_verify"/>
+  <meta content="pCX-Vg6TB92KowUNMKDZFkk_XYKtmjJ7IL4whpObHgs" name="google-site-verification"/>
+  <link href="/css/core.css?1596475727" media="all" rel="stylesheet"/>
+  <link href="/css/layout.css?1596475727" media="all" rel="stylesheet"/>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <script src="/js/classes/core.class.js?1596475727">
+  </script>
+  <script src="/js/classes/menu.class.js?1596475727">
+  </script>
+  <script src="/js/classes/account.class.js?1596475727">
+  </script>
+  <script src="/js/classes/delta.class.js?1596475727">
+  </script>
+  <script src="/js/controllers/main_main.js?1596475727">
+  </script>
+ </head>
+ <body id="body">
+  <div class="page-content-wrapper">
+   <div class="page-container">
+    <div id="block_head" style="position:relative;min-height:200px;">
+     <div align="center" style="top:20px;">
+      <table style="border-spacing:10px;">
+       <tr>
+        <td>
+         <a href="/">
+          <img src="/images/delta_logo.png" style="width:150px;"/>
+         </a>
+        </td>
+        <td>
+         <div style="font-size:70px;color:white;">
+          Delta
+          <sup style="color:#FFBB19;font-weight:bold;font-style: italic;font-family: Times New Roman, Times, serif;">
+           Money
+          </sup>
+         </div>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <div align="center" style="margin:10px 0 0 0;">
+      <table>
+       <tr>
+        <td nowrap="" style="display:none;">
+         <span class="button_delta" id="">
+          <a href="/files/delta_whitepaper_en.pdf" style="color:#FFFFFF;" target="_blank">
+           <b>
+            White Paper
+           </b>
+          </a>
+         </span>
+        </td>
+        <td nowrap="">
+         <span class="button_delta" id="button_main" style="margin:0 0 0 20px;">
+          <a href="/" style="color:#FFFFFF;">
+           <b>
+            Main
+           </b>
+          </a>
+         </span>
+        </td>
+        <td nowrap="">
+         <span class="button_delta" id="button_papers" style="margin:0 0 0 20px;">
+          <a href="/shop" style="color:#FFFFFF;">
+           <b>
+            Shop
+           </b>
+          </a>
+         </span>
+        </td>
+        <td nowrap="">
+         <span class="button_delta" style="margin:0 0 0 20px;">
+          <a href="/blocks" style="color:#FFFFFF;">
+           <b>
+            Blocks
+           </b>
+          </a>
+         </span>
+        </td>
+        <td nowrap="">
+         <span class="button_delta" id="button_txp" style="margin:0 0 0 20px;">
+          <a href="/tx_pending" style="color:#FFFFFF;">
+           <b>
+            PendingTxs
+           </b>
+          </a>
+         </span>
+        </td>
+        <td id="td_cabinet" nowrap="" style="display:none;">
+         <a href="/cabinet">
+          <span class="button_delta" id="button_cabinet" style="margin:0 0 0 20px;color:#FFBB19;">
+           Cabinet
+          </span>
+         </a>
+        </td>
+        <td id="td_history" nowrap="" style="display:none;">
+         <span class="button_delta" id="button_history" style="margin:0 0 0 20px;">
+          <span style="color:#FFFFFF;">
+           <b>
+            History
+           </b>
+          </span>
+         </span>
+        </td>
+        <td id="td_logout" nowrap="" style="display:none;">
+         <span class="button_delta" id="button_logout" style="margin:0 0 0 20px;color:#FFBB19;">
+          <b>
+           Logout
+          </b>
+         </span>
+        </td>
+       </tr>
+      </table>
+     </div>
+     <script type="text/javascript">
+      routes = Core.getRoutes();
+
+    if(Core.readCookie("auth") == 1) {
+        document.getElementById("td_cabinet").style.display = "";
+        document.getElementById("td_history").style.display = "";
+        document.getElementById("td_logout").style.display = "";
+    }
+
+    //if(routes[1] == 'cabinet') document.getElementById("td_cabinet").style.display = "none";
+    /*
+    var button = document.getElementById("button_main");
+    button.onclick = function(){              
+      window.location.href = '/';
+    }    
+
+    var button = document.getElementById("button_papers");
+    button.onclick = function(){              
+      window.location.href = '/papers';
+    }    
+    */
+    var button = document.getElementById("button_logout");
+    button.onclick = function(){    
+      Core.createCookie('auth', 0, 365);    
+      Core.createCookie('pub_a', 0, 365);   
+      Core.createCookie('private_hash', 0, 365);    
+      window.location.href = '/';
+    } 
+
+    var button = document.getElementById("button_txp");
+    button.onclick = function(){              
+      window.location.href = '/tx_pending';
+    }    
+
+    var button = document.getElementById("button_history");
+    button.onclick = function(){              
+      window.location.href = '/address/info/?address='+Core.readCookie("user_address");
+    }
+     </script>
+    </div>
+    <div id="block_middle" style="position:relative;padding-bottom:40px;">
+     <div align="center" style="padding:10px 10px 10px 10px;z-index:100;color:white;font-size:30px;">
+      <div style="font-size:36px;z-index:100;">
+       Delta - crypto-platform with own cryptocurrency, multi-blockchains and smart contracts 2.0.
+      </div>
+      <div align="left" style="margin:20px 0 0 0;background-color:#FFBB19;color:black;border-radius:5px;border:1px solid black;padding:10px 10px 10px 30px;">
+       Delta is a new crypto platform with own cryptocurrency, which combines the best practices in the field of blockchains, DAGs, crypto currencies
+            and smart contracts. Fast transactions, low commissions, verifyed contracts, own
+            blockchain and crypto constructors make Delta one of the advanced project for business, micropayments and Internet of things.
+      </div>
+      <div align="center" style="margin:20px 0 0 0;position:relative;">
+       <div style="position:relative;margin:20px 0 0 0;">
+        <span class="button_delta" id="button_create_account">
+         Create Account
+        </span>
+       </div>
+       <div style="position:relative;margin:30px 0 0 0;">
+        <table>
+         <tr>
+          <td>
+           <input id="input_open_account" name="" placeholder="Enter private key or PUSH Create account" style="font-size:20px;border-radius:5px;padding:5px;width:400px;" type="text"/>
+          </td>
+          <td>
+           <div style="margin: 0 0 0 20px;">
+            <span class="button_delta" id="button_open_account">
+             Open Account
+            </span>
+           </div>
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+      <div align="center" style="margin:20px 0 0 0;background-color:#FFBB19;color:black;border-radius:5px;border:1px solid black;padding:10px 10px 10px 10px;font-size:20px;">
+       <div>
+        Send 1 ETH directly on address and get 200 DELTA coins!
+       </div>
+       <div style="margin:10px 0 0 0;">
+        ETH:
+        <span style="font-weight:bold;font-size:24px;">
+         0x2F58dA4Bd9bB3Efdcadf1282449de6a40b301CC3
+        </span>
+       </div>
+       <div style="margin:10px 0 0 0;">
+        Only for January 1, 2019 Price: 1 ETH = 200 Delta!!!
+       </div>
+      </div>
+      <div style="margin:20px 0 0 0;">
+       <span class="button_delta">
+        Contacts:
+       </span>
+      </div>
+      <div align="center;" style="margin:20px 0 0 0;">
+       <table style="border-spacing:10px;">
+        <tr>
+         <td>
+          <a href="https://t.me/deltamoneynews" target="_blank">
+          </a>
+          <table>
+           <tr>
+            <td>
+             <img src="/images/icons/telegram2.png" style="width:50px;"/>
+            </td>
+            <td align="left" valign="top">
+             <span style="color:white">
+              Delta News
+             </span>
+            </td>
+           </tr>
+          </table>
+         </td>
+         <td>
+          <a href="https://t.me/ideltamoney" target="_blank">
+          </a>
+          <table>
+           <tr>
+            <td>
+             <img src="/images/icons/telegram2.png" style="width:50px;"/>
+            </td>
+            <td align="left" valign="top">
+             <span style="color:white">
+              Delta Community
+             </span>
+            </td>
+           </tr>
+          </table>
+         </td>
+        </tr>
+       </table>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="footer-wrapper" style="position:absolute;bottom:0;width:100%;">
+    <div id="footer">
+     <div class="copy">
+      <strong>
+       DELTA
+      </strong>
+      ©
+      <strong>
+       Money
+      </strong>
+     </div>
+    </div>
+    <div style="position:absolute;right:20%;color: #FFF;width:200px;">
+     <div class="copy">
+      <strong>
+       <a href="https://www.researchgate.net/profile/Andrey_Nechesov" style="color:white;" target="_blank">
+        Andrey Nechesov
+       </a>
+      </strong>
+      ©
+      <strong>
+       2018
+      </strong>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+   (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47860022 = new Ya.Metrika({
+                    id:47860022,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript>
+   <div>
+    <img alt="" src="https://mc.yandex.ru/watch/47860022" style="position:absolute; left:-9999px;"/>
+   </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114923302-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114923302-1');
+  </script>
+ </body>
+</html>

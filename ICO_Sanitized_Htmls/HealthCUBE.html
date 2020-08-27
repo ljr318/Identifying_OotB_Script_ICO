@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 ,user-scalable=no" name="viewport"/>
+  <title>
+   HealthCUBE
+  </title>
+  <link href="css/jquery.bxslider.css" type="text/css"/>
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="css/common.css" rel="stylesheet" type="text/css"/>
+  <link href="css/main.css" rel="stylesheet" type="text/css"/>
+  <script src="js/jquery-3.3.1.min.js">
+  </script>
+  <script src="js/jquery.bxslider.js">
+  </script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
+  <script src="https://code.jquery.com/jquery-latest.js">
+  </script>
+  <script type="text/javascript">
+   jQuery(document).ready(function() {			    
+				
+				$('#pop_up').show();
+								
+			});
+			
+			
+			//íì Close ê¸°ë¥
+			function close_pop() {
+			    $('#pop_up').hide();
+			}
+			
+			function close_pop_bitforex(flag) {
+				 $('#pop_up_bitforex').hide();
+			};
+			
+			
+			function close_pop_bitsonic(flag) {				 
+				 $('#pop_up_bitsonic').hide();
+				 $('#pop_up_bitforex').hide();
+			};
+			
+			
+			$(function(){
+				$(window).on("scroll", function(){
+				/*
+					if($(window).scrollTop()>0.5){
+						$("#header").addClass("active");
+						$(".navbar_ul li").css("color","#222222");
+					} else{
+						$("header").removeClass("active");  
+						$(".navbar_ul li").css("color","white");
+					}
+				*/
+				})
+			});
+            $(function(){
+               $("#popOpenBtn1").click(function(){
+                  $("#modal1").hide();
+               });
+                  $("#cancel1").click(function(){
+                     $("#modal1").hide();
+                  });
+            });
+            $(function(){
+               $("#popOpenBtn2").click(function(){
+                  $("#modal2").hide();
+               });
+                $("#cancel2").click(function(){
+                   $("#modal2").hide();
+                });
+            });
+            $(function(){
+               $("#videoBtn").click(function(){
+                  $("#modal3").hide();
+               });
+                $("#cancel3").click(function(){
+                   $("#modal3").hide();
+                });
+            });
+            $(function(){
+				$("#checklabel").click(function(){
+					$(".navbar").toggle(function(){
+					});
+				});
+			});
+  </script>
+  <style>
+   /* DIRECTION CONTROLS (NEXT / PREV) */
+            #token .bx-prev {
+              left: 0px;
+              position:absolute;
+              background-image:url(images/token_prev.png);
+              width:30px;
+              height:30px;
+              color:red;
+              background-repeat:no-repeat;
+              background-size:contain;
+              text-indent:-10000px;
+              color:rgba(0,0,0,0);
+            }
+
+            #token .bx-next {
+              left: 40px;
+              position:absolute;
+              background-image:url(images/token_next.png);
+              width:30px;
+              height:30px;
+              background-repeat:no-repeat;
+              background-size:contain;
+              text-indent:-10000px;
+              color:rgba(0,0,0,0);
+            }
+  </style>
+ </head>
+ <body>
+  <div id="wrap">
+   <!-- popup_frame-->
+   <div class="pop" id="pop_up">
+    <div class="popup_frame">
+     <div class="pop_content">
+      <img alt="" src="images/BitForex_kor.JPG"/>
+      <div class="close_btn" onclick="close_pop();">
+       <span onclick="close_pop();" style="color: white;">
+        <img alt="" src="images/pop_close.png"/>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- popup_frame
+			<div id="pop_up_bitforex" class="pop">			
+			  <div class="popup_frame" style="width: 75%;min-width: 360px;max-width:920px;">
+				<div class="pop_content">
+					<img src="images/pop_bitforex.png" alt="">					
+				<div class="close_btn" onclick="close_pop_bitforex();"><span onclick="close_pop_bitforex();" style="color: white;"><img src="images/pop_close.png" alt=""></span></div>
+				</div>
+			  </div>
+			</div>
+				-->
+   <!-- popup_frame
+			<div id="pop_up_bitsonic" class="pop">
+			  <div class="popup_frame" style="width: 75%;min-width: 360px;max-width:920px;">
+				<div class="pop_content">
+					<a href="https://bitsonic.co.kr/easybuy/detail/hcc" target="_blank">
+					<img src="images/pop_bitsonic.png" alt=""></a>
+
+				<div class="close_btn" onclick="close_pop_bitsonic();"><span onclick="close_pop_bitsonic();" style="color: white;"><img src="images/pop_close.png" alt=""></span></div>
+				</div>
+			  </div>
+			 </div>
+			  -->
+   <!-- popup_frame
+			<div id="pop_up_bonus" class="pop">
+			  <div class="popup_frame" style="width: 76%;min-width: 360px;max-width:920px;">
+				<div class="pop_content">
+					<img src="images/pop_hcbonus.png" alt="">					
+				<div class="close_btn" onclick="close_pop_bonus();"><span onclick="close_pop_bonus();" style="color: white;"><img src="images/pop_close.png" alt=""></span></div>
+				</div>
+			  </div>
+			  </div>
+			  -->
+   <header id="header">
+    <div id="main_nav">
+     <div class="inner">
+      <div class="logo">
+       <a href="index.html">
+        <img alt="" src="images/scroll_logo.png"/>
+       </a>
+      </div>
+      <!--.logo-->
+      <input id="checkbtn" type="checkbox"/>
+      <label for="checkbtn" id="checklabel">
+       <img alt="" src="images/hamburger.png" width="25px"/>
+      </label>
+      <div class="navbar">
+       <ul class="navbar_ul">
+        <li>
+         <a href="index.html">
+          Home
+         </a>
+        </li>
+        <li>
+         <a href="#healthcube">
+          HealthCUBE
+         </a>
+        </li>
+        <li>
+         <a href="#Blockchain">
+          Blockchain
+         </a>
+        </li>
+        <li>
+         <a href="#token">
+          Token
+         </a>
+        </li>
+        <li>
+         <a href="#team">
+          Expert
+         </a>
+        </li>
+        <li>
+         <a href="#roadmap">
+          Future
+         </a>
+        </li>
+        <li>
+         <a href="https://t.me/hcccum" target="_blank">
+          <img alt="" src="images/telegram.png" width="30px;"/>
+         </a>
+        </li>
+        <!--<li><a href="https://open.kakao.com/o/gJzU2uub" target="_blank"><img src="images/kakaotalk.png" alt="" width="30px;"></a></li>-->
+        <li>
+         <a href="http://www.healthcube.io/index_en.html" target="_blank">
+          English
+         </a>
+        </li>
+       </ul>
+       <!--.navbar_ul-->
+      </div>
+      <!--.navbar-->
+     </div>
+     <!--.inner-->
+    </div>
+    <!--#main_nav-->
+   </header>
+   <!--#header-->
+   <section id="mainVisual">
+    <div class="inner">
+     <p>
+      HealthCUBEë Blockchain ê¸°ë°ì
+      <br/>
+      ê°ì¸ ë§ì¶¤í ê±´ê°ê´ë¦¬ íë«í¼ ìë¹ì¤ë¥¼ ì§í¥í©ëë¤.
+     </p>
+     <div class="download">
+      <a href="í¬ì¤íë¸_ë°±ì_v2.0.pdf" target="_blank">
+       <img alt="" src="images/whitepaper.png"/>
+       White Paper
+      </a>
+      <a href="í¬ì¤íë¸_ì¬ìê³íì_v2.0.pdf" style="margin-right: 0;" target="_blank">
+       <img alt="" src="images/businessplan.png"/>
+       Business Plan
+      </a>
+     </div>
+     <!--.download-->
+     <div class="notice">
+      <a href="https://www.gadgetmatch.com/gadgetmatch-awards-best-of-computex-2019/" target="_blank">
+       <div class="news news1">
+        <div class="news_box">
+         <img alt="" src="images/news1.png"/>
+        </div>
+        <div class="title">
+         BEST OF COMPUTEX 2019
+         <br/>
+         <span class="subTitle">
+          ì¸ë¡ ê¸°ìê° ì ì í BEST OF COMPUTEX
+         </span>
+        </div>
+        <!--.title-->
+       </div>
+       <!--.news-->
+      </a>
+      <a href="https://www.computextaipei.com.tw/en_US/innprize/info.html?id=D70275FC69B144CA&amp;sFuncID=55153903F6076CFFD0636733C6861689" target="_blank">
+       <div class="news news2">
+        <div class="news_box">
+         <img alt="" src="images/news2.png"/>
+        </div>
+        <div class="title" style="font-size: 0.95rem;">
+         DESIGN&amp;INNOVATION AWARDS 2019 ìì
+        </div>
+        <!--.title-->
+       </div>
+       <!--.news-->
+      </a>
+      <a href="https://www.gevme.com/sites/iot-asia-2018-clone-old/trailblazer-award" target="_blank">
+       <div class="news news3">
+        <div class="news_box">
+         <img alt="" src="images/news3.png"/>
+        </div>
+        <div class="title">
+         IoT Asia 2018 Trailblazer innovation Award
+         <br/>
+         <span class="subTitle">
+          íêµ­ê¸°ì ìµì´ IoT ëììì
+         </span>
+        </div>
+        <!--.title-->
+       </div>
+       <!--.news-->
+      </a>
+      <a href="http://m.aving.net/global-news-aving?a_num=1384033" target="_blank">
+       <div class="news last_news">
+        <div class="news_box">
+         <img alt="" src="images/news4.png"/>
+        </div>
+        <div class="title">
+         BEST OF MIK MWC 2018
+        </div>
+        <!--.title-->
+       </div>
+       <!--.news-->
+      </a>
+     </div>
+     <!--.notice-->
+    </div>
+    <!--.inner-->
+   </section>
+   <!--#mainVisual-->
+   <section id="healthcube">
+    <div class="inner">
+     <h2>
+      HealthCUBE ìê°
+     </h2>
+     <div class="about">
+      <div class="about_img">
+       <img alt="" src="images/about.png"/>
+      </div>
+      <div class="text_frame">
+       <h2>
+        About HealthCUBE
+       </h2>
+       <p>
+        ê°ì ììì IoT í¬ì¤ì¼ì´ ê¸°ê¸°ë¤ì íì©í ê±´ê°ì²´í¬ë¶í° ì¸ê³µì§ë¥ì ì´ì©í ê±´ê° ë¶ì, ì¬íê´ ì§íìì 75% ìë°©, ëì¡¸ì¤ ì§í, ì¬ê·¼ê²½ì, ë¶ì ë§¥ ë± ì§ë³ ìì¸¡ ë° ì§ë¨ ì¨ë¼ì¸ ì±ëì íµí ìë£ì ë¬¸ê°ì ìê²©ì§ë£ ë° ë³ì ë°©ë¬¸ ì§ë£ì ì´ë¥´ê¸°ê¹ì§ ê°ì¸ì ê±´ê°ê´ë¦¬ì íìí ìë¹ì¤ë¥¼ ì ê³µíë ì¸ê³µì§ë¥ ê¸°ë°ì ë§ì¶¤í í¬ì¤ì¼ì´ íë«í¼ ìë¹ì¤
+       </p>
+      </div>
+      <!--.text_frame-->
+      <hr/>
+      <div class="more more1" id="popOpenBtn1">
+       ìì¸íë³´ê¸°
+      </div>
+      <div id="modal1">
+       <h3>
+        ì¬ì ìí ì²´ê³
+       </h3>
+       <button id="cancel1">
+        ×
+       </button>
+       <div class="modal_img_box">
+        <img alt="" src="images/more1.png"/>
+       </div>
+       <h3>
+        GLOBAL STRATEGY
+       </h3>
+       <div class="modal_img_box">
+        <img alt="" src="images/more1_1.png"/>
+       </div>
+      </div>
+      <!--#modal1-->
+     </div>
+     <!--.about-->
+     <div class="key">
+      <h2>
+       3 KEY SOLUTIONS
+      </h2>
+      <div class="key_img">
+       <img alt="" src="images/3key.png"/>
+      </div>
+      <!--.3key_img-->
+     </div>
+     <!--.3key-->
+     <div class="bigdata">
+      <h2>
+       BIGDATA&amp;AI
+      </h2>
+      <p>
+       Smart Devicesë¡ ì¸¡ì í ê°ì¸ë³ ìì²´ì í¸ë¥¼ Cloud Serverì BIGDATAí íì¬ ê°ì¸ì´ ê±´ê° ì¸¡ì  ì AI/Deep Learning Engineì¼ë¡ ì§ë³ ìì¸¡Â·ì§ë¨íì¬ ìë ¤ì¤
+      </p>
+      <div class="bigdata_img">
+       <img alt="" src="images/bigdata.png"/>
+      </div>
+      <!--.bigdata_img-->
+     </div>
+     <!--.bigdata-->
+     <div class="ecosystem">
+      <h2>
+       ECOSYSTEM
+      </h2>
+      <div class="ecosystem_img">
+       <img alt="" src="images/ecosystem.png"/>
+      </div>
+      <div class="foot">
+       *PHR: Personal Health Record
+      </div>
+      <div class="more more2" id="popOpenBtn2">
+       ìì¸íë³´ê¸°
+      </div>
+      <div id="modal2">
+       <h3>
+        HealthCUBE Token Ecosystem
+       </h3>
+       <button id="cancel2">
+        ×
+       </button>
+       <div class="modal_img_box">
+        <img alt="" src="images/more2.png"/>
+       </div>
+      </div>
+      <!--#modal2-->
+     </div>
+     <!--.ecosystem-->
+    </div>
+   </section>
+   <!--#healthcube-->
+   <section id="value">
+    <div class="inner">
+     <h2>
+      4 VALUE MAKERS
+     </h2>
+     <p>
+      HealthCUBE ìíê³ë ë¤ìì 4ê°ì§ ê°ì¹ì°½ì¶ì ê·¹ëíí¨ì¼ë¡ì¨ ëª¨ë  ì°¸ì¬ìê° íë³µí  íë«í¼ ìë¹ì¤ê° ë  ê²ì
+     </p>
+     <div class="value_img">
+      <img alt="" src="images/4m.png"/>
+     </div>
+    </div>
+   </section>
+   <!--#4m-->
+   <section id="device">
+    <div class="inner">
+     <h2>
+      HealthCUBE ê°ììëë¦¬ì¤ ìì
+     </h2>
+     <div class="video_frame" id="videoBtn">
+      <img alt="" src="images/device.png"/>
+     </div>
+     <!--.video_frame-->
+     <div class="text_frame">
+      <p>
+       ê°ì ìì HealthCUBE ê³ ê°ì´ Smart Deviceë¡ ì¬ì¥ìíë¥¼ ì¸¡ì íë©´ ì¸ê³µì§ë¥(AI)ì ìí´ BIGDATAë¥¼ ë¶ìíì¬ ì§ë¨íë©°, ê°ì¸ ë§ì¶¤í ê±´ê°ê´ë¦¬ë¥¼ í  ì ìëë¡ ëìì£¼ë ê°ì ìëë¦¬ì¤
+      </p>
+     </div>
+     <!--.text_frame-->
+     <div id="modal3">
+      <button id="cancel3">
+       ×
+      </button>
+      <div class="video_box">
+       <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="video" frameborder="0" height="360" src="https://www.youtube.com/embed/HARc5iGU0n8" width="640">
+       </iframe>
+      </div>
+     </div>
+     <!--#modal3-->
+    </div>
+   </section>
+   <!--#device-->
+   <section id="Blockchain">
+    <div class="inner">
+     <h2>
+      BLOCKCHAIN
+     </h2>
+     <p>
+      HealthCUBEì íµì¬ ê°ì¹ ì¤íì íìí í¬ì¤ì¼ì´ ë¹ë°ì´í°ë¥¼ í©ë¦¬ì ì´ê³  ìì íê² ê´ë¦¬íê³ , ê·¸ ì ë³´ì ìì ê¶ì íì ë³¸ì¸ìê² ëë ¤ì£¼ê¸° ìí´ Blockchain ê¸°ì  íì©
+     </p>
+     <div class="blockchain_content">
+      <div class="platform">
+       <div class="platform_img blockchain_img">
+        <img alt="" src="images/platform.png"/>
+       </div>
+       <div class="content_title">
+        HealthCUBE PHR Platform
+       </div>
+      </div>
+      <!--.platform-->
+      <div class="node">
+       <div class="node_img blockchain_img">
+        <img alt="" src="images/node.png"/>
+       </div>
+       <div class="content_title">
+        HealthCUBE Blockchain ë¸ë êµ¬ì±ë
+       </div>
+      </div>
+      <!--.platform-->
+     </div>
+     <!--.blockchain_content-->
+     <div class="role">
+      <h2>
+       Blockchain ê¸°ì ì ì­í
+      </h2>
+      <div class="role_frame" style="background-image: url('images/blockchain1.png'); background-size: cover;">
+       <div class="role_box">
+        <img alt="" src="images/blockchain_icon1.png"/>
+       </div>
+       <div class="role_title">
+        Blockchain ê¸°ë°ì¼ë¡
+        <br/>
+        ê°ì¸ ìë£ ë°ì´í° ì ì¥ ê´ë¦¬
+       </div>
+       <span>
+        íìê° ìë£ ë°ì´í° ìì
+        <br/>
+        ë°ì´í° ì ë¢°ì± íë³´(ìë³ì¡° ë°©ì§)
+        <br/>
+        ìí¸ ì´ì©ì±, ë³´ìì± íë³´
+       </span>
+      </div>
+      <!--.role_frame-->
+      <div class="role_frame" style="background-image: url('images/blockchain2.png'); background-size: cover;">
+       <div class="role_box">
+        <img alt="" src="images/blockchain_icon2.png"/>
+       </div>
+       <div class="role_title role_title2">
+        ê±´ê° íëì ë³í ì ë
+       </div>
+       <span>
+        ìí¸íí ì¸ì¼í°ë¸ë¥¼ íµí íëë³í ì ë
+       </span>
+      </div>
+      <!--.role_frame-->
+      <div class="role_frame role3" style="background-image: url('images/blockchain3.png'); background-size: cover;">
+       <div class="role_box">
+        <img alt="" src="images/blockchain_icon3.png"/>
+       </div>
+       <div class="role_title">
+        í ì¤ìí ë°©ìì¼ë¡ ìë£ ë°ì´í°ì ì£¼ì¸ì¸
+        <br/>
+        íì ë³¸ì¸ì´ ê±°ë ê²°ì 
+       </div>
+       <span>
+        íì ìì ì´ ë°ì´í° ì¬ì©ì ëí´ ê²°ì íê³  ììµë ì°½ì¶
+        <br/>
+        Smart Contract
+       </span>
+      </div>
+      <!--.role_frame-->
+     </div>
+     <!--.role-->
+    </div>
+   </section>
+   <!--#Blockchain-->
+   <seciton id="token">
+    <div class="inner">
+     <h2>
+      TOKEN
+     </h2>
+     <div class="token_slide">
+      <div class="token_cont2">
+       <img src="images/distribution1.png"/>
+      </div>
+      <!--.token_cont2-->
+      <div class="token_cont1">
+       <img src="images/budget1.png"/>
+      </div>
+     </div>
+    </div>
+   </seciton>
+   <!--#token-->
+   <script>
+    $(document).ready(function(){
+              $('.token_slide').bxSlider({
+                  auto:true,
+                  autoControls: false,
+                  stopAutoOnClick: false,
+                  pager: false,
+                  mode: 'fade'
+              });
+            });
+   </script>
+   <section id="team">
+    <div class="inner">
+     <h2>
+      TEAM
+     </h2>
+     <div class="profile profile1">
+      <img alt="" src="images/team1.png"/>
+      <div>
+       ì´ì°ì¤
+      </div>
+      <div>
+       FOUNDER
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profile profile2">
+      <img alt="" src="images/team2.png"/>
+      <div>
+       ì´ë§ì°¬
+      </div>
+      <div>
+       CSO
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profile profile3">
+      <img alt="" src="images/team3.png"/>
+      <div>
+       ì¡°ì°ì²
+      </div>
+      <div>
+       COO/CFO
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profile profile4">
+      <img alt="" src="images/team4.png"/>
+      <div>
+       ê¹ì¬ì©
+      </div>
+      <div>
+       CTO
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profile profile5">
+      <img alt="" src="images/team5.png"/>
+      <div>
+       ì´ì í¸
+      </div>
+      <div>
+       GLOBAL BIZ
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profilelo profile9">
+      <img alt="" src="images/team9.png"/>
+      <div>
+       ì¤ìë¹
+      </div>
+      <div>
+       BLOCKCHAIN ARCHITECTURE
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profilelo profile6">
+      <img alt="" src="images/team6.png"/>
+      <div>
+       ì¡ìë¯¼
+      </div>
+      <div>
+       SMART ALGORITHM
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profilelo profile7">
+      <img alt="" src="images/team7.png"/>
+      <div>
+       ê¹ì£¼í
+      </div>
+      <div>
+       SMART DEVICE
+      </div>
+     </div>
+     <div class="profilelo profile10">
+      <img alt="" src="images/team10.png"/>
+      <div>
+       í©ë°ì
+      </div>
+      <div>
+       SMART APPLICATION
+      </div>
+     </div>
+     <!--.profile-->
+     <div class="profilelo profile8">
+      <img alt="" src="images/team8.png"/>
+      <div>
+       ê¹ì±ë¯¼
+      </div>
+      <div>
+       RULE ENGINE
+      </div>
+     </div>
+     <!--.profile-->
+    </div>
+   </section>
+   <!--#team-->
+   <section id="advisor">
+    <div class="inner">
+     <h2>
+      ADVISOR
+     </h2>
+     <div class="advisor_rolling">
+      <div class="profile">
+       <img alt="" src="images/advisor1.png"/>
+       <div>
+        ì¡ì¢ë¯¼
+       </div>
+       <div>
+        MEDICAL EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor2.png"/>
+       <div>
+        ê¹ì§ë°
+       </div>
+       <div>
+        MEDICAL EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor3.png"/>
+       <div>
+        ì´ê²½ì£¼
+       </div>
+       <div>
+        MEDICAL EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor4.png"/>
+       <div>
+        ë¸ê²½ì²
+       </div>
+       <div>
+        BLOCKCHAIN EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor5.png"/>
+       <div>
+        ììì©
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor10.png"/>
+       <div>
+        ì¥ìµì 
+       </div>
+       <div>
+        IT EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor6.png"/>
+       <div>
+        ìì¼ê·
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor7.png"/>
+       <div>
+        ê³ ì¢ê´
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor8.png"/>
+       <div>
+        ë³ì¬ì 
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor9.png"/>
+       <div>
+        ì¥ì¤ì
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor1.png"/>
+       <div>
+        ì¡ì¢ë¯¼
+       </div>
+       <div>
+        MEDICAL EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor2.png"/>
+       <div>
+        ê¹ì§ë°
+       </div>
+       <div>
+        MEDICAL EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor3.png"/>
+       <div>
+        ì´ê²½ì£¼
+       </div>
+       <div>
+        MEDICAL EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor4.png"/>
+       <div>
+        ë¸ê²½ì²
+       </div>
+       <div>
+        BLOCKCHAIN EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor5.png"/>
+       <div>
+        ììì©
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor10.png"/>
+       <div>
+        ì¥ ìµ ì 
+       </div>
+       <div>
+        IT EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+      <div class="profile">
+       <img alt="" src="images/advisor6.png"/>
+       <div>
+        ìì¼ê·
+       </div>
+       <div>
+        INDUSTRY EXPERT
+       </div>
+      </div>
+      <!--.profile-->
+     </div>
+    </div>
+   </section>
+   <!--#advisor-->
+   <section id="partner">
+    <div class="inner">
+     <h2>
+      PARTNERS
+     </h2>
+     <div class="partner_img">
+      <img alt="" src="images/partners.png"/>
+     </div>
+    </div>
+   </section>
+   <!--#partner-->
+   <section id="roadmap">
+    <div class="inner">
+     <h2>
+      BUSINESS ROADMAP
+     </h2>
+     <div class="roadmap_img">
+      <img alt="" src="images/roadmap.png"/>
+     </div>
+    </div>
+   </section>
+   <!--#roadmap-->
+   <section id="milestone">
+    <div class="inner">
+     <h2>
+      MILESTONE
+     </h2>
+     <p>
+      HealthCUBE íë«í¼ êµ¬ì¶ ë° Global Operation íì°ì íµí Global í¬ì¤ì¼ì´ ìíê³ë¥¼ êµ¬ì¶íê³ ì í¨
+     </p>
+     <div class="milestone_img">
+      <img alt="" src="images/milestone.png"/>
+     </div>
+    </div>
+   </section>
+   <!--#milestone-->
+   <footer id="footer">
+    <div class="inner">
+     <div class="footer_content">
+      <div class="footer_logo">
+       <img alt="" src="images/footer_logo.png"/>
+      </div>
+      <div class="footer_p1">
+       HealthCUBE PTE. LTD.  11 Collyer Quay #11-06 The Arcade, Singapore 049317
+      </div>
+      <div class="footer_p2">
+       CONTACT US contact@healthcube.io, Copyright Â©2019 HealthCUBE PTE. LTD. All right reserved.
+      </div>
+     </div>
+    </div>
+   </footer>
+   <!--#footer-->
+  </div>
+  <!--#wrap-->
+ </body>
+</html>

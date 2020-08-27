@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>
+   Registrant WHOIS contact information verification
+  </title>
+  <link href="bootstrap.css" rel="STYLESHEET" type="text/css"/>
+  <script src="//cdn.optimizely.com/js/711892001.js">
+  </script>
+  <style>
+   BODY {background:#202020}
+        .wrapper {background:#FFF;padding:20px;-webkit-border-radius:5px;border-radius:5px;margin-bottom:15px}
+        H1, H2 {font-weight:normal;margin-top:25px}
+        .indent {padding-left:20px}
+        .option {display:inline-block}
+        .option:before, .option:after {border-top: 1px solid #CCC;display: block;height: 1px;content: " ";width: 36%;position: absolute;left: 0;top: .8em}
+        .option:after {right:0;left:auto}
+  </style>
+  <script type="text/javascript">
+   function showSelectedDiv() {
+
+            var value = document.getElementById("selCountry").value;
+
+            showDiv(value);
+        }
+
+        function showDiv(type) {            
+            document.getElementById("hdnLanguage").value = type;
+
+            if (document.getElementById("pnlStatus1") != null) {
+                var divs = document.getElementsByTagName("div");
+                for (var i = 0; i < divs.length; i++) {
+                    if (divs[i].getAttribute("id") != null) {
+                        if (divs[i].getAttribute("id").indexOf(type + "1z1") != -1) {
+                            divs[i].style.display = 'block';                            
+                        }
+                        else {
+                            if (divs[i].getAttribute("id").indexOf("1z1") != -1) {
+                                divs[i].style.display = 'none';
+                            }
+                        }
+                        if (divs[i].getAttribute("id").indexOf(type + "2z2") != -1) {
+                            divs[i].style.display = 'none';
+                        }
+                    }
+                }                       
+            }
+            else if (document.getElementById("pnlStatus2") != null) {
+                var divs = document.getElementsByTagName("div");
+                for (var i = 0; i < divs.length; i++) {
+                    if (divs[i].getAttribute("id") != null) {
+                        if (divs[i].getAttribute("id").indexOf(type + "2z2") != -1) {
+                            divs[i].style.display = 'block';
+                        }
+                        else {
+                            if (divs[i].getAttribute("id").indexOf("2z2") != -1) {
+                                divs[i].style.display = 'none';
+                            }
+                        }
+                        if (divs[i].getAttribute("id").indexOf(type + "1z1") != -1) {
+                            divs[i].style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            switch (type) {
+                case "English":                    
+                    document.getElementById("btnSubmit").value = "Resend Verification Email";
+                    document.getElementById("Captcha").placeholder = "Enter the numbers above seen";
+                    if (document.getElementById("lblMessage") != null) {                        
+                        document.getElementById("lblMessage").innerHTML = "Looks like you missed something - Captcha code is required.";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Looks like you missed something - Captcha code does not match.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Notification Email has been resent to the email address populated in your WHOIS data.") {
+                        document.getElementById("divMessage").innerHTML = "Notification Email has been resent to the email address populated in your WHOIS data.";
+                    }
+                    break;
+                case "German":                    
+                    document.getElementById("btnSubmit").value = "Eine neue  Benachrichtigungs-E-Mail senden";
+                    document.getElementById("Captcha").placeholder = "Geben Sie die Zahlen oben gesehen";
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "Sie haben etwas übersehen  - Captcha-Code ist erforderlich.";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Sie haben etwas übersehen - Captcha-Code passt nicht.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Eine Benachrichtigungs-E-Mail wurde erneut an die bereits in Ihren WHOIS-Daten eingetragene E-Mail-Adresse gesandt.") {
+                        document.getElementById("divMessage").innerHTML = "Eine Benachrichtigungs-E-Mail wurde erneut an die bereits in Ihren WHOIS-Daten eingetragene E-Mail-Adresse gesandt.";
+                    }
+                    break;
+                case "Spanish":
+                    document.getElementById("btnSubmit").value = "Reenviar correo electrónico de verificación";
+                    document.getElementById("Captcha").placeholder = "Introduzca los números de arriba visto";
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "Pareciera que le falta algo - Se requiere código Captcha.";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Parece que te has perdido algo - código no coincide Captcha.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Se ha reenviado una notificación por correo electrónico a la dirección de correo especificada en los datos WHOIS.") {
+                        document.getElementById("divMessage").innerHTML = "Se ha reenviado una notificación por correo electrónico a la dirección de correo especificada en los datos WHOIS.";
+                    }
+                    break;
+                case "French":
+                    // resend verification email text
+                    document.getElementById("btnSubmit").value = "Renvoi du courriel de vérification";
+                    document.getElementById("Captcha").placeholder = "Entrez les numéros vus plus haut";
+                    // Captcha is required text
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "Il semble que des informations soient manquantes. Code Captcha nécessaire.";
+                    }
+                    //Captcha does not match text
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "it que vous avez manqué quelque chose - code Captcha ne correspond pas.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Un courriel de notification a de nouveau été envoyé à l'adresse renseignée dans les données WHOIS.") {
+                        document.getElementById("divMessage").innerHTML = "Un courriel de notification a de nouveau été envoyé à l'adresse renseignée dans les données WHOIS.";
+                    }
+                    break;
+                case "Portuguese":
+                    // resend verification email text
+                    document.getElementById("btnSubmit").value = "Reenviar email de verificação";
+                    document.getElementById("Captcha").placeholder = "Digite os números acima visto";
+                    // Captcha is required text
+                    if (document.getElementById("divMessage") != null) {
+                        document.getElementById("divMessage").innerHTML = "Parece que você se esqueceu de algo - O código Captcha é obrigatório.";
+                    }
+                    //Captcha does not match text
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Parece que você perdeu alguma coisa - Captcha não corresponde.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Um email de notificação foi reenviado para o endereço de email preenchido nos dados WHOIS.") {
+                        document.getElementById("divMessage").innerHTML = "Um email de notificação foi reenviado para o endereço de email preenchido nos dados WHOIS.";
+                    }
+                    break;
+                case "Norwegian":
+                    // resend verification email text
+                    document.getElementById("btnSubmit").value = "Send e-post med bekreftelse på nytt";
+                    document.getElementById("Captcha").placeholder = "Skriv inn tallene sett ovenfor";
+                    // Captcha is required text
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "Ser ut som om noe mangler - Captcha-kode er påkrevd.";
+                    }
+                    //Captcha does not match text
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Ser ut som du gikk glipp av noe - Captcha-kode samsvarer ikke.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "E-post med varsel har blitt sendt på nytt til e-postadressen fylt ut i dine WHOIS-data.") {
+                        document.getElementById("divMessage").innerHTML = "E-post med varsel har blitt sendt på nytt til e-postadressen fylt ut i dine WHOIS-data.";
+                    }
+                    break;
+                case "Chinese":
+                    // resend verification email text
+                    document.getElementById("btnSubmit").value = "重新发送验证电子邮件";
+                    document.getElementById("Captcha").placeholder = "输入上面见到的数字";
+                    // Captcha is required text
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "您似乎遗漏了一些事项：验证码为必填。";
+                    }
+                    //Captcha does not match text
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "看起来你错过了什么 - 图形验证码不匹配。";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "通知电子邮件已重新发送至您 WHOIS 数据中所填写的电子邮件地址。") {
+                        document.getElementById("divMessage").innerHTML = "通知电子邮件已重新发送至您 WHOIS 数据中所填写的电子邮件地址。";
+                    }
+                    break;
+                case "Japanese":                    
+                    document.getElementById("btnSubmit").value = "確認電子メールの再送";
+                    document.getElementById("Captcha").placeholder = "上で見た数字を入力してください";
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "何か欠けているようです。Captchaコードが必要です。";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "何か欠けているようです。Captchaコードが一致しません";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "電子メールの通知がWHOISデータに入力された電子メールアドレスに再送されました。") {
+                        document.getElementById("divMessage").innerHTML = "電子メールの通知がWHOISデータに入力された電子メールアドレスに再送されました。";
+                    }
+                    break;
+                case "Poland":
+                    document.getElementById("btnSubmit").value = "Wyślij ponownie email weryfikacyjny";
+                    document.getElementById("Captcha").placeholder = "Wpisz znaki powyżej z uwzględnieniem ich wielkości";
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "Wygląda na to, że coś przegapiłem - wymagany jest kod CAPTCHA.";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Wygląda na to, że coś przegapiłem - kod Captcha nie pasuje.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Email weryfikacyjny został przesłany ponownie na adres e-mail widniejący w bazie WHOIS.") {
+                        document.getElementById("divMessage").innerHTML = "Email weryfikacyjny został przesłany ponownie na adres e-mail widniejący w bazie WHOIS.";
+                    }
+                    break;
+                case "Italian":
+                    // resend vefication email
+                    document.getElementById("btnSubmit").value = "Nuovo invio dell'email di verifica";
+                    // enter the numbers seen above
+                    document.getElementById("Captcha").placeholder = "Inserisci i numeri indicati sopra";
+                    if (document.getElementById("lblMessage") != null) {
+                        // Looks like you missed something - Captcha code is required.
+                        document.getElementById("lblMessage").innerHTML = "Il codice Captcha è obbligatorio";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        // Looks like you missed something - Captcha code does not match.
+                        document.getElementById("lblPostMessage").innerHTML = "Il codice Captcha non corrisponde";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "L'email di notifica è stata inviata di nuovo all'indirizzo email presente nei dati WHOIS.") {
+                        // Notification Email has been resent to the email address populated in your WHOIS data.
+                        document.getElementById("divMessage").innerHTML = "L'email di notifica è stata inviata di nuovo all'indirizzo email presente nei dati WHOIS.";
+                    }
+                    break;
+                default:
+                    document.getElementById("btnSubmit").value = "Resend Verification Email";
+                    document.getElementById("Captcha").placeholder = "Enter the numbers seen above";
+                    if (document.getElementById("lblMessage") != null) {
+                        document.getElementById("lblMessage").innerHTML = "Looks like you missed something - Captcha code is required.";
+                    }
+                    if (document.getElementById("lblPostMessage") != null) {
+                        document.getElementById("lblPostMessage").innerHTML = "Looks like you missed something - Captcha code does not match.";
+                    }
+                    if (document.getElementById("divMessage") != null && document.getElementById("divMessage").innerHTML != "Notification Email has been resent to the email address populated in your WHOIS data.") {
+                        document.getElementById("divMessage").innerHTML = "Notification Email has been resent to the email address populated in your WHOIS data.";
+                    }
+                    break;
+            }                        
+        }
+
+        function resetMessages() {            
+            if (document.getElementById("lblPostMessage") != null) {                
+                document.getElementById("lblPostMessage").style.display = "none";
+            }
+            if (document.getElementById("divMessage") != null) {
+                document.getElementById("divMessage").style.display = "none";
+            }
+            if (document.getElementById("lblMessage") != null) {
+                document.getElementById("lblMessage").style.display = "none";
+            }            
+        }
+
+        function checkCaptchaEntered() {            
+            resetMessages();
+            if (document.getElementById("Captcha").value.length > 7 || document.getElementById("Captcha").value.length == 0) {                
+                var type = document.getElementById("hdnLanguage").value             
+                document.getElementById("lblMessage").style.display = "block";             
+                switch (type) {
+                    case "English":                        
+                        document.getElementById("lblMessage").innerHTML = "Looks like you missed something - Captcha code is required.";                        
+                        break;
+                    case "German":
+                        document.getElementById("lblMessage").innerHTML = "Sie haben etwas übersehen  - Captcha-Code ist erforderlich.";                        
+                        break;
+                    case "Spanish":
+                        document.getElementById("lblMessage").innerHTML = "Pareciera que le falta algo - Se requiere código Captcha.";
+                        break;
+                    case "French":
+                        document.getElementById("lblMessage").innerHTML = "Il semble que des informations soient manquantes. Code Captcha nécessaire.";
+                        break;
+                    case "Portuguese":
+                        document.getElementById("lblMessage").innerHTML = "Parece que você se esqueceu de algo - O código Captcha é obrigatório.";
+                        break;
+                    case "Norwegian":
+                        document.getElementById("lblMessage").innerHTML = "Ser ut som om noe mangler - Captcha-kode er påkrevd.";
+                        break;
+                    case "Chinese":
+                        document.getElementById("lblMessage").innerHTML = "您似乎遗漏了一些事项：验证码为必填。";
+                        break;
+                    case "Japanese":
+                        document.getElementById("lblMessage").innerHTML = "何か欠けているようです。Captchaコードが必要です。";
+                        break;
+                    case "Poland":
+                        document.getElementById("lblMessage").innerHTML = "Wygląda na to, że coś przegapiłem - wymagany jest kod CAPTCHA.";
+                        break;
+                    case "Italian":
+                        // Looks like you missed something - Captcha code is required.
+                        document.getElementById("lblMessage").innerHTML = "Il codice Captcha è obbligatorio";
+                        break;
+                    default:
+                        document.getElementById("lblMessage").innerHTML = "Looks like you missed something - Captcha code is required.";
+                        break;
+                }                
+                document.getElementById("Captcha").style.backgroundColor = "#F2DEDE";
+                return false;
+            }
+            else {
+                resetMessages();
+                return true;
+            }            
+        }
+  </script>
+ </head>
+ <body onload="showDiv(document.getElementById('hdnLanguage').value)">
+  <form action="./" id="form1" method="post">
+   <div class="aspNetHidden">
+    <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="vauKa8Pf1DlD4sR3VLGLHQNuS/m3sALOV0tnB0MNWUQjxNmQHhrHiyVjNowo3GfvClwhWJBIC4t2tCwApofwYohntxhXoSteDmSSb+5yIqIFmYzhnPLuDC/M9S52oyd5hF1CVUc2A1xr0b1BJUz1qVZVwhRHiyuGFGzOdaQaGs8BNCCmjxliXMcUwgigyaTImSxOzTtdZ+C/sFc02teb/y7hBcrxrr1Ca8Oz1WnJMM5bT79vtAmSySUgQYY5knShXgDfNIprTExW5rf8b+nUZW3kVKc="/>
+   </div>
+   <div class="aspNetHidden">
+    <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="CA0B0334"/>
+    <input id="__EVENTVALIDATION" name="__EVENTVALIDATION" type="hidden" value="TVblPhVxp5gu3zdYOObOCAUBqS7HQzjypXzJK76KuWpPy1BAlRAlwVNgF1Tt6Ce2GVYGu+YU52b38ktyjTXMa/z4coEk9A/V3Lo43qjD7vA6Bzgy"/>
+   </div>
+   <div class="container text-right" style="padding:0 0 0 20px">
+    <p style="margin-top:20px">
+     <select class="input-medium" id="selCountry" onchange="showSelectedDiv();">
+      <option selected="" value="English">
+       English
+      </option>
+      <option value="Chinese">
+       简体中文
+      </option>
+      <option value="French">
+       Français
+      </option>
+      <option value="German">
+       Deutsch
+      </option>
+      <option value="Italian">
+       Italiano
+      </option>
+      <option value="Japanese">
+       日本の
+      </option>
+      <option value="Norwegian">
+       Norsk
+      </option>
+      <option value="Poland">
+       Polski
+      </option>
+      <option value="Portuguese">
+       Português
+      </option>
+      <option value="Spanish">
+       Español
+      </option>
+     </select>
+    </p>
+   </div>
+   <div class="container wrapper">
+    <div class="row-fluid">
+     <div class="alert alert-error" id="lblMessage" style="display:none;">
+     </div>
+     <div class="alert alert-error" id="lblPostMessage" style="display:none;">
+     </div>
+     <input id="hdnLanguage" name="hdnLanguage" type="hidden" value="English"/>
+     <div id="pnlStatus2">
+      <div id="divEnglish2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="not verified" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         You have reached a domain that was pending verification per ICANN rules but has since been verified. It may take 24 to 48 hours for the website to come back online.
+        </h2>
+       </div>
+       <p>
+        As of January 1, 2014 the Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) will mandate that all ICANN accredited registrars begin verifying the Registrant WHOIS contact information for all new domain registrations and Registrant contact modifications.
+       </p>
+       <h2>
+        Frequently asked questions
+       </h2>
+       <p>
+        <strong>
+         Why was my domain suspended?
+        </strong>
+        <br/>
+        ICANN requires that the domain registrant's contact information or changes to the registrant's WHOIS information be verified within 15 calendar days. If the data is not verified in this timeframe, ICANN mandates that the website be suspended pending the verification.
+       </p>
+       <p>
+        <strong>
+         How can I remove the suspension on my domain?
+        </strong>
+        <br/>
+        The suspension of the domain will be removed after the WHOIS information is successfully verified. Please update the WHOIS information with complete and accurate contact details through your domain service provider. Once updated you will recieve a new verification email.
+       </p>
+       <p>
+        <strong>
+         Once the suspension is removed, when will my website come back online?
+        </strong>
+        <br/>
+        We estimate it may take 24 to 48 hours for the website to come back online.
+       </p>
+       <p>
+        <strong>
+         Who is ICANN?
+        </strong>
+        <br/>
+        ICANN is responsible for the coordination of the global Internet's systems of unique identifiers and, in particular, ensuring its' stable and secure operation. ICANN maintains policies and specifications for registrars and registrants to abide by.
+       </p>
+       <p>
+        <strong>
+         What is WHOIS?
+        </strong>
+        <br/>
+        WHOIS services provide public access to data on registered domain name holders. Registered Name Holders are required to provide accurate and reliable contact details to their Registrar to update WHOIS data for a Registered Name.
+       </p>
+      </div>
+      <div id="divGerman2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="nicht überprüft" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Sie haben eine Domäne erreicht, deren Überprüfung gemäß der ICANN-Vorschriften noch ausstand, die aber seitdem bestätigt wurde. Es kann 24 bis 48 Stunden dauern, bis die Website wieder online ist.
+        </h2>
+       </div>
+       <p>
+        Ab 1. Januar 2014 sind alle ICANN-zugelassenen Registrierungsstellen gemäß der Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) verpflichtet, die WHOIS-Kontaktdaten aller neuen Domänenregistrierungen, sowie Kontaktänderungen der Registranten zu überprüfen.
+       </p>
+       <h2>
+        Häufig gestellte Fragen
+       </h2>
+       <p>
+        <strong>
+         Warum wurde meine Domäne gesperrt?
+        </strong>
+        <br/>
+        ICANN schreibt vor, dass Kontaktdaten der Registranten von Domänen, oder Änderungen dieser  WHOIS-Daten innerhalb von 15 Tagen überprüft werden müssen. Können die Daten in diesem Zeitraum nicht bestätigt werden, so wird die Website gemäß ICANN bis zur Verifizierung gesperrt.
+       </p>
+       <p>
+        <strong>
+         Wie kann ich die Sperre von meiner Domäne entfernen?
+        </strong>
+        <br/>
+        Die Sperre der Domäne wird entfernt, sobald die WHOIS-Daten erfolgreich bestätigt sind. Bitte aktualisieren Sie über Ihren Dienstanbieter der Domäne die WHOIS-Daten mit vollständigen und genauen Kontaktdaten. Nach der Aktualisierung werden Sie eine neue Verifizierungs-E-Mail erhalten.
+       </p>
+       <p>
+        <strong>
+         Wie lange dauert es nach Aufhebung der Sperre, bis meine Website wieder online ist?
+        </strong>
+        <br/>
+        Wir schätzen, dass es 24 bis 48 Stunden dauern kann, bis die Website wieder online ist.
+       </p>
+       <p>
+        <strong>
+         Wer ist ICANN?
+        </strong>
+        <br/>
+        ICANN ist verantwortlich für die Koordinierung spezifischer Erkennungsmarker der globalen Systeme des Internets, und insbesondere für die Gewährleistung ihrer stabilen und sicheren Funktion. ICANN verwaltet Richtlinien und Spezifikationen, die von Registrierungsstellen und Registranten eingehalten werden müssen.
+       </p>
+       <p>
+        <strong>
+         Was ist WHOIS?
+        </strong>
+        <br/>
+        WHOIS-Dienste bieten Zugang zu den Daten der registrierten Domäneninhaber. Registrierte Domäneninhaber sind verpflichtet, ihren Registrierungsstellen für registrierte Domänennamen genaue und zuverlässige Kontaktdaten zur Aktualisierung der WHOIS-Daten zur Verfügung zu stellen.
+       </p>
+      </div>
+      <div id="divSpanish2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="no verificado" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Usted ha alcanzado un dominio que estaba pendiente por verificación acorde con las normas de ICANN, pero el dominio ya ha sido verificado. El sitio web pudiera tardar de 24 a 48 horas en estar disponible nuevamente en línea.
+        </h2>
+       </div>
+       <p>
+        A partir del 1ero de enero de 2014 la corporación Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) exigirá que todos los registradores acreditados por ICANN comiencen a verificar la información de contacto WHOIS de la persona registrada para todos los registros nuevos de dominios y modificaciones de contacto de la persona registrada.
+       </p>
+       <h2>
+        Preguntas frecuentas
+       </h2>
+       <p>
+        <strong>
+         ¿Por qué mi dominio fue suspendido?
+        </strong>
+        <br/>
+        ICANN exige que la información de contacto de la persona que registra el dominio o cambios a la información WHOIS de la persona registrada sean validados en un plazo de 15 días. Si los datos no se verifican en este lapso de tiempo, ICANN exige que el sitio web sea suspendido en espera de la verificación.
+       </p>
+       <p>
+        <strong>
+         ¿Cómo puedo eliminar la suspensión de mi dominio?
+        </strong>
+        <br/>
+        La suspensión del dominio será levantada una vez que la información WHOIS sea verificada. Por favor actualice la información WHOIS con detalles precisos y completos a través de su proveedor de servicio. Una vez que se actualice, recibirá un nuevo correo electrónico de verificación.
+       </p>
+       <p>
+        <strong>
+         ¿Cuándo estará disponible en línea nuevamente mi sitio web una vez que se levante la suspensión?
+        </strong>
+        <br/>
+        Estimamos que el sitio web pudiera tardar de 24 a 48 horas en estar disponible en línea nuevamente.
+       </p>
+       <p>
+        <strong>
+         ¿Qués es ICANN?
+        </strong>
+        <br/>
+        ICANN es la organización responsable de la coordinación de los identificadores únicos de los sistemas globales de Internet y, en particular, se encarga de asegurar su operación sea segura y estable. ICANN mantiene políticas y especificaciones para su cumplimiento por parte de registradores y registrantes.
+       </p>
+       <p>
+        <strong>
+         ¿Qué es WHOIS?
+        </strong>
+        <br/>
+        Los servicios WHOIS proveen acceso público a los datos de los titulares de nombres de dominio registrados. Los titulares de nombres registrados deberán suministrar información de contacto precisa y fiable a su registrador para actualizar los datos WHOIS de un Nombre Registrado.
+       </p>
+      </div>
+      <div id="divFrench2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="non vérifié" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Vous êtes sur un domaine qui était en attente de vérification conformément aux règles ICANN. Il a depuis été vérifé. 24 à 48 heures peuvent être nécessaires pour que le site soit à nouveau disponible.
+        </h2>
+       </div>
+       <p>
+        À compter du 1er janvier 2014, l'Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) demandera à l'ensemble des bureaux d'enregistrement accrédités par l'ICANN de vérifier les informations de contact WHOIS des titulaires pour tous les nouveaux enregistrements de domaines et toutes les modifications des ces informations.
+       </p>
+       <h2>
+        Foire aux questions
+       </h2>
+       <p>
+        <strong>
+         Pourquoi mon domaine a-t-il été suspendu ?
+        </strong>
+        <br/>
+        L'ICANN exige que les informations de contact du titulaire ou modifications de ses informations WHOIS soient vérifiées dans les 15 jours calendaires. Si les données ne sont pas vérifiées dans le délai imparti, l'ICANN demande la suspension du site dans l'attente de la vérification.
+       </p>
+       <p>
+        <strong>
+         Comment puis-je annuler la suspension de mon domaine ?
+        </strong>
+        <br/>
+        La suspension du domaine sera annulée dès que les informations WHOIS auront effectivement été vérifiées. Veuillez mettre à jour les informations WHOIS en indiquant des coordonnées de contact complètes et précises à votre fournisseur de domaine. Vous recevrez un courriel pour la nouvelle vérification une fois que vous aurez effectué cette mise à jour.
+       </p>
+       <p>
+        <strong>
+         Une fois la suspension annulée, quand mon site Web sera-t-il de nouveau en ligne ?
+        </strong>
+        <br/>
+        Nous estimons que 24 à 48 heures peuvent être nécessaires pour que le site soit à nouveau disponible.
+       </p>
+       <p>
+        <strong>
+         Qu'est-ce que l'ICANN ?
+        </strong>
+        <br/>
+        L'ICANN est responsable de la coordination des systèmes d'identifiants uniques sur Internet dans le monde et, en particulier, pour en garantir la stabilité et la sécurité. L'ICANN disposent de politiques et spécifications que les bureaux d'enregistrement et titulaires doivent respecter.
+       </p>
+       <p>
+        <strong>
+         Qu'est-ce que WHOIS ?
+        </strong>
+        <br/>
+        Les services WHOIS permettent au public d'avoir accès aux données relatives au titulaires de noms de domaine enregistrés. Les titulaires de noms enregistrés doivent fournir des coordonnées de contact précises et fiables à leur bureau d'enregistrement afin de permettre la mise à jour des données WHOIS pour le nom de domaine enregistré.
+       </p>
+      </div>
+      <div id="divPortuguese2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="não verificado" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Você chegou a um domínio com verificação pendente conforme as regras ICANN, mas desde então foi verificado. Pode levar de 24 a 48 horas para o website voltar a estar online.
+        </h2>
+       </div>
+       <p>
+        Em 1º de janeiro de 2014, a Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) exigirá que todos os registradores certificados pela ICANN comecem a verificar as informações de contato WHOIS do registrante para todos os novos registros de domínio e modificações de contato do registrante.
+       </p>
+       <h2>
+        Perguntas frequentes
+       </h2>
+       <p>
+        <strong>
+         Por que meu domínio foi suspenso?
+        </strong>
+        <br/>
+        A ICANN exige que as informações de contato do registrante do domínio ou alterações a informações WHOIS do registrante sejam verificadas dentro de 15 dias corridos. Se os dados não forem verificados nesse período, a ICANN determinar que o website seja suspenso enquanto a verificação estiver pendente.
+       </p>
+       <p>
+        <strong>
+         Como posso remover a suspensão do meu domínio?
+        </strong>
+        <br/>
+        A suspensão do domínio será removida depois de as informações WHOIS serem verificadas com sucesso. Atualize as informações WHOIS com detalhes de contato completos e precisos pelo seu provedor de serviço de domínio. Depois da atualização, você receberá um email de verificação.
+       </p>
+       <p>
+        <strong>
+         Depois que a suspensão for removida, quando meu website voltar a ficar online?
+        </strong>
+        <br/>
+        Estimamos que possa levar de 24 a 48 horas para o website voltar a ficar online.
+       </p>
+       <p>
+        <strong>
+         Quem é a ICANN?
+        </strong>
+        <br/>
+        A ICANN é responsável pela coordenação dos sistemas global de identificadores únicos da Internet e, em particular, por garantir sua operação estável e segura. A ICANN mantém políticas e especificações a serem cumpridas por registradores e registrantes.
+       </p>
+       <p>
+        <strong>
+         O que é a WHOIS?
+        </strong>
+        <br/>
+        Os serviços da WHOIS fornecem acesso público aos dados em detentores de nomes de domínio registrados. Os detentores de nomes de domínio registrados devem fornecer detalhes de contato precisos e confiáveis para o registrador atualizar os dados WHOIS para um nome registrado.
+       </p>
+      </div>
+      <div id="divNorwegian2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="ikke bekreftet" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Du har kommet til et domene som avventet verifisering per ICANN-regler, men som i ettertiden har blitt verifisert. Det kan ta mellom 24 til 48 timer før nettsiden igjen er online.
+        </h2>
+       </div>
+       <p>
+        Fra 1. januar 2014 vil Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) kreve at alle ICANN-akkrediterte registratorer starter bekreftelse av  Registrator WHOIS kontaktinformasjon for alle nye domeneregistreringer og kontaktmodifikasjoner for registrator.
+       </p>
+       <h2>
+        Ofte stilte spørsmål
+       </h2>
+       <p>
+        <strong>
+         Hvorfor ble domenet mitt opphevet?
+        </strong>
+        <br/>
+        ICANN krever at domeneregistrators kontaktinformasjon eller endringer i registratorens WHOIS-informasjon må bekreftes innen 15 kalenderdager. Hvis dataene ikke bekreftes innen denne tidsrammen, krever ICANN at nettsiden oppheves i påvente av verifisering.
+       </p>
+       <p>
+        <strong>
+         Hvordan kan jeg fjerne opphevingen av mitt domene?
+        </strong>
+        <br/>
+        Opphevelsen av domenet vil fjernes etter at WHOIS-informasjonen har blitt verifisert. Oppdater WHOIS-informasjonen med fullstendige og nøyaktige kontaktdetaljer gjennom din domene-leverandør. Når siden er oppdatert vil du motta en ny e-post med bekreftelse.
+       </p>
+       <p>
+        <strong>
+         Når opphevingen er fjernet, når kommer nettsiden min opp igjen?
+        </strong>
+        <br/>
+        Vi anslår at det kan ta mellom 24 til 48 timer før nettsiden igjen er online.
+       </p>
+       <p>
+        <strong>
+         Hvem er ICANN?
+        </strong>
+        <br/>
+        ICANN er ansvarlig for koordineringen av det globale internett-systemets unike identifikatorer, og spesielt å sirke dets stabile og sikre drift. ICANN opprettholder policyer og spesifikasjoner som registratorer og registranter må overholde.
+       </p>
+       <p>
+        <strong>
+         Hva er WHOIS?
+        </strong>
+        <br/>
+        WHOIS-tjenester gir offentlig adgang til data på registrerte eiere av domenenavn. Registrerte navn-eiere må oppgi nøyaktige og pålitelige kontaktdetaljer til sin registrator for å oppdatere WHOIS-data for et registrert navn.
+       </p>
+      </div>
+      <div id="divChinese2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="未验证" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         您所访问的域正在等待根据 ICANN 规则进行验证但尚未进行验证。网站大约需要 24 到 48 小时恢复联机状态。
+        </h2>
+       </div>
+       <p>
+        自 2014 年 1 月 1 日起，Internet Corporation for Assigned Names and Numbers (
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ) 将要求所有 ICANN 委任域名注册公司开始在注册所有新域和修改注册人联系信息时验证注册人 WHOIS 联系信息。
+       </p>
+       <h2>
+        常见问题
+       </h2>
+       <p>
+        <strong>
+         我的域为何被挂起？
+        </strong>
+        <br/>
+        ICANN 要求在 15 个日历日内验证域注册人联系信息或注册人 WHOIS 信息的更改。如果数据未在此时间范围内验证，ICANN 要求将网站挂起等待验证。
+       </p>
+       <p>
+        <strong>
+         如何解除域的挂起状态？
+        </strong>
+        <br/>
+        WHOIS 信息验证成功后域的挂起状态将解除。请使用完整准确的详细联系信息通过您的域服务提供商更新 WHOIS 信息。更新完成后，您将收到一封新的验证电子邮件。
+       </p>
+       <p>
+        <strong>
+         挂起状态解除后，我的网站何时恢复联机状态？
+        </strong>
+        <br/>
+        我们估计大约需要 24 到 48 小时网站即可恢复联系状态。
+       </p>
+       <p>
+        <strong>
+         谁是 ICANN？
+        </strong>
+        <br/>
+        ICANN 负责全球协调全球互联网的唯一标识符系统，特别是确保其稳定和安全运行。ICANN 维护注册公司和注册人都需要遵守的政策和规范。
+       </p>
+       <p>
+        <strong>
+         什么是 WHOIS？
+        </strong>
+        <br/>
+        WHOIS 服务使公众可访问有关注册域名持有者的数据。注册域名持有者需要向其注册公司提供准确可靠的详细联系信息以便更新注册域名的 WHOIS 数据。
+       </p>
+      </div>
+      <div id="divJapanese2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="未確認" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         ICANN規則による確認待ちのドメインに到達しましたが、その後確認されました。ウェブサイトがオンラインに戻るのに24～48時間かかる可能性があります。
+        </h2>
+       </div>
+       <p>
+        2014年1月1日付けで、Internet Corporation for Assigned Names and Numbers（
+        <a href="http://www.icann.org/" target="_blank">
+         ICANN
+        </a>
+        ）は、すべてのICANN認定レジストラが、すべての新しいドメインの登録のための登録者のWHOIS連絡先情報と登録者連絡先の変更の確認を開始することを義務付けます。
+       </p>
+       <h2>
+        よくある質問
+       </h2>
+       <p>
+        <strong>
+         ドメインが停止した理由は何ですか？
+        </strong>
+        <br/>
+        ICANNは、ドメインの登録者の連絡先情報または登録者のWHOIS情報への変更が15暦日以内に確認されることを要求します。この時間枠内にデータが確認されない場合、ICANNは、確認されるまで、ウェブサイトの停止を命じます。
+       </p>
+       <p>
+        <strong>
+         どのようにすればドメインの停止を解除できますか？
+        </strong>
+        <br/>
+        ドメインの停止は、WHOIS情報が適切に確認された後、解除されます。 ドメインサービスプロバイダーを介して、WHOIS情報を完全かつ正確な連絡先情報で更新してください。更新したら、新しい確認の電子メールを受け取ります。
+       </p>
+       <p>
+        <strong>
+         停止が解除されたら、いつウェブサイトはオンラインに戻りますか？
+        </strong>
+        <br/>
+        私たちは、ウェブサイトがオンラインに戻るのに24～48時間かかる可能性があると予想しています。
+       </p>
+       <p>
+        <strong>
+         ICANNとは誰ですか？
+        </strong>
+        <br/>
+        ICANNは、ユニークな識別子のある世界中のインターネットのシステムの調整に責任を負い、その安定した、安全な稼働を確保します。ICANNは、レジストラと登録者が遵守すべき方針と仕様を維持します。
+       </p>
+       <p>
+        <strong>
+         WHOISとは何ですか？
+        </strong>
+        <br/>
+        WHOISのサービスは、登録済みのドメイン名ホルダーに関するデータへの公共のアクセスを実現します。登録名ホルダーは、レジストラに正確で信頼できる連絡先情報を提供して、登録名のWHOISデータを更新する必要があります。
+       </p>
+      </div>
+      <div id="divPoland2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="nie zweryfikowana" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Dotarłeś na domenę, która oczekiwała na weryfikację zgodnie z wymaganiami ICANN lecz została właśnie zweryfikowana. Może upłynąć od 24 do 48 godzin zanim domena będzie w pełni aktywna.
+        </h2>
+       </div>
+       <p>
+        Z dniem 1 stycznia 2014 Internet Corporation for Assigned Names and Numbers (ICANN) wymaga aby wszyscy akredytowani przez ICANN rejestratorzy rozpoczęli weryfikację danych abonenta, zapisanych w WHOIS, dla wszystkich nowych rejestracji domen oraz modyfikacji danych abonenta.
+       </p>
+       <h2>
+        Często zadawane pytania
+       </h2>
+       <p>
+        <strong>
+         Dlaczego moja domena została zawieszona?
+        </strong>
+        <br/>
+        ICANN wymaga aby każde dane abonenta domeny lub zmiany wprowadzone do danych abonenta zapisanych w bazie WHOIS były zweryfikowane w ciągu 15 dni kalendarzowych. Jeśli dane nie zostaną zweryfikowane w tym czasie, ICANN wymaga aby serwis internetowy został zawieszony do momentu zakończenia weryfikacji.
+       </p>
+       <p>
+        <strong>
+         Jak mogę usunąć blokadę mojej domeny?
+        </strong>
+        <br/>
+        Blokada domeny bêdzie zniesiona, gdy dane abonenta w bazie WHOIS zostan¹ pomyœlnie zweryfikowane. Prosimy zaktualizowaæ dane WHOIS, wprowadzaj¹c kompletne i dok³adne dane abonenta poprzez panel administracyjny rejestratora domeny. Jak tylko dane zostan¹ zaktualizowane, otrzymasz nowy email weryfikacyjny.
+       </p>
+       <p>
+        <strong>
+         W momencie zdjęcia blokady, kiedy działanie mojej domeny będzie przywrócone?
+        </strong>
+        <br/>
+        Szacujemy, że działanie domeny zostanie przywrócone w czasie od 24 do 48 godzin.
+       </p>
+       <p>
+        <strong>
+         Co to jest ICANN?
+        </strong>
+        <br/>
+        ICANN jest organizacją odpowiedzialną za koordynację globalnych systemów unikalnych identyfikatorów w Internecie, a w szczególności, za jego stabilne i bezpieczne działanie. ICANN zarządza politykami i zasadami działania obowiązujących rejestratorów oraz abonentów domen.
+       </p>
+       <p>
+        <strong>
+         Co to jest WHOIS?
+        </strong>
+        <br/>
+        WHOIS zapewnia publiczny dostęp do danych abonentów domen. Zarejestrowani abonenci domen są zobowiązani do podania pełnych i wiarygodnych dancyh kontaktowych za pośrednictwem swojego rejestratora domen, w celu aktualizacji ich w bazie WHOIS.
+       </p>
+      </div>
+      <div id="divItalian2z2">
+       <div class="clearfix" style="background:#F2F2F2;margin:-20px -20px 20px -20px;border-bottom:1px solid #CCC;padding:20px;-webkit-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px; ">
+        <img alt="not verified" class="pull-left" src="/images/verified.png" style="margin:10px 20px 0 0"/>
+        <h2 class="pull-left" style="max-width:1000px;margin:10px 0">
+         Hai raggiunto un sito web il cui dominio è oggetto di verifica da parte di ICANN. Il sito web tornerà online tra 24/48 ore.
+        </h2>
+       </div>
+       <p>
+        A partire dal 1 gennaio 2014, tutti i registrar accreditati ICANN - l'ente internazionale responsabile della gestione di tutti i domini di primo livello - devono verificare le informazioni di contatto WHOIS del cliente  per tutte le nuove registrazioni di dominio e modifiche di contatto.
+       </p>
+       <h2>
+        Domande frequenti
+       </h2>
+       <p>
+        <strong>
+         Perché il mio dominio è stato sospeso?
+        </strong>
+        <br/>
+        L'ICANN prevede che le informazioni - o la modifica delle informazioni - WHOIS del dichiarante siano verificate entro 15 giorni. Se le informazioni non vengono verificate in tempo utile, il dominio viene sospeso.
+       </p>
+       <p>
+        <strong>
+         Come rimuovo la sospensione del mio dominio?
+        </strong>
+        <br/>
+        La sospensione del dominio viene rimossa effettuando la verifica delle informazioni. Si prega di aggiornare le informazioni WHOIS attraverso il provider che gestisce il dominio. Dopo aver effettuato l'aggiornamento sarà inviata una email di verifica.
+       </p>
+       <p>
+        <strong>
+         Dopo aver rimosso la sospensione, quando tornerà online il mio sito?
+        </strong>
+        <br/>
+        Il sito dovrebbe tornare online dopo 24 / 48 ore dalla rimozione della sospensione.
+       </p>
+       <p>
+        <strong>
+         Cos'è l'ICANN?
+        </strong>
+        <br/>
+        È l'ente internazionale responsabile del coordinamento delle politiche di gestione di tutti i domini di primo livello. Svolge attività di garanzia e supervisione.
+       </p>
+       <p>
+        <strong>
+         Che cos'è l'WHOIS?
+        </strong>
+        <br/>
+        È un servizio che consente l'accesso ai dati pubblici dei titolari dei nomi a dominio registrati. I titolari di nomi a dominio sono tenuti s fornire al Registrar dati aggiornati.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- SJL0VWRAA03 -->
+  </form>
+ </body>
+</html>

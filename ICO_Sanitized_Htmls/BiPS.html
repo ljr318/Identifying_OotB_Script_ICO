@@ -1,0 +1,2622 @@
+<!DOCTYPE html>
+<html class="js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <script type="text/javascript">
+   (window.NREUM||(NREUM={})).loader_config={licenseKey:"26b394c22a",applicationID:"43757387"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);
+  </script>
+  <meta content="Moneybrain" name="author"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="Moneybrain, Building an open and fairer financial system" name="title"/>
+  <meta content="Moneybrain: Building an open and fairer financial system for the world, Transparent, Trustworthy, Secure." name="description"/>
+  <!-- Fav Icon  -->
+  <link href="/favicon.ico" rel="shortcut icon"/>
+  <link href="http://site.com/canonical-link.html" rel="canonical"/>
+  <!-- Site Title  -->
+  <title>
+   Moneybrain | Building an open and fairer financial system for the world
+  </title>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZ7W6PD');
+  </script>
+  <!-- End Google Tag Manager -->
+  <link href="/css/compiled/app.css" rel="stylesheet"/>
+ </head>
+ <body class="theme-salvia io-salvia" data-offset="80" data-spy="scroll" data-target="#mainnav">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WZ7W6PD" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="price_tickers">
+   <div data-url="/ajax/price-ticker" id="tickers">
+   </div>
+  </div>
+  <!-- Header -->
+  <header class="site-header is-sticky">
+   <!-- Place Particle Js -->
+   <div class="particles-container particles-js" id="particles-js">
+   </div>
+   <!-- Navbar -->
+   <div class="navbar navbar-expand-lg is-transparent" id="mainnav">
+    <nav class="container">
+     <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="/">
+      <img alt="logo" class="logo logo-dark" src="/static/public/images/logo/logo-mb-500-purple.png" srcset="/static/public/images/logo/logo-mb-500-purple.png 2x"/>
+      <img alt="logo" class="logo logo-light" src="/static/public/images/logo/logo-mb-500-white.png" srcset="/static/public/images/logo/logo-mb-500-white.png 2x"/>
+     </a>
+     <button class="navbar-toggler" data-target="#navbarToggle" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+       <span class="ti ti-align-justify">
+       </span>
+      </span>
+     </button>
+     <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
+      <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".75" id="xmenu">
+       <li class="nav-item">
+        <a class="nav-link menu-link" href="#about">
+         About
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link menu-link" href="#foundation">
+         BiPS Foundation
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link menu-link" href="#overview">
+         Overview
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link menu-link" href="#team">
+         Team
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link menu-link" href="#documents">
+         BiPS Papers
+        </a>
+       </li>
+      </ul>
+      <ul class="navbar-btns animated remove-animation" data-animate="fadeInDown" data-delay=".85">
+       <li class="nav-item">
+        <a class="nav-link btn btn-sm menu-link" href="/login">
+         Login
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link btn btn-sm menu-link" href="/signup">
+         Register
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+   <!-- End Navbar -->
+   <!-- Banner/Slider -->
+   <div class="banner banner-salvia" id="header">
+    <div class="container">
+     <div class="banner-content">
+      <div class="row align-items-center justify-content-center justify-content-lg-between">
+       <div class="col-lg-7 col-xl-6 col-md-12 res-m-bttm-lg text-center text-lg-left">
+        <div class="header-txt">
+         <h1 class="animated" data-animate="fadeInUp" data-delay="1.25">
+          Building an open and fairer financial system for the world.
+         </h1>
+         <p class="lead animated" data-animate="fadeInUp" data-delay="1.35">
+          Decentralised, Exchangeable, Transparent, Trustworthy and Secure.
+         </p>
+         <div class="lead animated" data-animate="fadeInUp" data-delay="1.35">
+          <div style="padding:56.25% 0 0 0;position:relative;">
+           <iframe allowfullscreen="" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/299927201?color=7a16de&amp;title=0&amp;byline=0&amp;portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" webkitallowfullscreen="">
+           </iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js">
+          </script>
+         </div>
+         <div class="gaps size-2x">
+         </div>
+         <h6 class="animated" data-animate="fadeInUp" data-delay="1.55">
+          Join our community
+         </h6>
+         <ul class="social-link-exp">
+          <li class="animated" data-animate="fadeInUp" data-delay="1.65">
+           <a href="https://t.me/MoneybrainBips" target="_blank">
+            <em class="fas fa-paper-plane">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay="1.75">
+           <a href="https://twitter.com/MoneybrainBiPS" target="_blank">
+            <em class="fab fa-twitter">
+            </em>
+           </a>
+          </li>
+          <li class="animated" data-animate="fadeInUp" data-delay="1.8">
+           <a href="https://medium.com/@bips" target="_blank">
+            <em class="fab fa-medium-m">
+            </em>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <!-- .col  -->
+       <div class="col-lg-5 col-xl-5 col-md-12 col-sm-9">
+        <div class="token-countdown-box animated" data-animate="fadeInUp" data-delay="2">
+         <div class="token-info">
+          <div class="row token-info-item-row">
+           <div class="row" style="margin: auto;">
+            <div class="col-sm-12">
+             <b>
+              <span id="ct">
+              </span>
+             </b>
+            </div>
+            <br/>
+           </div>
+          </div>
+          <div class="row token-info-item-row">
+           <div class="col-4 mkt_each_homepage">
+            <h4>
+             <span class="sellp">
+              £10.18
+             </span>
+             <span class="mkttype">
+              SELL
+             </span>
+            </h4>
+           </div>
+           <div class="col-4 mkt_each_homepage">
+            <h4>
+             £10.24
+             <span class="mkttype">
+              MID
+             </span>
+            </h4>
+           </div>
+           <div class="col-4 mkt_each_homepage">
+            <h4>
+             <span class="buyp">
+              £10.30
+             </span>
+             <span class="mkttype">
+              BUY
+             </span>
+            </h4>
+           </div>
+           <div class="col-lg-12 col-sm-12 text-center">
+            <span>
+             Exchange Token Price
+            </span>
+           </div>
+           <div class="col-lg-12 col-sm-12 text-center">
+            <small>
+             95% of token sale proceeds go to acquire assets.
+            </small>
+           </div>
+          </div>
+          <div class="row token-info-item-row">
+           <div class="col-lg-6 col-sm-6">
+            <h4>
+             £326,453,598
+            </h4>
+           </div>
+           <div class="col-lg-6 col-sm-6">
+            <span>
+             Market Cap
+            </span>
+           </div>
+          </div>
+          <div class="row token-info-item-row">
+           <div class="col-lg-6 col-sm-6">
+            <h4>
+             31,880,250
+            </h4>
+           </div>
+           <div class="col-lg-6 col-sm-6">
+            <span>
+             Circulating Supply
+            </span>
+           </div>
+          </div>
+          <div class="row token-info-item-row">
+           <div class="col-lg-6 col-sm-6">
+            <h4>
+             500,000,000
+            </h4>
+           </div>
+           <div class="col-lg-6 col-sm-6">
+            <span>
+             Max Supply
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="row token-action">
+          <a class="btn btn-cCap" href="/login">
+           Register to buy
+          </a>
+          <div class="token-action-info">
+           <span>
+            Minimum Purchase:
+           </span>
+           <span>
+            1 BiPS
+           </span>
+          </div>
+          <div class="bjoin">
+           <p>
+            By registering, you are confirming that you have considered carefully all of the information within this website.
+           </p>
+          </div>
+          <div class="animated fadeInUp" data-animate="fadeInUp" data-delay="1.55" style="visibility: visible; animation-delay: 1.55s; font-size: 11px;">
+           <br/>
+           THE ISSUANCE, TRANSFER AND PURCHASE OF GLOBAL BiPS EXCHANGE 
+                                        TOKENS IS NOT REGULATED BY THE FINANCIAL CONDUCT AUTHORITY
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- .col  -->
+      </div>
+      <!-- .row  -->
+     </div>
+     <!-- .banner-content  -->
+    </div>
+    <!-- .container  -->
+   </div>
+  </header>
+  <!-- End Header -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg-alt" id="about">
+   <div class="container">
+    <div class="row align-items-center">
+     <div class="col-lg-5">
+      <div class="graph-img res-m-btm animated" data-animate="fadeInUp" data-delay=".1">
+       <img alt="graph" src="/static/public/images/salvia/graph-salvia-a.png"/>
+      </div>
+     </div>
+     <div class="col-lg-7">
+      <div class="text-block">
+       <h2 class="animated" data-animate="fadeInUp" data-delay=".1">
+        About Moneybrain
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".2">
+        Moneybrain Ltd is the administrator for the issuance and transfer of value to the BIPS Foundation which holds the underlying asset 
+                        value created from the purchase of the tokens.
+       </p>
+       <p class="animated" data-animate="fadeInUp" data-delay=".3">
+        Moneybrain.com was founded in September 2000. The brainchild of Lee Birkett, the online business was focussed on disruptive fintech. 
+                        The next stage of its development is bringing the peer-to-peer (P2P) technology developed by Lee's team to the 
+                        world via blockchain to build an open and fairer financial system for all.
+       </p>
+      </div>
+      <div class="gaps size-1x">
+      </div>
+      <div class="row">
+       <div class="col-lg-12">
+        <div class="icn-with-txt one animated" data-animate="fadeInUp" data-delay=".4">
+         <span class="icon">
+          <em class="fas fa-check">
+          </em>
+         </span>
+         <p>
+          Security: The security offered by blockchain protocols allows us to create a token that can be used to remit, store, or borrow.
+         </p>
+        </div>
+       </div>
+       <div class="col-lg-12">
+        <div class="icn-with-txt two animated" data-animate="fadeInUp" data-delay=".5">
+         <span class="icon">
+          <em class="fas fa-check">
+          </em>
+         </span>
+         <p>
+          Trust: The team have successfully built out and currently operate a fully regulated P2P retail loan and savings platform JustUs.co in the UK.
+         </p>
+        </div>
+       </div>
+       <div class="col-lg-12">
+        <div class="icn-with-txt four animated" data-animate="fadeInUp" data-delay=".7">
+         <span class="icon">
+          <em class="fas fa-check">
+          </em>
+         </span>
+         <p>
+          Privacy: Anonymity will be supported by blockchain smart contracts.
+         </p>
+        </div>
+       </div>
+       <div class="col-lg-12">
+        <div class="icn-with-txt three animated" data-animate="fadeInUp" data-delay=".8">
+         <span class="icon">
+          <em class="fas fa-check">
+          </em>
+         </span>
+         <p>
+          Regulation: None of the activities associated with the BIPS tokens are regulated in the UK, however the 
+                             standards of data protection (GDPR), Know Your Customer (KYC) and Anti Money Laundering (AML) protocols 
+                             and segregated client accounts are managed by Moneybrain Ltd.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="section section-pad section-bg-alt" id="foundation">
+   <div class="container">
+    <div class="row align-items-center">
+     <div class="col-lg-5">
+      <div class="graph-img res-m-btm animated" data-animate="fadeInUp" data-delay=".1">
+       <img alt="graph" src="/static/public/images/salvia/graph-salvia-a.png"/>
+      </div>
+     </div>
+     <div class="col-lg-7 order-lg-first">
+      <div class="text-block">
+       <div class="gaps size-2x">
+       </div>
+       <h2 class="animated" data-animate="fadeInUp" data-delay=".10">
+        About BiPS Foundation
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".11">
+        The value of the token is tacitly stabilised through the publication of the value of assets purchased through the issuance of tokens.  
+                      Other crypto currencies only have intrinsic speculative value, with no underlying assets. 
+                      The sentiment of purchasing BiPS is far stronger as 95% of the value of a freshly minted BiPS is used by the
+                      BiPS Foundation to purchase real world assets (UK property, Gold etc).
+       </p>
+       <p class="animated" data-animate="fadeInUp" data-delay=".12">
+        The purpose of the BiPS Foundation is to securely hold these assets (never being able to dispose of the value), 
+                        continuously publish the value of these underlying assets and with any surplus over and above the speculative 
+                        value of the issued tokens, build better infrastructure (speed, cost and security) for token holders and 
+                        create a centre of excellence for the education of digital currencies.
+       </p>
+      </div>
+      <div class="gaps size-1x">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg" id="overview">
+   <div class="container">
+    <div class="row align-items-center">
+     <div class="col-lg-6">
+      <div class="graph-img res-m-btm animated" data-animate="fadeInUp" data-delay=".1">
+       <img alt="graph" src="/static/public/images/salvia/graph-salvia-b.png"/>
+      </div>
+     </div>
+     <div class="col-lg-6">
+      <div class="text-block">
+       <h2 class="animated" data-animate="fadeInUp" data-delay=".2">
+        Why?
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".3">
+        Since the financial crisis in 2008, trust in the world’s banks, financial institutions and governments is at an all-time low and ready for disruption. The blockchain and the BiPS Token holders can influence this global evolution simply and securely by creating a trusted network, using Distributed Ledger Technology (DLT).
+       </p>
+       <h2 class="animated" data-animate="fadeInUp" data-delay=".4">
+        Mission
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".5">
+        We aim to bring trust to the crypto world by creating an underlying value in the BiPS Token.
+       </p>
+       <h2 class="animated" data-animate="fadeInUp" data-delay=".6">
+        How?
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".7">
+        When the token is used as a payment or exchange, not only will the trade be on the public blockchain ledger, 
+                       but the network has a fully measurable underlying value as well as any speculative value of an emergent digital currency.  This is held in a Foundation which is unable to ever dispose of this value and with any surplus is able to provide education about digital currencies and 
+                       invest in infrastructure to increase speed and reduce costs to token holders.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg-alt nopb">
+   <div class="container">
+    <div class="row justify-content-center text-center">
+     <div class="col-lg-6 col-md-8">
+      <div class="section-head-s8">
+       <h2 class="section-title-s8 animated" data-animate="fadeInUp" data-delay=".1">
+        Problems
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-lg-4 col-md-6 res-m-bttm-lg">
+      <div class="icon-box animated" data-animate="fadeInUp" data-delay=".3">
+       <div class="icon-box-img">
+        <img alt="icon" src="/static/public/images/salvia/problem-icon-a.png"/>
+       </div>
+       <h5>
+        No World Wide Platform:
+       </h5>
+       <p>
+        Centralised banks exist in their own individual silo’s. They communicate internationally but are governed by their own country’s governments and regulators.
+       </p>
+      </div>
+     </div>
+     <div class="col-lg-4 col-md-6 res-m-bttm-lg">
+      <div class="icon-box animated" data-animate="fadeInUp" data-delay=".4">
+       <div class="icon-box-img">
+        <img alt="icon" src="/static/public/images/salvia/problem-icon-b.png"/>
+       </div>
+       <h5>
+        No Safe Transactions:
+       </h5>
+       <p>
+        We trust third parties to make the transactions for us. Wouldn’t it be safer if we could do this for ourselves?
+       </p>
+      </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+      <div class="icon-box animated" data-animate="fadeInUp" data-delay=".5">
+       <div class="icon-box-img">
+        <img alt="icon" src="/static/public/images/salvia/problem-icon-c.png"/>
+       </div>
+       <h5>
+        No Global Payment Systems:
+       </h5>
+       <p>
+        Again, we are reliant on the payment systems made available to us by the trusted third parties. These systems may communicate with each other however are subject to some restrictions.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg-alt">
+   <div class="container">
+    <div class="row justify-content-center text-center">
+     <div class="col-lg-6 col-md-8">
+      <div class="section-head-s8">
+       <h2 class="section-title-s8 animated" data-animate="fadeInUp" data-delay=".1">
+        BiPS Solutions
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-lg-4 col-md-6 res-m-bttm-lg">
+      <div class="icon-box animated" data-animate="fadeInUp" data-delay=".3">
+       <div class="icon-box-img">
+        <img alt="icon" src="/static/public/images/salvia/solution-icon-a.png"/>
+       </div>
+       <h5>
+        Global Single-Platform:
+       </h5>
+       <p>
+        Blockchain is a global solution allowing the decentralisation of the monetary system.
+       </p>
+      </div>
+     </div>
+     <div class="col-lg-4 col-md-6 res-m-bttm-lg">
+      <div class="icon-box animated" data-animate="fadeInUp" data-delay=".4">
+       <div class="icon-box-img">
+        <img alt="icon" src="/static/public/images/salvia/solution-icon-b.png"/>
+       </div>
+       <h5>
+        Be Safe and Secure:
+       </h5>
+       <p>
+        Transactions are recorded at multiple locations with decisions being made by more than one ‘person’. This peer to peer decision making ensures anonymity together with increased security.
+       </p>
+      </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+      <div class="icon-box animated" data-animate="fadeInUp" data-delay=".5">
+       <div class="icon-box-img">
+        <img alt="icon" src="/static/public/images/salvia/solution-icon-c.png"/>
+       </div>
+       <h5>
+        Decentralize Payment Systems
+       </h5>
+       <p>
+        Eliminates the borders inherent with centralised solutions.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad overlay-shape section-bg-salvia">
+   <div class="container">
+    <div class="row">
+     <div class="col-12 text-center">
+      <h2 class="animated" data-animate="fadeInUp" data-delay=".1">
+       The main issue
+      </h2>
+      <h3 class="animated" data-animate="fadeInUp" data-delay=".2">
+       Cryptocurrencies have many advantages over local government currency. The main benefit is their ability to function and operate without a single point of failure, which hackers can target.
+      </h3>
+      <p class="lead animated" data-animate="fadeInUp" data-delay=".3">
+       A traditional bank generally has a computer-based records system that is the sole point of contact for decisions within the organisation. Whilst this system may contain many individual computers it is essentially a single group. A decentralised system, via blockchain, removes that single entity and instead spreads it across a number of ‘decision makers’ who must agree to the transaction before it can happen.
+      </p>
+      <p class="lead animated" data-animate="fadeInUp" data-delay=".4">
+       This decentralisation allows for more privacy as the information does not pass through one single entity. Spreading the data across multiple points makes it more difficult to track the information. If you are looking for a way to protect your identity and online information, decentralisation is it.
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg-alt">
+   <div class="container">
+    <div class="row align-items-center justify-content-between">
+     <div class="col-lg-7">
+      <div class="graph-img res-m-btm animated" data-animate="fadeInUp" data-delay=".1">
+       <img alt="screenshoot" src="/static/public/images/salvia/screenshoot-a.png"/>
+      </div>
+     </div>
+     <div class="col-lg-4 order-md-first">
+      <div class="text-block">
+       <h2 class="animated" data-animate="fadeInUp" data-delay=".2">
+        Introducing the BiPS Platform
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".3">
+        When you become a member of the BiPS network and community, 
+                       you are provided access to the secure BiPS portal where you view your transactions. 
+                       You will have full visibility in a secure and safe environment.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="gaps size-2x">
+    </div>
+    <div class="row">
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="icn-with-txt one with-bg with-border animated" data-animate="fadeInUp" data-delay=".4">
+       <span class="icon">
+        <em class="fas fa-check">
+        </em>
+       </span>
+       <span class="txt">
+        Safe &amp; Secure Transactions
+       </span>
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="icn-with-txt two with-bg with-border animated" data-animate="fadeInUp" data-delay=".5">
+       <span class="icon">
+        <em class="fas fa-check">
+        </em>
+       </span>
+       <span class="txt">
+        Encrypted and Kept Private
+       </span>
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="icn-with-txt three with-bg with-border animated" data-animate="fadeInUp" data-delay=".6">
+       <span class="icon">
+        <em class="fas fa-check">
+        </em>
+       </span>
+       <span class="txt">
+        Multiple Payment Gateway
+       </span>
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="icn-with-txt four with-bg with-border animated" data-animate="fadeInUp" data-delay=".7">
+       <span class="icon">
+        <em class="fas fa-check">
+        </em>
+       </span>
+       <span class="txt">
+        KYC Verification
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg-alt" id="documents">
+   <div class="container">
+    <div class="row justify-content-center text-center">
+     <div class="col-lg-6 col-md-8">
+      <div class="section-head-s8">
+       <h2 class="section-title-s8 animated" data-animate="fadeInUp" data-delay=".1">
+        BiPS Papers
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="document-item-s2 animated" data-animate="fadeInUp" data-delay=".3">
+       <div class="document-img-s2">
+        <img alt="document" src="/static/public/images/salvia/document-a.png"/>
+       </div>
+       <div class="document-text">
+        <span class="document-info">
+         BiPS Project Memorandum
+         <span>
+          (PDF)
+         </span>
+        </span>
+        <a class="document-link" href="https://bips-moneybrain.s3.eu-west-2.amazonaws.com/documents/bips_project_memorandum_v1.pdf" target="_blank">
+         <em class="ti ti-import">
+         </em>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="document-item-s2 animated" data-animate="fadeInUp" data-delay=".4">
+       <div class="document-img-s2">
+        <img alt="document" src="/static/public/images/salvia/document-e.png"/>
+       </div>
+       <div class="document-text">
+        <span class="document-info">
+         BiPS KYA
+         <span>
+          (PDF)
+         </span>
+        </span>
+        <a class="document-link" href="https://bips-moneybrain.s3.eu-west-2.amazonaws.com/documents/Moneybrain_BiPS_KYA.pdf" target="_blank">
+         <em class="ti ti-import">
+         </em>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6 res-m-bttm">
+      <div class="document-item-s2 animated" data-animate="fadeInUp" data-delay=".5">
+       <div class="document-img-s2">
+        <img alt="document" src="/static/public/images/salvia/document-c.png"/>
+       </div>
+       <div class="document-text">
+        <span class="document-info">
+         Terms of Sales
+         <span>
+          (PDF)
+         </span>
+        </span>
+        <a class="document-link" href="https://s3.eu-west-2.amazonaws.com/bips-moneybrain/documents/Moneybrain_BiPS_Terms_and_Conditions.pdf" target="_blank">
+         <em class="ti ti-import">
+         </em>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="document-item-s2 animated" data-animate="fadeInUp" data-delay=".6">
+       <div class="document-img-s2">
+        <img alt="document" src="/static/public/images/salvia/document-d.png"/>
+       </div>
+       <div class="document-text">
+        <span class="document-info">
+         Privacy &amp; Policy
+         <span>
+          (PDF)
+         </span>
+        </span>
+        <a class="document-link" href="https://s3.eu-west-2.amazonaws.com/bips-moneybrain/documents/Moneybrain_BiPS_Privacy_Policy.pdf" target="_blank">
+         <em class="ti ti-import">
+         </em>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg section-fix-lg" id="team">
+   <div class="container">
+    <div class="row justify-content-center text-center">
+     <div class="col-lg-6 col-md-8">
+      <div class="section-head-s8">
+       <h2 class="section-title-s8 animated" data-animate="fadeInUp" data-delay=".1">
+        Team
+       </h2>
+      </div>
+     </div>
+    </div>
+    <h3 class="sub-heading animated" data-animate="fadeInUp" data-delay=".2">
+     Team Members
+    </h3>
+    <div class="row justify-content-center">
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".3">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/lee-birkett.jpg"/>
+        <a class="content-popup" href="#team-profile-1">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/leebirkett" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Lee Birkett
+       </h5>
+       <span class="team-position">
+        Executive Chairman &amp; CEO
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-1">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/lee-birkett.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Lee Birkett
+            </h3>
+            <p class="sub-title">
+             Executive Chairman &amp; CEO
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/leebirkett" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+            </p>
+            <ul>
+             <li>
+              Trained as a Financial Adviser with BAT Industries 1990-1993.
+             </li>
+             <li>
+              Original founder and CEO of AIM Listed financial services business Prestbury.com 1994-2008 originating in excess of £5BN of Loans and Insurance with full regulatory oversight.
+             </li>
+             <li>
+              Presented the Peer to Peer lending and saving opportunity to the Crowd in Dec 2013. Successfully closed an oversubscribed crowdfunding pitch April 2014 raising £400k to develop and prove the platform with the support of 100+ investors.
+             </li>
+             <li>
+              Passionate about creating a sustainable and equitable way for finance to function.
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".4">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images//team/john-gray.jpg"/>
+        <a class="content-popup" href="#team-profile-2">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/john-gray-02353418" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        John Gray ACA
+       </h5>
+       <span class="team-position">
+        Finance Director
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-2">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/john-gray.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             John Gray ACA
+            </h3>
+            <p class="sub-title">
+             Finance Director
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/john-gray-02353418" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+            </p>
+            <ul>
+             <li>
+              John was appointed Finance Director March 2016.
+             </li>
+             <li>
+              Before joining JustUs, John held a number of senior finance roles over a 12 year period at Rolls Royce plc.
+             </li>
+             <li>
+              John began his career with Arthur Andersen and is a member of the Institute of Chartered Accountants in England and Wales.
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".5">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/mike-moroney.jpg"/>
+        <a class="content-popup" href="#team-profile-3">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/mikemoroney" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Mike Moroney
+       </h5>
+       <span class="team-position">
+        Chief Operating Officer
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-3">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/mike-moroney.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Mike Moroney
+            </h3>
+            <p class="sub-title">
+             Chief Operating Officer
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/mikemoroney" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+            </p>
+            <ul>
+             <li>
+              An accomplished Sales and Compliance Manager.
+             </li>
+             <li>
+              Mike joins us from Santander UK plc where he has spent the last 9 years supervising regulated sales teams.
+             </li>
+             <li>
+              1995-2008 Mike was a member of the senior leadership team with Lee Birkett at the AIM listed financial services business Prestbury.com.
+             </li>
+            </ul>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".6">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/mehdi-dana.jpg"/>
+        <a class="content-popup" href="#team-profile-4">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/mehdidana" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Mehdi Dana
+       </h5>
+       <span class="team-position">
+        CTO &amp; Lead Blockchain
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-4">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/mehdi-dana.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Mehdi Dana
+            </h3>
+            <p class="sub-title">
+             CTO &amp; Lead Blockchain
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/mehdidana" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+            </p>
+            <ul>
+             <li>
+              Computer science advocate
+             </li>
+             <li>
+              Full-stack software developer
+             </li>
+             <li>
+              Software architecture
+             </li>
+             <li>
+              Blockchain developer
+             </li>
+             <li>
+              Held senior developer roles across multiple industries including Financial Services, e-Commerce and Software development.
+             </li>
+             <li>
+              Student forever
+             </li>
+            </ul>
+            <p>
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".7">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/debi-whitney.png"/>
+        <a class="content-popup" href="#team-profile-dewh">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/debi-whitney-0136606" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Debi Whitney
+       </h5>
+       <span class="team-position">
+        Underwriter
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-dewh">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/debi-whitney.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Debi Whitney
+            </h3>
+            <p class="sub-title">
+             Underwriter
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/debi-whitney-0136606" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Experienced Underwriter within the online markets. Skilled in Portfolio Management, Business Relationship Management, Business Planning, Risk Management, and Customer Service.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".7">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/simon-dempsey.png"/>
+        <a class="content-popup" href="#team-profile-5">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/simon-dempsey-693651151" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Simon Dempsey
+       </h5>
+       <span class="team-position">
+        Corporate Lending
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-5">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/simon-dempsey.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Simon Dempsey
+            </h3>
+            <p class="sub-title">
+             Corporate Lending
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/simon-dempsey-693651151" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Over 20 years’ experience within the corporate finance sector providing advice and capital raising for SME's, focusing on private equity and institutional debt, ensuring business owners and stakeholders are fully furnished with transparent decision-making potential.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".7">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/gemma-georgas.png"/>
+        <a class="content-popup" href="#team-profile-gege">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/gemma-georgas-77923271" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Gemma Georgas
+       </h5>
+       <span class="team-position">
+        Finance &amp; Administration Controller
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-gege">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/gemma-georgas.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Gemma Georgas
+            </h3>
+            <p class="sub-title">
+             Finance &amp; Administration Controller
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/gemma-georgas-77923271" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Gemma is a fundamental member of the Finance Team at BiPS. Gemma has worked within the industry for over 20 years in multiple roles across both sales, underwriting and accounting.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".7">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/dan-butler.png"/>
+        <a class="content-popup" href="#team-profile-debu">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/daniel-p-butler" target="_blank">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Daniel Butler
+       </h5>
+       <span class="team-position">
+        Secured Lending
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-debu">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/dan-butler.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Daniel Butler
+            </h3>
+            <p class="sub-title">
+             Secured Lending
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/daniel-p-butler" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             An accomplished financial services professional with 20 years’ experience across multiple sectors within the industry. CeMAP qualified. Specialising in FCA regulated residential mortgage lending with significant experience in supporting developers and property managers.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+    </div>
+    <div class="gaps size-1x d-none d-lg-block">
+    </div>
+    <h3 class="sub-heading animated" data-animate="fadeInUp" data-delay=".7">
+     Advisors and BiPS Founding Members
+    </h3>
+    <div class="row justify-content-center">
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".9">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/sir-john-heggarty.jpg"/>
+        <a class="content-popup" href="#team-profile-sjh">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.thegaragesoho.london/about">
+           <em class="fab fa-link">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Sir John Hegarty
+       </h5>
+       <span class="team-position">
+        Creative
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-sjh">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/sir-john-heggarty.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Sir John Hegarty
+            </h3>
+            <p class="sub-title">
+             Creative
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.thegaragesoho.london/about" target="_blank">
+               <em class="fab fa-link">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Founding partner in Saatchi and Saatchi in 1970. Knighted in 2007 and was the first recipient of the Lion of St Mark award at the Cannes Festival of Creativity in 2011. Co-founder of The Garage Soho. Creative founder of international advertising agency BBH.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay=".8">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/david-newns.jpg"/>
+        <a class="content-popup" href="#team-profile-dnew">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/david-newns-49a58134/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        David Newns
+       </h5>
+       <span class="team-position">
+        Investor
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-dnew">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/david-newns.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             David Newns
+            </h3>
+            <p class="sub-title">
+             Investor
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/david-newns-49a58134/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Serial entrepreneur and investor. Joined the JustUs board in 2014 following a substantial investment in the businesses via oversubscribed Crowdcube equity placement.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/richard-farr.jpg"/>
+        <a class="content-popup" href="#team-profile-rfarr">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/richardfarr/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Richard Farr
+       </h5>
+       <span class="team-position">
+        Compliance
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-rfarr">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/richard-farr.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Richard Farr
+            </h3>
+            <p class="sub-title">
+             Compliance
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/richardfarr/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             An accomplished FS risk and compliance consultant, Richard was a Director of the Association of Mortgage Intermediaries 2007 -2008. In 2008 to date as CEO of Telos Solutions Ltd, a multi-disciplined management consultancy who are appointed to FCA/PRA Skilled Persons Panel.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/abi-owers.png"/>
+        <a class="content-popup" href="#team-profile-abow">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/abi-owers-4446754/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Abi Owers
+       </h5>
+       <span class="team-position">
+        Engagement
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-abow">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/abi-owers.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Abi Owers
+            </h3>
+            <p class="sub-title">
+             Engagement
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/abi-owers-4446754/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Former earned media director for McCann. Engagement director for Big Brand Ideas. Extensive experience in creating paid and earned strategies that focus on content to drive brand awareness and engagement.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/thomas-adalbert.jpg"/>
+        <a class="content-popup" href="#team-profile-thad">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/thomas-adalbert-6b49392/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Thomas Adalbert
+       </h5>
+       <span class="team-position">
+        Investor
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-thad">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/thomas-adalbert.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Thomas Adalbert
+            </h3>
+            <p class="sub-title">
+             Investor
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/thomas-adalbert-6b49392/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Former Global Principal at Google, responsible for Fintech unit offering financial comparison in EMEA and USA. A member of founding team for beatthatquote.com, a leading fintech comparison site in the UK sold to Google in 2011
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/tom-teichman.jpg"/>
+        <a class="content-popup" href="#team-profile-tote">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/tom-teichman-bb918b14/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Tom Teichman
+       </h5>
+       <span class="team-position">
+        Investor
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-tote">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/tom-teichman.jpg"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Tom Teichman
+            </h3>
+            <p class="sub-title">
+             Investor
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/tom-teichman-bb918b14/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             A serial tech &amp; web investor and Board member of many disruptive businesses such as lastminute.com, Kobalt Music, Moshimonsters, notonthehighstreet.com. His portfolio companies have already exited over £1 billion in IPOs on NASDAQ, LSE, AIM and via trade sales to Financial Times, France Telecom, Dell, Oracle and Thompson Corp.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/tim-dempsey.png"/>
+        <a class="content-popup" href="#team-profile-tide">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/tsdempsey/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Tim Dempsey
+       </h5>
+       <span class="team-position">
+        Corporate Finance
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-tide">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/tim-dempsey.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Tim Dempsey
+            </h3>
+            <p class="sub-title">
+             Corporate Finance
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/tsdempsey/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             An energetic dealmaker in the VC space, focussed on Series A/B fundraising, secondary transactions and fund services; with a strong track record. listed in Insider's 42 under 42 (2012) and prior to this, profiled as a "Rising Star of Deal making".
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/mark-brady.png"/>
+        <a class="content-popup" href="#team-profile-mabr">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/mark-brady-51a0366/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Mark Brady
+       </h5>
+       <span class="team-position">
+        Corporate Finance
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-mabr">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/mark-brady.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Mark Brady
+            </h3>
+            <p class="sub-title">
+             Corporate Finance
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/mark-brady-51a0366/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Mark is a founding partner of Spark Advisory Partners. He has considerable experience in providing advice to corporate clients on IPOs, takeovers and a wide range of other transactions involving private and public companies.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/miriam-greenwood.png"/>
+        <a class="content-popup" href="#team-profile-migr">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/miriam-greenwood-3860615/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Miriam Greenwood OBE
+       </h5>
+       <span class="team-position">
+        Global Bond Expert
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-migr">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/miriam-greenwood.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Miriam Greenwood OBE
+            </h3>
+            <p class="sub-title">
+             Global Bond Expert
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/miriam-greenwood-3860615/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Miriam is a founding partner in Spark Advisory Partners. A qualified barrister, Miriam has had a distinguished City career and was recognised and awarded the OBE for her services to corporate finance.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/jack-hallam.png"/>
+        <a class="content-popup" href="#team-profile-jaha">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/jack-hallam-0203128/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Jack Hallam MRICS
+       </h5>
+       <span class="team-position">
+        Property Acquisition
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-jaha">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/jack-hallam.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Jack Hallam MRICS
+            </h3>
+            <p class="sub-title">
+             Property Acquisition
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/jack-hallam-0203128/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Founding partner of Hallams Property Consultants, Jack has in excess of 20 years’ experience in agency investment and development. Jack joins as Head of Property Acquisitions.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/john-barker.PNG"/>
+        <a class="content-popup" href="#team-profile-joba">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/john-barker-18952b14b/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        John Barker
+       </h5>
+       <span class="team-position">
+        Legal Counsel
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-joba">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/john-barker.PNG"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             John Barker
+            </h3>
+            <p class="sub-title">
+             Legal Counsel
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/john-barker-18952b14b/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             John is a partner in Metis Law LLP. He deals with all aspects of commercial law, including the preparation of commercial contracts, advising on points of regulatory law (including data protection, intellectual property and consumer credit) and the registration of trade marks.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/jon-butler.png"/>
+        <a class="content-popup" href="#team-profile-jobu">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/jonbutler77bigbrandideas/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Jon Butler
+       </h5>
+       <span class="team-position">
+        Branding
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-jobu">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/jon-butler.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Jon Butler
+            </h3>
+            <p class="sub-title">
+             Branding
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/jonbutler77bigbrandideas/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Founder of customer engagement agency Big Brand Ideas in 2010 after 10 years working in agency and client side martech. Jon leads a team of digital specialists focused on delivering immersive and engaging experiences for brands.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/jeremy-bostock.png"/>
+        <a class="content-popup" href="#team-profile-jabo">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/jeremy-bostock-67bbb612/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Jeremy Bostock
+       </h5>
+       <span class="team-position">
+        Audit and Reporting
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-jabo">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/jeremy-bostock.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Jeremy Bostock
+            </h3>
+            <p class="sub-title">
+             Audit and Reporting
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/jeremy-bostock-67bbb612/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Director in Accountancy Firm, Thompson-Wright, An audit specialist, Jeremy provides a wealth of experience with VC backed companies and non-listed PLC’s.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/barry-james.png"/>
+        <a class="content-popup" href="#team-profile-baja">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/barryejames/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Barry James
+       </h5>
+       <span class="team-position">
+        Blockchain and Crowdfunding Advocate
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-baja">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/barry-james.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Barry James
+            </h3>
+            <p class="sub-title">
+             Blockchain and Crowdfunding Advocate
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/barryejames/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Founding Chair of the British Blockchain &amp; Frontier Technologies Association (BBFTA).
+                                            Pioneer of the Crowdfunding &amp; Blockchain ecosystem. Thought-leader, adviser &amp; CItyAM columnist.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/rob-colin.png"/>
+        <a class="content-popup" href="#team-profile-roco">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/robert-colin-ba555118/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Rob Colin
+       </h5>
+       <span class="team-position">
+        Investment Committee
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-roco">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/rob-colin.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Rob Colin
+            </h3>
+            <p class="sub-title">
+             Investment Committee
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/robert-colin-ba555118/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Managing Director of Sequence Financial Management with over fifteen years’ industry experience. Specialist advisor to both corporate and individual clients specialising in Pensions (SIPP &amp; SSAS), Investments, Alternative Investments, Tax Planning and Finance.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+     <div class="col-lg-3 col-sm-6">
+      <div class="team-item animated" data-animate="fadeInUp" data-delay="1">
+       <div class="team-img">
+        <img alt="team" src="/static/public/images/team/nigel-payne.png"/>
+        <a class="content-popup" href="#team-profile-nipa">
+        </a>
+        <ul class="team-sprofile">
+         <li>
+          <a href="https://www.linkedin.com/in/nigel-payne-59965514/">
+           <em class="fab fa-linkedin-in">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <h5 class="team-intro">
+        Nigel Payne
+       </h5>
+       <span class="team-position">
+        Global Mortgage Assets
+       </span>
+       <!-- Start .team-profile  -->
+       <div class="team-profile mfp-hide" id="team-profile-nipa">
+        <button class="mfp-close" title="Close" type="button">
+         ×
+        </button>
+        <div class="container-fluid">
+         <div class="row no-mg">
+          <div class="col-md-6">
+           <div class="team-profile-photo">
+            <img alt="team" src="/static/public/images/team/nigel-payne.png"/>
+           </div>
+          </div>
+          <!-- .col  -->
+          <div class="col-md-6">
+           <div class="team-profile-info">
+            <h3 class="name">
+             Nigel Payne
+            </h3>
+            <p class="sub-title">
+             Global Mortgage Assets
+            </p>
+            <ul class="tpi-social">
+             <li>
+              <a href="https://www.linkedin.com/in/nigel-payne-59965514/" target="_blank">
+               <em class="fab fa-linkedin-in">
+               </em>
+              </a>
+             </li>
+            </ul>
+            <p>
+             Highly experienced Managing Director of large scale mortgage institutions including The Mortgage Business PLC and  BM Solutions.
+            </p>
+           </div>
+          </div>
+          <!-- .col  -->
+         </div>
+         <!-- .row  -->
+        </div>
+        <!-- .container  -->
+       </div>
+       <!-- .team-profile  -->
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad section-bg" id="contact">
+   <div class="container">
+    <div class="row justify-content-between">
+     <div class="col-lg-4 res-m-bttm">
+      <div class="section-head-s6">
+       <h2 class="section-title-s8 animated" data-animate="fadeInUp" data-delay=".1">
+        Get In Touch
+       </h2>
+       <p class="lead animated" data-animate="fadeInUp" data-delay=".2">
+        Any questions? Reach out to us and we’ll get back to you as soon as possible.
+       </p>
+      </div>
+      <ul class="contact-info-alt">
+       <li class="animated" data-animate="fadeInUp" data-delay=".4">
+        <em class="fa fa-envelope">
+        </em>
+        <span>
+         support@moneybrain.com
+        </span>
+       </li>
+       <li class="animated" data-animate="fadeInUp" data-delay=".5">
+        <a href="https://t.me/MoneybrainBips" target="_blank">
+         <em class="fa fa-paper-plane">
+         </em>
+         <span>
+          Join us on Telegram
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- .col -->
+     <div class="col-lg-7">
+      <form class="form-message form-message-s2 form-message-s3 text-left show-error-hint animated" data-animate="fadeInUp" data-delay=".6" id="contact-form" method="post">
+       <div class="form-results">
+       </div>
+       <div class="input-field">
+        <input class="input-border required" id="cname" name="name" placeholder="Your Name" type="text"/>
+       </div>
+       <div class="input-field">
+        <input class="input-border required email" id="cemail" name="email" placeholder="Your Email" type="email"/>
+       </div>
+       <div class="input-field">
+        <textarea class="txtarea input-border required" id="cmessage" name="message" placeholder="Your Message"></textarea>
+       </div>
+       <input id="curl" name="curl" type="hidden" value="/ajax/contactus"/>
+       <input class="d-none" name="form-anti-honeypot" type="text" value=""/>
+       <div class="input-field">
+        <button class="btn" type="submit">
+         Submit
+        </button>
+       </div>
+      </form>
+     </div>
+     <!-- .col -->
+    </div>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-pad-sm partner-section section-bg-alt">
+   <div class="container text-center">
+    <h4 class="sub-heading animated" data-animate="fadeInUp" data-delay=".1">
+     Our Partners
+    </h4>
+    <ul class="partner-list-s4 d-flex flex-wrap flex-md-nowrap align-items-center justify-content-center">
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://www.bigbrandideas.co.uk" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/bigbrandideas.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://icorad.io" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/icoradio.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://www.beestonshenton.co.uk" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/beestonshenton.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://theidco.com" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/idco.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://www.epiphanycapital.co.uk" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/epiphanycapital.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".2">
+      <a href="https://www.justus.co" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/justus.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://www.metislaw.com" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/metislaw.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://www.thegaragesoho.london" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/garage.png" target="_blank"/>
+      </a>
+     </li>
+     <li class="animated" data-animate="fadeInUp" data-delay=".3">
+      <a href="https://www.equifax.co.uk" target="_blank">
+       <img alt="partner" src="/static/public/images/partner/equifax.png" target="_blank"/>
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Section -->
+  <!-- Start Section -->
+  <div class="section section-bg-salvia overlay-shape footer-section footer-salvia section-pad-sm">
+   <div class="container">
+    <div class="row text-center text-sm-left">
+     <div class="col-sm-12">
+      <p class="text">
+       <a href="https://apps.apple.com/gb/app/moneybrain/id1476827262" rel="noopener" target="_blank">
+        <img src="/static/public/images/app/app-store.png" style="margin-bottom:10px; margin-right: 10px;"/>
+       </a>
+       <a href="https://play.google.com/store/apps/details?id=com.moneybrain.moneybrain" rel="noopener" target="_blank">
+        <img src="/static/public/images/app/google-play.png" style="margin-bottom:10px; margin-right: 10px;"/>
+       </a>
+      </p>
+      <p>
+       <br/>
+      </p>
+     </div>
+     <div class="col-lg-3 col-md-4 col-sm-5">
+      <div class="widget-item">
+       <h5 class="widget-title">
+        Features
+       </h5>
+       <ul class="widget-list">
+        <li>
+         28C London Rd
+         <br/>
+         Alderley Edge
+         <br/>
+         Cheshire
+         <br/>
+         SK9 7DZ
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- .col -->
+     <div class="col-lg-2 col-md-4 col-sm-3">
+      <div class="widget-item">
+       <h5 class="widget-title">
+        Resources
+       </h5>
+       <ul class="widget-links">
+        <li>
+         <a href="https://s3.eu-west-2.amazonaws.com/bips-moneybrain/documents/BiPS-Press-Release-11th-November-2018.pdf" target="_blank">
+          Media and PR
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- .col -->
+     <div class="col-lg-2 col-md-4 col-sm-3">
+      <div class="widget-item">
+       <h5 class="widget-title">
+        Company
+       </h5>
+       <ul class="widget-links">
+        <li>
+         <a href="#">
+          Home
+         </a>
+        </li>
+        <li>
+         <a href="#team">
+          Team
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- .col -->
+     <div class="col-lg-4 offset-lg-1">
+      <div class="widget-item">
+       <div class="widget-about">
+        <a class="widget-logo" href="/">
+         <img alt="logo" src="/static/public/images/logo/logo-mb-500-white.png" srcset="/static/public/images/logo/logo-mb-500-white.png"/>
+        </a>
+        <p>
+        </p>
+        <ul class="social-link-exp">
+         <li>
+          <a href="https://twitter.com/MoneybrainBiPS" target="_blank">
+           <em class="fab fa-twitter">
+           </em>
+          </a>
+         </li>
+         <li>
+          <a href="https://medium.com/@bips" target="_blank">
+           <em class="fab fa-medium-m">
+           </em>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <!-- .col -->
+     <div class="col-sm-12">
+      <p class="text">
+       Moneybrain Ltd is regulated in the UK by the financial conduct authority, however its role as administrator of the BiPS token is an unregulated activity and the BiPS tokens are an unregulated exchange token.
+      </p>
+      <p class="text">
+       Risks: being unregulated there are no methods of recourse if there is a lack of liquidity in the BiPS community and the value of the token can fluctuate.  Any value stored in BiPS is at risk.
+      </p>
+      <p class="text">
+       Moneybrain Ltd: Company number 6322797.
+       <br/>
+       BiPS Foundation: Company number: 11879883 Limited by guarantee without share capital.
+      </p>
+     </div>
+     <!-- .col -->
+    </div>
+    <!-- .row -->
+    <div class="gaps size-1x d-none d-lg-block">
+    </div>
+    <div class="footer-bottom">
+     <ul class="footer-list text-center">
+      <li>
+       © 2020
+       <a href="http://bips.moneybrain.com">
+        Moneybrain
+       </a>
+      </li>
+      <li>
+       <a href="https://s3.eu-west-2.amazonaws.com/bips-moneybrain/documents/Moneybrain_BiPS_Privacy_Policy.pdf" target="_blank">
+        Privacy policy
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <!-- .container -->
+  </div>
+  <!-- End Section -->
+  <!-- Preloader !remove please if you do not want -->
+  <div id="preloader">
+   <div id="loader">
+   </div>
+   <div class="loader-section loader-top">
+   </div>
+   <div class="loader-section loader-bottom">
+   </div>
+  </div>
+  <!-- Preloader End -->
+  <script src="/js/62c55d9.js">
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"26b394c22a","applicationID":"43757387","transactionName":"bwFQbUtZDUZZBkFbXVZLc1pNUQxbFwRFQm1cAVRYTFQXalELUVdK","queueTime":0,"applicationTime":45,"atts":"Q0ZTGwNDHkg=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>

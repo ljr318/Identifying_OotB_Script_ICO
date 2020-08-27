@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta content="index.html" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="weBloc - Tokenized" property="og:title"/>
+  <meta content="Advertising Alliance Protocol" property="og:description"/>
+  <meta content="imgs/share.jpg" property="og:image"/>
+  <meta content="weBloc Protocolì ê¸°ì¡´ ê´ê³ ìíê³ë¥¼ Tokenized í  ì ìëë¡ ë¸ë¡ì²´ì¸ ê¸°ë°ì¼ë¡
+        ì°ê²°í´ ì£¼ë Alliance Protocolìëë¤. weBloc Protocolì ICON íë«í¼ì ê³µì ê´ê³  íë«í¼ìëë¤." name="description"/>
+  <title>
+   weBloc : Tokenize Advertising Alliance Protocol
+  </title>
+  <link href="imgs/favicon.ico" rel="shortcut icon"/>
+  <link href="css/grid.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js">
+  </script>
+  <script src="js/controller.js">
+  </script>
+  <script src="js/roadmap.js">
+  </script>
+  <!-- dapps -->
+  <link href="css/swiper.min.css" rel="stylesheet"/>
+  <script src="js/swiper.min.js">
+  </script>
+  <!-- hamburger -->
+  <link href="css/hamburgers.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <div class="pc_header center clearfix">
+    <div class="left_area">
+     <a class="logo" href="#">
+     </a>
+     <nav>
+      <ul>
+       <li class="navi_li">
+        <a class="scroll" href="#about" onmouseout="this.style.fontWeight='normal'" onmouseover="this.style.fontWeight='bold'">
+         About
+        </a>
+       </li>
+       <li class="navi_li">
+        <a class="scroll" href="#service" onmouseout="this.style.fontWeight='normal'" onmouseover="this.style.fontWeight='bold'">
+         Service
+        </a>
+       </li>
+       <!--li class="navi_li"><a href="#media" class="scroll" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Media</a></li-->
+       <li class="navi_li">
+        <a class="scroll" href="#advisors" onmouseout="this.style.fontWeight='normal'" onmouseover="this.style.fontWeight='bold'">
+         Advisors
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <div class="right_area">
+     <!--
+					<ul class="lan">
+                        <li><a href="#" style="font-weight: 800">KOR</a></li>
+                        <li><a href="#">ENG</a></li>
+                    </ul>
+					
+					
+                    <a href="https://webloc.io/auth/signin?return_url=/account/mypage" class="login">
+                        <p class="btn_login">LOGIN</p>
+                    </a>
+					-->
+    </div>
+    <!-- hover ì ì§ -->
+    <script>
+     $(document).ready( function() {
+                        $('.navi_li').click(function() {
+                            $(this).addClass('nactive').siblings().removeClass('nactive');
+                        });
+                    });
+    </script>
+    <!-- scroll ì´ë -->
+    <script>
+     jQuery(document).ready(function($) {
+                        $(".scroll").click(function(event){            
+                            event.preventDefault();
+                            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 200);
+                        });
+                    });
+    </script>
+    <!-- scroll ì´ëì í¤ë ë°°ê²½ ë³ê²½ -->
+    <script>
+     $(function(){
+                        $(window).scroll(function(){
+                            var navbar = $(this).scrollTop();
+                            console.log(navbar);
+                            var $header = $('header');
+                            if(navbar > 500){
+                                $header.addClass('activated');
+                            }else{
+                                $header.removeClass('activated');
+                            }
+                        })
+                    })
+    </script>
+    <!-- ì¤í¬ë¡¤ í¤ë -->
+    <!-- mypage íì -->
+   </div>
+   <div class="mobile_header">
+    <nav class="navi">
+     <a class="navi_logo" href="index.html">
+      <img src="imgs/logo-webloc-w.svg"/>
+     </a>
+    </nav>
+    <div class="hamburger hamburger--stand m_hamburger js-hamburger-btn">
+     <div class="hamburger-box">
+      <div class="hamburger-inner">
+      </div>
+     </div>
+    </div>
+    <div class="m_menu_wrap js_menu">
+     <a class="m_lan" href="#">
+      KOR
+     </a>
+     <ul>
+      <li class="m_navi_li">
+       <a class="navi_hover" href="#about">
+        About
+       </a>
+      </li>
+      <li class="m_navi_li">
+       <a class="navi_hover" href="#mo_service">
+        Service
+       </a>
+      </li>
+      <!--li class="m_navi_li"><a href="#mo_media" class="navi_hover">Media</a></li-->
+      <li class="m_navi_li">
+       <a class="navi_hover" href="#advisors">
+        Advisors
+       </a>
+      </li>
+     </ul>
+     <a class="btn_m_login" href="#">
+      LOGIN
+     </a>
+    </div>
+    <!-- íë²ê±° -->
+    <script src="js/hamburger.js">
+    </script>
+    <script>
+     var btn_hamburger = $('.js-hamburger-btn');
+                    var menu_m = $('.js_menu');
+                    btn_hamburger.bind('click', function(){
+                        var _self = $(this);
+
+                        if(_self.hasClass('hamburger_active')){
+                            menu_m.fadeOut();
+                            $(this).removeClass('hamburger_active');
+                        }else{
+                            menu_m.fadeIn();
+                            $(this).addClass('hamburger_active');
+                        }
+                    });
+    </script>
+    <!-- íë²ê±° í´ë¦­ì ë°°ê²½ íì¤í¸ ìê²¼ë¤ ìì´ì¡ë¤ / ë·ë°°ê²½ ì¤í¬ë¡¤ ë§ê¸°-->
+    <script>
+     var toggle=true;
+                    $(document).ready( function() {
+                        $('.js-hamburger-btn').click(function() {
+                            $('.main .textbox').toggleClass('ham_text');
+                            $(this).toggleClass('ham_position');
+                            $('.navi_logo').toggleClass('ham_position');
+							
+							if(toggle){
+							$('html, body').css({'overflow': 'hidden'}); // ëª¨ë¬íì ì¤ html,bodyì scrollì hiddenìí´ 
+							$('#element').on('scroll touchmove mousewheel', function(event) { // í°ì¹ë¬´ë¸ì ë§ì°ì¤í  ì¤í¬ë¡¤ ë°©ì§     
+								event.preventDefault();     
+								event.stopPropagation();     
+								return false; });
+								
+								toggle=false;
+							}
+							else{
+								$('html, body').css({'overflow': 'auto'}); //scroll hidden í´ì  
+								$('#element').off('scroll touchmove mousewheel'); // í°ì¹ë¬´ë¸ ë° ë§ì°ì¤í  ì¤í¬ë¡¤ ê°ë¥
+								toggle=true;
+							}
+							
+                        });
+                    });
+    </script>
+    <!-- scroll ì´ëì ëª¨ë°ì¼ í¤ë ë°°ê²½ ë³ê²½ -->
+    <script>
+     $(function(){
+                        $(window).scroll(function(){
+                            var navbar = $(this).scrollTop();
+                            console.log(navbar);
+                            var $header = $('header');
+                            if(navbar > 500){
+                                $header.addClass('m_activated');
+                            }else{
+                                $header.removeClass('m_activated');
+                            }
+                        })
+                    })
+    </script>
+    <!-- ì¹´íê³ ë¦¬í´ë¦­ -->
+    <script>
+     $(document).ready( function() {
+                        $('.btn_m_login').click(function() {
+                            $('.m_navi_li').removeClass('m_nactive');
+                        });
+                    });
+    </script>
+    <script>
+     $(document).ready( function() {
+                        $('.m_navi_li').click(function() {
+                            $(this).addClass('m_nactive').siblings().removeClass('m_nactive');
+                        });
+                    });
+    </script>
+    <script>
+     $(document).ready( function() {
+                        $('.navi_hover').hover(function() {
+                            $(this).css("font-weight", "700").css("opacity","1");
+                        }, function(){
+                            $(this).css("font-weight", "300").css("opacity",".6");
+                        });
+                    });
+    </script>
+   </div>
+  </header>
+  <!-- 01 about -->
+  <div class="backgroundTransition" id="about">
+   <div class="main center clearfix">
+    <div class="textbox">
+     <h2 class="main_title">
+      <img src="imgs/ic-point-r.svg"/>
+      <span>
+       Tokenize
+       <br class="mo_br"/>
+       Advertising
+       <br/>
+       Alliance
+       <br class="mo_br"/>
+       Protocol
+      </span>
+     </h2>
+     <p>
+      weBloc Protocolì ê¸°ì¡´ ê´ê³ ìíê³ë¥¼
+      <br class="mo_br"/>
+      Tokenized í  ì ìëë¡ ë¸ë¡ì²´ì¸ ê¸°ë°ì¼ë¡
+      <br class="pc_br"/>
+      ì°ê²°í´ ì£¼ë
+      <br class="mo_br"/>
+      Alliance Protocolìëë¤.
+      <br class="mo_br"/>
+      weBloc Protocolì ICON íë«í¼ì
+      <br class="mo_br"/>
+      ê³µì ê´ê³  íë«í¼ìëë¤.
+     </p>
+    </div>
+   </div>
+   <div class="vision center clearfix">
+    <div class="col-3">
+     <h2 class="main_title">
+      <img src="imgs/ic-point-b.svg"/>
+      <span>
+       Our
+       <br class="pc_br"/>
+       vision
+      </span>
+     </h2>
+    </div>
+    <ul class="textbox col-9">
+     <li class="col-4">
+      <div>
+       <h3>
+        Alliance êµ¬ì¶ì íµí
+        <br/>
+        ê¸°ì¡´ ìíê³ ì´ë
+       </h3>
+       <p>
+        weBlocê³¼ ì°ê³ë ê´ê³ì¬ì íí¸ëë¤ì íµí´ í í°íë ê´ê³  ìíê³ë¥¼ êµ¬ì¶í©ëë¤. ë¹ì©ì¤ì¬ìì ëª©ì ì¤ì¬ì ìíê³ë¥¼ êµ¬ì¶í©ëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <h3>
+        User Intention ê¸°ë°ì
+        <br/>
+        ê´ê³  ìíê³ êµ¬ì¶
+       </h3>
+       <p>
+        ì¬ì©ì ë³´ìì´ ì ê³µëë í í°íë ê´ê³  ìì¥ êµ¬ì¡°ë¥¼ ë§ë¤ì´ ì¼ë°©ì ì¸ ê´ê³ ì£¼ ìì¡´ì ë°©ì§í©ëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <h3>
+        Decentralized ë
+        <br/>
+        ê´ê³  ìíê³ ì ì°©
+       </h3>
+       <p>
+        ê´ê³ ì ì°¸ì¬íë ì¬ì©ìì ê²½ì ì  ê°ì¹ë¥¼ ì¸ì íê³  ë³´ìíë êµ¬ì¡°ë¥¼ í í° ì´ì½ë¸ë¯¸ë¥¼ íµí´ ì¤íí©ëë¤.
+       </p>
+      </div>
+     </li>
+    </ul>
+    <div class="col-3">
+    </div>
+    <div class="btn_download col-9">
+     <p class="col-4 pc_br">
+      weBloc Alliance Protocol
+     </p>
+     <button class="col-4" type="button">
+      <a href="https://docs.google.com/document/d/1-VQJ-YP7PQGGkAqzqGTfeTwpiOMY0x0fOv4aWCQ811c/edit">
+       Whitepaper
+       <img src="imgs/ic-main-next.svg"/>
+      </a>
+     </button>
+     <button class="col-4" type="button">
+      <a href="https://docs.google.com/document/d/1nmrjy0vmPbqhDp6EU772wKy_3-9wTBrxfbKvYq7SpH4/edit">
+       FAQ
+       <img src="imgs/ic-main-next.svg"/>
+      </a>
+     </button>
+    </div>
+   </div>
+   <ul class="sns">
+    <li>
+     <a href="https://t.me/webloc_official">
+      <img src="imgs/icon-sns-tp.svg"/>
+     </a>
+    </li>
+    <li>
+     <a href="https://open.kakao.com/o/gXVlkWO">
+      <img src="imgs/icon-sns-k.svg"/>
+     </a>
+    </li>
+    <li>
+     <a href="https://twitter.com/webloc_io">
+      <img src="imgs/icon-sns-t.svg"/>
+     </a>
+    </li>
+    <li>
+     <a href="https://www.facebook.com/weBloc.io">
+      <img src="imgs/icon-sns-f.svg"/>
+     </a>
+    </li>
+    <li>
+     <a href="https://blog.naver.com/official_webloc">
+      <img src="imgs/icon-sns-b.svg"/>
+     </a>
+    </li>
+    <li>
+     <a href="https://medium.com/@webloc">
+      <img src="imgs/icon-sns-m.svg"/>
+     </a>
+    </li>
+   </ul>
+   <!-- ë°°ê²½ ì´ë¯¸ì§ -->
+   <script src="https://code.jquery.com/jquery-1.11.3.min.js">
+   </script>
+   <script src="js/backgroundTransition.js" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    $(document).ready(function(){
+                    $('.backgroundTransition').backgroundTransition({
+                        backgrounds:[
+                            {src: "imgs/BG_MAIN_1.jpg"},
+                            {src: "imgs/BG_MAIN_2.jpg"},
+                            {src: "imgs/BG_MAIN_3.jpg"},
+                            {src: "imgs/BG_MAIN_5.jpg"},
+                            {src: "imgs/BG_MAIN_6.jpg"},
+                        ],
+                        transitionDelay: 2,
+                        animationSpeed: 400
+                    });
+                });
+   </script>
+  </div>
+  <div class="icon">
+   <div class="center clearfix">
+    <div class="textbox">
+     <div class="col-4">
+      <h2 class="main_title">
+       <img src="imgs/ic-point-y.svg"/>
+       <span>
+        ICON
+        <br class="pc_br"/>
+        Alliance
+       </span>
+      </h2>
+     </div>
+     <p class="col-8">
+      ì°ë¦¬ë íí¸ë ì¤ì¬ì íë¡í ì½ì íì±í´ ëê°ë©° ëìì ICON ê³µì ê´ê³  íí¸ëë¡
+      <span>
+       ICON DApp ìíê³ì ì ì© ëì´ ë¸ë¡ì²´ì¸ ê´ê³  ê±°ë ìì¥ì íì¥í´ ëê°ë ì¤ìëë¤.
+      </span>
+      <br/>
+      <br/>
+      ICON Dappë¤ê³¼ ì§ìì ì¼ë¡ ì°ê³íì¬ ICONê³¼ ICON Dappë¤ì´ í¨ê» ë§ë¤ì´ê° ë¸ë¡ì²´ì¸ ì¸ìì ëì§í¸ ê´ê³  íµì¬ ì¶ì ë´ë¹í´ ëê° ê²ìëë¤.
+      <span>
+       ICON íì íë¡ì í¸ì Dapp ìíê³ë weBloc íë¡í ì½ê³¼ ì°ê³ëì´ ì¶©ë¶í ìëì§ í¨ê³¼ë¥¼ ë§ë¤ì´ë¼ ì ìì ê²ìëë¤.
+      </span>
+     </p>
+    </div>
+    <div class="col-4 pc_br">
+    </div>
+    <ul class="dap col-8 pc_br">
+     <li>
+      <img src="imgs/logo-bule@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-abl@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-stayge@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-mecacoin@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-logistics-x@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-carboneum@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-cosmo@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-zensports@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-discoverx@3x.png"/>
+     </li>
+    </ul>
+    <ul class="mo_dap mo_br">
+     <li>
+      <img src="imgs/logo-bule@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-abl@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-stayge@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-mecacoin@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-logistics-x@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-carboneum@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-cosmo@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-zensports@3x.png"/>
+     </li>
+     <li>
+      <img src="imgs/logo-discoverx@3x.png"/>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- 02 service -->
+  <div class="labs pc_labs" id="service">
+   <div class="center clearfix">
+    <div class="textbox">
+     <div class="col-5">
+      <h2 class="main_title">
+       <img src="imgs/ic-point-r.svg"/>
+       <span>
+        weBloc Labs
+       </span>
+      </h2>
+     </div>
+    </div>
+    <div class="wrapper">
+     <div class="swiper-container col-12">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-wecon@3x.png"/>
+         <p>
+          ìì½ì ì±íì ê¸°ë°ì¼ë¡ ì¨ë¼ì¸ ê´ê³ ë¥¼ íì°, íë³´íë ë¸ë¡ì²´ì¸ ê¸°ë°ì ë§ì¼í íë«í¼ìëë¤.
+         </p>
+        </div>
+        <a class="labs_linkbox" href="http://wecon.webloc.io/" target="_blank">
+         <img src="imgs/btn-labs-more@3x.png"/>
+        </a>
+        <img src="imgs/img-labs-1.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-snowpea@3x.png"/>
+         <p>
+          SNOWPEAë ë¸ë¡ì²´ì¸ ìí¸íí ì½ì¸ ë° í í° ì§ê°ì¼ë¡ ICON íë«í¼ì í¹íë ì íë¦¬ì¼ì´ììëë¤.
+         </p>
+        </div>
+        <!--a href="#" class="labs_linkbox" target="_blank"><img src="imgs/btn-labs-more@3x.png"></a-->
+        <img src="imgs/img-labs-2.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-jubjub@3x.png"/>
+         <p>
+          ì¤ì¤ì ê²ìì± ê¸°ë¥ì í¬í¨í ì ì£¼ë ê¸°ë° ì¤íë¼ì¸ ì´ì©ì íë ë³´ì ë§ì¼í ìë¹ì¤ ìëë¤.
+         </p>
+        </div>
+        <a class="labs_linkbox" href="http://www.jubjub.io" target="_blank">
+         <img src="imgs/btn-labs-more@3x.png"/>
+        </a>
+        <img src="imgs/img-labs-3.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-idoltoday@3x.png"/>
+         <p>
+          ì¤ëììì´ëì ë¸ë¡ì²´ì¸ ê¸°ë° ìì´ë ì¸ê¸°í¬í ë° ìì ë©ì¸ì§ ë§ì¼í ìë¹ì¤ ìëë¤.
+         </p>
+        </div>
+        <a class="labs_linkbox" href="http://todayidol.webloc.io/" target="_blank">
+         <img src="imgs/btn-labs-more@3x.png"/>
+        </a>
+        <img src="imgs/img-labs-4.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-brs@3x.png"/>
+         <p>
+          BRSë ê¸°ì¡´ ì íë¦¬ì¼ì´ìì ë¸ë¡ì²´ì¸ ìì¤í ì ì©ê³¼ í í° ììµì ì»ì ì ìë ê´ê³  ë¦¬ìë ìì¤í ìëë¤.
+         </p>
+        </div>
+        <!--a href="#" class="labs_linkbox" target="_blank"><img src="imgs/btn-labs-more@3x.png"></a-->
+        <img src="imgs/img-labs-5.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-paywok@3x.png"/>
+         <p>
+          PAYWOKì ì íë¦¬ì¼ì´ì ì¤ì¹ ë° íëì ë°ë¼ ì´ì©ììê² ê´ê³ ë¹ë¥¼ ì§ê¸íë ìë¹ì¤ìëë¤.
+         </p>
+        </div>
+        <a class="labs_linkbox" href="http://paywok.webloc.io/" target="_blank">
+         <img src="imgs/btn-labs-more@3x.png"/>
+        </a>
+        <img src="imgs/img-labs-6.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-devote@3x.png"/>
+         <p>
+          DEVOTEë ê³µì íê³  í¬ëªí ì ê±°ë¥¼ ìí, ì¸ê³ ìµì´ ë¸ë¡ì²´ì¸ ê¸°ì ì íì©í í¬í ì íë¦¬ì¼ì´ì ìëë¤.
+         </p>
+        </div>
+        <!--a href="#" class="labs_linkbox" target="_blank"><img src="imgs/btn-labs-more@3x.png"></a-->
+        <img src="imgs/img-labs-7.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <img src="imgs/ic-card-watch@3x.png"/>
+         <p>
+          ICOWATCHë ê° ê±°ëì ë³ ICX ìì¸ë¥¼ íëì íì¸í  ì ìë ì íë¦¬ì¼ì´ììëë¤.
+         </p>
+        </div>
+        <!--a href="#" class="labs_linkbox" target="_blank"><img src="imgs/btn-labs-more@3x.png"></a-->
+        <img src="imgs/img-labs-8.png"/>
+       </div>
+      </div>
+      <div class="swiper-pagination col-12">
+      </div>
+      <div class="swiper-button-next swiper-button">
+      </div>
+     </div>
+    </div>
+    <script>
+     $(document).ready(function() {
+                        var swiper = new Swiper('.swiper-container', {
+                            pagination: '.swiper-pagination',
+                            slidesPerView: 1,
+                            paginationClickable: true,
+                            spaceBetween: 30,
+                            keyboardControl: true,
+                            nextButton: '.swiper-button-next',
+                            prevButton: '.swiper-button-prev',
+                            paginationClickable: true,
+                            autoplay: 1800,
+                            loop: true,
+                        });
+                    });
+    </script>
+   </div>
+  </div>
+  <div class="labs mo_labs" id="mo_service">
+   <div class="center clearfix">
+    <div class="textbox">
+     <div class="col-5">
+      <h2 class="main_title">
+       <img src="imgs/ic-point-r.svg"/>
+       <span>
+        weBloc Labs
+       </span>
+      </h2>
+     </div>
+    </div>
+    <div class="wrapper">
+     <div class="swiper-container">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="http://wecon.webloc.io/">
+          <img src="imgs/ic-card-wecon@3x.png"/>
+          <p>
+           ìì½ì ì±íì ê¸°ë°ì¼ë¡ ì¨ë¼ì¸ ê´ê³ ë¥¼ íì°,
+           <br class="mo_br"/>
+           íë³´íë ë¸ë¡ì²´ì¸ ê¸°ë°ì ë§ì¼í íë«í¼ìëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-1@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="#">
+          <img src="imgs/ic-card-snowpea@3x.png"/>
+          <p>
+           SNOWPEAë ë¸ë¡ì²´ì¸ ìí¸íí ì½ì¸ ë°
+           <br class="mo_br"/>
+           í í° ì§ê°ì¼ë¡ ICON íë«í¼ì í¹íë
+           <br class="mo_br"/>
+           ì íë¦¬ì¼ì´ììëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-2@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="http://www.jubjub.io">
+          <img src="imgs/ic-card-jubjub@3x.png"/>
+          <p>
+           ì¤ì¤ì ê²ìì± ê¸°ë¥ì í¬í¨í ì ì£¼ë ê¸°ë°
+           <br class="mo_br"/>
+           ì¤íë¼ì¸ ì´ì©ì íë ë³´ì ë§ì¼í ìë¹ì¤ ìëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-3@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="http://todayidol.webloc.io/">
+          <img src="imgs/ic-card-idoltoday@3x.png"/>
+          <p>
+           ì¤ëììì´ëì ë¸ë¡ì²´ì¸ ê¸°ë° ìì´ë ì¸ê¸°í¬í ë°
+           <br class="mo_br"/>
+           ìì ë©ì¸ì§ ë§ì¼í ìë¹ì¤ ìëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-4@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="#">
+          <img src="imgs/ic-card-brs@3x.png"/>
+          <p>
+           BRSë ê¸°ì¡´ ì íë¦¬ì¼ì´ìì ë¸ë¡ì²´ì¸ ìì¤í ì ì©ê³¼
+           <br class="mo_br"/>
+           í í° ììµì ì»ì ì ìë ê´ê³  ë¦¬ìë ìì¤í ìëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-5@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="http://paywok.webloc.io/">
+          <img src="imgs/ic-card-paywok@3x.png"/>
+          <p>
+           PAYWOKì ì íë¦¬ì¼ì´ì ì¤ì¹ ë° íëì ë°ë¼
+           <br class="mo_br"/>
+           ì´ì©ììê² ê´ê³ ë¹ë¥¼ ì§ê¸íë ìë¹ì¤ìëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-6@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="#">
+          <img src="imgs/ic-card-devote@3x.png"/>
+          <p>
+           DEVOTEë ê³µì íê³  í¬ëªí ì ê±°ë¥¼ ìí,
+           <br class="mo_br"/>
+           ì¸ê³ ìµì´ ë¸ë¡ì²´ì¸ ê¸°ì ì íì©í
+           <br class="mo_br"/>
+           í¬í ì íë¦¬ì¼ì´ì ìëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-7@3x.png"/>
+       </div>
+       <div class="swiper-slide">
+        <div class="labs_textbox col-3">
+         <a href="#">
+          <img src="imgs/ic-card-watch@3x.png"/>
+          <p>
+           ICOWATCHë ê° ê±°ëì ë³ ICX ìì¸ë¥¼
+           <br class="mo_br"/>
+           íëì íì¸í  ì ìë ì íë¦¬ì¼ì´ììëë¤.
+          </p>
+         </a>
+        </div>
+        <img src="imgsm/m-img-labs-8@3x.png"/>
+       </div>
+      </div>
+      <div class="swiper-button-next swiper-button">
+      </div>
+      <div class="swiper-button-prev swiper-button swiper-button-prev-m">
+      </div>
+     </div>
+    </div>
+    <!--<script>
+                    $(document).ready(function() {
+                        var swiper = new Swiper('.swiper-container', {
+                            pagination: '.swiper-pagination',
+                            slidesPerView: 1,
+                            paginationClickable: true,
+                            spaceBetween: 30,
+                            keyboardControl: true,
+                            nextButton: '.swiper-button-next',
+                            prevButton: '.swiper-button-prev',
+                            paginationClickable: true,
+                            autoplay: 1800,
+                            loop: true,
+                        });
+                    });
+                </script>-->
+   </div>
+  </div>
+  <!-- 03 Media -->
+  <!--div class="media pc_media" id="media">
+            <div class="center clearfix">
+                <div class="textbox">
+                    <div class="col-3"><h2 class="main_title"><img src="imgs/ic-point-g.svg"><span>Media</span></h2></div>
+					
+                    <script>
+                        $(document).ready( function() {
+                            $('.pagenum').click(function() {
+                                $(this).addClass('media_active').siblings().removeClass('media_active');
+                            });
+                        });
+                    </script>
+                </div>
+				<ul class="media_list" id="jsonContent" name="jsonContent"></ul>
+                
+            </div>
+        </div-->
+  <!--script src="https://code.jquery.com/jquery-2.2.4.min.js"></script-->
+  <!-- Medium API -->
+  <!--script type="text/javascript">
+		function getFormatDate(date){ 
+		var strArray = date.split('-');
+		strArray[2]=strArray[2].substring(0,2);
+		return strArray[0] + '.' + strArray[1] + '.'+strArray[2] ;
+		}
+
+		$(function () {
+		var $content = $('#jsonContent');
+		var data = {
+		rss_url: 'https://medium.com/feed/@webloc'
+		};
+		$.get('https://api.rss2json.com/v1/api.json', data, function (response) {
+		if (response.status == 'ok') {
+		var output = '';
+		//ì¬ê¸°ë¶í°
+		//var output = '<h1>' + response.feed.title + '</h1>';
+		$.each(response.items, function (k, item) {
+		var visibleSm;
+		if(k < 3){
+		visibleSm = '';
+		} else {
+		visibleSm = ' visible-sm';
+		}
+		output += '<li class="col-4' + visibleSm + '">';
+
+		//output += '<h4 class="date">' + item.pubDate + "</h4>";
+
+		var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
+		var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
+		var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
+		var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart; // Find where the URL ends
+		var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
+		output += '<a href="' + item.link + '" >'
+		output += '<img class="img" src="' + src + '" >';
+		output += '</a>';
+		output += '<div class="mediabox">';
+		output +='<p>';
+		var num = k+1;
+		output += '<span class="news">'+"NEWS "+num+'</span>';
+		output += '<span class="data">' + getFormatDate(item.pubDate)+"</span>"+'</p>';
+		output += '<h3><a href="'+ item.link + '" >' + item.title + '</a></h3>';
+		//output += '<div class="post-meta"><span>By ' + item.author + '</span></div>';
+
+		var yourString = item.description.replace(/<img[^>]*>/g,"");
+		var maxLength = 120 // maximum number of characters to extract
+
+		//trim the string to the maximum length
+		var trimmedString = yourString.substr(0, maxLength);
+
+		//re-trim if we are in the middle of a word
+		trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+
+		//output += '<p>' + trimmedString + '...</p>';
+
+		output += '</div></li>';
+
+		return k < 5;
+		});
+		$content.html(output);
+		}
+		});
+		});
+		</script-->
+  <!--div class="media mo_media" id="mo_media">
+            <div class="center clearfix">
+                <div class="textbox">
+                    <h2 class="main_title"><img src="imgs/ic-point-g.svg"><span>Media</span></h2>
+                </div>
+				<ul class="media_list" id="jsonMo" name="jsonMo"></ul>
+                
+                
+                <script>
+                    $(document).ready( function() {
+                        $('.pagenum').click(function() {
+                            $(this).addClass('media_active').siblings().removeClass('media_active');
+                        });
+                    });
+                </script>
+            </div>
+        </div-->
+  <!-- Medium API for mobile-->
+  <!--script type="text/javascript">
+		function getFormatDate(date){ 
+		var strArray = date.split('-');
+		strArray[2]=strArray[2].substring(0,2);
+		return strArray[0] + '.' + strArray[1] + '.'+strArray[2] ;
+		}
+
+		$(function () {
+		var $content = $('#jsonMo');
+		var data = {
+		rss_url: 'https://medium.com/feed/@webloc'
+		};
+		$.get('https://api.rss2json.com/v1/api.json', data, function (response) {
+		if (response.status == 'ok') {
+		var output = '';
+		//ì¬ê¸°ë¶í°
+		//var output = '<h1>' + response.feed.title + '</h1>';
+		$.each(response.items, function (k, item) {
+		var visibleSm;
+		if(k < 3){
+		visibleSm = '';
+		} else {
+		visibleSm = ' visible-sm';
+		}
+		output += '<li class="col-4' + visibleSm + '">';
+
+		//output += '<h4 class="date">' + item.pubDate + "</h4>";
+
+		var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
+		var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
+		var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
+		var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart; // Find where the URL ends
+		var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
+
+		output += '<a href="' + item.link + '" >'
+		output += '<img class="img" src="' + src + '" >';
+		output += '</a>';
+		output += '<div class="mediabox">';
+		output +='<p>';
+		var num = k+1;
+		output += '<span class="news">'+"NEWS "+num+'</span>';
+		output += '<span class="data">' + getFormatDate(item.pubDate)+"</span>"+'</p>';
+		output += '<h3><a href="'+ item.link + '" >' + item.title + '</a></h3>';
+		//output += '<div class="post-meta"><span>By ' + item.author + '</span></div>';
+
+		var yourString = item.description.replace(/<img[^>]*>/g,"");
+		var maxLength = 120 // maximum number of characters to extract
+
+		//trim the string to the maximum length
+		var trimmedString = yourString.substr(0, maxLength);
+
+		//re-trim if we are in the middle of a word
+		trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+
+		//output += '<p>' + trimmedString + '...</p>';
+
+		output += '</div></li>';
+
+		return k < 3;
+		});
+		$content.html(output);
+		}
+		});
+		});
+		</script-->
+  <!-- 04 investors -->
+  <div class="investors">
+   <div class="center clearfix">
+    <div class="titlebox col-12">
+     <h2 class="main_title">
+      <img src="imgs/ic-point-r.svg"/>
+      <span>
+       Investors
+      </span>
+     </h2>
+    </div>
+    <ul class="investors_list">
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ë³´í, ìí, ìë³¸ìì¥ì í¬í¨í ê¸ìµê¶ê³¼ ëí, í¬ì¤ì¼ì´ ë± ë¤ìí ì»¤ë®¤ëí°ìì ì¤ì  ì ì© ì¬ë¡ë¥¼ ë§ë¤ì´ê°ë©° íêµ­ ë¸ë¡ì²´ì¸ ì°ììì ëë³´ì ì¸ ìì§ë¥¼ íë³´íê³ ìë ì±ê³µì ì¸ íë«í¼ìëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ëë¸ë½ì ìì´ì½ ì¬ë¨ê³¼ Ad4th ì¸ì¬ì´í¸ì ê³µë í¬ìë¡ ì¤ë¦½ë ë¸ë¡ì²´ì¸ ììë¬ë ì´í°ë¡, í¬ìì ëë¶ì´ weBloc ì ë¤í¸ìí¬ê° ì  ì¸ê³ë¡ íì¥ë  ì ìëë¡ ì§ìì ìë¼ì§ ìì ê²ìëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        GILGAë ë¶ë¯¸ì ICON ì»¤ë®¤ëí°ë¥¼ ë§ë¤ê³  ICON ê¸°ë°ì DAppê³¼ ìë¹ì¤ì ëí í° ê´ì¬ì ë°íì¼ë¡, ICON ìíê³ì íì±íìë ê¸°ì¬íê³  ììµëë¤. ICONê³¼ ê´ë ¨ë ì¬í­ë¤ ì¸ìë GILGAë ê¸ìµíìë³´í ê±°ëì ì¼ì¢ì¸ ì ì©íì°ì¤ì(Credit Default Swaps, CDS), ë¸ë¡ì²´ì¸ researchì podcastsë¥¼ íë Panel ë±ìë í¬ìíë©° ë¸ë¡ì²´ì¸ ìíê³ì íì¥ì ì§ìíê³  ììµëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        Davidoff Partners LLC. ë ë¯¸êµ­ ë´ìì ê¸°ë°ì ë ì ë¬¸ í¬ì íì¬ë¡, ë¸ë¡ì²´ì¸ ë¹ì¦ëì¤ì ëí ì´í´ë¥¼ ë°íì¼ë¡ ë¸ë¡ì²´ì¸ ë¹ì¦ëì¤ì ì±ì¥ ê°ë¥ì±ì ë¯¿ê³  ì´ë¥¼ ê¸°ë°ì¼ë¡ ë¤ìí í¬ì íëì ì´ì´ì¤ê³  ìë í¬ìì¬ìëë¤. ICON, weBloc ì¸ ë¤ìí íë¡ì í¸ì í¬ìíìì¼ë©°, íê´´ì  íì ì ê°ì ¸ì¬ ì ìë ê¸°ì ì ê³µê²©ì ì¼ë¡ í¬ìíê³  ììµëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ë²¤ì² ë° ê¸°ì¡´ ì¬ì ìì­ìì í¬ì ê²½íì´ ë§ì ì ë¬¸ê°ë¤ì´ ëª¨ì¬ ì¤ë¦½í í¬ìì¬ë¡, ICON, BlueWhale, Airbloc ë± ë¤ìí ICON DApp ë¤ì í¬ìí ê²½íì´ ìì¼ë©°, ë¸ë¡ì²´ì¸ ì°ìì ì±ì¥ê³¼ í¨ê» ë¸ë¡ì²´ì¸ íë¡ì í¸ì ì±ì¥ ê°ë¥ì±ì íê° ë° ë¶ìíì¬ ë¸ë¡ì²´ì¸ ìíê³ì ê±´ê°í ì±ì¥ ë° íì¥ì ê¸°ì¬íê³  ììµëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ìº¡ì¤í¤íí¸ëì¤ë 2009ë ì¤ë¦½ë ì´í AUM 2,400ìµìì ë¬ì±íìê³ , ë¤ìí ë¶ì¼ì 150ì¬ê° ì¤íí¸ìì í¬ìíë©´ì ì´ê¸° ê¸°ì í¬ìì ë¬¸ ë²¤ì² ìºí¼íë¡ìì ìì§ë¥¼ íê³ ì´ íê³  ììµëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ëì±ì°½ìí¬ì(ì£¼)ë 1987ë 8ìì ì¤ë¦½ë ëì±ê·¸ë£¹ ê³ì´ì ë²¤ì²ìºí¼íë¡ì, 30ëì ì¤ëìë ¥ê³¼ ííí ì´ì©ìì°ì ë°íì¼ë¡ ê¸ë¡ë² í¬ìë¥¼ ìí ì ë¬¸ ì¸ë ¥ê³¼ ì¬ë¬´êµ¬ì¡°ë¥¼ êµ¬ì¶íì¬ ì°ë ë²¤ì²ìºí¼íë¡ ìë¦¬ë§¤ê¹íê³  ììµëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ê³¨ëë¥ì¤ë í¬ë¦¬ìì´í°ë¸í ìì´ëì´ë¡ ê°ëì°¬ ì ì ë§ì¼í ê¸°ììëë¤ SNSë§ì¼í, WEBë§ì¼í ë± ì¨ë¼ì¸ ë§ì¼íë¶í° ì êµ­ 1ë§ì¬ GS25, CUí¸ìì ì ì¤ì¹ë í°ì¹ì¤í¬ë¦° LCD ëì¤íë ì´ ê´ê³ ë§¤ì²´ì¸ í¬ì¤í¸ë°ì¤ë¥¼ ì´ì©í ì¤íë¼ì¸ OOH ë¯¸ëì´ ìì¥ê¹ì§ ì§ì¶í êµ­ë´ ì ì¼í ì¨/ì¤íë¼ì¸ ì¢í© ë§ì¼í íì¬ìëë¤.
+       </p>
+      </div>
+     </li>
+     <li class="col-4">
+      <div>
+       <div class="btn_hover">
+        <img src="imgs/ic-main-next.svg"/>
+       </div>
+       <div class="logo">
+        <div>
+        </div>
+       </div>
+       <p>
+        ë³´í, ìí, ìë³¸ìì¥ì í¬í¨í ê¸ìµê¶ê³¼ ëí, í¬ì¤ì¼ì´ ë± ë¤ìí ì»¤ë®¤ëí°ìì ì¤ì  ì ì© ì¬ë¡ë¥¼ ë§ë¤ì´ê°ë©° íêµ­ ë¸ë¡ì²´ì¸ ì°ììì ëë³´ì ì¸ ìì§ë¥¼ íë³´íê³ ìë ì±ê³µì ì¸ íë«í¼ìëë¤.
+       </p>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- 06 advisors -->
+  <div class="advisors" id="advisors">
+   <div class="center clearfix">
+    <div class="titlebox col-12">
+     <h2 class="main_title">
+      <img src="imgs/ic-point-r.svg"/>
+      <span>
+       Advisors
+      </span>
+     </h2>
+    </div>
+    <ul class="advisors_list">
+     <li class="col-4">
+      <div class="profile profile_left">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì´ê²½ì¤
+        </p>
+        <p class="company">
+         ICON Foundation Council
+        </p>
+        <p class="introduce">
+         ì´ê²½ì¤ ì´ëë°ì´ì ë í¬í­ê³µëìì ì»´í¨í°ê³µíì ì ê³µíê³  ìíì´ìíí¸ìì êµ­ë´ ì²«ë²ì§¸ Firewallì¸ âìí¸ì â(SUHOSHIN)ì ê°ë°íììµëë¤. ë¸ë§¤ëì»¤ë¥ìì ì°½ìíì¬ P2P Media ìë¹ì¤ Zimlyë¥¼ íµí´ 300ë§ ì¬ì©ìë¥¼ íë³´í ê²½íì ê°ì§ê³  ììµëë¤.
+         <br/>
+         íì¬ë ìì´ì½ ì¹´ì´ì¬ë©¤ë² ìì¥ì¼ë¡ ê·¼ë¬´ íìë©° í¬ì ê¸°ì  ë¹ì¦ëì¤ ì ë°ì ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_center">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/jonghyup-kim-29995228/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ê¹ì¢í
+        </p>
+        <p class="company">
+         ICON Foundation Council
+        </p>
+        <p class="introduce">
+         ê¹ì¢í ì´ëë°ì´ì ë í¬í­ê³µëìì ì»´í¨í°ê³µíì ì ê³µíê³  ì ë³´ë³´ì ë¶ì¼ìì 20ë ê°ê¹ì´ ì¼í ê²½ë ¥ì ê°ì§ê³  ììµëë¤.
+         <br/>
+         PKI ì¸ì¦ ë³´ì íë¡í ì½ ë± ë¤ìì ì ë³´ë³´í¸ ê´ë ¨ í¹í ì¶ì ì¤ì ê³¼ CISA ìê²©ì ë³´ì íê³  ìì¼ë©° íì¬ ë¸ë¡ì²´ì¸ ì ë¬¸ê¸°ì ìì´ì½ë£¨íì ëíì´ì¬ë¥¼ ë§¡ê³  ììµëë¤. ë¸ë¡ì²´ì¸ ê¸°ì  ê¸°ë° ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_right">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/leehongkyu/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì´íê·
+        </p>
+        <p class="company">
+         CEO of LINE Unchain
+        </p>
+        <p class="introduce">
+         ì´íê· ì´ëë°ì´ì ë í¬í­ê³µëìì ì»´í¨í°ê³µíì ì ê³µíê³  ìì´ì½ ê¸°ì  ëë í° ê²¸ ìì´ì½ë£¨í ì´ì¬ë¡ì ëì± ê¸°ì ì ë¬¼ë¡  ë¤ìí í¬ì ìë¬´ë¥¼ ê²í íë¤ íì¬ë ë¼ì¸ê³¼ ìì´ì½ ì¡°ì¸í¸ë²¤í° ì¸ì²´ì¸ì ëíì´ì¬ë¡ ì ìëì´ í í° ì´ì½ë¸ë¯¸ ê¸°ì  íë«í¼ êµ¬ì¶ ì¤ì ììµëë¤.
+         <br/>
+         ë¸ë¡ì²´ì¸ í í°ì´ì½ë¸ë¯¸ DApp ê¸°ì  í¬ì ìë¬¸ì ëìì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_left">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ê¹ê·¼ì¬
+        </p>
+        <p class="company">
+         ICON Foundation Council
+        </p>
+        <p class="introduce">
+         ê¹ê·¼ì¬ ì´ëë°ì´ì ë ê³ ë ¤ëìì ì ì¹ì¸êµíê³¼ ì² íì ì ê³µíìì¼ë©° CPAë¡ì¨ Global Consulting firmì¸ PwCì»¨ì¤íìì 10ì¬ëê° ë¤ìì ê¸ìµê¸°ê´ì ëìì¼ë¡ ì ëµ ë° ITì»¨ì¤í ìë¬´ë¥¼ íì¨ìµëë¤.
+         <br/>
+         íì¬ ë¸ë¡ì²´ì¸ ì ë¬¸ê¸°ì ìì´ì½ë£¨íì CFOë¡ ê·¼ë¬´íê³  ìì¼ë©° AD4th Insight. í¬ìì ì¬ë¬´ ê´ë ¨ ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_center">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì ì¢í
+        </p>
+        <p class="company">
+         CEO of Nomad Connection
+        </p>
+        <p class="introduce">
+         ì ì¢í ì´ëë°ì´ì ë í¬í­ê³µëìì ì»´í¨í°ê³µíì ì ê³µ í Penta Security Systems Mpeon Asia ê·¼ë¬´ í íì¬ë Nomad Connection CEOë¡ ê·¼ë¬´ ì¤ì ììµëë¤.
+         <br/>
+         ë¸ë¡ì²´ì¸ ê¸°ì  ì¬ì DApp êµ¬ì¶ ê´ë ¨ ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_right">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì´í¬ì°
+        </p>
+        <p class="company">
+         CEO of LINE Unblock
+        </p>
+        <p class="introduce">
+         ì´í¬ì° ì´ëë°ì´ì ë ìê°ë ê²½ì í í¸ìë ê²½ìí ë°ì¬ ê³¼ì ì ë§ì¹ê³  IDG Ventures Korea. Cognitive Investment ë±ìì ì§ìì ì¸ ì¤íí¸ì í¬ì ìë¬´ë¥¼ ë´ë¹íë¤ ë¸ë¡ì²´ì¸ ì¸ìì ë¹ ì ¸ AD4th Insight ê³µëì°½ì í í í° ì´ì½ë¸ë¯¸ ìí¤íí¸ë¡ ì ì¸ í íì¬ë ë¼ì¸ ë¸ë¡ì²´ì¸ ìíì¬ ì¸ë¸ë½ì ëíë¡ ê·¼ë¬´ íê³  ê³ì­ëë¤.
+         <br/>
+         ë¸ë¡ì²´ì¸ ì¬ì í í°ì´ì½ë¸ë¯¸ í¬ì ë± ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_left">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/sungpilnam/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ë¨ì±í
+        </p>
+        <p class="company">
+         CEO &amp; Co-founder
+         <br/>
+         of AIRBLOC PROTOCOL
+        </p>
+        <p class="introduce">
+         ë¨ì±í ì´ëë°ì´ì ë ìì¸ëíêµ ìì ì ê³µíë¶ìì ê²½ìíì ì ê³µíìì¼ë©° 2015 ìíí¸ì¨ì´ ë§ìì¤í¸ë¡ TOP 8 ì ì ëì´ ë¯¸ëì°½ì¡°ê³¼íë¶ ì¥ê´ìì ììí ì´ë ¥ì´ ììµëë¤.
+         <br/>
+         íì¬ë ííí ê¸°ì ë ¥ì ëì§í¸ ë§ì¼í ì ë¬¸ íì¬ ab180ì ëí ë° ê³µëì°½ììì´ì íì¤ìíë ê°ì¸ ë°ì´í° íë¡í ì½ì¸ AIRBLOC íë¡ì í¸ë¥¼ ì§ííê³  ììµëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_center">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/%EC%A0%95%ED%9B%88-%EC%9D%B4-1a590765/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì´ì í
+        </p>
+        <p class="company">
+         ICON Foundation Council
+        </p>
+        <p class="introduce">
+         ì´ì í ì´ëë°ì´ì ë ìì¸ëìì ê¸°ê³í­ê³µê³µíì ì ê³µíê³  ê¸°ì ê²½ìëíììì ë°ì¬íìë¥¼ ë°ììµëë¤.
+         <br/>
+         ì°ë¦¬ê¸ìµê·¸ë£¹ìì ìëì´ ì ëë¦¬ì¤í¸ë¡ì ê±°ìê²½ì  ë° ê¸ìµì°ì ë¶ì ì ëµê¸°í ìë¬´ ë±ì ë´ë¹íìì¼ë©° íì¬ë ìì´ì½ ì¹´ì´ì¬ ë©¤ë²ë¡ì¨ ë¸ë¡ì²´ì¸ ê¸°ë°í ë¹ì¦ëì¤ ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_right">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì£¼ì¹(å¨ç¥¥)
+        </p>
+        <p class="company">
+         CEO of Netease news korea
+        </p>
+        <p class="introduce">
+         ì£¼ì¹(å¨ç¥¥) ì´ëë°ì´ì ë CYBER KOREAì ì°½ììì´ë©° ì¨ë¼ì¸ ì¤êµ­ì´ êµì¡ íë«í¼ì¸ Chinada ê³µë ì°½ììì´ê¸°ë í©ëë¤.
+         <br/>
+         íêµ­ìì ëêµ­ëíêµ ì ë¬¸ë°©ì¡í ìì¬íìë¥¼ ì·¨ëíì¼ë©° ì¤êµ­ aqiyi weibo miaopai ergeng ë± ë¯¸ëì´ìì íë ¥ê´ê³ì íë¶í íì¤ ê´ê³ /ë§ì¼íì ëí ê²½íì ë°íì¼ë¡ íì¤ ë¹ì§ëì¤ì ê°êµì­í ì ìííê³  ììµëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_left">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/arlina-hartono-14b656172/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         Arlina Hartono
+        </p>
+        <p class="company">
+         Managing Director
+         <br/>
+         at Briq International Indonesia
+        </p>
+        <p class="introduce">
+         Arlina Hartonoë The University of New South Wales (UNSW)ìì ê²½ìí íì¬íìë¥¼ ì·¨ëíì¼ë©° ë¤ëê° ì±ê°í´ì ë³¸ì¬ë¥¼ ëê³  ìë íì´ì¤ë¶ ê¸°ë° ìì ë§ì¼í ì ë¬¸íì¬ FAIMS Media ìì Online Marketing Manager ë¡ ê·¼ë¬´íë©° ëë¨ììì ë§ì¼íì ëìì ì£¼ê³  ììµëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_center">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì¡ìê°
+        </p>
+        <p class="company">
+         CEO of Capstone Partners
+        </p>
+        <p class="introduce">
+         ì¡ìê° ì´ëë°ì´ì ë ìì¸ëíêµ ê³ì°íµê³íê³¼ë¥¼ ì¡¸ìíê³  KAIST ì ì°íê³¼ìì AI ìì¬ê³¼ì ì ë§ì³¤ìµëë¤. ì´í ì¼ì±ì¢í©ê¸°ì ì ì¼ì±ì ì ì¼ì±ê·¸ë£¹ íì¥ ë¹ìì¤ì ì¸í°ë· TFí ë±ìì ê²½íì ììê³  íì¬ë ìº¡ì¤í¤íí¸ëì¤ ëíë¡ ê·¼ë¬´ ì¤ì´ì­ëë¤.
+         <br/>
+         ì¡ìê° ì´ëë°ì´ì ë ë¤ìí ì¤íí¸ìì ê°ì¹ë¥¼ íê°íê³  í¬ìë¥¼ ì§í í ê²½íì ê°ì§ê³  AD4th Insightì í¬ìì ì±ì¥ ê´ë ¨ ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_right">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/hslife/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì¤íì
+        </p>
+        <p class="company">
+         CEO of Deblock
+        </p>
+        <p class="introduce">
+         ì¤íì ì´ëë°ì´ì ë IT/HW/Mobile ìë¹ì¤ ì ë¬¸ í¬ì ì¬ì¬ì­ì¼ë¡ ê·¼ë¬´íë©´ì êµ­ë´ì¸ ë¤ìí ì¬ìëª¨ë¸ì ì íê³  ì ì§ ê¸°ì ì ìµëíìµëë¤.
+         <br/>
+         ê°ë°ê³¼ ì¬ìì ëª¨ë ì´í´íê³  ìë ì ë¬¸ í¬ì ì¬ì¬ì­ì¼ë¡ íì¬ë AD4th Insight í¬ì ì§ìê³¼ ICON ì ë¬¸ í¬ì ë²ì¸ Deblock ì CEOë¡ ê·¼ë¬´íê³  ìì¼ë©° ë¸ë¡ì²´ì¸ ì¬ì í í°ì´ì½ë¸ë¯¸ í¬ì ë± ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_left">
+       <div class="img">
+        <a class="btn_linkdin" href="https://www.linkedin.com/in/hongs/">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         íì¹ì§
+        </p>
+        <p class="company">
+         ëì ë²ë¥  ì¬ë¬´ì ëí
+        </p>
+        <p class="introduce">
+         íì¹ì§ ë³í¸ì¬ë ì¤í í¬ë ëíìì ê¸°ê³ê³µí ë° ì¬ë¦¬í ìì¬íì ì·¨ëíìì¼ë©° ì´í ì±ê· ê´ëíêµ ë²íì ë¬¸ëíìì ì¡¸ìíì¬ íì¬ ëì ë²ë¥  ì¬ë¬´ì ëí ë³í¸ì¬ìëë¤.
+         <br/>
+         í¹íê¶ ìíê¶ ì ìê¶ ë± ì§ìì¬ì°ê¶ ê´ë ¨ ì ë¬¸ ë¡íìì ê·¼ë¬´í ê²½ë ¥ì ë°íì¼ë¡ íì¬ ë¤ìí ê¸°ìì ë²ë¥  ìë¬¸ì ë´ë¹íê³  ììµëë¤. êµ­ë´ ë¸ë¡ì²´ì¸ ê¸°ë° ì°ìì ììë¶í° ë²ë¥  ìë¬¸ì ì§íí´ìì¼ë©° ìµê·¼ìë ìí¸ííì ë¸ë¡ì²´ì¸ TGE ê´ë ¨ ë²ë¥  ìë¬¸ì ì§ì¤íê³  ììµëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_center">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         íë¯¼
+        </p>
+        <p class="company">
+         SCH Univ. Professor
+        </p>
+        <p class="introduce">
+         íë¯¼ ì´ëë°ì´ì ë ì½ë¡ë¼ëëíêµ ì»´í¨í°ê³µí ìì¬ì ë°ì´ì¤ ì¸í¬ë©í±ì¤ ë°ì¬ ê³¼ì ì ë§ì¹ê³  íì¬ë ìì²í¥ëíêµ ì»´í¨í°ìíí¸ì¨ì´ê³µíê³¼ êµìë¡ ì¬ì§ ì¤ì ììµëë¤.
+         <br/>
+         ë¸ë¡ì²´ì¸ ê¸°ì ê³¼ ê¸ë¡ë² ëí ë¸ë¡ì²´ì¸ ìº í¼ì¤ íë¡ì í¸ ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤
+        </p>
+       </div>
+      </div>
+     </li>
+     <li class="col-4">
+      <div class="profile profile_right">
+       <div class="img">
+        <a class="btn_linkdin" href="#" style="display: none;">
+         <img src="imgs/btn-w-linkedin-b@3x.png"/>
+        </a>
+        <div class="photo">
+        </div>
+       </div>
+       <div class="textbox">
+        <p class="name">
+         ì ì¤ì
+        </p>
+        <p class="company">
+         KOREA Univ. Associate Professor
+        </p>
+        <p class="introduce">
+         ì ì¤ì ì´ëë°ì´ì ë ì¤íì´ì¤ ì£¼ë¦½ ëíìì íµê³í ìì¬ ë°ì¬ ê³¼ì ì ë§ì¹ê³  íì¬ë ê³ ë ¤ëíêµ íµê³íê³¼ êµìë¡ ì¬ì§ ì¤ì ììµëë¤.
+         <br/>
+         ë¸ë¡ì²´ì¸ í í°ì´ì½ë¸ë¯¸ ê´ë ¨ ìë¬¸ì ëì ì£¼ê³  ê³ì­ëë¤.
+        </p>
+       </div>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- 07 roadmap -->
+  <!--div class="roadmap">
+            <div class="center clearfix">
+                <div class="titlebox col-12"><h2 class="main_title"><img src="imgs/ic-point-y.svg"><span>Roadmap</span></h2></div>
+                <div class="container experience">
+                    <div class="row">
+                        <div>
+                            <section class="cd-horizontal-timeline container center clearfix">
+                                <div class="timeline col-12">
+                                    <div class="events-wrapper">
+                                        <div class="events">
+                                            <ol>
+                                                <li><a href="#0" data-date="01/01/2017" class="everytime"><p>2018</p></a></li>
+                                                <li><a href="#0" data-date="01/01/2016" class="selected"><p>2019</p> <h5>Q1</h5></a></li>
+                                                <li><a href="#0" data-date="01/01/2015"><p>2019</p> <h5>Q2</h5></a></li>
+                                                <li><a href="#0" data-date="01/01/2014"><p>2019</p> <h5>Q3</h5></a></li>
+                                                <li><a href="#0" data-date="01/01/2013"><p>2019</p> <h5>Q4</h5></a></li>
+                                                <li><a href="#0" data-date="01/01/2012"><p>2020</p> <h5>Q1</h5></a></li>
+                                            </ol>
+                                            <span class="filling-line" aria-hidden="true"></span>
+                                        </div> 
+                                    </div> 
+                                    <ul class="cd-timeline-navigation">
+                                        <li><a href="#0" class="prev inactive">Prev</a></li>
+                                        <li><a href="#0" class="next">Next</a></li>
+                                    </ul>
+                                </div>
+                                <div class="events-content col-12">
+                                    <ol>
+                                        <li data-date="01/01/2017">
+                                            <div class="tiltebox">
+                                                <div class="col-2">&nbsp;</div>
+                                                <div class="col-10"><h4>Mainnet Release</h4> </div>
+                                            </div>
+                                            <div class="contentbox">
+                                                <div class="col-1">&nbsp;</div>
+                                                <div class="col-1 quarter"><p>2019</p><h5>Q2</h5></div>
+                                                <div class="col-9 col-fit">
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>ìë¸ë½ììì ì ì£¼ë ë²ì¸ ì¤ë¦½</h5>
+                                                        <p>Data Appending Service for data processors to add more user attributes to user profile data.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>TGE ì§í with ICX ONLY</h5>
+                                                        <p>API for data processors to integrate Airbloc Protocol with their own data pipeline.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Exchange</h5>
+                                                        <p>Identity Matching Engine to facilitate second-party data exchange and user segment data import.</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-1">&nbsp;</div>
+                                            </div>
+                                        </li>
+                                        <li data-date="01/01/2016" class="selected">
+                                            <div class="tiltebox">
+                                                <div class="col-2">&nbsp;</div>
+                                                <div class="col-10"><h4>Mainnet Release</h4> </div>
+                                            </div>
+                                            <div class="contentbox">
+                                                <div class="col-1">&nbsp;</div>
+                                                <div class="col-1 quarter"><p>2019</p><h5>Q1</h5></div>
+                                                <div class="col-9 col-fit">
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>ìë¹ì¤ ê°ë°</h5>
+                                                        <p>ì¤ì¤, ì¤ëì ìì´ë ë±</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>ICON P-rep íë³´ì ë±ë¡</h5>
+                                                        <p>API for data processors to integrate Airbloc Protocol with their own data pipeline.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>ì ì£¼ ë¸ë¡ì²´ì¸ í¹êµ¬ ì§ì ê¸°ì ì ì²­</h5>
+                                                        <p>Identity Matching Engine to facilitate second-party data exchange and user segment data import.</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-1">&nbsp;</div>
+                                            </div>
+                                        </li>
+                                        <li data-date="01/01/2015">
+                                            <div class="tiltebox">
+                                                <div class="col-2">&nbsp;</div>
+                                                <div class="col-10"><h4>Mainnet Release</h4> </div>
+                                            </div>
+                                            <div class="contentbox">
+                                                <div class="col-1">&nbsp;</div>
+                                                <div class="col-1 quarter"><p>2019</p><h5>Q2</h5></div>
+                                                <div class="col-9 col-fit">
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>weCon ì¶ì</h5>
+                                                        <p>ë©ì ì  ííì ê´ê³  íë«í¼</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>ì¤ëì ìì´ë ì¶ì</h5>
+                                                        <p>ìì´ë í¬ ëì ë§ì¼í ìë¹ì¤</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>JUBJUB ì¶ì</h5>
+                                                        <p>ì¤íë¼ì¸ ì´ì©ì íëë³´ì ë§ì¼í ìë¹ì¤</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-1">&nbsp;</div>
+                                            </div>
+                                        </li>
+                                        <li data-date="01/01/2014">
+                                            <div class="tiltebox">
+                                                <div class="col-2">&nbsp;</div>
+                                                <div class="col-10"><h4>Mainnet Release</h4> </div>
+                                            </div>
+                                            <div class="contentbox">
+                                                <div class="col-1">&nbsp;</div>
+                                                <div class="col-1 quarter"><p>2019</p><h5>Q2</h5></div>
+                                                <div class="col-9 col-fit">
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Appending Service</h5>
+                                                        <p>Data Appending Service for data processors to add more user attributes to user profile data.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Processor API</h5>
+                                                        <p>API for data processors to integrate Airbloc Protocol with their own data pipeline.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Exchange</h5>
+                                                        <p>Identity Matching Engine to facilitate second-party data exchange and user segment data import.</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-1">&nbsp;</div>
+                                            </div>
+                                        </li>
+                                        <li data-date="01/01/2013">
+                                            <div class="tiltebox">
+                                                <div class="col-2">&nbsp;</div>
+                                                <div class="col-10"><h4>Mainnet Release</h4> </div>
+                                            </div>
+                                            <div class="contentbox">
+                                                <div class="col-1">&nbsp;</div>
+                                                <div class="col-1 quarter"><p>2019</p><h5>Q2</h5></div>
+                                                <div class="col-9 col-fit">
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Appending Service</h5>
+                                                        <p>Data Appending Service for data processors to add more user attributes to user profile data.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Processor API</h5>
+                                                        <p>API for data processors to integrate Airbloc Protocol with their own data pipeline.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Exchange</h5>
+                                                        <p>Identity Matching Engine to facilitate second-party data exchange and user segment data import.</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-1">&nbsp;</div>
+                                            </div>
+                                        </li>
+                                        <li data-date="01/01/2012">
+                                            <div class="tiltebox">
+                                                <div class="col-2">&nbsp;</div>
+                                                <div class="col-10"><h4>Mainnet Release</h4></div>
+                                            </div>
+                                            <div class="contentbox">
+                                                <div class="col-1">&nbsp;</div>
+                                                <div class="col-1 quarter"><p>2019</p><h5>Q2</h5></div>
+                                                <div class="col-9 col-fit">
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Appending Service</h5>
+                                                        <p>Data Appending Service for data processors to add more user attributes to user profile data.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Processor API</h5>
+                                                        <p>API for data processors to integrate Airbloc Protocol with their own data pipeline.</p>
+                                                    </div>
+                                                    <div class="col-4 quarter_content">
+                                                        <h5>Data Exchange</h5>
+                                                        <p>Identity Matching Engine to facilitate second-party data exchange and user segment data import.</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-1">&nbsp;</div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- footer -->
+  <footer class="pc_footer">
+   <nav class="center clearfix">
+    <div class="title">
+     <a class="col-3" href="#">
+      <img src="imgs/icon_footer_logo.svg"/>
+     </a>
+     <p class="col-6">
+      CONTACT US
+     </p>
+     <p class="col-3 col-fit">
+      SNS
+     </p>
+    </div>
+    <div class="content">
+     <div class="col-3">
+      <p>
+       Tokenized Advertising Alliance Protocol
+      </p>
+     </div>
+     <div class="col-6 contact">
+      <a href="#">
+       Terms &amp; conditions
+      </a>
+      <a href="#">
+       Privacy Policy
+      </a>
+      <a href="#">
+       Third-party privacy policies
+      </a>
+     </div>
+     <ul class="col-3 col-fit">
+      <li>
+       <a href="https://t.me/webloc_official">
+        <img src="imgs/icon-footer-tp.svg"/>
+       </a>
+      </li>
+      <li>
+       <a href="https://open.kakao.com/o/gXVlkWO">
+        <img src="imgs/icon-footer-k.svg"/>
+       </a>
+      </li>
+      <li>
+       <a href="https://twitter.com/webloc_io">
+        <img src="imgs/icon-footer-t.svg"/>
+       </a>
+      </li>
+      <li>
+       <a href="https://www.facebook.com/weBloc.io">
+        <img src="imgs/icon-footer-f.svg"/>
+       </a>
+      </li>
+      <li>
+       <a href="https://blog.naver.com/official_webloc">
+        <img src="imgs/icon-footer-blog.svg"/>
+       </a>
+      </li>
+      <li>
+       <a href="https://medium.com/@webloc">
+        <img src="imgs/icon-footer-m.svg"/>
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="copyright">
+     <p class="col-3">
+      Â© 2018 weBloc. All Rights Reserved
+     </p>
+     <a class="col-6" href="mailto:support@webloc.io" style="color: #00a566;">
+      <p>
+       support@webloc.io
+      </p>
+     </a>
+    </div>
+   </nav>
+  </footer>
+  <footer class="mo_footer">
+   <nav class="center clearfix">
+    <a class="logo" href="#">
+     <img src="imgs/icon_footer_logo.svg"/>
+    </a>
+    <p>
+     Tokenized Advertising Alliance Protocol
+     <br/>
+     Â© 2018 weBloc. All Rights Reserved
+    </p>
+    <ul class="contact">
+     <li>
+      <a href="#">
+       Terms &amp; conditions
+      </a>
+      <a href="#">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Third-party privacy policies
+      </a>
+      <a href="mailto:support@webloc.io" style="color: #00a566;">
+       <p>
+        support@webloc.io
+       </p>
+      </a>
+     </li>
+    </ul>
+    <ul class="sns">
+     <li>
+      <a href="https://t.me/webloc_official">
+       <img src="imgs/icon-footer-tp.svg"/>
+      </a>
+     </li>
+     <li>
+      <a href="https://open.kakao.com/o/gXVlkWO">
+       <img src="imgs/icon-footer-k.svg"/>
+      </a>
+     </li>
+     <li>
+      <a href="https://twitter.com/webloc_io">
+       <img src="imgs/icon-footer-t.svg"/>
+      </a>
+     </li>
+     <li>
+      <a href="https://www.facebook.com/weBloc.io">
+       <img src="imgs/icon-footer-f.svg"/>
+      </a>
+     </li>
+     <li>
+      <a href="https://blog.naver.com/official_webloc">
+       <img src="imgs/icon-footer-blog.svg"/>
+      </a>
+     </li>
+     <li>
+      <a href="https://medium.com/@webloc">
+       <img src="imgs/icon-footer-m.svg"/>
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </footer>
+ </body>
+</html>

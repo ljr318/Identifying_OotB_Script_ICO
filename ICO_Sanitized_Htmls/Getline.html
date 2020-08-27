@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it" xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="true" name="HandheldFriendly"/>
+  <meta content="320" name="MobileOptimized"/>
+  <meta content="user-scalable=no, width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Accedi" name="title"/>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
+  <meta content="Copyright 2020 - Vidra - Smart2Pay Onboarding. All Right Reserved." name="copyright"/>
+  <meta content="PHS Framework" name="author"/>
+  <meta content="1 days" name="revisit-after"/>
+  <link href="https://vidra.smart2pay.com/themes/s2p/images/favicon.png" rel="shortcut icon"/>
+  <link href="https://vidra.smart2pay.com/themes/default/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/default/jquery-ui.theme.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/default/jquery.checkbox.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/s2p/chosen.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/default/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/default/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/default/css/lightbox.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/s2p/css/style.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/s2p/css/style-colors.css" rel="stylesheet" type="text/css"/>
+  <link href="https://vidra.smart2pay.com/themes/s2p/css/extra.css" rel="stylesheet" type="text/css"/>
+  <script src="https://vidra.smart2pay.com/themes/default/js/jquery.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/jquery-ui.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/jquery.validate.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/jquery.checkbox.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/s2p/js/chosen.jquery.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/bootstrap.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/jquery.ui.datepicker-it.js" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/jsen.js.php" type="text/javascript">
+  </script>
+  <script src="https://vidra.smart2pay.com/themes/default/js/base.js.php" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   function phs_refresh_input_skins()
+{
+    $('input:checkbox[rel="skin_chck_big"]').checkbox({cls:'jqcheckbox-big', empty:'https://vidra.smart2pay.com/themes/default/images/empty.png'});
+    $('input:checkbox[rel="skin_chck_small"]').checkbox({cls:'jqcheckbox-small', empty:'https://vidra.smart2pay.com/themes/default/images/empty.png'});
+    $('input:checkbox[rel="skin_checkbox"]').checkbox({cls:'jqcheckbox-checkbox', empty:'https://vidra.smart2pay.com/themes/default/images/empty.png'});
+    $('input:radio[rel="skin_radio"]').checkbox({cls:'jqcheckbox-radio', empty:'https://vidra.smart2pay.com/themes/default/images/empty.png'});
+
+    $(".chosen-select").chosen( { disable_search_threshold: 7 } );
+    $(".chosen-select-nosearch").chosen( { disable_search: true } );
+    $(".ui-button").button();
+    $("*[title]").not(".no-title-skinning").tooltip();
+}
+
+function phs_refresh_dismissible_functionality()
+{
+    $('.dismissible').before( '<i class="fa fa-times-circle dismissible-close"></i>' );
+    $('.dismissible-close').on( 'click', function( event ){
+        $(this).parent().slideUp();
+        $(this).parent().find(".dismissible").html("");
+    });
+}
+
+function ignore_hidden_required( obj )
+{
+    var form_obj = $(obj).parents('form:first');
+
+    if( form_obj && form_obj[0]
+     && typeof document.createElement( 'input' ).checkValidity == 'function'
+     && form_obj[0].checkValidity() ) {
+        return;
+    }
+
+    form_obj.find( 'input,textarea,select' ).filter('[required]:hidden').removeAttr('required');
+}
+
+$(document).ready(function(){
+
+    phs_refresh_input_skins();
+
+    $.datepicker.setDefaults( $.datepicker.regional["it"] );
+
+    phs_refresh_dismissible_functionality();
+
+    $(document).on( 'click', '.submit-protection', function( event ){
+
+        var form_obj = $(this).parents('form:first');
+
+        if( form_obj && form_obj[0]
+         && typeof document.createElement( 'input' ).checkValidity == 'function'
+         && !form_obj[0].checkValidity() ) {
+            return;
+        }
+
+        var msg = $( this ).data( 'protectionTitle' );
+        if( typeof msg == 'undefined' || !msg )
+            msg = '';
+
+        show_submit_protection( msg );
+    });
+
+    $(document).on('click', '.ignore_hidden_required', function(){
+
+        var form_obj = $(this).parents('form:first');
+
+        if( form_obj && form_obj[0]
+         && typeof document.createElement( 'input' ).checkValidity == 'function'
+         && form_obj[0].checkValidity() ) {
+            return;
+        }
+
+        form_obj.find( 'input,textarea,select' ).filter('[required]:hidden').removeAttr('required');
+    });
+});
+  </script>
+  <script type="text/javascript">
+   function open_messages_summary_menu_pane()
+{
+    var isVisible = false;
+    close_menu_panes();
+    $('#messages-summary-container').stop().fadeToggle(function(){ if(!isVisible) isVisible = true });
+    var once = true;
+    if (once) {
+        $(window).click(function() {
+            if (isVisible && $('#messages-summary-container').is(':visible'))
+                $('#messages-summary-container').stop().fadeOut();
+        });
+
+        $('#messages-summary-container, #messages_summary_toggle').click(function(event){
+            event.stopPropagation();
+        });
+        once = false;
+    }
+}
+function close_messages_summary_menu_pane()
+{
+    $('#messages-summary-container' ).fadeOut();
+}
+function open_login_menu_pane( trigger )
+{
+    $('#login_popup').stop().slideToggle();
+    $(trigger).find('div').toggleClass('fa-arrow-down').toggleClass('fa-arrow-up');
+}
+function open_right_menu_pane()
+{
+    close_messages_summary_menu_pane();
+    $('#menu-right-pane' ).toggle('slide', { direction: 'right' }, 300);
+    $('#menu-left-pane' ).hide();
+}
+function open_left_menu_pane()
+{
+    close_messages_summary_menu_pane();
+    $('#menu-right-pane' ).hide();
+    $('#menu-left-pane' ).toggle('slide', { direction: 'left' }, 300);
+}
+function close_menu_panes()
+{
+    $('#menu-right-pane' ).hide('slide', { direction: 'right' }, 200);
+    $('#menu-left-pane' ).hide('slide', { direction: 'left' }, 200);
+}
+  </script>
+  <title>
+   Accedi
+  </title>
+  <script src="https://vidra.smart2pay.com/plugins/s2p_libraries/templates/js/s2p_jsengine.js.php" type="text/javascript">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
+  <script type="text/javascript">
+   $('.section_content').hide();
+    $('section h3').on('click', function() {
+        $('.section_content').not($(this).parent()).hide();
+        $(this).parent().next('.section_content').stop().slideToggle();
+    })
+  </script>
+ </head>
+ <body class="accounts_index_login accounts index login">
+  <div id="main_submit_protection">
+   <div class="mask">
+   </div>
+   <div class="loader_container">
+    <div id="main_submit_protection_loading_content">
+     <div class="ajax-loader" title="Caricamento in corso...">
+     </div>
+     <div class="loader-3_container">
+      <div class="loader-3">
+      </div>
+     </div>
+     <div id="main_submit_protection_message">
+      Attendere prego...
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="container">
+   <div class="menu-pane clearfix" id="menu-left-pane">
+    <div class="main-menu-pane-close-button clearfix" style="float: right;">
+     <a class="fa fa-times" href="javascript:void(0)" onclick="close_menu_panes()" onfocus="this.blur();">
+     </a>
+    </div>
+    <ul>
+     <li>
+      <a href="https://vidra.smart2pay.com/index.php?_route=index">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="https://vidra.smart2pay.com/index.php?_route=tandc">
+       Termini e condizioni
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="menu-pane clearfix" id="menu-right-pane">
+    <div class="main-menu-pane-close-button clearfix" style="float: left;">
+     <a class="fa fa-times" href="javascript:void(0)" onclick="close_menu_panes()" onfocus="this.blur();">
+     </a>
+    </div>
+    <ul>
+     <li>
+      <a href="javascript:void(0);" onclick="open_login_menu_pane(this);this.blur();">
+       Accedi
+       <div class="fa fa-arrow-up trigger_embedded_login">
+       </div>
+      </a>
+      <div class="login_popup" id="login_popup">
+       <form action="https://vidra.smart2pay.com/index.php?_route=accounts-login" id="menu_pane_login_frm" method="post" name="menu_pane_login_frm">
+        <div class="menu-pane-form-line form-group">
+         <label for="mt_nick">
+          E-mail
+         </label>
+         <input class="form-control" id="mt_nick" name="nick" required="required" type="text"/>
+        </div>
+        <div class="menu-pane-form-line form-group">
+         <label for="mt_pass">
+          Password
+         </label>
+         <input class="form-control" id="mt_pass" name="pass" required="required" type="password"/>
+        </div>
+        <div class="menu-pane-form-line fixskin">
+         <label for="mt_do_remember">
+          Ricordami
+         </label>
+         <input id="mt_do_remember" name="do_remember" rel="skin_checkbox" type="checkbox" value="1"/>
+         <div class="clearfix">
+         </div>
+        </div>
+        <div class="menu-pane-form-line form-group" style="width:100%;">
+         <div style="float: left;">
+          <a href="https://vidra.smart2pay.com/index.php?_route=accounts-forgot">
+           Password dimenticata
+          </a>
+         </div>
+         <div style="float: right; right: 10px;">
+          <input class="btn btn-primary btn-medium submit-protection ignore_hidden_required" name="do_submit" type="submit" value="Accedi"/>
+         </div>
+         <div class="clearfix">
+         </div>
+        </div>
+       </form>
+      </div>
+      <div class="clearfix">
+      </div>
+     </li>
+     <li class="phs_lang_container">
+      <div class="switch_lang_title">
+       <i class="fa fa-globe" style="">
+       </i>
+       <span>
+        Cambia la lingua
+       </span>
+      </div>
+      <ul>
+       <li class="phs_language_en">
+        <a href="javascript:PHS_JSEN.change_language( 'en' )">
+         English
+        </a>
+       </li>
+       <li class="phs_language_it phs_language_selected">
+        <a href="javascript:PHS_JSEN.change_language( 'it' )">
+         Italian
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </div>
+   <div id="phs_cookie_policy_agreement">
+    <span>
+     Questo sito utilizza cookies che aiuterà a fornire una migliore esperienza all'utente. Con la consultazione del sito, l'utente accetta di utilizzare i cookies.
+    </span>
+    <div class="phs_cookie_policy_agreement_actions">
+     <a class="btn btn-primary btn-small" href="https://en.wikipedia.org/wiki/Directive_on_Privacy_and_Electronic_Communications" id="phs_cookie_policy_more_link" rel="nofollow" target="_blank">
+      Maggiori informazioni
+     </a>
+     <a class="btn btn-primary btn-small" href="https://en.wikipedia.org/wiki/Directive_on_Privacy_and_Electronic_Communications" id="phs_cookie_policy_rejection_link" rel="nofollow">
+      Non sono d'accordo
+     </a>
+     <a class="btn btn-primary btn-small" href="javascript:void(0)" id="phs_cookie_policy_agree_link" onclick="phs_cookie_policy_agree()">
+      ACCETTO
+     </a>
+    </div>
+   </div>
+   <script type="text/javascript">
+    function phs_cookie_policy_agree()
+{
+    var container_obj = $("#phs_cookie_policy_agreement");
+    if( !container_obj )
+        return;
+
+    container_obj.hide();
+
+    var ajax_params = {
+        cache_response: false,
+        method: 'post',
+        url_data: { agree_cookies: 1 },
+        data_type: 'json',
+
+        onsuccess: function( response, status, ajax_obj, response_data ) {
+        },
+
+        onfailed: function( ajax_obj, status, error_exception ) {
+        }
+    };
+
+    var ajax_obj = PHS_JSEN.do_ajax( "https://vidra.smart2pay.com/_ajax.php?_route=cookie_notice-cookie_notice_ajax&_apk=136302317&_achks=826b4656df5dd6434bcc2286d832215e", ajax_params );
+}
+   </script>
+   <header id="header">
+    <div id="header_content">
+     <div id="logo">
+      <a href="https://vidra.smart2pay.com/index.php?_route=index">
+       <img alt="Vidra - Smart2Pay Onboarding" src="https://smart2paycdn.azureedge.net/static/images/Logos/S2P/s2p-logo-purple-bkg.svg" title="Vidra - Smart2Pay Onboarding"/>
+      </a>
+      <div class="clearfix">
+      </div>
+     </div>
+     <div id="menu">
+      <nav>
+       <ul>
+        <li>
+         <a href="https://vidra.smart2pay.com/index.php?_route=accounts-login" onfocus="this.blur();">
+          Accedi
+         </a>
+        </li>
+       </ul>
+      </nav>
+      <div id="user_info">
+       <nav>
+        <ul>
+         <li class="main-menu-placeholder">
+          <a class="fa fa-user main-menu-icon" href="javascript:void(0)" onclick="open_right_menu_pane()" onfocus="this.blur();">
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </header>
+   <div id="content">
+    <div id="main_content">
+     <div class="success-box" id="phs_ajax_success_box" style="display:none;">
+      <div class="dismissible">
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+     <div class="warning-box" id="phs_ajax_warning_box" style="display:none;">
+      <div class="dismissible">
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+     <div class="error-box" id="phs_ajax_error_box" style="display:none;">
+      <div class="dismissible">
+      </div>
+     </div>
+     <div class="clearfix">
+     </div>
+     <div class="login_container">
+      <form action="https://vidra.smart2pay.com/index.php?_route=accounts-login" id="login_form" method="post" name="login_form">
+       <input name="foobar" type="hidden" value="1"/>
+       <input name="back_page" type="hidden" value="https://vidra.smart2pay.com/index.php%3F_route=index"/>
+       <div class="form_container">
+        <section class="heading-bordered">
+         <h3>
+          Accedi
+         </h3>
+         <img class="logo_img" src="https://smart2paytestcdn.azureedge.net/static/images/Logos/S2P/s2p-logo-purple-bkg.svg"/>
+        </section>
+        <fieldset class="form-group">
+         <label for="nick">
+          E-mail
+         </label>
+         <div class="lineform_line">
+          <input class="form-control" id="nick" name="nick" required="required" type="text" value=""/>
+         </div>
+        </fieldset>
+        <fieldset class="form-group">
+         <label for="pass">
+          Password
+         </label>
+         <div class="lineform_line">
+          <input class="form-control" id="pass" name="pass" required="required" type="password" value=""/>
+         </div>
+        </fieldset>
+        <fieldset class="fixskin">
+         <label for="do_remember">
+          <input id="do_remember" name="do_remember" rel="skin_checkbox" type="checkbox" value="1"/>
+          <strong>
+           Ricordami (per 2 giorni)
+          </strong>
+         </label>
+         <div class="clearfix">
+         </div>
+         <small>
+          La sessione scadrà in 1 ora.
+         </small>
+        </fieldset>
+        <fieldset class="login_button mt-3">
+         <input class="btn btn-success btn-medium submit-protection ignore_hidden_required" id="do_submit" name="do_submit" type="submit" value="Accedi"/>
+        </fieldset>
+       </div>
+       <div class="login_form_actions">
+        <a class="forgot_pass" href="https://vidra.smart2pay.com/index.php?_route=accounts-forgot">
+         Hai dimenticato la password
+        </a>
+        <span class="separator">
+         |
+        </span>
+        <a href="https://smart2pay.com/en/Privacy" target="_blank">
+         Privacy
+        </a>
+       </div>
+      </form>
+     </div>
+    </div>
+    <footer class="clearfix" id="footer">
+     <div id="footer_content">
+      <div class="footerlinks clearfix">
+       <a href="https://smart2pay.com/en/Privacy" target="_blank">
+        Privacy
+       </a>
+      </div>
+      <div>
+       Vidra - Smart2Pay Onboarding (v1.9.3) © 2020 Tutti i diritti riservati.
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+ </body>
+</html>

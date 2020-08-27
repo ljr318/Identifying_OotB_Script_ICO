@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+ <head>
+  <!-- Google Analytics. -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-121621071-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-121621071-1');
+  </script>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-control"/>
+  <meta content="0" http-equiv="Expires"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Aenco bringing Innovation, Impact &amp; Integrity" name="description"/>
+  <meta content="Aencoin, Bitcoin, Ethereum, ICO, Token, AEN, BTC, ETH" name="keywords"/>
+  <!-- Favicon -->
+  <link href="./assets/img/favicon.png" rel="icon" type="image/png"/>
+  <!-- DNS Prefetch -->
+  <link href="https://www.youtube.com/" rel="dns-prefetch"/>
+  <title>
+   Aenco
+  </title>
+  <!-- Bootstrap -->
+  <link href="./assets/css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Custom Popup -->
+  <link href="./assets/css/popup/style.css" rel="stylesheet" type="text/css"/>
+  <!-- FontAwesome -->
+  <link href="./assets/css/vendor/flipclock.css" rel="stylesheet" type="text/css"/>
+  <!-- Font Family -->
+  <link href="https://fonts.googleapis.com/css?family=Teko:100,200,300,400,500" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:100,200,300,400,600,700,800" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/earlyaccess/notosanssc.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&amp;subset=korean" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400,700&amp;subset=korean" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Flamenco:300,400" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet"/>
+  <!-- slider -->
+  <link href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css"/>
+  <!-- Theme -->
+  <link href="./assets/css/aenco.css?3078d3b89bf2ac01c6e5f03ef02a7a30" rel="stylesheet" type="text/css"/>
+  <!-- Matomo -->
+  <script src="./assets/js/vendor/angular.min.js">
+  </script>
+  <!-- JQuery -->
+  <script src="./assets/js/vendor/jquery-3.3.1.min.js" type="text/javascript">
+  </script>
+  <!-- slick -->
+  <script src="./assets/js/vendor/slick.js" type="text/javascript">
+  </script>
+  <!-- Bootstrap -->
+  <!--<script type="text/javascript" src="./assets/js/vendor/popper.min.js"></script>-->
+  <script src="./assets/js/vendor/bootstrap.min.js" type="text/javascript">
+  </script>
+  <!-- count-down -->
+  <script src="./assets/js/vendor/flipclock.min.js" type="text/javascript">
+  </script>
+  <!-- pdf -->
+  <script src="./assets/js/vendor/pdfobject.min.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <div class="app display-none done-{{app.done}} lang-{{app.lang}}" ng-controller="AppController as app">
+   <!-- Modals -->
+   <div aria-hidden="true" aria-labelledby="modal-container" class="modal fade" id="modal-container" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h3 class="modal-title">
+       </h3>
+       <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+        <span aria-hidden="true">
+         ×
+        </span>
+       </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+       <div class="modal-body-content" id="modal-body-content">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- End Modals -->
+   <!-- mobile menu -->
+   <div class="overlay">
+   </div>
+   <div class="mobile-menu" id="mobile-menu">
+    <div class="menu-area">
+     <div class="list-group">
+      <!--<a class="list-group-item list-group-item-action close-when-click" target="_blank" href="{{ app.getPDFPath(0) }}"><h4>{{ app.getTranslatedText('text0224') }}</h4></a>-->
+      <a class="list-group-item list-group-item-action close-when-click" href="#exchange-area">
+       <h4>
+        {{ app.getTranslatedText('text0284') }}
+       </h4>
+      </a>
+      <!--<a href="#roadmap-area" class="list-group-item list-group-item-action close-when-click"><h4>{{ app.getTranslatedText('text0226') }}</h4></a>-->
+      <!--<a href="#team-area" class="list-group-item list-group-item-action close-when-click"><h4>{{ app.getTranslatedText('text0196') }}</h4></a>-->
+      <!--<a href="#token-corner-area" class="list-group-item list-group-item-action close-when-click"><h4>{{ app.getTranslatedText('text0293') }}</h4></a>-->
+      <a class="list-group-item list-group-item-action btn-faq close-when-click" href="#faq-area">
+       <h4>
+        {{ app.getTranslatedText('text0206') }}
+       </h4>
+      </a>
+      <a class="list-group-item list-group-item-action close-when-click" href="https://medium.com/@aencoin" target="_blank">
+       <h4>
+        {{ app.getTranslatedText('text0197') }}
+       </h4>
+      </a>
+      <a class="list-group-item list-group-item-action close-when-click" href="#contact-us-area">
+       <h4>
+        {{ app.getTranslatedText('text0198') }}
+       </h4>
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- mobile menu end -->
+   <!-- Header -->
+   <header class="header">
+    <div class="tb-row">
+     <div class="promotion-text">
+      <h6>
+      </h6>
+     </div>
+     <div class="language-bar">
+      <ul>
+       <li>
+        <a ng-click="app.changeLang('en')">
+         <span class="f6">
+          ENGLISH
+         </span>
+        </a>
+       </li>
+       <li>
+        <a ng-click="app.changeLang('zhcn')">
+         <span class="f6">
+          ä¸­æ
+         </span>
+        </a>
+       </li>
+       <li>
+        <a ng-click="app.changeLang('kr')">
+         <span class="f6">
+          íêµ­ì´
+         </span>
+        </a>
+       </li>
+       <li class="last">
+        <a ng-click="app.changeLang('jp')">
+         <span class="f6">
+          æ¥æ
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="clear">
+     </div>
+    </div>
+   </header>
+   <div class="header sec-header">
+    <div class="header-content">
+     <a href="#welcome-area">
+      <img class="brand-logo" src="./assets/img/logo.png"/>
+     </a>
+     <nav class="login-menu">
+      <ul>
+       <li class="mobile-menu-listitem">
+        <a>
+         <div class="mobile-menu-btn" id="mobile-menu-btn">
+          <ul>
+           <li>
+           </li>
+           <li>
+           </li>
+           <li>
+           </li>
+          </ul>
+         </div>
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <nav class="menu">
+      <ul>
+       <!--<li><a target="_blank" href="{{ app.getPDFPath(0) }}"><h4>{{ app.getTranslatedText('text0224') }}</h4></a></li>-->
+       <li>
+        <a href="#exchange-area">
+         <h4>
+          {{ app.getTranslatedText('text0284') }}
+         </h4>
+        </a>
+       </li>
+       <!--<li><a href="#roadmap-area"><h4>{{ app.getTranslatedText('text0226') }}</h4></a></li>-->
+       <!--<li><a href="#team-area"><h4>{{ app.getTranslatedText('text0196') }}</h4></a></li>-->
+       <!--<li><a href="#token-corner-area"><h4>{{ app.getTranslatedText('text0293') }}</h4></a></li>-->
+       <li>
+        <a href="#faq-area">
+         <h4>
+          {{ app.getTranslatedText('text0206') }}
+         </h4>
+        </a>
+       </li>
+       <li>
+        <a href="https://medium.com/@aencoin" target="_blank">
+         <h4>
+          {{ app.getTranslatedText('text0197') }}
+         </h4>
+        </a>
+       </li>
+       <li>
+        <a href="#contact-us-area">
+         <h4>
+          {{ app.getTranslatedText('text0198') }}
+         </h4>
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+   <!-- Header End -->
+   <!-- bottom bar -->
+   <div class="bottomBarContainer">
+    <div class="bottomBar">
+     <div class="fleft">
+      <h3 class="txt-join-community">
+       {{ app.getTranslatedText('text0193') }}
+      </h3>
+     </div>
+     <div class="fleft">
+      <ul>
+       <li>
+        <a href="https://t.me/AENCO" target="_blank">
+         <img src="./assets/img/social/icon-telegram.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/aencoin" target="_blank">
+         <img src="./assets/img/social/icon-twitter.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.linkedin.com/company/aenco/" target="_blank">
+         <img src="./assets/img/social/icon-linkedin.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://bitcointalk.org/index.php?topic=3710692" target="_blank">
+         <img src="./assets/img/social/icon-bitcointalk.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.youtube.com/channel/UCfDdfAGfY12GW1gisr3ELtw" target="_blank">
+         <img src="./assets/img/social/icon-youtube.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://discord.gg/KXZzqgS" target="_blank">
+         <img src="./assets/img/social/icon-discord.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://medium.com/@aencoin" target="_blank">
+         <img src="./assets/img/social/icon-medium.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://reddit.com/r/Aenco" target="_blank">
+         <img src="./assets/img/social/icon-reddit.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.facebook.com/AENCOIN/" target="_blank">
+         <img src="./assets/img/social/icon-facebook.png"/>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="clear">
+     </div>
+    </div>
+   </div>
+   <!-- bottom bar end -->
+   <!-- Welcome Area Start -->
+   <section class="section section-top section-full welcome-area section-cat-one" id="welcome-area">
+    <div class="background">
+     <div class="content">
+      <div class="row-core-message">
+       <h1 class="core-message">
+        {{ app.getTranslatedText('text0302') }}
+       </h1>
+      </div>
+      <div class="sub-message-container">
+       <h3 class="sub-message">
+        {{ app.getTranslatedText('text0303') }}
+       </h3>
+      </div>
+      <!--<div class="private-sale-notice">
+                <div class="col2"><h2 class="private-sale-txt">{{ app.updateIcoStatus() }}</h2></div>
+                <div class="col2" ng-if="app.isCounterShown">
+                    <a href="https://{{uatorlive}}.aencoin.com/register" class="btn-join">
+                        <span class="f3">{{ app.getTranslatedText('text0004') }}</span>
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>-->
+      <!--<div class="row-contributor" ng-if="app.isContributionShown">
+                <div class="link-group">
+                    <a class="f3 btn-contributors" id="btn-contributors" data-toggle="modal" data-target="#modal-container">{{ app.getTranslatedText('text0005') }}</a>
+                    <span>|</span> 
+                    <a class="f3 btn-learn" id="btn-learn" data-toggle="modal" data-target="#modal-container">{{ app.getTranslatedText('text0006') }}</a>
+                    <span>|</span>
+                    <a class="f3 txt-bonus-program" href="https://bountyhive.io/join/Aenco" target="_blank">{{ app.getTranslatedText('text0007') }}</a>
+                </div>
+            </div>-->
+      <!--<div class="count-down-container" ng-if="app.isCounterShown">
+                <div class="header-count-down f4">{{ app.getTranslatedText('text0277') }}</div>
+                <div class="clock"></div>
+            </div>
+            <div class="mvp-container" ng-if="!app.isContributionShown">
+                <img src="./assets/img/aenx_aenc.png" />
+            </div>-->
+      <!--<div class="count-down-container-txt" ng-if="!app.isCounterShown">
+                <h3 class="subtitle-3" ng-if="app.isContributionShown">{{ app.getTranslatedText('text0280') }}</h3>
+                <h3 class="subtitle-3" ng-if="!app.isContributionShown">{{ app.getTranslatedText('text0287') }}</h3>
+            </div>-->
+      <div class="contribution-bar table-container" ng-if="app.isContributionShown">
+      </div>
+      <!--<div class="link-group-container">
+                <div class="row">
+                    <ul class="link-list">
+                        <li class="link-txt"><a target="_blank" href="{{ app.getPDFPath(0) }}" class="f3">{{ app.getTranslatedText('text0009') }}</a></li>
+                        <li class="sepeartor">|</li>
+                        <li class="link-txt"><a target="_blank" href="{{ app.getPDFPath(1) }}" class="f3">{{ app.getTranslatedText('text0010') }}</a></li>
+                        <li class="sepeartor">|</li>
+                        <li class="link-txt"><a target="_blank" href="{{ app.getPDFPath(2) }}" class="f3">{{ app.getTranslatedText('text0011') }}</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <ul class="link-list">
+                        <li class="link-txt"><a target="_blank" href="{{ app.getPDFPath(7) }}" class="f3">{{ app.getTranslatedText('text0255') }}</a></li>
+                        <li class="sepeartor">|</li>
+                        <li class="link-txt"><a target="_blank" href="{{ app.getPDFPath(3) }}" class="f3">{{ app.getTranslatedText('text0012') }}</a></li>
+                    </ul>
+                </div>
+            </div>-->
+      <div class="rating-container" ng-if="app.isContributionShown">
+       <!--<div class="regular slider">
+                    <div class="slider-item">
+                        <a href="https://icobench.com/ico/aenco" target="_blank" rel="nofollow" title="Aenco on ICObench"><img border="0" src="https://icobench.com/rated/aenco?shape=horizontal&size=s" width="133px" height="50px" alt="Aenco ICO rating"/></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://www.trackico.io/ico/aenco/"
+                            target="_blank"
+                            title="Aenco on TrackICO">
+                             <img border="0"
+                                  src="https://www.trackico.io/widget/horizontal/aenco/240.png"
+                                  width="182px" height="50px" alt="Aenco TrackICO rating">
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://findico.io/ico/aenco" 
+                            target="_blank" 
+                            title="Aenco (AEN) on FindICO">
+                            <img border="0" 
+                                src="https://findico.io/widget/horizontal/aenco/216.png" 
+                                width="180px" 
+                                height="auto" 
+                                alt="Aenco (AEN) FindICO rating">
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <div id="cs-trust-badge" style="margin: auto;"></div>
+                        <script type="text/javascript" src="https://www.coinschedule.com/link-to-us/badge-js?id=2826&type=1"></script>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://cryptonext.com/ico/aenco" target="_blank" rel="nofollow" title="CRYTO NEXT"><img border="0" src="./assets/img/badge/crypto-next.png"/></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://cryptototem.com/ico-aencoin.com/" target="_blank" title="Aenco (AEN) rating on CryptoTotem"><img border="0" src="https://cryptototem.com/widgets/imggen.php?w=160&h=50&format=0&color=0&ico_id=13662" alt="Aenco (AEN) ICO rating"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://icocrunch.io/ico/Aenco" target="_blank" rel="nofollow" title="Aenco on ICOCrunch"><img src="https://icocrunch.io/rated_img?color=a&ico=Aenco&id=6181" alt="Aenco ICO Rating"/></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://trulycoin.com/ico/aenco/" target="_blank" rel="nofollow" title="AENCO on TrulyCoin" tabindex="-1"><img border="0" src="./assets/img/badge/trulycoin.png"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://icochannels.com/published/details/aenco-418.html"><img width="160" src="https://icochannels.com/public/widget/aenco/horizontal.png" title="AENCO on ICO Channels" /></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="https://ratingtoken.io/ico/AEN-1" target="_blank" rel="nofollow" title="AENCO on Rating Token" tabindex="-1"><img border="0" style="width:100%; height:auto;" src="./assets/img/badge/ratingtoken.png"></a>
+                    </div>
+                </div>-->
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Welcome Area End -->
+   <!-- What is Aen Blockchain -->
+   <!--<section id="what-is-aen-blockchain-area" class="section section-top section-full what-is-aen-blockchain-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <div class="table-container">
+                <div class="tb-col message-container dflex">
+                    <h2>{{ app.getTranslatedText('text0014') }}</h2>
+                    <h3>{{ app.getTranslatedText('text0015') }}</h3>
+                    <h5>{{ app.getTranslatedText('text0016') }}</h5>
+                </div>
+                <div class="tb-col video-container dflex" ng-bind-html="app.getCoreVideoUrl()"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="blockchain-diagram" ng-bind-html="app.getBlockchainDiagram()"></div>
+            <div class="aen-blockchain-platform-diagram" ng-bind-html="app.getBlockchainPlatformDiagram()"></div>
+        </div>
+    </div>
+</section>-->
+   <!-- What is Aen Blockchain End -->
+   <!-- Sample Application -->
+   <!--<section id="aenco-products-area" class="section section-top section-full aenco-products-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0263') }}</h2> 
+            <div class="system-diagram">
+                <img src="./assets/img/aenx-product.png" alt="Aenco Product" title="Aenco Products" />
+            </div>
+        </div>
+    </div>
+</section>-->
+   <!-- Sample Application End -->
+   <!-- What is Aen Token -->
+   <section class="section section-top section-full what-is-aen-token-area section-cat-one" id="what-is-aen-token-area">
+    <div class="main-container">
+     <div class="content">
+      <h2>
+       {{ app.getTranslatedText('text0249') }}
+      </h2>
+      <div class="message-container">
+       <p>
+        <span class="f3">
+         {{ app.getTranslatedText('text0294') }}
+        </span>
+       </p>
+       <p>
+        <span class="f3">
+         {{ app.getTranslatedText('text0295') }}
+        </span>
+       </p>
+       <p>
+        <span class="f3">
+         {{ app.getTranslatedText('text0296') }}
+        </span>
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- What is Aen Token End -->
+   <!-- Token Sale Area -->
+   <section class="section section-top section-full exchange-area section-cat-one" id="exchange-area">
+    <div class="main-container">
+     <div class="content">
+      <h2>
+       {{ app.getTranslatedText('text0281') }}
+      </h2>
+      <!--<div class="">
+                <div class="f3 main-desc">{{ app.getTranslatedText('text0282') }}</div>
+                <div class="f3 main-desc">{{ app.getTranslatedText('text0283') }}</div>
+            </div>-->
+      <div class="exchange-list-container">
+       <ul class="exchange-list dflex" id="exchange-list">
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Token Sale Area End -->
+   <!-- How is works -->
+   <section class="section section-top section-full how-it-works-area section-cat-one" id="how-it-works-area">
+    <div class="main-container">
+     <div class="content">
+      <h2>
+       {{ app.getTranslatedText('text0203') }}
+      </h2>
+      <div class="items">
+       <div class="item">
+        <div class="logo logo-partner">
+        </div>
+        <div class="info">
+         <h3 class="subtitle">
+          {{ app.getTranslatedText('text0017') }}
+         </h3>
+         <h5>
+          {{ app.getTranslatedText('text0018') }}
+         </h5>
+        </div>
+       </div>
+       <div class="item">
+        <div class="logo logo-solution">
+        </div>
+        <div class="info">
+         <h3 class="subtitle">
+          {{ app.getTranslatedText('text0297') }}
+         </h3>
+         <h5>
+          {{ app.getTranslatedText('text0298') }}
+         </h5>
+        </div>
+       </div>
+       <div class="item">
+        <div class="logo logo-global">
+        </div>
+        <div class="info">
+         <h3 class="subtitle">
+          {{ app.getTranslatedText('text0299') }}
+         </h3>
+         <h5>
+          {{ app.getTranslatedText('text0300') }}
+         </h5>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- How is works End -->
+   <!-- Ecosystem -->
+   <!--<section id="ecosystem-area" class="section section-top section-full ecosystem-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0023') }}</h2>
+            <div class="f3 main-desc">{{ app.getTranslatedText('text0253') }}</div>
+            <div class="diagram">
+                <div class="diagram-border-container">
+                    <div class="top-left-corner"></div>
+                    <div class="top-border"></div>
+                    <div class="top-right-corner"></div>
+                    <div class="left-border"></div>
+                    <div class="right-border"></div>
+                    <div class="bottom-left-corner"></div>
+                    <div class="bottom-border-end"></div>
+                    <div class="bottom-right-corner"></div>
+                </div>
+                <div class="diagram-title"><span class="f5">{{ app.getTranslatedText('text0025') }}</span></div>
+                <div class="diagram-pointer"><span class="f5">{{ app.getTranslatedText('text0024') }}</span></div>
+                <div class="items">
+                    <div class="item">
+                        <div class="title title-row-one"><h3 ng-bind-html="app.getTranslatedText('text0026')"></h3></div>
+                        <div class="desc">
+                            <ul class="list-row-1">
+                                <li><h5>{{ app.getTranslatedText('text0027') }}</h5></li>
+                                <li><h5>{{ app.getTranslatedText('text0028') }}</h5></li>
+                                <li><h5>{{ app.getTranslatedText('text0029') }}</h5></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item">
+                        <div class="title title-row-two"><h3 ng-bind-html="app.getTranslatedText('text0030')"></h3></div>
+                        <div class="desc">
+                            <ul class="list-row-2">
+                                <li><h5>{{ app.getTranslatedText('text0031') }}</h5></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item no-border">
+                        <div class="title title-row-three"><h3 ng-bind-html="app.getTranslatedText('text0032')"></h3></div>
+                        <div class="desc">
+                            <ul class="list-row-3">
+                                <li><h5>{{ app.getTranslatedText('text0033') }}</h5></li>
+                                <li><h5>{{ app.getTranslatedText('text0034') }}</h5></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+   <!-- Ecosystem End -->
+   <!-- Opportunities and Challenge -->
+   <!--<section id="challenges-opportunity-area" class="section section-top section-full challenges-opportunity-area section-cat-one">
+    <div class="main-container">
+        <div class="content table-container">
+            <div class="challenge-area table-container">
+                <div class="margin-area"></div>
+                <div class="challenge-box">
+                    <h2>{{ app.getTranslatedText('text0035') }}</h2>
+                    <div class="items">
+                        <div class="item">
+                            <div class="logo">
+                                <div class="challenge-one-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0036') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item">
+                            <div class="logo">
+                                <div class="challenge-two-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0037') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item">
+                            <div class="logo">
+                                <div class="challenge-three-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0038') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item">
+                            <div class="logo">
+                                <div class="challenge-four-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0039') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunities-area table-container">
+                <div class="opportunity-box">
+                    <h2>{{ app.getTranslatedText('text0040') }}</h2>
+                    <div class="items">
+                        <div class="item">
+                            <div class="logo">
+                                <div class="opportunity-one-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0041') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item">
+                            <div class="logo">
+                                <div class="opportunity-two-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0042') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item">
+                            <div class="logo">
+                                <div class="opportunity-three-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0043') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item">
+                            <div class="logo">
+                                <div class="opportunity-four-logo"></div>
+                            </div>
+                            <div class="desc"><h5>{{ app.getTranslatedText('text0044') }}</h5></div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin-area"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>-->
+   <!-- Opportunities and Challenge End -->
+   <!-- Explore Aenco -->
+   <!--<section id="explore-aenco-area" class="section section-top section-full explore-aenco-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0045') }}</h2>
+            <div class="items" id="video-list"></div>
+            <div class="more-btn-container">
+                <button class="btn-more-videos f4" id="btn-more-videos">{{ app.getTranslatedText('text0051') }}</button>
+            </div>
+        </div>
+    </div>
+</section>-->
+   <!-- Explore Aenco End -->
+   <!-- Token Corner -->
+   <!--<section id="token-corner-area" class="section section-top section-full token-corner-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0288') }}</h2>
+            <h5>{{ app.getTranslatedText('text0289') }}</h5>
+            <div class="items" id="token-partners-list"></div>
+            <div class="more-btn-container">
+                <button class="btn-more-videos f4" id="btn-more-videos">
+                    <h5 ng-bind-html="app.getTranslatedTextWithUrl('text0292', 'mailto:moon@aencoin.com')"></h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>-->
+   <!-- Token Corner End -->
+   <!-- Token Economy
+<section id="token-economy-area" class="section section-top section-full token-economy-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0052') }}</h2>
+            <div class="row coin-info">
+                <div class="soft-cap col">
+                    <div class="circle">
+                        <div class="title"><h3>{{ app.getTranslatedText('text0053') }}</h3></div>
+                        <div class="value f3" ng-bind-html="app.getTranslatedText('text0054')">
+                        </div>
+                    </div>
+                </div>
+                <div class="soft-cap col">
+                    <div class="circle">
+                        <div class="title"><h3>{{ app.getTranslatedText('text0055') }}</h3></div>
+                        <div class="value f3" ng-bind-html="app.getTranslatedText('text0056')">
+                        </div>
+                    </div>
+                </div>
+                <div class="soft-cap col">
+                    <div class="circle green-circle">
+                        <div class="title"><h3 ng-bind-html="app.getTranslatedText('text0057')"></h3></div>
+                        <div class="value f3" ng-bind-html="app.getTranslatedText('text0058')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coin-detailed-info">
+                <div class="desc fleft">
+                    <table class="tb-two-col" cellpadding="0" cellspacing="3">
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0059') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0060') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0061') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0062') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0063') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0064') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0065') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0066') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0067') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0068') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0069') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0070') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0071') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0072') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0073') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0074') }}</td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0075') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0076') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0264') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0265') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0077') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0078') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1 left-col">{{ app.getTranslatedText('text0079') }}</td>
+                            <td class="col2 right-col">{{ app.getTranslatedText('text0080') }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="desc fleft">
+                    <table cellpadding="0" cellspacing="3">
+                        <tr>
+                            <td class="col3 top-left-corner">{{ app.getTranslatedText('text0081') }}<br />{{ app.getTranslatedText('text0082') }}</td>
+                            <td colspan="2" class="col3 top-right-corner">{{ app.getTranslatedText('text0083') }}</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5" class="col4">
+                                {{ app.getTranslatedText('text0084') }}<br />
+                                {{ app.getTranslatedText('text0085') }}
+                            </td>
+                            <td class="col4">{{ app.getTranslatedText('text0086') }}</td>
+                            <td class="col4">{{ app.getTranslatedText('text0087') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col4">{{ app.getTranslatedText('text0088') }}</td>
+                            <td class="col4">{{ app.getTranslatedText('text0089') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col4">{{ app.getTranslatedText('text0090') }}</td>
+                            <td class="col4">{{ app.getTranslatedText('text0091') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col4">{{ app.getTranslatedText('text0092') }}</td>
+                            <td class="col4">{{ app.getTranslatedText('text0093') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col4">{{ app.getTranslatedText('text0094') }}</td>
+                            <td class="col4">{{ app.getTranslatedText('text0095') }}</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4" class="col3 bottom-left-corner">
+                                {{ app.getTranslatedText('text0096') }}<br />
+                                {{ app.getTranslatedText('text0097') }}
+                            </td>
+                            <td class="col3">{{ app.getTranslatedText('text0098') }}</td>
+                            <td class="col3">{{ app.getTranslatedText('text0087') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col3">{{ app.getTranslatedText('text0099') }}</td>
+                            <td class="col3">{{ app.getTranslatedText('text0100') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col3">{{ app.getTranslatedText('text0101') }}</td>
+                            <td class="col3">{{ app.getTranslatedText('text0102') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col3">{{ app.getTranslatedText('text0103') }}</td>
+                            <td class="col3 bottom-right-corner">{{ app.getTranslatedText('text0104') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="lalign" colspan="3">
+                                <div class="fleft remark-sign">*</div>
+                                <div class="fleft remark-text">{{ app.getTranslatedText('text0105') }}</div>
+                            <div class="clear"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="lalign" colspan="3">
+                                <div class="fleft remark-sign">#</div>
+                                <div class="fleft remark-text">{{ app.getTranslatedText('text0266') }}</div>
+                            <div class="clear"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="lalign" colspan="3">
+                                <div class="fleft remark-sign">^</div>
+                                <div class="fleft remark-text">{{ app.getTranslatedText('text0267') }}</div>
+                            <div class="clear"></div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</section>
+Topken Economy End -->
+   <!-- Token Distribution
+<section id="token-distribution-area" class="section section-top section-full token-distribution-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0106') }}</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="chart-title">
+                        <h3>{{ app.getTranslatedText('text0107') }}</h3>
+                    </div>
+                    <div class="chart-subtitle">
+                        <h5>{{ app.getTranslatedText('text0108')}} <br /> {{ app.getTranslatedText('text0109')}}</h5>
+                    </div>
+                    <div class="pie-chart">
+                        <canvas id="allocation-pie"></canvas>
+                    </div>
+                    <div id="token-allocation" class="chart-descriptions"></div>
+                </div>
+                <div class="col">
+                    <div class="chart-title">
+                        <h3>{{ app.getTranslatedText('text0118') }}</h3>
+                    </div>
+                    <div class="chart-subtitle">
+                        <h5>{{ app.getTranslatedText('text0119') }}<br />{{ app.getTranslatedText('text0120') }}</h5>
+                    </div>
+                    <div class="pie-chart">
+                        <canvas id="use-of-proceeds-pie"></canvas>
+                    </div>
+                    <div id="use-of-proceeds" class="chart-descriptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+Token Distribution End -->
+   <!-- Roadmap
+<section id="roadmap-area" class="section section-top section-full roadmap-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0131') }}</h2>
+            <div class="container-fluid">
+                <div class="row example-centered">
+                    <div class="margin-auto col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                        <ul class="timeline timeline-centered">
+                            <li class="timeline-item">
+                                <div class="timeline-info"> </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0132') }}</h3>
+                                    <h6>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0133') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info"> </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0134') }}</h3>
+                                    <h6>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0135') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info"> </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0136') }}</h3>
+                                    <h6>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0137') }}</li>
+                                            <li>{{ app.getTranslatedText('text0138') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info"> </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0139') }}</h3>
+                                    <h6>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0140') }}</li>
+                                            <li>{{ app.getTranslatedText('text0141') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info"> </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0142') }}</h3>
+                                    <h6 class="timeline-title">
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0143') }}</strong></span>
+                                        <br>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0144') }}</li>
+                                            <li>{{ app.getTranslatedText('text0145') }}</li>
+                                            <li>{{ app.getTranslatedText('text0146') }}</li>
+                                        </ul>
+                                    </h6>
+                                    <br />
+                                    <h6 class="timeline-title">
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0147') }}</strong></span><br>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0148') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker end-point"></div>
+                            </li>
+                            <li class="timeline-item period" style="padding-bottom: 50px;padding-top: 50px;">
+                                <div class="timeline-content">
+                                    <h2 class="timeline-title">{{ app.getTranslatedText('text0149') }}<br>
+                                    </h2>
+                                    <h6 class="timeline-subtitle">{{ app.getTranslatedText('text0150') }}</h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0151') }}</h3>
+                                    <h6>
+                                        <ul>
+                                            <li><strong>{{ app.getTranslatedText('text0152') }}</strong></li>
+                                            <li><strong>{{ app.getTranslatedText('text0153') }}</strong></li>
+                                            <li><strong>{{ app.getTranslatedText('text0154') }}</strong></li>
+                                            <li><strong>{{ app.getTranslatedText('text0155') }}</strong></li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0156') }}</h3>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0157') }}</h3>
+                                    <h6>
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0158') }}</strong></span>
+                                        <br>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0159') }}</li>
+                                        </ul>
+                                    </h6>
+                                    <br>
+                                    <h6>
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0160') }}</strong></span>
+                                        <br>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0161') }}</li>
+                                        </ul>
+                                    </h6>
+                                    <br>
+                                    <h6 class="txt-bc">
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0160') }}</strong></span>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0162') }}</li>
+                                            <li>{{ app.getTranslatedText('text0233') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h6>
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0163') }}</strong></span>
+                                        <br />
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0164') }}</li>
+                                            <li>{{ app.getTranslatedText('text0165') }}</li>
+                                        </ul>
+                                    </h6><br>
+                                    <h6 class="txt-bc">
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0163') }}</strong></span><br />
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0235') }}</li>
+                                            <li>{{ app.getTranslatedText('text0236') }}</li>
+                                            <li>{{ app.getTranslatedText('text0237') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h6>
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0166') }}</strong></span>
+                                        <br />
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0167') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0168') }}</h3>
+                                    <h6>
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0169') }}</strong></span>
+                                        <br />
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0170') }}</li>
+                                        </ul>
+                                    </h6>
+                                    <br />
+                                    <h6 class="txt-bc">
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0169') }}</strong></span>
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0239') }}</li>
+                                            <li>{{ app.getTranslatedText('text0240') }}</li>
+                                            <li>{{ app.getTranslatedText('text0241') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item ico">
+                                <div class="timeline-marker ico"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">{{ app.getTranslatedText('text0171') }}</h3>
+                                    <h6>
+                                        <span class="period"><strong>{{ app.getTranslatedText('text0172') }}</strong></span>
+                                        <br />
+                                        <ul>
+                                            <li>{{ app.getTranslatedText('text0173') }}</li>
+                                            <li>{{ app.getTranslatedText('text0174') }}</li>
+                                        </ul>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker ico2"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+Roadmap End -->
+   <!-- Media -->
+   <section class="section section-top section-full media-area section-cat-one" id="media-area">
+    <div class="main-container">
+     <div class="content">
+      <h2>
+       {{ app.getTranslatedText('text0175') }}
+      </h2>
+      <div class="media-list-container">
+       <ul class="media-list dflex" id="media-list">
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Media End-->
+   <!-- Partners -->
+   <section class="section section-top section-full partners-area section-cat-one" id="partners-area">
+    <div class="main-container">
+     <div class="content">
+      <h2>
+       {{ app.getTranslatedText('text0176') }}
+      </h2>
+      <div class="partner-list-container">
+       <ul class="partner-list dflex" id="partner-list">
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Partners End -->
+   <!-- Team -->
+   <!--<section id="team-area" class="section section-top section-full team-area section-cat-one">
+    <div class="main-container">
+        <div class="content">
+            <h2>{{ app.getTranslatedText('text0178') }}</h2>
+            <div id="team-member-list" class="team-member-list"></div>
+            <div class="more-btn-container">
+                <button id="btn-team-more" class="btn-more f4">{{ app.getTranslatedText('text0177') }}</button>
+            </div>
+            <h2>{{ app.getTranslatedText('text0179') }}</h2>
+            <div id="advisor-list" class="team-member-list"></div>
+            <div class="more-btn-container">
+                <button id="btn-advisors-more" class="btn-more f4">{{ app.getTranslatedText('text0177') }}</button>
+            </div>
+        </div>
+    </div>
+</section>-->
+   <!-- Team End -->
+   <!-- FAQ -->
+   <section class="section section-top section-full faq-area section-cat-two" id="faq-area">
+    <div class="main-container">
+     <div class="content">
+      <h2>
+       {{ app.getTranslatedText('text1001') }}
+      </h2>
+      <div class="subtitle">
+       {{ app.getTranslatedText('text1002') }}
+      </div>
+      <div class="questions-container">
+       <div id="accordion">
+        <div class="new-card">
+         <div class="new-card-header" id="headingOne">
+          <h5 class="mb-0">
+           <a aria-controls="collapseOne" aria-expanded="true" data-target="#collapseOne" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1003') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingOne" class="collapse show" data-parent="#accordion" id="collapseOne">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1004') }}
+           </p>
+           <p>
+            {{ app.getTranslatedText('text1005') }}
+           </p>
+           <p ng-bind-html="app.getTranslatedTextWithPdf('text1006', 0)">
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingTwo">
+          <h5 class="mb-0">
+           <a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-target="#collapseTwo" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1007') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordion" id="collapseTwo">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1008') }}
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingThree">
+          <h5 class="mb-0">
+           <a aria-controls="collapseThree" aria-expanded="false" class="collapsed" data-target="#collapseThree" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1009') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseThree">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1010') }}
+           </p>
+           <p>
+            {{ app.getTranslatedText('text1011') }}
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingFour">
+          <h5 class="mb-0">
+           <a aria-controls="collapseFour" aria-expanded="false" class="collapsed" data-target="#collapseFour" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1012') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingFour" class="collapse" data-parent="#accordion" id="collapseFour">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1013') }}
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingFive">
+          <h5 class="mb-0">
+           <a aria-controls="collapseFive" aria-expanded="false" class="collapsed" data-target="#collapseFive" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1014') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingFive" class="collapse" data-parent="#accordion" id="collapseFive">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1015') }}
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingSix">
+          <h5 class="mb-0">
+           <a aria-controls="collapseSix" aria-expanded="false" class="collapsed" data-target="#collapseSix" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1016') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingSix" class="collapse" data-parent="#accordion" id="collapseSix">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1017') }}
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingSeven">
+          <h5 class="mb-0">
+           <a aria-controls="collapseSeven" aria-expanded="false" class="collapsed" data-target="#collapseSeven" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1018') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingSeven" class="collapse" data-parent="#accordion" id="collapseSeven">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1019') }}
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="new-card">
+         <div class="new-card-header" id="headingEight">
+          <h5 class="mb-0">
+           <a aria-controls="collapseEight" aria-expanded="false" class="collapsed" data-target="#collapseEight" data-toggle="collapse">
+            <div class="sign">
+            </div>
+            <div class="btn-label">
+             {{ app.getTranslatedText('text1020') }}
+            </div>
+            <div class="clear">
+            </div>
+           </a>
+          </h5>
+         </div>
+         <div aria-labelledby="headingEight" class="collapse" data-parent="#accordion" id="collapseEight">
+          <div class="card-body">
+           <p>
+            {{ app.getTranslatedText('text1021') }}
+           </p>
+           <p>
+            {{ app.getTranslatedText('text1022') }}
+           </p>
+           <p ng-bind-html="app.getTranslatedTextWithUrl('text1023', 'https://etherscan.io/token/0x0bef619cf38cf0c22967289b8419720fbd1db9f7')">
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- FAQ End -->
+   <!-- Contact Us -->
+   <section class="section section-top section-full contact-us-area" id="contact-us-area">
+    <div class="main-container">
+     <div class="content">
+      <div class="footer-menu">
+       <!--<span class="title f5"><a target="_blank" href="{{ app.getPDFPath(0) }}">{{ app.getTranslatedText('text0207') }}</a></span>-->
+       <ul>
+        <!--<li class="f4"><a target="_blank" href="{{ app.getPDFPath(1) }}">{{ app.getTranslatedText('text0208') }}</a></li>
+                    <li class="f4"><a target="_blank" href="{{ app.getPDFPath(2) }}">{{ app.getTranslatedText('text0209') }}</a></li>
+                    <li class="f4"><a target="_blank" href="{{ app.getPDFPath(7) }}">{{ app.getTranslatedText('text0256') }}</a></li>
+                    <li class="f4"><a target="_blank" href="{{ app.getPDFPath(3) }}">{{ app.getTranslatedText('text0210') }}</a></li>-->
+        <li class="f4">
+         <div class="empty">
+          <br/>
+         </div>
+        </li>
+        <!--<li class="f4"><a href="#roadmap-area">{{ app.getTranslatedText('text0211') }}</a></li>-->
+        <!--<li class="f4"><a href="#team-area">{{ app.getTranslatedText('text0212') }}</a></li>-->
+        <li class="f4">
+         <a href="#media-area">
+          {{ app.getTranslatedText('text0213') }}
+         </a>
+        </li>
+        <li class="f4">
+         <a href="#partners-area">
+          {{ app.getTranslatedText('text0214') }}
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="footer-menu">
+       <!--<span class="title f5"><a href="#what-is-aen-blockchain-area">{{ app.getTranslatedText('text0215') }}</a></span>-->
+       <ul>
+        <li class="f4">
+         <a href="#what-is-aen-token-area">
+          {{ app.getTranslatedText('text0254') }}
+         </a>
+        </li>
+        <!--<li class="f4"><a href="#explore-aenco-area">{{ app.getTranslatedText('text0216') }}</a></li>-->
+        <li class="f4">
+         <a href="#how-it-works-area">
+          {{ app.getTranslatedText('text0203') }}
+         </a>
+        </li>
+        <!--<li class="f4"><a href="#ecosystem-area">{{ app.getTranslatedText('text0204') }}</a></li>-->
+        <li class="f4">
+         <a href="#exchange-area">
+          {{ app.getTranslatedText('text0285') }}
+         </a>
+        </li>
+        <!--<li class="f4"><a href="#challenges-opportunity-area">{{ app.getTranslatedText('text0205') }}</a></li>-->
+        <!--<li class="f4"><a href="#token-economy-area">{{ app.getTranslatedText('text0217') }}</a></li>-->
+        <!--<li class="f4"><a href="#token-distribution-area">{{ app.getTranslatedText('text0218') }}</a></li>-->
+        <!--<li class="f4"><a href="#token-corner-area">{{ app.getTranslatedText('text0293') }}</a></li>-->
+        <!--<li class="f4"><a href="#faq-area">{{ app.getTranslatedText('text0219') }}</a></li>-->
+        <li class="f4">
+         <a href="https://medium.com/@aencoin" target="_blank">
+          {{ app.getTranslatedText('text0220') }}
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="footer-menu">
+       <span class="title f5">
+        {{ app.getTranslatedText('text0221') }}
+       </span>
+       <ul>
+        <li>
+         <div class="empty">
+          <br/>
+         </div>
+        </li>
+        <li class="f4">
+         <a href="{{ app.getPDFPath(5) }}" target="_blank">
+          {{ app.getTranslatedText('text0185') }}
+         </a>
+        </li>
+        <li class="f4">
+         <a href="{{ app.getPDFPath(6) }}" target="_blank">
+          {{ app.getTranslatedText('text0186') }}
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="contact footer-menu" id="contact">
+       <span class="title f5">
+        {{ app.getTranslatedText('text0187') }}
+       </span>
+       <ul>
+        <!--<li class="f4 text-reg-addr">{{ app.getTranslatedText('text0188') }}</li>
+                    <li class="txt-registerd-address" ><h5 ng-bind-html="app.getTranslatedText('text0189')"></h5></li>-->
+        <li>
+         <div class="moon-contact">
+          <span class="f4">
+           {{ app.getTranslatedText('text0190') }}
+          </span>
+          <span class="txt-email">
+           <a href="/cdn-cgi/l/email-protection#3c515353527c5d59525f535552125f5351" target="_blank">
+            <h5>
+             {{ app.getTranslatedText('text0191') }}
+            </h5>
+           </a>
+          </span>
+         </div>
+        </li>
+        <li class="row-join-telegram">
+         <div class="f5 moon-contact fleft">
+          {{ app.getTranslatedText('text0192') }}
+         </div>
+         <a href="https://t.me/AENCO" target="_blank">
+          <div class="icon-social icon-telegram fleft">
+          </div>
+         </a>
+         <div class="clear">
+         </div>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Contact Us End -->
+   <footer>
+    <div class="footer footer-content">
+     <div class="fleft company-name">
+      <h6>
+       {{ app.getTranslatedText('text0194') }}
+      </h6>
+     </div>
+     <div class="fright version">
+      <h6>
+       VER rel:11
+      </h6>
+     </div>
+     <div class="clear">
+     </div>
+    </div>
+   </footer>
+   <!-- Hidden Bottom Bar Area -->
+   <section class="section section-top section-full bottom-bar-area">
+    <div class="main-container">
+     <div class="mockup">
+     </div>
+    </div>
+   </section>
+   <!-- Hidden Bottom Bar  End -->
+   <!-- Popup -->
+   <div class="popup">
+    <div class="popup-content">
+     <div class="main-content">
+      <span class="close">
+       ×
+      </span>
+      <!-- X button -->
+      <!-- start main content -->
+      <div class="en">
+       <div class="banner" ng-bind-html="app.getPopupImage()">
+       </div>
+       <div class="pr">
+        <div class="title">
+         AENCO Community Migration to a New and Upgraded Utility Token:
+         <br/>
+         <span class="blue">
+          THE AEN SMART (AENS) TOKEN
+         </span>
+        </div>
+        <div class="date">
+         15th June, 2020
+        </div>
+        <div class="text">
+         <p>
+          Dear Aenco community members, friends, and supporters,
+         </p>
+         <p>
+         </p>
+         <p>
+          As a socially responsible company, Aenco sees the safeguarding of token utility and safety of user assets amongst our core values. Therefore we seek to maintain your trust by enacting timely positive changes and technology upgrades when we see evolving circumstances demand it.
+         </p>
+         <p>
+          With appreciation to the confidence and support from our community members, business partners, and investors, Aenco is pleased to announce a community migration of AEN tokens, to a technologically-upgraded token contract distributed as the
+          <b>
+           AEN Smart (AENS) Token
+          </b>
+          .
+         </p>
+         <p>
+          The upgraded AENS Token showcases added technology and user safety protection, mainly as strengthened technical features and protective measures for token holders:
+         </p>
+         <p>
+          The AENS Token adopts substantial shift from the computation of older Ethereum versions to recent versions, thereby enabling further enhancements in the technical operations of the utility token. The new AENS smart contract is coded with the latest add-on capabilities pertaining to whitelisting, blacklisting, as well as pause and burn features, which the previous AEN Token did not possess, to facilitate sustainable business operations, compliance evaluation, and user flexibility.
+         </p>
+         <p>
+          All current AEN Token holders are eligible to receive a
+          <b>
+           ONE-for-ONE
+          </b>
+          token airdrop in AENS Token that was commenced on
+          <b>
+           15 June 2020 at 0600 AM (UTC)
+          </b>
+          . The new
+          <b>
+           <u>
+            AENS
+           </u>
+          </b>
+          Tokens are reflected in the same wallet accounts holding AEN Tokens. The amount of AENS tokens airdropped is based on a snapshot of AEN wallet balance taken at 0600AM (UTC). The overall token supply remains to be unchanged at 4,000,000,000 AENS.
+         </p>
+         <p>
+          We invite all AEN Token holders to check their existing AEN holding wallets for the new AENS Tokens; should you have any problems seeing them, kindly approach our customer support team at
+          <a href="/cdn-cgi/l/email-protection#8ee3e1e1e0ceefebe0ede1e7e0a0ede1e3">
+           <span class="__cf_email__" data-cfemail="adc0c2c2c3edccc8c3cec2c4c383cec2c0">
+            [email protected]
+           </span>
+          </a>
+          .
+         </p>
+         <p>
+          As before, we have coordinated with our exchange partners to ensure that AENS Tokens are traded on LATOKEN and Digifinex, and
+          <b>
+           <u>
+            in full replacement to the previously listed AEN Token
+           </u>
+          </b>
+          . We seek to ensure that this community migration and value transfer is seamless as possible for all our supporters and shall ensure that the anticipated token utility within the Aenco ecosystem remain unchanged.
+         </p>
+         <p>
+          Additionally, Aenco will be applying timely changes in relation to this migration across CoinMarketCap, Etherscan, and other informative platforms. Please stay tuned!
+         </p>
+         <p>
+          If you have any enquires in relation to the upgraded AENS Token, please contact us by email at
+          <a href="/cdn-cgi/l/email-protection#3e535151507e5f5b505d515750105d5153">
+           <span class="__cf_email__" data-cfemail="7d101212133d1c18131e121413531e1210">
+            [email protected]
+           </span>
+          </a>
+          or our official Telegram groups:
+         </p>
+         <ul>
+          <li>
+           English:
+           <a href="https://t.me/Aenco" target="blank">
+            t.me/Aenco
+           </a>
+          </li>
+          <li>
+           Chinese:
+           <a href="https://t.me/AencoCN" target="blank">
+            t.me/AencoCN
+           </a>
+          </li>
+          <li>
+           Korean:
+           <a href="https://t.me/AencoKorea" target="blank">
+            t.me/AencoKorea
+           </a>
+          </li>
+          <li>
+           Vietnamese:
+           <a href="https://t.me/AencoVietnam" target="blank">
+            t.me/AencoVietnam
+           </a>
+          </li>
+         </ul>
+         <p>
+          We thank you for your ongoing support!
+         </p>
+         <p>
+          Best regards,
+         </p>
+         <p>
+         </p>
+         <p>
+          The Aenco Team
+          <br/>
+          <img class="logo" src="images/aenco-logo.svg"/>
+         </p>
+         <p>
+          <a href="/cdn-cgi/l/email-protection#e78a888889a786828984888e89c984888a">
+           <span class="__cf_email__" data-cfemail="b4d9dbdbdaf4d5d1dad7dbddda9ad7dbd9">
+            [email protected]
+           </span>
+          </a>
+          <br/>
+          <a href="http://www.aencoin.com" target="blank">
+           www.aencoin.com
+          </a>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="sc zh zhcn zh-cn">
+       <div class="banner">
+        <img src="images/aens-launch_20200610_zh.jpg"/>
+       </div>
+       <div class="pr">
+        <div class="title">
+         AENCO å´­æ°éç¨:
+         <span class="blue">
+          AEN SMART (AENS) ä¼åçä»¤ç
+         </span>
+        </div>
+        <div class="date">
+         2020å¹´6æ15æ¥
+        </div>
+        <div class="text">
+         <p>
+          æ°ç±ç Aenco ç¤¾ç¾¤æåãæååæ¯æè,
+         </p>
+         <p>
+         </p>
+         <p>
+          Aenco ç§æ¿ä¼ä¸ç¤¾ä¼è´£ä»»ï¼å°½å¿ç»´æ¤Aencoä»£å¸çèµäº§å®ç¨æ§ï¼å¹¶è§ç¨æ·å®å¨ä¸ºæ ¸å¿ä»·å¼ä¹ä¸ãç§ææ¥æ°æå¼, æä»¬å æ¶å¶å®ï¼ä¸æ¶å¹¶è¿ï¼ç§¯ææ¨å¨åä¹å¸åºéè¦çææ¯æåï¼ä»èä¼åèµäº§ä»·å¼åæå¡ã
+         </p>
+         <p>
+          æèµæä»¬çç¤¾ç¾¤æåãåä½ä¼ä¼´åæèµèçä¿¡ä»»åæ¯æï¼Aenco å®£å¸å° AENCOIN(AEN)ä»£å¸åçº§å°ææ¯ä¼åççä»£å¸åçº¦ï¼å³
+          <b>
+           AEN Smart(AENS) ä»£å¸
+          </b>
+          ã
+         </p>
+         <p>
+          åçº§ç AENS ä»¤çå¢æ·»æ´å¤ææ¯åç¨æ·å®å¨çä¿éï¼ä¸ºèµäº§ææèæä¾æ´å¼ºé§ãæç»­çææ¯åè½æå±åä¿å»æ¹æ³ã
+         </p>
+         <p>
+          AENS ä»¤ççéå¤§ææ¯çªç ´ä¹ä¸ï¼ä¹éç¨äºæ´æ°çä»¥å¤ªåçè®¡ç®æ³ï¼ä»èå¢å¼ºä»¤ççç¨åºæä½ãAENS ææ°çæºè½åçº¦ç¼ç äº¦æ¶µçç½ååãé»ååï¼ä»¥åæååå»å½åè½æå³çéå åè½ï¼ä»¥ä¿è¿å¯æç»­ä¸å¡è¿è¥ãåè§æ§è¯ä¼°åç¨æ·çµæ´»æ§ã
+         </p>
+         <p>
+          å½åææ AEN èµäº§ææèåå·èµæ ¼è·å¾AENSä»¤ççä¸å¯¹ä¸ç©ºæå¯¹æ¢ï¼è¯¥ç©ºæäº
+          <b>
+           2020å¹´6æ15æ¥
+          </b>
+          ä¸çæ åæ¶é´
+          <b>
+           ä¸å6æ¶
+          </b>
+          å¼å§å®æ½ãæ°ç
+          <b>
+           <u>
+            AENS ä»¤ç
+           </u>
+          </b>
+          å°æ¾ç¤ºå¨ææ AEN ä»¤ççç¸åé±åå¸çæ·ä¸­ãAENS ä»£å¸ç©ºæçæ°éæ¯åºäºå¨ä¸å0600ï¼ä¸çæ åæ¶é´ï¼ææAENé±åä½é¢çæªå¾ãä»£å¸çæ»ä¾åºéä¾ç¶ç»´æä¸åï¼å³ 4,000,000,000 AENSã
+         </p>
+         <p>
+          æä»¬è¯éè¯¸ä½ AEN ä»£å¸ææäººæ£æ¥ç°æææ AEN çé±å, ä¸¦æ¥éæ´æ°ç AENS ä»£å¸æ¯å¦æ¶å¦¥ï¼å¦éä¸ä»»ä½é®é¢ï¼è¯·åçµé®å°
+          <a href="/cdn-cgi/l/email-protection#b2dfdddddcf2d3d7dcd1dddbdc9cd1dddf">
+           <span class="__cf_email__" data-cfemail="5f323030311f3e3a313c303631713c3032">
+            [email protected]
+           </span>
+          </a>
+          ä¸æä»¬çå®¢æ·æå¡å¢éèç³»ã
+         </p>
+         <p>
+          æ­¤å¤ï¼æä»¬ä¾æ§ä¸äº¤æ¢åä½ä¼ä¼´è¿è¡äºåè°ï¼å·²ç¡®ä¿AENSä»£å¸å¯å¨ LATOKEN å Digifinex ä¸è¿è¡äº¤æï¼å¹¶å®å¨æ¿ä»£ä»¥åååºçAENä»£å¸ãæä»¬åæ±ç¡®ä¿æ ç¼çææ¯è¿ç§»åä»·å¼è½¬ç§»ï¼å·©åº Aenco çæç³»ç»ä¸­é¢æçèµäº§ä»·å¼ã
+         </p>
+         <p>
+          æ­¤å¤ï¼Aenco å°éå¯¹ CoinMarketCapï¼Etherscan åå¶ä»è®¯æ¯å¹³å°ä½åºæ°æ®æ´æ°ãæ¬è¯·æå¾ï¼
+         </p>
+         <p>
+          è¥æå³äºåçº§ç AENS ä»¤çççé®ï¼è¯·éè¿çµé®èç³»æä»¬ï¼
+          <a href="/cdn-cgi/l/email-protection#107d7f7f7e5071757e737f797e3e737f7d">
+           <span class="__cf_email__" data-cfemail="97faf8f8f9d7f6f2f9f4f8fef9b9f4f8fa">
+            [email protected]
+           </span>
+          </a>
+          ï¼æå å¥æä»¬çå®æ¹çµæ¥ç»ï¼
+         </p>
+         <ul>
+          <li>
+           è±æ:
+           <a href="https://t.me/Aenco" target="blank">
+            t.me/Aenco
+           </a>
+          </li>
+          <li>
+           ä¸­æ:
+           <a href="https://t.me/AencoCN" target="blank">
+            t.me/AencoCN
+           </a>
+          </li>
+          <li>
+           æé²è¯­:
+           <a href="https://t.me/AencoKorea" target="blank">
+            t.me/AencoKorea
+           </a>
+          </li>
+          <li>
+           è¶åæ:
+           <a href="https://t.me/AencoVietnam" target="blank">
+            t.me/AencoVietnam
+           </a>
+          </li>
+         </ul>
+         <p>
+          æè°¢æ¨ä¸ç´ä»¥æ¥çæ¯æ!
+         </p>
+         <p>
+          æ¨ç Aenco å¢é
+          <br/>
+          <img class="logo" src="images/aenco-logo.svg"/>
+         </p>
+         <p>
+          <a href="/cdn-cgi/l/email-protection#ed80828283ad8c88838e828483c38e8280">
+           <span class="__cf_email__" data-cfemail="462b2929280627232825292f286825292b">
+            [email protected]
+           </span>
+          </a>
+          <br/>
+          <a href="http://www.aencoin.com" target="blank">
+           www.aencoin.com
+          </a>
+         </p>
+        </div>
+       </div>
+      </div>
+      <!-- end main content -->
+     </div>
+    </div>
+   </div>
+   <!-- Popup End -->
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script src="./assets/js/bundle.js?3078d3b89bf2ac01c6e5f03ef02a7a30">
+   </script>
+  </div>
+ </body>
+</html>

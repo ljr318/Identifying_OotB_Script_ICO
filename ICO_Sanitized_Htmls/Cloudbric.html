@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   SWAP - The Most Advanced Web Protection I Cloudbric
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="Cloudbric's SWAP keeps your website safe by providing the most advanced web application protection available." name="description"/>
+  <meta content="WAF, web application firewall, data breach, website security, website firewall, cloud WAF" name="keywords"/>
+  <link href="https://cloudbric.com/" rel="canonical"/>
+  <meta content="SWAP - The Most Advanced Web Protection I Cloudbric" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="/assets/image/main-thumbnail.png" property="og:image"/>
+  <meta content="Cloudbric's SWAP keeps your website safe by providing the most advanced web application protection available." property="og:description"/>
+  <meta content="https://v2.cloudbric.com/" property="og:url"/>
+  <link href="/assets/image/favicon.ico" rel="shortcut icon"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700|Noto+Sans:400,400i,700,700i&amp;display=swap&amp;subset=korean" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&amp;display=swap" rel="stylesheet"/>
+  <link href="/assets/css/reset.css?2020072101" rel="stylesheet"/>
+  <link href="/assets/css/common.css?2020072101" rel="stylesheet"/>
+  <link href="/assets/css/responsive.css?2020072101" rel="stylesheet"/>
+  <link href="https://v2.cloudbric.com/assets/css/main/common.css?2020072101" rel="stylesheet" type="text/css"/>
+  <link href="https://v2.cloudbric.com/assets/css/main/responsive.css?2020072101" rel="stylesheet" type="text/css"/>
+  <script src="/assets/js/common_head.js?2020072101">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-55909344-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-55909344-1');
+    gtag('config', 'AW-818830895');
+  </script>
+  <script>
+   gtag('event', 'page_view', {
+        'send_to': 'AW-818830895',
+        'user_id': '100'
+    });
+  </script>
+  <script>
+   (function() {
+        window.ldfdr = window.ldfdr || {};
+        (function(d, s, ss, fs) {
+            fs = d.getElementsByTagName(s)[0];
+
+            function ce(src) {
+                var cs = d.createElement(s);
+                cs.src = src;
+                setTimeout(function() {
+                    fs.parentNode.insertBefore(cs, fs)
+                }, 1);
+            }
+
+            ce(ss);
+        })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_3P1w24dZ25J8mY5n.js');
+    })();
+  </script>
+  <!-- VisitorQueue -->
+  <script>
+   function vqTrackId(){return 'bff42f06-ce16-46b0-8337-ba11b2305393';} (function(d, e) { var el = d.createElement(e); el.sa = function(an, av){this.setAttribute(an, av); return this;}; el.sa('id', 'vq_tracking').sa('src', '//t.visitorqueue.com/p/tracking.min.js?id='+vqTrackId()).sa('async', 1).sa('data-id', vqTrackId()); d.getElementsByTagName(e)[0].parentNode.appendChild(el); })(document, 'script');
+  </script>
+  <!-- Lead Forensics -->
+  <script src="https://secure.heat6have.com/js/192010.js" type="text/javascript">
+  </script>
+  <noscript>
+   <img alt="" src="https://secure.heat6have.com/192010.png" style="display:none;"/>
+  </noscript>
+  <!-- Convertflow -->
+  <script async="" src="https://js.convertflow.co/production/websites/11028.js">
+  </script>
+ </head>
+ <body>
+  <div class="language-banner" id="languageBanner">
+   <div class="language-banner-inner">
+    <div class="language-box gnb-language-box" data-direction="bottom" data-use-cookie="true">
+     <div class="language-item selected" data-lang="en">
+      English
+     </div>
+     <ul class="language-box-bundle">
+      <li class="language-item" data-lang="ko">
+       한국어
+      </li>
+      <li class="language-item" data-lang="ja">
+       日本語
+      </li>
+     </ul>
+    </div>
+    <button class="language-close-button" id="LanguageCloseButton">
+     ×
+    </button>
+   </div>
+  </div>
+  <div class="gnb-wrap">
+   <nav class="gnb">
+    <div class="gnb-inner">
+     <ul class="gnb-bundle">
+      <li class="gnb-item gnb-menu-item">
+       <button aria-label="Menu Button" class="gnb-menu-button" id="openNavigationButton" type="button">
+        <svg viewbox="0 0 54 40">
+         <path class="gnb-menu-path" d="m 3 6 a 1 1 0 0 1 0 -6 h 34 a 1 1 0 0 1 0 6 z">
+         </path>
+         <path class="gnb-menu-path" d="m 3 23 a 1 1 0 0 1 0 -6 h 48 a 1 1 0 0 1 0 6 z">
+         </path>
+         <path class="gnb-menu-path" d="m 3 40 a 1 1 0 0 1 0 -6 h 34 a 1 1 0 0 1 0 6 z">
+         </path>
+         <path class="gnb-menu-path" d="m 1 5 a 1 1 0 0 1 4 -4 l 34 34 a 1 1 0 0 1 -4 4 z">
+         </path>
+         <path class="gnb-menu-path" d="m 5 39 a 1 1 0 0 1 -4 -4 l 34 -34 a 1 1 0 0 1 4 4 z">
+         </path>
+        </svg>
+       </button>
+      </li>
+      <li class="gnb-item gnb-logo-item">
+       <a aria-label="Cloudbric Logo" class="gnb-logo-link" href="/" role="button" title="Cloudbric Main">
+       </a>
+      </li>
+      <li class="gnb-item gnb-large-menu">
+       <ul class="large-menu-bundle">
+        <li class="large-menu-item">
+         <a class="large-menu-link" href="/remote-access" title="Remote Access">
+          Remote Access
+         </a>
+        </li>
+        <li class="large-menu-item">
+         <a class="large-menu-link" href="/website-security" title="Website Security">
+          Website Security
+         </a>
+        </li>
+        <li class="large-menu-item">
+         <a class="large-menu-link" href="/mobile-security" title="Mobile Security">
+          Mobile Security
+         </a>
+        </li>
+        <li class="large-menu-item">
+         <a class="large-menu-link" href="/blockchain" title="Blockchain">
+          Blockchain
+         </a>
+        </li>
+        <li class="large-menu-item">
+         <a class="large-menu-link" href="/security-tools" title="Security Tools">
+          Security Tools
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="gnb-item gnb-contact-item">
+       <a class="gnb-contact-link" href="/partners" title="Contact Us">
+        Contact Us
+       </a>
+       <svg class="gnb-contact-arrow" height="12" width="48">
+        <line class="line path" stroke="#fff" stroke-width="2" x1="0" x2="48" y1="12" y2="12">
+        </line>
+        <line class="line hypotenuse" stroke="#fff" stroke-width="1" x1="35" x2="48" y1="0" y2="12">
+        </line>
+       </svg>
+      </li>
+     </ul>
+    </div>
+   </nav>
+   <div class="small-navigation">
+    <div class="small-navigation-inner">
+     <div class="small-navigation-body">
+      <ul class="small-navigation-list">
+       <li class="small-navigation-item">
+        <a class="small-navigation-link" href="/remote-access" title="Remote Access">
+         Remote Access
+        </a>
+       </li>
+       <li class="small-navigation-item">
+        <a class="small-navigation-link" href="/website-security" title="Website Security">
+         Website Security
+        </a>
+       </li>
+       <li class="small-navigation-item">
+        <a class="small-navigation-link" href="/mobile-security" title="Mobile Security">
+         Mobile Security
+        </a>
+       </li>
+       <li class="small-navigation-item">
+        <a class="small-navigation-link" href="/blockchain" title="Blockchain">
+         Blockchain
+        </a>
+       </li>
+       <li class="small-navigation-item">
+        <a class="small-navigation-link" href="/security-tools" title="Security Tools">
+         Security Tools
+        </a>
+       </li>
+       <li class="small-navigation-item">
+        <a class="small-navigation-link" href="/partners" title="Contact Us">
+         Contact Us
+        </a>
+       </li>
+      </ul>
+      <div class="navigation-language">
+       <div class="language-label">
+        Language
+       </div>
+       <div class="language-option">
+        <div class="language-option-inner">
+         <div class="current-language">
+          <select class="language-select gnb-language-select">
+           <option selected="" value="en">
+            English
+           </option>
+           <option value="ko">
+            Korean
+           </option>
+           <option value="ja">
+            Japanese
+           </option>
+          </select>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <main role="main">
+   <div class="main-inner">
+    <article>
+     <h1 class="main-heading">
+      Elite Full Service Website Security
+     </h1>
+     <div class="main-section-bundle">
+      <div class="main-section-item">
+       <section class="main-section" data-section-order="1">
+        <div class="section-inner">
+         <div class="column-section">
+          <div class="column-left">
+           <h2 class="section-heading">
+            Easy Enterprise Security
+           </h2>
+           <p class="content-text">
+            See how our proprietary technology protects websites around the world while keeping everything simple yet effective.
+           </p>
+           <p class="content-text">
+            Already a member?
+            <a class="external-link" href="https://console2.cloudbric.com/sign/in" target="_blank" title="Sign in here">
+             Sign in here
+            </a>
+           </p>
+          </div>
+          <div class="column-right">
+           <div class="triangles-link-wrap">
+            <ul class="triangle-link-list">
+             <li class="triangle-link-item">
+              <a aria-label="" class="triangle-link" href="/partners" target="_self" title="Get Started">
+               <div class="triangle1">
+               </div>
+               <div class="triangle-link-body">
+                <div class="triangle-link-text">
+                 Get Started
+                </div>
+                <svg class="triangle-link-arrow arrow-mobile" height="6" width="24">
+                 <line class="line path" x1="0" x2="24" y1="6" y2="6">
+                 </line>
+                 <line class="line hypotenuse" x1="18" x2="24" y1="0" y2="6">
+                 </line>
+                </svg>
+                <svg class="triangle-link-arrow arrow-large" height="12" viewbox="0 0 48 12" width="48">
+                 <line class="line path" x1="0" x2="48" y1="12" y2="12">
+                 </line>
+                 <line class="line hypotenuse" x1="35" x2="48" y1="0" y2="12">
+                 </line>
+                </svg>
+               </div>
+              </a>
+             </li>
+             <li class="triangle-link-item">
+              <a aria-label="" class="triangle-link" href="/websitesecurity" target="_self" title="Learn More">
+               <svg class="triangle2" viewbox="0 0 160 160">
+                <line class="line path" x1="0" x2="160" y1="0" y2="0">
+                </line>
+                <line class="line path" x1="160" x2="160" y1="0" y2="160">
+                </line>
+                <line class="line hypotenuse" x1="0" x2="160" y1="0" y2="160">
+                </line>
+               </svg>
+               <div class="triangle-link-body">
+                <div class="triangle-link-text">
+                 Learn More
+                </div>
+                <svg class="triangle-link-arrow arrow-mobile" height="6" width="24">
+                 <line class="line path" x1="0" x2="24" y1="6" y2="6">
+                 </line>
+                 <line class="line hypotenuse" x1="18" x2="24" y1="0" y2="6">
+                 </line>
+                </svg>
+                <svg class="triangle-link-arrow arrow-large" height="12" viewbox="0 0 48 12" width="48">
+                 <line class="line path" x1="0" x2="48" y1="12" y2="12">
+                 </line>
+                 <line class="line hypotenuse" x1="35" x2="48" y1="0" y2="12">
+                 </line>
+                </svg>
+               </div>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+      <div class="main-section-item">
+       <section class="main-section heading-line" data-section-order="2">
+        <div class="section-inner">
+         <h2 class="section-heading">
+          <span class="pseudo-line-break">
+           Award Winning
+          </span>
+          Web Application Protection
+         </h2>
+         <p class="content-text">
+          <span class="pseudo-line-break">
+           Recognized &amp; trusted by more than 10,000 enterprises
+          </span>
+          and small businesses spanning 25+ countries.
+         </p>
+         <div class="businesses-logo">
+         </div>
+         <div class="card-group">
+          <section class="card">
+           <div class="card-icon">
+            <svg class="card-icon-svg" viewbox="0 0 66 66">
+             <defs>
+              <g id="icon1-path-group">
+               <path class="fill-orange" d="m 0 5 a 5 5 0 0 1 5 -5 h 38 a 5 5 0 0 1 5 5 a 5 5 0 0 1 -5 5 h -38 a 5 5 0 0 1 -5 -5 z">
+               </path>
+               <path class="fill-blue" d="m 0 5 a 5 5 0 0 1 5 -5 a 5 5 0 0 1 5 5 v 38 a 5 5 0 0 1 -5 5 a 5 5 0 0 1 -5 -5 z">
+               </path>
+               <path class="fill-gray" d="m 0 5 a 5 5 0 0 1 5 -5 h 5 v 10 h -5 a 5 5 0 0 1 -5 -5 z">
+               </path>
+              </g>
+             </defs>
+             <use xlink:href="#icon1-path-group">
+             </use>
+             <use x="18" xlink:href="#icon1-path-group" y="18">
+             </use>
+            </svg>
+           </div>
+           <h3 class="card-heading">
+            Flexible Response
+           </h3>
+           <p class="card-text">
+            <span class="pseudo-line-break">
+             Deployment possible
+            </span>
+            for any infrastructure
+           </p>
+          </section>
+          <section class="card">
+           <div class="card-icon">
+            <svg class="card-icon-svg" viewbox="0 0 66 66">
+             <path class="fill-blue" d="m 33 66 a 1 1 10 1 1 0 -66 v 10 a 1 1 0 0 0 0 46 z">
+             </path>
+             <path class="fill-orange" d="m 33 66 a 1 1 0 0 0 0 -66 v 10 a 1 1 0 0 1 0 46 z">
+             </path>
+             <circle class="fill-gray" cx="33" cy="5" r="5">
+             </circle>
+             <circle class="fill-gray" cx="33" cy="61" r="5">
+             </circle>
+            </svg>
+           </div>
+           <h3 class="card-heading">
+            Retaining Expertise
+           </h3>
+           <p class="card-text">
+            Enterprise-grade cloud web application protection
+            <span class="pseudo-line-break">
+             customization and protection against
+            </span>
+            the OWASP top 10
+           </p>
+          </section>
+          <section class="card">
+           <div class="card-icon">
+            <svg class="card-icon-svg" viewbox="0 0 66 66">
+             <path class="fill-orange" d="m 28 5 a 5 5 0 0 1 10 0 v 56 a 5 5 0 0 1 -10 0 z">
+             </path>
+             <path class="fill-blue" d="m 16 10 a 5 5 0 0 1 0 -10 h 34 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-blue" d="m 16 30 a 5 5 0 0 1 0 -10 h 34 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-gray" d="m 28 5 a 5 5 0 0 1 10 0 v 5 h -10 z">
+             </path>
+             <path class="fill-gray" d="m 28 20 h 10 v 10 h -10 z">
+             </path>
+            </svg>
+           </div>
+           <h3 class="card-heading">
+            Extensive Experience
+           </h3>
+           <p class="card-text">
+            <span class="pseudo-line-break">
+             Over 20 years of enterprise
+            </span>
+            information security experience
+           </p>
+          </section>
+         </div>
+        </div>
+       </section>
+      </div>
+      <div class="main-section-item">
+       <section class="main-section heading-line" data-section-order="3">
+        <div class="section-inner">
+         <h2 class="section-heading">
+          <span class="pseudo-line-break">
+           Real-Time Security
+          </span>
+          <span class="pseudo-line-break">
+           Analysis with the
+          </span>
+          <span class="pseudo-line-break">
+           Cloudbric
+          </span>
+          Dashboard
+         </h2>
+         <p class="content-text">
+          Real-time cybersecurity that’s made with the customer in mind. We’ve taken out the complicated tech jargon and made our dashboard accessible to all.
+         </p>
+         <p class="content-text">
+          Tour the Dashboard
+          <a class="external-link" href="https://demo-v2.cloudbric.com" target="_blank" title="Get a tour">
+           Get a tour
+          </a>
+         </p>
+         <div class="card-group">
+          <section class="card">
+           <div class="card-icon">
+            <svg class="card-icon-svg" viewbox="0 0 66 66">
+             <path class="fill-orange" d="m 5 10 a 5 5 0 0 1 0 -10 h 56 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-blue" d="m 0 5 a 5 5 0 0 1 10 0 v 56 a 5 5 0 0 1 -10 0 z">
+             </path>
+             <path class="fill-blue" d="m 56 5 a 5 5 0 0 1 10 0 v 56 a 5 5 0 0 1 -10 0 z">
+             </path>
+             <path class="fill-orange" d="m 5 66 a 5 5 0 0 1 0 -10 h 56 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-gray" d="m 5 10 a 5 5 0 0 1 0 -10 h 5 v 10 z">
+             </path>
+             <path class="fill-gray" d="m 61 66 a 5 5 0 0 0 0 -10 h -5 v 10 z">
+             </path>
+            </svg>
+           </div>
+           <h3 class="card-heading">
+            Intuitive UI
+           </h3>
+           <p class="card-text">
+            Check your traffic and attacks in real-time through our intuitive dashboard.
+           </p>
+          </section>
+          <section class="card">
+           <div class="card-icon">
+            <svg class="card-icon-svg" viewbox="0 0 66 66">
+             <path class="fill-blue" d="m 5 10 a 5 5 0 0 1 0 -10 h 56 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-orange" d="m 5 38 a 5 5 0 0 1 0 -10 h 56 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-blue" d="m 5 66 a 5 5 0 0 1 0 -10 h 56 a 5 5 0 0 1 0 10 z">
+             </path>
+             <path class="fill-gray" d="m 61 0 a 5 5 0 0 1 0 10 h -5 v -10 z">
+             </path>
+             <path class="fill-gray" d="m 61 28 a 5 5 0 0 1 0 10 h -5 v -10 z">
+             </path>
+             <path class="fill-gray" d="m 61 56 a 5 5 0 0 1 0 10 h -5 v -10 z">
+             </path>
+            </svg>
+           </div>
+           <h3 class="card-heading">
+            Deep Learning System
+           </h3>
+           <p class="card-text">
+            Our COCEP engine integrates a machine learning platform, VISION, to increase detection accuracy over time.
+           </p>
+          </section>
+          <section class="card">
+           <div class="card-icon">
+            <svg class="card-icon-svg" viewbox="0 0 66 66">
+             <path class="fill-blue" d="m 2 56 a 1 1 0 0 0 8 8 l 54 -54 a 1 1 0 0 0 -8 -8 z">
+             </path>
+             <path class="fill-orange" d="m 35 56 a 1 1 0 0 0 8 8 l 21 -21 a 1 1 0 0 0 -8 -8 z">
+             </path>
+             <path class="fill-gray" d="m 56 2 a 1 1 0 0 1 8 8 l -4 4 l -8 -8 z">
+             </path>
+            </svg>
+           </div>
+           <h3 class="card-heading">
+            Monthly Reports
+           </h3>
+           <p class="card-text">
+            Download customized monthly security reports and gain insight into how your website is being protected.
+           </p>
+          </section>
+         </div>
+        </div>
+       </section>
+      </div>
+      <div class="main-section-item">
+       <section class="main-section heading-line" data-section-order="4">
+        <div class="section-inner">
+         <h2 class="section-heading">
+          Partners
+         </h2>
+         <ul class="partners-logo-list">
+          <li aria-label="Cloudbric Partner Logo" class="partner-logo-item logo-aws">
+           aws
+          </li>
+          <li aria-label="Cloudbric Partner Logo" class="partner-logo-item logo-linode">
+           linode
+          </li>
+          <li aria-label="Cloudbric Partner Logo" class="partner-logo-item logo-plesk">
+           plesk
+          </li>
+          <li aria-label="Cloudbric Partner Logo" class="partner-logo-item logo-xneelo">
+           xneelo
+          </li>
+          <li aria-label="Cloudbric Partner Logo" class="partner-logo-item logo-gmo">
+           gmo
+          </li>
+          <li aria-label="Cloudbric Partner Logo" class="partner-logo-item logo-penta">
+           penta
+          </li>
+         </ul>
+        </div>
+       </section>
+      </div>
+      <div class="main-section-item">
+       <section class="main-section" data-section-order="5">
+        <div class="section-inner">
+         <h2 class="section-heading">
+          The Most Advanced Web Application Protection
+         </h2>
+         <div class="content-text">
+          Integrating a proprietary artificial intelligence and a logic-based detection engine, see how SWAP can protect your business.
+         </div>
+         <a class="contact-link" href="/partners" title="Get Started">
+          Get Started
+         </a>
+        </div>
+       </section>
+      </div>
+     </div>
+    </article>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-inner">
+    <nav class="footer-nav">
+     <div aria-label="Cloudbric Footer Logo" class="fnb-logo">
+      Cloudbric
+     </div>
+     <ul class="fnb-bundle">
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="/remote-access" title="Remote Access">
+         Remote Access
+        </a>
+       </div>
+      </li>
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="/website-security" title="Website Security">
+         Website Security
+        </a>
+        <button class="fnb-dropdown-button" type="button">
+         +
+        </button>
+       </div>
+       <div class="fnb-dropdown-wrap">
+        <ul class="fnb-dropdown-list">
+         <li class="fnb-dropdown-item">
+          <a class="fnb-dropdown-link" href="https://console2.cloudbric.com/sign/in" target="_blank" title="Cloudbric Console">
+           Cloudbric Console
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="/mobile-security" title="Mobile Security">
+         Mobile Security
+        </a>
+       </div>
+      </li>
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="/blockchain" title="Blockchain">
+         Blockchain
+        </a>
+       </div>
+      </li>
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="/security-tools" title="Security Tools">
+         Security Tools
+        </a>
+       </div>
+      </li>
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="/partners" title="Contact Us">
+         Contact Us
+        </a>
+       </div>
+      </li>
+      <li class="fnb-item">
+       <div class="fnb-link-wrap">
+        <a class="fnb-link" href="https://cloudbric.zendesk.com/hc/en-us" target="_blank" title="Support">
+         Support
+        </a>
+        <button class="fnb-dropdown-button" type="button">
+         +
+        </button>
+       </div>
+       <div class="fnb-dropdown-wrap">
+        <ul class="fnb-dropdown-list">
+         <li class="fnb-dropdown-item">
+          <a class="fnb-dropdown-link" href="https://cloudbric.zendesk.com/hc/en-us" target="_blank" title="FAQ">
+           FAQ
+          </a>
+         </li>
+         <li class="fnb-dropdown-item">
+          <a class="fnb-dropdown-link" href="https://cloudbric.zendesk.com/hc/en-us/requests/new" target="_blank" title="Submit a Request">
+           Submit a Request
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+     </ul>
+    </nav>
+    <div class="footer-aside-bundle">
+     <div class="footer-aside-wrap">
+      <div class="language-box footer-language-box" data-direction="top">
+       <div class="language-item selected" data-lang="en">
+        English
+       </div>
+       <ul class="language-box-bundle">
+        <li class="language-item" data-lang="ja">
+         日本語
+        </li>
+        <li class="language-item" data-lang="ko">
+         한국어
+        </li>
+       </ul>
+      </div>
+      <aside class="social-link">
+       <ul class="social-link-list">
+        <li class="social-link-item">
+         <a href="https://www.facebook.com/cloudbric/" target="_blank" title="Facebook Link">
+          <img alt="facebook" class="social-link-icon" src="/assets/image/icon-facebook.png"/>
+         </a>
+        </li>
+        <li class="social-link-item">
+         <a href="https://twitter.com/cloudbric/" target="_blank" title="Twitter Link">
+          <img alt="twitter" class="social-link-icon" src="/assets/image/icon-twitter.png"/>
+         </a>
+        </li>
+        <li class="social-link-item">
+         <a href="https://www.youtube.com/channel/UC_kFLONjfsaysjyUKEMOfEA/" target="_blank" title="Youtube Link">
+          <img alt="youtube" class="social-link-icon" src="/assets/image/icon-youtube.png"/>
+         </a>
+        </li>
+        <li class="social-link-item">
+         <a href="https://www.linkedin.com/company/cloudbric/" target="_blank" title="Linkedin Link">
+          <img alt="linkedin" class="social-link-icon" src="/assets/image/icon-linkedin.png"/>
+         </a>
+        </li>
+       </ul>
+      </aside>
+     </div>
+     <aside class="policies-link">
+      <ul class="policies-link-list">
+       <li class="policies-link-item">
+        <a class="policy-link" href="/company/about-us/" title="About Cloudbric">
+         About Cloudbric
+        </a>
+       </li>
+       <li class="policies-link-item">
+        <a class="policy-link" href="https://www.cloudbric.com/blog/?lang=en" title="Cloudbric Blog">
+         Cloudbric Blog
+        </a>
+       </li>
+       <li class="policies-link-item">
+        <a class="policy-link" href="/acceptable-use-policy/" title="Acceptable Use Policy">
+         Acceptable Use Policy
+        </a>
+       </li>
+       <li class="policies-link-item">
+        <a class="policy-link" href="/master-service-agreement/" title="Master Service Agreement">
+         Master Service Agreement
+        </a>
+       </li>
+       <li class="policies-link-item">
+        <a class="policy-link" href="/service-level-agreement/" title="Service Level Agreement">
+         Service Level Agreement
+        </a>
+       </li>
+      </ul>
+     </aside>
+    </div>
+    <p class="footer-copyright">
+     ©2020 Cloudbric Corp. All Rights Reserved.
+    </p>
+   </div>
+  </footer>
+  <div class="cookie-confirmation" id="cookieConfirmation">
+   <div class="cookie-confirmation-inner">
+    <h6 class="cookie-confirmation-heading">
+     Cookie usage guide
+    </h6>
+    <p class="cookie-use-description">
+     Welcome to the Cloudbric Corp. website. This website uses cookies to provide better service to visitors who visit the site. Please check the
+     <a class="cookie-policy-link" href="/privacy-policy#cookies" title="Cookie Policy">
+      Cookie Policy
+     </a>
+     for details.
+    </p>
+    <button class="cookie-accept-button" id="cookieAcceptButton" type="button">
+     Accept
+    </button>
+    <button class="cookie-collapsible-button" id="cookieCollapsibleButton" type="button">
+    </button>
+   </div>
+  </div>
+  <script src="/assets/js/common_end.js?2020072101">
+  </script>
+  <script src="/assets/js/main/common.js?2020072101">
+  </script>
+  <script type="text/javascript">
+   (function(e, t, o, n, p, r, i) {
+                e.visitorGlobalObjectAlias = n;
+                e[e.visitorGlobalObjectAlias] = e[e.visitorGlobalObjectAlias] || function() {
+                    (e[e.visitorGlobalObjectAlias].q = e[e.visitorGlobalObjectAlias].q || []).push(arguments)
+                };
+                e[e.visitorGlobalObjectAlias].l = (new Date).getTime();
+                r = t.createElement("script");
+                r.src = o;
+                r.async = true;
+                i = t.getElementsByTagName("script")[0];
+                i.parentNode.insertBefore(r, i)
+            })(window, document, "https://diffuser-cdn.app-us1.com/diffuser/diffuser.js", "vgo");
+
+            vgo('setAccount', '610447306');
+            vgo('setTrackByDefault', true);
+            vgo('process');
+  </script>
+  <!-- linkedin -->
+  <script type="text/javascript">
+   _linkedin_partner_id = "736475";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+   (function(){var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript";b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+   <img alt="" height="1" src="https://px.ads.linkedin.com/collect/?pid=736475&amp;fmt=gif" style="display:none;" width="1"/>
+  </noscript>
+  <!-- Leadworx -->
+  <script src="//adpxl.co/TREkZQ7E/an.js">
+  </script>
+  <noscript>
+   <img alt="" src="//adpxl.co/TREkZQ7E/spacer.gif"/>
+  </noscript>
+  <!-- Leadworx -->
+ </body>
+</html>

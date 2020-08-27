@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <meta content="#063C4F" name="msapplication-TileColor"/>
+  <meta content="#063C4F" name="theme-color"/>
+  <title>
+   Switcheo | Finance without limits.
+  </title>
+  <meta content="Switcheo | Finance without limits." name="title"/>
+  <meta content="switcheo, switcheo network, switcheo exchange, demex, multichain dex, multi-chain dex, crosschain dex, cross-chain dex, neo dex, nep5 dex, decentralised exchange, decentralized exchange, crypto trading, crypto exchange, cryptocurrency exchange" name="keywords"/>
+  <meta content="Switcheo is the world's leading DEX platform. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="" property="og:url"/>
+  <meta content="Switcheo | Finance without limits." property="og:title"/>
+  <meta content="Switcheo is the world's leading DEX platform. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books." property="og:description"/>
+  <meta content="/assets/switcheo-finance-without-limits.png" property="og:image"/>
+  <meta content="summary_large_image" property="twitter:card"/>
+  <meta content="" property="twitter:url"/>
+  <meta content="Switcheo | Finance without limits." property="twitter:title"/>
+  <meta content="Switcheo is the world's leading DEX platform. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books." property="twitter:description"/>
+  <meta content="/assets/switcheo-finance-without-limits.png" property="twitter:image"/>
+  <script type="application/ld+json">
+   {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name" : "Switcheo",
+    "legalName": "Switcheo Exchange Pte. Ltd."
+    "description": "Switcheo is the world's leading DEX platform. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books.",
+    "url": "https://switcheo.network",
+    "brand": {
+      "logo": "https://switcheo.network/assets/switcheo-wordmark.png",
+      "slogan": "We go forward."
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressRegion": "Singapore",
+      "streetAddress": "71 Ayer Rajah Crescent #07-04",
+      "postalCode": "139951"
+    }
+  }
+  </script>
+  <style id="server-side-styles">
+   .MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #063C4F;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #E2FCA4;
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #e53935;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+.MuiPaper-root {
+  color: #063C4F;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #FFFFFF;
+}
+.MuiPaper-rounded {
+  border-radius: 4px;
+}
+.MuiPaper-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiPaper-elevation0 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation2 {
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation3 {
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+.MuiAppBar-root {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+@media print {
+  .MuiAppBar-positionFixed {
+    position: absolute;
+  }
+}
+  .MuiAppBar-positionAbsolute {
+    top: 0;
+    left: auto;
+    right: 0;
+    position: absolute;
+  }
+  .MuiAppBar-positionSticky {
+    top: 0;
+    left: auto;
+    right: 0;
+    position: sticky;
+  }
+  .MuiAppBar-positionStatic {
+    position: static;
+    transform: translateZ(0);
+  }
+  .MuiAppBar-positionRelative {
+    position: relative;
+  }
+  .MuiAppBar-colorDefault {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #f5f5f5;
+  }
+  .MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: #063C4F;
+  }
+  .MuiAppBar-colorSecondary {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #E2FCA4;
+  }
+  .MuiAppBar-colorInherit {
+    color: inherit;
+  }
+  .MuiAppBar-colorTransparent {
+    color: inherit;
+    background-color: transparent;
+  }
+  .MuiButtonBase-root {
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .MuiButtonBase-root::-moz-focus-inner {
+    border-style: none;
+  }
+  .MuiButtonBase-root.Mui-disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+@media print {
+  .MuiButtonBase-root {
+    color-adjust: exact;
+  }
+}
+
+  .jss48 {
+    max-width: lg;
+  }
+  .jss50 {
+    flex: 1;
+  }
+  .jss57 {  }
+  .jss58 {  }
+  .jss59 {
+    display: flex;
+    flex-direction: row;
+  }
+  .jss60 {
+    flex: 1;
+  }
+  .jss82 {
+    display: flex;
+    flex-direction: column;
+  }
+  .jss125 {  }
+  .jss135 {  }
+  .jss270 {
+    flex: 1;
+  }
+  .jss271 {  }
+  .jss273 {  }
+  .MuiTypography-root {
+    margin: 0;
+  }
+  .MuiTypography-body2 {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+  }
+@media (max-width:1279.95px) {
+  .MuiTypography-body2 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+  .MuiTypography-body1 {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -0.25px;
+  }
+@media (max-width:1279.95px) {
+  .MuiTypography-body1 {
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+}
+@media (max-width:959.95px) {
+  .MuiTypography-body1 {
+    font-size: 19px;
+    margin-bottom: 16px;
+  }
+}
+  .MuiTypography-caption {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0.33px;
+  }
+  .MuiTypography-button {
+    color: #063C4F;
+    font-size: 14px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 500;
+    line-height: 1.75;
+    text-transform: uppercase;
+  }
+  .MuiTypography-h1 {
+    font-size: 6rem;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 300;
+    line-height: 1.167;
+  }
+  .MuiTypography-h2 {
+    color: #063C4F;
+    font-size: 48px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: bold;
+    line-height: 48px;
+    margin-bottom: 24px;
+    letter-spacing: -1.5px;
+  }
+@media (max-width:1279.95px) {
+  .MuiTypography-h2 {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+}
+  .MuiTypography-h3 {
+    color: #063C4F;
+    font-size: 35px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: bold;
+    line-height: 35px;
+    margin-bottom: 24px;
+    letter-spacing: -1.5px;
+  }
+@media (max-width:1279.95px) {
+  .MuiTypography-h3 {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+}
+  .MuiTypography-h4 {
+    color: #063C4F;
+    font-size: 24px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: bold;
+    line-height: 32px;
+  }
+@media (max-width:1279.95px) {
+  .MuiTypography-h4 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.75px;
+  }
+}
+  .MuiTypography-h5 {
+    color: #063C4F;
+    font-size: 16px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.05px;
+  }
+  .MuiTypography-h6 {
+    color: #063C4F;
+    font-size: 14px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.05px;
+  }
+  .MuiTypography-subtitle1 {
+    font-size: 36px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    letter-spacing: -.25px;
+  }
+@media (max-width:1279.95px) {
+  .MuiTypography-subtitle1 {
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    letter-spacing: 0;
+  }
+}
+@media (max-width:959.95px) {
+  .MuiTypography-subtitle1 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+}
+  .MuiTypography-subtitle2 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 500;
+    line-height: 21px;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+  .MuiTypography-overline {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.33px;
+    text-transform: uppercase;
+  }
+  .MuiTypography-srOnly {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+  .MuiTypography-alignLeft {
+    text-align: left;
+  }
+  .MuiTypography-alignCenter {
+    text-align: center;
+  }
+  .MuiTypography-alignRight {
+    text-align: right;
+  }
+  .MuiTypography-alignJustify {
+    text-align: justify;
+  }
+  .MuiTypography-noWrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .MuiTypography-gutterBottom {
+    margin-bottom: 0.35em;
+  }
+  .MuiTypography-paragraph {
+    margin-bottom: 16px;
+  }
+  .MuiTypography-colorInherit {
+    color: inherit;
+  }
+  .MuiTypography-colorPrimary {
+    color: #063C4F;
+  }
+  .MuiTypography-colorSecondary {
+    color: #E2FCA4;
+  }
+  .MuiTypography-colorTextPrimary {
+    color: #063C4F;
+  }
+  .MuiTypography-colorTextSecondary {
+    color: #FFFFFF;
+  }
+  .MuiTypography-colorError {
+    color: #e53935;
+  }
+  .MuiTypography-displayInline {
+    display: inline;
+  }
+  .MuiTypography-displayBlock {
+    display: block;
+  }
+  .MuiButton-root {
+    color: #063C4F;
+    padding: 6px 16px;
+    font-size: 14px;
+    min-width: 64px;
+    box-sizing: border-box;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    font-weight: 500;
+    line-height: 1.75;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .MuiButton-root:hover {
+    text-decoration: none;
+    background-color: rgba(6, 60, 79, 0.04);
+  }
+  .MuiButton-root.Mui-disabled {
+    color: rgba(0, 0, 0, 0.26);
+  }
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-root:hover.Mui-disabled {
+    background-color: transparent;
+  }
+  .MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+  .MuiButton-text {
+    padding: 6px 8px;
+  }
+  .MuiButton-textPrimary {
+    color: #063C4F;
+  }
+  .MuiButton-textPrimary:hover {
+    background-color: rgba(6, 60, 79, 0.04);
+  }
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-textSecondary {
+    color: #E2FCA4;
+  }
+  .MuiButton-textSecondary:hover {
+    background-color: rgba(226, 252, 164, 0.04);
+  }
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    padding: 5px 15px;
+  }
+  .MuiButton-outlined.Mui-disabled {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .MuiButton-outlinedPrimary {
+    color: #063C4F;
+    border: 1px solid rgba(6, 60, 79, 0.5);
+  }
+  .MuiButton-outlinedPrimary:hover {
+    border: 1px solid #063C4F;
+    background-color: rgba(6, 60, 79, 0.04);
+  }
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-outlinedSecondary {
+    color: #E2FCA4;
+    border: 1px solid rgba(226, 252, 164, 0.5);
+  }
+  .MuiButton-outlinedSecondary:hover {
+    border: 1px solid #E2FCA4;
+    background-color: rgba(226, 252, 164, 0.04);
+  }
+  .MuiButton-outlinedSecondary.Mui-disabled {
+    border: 1px solid rgba(0, 0, 0, 0.26);
+  }
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-contained {
+    color: rgba(0, 0, 0, 0.87);
+    padding: 16px 24px;
+    font-size: 24px;
+    box-shadow: none;
+    font-weight: bold;
+    line-height: 32px;
+    border-radius: 0;
+    text-transform: none;
+    background-color: #e0e0e0;
+  }
+  .MuiButton-contained:hover {
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+    background-color: #d5d5d5;
+  }
+  .MuiButton-contained.Mui-focusVisible {
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  }
+  .MuiButton-contained:active {
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+  }
+  .MuiButton-contained.Mui-disabled {
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+@media (max-width:1279.95px) {
+  .MuiButton-contained {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+  .MuiButton-contained:hover, .MuiButton-contained :active {
+    box-shadow: none;
+  }
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+    background-color: #e0e0e0;
+  }
+}
+  .MuiButton-contained:hover.Mui-disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  .MuiButton-containedPrimary {
+    color: #E2FCA4;
+    background-color: #063C4F;
+  }
+  .MuiButton-containedPrimary:hover {
+    background-color: #517684;
+  }
+  .MuiButton-containedPrimary:hover, .MuiButton-containedPrimary :active {
+    background-color: #063C4F;
+  }
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #063C4F;
+  }
+}
+  .MuiButton-containedSecondary {
+    color: #063C4F;
+    background-color: #E2FCA4;
+  }
+  .MuiButton-containedSecondary:hover {
+    background-color: rgb(158, 176, 114);
+  }
+  .MuiButton-containedSecondary:hover, .MuiButton-containedSecondary :active {
+    background-color: #E2FCA4;
+  }
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: #E2FCA4;
+  }
+}
+  .MuiButton-disableElevation {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation:hover {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation.Mui-focusVisible {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation:active {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation.Mui-disabled {
+    box-shadow: none;
+  }
+  .MuiButton-colorInherit {
+    color: inherit;
+    border-color: currentColor;
+  }
+  .MuiButton-textSizeSmall {
+    padding: 4px 5px;
+    font-size: 0.8125rem;
+  }
+  .MuiButton-textSizeLarge {
+    padding: 8px 11px;
+    font-size: 0.9375rem;
+  }
+  .MuiButton-outlinedSizeSmall {
+    padding: 3px 9px;
+    font-size: 0.8125rem;
+  }
+  .MuiButton-outlinedSizeLarge {
+    padding: 7px 21px;
+    font-size: 0.9375rem;
+  }
+  .MuiButton-containedSizeSmall {
+    padding: 4px 10px;
+    font-size: 0.8125rem;
+  }
+  .MuiButton-containedSizeLarge {
+    padding: 8px 22px;
+    font-size: 0.9375rem;
+  }
+  .MuiButton-fullWidth {
+    width: 100%;
+  }
+  .MuiButton-startIcon {
+    display: inherit;
+    margin-left: -4px;
+    margin-right: 8px;
+  }
+  .MuiButton-startIcon.MuiButton-iconSizeSmall {
+    margin-left: -2px;
+  }
+  .MuiButton-endIcon {
+    display: inherit;
+    margin-left: 8px;
+    margin-right: -4px;
+  }
+  .MuiButton-endIcon.MuiButton-iconSizeSmall {
+    margin-right: -2px;
+  }
+  .MuiButton-iconSizeSmall > *:first-child {
+    font-size: 18px;
+  }
+  .MuiButton-iconSizeMedium > *:first-child {
+    font-size: 20px;
+  }
+  .MuiButton-iconSizeLarge > *:first-child {
+    font-size: 22px;
+  }
+  .MuiIconButton-root {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 12px;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+  }
+  .MuiIconButton-root:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  .MuiIconButton-root.Mui-disabled {
+    color: rgba(0, 0, 0, 0.26);
+    background-color: transparent;
+  }
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-edgeStart {
+    margin-left: -12px;
+  }
+  .MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+    margin-left: -3px;
+  }
+  .MuiIconButton-edgeEnd {
+    margin-right: -12px;
+  }
+  .MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+    margin-right: -3px;
+  }
+  .MuiIconButton-colorInherit {
+    color: inherit;
+  }
+  .MuiIconButton-colorPrimary {
+    color: #063C4F;
+  }
+  .MuiIconButton-colorPrimary:hover {
+    background-color: rgba(6, 60, 79, 0.04);
+  }
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-colorSecondary {
+    color: #E2FCA4;
+  }
+  .MuiIconButton-colorSecondary:hover {
+    background-color: rgba(226, 252, 164, 0.04);
+  }
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-sizeSmall {
+    padding: 3px;
+    font-size: 1.125rem;
+  }
+  .MuiIconButton-label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+  .MuiContainer-root {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+@media (min-width:600px) {
+  .MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+  .MuiContainer-disableGutters {
+    padding-left: 0;
+    padding-right: 0;
+  }
+@media (min-width:600px) {
+  .MuiContainer-fixed {
+    max-width: 600px;
+  }
+}
+@media (min-width:960px) {
+  .MuiContainer-fixed {
+    max-width: 960px;
+  }
+}
+@media (min-width:1280px) {
+  .MuiContainer-fixed {
+    max-width: 1280px;
+  }
+}
+@media (min-width:1920px) {
+  .MuiContainer-fixed {
+    max-width: 1920px;
+  }
+}
+@media (min-width:0px) {
+  .MuiContainer-maxWidthXs {
+    max-width: 444px;
+  }
+}
+@media (min-width:600px) {
+  .MuiContainer-maxWidthSm {
+    max-width: 600px;
+  }
+}
+@media (min-width:960px) {
+  .MuiContainer-maxWidthMd {
+    max-width: 960px;
+  }
+}
+@media (min-width:1280px) {
+  .MuiContainer-maxWidthLg {
+    max-width: 1280px;
+  }
+}
+@media (min-width:1920px) {
+  .MuiContainer-maxWidthXl {
+    max-width: 1920px;
+  }
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+strong, b {
+  font-weight: 700;
+}
+body {
+  color: #FFFFFF;
+  margin: 0;
+  font-size: 24px;
+  font-family: Union,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.25px;
+  background-color: #FFFFFF;
+}
+@media (max-width:1279.95px) {
+  body {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+@media print {
+  body {
+    background-color: #fff;
+  }
+}
+body::backdrop {
+  background-color: #FFFFFF;
+}
+  .MuiGrid-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+  .MuiGrid-item {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .MuiGrid-zeroMinWidth {
+    min-width: 0;
+  }
+  .MuiGrid-direction-xs-column {
+    flex-direction: column;
+  }
+  .MuiGrid-direction-xs-column-reverse {
+    flex-direction: column-reverse;
+  }
+  .MuiGrid-direction-xs-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .MuiGrid-wrap-xs-nowrap {
+    flex-wrap: nowrap;
+  }
+  .MuiGrid-wrap-xs-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  .MuiGrid-align-items-xs-center {
+    align-items: center;
+  }
+  .MuiGrid-align-items-xs-flex-start {
+    align-items: flex-start;
+  }
+  .MuiGrid-align-items-xs-flex-end {
+    align-items: flex-end;
+  }
+  .MuiGrid-align-items-xs-baseline {
+    align-items: baseline;
+  }
+  .MuiGrid-align-content-xs-center {
+    align-content: center;
+  }
+  .MuiGrid-align-content-xs-flex-start {
+    align-content: flex-start;
+  }
+  .MuiGrid-align-content-xs-flex-end {
+    align-content: flex-end;
+  }
+  .MuiGrid-align-content-xs-space-between {
+    align-content: space-between;
+  }
+  .MuiGrid-align-content-xs-space-around {
+    align-content: space-around;
+  }
+  .MuiGrid-justify-xs-center {
+    justify-content: center;
+  }
+  .MuiGrid-justify-xs-flex-end {
+    justify-content: flex-end;
+  }
+  .MuiGrid-justify-xs-space-between {
+    justify-content: space-between;
+  }
+  .MuiGrid-justify-xs-space-around {
+    justify-content: space-around;
+  }
+  .MuiGrid-justify-xs-space-evenly {
+    justify-content: space-evenly;
+  }
+  .MuiGrid-spacing-xs-1 {
+    width: calc(100% + 8px);
+    margin: -4px;
+  }
+  .MuiGrid-spacing-xs-1 > .MuiGrid-item {
+    padding: 4px;
+  }
+  .MuiGrid-spacing-xs-2 {
+    width: calc(100% + 16px);
+    margin: -8px;
+  }
+  .MuiGrid-spacing-xs-2 > .MuiGrid-item {
+    padding: 8px;
+  }
+  .MuiGrid-spacing-xs-3 {
+    width: calc(100% + 24px);
+    margin: -12px;
+  }
+  .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    padding: 12px;
+  }
+  .MuiGrid-spacing-xs-4 {
+    width: calc(100% + 32px);
+    margin: -16px;
+  }
+  .MuiGrid-spacing-xs-4 > .MuiGrid-item {
+    padding: 16px;
+  }
+  .MuiGrid-spacing-xs-5 {
+    width: calc(100% + 40px);
+    margin: -20px;
+  }
+  .MuiGrid-spacing-xs-5 > .MuiGrid-item {
+    padding: 20px;
+  }
+  .MuiGrid-spacing-xs-6 {
+    width: calc(100% + 48px);
+    margin: -24px;
+  }
+  .MuiGrid-spacing-xs-6 > .MuiGrid-item {
+    padding: 24px;
+  }
+  .MuiGrid-spacing-xs-7 {
+    width: calc(100% + 56px);
+    margin: -28px;
+  }
+  .MuiGrid-spacing-xs-7 > .MuiGrid-item {
+    padding: 28px;
+  }
+  .MuiGrid-spacing-xs-8 {
+    width: calc(100% + 64px);
+    margin: -32px;
+  }
+  .MuiGrid-spacing-xs-8 > .MuiGrid-item {
+    padding: 32px;
+  }
+  .MuiGrid-spacing-xs-9 {
+    width: calc(100% + 72px);
+    margin: -36px;
+  }
+  .MuiGrid-spacing-xs-9 > .MuiGrid-item {
+    padding: 36px;
+  }
+  .MuiGrid-spacing-xs-10 {
+    width: calc(100% + 80px);
+    margin: -40px;
+  }
+  .MuiGrid-spacing-xs-10 > .MuiGrid-item {
+    padding: 40px;
+  }
+  .MuiGrid-grid-xs-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-xs-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-xs-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-xs-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-xs-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-xs-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-xs-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-xs-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-xs-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-xs-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-xs-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-xs-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-xs-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-xs-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+@media (min-width:600px) {
+  .MuiGrid-grid-sm-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-sm-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-sm-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-sm-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-sm-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-sm-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-sm-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-sm-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-sm-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-sm-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-sm-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-sm-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-sm-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-sm-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:960px) {
+  .MuiGrid-grid-md-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-md-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-md-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-md-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-md-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-md-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-md-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-md-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-md-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-md-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-md-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-md-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-md-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-md-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1280px) {
+  .MuiGrid-grid-lg-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-lg-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-lg-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-lg-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-lg-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-lg-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-lg-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-lg-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-lg-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-lg-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-lg-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-lg-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-lg-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-lg-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1920px) {
+  .MuiGrid-grid-xl-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-xl-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-xl-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-xl-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-xl-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-xl-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-xl-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-xl-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-xl-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-xl-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-xl-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-xl-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-xl-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-xl-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+  .jss116 {
+    padding-top: 88px;
+  }
+@media (max-width:599.95px) {
+  .jss116 {
+    padding-top: 52px;
+  }
+}
+  .jss134 {
+    flex: 1;
+    margin: 0px 12px;
+    display: flex;
+    padding: 24px;
+    flex-basis: 50%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+@media (max-width:959.95px) {
+  .jss134 {
+    margin: 0;
+  }
+}
+  .jss49 path, .jss49 polygon {
+    fill: #063C4F;
+  }
+  .jss240 {
+    color: #063C4F;
+    width: 100%;
+    padding: 2px 0px;
+    font-size: 22px;
+    border-top: 1px solid;
+    text-align: left;
+    line-height: 32px;
+    border-radius: 0;
+    text-transform: none;
+    justify-content: left;
+    border-top-color: rgba(6, 60, 79, .3);
+  }
+@media (max-width:1279.95px) {
+  .jss240 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.75px;
+  }
+}
+  .jss240:hover {
+    color: #517684;
+    background-color: transparent;
+  }
+  .jss239 {
+    width: 100%;
+    padding: 4px 0px;
+    border-top: 1px solid;
+    margin-bottom: 24px;
+    border-top-color: rgba(6, 60, 79, .3);
+  }
+  .jss272 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-6px - 8px);
+    flex-direction: row;
+  }
+@media (max-width:959.95px) {
+  .jss272 {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: 36px;
+    justify-content: center;
+  }
+}
+  .jss272 a {
+    margin: 0px 8px;
+    padding: 6px;
+    min-width: 0;
+  }
+@media (max-width:959.95px) {
+  .jss272 a {
+    margin: 0px 16px 12px;
+  }
+}
+  .jss272 a svg {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+  }
+  .jss272 a:hover {
+    background-color: transparent;
+  }
+  .jss272 a:hover svg path {
+    fill: #517684;
+  }
+  .jss272 a svg path {
+    fill: #063C4F;
+    transition: fill .2s ease-in-out;
+  }
+  .jss117 {
+    padding-bottom: 1px;
+    background-color: #DEDEDE;
+  }
+@media (max-width:959.95px) {
+  .jss118 {
+    padding: 0;
+  }
+}
+  .jss119 {
+    min-height: calc(min(50vw, 640px) - 37px);
+    padding-top: 64px;
+    margin-bottom: 24px;
+  }
+@media (max-width:959.95px) {
+  .jss119 {
+    margin: 0;
+    min-height: 0;
+  }
+}
+  .jss120 {
+    color: #063C4F;
+    width: 158px;
+    height: 23px;
+  }
+  .jss121 {
+    flex: 1;
+  }
+  .jss122 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .jss123 {
+    padding-right: 24px;
+  }
+  .jss124 {
+    width: 100%;
+    display: flex;
+    margin-top: 24px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+@media (max-width:959.95px) {
+  .jss124 {
+    flex-direction: column;
+  }
+}
+  .jss83 {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+    border-top: 1px solid #063C4F;
+    padding-top: 2px;
+    margin-bottom: 16px;
+    flex-direction: row;
+    padding-bottom: 8px;
+  }
+  .jss84 {
+    flex: 1;
+    color: #063C4F;
+    display: flex;
+    padding: 0;
+    font-size: 42px;
+    transition: color .2s ease-in-out;
+    line-height: 1.2;
+    flex-direction: row;
+    letter-spacing: -1px;
+    text-decoration: none;
+  }
+  .jss84:hover {
+    color: #E2FCA4;
+    cursor: pointer;
+  }
+  .jss85 {
+    width: 75px;
+    height: 75px;
+    padding: 8px;
+    margin-left: auto;
+  }
+  .jss85 svg {
+    vertical-align: top;
+  }
+@media (max-width:1279.95px) {
+  .jss85 {
+    width: 48px;
+    height: 48px;
+  }
+}
+  .jss51 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    position: fixed;
+    transition: height .2s ease-in-out;
+    background-color: #fff;
+  }
+  .jss52 {
+    color: #063C4F;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    overflow: auto;
+    max-width: 1280px;
+    flex-direction: column;
+  }
+  .jss53 {
+    padding: 0px 24px;
+  }
+  .jss54 {
+    color: #063C4F;
+    padding: 24px;
+  }
+  .jss54 svg {
+    width: 56px;
+    height: 56px;
+  }
+@media (max-width:959.95px) {
+  .jss54 svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+  .jss55 {
+    padding: 16px;
+  }
+  .jss56 {
+    width: 150px;
+    margin: 36px 24px;
+  }
+  .jss1 {
+    z-index: 100;
+    transition: box-shadow 0.3s ease-out 0s;
+    background-color: #fff;
+  }
+  .jss1.elevated {
+    transition: box-shadow 0.3s ease-out 0s;
+  }
+  .jss1.elevated .jss3 {
+    top: 16px;
+    width: 150px;
+    transition: width 0.3s ease-out 0s, top 0.3s ease-out 0s;
+  }
+  .jss1.elevated:not(.expanded) .jss2 {
+    height: 52px;
+    transition: height 0.3s ease-out 0.25s;
+  }
+  .jss1.elevated:not(.expanded) .jss5 {
+    transform: translateY(-72px);
+    transition: transform 0.3s ease-out 0.45s;
+  }
+  .jss1.elevated:not(.expanded) .jss7 {
+    transform: translateY(calc(-100% - 12px));
+    transition: transform 0.3s ease-out 0.25s;
+  }
+  .jss2 {
+    width: 100%;
+    height: 88px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    max-width: 1280px;
+    transition: height 0.3s ease-out 0s;
+    flex-direction: row;
+  }
+@media (max-width:599.95px) {
+  .jss2 {
+    height: 52px;
+  }
+}
+  .jss3 {
+    top: 24px;
+    left: 24px;
+    width: 321px;
+    position: absolute;
+    transition: width 0.3s ease-in-out 0.3s, top 0.3s ease-in-out 0.25s;
+    line-height: 0;
+  }
+@media (max-width:599.95px) {
+  .jss3 {
+    top: 16px;
+    width: 150px;
+  }
+}
+  .jss4 {
+    color: #063C4F;
+    padding: 24px;
+  }
+  .jss4 svg {
+    width: 40px;
+    height: 40px;
+  }
+  .jss4:hover {
+    background: none;
+  }
+@media (max-width:959.95px) {
+  .jss4 {
+    padding: 12px 20px;
+  }
+}
+  .jss5 {
+    padding: 0;
+    transition: transform 0.3s ease-in 0s;
+    padding-right: 10px;
+  }
+  .jss6 {
+    width: 50vw;
+    overflow: hidden;
+    max-width: 640px;
+    text-align: right;
+    margin-left: -12px;
+    padding-top: 12px;
+    margin-right: 12px;
+    padding-bottom: 12px;
+  }
+  .jss7 {
+    text-align: left;
+    transition: transform 0.3s ease-out 0.2s;
+  }
+  </style>
+  <link href="/static/css/main.e2d0eede.chunk.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <noscript>
+   You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root">
+   <header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary jss1 mui-fixed MuiPaper-elevation0">
+    <div class="MuiBox-root jss48 jss2">
+     <a href="/">
+      <svg class="jss49 jss3" viewbox="0 0 321 46">
+       <title>
+       </title>
+       <defs>
+        <style>
+         .cls-1{fill:#063c4f;fill-rule:evenodd;}
+        </style>
+       </defs>
+       <path class="cls-1" d="M298.8,7.86c-8.27,0-12.53,6.26-12.53,15.23v.61c.15,5.37,2.41,14.44,12.52,14.44,8.14,0,12.41-6.32,12.41-15.11S307.07,7.86,298.8,7.86Zm-23.12-7v7.8H251.32v9.66h22.52v7.55H251.32V37.33h25v7.8H241.77V.87Zm-64.41,0V18.08h18.19V.87h9.61V45.13h-9.61V25.88H211.27V45.13h-9.61V.87Zm-55.64,0V45.13H147V16.31L118.18,45.06l-6.8-6.78L140.17,9.53H111.31V.87Zm-47.34,0V45.13h-9.6V.87ZM45.92.87,53,31.51h.07L61.12.87H71.3L79.19,32h.06L86.44.87H96L84.34,45.13H74.48L67.67,19.5l-1.59-6.37H66L64.43,19.5,57.75,45.13h-10L36.25.87ZM18.32,0C28.61,0,35.87,4.52,36.18,13.44v.37l-9.41.24C26.21,9.17,23,7.43,18.13,7.43c-3.63,0-7.32,1.42-7.32,4.71,0,1.67.7,2.72,3.18,3.65,3.57,1.36,13.36,3.4,17.43,5.63,3.69,2,6.17,5.39,6.17,10.71,0,9.47-8,13.87-18.51,13.87S.7,41.11,0,31l0-.4,9.29-.43c.38,5.88,4.32,8.3,10,8.3,4.14,0,8.91-1.74,8.91-5.76,0-2.6-1.85-4.09-5.6-5.14l-3.85-1c-4.6-1.24-10.54-3-12.94-5a10.48,10.48,0,0,1-4.2-8.78C1.59,5,8.91,0,18.32,0ZM298.74,0c14.1,0,22.09,9.82,22.26,22.75v.4C321,30.83,316.93,46,298.8,46c-12.78,0-22.26-8.36-22.26-22.78C276.54,10.65,284.11,0,298.74,0ZM180,0c9.46,0,17.07,4.93,19,14l.08.4-9.42,1.06c-.82-4.52-4.83-7.56-9.73-7.56-7.88,0-11.89,5.89-11.89,15.05s4,15.17,11.77,15.17c5.42,0,8.95-3.4,10.17-9.3l.07-.36,9.28,1.36C197.33,40.12,189.88,46,179.9,46c-13.42,0-21.56-9.66-21.56-22.72C158.34,10,166.29,0,180,0Z">
+       </path>
+      </svg>
+     </a>
+     <div class="MuiBox-root jss50">
+     </div>
+    </div>
+   </header>
+   <div class="MuiBox-root jss57 jss51" style="height:0">
+    <div class="MuiBox-root jss58 jss52">
+     <div class="MuiBox-root jss59">
+      <a href="/">
+       <svg class="jss49 jss56" viewbox="0 0 321 46">
+        <title>
+        </title>
+        <defs>
+         <style>
+          .cls-1{fill:#063c4f;fill-rule:evenodd;}
+         </style>
+        </defs>
+        <path class="cls-1" d="M298.8,7.86c-8.27,0-12.53,6.26-12.53,15.23v.61c.15,5.37,2.41,14.44,12.52,14.44,8.14,0,12.41-6.32,12.41-15.11S307.07,7.86,298.8,7.86Zm-23.12-7v7.8H251.32v9.66h22.52v7.55H251.32V37.33h25v7.8H241.77V.87Zm-64.41,0V18.08h18.19V.87h9.61V45.13h-9.61V25.88H211.27V45.13h-9.61V.87Zm-55.64,0V45.13H147V16.31L118.18,45.06l-6.8-6.78L140.17,9.53H111.31V.87Zm-47.34,0V45.13h-9.6V.87ZM45.92.87,53,31.51h.07L61.12.87H71.3L79.19,32h.06L86.44.87H96L84.34,45.13H74.48L67.67,19.5l-1.59-6.37H66L64.43,19.5,57.75,45.13h-10L36.25.87ZM18.32,0C28.61,0,35.87,4.52,36.18,13.44v.37l-9.41.24C26.21,9.17,23,7.43,18.13,7.43c-3.63,0-7.32,1.42-7.32,4.71,0,1.67.7,2.72,3.18,3.65,3.57,1.36,13.36,3.4,17.43,5.63,3.69,2,6.17,5.39,6.17,10.71,0,9.47-8,13.87-18.51,13.87S.7,41.11,0,31l0-.4,9.29-.43c.38,5.88,4.32,8.3,10,8.3,4.14,0,8.91-1.74,8.91-5.76,0-2.6-1.85-4.09-5.6-5.14l-3.85-1c-4.6-1.24-10.54-3-12.94-5a10.48,10.48,0,0,1-4.2-8.78C1.59,5,8.91,0,18.32,0ZM298.74,0c14.1,0,22.09,9.82,22.26,22.75v.4C321,30.83,316.93,46,298.8,46c-12.78,0-22.26-8.36-22.26-22.78C276.54,10.65,284.11,0,298.74,0ZM180,0c9.46,0,17.07,4.93,19,14l.08.4-9.42,1.06c-.82-4.52-4.83-7.56-9.73-7.56-7.88,0-11.89,5.89-11.89,15.05s4,15.17,11.77,15.17c5.42,0,8.95-3.4,10.17-9.3l.07-.36,9.28,1.36C197.33,40.12,189.88,46,179.9,46c-13.42,0-21.56-9.66-21.56-22.72C158.34,10,166.29,0,180,0Z">
+        </path>
+       </svg>
+      </a>
+      <div class="MuiBox-root jss60">
+      </div>
+      <button class="MuiButtonBase-root MuiIconButton-root jss54 jss55" tabindex="0" type="button">
+       <span class="MuiIconButton-label">
+        <svg aria-hidden="true" class="MuiSvgIcon-root" focusable="false" viewbox="0 0 24 24">
+         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+         </path>
+        </svg>
+       </span>
+      </button>
+     </div>
+     <div class="MuiBox-root jss82 jss53">
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="/key-features">
+        Key features
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="/key-features#products">
+        Products
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="https://switcheo.exchange/" target="_blank">
+        Exchange
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="/our-story">
+        Our story
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="/our-culture">
+        Our culture
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="/press">
+        Press
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="https://blog.switcheo.network/" target="_blank">
+        Blog
+       </a>
+      </div>
+      <div class="jss83">
+       <a class="MuiTypography-root jss84 MuiTypography-body1" href="https://support.switcheo.network/" target="_blank">
+        Support
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jss116">
+   </div>
+   <div class="MuiBox-root jss125 jss117">
+    <div class="MuiContainer-root jss118 MuiContainer-maxWidthLg">
+     <div class="MuiBox-root jss135 jss134 jss119">
+      <div class="MuiGrid-root jss121 MuiGrid-container">
+       <div class="MuiGrid-root jss122 jss123 MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3">
+        <h4 class="MuiTypography-root jss239 MuiTypography-h4 MuiTypography-colorPrimary">
+         Sitemap
+        </h4>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="https://switcheo.exchange/" tabindex="0" target="_blank">
+         <span class="MuiButton-label">
+          Exchange
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/" tabindex="0">
+         <span class="MuiButton-label">
+          Home
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/our-story" tabindex="0">
+         <span class="MuiButton-label">
+          Our Story
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/key-features" tabindex="0">
+         <span class="MuiButton-label">
+          Our Ecosystem
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/press" tabindex="0">
+         <span class="MuiButton-label">
+          Press
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/our-culture" tabindex="0">
+         <span class="MuiButton-label">
+          Careers
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="https://blog.switcheo.network/" tabindex="0" target="_blank">
+         <span class="MuiButton-label">
+          Blog
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="https://support.switcheo.network/" tabindex="0" target="_blank">
+         <span class="MuiButton-label">
+          Support
+         </span>
+        </a>
+       </div>
+       <div class="MuiGrid-root jss122 jss123 MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3">
+        <h4 class="MuiTypography-root jss239 MuiTypography-h4 MuiTypography-colorPrimary">
+         Resources
+        </h4>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="https://docs.switcheo.network/" tabindex="0" target="_blank">
+         <span class="MuiButton-label">
+          Developer
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="https://switcheo-assets.s3-ap-southeast-1.amazonaws.com/Switcheo_MediaKit_2020.zip" tabindex="0" target="_blank">
+         <span class="MuiButton-label">
+          Media Kit
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/terms-of-use" tabindex="0">
+         <span class="MuiButton-label">
+          Terms of Use
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/privacy-policy" tabindex="0">
+         <span class="MuiButton-label">
+          Privacy Policy
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/security-policy" tabindex="0">
+         <span class="MuiButton-label">
+          Security Policy
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="/listing-policy" tabindex="0">
+         <span class="MuiButton-label">
+          Listing Policy
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text jss240" href="https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit" tabindex="0" target="_blank">
+         <span class="MuiButton-label">
+          Apply for Listing
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="MuiBox-root jss270">
+      </div>
+      <div class="MuiBox-root jss271 jss124">
+       <div class="MuiBox-root jss273 jss272">
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://t.me/switcheo" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 39">
+           <title>
+            Telegram
+           </title>
+           <path d="M44.8,5.19,2.24,21.1c-2.92,1.1-2.87,2.67-.5,3.4l10.89,3.29L37.91,12.37c1.18-.76,2.26-.33,1.37.43L18.83,30.71,18,41.59a2.83,2.83,0,0,0,2.23-1.05l5.32-5,11,7.89c2,1.1,3.45.53,4-1.81L47.86,8.56C48.51,5.66,46.78,4.5,44.8,5.19Z" style="fill:#063c4f;fill-rule:evenodd" transform="translate(0 -5)">
+           </path>
+          </svg>
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://twitter.com/switcheonetwork" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 48">
+           <title>
+            Twitter
+           </title>
+           <path d="M33.14,5a10,10,0,0,0-10,10,10.51,10.51,0,0,0,.19,2,27.55,27.55,0,0,1-19.61-10,.22.22,0,0,0-.2-.09.25.25,0,0,0-.19.12A10,10,0,0,0,5.75,19.7a9.59,9.59,0,0,1-3.49-1.12.24.24,0,0,0-.23,0,.24.24,0,0,0-.12.2h0v.13a10,10,0,0,0,7,9.52,9.75,9.75,0,0,1-3.32-.05.22.22,0,0,0-.22.07.22.22,0,0,0,0,.23A10,10,0,0,0,14,35.57,19.23,19.23,0,0,1,2.56,39.29a19.41,19.41,0,0,1-2.29-.13.24.24,0,0,0-.26.15.25.25,0,0,0,.1.28A27.87,27.87,0,0,0,15.18,44c17.52,0,28-14.19,28-27.91,0-.38,0-.76,0-1.14a20,20,0,0,0,4.82-5,.24.24,0,0,0-.3-.35,18.88,18.88,0,0,1-4.5,1.36A9.88,9.88,0,0,0,46.67,6a.23.23,0,0,0-.07-.26.24.24,0,0,0-.27,0,19.35,19.35,0,0,1-6,2.31A10.05,10.05,0,0,0,33.14,5Z" style="fill:#063c4f;fill-rule:evenodd">
+           </path>
+          </svg>
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://medium.com/switcheo" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 38">
+           <title>
+            Medium
+           </title>
+           <path d="M14.52,5H.61v.8l4.48,5.39a1.83,1.83,0,0,1,.6,1.56h0V33.91A2.43,2.43,0,0,1,5,36H5l-5,6.1v.8H14.3v-.8L9.25,36a2.54,2.54,0,0,1-.69-2.1h0V15.61l12.55,27.3h1.46l10.77-27.3V37.37c0,.58,0,.69-.38,1.07h0L29.09,42.2V43H47.91v-.8l-3.74-3.67a1.11,1.11,0,0,1-.43-1.07h0V10.54a1.11,1.11,0,0,1,.43-1.07h0L48,5.8V5H34.73L25.28,28.52Z" style="fill:#063c4f;fill-rule:evenodd" transform="translate(0 -5)">
+           </path>
+          </svg>
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://www.reddit.com/r/Switcheo/" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 40">
+           <title>
+            Reddit
+           </title>
+           <path d="M40.4,4a4.33,4.33,0,1,1-4.34,4.54V8.21L28,6.33l-3,9.34A27.38,27.38,0,0,1,39,19.76a5.29,5.29,0,1,1,6.19,8.44,9.66,9.66,0,0,1,.15,1.62C45.34,37.64,35.72,44,23.9,44S2.46,37.64,2.46,29.82a9.83,9.83,0,0,1,.17-1.72,5.28,5.28,0,1,1,6.28-8.41,27.58,27.58,0,0,1,14.05-4h.55L26.82,5.22a.74.74,0,0,1,.78-.51l.1,0,8.66,2A4.34,4.34,0,0,1,40.4,4Zm-23,31.48a.74.74,0,1,0-1.05,1.05c1.54,1.52,3.91,2.3,7.26,2.35H24c3.56,0,6.06-.77,7.65-2.35a.74.74,0,1,0-1.05-1.05c-1.25,1.24-3.29,1.87-6.22,1.92H24C20.83,37.4,18.67,36.77,17.37,35.48ZM31.3,24a3.15,3.15,0,1,0,3.16,3.15A3.17,3.17,0,0,0,31.3,24ZM16.72,24a3.15,3.15,0,1,0,3.16,3.15A3.16,3.16,0,0,0,16.72,24Z" style="fill:#063c4f;fill-rule:evenodd" transform="translate(0 -4)">
+           </path>
+          </svg>
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://www.linkedin.com/company/switcheonetwork/" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 48">
+           <title>
+            LinkedIn
+           </title>
+           <path d="M10.74,15.94V48H.79V15.94Zm25.33-.8C46.14,15.14,48,21.78,48,30.41V48H38.06V32c0-3.65-.25-8.1-5.17-8.1-5.17,0-6,4.05-6,8.23h0V48H17V15.94h9.54v4.38h.14l.1-.19A10.51,10.51,0,0,1,36.07,15.14ZM5.77,0A5.78,5.78,0,1,1,0,5.78,5.77,5.77,0,0,1,5.77,0Z" style="fill:#063c4f;fill-rule:evenodd">
+           </path>
+          </svg>
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://www.facebook.com/SwitcheoExchange/" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 48">
+           <title>
+            Facebook
+           </title>
+           <path d="M30.4,0c-6.54,0-11,4-11,11.28h0v6.29H12V26.1h7.39V48h8.84V26.1H36.7V17.57H28.23V12.12c0-2.47.69-4.15,4.24-4.15H37V0Z" style="fill:#063c4f;fill-rule:evenodd">
+           </path>
+          </svg>
+         </span>
+        </a>
+        <a aria-disabled="false" class="MuiButtonBase-root MuiButton-root MuiButton-text" href="https://www.youtube.com/channel/UCqZ9sxvw-0UoHzno4-d97oQ/playlists" tabindex="0">
+         <span class="MuiButton-label">
+          <svg viewbox="0 0 48 33">
+           <title>
+            YouTube
+           </title>
+           <path d="M25.64,8h1.64A138.56,138.56,0,0,1,42,8.66a6,6,0,0,1,5.19,4.65A49.78,49.78,0,0,1,48,24.5v.69a47.09,47.09,0,0,1-.84,10.5A6,6,0,0,1,42,40.34,163.09,163.09,0,0,1,24,41H22.71A152.29,152.29,0,0,1,6,40.34,6,6,0,0,1,.84,35.69,49.78,49.78,0,0,1,0,24.5v-.69a46.51,46.51,0,0,1,.85-10.5A6,6,0,0,1,6,8.66,148.31,148.31,0,0,1,22.37,8h3.27Zm-7.83,8.19V31.85l5.08-2.6L33.07,24,17.81,16.19Z" style="fill:#063c4f;fill-rule:evenodd" transform="translate(0 -8)">
+           </path>
+          </svg>
+         </span>
+        </a>
+       </div>
+       <svg class="jss49 jss120" viewbox="0 0 321 46">
+        <title>
+        </title>
+        <defs>
+         <style>
+          .cls-1{fill:#063c4f;fill-rule:evenodd;}
+         </style>
+        </defs>
+        <path class="cls-1" d="M298.8,7.86c-8.27,0-12.53,6.26-12.53,15.23v.61c.15,5.37,2.41,14.44,12.52,14.44,8.14,0,12.41-6.32,12.41-15.11S307.07,7.86,298.8,7.86Zm-23.12-7v7.8H251.32v9.66h22.52v7.55H251.32V37.33h25v7.8H241.77V.87Zm-64.41,0V18.08h18.19V.87h9.61V45.13h-9.61V25.88H211.27V45.13h-9.61V.87Zm-55.64,0V45.13H147V16.31L118.18,45.06l-6.8-6.78L140.17,9.53H111.31V.87Zm-47.34,0V45.13h-9.6V.87ZM45.92.87,53,31.51h.07L61.12.87H71.3L79.19,32h.06L86.44.87H96L84.34,45.13H74.48L67.67,19.5l-1.59-6.37H66L64.43,19.5,57.75,45.13h-10L36.25.87ZM18.32,0C28.61,0,35.87,4.52,36.18,13.44v.37l-9.41.24C26.21,9.17,23,7.43,18.13,7.43c-3.63,0-7.32,1.42-7.32,4.71,0,1.67.7,2.72,3.18,3.65,3.57,1.36,13.36,3.4,17.43,5.63,3.69,2,6.17,5.39,6.17,10.71,0,9.47-8,13.87-18.51,13.87S.7,41.11,0,31l0-.4,9.29-.43c.38,5.88,4.32,8.3,10,8.3,4.14,0,8.91-1.74,8.91-5.76,0-2.6-1.85-4.09-5.6-5.14l-3.85-1c-4.6-1.24-10.54-3-12.94-5a10.48,10.48,0,0,1-4.2-8.78C1.59,5,8.91,0,18.32,0ZM298.74,0c14.1,0,22.09,9.82,22.26,22.75v.4C321,30.83,316.93,46,298.8,46c-12.78,0-22.26-8.36-22.26-22.78C276.54,10.65,284.11,0,298.74,0ZM180,0c9.46,0,17.07,4.93,19,14l.08.4-9.42,1.06c-.82-4.52-4.83-7.56-9.73-7.56-7.88,0-11.89,5.89-11.89,15.05s4,15.17,11.77,15.17c5.42,0,8.95-3.4,10.17-9.3l.07-.36,9.28,1.36C197.33,40.12,189.88,46,179.9,46c-13.42,0-21.56-9.66-21.56-22.72C158.34,10,166.29,0,180,0Z">
+        </path>
+       </svg>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="static-document" style="visibility:hidden">
+  </div>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119697219-1">
+  </script>
+  <script>
+   function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-119697219-1")
+  </script>
+  <script>
+   !function(e,t,n,i,a,c){e.twq||((i=e.twq=function(){i.exe?i.exe.apply(i,arguments):i.queue.push(arguments)}).version="1.1",i.queue=[],(a=t.createElement(n)).async=!0,a.src="//static.ads-twitter.com/uwt.js",(c=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,c))}(window,document,"script"),twq("init","nzx94"),twq("track","PageView")
+  </script>
+  <script>
+   window.__PRELOADED_STATE__="{\"Content\":{\"timestamp\":\"2020-08-02T16:29:23.379Z\",\"press\":[{\"title\":\"Switcheo - DEX on Ethereum, EOS and NEO blockchains\",\"link\":\"https://defiprime.com/switcheo-network\",\"date\":\"2019-10-23T00:00+08:00\",\"type\":\"Interview\"},{\"title\":\"[Podcast] The World’s 1st Multi-Chain Decentralized Exchange w/ Ivan Poon from Switcheo – (Ep. 0051)\",\"link\":\"https://blog.nomics.com/flippening/multi-chain-dex-ivan-poon-switcheo/\",\"date\":\"2019-07-27T00:00+08:00\",\"type\":\"Interview\"},{\"title\":\"What will it take for the next generation of crypto exchanges to succeed? Here are 5 must-have features\",\"link\":\"https://e27.co/will-take-next-generation-crypto-exchanges-succeed-5-must-features-20180806/\",\"date\":\"2018-08-06T00:00+08:00\",\"type\":\"Feature\"},{\"title\":\"4 Founders Reveal Secrets Behind Wildly Successful ICOS\",\"link\":\"https://bitcoinist.com/4-founders-secrets-successful-icos/\",\"date\":\"2018-08-18T00:00+08:00\",\"type\":\"Interview\"},{\"title\":\"Blockchain Platform and Exchange Want ‘Open Financial World’\",\"link\":\"https://cointelegraph.com/news/blockchain-platform-and-exchange-want-open-financial-world\",\"date\":\"2020-02-12T00:00+08:00\",\"type\":\"Feature\"},{\"title\":\"NEO-Based DEX Partners With Zilliqa to Add Ethereum and EOS Assets\",\"link\":\"https://cointelegraph.com/news/neo-based-dex-partners-with-zilliqa-to-add-ethereum-and-eos-assets\",\"date\":\"2020-03-17T00:00+08:00\",\"type\":\"Partnership\"},{\"title\":\"A Trustless, Decentralized Cryptocurrency Exchange with a Focus on Delivering a World-Class Trading Experience\",\"link\":\"https://www.cardrates.com/news/switcheo-is-a-decentralized-convenient-crypto-exchange/\",\"date\":\"2019-12-12T00:00+08:00\",\"type\":\"Interview\"},{\"title\":\"The Future of DEXs\",\"link\":\"https://www.asiablockchainreview.com/the-future-of-dexs/\",\"date\":\"2019-08-16T00:00+08:00\",\"type\":\"Review\"}],\"team\":[{\"name\":\"Yingyu Wang\",\"role\":\"Advisor  Director, Advocate & Solicitor\",\"team\":\"Advisory and Community\",\"image\":{\"title\":\"Yingyu Wang\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/3cZZuhWOiUS1lalhw1OQXV/7e60949bd65d6a1fbd857f0a7c380d22/yingyu-wang.png\",\"details\":{\"size\":165027,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"yingyu-wang.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Yingyu Wang's LinkedIn\",\"url\":\"https://www.linkedin.com/in/yingyu-wang-b77a6b3/\",\"label\":\"LinkedIn\"}],\"order\":0},{\"name\":\"Ivan Poon\",\"role\":\"Co-Founder, CEO\",\"team\":\"Core team\",\"image\":{\"title\":\"Ivan Poon\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/2SaZNYdPUDX6TLjEgujtMG/4a15e98286cd2f5272efac4a8b6a638e/ivan-poon.png\",\"details\":{\"size\":81658,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"ivan-poon.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Ivan GitHub\",\"url\":\"https://github.com/RavenXce\",\"label\":\"GitHub\"},{\"identifier\":\"Ivan's LinkedIn\",\"url\":\"https://www.linkedin.com/in/ivanpoonkm/\",\"label\":\"LinkedIn\"}],\"order\":0},{\"name\":\"Henry Chua\",\"role\":\"Co-Founder, COO\",\"team\":\"Core team\",\"image\":{\"title\":\"Henry Chua\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/1A1uEv2j0j4FglbGtePEmw/60d73317598d31a5f54340b2349157ee/henry-chua.png\",\"details\":{\"size\":85062,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"henry-chua.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Henry's GitHub\",\"url\":\"https://github.com/HenryTimelessness\",\"label\":\"GitHub\"},{\"identifier\":\"Henry's LinkedIn\",\"url\":\"https://www.linkedin.com/in/henry-chua-40690284/\",\"label\":\"LinkedIn\"}],\"order\":1},{\"name\":\"Roger Lim\",\"role\":\"Advisor\",\"team\":\"Advisory and Community\",\"image\":{\"title\":\"Roger\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/FVxDMsdPhfpEMDwKDPTWM/32efe5a23c0fe4cbb32ed5a297ca258e/photo_2020-06-09_13.56.03.jpeg\",\"details\":{\"size\":6038,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"photo_2020-06-09 13.56.03.jpeg\",\"contentType\":\"image/jpeg\"}},\"links\":[{\"identifier\":\"Roger Lim's LinkedIn\",\"url\":\"https://www.linkedin.com/in/limroger/\",\"label\":\"LinkedIn\"}],\"order\":2},{\"name\":\"Jack Yeu\",\"role\":\"Co-Founder, CCO\",\"team\":\"Core team\",\"image\":{\"title\":\"photo 2020-06-09 14.32.00\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/6gyiG1uBYcl1uBrnVWF9bF/31914eec4daa9952da55754c806d4dc2/photo_2020-06-09_14.32.00.jpeg\",\"details\":{\"size\":18966,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"photo_2020-06-09 14.32.00.jpeg\",\"contentType\":\"image/jpeg\"}},\"links\":[{\"identifier\":\"Jack's GitHub\",\"url\":\"https://github.com/jackyeu\",\"label\":\"GitHub\"},{\"identifier\":\"Jack's LinkedIn\",\"url\":\"https://www.linkedin.com/in/jackyeu/\",\"label\":\"LinkedIn\"}],\"order\":3},{\"name\":\"Intsol\",\"role\":\"Community Manager\",\"team\":\"Advisory and Community\",\"image\":{\"title\":\"intsol\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/3s3dTYCYizbAu5Y9kS5HWv/fd426e19b6f6eeed6a55a3bcc7dc30de/photo_2020-06-09_13.56.01.jpeg\",\"details\":{\"size\":8619,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"photo_2020-06-09 13.56.01.jpeg\",\"contentType\":\"image/jpeg\"}},\"order\":3},{\"name\":\"Yik Jiun Lee\",\"role\":\"CTO\",\"team\":\"Core team\",\"image\":{\"title\":\"Yik Jiun Lee\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/5KlSZzgzTQDSrZxucQGA9r/31a2ce028be0fe97880ae8bdb2aecd86/yik-jiun-lee.png\",\"details\":{\"size\":74924,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"yik-jiun-lee.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Yik Jiun's GitHub\",\"url\":\"https://github.com/leeyikjiun\",\"label\":\"GitHub\"},{\"identifier\":\"Yik Jiun's LinkedIn\",\"url\":\"https://www.linkedin.com/in/yik-jiun-lee-4babb0106/\",\"label\":\"LinkedIn\"}],\"order\":4},{\"name\":\"Luke\",\"role\":\"Community Manager\",\"team\":\"Advisory and Community\",\"image\":{\"title\":\"luke\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/69geSeY6BPYRdknuFY1lID/46b999730c16fda89b261dc3724eff60/luke.jpeg\",\"details\":{\"size\":6969,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"luke.jpeg\",\"contentType\":\"image/jpeg\"}},\"order\":4},{\"name\":\"Terence Toh\",\"role\":\"COS\",\"team\":\"Core team\",\"image\":{\"title\":\"Terence Toh\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/5nQbGgiijDLgVFTsIHBQv9/f284aba179d96e08eeff2eee5f221f1b/terence-toh.png\",\"details\":{\"size\":82999,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"terence-toh.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Terence's LinkedIn\",\"url\":\"https://www.linkedin.com/in/terence-toh-833948100/\",\"label\":\"LinkedIn\"}],\"order\":5},{\"name\":\"John Wong\",\"role\":\"VP Engineering - Blockchain\",\"team\":\"Core team\",\"image\":{\"title\":\"John Wong\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/zBgJLe1hIVbigKWN3Zegl/0d6d9856cba0b53d7cc2a7fe7739c229/john-wong.png\",\"details\":{\"size\":74314,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"john-wong.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"John's GitHub\",\"url\":\"https://github.com/jwheur\",\"label\":\"GitHub\"}],\"order\":6},{\"name\":\"Sng Ping Chiang\",\"role\":\"Developer\",\"team\":\"Core team\",\"image\":{\"title\":\"Sng Ping Chiang\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/7B6kg2SRbfGjftjgmaFKC6/9c6d79e7cbf4c73a6d5058131825b33b/sng-ping-chiang.png\",\"details\":{\"size\":73822,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"sng-ping-chiang.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Ping Chiang's GitHub\",\"url\":\"https://github.com/spclight\",\"label\":\"GitHub\"},{\"identifier\":\"Ping Chiang's LinkedIn\",\"url\":\"https://www.linkedin.com/in/ping-chiang-sng-9453b5b4/\",\"label\":\"LinkedIn\"}],\"order\":7},{\"name\":\"Lim Jia Rong\",\"role\":\"Developer\",\"team\":\"Core team\",\"image\":{\"title\":\"Lim Jia Rong\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/162JECObUpu6epPppmPEBm/74a90f5e26199582c7b365990f96b9c7/lim-jia-rong.png\",\"details\":{\"size\":77738,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"lim-jia-rong.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Lim Jia Rong's GitHub\",\"url\":\"https://github.com/holyxiaoxin\",\"label\":\"GitHub\"},{\"identifier\":\"Lim Jia Rong's LinkedIn\",\"url\":\"https://www.linkedin.com/in/limjiarong/\",\"label\":\"LinkedIn\"}],\"order\":8},{\"name\":\"Chan Jun Wei\",\"role\":\"Developer\",\"team\":\"Core team\",\"image\":{\"title\":\"Chan Jun Wei\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/1sOVi0IqJWT7cAYUiYMC8W/015138d91e4cb2b6e190ede2b58b52f4/chan-jun-wei.png\",\"details\":{\"size\":50440,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"chan-jun-wei.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Chan Jun Wei's GitHub\",\"url\":\"https://github.com/junw3i\",\"label\":\"GitHub\"},{\"identifier\":\"Chan Jun Wei's LinkedIn\",\"url\":\"https://www.linkedin.com/in/chanjunwei/\",\"label\":\"LinkedIn\"}],\"order\":9},{\"name\":\"Faye Xie\",\"role\":\"Product Lead\",\"team\":\"Core team\",\"image\":{\"title\":\"Faye Xie\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/3Xp6lGpTAP08S0Vj0dwzzr/96b4cffb68bef4b2a2a1a360d2583fba/faye-xie.png\",\"details\":{\"size\":78098,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"faye-xie.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Faye Xie's LinkedIn\",\"url\":\"https://www.linkedin.com/in/fayexie/\",\"label\":\"LinkedIn\"}],\"order\":10},{\"name\":\"Clemence Yeung\",\"role\":\"UI/UX Designer\",\"team\":\"Core team\",\"image\":{\"title\":\"Clemence Yeung\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/1zegcXZ6fL6iFKHL0531UI/51cb37ba71f80e6d4d851935067c81c3/clemence-yeung.png\",\"details\":{\"size\":88537,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"clemence-yeung.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Clemence Yeung's LinkedIn\",\"url\":\"https://www.linkedin.com/in/manting-yeung/\",\"label\":\"LinkedIn\"}],\"order\":11},{\"name\":\"Dany Le\",\"role\":\"UI/UX Designer\",\"team\":\"Core team\",\"image\":{\"title\":\"Dany Le\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/39HeD9KWRpGNTtHZTiaqzR/0e0681fcef00c64267333a28831b6590/dany-le.png\",\"details\":{\"size\":92240,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"dany-le.png\",\"contentType\":\"image/png\"}},\"links\":[{\"identifier\":\"Dany Le's LinkedIn\",\"url\":\"https://www.linkedin.com/in/danyhle/\",\"label\":\"LinkedIn\"}],\"order\":12},{\"name\":\"Yani Li\",\"role\":\"Marketing Executive\",\"team\":\"Core team\",\"image\":{\"title\":\"Yani Li\",\"file\":{\"url\":\"//images.ctfassets.net/zuuiz1tqvlit/5nQGrjk3Rnu4jOqfzaiSR4/612f66d2348ef8cb8eb843313dddb043/photo_2020-06-09_14.35.16.jpeg\",\"details\":{\"size\":16461,\"image\":{\"width\":300,\"height\":300}},\"fileName\":\"photo_2020-06-09 14.35.16.jpeg\",\"contentType\":\"image/jpeg\"}},\"links\":[{\"identifier\":\"Yani Li's LinkedIn\",\"url\":\"https://www.linkedin.com/in/yanili/\",\"label\":\"LinkedIn\"}],\"order\":15}],\"blogEntry\":[{\"title\":\"The Preemptive Guide to Staking SWTH\",\"preview\":\"The excitement is building up! Staking Switcheo tokens is going live any day now...\",\"date\":\"2020-07-27T17:58:47+08:00\",\"url\":\"https://blog.switcheo.network/the-preemptive-guide-to-staking-swth/\"},{\"title\":\"Switcheo Lists 5 New DeFi Tokens\",\"preview\":\"We are happy to announce that the following up and coming #deFi tokens have been listed on Switcheo Exchange! LEND, MTA, NXM, REN and YFI\",\"date\":\"2020-07-24T19:45:02+08:00\",\"url\":\"https://blog.switcheo.network/switcheo-lists-5-new-defi-tokens/\"},{\"title\":\"Switcheo Adds Integration With WalletConnect\",\"preview\":\"Switcheo latest wallet integration with WalletConnect allows you to use dApps securely through your mobile wallet and device.\",\"date\":\"2020-07-23T14:58:35+08:00\",\"url\":\"https://blog.switcheo.network/switcheo-adds-integration-with-walletconnect/\"},{\"title\":\"Switcheo Adds Integration With NeoLine Wallet\",\"preview\":\"Switcheo has recently integrated with NeoLine Wallet. You can now trade on Switcheo Exchange with your NeoLine Wallet.\",\"date\":\"2020-07-21T13:58:49+08:00\",\"url\":\"https://blog.switcheo.network/switcheo-adds-integration-with-neoline-wallet/\"}],\"featuredIn\":[{\"title\":\"Cointelegraph\",\"link\":\"https://cointelegraph.com/news/blockchain-platform-and-exchange-want-open-financial-world\"},{\"title\":\"Bitcoin Magazine\",\"link\":\"https://bitcoinmagazine.nl/2019/04/atomic-swaps-ethereum-eth-en-neo/\"},{\"title\":\"ccn\",\"link\":\"https://www.ccn.com/singapore-crypto-exchange-switcheo-announce-sdusd-stablecoin-support/\"},{\"title\":\"Crypto Briefing\",\"link\":\"https://cryptobriefing.com/switcheo-dex-plans-eos-expansion/\"},{\"title\":\"Blockonomi \",\"link\":\"https://blockonomi.com/switcheo-network-review-decentralized-cryptocurrency-exchange/\"},{\"title\":\"AsiaOne \",\"link\":\"https://www.asiaone.com/business/switcheo-network-first-bridge-across-ethereum-and-neo-blockchains\"},{\"title\":\"Markets Insider \",\"link\":\"https://markets.businessinsider.com/news/stocks/neo-and-switcheo-deepen-partnership-with-significant-funding-from-neo-eco-fund-1028815110\"},{\"title\":\"Asia Blockchain Review \",\"link\":\"https://www.asiablockchainreview.com/interview-with-ivan-poon-ceo-co-founder-of-switcheo/\"},{\"title\":\"Tech in Asia\",\"link\":\"https://www.techinasia.com/journey-blockchain-pioneer\"},{\"title\":\"Business Wire \",\"link\":\"https://www.businesswire.com/news/home/20190130005011/en/WBTC-Live-Ethereum\"},{\"title\":\"Crypto News Australia \",\"link\":\"https://cryptonews.com.au/story/switcheo-exchange-offers-alchemints-sdusd-stablecoin-as-quote-currency-65780\"},{\"title\":\"Blockchain Media\",\"link\":\"https://blockchainmedia.asia/post-172/\"},{\"title\":\"Bitcoinist\",\"link\":\"https://bitcoinist.com/4-founders-secrets-successful-icos/\"},{\"title\":\"Nomics \",\"link\":\"https://blog.nomics.com/flippening/multi-chain-dex-ivan-poon-switcheo/\"}],\"jobOpening\":[{\"role\":\"Frontend Developer (SG)\",\"url\":\"https://www.linkedin.com/jobs/search/?currentJobId=1866235515&keywords=switcheo\",\"order\":0},{\"role\":\"Marketing Executive (SG)\",\"url\":\"https://www.linkedin.com/jobs/search/?currentJobId=1866238277&keywords=switcheo\",\"order\":1}]}}"
+  </script>
+  <script>
+   !function(f){function e(e){for(var t,r,n=e[0],o=e[1],u=e[2],i=0,l=[];i<n.length;i++)r=n[i],Object.prototype.hasOwnProperty.call(c,r)&&c[r]&&l.push(c[r][0]),c[r]=0;for(t in o)Object.prototype.hasOwnProperty.call(o,t)&&(f[t]=o[t]);for(s&&s(e);l.length;)l.shift()();return p.push.apply(p,u||[]),a()}function a(){for(var e,t=0;t<p.length;t++){for(var r=p[t],n=!0,o=1;o<r.length;o++){var u=r[o];0!==c[u]&&(n=!1)}n&&(p.splice(t--,1),e=i(i.s=r[0]))}return e}var r={},c={1:0},p=[];function i(e){if(r[e])return r[e].exports;var t=r[e]={i:e,l:!1,exports:{}};return f[e].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=f,i.c=r,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(t,e){if(1&e&&(t=i(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)i.d(r,n,function(e){return t[e]}.bind(null,n));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/";var t=window["webpackJsonpswitcheo-website"]=window["webpackJsonpswitcheo-website"]||[],n=t.push.bind(t);t.push=e,t=t.slice();for(var o=0;o<t.length;o++)e(t[o]);var s=n;a()}([])
+  </script>
+  <script src="/static/js/2.a45e5c98.chunk.js">
+  </script>
+  <script src="/static/js/main.4ae134c2.chunk.js">
+  </script>
+ </body>
+</html>

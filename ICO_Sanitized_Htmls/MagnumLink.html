@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   MAGNUMLINK
+  </title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="Magnumlink" property="og:title"/>
+  <meta content="Buy and trade precious metals and gems efficiently! Blockchain platform for easy and convenient trading" property="og:description"/>
+  <link href="/assets/magnum/favicon-5a19d4d306dfacbc582bdc5f2d16529585020b625b1646f6e64c1559edf8f0ec.ico" rel="shortcut icon" type="image/x-icon"/>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="OhPkLH+by70TYkGv/s6IO5IjqD3+RfCFzuYVgocS/AMQ35Xu/I3W5Md3k9a6eP+2NXv8blI3wIt4+TnxsLeATQ==" name="csrf-token"/>
+  <link href="/assets/application-49839d51ea2c978dba9f2747b1f7d38feea2c248568ea885962aaeac7bbf0ad8.css" media="screen" rel="stylesheet"/>
+  <link href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" media="screen" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" rel="stylesheet"/>
+  <link href="/assets/magnum/devise_style-a17878c1ca507aa2313ce0dea4e32222179de5928165a51aad613ede6c3b8826.css" media="screen" rel="stylesheet"/>
+  <script src="/assets/application-7dd1accd1bd0a961e5dbb73e4fff03260958dc0df22cf414ad8a3eb0ebdf180d.js">
+  </script>
+  <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js">
+  </script>
+  <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+  <script src="/assets/devise_ajax-b9dc179abd66db1689aef9ddc8105724ae4d42ce0c0ec0de7a50efe8b64cda7f.js">
+  </script>
+ </head>
+ <body>
+  <style type="text/css">
+   .background-for-first-dots-container{background:url("/assets/magnum/dark-bg.png")}.first-dots-container{background:url("assets/backlinedot/Untitled-1.png") no-repeat;background-position:top}.first-dots-container header{background-color:rgba(69,69,69,0.3)}.first-dots-container .first-display{height:100vh}
+  </style>
+  <div class="background-for-first-dots-container">
+   <div class="first-dots-container">
+    <div class="first-display">
+     <style type="text/css">
+      header{height:80px;display:flex;align-items:center}header .container .not-row{display:flex;align-items:center}header .container .not-row .logo-container .logo-ml{margin-right:10px}header .container .not-row .links-container{margin-left:auto}header .container .not-row .bar-menu-btn{display:none}header .container .not-row .mobile-menu-btn-container{display:none}header .sections-link-container{font-family:'arimo';font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;margin-left:auto;color:#ffffff}header .sections-link-container .section-link{display:inline-block;text-decoration:none;color:#ffffff}header .sections-link-container .separator-image{height:5px;width:5px;margin:0 12px 2px 12px}header .sections-link-container .separator-image:last-child{display:none}.pre-ico-btn{background:white;box-shadow:0 2px 0 #d2d2d2;margin-left:15px}.pre-ico-btn:hover{background:white;opacity:0.7;color:#333333}.mobile-header-menu{display:none}@media (max-width: 991px){header{height:120px}header .container .not-row{display:block;text-align:center}header .container .not-row .logo-container{margin-bottom:15px}}@media (max-width: 768px){header{height:80px}header .container{width:90%}header .container .not-row{display:flex;text-align:inherit}header .container .not-row .logo-container{margin-bottom:0;display:inline-block}header .container .not-row .desktop-menu,header .container .not-row .log-in-desktop{display:none}header .container .not-row .mobile-menu-btn-container{display:inline-block;margin-left:auto}header .container .not-row .mobile-menu-btn-container i{color:white}.mobile-header-menu{background:#575757}.mobile-header-menu .mobile-section-link-container{padding:10px 0}.mobile-header-menu .mobile-section-link{color:#ffffff;font-family:'arimo';font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:1.2px}.mobile-header-menu .mobile-section-link:last-child{margin-bottom:15px;margin-top:10px}.mobile-header-menu .mobile-separator-image{margin:0px 10px 2px 0px}}@media (max-width: 385px){header .reset-container-padding-xs{padding:0}.logo-mg{display:none}}
+     </style>
+     <header id="header">
+      <div class="container reset-container-padding-xs">
+       <div class="not-row">
+        <a href="/">
+         <div class="logo-container">
+          <img alt="Logo ml" class="logo-ml" src="/assets/magnum/logo-ml-e964abbc5ff41415dcdf92f66d7d212088781aab81ac9cfd7df019ddf43dca50.png"/>
+          <img alt="Logo magnumlink" class="logo-mg" src="/assets/magnum/logo-magnumlink-9bcc9cad1284bb5f5c2cd69c4b3c2222b91d98e95f78dee2bf3d1a33305f5ca8.png"/>
+         </div>
+        </a>
+        <div class="sections-link-container desktop-menu">
+         <a class="section-link" href="https://www.magnumlink.com/articles/executive-summary">
+          ABOUT THE COMPANY
+         </a>
+         <img alt="Menu separator" class="separator-image" src="/assets/magnum/menu-separator-768b65c4b0af45088dd82e5ba58cc5d17201094e18b5f57c23c63d85d42d0284.png"/>
+         <a class="section-link" href="/sections/license-area">
+          LICENSED AREA
+         </a>
+         <img alt="Menu separator" class="separator-image" src="/assets/magnum/menu-separator-768b65c4b0af45088dd82e5ba58cc5d17201094e18b5f57c23c63d85d42d0284.png"/>
+         <a class="section-link" href="/sections/exploration-work-programme">
+          EXPLORATION PROGRAMME
+         </a>
+         <img alt="Menu separator" class="separator-image" src="/assets/magnum/menu-separator-768b65c4b0af45088dd82e5ba58cc5d17201094e18b5f57c23c63d85d42d0284.png"/>
+        </div>
+        <div class="log-in-desktop">
+         <a class="magnum-btn pre-ico-btn" href="/users/sign_in" id="login-btn">
+          <i class="fa fa-sign-out">
+          </i>
+          LOG IN
+         </a>
+        </div>
+        <div class="mobile-menu-btn-container">
+         <i class="fa fa-bars mobile-menu-btn">
+         </i>
+        </div>
+       </div>
+      </div>
+     </header>
+     <div class="mobile-header-menu">
+      <div class="container">
+       <div class="mobile-section-link-container">
+        <a class="mobile-section-link" href="https://www.magnumlink.com/articles/executive-summary">
+         <img alt="Menu separator" class="mobile-separator-image" src="/assets/magnum/menu-separator-768b65c4b0af45088dd82e5ba58cc5d17201094e18b5f57c23c63d85d42d0284.png"/>
+         ABOUT THE COMPANY
+        </a>
+       </div>
+       <div class="mobile-section-link-container">
+        <a class="mobile-section-link" href="/sections/license-area">
+         <img alt="Menu separator" class="mobile-separator-image" src="/assets/magnum/menu-separator-768b65c4b0af45088dd82e5ba58cc5d17201094e18b5f57c23c63d85d42d0284.png"/>
+         LICENSED AREA
+        </a>
+       </div>
+       <div class="mobile-section-link-container">
+        <a class="mobile-section-link" href="/sections/exploration-work-programme">
+         <img alt="Menu separator" class="mobile-separator-image" src="/assets/magnum/menu-separator-768b65c4b0af45088dd82e5ba58cc5d17201094e18b5f57c23c63d85d42d0284.png"/>
+         EXPLORATION PROGRAMME
+        </a>
+       </div>
+      </div>
+     </div>
+     <script>
+      $().ready(function () {
+  $('.mobile-menu-btn').click(function () {
+      $( '.mobile-header-menu').toggle('slow');
+  });
+});
+     </script>
+     <style type="text/css">
+      .links-mission{overflow:hidden;min-height:560px}.links-mission .links-mission-title{color:#ffffff;font-family:'arimo';font-size:68px;font-weight:700;line-height:94px;margin-top:100px}.links-mission .links-mission-desc{height:100%;padding-bottom:50px;padding-top:25px}.links-mission .links-mission-desc .desc-fill{color:#ffffff;font-family:'arimo';font-size:28px;font-weight:400;line-height:44px}.links-mission .links-mission-desc .whitepaper-container{margin-top:60px}.links-mission .links-mission-desc .whitepaper-container .magnum-btn{margin-right:30px}.links-mission .links-mission-desc .whitepaper-container .whitepaper-btn{box-shadow:0 2px 0 #d2d2d2;background:white;margin-right:40px}.links-mission .links-mission-desc .whitepaper-container .whitepaper-btn:hover{color:#333333;background-color:rgba(255,255,255,0.7)}.links-mission .mobile-login-in-links{display:none}#confirmation-email{display:none;position:fixed;border-radius:6px;padding:15px;width:300px;text-align:center;top:15px;right:calc(50% - 150px);color:white;font-size:20px;background:darkgreen}#confirmation-email .message-fill{display:inline-block}@media (max-width: 768px){.links-mission{min-height:auto}.links-mission .links-mission-title{font-size:50px;margin-top:50px;line-height:60px}.links-mission .links-mission-desc .desc-fill{font-size:20px}.links-mission .mobile-login-in-links{display:inline-block;margin-left:15px}}@media (max-width: 480px){.links-mission .links-mission-title{font-size:30px;margin-top:30px}.links-mission .mobile-login-in-links{margin-top:30px;margin-left:auto}}
+     </style>
+     <div class="links-mission">
+      <div class="links-mission-title">
+       <div class="container">
+        Buy and trade precious metals and gems efficiently!
+       </div>
+      </div>
+      <div class="links-mission-desc">
+       <div class="desc-fill container">
+        Blockchain platform for easy and convenient trading
+       </div>
+       <div class="whitepaper-container">
+        <div class="container">
+         <a class="magnum-btn" href="WP.pdf" target="_blank">
+          <i class="fa fa-cloud-download">
+          </i>
+          Whitepaper
+         </a>
+         <a class="magnum-btn whitepaper-btn read-more-anchor" href="#video">
+          <i class="fa fa-video-camera">
+          </i>
+          Video
+         </a>
+         <div class="mobile-login-in-links">
+          <a class="magnum-btn whitepaper-btn" href="/users/sign_in" id="login-btn">
+           <i class="fa fa-sign-out">
+           </i>
+           LOG IN
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="modal fade" id="deviseModal" role="dialog">
+      <div class="modal-dialog">
+       <div class="modal-content">
+       </div>
+      </div>
+     </div>
+     <div id="confirmation-email">
+      <div class="message-fill">
+       We have sent you a confirmation email.
+      </div>
+     </div>
+     <script>
+      function logInModal(loginBtn, e) {
+    e.preventDefault();
+    var signInPath = "/users/sign_in";
+    if (loginBtn.attr('href') == signInPath) {
+        $.ajax({
+            url: signInPath,
+            success: function (response) {
+                $('#deviseModal').html(response);
+            },
+            error: function (response) {
+                $('#deviseModal').html(response.responseText).modal();
+            },
+            dataType: 'script'
+        });
+        return false;
+    }
+}
+
+$(document).ready(function(){
+    var loginBtn = $('#login-btn');
+    loginBtn.click(function (e) {
+        logInModal($(this), e);
+    });
+
+    if (window.location.hash === '#login') {
+        loginBtn.trigger('click');
+    }
+    if (window.location.hash === '#new-pass') {
+        $.ajax({
+            url: "/users/password/edit",
+            dataType: 'script',
+            data: {
+                reset_password_token: window.location.search.substr(1).split('=')[1]
+            },
+            error: function (response) {
+                $('#deviseModal').html(response.responseText).modal();
+            }
+        })
+    }
+});
+     </script>
+    </div>
+    <style type="text/css">
+     .anchors-block .anchor-block-container{margin:60px 0;padding:0 15px}.anchors-block .anchor-block-container .anchor-content{background-color:#454545;padding:15px;height:415px}.anchors-block .anchor-block-container .anchor-content img{width:100%}.anchors-block .anchor-block-container .anchor-content .anchor-title{margin-top:15px;color:#ffffff;font-family:'oswald-bold';font-size:20px;font-weight:700;line-height:24px;text-transform:uppercase;letter-spacing:0.98px}.anchors-block .anchor-block-container .anchor-content .anchor-desc{height:100px;color:#ffffff;font-family:'arimo';font-size:12px;font-weight:400;line-height:25px}.anchors-block .anchor-block-container .anchor-content .magnum-btn{width:100px;height:30px;line-height:2.7;margin-top:10px;font-family:Arimo;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.49px}@media (max-width: 767px){.anchors-block .anchor-block-container .anchor-content{height:auto}}
+    </style>
+    <div class="anchors-block">
+     <div class="container">
+      <div class="row">
+       <div class="anchor-block-container col-sm-4">
+        <div class="anchor-content">
+         <img alt="Img diagram" src="/assets/magnum/img-diagram-71a9370a39e8a3b743e67d4af7e7253722099dae356e9fc0ee4e8885bce125e1.png"/>
+         <div class="anchor-title">
+          TRADING PLATFORM
+         </div>
+         <div class="anchor-desc">
+          Our tokens will equal to 1 gram of gold, silver, platinum or palladium and to 0.01 carat of a diamond. These tokens will be freely tradable on our platform and on numerous other exchanges.
+         </div>
+         <a class="magnum-btn read-more-anchor" href="#trading-platform">
+          READ MORE
+         </a>
+        </div>
+       </div>
+       <div class="anchor-block-container col-sm-4">
+        <div class="anchor-content">
+         <img alt="Img refinery" src="/assets/magnum/img-refinery-4825f7a8b723fefa0e822ea6239a5def2266356e698681847da13d0f615c5abd.png"/>
+         <div class="anchor-title">
+          REFINERY PRODUCTION
+         </div>
+         <div class="anchor-desc">
+          We create our own refinery production capacity in the most profitable regions so that we can deliver the depository of precious metals and gems with which our tokens will be backed.
+         </div>
+         <a class="magnum-btn read-more-anchor" href="#refinery-production">
+          READ MORE
+         </a>
+        </div>
+       </div>
+       <div class="anchor-block-container col-sm-4">
+        <div class="anchor-content">
+         <img alt="Mining" src="/assets/magnum/mining-de875ed75e58af72905f47320dd859df646a41fa02a508fe59129745928b405a.png"/>
+         <div class="anchor-title">
+          MINING
+         </div>
+         <div class="anchor-desc">
+          We are prospecting a region wealthy with diamonds and gold and plan to establish mining operations soon.
+         </div>
+         <a class="magnum-btn read-more-anchor" href="#mining">
+          READ MORE
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <script>
+     $().ready(function () {
+    $('.read-more-anchor').click(function (e) {
+        var diveTo = $($(this).attr('href')).offset().top;
+        $("html, body").stop().animate({scrollTop: diveTo }, 500, 'swing');
+        e.preventDefault();
+    });
+});
+    </script>
+    <style type="text/css">
+     .ico-video-wrapper{padding:30px 0;background:white}.ico-video-wrapper .video-container{text-align:center}.ico-video-wrapper .video-container .ico-video{width:100%}
+    </style>
+    <div class="ico-video-wrapper" id="video">
+     <div class="container">
+      <div class="video-container">
+       <iframe allowfullscreen="" class="ico-video" frameborder="0" gesture="media" src="https://www.youtube.com/embed/2h8Dil603og">
+       </iframe>
+      </div>
+     </div>
+    </div>
+    <script>
+     $().ready(function() {
+  var iframe = $('.video-container iframe');
+  iframe.height((iframe.width() / 16 * 9) - 1);
+  iframe.attr('src', iframe.attr('src') + '?showinfo=0');
+  $( window ).resize(function() {
+    iframe.height((iframe.width() / 16 * 9) - 1);
+  });
+});
+    </script>
+    <style type="text/css">
+     .team-container{background-color:#feb600}.team-container .team-title-container{text-align:center}.team-container .team-title-container .team-title{margin-top:30px;display:inline-block;color:#333333;font-family:'oswald-bold';font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:1.12px}.team-container .stick-container{text-align:center}.team-container .stick-container .stick{background-color:#333333;height:2px;width:40px;display:inline-block;margin-bottom:10px}.team-container .slider-container .slide{height:500px}.team-container .slider-container .slide .img-container img{width:100%}.team-container .slider-container .slide .slide-content{background:url("assets/magnum/dark-bg.png") repeat;text-align:center;padding:20px;min-height:240px}.team-container .slider-container .slide .slide-content .name{color:#ffffff;font-family:'oswald-bold';font-size:18px;font-weight:700;line-height:25px;text-transform:uppercase;letter-spacing:0.72px;padding-top:25px}.team-container .slider-container .slide .slide-content .slide-stick{width:40px;height:2px;background-color:#feb600;display:inline-block}.team-container .slider-container .slide .slide-content .position{color:#feb600;font-family:'arimo';font-size:14px;font-weight:400;line-height:25px;letter-spacing:0.56px;padding-top:15px}.team-container .slider-container .slide .slide-content .team-desc{color:#ffffff;font-family:'arimo';font-size:12px;font-weight:400;line-height:25px;letter-spacing:0.48px;text-align:left}.team-container .slider-container .slick-arrow-custom{background-color:#333333;display:inline-block;width:30px;height:30px;text-align:center;line-height:2.5;cursor:pointer}.team-container .slider-container .slick-arrow-custom i{font-size:20px;color:white}.team-container .slider-container .slick-arrow-custom:hover i{color:#feb600}.team-container .slider-container .slick-arrow-custom.right-arrow{position:relative;left:100%;bottom:250px}.team-container .slider-container .slick-arrow-custom.left-arrow{position:relative;right:30px;top:280px}@media (max-width: 1024px){.team-container .slider-container .slide .slide-content{min-height:275px}}@media (max-width: 767px){.team-container .slider-container .slide{width:450px}.team-container .slider-container .slide .slide-content{height:290px}}@media (max-width: 480px){.team-container .slide{height:auto !important;margin-bottom:15px;margin-left:7px}}
+    </style>
+    <div class="team-container">
+     <div class="team-title-container">
+      <div class="team-title">
+       EXECUTIVE TEAM
+      </div>
+     </div>
+     <div class="stick-container">
+      <div class="stick">
+      </div>
+     </div>
+     <div class="slider-container">
+      <div class="container">
+       <div class="row" id="team-slider">
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover photo 2017 10 02 12 43 14" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/9/cover_photo_2017-10-02_12-43-14.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Iurii Borysenko
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Co-Founder
+          </div>
+          <div class="team-desc">
+           Iurii has immense experience in establishment and managing of businesses in the field of precious metals and gems.
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover team5" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/10/cover_team5.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Konstantyn Buialo
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Co-Founder
+          </div>
+          <div class="team-desc">
+           Kostiantyn has a high-level managing experience. He is an experienced lawyer with an international reputation.
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover team6" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/11/cover_team6.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Andrey Popov
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Co-Founder
+          </div>
+          <div class="team-desc">
+           Andrey is a serial entrepreneur with experience of building successful businesses in different spheres.
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover 2017 12 21 17.38.09 2" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/25/cover_2017-12-21_17.38.09_2.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Sergey Bondarenko
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           CTO
+          </div>
+          <div class="team-desc">
+           Solution designer, Creative problem solver,
+IT architect, strategist, analyst, consultant, auditor, technology evangelist
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover 2017 10 09 12.42.52 2" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/16/cover_2017-10-09_12.42.52_2.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Mykhailo Buialo
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Executive Officer
+          </div>
+          <div class="team-desc">
+           <p>
+            <span style="font-style: normal;">
+             Misha is early crypto enthusiast and adopter of blockchain technology.  He is our core manager who coordinates everything with different stakeholders.
+            </span>
+            <br/>
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover 112" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/17/cover_112.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Aleksandar Ribak
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Marketing Manager
+          </div>
+          <div class="team-desc">
+           <p>
+            Aleksandar is a serial entrepreneur, has an MA in Marketing, and owns a blockchain marketing company www.tsm.global
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover konstantin" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/21/cover_Konstantin.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Konstantin Jovic
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Creative Lead
+          </div>
+          <div class="team-desc">
+           Konstantin has 18+ years’ experience in design
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover nichil sethi" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/20/cover_Nichil_Sethi.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Nikhil Sethi
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Communications Manager
+          </div>
+          <div class="team-desc">
+           Nikhil has 5+ years' experience in marketing, he worked with BlaBlaCar, Airtel and Carzonrent
+          </div>
+         </div>
+        </div>
+        <div class="slide col-sm-3">
+         <div class="img-container">
+          <img alt="Cover luigi" src="https://magnumlink.s3.amazonaws.com/uploads/admin/team/avatar/22/cover_Luigi.jpg"/>
+         </div>
+         <div class="slide-content">
+          <div class="name">
+           Luigi Pio Amendolagine
+          </div>
+          <div class="slide-stick">
+          </div>
+          <div class="position">
+           Community Manager
+          </div>
+          <div class="team-desc">
+           Luigi is a young crypto enthusiast and bounty manager
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <script>
+     $('#team-slider').slick({
+    infinite: true,
+    slidesToScroll: 1,
+    slidesToShow: 4,
+    nextArrow: '<div class="slick-arrow-custom right-arrow"><i class="fa fa-angle-right"></i></div>',
+    prevArrow: '<div class="slick-arrow-custom left-arrow"><i class="fa fa-angle-left"></i></div>',
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                arrows: false,
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                slidesToShow: 1
+            }
+        }
+    ]
+});
+    </script>
+   </div>
+  </div>
+  <style type="text/css">
+   .trading-platform .trading-title{font-family:'oswald-bold';font-size:28px;font-weight:700;line-height:24px;text-transform:uppercase;letter-spacing:1.14px}.trading-platform .stick{width:40px;height:2px;background-color:#feb600;margin-top:15px;margin-bottom:15px}.trading-platform .trading-desc .desc-part{font-family:'arimo';font-size:14px;font-weight:400;line-height:25px;margin-bottom:25px}.trading-platform .magnum-btn{width:100px;height:30px;line-height:2.7}.trading-platform .first-platform,.trading-platform .second-platform,.trading-platform .third-platform{display:flex;height:100%;align-items:center}.trading-platform .first-platform .container,.trading-platform .second-platform .container,.trading-platform .third-platform .container{padding:50px 0}.trading-platform .first-platform .container .row,.trading-platform .second-platform .container .row,.trading-platform .third-platform .container .row{margin:0}.trading-platform .first-platform .platform-image img,.trading-platform .second-platform .platform-image img,.trading-platform .third-platform .platform-image img{width:100%;top:25%}.trading-platform .first-platform .container{background-color:white;background:url("assets/magnum/73-content-page-jpg.png") no-repeat;background-attachment:fixed}.trading-platform .first-platform .trading-title{color:#333333}.trading-platform .first-platform .trading-desc .desc-part{color:#333333}.trading-platform .second-platform{background:url("assets/backlinedot/Untitled-3.png") no-repeat;background-position:top}.trading-platform .second-platform .container{background:url("assets/magnum/74_content_page.png") no-repeat;background-attachment:fixed;background-position:25% 10%}.trading-platform .second-platform .trading-title{color:white}.trading-platform .second-platform .trading-desc .desc-part{color:white}.trading-platform .third-platform .container{background:url("assets/magnum/img-mining.png") no-repeat;background-attachment:fixed;background-position:25% 10%}#refinery-production{background:url("/assets/magnum/dark-bg.png")}@media (max-width: 1199px){.trading-platform .first-platform,.trading-platform .second-platform,.trading-platform .third-platform{height:auto}.trading-platform .first-platform .container,.trading-platform .second-platform .container,.trading-platform .third-platform .container{background:none}}
+  </style>
+  <div class="trading-platform" id="trading-platform">
+   <div class="first-platform">
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-5 visible-lg-block">
+       <div class="platform-image">
+       </div>
+      </div>
+      <div class="col-lg-7">
+       <div class="trading-title">
+        TRADING PLATFORM
+       </div>
+       <div class="stick">
+       </div>
+       <div class="trading-desc">
+        <div class="desc-part">
+         <p>
+          <span style="color: rgb(51, 51, 51); font-family: arimo; font-size: 14px; font-style: normal; font-weight: normal;">
+           After the ICO, whenever gold, diamonds or other precious minerals enter secure bank storage, new tokens will be issued proportionally to the increased stock of precious metals and gems in our storage. No token will ever be issued after the ICO without backing from a non-digital precious asset.
+          </span>
+         </p>
+         <p>
+          <span style="color: rgb(51, 51, 51); font-family: arimo; font-size: 14px; font-style: normal; font-weight: normal;">
+           <br/>
+          </span>
+          <span style="font-weight: normal; color: rgb(51, 51, 51); font-family: arimo; font-size: 14px; font-style: normal;">
+           One MagnumLink Ltd. token for gold (MLG), silver (MLS), platinum (MLPT) or palladium (MLPD) or one token for 0.01 carat of the smallest diamond gem with the lowest colour and purity index (MLD) would ensure that investors can trade their tokens on our platform and on other exchanges.
+          </span>
+         </p>
+         <p>
+          <span style="font-weight: normal; color: rgb(51, 51, 51); font-family: arimo; font-size: 14px; font-style: normal;">
+           <br/>
+          </span>
+          <span style="color: rgb(51, 51, 51); font-family: arimo; font-size: 14px; font-style: normal; font-weight: normal;">
+           The investors who buy our tokens, unlike in the case of many derivatives, would have the option to receive real assets in exchange for their tokens. For instance, investors can get bars of gold or diamonds if they don’t want to store or trade their tokens.
+          </span>
+         </p>
+        </div>
+       </div>
+       <a href="/articles/trading-platform">
+        <div class="magnum-btn">
+         READ MORE
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="trading-platform" id="refinery-production">
+   <div class="second-platform">
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-5 visible-lg-block">
+       <div class="platform-image">
+       </div>
+      </div>
+      <div class="col-lg-7">
+       <div class="trading-title">
+        REFINERY PRODUCTION
+       </div>
+       <div class="stick">
+       </div>
+       <div class="trading-desc">
+        <div class="desc-part">
+         The first diversified portfolio of blockchain tokens fully supported with tangible assets based in precious metals and gems will be made available also by our own ability to conduct the manufacturing process. You don’t need to worry about the supply of new valuable tokens!Not only we will create great value for our investors but we will also improve production methods and living standards in Sierra Leone with the goal to upkeep the highest standards of eco-friendly production while paying fair wages to all of our employees.
+        </div>
+       </div>
+       <a href="/articles/refinery-production">
+        <div class="magnum-btn">
+         READ MORE
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="trading-platform" id="mining">
+   <div class="third-platform">
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-5 visible-lg-block">
+       <div class="platform-image">
+       </div>
+      </div>
+      <div class="col-lg-7 col-xs-12">
+       <div class="trading-title">
+        MINING
+       </div>
+       <div class="stick">
+       </div>
+       <div class="trading-desc">
+        <div class="desc-part">
+         <h6>
+         </h6>
+         <h5>
+         </h5>
+         <p style="font-size: 10px;">
+          <span style="font-style: normal; font-weight: normal; color: rgb(34, 34, 34); font-size: 14px; white-space: pre-wrap;">
+           <font face="Helvetica">
+            The area we have license for has yielded positive results. There is availability of both non-placer and alluvial reserve of diamonds and gold along with other minerals.
+           </font>
+          </span>
+         </p>
+         <p style="font-size: 10px;">
+          <span style="font-style: normal; font-weight: normal; color: rgb(34, 34, 34); font-size: 14px; white-space: pre-wrap;">
+           <font face="Helvetica">
+            The stage is enhanced exploration, measurement and development of mining plan while broadening licensed area.
+           </font>
+          </span>
+          <span style='font-style: normal; font-weight: normal; color: rgb(34, 34, 34); font-family: "dejavu sans mono", monospace; font-size: 14px; white-space: pre-wrap;'>
+           <br/>
+          </span>
+         </p>
+        </div>
+       </div>
+       <a href="/articles/mining">
+        <div class="magnum-btn">
+         READ MORE
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   $().ready(function () {
+    var containerMarginLeft = parseInt($('#trading-platform > div > div').css('margin-left')) + 15 + 'px';
+    var tradingPlatform = $('.trading-platform > div > div');
+    tradingPlatform.css('background-position', containerMarginLeft + ' 10%');
+    $(window).on('resize', function () {
+        containerMarginLeft = parseInt($('#trading-platform > div > div').css('margin-left')) + 15 + 'px';
+        tradingPlatform.css('background-position', containerMarginLeft + ' 10%');
+    })
+});
+  </script>
+  <style type="text/css">
+   .back-for-dots-lines{background:url("/assets/magnum/dark-bg.png")}.ico-token-container{text-align:center;padding:50px 0;background:url("assets/backlinedot/Untitled-4.png") no-repeat;background-position:top}.ico-token-container .ico-token-title{color:#ffffff;font-family:'oswald-bold';font-size:28px;font-weight:700;line-height:24px;text-transform:uppercase;letter-spacing:1.14px;display:inline-block}.ico-token-container .stick{width:40px;height:2px;background-color:#feb600;display:inline-block}.ico-token-container .ico-token-desc{color:#ffffff;font-family:'arimo';font-size:18px;font-weight:400;line-height:30px;padding-top:50px}.ico-token-container .chart-image img{width:100%}@media (min-width: 1200px){.back-for-dots-lines .ico-token-container .ico-token-desc{width:89%}}@media (max-width: 768px){.ico-token-container .container{margin-top:0}.ico-token-container .ico-token-desc{padding:15px 0}}
+  </style>
+  <div class="back-for-dots-lines">
+   <div class="ico-token-container">
+    <div class="ico-token-title">
+     ICO TOKEN DISTRIBUTION
+    </div>
+    <p>
+    </p>
+    <div class="stick">
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-offset-1 col-sm-4">
+       <div class="ico-token-desc">
+        We will sell our ML Tokens during ICO.
+The price of one token will be equal to
+1USDT. To pre-sale will be allocated
+500 000 amount of tokens.
+       </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-4">
+       <div class="chart-image">
+        <img alt="Img token" src="/assets/magnum/img_token-b483e6e2a11d0f3aa80cc90ad1e3c146801f75302639270b2713dc85c826afe8.png"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <style type="text/css">
+   .ico-money-container{text-align:center;padding:50px 0}.ico-money-container .ico-money-title{color:#333333;font-family:'oswald-bold';font-size:28px;font-weight:700;line-height:24px;text-transform:uppercase;letter-spacing:1.14px;display:inline-block}.ico-money-container .chart-container{padding-top:30px;text-align:start}.ico-money-container .chart-container .chart-desc{position:relative;top:-10px;height:0;color:#333333;width:34%;font-family:'arimo';font-size:18px;font-weight:400;line-height:30px;z-index:1}.ico-money-container .chart-container .chart-desc p{margin:0 0 3px}.ico-money-container .chart-container img{z-index:0;position:relative;width:100%}.ico-money-container .chart-container .layers-10{width:25%}@media (max-width: 1199px){.ico-money-container .chart-container .chart-desc{font-size:16px;line-height:20px}}@media (max-width: 991px){.ico-money-container .chart-container .chart-desc{font-size:15px;line-height:15px}}@media (max-width: 767px){.ico-money-container .chart-container .chart-desc{position:static;height:auto;width:100%}.ico-money-container .chart-container .chart-desc p{margin:0 0 5px}}
+  </style>
+  <div class="ico-money-container">
+   <div class="ico-money-title">
+    ICO money distribution
+   </div>
+   <p>
+   </p>
+   <div class="stick">
+   </div>
+   <div class="chart-container">
+    <div class="container">
+     <div class="chart-desc">
+      <p>
+       The invested money will be allocated to three profitable revenue sources:
+      </p>
+      <p>
+       1. Finishing of the trading platform which charges fees to traders
+      </p>
+      <p>
+       2. Refining precious minerals and earning money from the operations
+      </p>
+      <p>
+       3. Geological exploration to increase the amounts of precious materials we will extract
+      </p>
+     </div>
+     <img alt="Ico money plus" src="/assets/magnum/ico_money_plus-29cfabdd9b015e5be4bd78b94c230b291fb1df56979e0f30649b88a52b9906cb.png"/>
+    </div>
+   </div>
+  </div>
+  <style type="text/css">
+   footer{background:url("/assets/magnum/dark-bg.png")}footer .dots-lines-back{background:url("assets/backlinedot/Untitled-7.png") no-repeat;background-position:top}footer .footer-title{padding-top:30px;color:#ffffff;font-family:'oswald-bold';font-size:24px;font-weight:700;line-height:42px;text-transform:uppercase;letter-spacing:0.96px}footer .footer-desc{color:#7f7f7f;font-family:'arimo';font-size:14px;font-weight:400;line-height:25px}footer .address-container{margin-top:30px}footer .address-container .address-block{display:flex;align-items:center}footer .address-container .address-block .address-image{display:inline-block;width:15px;text-align:center}footer .address-container .address-block .address-text{color:#7f7f7f;font-family:'arimo';font-size:14px;font-weight:400;line-height:25px;display:inline-block;margin-left:15px;padding-top:2px}footer .address-container .address-block:nth-child(3) .address-text{color:#feb600}footer .address-container .address-block:nth-child(3) .address-text a{color:#feb600;text-decoration:none}footer .second-part{text-align:center}footer .second-part .footer-title{display:inline-block}footer .second-part .icons-container{height:150px;display:flex;align-items:center;justify-content:center;flex-flow:row wrap}footer .second-part .icons-container i{color:#ffffff;font-size:40px;font-weight:400;text-transform:uppercase;padding:0 15px;cursor:pointer}footer .second-part .icons-container i:hover{color:#7f7f7f}footer .second-part .form-container{margin-top:40px}footer .second-part .form-container form input{height:40px;padding-left:10px;width:50%;border-top-left-radius:4px;border-bottom-left-radius:4px;border-left-color:rgba(255,255,255,0);border-top-color:rgba(255,255,255,0);height:42px}footer .second-part .form-container form input:hover,footer .second-part .form-container form input:focus{outline:none;border-color:#feb600}footer .second-part .magnum-btn{line-height:3.7;border-radius:0;border-top-right-radius:4px;border-bottom-right-radius:4px}footer .last-block{background-color:rgba(69,69,69,0.5);height:70px;text-align:center;display:flex;align-items:center;margin-top:30px}footer .last-block .last-title{color:#7f7f7f;font-family:'arimo';font-size:12px;font-weight:400;line-height:25.47px;text-transform:uppercase;display:inline-block}footer .last-block .to-top-arrow{background-color:#333333;width:30px;height:30px;display:inline-block;cursor:pointer}footer .last-block .to-top-arrow i{color:white;line-height:2}footer .last-block .to-top-arrow i:hover{color:#feb600}footer .custom-color{color:#feb600 !important}@media (max-width: 767px){footer .last-block .last-title{font-size:10px}footer .last-block .container{width:80%}footer .second-part .form-container{margin-top:0}}@media (max-width: 480px){footer .second-part .icons-container i{font-size:25px}}
+  </style>
+  <footer>
+   <div class="dots-lines-back">
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-7">
+       <div class="footer-title">
+        WHO WE ARE
+       </div>
+       <div class="footer-desc">
+        We are a registered company with a valid license to operate exploration, mining and refining operations.
+We discover minerals and exploitation opportunities in Sierra Leone and internationally with the goal of
+allowing investors more secure and efficient way to trade precious minerals.
+We are creating a trading platform for precious metals and gems, but we are also developing a growing
+business of mining and refining that will be perpetually issuing tokens with real and not imaginary value!
+       </div>
+       <div class="address-container">
+        <div class="address-block">
+         <div class="address-image">
+          <img alt="Dom" src="/assets/magnum/dom-1a30b9efdbf7ce6762fdefe4c69f3cac487a2b8c3afb11d99291c771747f23b6.png"/>
+         </div>
+         <div class="address-text">
+          5 Main Motor Road
+         </div>
+        </div>
+        <div class="address-block">
+         <a href="https://goo.gl/maps/74AXxW9cauA2" target="_blank">
+          <div class="address-image">
+           <img alt="Point" src="/assets/magnum/point-1b485a4ccd65a226ffc0a50a9004ad76a7f5d6fcba3eeed0e769cd10db762dc5.png"/>
+          </div>
+          <div class="address-text custom-color">
+           Congo Cross Freetown
+          </div>
+         </a>
+        </div>
+        <div class="address-block">
+         <div class="address-image">
+          <img alt="Mail" src="/assets/magnum/mail-1d169e5731d65cdcef7e943c1698eacdae7a7ad1c045b584309c5472b6ef17b2.png"/>
+         </div>
+         <div class="address-text">
+          <a class="address-image" href="mailto:social@magnumlink.com">
+           social@magnumlink.com
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-sm-5 second-part">
+       <div class="footer-title">
+        Follow us
+       </div>
+       <div class="icons-container">
+        <a href="https://twitter.com/magnumlink1" target="_blank">
+         <i class="fa fa-twitter">
+         </i>
+        </a>
+        <a href="https://t.me/preciousico" target="_blank">
+         <i class="fa fa-paper-plane">
+         </i>
+        </a>
+        <a href="https://bitcointalk.org/index.php?topic=2233708.0" target="_blank">
+         <i class="fa fa-btc">
+         </i>
+        </a>
+        <a href="https://www.reddit.com/r/MagnumLink/" target="_blank">
+         <i class="fa fa-reddit-alien">
+         </i>
+        </a>
+        <a href="https://medium.com/@magnumlink" target="_blank">
+         <i class="fa fa-medium">
+         </i>
+        </a>
+        <a href="https://www.facebook.com/magnumLink" target="_blank">
+         <i class="fa fa-facebook">
+         </i>
+        </a>
+        <a href="https://github.com/MagnumLink/MagnumLink-ICO" target="_blank">
+         <i class="fa fa-github">
+         </i>
+        </a>
+       </div>
+       <div class="form-container">
+        <form>
+         <input id="email-to-subscribe" placeholder="Email address"/>
+         <div class="magnum-btn" id="subscribe">
+          Subscribe
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="last-block">
+     <div class="container">
+      <div class="row">
+       <div class="last-title">
+        © COPYRIGHT 2016. ALL RIGHTS RESERVED.
+       </div>
+       <a href="#header">
+        <div class="to-top-arrow pull-right">
+         <i class="fa fa-arrow-up">
+         </i>
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <div id="flashBlock">
+  </div>
+  <style type="text/css">
+   #flashBlock{display:none;top:0;right:0;position:fixed;width:300px;height:100px;border-radius:10px;color:white;font-size:25px;align-items:center;justify-content:center}
+  </style>
+  <script>
+   function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+function flashMessage(status, message) {
+    var flashBlock= $('#flashBlock');
+    flashBlock
+        .css('background', status? '#006100' : '#c83827')
+        .empty()
+        .append(message)
+        .css({top: '20%', right: 'calc(50% - 150px)', display: 'flex'})
+        .show()
+        .fadeOut(5000)
+}
+
+$().ready(function () {
+    $('a[href$="#header"]').click(function (e) {
+        $("html, body").stop().animate({scrollTop: 0 }, 500, 'swing');
+        e.preventDefault();
+    });
+    $('#subscribe').click(function () {
+        var email = $('#email-to-subscribe').val();
+        if(isEmail(email)) {
+            $.ajax({
+                url: "/subscribe",
+                method: 'post',
+                data: {
+                    email: email
+                },
+                success: flashMessage(true, 'you subscribed')
+            });
+
+        }
+        else {
+            flashMessage(false, 'Invalid email');
+        }
+    });
+});
+  </script>
+  <script>
+   adroll_adv_id = "FKMACJJW5ZFWLJCSBRREEV";
+adroll_pix_id = "OKFD5AGC3BCO5POLPZI6PE";
+/* OPTIONAL: provide email to improve user identification */
+/* adroll_email = "username@example.com"; */
+(function () {
+    var _onload = function(){
+        if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+        if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+        var scr = document.createElement("script");
+        var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+        scr.setAttribute('async', 'true');
+        scr.type = "text/javascript";
+        scr.src = host + "/j/roundtrip.js";
+        ((document.getElementsByTagName('head') || [null])[0] ||
+        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+    };
+    if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+    else {window.attachEvent('onload', _onload)}
+}());
+  </script>
+ </body>
+</html>

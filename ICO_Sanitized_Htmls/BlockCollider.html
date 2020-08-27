@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet"/>
+  <link href="/favicons/favicon.ico" rel="icon" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"/>
+  <link href="neomorphism.css" rel="stylesheet" type="text/css"/>
+  <title>
+   Block Collider &amp; Borderless Markets | Account-free 24/7 Unstoppable Trade.
+  </title>
+  <meta content="Block Collider &amp; Borderless Markets | Account-free 24/7 Unstoppable Trade." name="title"/>
+  <meta content="Block Collider is a multichain that enables transactions + trades to be executed between all blockchains. Borderless &amp; Overline run on Block Collider." name="description"/>
+  <meta content="block collider, multichain, interoperability, decentralized exchange, dex, timble, blockchain" name="keywords"/>
+  <meta content="index, follow" name="robots"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="English" name="language"/>
+  <meta content="7 days" name="revisit-after"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" name="viewport"/>
+  <style type="text/css">
+   .header,
+        .outer {
+            top: 0;
+            right: 0;
+            left: 0
+            background-image:linear-gradient(#000, #333);
+            width: 6wh;
+            background-size: 100%;
+            background: #0f1519;  /* fallback for old browsers */
+            background: radial-gradient(ellipse at top, #333 -100%, #090a0f 100%)
+        }
+
+        body {
+            min-height:100%;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:linear-gradient(#000, #333);
+            width: 10wh;
+            background-size: 100%;
+            background: #0f1519;  /* fallback for old browsers */
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)
+        }
+				.tooltip {
+					position: absolute;
+					display: inline-block;
+					border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+				}
+
+        .multichain {
+					max-width: 100%;
+					max-height: 100%;
+					display: block; 
+        }
+
+				.imgboxout {
+						width: auto;        
+						margin: 3%;
+						margin-right: 5%;
+						margin-bottom: 80px;
+						maring-top: -40px;
+						max-width: 580px;
+						float: right;
+						border: 0px solid #333;
+						display: block;
+				}    
+
+				.imgboxin {
+						margin-top: -80px;
+  					transform: perspective(50em) rotateX(78deg);
+						opacity: 0.9;
+            border: 1px solid white;
+            -webkit-box-shadow: -8px -43px 135px 10px rgba(125,124,125,0.38);
+            -moz-box-shadow: -8px -43px 135px 10px rgba(125,124,125,0.38);
+            box-shadow: -8px -43px 135px 10px rgba(125,124,125,0.38);
+				}    
+
+
+				#reflect {
+			    -webkit-box-reflect: below 4px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(30%, transparent), to(rgba(255, 255, 255, 0.2)));
+				}
+
+				/* Tooltip text */
+				.tooltip .tooltiptext {
+					visibility: visible;
+					width: 80px;
+					background-color: green;
+					color: #fff;
+					text-align: center;
+          font-size: 6pt;
+					padding: 10px;
+					border-radius: 3px;
+				 
+					/* Position the tooltip text - see examples below! */
+					position: absolute;
+					z-index: 1;
+          left: 50px;
+					top: 10px;
+				}
+       .stocks {
+					overflow            : hidden;
+					background-repeat   : repeat-x;
+					background-size     : 20px 100%;
+					background-position : -10px 0;
+					background-image    : -webkit-linear-gradient(left, #282828 5%, black 6%);
+					background-image    : -moz-linear-gradient(left, #282828 5%, black 6%);
+					background-image    : -ms-linear-gradient(left, #282828 5%, black 6%);
+					background-image    : -o-linear-gradient(left, #282828 5%, black 6%);
+					background-image    : linear-gradient(left, #282828 5%, black 6%); } 
+
+        a.disabled-cta-red {
+            color: #333;
+            border: 1px dashed #1f2020;
+            padding: 6px 8px;
+            width: 155px;
+            display: inline-block;
+            margin: 8px;
+            font-weight: 300;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        a.disabled-cta {
+            color: #333;
+            border: 1px dashed #1f2020;
+            width: 168px;
+            padding: 6px 8px;
+            display: inline-block;
+            margin: 8px;
+            font-weight: 300;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        a.myButton {
+          box-shadow:inset 0px 1px 0px 0px #ffffff;
+          background:linear-gradient(to bottom, #ffffff 5%, #999 100%);
+          background-color: #333;
+          border-radius:6px;
+          border:1px solid #dcdcdc;
+          display:inline-block;
+          cursor:pointer;
+          color: black;
+          font-family:Arial;
+          font-size:15px;
+          padding:6px 6px;
+          text-decoration: none;
+        }
+
+        a.myButton:hover {
+          text-color: white;
+          border:1px solid #dcdcdc;
+          text-decoration: none;
+          color: white;
+          background:linear-gradient(to bottom, #fff 5%, #333 100%);
+          background: #000;
+        }
+
+				.hero {
+	border     : 1px #cfcfcf solid;
+	overflow   : hidden;
+	background : -webkit-linear-gradient(top, white 0%, #dbdbdb 81%, white 82%);
+	background : -moz-linear-gradient(top, white 0%, #dbdbdb 81%, white 82%);
+	background : -ms-linear-gradient(top, white 0%, #dbdbdb 81%, white 82%);
+	background : -o-linear-gradient(top, white 0%, #dbdbdb 81%, white 82%);
+	background : linear-gradient(top, white 0%, #dbdbdb 81%, white 82%); }
+
+        .cta {
+            border: 1px solid #333; 
+            border-radius: 3px;
+            color: #fff;
+            width: 168px;
+            padding: 8px 2px;
+            display: inline-block;
+            margin: 8px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        a.cta:hover {
+            border: 1px solid rgba(255, 255, 255, .7);
+            border-color: #fff;
+            transition-delay: 0s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+        button.cta:hover {
+            border: 1px solid rgba(255, 255, 255, .7);
+            cursor: pointer;
+            border-color: #fff;
+            transition-delay: 0s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+
+        .wrap {
+            display: table;
+            margin: 0 auto;
+            height: 99%
+        }
+
+        .header {
+            display: -ms-flexbox;
+            text-align: center;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 2vw
+        }
+
+        .logo svg {
+						margin-bottom: 0px;
+            height: 50px;
+        }
+
+        .content {
+            display: table-cell;
+
+            padding-top: 10px;
+            vertical-align: middle;
+            text-align: center
+        }
+
+        h1,
+        div.header {
+            padding: 0;
+            text-align: center;
+            background: none;
+            color: #fff
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-weight: 200;
+            font-size: 20px;
+            line-height: 1.3em;
+        }
+
+        div.header {
+            margin: 0;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 1.3em;
+            display: block;
+            text-align: center;
+            letter-spacing: 1px
+        }
+
+        h3 {
+            margin: 0;
+            color: white;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.3em;
+            letter-spacing: 1px
+        }
+
+        .glass {
+            align: center;
+            margin: 4%;
+            margin-top: 0px;
+            max-width: 1200px;
+            font-weight: 200;
+            font-size: 16px;
+            color: white;
+            font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.5em;
+            letter-spacing: 1.1px
+        }
+
+        .glassnot {
+            margin: 8%;
+            margin-top: 0px;
+            max-width: 1200px;
+            font-size: 16px;
+            font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.5em;
+            letter-spacing: 1.1px
+        }
+
+        a.link {
+            color: whitesmoke;
+            text-decoration: underline;
+        }
+
+        a.link:hover {
+            transition-delay: 0s;
+            transition-property: all;
+            transition-timing-function: line;
+            color: white;
+            background-image: -webkit-linear-gradient(#2315E6 0%, #2315E6 100%);
+            background-size: 100% 1em;
+        }
+
+        @media screen and (max-width:800px) {
+            h1 {
+                font-size: 6.5vw;
+                letter-spacing: 2px
+            }
+
+            h2 {
+                font-size: 14px
+            }
+        }
+
+        .outer {
+            bottom: 0;
+            background-size: cover;
+            background-color: black;
+        }
+
+        .ocean {
+          bottom: 0;
+          background-size: cover;
+          background-color: #000;
+          background-image: linear-gradient(3deg, #000 30%, #000 74%);
+        }
+
+        .river {
+          bottom: 0;
+          background-size: cover;
+          background-color: #999;
+          background-image: linear-gradient(3deg, grey 34%, #333 74%);
+        }
+
+        .notification {
+          background-color: #555;
+          color: white;
+          text-decoration: none;
+          padding: 15px 26px;
+          position: relative;
+          display: inline-block;
+          border-radius: 2px;
+        }
+        
+        .notification:hover {
+          background: red;
+        }
+
+        @-webkit-keyframes pulse {
+          0% {
+            -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+          }
+          }
+          100% {
+              -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+          }
+        }
+        @keyframes pulse {
+          0% {
+            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+            box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+          }
+          70% {
+              -moz-box-shadow: 0 0 0 5px rgba(204,169,44, 0);
+              box-shadow: 0 0 0 5px rgba(204,169,44, 0);
+          }
+          100% {
+              -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+              box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+          }
+        }
+        hr {
+          border: 0px solid #e1e1e1;
+        }
+        .fa {
+          padding-right: 8px; 
+        }
+        .fas {
+          padding-right: 8px; 
+        }
+
+        .announcement {
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+          text-weight: 400;
+          background: none;
+          color: red;
+          font-family: "Computer Modern", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+          margin: 0;
+          padding: 12px;
+          padding-top:10px;
+          vertical-align: middle;
+          font-size: 0.8em;
+          text-transform: uppercase;
+        }
+        
+        .announcement a:hover {
+          color: blue;
+        }        
+
+        .caller {
+            width: 82px;
+            float: right;
+            font-size: 8pt;
+            font-family: tahoma;
+						color: black;
+            top: 0;
+            right: 0;
+            border: 1px solid #1f2020;
+            padding: 6px 8px;
+            margin-bottom: 6px;
+            text-decoration: none;
+            border-radius: 5px
+        }
+        ul li {
+          vertical-align: middle;
+          line-height: 1.4em;
+          font-weight: 300;
+          letter-spacing: 0.6px;
+          padding-bottom: 9px;
+        }
+
+       .textList.btcList {
+         border: 1px solid orange;
+         height: auto;
+				 padding: 2px;
+				 padding-left: 3px;
+         font-size: 10pt;
+				 padding-right: 3px;
+         font-style: 'monospace';
+       }
+       .textList.ethList {
+         border: 1px solid #9400D3;
+         height: auto;
+				 padding: 2px;
+         font-size: 10pt;
+				 padding-left: 3px;
+				 padding-right: 3px;
+         font-style: 'monospace';
+       }
+       .textList.neoList {
+         border: 1px solid green;
+         height: auto;
+				 padding: 2px;
+         font-size: 10pt;
+				 padding-left: 3px;
+				 padding-right: 3px;
+         font-style: 'monospace';
+       }
+       .textList.lskList {
+         border: 1px solid blue;
+         height: auto;
+				 padding: 2px;
+				 padding-left: 3px;
+         font-size: 10pt;
+				 padding-right: 3px;
+         font-style: 'monospace';
+       }
+       .textList.wavList {
+         border: 1px solid lightblue;
+         height: auto;
+				 padding: 2px;
+				 padding-left: 3px;
+         font-size: 10pt;
+				 padding-right: 3px;
+         font-style: 'monospace';
+       }
+       
+       .glassList.btcList {
+         border: 1px solid orange;
+         height: auto;
+         min-height: 100%; !important;
+         margin: 3px;
+         font-style: 'monospace';
+       }
+       .glassList.ethList {
+         border: 1px solid #9400D3;
+         height: auto;
+         min-height: 100%; !important;
+         margin: 3px;
+         font-style: 'monospace';
+       }
+       .glassList.neoList {
+         border: 1px solid green;
+         height: auto;
+         min-height: 100%; !important;
+         margin: 3px;
+         font-style: 'monospace';
+       }
+       .glassList.lskList {
+         border: 1px solid blue;
+         height: auto;
+         min-height: 100%; !important;
+         margin: 3px;
+         font-style: 'monospace';
+       }
+       .glassList.wavList {
+         border: 1px solid lightblue;
+         height: auto;
+         min-height: 100%; !important;
+         margin: 3px;
+         font-style: 'monospace';
+       }
+       .glassList.nrgList {
+         float: left;
+         font-style: 'monospace';
+         border: 1px solid white;
+         font-size: 9pt;
+         margin: 3px;
+         height: auto;
+         min-height: 100%; !important;
+         text-align: center;
+         width: 19px;
+       }
+       .glassList {
+-webkit-box-shadow: 2px 2px 1px 2px rgba(0,0,0,0.72);
+-moz-box-shadow: 2px 2px 1px 2px rgba(0,0,0,0.72);
+box-shadow: 2px 2px 1px 2px rgba(0,0,0,0.72);
+         float: left;
+         font-style: 'monospace';
+         border: 1px solid #333;
+         font-size: 9pt;
+         margin: 3px;
+         height: auto;
+         min-height: 100%; !important;
+         text-align: center;
+         width: 19px;
+       }
+
+#signals {
+	z-index: -25;
+}
+
+#signals span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	opacity: 0;
+	border-radius: 500px;
+	box-shadow: 0 0 80px rgba(116, 187, 220, 0.5);
+	-webkit-animation: signal 2s infinite alternate ease-in-out;
+	-moz-animation: signal 2s infinite alternate ease-in-out;
+	-ms-animation: signal 2s infinite alternate ease-in-out;
+	-o-animation: signal 2s infinite alternate ease-in-out;
+	animation: signal 2s infinite alternate ease-in-out;
+}
+
+#signals span.s1, #signals span.s2, #signals span.s3, #signals span.s4 {
+	border: 2px solid #74bbdc;
+	border-color: rgba(116,187,220,.3);
+	box-shadow: 0 0 80px rgba(107,208,255,.3);
+}
+
+#signals span.s1 {
+	width: 50;
+	height: 25;
+	margin-top: -50px;
+	margin-left: -50px;
+	-webkit-animation-delay: .3s;
+	-moz-animation-delay: .3s;
+	-ms-animation-delay: .3s;
+	-o-animation-delay: .3s;
+	animation-delay: .3s;
+}
+
+#signals span.s2 {
+	width: 100px;
+	height: 100px;
+	margin-top: -150px;
+	margin-left: -150px;
+	-webkit-animation-delay: .6s;
+	-moz-animation-delay: .6s;
+	-ms-animation-delay: .6s;
+	-o-animation-delay: .6s;
+	animation-delay: .6s;
+}
+
+#signals span.s3 {
+	width: 200px;
+	height: 200px;
+	margin-top: -250px;
+	margin-left: -250px;
+	-webkit-animation-delay: .9s;
+	-moz-animation-delay: .9s;
+	-ms-animation-delay: .9s;
+	-o-animation-delay: .9s;
+	animation-delay: .9s;
+}
+
+#signals span.s4 {
+	width: 250px;
+	height: 250px;
+	margin-top: -350px;
+	margin-left: -350px;
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay: 1.2s;
+	-ms-animation-delay: 1.2s;
+	-o-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+@-webkit-keyframes signal {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@-moz-keyframes signal {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@-o-keyframes signal {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes signal {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+       table, th {
+         display: inline-block; 
+       }
+
+       table  {
+         display: inline-block; 
+         width: 168px; 
+         float: right;
+         margin: 30px;
+         color: white;
+       }
+  </style>
+  <script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="wrap" style="text-align:center; background: black; width: 100%; top: -10px;">
+   <div class="announcement">
+    <i class="fa fa-exclamation-circle" style="color:red; text-transform: uppercase; ">
+    </i>
+    Block Collider is designed for experienced traders and engineers. Use with caution.
+   </div>
+   <div class="outer">
+    <div class="wrap">
+     <div class="content">
+      <table style="padding-top: 50px;">
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox11" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList btcList" id="nrgBox12" style="font-size: 8pt;">
+          83
+         </div>
+         <div class="glassList wavList" id="nrgBox13" style="font-size: 8pt;">
+          9
+         </div>
+         <div class="glassList" id="nrgBox14" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox15" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox16" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox21" style="font-size: 8pt;">
+          3
+         </div>
+         <div class="glassList btcList" id="nrgBox22" style="font-size: 8pt;">
+          83
+         </div>
+         <div class="glassList ethList" id="nrgBox23" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList lskList" id="nrgBox24" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList wavList" id="nrgBox25" style="font-size: 8pt;">
+          6
+         </div>
+         <div class="glassList" id="nrgBox26" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox31" style="font-size: 8pt;">
+          1
+         </div>
+         <div class="glassList btcList" id="nrgBox32" style="font-size: 8pt;">
+          79
+         </div>
+         <div class="glassList neoList" id="nrgBox33" style="font-size: 8pt;">
+          4
+         </div>
+         <div class="glassList wavList" id="nrgBox34" style="font-size: 8pt;">
+          5
+         </div>
+         <div class="glassList" id="nrgBox35" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox36" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox41" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList btcList" id="nrgBox42" style="font-size: 8pt;">
+          80
+         </div>
+         <div class="glassList ethList" id="nrgBox43" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList neoList" id="nrgBox44" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList wavList" id="nrgBox45" style="font-size: 8pt;">
+          5
+         </div>
+         <div class="glassList" id="nrgBox46" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox51" style="font-size: 8pt;">
+          1
+         </div>
+         <div class="glassList btcList" id="nrgBox52" style="font-size: 8pt;">
+          76
+         </div>
+         <div class="glassList wavList" id="nrgBox53" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList" id="nrgBox54" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox55" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox56" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox61" style="font-size: 8pt;">
+          3
+         </div>
+         <div class="glassList btcList" id="nrgBox62" style="font-size: 8pt;">
+          75
+         </div>
+         <div class="glassList ethList" id="nrgBox63" style="font-size: 8pt;">
+          3
+         </div>
+         <div class="glassList neoList" id="nrgBox64" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList" id="nrgBox65" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox66" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox71" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList btcList" id="nrgBox72" style="font-size: 8pt;">
+          74
+         </div>
+         <div class="glassList ethList" id="nrgBox73" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList lskList" id="nrgBox74" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList wavList" id="nrgBox75" style="font-size: 8pt;">
+          16
+         </div>
+         <div class="glassList" id="nrgBox76" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox81" style="font-size: 8pt;">
+          1
+         </div>
+         <div class="glassList btcList" id="nrgBox82" style="font-size: 8pt;">
+          73
+         </div>
+         <div class="glassList neoList" id="nrgBox83" style="font-size: 8pt;">
+          2
+         </div>
+         <div class="glassList wavList" id="nrgBox84" style="font-size: 8pt;">
+          15
+         </div>
+         <div class="glassList" id="nrgBox85" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox86" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <tr>
+        <th>
+         <div class="glassList nrgList" id="nrgBox91" style="font-size: 8pt;">
+          3
+         </div>
+         <div class="glassList btcList" id="nrgBox92" style="font-size: 8pt;">
+          72
+         </div>
+         <div class="glassList wavList" id="nrgBox93" style="font-size: 8pt;">
+          14
+         </div>
+         <div class="glassList" id="nrgBox94" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox95" style="font-size: 8pt;">
+          +
+         </div>
+         <div class="glassList" id="nrgBox96" style="font-size: 8pt;">
+          +
+         </div>
+        </th>
+       </tr>
+       <!--  <th>
+  </br>
+  </br>
+  </br>
+      <div class="glassList nrgList" style="font-size: 8pt; font-weight: 100; width: 26px;">BC</div>
+      <div style="float: left; color: white; font-weight: 200; font-size: 13pt;"> : [ </div>
+      <div class="glassList btcList" style="font-size: 8pt; font-weight: 200; width: 26px;">BTC</div>
+      <div class="glassList ethList" style="font-size: 8pt; font-weight: 200; width: 26px;">ETH</div>
+      <div class="glassList wavList" style="font-size: 8pt; font-weight: 200; width: 26px;">WAV</div>
+      <div class="glassList neoList" style="font-size: 8pt; font-weight: 200; width: 26px;">NEO</div>
+      <div class="glassList lskList" style="font-size: 8pt; font-weight: 200; width: 26px;">LSK</div>
+      <div style="float: left; color: white; font-weight: 200; font-size: 13pt;">]</div>
+    </th>
+ -->
+      </table>
+      <div class="header h1" style="font-size: 12pt; text-align: center; padding: 50px; margin-top: 0px;">
+       <div style="text-align: left;">
+        Mining
+        <span style="font-weight: 800;">
+         <b>
+          Bitcoin
+         </b>
+        </span>
+        secures transfers without banks.
+    
+    
+    Mining
+        <span style="font-weight: 800;">
+         <b>
+          Block Collider
+         </b>
+        </span>
+        secures
+        <a class="link" href="https://borderless.blockcollider.org" target="_blank">
+         trade
+        </a>
+        without exchanges.
+    
+    
+    Overline and
+        <a class="link" href="https://borderless.blockcollider.org" target="_blank">
+         Borderless
+        </a>
+        run on
+        <span style="font-weight: 800;">
+         <b>
+          Block Collider
+         </b>
+        </span>
+        .
+        <a class="myButton btn" href="https://borderless.blockcollider.org/" style="text-align: center; font-size: 10pt; width: 208px; margin-top: 4px; margin-bottom: 40px;" target="_blank">
+         <i class="fa fa-exchange-alt">
+         </i>
+         Start Borderless Trading
+        </a>
+       </div>
+       <div class="outer p-1" style="top: 0px;">
+        <div class="w3-dropdown-hover" style="background: none;">
+         <button class="cta p-3" style="background-color: black;">
+          <span style="color: #1e1e1e; padding-left: 6px; float: left;">
+           â¼
+          </span>
+          <i class="fa fa-key">
+          </i>
+          Create Wallet
+         </button>
+         <div class="w3-dropdown-content w3-bar-block w3-border" style="font-size: 10pt; width: 280px;">
+          <a class="w3-bar-item w3-button" href="https://portfolio.blockcollider.org" target="_blank">
+           Online (Less Secure)
+          </a>
+          <a class="w3-bar-item w3-button" href="https://www.blockcollider.org/borderless/Borderless.exe" target="_blank">
+           Borderless Markets &amp; Wallet PC
+          </a>
+          <a class="w3-bar-item w3-button" href="https://www.blockcollider.org/borderless/Borderless.dmg" target="_blank">
+           Borderless Markets &amp; Wallet Mac
+          </a>
+          <a class="w3-bar-item w3-button" href="https://www.blockcollider.org/borderless/Borderless.AppImage" target="_blank">
+           Borderless Markets &amp; Wallet Linux
+          </a>
+         </div>
+        </div>
+        <div class="w3-dropdown-hover" style="background: none;">
+         <button class="cta p-3" style="background-color: black; ">
+          <span style="color: #1e1e1e; padding-left: 6px; float: left;">
+           â¼
+          </span>
+          <i class="fa fa-book">
+          </i>
+          Education
+         </button>
+         <div class="w3-dropdown-content w3-bar-block w3-border" style="font-size: 10pt; width: 230px;">
+          <a class="w3-bar-item w3-button" href="https://docs.blockcollider.org/docs/nrg-emb-and-l-emb-tokenomics-of-block-collider#section-what-are-emblems" target="_blank">
+           Emblems
+           <img alt="EMB" src="https://files.readme.io/f142cae-EMB_1.svg" width="20px"/>
+           and NRG
+           <img alt="NRG" src="https://files.readme.io/fa63a22-NRG.svg" width="20px"/>
+          </a>
+          <a class="w3-bar-item w3-button" href="https://docs.blockcollider.org/docs/nrg-emb-and-l-emb-tokenomics-of-block-collider#section-what-are-leased-emblems" target="_blank">
+           What are Leased Emblems?
+          </a>
+          <a class="w3-bar-item w3-button" href="https://docs.blockcollider.org/docs/borderless-faq-docs#section-what-is-borderless-" target="_blank">
+           What is Borderless?
+          </a>
+          <a class="w3-bar-item w3-button" href="https://docs.blockcollider.org/docs/rpc-api" target="_blank">
+           Developer API &amp; RPC
+          </a>
+          <a class="w3-bar-item w3-button" href="https://docs.blockcollider.org/docs/roadmap" target="_blank">
+           Roadmap
+          </a>
+         </div>
+        </div>
+        <a class="cta p-3" href="https://multiverse.blockcollider.org/" style="background-color: black;" target="_blank">
+         <i class="fas fa-binoculars">
+         </i>
+         Block Explorer
+        </a>
+        <div class="w3-dropdown-hover">
+         <button class="cta p-3 w3-closebtn w3-closenav" style="background-color: black; ">
+          <span style="color: #1e1e1e; padding-left: 6px; float: left;">
+           â¼
+          </span>
+          <i class="fa fa-comments">
+          </i>
+          Community
+         </button>
+         <div class="w3-dropdown-content w3-bar-block w3-border" style="font-size: 10pt; width: 270px;">
+          <a class="w3-bar-item w3-button" href="https://blog.blockcollider.org/" target="_blank">
+           Official Blog
+          </a>
+          <a class="w3-bar-item w3-button" href="https://www.embnation.com/" target="_blank">
+           <i class="fa fa-flag">
+           </i>
+           EMB Nation: Forum &amp; Support
+          </a>
+          <a class="w3-bar-item w3-button" href="https://basecamp.blockcollider.org/" target="_blank">
+           <i class="fa fa-store">
+           </i>
+           Basecamp: Official Store
+          </a>
+          <a class="w3-bar-item w3-button" href="https://blockcollider.us16.list-manage.com/subscribe?u=1ab67a42a7e778dc48c55d3b9&amp;id=5dd8786742" target="_blank">
+           Mailing List
+          </a>
+          <a class="w3-bar-item w3-button" href="https://t.me/blockcollider" target="_blank">
+           Telegram Chat (EN)
+          </a>
+          <a class="w3-bar-item w3-button" href="https://t.me/blockcollideradvanced" target="_blank">
+           Telegram Chat Developers (EN)
+          </a>
+          <a class="w3-bar-item w3-button" href="https://t.me/BlockCollider_Japan" target="_blank">
+           Telegram Chat (JP)
+          </a>
+          <a class="w3-bar-item w3-button" href="https://t.me/BlockcolliderArabi" target="_blank">
+           Telegram Chat (Arabic)
+          </a>
+         </div>
+        </div>
+        <a class="cta p-3" href="http://emblemnrgminer.blockcollider.org/" style="background-color: black;" target="_blank">
+         <i class="fa fa-calculator">
+         </i>
+         EMB Calculator
+        </a>
+       </div>
+       <div class="ocean p-1">
+        <div class="tooltiptext">
+         RUN CRYPTO SMALL BUSINESS
+        </div>
+        <div class="w3-dropdown-hover" style="background: none;">
+         <button class="cta p-3" style="background-color: black;">
+          <span style="color: #1e1e1e; padding-left: 6px; float: left;">
+           â¼
+          </span>
+          <i class="fa fa-download">
+          </i>
+          Run Miner
+         </button>
+         <div class="w3-dropdown-content w3-bar-block w3-border" style="font-size: 10pt; width: 290px;">
+          <a class="w3-bar-item w3-button" href="https://docs.blockcollider.org/docs/beginners-guide-to-mining-block-collider">
+           Install With Docker (Linux, Mac, PC)
+          </a>
+          <a class="w3-bar-item w3-button" href="https://www.github.com/blockcollider/bcnode" target="_blank">
+           Build From Source (Linux, Mac)
+          </a>
+         </div>
+        </div>
+        <div class="w3-dropdown-hover">
+         <a class="cta p-3" href="https://docs.blockcollider.org/docs/borderless-multi-market-maker" name="mmm" style="background-color: black;" target="_blank">
+          <i class="fa fa-chart-line">
+          </i>
+          Run Trade Bot
+         </a>
+        </div>
+        <a class="disabled-cta p-3" disabled="" style="font-size: 10pt; color: #666666;">
+         <i class="fa fa-globe">
+         </i>
+         Run Overline
+        </a>
+       </div>
+       <ul style="list-style-type: square; text-align: left; background-color: #01010140; color: white; border-radius: 2px; border: 1px solid #101010; font-size: 10pt; padding: 20px; margin-top: 0px;">
+        <div class="imgboxout" style="align: center; margin: 30px; padding: 20px;">
+         <div class="imgboxin" style="max-width: 400px; padding: 10px;">
+          <img class="multichain" id="reflect" src="https://www.blockcollider.org/img/borderless_poster.jpg"/>
+         </div>
+        </div>
+        <div class="p-2" style="margin: 40px;">
+         <span style="margin-left: 10px; font-size: 12pt;">
+          <b>
+           A MULTICHAIN NOT A BLOCKCHAIN
+          </b>
+         </span>
+         <hr/>
+         <li>
+          Block Collider's mission is to protect and grow the entire blockchain industry.
+         </li>
+         <li>
+          Currently supports trading and
+          <a class="link" href="https://docs.blockcollider.org/docs/rpc-api" target="_blank">
+           building
+          </a>
+          apps between
+          <span class="textList btcList">
+           <a class="link" href="https://www.bitcoin.org" target="_blank">
+            BTC
+           </a>
+          </span>
+          ,
+          <span class="textList ethList">
+           <a class="link" href="https://www.ethereum.org" target="_blank">
+            ETH
+           </a>
+          </span>
+          ,
+          <span class="textList nrgList">
+           <a class="link" href="https://www.tether.to/" target="_blank">
+            USDT
+           </a>
+          </span>
+          ,
+          <span class="textList wavList">
+           <a class="link" href="https://waves.exchange/" target="_blank">
+            WAV
+           </a>
+          </span>
+          ,
+          <span class="textList lskList">
+           <a class="link" href="https://www.lsk.io" target="_blank">
+            LSK
+           </a>
+          </span>
+          ,
+          <span class="textList neoList">
+           <a class="link" href="https://www.neo.org" target="_blank">
+            NEO
+           </a>
+          </span>
+          ,
+          <a class="link" href="https://makerdao.com/da/" target="_blank">
+           DAI
+          </a>
+          , and
+          <a class="link" href="https://gold.tether.to/" target="_blank">
+           Tether Gold
+          </a>
+          .
+         </li>
+         <li>
+          Any blockchain can be added, algorithm agnostic. No centralized validators, hosted orderbooks, and/or oracles.
+         </li>
+         <li>
+          All trades are anonymous,
+          <b>
+           no accounts
+          </b>
+          , open to anyone with an internet connection. No fees, no deposit/withdrawal limits.
+         </li>
+         <li>
+          Supports partial orders. No atomic swaps. Spot rate settlements in under 3 seconds.
+         </li>
+         <li>
+          Block Collider is a Level 2 protocol designed for Borderless &amp; Overline (launches Q3 2020).
+         </li>
+         <span style="margin-left: 10px; font-size: 12pt;">
+          <b>
+           FOR DEVELOPERS
+          </b>
+         </span>
+         <hr/>
+         <li>
+          <a class="link" href="https://blockcollider.org/hiring" target="_blank">
+           Hiring
+          </a>
+          Rust and Node.js backend developers.
+         </li>
+         <li>
+          Manage interblockchain contracts and transactions with the
+          <a class="link" href="https://docs.blockcollider.org/docs/timble" target="_blank">
+           Timble
+          </a>
+          meta-contract language.
+         </li>
+         <li>
+          Developers can easily upgrade exchanges built on Ethereum, Tron, Stellar, and EOS to use Block Collider
+          <a class="link" href="https://docs.blockcollider.org/docs/rpc-api" target="_blank">
+           using RPC
+          </a>
+          .
+         </li>
+         <span style="margin-left: 10px; font-size: 12pt;">
+          <b>
+           FOR OWNERS
+          </b>
+         </span>
+         <hr/>
+         <li>
+          Two coins,
+          <a class="link" href="https://docs.blockcollider.org/docs/nrg-emb-and-l-emb-tokenomics-of-block-collider" target="_blank">
+           "Emblems" (EMB
+           <img alt="EMB" src="https://files.readme.io/f142cae-EMB_1.svg" width="20px"/>
+           )
+          </a>
+          is for owners and
+          <a class="link" href="https://docs.blockcollider.org/docs/nrg-emb-and-l-emb-tokenomics-of-block-collider" target="_blank">
+           Non-Relational Graphs" (NRG
+           <img alt="NRG" src="https://files.readme.io/fa63a22-NRG.svg" width="20px"/>
+           )
+          </a>
+          is mined (no
+    premine).
+         </li>
+         <li>
+          Emblems perminently and
+          <a class="link" href="http://emblemnrgminer.blockcollider.org/" target="_blank">
+           algorthmically boost mining power and mining reward
+          </a>
+          .
+         </li>
+         <li>
+          Emblems can be leased via built-in smart contract for 6, 12, and 24 months.
+         </li>
+         <li>
+          300M Emblems total, 100M locked in equity in
+          <a class="link" href="https://www.borderless.services" target="_blank">
+           Borderless Services
+          </a>
+          .
+         </li>
+         <span style="margin-left: 10px; font-size: 12pt;">
+          <b>
+           FOR MINERS
+          </b>
+         </span>
+         <hr/>
+         <li>
+          5-8 second block time.
+         </li>
+         <li>
+          NRG pays for multichain transactions and trades, Miners get 2 NRG per block (without EMB), no premine, 9.8B NRG mined over 40 years.
+         </li>
+         <li>
+          Algorithm is custom proof-of-work called
+          <a class="link" href="https://docs.blockcollider.org/docs/block-collider-core-technology#section-what-is-proof-of-distance-po-d" target="_blank">
+           "Proof of Distance"
+          </a>
+          based on the
+          <a class="link" href="https://en.wikipedia.org/wiki/Inner_product_space" target="_blank">
+           inner product of vectors
+          </a>
+          .
+         </li>
+         <li>
+          Emblems can be purchased or leased from owners who live in areas where costs make mining infeasible.
+         </li>
+         <li>
+          Diversify mining operations by automatically selling NRG into for any blockchain coin in the multichain.
+         </li>
+         <a class="myButton btn" href="https://blockcollider.us16.list-manage.com/subscribe?u=1ab67a42a7e778dc48c55d3b9&amp;id=5dd8786742" style="text-align: center; font-size: 10pt; width: 208px; margin-top: 4px; margin-bottom: 4px; text-align: center;" target="_blank">
+          <i class="fa fa-inbox">
+          </i>
+          Join Mailing List
+         </a>
+        </div>
+       </ul>
+       <p style="margin-top: 65px; color: white;">
+        Read the
+        <a class="link" href="https://www.blockcollider.org/whitepaper" target="_blank">
+         white paper
+        </a>
+        (
+        <a class="link" href="https://blockcollider.org/whitepaper" target="_blank">
+         <span class="flag-icon flag-icon-us link">
+         </span>
+        </a>
+        <a class="link" href="https://blockcollider.org/bc_whitepaper_zh.pdf" target="_blank">
+         <span class="flag-icon flag-icon-cn link">
+         </span>
+        </a>
+        <a class="link" href="https://blockcollider.org/blockcollider_wp_fr.pdf" target="_blank">
+         <span class="flag-icon flag-icon-fr link">
+         </span>
+        </a>
+        <span class="flag-icon flag-icon-mx link">
+        </span>
+        <span class="flag-icon flag-icon-es link">
+        </span>
+        <span class="flag-icon flag-icon-sk link">
+        </span>
+        <span class="flag-icon flag-icon-in link">
+        </span>
+        ), join the
+        <a class="link" href="https://blockcollider.us16.list-manage.com/subscribe?u=1ab67a42a7e778dc48c55d3b9&amp;id=5dd8786742" target="_blank">
+         mailing list
+        </a>
+        , review the
+        <a class="link" href="https://www.github.com/blockcollider" target="_blank">
+         source code
+        </a>
+        , and follow
+        <a class="link" href="https://www.twitter.com/blockcollider" target="_blank">
+         @blockcollider
+        </a>
+        .
+       </p>
+       <div class="logo">
+        <a href="https://www.blockcollider.org/">
+         <svg class="ghost-svg" viewbox="0 0 493 161" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Block Collider
+          </title>
+          <svg class="ghost-svg" height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewbox="0 0 5600 5430" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <path d="M2575,5124C2090,5074 1638,4890 1275,4595C861,4259 566,3798 441,3290C290,2674 387,2016 710,1480C953,1076 1301,754 1720,546C1942,436 2156,366 2395,326C3128,202 3910,438 4435,942L4505,1009L4335,1179C4242,1273 4161,1350 4156,1350C4152,1350 4120,1324 4086,1293C3818,1045 3456,874 3070,814C2930,792 2650,792 2511,814C2034,889 1620,1119 1322,1475C1233,1581 1143,1715 1090,1821L1051,1897L1355,2200L1658,2503L1670,2459C1726,2239 1815,2077 1963,1923C2166,1712 2401,1598 2691,1571C3033,1538 3366,1664 3612,1918C3787,2099 3886,2294 3925,2531C4037,3221 3491,3860 2790,3860C2627,3860 2431,3816 2295,3748C2126,3663 2090,3632 1478,3022L892,2437L883,2486C870,2562 874,2885 889,2980C1015,3779 1557,4379 2330,4575C2937,4729 3597,4564 4081,4138L4157,4072L4331,4246L4505,4421L4445,4476C4070,4818 3664,5018 3175,5101C3086,5116 2999,5122 2835,5125C2714,5127 2597,5126 2575,5124ZM2935,3345C3048,3322 3162,3258 3250,3170C3548,2873 3486,2373 3124,2155C3024,2095 2923,2068 2795,2067C2606,2065 2465,2124 2329,2259C2013,2574 2112,3116 2520,3303C2642,3359 2795,3374 2935,3345Z" id="layer1" style="fill:white;fill-rule:nonzero;">
+           </path>
+           <g id="layer2">
+            <path d="M2690,5264C2023,5232 1414,4964 947,4497C741,4290 589,4078 460,3815C341,3573 275,3369 228,3095C198,2918 195,2508 224,2330C406,1183 1309,308 2470,154C2619,135 2948,132 3095,149C3585,207 4037,390 4420,689C4528,773 4722,960 4815,1071C5552,1948 5608,3211 4954,4147C4852,4292 4765,4393 4623,4531C4212,4930 3701,5175 3135,5244C3008,5259 2798,5269 2690,5264ZM3175,5081C3655,5000 4053,4807 4421,4478L4485,4420L4321,4256L4157,4092L4081,4158C3717,4478 3266,4650 2790,4650C2107,4650 1481,4293 1122,3699C958,3427 869,3121 854,2780C848,2648 861,2443 877,2417C880,2412 1148,2673 1474,2997C2091,3612 2126,3643 2295,3728C2431,3796 2627,3840 2790,3840C3485,3840 4016,3217 3905,2531C3867,2300 3767,2099 3602,1928C3161,1470 2411,1472 1972,1934C1846,2067 1753,2231 1704,2410C1690,2462 1676,2512 1674,2519C1671,2529 1557,2422 1350,2215L1031,1897L1070,1821C1191,1580 1406,1329 1636,1158C1898,963 2181,846 2511,794C2650,772 2930,772 3070,794C3456,854 3818,1025 4086,1273C4120,1304 4152,1330 4156,1330C4161,1330 4237,1258 4325,1169L4485,1009L4424,951C3901,456 3122,223 2395,346C1884,432 1399,688 1050,1057C352,1795 191,2889 649,3795C772,4036 895,4209 1083,4398C1447,4767 1920,5008 2430,5084C2589,5108 2598,5108 2835,5105C2999,5102 3086,5096 3175,5081Z" style="fill-rule:nonzero;">
+            </path>
+            <path d="M2642,3365C2460,3325 2276,3179 2193,3007C2098,2814 2098,2615 2192,2420C2225,2351 2249,2319 2319,2249C2465,2103 2601,2045 2795,2047C2885,2047 2920,2052 2985,2073C3318,2181 3515,2515 3445,2852C3406,3039 3264,3221 3090,3308C2952,3377 2791,3397 2642,3365Z" style="fill-rule:nonzero;">
+            </path>
+           </g>
+          </svg>
+         </svg>
+        </a>
+       </div>
+       <p style="margin-top: 20px; font-size: 8pt; color: white;">
+        Copyright Â© 2020 Borderless Services Inc., No cookies or trackable assets are used by this website. Block Collider was not created by Craig Wright.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+    function now() {
+      return Math.floor(new Date())
+    }
+    var updated = {}
+    var rates = {
+      'btcList': 30100,
+      'ethList': 1500,
+      'neoList': 1000,
+      'lskList': 550,
+      'wavList': 2500
+    }
+    function update() {
+      var time = now()
+			var startup = false
+      var changes = []
+			if (Object.keys(updated).length < 1) {
+				startup = true
+				changes.push('lskList')	
+			}
+      Object.keys(rates).forEach(function(k) {
+        if (!updated[k]) {
+          updated[k] = {
+            lastUpdate: time,
+            nextUpdate: time + rates[k]
+          }
+        } else {
+          if (updated[k].nextUpdate <= time) {
+            updated[k] = {
+              lastUpdate: time,
+              nextUpdate: time + rates[k]
+            }
+            changes.push(k)
+          }
+        }
+      })
+
+      if (changes.length > 0) {
+
+					var columns = [2,3,4,5,6,7,8,9].reverse()
+					if (startup) {
+						columns = [1,2,3,4,5,6,7,8,9].reverse()
+					}
+					var rows = [1,2,3,4,5,6].reverse()
+					var firstRow = [1,2,3,4,5,6]
+					var firstRowData = []
+					columns.forEach(function(column) {
+							rows.forEach(function(row) {
+								if (startup && row !== 1) {
+									var oldKey = 'div#nrgBox' + (column - 1) + '' + row 
+									var newKey = 'div#nrgBox' + column + '' + row 
+									var oldClass = $(oldKey).attr('class')
+									var oldText = $(oldKey).text()
+									var startDelay = 1000 + (column * 100)
+									var endDelay = 2000 + (column * 100)
+									$(newKey).attr('class', oldClass)
+									if (startup && oldText !== "+"){
+										oldText = Number(oldText) + Math.floor((Math.random() * 10) + 1) 
+									}		
+									$(newKey).text(oldText)
+								} else if (!startup) {
+
+									var oldKey = 'div#nrgBox' + (column - 1) + '' + row 
+									var newKey = 'div#nrgBox' + column + '' + row 
+									var oldClass = $(oldKey).attr('class')
+									var oldText = $(oldKey).text()
+									var startDelay = 1000 + (column * 100)
+									var endDelay = 2000 + (column * 100)
+									$(newKey).attr('class', oldClass)
+									if (startup && oldText !== "+"){
+										oldText = Number(oldText) + Math.floor((Math.random() * 10) + 1) 
+									}		
+									$(newKey).text(oldText)
+
+								}
+							})
+					})
+					
+					var coinsLeft = Object.keys(rates) 	
+					Object.keys(rates).forEach(function(coin) {
+						if (changes.indexOf(coin) > -1) {
+							firstRowData.push({
+								coin: '',
+								value: 0,
+								text: '+'
+							})
+							coinsLeft = coinsLeft.filter(function(c) {
+								if(c !== coin) {
+									return c
+								}
+							})
+						} else {
+							firstRow.forEach(function(row) {
+								var key = 'div#nrgBox1' + row
+								var rowClass = $(key).attr('class') 
+							  var val = $(key).text()
+								if (val === '+') {
+									val = 0	
+								} else {
+									val = Number(val)
+								}
+								if (rowClass.indexOf(coin) > -1) {
+									firstRowData.push({
+										coin: coin,
+										value: val + 1,
+										text: String(val + 1)  
+									})
+									coinsLeft = coinsLeft.filter(function(c) {
+										if(c !== coin) {
+											return c
+										}
+									})
+								}
+							})
+						}
+					})
+
+					coinsLeft.forEach(function(coin) {
+					  if (coin !== 'nrgList') {
+							firstRowData.push({
+								coin: coin,
+								value: 1,
+								text: 1			
+							})
+						}
+					})
+
+					firstRowData.sort(function(a,b) {
+						if (a.value > b.value) {
+							return -1
+					  }
+						if (a.value < b.value) {
+							return 1
+					  }
+						return 0
+					})
+
+					var nrgTopRow = {
+						value: changes.length,
+						coin: 'nrgList',
+						text: changes.length
+					}
+
+					firstRowData.unshift(nrgTopRow)
+					firstRowData.forEach(function(rowData, rowIndex) {
+						var key = 'div#nrgBox1' + (rowIndex + 1)
+						$(key).text(rowData.text)
+						$(key).attr('class', 'glassList ' + rowData.coin).animate({
+							opacity: 1 
+						}, 1000)
+					})
+					
+      }
+
+    }
+		update()
+    setInterval(update, 500)
+   </script>
+  </div>
+ </body>
+</html>

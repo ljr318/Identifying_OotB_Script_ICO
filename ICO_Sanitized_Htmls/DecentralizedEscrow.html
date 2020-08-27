@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="favicon.ico" rel="icon"/>
+  <title>
+   descrow
+  </title>
+  <base href="https://descrow.com/"/>
+  <link href="css/style1n.css" rel="stylesheet"/>
+  <link href="css/news.css" rel="stylesheet"/>
+  <link href="css/simple-slider.css" rel="stylesheet"/>
+  <link href="css/simple-slider-volume.css" rel="stylesheet"/>
+  <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+  </script>
+  <script src="js/circle-progress.js">
+  </script>
+  <script src="js/turn.min.js">
+  </script>
+  <script src="js/news.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js" type="text/javascript">
+  </script>
+  <script src="js/simple-slider.js">
+  </script>
+  <style id="antiClickjack">
+   body{display:none !important;}
+  </style>
+  <script type="text/javascript">
+   if (self === top) {
+		   var antiClickjack = document.getElementById("antiClickjack");
+		   antiClickjack.parentNode.removeChild(antiClickjack);
+	   } else {
+		   top.location = self.location;
+	   }
+  </script>
+ </head>
+ <style type="text/css">
+  .roadmap .line-path > div:nth-child(2) .circle {
+		margin-top: 25px;
+		margin-bottom: 45px;
+	}
+	.roadmap .line-path > div:nth-child(4) .circle {
+		margin-top: 30px;
+		margin-bottom: 105px;
+	}
+ </style>
+ <body>
+  <section class="main">
+   <div class="bgIn">
+    <header>
+     <div class="container">
+      <button class="toggle-btn" style="margin-top: -10px;" type="button">
+       <span class="icon-bar">
+       </span>
+       <span class="icon-bar">
+       </span>
+       <span class="icon-bar">
+       </span>
+      </button>
+      <a class="logo" href="">
+       <!-- <img src="images/new/top-logo.png" style="height: 40px; margin: 20px 20px 20px 0;" alt=""> -->
+       <img alt="" height="100" src="images/header-logo.png"/>
+      </a>
+      <div class="lang">
+       <div class="lbl" onclick="$('.chooseLang').slideToggle();" style="cursor: pointer;">
+        EN ▼
+       </div>
+       <div class="chooseLang" style="display: none; position: absolute;">
+        <a href="https://descrow.com/interface?lang=ru">
+         Russian
+        </a>
+        <!--<a href="https://descrow.com/interface?lang=de">German</a>-->
+        <!--<a href="https://descrow.com/interface?lang=sp">Spanish</a>-->
+        <!--<a href="https://descrow.com/interface?lang=cn">Chinese</a>-->
+        <!--<a href="https://descrow.com/interface?lang=jp">Japanese</a>-->
+        <!--<a href="https://descrow.com/interface?lang=kr">Korean</a>-->
+       </div>
+      </div>
+      <ul class="mobile-menu">
+       <!-- <li><a href="#need" class="scroll-link">О НАС</a></li> -->
+       <li>
+        <a class="scroll-link" href=".howItWorks">
+         HOW IT WORKS
+        </a>
+       </li>
+       <li>
+        <a class="scroll-link" href="#white-paper">
+         WHITE PAPER
+        </a>
+       </li>
+       <!-- <li><a href="#white-paper" class="scroll-link">БЕЛАЯ БУМАГА</a></li> -->
+       <li>
+        <a class="scroll-link" href="#roadmap">
+         ROAD MAP
+        </a>
+       </li>
+       <!--<li><a href="#offer" class="scroll-link">OUR ICO</a></li>-->
+       <li>
+        <a class="scroll-link" href="#team-div">
+         TEAM
+        </a>
+       </li>
+       <li class="bButtons" style="white-space: nowrap;">
+        <a href="https://descrow.org" onclick="ga('send', 'event', 'КнопкаВойтиВерхменю', 'Вход1');" style="border: 1px solid #fff; padding: 10px 12px; border-radius: 5px;">
+         SIGN IN
+        </a>
+        <a class="tokenBuyButton" data-target="#buyModal" data-toggle="modal" href="#" onclick="ga('send', 'event', 'pab', 'pac');">
+         Buy tokens
+        </a>
+       </li>
+      </ul>
+     </div>
+    </header>
+    <div class="modalBuy">
+     <!-- Modal -->
+     <div class="modal fade" id="buyModal" role="dialog" style="background: none; z-index: 1100; color: #000;">
+      <div class="modal-dialog" style="position: absolute; left: 50%; top: 50%;transform: translate(-50%, -50%); white-space: normal;">
+       <!-- Modal content-->
+       <div class="modal-content" style="font-size:14px; padding: 0 20px;">
+        <div class="modal-header">
+         <button class="close" data-dismiss="modal" type="button">
+          ×
+         </button>
+         <h4 class="modal-title">
+          Buy DES tokens
+         </h4>
+        </div>
+        <div class="modal-body">
+         <center>
+          <p style="padding-top:20px;">
+           You can buy DES in automatic mode
+           <br/>
+           through payment on the address of the smart contract:
+          </p>
+          <p style="word-wrap: break-word;">
+           <b class="myCopy" onclick="copyToClipboard('.myCopy');" style="font-size: 1.2em;color: #3341d0; cursor: pointer;">
+            0x81A803d28EE340E8C3805362374703FfcbB8c0e2
+           </b>
+          </p>
+          <p class="acopyed" style="display: none; color: #12982F;">
+           adress has been copied to clipboard
+          </p>
+          <script>
+           function copyToClipboard(element) {
+						var $temp = $("<input>");
+						$("body").append($temp);
+						$temp.val($(element).text()).select();
+						document.execCommand("copy");
+						$temp.remove();
+						$(".acopyed").show();
+					}
+          </script>
+          <!-- <p>
+						<span style="font-weight:bold;">Чтобы добавить / увидеть токены DES у себя в кошельке:</span>
+						<br>Нажмите «добавить новый токен» и укажите:
+						<ol style="margin-left: 12px;">
+							<li style="list-style: inherit;">Адрес контракта: 
+								<br/><span style="word-wrap: break-word;">0x81A803d28EE340E8C3805362374703FfcbB8c0e2</span></li>
+							<li style="list-style: inherit;">Аббревиатуру токена: DES</li>
+							<li style="list-style: inherit;">Разрядность: 8</li>
+						</ol>
+					</p> -->
+          <hr/>
+          <p>
+           You can access more payment methods in your personal account
+           <br/>
+           (Ethereum, Bitcoin, Dash, NEO, Zcash, Advanced Cash USD)
+          </p>
+          <p>
+           <a class="btn tokenBuyButton" data-target="#sing-in" data-toggle="modal" href="#" onclick="ga('send', 'event', 'КнопкаПерейтиОкно', 'ПереходКаб');">
+            Go to your personal account
+           </a>
+          </p>
+          <hr/>
+          <p>
+           If you want to pay in cash without registering,
+           <br/>
+           please contact our manager through the chat window:
+          </p>
+          <p onclick="$('#jivo-iframe-container').css({'border': '5px solid red',
+						function() {
+							setTimeout(
+								function() {
+									$('#jivo-iframe-container').css({'border': 'none'});
+								}, 1000
+							);
+						}
+					}); ga('send', 'event', 'КнопкаНаличкаОкно', 'ОплатаНал');">
+           <a class="btn tokenBuyButton" href="javascript:jivo_api.open({start : 'chat'});">
+            I want to pay in cash
+           </a>
+          </p>
+         </center>
+         <hr/>
+         <p style="text-align: center; margin-bottom: 20px;">
+          <a href="https://t.me/descrow_eng" style="color: #000;" target="_blank">
+           <img src="images/new/tele.png" style="margin-right: 8px; cursor: pointer !important;" width="30px"/>
+           Do you have questions about payment?
+          </a>
+         </p>
+        </div>
+        <div class="modal-footer">
+         <button class="btn btn-default" data-dismiss="modal" type="button">
+          Close
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <section class="dMain">
+     <div class="container">
+      <div class="col left">
+       <div class="footer">
+        <div class="social">
+         <a href="https://twitter.com/Descrow3" target="_blank">
+          <img alt="" src="images/new/social-tw.png"/>
+         </a>
+         <a href="https://www.facebook.com/descrow3/" target="_blank">
+          <img alt="" src="images/new/social-fb.png"/>
+         </a>
+         <a href="https://medium.com/@Descrow/" target="_blank">
+          <img alt="" src="images/new/social-m.png"/>
+         </a>
+         <a href="https://t.me/descrow_eng" target="_blank">
+          <img alt="" src="images/new/social-tm.png"/>
+         </a>
+         <a href="https://vk.com/descrow" target="_blank">
+          <img alt="" src="images/new/social-vk.png"/>
+         </a>
+         <a href="https://www.linkedin.com/company-beta/18142266/" target="_blank">
+          <img alt="" src="images/new/social-li.png"/>
+         </a>
+         <!--<a href="https://bitcointalk.org/index.php?topic=2068387.0" target="_blank"><img src="images/new/social-btc.png" alt=""></a>-->
+         <a href="https://www.reddit.com/r/Descrow/" target="_blank">
+          <img alt="" src="images/new/social-rdt.png"/>
+         </a>
+        </div>
+       </div>
+       <h2 class="desTitle">
+        DESCROW
+       </h2>
+       <h2 class="desDescr">
+        Service with a set of reliable tools for safe investing in projects
+        <br/>
+        Invest with us!
+       </h2>
+       <!--<div class="btns" style="margin-top: 40px;">
+					<div>
+						<a href="https://goo.gl/ojjTBv" class="btn btn-blue" style="background: none; border: 1px solid #fff;">White Paper</a>
+						<a href="https://github.com/DecentralizedEscrow/ICO " class="btn btn-blue" style="background: none; border: 1px solid #fff;">Smart Contract</a>
+					</div><!--
+					-->
+       <!--<div class="haveQ" style="text-align: right; text-decoration: underline;"><a href="https://t.me/descrow_rus"><img src="images/new/tele.png" width="30px" style="margin-right: 8px; cursor: pointer !important;" />остались вопросы?</a></div>
+				</div>-->
+       <hr class="animate_hr wow infinite" style="margin-top: 14px; height: 0; background-color: #fff; margin: 30px 0 26px 0;"/>
+       <div class="pros">
+        <div class="mcol">
+         <div class="img">
+          <img alt="" src="images/new/lock.png" width="90"/>
+          <br/>
+          <span class="hh" style="margin-left: -10px;">
+           Reliability
+          </span>
+         </div>
+         <div class="txt">
+          <ul>
+           <li>
+            Decentralization
+           </li>
+           <li>
+            Voting
+           </li>
+           <li>
+            Expertise of projects
+            <sup style="font-size:10px;">
+             *
+            </sup>
+           </li>
+           <li>
+            Arbitrage of disputes
+           </li>
+          </ul>
+         </div>
+        </div>
+        <!--
+-->
+        <div class="mcol">
+         <div class="img">
+          <img alt="" src="images/new/control.png" width="90"/>
+          <br/>
+          <span class="hh">
+           Control
+          </span>
+         </div>
+         <div class="txt">
+          <ul>
+           <li>
+            Personal escrow accounts
+           </li>
+           <li>
+            Step-by-step investments on the basis of a smart contract
+           </li>
+           <li>
+            Roadmap and KPI
+           </li>
+          </ul>
+         </div>
+        </div>
+        <!--
+-->
+        <div class="mcol">
+         <div class="img">
+          <img alt="" src="images/new/money.png" width="90"/>
+          <br/>
+          <span class="hh">
+           Income
+          </span>
+         </div>
+         <div class="txt">
+          <ul>
+           <li>
+            Sale of projects' shares before finish Roadmap
+            <sup style="font-size:10px;">
+             **
+            </sup>
+           </li>
+           <li>
+            Additional services on the platform
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!--
+-->
+      <div class="col right">
+       <div style="color: #015c92; background: #fff; border-radius: 5px; padding: 20px; font-size: 28px;">
+        Platform's launched
+        <div>
+         <style>
+          .tokenBuyButton {display: none;}
+         </style>
+         <div class="in" style="display: none;">
+          <div style="border: 1px solid #aaa; padding: 20px; border-radius: 5px 5px 0 0; background-color: #fff; color: #000">
+           <div style="border-bottom: 1px solid #aaa; padding-bottom: 16px; margin-bottom: 16px;">
+            <div>
+             <b>
+              Before the end of the campaign
+             </b>
+            </div>
+            <div class="nTimer">
+             <div class="timerIn" style="padding: 0 20px;">
+              <div class="num" id="timerD">
+               -
+              </div>
+              <br/>
+              <div class="lit">
+               days
+              </div>
+             </div>
+             <!--
+-->
+             <div class="timerIn">
+              <div class="num" id="timerH">
+               -
+              </div>
+              <br/>
+              <div class="lit">
+               hours
+              </div>
+             </div>
+             <!--
+-->
+             <div class="divider">
+              :
+             </div>
+             <!--
+-->
+             <div class="timerIn">
+              <div class="num" id="timerM">
+               -
+              </div>
+              <br/>
+              <div class="lit">
+               min
+              </div>
+             </div>
+             <!--
+-->
+             <div class="divider">
+              :
+             </div>
+             <!--
+-->
+             <div class="timerIn">
+              <div class="num" id="timerS">
+               -
+              </div>
+              <br/>
+              <div class="lit">
+               sec
+              </div>
+             </div>
+            </div>
+            <!-- <div style="font-size: 22px; color: red; margin-top: 12px;">Sale ended</div> -->
+           </div>
+           <div class="desPrice">
+            <div class="a50">
+             <div class="lit">
+              token price
+             </div>
+             <br/>
+             <div class="num">
+              0,00125 ETH
+             </div>
+            </div>
+            <!--
+-->
+            <!-- <div class="a50" style="border-left: 1px solid #aaa;">
+								<div class="lit">бонус</div><br/>
+								<div class="num">+50%</div>
+							</div> -->
+           </div>
+           <div>
+            <a class="btn btn-blue tokenBuyButton" data-target="#buyModal" data-toggle="modal" href="#" onclick="ga('send', 'event', 'pad', 'pae');">
+             Buy tokens
+            </a>
+            <br/>
+            <span style="font-size: 15px;">
+             We accept BTC, ETH, ZEC, DASH, USD, RUR
+            </span>
+           </div>
+          </div>
+          <div class="haveQ" style="border: 1px solid #aaa; border-top: none; padding: 10px 0; background-color: #fff;">
+           <a href="https://t.me/descrow_eng" style="text-decoration: underline; color: #000;" target="_blank">
+            <img src="images/new/tele.png" style="margin-right: 8px; cursor: pointer !important;" width="30px"/>
+            Still have questions?
+           </a>
+          </div>
+          <div style="text-align: center; padding: 20px; background-color: #fff; border-radius: 0 0 5px 5px; border: 1px solid #aaa; border-top: none; color: #000;">
+           Funds raised at the moment
+           <br/>
+           <span style="font-size: 22px;">
+            $ 3 657 360 = DES 4 499 039
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <script>
+        // Set the date we're counting down to
+	var countDownDate = new Date("Jan 27, 2018 15:00:00").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+
+	  // Get todays date and time
+	  var now = new Date().getTime();
+
+	  // Find the distance between now an the count down date
+	  var distance = countDownDate - now;
+
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Display the result in the element with id="demo"
+	  //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+		document.getElementById("timerD").innerHTML = days
+		document.getElementById("timerH").innerHTML = hours
+		document.getElementById("timerM").innerHTML = minutes
+		document.getElementById("timerS").innerHTML = seconds
+		
+	  // If the count down is finished, write some text 
+	  //if (distance < 0) {
+		//clearInterval(x);
+		//document.getElementById("demo").innerHTML = "EXPIRED";
+	  //}
+	}, 1000);
+       </script>
+      </div>
+      <section class="howItWorks" style="padding: 60px 0;">
+       <h2 class="section-title" style="margin: 0 auto;">
+        How it works?
+        <hr class="animate_hr wow infinite"/>
+       </h2>
+       <div class="container" style="max-width:800px;">
+        <div class="thumb-wrap" style="position: relative; width: 100%; height: 0; box-shadow: 0 14px 50px rgba(0, 0, 0, 0.15);">
+         <div id="ytplayer">
+         </div>
+         <!-- <iframe src="https://www.youtube.com/embed/FG3o2MWWSY4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe> -->
+        </div>
+        <center>
+         <a class="btn btn-blue" download="" href="images/new/rus.pdf" style="margin-top:30px; background: none; border: 1px solid #000; color: #000 !important;">
+          Download presentation
+         </a>
+        </center>
+       </div>
+      </section>
+      <script>
+       var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('ytplayer', {
+	  height: '100%',
+	  width: '100%',
+	  videoId: 'SI9TCIqjpG8',
+	  events: {
+		'onStateChange': function(event) {
+		  if (event.data == YT.PlayerState.PLAYING) {
+			ga('send', 'event', 'Videos', 'play');
+		  }
+		}
+	  }
+	});
+};
+      </script>
+      <section class="mainInstruments" style="background-color: #F4F4F5; padding: 60px 0;">
+       <h2 class="section-title" style="margin: 0 auto;">
+        Mechanisms of Descrow
+        <hr class="animate_hr wow infinite"/>
+       </h2>
+       <div class="container" style="margin-top: 40px;">
+        <div class="instrumentCol icLeft desctop">
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="txt">
+            <b>
+             Insurance Fund
+            </b>
+            <br/>
+            Up to 100% protection from scam projects
+           </div>
+           <!--
+-->
+           <div class="img">
+            <img alt="" src="images/new/i1.png"/>
+           </div>
+          </div>
+         </div>
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="txt">
+            <b>
+             Safe Holding and Trading
+            </b>
+            <br/>
+            Investments are reserved at personal accounts of investors, extra income from trading
+           </div>
+           <!--
+-->
+           <div class="img">
+            <img alt="" src="images/new/i2.png"/>
+           </div>
+          </div>
+         </div>
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="txt">
+            <b>
+             Roadmap
+            </b>
+            <br/>
+            Step-by-step schedule of projects realization
+           </div>
+           <!--
+-->
+           <div class="img">
+            <img alt="" src="images/new/i3.png"/>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!--
+-->
+        <div class="instrumentCol icRight mobile">
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="img">
+            <img alt="" src="images/new/i1.png"/>
+           </div>
+           <!--
+-->
+           <div class="txt">
+            <b>
+             Insurance Fund
+            </b>
+            <br/>
+            Up to 100% protection from scam projects
+           </div>
+          </div>
+         </div>
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="img">
+            <img alt="" src="images/new/i2.png"/>
+           </div>
+           <!--
+-->
+           <div class="txt">
+            <b>
+             Safe Holding and Trading
+            </b>
+            <br/>
+            Investments are reserved at personal accounts of investors, extra income from trading
+           </div>
+          </div>
+         </div>
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="img">
+            <img alt="" src="images/new/i3.png"/>
+           </div>
+           <!--
+-->
+           <div class="txt">
+            <b>
+             Roadmap
+            </b>
+            <br/>
+            Step-by-step schedule of projects realization
+           </div>
+          </div>
+         </div>
+        </div>
+        <!--
+-->
+        <div class="midLogo">
+         <center>
+          <img alt="" src="images/new/logo.png" width="240"/>
+         </center>
+        </div>
+        <!--
+-->
+        <div class="instrumentCol icRight">
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="img">
+            <img alt="" src="images/new/i4.png"/>
+           </div>
+           <!--
+-->
+           <div class="txt">
+            <b>
+             Escrow Smart-Contract
+            </b>
+            <br/>
+            Automatic investments based on projects’ KPI
+           </div>
+          </div>
+         </div>
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="img">
+            <img alt="" src="images/new/i5.png"/>
+           </div>
+           <!--
+-->
+           <div class="txt">
+            <b>
+             Expertise and Arbitrage
+            </b>
+            <br/>
+            Advice for investors, acceleration of projects, resolution of disputes.
+           </div>
+          </div>
+         </div>
+         <div class="instrumentBlock">
+          <div class="instrument">
+           <div class="img">
+            <img alt="" src="images/new/i6.png"/>
+           </div>
+           <!--
+-->
+           <div class="txt">
+            <b>
+             Proof-of-Vote Payment
+            </b>
+            <br/>
+            Financing depends on investors’ voting
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="container" style="font-size: 12px; margin-top: 30px;">
+        * The expertise is of an informational nature and can not in any way be a legal basis for investing.
+        <br/>
+        ** Possibility of reselling  tokens of projects at the Descrow platform to late or wholesale investors registered on the platform.
+       </div>
+      </section>
+      <section class="desPlatform" style="margin-top: 20px; padding: 40px 0;">
+       <div class="container">
+        <div class="col left">
+         <h2 class="section-title">
+          Product–DescrowPlatform
+          <hr class="animate_hr wow infinite"/>
+         </h2>
+         <p>
+          <img alt="" src="images/new/galka.png" width="20"/>
+          Utility-token DES is used in the Platform services
+         </p>
+         <p>
+          <img alt="" src="images/new/galka.png" width="20"/>
+          Startup is integrated with the Descrowplatform
+         </p>
+         <p>
+          <img alt="" src="images/new/galka.png" width="20"/>
+          The Roadmap and KPI parameters of the project are loaded to Descrowplatform:
+         </p>
+         <ul>
+          <li>
+           Timing
+          </li>
+          <li>
+           Plan of work with deadlines
+          </li>
+          <li>
+           Tranches needed
+          </li>
+         </ul>
+         <p>
+          <img alt="" src="images/new/galka.png" width="20"/>
+          The Statupreporton stage → investors’ voting
+          <br/>
+          (&gt; 51% of votes) → next trancheof financing
+         </p>
+         <p>
+          <img alt="" src="images/new/galka.png" width="20"/>
+          The lack of the Startup's results of work allows investors to claim their funds back
+         </p>
+        </div>
+        <!--
+-->
+        <div class="col right" style="max-width: 500px;">
+         <img alt="" src="images/new/des_tablet.png" width="500"/>
+        </div>
+       </div>
+      </section>
+      <section class="need" id="need">
+       <div class="container">
+        <div class="slider col-md-7 col-sm-7 wow fadeInLeft" data-wow-offset="500">
+         <div class="carousel slide" data-interval="2000" data-ride="carousel" id="iphone">
+          <ol class="carousel-indicators">
+           <li data-slide-to="0" data-target="#iphone">
+           </li>
+           <li class="active" data-slide-to="1" data-target="#iphone">
+           </li>
+           <li data-slide-to="2" data-target="#iphone">
+           </li>
+           <li data-slide-to="3" data-target="#iphone">
+           </li>
+           <li data-slide-to="4" data-target="#iphone">
+           </li>
+          </ol>
+          <div class="iphone">
+          </div>
+          <div class="carousel-inner">
+           <div class="item">
+            <img alt="" src="images/iphone-screen.png"/>
+           </div>
+           <div class="item active">
+            <img alt="" src="images/iphone-screen-2.png"/>
+           </div>
+           <div class="item">
+            <img alt="" src="images/iphone-screen-3.png"/>
+           </div>
+           <div class="item">
+            <img alt="" src="images/iphone-screen-4.png"/>
+           </div>
+           <div class="item">
+            <img alt="" src="images/iphone-screen-5.png"/>
+           </div>
+          </div>
+         </div>
+         <div class="cheep">
+         </div>
+        </div>
+        <div class="content col-md-5 col-sm-5 wow fadeInRight" data-wow-offset="500">
+         <h2 class="section-title">
+          ABOUT US
+          <hr class="animate_hr wow zoomIn infinite"/>
+         </h2>
+         <p class="section-text">
+          DES – Decentralised Escrow Service (Descrow) is the first in the world and unique by its nature decentralised escrow platform for investments.
+         </p>
+         <p class="section-text">
+          Our project mission:
+         </p>
+         <ul>
+          <li>
+           To make safer invest for all participants.
+          </li>
+          <li>
+           To eliminate the excessive distrust of the potential investors to the new startups.
+          </li>
+          <li>
+           Give a boost to the further invest market growth.
+          </li>
+          <li>
+           To integrate our idea as a versatile instrument into all applicable investments.
+          </li>
+         </ul>
+         <a class="btn btn-blue tokenBuyButton" data-target="#buyModal" data-toggle="modal" href="#" onclick="ga('send', 'event', 'paf', 'pag');">
+          Buy tokens
+         </a>
+        </div>
+       </div>
+      </section>
+      <section class="white-paper" id="white-paper">
+       <div class="container">
+        <div class="col-md-8">
+         <div class="wow fadeInLeft" data-wow-offset="300" id="flipbook">
+          <div>
+           <img alt="" src=""/>
+          </div>
+          <div>
+           <img alt="" src="images/appendix-1en.jpg" width="350"/>
+          </div>
+          <div>
+           <img alt="" src="images/appendix-2en.jpg" width="350"/>
+          </div>
+          <div>
+           <img alt="" src="images/onepage_en.jpg" width="350"/>
+          </div>
+         </div>
+         <div class="book-control wow fadeIn" data-wow-offset="200">
+          <a class="btn left disabled" href="#">
+          </a>
+          <a class="btn right" href="#">
+          </a>
+         </div>
+        </div>
+        <div class="content col-md-4 wow fadeInRight" data-wow-offset="400">
+         <h2 class="section-title">
+          WHITE PAPER
+          <hr class="animate_hr wow zoomIn infinite"/>
+         </h2>
+         <p class="section-text">
+          Underlying document of the entire project, which comprises the detailed structure description of the company’s operation, platform specifics, legal aspects, project economics and profit opportunities for holders.
+          <br/>
+          <br/>
+         </p>
+         <a class="btn btn-white" download="" href="https://goo.gl/LwVkuP" onclick="ga('send', 'event', 'КнопкаOPage', 'ПросмотрOP');" target="_blank">
+          Onepage
+         </a>
+         <a class="btn btn-white" download="" href="https://goo.gl/yAH2gG" onclick="ga('send', 'event', 'КнопкаWPaper', 'ПросмотрW');" target="_blank">
+          White Paper
+         </a>
+        </div>
+       </div>
+      </section>
+      <section class="roadmap" id="roadmap">
+       <div class="container">
+        <h2 class="title">
+         ROAD MAP
+        </h2>
+       </div>
+       <div class="wrap">
+        <div class="line-path">
+         <div class="item">
+          <p class="date">
+           2017
+          </p>
+          <span>
+           May–Aug 2017
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Launch of the Project.
+           </b>
+           <br/>
+           Creating a prototype of an escrow-smart contract
+           <!--<a href="http://icomatiq.herokuapp.com/" target="_blank">http://icomatiq.herokuapp.com/ </a>-->
+           <br/>
+           Preparation for Pre-seed
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2017
+          </p>
+          <span>
+           Aug 2017
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Launch and conduction of Pre-seed
+           </b>
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2017
+          </p>
+          <span>
+           Oct 2017
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Preparation for Seed.
+           </b>
+           <br/>
+           Working with the community - collecting feedback on improving the characteristics and usability of Descrow. Company registration, development and implementation of legal structure. Expansion of the Platform team
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2017
+          </p>
+          <span>
+           Nov 2017
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Launch and conduction of invest.
+           </b>
+           <br/>
+           Development of Descrow platform. Establishing relationships with partners and investors
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2018
+          </p>
+          <span>
+           Jan 2018
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Finalizing Seed.
+           </b>
+           <br/>
+           Establishing relationships with partners and investors
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2018
+          </p>
+          <span>
+           2018-2019
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Development of the Descrow platform.
+           </b>
+           Internal testing of the Platform with the help the pool of the first projects at platform.
+					Counseling and work with Startups. Establishing relationships with partners and investors
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2019
+          </p>
+          <span>
+           Q4 2019
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Official launch of the Platform.
+           </b>
+           Expansion of operations at the Descrow platform. Continuation of operations at the Descrow platform. Consultation and work with Startups. Operations with partners and investors
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2020
+          </p>
+          <span>
+           2020
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Embedding advanced functionality in the platform,
+           </b>
+           integration with various constructors and assistants for the most simplified and functional conduction of projects
+          </p>
+         </div>
+         <div class="item">
+          <p class="date">
+           2021
+          </p>
+          <span>
+           2021
+          </span>
+          <div class="circle">
+          </div>
+          <p class="text">
+           <b>
+            Development of the Descrow Platform on other blockhains capable for tokens release and smart contracts usage.
+           </b>
+           <br/>
+           Further expansion of the Platform operations
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="footer">
+       </div>
+      </section>
+      <!--<section id="offer" class="offer">
+	<div class="container">
+		<div class="col-lg-6 col-md-6 col-sm-6 wow fadeInLeft" data-wow-offset="200">
+			<h2 class="section-title">COIN OFFERING <hr class="animate_hr wow zoomIn infinite"></h2>
+			
+			<img src="images/new/bubl_eng.png" alt="" style="width:100%" />
+		</div>
+		<div class="content col-lg-6 col-md-6 col-sm-6 wow fadeInRight" data-wow-offset="200">
+			<div class="individual-tab">
+				<ul>
+					<li>Start of ICO: 29.11.2017 (12:00 UTC)</li>
+					<li>Finish of ICO: 27.01.2018 (11:59 UTC)</li>
+					<li>Descrow tokens:	DES</li>
+					<li>DES compatibility:	ERC20 standard</li>
+					<li>Hard cap: 66 666 ETH</li>
+					<li>Initial price: 1 DES = 0,001 ETH (~0,30$)</li>
+					<li>Token total amount: ~ 66 666 666 DES</li>
+					<li>Initial price for blockchain-floating: 1 DES = 0,00175 ETH (~0,52$)</li>
+				</ul>
+			</div>
+			<a href="#" data-target="#buyModal" data-toggle="modal" class="btn btn-blue tokenBuyButton" style="max-width: 400px;" onclick="ga('send', 'event', 'pah', 'pai');">Buy tokens</a>
+		</div>
+	</div>
+	</div>
+</section>-->
+      <section class="despartners" id="despartner" style="text-align:center;">
+       <div class="container">
+        <center>
+         <h2 class="section-title wow fadeInDown" data-wow-offset="200">
+          Descrow Partners
+          <hr class="animate_hr wow zoomIn infinite"/>
+         </h2>
+        </center>
+        <div class="carousel slide wow fadeIn" data-ride="carousel" data-wow-offset="200" id="despartners">
+         <!--<ol class="carousel-indicators">
+				<li data-target="#despartners" data-slide-to="0" class="active"></li>
+			</ol>-->
+         <div class="carousel-inner">
+          <div class="item active">
+           <div class="slide">
+            <!--<span style="width:222px; height:70px; text-align:center"><a href="https://www.huffingtonpost.com/entry/how-descrow-will-help-ico-investors-to-save-their-money_us_5a26bffae4b0f7f1679a0352" target="_blank"><img src="images/partners-12.png" alt=""></a></span>-->
+            <a href="https://opengift.io" style="" target="_blank">
+             <img alt="" src="images/opengift-logo.svg" style="cursor:pointer !important; max-height: 73px; margin-bottom: 20px;"/>
+            </a>
+            <a href="https://kcn.media/" style="margin-right: 40px;" target="_blank">
+             <img alt="" src="images/despart-1.jpg" style="cursor:pointer !important;"/>
+            </a>
+            <a href="http://www.ldjcapital.com/" target="_blank">
+             <img alt="" src="images/ldj.jpg" style="cursor:pointer !important;"/>
+            </a>
+           </div>
+          </div>
+         </div>
+         <!--<a class="left carousel-control" href="#despartners" data-slide="prev">
+				<img src="images/partners-left.png" alt="">
+			</a>
+			<a class="right carousel-control" href="#despartners" data-slide="next">
+				<img src="images/partners-right.png" alt="">
+			</a>-->
+        </div>
+       </div>
+      </section>
+      <section class="partners" id="partner">
+       <div class="container">
+        <h2 class="section-title wow fadeInDown" data-wow-offset="200">
+         Information Partners
+         <hr class="animate_hr wow zoomIn infinite"/>
+        </h2>
+        <div class="carousel slide wow fadeIn" data-ride="carousel" data-wow-offset="200" id="partners">
+         <ol class="carousel-indicators">
+          <li class="active" data-slide-to="0" data-target="#partners">
+          </li>
+          <li data-slide-to="1" data-target="#partners">
+          </li>
+          <li data-slide-to="2" data-target="#partners">
+          </li>
+          <li data-slide-to="3" data-target="#partners">
+          </li>
+          <li data-slide-to="4" data-target="#partners">
+          </li>
+         </ol>
+         <div class="carousel-inner">
+          <div class="item active">
+           <div class="slide">
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://www.huffingtonpost.com/entry/how-descrow-will-help-ico-investors-to-save-their-money_us_5a26bffae4b0f7f1679a0352" target="_blank">
+              <img alt="" src="images/partners-12.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://cryptoconsulting.info/ru/2017/analytics/des-builds-anti-scam-platform-for-ico-investing/" target="_blank">
+              <img alt="" src="images/partners-2.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://coinidol.com/how-the-blockchain-can-resist-fraud/" target="_blank">
+              <img alt="" src="images/partners-3.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://cointelegraph.com/press-releases/des-builds-anti-scam-platform-for-safe-ico-investments" target="_blank">
+              <img alt="" src="images/partners-10.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://habrahabr.ru/post/336820/" target="_blank">
+              <img alt="" src="images/partners-5.png"/>
+             </a>
+            </span>
+           </div>
+          </div>
+          <div class="item">
+           <div class="slide">
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://icorating.com/project/439/DEScrow" target="_blank">
+              <img alt="" src="images/partners-6.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://bitcoinist.com/des-builds-anti-scam-platform-safe-ico-investments/" target="_blank">
+              <img alt="" src="images/partners-7.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://efir.me/descrow/" target="_blank">
+              <img alt="" src="images/partners-8.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://steemit.com/investment/@funcoin01/descrow-org-anti-scam-project" target="_blank">
+              <img alt="" src="images/partners-9.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://icos.tokendesk.io/des-builds-anti-scam-platform-safe-ico-investments/" target="_blank">
+              <img alt="" src="images/partners-11.png"/>
+             </a>
+            </span>
+           </div>
+          </div>
+          <div class="item">
+           <div class="slide">
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://irishtechnews.ie/business-showcase-descrow-platform/?utm_campaign=shareaholic&amp;utm_medium=twitter&amp;utm_source=socialnetwork" target="_blank">
+              <img alt="" src="images/partners-1.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center; margin-top:10px; margin-bottom:-10px;">
+             <a href="https://en.bitnovosti.com/2017/11/07/descrow-builds-a-platform-for-secure-investing-in-ico/" target="_blank">
+              <img alt="" src="images/partners-13.png"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://forum.cryptoinside.xyz/threads/decentralized-escrow-des-proekt-dlja-xedzhirovanija-riskov-investirovanija-v-ico.156/" target="_blank">
+              <img alt="" src="images/partners-14.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center; background-color:#333; padding: 0 10px;">
+             <a href="http://www.fintechpressreleases.com/press_releases/descrow-platform-for-secure-crowdfunding-is-launching-the-ico-campaign" target="_blank">
+              <img alt="" src="images/partners-15.png" style="max-width:202px; max-height:70px; margin-top:27px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://beforeitsnews.com/financial-markets/2017/11/descrow-platform-for-secure-crowdfunding-is-launching-the-ico-campaign-2946100.html" target="_blank">
+              <img alt="" src="images/partners-16.png" style="max-width:222px; max-height:70px; margin-top:20px;"/>
+             </a>
+            </span>
+           </div>
+          </div>
+          <div class="item">
+           <div class="slide">
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://bitcoiner.today/en/icos-descrow-secure-crowdfunding/" target="_blank">
+              <img alt="" src="images/partners-17.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://coinwatch.tv/news/descrow-announces-partnership-with-boon-tech/" target="_blank">
+              <img alt="" src="images/partners-18.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center; background-color:#333;">
+             <a href="https://themerkle.com/descrow-platform-for-secure-crowdfunding-is-launching-an-ico-campaign/" target="_blank">
+              <img alt="" src="images/partners-19.png" style="max-width:222px; max-height:70px; margin-top:20px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="http://cryptomore.io/decentralizedescrow/" target="_blank">
+              <img alt="" src="images/partners-20.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://www.cryptocoinsnews.com/descrow-platform-secure-crowdfunding-launching-ico-campaign/" target="_blank">
+              <img alt="" src="images/partners-21.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+           </div>
+          </div>
+          <div class="item">
+           <div class="slide">
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://hype.codes/how-conduct-secure-ico" target="_blank">
+              <img alt="" src="images/partners-22.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://www.coinspeaker.com/2017/11/29/descrow-platform-secure-crowdfunding-launching-ico-campaign/" target="_blank">
+              <img alt="" src="images/partners-23.png" style="max-width:122px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://golos.io/ico/@polyideic/neobkhodimost-kontrolya-startapov" target="_blank">
+              <img alt="" src="images/partners-24.png" style="max-width:222px; max-height:70px; margin-top:-10px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://www.cryptoninjas.net/2017/11/24/descrow-ico-begins-provide-insurance-crypto-investors/" target="_blank">
+              <img alt="" src="images/partners-25.png" style="max-width:222px; max-height:70px;"/>
+             </a>
+            </span>
+            <span style="width:222px; height:70px; text-align:center">
+             <a href="https://vc.ru/24993-ico-opinions" target="_blank">
+              <img alt="" src="images/partners-26.png" style="max-width:122px; max-height:70px;"/>
+             </a>
+            </span>
+           </div>
+          </div>
+         </div>
+         <a class="left carousel-control" data-slide="prev" href="#partners">
+          <img alt="" src="images/partners-left.png"/>
+         </a>
+         <a class="right carousel-control" data-slide="next" href="#partners">
+          <img alt="" src="images/partners-right.png"/>
+         </a>
+        </div>
+       </div>
+      </section>
+      <section class="news hidden">
+       <h2 class="section-title">
+        Our achievements
+        <hr class="animate_hr wow zoomIn infinite"/>
+       </h2>
+       <div class="container">
+        <div class="carousel slide wow fadeIn" data-ride="carousel" data-wow-offset="200" id="news">
+         <div class="carousel-inner">
+          <div class="item active">
+           <div class="wrap" style="border: 1px solid red;">
+            <img alt="" class="picture" src="https://scontent-mxp1-1.xx.fbcdn.net/v/t31.0-8/27021637_591277711223463_7927547863128517127_o.jpg?oh=bef06b219275ecf1986f7556abf6d1cd&amp;oe=5AED4389"/>
+            <div class="text-content" style="height:250px;">
+             <span class="category">
+              Jan 27, 2018 12:49
+             </span>
+             <a class="title" href="show/20/ico-of-descrow-has-come-to-an-end">
+              ICO of Descrow has come to an end.
+             </a>
+             <p class="text">
+              ICO of Descrow has come to an end.
+              <br/>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="item">
+           <div class="wrap">
+            <img alt="" class="picture" src="https://cdn-images-1.medium.com/max/1600/1*s6VW6yQpRzRSjdvWm4a2zg.jpeg"/>
+            <div class="text-content" style="height:250px;">
+             <span class="category">
+              Dec
+ 14, 2017 14:55
+             </span>
+             <a class="title" href="show/17/a-response-to-scammers-and-extortionists">
+              A response to scammers and extortionists
+             </a>
+             <p class="text">
+              How to fight against scammers on both sides of ICO campaign
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="item">
+           <div class="wrap">
+            <img alt="" class="picture" src="https://cdn-images-1.medium.com/max/1600/1*0yI8f7zYXDU4TGlA-z7CIQ.jpeg"/>
+            <div class="text-content" style="height:250px;">
+             <span class="category">
+              Dec
+ 12, 2017 12:30
+             </span>
+             <a class="title" href="show/16/des-tokens-price-freeze">
+              DES tokens price freeze
+             </a>
+             <p class="text">
+              The last month of the departing year is full of different events influencing the technology and network...
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="item">
+           <div class="wrap">
+            <img alt="" class="picture" src="https://cdn-images-1.medium.com/max/1600/1*sCoi7l1P1C6c18kX-TbsOg.jpeg"/>
+            <div class="text-content" style="height:250px;">
+             <span class="category">
+              Dec
+ 9, 2017 11:23
+             </span>
+             <a class="title" href="show/15/cryptospace-moscow-conference">
+              Cryptospace Moscow conference
+             </a>
+             <p class="text">
+              Descrow attended Cryptospace Moscow conference
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="item">
+           <div class="wrap">
+            <img alt="" class="picture" src="https://img.huffingtonpost.com/asset/5a26c321140000266db6b88a.png?ops=scalefit_820_noupscale"/>
+            <div class="text-content" style="height:250px;">
+             <span class="category">
+              Dec
+ 7, 2017 09:20
+             </span>
+             <a class="title" href="show/14/huffingtonpost">
+              Huffingtonpost:
+             </a>
+             <p class="text">
+              How Descrow Will Help ICO Investors To Save Their Money
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="item">
+           <div class="wrap">
+            <img alt="" class="picture" src="https://image.prntscr.com/image/gtwABK5iQBCUHNBis71x1A.jpg"/>
+            <div class="text-content" style="height:250px;">
+             <span class="category">
+              Dec
+ 4, 2017 15:47
+             </span>
+             <a class="title" href="show/12/descrow-has-passed-a-preliminary-legal-audit">
+              Descrow has passed a preliminary...
+             </a>
+             <p class="text">
+              The Descrow project has passed the legal audit and received an assessment from the leading Russian IT lawyer Vladimir...
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <a class="left carousel-control" data-slide="prev" href="#news">
+          <img alt="" src="images/partners-left.png"/>
+         </a>
+         <a class="right carousel-control" data-slide="next" href="#news">
+          <img alt="" src="images/partners-right.png"/>
+         </a>
+        </div>
+       </div>
+      </section>
+      <section class="news">
+       <h2 class="section-title">
+        Latest news
+        <hr class="animate_hr wow infinite"/>
+       </h2>
+       <div class="container" style="text-align: center;">
+        <a class="twitter-timeline" data-height="590" data-width="590" href="https://twitter.com/Descrow3?ref_src=twsrc%5Etfw">
+         Tweets by Descrow3
+        </a>
+        <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js">
+        </script>
+       </div>
+       <br/>
+      </section>
+      <section class="des-stars" id="team-div">
+       <div class="container">
+        <h2 class="section-title wow fadeInUp" data-wow-offset="200">
+         Descrow Team
+         <hr class="animate_hr wow zoomIn infinite"/>
+        </h2>
+        <div class="items">
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/team-9.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Vladislav Rutskiy
+           </p>
+           <p class="vacancy">
+            IR-manager
+           </p>
+           <div class="description">
+            Investment and technologies transfer consultant, SFU scientist-economist, Director and co-founder of the School of Investments in modern technologies "SIMT".
+           </div>
+           <div class="stars">
+            <!--<div class="star"><a href="https://www.facebook.com/vladislav.rutskiy" target="_blank"><img src="images/fb-min.png" alt=""></a></div>-->
+           </div>
+           <!--<a href="http://t.me/VlaR83" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>-->
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/slider-1-photo.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Sergey Besedin
+           </p>
+           <p class="vacancy">
+            CEO, founder
+           </p>
+           <div class="description">
+            Master mind. Founder of Descrow and Blockchain Assosiation in Russia.
+           </div>
+           <div class="stars">
+            <!--<div class="star"><a href="http://www.facebook.com/sergey.besedin.33" target="_blank"><img src="images/fb-min.png" alt=""></a></div>-->
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/besser99/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+           <br/>
+           <!--<a href="http://t.me/serggoal" style="margin: 0;" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>-->
+          </div>
+         </div>
+         <!-- <div class="block">
+				<div class="circle">
+					<img src="images/team-2.png" alt="">
+				</div>
+				<div class="info">
+					<p class="name">Ekaterina Tarasova</p>
+					<p class="vacancy">PR-Director</p>
+					<div class="description">Former News Editor of 'Bit-News', crypto-journalist and blockchain enthusiast from 2012.</div>
+					<div class="stars">
+						<div class="star"><a href="https://www.facebook.com/katerinafutur" target="_blank"><img src="images/fb-min.png" alt=""></a></div>
+					</div>
+					<a href="http://t.me/katerinafutur" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>
+				</div>
+			</div> -->
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/team-3.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Anton Mitrokhin
+           </p>
+           <p class="vacancy">
+            CFO, co-founder
+           </p>
+           <div class="description">
+            Strategic manager. Businessmen with 10+ years' experience in development and promotion of his own brands. Author of methodology of business projects and personnel assessment.
+           </div>
+           <div class="stars">
+            <!--<div class="star"><a href="http://www.facebook.com/tribog" target="_blank"><img src="images/fb-min.png" alt=""></a></div>-->
+           </div>
+           <!--<a href="http://t.me/Stalker1777" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>-->
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/team-10.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Igor Boklazhuk
+           </p>
+           <p class="vacancy">
+            Project manager
+           </p>
+           <div class="description">
+            Co-founder of the School of Investments in Modern Technologies "SIMT". Founder of marketing agency, serial entrepreneur, experience in advertising and marketing for more than 8 years.
+           </div>
+           <div class="stars">
+            <!--<div class="star"><a href="https://www.facebook.com/bim666" target="_blank"><img src="images/fb-min.png" alt=""></a></div>-->
+           </div>
+           <!--<a href="http://t.me/bim666" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>-->
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/team-11.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Farit Kadyrov
+           </p>
+           <p class="vacancy">
+            Developer
+           </p>
+           <div class="description">
+            Developer with 20 years of versatile experience, including development of highly loaded systems and blockchain systems (since 2016).
+           </div>
+          </div>
+         </div>
+         <!-- <div class="block">
+				<div class="circle">
+					<img src="images/team-4.png" alt="">
+				</div>
+				<div class="info">
+					<p class="name">Ilya Basuev</p>
+					<p class="vacancy">Director of Business Development</p>
+					<div class="description">Manager of Internet business projects since 2013.</div>
+					<div class="stars">
+						<div class="star"><a href="http://www.facebook.com/ilusa777" target="_blank"><img src="images/fb-min.png" alt=""></a></div>
+
+					</div>
+					<a href="http://t.me/ilusa777" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>
+				</div>
+			</div>
+			<div class="block">
+				<div class="circle">
+					<img src="images/team-5.png" alt="">
+				</div>
+				<div class="info">
+					<p class="name">Juliana Olshevskaya</p>
+					<p class="vacancy">Project Manager</p>
+					<div class="description">Project Manager with 10+ years' experience in Finance. Finance and Investment project analysis and finance modeling. Organization and preparation of group of companies to pre-IPO.</div>
+					<div class="stars">
+						<div class="star"><a href="https://www.facebook.com/julianabest" target="_blank"><img src="images/fb-min.png" alt=""></a></div>
+					</div>
+					<a href="http://t.me/julianabest" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>
+				</div>
+			</div>
+			<div class="block">
+				<div class="circle">
+					<img src="images/team-6.png" alt="">
+				</div>
+				<div class="info">
+					<p class="name">Tatyana Maximenko</p>
+					<p class="vacancy">Promotion</p>
+					<div class="description">Editor-in-chief of Coinfox media. Co-founder of WhereIsJohnConnor PR Agency.</div>
+					<div class="stars">
+						<div class="star"><a href="https://www.facebook.com/profile.php?id=100001910556095" target="_blank"><img src="images/fb-min.png" alt=""></a></div>
+					</div>
+					<a href="http://t.me/tattymax" target="_blank" class="link"><img src="images/telegram-min.png" alt=""></a>
+				</div>
+			</div>
+			<div class="block">
+				<div class="circle">
+					<img src="images/team-7.png" alt="">
+				</div>
+				<div class="info">
+					<p class="name">Alexey Karpov</p>
+					<p class="vacancy">Developer</p>
+					<div class="description">Founder and developer of bitaps.com</div>
+					<div class="stars">
+						<div class="star"><a href="https://www.facebook.com/alexey.karpov.545" target="_blank"><img src="images/fb-min.png" alt=""></a></div>
+					</div>
+
+				</div>
+			</div> -->
+        </div>
+        <a class="btn btn-blue tokenBuyButton" data-target="#buyModal" data-toggle="modal" href="#" onclick="ga('send', 'event', 'pal', 'pam');">
+         Buy tokens
+        </a>
+       </div>
+      </section>
+      <section class="follow wow fadeIn" data-wow-offset="300">
+       <h2 class="section-title follow-title wow fadeInUpBig" data-wow-offset="200">
+        Follow Descrow News!
+        <hr class="animate_hr wow infinite"/>
+       </h2>
+       <div class="head">
+       </div>
+       <div class="container">
+        <div class="form">
+         <form method="post" name="subs_frm" style="width:100%">
+          <input id="subs_frm_email" name="email" placeholder="Your email" style="border: 2px solid white; width: 400px;" type="email"/>
+          <button class="send" name="subs_frm_btn" onclick="ga('send', 'event', 'КнопкаMailПодписка', 'Подписка');" type="submit">
+           Subscribe
+          </button>
+          <input name="__Cert" type="hidden" value="b80afa6c"/>
+         </form>
+        </div>
+       </div>
+       <div class="foot">
+       </div>
+      </section>
+      <section class="des-advisors" id="team-adv" style="display:none;">
+       <div class="container">
+        <h2 class="section-title">
+         Descrow Advisors
+         <hr class="animate_hr wow zoomIn infinite"/>
+        </h2>
+        <div class="items">
+         <!--<div class="block">
+				<div class="circle">
+					<img src="images/coop-10.png" alt="">
+				</div>
+				<div class="info">
+					<p class="name">Henry Wang</p>
+					<p class="vacancy">Advisor</p>
+					<div class="description">Founder of SmartMesh.io and President of International Blockchain Application Federation (IBAF).</div>
+				</div>
+			</div>-->
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-11.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Bonnie Normile
+           </p>
+           <p class="vacancy">
+            Advisor
+           </p>
+           <div class="description">
+            Member of the Association of Blockchain in Israel, a blockchain enthusiast. Business Development and Public Relations. ICO analyst at ICOBench.
+           </div>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-2.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Simon Cocking
+           </p>
+           <p class="vacancy">
+            Senior Advisor Twitter
+           </p>
+           <div class="description">
+            Сhief editor of the Irish leading technologies' online magazine 'Irish Tech News'. Top-100 of 'The most influential blockchain people'. Expert in financial technologies and robotics.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/simon-cocking-20540135/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-1.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Colbert Low
+           </p>
+           <p class="vacancy">
+            Senior Advisor from Malaysia
+           </p>
+           <div class="description">
+            Colbert is a Senior Advisor with over 12 years of IT global operations and project management experience. He is the Vice-Secretary for ACCESS Blockchain Association Malaysia and he owns a blog at bitcoinmalaysia.com.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/colbertlow/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-3.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Denis Efremov
+           </p>
+           <p class="vacancy">
+            Venture Counselor
+           </p>
+           <div class="description">
+            Venture advisor. Da Vinci Capital Vice-president, ITinvest BoD member, expert in private &amp; venture capital investments and structuring in FinTech &amp; B2B tech.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/defremov/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-5.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Vladislav Sapozhnikov
+           </p>
+           <p class="vacancy">
+            Co-founder of Genesis Block
+           </p>
+           <div class="description">
+            Russia Ambassador of ICO paltform and decentralized exchange OpenLedger DEX. Coinsbank representative in Russia. Genesis Block rep, 12+ experience in electronic commerce and processing - Predprocessing, QIWI, CyberPlat, Alfa-Bank, Sberbank.
+           </div>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-6.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Sergey Skabelkin
+           </p>
+           <p class="vacancy">
+            FinTech Expert
+           </p>
+           <div class="description">
+            FinTech Expert. Co-founder of FinTech Cluster in Ukraine.  UELBU Vice-President, expert in FinTech and mobile banking, business-architect of mobile wallet and online services.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/sergeyskabelkin/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-7.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Maxim Taldykin
+           </p>
+           <p class="vacancy">
+            R&amp;D
+           </p>
+           <div class="description">
+            IT-Programmer, smart-contract developer
+           </div>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-8.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Mofassair Hossain (Shovon)
+           </p>
+           <p class="vacancy">
+            Representative in Asia
+           </p>
+           <div class="description">
+            A Chartered management accountant (CIMA). Сrypto investor. CEO and Founder of Perhalic. Expert in Israeli Blockchain Association and ICO Bench. Humaniq Ambassador from Bangladesh.
+           </div>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-9.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Anton Akentiyev
+           </p>
+           <p class="vacancy">
+            Blockchain Developer
+           </p>
+           <div class="description">
+            Founder and manager of Chain.Cloud. 10+ years' experienced software developer. Author of a blog Custom Blockchain (DLT) technology products.
+           </div>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-12.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Anurag Rathore
+           </p>
+           <p class="vacancy">
+            Adviser
+           </p>
+           <div class="description">
+            Computer Science Engineer. Project Manager at CLOUT. Expert at ICO Bench. Cryptocurrency Trader and Enthusiast. Admin at Crypto Warriors.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/anuragrathore0001/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-13.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Sandeep Aurora
+           </p>
+           <p class="vacancy">
+            Project Advisor from South Asia
+           </p>
+           <div class="description">
+            Former Marketing Director with 20+ years of Sales &amp; Marketing experience at Intel Corporation, an expert in India &amp; South Asia markets technologies.
+           </div>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-14.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            David Drake
+           </p>
+           <p class="vacancy">
+            Adviser
+           </p>
+           <div class="description">
+            Founder and Chairman at LDJ Capital. Leader in cryptocurrency.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/ldjcapital/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+         <div class="block">
+          <div class="circle">
+           <img alt="" src="images/coop-15.png"/>
+          </div>
+          <div class="info">
+           <p class="name">
+            Benjamin Kraus
+           </p>
+           <p class="vacancy">
+            Adviser
+           </p>
+           <div class="description">
+            Founder, CEO, and Chairman of the Board to Kraus Industries.
+           </div>
+           <a class="link" href="https://www.linkedin.com/in/bekraus/" target="_blank">
+            <img alt="" src="images/slider-link.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+        <a class="btn btn-blue tokenBuyButton" data-target="#buyModal" data-toggle="modal" href="#" onclick="ga('send', 'event', 'pas', 'pay');">
+         Buy tokens
+        </a>
+       </div>
+      </section>
+      <script>
+       $( "#team-div .items" ).hover(function() {
+	$( "#team-div .description, #team-div .stars, #team-div .link" ).slideDown( "fast", function() {
+		$( "#team-div .description, #team-div .stars, #team-div .link" ).stop(true,true);
+	} );
+  }, function() {
+	$( "#team-div .description, #team-div .stars, #team-div .link" ).stop(true,true);
+    $( "#team-div .description, #team-div .stars, #team-div .link" ).slideUp( "fast" );
+  }
+);
+$( "#team-adv .items" ).hover(function() {
+	$( "#team-adv .block .description, #team-adv .stars, #team-adv .link" ).slideDown( "fast", function() {
+		$( "#team-adv .block .description, #team-adv .stars, #team-adv .link" ).stop(true,true);
+	} );
+  }, function() {
+    $( "#team-adv .block .description, #team-adv .stars, #team-adv .link" ).stop(true,true);
+    $( "#team-adv .block .description, #team-adv .stars, #team-adv .link" ).slideUp( "fast" );
+  }
+);
+      </script>
+      <footer>
+       <div class="container">
+        <div class="content col-lg-3 col-sm-3">
+         <a class="logo" href="#">
+          <img alt="" src="images/header-logo.png"/>
+         </a>
+         <p class="text">
+         </p>
+         <div class="social" href="red">
+          <a href="https://twitter.com/Descrow3" target="_blank">
+           <img alt="" src="images/social-tw.png"/>
+          </a>
+          <a href="https://www.facebook.com/descrow3/" target="_blank">
+           <img alt="" src="images/social-fb.png"/>
+          </a>
+          <a href="https://medium.com/@Descrow/" target="_blank">
+           <img alt="" src="images/social-m.png"/>
+          </a>
+          <a href="https://t.me/descrow_eng" target="_blank">
+           <img alt="" src="images/social-tm.png"/>
+          </a>
+          <a href="https://vk.com/descrow" target="_blank">
+           <img alt="" src="images/social-vk.png"/>
+          </a>
+          <a href="https://www.linkedin.com/company-beta/18142266/" target="_blank">
+           <img alt="" src="images/social-li.png"/>
+          </a>
+          <!--<a href="https://bitcointalk.org/index.php?topic=2089578.0" target="_blank"><img src="images/social-btc.png" alt=""></a>-->
+          <a href="https://www.reddit.com/r/Descrow/" target="_blank">
+           <img alt="" src="images/social-rdt.png"/>
+          </a>
+         </div>
+        </div>
+        <div class="col-lg-2 col-lg-offset-3 col-sm-3">
+         <ul>
+          <li>
+           Company address
+          </li>
+          <li>
+           Decentralised Escrow Service OU
+          </li>
+          <li>
+           Laki 30, 12915 Tallinn Estonia
+          </li>
+         </ul>
+        </div>
+        <div class="col-lg-2 col-sm-3">
+         <ul>
+          <li>
+           <a class="scroll-link" href="#need">
+            About us
+           </a>
+          </li>
+          <li>
+           <a class="scroll-link" href=".howItWorks">
+            How it works
+           </a>
+          </li>
+          <li>
+           <a class="scroll-link" href="#roadmap">
+            Road Map
+           </a>
+          </li>
+          <li>
+           <a class="scroll-link" href="#team-div">
+            Our Team
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-lg-2 col-sm-3">
+         <ul>
+          <li>
+           <a class="scroll-link" href="#white-paper">
+            White Paper
+           </a>
+          </li>
+          <li>
+           <a class="" href="images/private_police.pdf" target="_blank">
+            Privacy police
+           </a>
+          </li>
+          <li>
+           <a class="" href="images/terms_en.pdf" target="_blank">
+            Terms &amp; Conditions
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </footer>
+      <div class="scroll-up">
+       <img alt="" src="images/new/up.png" style="cursor: pointer !important; opacity: 0.8;"/>
+      </div>
+      <div class="scroll-tm">
+       <a href="https://t.me/descrow_eng" target="_blank">
+        <span class="arrow">
+        </span>
+       </a>
+      </div>
+      <div class="modal fade sing-up" id="sing-up" role="dialog">
+       <div class="modal-dialog">
+        <img alt="" class="close_button" onclick="$('#sing-up').modal('hide');" src="images/close.png"/>
+        <div class="modal-content">
+         <div class="modal-body">
+          <div class="head">
+           Sign up
+          </div>
+          <div class="form">
+           <form action="registration" class="cfix" method="post" name="register_frm">
+            <div class="input">
+             <input id="register_frm_uLogin" name="uLogin" placeholder="Login" type="text" value=""/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <div class="input">
+             <input id="register_frm_uMail" name="uMail" placeholder="e-mail" type="email" value=""/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <div class="input">
+             <input id="register_frm_uPass" name="uPass" placeholder="Password" type="password" value=""/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <div class="input">
+             <input id="register_frm_Pass2" name="Pass2" placeholder="Confirm password" type="password" value=""/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <div class="input">
+             <input class="field" id="register_frm_uRef" name="uRef" placeholder="You are invited:" type="text" value=""/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <div>
+             <input id="register_frm_Agree" name="Agree" type="hidden" value="1"/>
+            </div>
+            <button class="btn btn-blue" name="register_frm_btn" type="submit">
+             Registration
+            </button>
+            <input name="__Cert" type="hidden" value="a8ade1a2"/>
+           </form>
+           <p>
+            Registration with social media:
+           </p>
+           <div class="social">
+            <a href="https://accounts.google.com/o/oauth2/auth?redirect_uri=https://descrow.com/?provider=google&amp;response_type=code&amp;client_id=444228100229-pt2aue0tsomv822uu1t4m9nhlm2ij7ei.apps.googleusercontent.com&amp;scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile">
+             <img alt="" src="images/social-gp.png"/>
+            </a>
+            <a href="">
+             <img alt="" src="images/modal-twitter.png"/>
+            </a>
+            <a href="https://www.facebook.com/dialog/oauth?client_id=147146292678716&amp;redirect_uri=https://descrow.com/?provider=facebook&amp;response_type=code&amp;scope=email,user_birthday">
+             <img alt="" src="images/modal-facebook.png"/>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="modal fade sing-in" id="sing-in" role="dialog" style="z-index: 1111;">
+       <div class="modal-dialog">
+        <img alt="" class="close_button" onclick="$('#sing-in').modal('hide');" src="images/close.png"/>
+        <div class="modal-content">
+         <div class="modal-body" style="height: 576px; color: #000; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;">
+          <div class="head">
+           Sign in
+          </div>
+          <div class="form">
+           <form action="login" class="cfix" method="post" name="login_frm">
+            <img alt="" class="close_button" onclick="$('#login').modal('hide');" src="img/close.png"/>
+            Have no account? &gt;&gt;
+            <a class="btn btn-blue" data-target="#sing-up" data-toggle="modal" href="#" onclick="$('#sing-in').modal('hide'); ga('send', 'event', 'КнопкаРегистрацияФорма', 'Регистрация');" style="max-width: 185px; padding: 4px; width: 120px; height: 30px; margin: 0;">
+             Sign Up
+            </a>
+            <hr/>
+            <br/>
+            Login to existing account:
+            <div class="input">
+             <input id="login_frm_Login" name="Login" placeholder="Login" type="text" value=""/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <div class="input">
+             <input id="login_frm_Pass" name="Pass" placeholder="Password" type="password"/>
+             <div class="gray">
+             </div>
+             <div class="blue">
+             </div>
+            </div>
+            <a class="forgetbut" href="./resetpass">
+             Remind password
+            </a>
+            <button class="btn btn-blue" name="login_frm_btn" onclick="ga('send', 'event', 'КнопкаВойтиФорма', 'Вход2');" style="padding: 4px; width: 120px; height: 36px;" type="submit">
+             Sign In
+            </button>
+            <input name="__Cert" type="hidden" value="82586efb"/>
+           </form>
+          </div>
+          <p>
+           <b>
+            Sing In with social media:
+           </b>
+          </p>
+          <div class="social">
+           <a href="https://accounts.google.com/o/oauth2/auth?redirect_uri=https://descrow.com/?provider=google&amp;response_type=code&amp;client_id=444228100229-pt2aue0tsomv822uu1t4m9nhlm2ij7ei.apps.googleusercontent.com&amp;scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile">
+            <img alt="" src="images/social-gp.png"/>
+           </a>
+           <a href="">
+            <img alt="" src="images/modal-twitter.png"/>
+           </a>
+           <a href="https://www.facebook.com/dialog/oauth?client_id=147146292678716&amp;redirect_uri=https://descrow.com/?provider=facebook&amp;response_type=code&amp;scope=email,user_birthday">
+            <img alt="" src="images/modal-facebook.png"/>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <script>
+      </script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet"/>
+      <link href="css/animate.css" rel="stylesheet"/>
+      <script src="js/bootstrap.min.js">
+      </script>
+      <script src="ES6/wow.min.js">
+      </script>
+      <script>
+       //new WOW({ mobile:false}).init();
+      </script>
+      <script>
+       /*! jQuery Mobile v1.3.2 | Copyright 2010, 2013 jQuery Foundation, Inc. | jquery.org/license */
+		(function (e, t, n) {
+			typeof define == "function" && define.amd ? define(["jquery"], function (r) {
+				return n(r, e, t), r.mobile
+			}) : n(e.jQuery, e, t)
+		})(this, document, function (e, t, n, r) {
+			(function (e, t, n, r) {
+				function x(e) {
+					while (e && typeof e.originalEvent != "undefined") e = e.originalEvent;
+					return e
+				}
+
+				function T(t, n) {
+					var i = t.type, s, o, a, l, c, h, p, d, v;
+					t = e.Event(t), t.type = n, s = t.originalEvent, o = e.event.props, i.search(/^(mouse|click)/) > -1 && (o = f);
+					if (s) for (p = o.length, l; p;) l = o[--p], t[l] = s[l];
+					i.search(/mouse(down|up)|click/) > -1 && !t.which && (t.which = 1);
+					if (i.search(/^touch/) !== -1) {
+						a = x(s), i = a.touches, c = a.changedTouches, h = i && i.length ? i[0] : c && c.length ? c[0] : r;
+						if (h) for (d = 0, v = u.length; d < v; d++) l = u[d], t[l] = h[l]
+					}
+					return t
+				}
+
+				function N(t) {
+					var n = {}, r, s;
+					while (t) {
+						r = e.data(t, i);
+						for (s in r) r[s] && (n[s] = n.hasVirtualBinding = !0);
+						t = t.parentNode
+					}
+					return n
+				}
+
+				function C(t, n) {
+					var r;
+					while (t) {
+						r = e.data(t, i);
+						if (r && (!n || r[n])) return t;
+						t = t.parentNode
+					}
+					return null
+				}
+
+				function k() {
+					g = !1
+				}
+
+				function L() {
+					g = !0
+				}
+
+				function A() {
+					E = 0, v.length = 0, m = !1, L()
+				}
+
+				function O() {
+					k()
+				}
+
+				function M() {
+					_(), c = setTimeout(function () {
+						c = 0, A()
+					}, e.vmouse.resetTimerDuration)
+				}
+
+				function _() {
+					c && (clearTimeout(c), c = 0)
+				}
+
+				function D(t, n, r) {
+					var i;
+					if (r && r[t] || !r && C(n.target, t)) i = T(n, t), e(n.target).trigger(i);
+					return i
+				}
+
+				function P(t) {
+					var n = e.data(t.target, s);
+					if (!m && (!E || E !== n)) {
+						var r = D("v" + t.type, t);
+						r && (r.isDefaultPrevented() && t.preventDefault(), r.isPropagationStopped() && t.stopPropagation(), r.isImmediatePropagationStopped() && t.stopImmediatePropagation())
+					}
+				}
+
+				function H(t) {
+					var n = x(t).touches, r, i;
+					if (n && n.length === 1) {
+						r = t.target, i = N(r);
+						if (i.hasVirtualBinding) {
+							E = w++, e.data(r, s, E), _(), O(), d = !1;
+							var o = x(t).touches[0];
+							h = o.pageX, p = o.pageY, D("vmouseover", t, i), D("vmousedown", t, i)
+						}
+					}
+				}
+
+				function B(e) {
+					if (g) return;
+					d || D("vmousecancel", e, N(e.target)), d = !0, M()
+				}
+
+				function j(t) {
+					if (g) return;
+					var n = x(t).touches[0], r = d, i = e.vmouse.moveDistanceThreshold, s = N(t.target);
+					d = d || Math.abs(n.pageX - h) > i || Math.abs(n.pageY - p) > i, d && !r && D("vmousecancel", t, s), D("vmousemove", t, s), M()
+				}
+
+				function F(e) {
+					if (g) return;
+					L();
+					var t = N(e.target), n;
+					D("vmouseup", e, t);
+					if (!d) {
+						var r = D("vclick", e, t);
+						r && r.isDefaultPrevented() && (n = x(e).changedTouches[0], v.push({
+							touchID: E,
+							x: n.clientX,
+							y: n.clientY
+						}), m = !0)
+					}
+					D("vmouseout", e, t), d = !1, M()
+				}
+
+				function I(t) {
+					var n = e.data(t, i), r;
+					if (n) for (r in n) if (n[r]) return !0;
+					return !1
+				}
+
+				function q() {
+				}
+
+				function R(t) {
+					var n = t.substr(1);
+					return {
+						setup: function (r, s) {
+							I(this) || e.data(this, i, {});
+							var o = e.data(this, i);
+							o[t] = !0, l[t] = (l[t] || 0) + 1, l[t] === 1 && b.bind(n, P), e(this).bind(n, q), y && (l.touchstart = (l.touchstart || 0) + 1, l.touchstart === 1 && b.bind("touchstart", H).bind("touchend", F).bind("touchmove", j).bind("scroll", B))
+						}, teardown: function (r, s) {
+							--l[t], l[t] || b.unbind(n, P), y && (--l.touchstart, l.touchstart || b.unbind("touchstart", H).unbind("touchmove", j).unbind("touchend", F).unbind("scroll", B));
+							var o = e(this), u = e.data(this, i);
+							u && (u[t] = !1), o.unbind(n, q), I(this) || o.removeData(i)
+						}
+					}
+				}
+
+				var i = "virtualMouseBindings", s = "virtualTouchID",
+						o = "vmouseover vmousedown vmousemove vmouseup vclick vmouseout vmousecancel".split(" "),
+						u = "clientX clientY pageX pageY screenX screenY".split(" "),
+						a = e.event.mouseHooks ? e.event.mouseHooks.props : [], f = e.event.props.concat(a), l = {}, c = 0,
+						h = 0, p = 0, d = !1, v = [], m = !1, g = !1, y = "addEventListener" in n, b = e(n), w = 1, E = 0, S;
+				e.vmouse = {moveDistanceThreshold: 10, clickDistanceThreshold: 10, resetTimerDuration: 1500};
+				for (var U = 0; U < o.length; U++) e.event.special[o[U]] = R(o[U]);
+				y && n.addEventListener("click", function (t) {
+					var n = v.length, r = t.target, i, o, u, a, f, l;
+					if (n) {
+						i = t.clientX, o = t.clientY, S = e.vmouse.clickDistanceThreshold, u = r;
+						while (u) {
+							for (a = 0; a < n; a++) {
+								f = v[a], l = 0;
+								if (u === r && Math.abs(f.x - i) < S && Math.abs(f.y - o) < S || e.data(u, s) === f.touchID) {
+									t.preventDefault(), t.stopPropagation();
+									return
+								}
+							}
+							u = u.parentNode
+						}
+					}
+				}, !0)
+			})(e, t, n), function (e) {
+				e.mobile = {}
+			}(e), function (e, t) {
+				var r = {touch: "ontouchend" in n};
+				e.mobile.support = e.mobile.support || {}, e.extend(e.support, r), e.extend(e.mobile.support, r)
+			}(e), function (e, t, r) {
+				function l(t, n, r) {
+					var i = r.type;
+					r.type = n, e.event.dispatch.call(t, r), r.type = i
+				}
+
+				var i = e(n);
+				e.each("touchstart touchmove touchend tap taphold swipe swipeleft swiperight scrollstart scrollstop".split(" "), function (t, n) {
+					e.fn[n] = function (e) {
+						return e ? this.bind(n, e) : this.trigger(n)
+					}, e.attrFn && (e.attrFn[n] = !0)
+				});
+				var s = e.mobile.support.touch, o = "touchmove scroll", u = s ? "touchstart" : "mousedown",
+						a = s ? "touchend" : "mouseup", f = s ? "touchmove" : "mousemove";
+				e.event.special.scrollstart = {
+					enabled: !0, setup: function () {
+						function s(e, n) {
+							r = n, l(t, r ? "scrollstart" : "scrollstop", e)
+						}
+
+						var t = this, n = e(t), r, i;
+						n.bind(o, function (t) {
+							if (!e.event.special.scrollstart.enabled) return;
+							r || s(t, !0), clearTimeout(i), i = setTimeout(function () {
+								s(t, !1)
+							}, 50)
+						})
+					}
+				}, e.event.special.tap = {
+					tapholdThreshold: 750, setup: function () {
+						var t = this, n = e(t);
+						n.bind("vmousedown", function (r) {
+							function a() {
+								clearTimeout(u)
+							}
+
+							function f() {
+								a(), n.unbind("vclick", c).unbind("vmouseup", a), i.unbind("vmousecancel", f)
+							}
+
+							function c(e) {
+								f(), s === e.target && l(t, "tap", e)
+							}
+
+							if (r.which && r.which !== 1) return !1;
+							var s = r.target, o = r.originalEvent, u;
+							n.bind("vmouseup", a).bind("vclick", c), i.bind("vmousecancel", f), u = setTimeout(function () {
+								l(t, "taphold", e.Event("taphold", {target: s}))
+							}, e.event.special.tap.tapholdThreshold)
+						})
+					}
+				}, e.event.special.swipe = {
+					scrollSupressionThreshold: 30,
+					durationThreshold: 1e3,
+					horizontalDistanceThreshold: 30,
+					verticalDistanceThreshold: 75,
+					start: function (t) {
+						var n = t.originalEvent.touches ? t.originalEvent.touches[0] : t;
+						return {time: (new Date).getTime(), coords: [n.pageX, n.pageY], origin: e(t.target)}
+					},
+					stop: function (e) {
+						var t = e.originalEvent.touches ? e.originalEvent.touches[0] : e;
+						return {time: (new Date).getTime(), coords: [t.pageX, t.pageY]}
+					},
+					handleSwipe: function (t, n) {
+						n.time - t.time < e.event.special.swipe.durationThreshold && Math.abs(t.coords[0] - n.coords[0]) > e.event.special.swipe.horizontalDistanceThreshold && Math.abs(t.coords[1] - n.coords[1]) < e.event.special.swipe.verticalDistanceThreshold && t.origin.trigger("swipe").trigger(t.coords[0] > n.coords[0] ? "swipeleft" : "swiperight")
+					},
+					setup: function () {
+						var t = this, n = e(t);
+						n.bind(u, function (t) {
+							function o(t) {
+								if (!i) return;
+								s = e.event.special.swipe.stop(t), Math.abs(i.coords[0] - s.coords[0]) > e.event.special.swipe.scrollSupressionThreshold && t.preventDefault()
+							}
+
+							var i = e.event.special.swipe.start(t), s;
+							n.bind(f, o).one(a, function () {
+								n.unbind(f, o), i && s && e.event.special.swipe.handleSwipe(i, s), i = s = r
+							})
+						})
+					}
+				}, e.each({
+					scrollstop: "scrollstart",
+					taphold: "tap",
+					swipeleft: "swipe",
+					swiperight: "swipe"
+				}, function (t, n) {
+					e.event.special[t] = {
+						setup: function () {
+							e(this).bind(n, e.noop)
+						}
+					}
+				})
+			}(e, this)
+		});
+      </script>
+      <script src="js/main1n.js">
+      </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-110230838-1">
+      </script>
+      <script>
+       window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-110230838-1');
+      </script>
+      <!-- Yandex.Metrika counter -->
+      <script type="text/javascript">
+       (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47372854 = new Ya.Metrika2({
+                    id:47372854,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+      </script>
+      <noscript>
+       <div>
+        <img alt="" src="https://mc.yandex.ru/watch/47372854" style="position:absolute; left:-9999px;"/>
+       </div>
+      </noscript>
+      <!-- /Yandex.Metrika counter -->
+      <!-- BEGIN JIVOSITE CODE  -->
+      <script type="text/javascript">
+       (function(){ var widget_id = 'eAyprSMSlw';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+      </script>
+      <!--  END JIVOSITE CODE -->
+     </div>
+    </section>
+   </div>
+  </section>
+ </body>
+</html>

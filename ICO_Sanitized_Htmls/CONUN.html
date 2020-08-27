@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" content="width=device-width, height=device-height, user-scalable=no" name="viewport"/>
+  <!-- Replaced by Dusu Park on 2018-08-29 -->
+  <title>
+   CONUN | 基于区块链的分布式超级计算平台
+  </title>
+  <!--
+<title>< ?=$this->lang->line('head_title')? ></title>
+test
+-->
+  <!-- . -->
+  <link href="/img/favicon.png" rel="icon"/>
+  <link href="/css/common2.css" rel="stylesheet"/>
+  <link href="/css/mobile2.css" rel="stylesheet"/>
+  <script src="/js/common.js">
+  </script>
+  <script src="/js/jquery.min.js">
+  </script>
+  <!-- 페이지 주소에 따른 bg 및 메뉴 컬러 변경 코드 -->
+  <script>
+   $(function() {
+	 
+	  
+  var loc = window.location.href; // returns the full URL
+  if(/account/.test(loc) || /complete/.test(loc)) {//presale page background setting
+    $('body').addClass('account-bg');
+	$('#con-menu').addClass('text-white');
+  }else if(/team/.test(loc)){//presale page background setting
+	  $('body').addClass('team-bg');
+	  $('#con-menu').addClass('text-white');
+  }else if(/signup/.test(loc) || /contactus/.test(loc)){//presale page background setting
+	  $('body').addClass('signup-bg');
+	  $('#con-menu').addClass('text-white');
+  }else if(/login/.test(loc) || /findpw/.test(loc)){//presale page background setting
+	  $('body').addClass('login-bg');
+	  $('#con-menu').addClass('text-white');
+  }else if(/whitepaper/.test(loc)){
+	  $('body').addClass('paper-bg');
+	  $('#con-menu').addClass('text-white');
+  }else if(/notice/.test(loc)){
+	  $('body').addClass('notice-bg');
+	  $('#con-menu').addClass('text-white');
+  }else if(/buycon/.test(loc) || /kyc/.test(loc)){
+	  $('body').addClass('kyc-bg');
+	  $('#con-menu').addClass('text-white');
+  }else{
+	  $('body').removeClass();
+	  $('#con-menu').addClass('text-white');
+  }
+  
+});
+//타이틀 텍스트 블러 효과 추가
+$(document).ready(function(){
+	var blt = $('#blur-title').text();
+	$('p#blur').text(blt);
+	var copyBtnwidth = $('.btn-copy').width();
+	var coinTextwidth = $('.wallet div').width();
+	var adressInputwidth = coinTextwidth - 51 - copyBtnwidth;
+	$('.address').css({
+		'width': adressInputwidth
+	});
+
+})
+$(window).resize(function(){
+	var copyBtnwidth = $('.btn-copy').width();
+	var coinTextwidth = $('.wallet div').width();
+	var adressInputwidth = coinTextwidth - 51 - copyBtnwidth;
+	$('.address').css({
+		'width': adressInputwidth
+	});
+});
+/*sticky header*/
+function createSticky(sticky) {
+ if (typeof sticky !== "undefined") {
+  var item = sticky.offset().top+300;
+  $(window).on("scroll", function() {
+   $(window).scrollTop() >= item ? sticky.addClass("sticky-menu") : sticky.removeClass("sticky-menu");
+  });
+ }
+}
+$(document).ready(function(){
+	createSticky($("header"));
+});
+  </script>
+ </head>
+ <body>
+  <style>
+  </style>
+  <!-- Menu Section -->
+  <div id="head-menubg">
+  </div>
+  <header class="container new" id="con-menu">
+   <!-- Image Preload section
+	<img src="/img/buy-bg.png" style="display:none">
+	<img src="/img/login_bg3.png" style="display:none">
+	<img src="/img/signup_bg2.png" style="display:none">
+ -->
+   <!-- mobile menu -->
+   <!-- Mobile Menu Section -->
+   <input class="mobile-menu" id="menu-btn2" name="menu-btn2" type="checkbox"/>
+   <label class="mobile-menu" for="menu-btn2" id="menu-btn">
+   </label>
+   <div class="mobile-menu" id="con-mobile-menu">
+    <div class="group language">
+     <div class="drop-down">
+     </div>
+    </div>
+    <div class="group account">
+     <a class="menu" href="/signup">
+      <p>
+       注册
+      </p>
+     </a>
+     <a class="menu" href="/login">
+      <p>
+       登录
+      </p>
+     </a>
+    </div>
+    <div class="group menus">
+     <!-- a class="menu" href="/presale" id="presale-menu">Pre-sale</a -->
+     <a class="menu" href="/presale/kyc">
+      KYC
+     </a>
+    </div>
+    <div class="group menus">
+     <a class="menu" href="/#overview">
+      Overview
+     </a>
+     <a class="menu" href="/#roadmap">
+      Roadmap
+     </a>
+     <a class="menu" href="/team">
+      Team
+     </a>
+     <a class="menu" href="https://medium.com/conun-korea" target="_blank">
+      Blog
+     </a>
+     <a class="menu" href="/whitepaper">
+      Whitepaper
+     </a>
+     <a class="menu" href="/notice">
+      Notice
+     </a>
+     <a class="menu" href="/contactus">
+      Contact Us
+     </a>
+    </div>
+    <div class="group" id="con-applink">
+     <div class="app" id="con-appios">
+      <a href="https://itunes.apple.com/kr/app/conun/id1435119985?mt=8" target="_blank">
+       <img src="/img/ico-apple.png"/>
+       IOS
+      </a>
+     </div>
+     <div class="app" id="con-appand">
+      <a href="https://play.google.com/store/apps/details?id=io.conun.conun" target="_blank">
+       <img src="/img/ico-google.png"/>
+       Android
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="mobile-menu" id="con-mobile-menu-bg">
+   </div>
+   <!-- web menu -->
+   <div class="header-box">
+    <div class="group-left" id="con-applink">
+     <div class="app" id="con-appios">
+      <a href="https://itunes.apple.com/kr/app/conun/id1435119985?mt=8" target="_blank">
+       <img src="/img/ico-apple.png"/>
+       IOS
+      </a>
+     </div>
+     <div class="app" id="con-appand">
+      <a href="https://play.google.com/store/apps/details?id=io.conun.conun" target="_blank">
+       <img src="/img/ico-google.png"/>
+       Android
+      </a>
+     </div>
+    </div>
+    <div class="group-right">
+     <script src="/js/lang.js">
+     </script>
+     <div class="drop-down">
+      <select onchange="window.location.href='/LanguageSwitcher/switchLang/'+this.value;">
+       <option class="kr" value="korean">
+        한국어
+       </option>
+       <option class="us" value="english">
+        ENG
+       </option>
+       <option class="cn" selected="" value="chinese">
+        中文
+       </option>
+       <option class="jp" value="japanese">
+        日本語
+       </option>
+      </select>
+     </div>
+    </div>
+   </div>
+   <div class="group group-left">
+    <a class="logo" href="/" id="con-logo">
+    </a>
+   </div>
+   <div class="group group-right">
+    <div class="group menus">
+     <!--<a class="menu" href="/presale" id="presale-menu">Pre-sale</a>-->
+     <a class="menu" href="/presale/kyc" id="kyc-menu">
+      KYC
+     </a>
+     <a class="menu" href="/#overview">
+      Overview
+     </a>
+     <a class="menu" href="/#roadmap">
+      Roadmap
+     </a>
+     <a class="menu" href="/team">
+      Team
+     </a>
+     <!--<a class="menu" href="https://brunch.co.kr/@conun" target="_blank">Blog</a>-->
+     <a class="menu" href="/whitepaper">
+      Whitepaper
+     </a>
+     <a class="menu" href="/notice">
+      Notice
+     </a>
+     <a class="menu" href="https://medium.com/conun-korea" target="_blank">
+      Blog
+     </a>
+    </div>
+    <!--User Menu & Language Area-->
+    <div class="group account">
+     <a class="menu" href="/signup">
+      <p>
+       注册
+      </p>
+     </a>
+     <a class="menu" href="/login">
+      <p>
+       登录
+      </p>
+     </a>
+    </div>
+   </div>
+  </header>
+  <style type="text/css">
+   .popup-alert>.text {
+        font-size: 18px;
+        font-family: "Noto Sans";
+        color: rgb(51, 51, 51);
+        line-height: 1.389;
+        margin-bottom: 20px;
+    }
+    .popup-alert>.text>.grey_text {
+        color: #999999;
+    }
+    .popup-alert>img {
+        width: 100%;
+    }
+    .popup-alert>.input {
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(221, 221, 221);
+        background-color: rgb(245, 245, 245);
+        width: 100%;
+        height: 51px;
+        padding: 16px;
+        margin-bottom: 50px;
+    }
+    .popup-alert>button {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 40px;
+        border: none;
+        background: #122F6F;
+        font-size: 15px;
+        font-family: "Noto Sans";
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+    }
+
+    .popup-alert-button {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 40px;
+        border: none;
+        background: #122F6F;
+        font-size: 15px;
+        font-family: "Noto Sans";
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+    }
+  </style>
+  <script type="text/javascript">
+   $('#con-mobile-menu-bg').on('click', function(){
+		$('input#menu-btn2').prop('checked',false);
+	});
+	function closeMobileMenu() {
+		$('#con-mobile-menu-wrapper').removeClass('open');
+		setTimeout(function() {
+			$('#con-mobile-menu-wrapper').hide();
+		}, 250);
+	}
+	$(function() {
+		$('#btn-mobile-menu').on('click', function() {
+			$('#con-mobile-menu-wrapper').show();
+			setTimeout(function() {
+				$('#con-mobile-menu-wrapper').addClass('open');
+			}, 0);
+		});
+		$('#con-mobile-menu-bg').on('click', function() {
+			closeMobileMenu();
+		});
+		$('#con-mobile-menu-close').on('click', function() {
+			closeMobileMenu();
+		});
+		$('#con-mobile-menu>.menus>a').on('click', function() {
+			closeMobileMenu();
+		});
+	});
+  </script>
+  <script src="https://conun.io/js/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <script src="https://conun.io/js/jquery.bxslider.min.js">
+  </script>
+  <link href="https://conun.io/css/jquery.bxslider.css" rel="stylesheet"/>
+  <script>
+   $(document).ready(function(){
+	var slider = $('.bxslider').bxSlider({
+			auto: true, mode:'fade',
+		});
+	var slider_01 =	$('.bxslider_01').bxSlider({
+			auto: true,autoControls: true, mode:'vertical',
+		});
+	var slider_02 =	$('.bxslider_02').bxSlider({
+			auto: true,controls:false,pagerCustom: '#bx-pager1'
+		});
+	var slider_03 =	$('.bxslider_03').bxSlider({
+			auto: true,controls:false,pager:false,maxSlides: 3,moveSlides:1,  slideWidth: 100,slideMargin:0,autoHover:true,
+		});
+		// Ŭ���� ���� ���� �ذ� //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider.stopAuto();
+		slider.startAuto();
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider.stopAuto();
+		slider.startAuto();
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		slider_02.stopAuto();
+		slider_02.startAuto();
+		});
+});
+  </script>
+  <style>
+   #con-banner2{    display: table;
+    width: 100%;
+    height: 840px;
+    margin-top: 150px;
+    background: url(/img/web_bigban_bg_02.png) center center no-repeat;
+    background-size: cover;}
+    	#con-banner-inner2{   display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;}
+.presale_line{
+    background-color: rgb(126, 126, 126);
+    width: 50%;
+    height: 2px;
+    margin-bottom: 20px;}
+
+    .presale_bigtxt{  
+		font-size: 40px;
+		color: #eee;
+		text-align: left;
+	}
+	.presale_bigtxt>.subtitle {
+		font-weight:300;
+		font-size: 40px;
+	}
+	.presale_bigtxt>.title {
+		font-weight:700;font-size: 40px;
+		word-break:normal;
+	}
+   
+
+    .presale_btn {
+		background-color: rgb(195, 171, 65);
+		color: rgb(255, 255, 255);
+		font-size: 28px;display:inline-block;
+		text-align: center;
+		border:none;
+		font-size: 21px;
+		padding: 15px 28px;
+		height: 60px;
+		font-weight:bold;
+		border-radius:1px;
+		cursor:pointer;
+	}
+
+
+    .presale_time {
+	  font-size: 65px;
+	  font-family: "Nexa Light";
+	  color:#eee;    padding-top: 10px;
+    padding-bottom: 10px;
+	}
+	.presale_time img {
+		margin-left: -18px;
+		margin-right: -18px;
+		    vertical-align: -7px;
+	}
+	.presale_type {
+		font-size: 20px;
+		color: rgb(255, 255, 255);
+		text-align: center;
+		line-height: 0px;
+	}
+
+        .presale_colon {  font-size: 80px;  color:#c3ab41; vertical-align: middle;
+
+}
+/* Added by Dusu Park on 2018-04-20 */
+.fixed {
+	display: inline-block; width: 75px;
+	text-align:center;
+}
+
+/*Added by yoon on 2018-10-22 _particles start*/
+
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk!
+      html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}*/
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 307px 696px #FFF , 833px 888px #FFF , 181px 1467px #FFF , 99px 407px #FFF , 1726px 433px #FFF , 621px 1216px #FFF , 1341px 1312px #FFF , 941px 1463px #FFF , 1104px 1385px #FFF , 221px 1443px #FFF , 799px 1091px #FFF , 453px 1px #FFF , 273px 680px #FFF , 1850px 1915px #FFF , 1377px 1283px #FFF , 931px 1795px #FFF , 1094px 1941px #FFF , 1551px 1357px #FFF , 1313px 902px #FFF , 136px 1294px #FFF , 792px 547px #FFF , 1568px 1424px #FFF , 1028px 336px #FFF , 877px 1155px #FFF , 1704px 1316px #FFF , 560px 1836px #FFF , 318px 1547px #FFF , 1319px 1034px #FFF , 1446px 115px #FFF , 683px 1177px #FFF , 332px 1690px #FFF , 1076px 1776px #FFF , 1392px 1542px #FFF , 1028px 1623px #FFF , 1962px 711px #FFF , 1904px 823px #FFF , 1263px 302px #FFF , 1099px 1221px #FFF , 1829px 1488px #FFF , 80px 1547px #FFF , 379px 133px #FFF , 863px 512px #FFF , 1237px 598px #FFF , 273px 553px #FFF , 740px 1230px #FFF , 1027px 1877px #FFF , 495px 280px #FFF , 1722px 1981px #FFF , 1726px 502px #FFF , 378px 1005px #FFF , 1655px 1020px #FFF , 31px 599px #FFF , 274px 583px #FFF , 1580px 137px #FFF , 1381px 1993px #FFF , 785px 1052px #FFF , 1904px 1320px #FFF , 1704px 1312px #FFF , 1722px 395px #FFF , 465px 1811px #FFF , 1143px 320px #FFF , 6px 8px #FFF , 1518px 816px #FFF , 441px 1790px #FFF , 1510px 642px #FFF , 728px 9px #FFF , 659px 418px #FFF , 1429px 1910px #FFF , 1793px 1575px #FFF , 1991px 750px #FFF , 576px 1948px #FFF , 302px 187px #FFF , 1745px 1849px #FFF , 1034px 959px #FFF , 328px 1854px #FFF , 530px 1088px #FFF , 230px 550px #FFF , 1962px 1083px #FFF , 1814px 951px #FFF , 1422px 135px #FFF , 1514px 298px #FFF , 487px 164px #FFF , 239px 414px #FFF , 1964px 451px #FFF , 1381px 999px #FFF , 1502px 353px #FFF , 1095px 1450px #FFF , 452px 1471px #FFF , 787px 1447px #FFF , 235px 591px #FFF , 1982px 30px #FFF , 1072px 1585px #FFF , 368px 953px #FFF , 808px 1819px #FFF , 187px 741px #FFF , 47px 1305px #FFF , 1848px 213px #FFF , 537px 1818px #FFF , 757px 52px #FFF , 887px 812px #FFF , 1414px 1046px #FFF , 1254px 286px #FFF , 1997px 862px #FFF , 1702px 464px #FFF , 1278px 1698px #FFF , 1413px 1664px #FFF , 924px 1667px #FFF , 1156px 1235px #FFF , 962px 559px #FFF , 1433px 1884px #FFF , 902px 342px #FFF , 693px 118px #FFF , 38px 191px #FFF , 1715px 229px #FFF , 322px 829px #FFF , 485px 792px #FFF , 1699px 500px #FFF , 1004px 949px #FFF , 1942px 1990px #FFF , 1295px 1670px #FFF , 891px 1025px #FFF , 933px 5px #FFF , 293px 581px #FFF , 1033px 773px #FFF , 1717px 708px #FFF , 172px 76px #FFF , 1861px 152px #FFF , 655px 1210px #FFF , 1509px 1680px #FFF , 1294px 583px #FFF , 1658px 838px #FFF , 1636px 307px #FFF , 1588px 463px #FFF , 440px 1528px #FFF , 1926px 1141px #FFF , 1145px 1667px #FFF , 1376px 1834px #FFF , 749px 1243px #FFF , 1794px 1080px #FFF , 1343px 1860px #FFF , 1872px 1913px #FFF , 1285px 688px #FFF , 455px 1617px #FFF , 699px 850px #FFF , 88px 534px #FFF , 141px 117px #FFF , 1412px 772px #FFF , 628px 232px #FFF , 849px 1390px #FFF , 619px 1474px #FFF , 1305px 578px #FFF , 251px 989px #FFF , 810px 711px #FFF , 1656px 143px #FFF , 1713px 1308px #FFF , 1478px 1744px #FFF , 1227px 1019px #FFF , 669px 1886px #FFF , 829px 1591px #FFF , 808px 188px #FFF , 592px 1124px #FFF , 204px 1474px #FFF , 1485px 1589px #FFF , 1007px 492px #FFF , 748px 157px #FFF , 1681px 14px #FFF , 1695px 1544px #FFF , 1538px 1899px #FFF , 1774px 26px #FFF , 488px 475px #FFF , 313px 262px #FFF , 848px 1506px #FFF , 937px 1416px #FFF , 517px 701px #FFF , 995px 1521px #FFF , 535px 228px #FFF , 1171px 480px #FFF , 890px 66px #FFF , 288px 676px #FFF , 1527px 1276px #FFF , 1389px 1235px #FFF , 507px 1232px #FFF , 1436px 1846px #FFF , 1782px 1096px #FFF , 1087px 1076px #FFF , 92px 418px #FFF , 1010px 176px #FFF , 1114px 1099px #FFF , 910px 658px #FFF , 1494px 1632px #FFF , 1188px 1587px #FFF , 112px 464px #FFF , 882px 1271px #FFF , 550px 1378px #FFF , 1339px 1870px #FFF , 1317px 612px #FFF , 470px 285px #FFF , 1174px 1214px #FFF , 1088px 732px #FFF , 481px 1873px #FFF , 457px 226px #FFF , 1670px 1697px #FFF , 1224px 1039px #FFF , 493px 1786px #FFF , 1814px 532px #FFF , 1013px 1480px #FFF , 514px 589px #FFF , 1751px 1137px #FFF , 1872px 1270px #FFF , 1553px 37px #FFF , 567px 920px #FFF , 1097px 1118px #FFF , 694px 795px #FFF , 1464px 1945px #FFF , 1384px 1414px #FFF , 1597px 1161px #FFF , 669px 694px #FFF , 1836px 1855px #FFF , 1135px 483px #FFF , 936px 171px #FFF , 638px 591px #FFF , 720px 878px #FFF , 1596px 1634px #FFF , 768px 130px #FFF , 1300px 1500px #FFF , 1951px 1309px #FFF , 154px 1110px #FFF , 1533px 1896px #FFF , 1898px 1352px #FFF , 82px 276px #FFF , 1226px 1022px #FFF , 1696px 1555px #FFF , 1876px 1973px #FFF , 161px 1717px #FFF , 1723px 360px #FFF , 1259px 1145px #FFF , 1887px 1068px #FFF , 1384px 906px #FFF , 872px 164px #FFF , 1349px 20px #FFF , 1136px 891px #FFF , 493px 1699px #FFF , 77px 489px #FFF , 1577px 660px #FFF , 496px 337px #FFF , 560px 1273px #FFF , 1301px 1592px #FFF , 1167px 1158px #FFF , 646px 1808px #FFF , 1925px 608px #FFF , 1267px 718px #FFF , 1294px 1318px #FFF , 1296px 1805px #FFF , 1122px 1474px #FFF , 1780px 1726px #FFF , 624px 845px #FFF , 1075px 630px #FFF , 1856px 394px #FFF , 712px 538px #FFF , 600px 1380px #FFF , 1943px 1899px #FFF , 938px 1137px #FFF , 1501px 53px #FFF , 1036px 1392px #FFF , 1093px 1153px #FFF , 348px 482px #FFF , 273px 1704px #FFF , 733px 1230px #FFF , 638px 1523px #FFF , 929px 403px #FFF , 459px 537px #FFF , 398px 181px #FFF , 259px 1827px #FFF , 1683px 852px #FFF , 758px 865px #FFF , 11px 447px #FFF , 1135px 1061px #FFF , 1334px 127px #FFF , 1473px 136px #FFF , 1494px 1961px #FFF , 1888px 1659px #FFF , 867px 946px #FFF , 456px 1757px #FFF , 590px 980px #FFF , 864px 349px #FFF , 1104px 1443px #FFF , 84px 1010px #FFF , 1231px 331px #FFF , 928px 1344px #FFF , 309px 1827px #FFF , 1694px 464px #FFF , 1747px 1695px #FFF , 1185px 1914px #FFF , 1505px 1528px #FFF , 660px 1879px #FFF , 924px 1257px #FFF , 419px 1972px #FFF , 1897px 1528px #FFF , 1634px 1155px #FFF , 1958px 1643px #FFF , 855px 751px #FFF , 478px 149px #FFF , 79px 477px #FFF , 1725px 730px #FFF , 778px 1169px #FFF , 1583px 1878px #FFF , 991px 524px #FFF , 1102px 1514px #FFF , 766px 1367px #FFF , 250px 1756px #FFF , 1253px 1875px #FFF , 503px 128px #FFF , 1286px 1034px #FFF , 574px 1617px #FFF , 512px 923px #FFF , 1206px 1811px #FFF , 1702px 609px #FFF , 379px 1815px #FFF , 728px 1793px #FFF , 135px 1184px #FFF , 1424px 1855px #FFF , 1834px 42px #FFF , 1856px 801px #FFF , 1035px 807px #FFF , 1043px 172px #FFF , 1694px 1999px #FFF , 1602px 1317px #FFF , 1163px 1433px #FFF , 342px 814px #FFF , 1803px 722px #FFF , 1492px 1594px #FFF , 1819px 26px #FFF , 1581px 1563px #FFF , 728px 429px #FFF , 493px 1844px #FFF , 1069px 143px #FFF , 1812px 439px #FFF , 331px 882px #FFF , 1090px 1104px #FFF , 458px 1290px #FFF , 830px 671px #FFF , 97px 170px #FFF , 1879px 481px #FFF , 986px 389px #FFF , 1093px 1934px #FFF , 1964px 1410px #FFF , 408px 1797px #FFF , 989px 1330px #FFF , 1855px 1670px #FFF , 1674px 882px #FFF , 590px 558px #FFF , 779px 1240px #FFF , 1929px 685px #FFF , 1138px 1246px #FFF , 1349px 1775px #FFF , 85px 1857px #FFF , 1052px 59px #FFF , 224px 1716px #FFF , 420px 148px #FFF , 708px 224px #FFF , 556px 1389px #FFF , 919px 1115px #FFF , 1471px 280px #FFF , 520px 1184px #FFF , 24px 374px #FFF , 1167px 540px #FFF , 1318px 1204px #FFF , 1672px 953px #FFF , 1001px 123px #FFF , 1494px 297px #FFF , 440px 543px #FFF , 1259px 201px #FFF , 54px 1526px #FFF , 1470px 91px #FFF , 763px 392px #FFF , 455px 690px #FFF , 336px 924px #FFF , 850px 1485px #FFF , 1450px 783px #FFF , 68px 1668px #FFF , 8px 1094px #FFF , 15px 1339px #FFF , 13px 1356px #FFF , 1594px 1550px #FFF , 1919px 731px #FFF , 921px 1508px #FFF , 1081px 1177px #FFF , 619px 1105px #FFF , 362px 1095px #FFF , 231px 1049px #FFF , 1700px 174px #FFF , 860px 1971px #FFF , 69px 1530px #FFF , 1535px 775px #FFF , 350px 699px #FFF , 899px 436px #FFF , 790px 1032px #FFF , 1008px 1402px #FFF , 1910px 1010px #FFF , 61px 122px #FFF , 139px 548px #FFF , 1316px 1754px #FFF , 1574px 247px #FFF , 335px 200px #FFF , 1545px 1564px #FFF , 1362px 474px #FFF , 777px 1177px #FFF , 119px 696px #FFF , 443px 784px #FFF , 855px 563px #FFF , 362px 190px #FFF , 818px 18px #FFF , 1228px 903px #FFF , 597px 1944px #FFF , 1117px 1837px #FFF , 1098px 889px #FFF , 1593px 164px #FFF , 223px 1536px #FFF , 185px 621px #FFF , 155px 1838px #FFF , 1883px 1998px #FFF , 1415px 479px #FFF , 1104px 206px #FFF , 1067px 1999px #FFF , 869px 998px #FFF , 1435px 132px #FFF , 771px 1739px #FFF , 78px 1513px #FFF , 1162px 896px #FFF , 736px 1006px #FFF , 1036px 583px #FFF , 191px 1054px #FFF , 1052px 1369px #FFF , 871px 48px #FFF , 1660px 300px #FFF , 1797px 575px #FFF , 1983px 1386px #FFF , 1740px 1657px #FFF , 1788px 780px #FFF , 1351px 1504px #FFF , 1775px 1689px #FFF , 1492px 1182px #FFF , 815px 110px #FFF , 324px 827px #FFF , 1524px 1768px #FFF , 1642px 975px #FFF , 710px 685px #FFF , 405px 651px #FFF , 1716px 360px #FFF , 1514px 614px #FFF , 841px 1752px #FFF , 18px 1880px #FFF , 1265px 1823px #FFF , 706px 1199px #FFF , 1448px 591px #FFF , 1506px 1827px #FFF , 830px 1073px #FFF , 12px 1933px #FFF , 866px 715px #FFF , 951px 15px #FFF , 1488px 305px #FFF , 281px 1435px #FFF , 1935px 128px #FFF , 1320px 781px #FFF , 932px 1244px #FFF , 1967px 1627px #FFF , 882px 1785px #FFF , 1912px 1749px #FFF , 1536px 1683px #FFF , 886px 1459px #FFF , 85px 1089px #FFF , 1014px 1863px #FFF , 840px 1788px #FFF , 56px 285px #FFF , 707px 1248px #FFF , 867px 1221px #FFF , 1264px 827px #FFF , 965px 1972px #FFF , 1136px 1913px #FFF , 1241px 1503px #FFF , 491px 580px #FFF , 120px 773px #FFF , 1910px 111px #FFF , 1295px 1652px #FFF , 1426px 207px #FFF , 552px 1887px #FFF , 352px 577px #FFF , 1947px 220px #FFF , 1028px 1573px #FFF , 1861px 1237px #FFF , 182px 426px #FFF , 1558px 399px #FFF , 836px 1548px #FFF , 1782px 1119px #FFF , 399px 961px #FFF , 252px 829px #FFF , 56px 518px #FFF , 894px 323px #FFF , 414px 993px #FFF , 792px 908px #FFF , 1498px 886px #FFF , 1403px 1328px #FFF , 1249px 1801px #FFF , 867px 946px #FFF , 977px 962px #FFF , 1146px 569px #FFF , 1744px 1728px #FFF , 425px 212px #FFF , 899px 49px #FFF , 1405px 1962px #FFF , 1723px 78px #FFF , 1800px 1337px #FFF , 257px 80px #FFF , 1835px 246px #FFF , 325px 1144px #FFF , 1516px 738px #FFF , 1068px 1240px #FFF , 772px 970px #FFF , 31px 1289px #FFF , 571px 1415px #FFF , 236px 1068px #FFF , 325px 1387px #FFF , 838px 389px #FFF , 760px 521px #FFF , 1237px 1995px #FFF , 1162px 388px #FFF , 1861px 575px #FFF , 1157px 462px #FFF , 1222px 1710px #FFF , 674px 1422px #FFF , 970px 503px #FFF , 848px 205px #FFF , 1388px 1049px #FFF , 733px 675px #FFF , 1525px 1127px #FFF , 1955px 155px #FFF , 15px 166px #FFF , 1738px 365px #FFF , 1197px 1707px #FFF , 770px 1112px #FFF , 1931px 1709px #FFF , 500px 798px #FFF , 1084px 761px #FFF , 604px 1498px #FFF , 753px 1301px #FFF , 941px 969px #FFF , 1630px 1456px #FFF , 173px 287px #FFF , 1951px 568px #FFF , 1401px 1561px #FFF , 13px 888px #FFF , 1419px 487px #FFF , 351px 1844px #FFF , 1314px 1004px #FFF , 1219px 499px #FFF , 786px 625px #FFF , 1875px 391px #FFF , 667px 1813px #FFF , 1535px 954px #FFF , 102px 1228px #FFF , 1885px 625px #FFF , 89px 562px #FFF , 866px 216px #FFF , 473px 691px #FFF , 1724px 284px #FFF , 1234px 1722px #FFF , 594px 520px #FFF , 550px 1671px #FFF , 1286px 33px #FFF , 1259px 991px #FFF , 531px 1318px #FFF , 1382px 1842px #FFF , 1953px 1903px #FFF , 1176px 1328px #FFF , 899px 681px #FFF , 1560px 675px #FFF , 223px 448px #FFF , 149px 1197px #FFF , 1889px 633px #FFF , 303px 220px #FFF , 720px 1911px #FFF , 1341px 1349px #FFF , 1228px 584px #FFF , 99px 1812px #FFF , 1134px 1521px #FFF , 57px 1822px #FFF , 1302px 27px #FFF , 1024px 169px #FFF , 142px 248px #FFF , 392px 1988px #FFF , 263px 211px #FFF , 907px 265px #FFF , 317px 698px #FFF , 1285px 668px #FFF , 1788px 771px #FFF , 782px 1336px #FFF , 916px 1961px #FFF , 1259px 385px #FFF , 1811px 58px #FFF , 935px 1923px #FFF , 270px 184px #FFF , 190px 1705px #FFF , 1059px 1920px #FFF , 1729px 178px #FFF , 1052px 1747px #FFF , 1418px 1118px #FFF , 389px 153px #FFF , 435px 817px #FFF , 1671px 222px #FFF , 632px 1757px #FFF , 1295px 1484px #FFF , 134px 1447px #FFF , 837px 959px #FFF , 1171px 1287px #FFF , 1996px 683px #FFF , 1032px 1851px #FFF , 1282px 1365px #FFF , 1881px 1771px #FFF , 863px 941px #FFF , 1428px 5px #FFF , 213px 496px #FFF , 1997px 1414px #FFF , 28px 1034px #FFF , 437px 1610px #FFF , 1104px 1866px #FFF , 1616px 970px #FFF , 628px 1334px #FFF , 1789px 1793px #FFF , 210px 76px #FFF , 1782px 473px #FFF , 631px 350px #FFF , 1314px 1975px #FFF , 1337px 679px #FFF , 574px 1007px #FFF , 1552px 161px #FFF , 485px 1421px #FFF , 1562px 1207px #FFF , 1793px 528px #FFF , 863px 1577px #FFF , 514px 857px #FFF , 141px 949px #FFF , 779px 1540px #FFF , 160px 357px #FFF , 337px 1130px #FFF , 492px 1365px #FFF , 1083px 974px #FFF , 1790px 404px #FFF , 477px 1190px #FFF , 1125px 367px #FFF , 1454px 1702px #FFF , 1883px 511px #FFF , 1481px 526px #FFF , 1490px 17px #FFF , 1141px 1640px #FFF , 838px 1796px #FFF , 813px 1985px #FFF , 1732px 1750px #FFF , 549px 1899px #FFF , 1298px 1429px #FFF , 1037px 1836px #FFF , 1214px 1409px #FFF , 1697px 1165px #FFF , 184px 1442px #FFF , 1965px 1783px #FFF , 242px 755px #FFF , 1425px 1549px #FFF , 1298px 1834px #FFF , 1958px 1681px #FFF , 829px 862px #FFF , 548px 469px #FFF , 298px 87px #FFF , 132px 1381px #FFF , 1578px 1765px #FFF , 1593px 854px #FFF , 579px 1127px #FFF , 270px 1685px #FFF , 1137px 1841px #FFF , 1209px 191px #FFF , 464px 1803px #FFF , 396px 297px #FFF , 593px 1793px #FFF , 823px 1445px #FFF , 225px 1708px #FFF , 1395px 139px #FFF , 30px 1370px #FFF , 1083px 1731px #FFF , 648px 1726px #FFF , 1245px 1230px #FFF , 1179px 551px #FFF , 547px 494px #FFF , 1479px 699px #FFF , 1444px 416px #FFF , 693px 1980px #FFF , 1764px 1174px #FFF , 97px 1110px #FFF , 646px 723px #FFF , 628px 1267px #FFF , 1663px 1891px #FFF , 885px 142px #FFF , 1847px 384px #FFF;
+  animation: animStar 50s linear infinite;
+}
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 307px 696px #FFF , 833px 888px #FFF , 181px 1467px #FFF , 99px 407px #FFF , 1726px 433px #FFF , 621px 1216px #FFF , 1341px 1312px #FFF , 941px 1463px #FFF , 1104px 1385px #FFF , 221px 1443px #FFF , 799px 1091px #FFF , 453px 1px #FFF , 273px 680px #FFF , 1850px 1915px #FFF , 1377px 1283px #FFF , 931px 1795px #FFF , 1094px 1941px #FFF , 1551px 1357px #FFF , 1313px 902px #FFF , 136px 1294px #FFF , 792px 547px #FFF , 1568px 1424px #FFF , 1028px 336px #FFF , 877px 1155px #FFF , 1704px 1316px #FFF , 560px 1836px #FFF , 318px 1547px #FFF , 1319px 1034px #FFF , 1446px 115px #FFF , 683px 1177px #FFF , 332px 1690px #FFF , 1076px 1776px #FFF , 1392px 1542px #FFF , 1028px 1623px #FFF , 1962px 711px #FFF , 1904px 823px #FFF , 1263px 302px #FFF , 1099px 1221px #FFF , 1829px 1488px #FFF , 80px 1547px #FFF , 379px 133px #FFF , 863px 512px #FFF , 1237px 598px #FFF , 273px 553px #FFF , 740px 1230px #FFF , 1027px 1877px #FFF , 495px 280px #FFF , 1722px 1981px #FFF , 1726px 502px #FFF , 378px 1005px #FFF , 1655px 1020px #FFF , 31px 599px #FFF , 274px 583px #FFF , 1580px 137px #FFF , 1381px 1993px #FFF , 785px 1052px #FFF , 1904px 1320px #FFF , 1704px 1312px #FFF , 1722px 395px #FFF , 465px 1811px #FFF , 1143px 320px #FFF , 6px 8px #FFF , 1518px 816px #FFF , 441px 1790px #FFF , 1510px 642px #FFF , 728px 9px #FFF , 659px 418px #FFF , 1429px 1910px #FFF , 1793px 1575px #FFF , 1991px 750px #FFF , 576px 1948px #FFF , 302px 187px #FFF , 1745px 1849px #FFF , 1034px 959px #FFF , 328px 1854px #FFF , 530px 1088px #FFF , 230px 550px #FFF , 1962px 1083px #FFF , 1814px 951px #FFF , 1422px 135px #FFF , 1514px 298px #FFF , 487px 164px #FFF , 239px 414px #FFF , 1964px 451px #FFF , 1381px 999px #FFF , 1502px 353px #FFF , 1095px 1450px #FFF , 452px 1471px #FFF , 787px 1447px #FFF , 235px 591px #FFF , 1982px 30px #FFF , 1072px 1585px #FFF , 368px 953px #FFF , 808px 1819px #FFF , 187px 741px #FFF , 47px 1305px #FFF , 1848px 213px #FFF , 537px 1818px #FFF , 757px 52px #FFF , 887px 812px #FFF , 1414px 1046px #FFF , 1254px 286px #FFF , 1997px 862px #FFF , 1702px 464px #FFF , 1278px 1698px #FFF , 1413px 1664px #FFF , 924px 1667px #FFF , 1156px 1235px #FFF , 962px 559px #FFF , 1433px 1884px #FFF , 902px 342px #FFF , 693px 118px #FFF , 38px 191px #FFF , 1715px 229px #FFF , 322px 829px #FFF , 485px 792px #FFF , 1699px 500px #FFF , 1004px 949px #FFF , 1942px 1990px #FFF , 1295px 1670px #FFF , 891px 1025px #FFF , 933px 5px #FFF , 293px 581px #FFF , 1033px 773px #FFF , 1717px 708px #FFF , 172px 76px #FFF , 1861px 152px #FFF , 655px 1210px #FFF , 1509px 1680px #FFF , 1294px 583px #FFF , 1658px 838px #FFF , 1636px 307px #FFF , 1588px 463px #FFF , 440px 1528px #FFF , 1926px 1141px #FFF , 1145px 1667px #FFF , 1376px 1834px #FFF , 749px 1243px #FFF , 1794px 1080px #FFF , 1343px 1860px #FFF , 1872px 1913px #FFF , 1285px 688px #FFF , 455px 1617px #FFF , 699px 850px #FFF , 88px 534px #FFF , 141px 117px #FFF , 1412px 772px #FFF , 628px 232px #FFF , 849px 1390px #FFF , 619px 1474px #FFF , 1305px 578px #FFF , 251px 989px #FFF , 810px 711px #FFF , 1656px 143px #FFF , 1713px 1308px #FFF , 1478px 1744px #FFF , 1227px 1019px #FFF , 669px 1886px #FFF , 829px 1591px #FFF , 808px 188px #FFF , 592px 1124px #FFF , 204px 1474px #FFF , 1485px 1589px #FFF , 1007px 492px #FFF , 748px 157px #FFF , 1681px 14px #FFF , 1695px 1544px #FFF , 1538px 1899px #FFF , 1774px 26px #FFF , 488px 475px #FFF , 313px 262px #FFF , 848px 1506px #FFF , 937px 1416px #FFF , 517px 701px #FFF , 995px 1521px #FFF , 535px 228px #FFF , 1171px 480px #FFF , 890px 66px #FFF , 288px 676px #FFF , 1527px 1276px #FFF , 1389px 1235px #FFF , 507px 1232px #FFF , 1436px 1846px #FFF , 1782px 1096px #FFF , 1087px 1076px #FFF , 92px 418px #FFF , 1010px 176px #FFF , 1114px 1099px #FFF , 910px 658px #FFF , 1494px 1632px #FFF , 1188px 1587px #FFF , 112px 464px #FFF , 882px 1271px #FFF , 550px 1378px #FFF , 1339px 1870px #FFF , 1317px 612px #FFF , 470px 285px #FFF , 1174px 1214px #FFF , 1088px 732px #FFF , 481px 1873px #FFF , 457px 226px #FFF , 1670px 1697px #FFF , 1224px 1039px #FFF , 493px 1786px #FFF , 1814px 532px #FFF , 1013px 1480px #FFF , 514px 589px #FFF , 1751px 1137px #FFF , 1872px 1270px #FFF , 1553px 37px #FFF , 567px 920px #FFF , 1097px 1118px #FFF , 694px 795px #FFF , 1464px 1945px #FFF , 1384px 1414px #FFF , 1597px 1161px #FFF , 669px 694px #FFF , 1836px 1855px #FFF , 1135px 483px #FFF , 936px 171px #FFF , 638px 591px #FFF , 720px 878px #FFF , 1596px 1634px #FFF , 768px 130px #FFF , 1300px 1500px #FFF , 1951px 1309px #FFF , 154px 1110px #FFF , 1533px 1896px #FFF , 1898px 1352px #FFF , 82px 276px #FFF , 1226px 1022px #FFF , 1696px 1555px #FFF , 1876px 1973px #FFF , 161px 1717px #FFF , 1723px 360px #FFF , 1259px 1145px #FFF , 1887px 1068px #FFF , 1384px 906px #FFF , 872px 164px #FFF , 1349px 20px #FFF , 1136px 891px #FFF , 493px 1699px #FFF , 77px 489px #FFF , 1577px 660px #FFF , 496px 337px #FFF , 560px 1273px #FFF , 1301px 1592px #FFF , 1167px 1158px #FFF , 646px 1808px #FFF , 1925px 608px #FFF , 1267px 718px #FFF , 1294px 1318px #FFF , 1296px 1805px #FFF , 1122px 1474px #FFF , 1780px 1726px #FFF , 624px 845px #FFF , 1075px 630px #FFF , 1856px 394px #FFF , 712px 538px #FFF , 600px 1380px #FFF , 1943px 1899px #FFF , 938px 1137px #FFF , 1501px 53px #FFF , 1036px 1392px #FFF , 1093px 1153px #FFF , 348px 482px #FFF , 273px 1704px #FFF , 733px 1230px #FFF , 638px 1523px #FFF , 929px 403px #FFF , 459px 537px #FFF , 398px 181px #FFF , 259px 1827px #FFF , 1683px 852px #FFF , 758px 865px #FFF , 11px 447px #FFF , 1135px 1061px #FFF , 1334px 127px #FFF , 1473px 136px #FFF , 1494px 1961px #FFF , 1888px 1659px #FFF , 867px 946px #FFF , 456px 1757px #FFF , 590px 980px #FFF , 864px 349px #FFF , 1104px 1443px #FFF , 84px 1010px #FFF , 1231px 331px #FFF , 928px 1344px #FFF , 309px 1827px #FFF , 1694px 464px #FFF , 1747px 1695px #FFF , 1185px 1914px #FFF , 1505px 1528px #FFF , 660px 1879px #FFF , 924px 1257px #FFF , 419px 1972px #FFF , 1897px 1528px #FFF , 1634px 1155px #FFF , 1958px 1643px #FFF , 855px 751px #FFF , 478px 149px #FFF , 79px 477px #FFF , 1725px 730px #FFF , 778px 1169px #FFF , 1583px 1878px #FFF , 991px 524px #FFF , 1102px 1514px #FFF , 766px 1367px #FFF , 250px 1756px #FFF , 1253px 1875px #FFF , 503px 128px #FFF , 1286px 1034px #FFF , 574px 1617px #FFF , 512px 923px #FFF , 1206px 1811px #FFF , 1702px 609px #FFF , 379px 1815px #FFF , 728px 1793px #FFF , 135px 1184px #FFF , 1424px 1855px #FFF , 1834px 42px #FFF , 1856px 801px #FFF , 1035px 807px #FFF , 1043px 172px #FFF , 1694px 1999px #FFF , 1602px 1317px #FFF , 1163px 1433px #FFF , 342px 814px #FFF , 1803px 722px #FFF , 1492px 1594px #FFF , 1819px 26px #FFF , 1581px 1563px #FFF , 728px 429px #FFF , 493px 1844px #FFF , 1069px 143px #FFF , 1812px 439px #FFF , 331px 882px #FFF , 1090px 1104px #FFF , 458px 1290px #FFF , 830px 671px #FFF , 97px 170px #FFF , 1879px 481px #FFF , 986px 389px #FFF , 1093px 1934px #FFF , 1964px 1410px #FFF , 408px 1797px #FFF , 989px 1330px #FFF , 1855px 1670px #FFF , 1674px 882px #FFF , 590px 558px #FFF , 779px 1240px #FFF , 1929px 685px #FFF , 1138px 1246px #FFF , 1349px 1775px #FFF , 85px 1857px #FFF , 1052px 59px #FFF , 224px 1716px #FFF , 420px 148px #FFF , 708px 224px #FFF , 556px 1389px #FFF , 919px 1115px #FFF , 1471px 280px #FFF , 520px 1184px #FFF , 24px 374px #FFF , 1167px 540px #FFF , 1318px 1204px #FFF , 1672px 953px #FFF , 1001px 123px #FFF , 1494px 297px #FFF , 440px 543px #FFF , 1259px 201px #FFF , 54px 1526px #FFF , 1470px 91px #FFF , 763px 392px #FFF , 455px 690px #FFF , 336px 924px #FFF , 850px 1485px #FFF , 1450px 783px #FFF , 68px 1668px #FFF , 8px 1094px #FFF , 15px 1339px #FFF , 13px 1356px #FFF , 1594px 1550px #FFF , 1919px 731px #FFF , 921px 1508px #FFF , 1081px 1177px #FFF , 619px 1105px #FFF , 362px 1095px #FFF , 231px 1049px #FFF , 1700px 174px #FFF , 860px 1971px #FFF , 69px 1530px #FFF , 1535px 775px #FFF , 350px 699px #FFF , 899px 436px #FFF , 790px 1032px #FFF , 1008px 1402px #FFF , 1910px 1010px #FFF , 61px 122px #FFF , 139px 548px #FFF , 1316px 1754px #FFF , 1574px 247px #FFF , 335px 200px #FFF , 1545px 1564px #FFF , 1362px 474px #FFF , 777px 1177px #FFF , 119px 696px #FFF , 443px 784px #FFF , 855px 563px #FFF , 362px 190px #FFF , 818px 18px #FFF , 1228px 903px #FFF , 597px 1944px #FFF , 1117px 1837px #FFF , 1098px 889px #FFF , 1593px 164px #FFF , 223px 1536px #FFF , 185px 621px #FFF , 155px 1838px #FFF , 1883px 1998px #FFF , 1415px 479px #FFF , 1104px 206px #FFF , 1067px 1999px #FFF , 869px 998px #FFF , 1435px 132px #FFF , 771px 1739px #FFF , 78px 1513px #FFF , 1162px 896px #FFF , 736px 1006px #FFF , 1036px 583px #FFF , 191px 1054px #FFF , 1052px 1369px #FFF , 871px 48px #FFF , 1660px 300px #FFF , 1797px 575px #FFF , 1983px 1386px #FFF , 1740px 1657px #FFF , 1788px 780px #FFF , 1351px 1504px #FFF , 1775px 1689px #FFF , 1492px 1182px #FFF , 815px 110px #FFF , 324px 827px #FFF , 1524px 1768px #FFF , 1642px 975px #FFF , 710px 685px #FFF , 405px 651px #FFF , 1716px 360px #FFF , 1514px 614px #FFF , 841px 1752px #FFF , 18px 1880px #FFF , 1265px 1823px #FFF , 706px 1199px #FFF , 1448px 591px #FFF , 1506px 1827px #FFF , 830px 1073px #FFF , 12px 1933px #FFF , 866px 715px #FFF , 951px 15px #FFF , 1488px 305px #FFF , 281px 1435px #FFF , 1935px 128px #FFF , 1320px 781px #FFF , 932px 1244px #FFF , 1967px 1627px #FFF , 882px 1785px #FFF , 1912px 1749px #FFF , 1536px 1683px #FFF , 886px 1459px #FFF , 85px 1089px #FFF , 1014px 1863px #FFF , 840px 1788px #FFF , 56px 285px #FFF , 707px 1248px #FFF , 867px 1221px #FFF , 1264px 827px #FFF , 965px 1972px #FFF , 1136px 1913px #FFF , 1241px 1503px #FFF , 491px 580px #FFF , 120px 773px #FFF , 1910px 111px #FFF , 1295px 1652px #FFF , 1426px 207px #FFF , 552px 1887px #FFF , 352px 577px #FFF , 1947px 220px #FFF , 1028px 1573px #FFF , 1861px 1237px #FFF , 182px 426px #FFF , 1558px 399px #FFF , 836px 1548px #FFF , 1782px 1119px #FFF , 399px 961px #FFF , 252px 829px #FFF , 56px 518px #FFF , 894px 323px #FFF , 414px 993px #FFF , 792px 908px #FFF , 1498px 886px #FFF , 1403px 1328px #FFF , 1249px 1801px #FFF , 867px 946px #FFF , 977px 962px #FFF , 1146px 569px #FFF , 1744px 1728px #FFF , 425px 212px #FFF , 899px 49px #FFF , 1405px 1962px #FFF , 1723px 78px #FFF , 1800px 1337px #FFF , 257px 80px #FFF , 1835px 246px #FFF , 325px 1144px #FFF , 1516px 738px #FFF , 1068px 1240px #FFF , 772px 970px #FFF , 31px 1289px #FFF , 571px 1415px #FFF , 236px 1068px #FFF , 325px 1387px #FFF , 838px 389px #FFF , 760px 521px #FFF , 1237px 1995px #FFF , 1162px 388px #FFF , 1861px 575px #FFF , 1157px 462px #FFF , 1222px 1710px #FFF , 674px 1422px #FFF , 970px 503px #FFF , 848px 205px #FFF , 1388px 1049px #FFF , 733px 675px #FFF , 1525px 1127px #FFF , 1955px 155px #FFF , 15px 166px #FFF , 1738px 365px #FFF , 1197px 1707px #FFF , 770px 1112px #FFF , 1931px 1709px #FFF , 500px 798px #FFF , 1084px 761px #FFF , 604px 1498px #FFF , 753px 1301px #FFF , 941px 969px #FFF , 1630px 1456px #FFF , 173px 287px #FFF , 1951px 568px #FFF , 1401px 1561px #FFF , 13px 888px #FFF , 1419px 487px #FFF , 351px 1844px #FFF , 1314px 1004px #FFF , 1219px 499px #FFF , 786px 625px #FFF , 1875px 391px #FFF , 667px 1813px #FFF , 1535px 954px #FFF , 102px 1228px #FFF , 1885px 625px #FFF , 89px 562px #FFF , 866px 216px #FFF , 473px 691px #FFF , 1724px 284px #FFF , 1234px 1722px #FFF , 594px 520px #FFF , 550px 1671px #FFF , 1286px 33px #FFF , 1259px 991px #FFF , 531px 1318px #FFF , 1382px 1842px #FFF , 1953px 1903px #FFF , 1176px 1328px #FFF , 899px 681px #FFF , 1560px 675px #FFF , 223px 448px #FFF , 149px 1197px #FFF , 1889px 633px #FFF , 303px 220px #FFF , 720px 1911px #FFF , 1341px 1349px #FFF , 1228px 584px #FFF , 99px 1812px #FFF , 1134px 1521px #FFF , 57px 1822px #FFF , 1302px 27px #FFF , 1024px 169px #FFF , 142px 248px #FFF , 392px 1988px #FFF , 263px 211px #FFF , 907px 265px #FFF , 317px 698px #FFF , 1285px 668px #FFF , 1788px 771px #FFF , 782px 1336px #FFF , 916px 1961px #FFF , 1259px 385px #FFF , 1811px 58px #FFF , 935px 1923px #FFF , 270px 184px #FFF , 190px 1705px #FFF , 1059px 1920px #FFF , 1729px 178px #FFF , 1052px 1747px #FFF , 1418px 1118px #FFF , 389px 153px #FFF , 435px 817px #FFF , 1671px 222px #FFF , 632px 1757px #FFF , 1295px 1484px #FFF , 134px 1447px #FFF , 837px 959px #FFF , 1171px 1287px #FFF , 1996px 683px #FFF , 1032px 1851px #FFF , 1282px 1365px #FFF , 1881px 1771px #FFF , 863px 941px #FFF , 1428px 5px #FFF , 213px 496px #FFF , 1997px 1414px #FFF , 28px 1034px #FFF , 437px 1610px #FFF , 1104px 1866px #FFF , 1616px 970px #FFF , 628px 1334px #FFF , 1789px 1793px #FFF , 210px 76px #FFF , 1782px 473px #FFF , 631px 350px #FFF , 1314px 1975px #FFF , 1337px 679px #FFF , 574px 1007px #FFF , 1552px 161px #FFF , 485px 1421px #FFF , 1562px 1207px #FFF , 1793px 528px #FFF , 863px 1577px #FFF , 514px 857px #FFF , 141px 949px #FFF , 779px 1540px #FFF , 160px 357px #FFF , 337px 1130px #FFF , 492px 1365px #FFF , 1083px 974px #FFF , 1790px 404px #FFF , 477px 1190px #FFF , 1125px 367px #FFF , 1454px 1702px #FFF , 1883px 511px #FFF , 1481px 526px #FFF , 1490px 17px #FFF , 1141px 1640px #FFF , 838px 1796px #FFF , 813px 1985px #FFF , 1732px 1750px #FFF , 549px 1899px #FFF , 1298px 1429px #FFF , 1037px 1836px #FFF , 1214px 1409px #FFF , 1697px 1165px #FFF , 184px 1442px #FFF , 1965px 1783px #FFF , 242px 755px #FFF , 1425px 1549px #FFF , 1298px 1834px #FFF , 1958px 1681px #FFF , 829px 862px #FFF , 548px 469px #FFF , 298px 87px #FFF , 132px 1381px #FFF , 1578px 1765px #FFF , 1593px 854px #FFF , 579px 1127px #FFF , 270px 1685px #FFF , 1137px 1841px #FFF , 1209px 191px #FFF , 464px 1803px #FFF , 396px 297px #FFF , 593px 1793px #FFF , 823px 1445px #FFF , 225px 1708px #FFF , 1395px 139px #FFF , 30px 1370px #FFF , 1083px 1731px #FFF , 648px 1726px #FFF , 1245px 1230px #FFF , 1179px 551px #FFF , 547px 494px #FFF , 1479px 699px #FFF , 1444px 416px #FFF , 693px 1980px #FFF , 1764px 1174px #FFF , 97px 1110px #FFF , 646px 723px #FFF , 628px 1267px #FFF , 1663px 1891px #FFF , 885px 142px #FFF , 1847px 384px #FFF;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 463px 677px #FFF , 1951px 506px #FFF , 1265px 889px #FFF , 1319px 1303px #FFF , 1148px 119px #FFF , 1376px 541px #FFF , 169px 1686px #FFF , 1046px 944px #FFF , 1661px 899px #FFF , 142px 826px #FFF , 209px 10px #FFF , 1204px 781px #FFF , 1230px 267px #FFF , 1958px 529px #FFF , 185px 814px #FFF , 1041px 638px #FFF , 1289px 469px #FFF , 1872px 1618px #FFF , 1626px 890px #FFF , 1649px 1797px #FFF , 159px 785px #FFF , 1134px 436px #FFF , 278px 648px #FFF , 500px 318px #FFF , 1503px 1704px #FFF , 1798px 663px #FFF , 1325px 186px #FFF , 1876px 752px #FFF , 1515px 1138px #FFF , 930px 1545px #FFF , 1455px 1065px #FFF , 1873px 1386px #FFF , 1698px 1595px #FFF , 921px 1285px #FFF , 588px 1332px #FFF , 665px 184px #FFF , 1047px 1535px #FFF , 988px 1421px #FFF , 1926px 366px #FFF , 744px 779px #FFF , 965px 612px #FFF , 1474px 1285px #FFF , 1420px 1706px #FFF , 869px 75px #FFF , 389px 876px #FFF , 386px 883px #FFF , 760px 1072px #FFF , 1770px 838px #FFF , 307px 602px #FFF , 1300px 830px #FFF , 365px 651px #FFF , 916px 1543px #FFF , 770px 736px #FFF , 1742px 1845px #FFF , 391px 1206px #FFF , 1284px 1395px #FFF , 471px 1095px #FFF , 60px 216px #FFF , 242px 1533px #FFF , 1428px 1974px #FFF , 530px 414px #FFF , 1129px 73px #FFF , 902px 498px #FFF , 969px 1052px #FFF , 1480px 1827px #FFF , 1837px 1178px #FFF , 39px 1726px #FFF , 1479px 512px #FFF , 1075px 745px #FFF , 765px 1880px #FFF , 4px 1493px #FFF , 434px 1308px #FFF , 1194px 1681px #FFF , 295px 276px #FFF , 1913px 763px #FFF , 1793px 1944px #FFF , 1285px 571px #FFF , 499px 1954px #FFF , 1448px 377px #FFF , 1165px 1693px #FFF , 762px 968px #FFF , 329px 1196px #FFF , 1540px 100px #FFF , 1595px 1479px #FFF , 737px 1744px #FFF , 196px 601px #FFF , 1579px 1330px #FFF , 428px 1536px #FFF , 1304px 239px #FFF , 603px 1599px #FFF , 1905px 826px #FFF , 924px 1876px #FFF , 1530px 1206px #FFF , 1280px 1014px #FFF , 1275px 885px #FFF , 412px 230px #FFF , 1100px 1180px #FFF , 400px 1197px #FFF , 92px 1693px #FFF , 1348px 735px #FFF , 58px 112px #FFF , 1391px 1773px #FFF , 709px 980px #FFF , 1664px 798px #FFF , 295px 1007px #FFF , 781px 1684px #FFF , 1278px 50px #FFF , 1859px 1887px #FFF , 1054px 1497px #FFF , 134px 549px #FFF , 1420px 1172px #FFF , 1460px 371px #FFF , 904px 1171px #FFF , 1442px 47px #FFF , 744px 657px #FFF , 1669px 544px #FFF , 468px 1335px #FFF , 1708px 347px #FFF , 1658px 767px #FFF , 936px 1268px #FFF , 1922px 355px #FFF , 38px 438px #FFF , 688px 255px #FFF , 1686px 1494px #FFF , 659px 109px #FFF , 253px 1666px #FFF , 266px 707px #FFF , 440px 1320px #FFF , 1764px 943px #FFF , 861px 623px #FFF , 1755px 1278px #FFF , 1310px 1352px #FFF , 757px 1120px #FFF , 1667px 211px #FFF , 1078px 263px #FFF , 1703px 529px #FFF , 1191px 1802px #FFF , 750px 1529px #FFF , 595px 1584px #FFF , 888px 1526px #FFF , 722px 1093px #FFF , 1631px 1704px #FFF , 183px 1424px #FFF , 163px 1501px #FFF , 1187px 240px #FFF , 1410px 1641px #FFF , 1575px 1002px #FFF , 1941px 1720px #FFF , 764px 278px #FFF , 661px 1383px #FFF , 1681px 632px #FFF , 1018px 437px #FFF , 521px 112px #FFF , 734px 229px #FFF , 22px 1433px #FFF , 1955px 838px #FFF , 982px 282px #FFF , 1406px 606px #FFF , 988px 1975px #FFF , 735px 1168px #FFF , 1234px 935px #FFF , 426px 384px #FFF , 1839px 149px #FFF , 1971px 1360px #FFF , 1667px 184px #FFF , 173px 718px #FFF , 305px 396px #FFF , 1934px 451px #FFF , 102px 1229px #FFF , 1178px 1441px #FFF , 871px 1219px #FFF , 850px 1244px #FFF , 1743px 1310px #FFF , 1586px 1793px #FFF , 409px 232px #FFF , 1601px 126px #FFF , 1669px 1836px #FFF , 1720px 189px #FFF , 1642px 376px #FFF , 293px 1764px #FFF , 850px 1574px #FFF , 1722px 695px #FFF , 405px 976px #FFF , 803px 1225px #FFF , 1953px 767px #FFF , 52px 1263px #FFF , 90px 829px #FFF , 1764px 1621px #FFF , 1866px 994px #FFF , 675px 1540px #FFF , 816px 232px #FFF , 268px 1961px #FFF , 146px 421px #FFF , 467px 1173px #FFF , 624px 1531px #FFF , 1635px 286px #FFF , 1479px 1163px #FFF , 1989px 1512px #FFF , 1479px 1423px #FFF , 1037px 1629px #FFF;
+  animation: animStar 100s linear infinite;
+}
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 463px 677px #FFF , 1951px 506px #FFF , 1265px 889px #FFF , 1319px 1303px #FFF , 1148px 119px #FFF , 1376px 541px #FFF , 169px 1686px #FFF , 1046px 944px #FFF , 1661px 899px #FFF , 142px 826px #FFF , 209px 10px #FFF , 1204px 781px #FFF , 1230px 267px #FFF , 1958px 529px #FFF , 185px 814px #FFF , 1041px 638px #FFF , 1289px 469px #FFF , 1872px 1618px #FFF , 1626px 890px #FFF , 1649px 1797px #FFF , 159px 785px #FFF , 1134px 436px #FFF , 278px 648px #FFF , 500px 318px #FFF , 1503px 1704px #FFF , 1798px 663px #FFF , 1325px 186px #FFF , 1876px 752px #FFF , 1515px 1138px #FFF , 930px 1545px #FFF , 1455px 1065px #FFF , 1873px 1386px #FFF , 1698px 1595px #FFF , 921px 1285px #FFF , 588px 1332px #FFF , 665px 184px #FFF , 1047px 1535px #FFF , 988px 1421px #FFF , 1926px 366px #FFF , 744px 779px #FFF , 965px 612px #FFF , 1474px 1285px #FFF , 1420px 1706px #FFF , 869px 75px #FFF , 389px 876px #FFF , 386px 883px #FFF , 760px 1072px #FFF , 1770px 838px #FFF , 307px 602px #FFF , 1300px 830px #FFF , 365px 651px #FFF , 916px 1543px #FFF , 770px 736px #FFF , 1742px 1845px #FFF , 391px 1206px #FFF , 1284px 1395px #FFF , 471px 1095px #FFF , 60px 216px #FFF , 242px 1533px #FFF , 1428px 1974px #FFF , 530px 414px #FFF , 1129px 73px #FFF , 902px 498px #FFF , 969px 1052px #FFF , 1480px 1827px #FFF , 1837px 1178px #FFF , 39px 1726px #FFF , 1479px 512px #FFF , 1075px 745px #FFF , 765px 1880px #FFF , 4px 1493px #FFF , 434px 1308px #FFF , 1194px 1681px #FFF , 295px 276px #FFF , 1913px 763px #FFF , 1793px 1944px #FFF , 1285px 571px #FFF , 499px 1954px #FFF , 1448px 377px #FFF , 1165px 1693px #FFF , 762px 968px #FFF , 329px 1196px #FFF , 1540px 100px #FFF , 1595px 1479px #FFF , 737px 1744px #FFF , 196px 601px #FFF , 1579px 1330px #FFF , 428px 1536px #FFF , 1304px 239px #FFF , 603px 1599px #FFF , 1905px 826px #FFF , 924px 1876px #FFF , 1530px 1206px #FFF , 1280px 1014px #FFF , 1275px 885px #FFF , 412px 230px #FFF , 1100px 1180px #FFF , 400px 1197px #FFF , 92px 1693px #FFF , 1348px 735px #FFF , 58px 112px #FFF , 1391px 1773px #FFF , 709px 980px #FFF , 1664px 798px #FFF , 295px 1007px #FFF , 781px 1684px #FFF , 1278px 50px #FFF , 1859px 1887px #FFF , 1054px 1497px #FFF , 134px 549px #FFF , 1420px 1172px #FFF , 1460px 371px #FFF , 904px 1171px #FFF , 1442px 47px #FFF , 744px 657px #FFF , 1669px 544px #FFF , 468px 1335px #FFF , 1708px 347px #FFF , 1658px 767px #FFF , 936px 1268px #FFF , 1922px 355px #FFF , 38px 438px #FFF , 688px 255px #FFF , 1686px 1494px #FFF , 659px 109px #FFF , 253px 1666px #FFF , 266px 707px #FFF , 440px 1320px #FFF , 1764px 943px #FFF , 861px 623px #FFF , 1755px 1278px #FFF , 1310px 1352px #FFF , 757px 1120px #FFF , 1667px 211px #FFF , 1078px 263px #FFF , 1703px 529px #FFF , 1191px 1802px #FFF , 750px 1529px #FFF , 595px 1584px #FFF , 888px 1526px #FFF , 722px 1093px #FFF , 1631px 1704px #FFF , 183px 1424px #FFF , 163px 1501px #FFF , 1187px 240px #FFF , 1410px 1641px #FFF , 1575px 1002px #FFF , 1941px 1720px #FFF , 764px 278px #FFF , 661px 1383px #FFF , 1681px 632px #FFF , 1018px 437px #FFF , 521px 112px #FFF , 734px 229px #FFF , 22px 1433px #FFF , 1955px 838px #FFF , 982px 282px #FFF , 1406px 606px #FFF , 988px 1975px #FFF , 735px 1168px #FFF , 1234px 935px #FFF , 426px 384px #FFF , 1839px 149px #FFF , 1971px 1360px #FFF , 1667px 184px #FFF , 173px 718px #FFF , 305px 396px #FFF , 1934px 451px #FFF , 102px 1229px #FFF , 1178px 1441px #FFF , 871px 1219px #FFF , 850px 1244px #FFF , 1743px 1310px #FFF , 1586px 1793px #FFF , 409px 232px #FFF , 1601px 126px #FFF , 1669px 1836px #FFF , 1720px 189px #FFF , 1642px 376px #FFF , 293px 1764px #FFF , 850px 1574px #FFF , 1722px 695px #FFF , 405px 976px #FFF , 803px 1225px #FFF , 1953px 767px #FFF , 52px 1263px #FFF , 90px 829px #FFF , 1764px 1621px #FFF , 1866px 994px #FFF , 675px 1540px #FFF , 816px 232px #FFF , 268px 1961px #FFF , 146px 421px #FFF , 467px 1173px #FFF , 624px 1531px #FFF , 1635px 286px #FFF , 1479px 1163px #FFF , 1989px 1512px #FFF , 1479px 1423px #FFF , 1037px 1629px #FFF;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 877px 1712px #FFF , 1126px 1021px #FFF , 1709px 1667px #FFF , 655px 203px #FFF , 908px 1342px #FFF , 485px 1576px #FFF , 796px 1455px #FFF , 485px 1179px #FFF , 1694px 1212px #FFF , 969px 261px #FFF , 926px 1474px #FFF , 1842px 577px #FFF , 69px 648px #FFF , 1567px 1535px #FFF , 247px 534px #FFF , 1416px 669px #FFF , 714px 946px #FFF , 1390px 117px #FFF , 696px 1123px #FFF , 1506px 1913px #FFF , 1882px 519px #FFF , 781px 1318px #FFF , 1483px 939px #FFF , 1067px 1837px #FFF , 102px 144px #FFF , 295px 1601px #FFF , 955px 4px #FFF , 520px 1348px #FFF , 901px 1910px #FFF , 1630px 282px #FFF , 698px 1352px #FFF , 1175px 1102px #FFF , 1421px 757px #FFF , 835px 408px #FFF , 1844px 450px #FFF , 576px 874px #FFF , 875px 1469px #FFF , 883px 479px #FFF , 1748px 1757px #FFF , 1327px 1059px #FFF , 773px 1677px #FFF , 1829px 492px #FFF , 1888px 1138px #FFF , 1866px 1290px #FFF , 77px 541px #FFF , 49px 1595px #FFF , 1685px 1657px #FFF , 593px 706px #FFF , 1114px 1641px #FFF , 1322px 32px #FFF , 1593px 1971px #FFF , 1162px 1310px #FFF , 347px 600px #FFF , 453px 943px #FFF , 1159px 221px #FFF , 1083px 999px #FFF , 1812px 1331px #FFF , 1555px 1864px #FFF , 1637px 1010px #FFF , 791px 955px #FFF , 161px 892px #FFF , 969px 1977px #FFF , 1710px 1421px #FFF , 821px 60px #FFF , 1814px 1429px #FFF , 1992px 935px #FFF , 1700px 1px #FFF , 214px 1542px #FFF , 236px 415px #FFF , 1239px 940px #FFF , 12px 1780px #FFF , 1719px 1348px #FFF , 886px 572px #FFF , 1621px 1558px #FFF , 702px 1094px #FFF , 22px 1573px #FFF , 522px 1885px #FFF , 1648px 85px #FFF , 1276px 1664px #FFF , 285px 1732px #FFF , 1809px 998px #FFF , 1785px 1523px #FFF , 387px 1761px #FFF , 502px 347px #FFF , 1630px 238px #FFF , 261px 1803px #FFF , 440px 910px #FFF , 461px 989px #FFF , 1929px 491px #FFF , 469px 701px #FFF , 161px 1407px #FFF , 1252px 947px #FFF , 529px 478px #FFF , 432px 2000px #FFF , 290px 1436px #FFF , 1144px 901px #FFF , 1102px 1765px #FFF , 131px 116px #FFF , 315px 102px #FFF , 1796px 1257px #FFF;
+  animation: animStar 150s linear infinite;
+}
+#stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 877px 1712px #FFF , 1126px 1021px #FFF , 1709px 1667px #FFF , 655px 203px #FFF , 908px 1342px #FFF , 485px 1576px #FFF , 796px 1455px #FFF , 485px 1179px #FFF , 1694px 1212px #FFF , 969px 261px #FFF , 926px 1474px #FFF , 1842px 577px #FFF , 69px 648px #FFF , 1567px 1535px #FFF , 247px 534px #FFF , 1416px 669px #FFF , 714px 946px #FFF , 1390px 117px #FFF , 696px 1123px #FFF , 1506px 1913px #FFF , 1882px 519px #FFF , 781px 1318px #FFF , 1483px 939px #FFF , 1067px 1837px #FFF , 102px 144px #FFF , 295px 1601px #FFF , 955px 4px #FFF , 520px 1348px #FFF , 901px 1910px #FFF , 1630px 282px #FFF , 698px 1352px #FFF , 1175px 1102px #FFF , 1421px 757px #FFF , 835px 408px #FFF , 1844px 450px #FFF , 576px 874px #FFF , 875px 1469px #FFF , 883px 479px #FFF , 1748px 1757px #FFF , 1327px 1059px #FFF , 773px 1677px #FFF , 1829px 492px #FFF , 1888px 1138px #FFF , 1866px 1290px #FFF , 77px 541px #FFF , 49px 1595px #FFF , 1685px 1657px #FFF , 593px 706px #FFF , 1114px 1641px #FFF , 1322px 32px #FFF , 1593px 1971px #FFF , 1162px 1310px #FFF , 347px 600px #FFF , 453px 943px #FFF , 1159px 221px #FFF , 1083px 999px #FFF , 1812px 1331px #FFF , 1555px 1864px #FFF , 1637px 1010px #FFF , 791px 955px #FFF , 161px 892px #FFF , 969px 1977px #FFF , 1710px 1421px #FFF , 821px 60px #FFF , 1814px 1429px #FFF , 1992px 935px #FFF , 1700px 1px #FFF , 214px 1542px #FFF , 236px 415px #FFF , 1239px 940px #FFF , 12px 1780px #FFF , 1719px 1348px #FFF , 886px 572px #FFF , 1621px 1558px #FFF , 702px 1094px #FFF , 22px 1573px #FFF , 522px 1885px #FFF , 1648px 85px #FFF , 1276px 1664px #FFF , 285px 1732px #FFF , 1809px 998px #FFF , 1785px 1523px #FFF , 387px 1761px #FFF , 502px 347px #FFF , 1630px 238px #FFF , 261px 1803px #FFF , 440px 910px #FFF , 461px 989px #FFF , 1929px 491px #FFF , 469px 701px #FFF , 161px 1407px #FFF , 1252px 947px #FFF , 529px 478px #FFF , 432px 2000px #FFF , 290px 1436px #FFF , 1144px 901px #FFF , 1102px 1765px #FFF , 131px 116px #FFF , 315px 102px #FFF , 1796px 1257px #FFF;
+}
+
+#title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  margin-top: -60px;
+  padding-left: 10px;
+}
+#title span {
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+
+
+.line_countimg{
+	margin:0;
+	width:100%;height:0px;
+	border-top:1px solid #555;
+	margin-right:auto;margin-left:auto;
+}
+@media only screen and (max-width:640px) {
+	.presale_mdtxt>div.btn-box.web {
+		display:none !important;
+	}
+	.pre-container>.btn-box.mob {
+		display:flex !important;
+		flex-wrap:wrap;
+		flex-direction:column;
+	}
+	.info-ios {
+		width:100%;
+	}
+	.pre-container {
+		width:calc(100% - 50px) !important;
+	}
+}
+.pre-container {
+	width:820px;
+	height:auto;
+	display:block;
+	margin-left:auto;margin-right:auto;
+}
+.presale_mdtxt>div {
+	display:inline-block;
+	width:auto;
+	vertical-align:top;
+}
+.presale_mdtxt>div {
+	display:inline-block;
+	width:auto;
+	vertical-align:top;
+}
+.presale_mdtxt>div.line-short {
+	display:inline-block;
+	width:40px;
+	margin-left:20px;margin-right:20px;
+	padding:0px;margin-top:35px;
+	vertical-align: middle;
+	border-color:#555;
+}
+.presale_mdtxt>div>.subtitle {
+	font-size:12px;
+	color:#999;
+	font-weight:400;
+}
+
+.presale_mdtxt>div.btn-box {
+	float:right;
+}
+.time-box {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+#day2 {
+	font-size:55px;
+}
+.presale_mdtxt>div>p>span {
+	font-size:18px;
+	color:#777;margin-left:10px;
+	font-weight:500;
+}
+.btn-box.mob {
+	display:none;
+}
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet"/>
+  <!-- Banner Section -->
+  <div id="con-banner">
+   <div id="main-con-banner-inner">
+    <!-- presale banner -->
+    <!-- Modified by Dusu Park on 2018-04-20 -->
+    <!-- main banner -->
+    <!--Added by yoon on 2018-10-22 _particles js-->
+    <div id="s_banner_wrap">
+     <ul class="bxslider">
+      <li class="banner_01">
+       <div id="stars">
+       </div>
+       <div id="stars2">
+       </div>
+       <div id="stars3">
+       </div>
+       <div class="title-warp">
+        <div class="t-md">
+         在新的通用网络上连
+        </div>
+        <div class="t-big">
+         接分布式超级计算平台
+        </div>
+        <div class="t-md">
+         CONUN是什么？
+        </div>
+        <div class="t-sm">
+         CONUN是基于block chain的分布式超级计算平台。
+         <br/>
+         通过分享参与者的个人电脑和智能手机的闲置资源,
+         <br/>
+         处理高性能计算资源的一个服务平台。
+        </div>
+       </div>
+      </li>
+      <li class="banner_02">
+       <div class="title-warp">
+        <div id="stars">
+        </div>
+        <div id="stars2">
+        </div>
+        <div id="stars3">
+        </div>
+        <div class="t-md">
+         在新的通用网络上连
+        </div>
+        <div class="t-big">
+         接分布式超级计算平台
+        </div>
+        <div class="t-md">
+         CONUN是什么？
+        </div>
+        <div class="t-sm">
+         CONUN是基于block chain的分布式超级计算平台。
+         <br/>
+         通过分享参与者的个人电脑和智能手机的闲置资源,
+         <br/>
+         处理高性能计算资源的一个服务平台。
+        </div>
+       </div>
+      </li>
+     </ul>
+    </div>
+    <!-- . -->
+   </div>
+  </div>
+  <!-- Content Section -->
+  <div id="con-content">
+   <style>
+    .player-wrap {
+		position:absolute;
+		z-index: 9;
+		width: 1024px; height:576px;
+		background-image:url('https://conun.io/img/bg_play.png');
+		background-size:cover;
+		left:0;right:0;margin:auto;
+	}
+	.player-wrap>button {
+		width:117px;height:120px;
+		position: absolute;
+		border: none;outline: none;
+		background-color:transparent;
+		background-image:url('https://conun.io/img/btn_play.png');
+		top:0;left:0;right:0;bottom:0;margin:auto;
+		cursor: pointer;
+	}
+
+
+	.text_warp>.timg>img, .roadmap>.year-box, .serviceplan>.item, .usecases>.text_warp>.scroll>.item {
+
+		transition:all .3s ease-in;
+	}
+	  .roadmapCanvas {
+		position:absolute;
+		top:4400px;
+		z-index:1;
+		opacity:0.5;
+		background:#000;
+	}
+   </style>
+   <script src="https://conun.io/js/jquery.ulslide.js" type="text/javascript">
+   </script>
+   <style type="text/css">
+    #myanmarbtn {
+		/* padding: 15px; */
+		color: #c3ab41;
+		/* background-color: #c3ab41; */
+		border-bottom: 2px solid #c3ab41;
+		display: inline-block;
+		font-weight: bold;margin-top:50px;margin-bottom:50px;
+	}
+	
+	@media only screen and (max-width:640px) {
+		#myanmarbtn {
+			margin-top:10px;margin-bottom:0px;
+		}
+	}
+   </style>
+   <div id="popup-mainpage" style="display: none;">
+    <div>
+     미얀마 페스티벌 참가 확정되신 분들은 아래 링크를 확인 부탁드립니다.
+     <br/>
+     기간 : 12월 03일까지
+     <br/>
+     <a href="https://goo.gl/JvnQEv" id="myanmarbtn" target="_blank">
+      참여 정보 확인 및 비용 안내 (새창)
+     </a>
+    </div>
+   </div>
+   <style type="text/css">
+    #myanmarbtn2 {
+		/* padding: 15px; */
+		color: #c3ab41;
+		/* background-color: #c3ab41; */
+		border-bottom: 2px solid #c3ab41;
+		display: inline-block;
+		font-weight: bold;margin-bottom:20px;
+	}
+	
+	#popup2 span {
+		color:#ff8080;
+		display:block;
+		margin-top:15px;
+	}
+	@media only screen and (max-width:640px) {
+		#myanmarbtn2 {
+			margin-top:10px;margin-bottom:20px;
+		}
+	}
+   </style>
+   <div id="popup-mainpage2" style="display:none;">
+    <div style="display:none;">
+     关于 KYC认证部分咨询比较多,因此留下了公告。
+     <br/>
+     KYC认证中将删除个人记录Ethereum基础地址，通过MY INFO页面预定更改能确认及变更个人钱包地址。
+     <br/>
+     <span>
+      ! HardWallet，imToken， Mew，MetaMask，MyEthWallet)可以使用,交易所钱包是绝对无法使用的。
+      <br/>
+      ! 错误个人以钱包为主输入时,本公司概不负责。
+     </span>
+     <br/>
+     追加咨询及想知道的事项是
+     <br/>
+     <br/>
+     Email :
+     <a class="__cf_email__" data-cfemail="42212d2c372c213102212d2c372c6c212d6c2930" href="/cdn-cgi/l/email-protection">
+      [email protected]
+     </a>
+     或
+     <br/>
+     Kakao Talk (1:1) :
+     <a href="https://open.kakao.com/o/sMX7mk6" id="myanmarbtn2" target="_blank">
+      直走OpenKakao Talk(新窗口)
+     </a>
+     <br/>
+     请通过上述方法联系我。
+    </div>
+    <div>
+     <span style="color:#c3ab41; font-weight:bold; font-size:17px;">
+      ※Caution for CONUN’s Smishing and Fraudulent E-mails※
+     </span>
+     <br/>
+     <br/>
+     On the Sunday of March 15th 2020, 9:15 PM,
+smishing attempts have been found stating to provide “coins and special benefits”.
+     <br/>
+     <span style="text-decoration:underline;">
+      This text message was not an official text message given out by CONUN.
+     </span>
+     <br/>
+     <br/>
+     We ask that you do not open the e-mail,
+     <br/>
+     <span style="text-decoration:underline; color:#c3ab41;">
+      or give out any personal information (private key information etc.) depending on the content of the e-mail.
+     </span>
+     <br/>
+     <br/>
+     Instead, we advise that delete the e-mail
+     <br/>
+     immediately before opening it, and if already opened, please check it over with an anti-virus program (pill, Naver Vaccine, etc.)
+     <br/>
+     <br/>
+     In addition, please alter the password of the e-mail that you commonly utilize, and please keep in mind once again that any action requesting for the address of your personal wallet and private key is an 100% attempt for hacking.
+     <br/>
+     <br/>
+     Similarly, we request that you do not click on any suspicious URLS (links) in suspicious text messages or e-mails are they are usually installed with illegal programs.
+     <br/>
+     <br/>
+     For more detail, please refer to [Notices]
+Thank you for your cooperation.
+     <a href="https://conun.io/notice/view/39" target="_blank">
+      <p style="border-radius: 2px;text-align:center;height:30px; color:white; margin-top:20px; padding:20px; background-color: #c3ab41;align-items: center;
+    display: inline-flex;">
+       Click to go directly to [Notices]
+      </p>
+     </a>
+    </div>
+   </div>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script type="text/javascript">
+    $(document).ready(function(){
+	//openImagePopup('pop_meet-up_181115');
+	//openPopupID2('미얀마 페스티벌 <br id="jpbr">참석자 확인 안내', '#popup-mainpage');
+	//openPopupID3('KYC认证相关公告', '#popup-mainpage2');
+	openPopupID3('NOTICE', '#popup-mainpage2');
+});
+
+//play video
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+	player = new YT.Player('con-player', {
+	  height: '576',
+	   width: '1024',
+	   videoId: 'pwkrE2mpIiA',
+	  events: {
+		'onReady': onPlayerReady,
+		'onStateChange': onPlayerStateChange
+	  }
+	});
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+	event.target.stopVideo();
+
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  var done = false;
+  function onPlayerStateChange(event) {
+	if (event.data == YT.PlayerState.PLAYING && !done) {
+	  //setTimeout(stopVideo, 6000);
+	  done = true;
+	}
+  }
+  function stopVideo() {
+	player.stopVideo();
+  }
+$(document).on('click','#conplaybtn', function(){
+	$('.player-wrap').hide();
+	player.playVideo();
+});
+$(document).ready(function(){
+	//reset position, opacity
+
+	$('.text_warp>.timg>img, .roadmap>.year-box, .text_warp>.scroll>.item').css({
+		'opacity':'0',
+		'margin-top':'30px',
+		'transition':'all .3s ease-in'
+	});
+	$('.serviceplan>.item').css({
+		'opacity':'0',
+		'margin-top':'30px',
+		'transition':'all .3s ease-in'
+	});
+
+	$('#right_layer p').click(function(){
+		$('#right_layer').css({
+			'display':'none'
+		});
+	});
+
+	//scroll animation
+	$(window).on('scroll', function(){
+		var overviewTop = $('#overview').offset().top;
+		var archiTop = $('.architecture').offset().top;
+		var useTop = $('.usecases').offset().top;
+		var serviceTop = $('.serviceplan').offset().top;
+
+		if($(window).scrollTop()>overviewTop - 300){
+			$('#overview>.text_warp>.timg>img').css({
+				'opacity':'1',
+				'margin-top':'10px'
+			});
+		}else{ return false;};
+		if($(window).scrollTop()>archiTop - 500){
+			$('.architecture>.text_warp>.timg>img').css({
+				'opacity':'1',
+				'margin-top':'10px'
+			});
+		}else{ return false;};
+		if($(window).scrollTop()>useTop - 600){
+			$('.usecases>.text_warp>.scroll>.item').eq(0).css({
+				'opacity':'1',
+				'margin-top':'0px'
+			});
+			$('.usecases>.text_warp>.scroll>.item').eq(1).css({
+				'opacity':'1',
+				'transition-delay':'.3s',
+				'margin-top':'0px'
+			});
+			$('.usecases>.text_warp>.scroll>.item').eq(2).css({
+				'opacity':'1',
+				'transition-delay':'.6s',
+				'margin-top':'0px'
+			});
+			$('.usecases>.text_warp>.scroll>.item').eq(3).css({
+				'opacity':'1',
+				'transition-delay':'.8s',
+				'margin-top':'0px'
+			});
+			$('.usecases>.text_warp>.scroll>.item').eq(4).css({
+				'opacity':'1',
+				'transition-delay':'1.1s',
+				'margin-top':'0px'
+			});
+			$('.usecases>.text_warp>.scroll>.item').eq(5).css({
+				'opacity':'1',
+				'transition-delay':'1.2s',
+				'margin-top':'0px'
+			});
+		}else{ return false;};
+		if($(window).scrollTop()>serviceTop - 600){
+			$('.serviceplan>.item').eq(0).css({
+				'opacity':'1',
+				'margin-top':'7px'
+			});
+			$('.serviceplan>.item').eq(1).css({
+				'opacity':'1',
+				'transition-delay':'.3s',
+				'margin-top':'20px'
+			});
+			$('.serviceplan>.item').eq(2).css({
+				'opacity':'1',
+				'margin-top':'7px',
+				'transition-delay':'.2s',
+			});
+			$('.serviceplan>.item').eq(3).css({
+				'opacity':'1',
+				'transition-delay':'.5s',
+				'margin-top':'20px'
+			});
+		}else{ return false;};
+
+		if($(window).width()<640){
+
+			if($(window).scrollTop()>$('#roadmap').offset().top - 300){
+				$('.roadmap>.year-box').eq(0).css({
+					'opacity':'1',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(1).css({
+					'opacity':'1',
+					'transition-delay':'.3s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(2).css({
+					'opacity':'1',
+					'margin-top':'0px',
+					'transition-delay':'.6s',
+				});
+				$('.roadmap>.year-box').eq(3).css({
+					'opacity':'1',
+					'transition-delay':'.8s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(4).css({
+					'opacity':'1',
+					'transition-delay':'1.0s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(5).css({
+					'opacity':'1',
+					'transition-delay':'1.15s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(6).css({
+					'opacity':'1',
+					'transition-delay':'1.3s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(7).css({
+					'opacity':'1',
+					'transition-delay':'1.4s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(8).css({
+					'opacity':'1',
+					'transition-delay':'1.5s',
+					'margin-top':'0px'
+				});
+			}else {
+				return false;
+			}
+
+		}else{
+			if($(window).scrollTop()>$('#roadmap').eq(0).offset().top - 600){
+				$('.roadmap>.year-box').eq(0).css({
+					'opacity':'1',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(1).css({
+					'opacity':'1',
+					'transition-delay':'.3s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(2).css({
+					'opacity':'1',
+					'margin-top':'0px',
+					'transition-delay':'.6s',
+				});
+				$('.roadmap>.year-box').eq(3).css({
+					'opacity':'1',
+					'transition-delay':'.8s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(4).css({
+					'opacity':'1',
+					'transition-delay':'1.0s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(5).css({
+					'opacity':'1',
+					'transition-delay':'1.15s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(6).css({
+					'opacity':'1',
+					'transition-delay':'1.3s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(7).css({
+					'opacity':'1',
+					'transition-delay':'1.4s',
+					'margin-top':'0px'
+				});
+				$('.roadmap>.year-box').eq(8).css({
+					'opacity':'1',
+					'transition-delay':'1.5s',
+					'margin-top':'0px'
+				});
+			}else {
+				return false;
+			}
+		}
+
+	});
+});
+
+$(function() {
+	$('#main_bn').ulslide({
+		statusbar: true,
+		width: 560,        // 슬라이드 배너의 가로크기 조절
+		height: 350,        // 슬라이드 배너의 세로크기 조절
+		affect: 'slide',      // fade로 변경시 서서히 사라지고 나타나는 형태로 바뀜
+		axis: 'x',              // y로 변경시 세로슬라이드로 바뀜
+		navigator: '#main_bn_bt a',
+		duration: 400,        // 배너 바뀌는 속도
+		autoslide: 3500       // 배너 바뀌는 딜레이 조절
+	});
+});
+   </script>
+   <!--
+<div id="right_layer" style="position:fixed; top: 197px; right:1%; ; z-index:1; display:block; width:94px; background:#333; z-index:20;">
+
+<img src="/img/wing_ban.png" onclick="window.open('https://play.google.com/store/apps/details?id=io.conun.conun', 'conunApp')" style="cursor: pointer;" alt="ConunApp download" title="ConunApp download" />
+<p style="color:#fff; text-align: center; background:#333; height:22px;"><a href="#"><span style="color:#fff;" >[关闭]</span></a></p></div>
+
+
+
+-->
+   <!-- 레이어팝업시작 -->
+   <script language="text/javascript">
+    <!--
+function setCookie( name, value, expirehours ) {
+var todayDate = new Date();
+todayDate.setHours( todayDate.getHours() + expirehours );
+document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+function closeWin() {
+document.getElementById('popup').style.display = "none";
+document.getElementById('popup2').style.display = "none";
+document.getElementById('imagepopup').style.display = "none";
+}
+function closeWin() {
+document.getElementById('right_layer').style.display = "none";
+}
+function todaycloseWin() {
+setCookie( "ncookie", "done" , 24 );
+document.getElementById('popup').style.display = "none";
+document.getElementById('popup2').style.display = "none";
+document.getElementById('imagepopup').style.display = "none";
+}
+-->
+   </script>
+   <!--
+<div id="popup" style="position:absolute; left:10%; top:120px;  z-index:101; border:2px solid #333; background-color:#333;">
+ 슬라이드 팝업 시작
+<div id="slidepop">
+
+        <div id="main_bn">
+<!-- Deleted by Dusu Park on 2018-04-28
+            <li><a href="https://conun.io/presale/"><img src="/img/main_popup8.png"></a></li>
+
+            <li><img src="/img/main_popup6.png"></li>
+        </div>-->
+   <!-- Deleted by Dusu Park on 2018-04-28
+        <div id="main_bn_bt">
+            <li><a href="#1"><img src="/img/ico_circle.png"></a></li>
+            <li><a href="#2"><img src="/img/ico_circle.png"></a></li>
+        </div>
+
+ </div>
+  <p style="color:#fff; text-align: left; float:left; height:27px; line-height: 32px; margin-left:6px;"><a href="#" onclick="todaycloseWin();"><span style="color:#fff;" >[今天不要打开]</span></a></p>
+    <p style="color:#fff; text-align: left; float:right;height:27px;line-height: 32px;margin-right:6px;"><a href="#" onclick="closeWin();"><span style="color:#fff;" >[关闭]</span></a></p>
+<map name="pop">
+<area shape="rect" coords="10,349,144,377" href="#" onclick="todaycloseWin();" alt="关闭">
+<area shape="rect" coords="487,352,544,378" href="#" onclick="closeWin();" alt="今天不要打开">
+</map
+
+<!--쿠키 설정
+<script language="JavaScript">
+<!--
+cookiedata = document.cookie;
+if ( cookiedata.indexOf("ncookie=done") < 0 ){
+document.getElementById('popup').style.display = "block";
+} else {
+document.getElementById('popup').style.display = "none";
+}
+
+</script>
+
+</div>-->
+   <!--
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#copyad').on('click',function(){
+			$('input#returnAdr').select();
+			document.execCommand('copy');
+		});
+	});
+</script>
+-->
+   <div class="con-container" id="con-home">
+    <div class="section overview mat60" id="overview">
+     <div class="text_warp">
+      <div class="title">
+       Overview
+      </div>
+      <div class="timg">
+       <img src="/img/overview_2-2_01.png"/>
+      </div>
+      <div class="text">
+       <div class="subtitle">
+        Technology Introduction
+       </div>
+       <div class="subcon">
+        CONUN的分布式计算(DistributedComputing)提供了一个通用计算网络架构平台，支持基于桌面网格计算技术的连接到互联网的个人计算机的分布式处理。
+        <br/>
+        <br/>
+        CONUN由分布式计算资源共享参与者和用户之间的合约运营，并为所有参与者提供开放和公平的利润生态系统。
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="section architecture">
+     <div class="text_warp">
+      <div class="text">
+       <div class="subtitle">
+        Architecture
+       </div>
+       <div class="subcon">
+        CONUN设计一个计算节点，用于控制个人计算机的组件，如CPU，GPU，内存和存储设备，模块化每个节点以及处理应用程序。
+       </div>
+       <div class="title">
+        Grid Computing Core
+       </div>
+       <div class="content">
+        使用计算资源来解决计算任务的分布式计算核心功能
+       </div>
+       <div class="title">
+        Virtual Machine(Docker Container)
+       </div>
+       <div class="content">
+        可在每个计算节点上部署并自动运行应用程序，而不受各个操作系统干扰的独立虚拟处理系统
+       </div>
+       <div class="title">
+        Hybrid Peer-to-Peer Network
+       </div>
+       <div class="content">
+        不区分计算机的类型，充当网络上的所有计算机客户端和服务器
+       </div>
+       <div class="title">
+        Ethereum smart contracts(交易系统)
+       </div>
+       <div class="content">
+        透明而安全地交易，合约并付款而不需中介服务的系统
+       </div>
+      </div>
+      <div class="timg">
+       <img src="/img/overview_2-2_02.png"/>
+       <!--<img src="/img/overview_02-02.png">-->
+      </div>
+     </div>
+    </div>
+    <div class="section usecases">
+     <div class="text_warp">
+      <div class="title">
+       Use Cases
+      </div>
+      <div class="scroll">
+       <div class="item">
+        <div class="item_img">
+         <img src="/img/usecase_2-2_01.png"/>
+        </div>
+        <div class="item_con">
+         <div class="title">
+          科学计算系统
+         </div>
+         <div class="content">
+          可用于执行需要复杂和快速计算性能的科学计算任务。
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="item_img">
+         <img src="/img/usecase_2-2_02.png"/>
+        </div>
+        <div class="item_con">
+         <div class="title">
+          深度学习模型项目
+         </div>
+         <div class="content">
+          在人工智能领域中的卷积神经网络（CNN），循环神经网络（RNN）和强化学习等另一种可通过用户设计的深度学习模型，快速、深度学习算法，造成多样的程序环境。
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="item_img">
+         <img src="/img/usecase_2-2_03.png"/>
+        </div>
+        <div class="item_con">
+         <div class="title">
+          大数据分析项目
+         </div>
+         <div class="content">
+          应用大数据分析技术处理数据挖掘、自然语言处理、模式识别处理等基本方法，处理社交媒体等它应用大数据分析技术处理数据挖掘、自然语言处理、模式识别处理等基本方法，处理社交媒体等文本挖掘、意见挖掘、交网络分析和聚类分析。
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="item_img">
+         <img src="/img/usecase_2-2_04.png"/>
+        </div>
+        <div class="item_con">
+         <div class="title">
+          计算机图形处理项目
+         </div>
+         <div class="content">
+          计算机图形学领域的计算机生成图像（CGI）被用于快速且低成本地处理电影、电视节目、广告、模拟器、模拟和3D计算机图形等项目。
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="item_img">
+         <img src="/img/usecase_2-2_05.png"/>
+        </div>
+        <div class="item_con">
+         <div class="title">
+          生命科学研究项目
+         </div>
+         <div class="content">
+          改善现有治疗疾病和开发新疗法的生物学研究是利用分布式计算的领域之一，可用于大学研究机构和生物技术行业的研究。
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="item_img">
+         <img src="/img/usecase_2-2_06.png"/>
+        </div>
+        <div class="item_con">
+         <div class="title">
+          学术/研究/社会文化热门等服务
+         </div>
+         <div class="content">
+          通过直接或间接参与各种学术研究，社会文化话题等通用网络获得额外利润，同时创造一个通过研究和讨论提高生活质量和发展文化的社区，可以创造各种学术研究，社会和文化问题。
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="bus-bg">
+     <div class="play">
+      <center>
+       <!-- Replaced by Dusu Park on 2018-05-09 -->
+       <div class="player-wrap">
+        <button id="conplaybtn" type="button">
+        </button>
+       </div>
+       <div id="con-player">
+       </div>
+       <!--<iframe id="con-player" width="1024" height="576" src="https://www.youtube.com/embed/XNJA1iQeEqU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+       <!--
+		<iframe width="1200" height="675" src="https://www.youtube.com/embed/sXlFWe9feHM?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+-->
+       <!-- . -->
+      </center>
+     </div>
+     <div class="section serviceplan">
+      <div class="title">
+       Business Plan
+      </div>
+      <div class="item">
+       <div class="title">
+        大型在线购物电子商交易服务
+       </div>
+       <div class="line">
+       </div>
+       <div class="content">
+        在指定的网上商城使用CONUN电子支付服务
+       </div>
+      </div>
+      <div class="item i2">
+       <div class="title">
+        Crypto Currency 交换
+       </div>
+       <div class="line">
+       </div>
+       <div class="content">
+        为了CONUN长期的业务进行持续的营利业务 CONUN Token用交易处附加服务
+       </div>
+      </div>
+      <div class="item">
+       <div class="title">
+        World AD Service
+       </div>
+       <div class="line">
+       </div>
+       <div class="content">
+        允许广告商按照国家和地区与平台成员进行互动，并向参与者提供奖励的服务
+       </div>
+      </div>
+      <div class="item i2">
+       <div class="title">
+        全球问卷调查服务
+       </div>
+       <div class="line">
+       </div>
+       <div class="content">
+        按国家或地区参与对政府、企业、学术政府或私营公司的各种问卷调查参与服务
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="roadmap">
+     <div class="section roadmap" style="z-index:2">
+      <div class="title">
+       Technology &amp; Business Roadmaps
+      </div>
+      <div class="roadmap">
+       <!--2017 year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2017
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2017.一月
+           </div>
+           <div class="subtitle">
+            CONUN 规划
+           </div>
+           <div class="content">
+            提示并开发策划CONUN的技术及事业目标与方向性。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2017.十月
+           </div>
+           <div class="subtitle">
+            交易所(Crypto currency 交换)
+           </div>
+           <div class="content">
+            开始开发数字货币的交易所平台。
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="item">
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2017.十二月
+           </div>
+           <div class="subtitle">
+            交易所 Alpha版本平台
+           </div>
+           <div class="content">
+            开发数字货币交易平台的alpha版本。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+         </div>
+        </div>
+       </div>
+       <!--2018 first half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2018
+          <div>
+           上半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.二月
+           </div>
+           <div class="subtitle">
+            交易所 Network Core
+           </div>
+           <div class="content">
+            应用了各种网络核心及交易系统，例如：比特币、 etherium 、ripple 、Quantum。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.三月
+           </div>
+           <div class="subtitle">
+            CONUN 白皮书
+           </div>
+           <div class="content">
+            介绍CONUN的技术目标和方向，并提供详细的架构和平台介绍。
+           </div>
+           <div class="subtitle">
+            CTM前端
+           </div>
+           <div class="content">
+            数字货币交易所的客户服务开发。
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="item">
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.四月
+           </div>
+           <div class="subtitle">
+            CROWDFUNDING PRE-SALE
+           </div>
+           <div class="content">
+            为了筹集资金，我们正在广泛的进行预售。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.五月
+           </div>
+           <div class="subtitle">
+            平台开发
+           </div>
+           <div class="content">
+            研究和开发定义Conun平台基础的技术。
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!--2018 second half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2018
+          <div>
+           下半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.六月
+           </div>
+           <div class="subtitle">
+            CONUN 平台核心&amp;钱包
+           </div>
+           <div class="content">
+            发布与CONUN数据网络相对应的核心与用户电子钱包。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.十月
+           </div>
+           <div class="subtitle">
+            交易所 BETA测试床
+           </div>
+           <div class="content">
+            测试该平台的beta版本以运行实际的密码交换。 检查交易系统和核心，并努力提高安全性。
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="item">
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.十一月
+           </div>
+           <div class="subtitle">
+            CONUN 智能合约 &amp; 挖掘算法
+           </div>
+           <div class="content">
+            实施智能合约与挖掘算法来管理交易。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2018.十二月
+           </div>
+           <div class="subtitle">
+            Cryptocurrency 交换服务
+           </div>
+           <div class="content">
+            开始数字货币交易所服务。
+           </div>
+           <div class="subtitle">
+            PC 应用程序UI / UX /虚拟机
+           </div>
+           <div class="content">
+            设计个人计算机的应用程序UI与UX，并实施虚拟机系统以使应用程序正常工作。
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!--2019 first half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2019
+          <div>
+           上半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2019.一月
+           </div>
+           <div class="subtitle">
+            Alpha版本部署
+           </div>
+           <div class="content">
+            通过用户应用程序的桌面网格系统及测试网络，设计并开发服务运营的初始平台。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2019.三月
+           </div>
+           <div class="subtitle">
+            P2P 网络架构/桌面网格平台
+           </div>
+           <div class="content">
+            实现基于桌面网格系统和网格系统的核心的P2P网络体系结构。
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="item">
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2019.五月
+           </div>
+           <div class="subtitle">
+            P2P 网络架构
+           </div>
+           <div class="content">
+            设计并实现一个传输和管理应用程序数据的分布式数据存储核心。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+         </div>
+        </div>
+       </div>
+       <!--2019 second half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2019
+          <div>
+           下半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2019.七月
+           </div>
+           <div class="subtitle">
+            智能合约阶段 2
+           </div>
+           <div class="content">
+            将智能合约应用程序添加到分布式计算处理环境。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2019.十月
+           </div>
+           <div class="subtitle">
+            认证 &amp; 安全
+           </div>
+           <div class="content">
+            实施CONUN应用程序的认证方案和信息安全相关任务。
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="item">
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2019.十一月
+           </div>
+           <div class="subtitle">
+            CONUN TASK API
+           </div>
+           <div class="content">
+            实施用户应用程序界面并实现用户平台桌面API。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+         </div>
+        </div>
+       </div>
+       <!--2020 first half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2020
+          <div>
+           上半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2020.五月
+           </div>
+           <div class="subtitle">
+            市场版本部署
+           </div>
+           <div class="content">
+            构成CONUN平台的部署版本以配置实时网络环境，并利用token处理用户的分布式计算请求。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2020.六月
+           </div>
+           <div class="subtitle">
+            应用类别管理t
+           </div>
+           <div class="content">
+            从特定于应用程序的科学计算分类版本和深度运行，逐步在多个领域进行开发和管理。
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!--2021 second half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2020
+          <br/>
+          下半年
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2020.八月
+           </div>
+           <div class="subtitle">
+            安全声誉管理
+           </div>
+           <div class="content">
+            加强CONUN的认证和信息安全级别，并支持社区活动，以有效监控和管理用户参与。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2020.十月
+           </div>
+           <div class="subtitle">
+            CONUN 资源监控
+           </div>
+           <div class="content">
+            CONUN实现可以监控用户的活动及其处理状态的管理系统。
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="item">
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2020.十二月
+           </div>
+           <div class="subtitle">
+            CONUN 社区网络
+           </div>
+           <div class="content">
+            CONUN支持可以创建和运行的社区网络服务。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+         </div>
+        </div>
+       </div>
+       <!--2021 second half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2021
+          <div>
+           下半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2021.九月
+           </div>
+           <div class="subtitle">
+            移动治理
+           </div>
+           <div class="content">
+            CONUN构建移动应用程序并扩展用户界面开发。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2021.十一月
+           </div>
+           <div class="subtitle">
+            系统集成
+           </div>
+           <div class="content">
+            构成配置与桌面网格平台通化的单个网络。
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!--2022 first half year-->
+       <div class="year-box">
+        <div class="item">
+         <button class="center">
+          2022
+          <div>
+           上半年
+          </div>
+         </button>
+         <div class="left road-con">
+          <div class="plan">
+           <div class="circle">
+           </div>
+           <div class="title">
+            2022.二月
+           </div>
+           <div class="subtitle">
+            Mobile 聚类
+           </div>
+           <div class="content">
+            向公众开放移动网格系统架构与框架。
+           </div>
+          </div>
+         </div>
+         <div class="right road-con">
+         </div>
+        </div>
+       </div>
+      </div>
+      <!--<script src="/js/three.js"></script>
+
+		<script src="/js/Projector.js"></script>
+		<script src="/js/CanvasRenderer.js"></script>
+
+		<script src="/js/libs/stats.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+		$('canvas').addClass('roadmapCanvas');
+	});
+			var SEPARATION = 75, AMOUNTX = 50, AMOUNTY = 50;
+			var container, stats;
+			var camera, scene, renderer;
+			var particles, particle, count = 100;
+			var mouseX = 0, mouseY = 0;
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+			init();
+			animate();
+			function init() {
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+				camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.z = 1000;
+				scene = new THREE.Scene();
+				particles = new Array();
+				var PI2 = Math.PI * 2;
+				var material = new THREE.SpriteCanvasMaterial( {
+					color: 0x847c72,
+					program: function ( context ) {
+						context.beginPath();
+						context.arc( 0, 0, 0.3, 0, PI2, true );
+						context.fill();
+					}
+				} );
+				var i = 0;
+				for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+					for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+						particle = particles[ i ++ ] = new THREE.Sprite( material );
+						particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+						particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+						scene.add( particle );
+					}
+				}
+				renderer = new THREE.CanvasRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+				stats = new Stats();
+				container.appendChild( stats.dom );
+				//document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+				//
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+			function onWindowResize() {
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+			//
+			function onDocumentMouseMove( event ) {
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+			}
+			function onDocumentTouchStart( event ) {
+				if ( event.touches.length === 1 ) {
+					event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+			function onDocumentTouchMove( event ) {
+				if ( event.touches.length === 1 ) {
+					event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+			//
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+				stats.update();
+			}
+			function render() {
+				camera.position.x += ( mouseX - camera.position.x ) * .05;
+				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				camera.lookAt( scene.position );
+				var i = 0;
+				for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+					for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+						particle = particles[ i++ ];
+						particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 80 ) +
+							( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+						particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 4 +
+							( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 4;
+					}
+				}
+				renderer.render( scene, camera );
+				count += 0.05;
+			}
+		</script>-->
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+   <div class="container">
+    <div class="social-group">
+     <a href="https://t.me/conun_global" target="_blank">
+      <img class="social" id="telegram" src="/img/sns_tg2.png"/>
+     </a>
+     <a href="https://www.facebook.com/CONUN-276738069557945/?modal=admin_todo_tour" target="_blank">
+      <img class="social" id="facebook" src="/img/sns_fb2.png"/>
+     </a>
+     <a href="https://twitter.com/conunglobal" target="_blank">
+      <img class="social" id="twitter" src="/img/sns_tw2.png"/>
+     </a>
+     <a href="https://open.kakao.com/o/gCsycmhb" target="_blank">
+      <img class="social" id="kakao" src="/img/sns_kt2.png"/>
+     </a>
+    </div>
+    <p id="foot-menu">
+     <a href="/jobs">
+      Jobs
+     </a>
+     |
+     <a href="https://brunch.co.kr/@conun" target="_blank">
+      Blog
+     </a>
+     |
+     <a href="/contactus">
+      Contact Us
+     </a>
+     |
+     <a href="/policy/termsandcondition" target="_blank">
+      Terms and Conditions
+     </a>
+     |
+     <a href="/policy/privacypolicy" target="_blank">
+      Privacy Policy
+     </a>
+    </p>
+    <!-- Copyright Section -->
+    <div id="copyright">
+     <p id="con-email">
+      <!--<a href="mailto:help@conun.io">help@conun.io</a>&nbsp;&nbsp;/&nbsp;&nbsp;-->
+      <a href="/cdn-cgi/l/email-protection#187b77766d767b6b587b77766d76367b7736736a">
+       <span class="__cf_email__" data-cfemail="6b0804051e0508182b0804051e05450804450019">
+        [email protected]
+       </span>
+      </a>
+      /
+     </p>
+     <p id="con-address">
+      1莱佛士坊＃44-01A新加坡莱佛士坊
+     </p>
+     <p>
+      ⓒ 2018 CONUN. All rights reserved.
+     </p>
+    </div>
+   </div>
+  </footer>
+  <!-- Added by Jihye Yun & Dusu Park on 2018-04-30 -->
+  <!-- . -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script type="text/javascript">
+   /*
+        var JsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+        var sTime = new Date().getTime();
+        document.write(unescape("%3Cscript id='log_script' src='" + JsHost + "ninemonster.weblog.cafe24.com/weblog.js?uid=ninemonster&t=" + sTime + "' type='text/javascript'%3E%3C/script%3E"));
+  */
+  </script>
+  <!-- Matomo -->
+  <script type="text/javascript">
+   var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//conun.io/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+  <!-- Popup Section -->
+  <div class="modal fade" id="popup">
+   <div class="wrapper">
+    <div class="box">
+     <div class="content">
+      <div class="header">
+       <div class="title">
+       </div>
+       <div id="popup-close">
+       </div>
+      </div>
+      <div class="inner">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+   function getPopupData() {
+		return $('#popup>.wrapper>.box>.content>.inner').attr('data');
+	}
+	function openPopupID(title, selector, data) {
+		$('#popup>.wrapper>.box>.content>.header>.title').html(title);
+		$('#popup>.wrapper>.box>.content>.inner').html($(selector).html());
+		$('#popup>.wrapper>.box>.content>.inner').attr('data', data ? JSON.stringify(data) : '');
+		$('#popup').show();
+		setTimeout(function() {
+			$('#popup').addClass('in');
+			$('body').addClass('modal-open');
+		}, 0);
+	}
+	function openPopup(title, content) {
+		$('#popup>.wrapper>.box>.content>.header>.title').html(title);
+		$('#popup>.wrapper>.box>.content>.inner').html(content);
+		$('#popup>.wrapper>.box>.content>.inner').attr('data', '');
+		$('#popup').show();
+		setTimeout(function() {
+			$('#popup').addClass('in');
+			$('body').addClass('modal-open');
+		}, 0);
+	}
+	function closePopup() {
+		$('#popup').removeClass('in');
+		$('body').removeClass('modal-open');
+		setTimeout(function() {
+			$('#popup').hide();
+		}, 250);
+	}
+
+	$(function() {
+		$('#popup-close').on('click', function(e) {
+			closePopup();
+		});
+		$(document).on('keydown', function(e) {
+			if(e.keyCode == 27) {
+				closePopup();
+			}
+		});
+
+		$(document).on('click', '.btn-popup-copy', function() {
+			var value = $(this).attr('data-value');
+			var input = $(value)[0];
+			input.select();
+			document.execCommand('Copy');
+		});
+	});
+  </script>
+  <!-- Added by Yuree Kang on 2018-11-15 -->
+  <!-- Popup Section -->
+  <style>
+   #popup2 {
+		width:370px;
+		height:auto;
+		
+		border:1px solid #444;
+		position:absolute;
+		top:777px;
+		right: 90px;
+		
+		background-image:url('/img/pop2_bg.png');
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center top;
+	}
+	#popup2>.header {
+		padding:50px 25px;
+	}
+	#popup2>.header>.title {
+		margin-top:40px;
+		font-size:21px;
+	}
+	#popup2>.header, #popup2>.inner {
+		background-color:transparent;
+		color:#fff;
+		font-size:14px;
+	}
+	#popup2>.inner {
+		padding:0px 25px 50px 25px;
+	}
+	#popup2>#popup-close {
+		width:26px;
+		height:26px;
+		padding:4px;
+		background-size:12px auto;
+		background-position: calc(100% - 7px) 7px;
+	}
+	@media only screen and (max-width:640px){
+		#popup2>.header>.title {
+			font-size:18px;
+			margin-top:0px;
+		}
+		#popup2>.header{
+			padding:25px;
+		}
+		#popup2>.inner {
+			padding:0px 25px 25px 25px;
+			font-size:13px;
+		}
+	}
+  </style>
+  <div class="fade" id="popup2">
+   <div class="header">
+    <div class="title">
+    </div>
+   </div>
+   <div class="inner">
+   </div>
+   <div id="popup-close">
+   </div>
+  </div>
+  <!--$controller->loadView('items/popup/FILENAME', null, false)-->
+  <script type="text/javascript">
+   $(document).on('click','#popup2>#popup-close',function(){
+		$('#popup2').removeClass('in');
+		setTimeout(function() {
+			$('#popup2').hide();
+		}, 250);
+	});
+	function getPopupData2() {
+		return $('#popup2>.inner').attr('data');
+	}
+	function openPopupID2(title, selector, data) {
+		$('#popup2>.header>.title').html(title);
+		$('#popup2>.inner').html($(selector).html());
+		$('#popup2>.inner').attr('data', data ? JSON.stringify(data) : '');
+		$('#popup2').show();
+		setTimeout(function() {
+			$('#popup2').addClass('in');
+		}, 0);
+	}
+	function openPopup2(title, content) {
+		$('#popup2>.header>.title').html(title);
+		$('#popup2>.inner').html(content);
+		$('#popup2>.inner').attr('data', '');
+		$('#popup2').show();
+		setTimeout(function() {
+			$('#popup2').addClass('in');
+		}, 0);
+	}
+	function closePopup2() {
+		$('#popup2').removeClass('in');
+		setTimeout(function() {
+			$('#popup2').hide();
+		}, 250);
+	}
+	/*
+	
+
+	$(function() {
+		$('#popup-close').on('click', function(e) {
+			closePopup();
+		});
+		$(document).on('keydown', function(e) {
+			if(e.keyCode == 27) {
+				closePopup();
+			}
+		});
+
+		$(document).on('click', '.btn-popup-copy', function() {
+			var value = $(this).attr('data-value');
+			var input = $(value)[0];
+			input.select();
+			document.execCommand('Copy');
+		});
+	});
+*/
+  </script>
+  <style>
+   #popup3 {
+		width:370px;
+		height:auto;
+		
+		border:1px solid #444;
+		position:absolute;
+		top:180px;
+		right: 90px;
+		
+		background-image:url('/img/pop2_bg.png');
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center top;
+	}
+	#popup3>.header {
+		padding:50px 25px;
+	}
+	#popup3>.header>.title {
+		margin-top:40px;
+		font-size:21px;
+	}
+	#popup3>.header, #popup3>.inner {
+		background-color:transparent;
+		color:#fff;
+		font-size:14px;
+	}
+	#popup3>.inner {
+		padding:0px 25px 50px 25px;
+	}
+	#popup3>#popup-close {
+		width:26px;
+		height:26px;
+		padding:4px;
+		background-size:12px auto;
+		background-position: calc(100% - 7px) 7px;
+	}
+
+	@media only screen and (max-width:640px){
+		#popup3>.header>.title {
+			font-size:18px;
+			margin-top:0px;
+		}
+		#popup3>.header{
+			padding:25px;
+		}
+		#popup3>.inner {
+			padding:0px 25px 25px 25px;
+			font-size:13px;
+		}
+	}
+  </style>
+  <div class="fade" id="popup3">
+   <div class="header">
+    <div class="title">
+    </div>
+   </div>
+   <div class="inner">
+   </div>
+   <div id="popup-close">
+   </div>
+  </div>
+  <script type="text/javascript">
+   $(document).on('click','#popup3>#popup-close',function(){
+		$('#popup3').removeClass('in');
+		setTimeout(function() {
+			$('#popup3').remove();
+		}, 250);
+	});
+	function getPopupData3() {
+		return $('#popup3>.inner').attr('data');
+	}
+	function openPopupID3(title, selector, data) {
+		$('#popup3>.header>.title').html(title);
+		$('#popup3>.inner').html($(selector).html());
+		$('#popup3>.inner').attr('data', data ? JSON.stringify(data) : '');
+		$('#popup3').show();
+		setTimeout(function() {
+			$('#popup3').addClass('in');
+		}, 0);
+	}
+	function openPopup3(title, content) {
+		$('#popup3>.header>.title').html(title);
+		$('#popup3>.inner').html(content);
+		$('#popup3>.inner').attr('data', '');
+		$('#popup3').show();
+		setTimeout(function() {
+			$('#popup3').addClass('in');
+		}, 0);
+	}
+	function closePopup3() {
+		$('#popup3').removeClass('in');
+		setTimeout(function() {
+			$('#popup3').hide();
+		}, 250);
+	}
+	/*
+	
+
+	$(function() {
+		$('#popup-close').on('click', function(e) {
+			closePopup();
+		});
+		$(document).on('keydown', function(e) {
+			if(e.keyCode == 27) {
+				closePopup();
+			}
+		});
+
+		$(document).on('click', '.btn-popup-copy', function() {
+			var value = $(this).attr('data-value');
+			var input = $(value)[0];
+			input.select();
+			document.execCommand('Copy');
+		});
+	});
+*/
+  </script>
+  <style>
+   #imagepopup {
+		position:absolute;    
+		z-index: 33;
+		top:180px;
+		left:13%;
+		width:auto;
+		height:auto;
+		
+		box-shadow:0px 0px 25px #000;
+	}
+	#imagepopup>.box>#popup-close {
+		width:26px;
+		height:26px;
+		background-size:12px auto;
+		background-position: center;
+	}
+	#imagepopup>.box {
+		width:100%;
+		height:100%;
+		
+		line-height:0;
+		font-size:0px;
+	}
+  </style>
+  <div class="fade" id="imagepopup">
+   <div class="box">
+    <img class="popbg"/>
+    <div id="popup-close">
+    </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+   $(document).on('click','#imagepopup>.box>#popup-close',function(){
+		$('#imagepopup').removeClass('in');
+		setTimeout(function() {
+			$('#imagepopup').hide();
+		}, 250);
+	});
+	
+	function openImagePopup(setbg) {
+		$('#imagepopup>.box>.popbg').attr('src','https://conun.io/img/'+ setbg + '.jpg');
+
+		$('#imagepopup').show();
+		setTimeout(function() {
+			$('#imagepopup').addClass('in');
+		}, 0);
+	}
+	
+	function closePopup2() {
+		$('#imagepopup').removeClass('in');
+		setTimeout(function() {
+			$('#imagepopup').hide();
+		}, 250);
+	}
+  </script>
+  <!-- . -->
+ </body>
+</html>

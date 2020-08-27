@@ -1,0 +1,3418 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <title>
+   Coin Island
+  </title>
+  <link href="./include/css/common.css" rel="stylesheet" type="text/css"/>
+  <script src="./include/js/ui.js" type="text/javascript">
+  </script>
+  <script src="./include/js/common.js" type="text/javascript">
+  </script>
+  <link href="./include/img/ico/favicon.jpg" rel="shortcut icon"/>
+  <style>
+   #map-canvas {
+            	height: 100%;
+       		}
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-137507011-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-137507011-1');
+  </script>
+ </head>
+ <body>
+  <form action="./index.html" id="fmain" method="get" name="fmain">
+   <div class="wrapper">
+    <!-- start : wrapper -->
+    <div class="topbar">
+     <div class="rela">
+      <!-- <a href="javascript:void(0)" class="back_btn" id="back_btn"></a> -->
+      <a class="selectBx t01" href="javascript:void(0)">
+       USA
+      </a>
+      <ul class="selectBxList t01">
+       <li>
+        <a class="" href="javascript:selPrice('KOR')">
+         KOR
+        </a>
+       </li>
+       <li>
+        <a class="on" href="javascript:selPrice('USA')">
+         USA
+        </a>
+       </li>
+       <li>
+        <a class="" href="javascript:selPrice('EUR')">
+         EUR
+        </a>
+       </li>
+       <li>
+        <a class="" href="javascript:selPrice('JPN')">
+         JPN
+        </a>
+       </li>
+      </ul>
+      <ul class="coinList">
+       <li class="t01" id="BTCP">
+       </li>
+       <li class="t03" id="ETHP">
+       </li>
+       <li class="t02" id="XRPP">
+       </li>
+      </ul>
+      <ul class="contryList">
+       <li>
+        <a class="t01" href="javascript:selLan('kr')">
+         KOR
+        </a>
+       </li>
+       <li>
+        <a class="t02 on" href="javascript:selLan('en')">
+         ENG
+        </a>
+       </li>
+       <li>
+        <a class="t03" href="javascript:selLan('cn')">
+         CHN
+        </a>
+       </li>
+       <li>
+        <a class="t04" href="javascript:selLan('jp')">
+         JPN
+        </a>
+       </li>
+      </ul>
+      <ul class="signupout">
+       <li style="border-right: 0px;width: 110px;">
+        <a href="javascript:clickMenu('./main.html')">
+         Sign In/Sign Up
+        </a>
+       </li>
+       <!-- <li><a href="javascript:SignUp()">Sign Up</a></li>  -->
+      </ul>
+      <a class="contryList_app t02" href="javascript:void(0)">
+       ENG
+      </a>
+      <ul class="contryBxList">
+       <li>
+        <a class="t01" href="javascript:selLan('kr')">
+         KOR
+        </a>
+       </li>
+       <li>
+        <a class="t02 on" href="javascript:selLan('en')">
+         ENG
+        </a>
+       </li>
+       <li>
+        <a class="t03" href="javascript:selLan('cn')">
+         CHN
+        </a>
+       </li>
+       <li>
+        <a class="t04" href="javascript:selLan('jp')">
+         JPN
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="header">
+     <!-- start : header -->
+     <h1>
+      <a class="logo" href="./index.html">
+       <img alt="" class="logo_web" src="./include/img/etc/etc_logo.png"/>
+      </a>
+     </h1>
+     <ul class="gnbList">
+      <li>
+       <a href="javascript:void(0)">
+        PLATFORM
+       </a>
+       <ul>
+        <li>
+         <a href="javascript:clickMenu('./platform.html')">
+          Coin lsland
+         </a>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./platform01.html')">
+          Coin People
+         </a>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./platform02.html')">
+          Coin Store
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a href="javascript:clickMenu('./business.html')">
+        BUSSINESS
+       </a>
+      </li>
+      <li>
+       <a href="javascript:void(0)">
+        TOKEN
+       </a>
+       <ul>
+        <li>
+         <a href="javascript:clickMenu('./token02.html')">
+          CIA
+         </a>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./token01.html')">
+          CIT
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a href="javascript:clickMenu('./about.html')">
+        ABOUT US
+       </a>
+      </li>
+      <li>
+       <a href="javascript:clickMenu('./notice.html')">
+        SUPPORT
+       </a>
+      </li>
+      <li>
+       <a href="javascript:clickMenu('./contact.html')">
+        CONTACT US
+       </a>
+      </li>
+      <li>
+       <a href="javascript:clickMenu('./whitepaper.html')">
+        WHITE PAPER
+       </a>
+      </li>
+      <li>
+       <a href="javascript:clickMenu('./api.html')">
+        API
+       </a>
+      </li>
+     </ul>
+     <a class="icoTotal" href="javascript:common.lnbOpen()">
+      <img src="./include/img/btn/btn_total.png"/>
+     </a>
+    </div>
+    <!-- end : header -->
+    <style>
+     #popup {
+    display:none;
+    position:absolute;
+    top:50px;
+    left:10px;
+    z-index:5000;
+    width:800px;
+    max-width:800px;
+    background:black;
+    padding-bottom:30px;
+    box-sizing:border-box;
+}
+#popup .pop-body {
+    background:white;
+    font-size:0px;
+}
+#popup .pop-body.img,
+#popup .pop-body.text {
+    border:1px solid #e6e6e6;
+    border-bottom:none;
+    box-sizing:border-box;
+}
+#popup .pop-body.img .item img {
+    width:100%;
+    height:auto;
+}
+#popup .pop-body.text {
+    min-height:200px;
+}
+#popup .pop-body.text h3 {
+    padding:25px 15px;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    line-height:24px;
+}
+#popup .pop-body.text p {
+    padding:0px 15px 30px 15px;
+    color:black;
+    font-size:16px;
+    line-height:20px;
+}
+#popup .pop-body.frame {
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%;
+}
+#popup .pop-body.frame iframe {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+#popup .pop-foot {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    z-index:6000;
+    width:100%;
+    height:30px;
+}
+#popup .pop-foot .today-close {
+    display:inline-block;
+    padding:0px 8px;
+    color:white;
+    font-size:14px;
+    line-height:30px;
+    cursor:pointer;
+}
+#popup .pop-foot .today-close input {
+    vertical-align:middle;
+}
+#popup .pop-foot .close-btn {
+    position:absolute;
+    top:0px;
+    right:0px;
+    padding:0px 8px;
+    color:white;
+    font-size:14px;
+    line-height:30px;
+}
+#popup .pop-foot .close-btn:hover {
+    color:white;
+    opacity:1;
+}
+    </style>
+    <script>
+     function setCookie(name, value, expiredays) {
+    var today = new Date();
+    today.setDate(today.getDate() + expiredays);
+
+    document.cookie = name + '=' + escape(value) + '; path=/; expires=' + today.toGMTString() + ';'
+}
+
+function getCookie(name) { 
+    var cName = name + "="; 
+    var x = 0; 
+
+    while (x <= document.cookie.length ) { 
+        var y = (x+cName.length); 
+
+        if ( document.cookie.substring( x, y ) == cName ) { 
+            if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) 
+                endOfCookie = document.cookie.length;
+
+            return unescape( document.cookie.substring( y, endOfCookie ) ); 
+        } 
+
+        x = document.cookie.indexOf( " ", x ) + 1; 
+
+        if ( x == 0 ) 
+            break; 
+    } 
+
+    return ""; 
+} 
+
+$(window).ready(function(){
+    if(getCookie("popup1")!="Y"){
+        $("#popup.popup1").show('fade');
+    }
+    if(getCookie("popup2")!="Y"){
+        $("#popup.popup2").show('fade');
+    }
+    if(getCookie("popup3")!="Y"){
+        $("#popup.popup3").show('fade');
+    }
+    if(getCookie("popup4")!="Y"){
+        $("#popup.popup4").show('fade');
+    }
+    if(getCookie("popup4")!="Y"){
+        $("#popup.popup5").show('fade');
+    }
+
+    $("#popup .today-close").click(function() {
+        var cookie_name = $(this).parents("#popup").attr("data-cookie-name");
+        setCookie(cookie_name,'Y', 1);
+
+        $(this).parents("#popup").hide('fade');
+
+        return false;
+    });
+
+    $("#popup .close-btn").click(function() {
+        $(this).parents("#popup").hide('fade');
+
+        return false;
+    });
+
+	$(".popupSlide").slick({
+		dots: false, slidesToShow: 1,slidesToScroll: 1, autoplay:true ,autoplaySpeed: 5000,pauseOnHover : false, swipe:false
+    });
+    
+    if ($(window).width() <= 400) {
+        var pop_leng = $(".popup").filter(function() { return $(this).css('display') !== 'none'; }).length;
+
+        $(".popup").filter(function() { return $(this).css('display') !== 'none'; }).each(function(index, value) {
+            $(this).css({
+                'width':($(window).width() - 10) - (pop_leng * 10),
+                'left':(index + 1) * 10,
+                'top':150 + (index + 1) * 10,
+            });
+        });
+    }
+
+    $(window).resize(function() {
+        if ($(window).width() <= 400) {
+            var pop_leng = $(".popup").filter(function() { return $(this).css('display') !== 'none'; }).length;
+
+            $(".popup").filter(function() { return $(this).css('display') !== 'none'; }).each(function(index, value) {
+                $(this).css({
+                    'width':($(window).width() - 10) - (pop_leng * 10),
+                    'left':(index + 1) * 10,
+                    'top':150 + (index + 1) * 10,
+                });
+            });
+        }
+    })
+});
+    </script>
+    <div class="container">
+     <!-- start : container -->
+     <div class="visualBox">
+      <div class="mainSlide">
+       <div class="item" style="background:url('https://admin.coin-island.com/upload/banner/img11.jpg') no-repeat center top;background-size:cover">
+       </div>
+       <div class="item" style="background:url('https://admin.coin-island.com/upload/banner/img12.jpg') no-repeat center top;background-size:cover">
+       </div>
+       <div class="item" style="background:url('https://admin.coin-island.com/upload/banner/img13.jpg') no-repeat center top;background-size:cover">
+       </div>
+       <div class="item" style="background:url('https://admin.coin-island.com/upload/banner/img14.jpg') no-repeat center top;background-size:cover">
+       </div>
+       <div class="item" style="background:url('https://admin.coin-island.com/upload/banner/img15.jpg') no-repeat center top;background-size:cover">
+       </div>
+       <div class="item" style="background:url('https://admin.coin-island.com/upload/banner/img16.jpg') no-repeat center top;background-size:cover">
+       </div>
+       <!-- <div class="item img01"> 
+				<div class="cont">
+					<p class="t01">You can use the service with only one application.</p>
+					<p class="t02">It is a payment service of Cryptocurrency to be able to trade in a few seconds.</p>
+					<p class="t03">You can use the Cryptocurrency to buy goods and services at no additional fee through Coin People.<br />Coin Store helps you get your store promotions, revenue management, and billing services at one time.</p>
+					<div class="btn">
+												<a href="https://itunes.apple.com/us/app/coin-island/id1438424739" class="ready-btn"><img src="./include/img/btn/btn_appstore01.png" /></a>
+												<a href="https://play.google.com/store/apps/details?id=com.coinisland.coinisland" class="ready-btn"><img src="./include/img/btn/btn_googleplay01.png" /></a>
+					</div>
+				</div>
+			</div>     
+			<div class="item img02"> 
+				<div class="cont">
+					<p class="t01">You can buy things in Cryptocurrency anywhere in the world.</p>
+					<p class="t02">The Easiest Global Cryptocurrency Payment Service</p>
+					<p class="t03">You can pay for the Cryptocurrency when you go shopping, have a meal and use currency exchange.<br />You can pay in Cryptocurrencie like bitcoin, etherium, and ripple at Coin island affiliated stores anywhere in the world through the multilingual services.</p>
+					<div class="btn">
+												<a href="https://itunes.apple.com/us/app/coin-island/id1438424739" class="ready-btn"><img src="./include/img/btn/btn_appstore01.png" /></a>
+												<a href="https://play.google.com/store/apps/details?id=com.coinisland.coinisland" class="ready-btn"><img src="./include/img/btn/btn_googleplay01.png" /></a>
+					</div>
+				</div>
+			</div> 
+			<div class="item img03"> 
+				<div class="cont">
+					<p class="t01">Please, trade your Cryptocurrency safely.</p>
+					<p class="t03">Are you nervous when dealing with your valuable Cryptocurrency?<br />Coin Island does not require a wallet password of users and stores.<br />Coin Island Wallet's Cryptocurrency is securely protected by a hardware wallet.</p>
+					<div class="btn">
+												<a href="https://itunes.apple.com/us/app/coin-island/id1438424739" class="ready-btn"><img src="./include/img/btn/btn_appstore01.png" /></a>
+												<a href="https://play.google.com/store/apps/details?id=com.coinisland.coinisland" class="ready-btn"><img src="./include/img/btn/btn_googleplay01.png" /></a>
+					</div>
+				</div>
+			</div>  -->
+      </div>
+     </div>
+     <div class="mainVideo">
+      <div class="iframe-wrap">
+       <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/KhOfs9GckJ8">
+       </iframe>
+      </div>
+     </div>
+     <div class="mainIconTabs">
+      <p class="t01">
+       What is the
+       <span>
+        Coin Island
+       </span>
+       ?
+      </p>
+      <p class="t02">
+       Coin Island is the best payment platform for users to be able to pay with their Cryptocurrency through an application to be supporting multilingual services.
+      </p>
+      <ul class="miTabList">
+       <li>
+        <a class="on" href="javascript:void(0)">
+         <img src="./include/img/btn/btn_mtabs01.png"/>
+         <span>
+          COIN ISLAND
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <img src="./include/img/btn/btn_mtabs02.png"/>
+         <span>
+          COIN PEOPLE
+         </span>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <img src="./include/img/btn/btn_mtabs03.png"/>
+         <span>
+          COIN STORE
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="islandCont">
+      <div class="islandContSlide">
+       <div class="item img01">
+        <div class="pic">
+         <img src="./include/img/bg/bg_islandCont01.jpg"/>
+        </div>
+        <div class="cont">
+         <p class="t01">
+          Global Cryptocurrency payment service
+         </p>
+         <p class="t02">
+          Coin Island's payment platform is largely composed of Coin People, a platform for users, and Coin Store, a platform for stores. Coin Island also offers a Coin Island Wallet for quick and secure payments between users and stores.
+         </p>
+         <div class="t03">
+          <a href="javascript:clickMenu('./platform.html')">
+           MORE
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="item img02">
+        <div class="pic">
+         <img src="./include/img/bg/bg_islandCont02.jpg"/>
+        </div>
+        <div class="cont">
+         <p class="t01">
+          Use Cryptocurrencies to shop around the world.
+         </p>
+         <p class="t02">
+          Coin People allows you to use Cryptocurrencies in stores and currency exchange offices around the world at no charge.
+         </p>
+         <div class="t03">
+          <a href="javascript:clickMenu('./platform01.html')">
+           MORE
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="item img03">
+        <div class="pic">
+         <img src="./include/img/bg/bg_islandCont03.jpg"/>
+        </div>
+        <div class="cont">
+         <p class="t01">
+          Attract customers around the world to your store.
+         </p>
+         <p class="t02">
+          Coin Store is an integrated platform that provides shop promotion, Cryptocurrency payment, and sales management.
+         </p>
+         <div class="t03">
+          <a href="javascript:clickMenu('./platform02.html')">
+           MORE
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="mainStep">
+      <p class="t01">
+       Why choose Coin Island?
+      </p>
+      <p class="t02">
+       Why did users and stores for Cryptocurrency around the world choose Coin Island?
+       <br/>
+       The number of Coin Island franchisees is increasing even at this moment.
+       <br/>
+       Success depends on your choice.
+      </p>
+      <div class="pic">
+       <img class="wimg" src="./include/img/etc/en/etc_mstep_w.jpg"/>
+       <img class="mimg" src="./include/img/etc/en/etc_mstep_m.jpg"/>
+      </div>
+      <div class="platEtc t03">
+       <span>
+        Coin Island Strategy
+       </span>
+      </div>
+     </div>
+     <div class="serviceView">
+      <div class="rela">
+       <div class="serviceTabs">
+        <p class="t01">
+         You are available everywhere in the world.
+         <br/>
+         World's first Cryptocurrency payment service
+        </p>
+        <p class="t02">
+         Experience a new world in Coin Island being opening up the new world.
+         <br/>
+         You can experience another world.
+        </p>
+        <ul>
+         <li>
+          <div class="rela">
+           <span class="num">
+            <img src="./include/img/etc/etc_serviceTabs01.png"/>
+           </span>
+           <div class="link s01 on">
+            Search for a location-based franchising store.
+           </div>
+           <div class="link s02">
+            Easy and safe Cryptocurrency payment
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="rela">
+           <span class="num">
+            <img src="./include/img/etc/etc_serviceTabs02.png"/>
+           </span>
+           <span class="link s01">
+            Real-time confirmation service of payment
+           </span>
+           <span class="link s02">
+            Sales management service of the Cryptocurrency
+           </span>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="serviceSlideBx">
+        <div class="serviceSlide">
+         <div class="item">
+          <img src="./include/img/etc/en_etc_phoneimg01.jpg"/>
+         </div>
+         <div class="item">
+          <img src="./include/img/etc/en_etc_phoneimg02.jpg"/>
+         </div>
+         <div class="item">
+          <img src="./include/img/etc/en_etc_phoneimg03.jpg"/>
+         </div>
+         <div class="item">
+          <img src="./include/img/etc/en_etc_phoneimg04.jpg"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="resultCount" style="display: none;">
+      <ul>
+       <li>
+        <img src="./include/img/ico/ico_rc01.png"/>
+        <p class="t01" id="countNum01">
+        </p>
+        <p class="t02">
+         COUNTRIES
+        </p>
+       </li>
+       <li>
+        <img src="./include/img/ico/ico_rc02.png"/>
+        <p class="t01" id="countNum02">
+        </p>
+        <p class="t02">
+         USERS
+        </p>
+       </li>
+       <li>
+        <img src="./include/img/ico/ico_rc03.png"/>
+        <p class="t01" id="countNum03">
+        </p>
+        <p class="t02">
+         STORE
+        </p>
+       </li>
+       <li>
+        <img src="./include/img/ico/ico_rc04.png"/>
+        <p class="t01" id="countNum04">
+        </p>
+        <p class="t02">
+         COIN ISLAND EXCHANGE
+        </p>
+       </li>
+      </ul>
+     </div>
+     <div class="contactBx">
+      <ul>
+       <li>
+        +82 42-382-0202
+       </li>
+       <li>
+        support@coin-island.com
+       </li>
+      </ul>
+      <a href="javascript:clickMenu('./contact.html')">
+       CONTACT US
+      </a>
+     </div>
+     <div class="appstoreBx">
+      <div class="pic">
+       <img src="./include/img/ico/ico_lunchu.png"/>
+      </div>
+      <div class="tit">
+       Coin Island
+      </div>
+      <div class="txt">
+       Now you can buy things in Cryptocurrency.
+       <br/>
+       The easiest Cryptocurrency trading service
+      </div>
+      <div class="btn">
+       <a href="https://apps.apple.com/us/app/coin-island/id1438424739">
+        <img src="./include/img/btn/btn_appstore.png"/>
+       </a>
+       <a href="https://play.google.com/store/apps/details?id=com.coinisland.coinisland&amp;hl=en_US">
+        <img src="./include/img/btn/btn_googleplay.png"/>
+       </a>
+      </div>
+     </div>
+    </div>
+    <!-- end : container -->
+    <script>
+     $(function() {
+		$(".ready-btn").click(function() {
+			alert("Coming Soon.");
+
+			return false;
+		});
+	});
+	// $(function(){
+		
+	// 	 $(window).scroll(function(){
+	// 		var ot = $(".resultCount").position().top;
+	// 		var wt = $(window).scrollTop() + 800;
+	// 		if(wt > ot ){
+	// 			numCount1("#countNum01", 1);//3,548,752
+	// 			numCount2("#countNum02", );//3,548,752
+	// 			numCount3("#countNum03", );//3,548,752
+	// 			numCount4("#countNum04", );//3,548,752 
+	// 		} 
+	// 	 });
+		
+	// });
+
+	// var isCount1 = true;
+	// var isCount2 = true;
+	// var isCount3 = true;
+	// var isCount4 = true;
+
+	// function numCount1(id, v){ 
+	// 	if(isCount1){
+	// 		var i =0;
+	// 		var myVar = setInterval(function(){
+	// 			if(i==50){ 
+	// 				clearInterval(myVar);
+	// 				$(id).text(v);
+	// 			}else{
+	// 				$(id).text(i);
+	// 			} 
+	// 			i++; 
+	// 		},50);
+	// 		isCount1 = false;
+	// 	} 
+	// }
+
+	// function numCount2(id, v){ 
+	// 	if(isCount2){
+	// 		var i =0;
+	// 		var myVar = setInterval(function(){
+	// 			if(i==50){ 
+	// 				clearInterval(myVar);
+	// 				$(id).text(v);
+	// 			}else{
+	// 				$(id).text(i);
+	// 			} 
+	// 			i++; 
+	// 		},40);
+	// 		isCount2 = false;
+	// 	} 
+	// }
+	
+	// function numCount3(id, v){ 
+	// 	if(isCount3){
+	// 		var i =0;
+	// 		var myVar = setInterval(function(){
+	// 			if(i==50){ 
+	// 				clearInterval(myVar);
+	// 				$(id).text(v);
+	// 			}else{
+	// 				$(id).text(i);
+	// 			} 
+	// 			i++; 
+	// 		},30);
+	// 		isCount3 = false;
+	// 	} 
+	// }
+	
+	// function numCount4(id, v){ 
+	// 	if(isCount4){
+	// 		var i =0;
+	// 		var myVar = setInterval(function(){
+	// 			if(i==50){ 
+	// 				clearInterval(myVar);
+	// 				$(id).text(v);
+	// 			}else{
+	// 				$(id).text(i);
+	// 			} 
+	// 			i++; 
+	// 		},20);
+	// 		isCount4 = false;
+	// 	} 
+	// }
+    </script>
+    <div class="footer">
+     <!-- start : footer -->
+     <div class="ftop">
+      <div class="fLogo">
+       <div class="pic">
+        <img src="./include/img/etc/etc_logo.png"/>
+       </div>
+       <div class="txt">
+        Address: 201, 36-18 Yuseong-daero 822beon-gil, Yuseong-gu, Daejeon
+        <br/>
+        Phone: +82 42-382-0202
+        <br/>
+        Fax: +82 42-382-0201
+       </div>
+       <div class="txt">
+        E-mail: support@coin-island.com
+       </div>
+       <ul class="fnb">
+        <li>
+         <a href="javascript:void(0)">
+          PLATFORM
+         </a>
+         <ul>
+          <li>
+           <a href="javascript:clickMenu('./platform.html')">
+            Coin lsland
+           </a>
+          </li>
+          <li>
+           <a href="javascript:clickMenu('./platform01.html')">
+            Coin People
+           </a>
+          </li>
+          <li>
+           <a href="javascript:clickMenu('./platform02.html')">
+            Coin Store
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./about.html')">
+          BUSSINESS
+         </a>
+        </li>
+        <li>
+         <a href="javascript:void(0)">
+          TOKEN
+         </a>
+         <ul>
+          <li>
+           <a href="javascript:clickMenu('./about.html')">
+            CIA
+           </a>
+          </li>
+          <li>
+           <a href="javascript:clickMenu('./about.html')">
+            CIT
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./about.html')">
+          ABOUT US
+         </a>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./faq.html')">
+          SUPPORT
+         </a>
+        </li>
+        <li>
+         <a href="javascript:clickMenu('./contact.html')">
+          CONTACT US
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="fcopy">
+       <p class="t01">
+        Copyright © 2018 Coin Island.
+       </p>
+       <ul class="feb">
+        <li>
+         <a class="openPrivacy" href="javascript:void(0)">
+          Privacy
+         </a>
+        </li>
+        <li>
+         <a class="openTerms" href="javascript:void(0)">
+          Terms
+         </a>
+        </li>
+       </ul>
+       <div class="ico">
+        <a href="https://www.facebook.com/coinIsland.co" target="_blank">
+         <img src="./include/img/ico/ico_sns01.png"/>
+        </a>
+        <a href="https://twitter.com/withcoinisland" target="_blank">
+         <img src="./include/img/ico/ico_sns02.png"/>
+        </a>
+        <a href="https://www.instagram.com/coinisland" target="_blank">
+         <img src="./include/img/ico/ico_sns03.png"/>
+        </a>
+        <a href="https://blog.naver.com/coinisland" target="_blank">
+         <img src="./include/img/ico/ico_sns04.png"/>
+        </a>
+        <a href="https://open.kakao.com/o/gZD8NPbb" target="_blank">
+         <img src="./include/img/ico/ico_sns05.png"/>
+        </a>
+        <a href="https://www.linkedin.com/company/coin-island/" target="_blank">
+         <img src="./include/img/ico/ico_sns06.png"/>
+        </a>
+        <a href="https://www.reddit.com/user/coin-island" target="_blank">
+         <img src="./include/img/ico/ico_sns07.png"/>
+        </a>
+        <a href="https://band.us/band/73960993" target="_blank">
+         <img src="./include/img/ico/ico_sns08.png"/>
+        </a>
+        <a href="https://t.me/coinisland_official" target="_blank">
+         <img src="./include/img/ico/ico_sns09.png"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- end : footer -->
+   </div>
+   <!-- end : wrapper-->
+  </form>
+  <div class="dialog">
+   <div class="etcArea" onclick="common.lnbClose()">
+   </div>
+   <div class="lnbArea">
+    <a class="lnbClose" href="javascript:void(0)" onclick="common.lnbClose()">
+     <img src="./include/img/btn/btn_close01.png"/>
+    </a>
+    <ul>
+     <li>
+      <a href="javascript:clickMenu('./index.html')">
+       HOME
+      </a>
+     </li>
+     <li>
+      <a href="javascript:void(0)">
+       PLATFORM
+      </a>
+      <ul class="sblist">
+       <li>
+        <a href="javascript:clickMenu('./platform.html')">
+         Coin lsland
+        </a>
+       </li>
+       <li>
+        <a href="javascript:clickMenu('./platform01.html')">
+         Coin People
+        </a>
+       </li>
+       <li>
+        <a href="javascript:clickMenu('./platform02.html')">
+         Coin Store
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="javascript:clickMenu('./business.html')">
+       BUSSINESS
+      </a>
+     </li>
+     <li>
+      <a href="javascript:void(0)">
+       TOKEN
+      </a>
+      <ul class="sblist">
+       <li>
+        <a href="javascript:clickMenu('./token02.html')">
+         CIA
+        </a>
+       </li>
+       <li>
+        <a href="javascript:clickMenu('./token01.html')">
+         CIT
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="javascript:clickMenu('./about.html')">
+       ABOUT US
+      </a>
+     </li>
+     <li>
+      <a href="javascript:clickMenu('./notice.html')">
+       SUPPORT
+      </a>
+     </li>
+     <li>
+      <a href="javascript:clickMenu('./contact.html')">
+       CONTACT US
+      </a>
+     </li>
+     <li>
+      <a href="javascript:clickMenu('./whitepaper.html')">
+       WHITE PAPER
+      </a>
+     </li>
+     <li>
+      <a href="javascript:clickMenu('./api.html')">
+       API
+      </a>
+     </li>
+     <!-- <li style="width:140px;"><a href="javascript:clickMenu('./main.html')">Sign In/Sign Up</a></li> -->
+     <!-- <li><a href="javascript:SignUp()">Sign Up</a></li>  -->
+    </ul>
+   </div>
+  </div>
+  <div class="dialogPopup" id="popAgree">
+   <div class="pBox">
+    <div class="pHeader">
+     <span>
+      Terms of Use
+     </span>
+     <a class="popClose" href="javascript:void(0)">
+      <img alt="close" src="./include/img/btn/btn_close03.png"/>
+     </a>
+    </div>
+    <div class="pContent">
+     <p>
+      <span style="letter-spacing: 0pt; font-size: 14pt; font-weight: bold;">
+      </span>
+      <span style="font-size: 14pt; font-weight: bold; letter-spacing: 0pt;">
+       Chapter 1 General Provisions
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 1 Purpose
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The goal of this provision is to define the utilization conditions and processes of cryptocurrency payment related various services (hereafter “the Service”) in relation to rights, obligations, responsibility and other necessary matters, which Coin Island Inc., (hereafter “the Company”) provides.
+      </span>
+     </p>
+     <p class="0">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 2 (Definition of Terminology)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The definitions of terminologies in this provision are following:
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. Service: The Service refers to the Company’s cryptocurrency payment service and general services in relation to this, which members can use, regardless of equipment (includes PC, mobile equipment and other various wire and/or wireless equipment)
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. User: It refers to the members and non-members who are provided with the services which the Company provides according to this provision.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. Member: Those users who have approved this provision and join as a member after signing the utilization contract with the Company.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. ID (or Account): To identify each member and utilization of service, a combination of characters and numbers which combined by the member, approved by the company.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       5. Password: To confirm the identity of the member and to protect the member’s information, a combination of characters, numbers and special characters  which the member has set according to the approval of the Company.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       6. Payment password : This number is approved by the company in order to confirm the membership identity when payment.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       7. Cryptocurrency: The value of the currencies are electrically marked on the Blockchain network, which the members can trade on the services, such as Bitcoin, Ethereum, Ripple and others.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       8. Cryptocurrency Wallet: All cryptocurrency storage which the member or the other person possesses or uses outside the Coin Island Wallet. The cryptocurrency Wallet is not controlled or managed by the Company.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       9. Coin Island Wallet: This refers to a cryptocurrency storage where the Company’s users to preserve cryptocurrency which linked to the members’ ID. The members can exchange cryptocurrency between “Cryptocurrency Wallet” through “Coin Island Wallet.”
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       10. Contents Service: This refers to the information and/or data of digital format of sign, characters, figures, colors, voices, sounds, images, videos (including the combination of these) which the Company provides to the members.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       11. Coin People Service: This refers to the service which provides exchange of payment information and convenience of balancing the accounts for smooth handling of transactions when paying the prices of goods and services and other services by cryptocurrency, on the on- and off-line.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       12. User: This refers to the corporate body who are joining and using the Coin People services.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       13. Coin Store Service: This refers to the Service which provides payment information and convenience of balancing the accounts for smooth handling of transactions when the store (defined in below 13
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;">
+       th
+      </span>
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       paragraph) wants to get paid with cryptocurrency of goods and services and other services on the on- and off-line.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       14. Store: This refers to the corporate body who is using the Coin Store Service after joining.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       15. Annual Fee: This refers to the annual fee for the stores which announced by the Company.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 3 (Post and Revision of Provisions)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. This provisions will be announced on the homepage or other methods; by joining the site as a member, this provision is consented and be effective from that time.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2, When it is necessary, the Company can revise the provision within the scope of not violating the related legislations.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. When the Company is revising the provisions, the Company shall state the contents of revision and date of application and announce it 7 days before the application date through the date before application on the first page of the homepage with current provisions. However, when it the revision is unfavorable to the members, the Company shall announce it 30 days before the application.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. It is regarded as the members has consented with revised provisions if he/she does not explicitly express the intention of refusal, when the Company states that if the members do not express the will regarding to the matter according to the previous provision, than it is regarded as the expression of will is done.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       5. If the members does not agree with the revised provision, he/she can express the intention of refusal to the Company until the date before the application and cancel the service utilization contract.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 4 (Regulations Other than Provisions)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The interpretation of the matters not defined in this provision and this provision shall according to the Consumer Protection Law in E-commerce, Law in relation to the regulations of provisions, guidelines for consumer protection in E-commerce enacted by Fair Trade Commission and general trade practices. However, to the trade between the members through the Service which the Company provides, Laws in relation to the door-to-door sales, Basic Act for E-Commerce and Consumer Protection Law is preferentially applied; the members cannot insist exemption to the counter-party based on this rule of provision.
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 2 Application and Approval of Service Usage (Joining and Withdrawal of membership)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:14.0pt;">
+      <span style="font-size: 14pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 5 (Establishment of Utilization Contract)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The user applies for the membership joining, by entering the member information according to the format set by the Company and expressing the will of consenting with the provisions.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The service usage contract (hereafter “Usage Contract”) comes into existence when the Company approves that member’s join, and that approval reaches to that member.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The usage contract is concluded by each ID. If the usage contract is enacted, the applicant shall be enlisted as a member.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. Those who joined with fake name or others’ name or stole other’s personal information such as telephone number, cannot be protected by the law; all the civil and criminal responsibility shall be burdened by the member him/herself.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       5. Application according to the section 1, the Company may require for the verification of real name and certification of oneself through specialized agency, in accordance with the type of the user, in line with relevant Acts. If the member refuses to provide the requested materials and fails to verify the identification, the Company does not bear any disadvantages in regarding to this.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 6 (Consent to Membership Information Utilization and Approval of Enlist of Membership)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. Consent to the Use of Member Information
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company use the personal information for the purpose of the members to execute the usage contract and provide the Services in accordance with the utilization contract.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       To allow the members to conveniently use of the Services provided by the Company and affiliates (hereafter “Affiliates”), the personal information may be provided to the affiliated companies. However, before providing the information, the preservation of personal information and its period, the fact that one can reject the agreement and if there are any disadvantages, that should be notified and get agreement from the members.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ③
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       However, the Company always provides or distribute member’s personal information to the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;">
+       rd
+      </span>
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       party with notifying beforehand about the affiliates, the purpose, the contents and get agreement, except for the case in which the governmental institution’s request according to the Framework Act on Telecommunications, on the purpose of criminal inspection, and on the request of Korea Internet Safety Commission. However, if the two parties of trade exchange the personal information in accordance with normal trade process, this paragraph does not apply.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ④
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company does not opt for the agreement of personal information collection, usage and providing check-box beforehand. Also, the Company elaborates the limited service scope when the member does not agree on it; if it is not necessary collection items, the Company does not limit or reject the Service providing by not agreeing with personal information collection, usage and providing.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. Approval of the Enlist of Membership
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company may approve the membership joining of a person when that person entered all the requested information on the membership joining format. However, in the case of no. 2 or no. 3, the Company may defer or reject the approval.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company may defer the approval of enlist of membership when:
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (a) there is no room for facilities
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (b) there is technical inconvenience
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (c) there is difficulties due to the circumstances of the Company
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ③
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company may reject the approval of enlist of membership when:
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (a) the name is not real
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (b) when the application is made with other person’s name
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (c) the requested information is spuriously entered
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (d) when the application is made to hinder the peace and order of society or beautiful and fine custom
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (e) when there is incomplete part of requirement defined by the Company
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 7 (Limitation and Cancellation of Utilization Contract)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The usage contract shall be cancellation of the member or the Company. The damage caused by the member’s cancellation of usage contract shall be burdened by that member and the Company shall have no responsibilities.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The member who want to cancel the contract can leave through membership withdrawal in application. The remained cryptocurrency in the Coin Island Wallet will be eliminated at the same time of cancellation and withdrawal from Coin Island and it will not be allowed although re-entry.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company may restrict the usage of the Service for a certain defined time or cancel the usage contract when the member may commit a action conform to following during the usage:
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (a) If there is any violation of following:
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l0 level1 lfo1;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Stole the other’s service ID and Password
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l2 level1 lfo3;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Deliberately hinder the Service management
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l2 level1 lfo3;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The name is a fake
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l3 level1 lfo4;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Deliberately distributing the contents hindering order and custom
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l3 level1 lfo4;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The member plans or uses the Service to impede the national interest or social good
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l4 level1 lfo5;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Action of defamation and/or disadvantage is done
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l4 level1 lfo5;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Sending great quantity of information and/or commercial information for the purpose of impede stable management of the Service
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l5 level1 lfo6;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Distributing PC virus program which incurs malfunction of information and communication equipment and/or destruction of information
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l5 level1 lfo6;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Wrongful use of others’ personal information, ID and password
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l6 level1 lfo7;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Copying, distributing or commercially using the information acquired through the Company’s Service without the Company’s permission
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l6 level1 lfo7;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Multiple registration of the same person with different IDs
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l7 level1 lfo8;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Breaching the intellectual property of the Company, other members or the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;">
+       rd
+      </span>
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       person
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l7 level1 lfo8;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When there is a requirement for correction by outer institutions such as Korea Communication Standards Commission and/or authoritative interpretation is made by National Election Commission in relation to the illegal election campaign
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l8 level1 lfo9;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Violating usage condition defined by the Company including this provision
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l8 level1 lfo9;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When the dormant member does not express the will to use the Service within the informed period
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l9 level1 lfo10;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Collecting, saving and making public of personal information of users without consent
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l9 level1 lfo10;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       In inevitable cases to improve the Service enhancement of the Company
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (b) In the following cases occurs:
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l10 level1 lfo11;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When the manager or administrator determines that it is not suitable for the user to use the Service
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l10 level1 lfo11;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       A case which objectively considered as associated with crime
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l11 level1 lfo12;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       A case which violates other related laws
+      </span>
+     </p>
+     <p class="0" style="margin-left:60.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l11 level1 lfo12;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       A case which store does not use the service of Coin Store intentionally.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. Process of Service Use Restriction
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When the Company wants to restrict the use according to Article 1 paragraph 2, the Company shall notify the member or the representative of its reason, date and periods via written notice, phone call and message function of the homepage beforehand.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       However, when the Company admits that the suspension of the Service shall be executed immediately, the Company can suspend the usage without above mentioned process; this shall be notified afterwards.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ③
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The member or the representative who is restricted from the Service can file an objection if there is any dissent.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ④
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company lift the restriction only if the reason for restriction is dissolved during the restricted period.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. Cancellation of Usage Contract
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company can cancel the usage contract when the same action is repeated more than twice after the restriction is applied, when the reason is not corrected within the 30 days period, and/or violation of 1.
+      </span>
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (a) is found.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When the Company cancels the usage contract, the registration of member is obliterated. In this case, the Company notifies to the member and give primafacie evidence of the reason before obliterate the registration.
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 8 (Alternation of Membership Information)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The members, at any time, can peruse and amend their personal information through personal information amendment page on the Company’s homepage. However, those information needed for management of service such as real name, date of birth, sex, ID, cryptocurrency wallet cannot be amended.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The member shall make a amendment through online if there is any change to the information when he/she wrote when joining as a member; or, one should notify the Company the change via E-mail and so forth.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The Company shall not burden any disadvantage caused by not notifying the change according to the paragraph 2.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 3 Obligation of Members
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:14.0pt;">
+      <span style="font-size: 14pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 9 (Obligation of Members on Members’ ID, Password and Password for Payment Management)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. All the management responsibility of ID, Password and Payment Password lies to each member. The consequences of improper management and wrongful use of ID, Password and Password for Payment granted to each member shall be burdened by the member.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. When the member recognizes that his/her ID is wrongfully used, he/she must notify the fact to the Company and should follow the instruction.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. In the case of paragraph 2, if the member does not notify to the Company or does not follow the instruction, the Company has no responsibility for any occurred disadvantage.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 10 (Providing of Information)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company can provide following Service information which acknowledged as necessary to the Service to the members via E-mail or DM; if the member does not want to receive the information, he/she can un-subscribe on the joining application menu or member information amendment menu.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. Services related to cryptocurrency payment
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. Services related to events and ceremony
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. Services which the Company determines and provides to members frequently
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 4 General Provisions on Service Usage
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:14.0pt;">
+      <span style="font-size: 14pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 11 (Types of Services)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The Company provides the Services such as a cryptocurrency payment (deposit, withdrawal, market value search), contents, Coin Island Wallet, Coin People Service, Coin Stores Service, etc.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The type of the Services which the Company provides can frequently changed dependent on the circumstances of the Company; all the copyright and intellectual property rights of the provided Service, belongs to “the Company.”
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The Company grants the members account, ID, rights to used the service company according to the usage condition defined by the Company; the member cannot provide similar services to others nor execute commercial actions.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 12 (Announcement and Alternation of Service Contents)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The Company makes announcement of the features of each Service, procedure and method on the Service page according to the type of the Service and the member shall understand the contents of each Service announced by the Company and use it.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. When there is a change in the contents of the Service, the Company shall notify it at least 7 days before the application, and the Company does not take responsibility for the damage caused to the member by not checking the announcement.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 13 (Maintenance and Discontinuation of Services)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. If there is no business nor technological malfunction, the member can use the Service all year around, 24 hours per day, except for the days which the Company designates as closing day or times such as routine inspection.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The Company may divide the Service into certain field and set for a available time for each field. In this case, the contents shall be notified beforehand.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The Company may discontinue to provide the Service in the following cases:
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       In the inevitable cases such as construction of the Service facility repair
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       In the case of key telecommunications business operator which stipulated by Telecommunications Business Act, suspended to provide the telecommunication service
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ③
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       In the case that the Service is provided by 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;">
+       rd
+      </span>
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       person such as affiliates and the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;">
+       rd
+      </span>
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       person such as affiliates suspend to provide the Service
+      </span>
+     </p>
+     <p class="0" style="margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ④
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       In the case that there is an irresistible force
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. The Company may restrict or suspend all or part of the Service when there is a problem with normal Service usage such as state of national emergency, blackout, malfunction of service facilities and/or deluge of the Service usage.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       5. The Company may suspend to provide the Service when changing to a new Service or if there is a circumstance where the Company may not able to provide the Service.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 5 Service Utilization in Relation to Cryptocurrency Payment
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:14.0pt;">
+      <span style="font-size: 14pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 14 (Utilization of Services)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. When the member deposits cryptocurrency to the cryptocurrency account designated by the company, the company provide this deposited cryptocurrency to member’s Coin Island Wallet.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. When the member uses the cryptocurrency payment service, he/she must deposit the cryptocurrency to Coin Island Wallet.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The company provides the information about market price and commission of the cryptocurrency which the member is going to use. The member agrees that even in the case when the company is not able to provide such information, the transaction is not affected.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. The member agrees that the company does not take a responsibility of the fluctuation of the value of cryptocurrency. When the suspension of cryptocurrency market or inevitable event such as Article 22 paragraph 1 occurs, the Company can execute more than one of the following action and the Company does not take responsibility of damage caused to the member.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;text-indent:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ①
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Access suspension to the Service
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;text-indent:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       ②
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Suspending all the actions within the Service
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       5. When the member asks for the withdrawal of cryptocurrency in the Coin Island Wallet to the Company, the Company provides the cryptocurrency to the member’s own cryptocurrency wallet.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       6. The Company may require the verification of real name and identification of oneself through specialized institution within the scope allowed by regulation to confirm that the information provided by the member corresponds to the fact when the member tries to withdraw the cryptocurrency.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       7. The responsibility of accurate cryptocurrency wallet which the member uses lies to each member; the Company does not take responsibility of sending cryptocurrency to the wrongly entered cryptocurrency wallet.
+      </span>
+     </p>
+     <p class="0">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 15 (Restrictions on Services)
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <table class="__se_tbl_ext" style="border-collapse:collapse;table-layout:fixed;border-top:none;border-left:none;border-bottom:none;border-right:none;mso-table-overlap:never;">
+      <tbody>
+       <tr>
+        <td style="width:83.78pt;height:24.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Classification
+          </span>
+         </p>
+        </td>
+        <td style="width:164.67pt;height:24.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Reason for Suspension
+          </span>
+         </p>
+        </td>
+        <td style="width:98.22pt;height:24.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Lift Condition
+          </span>
+         </p>
+        </td>
+        <td style="width:76.36pt;height:24.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Suspension Efficacy
+          </span>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td style="width:83.78pt;height:193.64pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Service Restriction (Services other than log-in is unavailable)
+          </span>
+          <br/>
+         </p>
+        </td>
+        <td style="width:164.67pt;height:193.64pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Unconfirmed name (contact address)
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Hijacking / fraud accident
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - The member related to the accident (corresponding contact address and personal information)
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Consecutive error with payment security
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Application of usage agreement withdrawal
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Others: decided by the administrator of the Company (when causing severe damage to the normal service providing)
+          </span>
+         </p>
+        </td>
+        <td style="width:98.22pt;height:193.64pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Resolving the cause for the suspension
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Decision of the administrator of the Company
+          </span>
+         </p>
+        </td>
+        <td style="width:76.36pt;height:193.64pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US">
+          </span>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Payment and withdrawal unavailable other than the Company log-in
+          </span>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td style="width:83.78pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Log-in Restriction
+          </span>
+         </p>
+        </td>
+        <td style="width:164.67pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Consecutive error with the password
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Hijacking / fraud accident
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Doubtful of illegal use of other’s name
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Others: decided by the administrator of the Company
+          </span>
+         </p>
+        </td>
+        <td style="width:98.22pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Resolving the cause for the suspension
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Decision of the administrator of the Company
+          </span>
+         </p>
+        </td>
+        <td style="width:76.36pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Log-in unavailable
+          </span>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td style="width:83.78pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           purchasing, selling, deposit and withdrawal  service restriction
+          </span>
+         </p>
+        </td>
+        <td style="width:164.67pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Depends on the decision of the administrator of the Company, if there is no problems other and payment / deposit and withdrawal, this can be handled as partial service restriction.
+          </span>
+         </p>
+        </td>
+        <td style="width:98.22pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Resolving the cause for the suspension
+          </span>
+          <br/>
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           - Decision of the administrator of the Company
+          </span>
+         </p>
+        </td>
+        <td style="width:76.36pt;height:84.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; line-height: 120%; word-break: keep-all;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Certain service unavailable
+          </span>
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:굴림;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 6 Commission on Service Usage
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:14.0pt;">
+      <span style="font-size: 14pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 16 (Contents of Service Commission in Relation to Cryptocurrency Payment)
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The company imposes the commission to the stores in return for providing the Service through Coin Store. The commission is stated on the company’s homepage of way of utilization and it may be changed dependent on the circumstances of the company and the market.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The company may suspend to provide the Service when changing to the new Services or when a reason for unable to provide the Service occurs.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3, The company shall compensate the damage caused to the user or the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;">
+       rd
+      </span>
+      <span lang="EN-US">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       party by the reason of the first paragraph, of temporary suspension of the Service. However, if the company can prove that it does not have any intention or mistake, the company shall not compensate for the damage.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 7 Utilization of the Services
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 17 (Utilization of the Services)
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. Utilization of the Service
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l12 level1 lfo13;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The company execute following tasks to provide the Service.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Providing necessary the company’s payment URL, page and system when the user asks for the payment
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Providing detailed information about the Company’s market value and payment detail to exchange quantity of cryptocurrency when make a payment
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Providing the payment history inquiry service to balance the account
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Other tasks defined by the Company in relation to the management of the Company
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l12 level1 lfo13;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The stores shall execute following tasks when using the Coin Store Service.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Customer response, refund and cancellation in relation to the Company’s payment
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Throughly understand the usage provisions of the Company and execute obligation of notification to the members of precautions in relation to the cryptocurrency payments.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l13 level1 lfo14;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The store shall not use the Company’s Service on the purpose of selling custom-hindering and/or legally prohibited products and services and contents, including exaggerated information.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l13 level1 lfo14;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The delay on Store may occur due to cryptocurrency network circumstances or system maintenance work and other inevitable causes; the Company does not take any responsibility in regarding to this.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l14 level1 lfo15;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Coin Island Wallet is the Service based on the market value of cryptocurrency; the Service may temporarily suspended when the market value soars or collapses.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. Coin Store Service Calculation
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l14 level1 lfo15;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company calculates the sale money which the store received with cryptocurrency to the store’s Coin Island Wallet.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l15 level1 lfo16;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Withdrawal of calculated sale money does not exceed maximum 3 business day, based on the transfer date to the wallet.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. Cancellation of Payment
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l15 level1 lfo16;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When the member asks for the cancellation within 1 hour of the payment, the store directly handles the request under their responsibility.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l16 level1 lfo17;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       When the payment delay or cancellation due to the store’s mistake occurs, the store shall take all the responsibilities.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. Commission of the Company
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l16 level1 lfo17;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Sales Commission
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Sales Commission is stated on the Company’s homepage; when calculation is made, certain percentage of commission is deducted. However, the rate of the sales commission can be changed according to the Company’s policy.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l17 level1 lfo18;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Withdrawal Commission
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Withdrawal commission is stated on the Company’s homepage. The rate of the withdrawal commission varies according to the cryptocurrency.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-list:l17 level1 lfo18;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       Annual Fee
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       - Annual fee is stated on the Company’s homepage. However, the annual fee can be changed according to the Company’s policy.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:45.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 8 Protection of Personal Information
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 18 (Consent on Utilization of Membership Information)
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. When personal information is changed, the member should amend related information by notifying to the administrator or via amendment through personal information amendment menu on the Company’s homepage immediately. However, user ID, name, date of birth, sex, cryptocurrency wallet cannot be changed due to management of credit.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. In relation to the previous paragraph, all the disadvantages caused by un-amended information shall be burdened by the member; the Company does not take any responsibilities.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. If the member is dissatisfied with the Company’s personal information policy, he/she should submit related contents in written format and in this case, the Company should handle the dissatisfaction according to the legitimate procedure.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. The member’s usage contract cancellation shall be in line with Article 7; in this case, the personal information which is stated in Consumer Protection Law shall be saved and be deleted later on.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       5. The Company shall preserve the personal information for certain period of time when there is an obligation to destruct, if there is a need according to commercial law. However, the back numbers of collected resident registration number shall be concealed.
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:14.0pt;">
+       Chapter 9 Indemnification and Exemption Clauses
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 20 (Indemnification)
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       The Company does not take any responsibilities to the accident caused by violating the trade regulation defined in this provision; also, the Company does not take any responsibilities to the dispute caused by the mistake made by the member. The damage caused by affiliates follows the provisions of affiliates, and make it a rule to resolve the dispute between affiliates and the member.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 21 (Exemption)
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The Company does not take responsibilities as following:
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (a) Eruption of a war, incidents, natural disaster and inevitable cases such s state of national emergency which come close to those
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (b) When the damage is occurred due to the user’s intention or mistake
+      </span>
+     </p>
+     <p class="0" style="line-height:120%;margin-left:30.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       (c) In the case of malfunction of telecommunication service which other key telecommunications business operator provides occurs
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The Company does not take responsibilities of any malfunction of the Service utilization due to the reasons imputable to the uses.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The Company does not take responsibility of contents which the user posted or transmitted.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       4. The Company does not take responsibility when flaw caused to delivery of cryptocurrency due to the service malfunction of management system of issuing cryptocurrenciy or telecommunication service company nor regular server checking time.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 22 (Disapprove of Proxy and Guarantee)
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. The Company does not have any rights to represent the member who wants to use the services and any actions of the Company does not be considered as proxy to the member.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. The Company does not guarantee the goods and services which handled by the linked site. The Company and linked sites are independently operated and the Company does not take any responsibility to the trade between the linked site and member.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:12.0pt;">
+      <span style="font-size: 12pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:12.0pt;">
+       Article 23 (Competent Court and Proper Law)
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <!--[if !supportEmptyParas]-->
+      <!--[endif]-->
+      <o:p>
+      </o:p>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       1. When dispute occurs in relation to the Service usage such as the Company’s fee structure, the dispute shall be conciliated at the designating court which takes charge of jurisdiction is where the user lies as a competent court.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       2. If the user lives in a foreign country, conciliation will be designated court which takes charge of jurisdiction is where the headquarter lies as a competent court.
+      </span>
+     </p>
+     <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+       3. The lawsuit between the Company and the member in relation to the Service usage shall adopt South Korean Law.
+      </span>
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="dialogPopup" id="popPrivacy">
+   <div class="pBox">
+    <div class="pHeader">
+     <span>
+      Privacy Statement
+     </span>
+     <a class="popClose" href="javascript:void(0)">
+      <img alt="close" src="./include/img/btn/btn_close03.png"/>
+     </a>
+    </div>
+    <div class="pContent">
+     <p>
+      <span style="letter-spacing: 0pt; font-size: 12pt;">
+      </span>
+      <span style="font-size: 12pt; letter-spacing: 0pt;">
+       Coin Island Inc., (hereafter “Coin Island”) follows the personal information protection policy defined by Act on the Protection of Personal Information and tries its best to protect the rights of the users by defining the personal information process policy.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       1. Collection of Personal Information
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island collect the minimum information to join the membership and use the services.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       When collecting the user’s personal information, we shall notify the fact to the members beforehand and shall acquires the agreement.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       1) At the point of joining the membership, Coin Island collects following informations from the uses:
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Name, address, nickname of address, password, password for payment, telephone number, e-mail address, nationality, copy of the ID
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       2) Additionally collecting personal information from the users for verification of security when pay and balance the account is following:
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Telephone verification: Using Google OTP
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Deposit and withdrawal of Cryptocurrency: Address of Cryptocurrency wallet (Bitcoin, Ethereum, Ripple)
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       3) While using the service, following information can be generated, collected and used:
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Equipment information (OS, size of screen, device ID, telephone number, UID, UUID, IMEI), IP address, service history, user status information, cookie
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       2. Utilization of Personal Information
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       (The purpose of the utilization)
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island only utilizes the user’s personal information based on the following purposes;
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       1) Verification of the user, confirmation of joining will and age, prevention of faulty member’s illicit usage, management of members
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       2) Providing various services such as link services provided by affiliates
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       3) Handling of inquiry or dissatisfaction of the user and delivery of notice
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       4) Providing the promised services and calculation of usage charge
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       5) Developing new services, delivering information on events and utilizing for marketing and advertisement
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       6) Analyzation of the service history and access frequency, statistics on the service usage, establishment of privacy protection service environment, providing bespoke service and utilization to service enhancement
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       (Period of Use)
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island is utilizing the user’s personal information restrictively based on the purpose of collection and usage and usage period; the personal information shall be immediately when the user asks for membership withdrawal and/or withdraw from the agreement. However, certain information that should be preserved shall be kept under the period defined by the law in relation to the act on the consumer protection in the electronic commerce transactions, Electronic Financial Transaction Act and Protection of Communications Secrets Act.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       1) Consumer protection in the electronic commerce transactions
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Record on collection / process and usage of credit information: 3 years
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Record on contract or subscription withdrawal: 5 years
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Record on payment or supply of goods: 5 years
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Record on customers dissatisfaction or dispute settlement: 3 years
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Record on mark / advertisement: 6 months
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       2) Electronic Financial Transaction Act
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Record on electronic finance: 5 years
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       3) Protection of Communications Secrets Act.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Log-in history: 3 months
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       3. Offering and Consignment of Personal Information
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       (Offering personal information to the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;font-size:12.0pt;">
+       rd
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       person)
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island does not offer personal information to the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;font-size:12.0pt;">
+       rd
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       person as a general rule. However, when the user directly agrees to offering the personal information to the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;font-size:12.0pt;">
+       rd
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       person, Coin Island offers the information based on the events when; the obligation to submit the information occurs according to the related regulations; the imminent danger is confirmed to the user’s life or safety and to resolve this.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       The 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;font-size:12.0pt;">
+       rd
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       person which Coin Island provides personal information after acquiring the consent of the user is following:
+      </span>
+     </p>
+     <table class="__se_tbl_ext" style="border-collapse:collapse;table-layout:fixed;border-top:none;border-left:none;border-bottom:none;border-right:none;mso-table-overlap:never;">
+      <tbody>
+       <tr>
+        <td style="width:70.92pt;height:28.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Service Name
+          </span>
+         </p>
+        </td>
+        <td style="width:82.24pt;height:28.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Provided Entity
+          </span>
+         </p>
+        </td>
+        <td style="width:141.67pt;height:28.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Provided Item
+          </span>
+         </p>
+        </td>
+        <td style="width:124.69pt;height:28.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Period of Use
+          </span>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td style="width:70.92pt;height:44.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Coin People
+          </span>
+         </p>
+        </td>
+        <td style="width:82.24pt;height:44.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Coin Store Affiliates
+          </span>
+         </p>
+        </td>
+        <td style="width:141.67pt;height:44.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Nickname of the account
+          </span>
+         </p>
+        </td>
+        <td style="width:124.69pt;height:44.82pt;padding:1.41pt 5.10pt 1.41pt 5.10pt;border-top:solid #000000 1px;border-left:solid #000000 1px;border-bottom:solid #000000 1px;border-right:solid #000000 1px;" valign="middle">
+         <p class="0" style="mso-style-name:＇바탕글＇;line-height:160%;margin-left:0pt;margin-right:0pt;text-indent:0pt;margin-top:0pt;margin-bottom:0pt;text-align:justify;word-break:break-hangul;layout-grid-mode:both;vertical-align:baseline;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;mso-ascii-font-family:함초롬바탕;mso-ascii-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:10.0pt;color:#000000;mso-font-kerning:0pt; text-align:center;word-break:keep-all;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+          <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">
+           Until membership withdrawal or affiliate contract expiration
+          </span>
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       4. Destruction of Personal Information
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island destroys the user’s personal information after the purpose of the collection and usage of personal information fulfilled.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       However, in the case that the personal information should be preserved according to the related regulations, the personal information shall be destroyed after the certain period of time. In this case, the separately preserved information will only be used in a purposed according to the regulations.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Information in electronic format will be destroyed using technical method not to be restored or revived. Other formats, such as documents, prints, letters will be destroyed with grinder or incinerator.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       5. Rights of the User and Legal Representative and its Execute Method
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island is protecting the user’s rights as following:
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       1) The user can view and amend their personal information at any time.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       2) The user can ask the withdrawal of agreement of personal information offering / withdrawal of membership joining at any time.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       3) When the personal information correction requirement is made, the user’s personal information does not used or provided until the amendment is done, to use and provide accurate personal information. If the information is already provided to the 3
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;vertical-align:super;font-size:12.0pt;">
+       rd
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       person, we will inform them immediately to make correction.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       To view and correct the personal information of the user, the user can make amendment at ‘correction of personal information’; to withdraw from the membership (agreement withdrawal), the user can do this by clicking on ‘withdrawal’ from the service settings.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       6. Matters on Installation and Management of Personal Information Automatic Collection Device and Rejection of This
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       1) Definition of Cookie
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Cookie is a very small text file which the server running the web-site sends to the user’s browser; this is saved in the user’s computer.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       2) Purpose of Cookie Usage
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       By utilizing cookie, the server can provide faster web environment to the user by saving the preferential settings and it also utilizes service enhancement for convenient usage. Through this, the user can use the service more easily.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       3) Installation, Management and Rejection of Cookie
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       The user holds the option to choose the installation of cookie, and at refuse to save or delete the cookie at any time.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       4) Way to Refuse Cookie
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Internet Explorer : Click on Tools &gt; Click on Internet Option &gt; Click on Personal Information Tap &gt; Set the level for personal information handling
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Chrome : Click on Settings &gt; Click on View the Advanced Settings &gt; Click on Personal Information-Contents Settings &gt; Set for the Cookie Level
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       - Safari : Click on the Configuration &gt; Click on Personal Informatino Tap &gt; Set for the Cookie and Web-site Data Level
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       7. Actions to Secure the Personal Information Stability
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island is taking following technical, management, physical actions when processing personal information to make sure it is not stolen, robbed, forged, falsified or damaged:
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       1) Establishment and Execution of Internal Management Plan
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       To handle the personal information safely, we establish and execute internal management plan
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       2) Restriction of Access to the Personal Information
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       We have minimized the person in charge of the personal information and taken necessary steps to restrict access to the personal information by granting, altering and deleting the access authority to the database system which processes personal information.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       3) Encryption of Personal Information
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       We are transmitting the user’s personal information through encrypted communication interval and preserving the key information such as passwords encrypted.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       4) Preservation of Access History and Prevention of Forge and Falsification
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       We are preserving and managing the history of access to the personal information processing system (web log, summary information, etc.) and utilizing security function to prevent access history from forge, falsification, robbery or loss.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       5) Technical Measures in Preparation for Hijacking
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       In preparation for damage to the personal information, we are frequently backing up the data; also we are preventing the user’s personal information from leaking or damaging by using up-to-date vaccine program. We are controlling the unauthorized access from outside utilizing the trespass block system and trying to prepre all the technical equipment to secure other systematical security.
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       6) Access control on Unauthorized Person
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       To prevent the leaking of the personal information, we are running the access control system and device to control outsider’s access all the time.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       8. Person in Charge of Personal Information Protection and Contact Information
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Coin Island has designated the person in charge to protect the user’s personal information, to solve the questions and handle the dissatisfaction. We will whenever provide the proper answer to your inquiries.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-weight:bold;font-size:13.0pt;">
+       9. Change of Personal Information Processing Policy
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-weight:bold;font-size:13.0pt;">
+      <span style="font-size: 13pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       This Personal Information Policy will effective on and after October 10, 2018.
+      </span>
+     </p>
+     <p class="0" style="mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;font-size:12.0pt;">
+      <span style="mso-fareast-font-family:함초롬바탕;font-size:12.0pt;">
+       <!--[if !supportEmptyParas]-->
+       <!--[endif]-->
+       <o:p>
+       </o:p>
+      </span>
+     </p>
+     <p class="0">
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       [Person in Charge of Personal Information Protection]
+      </span>
+     </p>
+     <p class="0">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       •
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Name : Lee, Jae-hyun
+      </span>
+     </p>
+     <p class="0">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       •
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Title : Person in charge of personal information protection
+      </span>
+     </p>
+     <p class="0">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       •
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       Contact information : 042-382-0202 (Customer Center)
+      </span>
+     </p>
+     <p class="0">
+      <span style="font-family:함초롬바탕;mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       •
+      </span>
+      <span lang="EN-US" style="mso-fareast-font-family:함초롬바탕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:12.0pt;">
+       e-mail : support@coin-island.com
+      </span>
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="altpage">
+   <div class="AltMsg">
+    <p id="msg">
+    </p>
+    <a class="altclose" href="javascript:void(0)">
+     Confirm
+    </a>
+   </div>
+  </div>
+  <div class="altConfrimpage">
+   <div class="cnfrimMsg">
+    <p id="cnfmsg">
+    </p>
+    <div class="cmdbtn">
+     <a class="altyesclose" href="javascript:void(0)">
+      Now
+     </a>
+     <a class="altnoclose" href="javascript:void(0)">
+      Later
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+ <script>
+  function btcpriceView()
+	{
+		var urladr = "https://www.coin-island.com:3002/get_icoprice";
+        var httpbtc = new XMLHttpRequest();
+		httpbtc.open("POST", urladr, true);
+
+		//Send the proper header information along with the request
+		httpbtc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		httpbtc.onreadystatechange = function() {//Call a function when the state changes.
+		    if(httpbtc.readyState == XMLHttpRequest.DONE && httpbtc.status == 200) {
+		        // Request finished. Do processing here.
+		        var response = JSON.parse(httpbtc.responseText);
+		        var unitname = response["errcode"]["btcdata"]["pricename"];
+		        var btcprice = viewPriceFormat(response["errcode"]["btcdata"]["icoPrice"]) + unitname;
+		        var ethprice = viewPriceFormat(response["errcode"]["ethdata"]["icoPrice"]) + unitname;
+		        var xrpprice = viewPriceFormat(response["errcode"]["xrpdata"]["icoPrice"]) + unitname;
+		        document.getElementById("BTCP").innerHTML = btcprice;
+		        document.getElementById("ETHP").innerHTML = ethprice;
+		        document.getElementById("XRPP").innerHTML = xrpprice;
+		    }
+		}
+
+		httpbtc.send("ctrycode=USA");
+	}
+	setInterval(btcpriceView, 1000);
+ </script>
+</html>

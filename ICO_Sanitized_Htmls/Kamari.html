@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Kamari – Building Mobile Gaming and Payments for One Billion People
+  </title>
+  <style>
+  </style>
+  <style>
+   @font-face {
+font-family: 'SourceSansPro';
+font-style: normal;
+font-weight: normal;
+src: url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-regular.eot');
+src: local('SourceSansPro'), local('SourceSansPro'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-regular.eot?#iefix') format('embedded-opentype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-regular.woff') format('woff'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-regular.woff2') format('woff2'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-regular.ttf') format('truetype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-regular.svg#svgFont') format('svg');
+}
+@font-face {
+font-family: 'SourceSansPro';
+font-style: italic;
+font-weight: normal;
+src: url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-italic.eot');
+src: local('SourceSansPro'), local('SourceSansPro'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-italic.eot?#iefix') format('embedded-opentype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-italic.woff') format('woff'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-italic.woff2') format('woff2'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-italic.ttf') format('truetype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-italic.svg#svgFont') format('svg');
+}
+@font-face {
+font-family: 'SourceSansPro';
+font-style: normal;
+font-weight: 700;
+src: url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-700.eot');
+src: local('SourceSansPro'), local('SourceSansPro'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-700.eot?#iefix') format('embedded-opentype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-700.woff') format('woff'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-700.woff2') format('woff2'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-700.ttf') format('truetype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-700.svg#svgFont') format('svg');
+}
+@font-face {
+font-family: 'SourceSansPro';
+font-style: normal;
+font-weight: 900;
+src: url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-900.eot');
+src: local('SourceSansPro'), local('SourceSansPro'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-900.eot?#iefix') format('embedded-opentype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-900.woff') format('woff'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-900.woff2') format('woff2'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-900.ttf') format('truetype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-900.svg#svgFont') format('svg');
+}
+@font-face {
+font-family: 'SourceSansPro';
+font-style: normal;
+font-weight: 600;
+src: url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-600.eot');
+src: local('SourceSansPro'), local('SourceSansPro'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-600.eot?#iefix') format('embedded-opentype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-600.woff') format('woff'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-600.woff2') format('woff2'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-600.ttf') format('truetype'), url('https://kamari.io/wp-content/uploads/2019/06/source-sans-pro-v12-latin-600.svg#svgFont') format('svg');
+}
+  </style>
+  <link href="https://kamari.io/feed/" rel="alternate" title="Kamari » Feed" type="application/rss+xml"/>
+  <link href="https://kamari.io/comments/feed/" rel="alternate" title="Kamari » Comments Feed" type="application/rss+xml"/>
+  <meta content="article" property="og:type"/>
+  <meta content="Home" property="og:title"/>
+  <meta content="https://kamari.io/" property="og:url"/>
+  <meta content="Kamari" property="og:site_name"/>
+  <!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://kamari.io/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='contact-form-7-css'  href='https://kamari.io/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='cookie-notice-front-css'  href='https://kamari.io/wp-content/plugins/cookie-notice/css/front.min.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='display-medium-posts-css'  href='https://kamari.io/wp-content/plugins/display-medium-posts/public/css/display-medium-posts-public.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='ace-owl-carousel-css'  href='https://kamari.io/wp-content/plugins/display-medium-posts/public/vendors/owl-carousel/owl.carousel.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='ace-owl-theme-css'  href='https://kamari.io/wp-content/plugins/display-medium-posts/public/vendors/owl-carousel/owl.theme.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='font-awesome-css'  href='https://kamari.io/wp-content/themes/kalium/assets/css/fonts/font-awesome/font-awesome-admin.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='bootstrap-css'  href='https://kamari.io/wp-content/themes/kalium/assets/css/bootstrap.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='main-css'  href='https://kamari.io/wp-content/themes/kalium/assets/css/main.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='style-css'  href='https://kamari.io/wp-content/themes/kalium/style.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='custom-skin-css'  href='https://kamari.io/wp-content/themes/kalium-child/custom-skin.css' type='text/css' media='all' /> -->
+  <link href="//kamari.io/wp-content/cache/wpfc-minified/78j6w5ik/5qi03.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+<link rel='stylesheet' id='vc_lte_ie9-css'  href='https://kamari.io/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css' type='text/css' media='screen' />
+<![endif]-->
+  <!-- <link rel='stylesheet' id='js_composer_front-css'  href='https://kamari.io/wp-content/plugins/js_composer/assets/css/js_composer.min.css' type='text/css' media='all' /> -->
+  <link href="//kamari.io/wp-content/cache/wpfc-minified/1163bvnv/5qi03.css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="js_composer_front-inline-css" type="text/css">
+   .vc_custom_1562362614132{background-position: center;background-repeat: no-repeat !important;background-size: contain !important;}.vc_custom_1562270976645{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;background-color: #f0f0f7 !important;}.vc_custom_1562329913086{background-image: url(https://kamari.io/wp-content/uploads/2019/06/Kamari-Oportu.jpg?id=201) !important;}.vc_custom_1562337786133{background-color: #f0f0f7 !important;}.vc_custom_1562337865107{padding-top: 80px !important;padding-bottom: 80px !important;}.vc_custom_1562337876862{padding-top: 80px !important;padding-bottom: 80px !important;}.vc_custom_1562327305344{padding-top: 80px !important;padding-bottom: 80px !important;}.vc_custom_1562337921373{padding-top: 0px !important;padding-bottom: 0px !important;background-color: #9e765a !important;}.vc_custom_1562337932880{padding-top: 80px !important;padding-bottom: 80px !important;background-color: #36363f !important;}.vc_custom_1569938032543{margin-bottom: 15px !important;}.vc_custom_1561832061761{padding-bottom: 50px !important;}.vc_custom_1561810891272{margin-top: 35px !important;margin-bottom: 10px !important;}.vc_custom_1561810883120{margin-bottom: 10px !important;}.vc_custom_1562269517537{margin-bottom: 50px !important;}.vc_custom_1561840432363{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1562492321183{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1561885366930{margin-top: 0px !important;margin-bottom: 0px !important;padding-bottom: 0px !important;}.vc_custom_1562492332134{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1561885378467{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1561844949902{padding-top: 50px !important;padding-bottom: 50px !important;}.vc_custom_1562321143745{background-image: url(https://kamari.io/wp-content/uploads/2019/06/africa-numbers.png?id=285) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: contain !important;}.vc_custom_1561979247711{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1561979213070{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1562342109023{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1562267559173{margin-bottom: 15px !important;}.vc_custom_1562267553297{margin-bottom: 15px !important;}
+  </style>
+  <script type="text/javascript">
+   var ajaxurl = ajaxurl || 'https://kamari.io/wp-admin/admin-ajax.php';
+  </script>
+  <style id="typolab-font-variants">
+   h1{font-family:'SourceSansPro';font-style:normal;font-weight:600}.bolder{font-family:'SourceSansPro';font-style:normal;font-weight:900}h2{font-family:'SourceSansPro';font-style:normal;font-weight:700}body,p{font-family:'SourceSansPro';font-style:normal;font-weight:normal}h1{font-size:56px}
+  </style>
+  <script src="//kamari.io/wp-content/cache/wpfc-minified/jxmjo7sw/5qi03.js" type="text/javascript">
+  </script>
+  <!-- <script type='text/javascript' src='https://kamari.io/wp-includes/js/jquery/jquery.js'></script> -->
+  <!-- <script type='text/javascript' src='https://kamari.io/wp-includes/js/jquery/jquery-migrate.min.js'></script> -->
+  <!-- <script type='text/javascript' src='https://kamari.io/wp-content/plugins/display-medium-posts/public/vendors/owl-carousel/owl.carousel.js'></script> -->
+  <link href="https://kamari.io/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://kamari.io/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://kamari.io/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <meta content="WordPress 5.2.5" name="generator"/>
+  <link href="https://kamari.io/" rel="canonical"/>
+  <link href="https://kamari.io/" rel="shortlink"/>
+  <link href="https://kamari.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkamari.io%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://kamari.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkamari.io%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <!-- start Simple Custom CSS and JS -->
+  <script type="text/javascript">
+   jQuery(document).ready(function( $ ){
+if($(window).width() > 768 ) {
+MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/kamari-coin","postsPerLine":2,"limit":4,"picture":"big","fields":["description","author","claps","publishAt"],"ratio":"landscape"}})
+} else {
+MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/kamari-coin","postsPerLine":1,"limit":4,"picture":"big","fields":["description","author","claps","publishAt"],"ratio":"landscape"}})
+}
+});
+  </script>
+  <!-- end Simple Custom CSS and JS -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-141312129-1', 'auto');
+ga('send', 'pageview');
+  </script>
+  <link href="//kamari.io/wp-content/uploads/2019/06/favicon.png" rel="shortcut icon"/>
+  <link href="//kamari.io/wp-content/uploads/2019/06/Kamari-Logo.png" rel="apple-touch-icon-precomposed"/>
+  <link href="//kamari.io/wp-content/uploads/2019/06/Kamari-Logo.png" rel="apple-touch-icon-precomposed" sizes="72x72"/>
+  <link href="//kamari.io/wp-content/uploads/2019/06/Kamari-Logo.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
+  <script>
+   var mobile_menu_breakpoint = 992;
+  </script>
+  <style>
+   @media screen and (min-width:993px) { .mobile-menu-wrapper,.mobile-menu-overlay,.standard-menu-container .menu-bar-hidden-desktop {
+display: none;
+} }
+  </style>
+  <style>
+   @media screen and (max-width:992px) { .standard-menu-container > div,.standard-menu-container > nav,.main-header.menu-type-standard-menu .standard-menu-container div.menu>ul,.main-header.menu-type-standard-menu .standard-menu-container ul.menu,.menu-cart-icon-container {
+display: none;
+} }
+  </style>
+  <style id="theme-custom-css">
+   @import url("https://kamari.io/wp-content/uploads/font-awesome-5/css/all.css");body,html {font-size: 16px;-webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;-o-hyphens: auto;hyphens: auto;}body {-webkit-transition: background-color 1s ease-in-out; transition: background-color 1s ease-in-out; background-color: #1B1B1E;}a:hover {color: #BD9A87 !important;}.main-header.menu-type-standard-menu .standard-menu-container.menu-skin-main div.menu > ul > li > a::after, .main-header.menu-type-standard-menu .standard-menu-container.menu-skin-main ul.menu > li > a::after {background-color: #BD9A87;}.go-to-top.visible:hover {background-color: #876757;}.wrapper {background: transparent;}.social-networks.rounded li a i {color: #fff;  }.social-networks.rounded li a.link-hover i {color: #BD9A87;}header nav > p {display: none;}header .social-networks.rounded li a i {color: #fff; }header .social-networks.rounded li a.link-hover i {color: #F7F0D5;}.bolder {font-weight:900;}::after, ::before {box-sizing: border-box;}::selection {background: #876757; color: #fff;}#home h1 {color: #ffffff;}#home p {color: #F7F0D5;}#home .newstext p {color: #9A9AA0;}.round_btn {padding: 10px 20px;border-radius: 50px;background-color: #876757;color: #fff;text-align: center;display: inline-block;border: 1px solid transparent;font-weight:700;width: 20%;}.cn-button.wp-default {padding: 0 20px;background: #876757;color: #fff;text-align: center;display: inline-block;border: 1px solid transparent;font-family:inherit}.round_btn:hover {background-color: transparent;border-color: #BD9A87;color: #BD9A87;}.cn-button.wp-default:hover {background: transparent;border-color: #BD9A87;color: #BD9A87;text-shadow: none;}a.round_btn:after,.round_btn:after,a.corner_btn:after,a.cn-button::after,.cn-button::after {display: none;}.wpcf7-form input[type="email"] {margin: 0 15px 20px 0;border: none;border-radius: 5px;color: #373240;font-size: 1.3rem;width: 50%;}#home .social-networks.rounded li a i {color: #fff;}#home .social-networks.rounded li a:not(.link-hover) {background: #3E3E44;}.blockchain h2 {font-size: 1.7rem;color: #fff;margin-bottom: 25px;}.blockchain p {color: #EBF2F7;}.blockchain  ul li {color: #E0D6D3 !important;}.flex-slider, .flexer, .whitepaper_html > .wpb_wrapper, .milestone_box > .wpb_wrapper > div {    display: -ms-flexbox;    display: -webkit-flex;    display: flex;    -webkit-align-items: center;    -ms-flex-align: center;    align-items: center;    -webkit-flex-wrap: wrap;    -ms-flex-wrap: wrap;    flex-wrap: wrap;}#display-medium-owl-demo {display: -ms-flexbox;    display: -webkit-flex;    display: flex;    -webkit-flex-wrap: wrap;    -ms-flex-wrap: wrap;    flex-wrap: wrap;    -webkit-align-content: stretch;    -ms-flex-line-pack: stretch;    align-content: stretch;    -webkit-justify-content: space-between;    -ms-flex-pack: space-between;justify-content: space-between;}#display-medium-owl-demo .details-title {    border-bottom: none;    margin: 20px 0 10px;    font-size: 1.2rem;    font-weight: 700;    color: #333;}#display-medium-owl-demo .display-medium-item {width:49%;overflow:hidden;margin-bottom: 50px;}#display-medium-owl-demo .display-medium-item a > img {width: 100%;height: 300px;max-height: 350px;object-fit: cover;}#display-medium-owl-demo .display-medium-item .display-medium-subtitle {    width: 65%;    float: left;    padding-right: 5%;    font-size: .9rem;}#display-medium-owl-demo .display-medium-item a.display-medium-readmore {    color: #876757;    font-size: .9rem;display: block;}#display-medium-owl-demo .display-medium-item a.display-medium-readmore:hover {    color: #f7f0d5;}#display-medium-owl-demo .display-medium-item .display-medium-date-read {text-align: right;    font-size: .9rem;font-weight: 600;}#display-medium-owl-demo .medium-image {height: 300px;}.flexer {width: 320px;margin-bottom: 50px;}.flex-slider h2 {    text-align: left;    margin: 15px 0 !important;}.text_white p {color: #fff;}.text_white li {color: #E0D6D3;}.whitepaper_html p {margin-right: 15px; margin-bottom: 0;}.whitepaper_html a.vc_btn3.vc_btn3-color-white.vc_btn3-style-modern {    color: #fff;    border-color: transparent;    background-color: #BD9A87;}.whitepaper_html a.vc_btn3.vc_btn3-color-white.vc_btn3-style-modern:hover {    background-color: transparent;border-color: #BD9A87;}.slick-slider img {margin-top: 15px !important;}.content-section {display: none;}.grau_braun h2 {color: #EDEDF4;}.grau_braun h4 {color: #C4AB99;font-weight: 700;}.milestone_box > .wpb_wrapper > div {        -webkit-justify-content: flex-start;    -ms-flex-pack: flex-start;justify-content: flex-start;}.milestone_box h3 {    color: #997D6A;    font-weight: 700;    flex-basis: 100%;    margin-bottom: 0px;}.milestone_box p {color: #fff;font-size: 1.5rem;font-weight: 900;line-height: 1;}.milestone_box p.large {font-size: 4rem;font-weight: 900;margin-right: 10px;}#numbers {background-position: 100% top !important;}#founders h2 {color: #C0C0CE}#founders h3 {color: #E5E1DF; font-weight: 700;}#founders p {color: #dadaea}#founders h3 + p {font-weight: 700;}.team-holder > .row {display: -ms-flexbox;    display: -webkit-flex;    display: flex;    -webkit-flex-wrap: wrap;    -ms-flex-wrap: wrap;    flex-wrap: wrap;    -webkit-align-content: stretch;    -ms-flex-line-pack: stretch;    align-content: stretch;}.team-holder > .row > div {margin-bottom: 1.5rem;}.team-holder .member {margin-bottom: 0;}.team-holder .thumb {border-radius: 50%;width: 40%;margin: 0 auto;background-color: transparent;}.team-holder .thumb img {opacity: 0;visibility: hidden;}.member-details h3 {position: relative;}.member-details h3 span {    position: absolute;    border: 1px solid #333;top: 0;right: 0.5rem;width: 2rem;height: 2rem;    -webkit-border-radius: 50%;    -webkit-background-clip: padding-box;    -moz-border-radius: 50%;    -moz-background-clip: padding;    border-radius: 50%;    background-clip: padding-box;    background-color: #997D6A;text-align: center;cursor: pointer;}.member-details h3 span:hover {    background-color: #0077B5;cursor: pointer;}.member-details h3 span i { color: #fff;font-size: 1rem;transform: translateY(-50%);margin-top: 50%;}.follow_us_block a {color: #fff;font-size: 2rem;font-weight: 400;}.follow_linker a {display: block;text-align: right;font-size: 2.5rem;}.follow_us_block a:hover {color: #f7f0d5 !important;}.follow_linker a::after {display: none;}#community p {color: #fff;}.socials_follow ul.social-networks li a,.lab-vc-social-networks ul.social-networks li a {background-color: #17171C;}.socials_follow ul.social-networks li a.custom:hover i,.socials_follow ul.social-networks li a.medium:hover i,.lab-vc-social-networks ul.social-networks li a.custom:hover i,.lab-vc-social-networks ul.social-networks li a.medium:hover i {    color: #000 !important;}.socials_follow ul.social-networks li a.facebook:hover i,.socials_follow ul.social-networks li a.twitter:hover i, .lab-vc-social-networks ul.social-networks li a.facebook:hover i,.lab-vc-social-networks ul.social-networks li a.twitter:hover i {color: #fff !important;}#footer p {color: #fff;}#footer a {color: #f7f0d5;}.site-footer.footer-bottom-horizontal .footer-bottom-content .footer-content-right {display: -ms-flexbox;    display: -webkit-flex;    display: flex;    -webkit-flex-wrap: wrap;    -ms-flex-wrap: wrap;    flex-wrap: wrap;    -webkit-align-content: center;    -ms-flex-line-pack: center;    align-content: center;    -webkit-justify-content: flex-end;    -ms-flex-pack: flex-end;justify-content: flex-end;}.site-footer.footer-bottom-horizontal .footer-bottom-content .footer-content-right .social-networks {display: none;}.site-footer.footer-bottom-horizontal .footer-bottom-content .footer-content-right p {margin-left: 25px;}.footer-widgets div.textwidget.custom-html-widget div.spalte {display: -ms-flexbox;    display: -webkit-flex;    display: flex;-webkit-flex-direction: column;    -ms-flex-direction: column;    flex-direction: column;}.footer-widgets div.textwidget.custom-html-widget h4 {    white-space: nowrap;margin-bottom: 20px;}.footer-widgets div.textwidget.custom-html-widget a + h4 {margin-top: 25px;}.footer-widgets div.textwidget.custom-html-widget a {margin-bottom: 10px;}.footer-widgets div.textwidget.custom-html-widget a::after {display:none;}.menu-items-blocks.standard-menu-container nav {    display: -ms-flexbox;    display: -webkit-flex;    display: flex;-webkit-box-pack: end;-ms-flex-pack: end;-webkit-justify-content: flex-end;justify-content: flex-end;    -webkit-align-items: center;    -ms-flex-align: center;    align-items: center;}.main-header.menu-type-standard-menu .standard-menu-container div.menu > ul > li + li, .main-header.menu-type-standard-menu .standard-menu-container ul.menu > li + li {margin-left: 1.5rem;}.menu-items-blocks.standard-menu-container nav ul.social-networks {margin-left: 2.5rem;margin-top: .25rem;}.menu-items-blocks.standard-menu-container nav ul.social-networks.rounded li a {background-color: transparent;}.menu-items-blocks.standard-menu-container nav ul.social-networks.rounded li a.facebook {width: 30px;}.main-header.menu-type-standard-menu .standard-menu-container div.menu > ul > li > a, .main-header.menu-type-standard-menu .standard-menu-container ul.menu > li > a {font-size: 1rem;}.vc_btn3-container.vc_btn3-inline {margin-right: 15px;}.about_flex > .vc_column-inner > .wpb_wrapper {display: -ms-flexbox;    display: -webkit-flex;    display: flex;    -webkit-flex-wrap: wrap;    -ms-flex-wrap: wrap;    flex-wrap: wrap;    -webkit-justify-content: space-between;    -ms-flex-pack: space-between;    justify-content: space-between;-webkit-align-items: center;    -ms-flex-align: center;    align-items: center;}.about_flex .about_bild {flex-basis: 25%;}.about_flex .about_text {flex-basis: 70%;}#home .vc_parallax-inner {    background-position: 85%;background-size: contain;background-repeat: no-repeat;opacity: 0.6;}#blockchain .vc_parallax-inner {background-position: 20% 0;}#blockchain {    background-position: 55%;background-size: cover;background-repeat: no-repeat;}.newsletter .wpcf7-acceptance label{padding-right: 20px;}.newsletter .wpcf7-form .wpcf7-list-item-label {font-size: 0.7rem;left: 30px;position: relative;margin-left: -15px;}span.wpcf7-not-valid-tip {display: none;}div.wpcf7-response-output {    margin: 0 0.5em 1em;    padding: 0 1em;    border: none;color: #fff;}::placeholder {   color: #A8A8B2;  font-size: 1rem;  opacity: 1; }::-ms-input-placeholder {   font-size: 1rem;  color: #A8A8B2;}::-ms-input-placeholder {   font-size: 1rem;  color: #A8A8B2;}.vc_column-inner .vc_custom_1561907542796 {background-position: 90% center !important;}.animated {    -webkit-animation-duration: 2s !important;    animation-duration: 2s !important;}img.external_link {width: 3.75rem;height: auto;}.vc_btn3.vc_btn3-size-md.vc_btn3-icon-right:not(.vc_btn3-o-empty) .vc_btn3-icon {height: 2rem;width: auto;right: 15px;filter: brightness(3);}.whitepaper_html a.vc_btn3.vc_btn3-color-white.vc_btn3-style-modern:hover .vc_btn3-icon {filter: none;}.ultimate-slide-img {cursor: pointer;}.xs-visible::after, .xs-hidden::after {display: none !important;}.slick-slide img {padding: 0 10px;}.mobile-menu-wrapper.mobile-menu-slide .mobile-menu-container {background-color: #333244;}.mobile-menu-wrapper .mobile-menu-container ul.menu > li > a {color: #C0C0CE;}.mobile-menu-wrapper .mobile-menu-container ul {padding-top: 50px;}@media screen and (min-width: 1200px) {header > .container {width: 1280px; margin-left: calc((100% - 1360px) / 2);}}@media screen and (min-width: 1024px) {.slick-slide {float: none;width: auto !important;}}@media screen and (min-width: 992px) and (max-width: 1385px) {header > .container {width: 100% !important; margin-left: auto !important;}}@media screen and (max-width: 405px) {.menu-items-blocks.standard-menu-container nav ul.social-networks {margin: 0; display: none;}.widget-area.widgets--columned-layout.widgets--columns-3 > .widget {width: 100% !important;}#home h1 br {display: none;}}@media screen and (max-width: 768px){h1 {font-size: 2rem;}.flex-slider h2 {text-align: center;}.wpcf7-form input[type="email"] {margin: 0 0 20px 0; width: 100%;}.round_btn {width: 100%;}#blockchain {background-position: 30%;}.whitepaper_html p {width: 100%; text-align: center; margin-right: 0;}.whitepaper_html a.vc_btn3.vc_btn3-color-white.vc_btn3-style-modern {margin-top: 20px;}.flex-slider, .flexer, .whitepaper_html > .wpb_wrapper, .milestone_box > .wpb_wrapper > div {-webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;}.milestone_box h3 {text-align: center; color: #C4AB99;}.flexer {margin-bottom: 20px;}#numbers {background-position: center center !important;}#display-medium-owl-demo .display-medium-item {width: 100%;}#display-medium-owl-demo .display-medium-item .display-medium-subtitle {width: 100%;}.xs-hidden {display: none !important;}.xs-visible img.external_link {width: 2.5rem;}.follow_us_block a {font-size: 1.5rem;}.follow_us_block p {text-align: center;}.widget-area.widgets--columned-layout.widgets--columns-3 > .widget {float: left; width: 50%;}.blockchain {margin-top: 80px;}.site-footer.footer-bottom-horizontal .footer-bottom-content .footer-content-right {-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;}.site-footer.footer-bottom-horizontal .footer-bottom-content .footer-content-right p {margin: 0 10px 10px;}#numbers > .vc_column_container::before, #blockchain > .vc_column_container::before {content: ''; position: absolute; background-color: rgba(0,0,0,.4); height: 100%; width: 100%; left: 0; top: 0;}.post-formatting img, .widget.widget_media_gallery img {margin-top: 0;}}@media screen and (min-width: 768px){h1 {font-size: 2rem;}.flex-slider h2 {text-align: center;}#blockchain {background-position: 35%;}#display-medium-owl-demo .display-medium-item {width: 100%;}.newsletter .vc_col-sm-8,.newsletter .vc_col-sm-4 {width: 100% !important;}.xs-visible {display:none !important;}.xs-hidden img.external_link {width: 3rem;}.follow_us_block a {font-size: 1.5rem;}.slick-track {display: flex !important;justify-content: space-between;align-items: center;}.slick-slide {float: none;width: auto;}}@media screen and (min-width: 992px){h1 {font-size: 3rem;}.flex-slider h2 {text-align: left;}#display-medium-owl-demo .display-medium-item {width:49%;}.newsletter .vc_col-sm-8 {width: 66.66666667% !important;}.newsletter .vc_col-sm-4 {width: 33.33333333% !important;}}
+  </style>
+  <style type="text/css">
+   .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+  </style>
+  <meta content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." name="generator"/>
+  <noscript>
+   <style>
+    .wpb_animate_when_almost_visible { opacity: 1; }
+   </style>
+  </noscript>
+ </head>
+ <body class="home page-template-default page page-id-7 cookies-not-set wpb-js-composer js-comp-ver-6.0.3 vc_responsive">
+  <div class="mobile-menu-wrapper mobile-menu-slide">
+   <div class="mobile-menu-container">
+    <ul class="menu" id="menu-mainmenu">
+     <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-55" id="menu-item-55">
+      <a aria-current="page" href="https://kamari.io/#about">
+       About Kamari
+      </a>
+     </li>
+     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-56" id="menu-item-56">
+      <a aria-current="page" href="https://kamari.io/#founders">
+       Founders
+      </a>
+     </li>
+     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-57" id="menu-item-57">
+      <a aria-current="page" href="https://kamari.io/#newsblog">
+       News and Blog
+      </a>
+     </li>
+     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-58" id="menu-item-58">
+      <a aria-current="page" href="https://kamari.io/#community">
+       Join Community
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="mobile-menu-overlay">
+  </div>
+  <div class="wrapper" id="main-wrapper">
+   <style>
+    header.site-header {
+padding-top: 20px;
+}
+   </style>
+   <style>
+    header.main-header {
+border-bottom: 1px solid rgba(255,255,255,0)
+}
+   </style>
+   <style>
+    header.main-header {
+box-shadow: rgba(255,255,255,0) 0px 0px 0px 0px
+}
+   </style>
+   <header class="site-header main-header menu-type-standard-menu is-sticky">
+    <div class="container">
+     <div class="logo-and-menu-container">
+      <div class="logo-column" itemscope="" itemtype="http://schema.org/Organization">
+       <style>
+        .header-logo.logo-image {
+width: 200px;
+height: 80.090497737557px;
+}
+       </style>
+       <style>
+        @media screen and (max-width: 992px) { .header-logo.logo-image {
+width: 150px ;
+height: 60.067873303167px ;
+} }
+       </style>
+       <a class="header-logo logo-image" href="https://kamari.io" itemprop="url">
+        <img alt="Kamari" class="main-logo" height="354" itemprop="logo" src="//kamari.io/wp-content/uploads/2019/07/Logo-Kamari.png" width="884"/>
+       </a>
+      </div>
+      <div class="menu-column">
+       <div class="menu-items-blocks standard-menu-container menu-skin-main reveal-from-top">
+        <nav>
+         <ul class="menu" id="menu-mainmenu-1">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-55">
+           <a aria-current="page" href="https://kamari.io/#about">
+            <span>
+             About Kamari
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-56">
+           <a aria-current="page" href="https://kamari.io/#founders">
+            <span>
+             Founders
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-57">
+           <a aria-current="page" href="https://kamari.io/#newsblog">
+            <span>
+             News and Blog
+            </span>
+           </a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-58">
+           <a aria-current="page" href="https://kamari.io/#community">
+            <span>
+             Join Community
+            </span>
+           </a>
+          </li>
+         </ul>
+         <ul class="social-networks rounded">
+          <li>
+           <a class="facebook" href="https://www.facebook.com/KamariCoin/" rel="noopener" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f">
+            </i>
+            <span class="name">
+             Facebook
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="twitter" href="https://twitter.com/kamaricoin" rel="noopener" target="_blank" title="Twitter">
+            <i class="fab fa-twitter">
+            </i>
+            <span class="name">
+             Twitter
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="custom" href="https://t.me/KamariOfficial" rel="noopener" target="_blank" title="Telegram">
+            <i class="fa fa-paper-plane">
+            </i>
+            <span class="name">
+             Telegram
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="medium" href="https://medium.com/kamari-coin" rel="noopener" target="_blank" title="Medium">
+            <i class="fab fa-medium-m">
+            </i>
+            <span class="name">
+             Medium
+            </span>
+           </a>
+          </li>
+         </ul>
+         <p>
+          <a href="https://kamari.io/terms-of-use/">
+           Terms of Use
+          </a>
+         </p>
+         <p>
+          <a href="https://kamari.io/privacy-policy ">
+           Privacy Policy
+          </a>
+         </p>
+         <p>
+          <a href="https://kamari.io/cookie-policy">
+           Cookie Policy
+          </a>
+         </p>
+        </nav>
+        <a class="menu-bar menu-skin-main menu-bar-hidden-desktop" href="#">
+         <span class="ham">
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <script type="text/javascript">
+    var headerOptions = headerOptions || {};
+jQuery.extend( headerOptions, {"stickyHeader":{"type":"classic","wrapper":".wrapper","container":".main-header","logoContainer":".header-logo","spacer":true,"initialOffset":10,"debugMode":false,"animateDuration":true,"breakpoints":{"desktop":[992,null],"tablet":[768,992],"mobile":[null,768]},"skin":{"classes":["menu-skin-main","menu-skin-dark","menu-skin-light"],"current":"menu-skin-main","active":""},"scenes":{"paddingSceneOptions":{"scene":[],"tween":{"easing":"Sine.easeInOut","css":{"paddingTop":"10px","paddingBottom":"10px"}}},"backgroundSceneOptions":{"scene":[],"tween":{"easing":"Sine.easeInOut","css":{"backgroundColor":"#020202","borderBottomColor":"rgba(255,255,255,0.51)","boxShadow":"rgba(255,255,255,0) 0px 0px 0px 0px"}}},"logoSceneOptions":{"scene":[],"tween":{"easing":"Sine.easeInOut","css":[]},"logo":{"src":"","width":200,"height":80}}},"autohide":{"duration":0.299999999999999988897769753748434595763683319091796875,"easing":"Sine.easeInOut","css":{"autoAlpha":0}}},"sectionLogoSwitch":[]} );
+   </script>
+   <div class="vc-container">
+    <div class="vc-row-container container">
+     <div class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeIn fadeIn vc_custom_1562362614132 vc_row-has-fill vc_row-o-full-height vc_row-o-columns-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving-fade js-vc_parallax-o-fade row-stretch" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1" data-vc-parallax-image="https://kamari.io/wp-content/uploads/2019/07/helloafrica.gif" data-vc-parallax-o-fade="on" id="home">
+      <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-8 vc_col-md-offset-0 vc_col-md-10">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="vc_empty_space" style="height: 40px">
+          <span class="vc_empty_space_inner">
+          </span>
+         </div>
+         <div class="wpb_text_column wpb_content_element vc_custom_1569938032543 post-formatting">
+          <div class="wpb_wrapper">
+           <h1>
+           </h1>
+           <h1>
+            The Digital Currency of
+            <strong>
+             Africa
+            </strong>
+            .
+           </h1>
+          </div>
+         </div>
+         <div class="vc_row wpb_row vc_inner vc_row-fluid container-fixed">
+          <div class="wpb_column vc_column_container vc_col-sm-12" id="button_flex">
+           <div class="vc_column-inner vc_custom_1561832061761">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element vc_custom_1561810891272 newstext post-formatting">
+              <div class="wpb_wrapper">
+               <p>
+                Updates and Early Access
+               </p>
+              </div>
+             </div>
+             <div class="wpcf7" dir="ltr" id="wpcf7-f148-p7-o1" lang="de-DE" role="form">
+              <div class="screen-reader-response">
+              </div>
+              <form action="/#wpcf7-f148-p7-o1" class="wpcf7-form" method="post" novalidate="novalidate">
+               <div style="display: none;">
+                <input name="_wpcf7" type="hidden" value="148"/>
+                <input name="_wpcf7_version" type="hidden" value="5.1.3"/>
+                <input name="_wpcf7_locale" type="hidden" value="de_DE"/>
+                <input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f148-p7-o1"/>
+                <input name="_wpcf7_container_post" type="hidden" value="7"/>
+               </div>
+               <p>
+                <span class="wpcf7-form-control-wrap your-email">
+                 <input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" name="your-email" placeholder="Enter your email..." size="40" type="email" value=""/>
+                </span>
+                <button class="round_btn wpcf7-form-control wpcf7-submit icon-arrow-right en-icon" id="submit">
+                 Subscribe
+                </button>
+               </p>
+               <div class="wpcf7-response-output wpcf7-display-none">
+               </div>
+              </form>
+             </div>
+             <div class="wpb_text_column wpb_content_element vc_custom_1561810883120 newstext post-formatting">
+              <div class="wpb_wrapper">
+               <p>
+                Join the Community
+               </p>
+              </div>
+             </div>
+             <div class="lab-vc-social-networks display-type-rounded-icons vc_custom_1562269517537">
+              <ul class="social-networks rounded colored-bg-hover">
+               <li>
+                <a class="facebook" href="https://www.facebook.com/KamariCoin/" rel="noopener" target="_blank" title="Facebook">
+                 <i class="fab fa-facebook-f">
+                 </i>
+                 <span class="name">
+                  Facebook
+                 </span>
+                </a>
+               </li>
+               <li>
+                <a class="twitter" href="https://twitter.com/kamaricoin" rel="noopener" target="_blank" title="Twitter">
+                 <i class="fab fa-twitter">
+                 </i>
+                 <span class="name">
+                  Twitter
+                 </span>
+                </a>
+               </li>
+               <li>
+                <a class="custom" href="https://t.me/KamariOfficial" rel="noopener" target="_blank" title="Telegram">
+                 <i class="fa fa-paper-plane">
+                 </i>
+                 <span class="name">
+                  Telegram
+                 </span>
+                </a>
+               </li>
+               <li>
+                <a class="medium" href="https://medium.com/kamari-coin" rel="noopener" target="_blank" title="Medium">
+                 <i class="fab fa-medium-m">
+                 </i>
+                 <span class="name">
+                  Medium
+                 </span>
+                </a>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="vc_row-full-width vc_clearfix">
+     </div>
+    </div>
+    <div class="vc-row-container vc-row-container--stretch-content-no-spaces">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562270976645 vc_row-has-fill vc_row-no-padding" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner vc_custom_1561840432363">
+        <div class="wpb_wrapper">
+         <div class="vc_row wpb_row vc_inner vc_row-fluid flex-slider vc_custom_1562492321183 container-fixed">
+          <div class="wpb_column vc_column_container vc_col-sm-2">
+           <div class="vc_column-inner vc_custom_1561885366930">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element vc_custom_1561885378467 post-formatting">
+              <div class="wpb_wrapper">
+               <h2>
+                Media
+               </h2>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wpb_column vc_column_container vc_col-sm-10">
+           <div class="vc_column-inner vc_custom_1562492332134">
+            <div class="wpb_wrapper">
+             <section class="tdt-slider slider content-over-slider" data-slick='{"arrows": false, "autoplaySpeed": 2000, "dots": false, "autoplay": true, "slidesToShow": 6, "slidesToScroll": 1, "fade": false}' data-slide="1" data-tabs="3" id="tdt-slider-34" style="width: ;">
+              <div class="carousel-caption" style="background: none;">
+               <div>
+                <noscript>
+                 <img alt="dw.com" class="ultimate-slide-img" onclick="window.open('https://www.dw.com/en/dw-business-africa/av-49462858', '_blank')" src="https://kamari.io/wp-content/uploads/2019/07/dwlogo.png" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                </noscript>
+                <img alt="dw.com" class="lazyload ultimate-slide-img" data-src="https://kamari.io/wp-content/uploads/2019/07/dwlogo.png" onclick="window.open('https://www.dw.com/en/dw-business-africa/av-49462858', '_blank')" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                <span class="content-section" style="text-align: center;">
+                 <h2 class="tdt-slider-heading" style="font-size: 22px; color: ; font-weight: normal; line-height: 1;">
+                 </h2>
+                 <br/>
+                </span>
+               </div>
+              </div>
+              <div class="carousel-caption" style="background: none;">
+               <div>
+                <noscript>
+                 <img alt="CNBCAFRICA.com" class="ultimate-slide-img" onclick="window.open('https://www.cnbcafrica.com/videos/2019/07/08/kamari-ceo-why-blockchain-is-the-answer-to-africas-growth-challenges/', '_blank')" src="https://kamari.io/wp-content/uploads/2019/07/cnbc_africa.png" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                </noscript>
+                <img alt="CNBCAFRICA.com" class="lazyload ultimate-slide-img" data-src="https://kamari.io/wp-content/uploads/2019/07/cnbc_africa.png" onclick="window.open('https://www.cnbcafrica.com/videos/2019/07/08/kamari-ceo-why-blockchain-is-the-answer-to-africas-growth-challenges/', '_blank')" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                <span class="content-section" style="text-align: center;">
+                 <h2 class="tdt-slider-heading" style="font-size: 22px; color: ; font-weight: normal; line-height: 1;">
+                 </h2>
+                 <br/>
+                </span>
+               </div>
+              </div>
+              <div class="carousel-caption" style="background: none;">
+               <div>
+                <noscript>
+                 <img alt="bitcoin.com" class="ultimate-slide-img" onclick="window.open('https://news.bitcoin.com/moon-landing-or-misfire-2019s-biggest-initial-exchange-offerings-analyzed/', '_blank')" src="https://kamari.io/wp-content/uploads/2019/07/bitcoin.png" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                </noscript>
+                <img alt="bitcoin.com" class="lazyload ultimate-slide-img" data-src="https://kamari.io/wp-content/uploads/2019/07/bitcoin.png" onclick="window.open('https://news.bitcoin.com/moon-landing-or-misfire-2019s-biggest-initial-exchange-offerings-analyzed/', '_blank')" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                <span class="content-section" style="text-align: center;">
+                 <h2 class="tdt-slider-heading" style="font-size: 22px; color: ; font-weight: normal; line-height: 1;">
+                 </h2>
+                 <br/>
+                </span>
+               </div>
+              </div>
+              <div class="carousel-caption" style="background: none;">
+               <div>
+                <noscript>
+                 <img alt="cryptobriefing.com" class="ultimate-slide-img" onclick="window.open('https://cryptobriefing.com/blockchain-startups-health-protocols-africa/', '_blank')" src="https://kamari.io/wp-content/uploads/2019/07/crypto-briefing-1.png" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                </noscript>
+                <img alt="cryptobriefing.com" class="lazyload ultimate-slide-img" data-src="https://kamari.io/wp-content/uploads/2019/07/crypto-briefing-1.png" onclick="window.open('https://cryptobriefing.com/blockchain-startups-health-protocols-africa/', '_blank')" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                <span class="content-section" style="text-align: center;">
+                 <h2 class="tdt-slider-heading" style="font-size: 22px; color: ; font-weight: normal; line-height: 1;">
+                 </h2>
+                 <br/>
+                </span>
+               </div>
+              </div>
+              <div class="carousel-caption" style="background: none;">
+               <div>
+                <noscript>
+                 <img alt="bitcoinist.com" class="ultimate-slide-img" onclick="window.open('https://bitcoinist.com/ieos-guide-blockchain-through-murky-regulatory-waters/', '_blank')" src="https://kamari.io/wp-content/uploads/2019/07/bitcoinist2-1.png" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                </noscript>
+                <img alt="bitcoinist.com" class="lazyload ultimate-slide-img" data-src="https://kamari.io/wp-content/uploads/2019/07/bitcoinist2-1.png" onclick="window.open('https://bitcoinist.com/ieos-guide-blockchain-through-murky-regulatory-waters/', '_blank')" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                <span class="content-section" style="text-align: center;">
+                 <h2 class="tdt-slider-heading" style="font-size: 22px; color: ; font-weight: normal; line-height: 1;">
+                 </h2>
+                 <br/>
+                </span>
+               </div>
+              </div>
+              <div class="carousel-caption" style="background: none;">
+               <div>
+                <noscript>
+                 <img alt="investinblockchain.com" class="ultimate-slide-img" onclick="window.open('https://www.investinblockchain.com/what-is-kamari-coin/', '_blank')" src="https://kamari.io/wp-content/uploads/2019/07/blockchain.png" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                </noscript>
+                <img alt="investinblockchain.com" class="lazyload ultimate-slide-img" data-src="https://kamari.io/wp-content/uploads/2019/07/blockchain.png" onclick="window.open('https://www.investinblockchain.com/what-is-kamari-coin/', '_blank')" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E" style="max-width: 100%; width: ; height: ; border-radius: 0px; margin-bottom: 15px;"/>
+                <span class="content-section" style="text-align: center;">
+                 <h2 class="tdt-slider-heading" style="font-size: 22px; color: ; font-weight: normal; line-height: 1;">
+                 </h2>
+                 <br/>
+                </span>
+               </div>
+              </div>
+             </section>
+             <style>
+              #tdt-slider-34 .slick-dots li button:before{
+color: transparent;
+border: 2px solid transparent;
+}
+#tdt-slider-34 .slick-next:before {
+color: #000 !important;
+font-size: 30px !important;
+}
+#tdt-slider-34 .slick-prev:before {
+color: #000 !important;
+font-size: 30px !important;
+}
+#tdt-slider-34 .slick-dots li.slick-active button:before {
+opacity: 1 !important;
+}
+#tdt-slider-34.content-over-slider .slick-slide .content-section {
+top: 10px;
+}
+@media only screen and (max-width: 480px) {
+#tdt-slider-34.content-over-slider .slick-slide .content-section {
+top: 35px !important;
+}
+#tdt-slider-34.content-over-slider .ultimate-slide-img {
+height: 300 !important;
+}
+}
+             </style>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="vc_row-full-width vc_clearfix">
+     </div>
+    </div>
+    <div class="vc-row-container vc-row-container--stretch-content-no-spaces">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562329913086 vc_row-has-fill vc_row-no-padding vc_row-o-equal-height vc_row-o-content-middle vc_row-flex" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" id="blockchain">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="vc_empty_space" style="height: 50px">
+          <span class="vc_empty_space_inner">
+          </span>
+         </div>
+         <div class="vc_row wpb_row vc_inner vc_row-fluid container-fixed">
+          <div class="wpb_column vc_column_container vc_col-sm-6">
+           <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+            </div>
+           </div>
+          </div>
+          <div class="wpb_column vc_column_container vc_col-sm-6">
+           <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element text_white blockchain post-formatting">
+              <div class="wpb_wrapper">
+               <div class="jqDnR" id="idTextPanel">
+                <h2>
+                 The Blockchain Opportunity in Africa
+                </h2>
+                <p>
+                 <b>
+                  Africa is one of the Worldâs last great growth regions.
+                 </b>
+                 In the coming decades, as Africaâs population doubles to
+                 <b>
+                  two billion people
+                 </b>
+                 , its GDP has been predicted to increase from $2 trillion today to $29 trillion in todayâs money by 2050. The conditions for growth and disruption are huge. Currently:
+                </p>
+                <ul>
+                 <li>
+                  Two-thirds of the population is under the age of 24.
+                 </li>
+                 <li>
+                  The worldâs fastest growing mobile market, with three quarters of the population owning a mobile device.
+                 </li>
+                 <li>
+                  Over 350 million unbanked adults.
+                 </li>
+                 <li>
+                  54 disparate currencies, some with high inflation and backed by unstable governments.
+                 </li>
+                </ul>
+                <p>
+                 With a growing population and expanding economy, Blockchain has the potential to provide the technology infrastructure to overcome the hurdles of massive growth and
+                 <b>
+                  economically unite
+                 </b>
+                 the African continent.
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="vc_empty_space" style="height: 200px">
+          <span class="vc_empty_space_inner">
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="vc_row-full-width vc_clearfix">
+     </div>
+    </div>
+    <div class="vc-row-container vc-row-container--stretch-content-no-spaces">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562337786133 vc_row-has-fill vc_row-no-padding" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" id="about">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner vc_custom_1561844949902">
+        <div class="wpb_wrapper">
+         <div class="vc_row wpb_row vc_inner vc_row-fluid container-fixed">
+          <div class="wpb_column vc_column_container vc_col-sm-12">
+           <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element post-formatting">
+              <div class="wpb_wrapper">
+               <h2>
+                What is Kamari?
+               </h2>
+               <p>
+                Kamari was created with the vision of a world of lotteries and payments united without borders. By integrating existing infrastructure and licensing with one standardized currency, Kamari will instantly offer a better experience to hundreds of millions of people across Africa.
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="vc_row-full-width vc_clearfix">
+     </div>
+    </div>
+    <div class="vc-row-container container">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562337865107">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="wpb_text_column wpb_content_element grau_braun post-formatting">
+          <div class="wpb_wrapper">
+           <h2>
+            Kamari by the Numbers
+           </h2>
+           <h4>
+            Planing to launch with licenses and user aquisition
+           </h4>
+          </div>
+         </div>
+         <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1562321143745 vc_row-has-fill container-fixed" id="numbers">
+          <div class="about_flex wpb_column vc_column_container vc_col-sm-12">
+           <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+             <div class="wpb_raw_code wpb_content_element wpb_raw_html milestone_box">
+              <div class="wpb_wrapper">
+               <div>
+                <div class="flexer">
+                 <h3>
+                  Lotteries
+                 </h3>
+                 <p class="large">
+                  <span id="lotty_timer">
+                   0
+                  </span>
+                  +
+                 </p>
+                 <p class="small">
+                  African
+                  <br/>
+                  Countries
+                 </p>
+                </div>
+               </div>
+               <div>
+                <div class="flexer">
+                 <h3>
+                  POS units
+                 </h3>
+                 <p class="large">
+                  <span id="pos_timer">
+                   0
+                  </span>
+                  K+
+                 </p>
+                 <p class="small">
+                  Within
+                  <br/>
+                  18 Months
+                 </p>
+                </div>
+               </div>
+               <div>
+                <div class="flexer">
+                 <h3>
+                  Potential Customers
+                 </h3>
+                 <p class="large">
+                  <span id="customers_timer">
+                   0
+                  </span>
+                  M+
+                 </p>
+                </div>
+               </div>
+               <!-- 
+<div>
+<div class="flexer">
+<h3>Lotteries</h3>
+<p class="large"><span id="lotty_timer">0</span>+</p>
+<p class="small">African<br>Countries</p>
+</div>
+<div class="flexer">
+<h3>Sports Betting</h3>
+<p class="large"><span id="sports_timer">0</span>+</p>
+<p class="small">African<br>Countries</p>
+</div> 
+</div>
+<div>
+<div class="flexer">
+<h3>Online Casinos</h3>
+<p class="large"><span id="casinos_timer">0</span>+</p>
+<p class="small">African<br>Countries</p>
+</div>
+<div class="flexer">
+<h3>POS units</h3>
+<p class="large"><span id="pos_timer">0</span>K+</p>
+<p class="small">Within<br>18 Months</p>
+</div>
+</div>
+<div>
+<div class="flexer">
+<h3>Potential Customers</h3>
+<p class="large"><span id="customers_timer">0</span>M+</p>
+</div>
+</div>
+-->
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="vc-row-container container">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562337876862" id="founders">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="wpb_text_column wpb_content_element post-formatting">
+          <div class="wpb_wrapper">
+           <h2>
+            Founders and Advisors
+           </h2>
+          </div>
+         </div>
+         <div class="vc_empty_space" style="height: 20px">
+          <span class="vc_empty_space_inner">
+          </span>
+         </div>
+         <div class="" id="team-members-173123">
+          <div class="team-holder">
+           <div class="row">
+            <div class="col-md-4 col-sm-6">
+             <div class="member founders layout-visible-titles wow fadeIn" data-wow-duration="1s">
+              <!-- <div class="thumb">
+<span class="image-placeholder" style="padding-bottom:100.00000000%;background-color:#eeeeee"><img width="150"  height="150"  class="attachment-460x460 size-460x460 img-93 lazyload"  alt="Founder &amp; Advisor"  data-src="https://kamari.io/wp-content/uploads/2019/06/trans.png" /></span>            </div> -->
+              <div class="member-details">
+               <h3>
+                Chris Cleverly
+                <span onclick="window.open('https://www.linkedin.com/in/cleverly/', '_blank')">
+                 <i class="fab fa-linkedin-in">
+                 </i>
+                </span>
+               </h3>
+               <p class="job-title">
+                Kamari Co-Founder
+               </p>
+               <p class="description">
+                Barrister Chris Cleverly, chairman of numerous listed entities and founder of Trafalgar Chambers, holds the title as the youngest head of chambers in the last century. He is passionate about Africa and the need for mechanisms to empower Africans to help themselves. His passion led to his role as advisor to a number of African governments and multilateral organizations. Chris is also a regular presenter on TV and radio and a contributor to newspapers and magazines.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+             <div class="member founders layout-visible-titles wow fadeIn" data-wow-duration="1s">
+              <!-- <div class="thumb">
+<span class="image-placeholder" style="padding-bottom:100.00000000%;background-color:#eeeeee"><img width="150"  height="150"  class="attachment-460x460 size-460x460 img-93 lazyload"  alt="Founder &amp; Advisor"  data-src="https://kamari.io/wp-content/uploads/2019/06/trans.png" /></span>            </div> -->
+              <div class="member-details">
+               <h3>
+                Raymond Sze
+                <span onclick="window.open('https://www.linkedin.com/in/raymond-sze-390a47b/', '_blank')">
+                 <i class="fab fa-linkedin-in">
+                 </i>
+                </span>
+               </h3>
+               <p class="job-title">
+                Kamari Co-Founder
+               </p>
+               <p class="description">
+                Raymond Sze is currently managing director of Solocas, a global gaming company. He is a serial entrepreneur with an eye for strategic marketing and a passion for e-gaming. Raymond brings over a decade of business experience from the e-gaming industry to Kamari, some of which includes his time as CEO to a global gaming company.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+             <div class="member founders layout-visible-titles wow fadeIn" data-wow-duration="1s">
+              <!-- <div class="thumb">
+<span class="image-placeholder" style="padding-bottom:100.00000000%;background-color:#eeeeee"><img width="150"  height="150"  class="attachment-460x460 size-460x460 img-93 lazyload"  alt="Founder &amp; Advisor"  data-src="https://kamari.io/wp-content/uploads/2019/06/trans.png" /></span>            </div> -->
+              <div class="member-details">
+               <h3>
+                Alex Lightman
+                <span onclick="window.open('https://www.linkedin.com/in/alexlightman/', '_blank')">
+                 <i class="fab fa-linkedin-in">
+                 </i>
+                </span>
+               </h3>
+               <p class="job-title">
+                Advisor
+               </p>
+               <p class="description">
+                Alex Lightman is a Blockchain industry entrepreneur, advisor, writer and keynote speaker known globally. He is the founder of Token Communities Ltd., chairman of NextHash and Blockchain Commodities Exchange, and an advisor to 20+ companies on coin/token offerings. He is also a co-founder and one of the seven steering committee members of the Digital Asset Trade Association (DATA), wrote the membership benefits, and raised the first outside funds.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+             <div class="member founders layout-visible-titles wow fadeIn" data-wow-duration="1s">
+              <!-- <div class="thumb">
+<span class="image-placeholder" style="padding-bottom:100.00000000%;background-color:#eeeeee"><img width="150"  height="150"  class="attachment-460x460 size-460x460 img-93 lazyload"  alt="Founder &amp; Advisor"  data-src="https://kamari.io/wp-content/uploads/2019/06/trans.png" /></span>            </div> -->
+              <div class="member-details">
+               <h3>
+                Simon Webster
+                <span onclick="window.open('https://www.linkedin.com/in/simon-webster-9179115/', '_blank')">
+                 <i class="fab fa-linkedin-in">
+                 </i>
+                </span>
+               </h3>
+               <p class="job-title">
+                Advisor
+               </p>
+               <p class="description">
+                Simon has over 20 yearsâ experience of successfully delivering a wide variety of global commercial, marketing and media strategies to some of the worldâs leading brands and across multiple commercial disciplines including e-gaming.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+             <div class="member founders layout-visible-titles wow fadeIn" data-wow-duration="1s">
+              <!-- <div class="thumb">
+<span class="image-placeholder" style="padding-bottom:100.00000000%;background-color:#eeeeee"><img width="150"  height="150"  class="attachment-460x460 size-460x460 img-93 lazyload"  alt="Founder &amp; Advisor"  data-src="https://kamari.io/wp-content/uploads/2019/06/trans.png" /></span>            </div> -->
+              <div class="member-details">
+               <h3>
+                Kingsley Pungong
+                <span onclick="window.open('https://www.linkedin.com/in/kingsley-pungong-15518144/', '_blank')">
+                 <i class="fab fa-linkedin-in">
+                 </i>
+                </span>
+               </h3>
+               <p class="job-title">
+                Advisor
+               </p>
+               <p class="description">
+                Kingsley is an entrepreneur and investor with a vast experience in starting and running businesses in Africa. He currently serves as CEO of Rainbow World Group, a diversified Holding company with interest in Sports, Media, Trading, Telecoms and gaming.
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <style>
+          #team-members-173123 .member-empty-spacing {
+padding-top: 100%;
+}
+         </style>
+         <div class="vc_empty_space" style="height: 40px">
+          <span class="vc_empty_space_inner">
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="vc-row-container container">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562327305344" id="newsblog">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="wpb_text_column wpb_content_element post-formatting">
+          <div class="wpb_wrapper">
+           <h2>
+            News and Blog
+           </h2>
+          </div>
+         </div>
+         <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+          <div class="wpb_wrapper">
+           <div id="medium-widget">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="vc-row-container vc-row-container--stretch-content-no-spaces parent--follow_us_block">
+     <div class="vc_row wpb_row vc_row-fluid follow_us_block vc_custom_1562337921373 vc_row-has-fill vc_row-no-padding vc_row-o-content-middle vc_row-flex" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1561979247711 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex container-fixed">
+          <div class="wpb_column vc_column_container vc_col-sm-10">
+           <div class="vc_column-inner vc_custom_1561979213070">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element post-formatting">
+              <div class="wpb_wrapper">
+               <p>
+                <a href="https://medium.com/kamari-coin/" rel="noopener noreferrer" target="_blank">
+                 For more news and articles, visit our blog.
+                </a>
+                <a class="xs-visible" href="https://medium.com/kamari-coin/" rel="noopener noreferrer" target="_blank">
+                 <noscript>
+                  <img alt="read more" class="external_link" src="./wp-content/uploads/2019/07/icon-readmore.svg"/>
+                 </noscript>
+                 <img alt="read more" class="lazyload external_link" data-src="./wp-content/uploads/2019/07/icon-readmore.svg" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E"/>
+                </a>
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="xs-hidden wpb_column vc_column_container vc_col-sm-2">
+           <div class="vc_column-inner vc_custom_1562342109023">
+            <div class="wpb_wrapper">
+             <div class="wpb_raw_code wpb_content_element wpb_raw_html follow_linker">
+              <div class="wpb_wrapper">
+               <a href="https://medium.com/kamari-coin/" target="_blank">
+                <noscript>
+                 <img alt="read more" class="external_link" src="./wp-content/uploads/2019/07/icon-readmore.svg"/>
+                </noscript>
+                <img alt="read more" class="lazyload external_link" data-src="./wp-content/uploads/2019/07/icon-readmore.svg" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E"/>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="vc_row-full-width vc_clearfix">
+     </div>
+    </div>
+    <div class="vc-row-container vc-row-container--stretch-content-no-spaces">
+     <div class="vc_row wpb_row vc_row-fluid vc_custom_1562337932880 vc_row-has-fill vc_row-no-padding vc_row-o-equal-height vc_row-flex" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" id="community">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+       <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+         <div class="vc_row wpb_row vc_inner vc_row-fluid newsletter container-fixed">
+          <div class="wpb_column vc_column_container vc_col-sm-8">
+           <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element vc_custom_1562267559173 post-formatting">
+              <div class="wpb_wrapper">
+               <p>
+                Join our community
+               </p>
+              </div>
+             </div>
+             <div class="wpcf7" dir="ltr" id="wpcf7-f148-p7-o2" lang="de-DE" role="form">
+              <div class="screen-reader-response">
+              </div>
+              <form action="/#wpcf7-f148-p7-o2" class="wpcf7-form" method="post" novalidate="novalidate">
+               <div style="display: none;">
+                <input name="_wpcf7" type="hidden" value="148"/>
+                <input name="_wpcf7_version" type="hidden" value="5.1.3"/>
+                <input name="_wpcf7_locale" type="hidden" value="de_DE"/>
+                <input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f148-p7-o2"/>
+                <input name="_wpcf7_container_post" type="hidden" value="7"/>
+               </div>
+               <p>
+                <span class="wpcf7-form-control-wrap your-email">
+                 <input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" name="your-email" placeholder="Enter your email..." size="40" type="email" value=""/>
+                </span>
+                <button class="round_btn wpcf7-form-control wpcf7-submit icon-arrow-right en-icon" id="submit">
+                 Subscribe
+                </button>
+               </p>
+               <div class="wpcf7-response-output wpcf7-display-none">
+               </div>
+              </form>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wpb_column vc_column_container vc_col-sm-4">
+           <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+             <div class="wpb_text_column wpb_content_element vc_custom_1562267553297 post-formatting">
+              <div class="wpb_wrapper">
+               <p>
+                Follow us
+               </p>
+              </div>
+             </div>
+             <div class="lab-vc-social-networks socials_follow display-type-rounded-icons">
+              <ul class="social-networks rounded colored-bg-hover">
+               <li>
+                <a class="facebook" href="https://www.facebook.com/KamariCoin/" rel="noopener" target="_blank" title="Facebook">
+                 <i class="fab fa-facebook-f">
+                 </i>
+                 <span class="name">
+                  Facebook
+                 </span>
+                </a>
+               </li>
+               <li>
+                <a class="twitter" href="https://twitter.com/kamaricoin" rel="noopener" target="_blank" title="Twitter">
+                 <i class="fab fa-twitter">
+                 </i>
+                 <span class="name">
+                  Twitter
+                 </span>
+                </a>
+               </li>
+               <li>
+                <a class="custom" href="https://t.me/KamariOfficial" rel="noopener" target="_blank" title="Telegram">
+                 <i class="fa fa-paper-plane">
+                 </i>
+                 <span class="name">
+                  Telegram
+                 </span>
+                </a>
+               </li>
+               <li>
+                <a class="medium" href="https://medium.com/kamari-coin" rel="noopener" target="_blank" title="Medium">
+                 <i class="fab fa-medium-m">
+                 </i>
+                 <span class="name">
+                  Medium
+                 </span>
+                </a>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="vc_row-full-width vc_clearfix">
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="site-footer main-footer footer-bottom-horizontal" id="footer" role="contentinfo">
+   <div class="container">
+    <div class="footer-widgets">
+     <div class="footer--widgets widget-area widgets--columned-layout widgets--columns-3" role="complementary">
+      <div class="widget_text widget widget_custom_html" id="custom_html-2">
+       <div class="textwidget custom-html-widget">
+        <div class="spalte">
+         <h4>
+          Social
+         </h4>
+         <a href="https://www.facebook.com/KamariCoin/" rel="noopener noreferrer" target="_blank">
+          Facebook
+         </a>
+         <a href="https://twitter.com/kamaricoin" rel="noopener noreferrer" target="_blank">
+          Twitter
+         </a>
+         <a href="https://t.me/KamariOfficial" rel="noopener noreferrer" target="_blank">
+          Telegram
+         </a>
+         <a href="https://medium.com/kamari-coin" rel="noopener noreferrer" target="_blank">
+          Medium
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="widget_text widget widget_custom_html" id="custom_html-3">
+       <div class="textwidget custom-html-widget">
+        <div class="spalte">
+         <!--<h4>Downloads</h4><a href="./wp-content/uploads/2019/06/KAMARI-WHITEPAPER-v4.0.pdf" target="_blank" rel="noopener noreferrer">Whitepaper</a>-->
+         <h4>
+          Press Inquiries
+         </h4>
+         <a href="mailto:press@kamari.io">
+          press@kamari.io
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="widget_text widget widget_custom_html" id="custom_html-4">
+       <div class="textwidget custom-html-widget">
+        <div class="spalte">
+         <h4>
+          Contact us
+         </h4>
+         <a href="mailto:contact@kamari.io">
+          contact@kamari.io
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <hr/>
+   </div>
+   <div class="footer-bottom">
+    <div class="container">
+     <div class="footer-bottom-content">
+      <div class="footer-content-right">
+       <ul class="social-networks rounded">
+        <li>
+         <a class="facebook" href="https://www.facebook.com/KamariCoin/" rel="noopener" target="_blank" title="Facebook">
+          <i class="fab fa-facebook-f">
+          </i>
+          <span class="name">
+           Facebook
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="twitter" href="https://twitter.com/kamaricoin" rel="noopener" target="_blank" title="Twitter">
+          <i class="fab fa-twitter">
+          </i>
+          <span class="name">
+           Twitter
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="custom" href="https://t.me/KamariOfficial" rel="noopener" target="_blank" title="Telegram">
+          <i class="fa fa-paper-plane">
+          </i>
+          <span class="name">
+           Telegram
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="medium" href="https://medium.com/kamari-coin" rel="noopener" target="_blank" title="Medium">
+          <i class="fab fa-medium-m">
+          </i>
+          <span class="name">
+           Medium
+          </span>
+         </a>
+        </li>
+       </ul>
+       <p>
+        <a href="https://kamari.io/terms-of-use/">
+         Terms of Use
+        </a>
+       </p>
+       <p>
+        <a href="https://kamari.io/privacy-policy ">
+         Privacy Policy
+        </a>
+       </p>
+       <p>
+        <a href="https://kamari.io/cookie-policy">
+         Cookie Policy
+        </a>
+       </p>
+      </div>
+      <div class="footer-content-left">
+       <div class="copyrights site-info">
+        <p>
+         Â© Copyright 2019. All Rights Reserved
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <style>
+   .lazyload,.lazyloading{opacity:0;}.lazyloaded{opacity:1;transition:opacity 300ms;}
+  </style>
+  <noscript>
+   <style>
+    .lazyload{display:none;}
+   </style>
+  </noscript>
+  <script data-noptimize="1">
+   window.lazySizesConfig=window.lazySizesConfig||{};window.lazySizesConfig.loadMode=1;
+  </script>
+  <script async="" data-noptimize="1" src="https://kamari.io/wp-content/plugins/autoptimize/classes/external/js/lazysizes.min.js">
+  </script>
+  <a class="go-to-top rounded position-bottom-right" data-type="footer" data-val="footer" href="#top">
+   <i class="flaticon-bottom4">
+   </i>
+  </a>
+  <!-- <link rel='stylesheet' id='vc_animate-css-css'  href='https://kamari.io/wp-content/plugins/js_composer/assets/lib/bower/animate-css/animate.min.css' type='text/css' media='all' /> -->
+  <!-- <link rel='stylesheet' id='slick-carousel-css-css'  href='https://kamari.io/wp-content/plugins/ultimate-carousel-for-visual-composer/render/../css/slick-carousal.css' type='text/css' media='all' /> -->
+  <link href="//kamari.io/wp-content/cache/wpfc-minified/l221u3gt/5qi03.css" media="all" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/kamari.io\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/contact-form-7/includes/js/scripts.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   /* <![CDATA[ */
+var cnArgs = {"ajaxurl":"https:\/\/kamari.io\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"no","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
+/* ]]> */
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/cookie-notice/js/front.min.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/display-medium-posts/public/js/display-medium-posts-public.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-includes/js/wp-embed.min.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/js_composer/assets/lib/vc_waypoints/vc-waypoints.min.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/js_composer/assets/lib/bower/skrollr/dist/skrollr.min.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/ultimate-carousel-for-visual-composer/render/../js/slick.js" type="text/javascript">
+  </script>
+  <script src="https://kamari.io/wp-content/plugins/ultimate-carousel-for-visual-composer/render/../js/custom-tm.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   var _k = _k || {}; _k.enqueueAssets = {"js":{"light-gallery":[{"src":"https:\/\/kamari.io\/wp-content\/themes\/kalium\/assets\/js\/light-gallery\/lightgallery-all.min.js"}]},"styles":{"light-gallery":[{"src":"https:\/\/kamari.io\/wp-content\/themes\/kalium\/assets\/js\/light-gallery\/css\/lightgallery.min.css"},{"src":"https:\/\/kamari.io\/wp-content\/themes\/kalium\/assets\/js\/light-gallery\/css\/lg-transitions.min.css"}]}};
+var _k = _k || {}; _k.require = function(e){var t=e instanceof Array?e:[e];return new Promise(function(e,r){var a=function(t){if(t&&t.length){var r=t.shift(),n=r.match( /\.js(\?.*)?$/)?"script":"text";jQuery.ajax({dataType:n,url:r}).success(function(){!function(e){var t;e.match( /\.js(\?.*)?$/)?(t=document.createElement("script")).src=e:((t=document.createElement("link")).rel="stylesheet",t.href=e);var r=!1,a=jQuery("[data-deploader]").each(function(t,a){e!=jQuery(a).attr("src")&&e!=jQuery(a).attr("href")||(r=!0)}).length;r||(t.setAttribute("data-deploader",a),jQuery("head").append(t))}(r)}).always(function(){r.length&&a(t)})}else e()};a(t)})};
+  </script>
+  <script src="https://kamari.io/wp-content/themes/kalium/assets/js/main.min.js" type="text/javascript">
+  </script>
+  <script src="https://medium-widget.pixelpoint.io/widget.js">
+  </script>
+  <!-- <script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js"></script> -->
+  <!-- start Simple Custom CSS and JS -->
+  <script type="text/javascript">
+   /* Default comment here */ 
+jQuery(document).ready(function( $ ){
+var final = 0;
+$(window).scroll(function(){
+var breakpoint = $(window).scrollTop() + ($(window).height() * 0.8);
+var breakpoint_news = $(window).scrollTop() + ($(window).height() * 0.6);
+var home = $('#home').offset().top;
+var about = $('#about').offset().top;
+var founders = $('#founders').offset().top;
+var newsblog = $('#newsblog').offset().top;
+var community = $('#community').offset().top;
+var numbers = $('#numbers').offset().top;
+if((breakpoint >= home) && (breakpoint <= about))
+{
+$('body').css('background-color','#1B1B1E');
+}
+if((breakpoint >= about) && (breakpoint <= founders))
+{
+$('body').css('background-color','#1B1B1E');
+}
+if((breakpoint >= numbers) && (final == 0))
+{
+final = 1;
+jQuery(function($) {
+$('#lotty_timer').countTo({
+from: 0,
+to: 7,
+speed: 1500,
+refreshInterval: 75,
+});
+/*
+$('#sports_timer').countTo({
+from: 0,
+to: 12,
+speed: 1500,
+refreshInterval: 75,
+});
+$('#casinos_timer').countTo({
+from: 0,
+to: 9,
+speed: 1500,
+refreshInterval: 75,
+});
+*/
+$('#pos_timer').countTo({
+from: 0,
+to: 100,
+speed: 1000,
+refreshInterval: 50,
+});
+$('#customers_timer').countTo({
+from: 0,
+to: 50,
+speed: 1000,
+refreshInterval: 50,
+});
+});
+}
+if((breakpoint >= founders) && (breakpoint_news <= newsblog))
+{
+$('body').css('background-color','#222226');
+}
+if((breakpoint_news >= newsblog) && (breakpoint <= community))
+{
+$('body').css('background-color','#F0F0F7');
+}
+if(breakpoint >= community)
+{
+$('body').css('background-color','#36363F');
+}
+});
+});
+(function($) {
+$.fn.countTo = function(options) {
+//merge the default plugin settings with the custom options
+options = $.extend({}, $.fn.countTo.defaults, options || {});
+//how many times to update the value, and how much to increment the value on each update
+var loops = Math.ceil(options.speed/options.refreshInterval),
+increment = (options.to - options.from)/loops;
+return $(this).each(function() {
+var _this = this,
+loopCount = 0,
+value = options.from,
+interval = setInterval(updateTimer, options.refreshInterval);
+function updateTimer() {
+value += increment;
+loopCount++;
+$(_this).html(value.toFixed(options.decimals));
+if (typeof(options.onUpdate) == 'function') {
+options.onUpdate.call(_this, value);
+}
+if (loopCount >= loops) {
+clearInterval(interval);
+value = options.to;
+if (typeof(options.onComplete) == 'function') {
+options.onComplete.call(_this, value);
+}
+}
+}
+});
+};
+$.fn.countTo.defaults = {
+from: 0, //the number the element should start at
+to: 100, //the number the element should end at
+speed: 1000, //how long it should take to count between the target numbers
+refreshInterval: 100, //how often the element should be updated
+decimals: 0, //the number of decimal places to show
+onUpdate: null, //callback method for every time the element is updated,
+onComplete: null, //callback method for when the element finishes updating
+};
+})(jQuery);
+  </script>
+  <!-- end Simple Custom CSS and JS -->
+  <div class="cn-bottom wp-default" id="cookie-notice" role="banner" style="color: #fff; background-color: #000;">
+   <div class="cookie-notice-container">
+    <span id="cn-notice-text">
+     We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
+    </span>
+    <a class="cn-set-cookie cn-button wp-default button" data-cookie-set="accept" href="#" id="cn-accept-cookie">
+     Ok
+    </a>
+    <a class="cn-more-info cn-button wp-default button" href="https://kamari.io/privacy-policy/" id="cn-more-info" target="_self">
+     Privacy policy
+    </a>
+   </div>
+  </div>
+  <!-- ET: 0.17285299301147s 2.9ch -->
+ </body>
+</html>
+<!-- WP Fastest Cache file was created in 0.27610111236572 seconds, on 10-03-20 9:46:27 -->

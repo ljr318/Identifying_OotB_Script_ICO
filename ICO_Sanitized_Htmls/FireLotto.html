@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   Fire Lotto blockchain lottery
+  </title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta charset="utf-8"/>
+  <meta content="Fire Lotto - International blockchain lottery based on Ethereum smart contracts" name="description"/>
+  <link href="assets/images/favicon.png" rel="shortcut icon"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" integrity="sha256-9vPVPdIkAmHxV2la3zhqXAgBQpjBn2LM9jzRYploktA=" rel="stylesheet"/>
+  <link href="assets/css/style.min.css?5.2" rel="stylesheet"/>
+  <!--Google Analytics-->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-109663484-1', 'auto');
+            ga('send', 'pageview');
+  </script>
+  <!--End Google Analytics-->
+  <!--Yandex.Metrika counter-->
+  <script type="text/javascript">
+   (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+            try {
+            w.yaCounter47121798 = new Ya.Metrika({
+            id:47121798,
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            trackHash:true
+            });
+            } catch(e) { }
+            });
+            var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript>
+   <div>
+    <img alt="" src="https://mc.yandex.ru/watch/47121798" style="position:absolute; left:-9999px;"/>
+   </div>
+  </noscript>
+  <!--Yandex.Metrika counter -->
+  <!--Facebook Pixel Code-->
+  <script>
+   !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1775520389409859');
+            fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=1775520389409859&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+  </noscript>
+  <!--End Facebook Pixel Code-->
+ </head>
+ <body class="offcanvas offcanvas-right">
+  <header>
+   <nav class="navbar fixed-top">
+    <div class="container-navbar">
+     <a class="navbar-brand" href="#" title="FireLotto">
+      <img alt="FireLotto" src="assets/images/logo.svg"/>
+      <span class="d-none d-sm-inline ml-2">
+       FIRELOTTO
+      </span>
+     </a>
+     <button aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarOffcanvas" data-toggle="offcanvas" title="Menu" type="button">
+      <img alt="Menu" src="assets/images/menu.svg"/>
+     </button>
+     <div class="dropdown show">
+      <a alt="Russian" aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+       <img alt="Russian" class="flag-item curent-lang" src="assets/images/flags/ru.svg"/>
+       <span id="localeIndicator">
+        ru
+       </span>
+      </a>
+      <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('ru')" title="Russian">
+        <img alt="" class="flag-item" src="assets/images/flags/ru.svg"/>
+        <span>
+         ru
+        </span>
+       </a>
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('en')" title="English">
+        <img alt="English" class="flag-item" src="assets/images/flags/en.svg"/>
+        <span>
+         en
+        </span>
+       </a>
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('tr')" title="Turkish">
+        <img alt="Turkish" class="flag-item" src="assets/images/flags/tr.svg"/>
+        <span>
+         Tr
+        </span>
+       </a>
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('ch')" title="Chinese">
+        <img alt="Chinese" class="flag-item" src="assets/images/flags/ch.svg"/>
+        <span>
+         Ch
+        </span>
+       </a>
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('es')" title="Spanish">
+        <img alt="Spanish" class="flag-item" src="assets/images/flags/es.svg"/>
+        <span>
+         Es
+        </span>
+       </a>
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('kr')" title="">
+        <img alt="" class="flag-item" src="assets/images/flags/kr.svg"/>
+        <span>
+         Kr
+        </span>
+       </a>
+       <a class="dropdown-item d-flex align-items-center" href="#" onclick="updateLanguage('it')" title="">
+        <img alt="" class="flag-item" src="assets/images/flags/it.svg"/>
+        <span>
+         It
+        </span>
+       </a>
+       <!--a.dropdown-item.d-flex.align-items-center(href='#',onclick="updateLanguage('de')", title="")
+                            img.flag-item(src='assets/images/flags/de.svg', alt="")
+                            span De
+                            -->
+       <!--a.dropdown-item.d-flex.align-items-center(href='#',onclick="updateLanguage('br')", title="")
+                            img.flag-item(src='assets/images/flags/br.svg', alt="")
+                            span Br
+                            -->
+       <!--a.dropdown-item.d-flex.align-items-center(href='#',onclick="updateLanguage('fr')", title="")
+                            img.flag-item(src='assets/images/flags/fr.svg', alt="")
+                            span Fr
+                            -->
+      </div>
+     </div>
+     <div class="float-right d-none d-sm-flex align-items-center">
+      <a class="social m-1" href="https://www.facebook.com/firelotto" target="_blank" title="facebook">
+       <img alt="Facebook" src="assets/images/social/facebook.svg"/>
+      </a>
+      <a class="social m-1" href="https://twitter.com/FireLottery" target="_blank" title="Twitter">
+       <img alt="Twitter" src="assets/images/social/twitter.svg"/>
+      </a>
+      <a class="social m-1 telegramLink" href="https://t.me/firelotto" target="_blank" title="Telegram">
+       <img alt="Telegram" src="assets/images/social/telegram.svg"/>
+      </a>
+      <a class="social m-1" href="https://medium.com/@FireLottery" target="_blank" title="Medium">
+       <img alt="Medium" src="assets/images/social/medium.svg"/>
+      </a>
+      <a class="social m-1" href="https://github.com/firelotto" target="_blank" title="Github">
+       <img alt="Github" src="assets/images/social/github.svg"/>
+      </a>
+     </div>
+     <div class="float-right d-none d-md-flex top-menu">
+      <ul class="navbar-nav flex-row justify-content-center">
+       <li class="nav-item">
+        <a class="btn btn-orange" data-locale="personal_cabinet" href="account.html" title="Investorâs account">
+         Investorâs account
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="sidebar-offcanvas" id="navbarOffcanvas">
+      <ul class="navbar-nav">
+       <li class="nav-item">
+        <a class="nav-link" data-locale="about_project" href="#about" title="About Fire Lotto">
+         About Fire Lotto
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="project_unique" href="#unique" title="Uniqueness">
+         Uniqueness
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="problems_solution" href="#solution" title="What problems can be solved">
+         What problems can be solved
+        </a>
+       </li>
+       <!--li.nav-itema.nav-link(href="#about-token", data-locale="about_token", title="About FLOT tokens") About FLOT tokens
+                            -->
+       <li class="nav-item">
+        <a class="nav-link" data-locale="funds_distribution" href="#chart" title="Distribution of funds">
+         Distribution of funds
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="payment_schedule" href="#calendar" title="Payment calendar">
+         Payment calendar
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="where_buy_token" href="#stocks" title="Where to buy FLOT tokens">
+         Exchanges
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="play_lotto" href="#play-lotto" title="PLAY BLOCKCHAIN LOTTERY">
+         PLAY BLOCKCHAIN LOTTERY
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="project_roadmap" href="#roadmap" title="Project Roadmap">
+         Project Roadmap
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="partner_program" href="#partner-program" title="Affiliate Program">
+         Affiliate Program
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="news" href="#news" title="News">
+         News
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="press" href="#press" title="Press">
+         Press  about Firelotto
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" data-locale="events" href="#events" title="Events">
+         Events
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="faq.html" title="Faq">
+         Faq
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main class="home">
+   <section class="top" id="top">
+    <div class="container-wide">
+     <div class="top-wrap d-flex flex-column justify-content-center">
+      <div class="text-center">
+       <!--.logo
+                            img(src="assets/images/logo.svg", alt="FireLotto Logo")
+                            span FIRELOTTO
+                            -->
+       <h1 data-locale="lotto_title">
+        International blockchain lottery
+       </h1>
+       <h4 data-locale="lotto_subtitle">
+        The worldâs first truly fair and global lottery
+       </h4>
+       <a class="btn btn-red btn-big mt-4 lotteryURL" href="https://firelotto.com/" target="_blank">
+        <div class="inner">
+         <span data-locale="play_lotto">
+          Play the lottery
+         </span>
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="main-circles">
+    </div>
+   </section>
+   <section class="video">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="video_title">
+      Fire Lotto Presentation
+     </h2>
+     <div class="embed-responsive embed-responsive-16by9 mx-auto">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T1aP705OVkY">
+      </iframe>
+     </div>
+    </div>
+   </section>
+   <section class="about" id="about">
+    <div class="container-fluid">
+     <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+       <h2 class="violet-title text-center" data-locale="short_desc_firelotto">
+        Overview of our project
+       </h2>
+       <p data-locale="firelotto_desc_1">
+        One of only a few real-life applications that use blockchain technology, Fire Lotto is the worldâs first totally decentralized lottery platform based on the Ethereum blockchain and managed by smart contracts without any human intervention. Fire Lotto offers two types of lottery games: a draw lottery and an instant win game. The
+        <a href="https://firelotto.com/" target="_blank" title="firelotto.com">
+         Firelotto.com
+        </a>
+        website has already been launched and the total prize pool has exceeded ETH 1200.
+       </p>
+       <p data-locale="firelotto_desc_2">
+        The lottery platform features a licensed crypto exchange with a user-friendly interface that allows players to buy lottery tickets with cryptocurrency and fiat (using credit cards or PayPal).
+       </p>
+       <p data-locale="firelotto_desc_3">
+        In total, maximum 100 million FLOT tokens have been issued. Token holders receive a 10% commission on all lottery ticket sales, which is paid in ETH every two months. Tokens can be held as an asset or used to play games. In the latter case, Fire Lotto sets a rate that is higher than that on exchanges, rewarding token holders while also helping to increase the demand for tokens in the marketplace. FLOT tokens are traded on six exchanges.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="unique" id="unique">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="unique_title">
+      How fire lotto is revolutionizing the way the world plays
+     </h2>
+     <div class="row">
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="SMART" src="assets/images/unique/1.png"/>
+        <p data-locale="unique_slide_1">
+         <b>
+          SMART
+         </b>
+         The platform has no server, and everything is based on smart contracts. Our developers have solved the issue of handling thousands of instant payment transactions without putting noticeable pressure on the Ethereum blockchain.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="PROVEN" src="assets/images/unique/2.png"/>
+        <p data-locale="unique_slide_2">
+         <b>
+          PROVEN
+         </b>
+         Fire Lotto is fully operational and enjoyed by players around the world.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="BULLET-PROOF" src="assets/images/unique/3.png"/>
+        <p data-locale="unique_slide_3">
+         <b>
+          BULLET-PROOF
+         </b>
+         Full decentralization of the platform makes it independent, autonomous, anonymous, secure and transparent.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="RECORD-BREAKING" src="assets/images/unique/4.png"/>
+        <p data-locale="unique_slide_4">
+         <b>
+          RECORD-BREAKING
+         </b>
+         70% of lottery ticket sales go to the prize pool. Thanks to the low costs of running a blockchain-powered lottery, Fire Lotto contributes a larger percentage of profits to the jackpot than a traditional lottery ever could.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="REVOLUTIONARY" src="assets/images/unique/5.png"/>
+        <p data-locale="unique_slide_5">
+         <b>
+          REVOLUTIONARY
+         </b>
+         New blockchain games are being added to Fire Lotto as it quickly gains popularity.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="GLOBAL" src="assets/images/unique/6.png"/>
+        <br/>
+        <p data-locale="unique_slide_6">
+         <b>
+          GLOBAL
+         </b>
+         It cannot be banned or forbidden by any government or state monopoly.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="ACCESSIBLE" src="assets/images/unique/7.png"/>
+        <p data-locale="unique_slide_7">
+         <b>
+          ACCESSIBLE
+         </b>
+         The source code is public, and anyone with Internet access can play, invest or become an affiliate. Fire Lotto is already hosted on 120 affiliate sites around the worldâ¦and counting.
+        </p>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 text-center">
+       <div class="unique-block">
+        <img alt="UNBIASED" src="assets/images/unique/8.png"/>
+        <p data-locale="unique_slide_8">
+         <b>
+          UNBIASED
+         </b>
+         Anyone who has Internet access can play, regardless of their citizenship.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="solution" id="solution">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="solution_title">
+      The solution to the worldâs lottery problems
+     </h2>
+     <div class="row">
+      <div class="col-12 col-md-7">
+       <p class="pb-0 mb-0" data-locale="solution_slide_3">
+        <b>
+         INFALLIBLE:
+        </b>
+        Thanks to its decentralized blockchain technology, Fire Lotto eliminates the possibility of human intervention.
+       </p>
+       <p class="pb-0" data-locale="solution_slide_6">
+        <b>
+         RELIABLE:
+        </b>
+        Almost instant payments are guaranteed by Fire Lottoâs smart contracts.
+       </p>
+       <a class="btn btn-white mx-1" href="https://etherscan.io/address/0x2734B99e2C62cA70fE753a0cbcD3a90930E1EEC9" target="_blank" title="Firelotto 6Ñ45">
+        6Ñ45
+       </a>
+       <a class="btn btn-white mx-1" href="https://etherscan.io/address/0x10c621008b210c3a5d0385e458b48af05bf4ec88" target="_blank" title="Firelotto 5x36">
+        5x36
+       </a>
+       <a class="btn btn-white mx-1" href="https://etherscan.io/address/0x2020fe9fa0f43fde44360aae03138c4b6ab35055" target="_blank" title="Firelotto 4x20">
+        4x20
+       </a>
+       <p class="pb-0 mb-0" data-locale="solution_slide_7">
+        <b>
+         SAFE:
+        </b>
+        Unlike traditional lotteries, Fire Lotto winners remain anonymous, so they are far less likely to become targets for scams or crimes.
+       </p>
+       <p class="pb-0" data-locale="solution_slide_2">
+        <b>
+         TRANSPARENT:
+        </b>
+        Unlike other lotteries, Fire Lotto publishes all data on ticket sales, income, costs and other performance indicators.
+       </p>
+       <a class="btn btn-white" data-locale="check" href="https://statistics.firelotto.io/" target="_blank" title="Statistics Firelotto">
+        Check
+       </a>
+       <p class="pb-0 mb-0" data-locale="solution_slide_4">
+        <b>
+         UNMONOPOLIZABLE:
+        </b>
+        Since Fire Lottoâs blockchain technology is beyond governmental control, all restrictions imposed by national borders and state lottery monopolies disappear. For the first time, anyone around the world can play the same game.
+       </p>
+       <p class="pb-0" data-locale="solution_slide_1">
+        <b>
+         FAIR:
+        </b>
+        Using an automated double-random number generator built on the Bitcoin blockchain, Fire Lotto eliminates any possibility of tampering.
+       </p>
+       <a class="btn btn-white" data-locale="check_code" href="https://firelotto.com/?page=security&amp;lotto=undefined&amp;draw=undefined" target="_blank" title="firelotto.com">
+        Check the Code
+       </a>
+       <p class="pb-0 mb-0" data-locale="solution_slide_8">
+        <b>
+         INCLUSIVE:
+        </b>
+        By purchasing Fire Lotto tokens (FLOT), anyone can take part in co-owning a profitable lottery business.
+       </p>
+      </div>
+      <div class="col-12 col-md-5">
+       <div class="table-block p-3 mb-4 mt-3">
+        <p class="py-0 mb-0" data-locale="solution_slide_5">
+         <b>
+          WINNABLE:
+         </b>
+         A playerâs chances of winning the jackpot in Fire Lotto are 30 times higher than in a traditional lottery.
+        </p>
+        <table class="table mt-3">
+         <tr class="thead-dark">
+          <th data-locale="lottery">
+           Lottery
+          </th>
+          <th data-locale="chance">
+           Chance
+          </th>
+         </tr>
+         <tr>
+          <td>
+           <b>
+            Fire Lotto
+           </b>
+          </td>
+          <td>
+           <b>
+            1
+            <span data-locale="to">
+             to
+            </span>
+            8 million
+           </b>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           SuperEnaLotto (Italy)
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           623 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Power Ball (US)
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           292 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           MegaMillions (US)
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           259 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           EuroMillions (US)
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           140 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           EuroJackpot
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           95 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Uk Lotto
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           45 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Spanish Lotto
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           32 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Swedish Lotto
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           32 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Lotto Maxx (CAN)
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           29 million
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Lotto 649 (CAN)
+          </td>
+          <td>
+           1
+           <span data-locale="to">
+            to
+           </span>
+           14 million
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="chart" id="chart">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="funds_distribution_title">
+      Distribution of funds received from ticket sales
+     </h2>
+     <div class="row">
+      <div class="col-12 col-md-6">
+       <div class="pie-chart mx-auto">
+        <div class="sector sector-media">
+        </div>
+        <div class="sector sector-bonus">
+        </div>
+        <div class="sector sector-tech">
+        </div>
+        <div class="sector sector-legal">
+        </div>
+        <div class="chart-shadow">
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-md-6 legend d-flex flex-column justify-content-center">
+       <div class="prize d-flex align-items-center">
+        <div class="circle circle-investor flex-shrink-0">
+        </div>
+        <b class="flex-shrink-0">
+         70%
+        </b>
+        <span data-locale="players_prizes">
+         Prizes for players
+        </span>
+       </div>
+       <div class="prize d-flex align-items-center mt-3">
+        <div class="circle circle-media flex-shrink-0">
+        </div>
+        <b class="flex-shrink-0">
+         10%
+        </b>
+        <span data-locale="advertising_fund">
+         Advertising Fund
+        </span>
+       </div>
+       <div class="prize d-flex align-items-center mt-3">
+        <div class="circle circle-bonus flex-shrink-0">
+        </div>
+        <b class="flex-shrink-0">
+         10%
+        </b>
+        <span data-locale="holders_commission">
+         Commissions for token holders
+        </span>
+       </div>
+       <div class="prize d-flex align-items-center mt-3">
+        <div class="circle circle-tech flex-shrink-0">
+        </div>
+        <b class="flex-shrink-0">
+         5%
+        </b>
+        <span data-locale="technical_costs">
+         Technical costs
+        </span>
+       </div>
+       <div class="prize d-flex align-items-center mt-3">
+        <div class="circle circle-legal flex-shrink-0">
+        </div>
+        <b class="flex-shrink-0">
+         5%
+        </b>
+        <span data-locale="development_support">
+         Development and support
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="calendar" id="calendar">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="payment_schedule_title">
+      FLOT Commission payment calendar for 2018â2019
+     </h2>
+     <div class="row">
+      <div class="col-12 col-md-6">
+       <table class="table table-striped text-center">
+        <tr>
+         <td data-locale="schedule_date_02">
+          30th of April 2018 12:00 UTC
+         </td>
+        </tr>
+        <tr class="done">
+         <td data-locale="schedule_info_02">
+          <b>
+           DONE
+          </b>
+          (3481 wallets for 16612991 FLOT)
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_01">
+          7th of July 2018 12:00 UTC
+         </td>
+        </tr>
+        <tr class="done">
+         <td data-locale="schedule_info_01">
+          <b>
+           DONE
+          </b>
+          (3766 wallets for 19082540 FLOT)
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_1">
+          7th of September 2018 12:00 UTC
+         </td>
+        </tr>
+        <tr class="done">
+         <td data-locale="schedule_info_1">
+          <b>
+           DONE
+          </b>
+          (3918  wallets for 24829305 FLOT)
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_2">
+          7th of November 2018 12:00 UTC
+         </td>
+        </tr>
+        <tr class="done">
+         <td data-locale="schedule_info_2">
+          <b>
+           DONE
+          </b>
+          (3907 wallets for 20832594 FLOT)
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_3">
+          7th of January 2019 12:00 UTC
+         </td>
+        </tr>
+        <tr class="done">
+         <td data-locale="schedule_info_3">
+          <b>
+           DONE
+          </b>
+          (3894 wallets for 20883655 FLOT)
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_4">
+          7th of March 2019 12:00 UTC
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_5">
+          7th of May 2019 12:00 UTC
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_6">
+          7th of July 2019 12:00 UTC
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_7">
+          7th of September 2019 12:00 UTC
+         </td>
+        </tr>
+        <tr>
+         <td data-locale="schedule_date_8">
+          7th of November 2019 12:00 UTC
+         </td>
+        </tr>
+       </table>
+      </div>
+      <div class="col-12 col-md-6">
+       <p data-locale="token_desc_1">
+        Fire Lotto token (FLOT) holders receive a 10% commission of revenue on total lottery tickets sold on the Fire Lotto platform every 60 days. Commissions are paid in Ethereum, proportionate to the number of tokens the holder owns.
+       </p>
+       <p data-locale="token_desc_2">
+        To receive a commission you must have more than 500 FLOT in your personal wallet at the times specified in the commission payment calendar.
+       </p>
+       <p data-locale="token_desc_3">
+        FLOT tokens are also used to play the 6/45 PROMO lottery with prizes in ETH. The exchange rate of FLOT to ETH for a lottery game is always higher than the average exchange rate of the token to Ethereum.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="play-lotto" id="play-lotto">
+    <div class="container-wide">
+     <h2 class="violet-title text-center" data-locale="play_lotto">
+      Play the lottery
+     </h2>
+     <div class="row lotto-wrap m-0">
+      <div class="col-12 col-sm-6 col-lg-3 lotto-item lotto-4-20 p-0">
+       <div class="wrapper text-center h-100 d-flex flex-column justify-content-between">
+        <div class="title">
+         <span data-locale="lottery_4x20">
+          4\20 lottery
+         </span>
+        </div>
+        <div class="Jackpot">
+         <span data-locale="jackpot">
+          Jackpot
+         </span>
+         <span class="eth">
+          3 ETH
+         </span>
+         <span class="usd">
+          $1,918
+         </span>
+        </div>
+        <div class="mt-4">
+         <a class="lotteryURL btn btn-orange" data-locale="play" href="https://firelotto.com/" onclick="yaCounter47121798.reachGoal('real_buy'); ga('send', 'event', 'real_buy', 'push3');" target="_blank">
+          Play
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3 lotto-item lotto-5-36 p-0">
+       <div class="wrapper text-center h-100 d-flex flex-column justify-content-between">
+        <div class="title">
+         <span data-locale="lottery_5x36">
+          5\36 lottery
+         </span>
+        </div>
+        <div class="Jackpot">
+         <span data-locale="jackpot">
+          Jackpot
+         </span>
+         <span class="eth">
+          100 ETH
+         </span>
+         <span class="usd">
+          $36,316
+         </span>
+        </div>
+        <div class="mt-4">
+         <a class="lotteryURL btn btn-orange" data-locale="play" href="https://firelotto.com/" onclick="yaCounter47121798.reachGoal('real_buy'); ga('send', 'event', 'real_buy', 'push3');" target="_blank">
+          Play
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3 lotto-item lotto-6-45 p-0">
+       <div class="wrapper text-center h-100 d-flex flex-column justify-content-between">
+        <div class="title">
+         <span data-locale="lottery_6x45">
+          6\45 lottery
+         </span>
+        </div>
+        <div class="Jackpot">
+         <span data-locale="jackpot">
+          Jackpot
+         </span>
+         <span class="eth">
+          1,017 ETH
+         </span>
+         <span class="usd">
+          $369,334
+         </span>
+        </div>
+        <div class="mt-4">
+         <a class="lotteryURL btn btn-orange" data-locale="play" href="https://firelotto.com/" onclick="yaCounter47121798.reachGoal('real_buy'); ga('send', 'event', 'real_buy', 'push3');" target="_blank">
+          Play
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3 lotto-item lotto-rw p-0">
+       <div class="wrapper text-center h-100 d-flex flex-column justify-content-between">
+        <div class="title">
+         <span data-locale="lottery_rw">
+          Roger's Wheel lottery
+         </span>
+        </div>
+        <div class="Jackpot">
+         <span data-locale="instant">
+          Instant
+         </span>
+         <span class="eth" data-locale="lottery">
+          Lottery
+         </span>
+        </div>
+        <div class="mt-4">
+         <a class="lotteryURL btn btn-orange" data-locale="play" href="https://firelotto.com/" onclick="yaCounter47121798.reachGoal('real_buy'); ga('send', 'event', 'real_buy', 'push3');" target="_blank">
+          Play
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="stocks" id="stocks">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="where_buy_token">
+      Exchanges
+     </h2>
+     <div class="row text-center slider slider-stocks justify-content-center">
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a href="https://yobit.net/" target="_blank" title="Yobit">
+        <img alt="Yobit" src="assets/images/stocks/yobit.png"/>
+       </a>
+      </div>
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a href="https://www.coinexmarket.io/" target="_blank" title="Coinexmarket">
+        <img alt="Coinexmarket" src="assets/images/stocks/coinexmarket.png"/>
+       </a>
+      </div>
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a href="https://crex24.com/ru/exchange/FLOT-BTC" target="_blank" title="Crex24">
+        <img alt="Crex24" src="assets/images/stocks/crex24.png"/>
+       </a>
+      </div>
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a alt="" href="https://topbtc.com/" target="_blank" title="Topbtc">
+        <img alt="Topbtc" src="assets/images/stocks/topbtc.png"/>
+       </a>
+      </div>
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a href="https://exrates.me/dashboard" target="_blank" title="Exrate">
+        <img alt="Exrate" src="assets/images/stocks/exrates.png"/>
+       </a>
+      </div>
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a href="https://www.livecoin.net/" target="_blank" title="Livecoin">
+        <img alt="Livecoin" src="assets/images/stocks/livecoin.png"/>
+       </a>
+      </div>
+      <div class="slide col-12 col-sm-6 col-md-4 stock p-3 text-center">
+       <a href="https://alpha.deex.exchange/" target="_blank" title="Deex">
+        <img alt="Deex" src="assets/images/stocks/deex.png"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!--section.free-tokens
+            .container-fluid
+                h2.violet-title.text-center(data-locale="get_free_token") Get a free token
+                p.text-center(data-locale="no_promo") Check back for promotions!    
+            -->
+   <section class="roadmap" id="roadmap">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="project_roadmap">
+      Project Roadmap
+     </h2>
+     <div class="roadmar-wrap d-flex flex-row-reverse flex-lg-column justify-content-center">
+      <div class="roadmar-row d-flex flex-column flex-lg-row flex-reverce">
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         15.03.2018 - 15.04.2018
+        </span>
+        <p data-locale="roadmap_3">
+         ICO
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         01.07.2018
+        </span>
+        <p data-locale="roadmap_5">
+         6\45 PROMO lottery launch (using FLOT tokens)
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         01.10.2018
+        </span>
+        <p data-locale="roadmap_7">
+         Instant-win game launch
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span data-locale="roadmap_date71">
+         1st quarter 2019
+        </span>
+        <p data-locale="roadmap_71">
+         TRON blockchain games
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center">
+        <p data-locale="roadmap_10">
+         New instant games, fiat payments, integrations with affiliates, licenses
+        </p>
+       </div>
+      </div>
+      <div class="roadmar-row d-flex flex-column flex-lg-row">
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         â01.01.2018
+        </span>
+        <p data-locale="roadmap_1">
+         Fire Lotto launch
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         01.06.2018
+        </span>
+        <p data-locale="roadmap_4">
+         Lottery statistics launch
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         20.08.2018
+        </span>
+        <p data-locale="roadmap_6">
+         FireChain technology integration
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center done">
+        <span>
+         15.10.2018
+        </span>
+        <p data-locale="roadmap_8">
+         API for affiliates
+        </p>
+       </div>
+       <div class="col roadmap-col d-flex flex-column justify-content-center">
+        <span data-locale="roadmap_date81">
+         2nd quarter 2019
+        </span>
+        <p data-locale="roadmap_81">
+         EOS blockchain games
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="partner-program" id="partner-program">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center text-white" data-locale="partner_program">
+      Affiliate Program
+     </h2>
+     <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+       <div class="partner-iframe p-3 mb-4">
+        <h3 class="text-center" data-locale="iframe_connection">
+         IFRAME connection
+        </h3>
+        <div class="row">
+         <div class="col-12 col-md-6">
+          <ul>
+           <li>
+            <b data-locale="profit_sharing">
+             Profit-Sharing:
+            </b>
+            <span class="ml-1" data-locale="profit_sharing_desc">
+             Affiliates earn up to 50% of lottery ticket revenue.
+            </span>
+           </li>
+           <li>
+            <b data-locale="bigger_returns">
+             Guaranteed:
+            </b>
+            <span class="ml-1" data-locale="bigger_returns_desc">
+             Instant Ethereum payouts are ensured by smart contracts.
+            </span>
+           </li>
+           <li>
+            <b data-locale="fast_payment">
+             Fast:
+            </b>
+            <span class="ml-1" data-locale="fast_payment_desc">
+             Payouts happen on a regular schedule without delay.
+            </span>
+           </li>
+           <li>
+            <b data-locale="quick_integration">
+             Quick Integration:
+            </b>
+            <span class="ml-1" data-locale="quick_integration_desc">
+             Have the lottery platform running on your site within 1 day.
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="col-12 col-md-6">
+          <ul>
+           <li>
+            <b data-locale="fully_custom">
+             Fully Custom:
+            </b>
+            <span class="ml-1" data-locale="fully_custom_desc">
+             Showcase your own brand with White Label integration.
+            </span>
+           </li>
+           <li>
+            <b data-locale="flexible_options">
+             Flexible Options:
+            </b>
+            <span class="ml-1" data-locale="flexible_options_desc">
+             IFRAMEs and referral links can be used to generate revenue.
+            </span>
+           </li>
+           <li>
+            <b data-locale="hands_free">
+             Hands-Free Operation:
+            </b>
+            <span class="ml-1" data-locale="hands_free_desc">
+             Winnings and jackpot payouts are made by the platform, requiring zero effort on your end.
+            </span>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!--.col-12.col-md-6
+                        h3.text-center(data-locale="api_connection") API Connection
+                        p.text-center(data-locale="available_soon") Available in August
+
+                        -->
+     </div>
+    </div>
+   </section>
+   <section class="partners">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="partners">
+      Partners and affiliates
+     </h2>
+     <div class="row align-items-center justify-content-center">
+      <div class="col-6 col-sm-4 col-md-3 p-3 partner text-center">
+       <a href="https://qiwi.com/" target="_blank" title="QIWI">
+        <img alt="QIWI" src="assets/images/qiwi-logo.png"/>
+       </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 p-3 partner text-center">
+       <a href="https://1xbet.com/blockchainlottery" target="_blank" title="1xbet">
+        <img alt="1xbet" src="assets/images/1xbet-logo.png"/>
+       </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 p-3 partner text-center">
+       <a href="http://www.rightsolutions.ru" target="_blank" title="Rightsolutions">
+        <img alt="Rightsolutions" src="assets/images/rs-logo.png"/>
+       </a>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 p-3 partner text-center">
+       <a href="http://playshangrila.com/" target="_blank" title="Playshangrila">
+        <img alt="Playshangrila" src="assets/images/playshangrila-logo.png"/>
+       </a>
+      </div>
+      <div class="col-12 col-sm-4 col-md-3 p-3 partner text-center">
+       <a href="https://cashpokerpro.io/" target="_blank" title="cashpokerpro.io">
+        <img alt="cashpokerpro.io" src="https://cashpokerpro.io/assets/banner330x113.gif"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="news" id="news">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="news">
+      News
+     </h2>
+     <div class="text-center">
+      <div id="fb-root">
+      </div>
+      <script>
+       (function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = 'https://connect.facebook.net/en_En/sdk.js#xfbml=1&version=v3.1';
+                            fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <div class="fb-page" data-adapt-container-width="true" data-hide-cover="false" data-href="https://www.facebook.com/firelotto" data-show-facepile="true" data-small-header="false" data-tabs="timeline" data-width="500">
+       <blockquote cite="https://www.facebook.com/firelotto" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/firelotto">
+         Firelotto
+        </a>
+       </blockquote>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="press" id="press">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center" data-locale="press">
+      Press about Firelotto
+     </h2>
+     <div class="row align-items-center position-relative pb-4 px-4">
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.ccn.com/fire-lotto-blockchain-based-lottery-platform-announces-its-next-jackpot-win/" target="_blank" title="ccn.com">
+        <img alt="ccn.com" src="assets/images/press/ccn-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="http://coin-turk.com/blockchain-temelli-yeni-nesil-platform-fire-lotto" target="_blank" title="coin-turk.com">
+        <img alt="coin-turk.com" src="assets/images/press/cointurk-lg.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.icolighthouse.com/" target="_blank" title="icolighthouse.com">
+        <img alt="icolighthouse.com" src="assets/images/press/lighthouse.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="http://www.forexnewsnow.com/forex-analysis/cryptocurrency/best-ico-january-2018-fire-lotto/" target="_blank" title="forexnewsnow.com">
+        <img alt="forexnewsnow.com" src="assets/images/press/forexnewsnow.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://portaldobitcoin.com/melhor-ico-de-janeiro-de-2018-fire-lotto/" target="_blank" title="portaldobitcoin.com">
+        <img alt="portaldobitcoin.com" src="assets/images/press/portaldobitcoin.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://zycrypto.com/fire-lotto-launched-first-ever-transparent-decentralized-bitcoin-blockchain-lottery/" target="_blank" title="zycrypto.com">
+        <img alt="zycrypto.com" src="assets/images/press/zycrypto.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://casinonews.today/2017/12/first-transparent-lottery-powered-blockchain/" target="_blank" title="casinonews.today">
+        <img alt="casinonews.today" src="assets/images/press/casino-news-today.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="http://www.livebitcoinnews.com/fire-lotto-best-blockchain-international-lottery-investment-2018/" target="_blank" title="livebitcoinnews.com">
+        <img alt="livebitcoinnews.com" src="assets/images/press/lbn-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://themerkle.com/fire-lotto-tokens-a-new-blockchain-lottery/" target="_blank" title="themerkle.com">
+        <img alt="themerkle.com" src="assets/images/press/themerkle-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.fxempire.com/news/article/fire-lotto-first-blockchain-lottery-platform-463417" target="_blank" title="fxempire.com">
+        <img alt="fxempire.com" src="assets/images/press/fxempire-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://coinidol.com/fire-lotto-launched-first-truly-transparent-decentralized-blockchain-bitcoin-lottery/" target="_blank" title="coinidol.com">
+        <img alt="coinidol.com" src="assets/images/press/coinidol-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.bitbetnews.com/ico/platforma-fire-lotto-pervaja-lotereja-na-blokchejne/" target="_blank" title="bitbetnews.co">
+        <img alt="bitbetnews.co" src="assets/images/press/bitbetnews-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.newsbtc.com/2018/01/06/fire-lotto-worlds-first-blockchain-lottery-platform-launched/" target="_blank" title="newsbtc.com">
+        <img alt="newsbtc.com" src="assets/images/press/newsbtc_logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.ccn.com/fire-lotto-launches-annoucnes-token-sale-innovative-blockchain-lottery/" target="_blank" title="ccn.com">
+        <img alt="ccn.com" src="assets/images/press/ccn-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://cryptovest.com/news/fire-lotto-builds-international-lottery-over-ethereum-blockchain/" target="_blank" title="cryptovest.com">
+        <img alt="cryptovest.com" src="assets/images/press/cryptovest-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="http://bitcoinist.com/fire-lotto-to-launch-first-international-blockchain-based-lottery/" target="_blank" title="bitcoinist.com">
+        <img alt="bitcoinist.com" src="assets/images/press/bitcoinist-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://coinstelegram.com/2018/01/08/introducing-fire-lotto-ico/" target="_blank" title="coinstelegram.com">
+        <img alt="coinstelegram.com" src="assets/images/press/coinstelegram-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.motiv8.me/introducing-firelotto-worlds-first-ever-blockchain-lottery/" target="_blank" title="motiv8.me">
+        <img alt="motiv8.me" src="assets/images/press/motiv8-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://hype.codes/blockchain-future-lottery/" target="_blank" title="hype.codes">
+        <img alt="hype.codes" src="assets/images/press/hype-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://bitjournal.media/14-01-2018/firelotto-igraj-v-odno-kasanie/" target="_blank" title="bitjournal.media">
+        <img alt="bitjournal.media" src="assets/images/press/bitjournal-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://theusacommerce.com/hot-pre-ico-fire-lotto-fast-fair-lottery-game-blockchain-era/" target="_blank" title="theusacommerce.com">
+        <img alt="theusacommerce.com" src="assets/images/press/theusacommerce-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://www.piattaformetrading.eu/firelotto/" target="_blank" title="piattaformetrading.eu">
+        <img alt="piattaformetrading.eu" src="assets/images/press/piattaformetrading-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="http://www.coinnewsasia.com/fire-lotto-innovates-the-modern-blockchain-lottery/" target="_blank" title="coinnewsasia.com">
+        <img alt="coinnewsasia.com" src="assets/images/press/coinnewsasia-logo.png"/>
+       </a>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+       <a href="https://cryptocoin.news/news/ethereum/firelotto-innovative-lottery-platform-built-on-the-ethereum-blockchain-5777/" target="_blank" title="cryptocoin.news">
+        <img alt="cryptocoin.news" src="assets/images/press/cryptocoin-logo.png"/>
+       </a>
+      </div>
+      <div class="transparent-block text-center d-flex align-items-end justify-content-center">
+       <button class="btn btn-orange btn-shadow" data-locale="show_all" data-target="#PressModal" data-toggle="modal">
+        show all
+       </button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="events" id="events">
+    <div class="container-fluid">
+     <h2 class="violet-title text-center mt-5" data-locale="events_archive">
+      Events archive
+     </h2>
+     <div class="list row flex-wrap justify-content-center position-relative pb-4 px-4">
+      <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+       <div class="item d-flex flex-column justify-content-end mx-auto">
+        <h2>
+         <span>
+          28-30 November
+         </span>
+         Summit of iGaming Malta, SiGMA, BOOTH B244
+        </h2>
+        <div class="d-flex flex-wrap">
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/sig/logo.png)">
+           <a href="https://sigma.com.mt" target="_blank" title="sigma.com.mt">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/sig/photo_1s.jpg)">
+           <a data-fancybox="sig" href="assets/images/conferences/sig/photo_1.jpg" title="Summit of iGaming Malta">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/sig/photo_2s.jpg)">
+           <a data-fancybox="sig" href="assets/images/conferences/sig/photo_2.jpg" title="Summit of iGaming Malta">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/sig/photo_3s.jpg)">
+           <a data-fancybox="sig" href="assets/images/conferences/sig/photo_3.jpg" title="Summit of iGaming Malta">
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+       <div class="item d-flex flex-column justify-content-end mx-auto">
+        <h2>
+         <span>
+          17-18 October
+         </span>
+         Crypto Game Conference Minsk (Belarus)
+        </h2>
+        <div class="d-flex flex-wrap">
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cgc/logo.png)">
+           <a href="https://cryptogames.events/" target="_blank" title="cryptogames.events">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/cgc/photo_1s.jpg)">
+           <a data-fancybox="cgc" href="assets/images/conferences/cgc/photo_1.jpg" title="Crypto Games Conference">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/cgc/photo_2s.jpg)">
+           <a data-fancybox="cgc" href="assets/images/conferences/cgc/photo_2.jpg" title="Crypto Games Conference">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/cgc/photo_3s.jpg)">
+           <a data-fancybox="cgc" href="assets/images/conferences/cgc/photo_3.jpg" title="Crypto Games Conference">
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+       <div class="item d-flex flex-column justify-content-end mx-auto">
+        <h2>
+         <span>
+          9-11 October
+         </span>
+         Global Gaming Expo in Las Vegas (USA)
+         <br/>
+         Stand 4826
+        </h2>
+        <div class="d-flex flex-wrap">
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/gge/logo.png)">
+           <a href="http://www.globalgamingexpo.com/" target="_blank" title="globalgamingexpo.com">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/gge/photo_1s.jpg)">
+           <a data-fancybox="gge" href="assets/images/conferences/gge/photo_1.jpg" title="Global Gaming Expo">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/gge/photo_2s.jpg)">
+           <a data-fancybox="gge" href="assets/images/conferences/gge/photo_2.jpg" title="Global Gaming Expo">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/gge/photo_3s.jpg)">
+           <a data-fancybox="gge" href="assets/images/conferences/gge/photo_3.jpg" title="Global Gaming Expo">
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+       <div class="item d-flex flex-column justify-content-end mx-auto">
+        <h2>
+         <span>
+          30th June
+         </span>
+         gge First World Blockchain Forum (Hong Kong)
+        </h2>
+        <div class="d-flex flex-wrap">
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/wbo/logo.png)">
+           <a href="http://www.huodongxing.com/event/2443174231500?td=9902892483697" target="_blank" title="huodongxing.com">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_1s.jpg)">
+           <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_1.jpg" title="World Blockchain Forum">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_2s.jpg)">
+           <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_2.jpg" title="World Blockchain Forum">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1">
+          <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_3s.jpg)">
+           <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_3.jpg" title="World Blockchain Forum">
+           </a>
+          </div>
+         </div>
+         <div class="col-6 col-md-3 p-1 d-none">
+          <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_4s.jpg)">
+           <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_4.jpg" title="World Blockchain Forum">
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="transparent-block-gray text-center d-flex align-items-end justify-content-center">
+       <button class="btn btn-orange btn-shadow" data-locale="show_all" data-target="#EventsModal" data-toggle="modal">
+        show all
+       </button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <footer>
+    <div class="container-fluid">
+     <form accept-charset="utf-8" action="https://app.getresponse.com/add_subscriber.html" class="d-flex flex-wrap flex-sm-nowrap mx-auto justify-content-center" id="SubscribeForm" method="post" onsubmit="yaCounter47121798.reachGoal('subscribe'); ga('send', 'event', 'subscribe', 'push1');" target="_blank">
+      <input class="col-12 col-sm form-control" data-locale-placeholder="your_email" placeholder="Your e-mail" type="text"/>
+      <input name="campaign_token" type="hidden" value="nXYG6"/>
+      <button class="btn btn-orange mt-2 mt-sm-0" data-locale="subscribe" title="Subscribe">
+       Subscribe
+      </button>
+     </form>
+     <div class="row text-center form-text">
+      <div class="col mt-4">
+       <p class="mb-1">
+        <span data-locale="still_have_questions">
+         Do you have any questions?
+        </span>
+       </p>
+       <p class="mb-1">
+        <span data-locale="send_email">
+         Send us an e-mail:
+        </span>
+        <a class="ml-1" href="/cdn-cgi/l/email-protection#2f464149406f49465d4a43405b5b40014c4042" style="color: white; text-decoration: underline" title="Send us an e-mail">
+         <span class="__cf_email__" data-cfemail="d9b0b7bfb699bfb0abbcb5b6adadb6f7bab6b4">
+          [email protected]
+         </span>
+        </a>
+       </p>
+       <p class="mb-1">
+        <span data-locale="technical_support">
+         Technical support:
+        </span>
+        <a class="ml-1" href="/cdn-cgi/l/email-protection#5e2d2b2e2e312c2a1e38372c3b32312a2a31703d3133" style="color: white; text-decoration: underline" title="Technical support">
+         <span class="__cf_email__" data-cfemail="a3d0d6d3d3ccd1d7e3c5cad1c6cfccd7d7cc8dc0ccce">
+          [email protected]
+         </span>
+        </a>
+       </p>
+       <p class="light-text">
+        firelotto.io is operated by PASSADO COMPANY LIMITED, having its registered address at Room 709 Wellborne Commercial Centre, 8 Java Road, North Point, Hong Kong.
+       </p>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-12 text-center">
+       <ul class="navbar-nav flex-row justify-content-center mb-3">
+        <li class="nav-item">
+         <a class="nav-link" data-locale="personal_cabinet" href="account.html" title="Investorâs account">
+          Investorâs account
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link whitepaperLink" href="whitepaper_en.pdf" title="Whitepaper">
+          Whitepaper
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-12 text-center">
+       <a class="social m-1" href="https://www.facebook.com/firelotto" target="_blank" title="facebook">
+        <img alt="Facebook" src="assets/images/social/facebook.svg"/>
+       </a>
+       <a class="social m-1" href="https://twitter.com/FireLottery" target="_blank" title="Twitter">
+        <img alt="Twitter" src="assets/images/social/twitter.svg"/>
+       </a>
+       <a class="social m-1 telegramLink" href="https://t.me/firelotto" target="_blank" title="Telegram">
+        <img alt="Telegram" src="assets/images/social/telegram.svg"/>
+       </a>
+       <a class="social m-1" href="https://medium.com/@FireLottery" target="_blank" title="Medium">
+        <img alt="Medium" src="assets/images/social/medium.svg"/>
+       </a>
+       <a class="social m-1" href="https://github.com/firelotto" target="_blank" title="Github">
+        <img alt="Github" src="assets/images/social/github.svg"/>
+       </a>
+      </div>
+      <div class="col-12 text-center">
+       <p class="mt-4">
+        Copyright Â© 2019 Fire Lotto
+       </p>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <!--modal-->
+   <div class="modal hidden p-0" id="PressModal">
+    <div class="modal-dialog modal-full">
+     <div class="modal-content">
+      <div class="modal-header d-block">
+       <div aria-label="Close" class="button btn btn-orange" data-dismiss="modal" data-locale="back">
+        Back
+       </div>
+      </div>
+      <div class="modal-body">
+       <div class="container-fluid modal-press">
+        <div class="row align-items-center position-relative">
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.ccn.com/fire-lotto-blockchain-based-lottery-platform-announces-its-next-jackpot-win/" target="_blank" title="ccn.com">
+           <img alt="ccn.com" src="assets/images/press/ccn-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://coin-turk.com/blockchain-temelli-yeni-nesil-platform-fire-lotto" target="_blank" title="coin-turk.com">
+           <img alt="coin-turk.com" src="assets/images/press/cointurk-lg.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.icolighthouse.com/" target="_blank" title="icolighthouse.com">
+           <img alt="icolighthouse.com" src="assets/images/press/lighthouse.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.forexnewsnow.com/forex-analysis/cryptocurrency/best-ico-january-2018-fire-lotto/" target="_blank" title="forexnewsnow.com">
+           <img alt="forexnewsnow.com" src="assets/images/press/forexnewsnow.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://portaldobitcoin.com/melhor-ico-de-janeiro-de-2018-fire-lotto/" target="_blank" title="portaldobitcoin.com">
+           <img alt="portaldobitcoin.com" src="assets/images/press/portaldobitcoin.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://zycrypto.com/fire-lotto-launched-first-ever-transparent-decentralized-bitcoin-blockchain-lottery/" target="_blank" title="zycrypto.com">
+           <img alt="zycrypto.com" src="assets/images/press/zycrypto.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://casinonews.today/2017/12/first-transparent-lottery-powered-blockchain/" target="_blank" title="casinonews.today">
+           <img alt="casinonews.today" src="assets/images/press/casino-news-today.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.livebitcoinnews.com/fire-lotto-best-blockchain-international-lottery-investment-2018/" target="_blank" title="livebitcoinnews.com">
+           <img alt="livebitcoinnews.com" src="assets/images/press/lbn-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://themerkle.com/fire-lotto-tokens-a-new-blockchain-lottery/" target="_blank" title="themerkle.com">
+           <img alt="themerkle.com" src="assets/images/press/themerkle-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.fxempire.com/news/article/fire-lotto-first-blockchain-lottery-platform-463417" target="_blank" title="fxempire.com">
+           <img alt="fxempire.com" src="assets/images/press/fxempire-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://coinidol.com/fire-lotto-launched-first-truly-transparent-decentralized-blockchain-bitcoin-lottery/" target="_blank" title="coinidol.com">
+           <img alt="coinidol.com" src="assets/images/press/coinidol-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.bitbetnews.com/ico/platforma-fire-lotto-pervaja-lotereja-na-blokchejne/" target="_blank" title="bitbetnews.co">
+           <img alt="bitbetnews.co" src="assets/images/press/bitbetnews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.newsbtc.com/2018/01/06/fire-lotto-worlds-first-blockchain-lottery-platform-launched/" target="_blank" title="newsbtc.com">
+           <img alt="newsbtc.com" src="assets/images/press/newsbtc_logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.ccn.com/fire-lotto-launches-annoucnes-token-sale-innovative-blockchain-lottery/" target="_blank" title="ccn.com">
+           <img alt="ccn.com" src="assets/images/press/ccn-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://cryptovest.com/news/fire-lotto-builds-international-lottery-over-ethereum-blockchain/" target="_blank" title="cryptovest.com">
+           <img alt="cryptovest.com" src="assets/images/press/cryptovest-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://bitcoinist.com/fire-lotto-to-launch-first-international-blockchain-based-lottery/" target="_blank" title="bitcoinist.com">
+           <img alt="bitcoinist.com" src="assets/images/press/bitcoinist-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://coinstelegram.com/2018/01/08/introducing-fire-lotto-ico/" target="_blank" title="coinstelegram.com">
+           <img alt="coinstelegram.com" src="assets/images/press/coinstelegram-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.motiv8.me/introducing-firelotto-worlds-first-ever-blockchain-lottery/" target="_blank" title="motiv8.me">
+           <img alt="motiv8.me" src="assets/images/press/motiv8-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://hype.codes/blockchain-future-lottery/" target="_blank" title="hype.codes">
+           <img alt="hype.codes" src="assets/images/press/hype-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://bitjournal.media/14-01-2018/firelotto-igraj-v-odno-kasanie/" target="_blank" title="bitjournal.media">
+           <img alt="bitjournal.media" src="assets/images/press/bitjournal-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://theusacommerce.com/hot-pre-ico-fire-lotto-fast-fair-lottery-game-blockchain-era/" target="_blank" title="theusacommerce.com">
+           <img alt="theusacommerce.com" src="assets/images/press/theusacommerce-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.piattaformetrading.eu/firelotto/" target="_blank" title="piattaformetrading.eu">
+           <img alt="piattaformetrading.eu" src="assets/images/press/piattaformetrading-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.coinnewsasia.com/fire-lotto-innovates-the-modern-blockchain-lottery/" target="_blank" title="coinnewsasia.com">
+           <img alt="coinnewsasia.com" src="assets/images/press/coinnewsasia-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://cryptocoin.news/news/ethereum/firelotto-innovative-lottery-platform-built-on-the-ethereum-blockchain-5777/" target="_blank" title="cryptocoin.news">
+           <img alt="cryptocoin.news" src="assets/images/press/cryptocoin-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://bitscreener.com/news/fire-lotto-the-world-s-hottest-crypto-lottery-tm-launching-ico" target="_blank" title="bitscreener.com">
+           <img alt="bitscreener.com" src="assets/images/press/bitscreener-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://bestinvestor.ru/fire-lotto-obzor-ico-loterei-na-blokchejne/" target="_blank" title="bestinvestor.ru">
+           <img alt="bestinvestor.ru" src="assets/images/press/bestinvestor-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://finance.yahoo.com/news/firelotto-launches-first-truly-transparent-220500452.html" target="_blank" title="finance.yahoo.com">
+           <img alt="finance.yahoo.com" src="assets/images/press/f-yahoo-logo.jpg"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://crobitcoin.com/dolazi-nam-prva-medunarodna-lutrija-na-blockchainu/" target="_blank" title="crobitcoin.com">
+           <img alt="crobitcoin.com" src="assets/images/press/crobitcoin-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://forklog.com/razrabotchiki-firelotto-sozdayut-prozrachnuyu-obshhestvennuyu-blokchejn-lotereyu/" target="_blank" title="forklog.com">
+           <img alt="forklog.com" src="assets/images/press/forklog-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.2100news.com/2018/02/08/crypto-lottery-based-ethereum/" target="_blank" title="2100news.com">
+           <img alt="2100news.com" src="assets/images/press/2100news-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.stevenmale.com/blog/fire-lotto-interview" target="_blank" title="stevenmale.com">
+           <img alt="stevenmale.com" src="assets/images/press/stevenmale-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://ambcrypto.com/firelotto-blockchain-based-lottery-puts-stage-fire" target="_blank" title="ambcrypto.com">
+           <img alt="ambcrypto.com" src="assets/images/press/ambcrypto-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.techavy.com/firelotto-review" target="_blank" title="techavy.com">
+           <img alt="techavy.com" src="assets/images/press/techavy-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://focusgn.com/fire-lotto-crypto-lottery" target="_blank" title="focusgn.com">
+           <img alt="focusgn.com" src="assets/images/press/focusgn-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://cryptomagic.ru/ico/fire-lotto.html" target="_blank" title="cryptomagic.ru">
+           <img alt="cryptomagic.ru" src="assets/images/press/cryptomagic-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://eprnews.com/fire-lotto-adds-david-drake-to-list-of-advisors-308367/" target="_blank" title="eprnews.com">
+           <img alt="eprnews.com" src="assets/images/press/eprnews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://coinvedi.com/fire-lotto-lets-democratize-lotto-together-hottest-crypto-lottery/" target="_blank" title="coinvedi.com">
+           <img alt="coinvedi.com" src="assets/images/press/coinvedi-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://blogtienao.com/fire-lotto-la-gi-du-an-ico-xo-so-blockchain-thang-3/" target="_blank" title="blogtienao.com">
+           <img alt="blogtienao.com" src="assets/images/press/blogtienao-logo.jpg"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://cryptocurrencymagazine.com/firelotto-ico" target="_blank" title="cryptocurrencymagazine.com">
+           <img alt="cryptocurrencymagazine.com" src="assets/images/press/cryptocurrencymagazine-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.pravda.ru/economics/crypto/analytics/09-03-2018/1374255-FLOT-0/" target="_blank" title="pravda.ru">
+           <img alt="pravda.ru" src="assets/images/press/pravda-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www2.hkej.com/editorchoice/article/id/1785608/Fire%E6%A8%82%E9%80%8F%E6%8A%BD%E7%8D%8E100%E8%90%AC%E7%BE%8E%E5%85%83" target="_blank" title="hkej.com">
+           <img alt="hkej.com" src="assets/images/press/hkej-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://bitcoinvietnamnews.com/2018/03/fire-lotto-xo-so-truc-tuyen-tren-blockchain.html" target="_blank" title="bitcoinvietnamnews.com">
+           <img alt="bitcoinvietnamnews.com" src="assets/images/press/bitcoinvietnamnews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://forklog.com/v-ssha-legalizuyut-blokchejn-lotereyu-firelotto/" target="_blank" title="forklog.com">
+           <img alt="forklog.com" src="assets/images/press/forklog-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.bitcoinnews.com.br/ico/democratize-a-loteria-com-a-fire-lotto/" target="_blank" title="bitcoinnews.com.br">
+           <img alt="bitcoinnews.com.br" src="assets/images/press/bnews-br-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://bitcoinnewsarabia.com/fire-lotto/" target="_blank" title="bitcoinnewsarabia.com">
+           <img alt="bitcoinnewsarabia.com" src="assets/images/press/bnews-ar-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://bitcoinnewses.com/bitcoinespanol/democraticemos-la-loteria-con-fire-lotto/" target="_blank" title="bitcoinnewses.com">
+           <img alt="bitcoinnewses.com" src="assets/images/press/bnews-es-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://cointelegraph.com/news/is-blockchain-based-lottery-to-intervene-the-online-gambling-market" target="_blank" title="cointelegraph.com">
+           <img alt="cointelegraph.com" src="assets/images/press/cointelegraph-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://siamblockchain.com/2018/03/13/firelotto-announces-ico-sale-for-truly-transparent-crypto-lottery-platform/" target="_blank" title="siamblockchain.com">
+           <img alt="siamblockchain.com" src="assets/images/press/siamblockchain-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://ck101.com/thread-4438128-1-1.html" target="_blank" title="ck101.com">
+           <img alt="ck101.com" src="assets/images/press/ck101-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://www.financemagnates.com/thought-leadership/firelotto-unveils-ico-for-blockchain-based-crypto-lottery-platform/" target="_blank" title="financemagnates.com">
+           <img alt="financemagnates.com" src="assets/images/press/financemagnates-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.finsmes.com/2018/03/firelotto-announces-ico-token-flot-crowdsale-on-march-15th.html" target="_blank" title="finsmes.com">
+           <img alt="finsmes.com" src="assets/images/press/finsmes-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.digitaljournal.com/pr/3696028" target="_blank" title="digitaljournal.com">
+           <img alt="digitaljournal.com" src="assets/images/press/digitaljournal-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.livebitcoinnews.com/firelotto-announces-saft-ico-token-sale/" target="_blank" title="livebitcoinnews.com">
+           <img alt="livebitcoinnews.com" src="assets/images/press/livebitcoinnews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://news.playshangrila.com/fire-lotto-ethereum-blockchain-lottery/" target="_blank" title="playshangrila.com">
+           <img alt="playshangrila.com" src="assets/images/press/playshangrila-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://krypto-nachrichten.com/firelotto-ico-ist-auf-vollen-touren-mit-20-millionen-verkauften-flot-token/" target="_blank" title="krypto-nachrichten.com">
+           <img alt="krypto-nachrichten.com" src="assets/images/press/krypto-nachrichten-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://blokt.com/news/fire-lotto-ico-launches-blockchain-lottery" target="_blank" title="blokt.com">
+           <img alt="blokt.com" src="assets/images/press/blokt-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://www.digitaljournal.com/pr/3681879" target="_blank" title="digitaljournal.com">
+           <img alt="digitaljournal.com" src="assets/images/press/digitaljournal-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.bigspringherald.com/bigspringherald/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.bigspringherald.com">
+           <img alt="business.bigspringherald.com" src="assets/images/press/bigspringherald-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.punxsutawneyspirit.com/punxsutawneyspirit/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.punxsutawneyspirit.com">
+           <img alt="business.punxsutawneyspirit.com" src="assets/images/press/punxsutawneyspirit-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://markets.kelownadailycourier.ca/kelownadailycourier/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.kelownadailycourier.ca">
+           <img alt="markets.kelownadailycourier.ca" src="assets/images/press/kelownadailycourier-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.poteaudailynews.com/poteaudailynews/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.poteaudailynews.com">
+           <img alt="business.poteaudailynews.com" src="assets/images/press/poteaudailynews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.smdailypress.com/smdailypress/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.smdailypress.com">
+           <img alt="business.smdailypress.com" src="assets/images/press/smdailypress-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/bpas/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/financialcontent-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.borgernewsherald.com/borgernewsherald/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.borgernewsherald.com">
+           <img alt="business.borgernewsherald.com" src="assets/images/press/borgernewsherald-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://finance.dailyherald.com/dailyherald/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="finance.dailyherald.com">
+           <img alt="finance.dailyherald.com" src="assets/images/press/dailyherald-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://finance.jsonline.com/jsonline/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="finance.jsonline.com">
+           <img alt="finance.jsonline.com" src="assets/images/press/jsonline-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.theantlersamerican.com/theantlersamerican/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.theantlersamerican.com">
+           <img alt="business.theantlersamerican.com" src="assets/images/press/theantlersamerican-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.times-online.com/times-online/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.times-online.com">
+           <img alt="business.times-online.com" src="assets/images/press/times-online-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.dailytimesleader.com/dailytimesleader/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.dailytimesleader.com">
+           <img alt="business.dailytimesleader.com" src="assets/images/press/dailytimesleader-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.observernewsonline.com/observernewsonline/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.observernewsonline.com">
+           <img alt="business.observernewsonline.com" src="assets/images/press/observernewsonline-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://markets.chroniclejournal.com/chroniclejournal/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.chroniclejournal.com">
+           <img alt="markets.chroniclejournal.com" src="assets/images/press/chroniclejournal-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/tamarsecurities/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/tamarsecurities-logo.jpg"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.dptribune.com/dptribune/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.dptribune.com">
+           <img alt="business.dptribune.com" src="assets/images/press/dptribune-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.decaturdailydemocrat.com/decaturdailydemocrat/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.decaturdailydemocrat.com">
+           <img alt="business.decaturdailydemocrat.com" src="assets/images/press/decaturdailydemocrat-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.theeveningleader.com/theeveningleader/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.theeveningleader.com">
+           <img alt="business.theeveningleader.com" src="assets/images/press/theeveningleader-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://markets.pentictonherald.ca/pentictonherald/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.pentictonherald.ca">
+           <img alt="markets.pentictonherald.ca" src="assets/images/press/pentictonherald-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://business.am-news.com/am-news/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="business.am-news.com">
+           <img alt="business.am-news.com" src="assets/images/press/am-news-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="http://thenumbers.marketplace.org/publicradio/news/read?GUID=35885332" target="_blank" title="thenumbers.marketplace.org">
+           <img alt="thenumbers.marketplace.org" src="assets/images/press/marketplace-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/wral/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/wral-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/townhall/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/townhall-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/buffnews/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/buffnews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/searchbug/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/searchbug-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/marketintelligence/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/marketintelligence-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/pennwell.dental/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/pennwell-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/gatehouse.rrstar/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/rrstar-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/spoke/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/spoke-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/citcomm.kvoram/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/kvoram-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/sandiego/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/sandiego-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/franklincredit/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/franklincredit-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/newsok/news/read/35885332/fire-lotto-adds-david-drake-to-list-of-advisors" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/newsok-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/crain.businessinsurance/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/businessinsurance-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/fatpitch.valueinvestingnews/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/valueinvestingnews-logo.png"/>
+          </a>
+         </div>
+         <div class="col-4 col-sm-3 col-md-2 p-2 text-center publication">
+          <a href="https://markets.financialcontent.com/ascensus/news/read?GUID=35885332" target="_blank" title="markets.financialcontent.com">
+           <img alt="markets.financialcontent.com" src="assets/images/press/ascensus-logo.png"/>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="modal-footer d-block">
+       <div aria-label="Close" class="button btn btn-orange" data-dismiss="modal" data-locale="back">
+        Back
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal hidden p-0" id="EventsModal">
+    <div class="modal-dialog modal-full">
+     <div class="modal-content">
+      <div class="modal-header d-block">
+       <div aria-label="Close" class="button btn btn-orange" data-dismiss="modal" data-locale="back">
+        Back
+       </div>
+      </div>
+      <div class="modal-body">
+       <div class="container-fluid modal-events">
+        <div class="list row flex-wrap justify-content-center">
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             28-30 November
+            </span>
+            Summit of iGaming Malta, SiGMA, BOOTH B244
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/sig/logo.png)">
+              <a href="https://sigma.com.mt" target="_blank" title="sigma.com.mt">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/sig/photo_1s.jpg)">
+              <a data-fancybox="sig" href="assets/images/conferences/sig/photo_1.jpg" title="Summit of iGaming Malta">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/sig/photo_2s.jpg)">
+              <a data-fancybox="sig" href="assets/images/conferences/sig/photo_2.jpg" title="Summit of iGaming Malta">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/sig/photo_3s.jpg)">
+              <a data-fancybox="sig" href="assets/images/conferences/sig/photo_3.jpg" title="Summit of iGaming Malta">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             17-18 October
+            </span>
+            Crypto Game Conference Minsk (Belarus)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cgc/logo.png)">
+              <a href="https://cryptogames.events/" target="_blank" title="cryptogames.events">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cgc/photo_1s.jpg)">
+              <a data-fancybox="cgc" href="assets/images/conferences/cgc/photo_1.jpg" title="Crypto Games Conference">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cgc/photo_2s.jpg)">
+              <a data-fancybox="cgc" href="assets/images/conferences/cgc/photo_2.jpg" title="Crypto Games Conference">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cgc/photo_3s.jpg)">
+              <a data-fancybox="cgc" href="assets/images/conferences/cgc/photo_3.jpg" title="Crypto Games Conference">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             9-11 October
+            </span>
+            Global Gaming Expo in Las Vegas (USA)
+            <br/>
+            Stand 4826
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/gge/logo.png)">
+              <a href="http://www.globalgamingexpo.com/" target="_blank" title="globalgamingexpo.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/gge/photo_1s.jpg)">
+              <a data-fancybox="gge" href="assets/images/conferences/gge/photo_1.jpg" title="Global Gaming Expo">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/gge/photo_2s.jpg)">
+              <a data-fancybox="gge" href="assets/images/conferences/gge/photo_2.jpg" title="Global Gaming Expo">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/gge/photo_3s.jpg)">
+              <a data-fancybox="gge" href="assets/images/conferences/gge/photo_3.jpg" title="Global Gaming Expo">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             30th June
+            </span>
+            WBO First World Blockchain Forum (Hong Kong)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/wbo/logo.png)">
+              <a href="http://www.huodongxing.com/event/2443174231500?td=9902892483697" target="_blank" title="huodongxing.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_1s.jpg)">
+              <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_1.jpg" title="World Blockchain Foru">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_2s.jpg)">
+              <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_2.jpg" title="World Blockchain Foru">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_3s.jpg)">
+              <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_3.jpg" title="World Blockchain Foru">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/wbo/photo_4s.jpg)">
+              <a data-fancybox="wbo" href="assets/images/conferences/wbo/photo_4.jpg" title="World Blockchain Foru">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             27-29 June
+            </span>
+            Mobile World Congress in Shanghai (China)
+            <br/>
+            stand in Internet &amp; App Planet N4.G59
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/wcs/logo.png)">
+              <a href="https://www.mwcshanghai.com/" target="_blank" title="mwcshanghai.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/wcs/photo_1s.jpg)">
+              <a data-fancybox="wcs" href="assets/images/conferences/wcs/photo_1.jpg" title="Mobile World Congress">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/wcs/photo_2s.jpg)">
+              <a data-fancybox="wcs" href="assets/images/conferences/wcs/photo_2.jpg" title="Mobile World Congress">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/wcs/photo_3s.jpg)">
+              <a data-fancybox="wcs" href="assets/images/conferences/wcs/photo_3.jpg" title="Mobile World Congress">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/wcs/photo_4s.jpg)">
+              <a data-fancybox="wcs" href="assets/images/conferences/wcs/photo_4.jpg" title="Mobile World Congress">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             5-6 June
+            </span>
+            Belgrade Future Gaming Belgrade (Serbia)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/bfg/logo.png)">
+              <a href="http://www.belgradegaming.com/vazne-informacije/info-za-posetiocepress.php" target="_blank" title="belgradegaming.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bfg/photo_1s.jpg)">
+              <a data-fancybox="bfg" href="assets/images/conferences/bfg/photo_1.jpg" title="Future Gaming Belgrade">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bfg/photo_2s.jpg)">
+              <a data-fancybox="bfg" href="assets/images/conferences/bfg/photo_2.jpg" title="Future Gaming Belgrade">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bfg/photo_3s.jpg)">
+              <a data-fancybox="bfg" href="assets/images/conferences/bfg/photo_3.jpg" title="Future Gaming Belgrade">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             2-3 April
+            </span>
+            Global Blockchain Forum Santa Clara (US)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/gbf/logo.png)">
+              <a href="https://www.gbforum.co/" target="_blank" title="gbforum.co">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/gbf/photo_1s.jpg)">
+              <a data-fancybox="gbf" href="assets/images/conferences/gbf/photo_1.jpg" title="Global Blockchain Forum">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/gbf/photo_2s.jpg)">
+              <a data-fancybox="gbf" href="assets/images/conferences/gbf/photo_2.jpg" title="Global Blockchain Forum">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/gbf/photo_3s.jpg)">
+              <a data-fancybox="gbf" href="assets/images/conferences/gbf/photo_3.jpg" title="Global Blockchain Forum">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             27-28 of March
+            </span>
+            Blockchain West CryptoSlate in San Francisco (USA)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/bwc/logo.png)">
+              <a href="https://cryptoslate.com/event/blockchain-west/" target="_blank" title="cryptoslate.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bwc/photo_1s.jpg)">
+              <a data-fancybox="bwc" href="assets/images/conferences/bwc/photo_1.jpg" title="Blockchain West CryptoSlate">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bwc/photo_2s.jpg)">
+              <a data-fancybox="bwc" href="assets/images/conferences/bwc/photo_2.jpg" title="Blockchain West CryptoSlate">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bwc/photo_3s.jpg)">
+              <a data-fancybox="bwc" href="assets/images/conferences/bwc/photo_3.jpg" title="Blockchain West CryptoSlate">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/bwc/photo_4s.jpg)">
+              <a data-fancybox="bwc" href="assets/images/conferences/bwc/photo_4.jpg" title="Blockchain West CryptoSlate">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             22-23 of March
+            </span>
+            Cryptocurrency &amp; Blockchain conference in San Francisco (USA)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cbc/logo.png)">
+              <a href="https://cbconference.io" target="_blank" title="cbconference.io">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cbc/photo_1s.jpg)">
+              <a data-fancybox="cbc" href="assets/images/conferences/cbc/photo_1.jpg" title="Cryptocurrency &amp; Blockchain">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cbc/photo_2s.jpg)">
+              <a data-fancybox="cbc" href="assets/images/conferences/cbc/photo_2.jpg" title="Cryptocurrency &amp; Blockchain">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cbc/photo_3s.jpg)">
+              <a data-fancybox="cbc" href="assets/images/conferences/cbc/photo_3.jpg" title="Cryptocurrency &amp; Blockchain">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             21-22 of March
+            </span>
+            Cryptocurrency World Expo - Berlin Summit Berlin (Germany)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cwe/logo.png)">
+              <a href="https://cryptocurrencyworldexpo.com" target="_blank" title="cryptocurrencyworldexpo.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cwe/photo_1s.jpg)">
+              <a data-fancybox="cwe" href="assets/images/conferences/cwe/photo_1.jpg" title="Cryptocurrency World Expo">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cwe/photo_2s.jpg)">
+              <a data-fancybox="cwe" href="assets/images/conferences/cwe/photo_2.jpg" title="Cryptocurrency World Expo">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cwe/photo_3s.jpg)">
+              <a data-fancybox="cwe" href="assets/images/conferences/cwe/photo_3.jpg" title="Cryptocurrency World Expo">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             19th of March
+            </span>
+            Blockchain innovation and investment summit Dubai (OAE)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/bii/logo.png)">
+              <a href="https://www.biisummit.com" target="_blank" title="biisummit.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bii/photo_1s.jpg)">
+              <a data-fancybox="bii" href="assets/images/conferences/bii/photo_1.jpg" title="Blockchain innovation summit">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bii/photo_2s.jpg)">
+              <a data-fancybox="bii" href="assets/images/conferences/bii/photo_2.jpg" title="Blockchain innovation summit">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bii/photo_3s.jpg)">
+              <a data-fancybox="bii" href="assets/images/conferences/bii/photo_3.jpg" title="Blockchain innovation summit">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/bii/photo_4s.jpg)">
+              <a data-fancybox="bii" href="assets/images/conferences/bii/photo_4.jpg" title="Blockchain innovation summit">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             13-14 of March
+            </span>
+            IGaming Asia Congress IGA Macau (China)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/iga/logo.png)">
+              <a href="https://igamingasiacongress.com" target="_blank" title="igamingasiacongress.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/iga/photo_1s.jpg)">
+              <a data-fancybox="iga" href="assets/images/conferences/iga/photo_1.jpg" title="IGaming Asia Congress">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/iga/photo_2s.jpg)">
+              <a data-fancybox="iga" href="assets/images/conferences/iga/photo_2.jpg" title="IGaming Asia Congress">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/iga/photo_3s.jpg)">
+              <a data-fancybox="iga" href="assets/images/conferences/iga/photo_3.jpg" title="IGaming Asia Congress">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             10th of March
+            </span>
+            Crypto Investor Show London (UK)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cis/logo.png)">
+              <a href="https://www.cryptoinvestor.show" target="_blank" title="cryptoinvestor.show">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cis/photo_1s.jpg)">
+              <a data-fancybox="cis" href="assets/images/conferences/cis/photo_1.jpg" title="Crypto Investor Show">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cis/photo_2s.jpg)">
+              <a data-fancybox="cis" href="assets/images/conferences/cis/photo_2.jpg" title="Crypto Investor Show">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cis/photo_3s.jpg)">
+              <a data-fancybox="cis" href="assets/images/conferences/cis/photo_3.jpg" title="Crypto Investor Show">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             7-8 March
+            </span>
+            Blockchain Summit Zurich 2018 Zurich (Switzerland)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/bsz/logo.png)">
+              <a href="http://conferences.unicom.co.uk/blockchain-zurich-2018/" target="_blank" title="conferences.unicom.co.uk">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bsz/photo_1s.jpg)">
+              <a data-fancybox="bsz" href="assets/images/conferences/bsz/photo_1.jpg" title="Blockchain Summit Zurich">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bsz/photo_2s.jpg)">
+              <a data-fancybox="bsz" href="assets/images/conferences/bsz/photo_2.jpg" title="Blockchain Summit Zurich">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/bsz/photo_3s.jpg)">
+              <a data-fancybox="bsz" href="assets/images/conferences/bsz/photo_3.jpg" title="Blockchain Summit Zurich">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/bsz/photo_4s.jpg)">
+              <a data-fancybox="bsz" href="assets/images/conferences/bsz/photo_4.jpg" title="Blockchain Summit Zurich">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             February - April
+            </span>
+            Kite Class competitions and events in Tundra (Russia)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/kcc/logo.png)">
+              <a href="http://www.kiteclass.ru/tundra.php" target="_blank" title="kiteclass.ru">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/kcc/photo_1s.jpg)">
+              <a data-fancybox="kcc" href="assets/images/conferences/kcc/photo_1.jpg" title="Kite Class">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/kcc/photo_2s.jpg)">
+              <a data-fancybox="kcc" href="assets/images/conferences/kcc/photo_2.jpg" title="Kite Class">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/kcc/photo_3s.jpg)">
+              <a data-fancybox="kcc" href="assets/images/conferences/kcc/photo_3.jpg" title="Kite Class">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             24-26 February
+            </span>
+            CryptoMarafon (Online conference)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cmf/logo.png)">
+              <a href="http://cryptomarafon.online/2018" target="_blank" title="cryptomarafon.online">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cmf/photo_1s.jpg)">
+              <a data-fancybox="cmf" href="assets/images/conferences/cmf/photo_1.jpg" title="CryptoMarafon">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cmf/photo_2s.jpg)">
+              <a data-fancybox="cmf" href="assets/images/conferences/cmf/photo_2.jpg" title="CryptoMarafon">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cmf/photo_3s.jpg)">
+              <a data-fancybox="cmf" href="assets/images/conferences/cmf/photo_3.jpg" title="CryptoMarafon">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             16th February
+            </span>
+            Crypto Event Almaty (Kazakhstan)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/cea/logo.png)">
+              <a href="https://cryptoconf.su/" target="_blank" title="cryptoconf.su">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cea/photo_1s.jpg)">
+              <a data-fancybox="cea" href="assets/images/conferences/cea/photo_1.jpg" title="Crypto Event Almaty">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cea/photo_2s.jpg)">
+              <a data-fancybox="cea" href="assets/images/conferences/cea/photo_2.jpg" title="Crypto Event Almaty">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/cea/photo_3s.jpg)">
+              <a data-fancybox="cea" href="assets/images/conferences/cea/photo_3.jpg" title="Crypto Event Almaty">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/cea/photo_4s.jpg)">
+              <a data-fancybox="cea" href="assets/images/conferences/cea/photo_4.jpg" title="Crypto Event Almaty">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/cea/photo_5s.jpg)">
+              <a data-fancybox="cea" href="assets/images/conferences/cea/photo_5.jpg" title="Crypto Event Almaty">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             7-10 February
+            </span>
+            London Affiliate Conference(UK)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/lac/logo.png)">
+              <a href="http://www.igbaffiliate.com/events/london-affiliate-conference" target="_blank" title="igbaffiliate.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/lac/photo_1s.jpg)">
+              <a data-fancybox="lac" href="assets/images/conferences/lac/photo_1.jpg" title="London Affiliate Conference">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/lac/photo_2s.jpg)">
+              <a data-fancybox="lac" href="assets/images/conferences/lac/photo_2.jpg" title="London Affiliate Conference">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/lac/photo_3s.jpg)">
+              <a data-fancybox="lac" href="assets/images/conferences/lac/photo_3.jpg" title="London Affiliate Conference">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             6-8 February
+            </span>
+            ICE Totally Gaming 2018 London (UK)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/itg/logo.png)">
+              <a href="http://www.icelondon.uk.com" target="_blank" title="icelondon.uk.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/itg/photo_1s.jpg)">
+              <a data-fancybox="itg" href="assets/images/conferences/itg/photo_1.jpg" title="ICE Totally Gaming">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/itg/photo_2s.jpg)">
+              <a data-fancybox="itg" href="assets/images/conferences/itg/photo_2.jpg" title="ICE Totally Gaming">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/itg/photo_3s.jpg)">
+              <a data-fancybox="itg" href="assets/images/conferences/itg/photo_3.jpg" title="ICE Totally Gaming">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/itg/photo_4s.jpg)">
+              <a data-fancybox="itg" href="assets/images/conferences/itg/photo_4.jpg" title="ICE Totally Gaming">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             30-31 January
+            </span>
+            2018 Paris Fintech Forum 2018 (FRANCE)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/pff/logo.png)">
+              <a href="http://www.parisfintechforum.com/" target="_blank" title="parisfintechforum.com">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/pff/photo_1s.jpg)">
+              <a data-fancybox="pff" href="assets/images/conferences/pff/photo_1.jpg" title="Paris Fintech Forum">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/pff/photo_2s.jpg)">
+              <a data-fancybox="pff" href="assets/images/conferences/pff/photo_2.jpg" title="Paris Fintech Forum">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/pff/photo_3s.jpg)">
+              <a data-fancybox="pff" href="assets/images/conferences/pff/photo_3.jpg" title="Paris Fintech Forum">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/pff/photo_4s.jpg)">
+              <a data-fancybox="pff" href="assets/images/conferences/pff/photo_4.jpg" title="Paris Fintech Forum">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             December 2017 - February 2018
+            </span>
+            Crypto Shark Moscow (Russia)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/csm/logo.png)">
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/csm/photo_1s.jpg)">
+              <a data-fancybox="csm" href="assets/images/conferences/csm/photo_1.jpg" title="Crypto Shark Moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/csm/photo_2s.jpg)">
+              <a data-fancybox="csm" href="assets/images/conferences/csm/photo_2.jpg" title="Crypto Shark Moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/csm/photo_3s.jpg)">
+              <a data-fancybox="csm" href="assets/images/conferences/csm/photo_3.jpg" title="Crypto Shark Moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/csm/photo_4s.jpg)">
+              <a data-fancybox="csm" href="assets/images/conferences/csm/photo_4.jpg" title="Crypto Shark Moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1 d-none">
+             <div class="preview" style="background-image: url(assets/images/conferences/csm/photo_5s.jpg)">
+              <a data-fancybox="csm" href="assets/images/conferences/csm/photo_5.jpg" title="Crypto Shark Moscow">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-sm-6 col-md-12 mt-4 text-center">
+          <div class="item d-flex flex-column justify-content-end mx-auto">
+           <h2>
+            <span>
+             8th December 2017
+            </span>
+            Cryptospace Conference Moscow (Russia)
+           </h2>
+           <div class="d-flex flex-wrap">
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview conferences-logo" style="background-image: url(assets/images/conferences/ccm/logo.png)">
+              <a href="http://cryptospace.moscow/en" target="_blank" title="cryptospace.moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/ccm/photo_1s.jpg)">
+              <a data-fancybox="ccm" href="assets/images/conferences/ccm/photo_1.jpg" title="Cryptospace Conference Moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/ccm/photo_2s.jpg)">
+              <a data-fancybox="ccm" href="assets/images/conferences/ccm/photo_2.jpg" title="Cryptospace Conference Moscow">
+              </a>
+             </div>
+            </div>
+            <div class="col-6 col-md-3 p-1">
+             <div class="preview" style="background-image: url(assets/images/conferences/ccm/photo_3s.jpg)">
+              <a data-fancybox="ccm" href="assets/images/conferences/ccm/photo_3.jpg" title="Cryptospace Conference Moscow">
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="modal-footer d-block">
+       <div aria-label="Close" class="button btn btn-orange" data-dismiss="modal" data-locale="back">
+        Back
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <a class="position-fixed p-2" href="#top" id="to-top" title="To Top">
+    <img alt="To Top" src="assets/images/up-arrow.svg"/>
+   </a>
+   <!-- MatchICO pixel-->
+   <img height="1" src="https://matchico.com/track-investor/eb108e0b-2349-4fc5-a2de-5f64de738d5d/pageview.gif" style="display:none" width="1"/>
+   <!-- End MatchICO pixel-->
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+   </script>
+   <script crossorigin="anonymous" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js">
+   </script>
+   <script crossorigin="anonymous" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
+   </script>
+   <script crossorigin="anonymous" integrity="sha256-kTezPOsOi5ZsWUKr7/D/EWcONq/hdrc0gPwk5/IUYy0=" src="https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js">
+   </script>
+   <script crossorigin="anonymous" integrity="sha256-Tb4gdeCN/ACKmhKQ3BSfbuNgIVYQzBlEvbYlwK7juDw=" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js">
+   </script>
+   <script src="assets/js/main.js?4.2">
+   </script>
+   <script src="assets/js/locale.js?6.0">
+   </script>
+  </main>
+ </body>
+</html>

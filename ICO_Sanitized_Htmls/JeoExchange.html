@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+  <title>
+   Welcome | Jeo Exchange
+  </title>
+  <link href="https://www.jeoex.com/assets/css/plugins.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://www.jeoex.com/assets/css/theme-styles.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://www.jeoex.com/assets/css/blocks.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://www.jeoex.com/assets/css/widgets.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://www.jeoex.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://www.jeoex.com/assets/global/plugins/flag/css/flag-icon.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i,900," rel="stylesheet"/>
+  <!--Styles for RTL-->
+  <!--<link rel="stylesheet" type="text/css" href="https://www.jeoex.com/assets/css/rtl.css">-->
+  <style>
+   .post-standard-details .post__content{
+		text-align: justify;
+	}
+	.select2-results__option {
+		line-height: inherit;
+	}
+	.account_menu{
+		display:block;
+		width:100%;
+	}
+	.hide-on-desktop{
+		display:none;
+	}
+	.airdropPage .list li{
+		font-size: 22px;
+	}
+	.mobileHomeMenu{
+		display: none;
+	}
+			.header-content-wrapper .select2-container{
+			width:auto !important;
+		}
+		.language-switcher + .select2{
+			min-width:120px !important;
+		}
+		@media (max-width:412px) {
+		.window-popup.active {
+			width:90% !important;
+		}
+		.hide-on-desktop{
+			display:block;
+		}
+		
+		.main-content-wrapper > .medium-padding120{
+			padding: 80px 0;
+		}
+		.mobileHomeMenu{
+			display: block;
+			position: absolute;
+			font-size: 22px;
+		}
+		.mobileMenu{
+			margin-left: 40px;
+		}
+
+	}
+  </style>
+  <script src="https://www.jeoex.com/assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script>
+   var base_url = "https://www.jeoex.com/";
+		var f_user_login = false;
+		var f_first_name = '';
+				jQuery(document).ready(function() {
+			jQuery('.language-switcher').change(function() {
+				if(jQuery(this).val() != '')
+				{
+					var red_url = "https://www.jeoex.com/"+jQuery(this).val();
+					window.location.href = red_url;
+				}
+			});
+			
+			jQuery(document).delegate('.icon-close','click',function() {
+				jQuery(this).parents('.alert').remove();
+				return false;
+			});
+			
+			jQuery(document).delegate('.popup-close','click',function() {
+				$body = jQuery('body');
+					$body.removeClass('popup-active');
+					$body.removeClass('body-overlay-active');
+				jQuery('.window-popup.under_construction_modal').removeClass('active');
+				
+				return false;
+			});
+			
+			
+			jQuery(document).delegate('#primary-menu .primary-menu-menu .sub-menu li .js-open-popup', 'click', function () {
+				jQuery('.window-popup.under_construction_modal').addClass('active');
+				$body = jQuery('body');
+				$body.addClass('popup-active');
+				$body.addClass('body-overlay-active');
+				return false;
+			});
+		});
+  </script>
+ </head>
+ <body class="crumina-grid">
+  <div id="hellopreloader">
+   <div class="preloader">
+    <svg fill="#fff" height="140" width="135">
+     <rect height="120" rx="6" width="15" y="10">
+      <animate attributename="height" begin="0.5s" calcmode="linear" dur="1s" repeatcount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120">
+      </animate>
+      <animate attributename="y" begin="0.5s" calcmode="linear" dur="1s" repeatcount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10">
+      </animate>
+     </rect>
+     <rect height="120" rx="6" width="15" x="30" y="10">
+      <animate attributename="height" begin="0.25s" calcmode="linear" dur="1s" repeatcount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120">
+      </animate>
+      <animate attributename="y" begin="0.25s" calcmode="linear" dur="1s" repeatcount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10">
+      </animate>
+     </rect>
+     <rect height="140" rx="6" width="15" x="60">
+      <animate attributename="height" begin="0s" calcmode="linear" dur="1s" repeatcount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120">
+      </animate>
+      <animate attributename="y" begin="0s" calcmode="linear" dur="1s" repeatcount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10">
+      </animate>
+     </rect>
+     <rect height="120" rx="6" width="15" x="90" y="10">
+      <animate attributename="height" begin="0.25s" calcmode="linear" dur="1s" repeatcount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120">
+      </animate>
+      <animate attributename="y" begin="0.25s" calcmode="linear" dur="1s" repeatcount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10">
+      </animate>
+     </rect>
+     <rect height="120" rx="6" width="15" x="120" y="10">
+      <animate attributename="height" begin="0.5s" calcmode="linear" dur="1s" repeatcount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120">
+      </animate>
+      <animate attributename="y" begin="0.5s" calcmode="linear" dur="1s" repeatcount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10">
+      </animate>
+     </rect>
+    </svg>
+    <div class="text">
+     Loading ...
+    </div>
+   </div>
+  </div>
+  <header class="header" id="site-header">
+   <div class="container">
+    <div class="header-content-wrapper">
+     <!--
+			<a href="https://www.jeoex.com/" class="site-logo" style="font-size: 1.5em;">
+				Jeo Money Exchange
+			</a>
+			-->
+     <nav class="primary-menu" id="primary-menu">
+      <!-- menu-icon-wrapper -->
+      <a class="mobileHomeMenu" href="./">
+       <span class="mob-menu--title">
+        <i class="fa fa-home">
+        </i>
+       </span>
+      </a>
+      <a class="menu-icon-trigger showhide mobileMenu" href="javascript:void(0)" id="menu-icon-trigger">
+       <span class="menu-icon-wrapper" id="menu-icon-wrapper">
+        <svg height="1000px" width="1000px">
+         <path d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800" id="pathD">
+         </path>
+         <path d="M 300 500 L 700 500" id="pathE">
+         </path>
+         <path d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200" id="pathF">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <ul class="primary-menu-menu">
+       <li>
+        <a href="https://www.jeoex.com/">
+         Home
+        </a>
+       </li>
+       <li class="menu-item-has-children">
+        <a href="javascript:void();">
+         Exchange
+        </a>
+        <ul class="sub-menu">
+         <li class="">
+          <a href="https://www.jeoex.com/cryptocurrencies">
+           Cryptocurrencies
+          </a>
+         </li>
+         <li class="">
+          <a href="https://www.jeoex.com/fiat-gateway">
+           Fiat Gateway
+          </a>
+         </li>
+         <!--<li class="">
+								<a href="https://www.jeoex.com/currency-convertor">Currency Convertor</a>
+							</li>-->
+        </ul>
+       </li>
+       <li class="">
+        <a href="https://www.jeoex.com/token-sale">
+         Token Sale
+        </a>
+       </li>
+       <li class="menu-item-has-children">
+        <a href="javascript:void();">
+         Jeo Platform
+        </a>
+        <ul class="sub-menu">
+         <li class="">
+          <a class="js-open-popup under_construction_block" href="#">
+           Market
+          </a>
+         </li>
+         <li class="">
+          <a class="js-open-popup under_construction_block" href="#">
+           Margin
+          </a>
+         </li>
+         <li class="">
+          <a class="js-open-popup under_construction_block" href="#">
+           Launchpad
+          </a>
+         </li>
+         <li class="">
+          <a class="js-open-popup under_construction_block" href="#">
+           P2P Trade
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="">
+        <a download="whitepaper.pdf" href="https://www.jeoex.com/assets/doc/whitepaper.pdf">
+         White Paper
+        </a>
+       </li>
+       <li class="">
+        <a href="https://www.jeoex.com/airdrop">
+         Airdrop
+        </a>
+       </li>
+       <li class="">
+        <a href="https://www.jeoex.com/otc">
+         OTC
+        </a>
+       </li>
+       <!--
+					<li class="menu-item-has-children">
+						<a href="javascript:void();">Other</a>
+						<ul class="sub-menu">
+							<li class="">
+								<a href="https://www.jeoex.com/news">News</a>
+							</li>
+							<li class="">
+								<a href="https://www.jeoex.com/faqs">Faqs</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="">
+						<a href="https://www.jeoex.com/contact-us">Contact Us</a>
+					</li>
+					-->
+       <li class="">
+        <a href="https://www.jeoex.com/roadmap">
+         RoadMap
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <select class="woox--select language-switcher" data-dropdown-css-class="language-switcher-dropdown" data-minimum-results-for-search="Infinity">
+      <option value="">
+       My Account
+      </option>
+      <option value="login">
+       Login
+      </option>
+      <option value="register">
+       Register
+      </option>
+     </select>
+    </div>
+   </div>
+  </header>
+  <div class="window-popup under_construction_modal" style="width:50%;">
+   <div class="mCustomScrollbar" data-mcs-theme="dark">
+    <div class="content">
+     <div class="author-details">
+      <a class="popup-close" href="#">
+       <svg class="woox-icon">
+        <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-close">
+        </use>
+       </svg>
+      </a>
+      <div class="author-content">
+       <h3 class="author-name" style="text-align:center;">
+        Under Development
+       </h3>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- ... end Header -->
+  <style>
+   .banner-heading-block{
+	margin-top:150px !important;
+}
+.comming-soon-below-mobile-screen
+{
+	margin-left:10em;
+}
+.comming-soon-below-pc-screen
+{
+	margin-left:20em;
+}
+.crumina-featured-block .text-block {
+    width: 100%;
+    margin-left: 0px;
+}
+.crumina-featured-block .image-block {
+    width: 100%;
+}
+.clients--slider .swiper-slide {
+	padding:20px;
+}
+.clients--slider .swiper-slide .crumina-module{
+	/*background:linear-gradient(to bottom, #ffff00, #ffba00);
+	min-height:185px;*/
+	border:0px none;
+	padding: 0 !important;
+}
+.clients--slider .swiper-slide .crumina-module h5 span{
+	font-size: 22px;
+	color: #fff;
+	letter-spacing: 1px;
+}
+.pricing-table--style1:hover {
+    padding: 40px;
+}
+@media (max-width:412px) {
+	.banner-heading-block{
+		margin-top:30px !important;
+	}
+	.info-box--style2 .info-box-thumb {
+		margin: 0 0 -10px;
+	}
+	.crumina-slider--info-boxes {
+		padding: 40px 80px 50px 40px !important;
+	}
+	.comming-soon-below-mobile-screen {
+		margin-left: 0em;
+	}
+	.telegram-footer-link{
+		right: 90px !important;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;		
+	}
+	.telegram-footer-link svg{
+		font-size: 2.7em;
+		margin-top:4px;
+	}
+	.comming-soon-below-pc-screen {
+
+		margin-left: 00em;
+		margin-bottom: 60px;
+
+	}
+	.crumina-heading.heading--with-decoration .heading-title:after{
+		visibility: hidden;
+	}
+	.crumina-heading{
+		text-align: center !important;
+	}
+}
+  </style>
+  <script>
+   jQuery(document).ready(function() {
+		jQuery('.author-block .socials .social-item a').click(function() {
+			if(jQuery(this).attr('href') != '' && jQuery(this).attr('href') != '#')
+			{
+				var red_url = jQuery(this).attr('href');
+				//window.location.href = red_url;
+				window.open(red_url,'_blank');
+			}
+			return false;
+		});
+	});
+  </script>
+  <div class="main-content-wrapper">
+   <section class="main-section crumina-flying-balls particles-js bg-1 medium-padding120 responsive-align-center" data-settings="particles-1">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+       <img alt="image" class="responsive-width-50" src="https://www.jeoex.com/assets/img/jeo_logo.png"/>
+      </div>
+      <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+       <center>
+        <header class="crumina-module crumina-heading heading--h1 heading--with-decoration">
+         <h1 class="heading-title f-size-90 weight-normal no-margin banner-heading-block">
+          <span class="weight-bold">
+           JEO EXCHANGE
+          </span>
+         </h1>
+         <h2 class="c-primary">
+          Buy Cryptocurrencies
+         </h2>
+        </header>
+       </center>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section>
+    <div class="container">
+     <div class="row medium-padding80">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="details">
+       <div class="crumina-module crumina-module-slider crumina-slider--info-boxes" style="padding:80px 80px 100px 80px;">
+        <div class="swiper-btn-wrap hide-on-desktop">
+         <div class="swiper-btn-next">
+          <svg class="woox-icon icon-line-arrow-right">
+           <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-line-arrow-right">
+           </use>
+          </svg>
+         </div>
+         <div class="swiper-btn-prev">
+          <svg class="woox-icon icon-line-arrow-left">
+           <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-line-arrow-left">
+           </use>
+          </svg>
+         </div>
+        </div>
+        <div class="swiper-container auto-height" data-prev-next="1" data-show-items="5">
+         <div class="swiper-wrapper">
+          <div class="swiper-slide">
+           <div class="crumina-module crumina-info-box info-box--style2">
+            <div class="info-box-thumb">
+             <svg class="woox-icon" data-name="Layer 1" viewbox="0 0 26.97 35.33">
+              <path d="M14.05 35.33l-3.92-.98 1.2-4.84-1.38-.35L8.75 34l-3.93-.97 1.22-4.92-5.47-1.38L0 26.6l1.87-4.32.42.1c.64.18 1.35.36 1.75.46l.38.08a.99.99 0 0 0 .23.03c.1 0 .37 0 .54-.43L8.5 9.27c.03-.55-.29-.93-1-1.1l-.34-.1-1.8-.44-.5-.11 1.02-4.14.49.12 5.47 1.36L13.05 0l3.92.98-1.19 4.75c.47.1.94.21 1.4.33l1.18-4.73 3.93.98-1.22 4.9c2.93 1.06 6.45 2.97 5.82 7.19a5.24 5.24 0 0 1-3.07 4.4c2.45 1.67 3.1 4.03 1.99 7.2-1.13 3.24-3.37 4.75-7.04 4.75a20.42 20.42 0 0 1-3.49-.35zm-2.7-1.7l1.98.49 1.21-4.88.47.1a20.58 20.58 0 0 0 3.77.4c3.22 0 5.1-1.25 6.09-4.07 1.08-3.09.31-5.1-2.48-6.56l-1.2-.63 1.32-.3a4.22 4.22 0 0 0 3.4-3.93c.42-2.85-1.3-4.77-5.6-6.25l-.43-.15 1.2-4.82-1.99-.49-1.18 4.73-.48-.12c-.77-.2-1.57-.38-2.36-.56l-.5-.11 1.2-4.77-2-.5-1.2 4.85-.48-.11-5.48-1.36-.54 2.18c.9.2 1.4.32 1.66.42a2.08 2.08 0 0 1 1.75 2.23l-3.33 13.4a1.57 1.57 0 0 1-1.9 1.08c-.12-.01-.46-.08-1.8-.44L1.38 25.9l5.38 1.36.48.13-1.22 4.9 1.98.5 1.22-4.87.49.13c.8.22 1.58.42 2.35.61l.48.13zM16 26.45a20.76 20.76 0 0 1-5.02-.85l-1.05-.27 1.87-7.47.48.12.72.16c2.06.46 5.51 1.24 6.77 3.28a3.13 3.13 0 0 1 .35 2.48c-.29 1.17-1.24 2.55-4.12 2.55zm-4.86-1.84l.1.02a19.97 19.97 0 0 0 4.76.82c1.82 0 2.85-.58 3.15-1.79a2.13 2.13 0 0 0-.23-1.72c-1.04-1.68-4.36-2.42-6.14-2.82l-.25-.06zm6.18-7.82a16.35 16.35 0 0 1-4.06-.7l-.96-.24L14 8.98l.5.13.6.13c1.68.38 4.51 1 5.6 2.77a2.99 2.99 0 0 1 .33 2.38c-.27 1.1-1.14 2.4-3.7 2.4zm-3.81-1.66h.01a15.57 15.57 0 0 0 3.8.65c2.09 0 2.57-.94 2.74-1.65a2 2 0 0 0-.2-1.6c-.87-1.4-3.54-2-4.98-2.32l-.14-.03z" data-name="Bitcoin BTC">
+              </path>
+             </svg>
+            </div>
+            <div class="info-box-content">
+             <h5 class="info-box-title">
+              Bitcoin
+             </h5>
+             <ul class="pricing-tables-position pricing-tables-position--inline">
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Price:
+                </h6>
+                <h6 class="value">
+                 $11,561.94
+                </h6>
+               </div>
+              </li>
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Cap:
+                </h6>
+                <h6 class="value">
+                 $213,300,295,410.83
+                </h6>
+               </div>
+              </li>
+             </ul>
+             <div class="growth">
+              +3.4%
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="crumina-module crumina-info-box info-box--style2">
+            <div class="info-box-thumb">
+             <svg class="woox-icon" data-name="Layer 1" viewbox="0 0 22.62 36.84">
+              <g data-name="Ethereum ETH" id="Ethereum_ETH">
+               <path class="cls-1" d="M32 15.52L41.93 32 32 37.86 22.07 32 32 15.52zm0-1.94L20.69 32.34 32 39.02l11.3-6.68L32 13.58z" transform="translate(-20.69 -13.58)">
+               </path>
+               <path class="cls-1" d="M32 28.67l9.09 3.82L32 37.86l-9.09-5.37L32 28.67zm0-1.09l-11.31 4.76L32 39.02l11.3-6.68L32 27.58z" transform="translate(-20.69 -13.58)">
+               </path>
+               <path class="cls-1" d="M39.78 37.73L32 48.7l-7.78-10.96 7.27 4.3.5.3.52-.3 7.27-4.3zm3.53-3.24L32 41.16 20.7 34.5 32 50.41l11.31-15.94z" transform="translate(-20.69 -13.58)">
+               </path>
+               <path class="cls-1" d="M10.81 1.88h1v22.79h-1zM10.81 27.75h1v7.87h-1z">
+               </path>
+              </g>
+             </svg>
+            </div>
+            <div class="info-box-content">
+             <h5 class="info-box-title">
+              Ethereum
+             </h5>
+             <ul class="pricing-tables-position pricing-tables-position--inline">
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Price:
+                </h6>
+                <h6 class="value">
+                 $353.96
+                </h6>
+               </div>
+              </li>
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Cap:
+                </h6>
+                <h6 class="value">
+                 $39,642,890,792.51
+                </h6>
+               </div>
+              </li>
+             </ul>
+             <div class="growth">
+              +3.15%
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="crumina-module crumina-info-box info-box--style2">
+            <div class="info-box-thumb">
+             <svg class="woox-icon" data-name="Layer 1" viewbox="0 0 29.098 31.372">
+              <path d="M22.248 31.372a6.778 6.778 0 0 1-3.427-.949 6.924 6.924 0 0 1-3.424-5.952 7.569 7.569 0 0 1 1.006-3.651 2.135 2.135 0 0 0-.763-2.736 1.891 1.891 0 0 0-2.717.761 6.955 6.955 0 0 1-2.657 2.774 6.788 6.788 0 0 1-6.842-.005 6.9 6.9 0 0 1 0-11.917 6.777 6.777 0 0 1 6.854 0 11.248 11.248 0 0 1 2.731 2.717 2.056 2.056 0 0 0 2.751.811 1.691 1.691 0 0 0 1.025-1.3 2.618 2.618 0 0 0-.274-1.455 7.517 7.517 0 0 1-1.113-3.631A6.94 6.94 0 0 1 18.821.885a6.483 6.483 0 0 1 3.386-.886 6.6 6.6 0 0 1 3.479.9 6.887 6.887 0 0 1-.013 11.9 7.892 7.892 0 0 1-3.78.893 1.967 1.967 0 1 0 0 3.933 7.566 7.566 0 0 1 3.771.887 6.889 6.889 0 0 1 .009 11.915 6.809 6.809 0 0 1-3.425.945zm-7.636-14.587a3.051 3.051 0 0 1 1.53.436 3.119 3.119 0 0 1 1.142 4.064 6.608 6.608 0 0 0-.89 3.186 5.923 5.923 0 0 0 2.93 5.09 5.753 5.753 0 0 0 5.84 0 5.89 5.89 0 0 0 0-10.186 6.6 6.6 0 0 0-3.274-.754 2.966 2.966 0 1 1 0-5.933 6.89 6.89 0 0 0 3.284-.761 5.887 5.887 0 0 0-.01-10.175 5.56 5.56 0 0 0-2.922-.755 5.616 5.616 0 0 0-2.9.741 5.943 5.943 0 0 0-2.943 5.1 6.61 6.61 0 0 0 1 3.163 3.6 3.6 0 0 1 .381 2.063 2.63 2.63 0 0 1-1.535 2.036 2.785 2.785 0 0 1-1.423.383 3.1 3.1 0 0 1-2.639-1.514 9.809 9.809 0 0 0-2.435-2.425 5.777 5.777 0 0 0-5.816.014 5.9 5.9 0 0 0 0 10.193 5.763 5.763 0 0 0 5.839 0 6.017 6.017 0 0 0 2.282-2.4 3.058 3.058 0 0 1 2.559-1.566z" data-name="Ripple XRP">
+              </path>
+             </svg>
+            </div>
+            <div class="info-box-content">
+             <h5 class="info-box-title">
+              Ripple
+             </h5>
+             <ul class="pricing-tables-position pricing-tables-position--inline">
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Price:
+                </h6>
+                <h6 class="value">
+                </h6>
+               </div>
+              </li>
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Cap:
+                </h6>
+                <h6 class="value">
+                </h6>
+               </div>
+              </li>
+             </ul>
+             <div class="c-primary">
+              0.00%
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="crumina-module crumina-info-box info-box--style2">
+            <div class="info-box-thumb">
+             <svg class="woox-icon" data-name="Layer 1" viewbox="0 0 27.248 29">
+              <path d="M25.451 29H1.081l2.288-8.436L0 21.964l1.443-5.43 3.38-1.234L8.898 0h9.805L15.69 11.341l4.275-1.567-1.342 5.393-4.36 1.653L12.65 23h14.6zM2.387 28h22.319l1.2-4H11.355l2.07-7.933 4.357-1.651.759-3.055-4.311 1.579L17.402 1H9.666L5.652 16.066 2.275 17.3l-.789 2.969 3.381-1.4z" data-name="Litecoin LTC">
+              </path>
+             </svg>
+            </div>
+            <div class="info-box-content">
+             <h5 class="info-box-title">
+              Litecoin
+             </h5>
+             <ul class="pricing-tables-position pricing-tables-position--inline">
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Price:
+                </h6>
+                <h6 class="value">
+                 $59.00
+                </h6>
+               </div>
+              </li>
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Cap:
+                </h6>
+                <h6 class="value">
+                 $3,843,883,225.35
+                </h6>
+               </div>
+              </li>
+             </ul>
+             <div class="growth">
+              +2.63%
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="crumina-module crumina-info-box info-box--style2">
+            <div class="info-box-thumb" style="text-align: center;">
+             <img src="https://www.jeoex.com/assets/img/logo_gray.png" style="margin-top: 8px;width: 90%;-webkit-filter: grayscale(100%); filter: grayscale(100%);"/>
+            </div>
+            <div class="info-box-content">
+             <h5 class="info-box-title">
+              Jeo
+             </h5>
+             <ul class="pricing-tables-position pricing-tables-position--inline">
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Price:
+                </h6>
+                <h6 class="value">
+                 -
+                </h6>
+               </div>
+              </li>
+              <li class="position-item">
+               <div class="currency-details-item">
+                <h6 class="title">
+                 Cap:
+                </h6>
+                <h6 class="value">
+                 -
+                </h6>
+               </div>
+              </li>
+             </ul>
+             <div class="c-primary">
+              0.00%
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="medium-padding120 responsive-align-center">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+       <header class="crumina-module crumina-heading heading--h2 heading--with-decoration">
+        <div class="heading-sup-title">
+         JEO EXCHANGE
+        </div>
+        <h2 class="heading-title weight-normal">
+         Buy bitcoin and other digital assets
+        </h2>
+        <div class="heading-text">
+         JEO exchange is a next generation cryptocurrency exchange that will provide a secure and user-friendly
+						trading experience to buy cryptocurrencies.
+        </div>
+       </header>
+       <p>
+        Jeo platform will offer an intuitive interface with real time order books, charting tools, trade history, and a simple order process so you can trade from day one.
+       </p>
+       <div class="btn-market-wrap mt60">
+        <span class="has-popup">
+         <a class="btn btn--market btn--apple btn--with-icon btn--icon-left js-open-popup" href="#">
+          <svg class="woox-icon icon-apple">
+           <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-apple">
+           </use>
+          </svg>
+          <div class="text">
+           <span class="sup-title">
+            download on
+           </span>
+           <span class="title">
+            Apple Store
+           </span>
+          </div>
+         </a>
+         <div class="window-popup" style="width:50%;">
+          <div class="mCustomScrollbar" data-mcs-theme="dark">
+           <div class="content">
+            <div class="author-details">
+             <a class="js-open-popup js-body-overlay popup-close" href="#">
+              <svg class="woox-icon icon-close">
+               <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-close">
+               </use>
+              </svg>
+             </a>
+             <div class="author-content">
+              <h3 class="author-name" style="text-align:center;">
+               Comming Soon
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </span>
+        <span class="has-popup">
+         <a class="btn btn--market btn--google btn--with-icon btn--icon-left js-open-popup" href="#">
+          <svg class="woox-icon icon-if-59-play-843782">
+           <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-if-59-play-843782">
+           </use>
+          </svg>
+          <div class="text">
+           <span class="sup-title">
+            download on
+           </span>
+           <span class="title">
+            Google Play
+           </span>
+          </div>
+         </a>
+         <div class="window-popup" style="width:50%;">
+          <div class="mCustomScrollbar" data-mcs-theme="dark">
+           <div class="content">
+            <div class="author-details">
+             <a class="js-open-popup js-body-overlay popup-close" href="#">
+              <svg class="woox-icon icon-close">
+               <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-close">
+               </use>
+              </svg>
+             </a>
+             <div class="author-content">
+              <h3 class="author-name" style="text-align:center;">
+               Comming Soon
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </span>
+       </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt30">
+       <img alt="phone" class="responsive-width-80 pb30" src="https://www.jeoex.com/assets/img/phone.png"/>
+       <a class="btn btn--large btn--primary btn--transparent btn--with-icon btn--icon-right comming-soon-below-mobile-screen">
+        Comming Soon
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="bg-dotted-map">
+    <div class="container">
+     <div class="row medium-padding300 align-center">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <img alt="dots" class="primary-dots mb30" src="https://www.jeoex.com/assets/img/dots.png"/>
+       <header class="crumina-module crumina-heading heading--h2 heading--with-decoration">
+        <h2 class="heading-title weight-normal">
+         Life in the
+         <span class="weight-bold">
+          digital world
+         </span>
+        </h2>
+        <div class="heading-text">
+         Blockchain Technology
+        </div>
+       </header>
+       <div class="counters">
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+         <div class="crumina-module crumina-counter-item">
+          <div class="counter-numbers counter">
+           <span data-from="2" data-refresh-interval="10" data-speed="2000" data-to="2420">
+            2420
+           </span>
+          </div>
+          <h4 class="counter-title">
+           TOTAL CRYPTOCURRENCIES
+          </h4>
+          <div class="counter-line">
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+         <div class="crumina-module crumina-counter-item">
+          <div class="counter-numbers counter">
+           <span data-from="2" data-refresh-interval="9" data-speed="2000" data-to="290">
+            290
+           </span>
+           <div class="units">
+            BN
+           </div>
+          </div>
+          <h4 class="counter-title">
+           TOTAL MARKET CAP
+          </h4>
+          <div class="counter-line">
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+         <div class="crumina-module crumina-counter-item">
+          <div class="counter-numbers counter">
+           <span data-from="2" data-refresh-interval="6" data-speed="2000" data-to="55">
+            55
+           </span>
+           <div class="units">
+            BN
+           </div>
+          </div>
+          <h4 class="counter-title">
+           AVERAGE VOLUME DAILY
+          </h4>
+          <div class="counter-line">
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+         <div class="crumina-module crumina-counter-item">
+          <div class="counter-numbers counter">
+           <span data-from="2" data-refresh-interval="30" data-speed="2000" data-to="19679">
+            19679
+           </span>
+           <div class="units">
+           </div>
+          </div>
+          <h4 class="counter-title">
+           MARKETS
+          </h4>
+          <div class="counter-line">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="bg-1">
+    <div class="container">
+     <div class="row medium-padding120">
+      <div class="crumina-module crumina-featured-block">
+       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="image-block pb30">
+         <img alt="phone" src="https://www.jeoex.com/assets/img/pc.png"/>
+        </div>
+        <a class="btn btn--large btn--primary btn--transparent btn--with-icon btn--icon-right comming-soon-below-pc-screen">
+         Comming Soon
+        </a>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="text-block">
+         <header class="crumina-module crumina-heading heading--h2 heading--with-decoration">
+          <center>
+           <h2 class="heading-title tradeHeading weight-bold">
+            TRADE
+            <span class="weight-bold">
+             WITH HIGHLY FAST MATCHING ENGINE
+            </span>
+           </h2>
+          </center>
+         </header>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row pb100">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="crumina-module crumina-module-slider clients--slider navigation-center-both-sides">
+        <div class="swiper-btn-next">
+         <svg class="woox-icon icon-line-arrow-right">
+          <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-line-arrow-right">
+          </use>
+         </svg>
+        </div>
+        <div class="swiper-btn-prev">
+         <svg class="woox-icon icon-line-arrow-left">
+          <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-line-arrow-left">
+          </use>
+         </svg>
+        </div>
+        <div class="row">
+         <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+          <div class="swiper-container" data-autoplay="1000" data-prev-next="1" data-show-items="2">
+           <div class="swiper-wrapper">
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>FIAT GATEWAY</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/01.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>P2P TRADING</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/02.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>WORLD CLASS SECURITY</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/03.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>MARGIN TRADING</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/04.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>OVER THE COUNTER TRADE</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/05.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>INITIAL EXCHANGE OFFERING</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/06.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>NITIAL AIRDROP OFFERING</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/07.png"/>
+             </div>
+            </div>
+            <div class="swiper-slide">
+             <div class="crumina-module crumina-pricing-table pricing-table--style1">
+              <!--<h5 class="pricing-title"><span>STACKING AND REWARD</span></h5>-->
+              <img class="img-responsive" src="https://www.jeoex.com/assets/img/slides/08.png"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <hr class="divider"/>
+    </div>
+   </section>
+   <section class="medium-padding120 responsive-align-center">
+    <div class="container">
+     <div class="row bg-2">
+      <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 mb30" id="tab-form">
+       <div class="tabs tabs--style3">
+        <ul role="tablist">
+         <li class="tab-control active" role="presentation">
+          <a class="control-item" data-toggle="tab" href="#tab-13" role="tab">
+           <h6 class="tab-title">
+            Submit Interest For Private Sale
+           </h6>
+          </a>
+         </li>
+         <li class="tab-control" role="presentation">
+          <a class="control-item" data-toggle="tab" href="#tab-14" role="tab">
+           <h6 class="tab-title">
+            Join ICO Whitelist
+           </h6>
+          </a>
+         </li>
+        </ul>
+        <div class="tab-content">
+         <div class="tab-pane fade active" id="tab-13" role="tabpanel">
+          <form action="" class="contact-form" method="post" style="margin:0px;">
+           <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="form-group">
+              <label class="input-label" style="margin-left:0px;">
+               Email Address
+               <abbr class="required" title="required">
+                *
+               </abbr>
+              </label>
+              <input class="form-control input--squared input--dark" name="email" required="" type="email" value=""/>
+             </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <button class="btn btn--large btn--primary" name="submit-interest">
+              Submit
+             </button>
+            </div>
+           </div>
+          </form>
+         </div>
+         <div class="tab-pane fade" id="tab-14" role="tabpanel">
+          <form action="" class="contact-form" method="post" style="margin:0px;">
+           <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="form-group">
+              <label class="input-label" style="margin-left:0px;">
+               Email Address
+               <abbr class="required" title="required">
+                *
+               </abbr>
+              </label>
+              <input class="form-control input--squared input--dark" name="email" required="" type="email" value=""/>
+             </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="form-group">
+              <label class="input-label" style="margin-left:0px;">
+               ETH Address
+               <abbr class="required" title="required">
+                *
+               </abbr>
+              </label>
+              <input class="form-control input--squared input--dark" name="eth_address" placeholder="" required=""/>
+             </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <button class="btn btn--large btn--primary" name="submit-ico">
+              Submit
+             </button>
+            </div>
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-5 col-md-12 col-lg-offset-0 col-sm-12 col-xs-12">
+       <div class="widget w-distribution-ends countdown-bg1">
+        <h5 class="title">
+         Team
+        </h5>
+        <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="crumina-module crumina-module-slider clients--slider navigation-center-both-sides">
+           <div class="swiper-btn-next">
+            <svg class="woox-icon icon-line-arrow-right">
+             <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-line-arrow-right">
+             </use>
+            </svg>
+           </div>
+           <div class="swiper-btn-prev">
+            <svg class="woox-icon icon-line-arrow-left">
+             <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-line-arrow-left">
+             </use>
+            </svg>
+           </div>
+           <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+             <div class="swiper-container" data-prev-next="1" data-show-items="1">
+              <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                <div class="author-block author-block--column hover-shadow-bottom js-open-popup js-body-overlay">
+                 <div class="avatar avatar200">
+                  <img alt="Nicola Baro" src="https://www.jeoex.com/assets/img/team/nicola_baro.jpg"/>
+                 </div>
+                 <div class="author-content">
+                  <a class="h6 author-name" href="#">
+                   Nicola Baro
+                  </a>
+                  <div class="author-prof">
+                   Chief Executive Officer
+                  </div>
+                 </div>
+                 <ul class="socials socials--white">
+                  <li class="social-item">
+                   <a href="https://twitter.com/Nicola_Baro?s=08" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-twitter fa-w-16 woox-icon" data-fa-i2svg="" data-icon="twitter" data-prefix="fab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-twitter woox-icon"></i> -->
+                   </a>
+                  </li>
+                  <li class="social-item">
+                   <a href="https://www.linkedin.com/in/nicolabaro" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-linkedin-in fa-w-14 woox-icon" data-fa-i2svg="" data-icon="linkedin-in" data-prefix="fab" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-linkedin-in woox-icon"></i> -->
+                   </a>
+                  </li>
+                 </ul>
+                </div>
+               </div>
+               <div class="swiper-slide">
+                <div class="author-block author-block--column hover-shadow-top js-open-popup js-body-overlay">
+                 <div class="avatar avatar200">
+                  <img alt="avatar" src="https://www.jeoex.com/assets/img/team/martin_richie.jpg"/>
+                 </div>
+                 <div class="author-content">
+                  <a class="h6 author-name" href="#">
+                   Martin Richie
+                  </a>
+                  <div class="author-prof">
+                   Chief Technology Officer
+                  </div>
+                 </div>
+                 <ul class="socials socials--white">
+                  <li class="social-item">
+                   <a href="https://twitter.com/martinrichie7?s=08" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-twitter fa-w-16 woox-icon" data-fa-i2svg="" data-icon="twitter" data-prefix="fab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-twitter woox-icon"></i> -->
+                   </a>
+                  </li>
+                  <li class="social-item">
+                   <a href="https://www.linkedin.com/in/martinrichie7/" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-linkedin-in fa-w-14 woox-icon" data-fa-i2svg="" data-icon="linkedin-in" data-prefix="fab" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-linkedin-in woox-icon"></i> -->
+                   </a>
+                  </li>
+                 </ul>
+                </div>
+               </div>
+               <div class="swiper-slide">
+                <div class="author-block author-block--column hover-shadow-left-top js-open-popup js-body-overlay">
+                 <div class="avatar avatar200">
+                  <img alt="avatar" src="https://www.jeoex.com/assets/img/team/marcle_wesselink.jpg"/>
+                 </div>
+                 <div class="author-content">
+                  <a class="h6 author-name" href="#">
+                   Marcle Wesselink
+                  </a>
+                  <div class="author-prof">
+                   Marketing Specialist
+                  </div>
+                 </div>
+                 <ul class="socials socials--white">
+                  <li class="social-item">
+                   <a href="https://twitter.com/marclewesselink?s=08" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-twitter fa-w-16 woox-icon" data-fa-i2svg="" data-icon="twitter" data-prefix="fab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-twitter woox-icon"></i> -->
+                   </a>
+                  </li>
+                  <li class="social-item">
+                   <a href="https://www.linkedin.com/in/marcle-wesselink-b490a6192" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-linkedin-in fa-w-14 woox-icon" data-fa-i2svg="" data-icon="linkedin-in" data-prefix="fab" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-linkedin-in woox-icon"></i> -->
+                   </a>
+                  </li>
+                 </ul>
+                </div>
+               </div>
+               <div class="swiper-slide">
+                <div class="author-block author-block--column hover-shadow-right js-open-popup js-body-overlay">
+                 <div class="avatar avatar200">
+                  <img alt="avatar" src="https://www.jeoex.com/assets/img/team/luke_poulter.jpg"/>
+                 </div>
+                 <div class="author-content">
+                  <a class="h6 author-name" href="#">
+                   Luke Poulter
+                  </a>
+                  <div class="author-prof">
+                   Vice President of Public Relations
+                  </div>
+                 </div>
+                 <ul class="socials socials--white">
+                  <li class="social-item">
+                   <a href="https://twitter.com/lukepoulter7?s=08" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-twitter fa-w-16 woox-icon" data-fa-i2svg="" data-icon="twitter" data-prefix="fab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-twitter woox-icon"></i> -->
+                   </a>
+                  </li>
+                  <li class="social-item">
+                   <a href="https://www.linkedin.com/in/luke-poulter-223698160" target="_blank">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-linkedin-in fa-w-14 woox-icon" data-fa-i2svg="" data-icon="linkedin-in" data-prefix="fab" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z" fill="currentColor">
+                     </path>
+                    </svg>
+                    <!-- <i class="fab fa-linkedin-in woox-icon"></i> -->
+                   </a>
+                  </li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <style>
+   .quick-links a{
+	font-weight: 700;
+	background-color: transparent;
+	color: #c3c9d4;
+	font-size: 14px;
+	margin-left:5px;
+	margin-right:5px;
+}
+.quick-links a:hover
+{
+	color: #ffba00;
+}
+  </style>
+  <footer class="footer" id="site-footer">
+   <canvas id="can">
+   </canvas>
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0 col-xs-12">
+      <div class="widget w-info">
+       <a class="site-logo" href="https://www.jeoex.com/" style="font-size:2em;">
+        Jeo Exchange
+       </a>
+       <p>
+        At Jeo Exchange we are targeting experienced professionals as well as newcomers in this field. To us,
+					security is the most important aspect of business practice. This is why we integrate similar smart technologies to provide
+					our clients with the highest guarantee of security available on the market.
+       </p>
+       <span class="quick-links">
+        <a href="https://www.jeoex.com/news">
+         NEWS/EVENTS
+        </a>
+        <a href="https://www.jeoex.com/faqs">
+         FAQ
+        </a>
+        <a href="https://www.jeoex.com/contact-us">
+         CONTACT US
+        </a>
+       </span>
+      </div>
+      <div class="widget w-contacts">
+       <ul class="socials socials--white">
+        <li class="social-item">
+         <a href="http://www.twitter.com/jeoexchange" target="_blank">
+          <i class="fab fa-twitter woox-icon">
+          </i>
+         </a>
+        </li>
+        <li class="social-item">
+         <a href="https://www.instagram.com/jeoexchange/" target="_blank">
+          <i class="fab fa-instagram woox-icon">
+          </i>
+         </a>
+        </li>
+        <li class="social-item">
+         <a href="https://www.linkedin.com/company/jeo-exchange" target="_blank">
+          <i class="fab fa-linkedin-in woox-icon">
+          </i>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sub-footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0 col-xs-12">
+       <span>
+        Copyright @2020. All Right Reserved.
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <a class="back-to-top" href="#">
+    <svg class="woox-icon icon-top-arrow">
+     <use xlink:href="https://www.jeoex.com/assets/svg-icons/sprites/icons.svg#icon-top-arrow">
+     </use>
+    </svg>
+   </a>
+  </footer>
+  <!-- ... end Footer -->
+  <script src="https://www.jeoex.com/assets/js/method-assign.js">
+  </script>
+  <!-- jQuery first, then Other JS. -->
+  <!--
+<script src="https://www.jeoex.com/assets/js/map-shortcode.js"></script>
+-->
+  <script src="https://www.jeoex.com/assets/js/js-plugins/crum-mega-menu.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/theme-plugins.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/isotope.pkgd.min.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/ajax-pagination.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/swiper.min.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/material.min.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/orbitlist.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/highstock.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/js-plugins/bootstrap-datepicker.js">
+  </script>
+  <!-- FontAwesome 5.x.x JS -->
+  <script defer="" src="https://www.jeoex.com/assets/fonts/fontawesome-all.js">
+  </script>
+  <script src="https://www.jeoex.com/assets/js/main.js">
+  </script>
+  <style>
+   .telegram-footer-link{
+	position: fixed;
+	bottom: 20px;
+	right: 100px;
+	z-index:9999;
+	left: 10px;
+}
+  </style>
+  <a class="btn btn--round btn--secondary btn--transparent telegram-footer-link" href="http://www.telegram.me/jeoexchange" target="_blank" title="JOIN TELEGRAM GROUP">
+   <img src="https://www.jeoex.com/assets/img/telegram-icon.png"/>
+   <!--<svg class="svg-inline--fa fa-telegram fa-w-16 fa-4x" style="font-size: 1.4em;" aria-hidden="true" data-prefix="fab" data-icon="telegram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>-->
+  </a>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5d6bfc7e77aa790be331dc64/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+  </script>
+  <!--End of Tawk.to Script-->
+ </body>
+</html>

@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html class="js" lang="zxx">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="BANKAERO" name="author"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="" name="description"/>
+  <!-- Fav Icon  -->
+  <link href="/favicon.ico?v=3.1" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/favicon.ico?v=3.1" rel="icon" type="image/x-icon"/>
+  <!-- Bundle and Base CSS -->
+  <link href="https://bankaero.com/assets/css/vendor.bundle.css?ver=161" rel="stylesheet"/>
+  <link href="https://bankaero.com/assets/css/style.css?ver=161" rel="stylesheet"/>
+  <title>
+   Welcome to BANKAERO - BANKAERO
+  </title>
+  <meta content="free current account, currency exchange, cryptocurrency exchange" name="keywords"/>
+  <meta content="Free and secure mobile-based current account. Hold, exchange and transfer without fees in different currencies." name="description"/>
+  <script src="https://www.google.com/recaptcha/api.js">
+  </script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css"/>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+  </script>
+  <script>
+   window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#252e39"
+            },
+            "button": {
+                "background": "#14a7d0"
+            }
+        },
+        "theme": "classic",
+        "position": "bottom-right",
+        "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "https://bankaero.com/privacy"
+        }
+    })});
+  </script>
+  <script>
+   $( document ).ready(function() {
+      
+      $.post( "/ajax/get_credit_defaults", {  })
+        .done(function( data ) {
+          data = $.parseJSON(data);
+          //console.log(data);
+          
+          var days_min = data[1]['value'];
+          var days_max = data[2]['value'];
+          
+          $('#days_min').html(days_min);
+          $('#days_max').html(days_max);
+          
+          $('#myRange').prop("min", days_min);
+          $('#myRange').prop("max", days_max);
+          
+          //console.log(  );
+          
+        });
+    
+      
+                  var exch_link = 'user/register';
+                    
+                      var credit_link = 'user/register';
+                  //console.log(exch_link);
+      var link = "https://bankaero.com/" + exch_link;
+      $('.exch_link').attr("href", link);
+      
+      var link = "https://bankaero.com/" + credit_link;
+      $('#credit_link').attr("href", link);
+
+      
+      function recalc() {
+
+        var give = $("#give").val();
+        var give_cur = $( "#give_cur" ).val();
+        var get = $("#get").val();
+        var get_cur = $( "#get_cur" ).val();
+
+        if (give.indexOf('.') != -1) {
+          // will not be triggered because str has _..
+          if (give[give.length -1] == '.') {
+            console.log('last');
+            return false;
+          }
+
+        }
+
+        if (give_cur == get_cur) {
+          if (get_cur == 0) {
+            get_cur = 1;
+            $("#get_cur").val(get_cur);
+          }
+          if (get_cur == 5) {
+            get_cur = 0;
+            $("#get_cur").val(get_cur);
+          }
+        }
+
+        $.post( "/ajax/recalc", { 
+            give_amount: give, 
+            give_currency: give_cur == 0 ? 'debit_base' : 'debit_extra'+give_cur, 
+            get_amount: get, 
+            get_currency: get_cur == 0 ? 'debit_base' : 'debit_extra'+get_cur, 
+          })
+        .done(function( data ) {
+          data = $.parseJSON(data);
+          //console.log(data);
+          $("#get").val(data.get);
+          
+          
+          $("#give").val(data.give);
+        });
+
+      }
+
+      $("#give").val('1');
+      $("#give_cur").val('5');
+      $("#get_cur").val('1');
+      $('.cur_option_get').each(function(value, item){
+          if (value > 4) {
+             $(item).addClass('d-none');
+          }
+      });
+
+      if ( ($("#give").length > 0) && ($("#give_cur").length > 0) && ($("#get_cur").length > 0) && ($("#get").length > 0)  ) {
+        recalc();
+        credit_recalc();
+      }
+
+      $(document).on("keypress","#give, #get",function(event) {
+
+        key = event.keyCode;
+        if (key == 0) {
+          key = event.which;
+        }
+        
+        if(key == 46 || key == 37 || key == 39 || key == 8 || key == 46 || (key >= 48 && key <= 57) ) { // . / Left / Right / Backspace, Delete keys, numbers
+
+        } else {
+          event.preventDefault();
+          return false;
+        }
+
+
+
+      });
+      $(document).click(".cur_option_give", function(event){
+          if ($("#give_cur").val() > 4) {
+              $('.cur_option_get').each(function(value, item){
+                  if (value > 4) {
+                  $(item).addClass('d-none');
+                  if ($("#get_cur").val() > 4) {
+                    $('#get_option_selected').html('EUR');
+                    $('#get_img_selected').attr("src","/assets/themes/escrow/img/euro.png");
+                    $("#get_cur").val(0);
+                    recalc();
+                  }
+              }
+            });
+          }
+          if ($("#give_cur").val() < 5) {
+            $('.cur_option_get').each(function(value, item){
+                $(item).removeClass('d-none');
+            });
+          }
+      });
+      $(document).click(".cur_option_get", function(event){
+          if ($("#get_cur").val() > 4) {
+              $('.cur_option_give').each(function(value, item){
+                  if (value > 4) {
+                  $(item).addClass('d-none');
+                  if ($("#give_cur").val() > 4) {
+                    $('#give_option_selected').html('EUR');
+                    $('#give_img_selected').attr("src","/assets/themes/escrow/img/euro.png");
+                    $("#give_cur").val(0);
+                    recalc();
+                  }
+              }
+            });
+          }
+          if ($("#get_cur").val() < 5) {
+            $('.cur_option_give').each(function(value, item){
+                $(item).removeClass('d-none');
+            });
+          }
+      });
+
+      $(document).on("keyup","#give, #get",function(event) { recalc(); });
+
+      $(document).on("change","#give_cur, #get_cur",function() {recalc();});
+
+      $(".cur_option_give").click(function(event){
+        event.preventDefault();
+        var get_s = $('#get_cur').val();
+        var give_s = $('#give_cur').val();
+
+        if ($(this).attr('data-id') != get_s) {
+          $('#give_option_selected').html($(this).attr('data-text') + ' ');
+          $('#give_img_selected').attr("src",($(this).attr('data-img')));
+          $("#give_cur").val($(this).attr('data-id'));
+        } else {
+
+          if (get_s != 0) {
+            $('#get_option_selected').html('EUR ');
+            $('#get_img_selected').attr("src","/assets/themes/escrow/img/euro.png");
+            $("#get_cur").val(0);
+          }
+          else {
+            $('#get_option_selected').html('USD ');
+            $('#get_img_selected').attr("src","/assets/themes/escrow/img/usd.png");
+            $("#get_cur").val(1);
+          }
+
+          $('#give_option_selected').html($(this).attr('data-text') + ' ');
+          $('#give_img_selected').attr("src",($(this).attr('data-img')));
+          $("#give_cur").val($(this).attr('data-id'));
+        }
+
+        recalc();
+
+      });
+      
+      if ($('.credit_cur_option_get').length > 0) {
+        $(".credit_cur_option_get").click(function(event){
+          event.preventDefault();
+
+          //switch currency
+          $('#credit_get_option_selected').html($(this).attr('data-text') + ' ');
+          $('#credit_get_img_selected').attr("src",($(this).attr('data-img')));
+          $("#credit_get_cur").val($(this).attr('data-id'));
+          credit_recalc();
+        });
+    }
+    if ($('.credit_cur_option_give').length > 0) {
+        $(".credit_cur_option_give").click(function(event){
+          event.preventDefault();
+
+          //switch currency
+          $('#credit_give_option_selected').html($(this).attr('data-text') + ' ');
+          $('#credit_give_img_selected').attr("src",($(this).attr('data-img')));
+          $("#credit_give_cur").val($(this).attr('data-id'));
+          credit_recalc();
+        });
+    }
+        
+        $(document).on('change', '#myRange', function(event) {
+            credit_recalc();
+        });
+        
+        $(document).on('keyup', '#demo', function(event) {
+            event.preventDefault();
+            if ($(this).val() >= 7 && $(this).val() <= 365) {
+              $('#myRange').val($(this).val());
+              credit_recalc();
+            } 
+        });
+        
+        $(document).on('keypress', '#credit_give, #credit_get', function(event) {
+          
+        key = event.keyCode;
+        if (key == 0) {
+          key = event.which;
+        }
+        //console.log(key);
+        //console.log(key2);
+
+        if(key == 46 || key == 37 || key == 39 || key == 8 || key == 46 || (key >= 48 && key <= 57) ) { // . / Left / Right / Backspace, Delete keys, numbers
+
+        } else {
+          event.preventDefault();
+          return false;
+        }
+        
+        
+         });
+        
+        $(document).on('keyup', '#credit_give', function(event) {
+          
+            event.preventDefault();
+              credit_recalc(); 
+        });
+        
+       function credit_recalc() {
+         //console.log('credit recalc');
+         //give sum 
+          var give_amount = $('#credit_give').val();
+          
+          //term
+          var term = $('#demo').val();
+          
+          //get currency
+          var get_currency = $('#credit_get_cur').val();
+          var give_currency = $('#credit_give_cur').val();
+          
+          $.post( "/ajax/credit_recalc", { 
+            give_amount: give_amount, 
+            give_currency: 'debit_extra'+(parseInt(give_currency)),
+            get_currency: get_currency == 0 ? 'debit_base' : 'debit_extra'+get_currency, 
+            term: term})
+            .done(function( data ) {
+                data = $.parseJSON(data);
+                console.log(data);
+                $("#credit_get").val(data.credit_sum);
+                $("#apr_value").html(data.apr_rate + ' %');
+                
+              
+                $("#loan_amount").html(data.loan_total + ' ' + $('#credit_get_option_selected').text());
+              //$("#give").val(data.give);
+            });
+          
+          //console.log(get_cur);
+         
+      }
+
+      if($('.cur_option_get').length > 0) {
+        $(".cur_option_get").click(function(event){
+            event.preventDefault();
+
+            var get_s = $('#get_cur').val();
+            var give_s = $('#give_cur').val();
+
+            if ($(this).attr('data-id') != give_s) {
+              $('#get_option_selected').html($(this).attr('data-text') + ' ');
+              $('#get_img_selected').attr("src",($(this).attr('data-img')));
+              $("#get_cur").val($(this).attr('data-id'));
+            } else {
+
+              if (give_s != 0) {
+                $('#give_option_selected').html('EUR ');
+                $('#give_img_selected').attr("src","/assets/themes/escrow/img/euro.png");
+                $("#give_cur").val(0);
+              }
+              else {
+                $('#give_option_selected').html('USD ');
+                $('#give_img_selected').attr("src","/assets/themes/escrow/img/usd.png");
+                $("#give_cur").val(1);
+              }
+
+              $('#get_option_selected').html($(this).attr('data-text') + ' ');
+              $('#get_img_selected').attr("src",($(this).attr('data-img')));
+              $("#get_cur").val($(this).attr('data-id'));
+            }
+
+
+            recalc();
+        });
+      }
+      
+      if($('#credit_get').length > 0) {
+        $(document).on('keyup', '#credit_get', function(event) {  
+            event.preventDefault();
+            reverse_credit_recalc(); 
+        });
+      }
+      
+      function reverse_credit_recalc() {
+        
+          var get_sum = $('#credit_get').val();
+          var get_cur = $('#credit_get_cur').val();
+          var term = $('#demo').val();
+          
+          //get currency
+          $.post( "/ajax/credit_recalcr", { get: get_sum, get_cur: get_cur, term: term})
+            .done(function( data ) {
+              data = $.parseJSON(data);
+              console.log(data);
+              $('#credit_give').val(data.btc);
+
+              //$("#credit_get").val(data.credut_sum);
+              $("#apr_value").html(data.apr_rate + ' %');
+              $("#loan_amount").html(data.loan_total + ' ' + $('#credit_get_option_selected').text());
+            });
+      }
+      
+
+      //pre-order
+      $(document).on('click', '#p_email, #p_name', function(event) {
+        $('#p_send').removeClass('btn-danger');
+        $('#p_send').addClass('btn-success');
+        $('#p_send').html('Send!');
+      });
+      
+      
+       $(document).on("keyup","#p_name",function(event) { 
+            if ($(this).val().length >= 3) {
+              $('#p_send').prop('disabled', false);
+            }
+        });
+      
+
+      $(document).on('click', '#p_send', function(event) {
+          var email = $('#p_email').val();
+          var name = $('#p_name').val();
+          check_email = false;
+          if (email.length > 0) {
+            function validateEmail(email) {
+              var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+              if( !emailReg.test( email ) ) {
+                  return false;
+              } else {
+                  return true;
+              }
+            }
+
+            var check_email = validateEmail(email);
+          } else {
+            var check_email = false;
+          }
+
+          if (check_email == false) {
+            $('#p_send').removeClass('btn-success');
+            $('#p_send').addClass('btn-danger');
+            $('#p_send').html('Incorrect email!');
+          } else {
+            $.post( "/ajax/preorder", { name: name, email:email })
+            .done(function( data ) {
+              $('#div_preorder').empty();
+              var message = '<center><div style="width:150px" class="alert alert-success" role="alert">' +
+                'Thank you!' +
+                '</div></center>';
+              $('#div_preorder').append(message);
+            });
+          }
+
+        });
+
+      $(document).on('click', '#card_preorder', function(event) {
+        $(this).remove();
+        $('#div_preorder').empty()
+        var pre_form = '<center><input type="text" name="name" id="p_name" class="form-control" style="width:200px; display:inline-block; margin-left:5px; margin-right:5px;" placeholder="Name: ">' +
+          ' <input type="email" name="email" id="p_email" class="form-control" style="width:200px; display:inline-block; margin-left:5px; margin-right:5px;" placeholder="E-mail">' + '</br>' +
+          '</br><button style="margin-left:15px" type="button" class="btn btn-md btn-secondary" id="p_send" disabled>Send!</button></center>';
+        $('#div_preorder').append(pre_form);
+
+        $("#p_name").focus();    
+
+
+        /*
+        if (email == '') {
+            $('input.email').addClass('error');
+            $('input.email').keypress(function(){
+                $('input.email').removeClass('error');
+            });
+            $('input.email').focusout(function(){
+                $('input.email').filter(function(){
+                    return this.value.match(/your email regex/);
+                }).addClass('error');
+            });
+        }
+        */
+
+      });
+
+        if ( ($("#myRange").length > 0) && ($('#demo').length > 0) ) {
+          var slider = document.getElementById("myRange");
+          var output = document.getElementById("demo");
+          output.innerHTML = slider.value;
+          slider.oninput = function() {
+            output.value = this.value;
+          }
+        }
+
+
+    });
+  </script>
+ </head>
+ <body class="nk-body body-wider theme-dark mode-onepage">
+  <div class="nk-wrap">
+   <header class="nk-header page-header is-transparent is-sticky is-shrink is-dark" id="header">
+    <!-- Header @s -->
+    <div class="header-main">
+     <div class="container">
+      <div class="header-wrap">
+       <!-- Logo @s -->
+       <div class="header-logo logo">
+        <a class="logo-link" href="https://bankaero.com/">
+         <img alt="logo" class="logo-dark" src="https://bankaero.com/assets/img/logo.png" srcset="https://bankaero.com/assets/img/logo2x.png 2x"/>
+         <img alt="logo" class="logo-light" src="https://bankaero.com/assets/img/logo-full-white.png" srcset="https://bankaero.com/assets/img/logo-full-white2x.png 2x"/>
+        </a>
+       </div>
+       <!-- Menu Toogle @s -->
+       <div class="header-nav-toggle">
+        <a class="navbar-toggle" data-menu-toggle="header-menu" href="#">
+         <div class="toggle-line">
+          <span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <!-- Menu @s -->
+       <div class="header-navbar header-navbar-s2">
+        <nav class="header-menu justify-content-between" id="header-menu">
+         <ul class="menu">
+          <li class="menu-item">
+           <a class="menu-link nav-link" href="https://bankaero.com/pricing">
+            Pricing
+           </a>
+          </li>
+          <li class="menu-item">
+           <a class="menu-link nav-link" href="https://blog.bankaero.com">
+            Blog
+           </a>
+          </li>
+          <li class="menu-item">
+           <a class="menu-link nav-link" href="https://bankaero.com/faq">
+            FAQ
+           </a>
+          </li>
+          <li class="menu-item">
+           <a class="menu-link nav-link" href="https://bankaero.com/contact">
+            Contact
+           </a>
+          </li>
+         </ul>
+         <ul class="menu-btns align-items-center">
+          <li>
+           <a class="btn btn-sm btn-primary btn-outline btn-auto" href="https://bankaero.com/login">
+            <span>
+             Sign in
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="btn btn-sm btn-secondary" href="https://bankaero.com/user/register">
+            <span>
+             Create account
+            </span>
+           </a>
+          </li>
+          <li class="language-switcher language-switcher-s2 toggle-wrap">
+           <a class="btn btn-sm toggle-tigger btn-outline btn-auto btn-primary" href="#">
+            EN
+           </a>
+           <ul aria-labelledby="session-language" class="toggle-class toggle-drop toggle-drop-left drop-list drop-list-sm" id="session-language-dropdown">
+            <a class="dropdown-item" href="#" rel="english">
+             <i class="icon-arrow-right icons">
+             </i>
+             English
+            </a>
+            <a class="dropdown-item" href="#" rel="russian">
+             Russian
+            </a>
+           </ul>
+          </li>
+         </ul>
+        </nav>
+       </div>
+       <!-- .header-navbar @e -->
+      </div>
+     </div>
+    </div>
+    <!-- .header-main @e -->
+   </header>
+   <main class="nk-pages">
+    <!-- Banner @s -->
+    <div class="header-banner bg-theme-grad">
+     <div class="nk-banner">
+      <div class="banner banner-fs banner-single banner-s1 banner-s1-overlay">
+       <div class="banner-wrap">
+        <div class="container">
+         <div class="row align-items-center justify-content-center justify-content-lg-between gutter-vr-30px">
+          <div class="col-lg-7 col-xl-6 col-md-8 col-sm-9 order-last">
+           <div class="header-image-lg">
+            <img alt="" src="assets/img/banner-tp.png" srcset="assets/img/banner-tp2x.png 2x"/>
+           </div>
+          </div>
+          <!-- .col -->
+          <div class="col-lg-5 col-xl-5 text-center text-lg-left">
+           <div class="banner-caption tc-light">
+            <div class="cpn-head">
+             <h1 class="title title-thin title-xl-2">
+              Free Account in Multiple Currencies
+             </h1>
+            </div>
+            <div class="cpn-text cpn-text-s2">
+             <p class="lead-s2 lead-light">
+              BANKAERO is the easiest and most trusted place to buy, store, exchange and spend your crypto and traditional currency in-app or on desktop.
+             </p>
+            </div>
+            <div class="cpn-btns">
+             <ul class="btn-grp btn-grp-bk">
+              <li>
+               <a class="btn-bk" href="https://play.google.com/store/apps/details?id=com.bankaero.mobile">
+                <img alt="" src="assets/img/google.png"/>
+               </a>
+              </li>
+              <li>
+               <a class="btn-bk" href="https://apps.apple.com/us/app/bankaero/id1473104755">
+                <img src="assets/img/app.png"/>
+               </a>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+          <!-- .col -->
+         </div>
+         <!-- .row -->
+        </div>
+       </div>
+      </div>
+      <!-- Place Particle Js -->
+      <div class="particles-container particles-bg op-60" id="particles-bg">
+      </div>
+     </div>
+     <!-- .nk-banner -->
+     <div class="nk-ovm shape-q">
+     </div>
+    </div>
+    <!-- .header-banner @e -->
+    <section class="section section-l bg-light">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block">
+       <div class="row align-items-center gutter-vr-30px">
+        <div class="col-lg-6">
+         <!-- Section Head @s -->
+         <div class="nk-block-text pdb-r">
+          <h2 class="title title-thin">
+           Buy and exchange cryptocurrency
+          </h2>
+          <p>
+           You can buy, hold and exchange Bitcoin and other cryptocurrencies at the best possible exchange rate
+          </p>
+         </div>
+         <!-- .section-head @e -->
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6">
+         <div class="loan-box py-4">
+          <form class="contact-form contact-form-s2 boxed boxed-md">
+           <label class="field-label field-top">
+            You give
+           </label>
+           <div class="field-item dropdown">
+            <input class="input-bordered" id="give" name="give" style="font-size: 18px;" type="text"/>
+            <button aria-expanded="false" aria-haspopup="true" class="field-btn field-drop select-bordered input-bordered dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" type="button">
+             <span id="give_option_selected">
+              BTC
+             </span>
+             <input id="give_cur" type="hidden" value="0"/>
+            </button>
+            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu option_give">
+             <a class="dropdown-item cur_option_give" data-id="0" data-text="EUR" href="#">
+              EUR
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="1" data-text="USD" href="#">
+              USD
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="2" data-text="GBP" href="#">
+              GBP
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="3" data-text="JPY" href="#">
+              JPY
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="4" data-text="RUB" href="#">
+              RUB
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="5" data-text="BTC" href="#">
+              BTC
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="6" data-text="ETH" href="#">
+              ETH
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="7" data-text="XRP" href="#">
+              XRP
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="8" data-text="BCH" href="#">
+              BCH
+             </a>
+             <a class="dropdown-item cur_option_give" data-id="9" data-text="LTC" href="#">
+              LTC
+             </a>
+            </div>
+           </div>
+           <label class="field-label field-top">
+            You Get
+           </label>
+           <div class="dropdown field-item">
+            <input class="input-bordered" id="get" name="get" style="font-size: 18px;" type="text"/>
+            <button aria-expanded="false" aria-haspopup="true" class="option_click field-btn field-drop select-bordered input-bordered" data-toggle="dropdown" id="dropdownMenuButton" type="button">
+             <span id="get_option_selected">
+              USD
+             </span>
+             <input id="get_cur" type="hidden" value="0"/>
+            </button>
+            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu option_get">
+             <a class="dropdown-item cur_option_get" data-id="0" data-text="EUR" href="#">
+              EUR
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="1" data-text="USD" href="#">
+              USD
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="2" data-text="GBP" href="#">
+              GBP
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="3" data-text="JPY" href="#">
+              JPY
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="4" data-text="RUB" href="#">
+              RUB
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="5" data-text="BTC" href="#">
+              BTC
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="6" data-text="ETH" href="#">
+              ETH
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="7" data-text="XRP" href="#">
+              XRP
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="8" data-text="BCH" href="#">
+              BCH
+             </a>
+             <a class="dropdown-item cur_option_get" data-id="9" data-text="LTC" href="#">
+              LTC
+             </a>
+            </div>
+           </div>
+           <a class="btn btn-md btn-secondary my-2 my-sm-0 my-lg-3 exch_link" href="">
+            Exchange with Bankaero
+           </a>
+          </form>
+         </div>
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <section class="section section-l bg-white">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block">
+       <div class="section-head section-head-s7 wide-auto-sm text-center">
+        <h2 class="title title-thin">
+         Key features
+        </h2>
+       </div>
+       <div class="row gutter-vr-40px justify-content-center">
+        <div class="col-lg-4 col-md-4">
+         <div class="feature feature-s8 feature-center card card-full card-md">
+          <div class="feature-icon feature-icon-lg">
+           <img alt="feature" assets="" icon-a-dark2x.png="" img="" src="assets/img/icon-a-dark.png"/>
+          </div>
+          <div class="feature-text feature-text-s8">
+           <h4 class="title title-sm title-thin">
+            Multiple currencies
+           </h4>
+           <p>
+            Store, transfer, exchange instantly via mobile and desktop.
+           </p>
+           <a class="link link-primary link-feature-s1" href="https://dev.bankaero.com/faq">
+            <em class="link-icon icon-circle icon-circle-md ti ti-arrow-right">
+            </em>
+           </a>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-4 col-md-4">
+         <div class="feature feature-s8 feature-center card card-full card-md">
+          <div class="feature-icon feature-icon-lg">
+           <img alt="feature" assets="" icon-a-dark2x.png="" img="" src="assets/img/icon-b-dark.png"/>
+          </div>
+          <div class="feature-text feature-text-s8">
+           <h4 class="title title-sm title-thin">
+            Instant transfers
+           </h4>
+           <p>
+            Send money instantly to BANKAERO users. Money is received in seconds, even on weekends.
+           </p>
+           <a class="link link-primary link-feature-s1" href="https://dev.bankaero.com/faq">
+            <em class="link-icon icon-circle icon-circle-md ti ti-arrow-right">
+            </em>
+           </a>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-4 col-md-4">
+         <div class="feature feature-s8 feature-center card card-full card-md">
+          <div class="feature-icon feature-icon-lg">
+           <img alt="feature" src="assets/img/icon-c-dark.png"/>
+          </div>
+          <div class="feature-text feature-text-s8">
+           <h4 class="title title-sm title-thin">
+            Private and Secure
+           </h4>
+           <p>
+            Independent of your regular bank account. Bank-level operation security.
+           </p>
+           <a class="link link-primary link-feature-s1" href="https://dev.bankaero.com/faq">
+            <em class="link-icon icon-circle icon-circle-md ti ti-arrow-right">
+            </em>
+           </a>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <!-- .row -->
+        <!-- .block @e -->
+       </div>
+      </div>
+     </div>
+    </section>
+    <!-- // -->
+    <section class="section section-l bg-light">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block">
+       <div class="row align-items-center justify-content-between gutter-vr-30px">
+        <div class="col-lg-6">
+         <div class="gfx">
+          <img alt="gfx" src="assets/img/gfx-p.png" srcset="assets/img/gfx-p2x.png 2x"/>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6">
+         <div class="section-head section-head-s7 wide-auto-sm">
+          <h2 class="title title-thin">
+           Wallets
+          </h2>
+         </div>
+         <div class="nk-block-text">
+          <ul class="list list-check list-check-s3">
+           <li>
+            BANKAERO offers to manage your traditional money or different cryptocurrencies through our secure cold storage wallets.
+           </li>
+           <li>
+            Available traditional currencies: EUR, USD, GBP, RUB and cryptocurrencies: BTC (LTC, XRP, ETH - coming soon) at the best possible exchange rate.
+           </li>
+           <li>
+            Multiple methods of depositing funds: credit or debit card, crypto or bank transfer or through different online payment systems.
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <div class="section-wrap">
+     <section class="section py-0 bg-transparent">
+      <div class="container">
+       <div class="row justify-content-center">
+        <div class="col-lg-10">
+         <!-- Block @s -->
+         <div class="nk-block nk-block-loan">
+          <div class="row justify-content-center">
+           <div class="col-lg-9">
+            <div class="section-head section-head-s7 wide-auto-md text-center">
+             <h2 class="title title-thin">
+              Instant Crypto-backed Loans
+             </h2>
+             <p class="lead">
+              Don’t sell your crypto. Don’t lose the upside potential. Keep it and get an Instant Loan from BANKAERO
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="row align-items-center justify-content-center gutter-vr-30px">
+           <div class="col-lg-10">
+            <div class="loan-block">
+             <form action="form/contact.php" class="contact-form" id="contact-form-s2" method="post">
+              <div class="loan-contact">
+               <div class="field-contact">
+                <label class="field-label">
+                 CRYPTO SUM
+                </label>
+                <div class="dropdown field-box">
+                 <input id="credit_give" name="credit_give" style="font-size: 18px;" type="text" value="1"/>
+                 <button aria-expanded="false" aria-haspopup="true" class="field-drop btn insert_cone_click1" data-toggle="dropdown" id="dropdownMenuButton" type="button">
+                  <span id="credit_give_option_selected">
+                   BTC
+                  </span>
+                  <input id="credit_give_cur" type="hidden" value="5"/>
+                 </button>
+                 <div aria-labelledby="dropdownMenuButton1" class="dropdown-menu insert_cone1">
+                  <a class="dropdown-item credit_cur_option_give" data-id="5" data-text="BTC" href="#">
+                   BTC
+                  </a>
+                  <a class="dropdown-item credit_cur_option_give" data-id="6" data-text="ETH" href="#">
+                   ETH
+                  </a>
+                  <a class="dropdown-item credit_cur_option_give" data-id="7" data-text="XRP" href="#">
+                   XRP
+                  </a>
+                  <a class="dropdown-item credit_cur_option_give" data-id="8" data-text="BCH" href="#">
+                   BCH
+                  </a>
+                  <a class="dropdown-item credit_cur_option_give" data-id="9" data-text="LTC" href="#">
+                   LTC
+                  </a>
+                 </div>
+                </div>
+               </div>
+               <div class="field-contact">
+                <label class="field-label">
+                 CREDIT SUM
+                </label>
+                <div class="dropdown field-box">
+                 <input id="credit_get" name="credit_get" style="font-size: 18px;" type="text"/>
+                 <button aria-expanded="false" aria-haspopup="true" class="field-drop btn insert_cone_click" data-toggle="dropdown" id="dropdownMenuButton" type="button">
+                  <span id="credit_get_option_selected">
+                   USD
+                  </span>
+                  <input id="credit_get_cur" type="hidden" value="1"/>
+                 </button>
+                 <div aria-labelledby="dropdownMenuButton" class="dropdown-menu insert_cone">
+                  <a class="dropdown-item credit_cur_option_get" data-id="0" data-text="EUR" href="#">
+                   EUR
+                  </a>
+                  <a class="dropdown-item credit_cur_option_get" data-id="1" data-text="USD" href="#">
+                   USD
+                  </a>
+                  <a class="dropdown-item credit_cur_option_get" data-id="2" data-text="GBP" href="#">
+                   GBP
+                  </a>
+                  <a class="dropdown-item credit_cur_option_get" data-id="3" data-text="JPY" href="#">
+                   JPY
+                  </a>
+                  <a class="dropdown-item credit_cur_option_get" data-id="4" data-text="RUB" href="#">
+                   RUB
+                  </a>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="loan-range">
+               <div class="row aligns-item-center">
+                <div class="col-lg-8 col-md-7">
+                 <div class="slidecontainer">
+                  <input class="slider" id="myRange" max="365" min="7" type="range" value="50"/>
+                  <div class="range-max d-flex justify-content-between">
+                   <span class="eq-text" id="days_min">
+                   </span>
+                   <span class="eq-text" id="days_max">
+                   </span>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                 <div class="total-box">
+                  <span class="eq-text">
+                   =
+                  </span>
+                  <input class="eq-box" id="demo" placeholder="30" type="text" value="30"/>
+                  <label>
+                   DAYS
+                  </label>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="loan-rate">
+               <div class="loan-inner">
+                <span>
+                 LOAN AMOUNT
+                </span>
+                <h5 id="loan_amount">
+                 nbsp;
+                </h5>
+               </div>
+               <div class="loan-inner">
+                <span>
+                 INTEREST RATE (APR)
+                </span>
+                <h5 id="apr_value">
+                </h5>
+               </div>
+              </div>
+             </form>
+            </div>
+            <div class="loan-btn text-center">
+             <a class="btn btn-md btn-secondary my-2 my-sm-0 my-lg-3" href="" id="credit_link" style="width: 200px;margin-left: auto;margin-right: auto;">
+              Get instant loan
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <!-- .row -->
+        </div>
+        <!-- .block @e -->
+       </div>
+      </div>
+     </section>
+    </div>
+    <div class="nk-ovm ovm-top ovm-h-50 bg-light">
+    </div>
+    <!-- // -->
+    <section class="section section-l bg-transparent ov-h tc-light overlay-x">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block nk-block-text-wrap">
+       <div class="nk-block-text">
+        <div class="beta-product">
+         <div class="section-head section-head-s7 wide-auto-md text-center">
+          <h2 class="title title-thin">
+           Merchant system for business
+          </h2>
+          <p class="lead">
+           Our merchant system allows you to seamlessly integrate your BANKAERO business account into your workflow. Accept payments on your website by using our HTML payment form and instant payment notifications.
+          </p>
+         </div>
+         <div class="product-block">
+          <div class="row justify-content-center gutter-vr-30px">
+           <div class="col-lg-4">
+            <div class="product-item">
+             <div class="product-box">
+              <div class="product-image">
+               <img alt="prdouct" src="assets/img/products-c.jpg" srcset="assets/img/products-c2x.jpg 2x"/>
+              </div>
+             </div>
+             <p>
+              Verify your account to start accepting payments
+             </p>
+            </div>
+           </div>
+           <div class="col-lg-4">
+            <div class="product-item">
+             <div class="product-box">
+              <div class="product-image">
+               <img alt="prdouct" src="assets/img/products-d.jpg"/>
+              </div>
+             </div>
+             <p>
+              Submit a new merchant and your website for moderation
+             </p>
+            </div>
+           </div>
+           <div class="col-lg-4">
+            <div class="product-item">
+             <div class="product-box">
+              <div class="product-image">
+               <img alt="prdouct" src="assets/img/products-e.jpg"/>
+              </div>
+             </div>
+             <p>
+              Publish HTML form on your website and start receiving payments
+             </p>
+            </div>
+           </div>
+           <a class="btn btn-md btn-secondary" href="https://dev.bankaero.com/developers">
+            documentation
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- .nk-block @e -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <section class="section section-l bg-light">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block card-block">
+       <div class="row justify-content-center">
+        <div class="col-lg-10 col-sm-12">
+         <div class="section-head section-head-s7 wide-auto-sm text-center">
+          <h2 class="title title-thin">
+           Pre-order a BANKAERO card
+          </h2>
+         </div>
+         <div class="row align-items-center justify-content-between gutter-vr-30px">
+          <div class="col-lg-6">
+           <div class="gfx">
+            <img alt="gfx" src="assets/img/gfx-o.png" srcset="assets/img/gfx-o2x.png 2x"/>
+           </div>
+          </div>
+          <!-- .col -->
+          <div class="col-lg-6">
+           <div class="nk-block-text">
+            <ul class="list list-check list-check-s3">
+             <li>
+              Make purchases with a BANKAERO crypto debit card as fast as your regular one. It takes up to 3 seconds to process any payment on our side, so no need to wait for exchanging.
+             </li>
+             <li>
+              Free ATM withdrawals worldwide. Spend multiple currencies of your choice. Replenish your crypto debit card with fiat money and vice versa.
+             </li>
+             <li>
+              Use BANKAERO without multistep withdrawals and verifications. Pay anywhere in the world, where Visa cards are accepted.
+             </li>
+            </ul>
+            <div id="div_preorder">
+             <h4 class="text-center" id="h_preorder">
+              <button class="btn btn-md btn-secondary" id="card_preorder" type="button">
+               Pre-order
+              </button>
+              <input id="give" name="give" style="font-size: 18px;" type="hidden"/>
+             </h4>
+            </div>
+           </div>
+          </div>
+          <!-- .row -->
+         </div>
+         <!-- .col -->
+        </div>
+        <!-- .row -->
+       </div>
+       <!-- .block @e -->
+      </div>
+     </div>
+    </section>
+    <!-- // -->
+    <section class="section section-l bg-light pt-0">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block">
+       <div class="row align-items-center flex-row-reverse justify-content-between gutter-vr-30px">
+        <div class="col-lg-7">
+         <div class="gfx">
+          <img alt="gfx" src="assets/img/gfx-n.png" srcset="assets/img/gfx-n2x.png 2x"/>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-5">
+         <!-- Section Head @s -->
+         <div class="section-head pdb-r">
+          <h2 class="title title-thin">
+           Different
+           <br/>
+           Deposit Methods
+          </h2>
+          <p>
+           Depositing funds has never been easier. There are always fast affordable ways to fund your BANKAERO account wherever you are.
+          </p>
+         </div>
+         <!-- .section-head @e -->
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <section class="section section-l bg-white">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block">
+       <div class="row align-items-center flex-row-reverse justify-content-between gutter-vr-30px">
+        <div class="col-lg-7">
+         <div class="gfx">
+          <img alt="gfx" src="assets/img/gfx-m.png" srcset="assets/img/gfx-m2x.png 2x"/>
+          <a class="nk-block-video-play video-popup btn-play btn-play-s3" href="https://www.youtube.com/watch?v=rYx7Co9gz1M">
+           <svg class="btn-play-icon-s2" viewbox="0 0 24 34">
+            <path d="M0.212,32.552 C0.427,32.851 0.769,33.010 1.117,33.010 C1.337,33.010 1.559,32.947 1.752,32.814 L23.521,17.879 C23.816,17.678 23.991,17.350 23.991,16.998 C23.991,16.646 23.816,16.319 23.521,16.115 L1.752,1.181 C1.415,0.950 0.972,0.922 0.606,1.107 C0.240,1.292 0.010,1.661 0.010,2.064 L0.010,22.480 C0.010,23.076 0.506,23.558 1.116,23.558 C1.727,23.558 2.222,23.076 2.222,22.480 L2.222,4.142 L20.963,16.998 L0.479,31.049 C-0.020,31.393 -0.140,32.066 0.212,32.552 Z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-4">
+         <!-- Section Head @s -->
+         <div class="section-head pdb-r">
+          <h2 class="title title-thin">
+           How it works
+          </h2>
+          <p>
+           Watch our video for an overview of how BANKAERO works
+          </p>
+         </div>
+         <!-- .section-head @e -->
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <section class="section section-l bg-light pb-0">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block">
+       <div class="row align-items-center justify-content-between">
+        <div class="col-lg-6">
+         <!-- Section Head @s -->
+         <div class="section-head pdb-r cpn-center">
+          <h2 class="title title-thin">
+           Get the All-in-One App
+          </h2>
+          <div class="cpn-btns">
+           <ul class="btn-grp btn-grp-bk">
+            <li>
+             <a class="btn-bk" href="https://play.google.com/store/apps/details?id=com.bankaero.mobile">
+              <img alt="" src="assets/img/google.png"/>
+             </a>
+            </li>
+            <li>
+             <a class="btn-bk" href="https://apps.apple.com/us/app/bankaero/id1473104755">
+              <img alt="" src="assets/img/app.png"/>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <!-- .section-head @e -->
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6">
+         <div class="gfx gfx-center">
+          <img alt="gfx" src="assets/img/gfx-q.png" srcset="assets/img/gfx-q2x.png 2x"/>
+         </div>
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+   </main>
+   <footer class="nk-footer footer-bg ov-h overlay-x">
+    <section class="section tc-light tc-light-alt bg-transparent">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block nk-block-footer">
+       <div class="row text-center text-sm-left">
+        <div class="col-lg-4 col-md-4 col-sm-6">
+         <div class="wgs wgs-menu">
+          <h6 class="wgs-title wgs-title-s2 text-white">
+           COMPANY
+          </h6>
+          <div class="wgs-body">
+           <ul class="wgs-list wgs-list-s2">
+            <li class="pdb-s">
+             71-75 Shelton Street,
+             <br/>
+             Covent Garden, London,
+             <br/>
+             WC2H 9JQ, United Kingdom
+            </li>
+            <li>
+             <span class="wgs-text-alt">
+              Phone:
+             </span>
+             <a href="tel:37125252040">
+              +371 25252040
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-3 col-md-3 col-sm-6">
+         <div class="wgs wgs-menu">
+          <h6 class="wgs-title wgs-title-s2 text-white">
+           Resources
+          </h6>
+          <div class="wgs-body">
+           <ul class="wgs-links wgs-links-s2">
+            <li>
+             <a href="https://bankaero.com/pricing">
+              Pricing
+             </a>
+            </li>
+            <li>
+             <a href="https://blog.bankaero.com">
+              Blog
+             </a>
+            </li>
+            <li>
+             <a href="https://bankaero.com/faq">
+              FAQ
+             </a>
+            </li>
+            <li>
+             <a href="https://bankaero.com/contact">
+              Contact
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-4 col-md-5">
+         <div class="wgs wgs-text">
+          <h6 class="wgs-title wgs-title-s2">
+           <a href="./">
+            <img alt="logo" src="https://bankaero.com/assets/img/logo-white.png" srcset="https://bankaero.com/assets/img/logo-white.png"/>
+           </a>
+          </h6>
+          <div class="wgs-body">
+           <div class="wgs-subscribe wgs-subscribe-s2">
+            <p>
+             BANKAERO is the easiest and most trusted place to buy, store, exchange and spend your crypto and traditional currency in-app or on desktop.
+            </p>
+            <ul class="social">
+             <li>
+              <a href="https://www.facebook.com/bankaero">
+               <em class="social-icon fab fa-facebook-f">
+               </em>
+              </a>
+             </li>
+             <li>
+              <a href="https://twitter.com/bankaeroapp">
+               <em class="social-icon fab fa-twitter">
+               </em>
+              </a>
+             </li>
+             <li>
+              <a href="https://www.instagram.com/bankaeroapp">
+               <em class="social-icon fab fa-instagram">
+               </em>
+              </a>
+             </li>
+             <li>
+              <a href="https://t.me/bankaeroapp">
+               <em class="social-icon fab fa-telegram-plane">
+               </em>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+       <div class="footer-bottom pdt-r">
+        <div class="copyright-text copyright-text-s3">
+         <div class="row">
+          <div class="col-md-6 col-lg-5 text-md-left">
+           <p>
+            © 2019 Bankaero All Rights Reserved
+           </p>
+          </div>
+          <div class="col-md-6 col-lg-7 text-lg-right">
+           <ul class="footer-bottom-menu">
+            <li>
+             <a href="https://bankaero.com/agreement">
+              Terms and Conditions
+             </a>
+            </li>
+            <li>
+             <a href="https://bankaero.com/privacy">
+              Privacy Policy
+             </a>
+            </li>
+            <li>
+             <a href="https://bankaero.com/aml">
+              AML Policy
+             </a>
+            </li>
+            <li>
+             <a href="https://bankaero.com/developers">
+              For developers
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+   </footer>
+  </div>
+  <!-- JavaScript -->
+  <script src="https://bankaero.com/assets/script/jquery.bundle.js?ver=161">
+  </script>
+  <script src="https://bankaero.com/assets/script/scripts.js?ver=161">
+  </script>
+  <script type="text/javascript">
+   /**
+ * Configurations
+ */
+var config = {
+    logging : true,
+    baseURL : "https://bankaero.com/"
+};
+
+
+/**
+ * Bootstrap IE10 viewport bug workaround
+ */
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+        document.createTextNode(
+            '@-ms-viewport{width:auto!important}'
+        )
+    )
+    document.querySelector('head').appendChild(msViewportStyle)
+}
+
+
+/**
+ * Execute an AJAX call
+ */
+function executeAjax(url, data, callback) {
+    $.ajax({
+        type     : 'POST',
+        url      : url,
+        data     : data,
+        dataType : 'json',
+        async    : true,
+        success  : function(results) {
+            callback(results);
+        },
+        error    : function(error) {
+            alert("Error " + error.status + ": " + error.statusText);
+        }
+    });
+    // prevent default action
+    return false;
+}
+
+
+/**
+ * Global core functions
+ */
+$(document).ready(function() {
+
+    /**
+     * Session language selected
+     */
+    $('#session-language-dropdown a').click(function(e) {
+        // prevent default behavior
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = false;
+        }
+
+        // set up post data
+        var postData = {
+            language : $(this).attr('rel')
+        };
+
+        // define callback function to handle AJAX call result
+        var ajaxResults = function(results) {
+            if (results.success) {
+                location.reload();
+            } else {
+                alert("There was a problem setting the language!");
+            }
+        };
+
+        // perform AJAX call
+        executeAjax(config.baseURL + 'ajax/set_session_language', postData, ajaxResults);
+    });
+
+});
+  </script>
+ </body>
+</html>

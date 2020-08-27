@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <title>
+   Libra | A New Global Payment System
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <script type="text/javascript">
+   (window.NREUM||(NREUM={})).loader_config={licenseKey:"f85816f98e",applicationID:"259145175"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);
+  </script>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/browserconfig.xml" name="msapplication-config"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <link href="http://gmpg.org/xfn/11" rel="profile"/>
+  <meta content="The Libra mission is to build a simple global payment system and financial infrastructure that empowers billions of people. Read the Libra White Paper." name="description"/>
+  <meta content="digital, payment system, global, reinvent money, transform the global economy, financial inclusion, send money, send money online, send money abroad, send money worldwide, transfer money, bank accounts, financial services,  secure, new kind of money, digital revolution, innovation, future of finance, scalable" name="keywords"/>
+  <meta content="fdZCOAIHF21ghXl2nW4w2G9W2-xvW7wH_Zivkg8LlZ8" name="google-site-verification"/>
+  <meta content="4236877D41AFD9809A38C77DCFD8FD6E" name="msvalidate.01"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Libra | A New Global Payment System" property="og:title"/>
+  <meta content="The Libra mission is to build a simple global payment system and financial infrastructure that empowers billions of people. Read the Libra White Paper." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://libra.org/en-US/" property="og:url"/>
+  <meta content="Libra.org" property="og:site_name"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="https://libra.org/en-US/wp-content/themes/jfl-default/images/graph-image.png" property="og:image"/>
+  <meta content="summary" name="twitter:card"/>
+  <link href="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/site.webmanifest" rel="manifest"/>
+  <link color="#ffffff" href="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/safari-pinned-tab.svg" rel="mask-icon"/>
+  <link href="https://libra.org/en-US/wp-content/themes/jfl-default/favicons/favicon.ico" rel="shortcut icon"/>
+  <link href="https://libra.org/en-US/wp-content/themes/jfl-default/release/styles.6c515130a67daea967f1.css" id="jam3-styles-css" media="all" rel="stylesheet"/>
+  <link as="script" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/webpack-runtime-b7af86c2637ee14c9997.js" rel="preload"/>
+  <link as="script" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/styles-4f93cbeb380f2accc30d.js" rel="preload"/>
+  <link as="script" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/app-de98b124f0718f970b52.js" rel="preload"/>
+  <link as="script" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/1-3477ec0c1c028b27f22f.js" rel="preload"/>
+  <link as="script" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/3-15b706a71d14e8e2467f.js" rel="preload"/>
+  <link as="script" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/component---src-templates-home-home-js-8e9532dc86164352e921.js" rel="preload"/>
+  <link as="style" href="https://libra.org/en-US/wp-content/themes/jfl-default/release/styles.6c515130a67daea967f1.css" rel="preload"/>
+  <link href="https://libra.org/en-US/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://libra.org/en-US/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://libra.org/en-US/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <link href="https://libra.org/en-US/" rel="canonical"/>
+  <link href="https://libra.org/en-US/" rel="shortlink"/>
+  <link href="https://libra.org/fr-FR/" hreflang="fr-FR" rel="alternate"/>
+  <link href="https://libra.org/de-DE/" hreflang="de-DE" rel="alternate"/>
+  <link href="https://libra.org/id-ID/" hreflang="id-ID" rel="alternate"/>
+  <link href="https://libra.org/pt-BR/" hreflang="pt-BR" rel="alternate"/>
+  <link href="https://libra.org/zh-CN/" hreflang="zh-Hans-CN" rel="alternate"/>
+  <link href="https://libra.org/es-LA/" hreflang="es-419" rel="alternate"/>
+  <link href="https://libra.org/ja-JP/" hreflang="ja-JP" rel="alternate"/>
+  <link href="https://libra.org/ru-RU/" hreflang="ru-RU" rel="alternate"/>
+  <link href="https://libra.org/en-US/" hreflang="en-US" rel="alternate"/>
+  <link href="https://libra.org/en-US/" hreflang="x-default" rel="alternate"/>
+  <style type="text/css">
+   img#wpstats{display:none}
+  </style>
+  <script>
+   if ('IntersectionObserver' in window) document.documentElement.className += ' enable-animations';
+  </script>
+ </head>
+ <body>
+  <div id="___gatsby">
+   <div role="group" style="outline:none" tabindex="-1">
+    <nav class="NavBar sticky white">
+     <div class="topNavWrapper container">
+      <div class="HamburgerButton purple">
+       <svg height="22" width="22">
+        <g fill="none" fill-rule="evenodd">
+         <circle cx="11" cy="11" fill="#D8D8D8" opacity="0.013" r="11">
+         </circle>
+         <path d="M8 7.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 4.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 4.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" fill="#39298C" fill-rule="nonzero">
+         </path>
+        </g>
+       </svg>
+      </div>
+      <a class="logo-container not-active" href="https://libra.org/en-US/" target="">
+       <svg class="Logo" viewbox="0 0 1229.78 330.24">
+        <path d="M314.82,292.65a192,192,0,0,0,23.31-32.92l-39.45-19.64A120.78,120.78,0,0,1,278,266c-11,10.21-22.7,16.16-34.61,17.68-23,2.94-39.07-4.17-62.51-19.21-24.63-15.8-52.54-33.71-92.15-28.65-24,3.08-46.06,15.66-65.44,37.39A191.89,191.89,0,0,0,0,306.13l39.44,19.64a121.7,121.7,0,0,1,20.64-25.93c10.88-10.07,22.52-16,34.62-17.51a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.66,33.15,92.17,28C273.87,326.22,295.89,313.87,314.82,292.65Zm0-117.48a192,192,0,0,0,23.31-32.92l-39.45-19.64A121,121,0,0,1,278,148.53c-11,10.21-22.7,16.16-34.61,17.68-23,2.93-39.07-4.17-62.51-19.21-24.63-15.8-52.54-33.71-92.15-28.65-24,3.08-46.06,15.65-65.44,37.39A191.5,191.5,0,0,0,0,188.65l39.44,19.64a122,122,0,0,1,20.64-25.94C71,172.29,82.6,166.4,94.7,164.85a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.66,33.15,92.17,28C273.87,208.74,295.89,196.39,314.82,175.17Zm0-117.48a192,192,0,0,0,23.31-32.92L298.68,5.13A121,121,0,0,1,278,31.05c-11,10.21-22.7,16.16-34.61,17.68-23,2.93-39.07-4.17-62.51-19.21C156.28,13.72,128.37-4.19,88.76.87,64.72,4,42.7,16.52,23.32,38.26A191.5,191.5,0,0,0,0,71.17L39.44,90.81A122,122,0,0,1,60.08,64.87C71,54.81,82.6,48.92,94.7,47.37a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.64,33.14,92.17,28C273.87,91.26,295.89,78.91,314.82,57.69Z">
+        </path>
+        <path d="M452.56,5.45V326.61H407V5.45Zm48.09,92.44V326.61h45.6V97.89ZM929.5,150.7c18.77-12.62,40.86-16.24,63-12.71V98.19a125.23,125.23,0,0,0-15.42-1c-31.27,0-56.07,9.56-68,26.22l-5.6,7.78V97.63H857.84v229h45.37V247.05c0-14.57-.16-26.82,0-41.39C903.5,181.62,911.6,162.75,929.5,150.7Zm300.28,175.91v-229h-42.41v25.15l-5.1-4.39c-19.87-17.1-43.94-25.77-71.54-25.77-20.55,0-39.9,5-56,14.58-37,21.87-59,61.09-59,104.92s21.88,82.74,58.53,104.42c15.9,9.44,37.38,15.08,57.46,15.08,26.92,0,52-9.14,70.49-25.73l5.15-4.61v25.33Zm-60.51-57.25A73.75,73.75,0,0,1,1118,292.71c-.92,0-1.82.05-2.71.05-45.5,0-81.14-35.42-81.14-80.64,0-21.28,7.64-41.26,21.52-56.26,14.55-15.72,34.84-24.38,57.12-24.38,1,0,2.1,0,3.16.05a75.59,75.59,0,0,1,52.75,23.78,78.06,78.06,0,0,1,21.52,54v7.44A76.41,76.41,0,0,1,1169.27,269.36ZM713.38,331.62c20.55,0,39.9-5,56-14.58,37-21.87,59-61.09,59-104.92S806.5,129.38,769.85,107.7c-15.9-9.44-37.39-15.08-57.47-15.08-26.91,0-51.94,9.14-70.49,25.74l-5.15,4.6V5.45h-42.4V326.61h42.4V301.46l5.11,4.39C661.72,323,685.79,331.62,713.38,331.62ZM633.94,215v-7.44a76.46,76.46,0,0,1,20.9-52.64,73.78,73.78,0,0,1,51.33-23.35c.91,0,1.81-.05,2.71-.05,45.5,0,81.14,35.42,81.14,80.64,0,21.28-7.65,41.26-21.53,56.26-14.55,15.72-34.83,24.38-57.11,24.38-1,0-2.11,0-3.16-.05a75.61,75.61,0,0,1-52.76-23.78A78.11,78.11,0,0,1,633.94,215ZM546.25,5.45h-45.6V51h45.6Z">
+        </path>
+       </svg>
+      </a>
+      <ul class="nav-site nav-site-internal">
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/vision/" target="">
+         Vision
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/association/" target="">
+         Association
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/developers/" target="">
+         Developers
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/learn-faqs/" target="">
+         Learn
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/media-press-news/" target="">
+         Media
+        </a>
+       </li>
+       <li class="highlight">
+        <a class="not-active" href="https://libra.org/en-US/white-paper/" target="">
+         White Paper
+        </a>
+       </li>
+      </ul>
+      <div class="whitepapericon">
+       <a class="not-active" href="https://libra.org/en-US/white-paper/" target="">
+        <svg class="" height="46" id="whitepaper_svg__Layer_1" width="45" x="0" xml:space="preserve" y="0">
+         <style>
+          .whitepaper_svg__st7 {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+                fill: #aeaeae;
+              }
+         </style>
+         <g transform="translate(5.5)">
+          <circle clip-rule="evenodd" cx="17" cy="22.6" fill="#fafafa" fill-rule="evenodd" id="whitepaper_svg__a_1_" r="18">
+          </circle>
+          <defs>
+           <filter filterunits="userSpaceOnUse" height="40" id="whitepaper_svg__Adobe_OpacityMaskFilter" width="32.6" x="0.6" y="9.8">
+            <fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0">
+            </fecolormatrix>
+           </filter>
+          </defs>
+          <mask height="40" id="whitepaper_svg__b_1_" maskunits="userSpaceOnUse" width="32.6" x="0.6" y="9.8">
+           <g filter="url(#whitepaper_svg__Adobe_OpacityMaskFilter)">
+            <circle clip-rule="evenodd" cx="11.5" cy="22.6" fill="#fff" fill-rule="evenodd" id="whitepaper_svg__a_2_" r="18">
+            </circle>
+           </g>
+          </mask>
+          <g mask="url(#whitepaper_svg__b_1_)">
+           <path clip-rule="evenodd" d="M-1 11l25.9-4.1 5.3 33.7-25.9 4L-1 11z" fill="#706aaf" fill-rule="evenodd" transform="translate(1.55 5.25)">
+           </path>
+           <path clip-rule="evenodd" d="M2 7.7l26.1-2.3 3 34L5 41.7l-3-34z" fill="#42318c" fill-rule="evenodd" transform="translate(1.55 5.25)">
+           </path>
+           <path clip-rule="evenodd" d="M5.4 4.6h26.2v34.2H5.4V4.6z" fill="#efefef" fill-rule="evenodd" transform="translate(1.55 5.25)">
+           </path>
+           <path class="whitepaper_svg__st7" d="M8.5 11.2h11v1h-11v-1zM8.6 14.8H24v1H8.6v-1zM8.5 16.5H28v1H8.5v-1zM8.5 18.2h8.2v1H8.5v-1zM8.5 22.2h7v1h-7v-1zM8.6 23.8h16.3l-1 1H8.6v-1zM8.6 28.7h15.3v1H8.6v-1zM8.5 25.4h8.2v1H8.5v-1zM8.5 27h12.4v1H8.5v-1zM18.2 25.4H28v1h-9.8v-1zM18.2 18.2h8.2v1h-8.2v-1z" transform="translate(1.55 5.25)">
+           </path>
+          </g>
+         </g>
+        </svg>
+        <div class="whitepaper-text">
+         White Paper
+        </div>
+       </a>
+      </div>
+     </div>
+    </nav>
+    <nav aria-hidden="true" class="NavBar">
+     <div class="topNavWrapper container">
+      <div class="HamburgerButton white">
+       <svg height="22" width="22">
+        <g fill="none" fill-rule="evenodd">
+         <circle cx="11" cy="11" fill="#D8D8D8" opacity="0.013" r="11">
+         </circle>
+         <path d="M8 7.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 4.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 4.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" fill="#39298C" fill-rule="nonzero">
+         </path>
+        </g>
+       </svg>
+      </div>
+      <a class="logo-container not-active" href="https://libra.org/en-US/" target="">
+       <svg class="Logo" viewbox="0 0 1229.78 330.24">
+        <path d="M314.82,292.65a192,192,0,0,0,23.31-32.92l-39.45-19.64A120.78,120.78,0,0,1,278,266c-11,10.21-22.7,16.16-34.61,17.68-23,2.94-39.07-4.17-62.51-19.21-24.63-15.8-52.54-33.71-92.15-28.65-24,3.08-46.06,15.66-65.44,37.39A191.89,191.89,0,0,0,0,306.13l39.44,19.64a121.7,121.7,0,0,1,20.64-25.93c10.88-10.07,22.52-16,34.62-17.51a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.66,33.15,92.17,28C273.87,326.22,295.89,313.87,314.82,292.65Zm0-117.48a192,192,0,0,0,23.31-32.92l-39.45-19.64A121,121,0,0,1,278,148.53c-11,10.21-22.7,16.16-34.61,17.68-23,2.93-39.07-4.17-62.51-19.21-24.63-15.8-52.54-33.71-92.15-28.65-24,3.08-46.06,15.65-65.44,37.39A191.5,191.5,0,0,0,0,188.65l39.44,19.64a122,122,0,0,1,20.64-25.94C71,172.29,82.6,166.4,94.7,164.85a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.66,33.15,92.17,28C273.87,208.74,295.89,196.39,314.82,175.17Zm0-117.48a192,192,0,0,0,23.31-32.92L298.68,5.13A121,121,0,0,1,278,31.05c-11,10.21-22.7,16.16-34.61,17.68-23,2.93-39.07-4.17-62.51-19.21C156.28,13.72,128.37-4.19,88.76.87,64.72,4,42.7,16.52,23.32,38.26A191.5,191.5,0,0,0,0,71.17L39.44,90.81A122,122,0,0,1,60.08,64.87C71,54.81,82.6,48.92,94.7,47.37a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.64,33.14,92.17,28C273.87,91.26,295.89,78.91,314.82,57.69Z">
+        </path>
+        <path d="M452.56,5.45V326.61H407V5.45Zm48.09,92.44V326.61h45.6V97.89ZM929.5,150.7c18.77-12.62,40.86-16.24,63-12.71V98.19a125.23,125.23,0,0,0-15.42-1c-31.27,0-56.07,9.56-68,26.22l-5.6,7.78V97.63H857.84v229h45.37V247.05c0-14.57-.16-26.82,0-41.39C903.5,181.62,911.6,162.75,929.5,150.7Zm300.28,175.91v-229h-42.41v25.15l-5.1-4.39c-19.87-17.1-43.94-25.77-71.54-25.77-20.55,0-39.9,5-56,14.58-37,21.87-59,61.09-59,104.92s21.88,82.74,58.53,104.42c15.9,9.44,37.38,15.08,57.46,15.08,26.92,0,52-9.14,70.49-25.73l5.15-4.61v25.33Zm-60.51-57.25A73.75,73.75,0,0,1,1118,292.71c-.92,0-1.82.05-2.71.05-45.5,0-81.14-35.42-81.14-80.64,0-21.28,7.64-41.26,21.52-56.26,14.55-15.72,34.84-24.38,57.12-24.38,1,0,2.1,0,3.16.05a75.59,75.59,0,0,1,52.75,23.78,78.06,78.06,0,0,1,21.52,54v7.44A76.41,76.41,0,0,1,1169.27,269.36ZM713.38,331.62c20.55,0,39.9-5,56-14.58,37-21.87,59-61.09,59-104.92S806.5,129.38,769.85,107.7c-15.9-9.44-37.39-15.08-57.47-15.08-26.91,0-51.94,9.14-70.49,25.74l-5.15,4.6V5.45h-42.4V326.61h42.4V301.46l5.11,4.39C661.72,323,685.79,331.62,713.38,331.62ZM633.94,215v-7.44a76.46,76.46,0,0,1,20.9-52.64,73.78,73.78,0,0,1,51.33-23.35c.91,0,1.81-.05,2.71-.05,45.5,0,81.14,35.42,81.14,80.64,0,21.28-7.65,41.26-21.53,56.26-14.55,15.72-34.83,24.38-57.11,24.38-1,0-2.11,0-3.16-.05a75.61,75.61,0,0,1-52.76-23.78A78.11,78.11,0,0,1,633.94,215ZM546.25,5.45h-45.6V51h45.6Z">
+        </path>
+       </svg>
+      </a>
+      <ul class="nav-site nav-site-internal">
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/vision/" target="">
+         Vision
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/association/" target="">
+         Association
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/developers/" target="">
+         Developers
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/learn-faqs/" target="">
+         Learn
+        </a>
+       </li>
+       <li>
+        <a class="not-active" href="https://libra.org/en-US/media-press-news/" target="">
+         Media
+        </a>
+       </li>
+       <li class="highlight">
+        <a class="not-active" href="https://libra.org/en-US/white-paper/" target="">
+         White Paper
+        </a>
+       </li>
+      </ul>
+      <div class="whitepapericon">
+       <a class="not-active" href="https://libra.org/en-US/white-paper/" target="">
+        <svg class="white" height="46" id="whitepaper_svg__Layer_1" width="45" x="0" xml:space="preserve" y="0">
+         <style>
+          .whitepaper_svg__st7 {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+                fill: #aeaeae;
+              }
+         </style>
+         <g transform="translate(5.5)">
+          <circle clip-rule="evenodd" cx="17" cy="22.6" fill="#fafafa" fill-rule="evenodd" id="whitepaper_svg__a_1_" r="18">
+          </circle>
+          <defs>
+           <filter filterunits="userSpaceOnUse" height="40" id="whitepaper_svg__Adobe_OpacityMaskFilter" width="32.6" x="0.6" y="9.8">
+            <fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0">
+            </fecolormatrix>
+           </filter>
+          </defs>
+          <mask height="40" id="whitepaper_svg__b_1_" maskunits="userSpaceOnUse" width="32.6" x="0.6" y="9.8">
+           <g filter="url(#whitepaper_svg__Adobe_OpacityMaskFilter)">
+            <circle clip-rule="evenodd" cx="11.5" cy="22.6" fill="#fff" fill-rule="evenodd" id="whitepaper_svg__a_2_" r="18">
+            </circle>
+           </g>
+          </mask>
+          <g mask="url(#whitepaper_svg__b_1_)">
+           <path clip-rule="evenodd" d="M-1 11l25.9-4.1 5.3 33.7-25.9 4L-1 11z" fill="#706aaf" fill-rule="evenodd" transform="translate(1.55 5.25)">
+           </path>
+           <path clip-rule="evenodd" d="M2 7.7l26.1-2.3 3 34L5 41.7l-3-34z" fill="#42318c" fill-rule="evenodd" transform="translate(1.55 5.25)">
+           </path>
+           <path clip-rule="evenodd" d="M5.4 4.6h26.2v34.2H5.4V4.6z" fill="#efefef" fill-rule="evenodd" transform="translate(1.55 5.25)">
+           </path>
+           <path class="whitepaper_svg__st7" d="M8.5 11.2h11v1h-11v-1zM8.6 14.8H24v1H8.6v-1zM8.5 16.5H28v1H8.5v-1zM8.5 18.2h8.2v1H8.5v-1zM8.5 22.2h7v1h-7v-1zM8.6 23.8h16.3l-1 1H8.6v-1zM8.6 28.7h15.3v1H8.6v-1zM8.5 25.4h8.2v1H8.5v-1zM8.5 27h12.4v1H8.5v-1zM18.2 25.4H28v1h-9.8v-1zM18.2 18.2h8.2v1h-8.2v-1z" transform="translate(1.55 5.25)">
+           </path>
+          </g>
+         </g>
+        </svg>
+        <div class="whitepaper-text">
+         White Paper
+        </div>
+       </a>
+      </div>
+     </div>
+    </nav>
+    <main id="Home">
+     <section class="Hero is-home theme-empty animateInit">
+      <div class="BackgroundImage has-mobile-image">
+       <div aria-label="" class="image mobile-image" style="background-image:url('https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/mobile-home-hero.jpg')">
+       </div>
+       <div aria-label="Welcome to Libra - Borderless global currency" class="image desktop-image" style="background-image:url('https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/desktop-home-hero-gradient.jpg')">
+       </div>
+      </div>
+      <div class="container">
+       <div class="content">
+        <div class="sub-title">
+        </div>
+        <div class="LogoTitle animateInit">
+         <svg class="AnimatedLogo animateInit" viewbox="0 0 298.71 301.18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 66.1C20.3 24.95 66.37-6 115.49 14.21c18.46 7.6 42.14 26.1 67.05 36.41C222.6 67.21 271.7 53.08 298.71 0">
+          </path>
+          <path d="M0 183.67c20.3-41.15 66.37-72.1 115.49-51.89 18.46 7.6 42.14 26.1 67.05 36.41 40.06 16.59 89.16 2.46 116.17-50.62">
+          </path>
+          <path d="M0 301.18c20.3-41.15 66.37-72.1 115.49-51.89 18.46 7.6 42.14 26.1 67.05 36.41 40.06 16.59 89.16 2.46 116.17-50.62">
+          </path>
+         </svg>
+         <h1 class="title">
+          Welcome to the Libra project
+         </h1>
+        </div>
+        <div class="description">
+        </div>
+        <button class="CTA CTAButton">
+         <span class="cta-content white animateInit">
+          <span class="text">
+           Watch to find out more
+          </span>
+          <span class="icon play">
+           <svg viewbox="0 0 13.79 14.58">
+            <path d="M0 0v14.58l13.79-7.29L0 0z">
+            </path>
+           </svg>
+          </span>
+         </span>
+        </button>
+       </div>
+      </div>
+     </section>
+     <section class="Section" id="home-mission-statement-section">
+      <div class="container">
+       <div class="MissionStatement animateInit">
+        <p class="sub-title">
+         The Libra mission
+        </p>
+        <h2 class="title">
+         A simple global payment system and financial infrastructure that empowers billions of people.
+        </h2>
+        <p class="description">
+         Provide people everywhere access to safe and affordable financial services. So people everywhere can live better lives.
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="Section" id="home-image-group-section">
+      <div class="container">
+       <div class="TwoOverlappingImages landscape">
+        <div class="aspect-ratio-container">
+         <div class="back-image">
+          <div class="image-wrapper">
+           <img alt="" class="image" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/home-image-group-front-1.jpg"/>
+          </div>
+         </div>
+         <div class="front-image">
+          <div class="image-wrapper">
+           <img alt="Reinvent money so people everywhere can live better lives" class="image" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/home-image-group-front.jpg"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="Section">
+      <div class="container">
+       <div class="InfographicVideo animateInit">
+       </div>
+      </div>
+     </section>
+     <div class="ColorBlock grey">
+      <section class="Section" id="home-icon-grid-section">
+       <div class="container">
+        <div class="Grid grid-type-icon">
+         <div class="content animateInit">
+          <h2 class="title">
+           The Libra payment system is for everyone
+          </h2>
+          <div class="description">
+           Moving money around the world should be as easy and cheap as sending a message. No matter where you live, what you do, or how much you earn.
+          </div>
+         </div>
+         <div class="grid-container animateInit">
+          <div class="grid-item">
+           <div class="IconGridItem">
+            <div class="icon-container">
+             <img alt="Libra is accessible to everyone with an entry level smart phone and data" class="icon" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/mobile-icon.png"/>
+            </div>
+            <h3 class="title">
+             Mobile
+            </h3>
+            <p class="description">
+             The Libra payment system will be accessible to anyone with an entry-level smartphone and data connectivity.
+            </p>
+            <div class="cta">
+            </div>
+           </div>
+          </div>
+          <div class="grid-item">
+           <div class="IconGridItem">
+            <div class="icon-container">
+             <img alt="" class="icon" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/stable-icon.png"/>
+            </div>
+            <h3 class="title">
+             Stable
+            </h3>
+            <p class="description">
+             Libra Coins are backed by a reserve of assets made up of cash or cash equivalents and very short-term government securities.
+            </p>
+            <div class="cta">
+            </div>
+           </div>
+          </div>
+          <div class="grid-item">
+           <div class="IconGridItem">
+            <div class="icon-container">
+             <img alt="Libra transactions are fast - send and receive money quickly" class="icon" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/fast-icon.png"/>
+            </div>
+            <h3 class="title">
+             Fast
+            </h3>
+            <p class="description">
+             Libra transactions are quick and easy, no matter where you are sending, or spending, your money.
+            </p>
+            <div class="cta">
+            </div>
+           </div>
+          </div>
+          <div class="grid-item">
+           <div class="IconGridItem">
+            <div class="icon-container">
+             <img alt="" class="icon" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/global-icon.png"/>
+            </div>
+            <h3 class="title">
+             For the World
+            </h3>
+            <p class="description">
+             The Libra payment system will facilitate a more accessible, more connected global financial system.
+            </p>
+            <div class="cta">
+            </div>
+           </div>
+          </div>
+          <div class="grid-item">
+           <div class="IconGridItem">
+            <div class="icon-container">
+             <img alt="" class="icon" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/scalable-icon-2.png"/>
+            </div>
+            <h3 class="title">
+             Scalable
+            </h3>
+            <p class="description">
+             The open-source Libra protocol will foster a vibrant community of developers building products and services to help people access and use the Libra payment system.
+            </p>
+            <div class="cta">
+            </div>
+           </div>
+          </div>
+          <div class="grid-item">
+           <div class="IconGridItem">
+            <div class="icon-container">
+             <img alt="Libra is build on blockchain designed with a security focus" class="icon" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/secure-icon.png"/>
+            </div>
+            <h3 class="title">
+             Secure
+            </h3>
+            <p class="description">
+             The Libra network is built on blockchain technology and designed with security in mind.
+            </p>
+            <div class="cta">
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <section class="WhitepaperSection animateInit">
+      <div class="container">
+       <div class="content">
+        <h2 class="title">
+         The Libra White Paper
+        </h2>
+        <p class="description">
+         The Payment System. The Blockchain. The Reserve. The Association.
+        </p>
+        <a aria-label="Read the White Paper" class="CTA CTAInternalLink" href="/en-US/white-paper/">
+         <span class="cta-content animateInit">
+          <span class="text">
+           Read the White Paper
+          </span>
+          <span class="icon arrow">
+           <svg viewbox="0 0 22.03 22.83">
+            <path d="M10.05 21.41l10.53-9.79L10.05 1.41M19.72 11.66H1">
+            </path>
+           </svg>
+          </span>
+         </span>
+        </a>
+       </div>
+       <div class="svg-container">
+        <svg class="PaperSVG" viewbox="0 0 629 549">
+         <polygon class="paper-light-purple" points="124.194524 0.24294752 628.913587 0.24294752 628.913587 657.83262 124.194524 657.83262">
+         </polygon>
+         <polygon class="paper-purple" points="124.194524 0.24294752 628.913587 0.24294752 628.913587 657.83262 124.194524 657.83262">
+         </polygon>
+         <g class="paper-white-container">
+          <polygon class="paper-white" points="124.194524 0.24294752 628.913587 0.24294752 628.913587 657.83262 124.194524 657.83262">
+          </polygon>
+          <g class="rect-container" transform="translate(183.939443, 126.931564)">
+           <rect height="11.3806676" width="212.818483">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 197.813613)">
+           <rect height="11.3806676" width="297.035423">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 230.716167)">
+           <rect height="11.3806676" width="374.423963">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 262.618505)">
+           <rect height="11.3806676" width="158.191279">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 339.923503)">
+           <rect height="11.3806676" width="134.291877">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 371.825841)">
+           <rect height="11.3806676" width="294.75929">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 464.637593)">
+           <rect height="11.3806676" width="294.75929">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 400.832917)">
+           <rect height="11.3806676" width="158.191279">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(183.939443, 432.735255)">
+           <rect height="11.3806676" width="238.994019">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(368.875291, 400.832917)">
+           <rect height="11.3806676" width="189.488115">
+           </rect>
+          </g>
+          <g class="rect-container" transform="translate(368.875291, 262.618505)">
+           <rect height="11.3806676" width="158.191279">
+           </rect>
+          </g>
+          <path class="logo" d="M203.199549,62.5002721 C203.71385,61.9265584 204.179362,61.2727493 204.621455,60.5031658 L202.215832,59.3113218 C201.828261,59.9428013 201.404586,60.4717345 200.95609,60.8840438 C200.282247,61.5035697 199.571995,61.8645451 198.845155,61.9568976 C197.444715,62.1349278 196.462707,61.7039902 195.032933,60.7911452 C193.531195,59.8324274 191.82881,58.7458604 189.413124,59.0530141 C187.94682,59.2394787 186.604013,60.0026302 185.421906,61.3213526 C184.907849,61.8948843 184.442276,62.5486934 184,63.3184589 L186.405562,64.5102422 C186.793011,63.8784593 187.21632,63.3491621 187.66439,62.9364281 C188.327438,62.3256399 189.037751,61.9683658 189.775569,61.8744964 C189.987437,61.8476159 190.189669,61.8343273 190.385009,61.8343273 C191.49137,61.8343273 192.380496,62.2591971 193.588583,63.0304795 C194.991889,63.9263952 196.73794,65.0412991 199.209246,64.727228 C200.702629,64.5373654 202.04513,63.7881093 203.199549,62.5002721 L203.199549,62.5002721 Z M203.199549,69.6287638 C203.713789,69.0551715 204.179301,68.4013623 204.621455,67.6317182 L202.215832,66.4398742 C201.828261,67.0713537 201.404586,67.6002262 200.95609,68.0125355 C200.282247,68.6320614 199.571995,68.9930368 198.845155,69.0855106 C197.444715,69.2632982 196.462707,68.8325426 195.032933,67.9196369 C193.531256,66.9609191 191.829176,65.8745341 189.413124,66.1815058 C187.94682,66.3679704 186.604013,67.1311826 185.421906,68.449905 C184.907849,69.023376 184.442337,69.6771851 184,70.4469506 L186.405562,71.6387946 C186.793011,71.0070117 187.21632,70.4777145 187.66439,70.0649804 C188.327438,69.4541316 189.037812,69.0968575 189.775569,69.0029881 C189.987437,68.9761076 190.189608,68.962819 190.385009,68.962819 C191.491309,68.962819 192.380435,69.3876888 193.588583,70.1590319 C194.99195,71.0549476 196.738611,72.1700335 199.209246,71.8557197 C200.702629,71.6657965 202.04513,70.916601 203.199549,69.6287638 L203.199549,69.6287638 Z M203.199549,76.7573162 C203.71385,76.1836025 204.179362,75.5297933 204.621455,74.7602706 L202.215832,73.5684266 C201.828261,74.1999061 201.404586,74.7288392 200.95609,75.1410879 C200.282247,75.7606137 199.571995,76.1215892 198.845155,76.2140023 C197.444715,76.3921539 196.462707,75.961095 195.032933,75.0481893 C193.531256,74.0895322 191.829176,73.0029651 189.413124,73.3100582 C187.94682,73.4965227 186.604013,74.2597349 185.421906,75.5784574 C184.907788,76.1519891 184.442276,76.8057982 184,77.575503 L186.405562,78.767347 C186.793011,78.1355034 187.21632,77.6062062 187.66439,77.1935328 C188.327438,76.5826839 189.037751,76.2254099 189.775569,76.1315405 C189.987437,76.10466 190.189608,76.0913714 190.385009,76.0913714 C191.491309,76.0913714 192.380435,76.5162411 193.588583,77.2875236 C194.99195,78.1835 196.738611,79.2984645 199.209246,78.9842721 C200.702629,78.7943488 202.04513,78.0450927 203.199549,76.7573162 L203.199549,76.7573162 Z M214.533207,62.0970645 L217.313838,62.0970645 L217.313838,59.3304962 L214.533207,59.3304962 L214.533207,62.0970645 Z M222.662072,72.0435798 L222.662072,71.592133 C222.662072,70.3991967 223.114838,69.2648151 223.936818,68.3980857 C224.76453,67.5254098 225.876136,67.0220829 227.066902,66.9808216 C227.122644,66.9789406 227.177715,66.9779091 227.232116,66.9779091 C230.007013,66.9779091 232.180582,69.1272573 232.180582,71.8710713 C232.180582,73.1623671 231.71446,74.3747204 230.867964,75.2847742 C229.980606,76.2388804 228.743551,76.7642335 227.384644,76.7642335 C227.320546,76.7642335 227.256327,76.7632627 227.191925,76.7612603 C225.968836,76.723397 224.82631,76.2108471 223.974569,75.3180866 C223.128255,74.4309085 222.662072,73.2680081 222.662072,72.0435798 L222.662072,72.0435798 Z M227.5068,79.1219512 C228.760139,79.1219512 229.940294,78.8160717 230.919802,78.237443 C233.174239,76.9106504 234.520034,74.5307244 234.520034,71.8710713 C234.520034,69.219185 233.185644,66.8506666 230.950601,65.5352208 C229.980667,64.9622352 228.670549,64.6202521 227.445874,64.6202521 C225.804598,64.6202521 224.277856,65.1747308 223.146795,66.1816272 L222.832957,66.4609903 L222.832957,59.3304962 L220.246813,59.3304962 L220.246813,78.8183775 L222.832957,78.8183775 L222.832957,77.2918924 L223.144051,77.5582703 C224.356163,78.5958093 225.824053,79.1219512 227.5068,79.1219512 L227.5068,79.1219512 Z M255.310057,75.3440569 C254.482405,76.2167328 253.3708,76.7200597 252.180033,76.761321 C252.124291,76.7632627 252.069159,76.7642335 252.014698,76.7642335 C249.239861,76.7642335 247.066293,74.614946 247.066293,71.8710713 C247.066293,70.5797148 247.532414,69.3673615 248.378911,68.4573684 C249.266268,67.5033228 250.503385,66.9779091 251.862292,66.9779091 C251.926267,66.9779091 251.990547,66.9790013 252.05501,66.980943 C253.2781,67.0188063 254.420626,67.5313562 255.272245,68.424056 C256.118619,69.3112947 256.584741,70.4741952 256.584741,71.6986235 L256.584741,72.1500096 C256.584741,73.3430065 256.132036,74.4773882 255.310057,75.3440569 L255.310057,75.3440569 Z M259,78.8183775 L259,64.9238258 L256.413917,64.9238258 L256.413917,66.4503109 L256.102824,66.1839936 C254.890834,65.1463333 253.422943,64.6202521 251.740013,64.6202521 C250.486735,64.6202521 249.306519,64.9261316 248.327011,65.5048209 C246.072635,66.8315529 244.726962,69.2114182 244.726962,71.8710713 C244.726962,74.5230183 246.061353,76.8915974 248.296335,78.2068611 C249.266329,78.7799681 250.576447,79.1219512 251.800939,79.1219512 C253.442337,79.1219512 254.969141,78.5674725 256.100079,77.5606368 L256.413917,77.2811523 L256.413917,78.8183775 L259,78.8183775 Z M240.687382,68.1441468 C241.832164,67.3786288 243.179179,67.1589732 244.528999,67.3728644 L244.528999,64.9582304 C244.224553,64.9163017 243.844789,64.8945182 243.588217,64.8945182 C241.681466,64.8945182 240.168994,65.4742997 239.438556,66.4853223 L239.097396,66.9574605 L239.097396,64.9238258 L236.316643,64.9238258 L236.316643,78.8183775 L239.08404,78.8183775 L239.08404,77.2226584 L239.08404,73.9906265 C239.08404,73.106361 239.073855,72.3631727 239.084406,71.4789679 C239.101726,70.0206246 239.595414,68.8753815 240.687382,68.1441468 L240.687382,68.1441468 Z M214.533207,78.8183775 L217.313838,78.8183775 L217.313838,64.9400876 L214.533207,64.9400876 L214.533207,78.8183775 Z M208.819601,78.8183775 L211.600232,78.8183775 L211.600232,59.3304962 L208.819601,59.3304962 L208.819601,78.8183775 Z">
+          </path>
+         </g>
+        </svg>
+       </div>
+      </div>
+     </section>
+     <div class="ColorBlock">
+      <section class="Section" id="home-carousel-section">
+       <div class="container">
+        <div class="Carousel">
+         <div class="title-container">
+          <h3 class="title">
+           A closer look at
+          </h3>
+          <div class="swiper-navigation">
+           <div class="arrow-container prev">
+            <svg viewbox="0 0 22.03 22.83">
+             <path d="M10.05 21.41l10.53-9.79L10.05 1.41M19.72 11.66H1">
+             </path>
+            </svg>
+           </div>
+           <div class="arrow-container next">
+            <svg viewbox="0 0 22.03 22.83">
+             <path d="M10.05 21.41l10.53-9.79L10.05 1.41M19.72 11.66H1">
+             </path>
+            </svg>
+           </div>
+          </div>
+         </div>
+         <div class="swiper-container">
+          <div class="swiper-wrapper">
+          </div>
+         </div>
+         <div class="swiper-scrollbar">
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <section class="PreFooter theme-grey full-bleed layout-with-two-overlapping-images image-overflow light-background animateInit">
+      <div class="colored-full-bleed-container">
+       <div class="container">
+        <div class="colored-container">
+         <div class="TwoOverlappingImages portrait">
+          <div class="aspect-ratio-container">
+           <div class="back-image">
+            <div class="image-wrapper">
+             <img alt="" class="image" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/home-libra-association-back.jpg"/>
+            </div>
+           </div>
+           <div class="front-image">
+            <div class="image-wrapper">
+             <img alt="The Libra Association is a non-profit organization" class="image" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/home-libra-association-front.jpg"/>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="content">
+          <h3 class="title">
+           The Libra Association
+          </h3>
+          <p class="description">
+           An independent membership organization.
+          </p>
+          <a aria-label="Learn more" class="CTA CTALink" href="/en-US/association/" rel="noopener noreferrer" target="_blank">
+           <span class="cta-content animateInit">
+            <span class="text">
+             Learn more
+            </span>
+            <span class="icon arrow">
+             <svg viewbox="0 0 22.03 22.83">
+              <path d="M10.05 21.41l10.53-9.79L10.05 1.41M19.72 11.66H1">
+              </path>
+             </svg>
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="ColorBlock grey">
+      <section class="PreFooter theme-green horizontally-reversed cropping-image animateInit" id="home-developers-bottom">
+       <div class="colored-full-bleed-container">
+        <div class="container">
+         <div class="colored-container">
+          <img alt="Libra For Developers - Open Source with a new programming language called MOVE" class="image" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/home-libra-developers-illustration.png"/>
+          <div class="content">
+           <h3 class="title">
+            The Libra Blockchain for developers
+           </h3>
+           <p class="description">
+            Open source. Scalable. Secure.
+           </p>
+           <a aria-label="Learn more" class="CTA CTALink" href="/en-US/developers/" rel="noopener noreferrer" target="_blank">
+            <span class="cta-content white animateInit">
+             <span class="text">
+              Learn more
+             </span>
+             <span class="icon arrow">
+              <svg viewbox="0 0 22.03 22.83">
+               <path d="M10.05 21.41l10.53-9.79L10.05 1.41M19.72 11.66H1">
+               </path>
+              </svg>
+             </span>
+            </span>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </main>
+    <footer id="Footer">
+     <div class="container big-footer">
+      <svg class="Logo" viewbox="0 0 338.13 330.24">
+       <path d="M314.82,292.65a192,192,0,0,0,23.31-32.92l-39.45-19.64A120.78,120.78,0,0,1,278,266c-11,10.21-22.7,16.16-34.61,17.68-23,2.94-39.07-4.17-62.51-19.21-24.63-15.8-52.54-33.71-92.15-28.65-24,3.08-46.06,15.66-65.44,37.39A191.89,191.89,0,0,0,0,306.13l39.44,19.64a121.7,121.7,0,0,1,20.64-25.93c10.88-10.07,22.52-16,34.62-17.51a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.66,33.15,92.17,28C273.87,326.22,295.89,313.87,314.82,292.65Zm0-117.48a192,192,0,0,0,23.31-32.92l-39.45-19.64A121,121,0,0,1,278,148.53c-11,10.21-22.7,16.16-34.61,17.68-23,2.93-39.07-4.17-62.51-19.21-24.63-15.8-52.54-33.71-92.15-28.65-24,3.08-46.06,15.65-65.44,37.39A191.5,191.5,0,0,0,0,188.65l39.44,19.64a122,122,0,0,1,20.64-25.94C71,172.29,82.6,166.4,94.7,164.85a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.66,33.15,92.17,28C273.87,208.74,295.89,196.39,314.82,175.17Zm0-117.48a192,192,0,0,0,23.31-32.92L298.68,5.13A121,121,0,0,1,278,31.05c-11,10.21-22.7,16.16-34.61,17.68-23,2.93-39.07-4.17-62.51-19.21C156.28,13.72,128.37-4.19,88.76.87,64.72,4,42.7,16.52,23.32,38.26A191.5,191.5,0,0,0,0,71.17L39.44,90.81A122,122,0,0,1,60.08,64.87C71,54.81,82.6,48.92,94.7,47.37a79.51,79.51,0,0,1,10-.66c18.14,0,32.71,7,52.52,19.71,23,14.77,51.64,33.14,92.17,28C273.87,91.26,295.89,78.91,314.82,57.69Z">
+       </path>
+      </svg>
+      <nav>
+       <ul>
+        <li>
+         <a href="/en-US/vision/">
+          Vision
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/association/">
+          Association
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/developers/">
+          Developers
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/learn-faqs/">
+          Learn
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/media-press-news/">
+          Media
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/white-paper/">
+          White Paper
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/careers/">
+          Careers
+         </a>
+        </li>
+        <li>
+         <ul class="social-links">
+          <li>
+           <a href="https://developers.libra.org" rel="noopener noreferrer" target="_blank" title="Github">
+            <img alt="" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/github.png"/>
+           </a>
+          </li>
+          <li>
+           <a href="https://www.instagram.com/libra" rel="noopener noreferrer" target="_blank" title="Instagram">
+            <img alt="" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/instagram.png"/>
+           </a>
+          </li>
+          <li>
+           <a href="https://twitter.com/libra_" rel="noopener noreferrer" target="_blank" title="Twitter">
+            <img alt="" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/twitter.png"/>
+           </a>
+          </li>
+          <li>
+           <a href="https://www.facebook.com/LibraAssociation/" rel="noopener noreferrer" target="_blank" title="Facebook">
+            <img alt="" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/06/facebook.png"/>
+           </a>
+          </li>
+          <li>
+           <a href="https://www.linkedin.com/company/libra-association/" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+            <img alt="" src="https://libra.org/en-US/wp-content/uploads/sites/23/2019/12/LinkedIn.png"/>
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="container tiny-footer">
+      <div class="TinyFooter">
+       <ul class="left-side">
+        <li>
+         © 2020 Libra Association
+        </li>
+        <li>
+         Powered by WordPress.com VIP
+        </li>
+       </ul>
+       <ul class="right-side">
+        <li class="LanguageSelector">
+         <label class="language-label">
+          Language:
+          <select class="language-selector" name="language-selector">
+           <option value="id-ID">
+            Indonesia (Indonesia)
+           </option>
+           <option value="zh-CN">
+            中文 (简体中文)
+           </option>
+           <option value="en-US">
+            English
+           </option>
+           <option value="fr-FR">
+            Français (France)
+           </option>
+           <option value="de-DE">
+            Deutsch (Deutschland)
+           </option>
+           <option value="ja-JP">
+            日本語 (日本)
+           </option>
+           <option value="pt-BR">
+            Português (Brasil)
+           </option>
+           <option value="es-LA">
+            Español (Latinoamérica)
+           </option>
+           <option value="ru-RU">
+            Русский (Россия)
+           </option>
+          </select>
+         </label>
+        </li>
+        <li>
+         <a href="/en-US/privacy/#cookies_policy">
+          Cookies
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/privacy/#data_policy">
+          Data Policy
+         </a>
+        </li>
+        <li>
+         <a href="/en-US/privacy/#terms_of_use">
+          Terms of Use
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script type="text/javascript">
+   //<![CDATA[
+            /**
+             * Jam3InitCookieBanner
+             *
+             * Class to handle initiating Jam3 Cookie Banner,
+             * detects if current user has closed the banner or not already
+             * and loads JS and CSS assets if banner should be rendered
+             *
+             * @access public
+             * @author Ben Moody
+             */
+            var Jam3InitCookieBanner = function () {
+
+                var pluginCookieName;
+                var isHttps;
+
+                /**
+                 * init
+                 *
+                 * Constructor method, called on class instance
+                 *
+                 * Boots the process
+                 *
+                 * @access public
+                 * @author Ben Moody
+                 */
+                this.init = function () {
+
+                    //vars
+                    var theBannerContainer = document.getElementById('jam3-cookie-banner');
+
+                    //Cache cookiename
+                    this.pluginCookieName = "jam3_cookie_closed";
+
+                    //Cache if this is https
+                    this.isHttps = "true";
+
+                    //Has user already closed banner?
+                    if (true === this.maybeRenderBanner()) {
+
+                        //Load plugin assets, JS, CSS
+                        this.loadAssets();
+
+                    } else {
+
+                        //remove banner from DOM
+                        theBannerContainer.remove();
+                    }
+
+                };
+
+                /**
+                 * loadAssets
+                 *
+                 * Call method to dynamically load and assets, CSS or JS
+                 *
+                 * @access public
+                 * @author Ben Moody
+                 */
+                this.loadAssets = function () {
+
+                    //vars
+                    var pluginJSFile = "https:\/\/libra.org\/en-US\/wp-content\/plugins\/jam3-cookie-banner\/js\/main-min.js?v=1.1";
+                    var pluginCSSFile = "https:\/\/libra.org\/en-US\/wp-content\/plugins\/jam3-cookie-banner\/css\/main.css";
+
+                    //Load JS file
+                    this.loadJsCssFile(pluginJSFile, 'js');
+
+                    //Load CSS file
+                    this.loadJsCssFile(pluginCSSFile, 'css');
+
+                };
+
+                /**
+                 * maybeRenderBanner
+                 *
+                 * Detect if current user has closed the banner by
+                 * looking for a valid browser cookie.
+                 *
+                 * @access public
+                 * @author Ben Moody
+                 */
+                this.maybeRenderBanner = function () {
+
+                    var cookieValue = '';
+
+                    //Does cookie exist
+                    cookieValue = this.getCookie(this.pluginCookieName);
+
+                    if ('true' === cookieValue) {
+                        return false;
+                    }
+
+                    return true;
+                };
+
+                /**
+                 * getCookie
+                 *
+                 * Helper to get a cookie value by cookie name
+                 *
+                 * @param string cname
+                 * @access public
+                 * @author Ben Moody
+                 */
+                this.getCookie = function (cname) {
+
+                    var v = document.cookie.match('(^|;) ?' + cname + '=([^;]*)(;|$)');
+
+                    return v ? v[2] : null;
+                };
+
+                /**
+                 * loadJsCssFile
+                 *
+                 * Dynamically load a JS or CSS file into the DOM
+                 *
+                 * @param string filename
+                 * @param string filetype
+                 * @access public
+                 * @author Ben Moody
+                 */
+                this.loadJsCssFile = function (filename, filetype) {
+
+                    if (filetype == "js") { //if filename is a external JavaScript file
+                        var fileref = document.createElement('script')
+                        fileref.setAttribute("type", "text/javascript")
+                        fileref.setAttribute("src", filename)
+                    }
+                    else if (filetype == "css") { //if filename is an external CSS file
+                        var fileref = document.createElement("link")
+                        fileref.setAttribute("rel", "stylesheet")
+                        fileref.setAttribute("type", "text/css")
+                        fileref.setAttribute("href", filename)
+                    }
+                    if (typeof fileref != "undefined")
+                        document.getElementsByTagName("head")[0].appendChild(fileref)
+                };
+
+            };
+
+            //Create instance of class to get things started
+            var Jam3InitCookieBanner = new Jam3InitCookieBanner;
+            window.onload = function () {
+                Jam3InitCookieBanner.init();
+            }
+            //]]>
+  </script>
+  <div id="jam3-cookie-banner" style="display: none">
+   <!-- The banner content !-->
+   To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. Learn more, including about available controls:
+   <a href="https://libra.org/privacy/">
+    Cookies Policy
+   </a>
+   .
+  </div>
+  <!-- Banner dynamic theme elements !-->
+  <style type="text/css">
+   #jam3-cookie-banner,
+		#jam3-cookie-banner a {
+			color: ;
+		}
+
+		#jam3-close-cookie-banner:before,
+		#jam3-close-cookie-banner:after {
+		   background-color: ;
+	    }
+  </style>
+  <script>
+   var page = {"componentChunkName":"component---src-templates-home-home-js","jsonName":"en-us-64f","path":"\/en-US\/"};
+var dataPath = "path---en-us-64-f-277";
+var ___chunkMapping = {"app":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/app-de98b124f0718f970b52.js"],"component---src-templates-home-home-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-home-home-js-8e9532dc86164352e921.js"],"component---src-templates-vision-vision-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-vision-vision-js-9178f9121b34a214a1ec.js"],"component---src-templates-association-association-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-association-association-js-cc20b88fa2f77fedbb09.js"],"component---src-templates-developers-developers-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-developers-developers-js-cea564017927403babc0.js"],"component---src-templates-partners-partners-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-partners-partners-js-c4b29b3c44e434ed0a5e.js"],"component---src-templates-learn-learn-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-learn-learn-js-0f4f18da0ef7eac03b65.js"],"component---src-templates-media-media-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-media-media-js-62250eb3e8925726474d.js"],"component---src-templates-careers-careers-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-careers-careers-js-3075b9f9fa1c3a014ca9.js"],"component---src-templates-job-board-job-board-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-job-board-job-board-js-a29baafd6ccbf47f4f77.js"],"component---src-templates-white-paper-white-paper-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-white-paper-white-paper-js-fd1bce2486385372cb58.js"],"component---src-templates-privacy-privacy-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-privacy-privacy-js-85217b9eb40fe84778f1.js"],"component---src-templates-deep-dive-deep-dive-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-deep-dive-deep-dive-js-b31ca999fa764dd322ce.js"],"component---src-templates-press-release-post-press-release-post-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-press-release-post-press-release-post-js-52552904c7032ad64a2e.js"],"component---src-templates-press-release-archive-press-release-archive-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-press-release-archive-press-release-archive-js-446c2efcf222b881bd77.js"],"component---src-templates-press-release-taxonomy-press-release-taxonomy-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-press-release-taxonomy-press-release-taxonomy-js-d8f1bc5ac5b2f8157c3b.js"],"component---src-templates-blog-post-blog-post-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-blog-post-blog-post-js-fe5ee34cd63331009147.js"],"component---src-templates-blog-archive-blog-archive-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-blog-archive-blog-archive-js-33069d7b880937a1f6d7.js"],"component---src-templates-blog-taxonomy-blog-taxonomy-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-blog-taxonomy-blog-taxonomy-js-ba82ab9a59d18ee92cf7.js"],"component---src-templates-event-archive-event-archive-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-event-archive-event-archive-js-6054e2c537ff43be83c4.js"],"component---src-templates-cla-learn-learn-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-cla-learn-learn-js-299b36ab2a0f3d6ff866.js"],"component---src-templates-cla-sign-sign-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-cla-sign-sign-js-43108b3aad1b1705e826.js"],"component---src-templates-cla-sign-individual-sign-individual-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-cla-sign-individual-sign-individual-js-2d546a55e88e6e52fa27.js"],"component---src-templates-cla-sign-corporation-sign-corporation-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-cla-sign-corporation-sign-corporation-js-b6847ede7f4038234947.js"],"component---src-templates-thanks-thanks-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-thanks-thanks-js-131a6bc1a3166e4711bc.js"],"component---src-templates-document-document-js":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/component---src-templates-document-document-js-a4d549b3b8b415d2b993.js"],"pages-manifest":["https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default\/release\/pages-manifest-fb3508e5ff5a1b8b20c1.js"]};
+var general = {"theme_directory":"https:\/\/libra.org\/en-US\/wp-content\/themes\/jfl-default","frontend_route":"release","global_settings":{"global_copy":{"next":"Next","previous":"Previous","close":"Close","jump_to_links":"On this page","language_selector_text":"Language","back":"Back"},"fb_pixel":{"fb_pixel_live":"328963054441350","fb_pixel_develop":"425347724711558"},"segment_analytics":{"js_write_key_live":"b8zMpZ1kwBKfOFS9uiSB2LcUNOkmem93","js_write_key_develop":"4o1O3LLd7EvFJ2Cp3CbFfXk3yy8LeT5t"},"not_found":{"title":"Page Not Found","description":"Sorry, it appears that the page you requested doesn't exist anymore and cannot be found."}},"menus":{"header":[{"copy":"Vision","link":"\/en-US\/vision\/","externallink":"https:\/\/libra.org\/en-US\/vision\/","page_title":"","target":"","associated_nav_name":"","current_nav":"header"},{"copy":"Association","link":"\/en-US\/association\/","externallink":"https:\/\/libra.org\/en-US\/association\/","page_title":"","target":"","associated_nav_name":"","current_nav":"header"},{"copy":"Developers","link":"\/en-US\/developers\/","externallink":"https:\/\/libra.org\/en-US\/developers\/","page_title":"","target":"","associated_nav_name":"developers","current_nav":"header"},{"copy":"Learn","link":"\/en-US\/learn-faqs\/","externallink":"https:\/\/libra.org\/en-US\/learn-faqs\/","page_title":"","target":"","associated_nav_name":"","current_nav":"header"},{"copy":"Media","link":"\/en-US\/media-press-news\/","externallink":"https:\/\/libra.org\/en-US\/media-press-news\/","page_title":"","target":"","associated_nav_name":"media","current_nav":"header"}],"highlight":[{"copy":"White Paper","link":"\/en-US\/white-paper\/","externallink":"https:\/\/libra.org\/en-US\/white-paper\/","page_title":"","target":"","associated_nav_name":"","current_nav":"highlight"}],"legal":[{"copy":"Cookies","link":"\/en-US\/privacy\/#cookies_policy","externallink":"\/privacy\/#cookies_policy","page_title":"","target":"","associated_nav_name":"","current_nav":"legal"},{"copy":"Data Policy","link":"\/en-US\/privacy\/#data_policy","externallink":"\/privacy\/#data_policy","page_title":"","target":"","associated_nav_name":"","current_nav":"legal"},{"copy":"Terms of Use","link":"\/en-US\/privacy\/#terms_of_use","externallink":"\/privacy\/#terms_of_use","page_title":"","target":"","associated_nav_name":"","current_nav":"legal"}],"logo":[{"link":"\/en-US\/","externallink":"https:\/\/libra.org\/en-US\/","target":"","associated_nav_name":"","current_nav":"logo"}],"developers":[{"copy":"Overview","link":"\/en-US\/developers\/","externallink":"https:\/\/libra.org\/en-US\/developers\/","page_title":"","target":"","associated_nav_name":"","current_nav":"developers"},{"copy":"Libra Docs","link":"\/en-US\/https:\/\/developers.libra.org\/docs\/welcome-to-libra","externallink":"https:\/\/developers.libra.org\/docs\/welcome-to-libra","page_title":"","target":"","associated_nav_name":"","current_nav":"developers"},{"copy":"Governance","link":"\/en-US\/https:\/\/lip.libra.org","externallink":"https:\/\/lip.libra.org","page_title":"","target":"","associated_nav_name":"","current_nav":"developers"},{"copy":"Community","link":"\/en-US\/https:\/\/community.libra.org","externallink":"https:\/\/community.libra.org","page_title":"","target":"","associated_nav_name":"","current_nav":"developers"},{"copy":"GitHub","link":"\/en-US\/https:\/\/github.com\/libra","externallink":"https:\/\/github.com\/libra","page_title":"","target":"_blank","associated_nav_name":"","current_nav":"developers"}],"media":[{"copy":"Overview","link":"\/en-US\/media-press-news\/","externallink":"https:\/\/libra.org\/en-US\/media-press-news\/","page_title":"","target":"","associated_nav_name":"","current_nav":"media"},{"copy":"Blog","link":"\/en-US\/blog\/","externallink":"https:\/\/libra.org\/en-US\/blog\/","page_title":"","target":"","associated_nav_name":"","current_nav":"media"},{"copy":"Updates","link":"\/en-US\/updates\/","externallink":"https:\/\/libra.org\/en-US\/updates\/","page_title":"","target":"","associated_nav_name":"","current_nav":"media"},{"copy":"Events","link":"\/en-US\/events\/","externallink":"https:\/\/libra.org\/en-US\/events\/","page_title":"","target":"","associated_nav_name":"","current_nav":"media"}]},"footer":{"newsletter":{"title":"Sign up for the Libra newsletter","email":{"placeholder":"Email","invalid_error":"Invalid Email","empty_error":"This field is required"},"confirmation_message":"Success!"},"social_icons":[{"name":"Github","media":{"type":"image","image":{"default":{"width":20,"height":20,"url":"https:\/\/libra.org\/en-US\/wp-content\/uploads\/sites\/23\/2019\/06\/github.png","alt":"","title":"github"}}},"link":"https:\/\/developers.libra.org"},{"name":"Instagram","media":{"type":"image","image":{"default":{"width":20,"height":20,"url":"https:\/\/libra.org\/en-US\/wp-content\/uploads\/sites\/23\/2019\/06\/instagram.png","alt":"","title":"instagram"}}},"link":"https:\/\/www.instagram.com\/libra"},{"name":"Twitter","media":{"type":"image","image":{"default":{"width":20,"height":20,"url":"https:\/\/libra.org\/en-US\/wp-content\/uploads\/sites\/23\/2019\/06\/twitter.png","alt":"","title":"twitter"}}},"link":"https:\/\/twitter.com\/libra_"},{"name":"Facebook","media":{"type":"image","image":{"default":{"width":20,"height":20,"url":"https:\/\/libra.org\/en-US\/wp-content\/uploads\/sites\/23\/2019\/06\/facebook.png","alt":"","title":"facebook"}}},"link":"https:\/\/www.facebook.com\/LibraAssociation\/"},{"name":"LinkedIn","media":{"type":"image","image":{"default":{"width":29,"height":29,"url":"https:\/\/libra.org\/en-US\/wp-content\/uploads\/sites\/23\/2019\/12\/LinkedIn.png","alt":"","title":"icon-social-linkedIn"}}},"link":"https:\/\/www.linkedin.com\/company\/libra-association\/"}],"copyright":"\u00a9 2020 Libra Association","wordpress_attribution":"Powered by WordPress.com VIP","links":[{"copy":"Vision","link":"\/en-US\/vision\/","externallink":"https:\/\/libra.org\/en-US\/vision\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"},{"copy":"Association","link":"\/en-US\/association\/","externallink":"https:\/\/libra.org\/en-US\/association\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"},{"copy":"Developers","link":"\/en-US\/developers\/","externallink":"https:\/\/libra.org\/en-US\/developers\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"},{"copy":"Learn","link":"\/en-US\/learn-faqs\/","externallink":"https:\/\/libra.org\/en-US\/learn-faqs\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"},{"copy":"Media","link":"\/en-US\/media-press-news\/","externallink":"https:\/\/libra.org\/en-US\/media-press-news\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"},{"copy":"White Paper","link":"\/en-US\/white-paper\/","externallink":"https:\/\/libra.org\/en-US\/white-paper\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"},{"copy":"Careers","link":"\/en-US\/careers\/","externallink":"https:\/\/libra.org\/en-US\/careers\/","page_title":"","target":"","associated_nav_name":"","current_nav":"footer"}]},"lang":"en-US","languages":{"id-ID":"Indonesia (Indonesia)","zh-CN":"\u4e2d\u6587 (\u7b80\u4f53\u4e2d\u6587)","en-US":"English","fr-FR":"Fran\u00e7ais (France)","de-DE":"Deutsch (Deutschland)","ja-JP":"\u65e5\u672c\u8a9e (\u65e5\u672c)","pt-BR":"Portugu\u00eas (Brasil)","es-LA":"Espa\u00f1ol (Latinoam\u00e9rica)","ru-RU":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439 (\u0420\u043e\u0441\u0441\u0438\u044f)"},"general_site_title":"Libra.org","page_title":"Libra | A New Global Payment System","nav_titles":{"footer":"Footer","header":"Header","highlight":"Highlight","legal":"Legal","logo":"Logo","developers":"Developers","media":"Media"}};
+  </script>
+  <script async="true" src="https://libra.org/en-US/wp-content/themes/jfl-default/release/webpack-runtime-b7af86c2637ee14c9997.js">
+  </script>
+  <script async="true" src="https://libra.org/en-US/wp-content/themes/jfl-default/release/styles-4f93cbeb380f2accc30d.js">
+  </script>
+  <script async="true" src="https://libra.org/en-US/wp-content/themes/jfl-default/release/app-de98b124f0718f970b52.js">
+  </script>
+  <script async="true" src="https://libra.org/en-US/wp-content/themes/jfl-default/release/1-3477ec0c1c028b27f22f.js">
+  </script>
+  <script async="true" src="https://libra.org/en-US/wp-content/themes/jfl-default/release/3-15b706a71d14e8e2467f.js">
+  </script>
+  <script async="true" src="https://libra.org/en-US/wp-content/themes/jfl-default/release/component---src-templates-home-home-js-8e9532dc86164352e921.js">
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lf2h9oUAAAAAFOoom8x_2QjI-Q3T0lcB2ZSTz5w&amp;ver=5">
+  </script>
+  <script async="async" defer="defer" src="https://stats.wp.com/e-202031.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   _stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'163316427',post:'21',tz:'0',srv:'libra.org'} ]);
+	_stq.push([ 'clickTrackerInit', '163316427', '21' ]);
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f85816f98e","applicationID":"259145175","transactionName":"NVxaMkYFW0VSBhFYWAwWeQVADVpYHAwLVVIa","queueTime":0,"applicationTime":565,"atts":"GRtNRA4fSBoRBEcLTB9E","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>

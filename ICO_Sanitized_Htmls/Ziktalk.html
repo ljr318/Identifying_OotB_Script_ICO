@@ -1,0 +1,2770 @@
+<!DOCTYPE html>
+<html class="js" lang="zxx">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Softnio" name="author"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="Ziktalk is a global language exchange sns" name="description"/>
+  <!-- Fav Icon  -->
+  <link href="images/favicon.png" rel="shortcut icon"/>
+  <!-- Site Title  -->
+  <title>
+   Ziktalk
+  </title>
+  <!-- Bundle and Base CSS -->
+  <link href="assets/css/vendor.bundle.css?ver=150" rel="stylesheet"/>
+  <link href="assets/css/style.css?ver=150" rel="stylesheet"/>
+  <!-- Color Scheme CSS -->
+  <link href="assets/css/theme.css?ver=150" id="theming" rel="stylesheet"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-137887680-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-137887680-1');
+  </script>
+  <script>
+   class LocalLang {
+            constructor( supportedLangs, defaultLang ) {
+                this.supportedLangs = supportedLangs;
+                this.defaultLang = defaultLang;
+
+                let style = '';
+                for ( let i of this.supportedLangs ) {
+                    style += `.lang-${i} ${i} { display: inline; }\n`;
+                    style += `${i} { display: none; }\n`;
+                }
+                let styleEle = document.createElement( 'style' );
+                styleEle.id = 'localLang';
+                styleEle.innerHTML = style;
+                document.head.appendChild( styleEle );
+            }
+
+            set( lang ) {
+                if ( this.supportedLangs.indexOf( lang ) == -1 )
+                    lang = this.defaultLang;
+                
+                console.log( '[LocalLang.set] lang='+lang );
+
+                localStorage.setItem( '__lang', lang );
+
+                /** @type {HTMLBodyElement} */
+                let body = document.body;
+                let classes = [ ...body.classList.values() ];
+                for ( let i of classes )
+                    if ( i.startsWith( 'lang-' ) )
+                        body.classList.remove( i );
+                body.classList.add( 'lang-'+lang );
+            }
+
+            applyDefault() {
+                console.log( '[LocalLang.applyDefault]' );
+                let lang = localStorage.getItem( '__lang' );
+                this.set( lang || navigator.language );
+            }   
+        }
+
+        var _lang = new LocalLang( [ 'en', 'ko' ], 'en' );
+  </script>
+ </head>
+ <body class="nk-body body-wider bg-light lang-en">
+  <script>
+   _lang.applyDefault();
+  </script>
+  <div class="nk-wrap">
+   <header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+    <!-- Header @s -->
+    <div class="header-main">
+     <div class="header-container container">
+      <div class="header-wrap">
+       <!-- Logo @s -->
+       <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".6">
+        <a class="logo-link" href="./">
+         <span class="logo-dark" style="color: #212D7E;
+                                font-size: 2rem;
+                                font-weight: 800;">
+          ZIKTALK
+         </span>
+         <span class="logo-light" style="color: white;
+                                font-size: 2rem;
+                                font-weight: 800;">
+          ZIKTALK
+         </span>
+         <!-- <img class="logo-dark" src="images/logo2x.png" srcset="images/logo2x.png 2x" alt="logo">
+								<img class="logo-light" src="images/logo-full-white2x.png" srcset="images/logo-full-white2x.png 2x" alt="logo"> -->
+        </a>
+       </div>
+       <!-- Menu Toogle @s -->
+       <div class="header-nav-toggle">
+        <a class="navbar-toggle" data-menu-toggle="header-menu" href="#">
+         <div class="toggle-line">
+          <span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <!-- Menu @s -->
+       <div class="header-navbar animated" data-animate="fadeInDown" data-delay=".75">
+        <nav class="header-menu" id="header-menu">
+         <!-- <ul class="menu">
+									<li class="menu-item has-sub">
+                                        <a class="menu-link nav-link menu-toggle" href="#">Company</a>
+									    <div class="menu-sub menu-drop menu-mega menu-mega-1clmn">
+                                            <div class="menu-mega-innr">
+                                                <ul class="menu-mega-list">
+                                                    <li class="menu-item"><a href="#">About Us</a></li>
+                                                    <li class="menu-item"><a href="#">Team</a></li>
+                                                    <li class="menu-item"><a href="#">Tutors</a></li>
+                                                    <li class="menu-item"><a href="#">Advisors<span class="badge badge-xs badge-new">New</span></a></li>
+                                                    <li class="menu-item"><a href="#">Partners</a></li>
+                                                </ul>
+                                            </div>
+										</div>
+									</li>
+									<li class="menu-item has-sub">
+										<a class="menu-link nav-link menu-toggle" href="#">Legal</a>
+										<ul class="menu-sub menu-drop">
+											<li class="menu-item"><a class="menu-link nav-link" href="#">Terms & Conditions</a></li>
+											<li class="menu-item"><a class="menu-link nav-link" href="#">Privacy Policy</a></li>
+											<li class="menu-item"><a class="menu-link nav-link" href="#">Terms of Sale</a></li>
+											<li class="menu-item"><a class="menu-link nav-link" href="https://docs.google.com/presentation/d/13Tk3Kwytvwb6-qmJG3THR3vQjZ94pVkRQHpopfW4ZCc/edit?usp=sharing" target='_blank'>Whitepaper</a></li>
+										</ul>
+									</li>
+									<li class="menu-item has-sub">
+										<a class="menu-link nav-link menu-toggle" href="#">Links</a>
+										<ul class="menu-sub menu-drop">
+											<li class="menu-item"><a class="menu-link nav-link" href="#">Tokens</a></li>
+											<li class="menu-item"><a class="menu-link nav-link" href="#">Roadmaps</a></li>
+											<li class="menu-item"><a class="menu-link nav-link" href="#">FAQ</a></li>
+											<li class="menu-item"><a class="menu-link nav-link" href="#">Login</a></li>
+										</ul>
+									</li>
+								</ul> -->
+         <style>
+          .has-fixed .menu-btns .badge {
+                                            color: #333;
+                                        }
+         </style>
+         <ul class="menu-btns">
+          <!-- <li><a href="#" onclick='alert("not yet")' class="btn btn-md btn-auto btn-grad"><span>Login</span></a></li> -->
+          <!-- <li><a href="#" onclick='alert("not yet")' class="btn btn-md btn-auto btn-outline btn-primary" ><span>한국어</span></a></li> -->
+          <!-- <li><a href="#" onclick='_lang.set("ko")' class="badge badge-md badge-outline" ><span>한국어</span></a></li>
+									<li><a href="#" onclick='_lang.set("en")' class="badge badge-md badge-outline" ><span>English</span></a></li> -->
+          <li>
+           <a class="badge badge-md badge-outline" href="javascript:_lang.set('ko')">
+            <span>
+             한국어
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="badge badge-md badge-outline" href="javascript:_lang.set('en')">
+            <span>
+             English
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+       <!-- Menu .header-navbar @e -->
+      </div>
+     </div>
+    </div>
+    <!-- .header-main @e -->
+    <!-- header-banner -->
+    <div class="header-banner bg-theme-grad">
+     <div class="nk-banner">
+      <div class="banner banner-page banner-page-lg banner-gap-b4">
+       <div class="banner-wrap">
+        <div class="container">
+         <div class="row align-items-center justify-content-center justify-content-lg-start">
+          <div class="col-lg-6 col-sm-10 text-center text-lg-left">
+           <div class="banner-caption cpn tc-light">
+            <div class="cpn-head">
+             <h1 class="title">
+              <ko>
+               블록체인과 소셜네트워크로 만드는
+               <br/>
+               글로벌 재능 공유 플랫폼
+              </ko>
+              <en>
+               Global Gig Economy
+               <br/>
+               with Social Network and Blockchain
+              </en>
+             </h1>
+            </div>
+            <div class="cpn-text">
+             <ko>
+              <p>
+               현재 직톡은 언어 학습과 글로벌 유저층을 만드는데 집중하고 있습니다. 곧 법률 상담, 마케팅 멘토링등 다양한 분야로 확장될 것입니다.
+              </p>
+             </ko>
+             <en>
+              <p>
+               Ziktalk is currently focusing on language learning and building global audience. It will extends its coverage to law consultation, marketing advices and much more.
+              </p>
+             </en>
+            </div>
+            <div class="cpn-action">
+             <!-- <a class="btn btn-grad" href="#">Download</a> -->
+             <!-- <a class="btn btn-grad" href="#">Join Telegram&nbsp;<img width='20px' height='20px' src="images/social/telegram.png" /></a> -->
+             <!-- <a class="btn btn-grad" href="#">Join Telegram <em class="icon fab fa-telegram"></em></span></a> -->
+             <div class="row gutter-10px gutter-vr-10px">
+              <!-- <div class='col-sm-6'>
+                                                        <div class="btn btn-light btn-md" style='width:100%' href="#"><ko>텔레그램</ko><en>Join Telegram</en>&nbsp;<img width='25px' height='25px' src="images/social/telegram.png" /></div>
+                                                    </div> -->
+              <div class="col-sm-6">
+               <a href="https://t.me/ziktoken" target="_blank">
+                <div class="btn btn-light btn-md" style="width:100%">
+                 <ko>
+                  텔레그램
+                 </ko>
+                 <en>
+                  Join Telegram
+                 </en>
+                 <img height="25px" src="images/social/telegram.png" width="25px"/>
+                </div>
+               </a>
+              </div>
+              <div class="col-sm-6">
+               <a href="https://open.kakao.com/o/gz048bjb" target="_blank">
+                <div class="btn btn-light btn-md" style="width:100%">
+                 <ko>
+                  카카오톡
+                 </ko>
+                 <en>
+                  Join Kakaotalk
+                 </en>
+                 <img height="25px" src="images/social/kakaotalk.png" width="25px"/>
+                </div>
+               </a>
+              </div>
+             </div>
+             <!-- <a class="btn btn-light btn-md" href="#">Join Telegram&nbsp;<img width='25px' height='25px' src="images/social/telegram.png" /></a>
+                                                <a class="btn btn-light btn-md" href="#">Join Telegram (US) &nbsp;<img width='25px' height='25px' src="images/social/telegram.png" /></a>
+                                                <a class="btn btn-light btn-md" href="#">Join Kakaotalk&nbsp;<img width='25px' height='25px' src="images/social/kakaotalk.png" /></a>
+                                                <ul>
+                                                    <li><img src="images/social/kakaotalk.png" /><a  href="#" target='_blank'>Kakaotalk KR</a></li>
+                                                    <li><img src="images/social/kakaotalk.png" /><a  href="#" target='_blank'>Kakaotalk KR</a></li>
+                                                </ul>
+                                                <a  href="#" target='_blank'>Kakaotalk KR<img src="images/social/kakaotalk.png" /></a>
+                                                <a  href="#" target='_blank'>Telegram KR<img src="images/social/telegram.png" /></a>
+                                                <a  href="#" target='_blank'>Telegram EN<img src="images/social/telegram.png" /></a> -->
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="banner-screen banner-screen-right">
+      <div class="container">
+       <div class="row justify-content-end">
+        <div class="col-lg-6 col-xl-5">
+         <div class="banner-screen-gfx pl-lg-4 pl-xl-0">
+          <img alt="" src="images/app-screens/shot.png"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="nk-ovm mask-a-md shape-a-sm">
+     </div>
+     <div class="particles-container particles-bg" id="particles-bg">
+     </div>
+    </div>
+    <!-- fullscreen header banner-->
+    <!-- <div class="header-banner bg-theme-grad">
+				<div class="nk-banner">
+				    <div class="banner banner-fs banner-single banner-gap-b2">
+				        <div class="banner-wrap">
+                            <div class="container">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-5 order-lg-last">
+                                        <div class="banner-gfx animated" data-animate="fadeInUp" data-delay=".9">
+                                            <img src="images/header/gfx-a.png" alt="header">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-10 text-center text-lg-left">
+                                        <div class="banner-caption cpn tc-light">
+                                            <div class="cpn-head">
+                                                <h1 class="title animated" data-animate="fadeInUp" data-delay="1">Global Gig Economy<br class="d-none d-md-block"> With P2P Blockchain</h1>
+                                            </div>
+                                            <div class="cpn-text">
+                                                <p class="animated" data-animate="fadeInUp" data-delay="1.1">Ziktalk is a global gig sharing platform which spans its coverage from learning a language to law consultation, marketing advices and many more.</p>
+                                            </div>
+                                            <div class="cpn-action">
+                                                <div class="cpn-btns animated" data-animate="fadeInUp" data-delay="1.2">
+                                                    <a class="btn btn-grad" href="#" onclick='alert("not yet")'>Register &amp; Buy Token Now</a>
+                                                    <em>Coming soon</em>
+                                                </div>
+                                                <ul class="cpn-links animated" data-animate="fadeInUp" data-delay="1.3">
+                                                    <li><a class="link" href="#"><em class="link-icon far fa-lightbulb"></em>How to Buy</a></li>
+                                                    <li><a class="link" href="https://docs.google.com/presentation/d/13Tk3Kwytvwb6-qmJG3THR3vQjZ94pVkRQHpopfW4ZCc/edit?usp=sharing" target='_blank'><em class="link-icon fas fa-file-alt"></em>White Paper</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+				    </div>
+				</div>
+				<div class="nk-ovm mask-a shape-a"></div>
+				
+				<div id="particles-bg" class="particles-container particles-bg"></div>
+			</div> -->
+   </header>
+   <main class="nk-pages">
+    <!-- Download -->
+    <section class="section section-l section-partners bg-light" id="partners">
+     <div class="container">
+      <div class="section-head text-center wide-auto-xs">
+       <h2 class="title title-lg title-dark">
+        <ko>
+         직톡 다운로드
+        </ko>
+        <en>
+         Download Ziktalk
+        </en>
+       </h2>
+       <en>
+        <p>
+         Ziktalk is available on Android &amp; iOS.
+         <br/>
+         Windows &amp; Mac versions are coming soon.
+        </p>
+       </en>
+       <ko>
+        <p>
+         안드로이드와 iOS 버전이 서비스 중입니다.
+         <br/>
+         윈도우와 맥용 버전은 곧 출시될 예정입니다.
+        </p>
+       </ko>
+      </div>
+      <div class="nk-block block-partners card">
+       <div class="row align-items-center">
+        <div class="col-lg-4 col-sm-6 download-option">
+         <ul class="btn-grp gutter-20px gutter-vr-20px justify-content-center mt-auto mb-auto">
+          <li>
+           <a class="btn-download google-play" href="https://play.google.com/store/apps/details?id=com.fronty.ziktalk2" style="height: 60px" target="_blank">
+            <img alt="" src="images/download-googleplay.svg"/>
+           </a>
+          </li>
+          <li>
+           <a class="btn-download app-store" href="https://itunes.apple.com/us/app/ziktalk/id1166810345?mt=8" style="height: 60px" target="_blank">
+            <img alt="" src="images/download-appstore.svg"/>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-lg-4 col-sm-6 download-option">
+         <em class="icon fab fa-windows">
+         </em>
+         <a class="btn btn-outline btn-dark btn-md" style="font-size: 1rem">
+          <ko>
+           윈도우
+          </ko>
+          <en>
+           Windows
+          </en>
+         </a>
+         <div>
+          <ko>
+           곧 출시 예정
+          </ko>
+          <en>
+           Coming Soon
+          </en>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 download-option">
+         <em class="icon fab fa-apple">
+         </em>
+         <a class="btn btn-outline btn-dark btn-md" style="font-size: 1rem">
+          <ko>
+           맥 OSX
+          </ko>
+          <en>
+           Mac OSX
+          </en>
+         </a>
+         <div>
+          <ko>
+           곧 출시 예정
+          </ko>
+          <en>
+           Coming Soon
+          </en>
+         </div>
+        </div>
+        <!-- <div class="col-lg-3 col-sm-6 download-option">
+                                <em class="icon fab fa-linux"></em>
+                                <a href="#" class="btn btn-outline btn-dark btn-md">Linux</a>
+                            </div> -->
+       </div>
+      </div>
+     </div>
+    </section>
+    <!-- ICO Ratings-->
+    <!-- <section class="section no-pd text-center over-up">
+                <h6 class="title title-xs tc-secondary pdb-s animated" data-animate="fadeInUp" data-delay="1.4">Ico Rating</h6>
+                <ul class="rank-list">
+                    <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.5">
+                        <img src="images/logo/a.png" alt="logo">
+                        <div class="rank-count">4.7 <span>/5</span></div>
+                    </li>
+                    <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.6">
+                        <img src="images/logo/b.png" alt="logo">
+                        <div class="rank-count">A</div>
+                    </li>
+                    <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.7">
+                        <img src="images/logo/c.png" alt="logo">
+                        <div class="rank-count">9.4 <span>/10</span></div>
+                    </li>
+                    <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.8">
+                        <img src="images/logo/d.png" alt="logo">
+                        <div class="rank-count">4.9 <span>/5</span></div>
+                    </li>
+                    <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.9">
+                        <img src="images/logo/e.png" alt="logo">
+                        <div class="rank-count">5 <span>/5</span></div>
+                    </li>
+                </ul>
+            </section> -->
+    <!-- // -->
+    <section class="section bg-light section-l section-about" id="about">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block nk-block-about">
+       <div class="row align-items-center gutter-vr-30px pdb-l">
+        <div class="col-lg-6">
+         <div class="nk-block-text">
+          <h2 class="title">
+           <ko>
+            직톡
+           </ko>
+           <en>
+            About Ziktalk
+           </en>
+          </h2>
+          <ko>
+           <p class="animated" data-animate="fadeInUp" data-delay=".2">
+            직톡은 현재
+            <strong>
+             서비스중
+            </strong>
+            인
+            <strong>
+             언어 공유 플랫폼
+            </strong>
+            입니다. 1600명 이상의 선생님들과 수많은 다국적 이용자들이 있습니다. 직톡에선 실제로 대화할 수 있는 외국인을 만날 수 있습니다.
+           </p>
+           <p class="animated" data-animate="fadeInUp" data-delay=".3">
+            직톡은
+            <strong>
+             글로벌 재능 공유 플랫폼
+            </strong>
+            을 목표로 개발중입니다. 직톡에선 법률, 마케팅, 비즈니스등 여러 분야의 전문가들과 직접 대화할 수 있게 될 것입니다.
+           </p>
+           <p class="animated" data-animate="fadeInUp" data-delay=".4">
+            ZIK 토큰은 직톡 플랫폼에서 사용되기 위해 개발되었습니다. 다국적 이용자들과 재능 판매자들간의 국제 거래를 신뢰성 있고 빠르게 처리할 수 있도록 블록체인 기술을 활용였습니다.
+           </p>
+          </ko>
+          <en>
+           <p class="animated" data-animate="fadeInUp" data-delay=".2">
+            <strong>
+             Ziktalk is a language sharing platform
+            </strong>
+            that are
+            <strong>
+             in live operation
+            </strong>
+            . There are more than 1600 registered tutors and many more students worldwide. You can actually find a real foreigner you can talk to in Ziktalk.
+           </p>
+           <p class="animated" data-animate="fadeInUp" data-delay=".3">
+            <strong>
+             Ziktalk is developing to be a global gig-sharing platform
+            </strong>
+            where you can find an expert in any area (eg: law, marketing, business, etc) whom you can actually talk to.
+           </p>
+           <p class="animated" data-animate="fadeInUp" data-delay=".4">
+            We created ZIK coins for the platform and its international users. Gig-sellers and users can make payment with confidence and ease, all by the decentralized nature of Blockchain.
+           </p>
+          </en>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="nk-block-video animated" data-animate="fadeInUp" data-delay=".5">
+          <img alt="video" src="images/video/video.jpg"/>
+          <a class="nk-block-video-play video-popup btn-play btn-play-light" href="https://www.youtube.com/watch?v=9n-6LGQd9j4">
+           <em class="fas fa-play">
+           </em>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- .block @e -->
+      <!-- <div class="section-head">
+                        <h2 class="title title-lg animated" data-animate="fadeInUp" data-delay=".6">Key features of Ziktalk</h2>
+                    </div>
+                    <div class="nk-block nk-block-features mgb-m30">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="feature animated" data-animate="fadeInUp" data-delay=".7">
+                                    <div class="feature-icon dot">
+                                        <em class="icon ikon ikon-paricle-alt"></em>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h5 class="title title-sm">Create a secure decentralize</h5>
+                                        <p>Tempore, cum soluta nobis est eligendi optiocum que nihil maxime placeat facere possimus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="feature animated" data-animate="fadeInUp" data-delay=".8">
+                                    <div class="feature-icon dot">
+                                        <em class="icon ikon ikon-donught"></em>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h5 class="title title-sm">Solving small business problems</h5>
+                                        <p>Placeat facere possimus, omnis voluptas assum enda est, omnis dolor repellendus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="feature animated" data-animate="fadeInUp" data-delay=".9">
+                                    <div class="feature-icon dot">
+                                        <em class="icon ikon ikon-document"></em>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h5 class="title title-sm">Personal data must be isolated</h5>
+                                        <p>Nam libero tempore, cum soluta nobis est optio cumque nihil impedit quo minus id quod.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+     </div>
+    </section>
+    <!-- // -->
+    <!-- <section class="section section-l section-features bg-white" id="why">
+                <div class="container">
+                    <div class="nk-block nk-block-features-2">
+                        <div class="row align-items-center flex-row-reverse">
+                            <div class="col-lg-5">
+                                <div class="gfx py-4">
+                                    <img src="images/gfx/gfx-a.png" alt="gfx">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="section-head">
+                                    <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">Why Ziktalk?</h2>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".3">We believe in an international community in which what are happening on a local level happen on an international level. Everyone can meet all, talk to all, learn from all, work with all.</p>
+                                </div>
+                                <div class="features-list mr-4 mgb-m30">
+                                    <div class="feature feature-2 animated" data-animate="fadeInUp" data-delay=".4">
+                                        <div class="feature-icon dot">
+                                            <em class="icon ikon ikon-shiled-alt"></em>
+                                        </div>
+                                        <div class="feature-text">
+                                            <h5 class="title title-sm">Secured User Data</h5>
+                                            <p>We protect user data and emo enim ipsam voluptatem quia voluptas sitaut odit aut fugit, sed quia conseq ur magni dolores aspernatur.</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature feature-2 animated" data-animate="fadeInUp" data-delay=".5">
+                                        <div class="feature-icon dot">
+                                            <em class="icon ikon ikon-user"></em>
+                                        </div>
+                                        <div class="feature-text">
+                                            <h5 class="title title-sm">Most Credibility</h5>
+                                            <p>Most authentically sed do eiusmod tempor incididunt ut labore et dolore magna aliqua cillum dolore eu fugiat ipsum dolor sit amet.</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature feature-2 animated" data-animate="fadeInUp" data-delay=".6">
+                                        <div class="feature-icon dot">
+                                            <em class="icon ikon ikon-data-server"></em>
+                                        </div>
+                                        <div class="feature-text">
+                                            <h5 class="title title-sm">Big Data Insights</h5>
+                                            <p>You can trade &amp; invest toekn oluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat magni dolores.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section> -->
+    <!-- // -->
+    <!-- <section class="section section-l section-problem bg-light" id="problem">
+                <div class="container">
+                    <div class="section-head text-center wide-auto-sm">
+                        <h2 class="title">Problem and Challenge</h2>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".2">We are creating modular software, apps blockchain based accusamus et eiusto odio dignimus qui blan ditiis praes entium volup tatun.</p>
+                    </div>
+                    <div class="nk-block nk-block-problems tc-light">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-lg-6">
+                                <div class="feature boxed boxed-lg bg-theme-alt no-mg split-lg-left split-left animated" data-animate="fadeInUp" data-delay=".3">
+                                    <h4 class="title title-md">Automation Development</h4>
+                                    <p>The automation development provides rem aperiam, et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit molestiae illum qui dolorem eum.</p>
+                                    <ul class="list list-dot">
+                                        <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                        <li>Wende omnis iste natus error sit volupt.</li>
+                                        <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                        <li>Exercitation ullamco laboris nisi ut consequ.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-group bg-theme-alt split-right split-lg animated" data-animate="fadeInUp" data-delay=".4">
+                                    <div class="feature boxed bg-white-10">
+                                        <div class="feature-text">
+                                            <h4 class="title title-md">High transfer fees</h4>
+                                            <p>Each year over than 200$ bilion fees rem aperiam, et quasi arch itecto beatae vitae dicta sunt explicabo. Voluptas sit aspernatur aut odit aut fugit molestiae illum qui dolorem eum.</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature boxed bg-white-2">
+                                        <div class="feature-text">
+                                            <h4 class="title title-md">Scaling and Absolete Tool</h4>
+                                            <p>Scalling is biggest problem that comes rem aperiam, et quasi arch itecto beatae vitae dicta sunt explicabo. Voluptas sit aspern odit aut fugit illum qui dolorem eum.</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature boxed bg-black-10">
+                                        <div class="feature-text">
+                                            <h4 class="title title-md">Secure Networks &amp; Flexibility</h4>
+                                            <p>Security is most concern for long rem aperiam, et quasi arch itecto beatae vitae  aspernatur aut odit aut fugit molestiae illum qui dolorem ullamco laboris nisi volupt natus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section> -->
+    <!-- // -->
+    <!-- <section class="section section-l section-solution bg-light pt-0" id="solution"> -->
+    <!-- <section class="section section-l section-solution bg-light" id="solution"> -->
+    <section class="section section-l section-solution bg-white" id="solution">
+     <div class="container">
+      <!-- Section Head @s -->
+      <div class="section-head text-center wide-auto-sm">
+       <h2 class="title">
+        <en>
+         Key Features of Ziktalk
+        </en>
+        <ko>
+         직톡의 핵심 기능
+        </ko>
+       </h2>
+       <p class="animated" data-animate="fadeInUp" data-delay=".2">
+        <en>
+         We dream of an international community where everyone can meet, talk, learn, and work together.
+        </en>
+        <ko>
+         우리는 누구나 서로 만나서 대화하고 배울수 있고 같이 일할 수 있는 국제 커뮤니티를 꿈꿉니다.
+        </ko>
+       </p>
+      </div>
+      <!-- .section-head @e -->
+      <!-- Block @s -->
+      <div class="nk-block nk-block-features-3 mgb-m40 mgt-m20">
+       <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-10">
+         <div class="feature feature-3 feature-center animated" data-animate="fadeInUp" data-delay=".3">
+          <div class="feature-icon">
+           <em class="icon icon-lg ikon ikon-cloud">
+           </em>
+          </div>
+          <div class="feature-text">
+           <h4 class="title title-md title-dark">
+            <ko>
+             단일 글로벌 플랫폼
+            </ko>
+            <en>
+             Global Single Platform
+            </en>
+           </h4>
+           <p>
+            <ko>
+             전세계 모든 유저들에게 단일 플랫폼을 제공합니다.
+            </ko>
+            <en>
+             We provide a single global platform for all users around the world
+            </en>
+           </p>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6 col-md-10">
+         <div class="feature feature-3 feature-center animated" data-animate="fadeInUp" data-delay=".4">
+          <div class="feature-icon">
+           <em class="icon icon-lg ikon ikon-safety">
+           </em>
+          </div>
+          <div class="feature-text">
+           <h4 class="title title-md title-dark">
+            <ko>
+             통합 플랫폼
+            </ko>
+            <en>
+             Unified Platform
+            </en>
+           </h4>
+           <p>
+            <ko>
+             필요한 모든 기능을 한곳에 모았습니다. 통화나 지불을 위해 앱을 나가지 않아도됩니다.
+            </ko>
+            <en>
+             We've unified all the required features in one place. No need to leave the app for calls or payments.
+            </en>
+           </p>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6 col-md-10">
+         <div class="feature feature-3 feature-center animated" data-animate="fadeInUp" data-delay=".5">
+          <div class="feature-icon">
+           <em class="icon icon-lg ikon ikon-cash">
+           </em>
+          </div>
+          <div class="feature-text">
+           <h4 class="title title-md title-dark">
+            <ko>
+             분산 결제 시스템
+            </ko>
+            <en>
+             Decentralized Payment System
+            </en>
+           </h4>
+           <p>
+            <en>
+             Payment system is powered by Luniverse, Ethereum and other blockchain technologies.
+            </en>
+            <ko>
+             루니버스, 이더리움등의 블록체인 기술을 기반으로 합니다.
+            </ko>
+           </p>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6 col-md-10">
+         <div class="feature feature-3 feature-center animated" data-animate="fadeInUp" data-delay=".6">
+          <div class="feature-icon">
+           <em class="icon icon-lg ikon ikon-globe">
+           </em>
+          </div>
+          <div class="feature-text">
+           <h4 class="title title-md title-dark">
+            <ko>
+             소셜 네트워크
+            </ko>
+            <en>
+             Social Network
+            </en>
+           </h4>
+           <p>
+            <ko>
+             독특한 소셜네트워크를 통해 지속적인 참여가 가능합니다.
+            </ko>
+            <en>
+             Ongoing engagement is possible with the unique social network.
+            </en>
+           </p>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <!-- <section class="section section-l section-product bg-white" id="products"> -->
+    <!-- <section class="section section-l section-product bg-light" id="products">
+                <div class="container">
+                    <div class="nk-block nk-block-features-4 mgb-m30">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="section-head">
+                                    <h2 class="title">Screenshots</h2>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".2">We created our product libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a href="#" class="feature feature-4 feature-center animated" data-animate="fadeInUp" data-delay=".3">
+                                    <div class="feature-img">
+                                        <img src="images/products/a.jpg" alt="product">
+                                    </div>
+                                    <h5 class="title title-sm title-dark">Product Title One</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <a href="#" class="feature feature-4 feature-center animated" data-animate="fadeInUp" data-delay=".4">
+                                    <div class="feature-img">
+                                        <img src="images/products/b.jpg" alt="product">
+                                    </div>
+                                    <h5 class="title title-sm title-dark">Product Title Two</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+    <!-- // -->
+    <section class="bg-theme bg-pattern-dots" id="tokens">
+     <div class="section-l section-tokensale tc-light">
+      <div class="container">
+       <!-- Section Head @s -->
+       <div class="section-head text-center wide-auto">
+        <h2 class="title">
+         <ko>
+          ZIK 토큰
+         </ko>
+         <en>
+          ZIK Tokens
+         </en>
+        </h2>
+        <p class="animated" data-animate="fadeInUp" data-delay=".2">
+         <ko>
+          직톡 플랫폼을 위한 토큰
+         </ko>
+         <en>
+          Tokens for Ziktalk Platform
+         </en>
+        </p>
+       </div>
+       <!-- .section-head @e -->
+       <!-- Block @s -->
+       <div class="nk-block nk-block-token mgb-m30">
+        <div class="row">
+         <div class="col-lg-7">
+          <div class="token-info bg-theme animated" data-animate="fadeInUp" data-delay=".3">
+           <h4 class="title title-md mb-2 text-sm-center">
+            <en>
+             Sales Information
+            </en>
+            <ko>
+             판매 정보
+            </ko>
+           </h4>
+           <table class="table table-token">
+            <tbody>
+             <tr>
+              <td class="table-head">
+               <en>
+                Private Sale
+               </en>
+               <ko>
+                프라이빗 세일
+               </ko>
+              </td>
+              <td class="table-des">
+               <a href="#contactus">
+                <ko>
+                 문의하기
+                </ko>
+                <en>
+                 Contact us
+                </en>
+               </a>
+              </td>
+             </tr>
+             <!-- <tr>
+                                                    <td class="table-head"><ko>퍼블릭 세일 시작</ko><en>Public Sale Starts</en></td>
+                                                    <td class="table-des"><ko>공지 예정</ko><en>TBA</en></td>
+                                                </tr> -->
+             <!-- <tr>
+                                                    <td class="table-head">Public Sale Ends</td>
+                                                    <td class="table-des">TBA</td>
+                                                </tr> -->
+             <tr>
+              <td class="table-head">
+               <ko>
+                총 토큰 공급량
+               </ko>
+               <en>
+                Total Token Supply
+               </en>
+              </td>
+              <td class="table-des">
+               10,000,000,000
+              </td>
+             </tr>
+             <tr>
+              <td class="table-head">
+               <ko>
+                토큰 판매량
+               </ko>
+               <en>
+                Tokens Allocated for Sales
+               </en>
+              </td>
+              <td class="table-des">
+               1,000,000,000
+              </td>
+             </tr>
+             <!-- <tr>
+                                                    <td class="table-head"><ko>토큰 가격</ko><en>Token Price</en></td>
+                                                    <td class="table-des"><ko>공지 예정</ko><en>TBA</en></td>
+                                                </tr> -->
+             <tr>
+              <td class="table-head">
+               <ko>
+                결제 방법
+               </ko>
+               <en>
+                Accepted
+               </en>
+              </td>
+              <td class="table-des">
+               KRW, USD, ETH
+              </td>
+             </tr>
+            </tbody>
+           </table>
+          </div>
+         </div>
+         <!-- .col -->
+         <div class="col-lg-5">
+          <div class="animated" data-animate="fadeInUp" data-delay=".4">
+           <div class="token-status bg-theme">
+            <h4 class="title title-md">
+             <ko>
+              프라이빗 세일 종료
+             </ko>
+             <en>
+              Private Sale Ends In
+             </en>
+            </h4>
+            <div class="token-countdown countdown countdown-s2" data-date="2019/05/03">
+            </div>
+            <!-- <div class="progress-wrap progress-wrap-point">
+                                                <span class="progress-info">Raised so far <span>$---,---,---</span></span>
+                                                <div class="progress-bar">
+                                                    <div class="progress-percent bg-grad" data-percent="20"></div>
+                                                    <div class="progress-point progress-point-2">Hard Cap <span>$4.00m</span></div>
+                                                </div>
+                                            </div> -->
+            <!-- <a href="#" class="btn btn-grad">Register &amp; Buy Token Now</a> -->
+            <a class="btn btn-grad" href="#contactus">
+             <ko>
+              프라이빗 세일 문의하기
+             </ko>
+             <en>
+              Contact us for Private Sales
+             </en>
+            </a>
+            <!-- <span class="token-min">Minimum Purchase: 200 ZIK</span> -->
+           </div>
+           <!-- Bonus -->
+           <!-- <div class="bonus bg-theme">
+                                            <div class="bonus-info">
+                                                <div class="bonus-percent">50% <small>Bonus</small></div>
+                                                <div class="bonus-date">Private Sale Bonus</div>
+                                                <div class="bonus-date">End at Apr 30, 2019</div>
+                                                <span class="bonus-badge badge-xs">Now</span>
+                                            </div>
+                                            <div class="bonus-info">
+                                                <div class="bonus-percent">25%<small>Bonus</small></div>
+                                                <div class="bonus-date">Start at 01 Dec, 2019</div>
+                                            </div>
+                                        </div> -->
+          </div>
+         </div>
+         <!-- .col -->
+        </div>
+        <!-- .row -->
+       </div>
+       <!-- .block @e -->
+      </div>
+     </div>
+     <!-- .section-tokensale -->
+     <div class="section-tokendes">
+      <div class="container">
+       <!-- Block @s -->
+       <div class="nk-block nk-block-alocation mgb-m30">
+        <div class="row">
+         <div class="col-lg-6">
+          <div class="token-alocate-item">
+           <div class="token-alocate-graph">
+            <span>
+             <ko>
+              토큰
+              <br/>
+              배분
+             </ko>
+             <en>
+              Token
+              <br/>
+              Allocation
+             </en>
+            </span>
+            <canvas id="token-alocate">
+            </canvas>
+           </div>
+           <ul class="chart-data" data-canvas="token-alocate" data-canvas-type="doughnut">
+            <li data-amount="10" data-color="#223fa8" data-title="Sales">
+            </li>
+            <li data-amount="10" data-color="#4aa0f6" data-title="Team">
+            </li>
+            <li data-amount="5" data-color="#6ad9ac" data-title="Partners">
+            </li>
+            <li data-amount="2" data-color="#d9a6ac" data-title="Advisors">
+            </li>
+            <li data-amount="3" data-color="#ac6ad9" data-title="Bounty">
+            </li>
+            <li data-amount="20" data-color="#8aa0f6" data-title="Reserve">
+            </li>
+            <li data-amount="50" data-color="#4d6fe9" data-title="User Acquisition">
+            </li>
+           </ul>
+          </div>
+         </div>
+         <!-- .col -->
+         <div class="col-lg-6">
+          <div class="token-alocate-item animated" data-animate="fadeInUp" data-delay=".2">
+           <div class="token-alocate-graph">
+            <span>
+             <ko>
+              자금 분배
+             </ko>
+             <en>
+              Funds
+              <br/>
+              Allocation
+             </en>
+            </span>
+            <canvas id="fund-alocate">
+            </canvas>
+           </div>
+           <ul class="chart-data" data-canvas="fund-alocate" data-canvas-type="doughnut">
+            <li data-amount="35" data-color="#15216d" data-title="Marketing">
+            </li>
+            <li data-amount="35" data-color="#4aa0f6" data-title="Development">
+            </li>
+            <li data-amount="5" data-color="#223fa8" data-title="Research">
+            </li>
+            <li data-amount="10" data-color="#72a3f4" data-title="Operation">
+            </li>
+            <li data-amount="10" data-color="#72a3f4" data-title="Overseas">
+            </li>
+            <li data-amount="5" data-color="#6ad9ac" data-title="Legal">
+            </li>
+           </ul>
+          </div>
+         </div>
+         <!-- .col -->
+        </div>
+        <!-- .row -->
+       </div>
+       <!-- .block @e -->
+      </div>
+      <div class="nk-ovm ovm-bottom ovm-h-70 bg-light">
+      </div>
+      <!-- .nk-ovm -->
+     </div>
+     <!-- .section-tokendes -->
+    </section>
+    <!-- // -->
+    <section class="section bg-light section-l section-document" id="documents">
+     <div class="container">
+      <!-- Section Head @s -->
+      <div class="section-head text-center wide-auto">
+       <h2 class="title">
+        <ko>
+         문서
+        </ko>
+        <en>
+         Documents
+        </en>
+       </h2>
+       <!-- <p class="animated" data-animate="fadeInUp" data-delay=".2">Our Tokens with real world use cases created on a blockchain.</p> -->
+      </div>
+      <!-- .section-head @e -->
+      <!-- Block @s -->
+      <div class="nk-block nk-block-document">
+       <div class="row justify-content-center">
+        <div class="col-lg-10">
+         <div class="card card-lg animated" data-animate="fadeInUp" data-delay=".3">
+          <div class="row align-items-center">
+           <div class="col-md-7">
+            <div class="nk-block-img px-4 pb-4 pb-md-0">
+             <!-- <img src="images/doc-a.png" alt="doc"> -->
+             <img alt="doc" src="images/whitepaper-mockup.png"/>
+            </div>
+           </div>
+           <!-- .col -->
+           <div class="col-md-5">
+            <div class="nk-block-text">
+             <h4 class="title title-md">
+              <ko>
+               백서 읽기
+              </ko>
+              <en>
+               Read the Whitepaper
+              </en>
+             </h4>
+             <p>
+              <ko>
+               글로벌 재능 경제를 구축하는데 블록체인을 어떻게 사용하는지 알아보세요.
+              </ko>
+              <en>
+               Get to know our action plans and see how we are going to use blockchain to help buildding a global gig economy
+              </en>
+             </p>
+             <ul class="btn-grp gutter-30px gutter-vr-20px">
+              <li>
+               <a class="btn btn-grad" href="https://docs.google.com/presentation/d/13Tk3Kwytvwb6-qmJG3THR3vQjZ94pVkRQHpopfW4ZCc/edit?usp=sharing" target="_blank">
+                Read WHite paper
+               </a>
+              </li>
+              <!-- <li><a href="#" class="link"><em class="link-icon fas fa-file-alt"></em> Download Two Pager</a></li> -->
+             </ul>
+            </div>
+           </div>
+           <!-- .col -->
+          </div>
+          <!-- .row -->
+         </div>
+         <!-- .box -->
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <!-- <section class="section section-l section-wallet bg-white" id="app-download"> -->
+    <!-- <section class="section section-l section-wallet tc-light bg-theme-grad" id="app-download">
+                <div class="container">
+                    <div class="nk-block nk-block-text-wrap">
+                        <div class="row align-items-center justify-content-center flex-row-reverse">
+                            <div class="col-lg-7 mb-4 mb-lg-0">
+                                <div class="nk-block-img bg-pattern-dots-color">
+                                    <div class="app-slide-wrap">
+                                        <div class="app-slide">
+                                            <img src="images/app-screens/a.jpg" alt="App Screen">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-10 text-center text-lg-left">
+                                <div class="nk-block-text">
+                                    <h2 class="title">Our App <br class="d-none d-md-block">In live operation</h2>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".2">We focus on product quality, market expansion and user satisfaction.</p>
+                                    <div class="pdt-m animated" data-animate="fadeInUp" data-delay=".3">
+                                        <a href="http://play.google.com/store/apps/details?id=com.fronty.ziktalk2" class="btn btn-grad">Download Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+    <!-- /wallet/ -->
+    <!-- <section class="section section-l section-wallet-bottom bg-white pdt-0" id="wallet">
+                <div class="container">
+                    <div class="nk-block nk-block-text-grp mgb-m30">
+                        <h6 class="title title-xs tc-primary pdb-s animated" data-animate="fadeInUp" data-delay=".4">Why Use Tokenpay Wallets?</h6>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="feature feature-5 animated" data-animate="fadeInUp" data-delay=".5">
+                                    <h4 class="title title-md">Safe &amp; Secure</h4>
+                                    <p>Tempore, cum soluta nobis est eligendi optio cumque nihil id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor impedit quo minus repellendus. </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="feature feature-5 animated" data-animate="fadeInUp" data-delay=".6">
+                                    <h4 class="title title-md">Universal and Interactive</h4>
+                                    <p>Placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="feature feature-5 animated" data-animate="fadeInUp" data-delay=".7">
+                                    <h4 class="title title-md">Send and Receive</h4>
+                                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section> -->
+    <!-- /admin intro/ -->
+    <!-- <section class="section section-l tc-light bg-theme-grad" id="admin-intro">
+                <div class="container">
+                    <div class="nk-block nk-block-text-wrap">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 order-lg-last">
+                                <div class="nk-block-img edge-r1 pb-4 pb-lg-0">
+                                    <img src="images/app-screens/laptop-a.png" alt="app">
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="nk-block-text">
+                                    <h6 class="title title-xs tc-primary">Ico Admin Dashboard</h6>
+                                    <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">Introducing Complete Admin Dashboard</h2>
+                                    <p class="animated" data-animate="fadeInUp" data-delay=".3">We designed the ICO Admin panel to mange back-end of ICO Token Sales. It’s allows to mange every thing such as KYC, Users, Transaction etc.</p>
+                                    <ul class="list list-check animated" data-animate="fadeInUp" data-delay=".4">
+                                        <li>Fully manage KYC application process.</li>
+                                        <li>Online Payment Gateway with Offline Payment option.</li>
+                                        <li>Manage ICO Stage &amp; each stage pricing and bonus option.</li>
+                                        <li>Analytics reports, Token Sales Data and others.</li>
+                                        <li>Newsletter with Emailing options.</li>
+                                        <li>Mobile Friendly and Support all modern browser.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section> -->
+    <!-- // -->
+    <section class="section section-l bg-white">
+     <div class="container">
+      <div class="section-head text-center wide-auto">
+       <h2 class="title">
+        <ko>
+         뉴스
+        </ko>
+        <en>
+         News
+        </en>
+       </h2>
+       <!-- <p class="animated" data-animate="fadeInUp" data-delay=".2">Our Tokens with real world use cases created on a blockchain.</p> -->
+      </div>
+      <!-- .section-head @e -->
+      <div class="nk-block nk-block-blog">
+       <div class="row">
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="https://www.youtube.com/watch?v=NIb6uQo8a8M" target="_blank">
+            <img alt="blog-thumb" src="images/news/19-06-frontier.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a>
+              02 Jun, 2019
+             </a>
+            </li>
+            <li>
+             <a>
+              <ko>
+               머니투데이
+              </ko>
+              <en>
+               MTN
+              </en>
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="https://www.youtube.com/watch?v=NIb6uQo8a8M" target="_blank">
+             <en>
+              Blockchain Insight - Frontier Interview
+             </en>
+             <ko>
+              블록체인 인사이트 - 프론티어 인터뷰
+             </ko>
+            </a>
+           </h4>
+           <p>
+            직톡은 글로벌 재능 공유 플랫폼을 목표로 개발중입니다. 직톡에선 법률, 마케팅, 비즈니스등 여러 분야의 전문가들과 직접 대화할 수 있게 될 것입니다.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105&amp;oid=015&amp;aid=0004150114" target="_blank">
+            <img alt="blog-thumb" src="images/news/19-05-29-financial-news.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a>
+              29 May, 2019
+             </a>
+            </li>
+            <li>
+             <a>
+              <ko>
+               한국 경제
+              </ko>
+              <en>
+               Korean Economy
+              </en>
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105&amp;oid=015&amp;aid=0004150114" target="_blank">
+             <en>
+              Ziktalk receives Investment from BW, a global exchange
+             </en>
+             <ko>
+              직톡, 해외 가상화폐거래소 BW서 투자 유치
+             </ko>
+            </a>
+           </h4>
+           <p>
+            중국을 포함한 동남아 시장에서 직톡 서비스가 영향력을 확대할 수 있도록 지원할 것
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="https://blockpost.com/tech/35272/" target="_blank">
+            <img alt="blog-thumb" src="images/news/19-04-22-blockpost.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a>
+              22 Apr, 2019
+             </a>
+            </li>
+            <li>
+             <a>
+              <ko>
+               블록포스트
+              </ko>
+              <en>
+               Block Post
+              </en>
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="https://blockpost.com/tech/35272/" target="_blank">
+             <en>
+              Global Knowledge Sharing Platform without Fees
+             </en>
+             <ko>
+              수수료 걱정 없는 글로벌 지식 공유 플랫폼
+             </ko>
+            </a>
+           </h4>
+           <p>
+            전세계에서 가장 큰 지식 공유 플랫폼을 만든다
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="http://www.fintechpost.co.kr/news/articleView.html?idxno=28556" target="_blank">
+            <img alt="blog-thumb" src="images/news/28556_16717_2130.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a href="#">
+              27 Mar, 2019
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              블록체인 밸리
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="http://www.fintechpost.co.kr/news/articleView.html?idxno=28556" target="_blank">
+             <ko>
+              [인터뷰] 심범석 직톡 대표
+             </ko>
+             <en>
+              Interview with Abraham Shim
+             </en>
+            </a>
+           </h4>
+           <p>
+            우리 시장은 글로벌. 우버,에어비앤비와 같은 유니콘 기업 목표. 글로벌 언어 공유플랫폼 1등 할것..
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="https://www.beinews.net/news/articleView.html?idxno=22539" target="_blank">
+            <img alt="blog-thumb" src="images/news/19-03-beinews.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a>
+              21 Mar, 2019
+             </a>
+            </li>
+            <li>
+             <a>
+              <ko>
+               비아이 뉴스
+              </ko>
+              <en>
+               BEI NEWS
+              </en>
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="https://www.beinews.net/news/articleView.html?idxno=22539" target="_blank">
+             <en>
+              From Video Call to Gig Market
+             </en>
+             <ko>
+              화상통화에서 지식마켓으로
+             </ko>
+            </a>
+           </h4>
+           <p>
+            분야별 전문인들, 예를 들어 변호사, 금융인, 디자이너 등과 대화할 수 있는 플랫폼으로 확장시켜 나갈 계획이다.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="http://www.bloter.net/archives/333843" target="_blank">
+            <img alt="blog-thumb" src="images/news/19-03-20-luniverse-partners.png"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a href="#">
+              20 Mar, 2019
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              블로터
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="http://www.bloter.net/archives/333843" target="_blank">
+             <ko>
+              람다256 ‘루니버스’ 출범
+             </ko>
+             <en>
+              Lambda256's Luniverse launches
+             </en>
+            </a>
+           </h4>
+           <p>
+            루니버스 생태계를 풍성하게 만드는 파트너십. 시너지를 낼 수 있는 파트너를 확보하는 것은..
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="http://www.betanews.net/article/987709" target="_blank">
+            <img alt="blog-thumb" src="images/news/49143_94141_106.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a href="#">
+              19 Mar, 2019
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              베타뉴스
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="http://www.betanews.net/article/987709" target="_blank">
+             <en>
+              Ziktalk partners with Luniverse
+             </en>
+             <ko>
+              직톡, 두나무의 람다256 ‘루니버스’ 합류
+             </ko>
+            </a>
+           </h4>
+           <p>
+            프론티는 지난해부터 람다256의 루니버스 프로젝트에 참여해 왔으며, 올해 1월 두나무와 정식 계약..
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="http://it.chosun.com/site/data/html_dir/2019/02/27/2019022702144.html" target="_blank">
+            <img alt="blog-thumb" src="images/news/2019022702128_0.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a href="#">
+              27 Feb, 2019
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              IT조선
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="http://it.chosun.com/site/data/html_dir/2019/02/27/2019022702144.html" target="_blank">
+             <ko>
+              글로벌 언어공유 직톡, 암호화폐 도입
+             </ko>
+             <en>
+              Ziktalk announce ZIK token
+             </en>
+            </a>
+           </h4>
+           <p>
+            직톡은 블록체인 기술을 도입해 기존 중개수수료를 1/10 수준인 5%대까지 단계적으로 줄일 계획..
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         <div class="blog">
+          <div class="blog-photo">
+           <a href="http://www.datanet.co.kr/news/articleView.html?idxno=122146" target="_blank">
+            <img alt="blog-thumb" src="images/news/122146_49550_2132.jpg"/>
+           </a>
+          </div>
+          <div class="blog-text">
+           <ul class="blog-meta">
+            <li>
+             <a href="#">
+              26 Apr, 2018
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              DataNet
+             </a>
+            </li>
+           </ul>
+           <h4 class="title title-sm">
+            <a href="http://www.datanet.co.kr/news/articleView.html?idxno=122146" target="_blank">
+             <ko>
+              직톡으로 한국어와 문화 배웠어요
+             </ko>
+             <en>
+              I learned Korean with Ziktalk
+             </en>
+            </a>
+           </h4>
+           <p>
+            다국어 원어민 애플리케이션인 직톡은 언제 어디서든 원어민과 화상 또는 음성으로 통화하며 회화..
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- <nav class="w-100 d-flex">
+                            <ul class="pagination">
+                                <li><a class="active" href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#"><em class="icon ti ti-angle-right"></em></a></li>
+                            </ul>
+                        </nav> -->
+      </div>
+     </div>
+    </section>
+    <section class="section section-l section-roadmap bg-light" id="roadmap">
+     <div class="container">
+      <!-- Section Head @s -->
+      <div class="section-head text-center wide-auto">
+       <!-- <h6 class="title title-xs title-light"><ko>성공으로 가는 로드맵</ko><en>The roadmap to success</en></h6> -->
+       <h2 class="title title-lg title-dark animated" data-animate="fadeInUp" data-delay=".2">
+        <ko>
+         로드맵
+        </ko>
+        <en>
+         Roadmap
+        </en>
+       </h2>
+       <!-- <h6 class="title title-xs title-light"><ko>이미 많은 일을 마쳤습니다</ko><en>We've done a lot of work already</en></h6>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".3"><ko>다음 계획을 위해 달리고 있습니다 🚀</ko><en>We're working hard for the next plan 🚀</en></p> -->
+       <p class="animated" data-animate="fadeInUp" data-delay=".3">
+        <ko>
+         이미 많은 일을 마쳤고
+         <br/>
+         다음 계획을 위해 달리고 있습니다 🚀
+        </ko>
+        <en>
+         We've done a lot of work already
+         <br/>
+         and we're working hard for the next plan 🚀
+        </en>
+        <br/>
+       </p>
+      </div>
+      <!-- .section-head @e -->
+      <!-- Block @s -->
+      <div class="nk-block nk-block-roadmap">
+       <div class="row justify-content-center">
+        <div class="col-xl-10">
+         <div class="roadmap-wrap">
+          <div class="roadmap-line">
+          </div>
+          <div class="roadmap roadmap-left roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2006년 9월
+              </ko>
+              <en>
+               Sep 2016
+              </en>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v1.0
+             </span>
+            </div>
+            <p>
+             <en>
+              Launched on Google Play
+             </en>
+             <ko>
+              구글플레이에 출시하였습니다
+             </ko>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap animated" data-animate="fadeInUp" data-delay=".4">
+           <div class="roadmap-year">
+            2017
+           </div>
+          </div>
+          <div class="roadmap roadmap-right roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2017년 1월
+              </ko>
+              <en>
+               Jan 2017
+              </en>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v1.0 - iOS
+             </span>
+            </div>
+            <p>
+             <ko>
+              앱스토어에 출시하였습니다
+             </ko>
+             <en>
+              Launched on App Store
+             </en>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap roadmap-left roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2017년 7월
+              </ko>
+              <en>
+               Jul 2017
+              </en>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v2.0
+             </span>
+            </div>
+            <p>
+             <ko>
+              소셜 네트워크 추가
+             </ko>
+             <en>
+              Social Network
+             </en>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap roadmap-right roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2017년 11월
+              </ko>
+              <en>
+               Nov 2017
+              </en>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v3.0
+             </span>
+            </div>
+            <p>
+             <ko>
+              통화중 레슨 기능 추가
+             </ko>
+             <en>
+              Lessons in Call
+             </en>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap roadmap-left roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2017년 12월
+              </ko>
+              <en>
+               Dec 2017
+              </en>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v4.0
+             </span>
+            </div>
+            <p>
+             <ko>
+              언어 교환
+             </ko>
+             <en>
+              Language Exchanges
+             </en>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap animated" data-animate="fadeInUp" data-delay=".4">
+           <div class="roadmap-year">
+            2018
+           </div>
+          </div>
+          <div class="roadmap roadmap-right roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2018년 3월
+              </ko>
+              <en>
+               Mar 2018
+              </en>
+             </span>
+             <span class="roadmap-title">
+              <en>
+               Investment from Venture Square Inc
+              </en>
+              <ko>
+               벤처스퀘어 투자 유치
+              </ko>
+             </span>
+            </div>
+            <!-- <p>Thanks for a recognization from the renowned accelator.</p> -->
+           </div>
+          </div>
+          <div class="roadmap roadmap-left roadmap-finished animated" data-animate="fadeInUp" data-delay=".6">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2018년 9월
+              </ko>
+              <en>
+               Sep 2018
+              </en>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v5.0
+             </span>
+            </div>
+            <p>
+             <ko>
+              버전 4이후 다양한 개선들이 이루어졌습니다
+             </ko>
+             <en>
+              Collection of many improvements
+             </en>
+            </p>
+            <!-- <ul class="list list-dot roadmap-step-list">
+                                                <li>MVP of wallet prototype released</li>
+                                                <li>Pre-Sale ICO Starts</li>
+                                                <li>Redesign of website goes live</li>
+                                                <li>Version 2 of Whitepaper released</li>
+                                                <li>Version 3 of Onepager released</li>
+                                            </ul> -->
+           </div>
+          </div>
+          <div class="roadmap roadmap-right roadmap-finished animated" data-animate="fadeInUp" data-delay=".6">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <ko>
+               2018년 12월
+              </ko>
+              <en>
+               Dec 2018
+              </en>
+             </span>
+             <span class="roadmap-title">
+              <ko>
+               람다256, 두나무와 협력
+              </ko>
+              <en>
+               Partnership with Lambda 256 &amp; Dunamu
+              </en>
+             </span>
+            </div>
+            <p>
+             <ko>
+              업비트의 운영사인 두나무 산하 연구소 람다256과 긴밀히 협력하고 있습니다
+             </ko>
+             <en>
+              We're working closely with Dunamu, a very highly regarded crypto-exchange company in Korea.
+             </en>
+            </p>
+            <!-- <ul class="list list-dot roadmap-step-list">
+                                                <li>MVP of wallet prototype released</li>
+                                                <li>Pre-Sale ICO Starts</li>
+                                                <li>Redesign of website goes live</li>
+                                                <li>Version 2 of Whitepaper released</li>
+                                                <li>Version 3 of Onepager released</li>
+                                            </ul> -->
+           </div>
+          </div>
+          <div class="roadmap animated" data-animate="fadeInUp" data-delay=".4">
+           <div class="roadmap-year">
+            2019
+           </div>
+          </div>
+          <div class="roadmap roadmap-right roadmap-progress animated" data-animate="fadeInUp" data-delay=".5">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <en>
+               Apr 2019 ~ Jul 2019
+              </en>
+              <ko>
+               2019년 4월 ~ 7월
+              </ko>
+             </span>
+             <span class="roadmap-title">
+              <en>
+               Private Sale
+              </en>
+              <ko>
+               프라이빗 세일
+              </ko>
+             </span>
+            </div>
+            <p>
+             <ko>
+              프라이빗 투자자들과 만나는 중입니다
+             </ko>
+             <en>
+              We are meeting with private investors
+             </en>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap roadmap-left roadmap-finished animated" data-animate="fadeInUp" data-delay=".6">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <en>
+               June 2019
+              </en>
+              <ko>
+               2019년 6월
+              </ko>
+             </span>
+             <span class="roadmap-title">
+              Ziktalk v6.0
+             </span>
+            </div>
+            <p>
+             <en>
+              We've rewritten almost entire codebase to improve code quality and quicken the future development process
+             </en>
+             <ko>
+              코드 품질을 향상시키고 향후 개발 프로세스를 더 빠르게 하기 위해 거의 모든 코드를 새로이 작성하였습니다
+             </ko>
+            </p>
+           </div>
+          </div>
+          <div class="roadmap roadmap-right roadmap-finished animated" data-animate="fadeInUp" data-delay=".6">
+           <div class="roadmap-step">
+            <div class="roadmap-head">
+             <span class="roadmap-time">
+              <en>
+               Jul 2019
+              </en>
+              <ko>
+               2019년 7월
+              </ko>
+             </span>
+             <span class="roadmap-title">
+              <en>
+               List on BW.COM
+              </en>
+              <ko>
+               BW 상장
+              </ko>
+             </span>
+            </div>
+            <p>
+             <en>
+              Details are to be announced
+             </en>
+             <ko>
+              상세 사항은 차후 공지될 예정입니다
+             </ko>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+       <!-- <div class="text-center animated" data-animate="fadeInUp" data-delay=".4">
+                            <a href="#" class="btn btn-grad">View Full Roadmap</a>
+                        </div> -->
+      </div>
+      <!-- Block @e -->
+     </div>
+    </section>
+    <!-- // -->
+    <!-- <section class="section section-l section-team bg-light pt-0" id="team"> -->
+    <section class="section section-l section-team bg-white" id="team">
+     <div class="container">
+      <div class="section-head text-center wide-auto">
+       <h2 class="title title-lg title-dark">
+        Core Team
+       </h2>
+      </div>
+      <!-- Block @s -->
+      <div class="nk-block nk-block-team-list team-list">
+       <div class="row justify-content-center">
+        <div class="col-md-3 col-6">
+         <div class="team animated" data-animate="fadeInUp" data-delay=".2">
+          <div class="team-photo">
+           <img alt="team" src="images/team/abe.jpg"/>
+           <a class="team-show content-popup" href="#team-popup-1">
+           </a>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/ziktalk/" target="_blank">
+              <em class="fab fa-linkedin-in">
+              </em>
+             </a>
+            </li>
+            <!-- <li><a href="#"><em class="fab fa-facebook-f"></em></a></li> -->
+           </ul>
+          </div>
+          <h5 class="team-name title title-sm">
+           <ko>
+            심범석
+           </ko>
+           <en>
+            Abraham Shim
+           </en>
+          </h5>
+          <span class="team-position">
+           CEO
+          </span>
+         </div>
+         <!-- Start .team-profile  -->
+         <div class="team-popup mfp-hide" id="team-popup-1">
+          <a class="mfp-close" title="Close">
+           ×
+          </a>
+          <div class="row align-items-start">
+           <div class="col-md-6">
+            <div class="team-photo">
+             <img alt="team" src="images/team/abe.jpg"/>
+            </div>
+           </div>
+           <!-- .col  -->
+           <div class="col-md-6">
+            <div class="team-popup-info pl-md-3">
+             <h3 class="team-name title title-lg pt-4">
+              <ko>
+               심범석
+              </ko>
+              <en>
+               Abraham Shim
+              </en>
+             </h3>
+             <p class="team-position">
+              CEO
+             </p>
+             <ul class="team-social mb-4">
+              <!-- <li><a href="#"><em class="fab fa-facebook-f"></em></a></li> -->
+              <li>
+               <a href="https://www.linkedin.com/in/ziktalk/" target="_blank">
+                <em class="fab fa-linkedin-in">
+                </em>
+               </a>
+              </li>
+             </ul>
+             <!-- <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                                <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p> -->
+             <div class="progress-list">
+              <div class="progress-wrap">
+               <div class="progress-title">
+                Determination
+                <span class="progress-amount">
+                 75%
+                </span>
+               </div>
+               <div class="progress-bar progress-bar-xs bg-black-10">
+                <div class="progress-percent bg-primary" data-percent="75">
+                </div>
+               </div>
+              </div>
+              <div class="progress-wrap">
+               <div class="progress-title">
+                Courage
+                <span class="progress-amount">
+                 85%
+                </span>
+               </div>
+               <div class="progress-bar progress-bar-xs bg-black-10">
+                <div class="progress-percent bg-primary" data-percent="85">
+                </div>
+               </div>
+              </div>
+              <div class="progress-wrap">
+               <div class="progress-title">
+                Detail
+                <span class="progress-amount">
+                 55%
+                </span>
+               </div>
+               <div class="progress-bar progress-bar-xs bg-black-10">
+                <div class="progress-percent bg-primary" data-percent="55">
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <!-- .col  -->
+          </div>
+          <!-- .row  -->
+         </div>
+         <!-- .team-profile  -->
+        </div>
+        <!-- .col -->
+        <div class="col-md-3 col-6">
+         <div class="team animated" data-animate="fadeInUp" data-delay=".3">
+          <div class="team-photo">
+           <img alt="team" src="images/team/josh.jpg"/>
+           <a class="team-show content-popup" href="#team-popup-3">
+           </a>
+           <ul class="team-social">
+            <li>
+             <a href="https://www.linkedin.com/in/joshua-shim-51863651">
+              <em class="fab fa-linkedin-in">
+              </em>
+             </a>
+            </li>
+            <!-- <li><a href="#"><em class="fab fa-facebook-f"></em></a></li> -->
+           </ul>
+          </div>
+          <h5 class="team-name title title-sm">
+           <ko>
+            심명성
+           </ko>
+           <en>
+            Josh Shim
+           </en>
+          </h5>
+          <span class="team-position">
+           CMO
+          </span>
+         </div>
+         <!-- Start .team-profile  -->
+         <div class="team-popup mfp-hide" id="team-popup-3">
+          <a class="mfp-close" title="Close">
+           ×
+          </a>
+          <div class="row align-items-start">
+           <div class="col-md-6">
+            <div class="team-photo">
+             <img alt="team" src="images/team/josh.jpg"/>
+            </div>
+           </div>
+           <!-- .col  -->
+           <div class="col-md-6">
+            <div class="team-popup-info pl-md-3">
+             <h3 class="team-name title title-lg pt-4">
+              <ko>
+               심명성
+              </ko>
+              <en>
+               Josh Shim
+              </en>
+             </h3>
+             <p class="team-position">
+              CMO
+             </p>
+             <ul class="team-social mb-4">
+              <!-- <li><a href="#"><em class="fab fa-facebook-f"></em></a></li> -->
+              <li>
+               <a href="https://www.linkedin.com/in/joshua-shim-51863651">
+                <em class="fab fa-linkedin-in">
+                </em>
+               </a>
+              </li>
+             </ul>
+             <!-- <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                                <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p> -->
+            </div>
+           </div>
+           <!-- .col  -->
+          </div>
+          <!-- .row  -->
+         </div>
+         <!-- .team-profile  -->
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+       <!-- <div class="text-center animated" data-animate="fadeInUp" data-delay=".5">
+                            <a href="#" class="btn btn-grad">See All Team Member</a>
+                        </div> -->
+      </div>
+      <!-- Block @r -->
+     </div>
+    </section>
+    <!-- // -->
+    <!-- <section class="section section-l section-faq bg-white" id="faq">
+                <div class="container">
+                    <div class="section-head text-center wide-auto">
+                        <h2 class="title">FAQs</h2>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch via email.</p>
+                    </div>
+                    <div class="nk-block block-faq">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3 mb-4 mb-lg-0">
+                                <ul class="nav tab-nav tab-nav-vr tab-nav-bdr mr-lg-3 animated" data-animate="fadeInUp" data-delay=".3">
+                                    <li><a class="active" data-toggle="tab" href="#general-questions"><em class="fas fa-caret-right"></em>General Questions</a></li>
+                                    <li><a data-toggle="tab" href="#tokens-sales"><em class="fas fa-caret-right"></em>Tokens Sales</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="general-questions">
+                                        <div class="accordion accordion-faq" id="faq-1">
+                                            <div class="accordion-item">
+                                                <h5 class="accordion-title accordion-title-sm" data-toggle="collapse" data-target="#faq-1-1">What is ZIK? <span class="accordion-icon"></span></h5>
+                                                <div id="faq-1-1" class="collapse show" data-parent="#faq-1">
+                                                    <div class="accordion-content">
+                                                        <p>Ziktalk Token.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".2">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-1-2">What cryptocurrencies can I use to purchase? <span class="accordion-icon"></span></h5>
+                                                <div id="faq-1-2" class="collapse" data-parent="#faq-1">
+                                                    <div class="accordion-content">
+                                                        <p>Ethereum or Luk (Luniverse)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".3">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-1-3">How can I participate in the ICO Token sale? <span class="accordion-icon"></span></h5>
+                                                <div id="faq-1-3" class="collapse" data-parent="#faq-1">
+                                                    <div class="accordion-content">
+                                                        <p>Once ICO is launched, you can purchased directly in this site or in Ziktalk app.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".4">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-1-4">How do I benefit from the ICO Token? <span class="accordion-icon"></span></h5>
+                                                <div id="faq-1-4" class="collapse" data-parent="#faq-1">
+                                                    <div class="accordion-content">
+                                                        <p>You own ZIK before any other non-participants.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tokens-sales">
+                                        <div class="accordion accordion-faq" id="faq-3">
+                                            <div class="accordion-item">
+                                                <h5 class="accordion-title accordion-title-sm" data-toggle="collapse" data-target="#faq-3-1">Q<span class="accordion-icon"></span></h5>
+                                                <div id="faq-3-1" class="collapse show" data-parent="#faq-3">
+                                                    <div class="accordion-content">
+                                                        <p>A</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".2">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-3-2">Q<span class="accordion-icon"></span></h5>
+                                                <div id="faq-3-2" class="collapse" data-parent="#faq-3">
+                                                    <div class="accordion-content">
+                                                        <p>A</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".3">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-3-3">Q<span class="accordion-icon"></span></h5>
+                                                <div id="faq-3-3" class="collapse" data-parent="#faq-3">
+                                                    <div class="accordion-content">
+                                                        <p>A</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".4">
+                                                <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-3-4">Q<span class="accordion-icon"></span></h5>
+                                                <div id="faq-3-4" class="collapse" data-parent="#faq-3">
+                                                    <div class="accordion-content">
+                                                        <p>A</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+    <!-- // -->
+    <section class="section section-m section-partners bg-gray" id="partners">
+     <div class="container">
+      <!-- Block @s -->
+      <div class="nk-block block-partners">
+       <div class="section-head text-center wide-auto">
+        <h2 class="title title-lg title-dark">
+         <ko>
+          파트너사
+         </ko>
+         <en>
+          Our Partners
+         </en>
+        </h2>
+       </div>
+       <!-- <h6 class="title title-xs tc-primary text-center">Our Partners</h6> -->
+       <ul class="partner-list flex-lg-nowrap">
+        <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".2">
+         <img alt="partner" src="images/partners/luniverse.png"/>
+        </li>
+        <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".3">
+         <img alt="partner" src="images/partners/venturesquare.png"/>
+        </li>
+        <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".4">
+         <img alt="partner" src="images/partners/hexlant.png"/>
+        </li>
+        <!-- <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".5"><img src="images/partners/d.png" alt="partner"></li>
+                            <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".6"><img src="images/partners/e.png" alt="partner"></li>
+                            <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".7"><img src="images/partners/f.png" alt="partner"></li>
+                            <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".8"><img src="images/partners/g.png" alt="partner"></li> -->
+       </ul>
+      </div>
+      <!-- Block @e -->
+     </div>
+    </section>
+   </main>
+   <footer class="nk-footer bg-theme-grad">
+    <!-- <section class="section no-pdy section-contact bg-transparent">
+				<div class="container">
+					<div class="nk-block block-contact animated" data-animate="fadeInUp" data-delay=".9" id="contact">
+                        <div class="row justify-content-center no-gutters">
+                            <div class="col-lg-6">
+                                <div class="contact-wrap bg-genitian tc-white round">
+                                    <h5 class="title title-md tc-light">Contact us for private sale options</h5>
+                                    <ul class="contact-list">
+                                        <li>
+                                            <em class="contact-icon fas fa-building"></em>
+                                            <div class="contact-text">
+                                                <div>Fronty Inc.</div>
+                                                <span>Maebongsan-ro 31, Mapo-gu<br/>Seoul, Korea</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <em class="contact-icon fas fa-phone"></em>
+                                            <div class="contact-text">
+                                                <span>+82-10-4486-9007</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <em class="contact-icon fas fa-envelope"></em>
+                                            <div class="contact-text">
+                                                <span>private@ziktalk.com</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				
+				<div class="nk-ovm ovm-top ovm-h-60 bg-light"></div>
+			</section> -->
+    <!-- <section class="section no-pdy section-contact bg-transparent">
+                <div class="container">
+                    <div class="nk-block block-contact animated" data-animate="fadeInUp" data-delay=".9">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="card card-lg animated" data-animate="fadeInUp" data-delay=".3">
+                                    <div class="row align-items-center">
+                                        <h5 class="title title-md">Contact us for private sale options</h5>
+                                        <ul class="contact-list">
+                                            <li>
+                                                <em class="contact-icon fas fa-building"></em>
+                                                <div class="contact-text">
+                                                    <h6>Fronty Inc.</h6>
+                                                    <span>Maebongsan-ro 31, Mapo-gu<br/>Seoul, Korea</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <em class="contact-icon fas fa-phone"></em>
+                                                <div class="contact-text">
+                                                    <span>+82-10-4486-9007</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <em class="contact-icon fas fa-envelope"></em>
+                                                <div class="contact-text">
+                                                    <span>help@ziktalk.com</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <em class="contact-icon fas fa-paper-plane"></em>
+                                                <div class="contact-text">
+                                                    <span>Join us on Telegram</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="nk-ovm ovm-top ovm-h-60 bg-light"></div>
+            </section> -->
+    <section class="section no-pdy section-contact bg-transparent">
+     <div class="container" id="contactus">
+      <div class="nk-block block-contact animated" data-animate="fadeInUp" data-delay=".9" id="contact">
+       <div class="row justify-content-center no-gutters">
+        <div class="col-lg-4">
+         <div class="contact-wrap split split-left split-lg-left bg-white">
+          <h5 class="title title-md">
+           <ko>
+            연락처
+           </ko>
+           <en>
+            Contact Us
+           </en>
+          </h5>
+          <div>
+           <en>
+            Are you interested in private sale options?
+            <br/>
+            <br/>
+            Contact us directly via phone or join one of our channels.
+           </en>
+           <ko>
+            프라이빗 세일에 관심이 있으신가요?
+            <br/>
+            <br/>
+            전화로 직접 연락주시거나 카카오톡이나 텔레그램 채널에서 문의 주세요.
+           </ko>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="contact-wrap split split-right split-lg-right bg-genitian bg-theme tc-light">
+          <div class="d-flex flex-column justify-content-between h-100">
+           <ul class="contact-list">
+            <li>
+             <em class="contact-icon fas fa-building">
+             </em>
+             <div class="contact-text">
+              <h6>
+               Fronty Inc.
+              </h6>
+              <span>
+               Maebongsan-ro 31, Mapo-gu
+               <br/>
+               Seoul, Korea
+              </span>
+             </div>
+            </li>
+            <li>
+             <em class="contact-icon fas fa-phone">
+             </em>
+             <div class="contact-text">
+              <h6>
+               <en>
+                Abraham Shim
+               </en>
+               <ko>
+                심범석
+               </ko>
+              </h6>
+              <span>
+               +82-10-4486-9007
+              </span>
+             </div>
+            </li>
+            <li>
+             <em class="contact-icon fas fa-envelope">
+             </em>
+             <div class="contact-text">
+              <span>
+               <a href="mailto:shim@ziktalk.com">
+                shim@ziktalk.com
+               </a>
+              </span>
+             </div>
+            </li>
+            <li>
+             <em class="contact-icon fab fa-facebook-f">
+             </em>
+             <div class="contact-text">
+              <span>
+               <a href="https://www.facebook.com/ziktalk/" target="_blank">
+                facebook.com/ziktalk
+               </a>
+              </span>
+             </div>
+            </li>
+            <!-- <li>
+                                                <em class="contact-icon fas fa-paper-plane"></em>
+                                                <div class="contact-text">
+                                                    <span>Join us on Telegram</span>
+                                                </div>
+                                            </li> -->
+           </ul>
+           <div class="contact-social">
+            <h6>
+             Be a part of our community
+            </h6>
+            <ul class="btn-grp gutter-10px gutter-vr-10px">
+             <li>
+              <a class="btn btn-light btn-md" href="https://open.kakao.com/o/gz048bjb" target="_blank">
+               <en>
+                Join Kakaotalk
+               </en>
+               <ko>
+                카카오톡
+               </ko>
+               <img height="25px" src="images/social/kakaotalk.png" width="25px"/>
+              </a>
+             </li>
+             <li>
+              <a class="btn btn-light btn-md" href="https://t.me/ziktoken" target="_blank">
+               <en>
+                Join Telegram
+               </en>
+               <ko>
+                텔레그램
+               </ko>
+               <img height="25px" src="images/social/telegram.png" width="25px"/>
+              </a>
+             </li>
+            </ul>
+            <!-- <ul class="social-links">
+                                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-medium-m"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-youtube"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-github"></em></a></li>
+                                            </ul> -->
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="nk-ovm ovm-top ovm-h-60 bg-light">
+     </div>
+    </section>
+    <!-- <section class="section no-pdy section-contact bg-transparent">
+				<div class="container">
+					<div class="nk-block block-contact animated" data-animate="fadeInUp" data-delay=".9" id="contact">
+                        <div class="row justify-content-center no-gutters">
+                            <div class="col-lg-6">
+                                <div class="contact-wrap split split-left split-lg-left bg-white">
+                                    <h5 class="title title-md">Contact Us</h5>
+                                    <form class="nk-form-submit" action="form/contact.php" method="post">
+                                        <div class="field-item">
+                                            <input name="contact-name" type="text" class="input-line required">
+                                            <label class="field-label field-label-line">Your Name</label>
+                                        </div>
+                                        <div class="field-item">
+                                            <input name="contact-email" type="email" class="input-line required email">
+                                            <label class="field-label field-label-line">Your Email</label>
+                                        </div>
+                                        <div class="field-item">
+                                            <textarea name="contact-message" class="input-line input-textarea required"></textarea>
+                                            <label class="field-label field-label-line">Your Message</label>
+                                        </div>
+                                        <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <button type="submit" class="btn btn-lg btn-grad">Submit</button>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="form-results"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="contact-wrap split split-right split-lg-right bg-genitian bg-theme tc-light">
+                                    <div class="d-flex flex-column justify-content-between h-100">
+                                        <ul class="contact-list">
+                                            <li>
+                                                <em class="contact-icon fas fa-building"></em>
+                                                <div class="contact-text">
+                                                    <h6>Fronty Inc.</h6>
+                                                    <span>Maebongsan-ro 31, Mapo-gu<br/>Seoul, Korea</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <em class="contact-icon fas fa-phone"></em>
+                                                <div class="contact-text">
+                                                    <span>+82-10-4486-9007</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <em class="contact-icon fas fa-envelope"></em>
+                                                <div class="contact-text">
+                                                    <span>help@ziktalk.com</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <em class="contact-icon fas fa-paper-plane"></em>
+                                                <div class="contact-text">
+                                                    <span>Join us on Telegram</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="contact-social">
+                                            <h6>Be a part of our community</h6>
+                                            <ul class="social-links">
+                                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-medium-m"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-youtube"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
+                                                <li><a href="#"><em class="fab fa-github"></em></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				
+				<div class="nk-ovm ovm-top ovm-h-60 bg-light"></div>
+			</section> -->
+    <section class="section section-footer section-l tc-light bg-transparent">
+     <div class="container">
+      <div class="nk-block block-footer">
+       <div class="row">
+        <div class="col-lg-2 col-sm-4 mb-4 mb-sm-0">
+         <div class="wgs wgs-menu animated" data-animate="fadeInUp" data-delay=".2">
+          <h6 class="wgs-title">
+           Company
+          </h6>
+          <div class="wgs-body">
+           <ul class="wgs-links">
+            <li>
+             <a href="#">
+              About Us
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Meet Our Team
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Advisors
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Partners
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Contact Us
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Insights
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-2 col-sm-4 mb-4 mb-sm-0">
+         <div class="wgs wgs-menu animated" data-animate="fadeInUp" data-delay=".3">
+          <h6 class="wgs-title">
+           Legal
+          </h6>
+          <div class="wgs-body">
+           <ul class="wgs-links">
+            <li>
+             <a href="#">
+              Terms &amp; Conditions
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Privacy Policy
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Terms of Sales
+             </a>
+            </li>
+            <li>
+             <a href="https://docs.google.com/presentation/d/13Tk3Kwytvwb6-qmJG3THR3vQjZ94pVkRQHpopfW4ZCc/edit?usp=sharing" target="_blank">
+              Whitepaper
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-2 col-sm-4 mb-4 mb-sm-0">
+         <div class="wgs wgs-menu animated" data-animate="fadeInUp" data-delay=".4">
+          <h6 class="wgs-title">
+           Quick Links
+          </h6>
+          <div class="wgs-body">
+           <ul class="wgs-links">
+            <li>
+             <a href="#">
+              Ecosystems
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Tokens
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Roadmaps
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Faqs
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Login
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+        <div class="col-lg-6 mb-4 mb-lg-0 order-lg-first">
+         <div class="wgs wgs-text">
+          <div class="wgs-body">
+           <a class="wgs-logo" href="./">
+            <img alt="logo" src="images/logo-full-white2x.png" srcset="images/logo-full-white2x.png 2x"/>
+           </a>
+           <p>
+            Copyright © 2019 Fronty Inc.
+            <br/>
+            All rights reserved.
+           </p>
+          </div>
+         </div>
+        </div>
+        <!-- .col -->
+       </div>
+       <!-- .row -->
+      </div>
+      <!-- .block @e -->
+     </div>
+    </section>
+    <div class="nk-ovm shape-b">
+    </div>
+   </footer>
+  </div>
+  <div class="preloader">
+   <span class="spinner spinner-round">
+   </span>
+  </div>
+  <!-- JavaScript -->
+  <script src="assets/js/jquery.bundle.js?ver=150">
+  </script>
+  <script src="assets/js/scripts.js?ver=150">
+  </script>
+  <script src="assets/js/charts.js">
+  </script>
+ </body>
+</html>

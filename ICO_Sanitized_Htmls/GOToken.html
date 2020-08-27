@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta charset="utf-8"/>
+  <script type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+   (window.NREUM||(NREUM={})).loader_config={licenseKey:"67b7321a72",applicationID:"303483737"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);
+  </script>
+  <title>
+   GOToken ParkinGO utility Token
+  </title>
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport"/>
+  <meta content="ParkinGO utility Token" name="description"/>
+  <meta content="ParkinGO utility Token" name="keywords"/>
+  <link href="/bower_components/aos/dist/aos.css" rel="stylesheet"/>
+  <link href="/bower_components/slick-carousel/slick/slick.css" rel="stylesheet"/>
+  <link href="/bower_components/slick-carousel/slick/slick-theme.css" rel="stylesheet"/>
+  <link href="/bower_components/jquery-ui/themes/base/all.css" rel="stylesheet"/>
+  <link href="/css/jquery.fancybox.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet"/>
+  <link href="/js/select2/select2.min.css" rel="stylesheet"/>
+  <link href="/css/style.css?v=ec96d4e6f" rel="stylesheet"/>
+  <link href="/images/favicon.ico" rel="shortcut icon"/>
+ </head>
+ <body>
+  <div class="sliding-header home">
+   <div class="wrapper">
+    <a class="logo-wrapper" href="/">
+     <div class="logo-ico gotoken">
+      <img alt="" src="images/GOToken.png"/>
+     </div>
+    </a>
+    <a class="logo-wrapper" href="https://www.parkingo.com/en/" target="_blank">
+     <div class="powered">
+      <div class="text">
+       Powered by
+      </div>
+      <figure>
+       <img alt="" src="images/parkingo.svg"/>
+      </figure>
+     </div>
+    </a>
+    <div class="actions">
+     <a class="btn bordered small whitepaper" href="https://www.parkingo.com/en/" target="_blank">
+      Book now
+     </a>
+    </div>
+   </div>
+  </div>
+  <!-- OLD MENUS -->
+  <!--<div class="sliding-header fixed">
+        <div class="wrapper">
+            <a href="/" class="logo-wrapper">
+                <div class="logo-ico gotoken">
+                    <img src="images/GOToken.png" alt="">
+                </div>
+                <div class="powered">
+                    <div class="text">Powered by</div>
+                    <figure><img src="images/parkingo.svg" alt=""></figure>
+                </div>
+            </a>
+
+            <div class="actions">
+                <a href="/whitepaper-parkingo.pdf" target="_blank" class="btn bordered small whitepaper"></a>
+                <a data-fancybox data-type="ajax" data-src="form_contatto" href="javascript:;" class="btn small"></a> 
+                <a class="btn small" href="kyc-check">
+                        </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sliding-header home">
+        <div class="wrapper">
+            <a href="#hero" class="logo-wrapper scroll-link anchor-link">
+                <div class="logo-ico gotoken">
+                    <img src="images/GOToken.png" alt="">
+                </div>
+                <div class="powered">
+                    <div class="text">Powered by</div>
+                    <figure><img src="images/parkingo.svg" alt=""></figure>
+                </div>
+            </a>
+            <div class="actions">
+                <a href="/whitepaper-parkingo.pdf" target="_blank" class="btn bordered small whitepaper">
+                    </a>
+                <a class="btn small" href="kyc-check">
+                        </a>
+            </div>
+        </div>
+    </div> -->
+  <div class="fixed-header">
+   <div class="languages">
+    <select class="languages-choise" id="selezioneLingua" name="selezioneLingua" style="width: 100%;">
+     <option value="ita|/it/index">
+      IT
+     </option>
+     <option selected="" value="eng|/en/index">
+      EN
+     </option>
+     <option value="esp|/es/index">
+      ES
+     </option>
+     <option value="fra|/fr/index">
+      FR
+     </option>
+     <option value="deu|/de/index">
+      DE
+     </option>
+     <option value="cze|/cz/index">
+      CZ
+     </option>
+     <option value="slo|/sk/index">
+      SK
+     </option>
+     <option value="rus|/ru/index">
+      RU
+     </option>
+     <option value="ara|/ar/index">
+      AR
+     </option>
+    </select>
+   </div>
+  </div>
+  <div class="telegram-button">
+   <a href="https://t.me/joinchat/HijtbkwYo9ekRsq0T9m_yw" target="_blank">
+    <i class="fab fa-telegram">
+    </i>
+   </a>
+  </div>
+  <div class="hero" id="hero">
+   <div class="crypto-texture">
+   </div>
+   <div class="wrapper">
+    <div class="left">
+     <div class="intro" data-aos="fade-right" data-aos-delay="300">
+      <div class="image gotoken">
+       <div class="sparkle">
+        <img alt="" src="images/sparkle.png"/>
+       </div>
+       <img alt="" src="images/GOToken.png"/>
+      </div>
+      <div class="text">
+       <h1>
+        GOToken
+       </h1>
+       <p>
+       </p>
+       <p>
+        <strong>
+         GOToken is the ParkinGO utility token that allows you to purchase any network services in a fast and innovative way.
+        </strong>
+       </p>
+       <p>
+       </p>
+      </div>
+      <div class="powered-by">
+       <span>
+        powered by
+       </span>
+       <img alt="" src="images/parkingo.svg"/>
+      </div>
+     </div>
+     <div class="other-actions" data-aos="zoom-in" data-aos-delay="400">
+      <a class="btn small bordered" href="https://www.parkingo.com/en/" target="_blank">
+       Book now
+      </a>
+      <div style="text-align:center;padding-top: 30px;">
+       <span class="text">
+        Buy GOToken on
+       </span>
+       <a href="https://www.ethfinex.com/" target="_blank">
+        <img alt="Ethfinex" src="images/Ethfinex_logo.svg" style="max-width: 200px;"/>
+       </a>
+      </div>
+     </div>
+     <!--<div class="other-actions" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="balance" class="btn bordered">
+                    VERIFY YOUR BALANCE</a>
+                </div>-->
+    </div>
+    <div class="right">
+     <div class="go" data-aos="zoom-in" data-aos-delay="300">
+      <img alt="" src="images/hero-go.svg"/>
+     </div>
+     <div class="payoff">
+      Innovating Mobility through the blockchain
+     </div>
+    </div>
+   </div>
+  </div>
+  <main class="" id="">
+   <section id="power-week">
+    <div class="wrapper">
+     <img alt="" src="images/Logo_PGO.png"/>
+     <h1 class="section-title">
+      is pleased to announce next step:
+      <br/>
+      a
+      <strong>
+       security token
+      </strong>
+      . Soon available on
+     </h1>
+     <a href="https://stokr.io/parkingo" target="_blank">
+      <img alt="" src="images/STOKR-LOGO_Red.png"/>
+     </a>
+     <div class="cta">
+      <a class="btn bordered small whitepaper" href="https://stokr.io/parkingo" target="_blank">
+       find out more
+      </a>
+     </div>
+    </div>
+   </section>
+   <section id="history">
+    <!-- <div id="particles-history" class="particles-wrapper"></div> -->
+    <div class="wrapper">
+     <h1 class="section-title" data-aos="zoom-in" data-aos-delay="200" data-aos-offset="200">
+      HISTORY
+     </h1>
+     <h2 class="subtitle" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      Innovators since 1995
+     </h2>
+     <p class="intro" data-aos="zoom-in" data-aos-delay="450" data-aos-offset="200">
+      In 1995 our first ParkinGO software was written in
+      <a href="https://it.wikipedia.org/wiki/MS-DOS">
+       MS-DOS
+      </a>
+      and automatically managed capacity, seasonal demand and pricing.
+     </p>
+     <div class="timeline" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      <div class="history-for">
+       <div class="item hist-1995">
+        <div class="title">
+         Our first location at Milano Malpensa
+        </div>
+        <p>
+         ParkinGO was born in Italy to meet the growing demand for parking areas near the airport of Milan Malpensa and soon becomes the leading parking network for all travellers. In the years that follow, ParkinGO expands through the direct management of parking locations at prime airports through an affiliation and franchising business model at other airports. Today the Group has over 55 locations across Europe, all in continuous expansion.
+        </p>
+       </div>
+       <div class="item hist-2001">
+        <div class="title">
+         Opening of new ParkinGO locations, and the idea of a network is born
+        </div>
+        <p>
+         The development of the network begins and the know-how acquired over the first six years of activity allows the opening of further offices at Milan Linate, Bergamo and Fiumicino.
+        </p>
+       </div>
+       <div class="item hist-2006">
+        <div class="title">
+         The franchising program begins
+        </div>
+        <p>
+         The ParkinGO business model generates strong interest in the airport parking sector with the first locations added through the franchising project in Turin and Verona. Today there are 28 ParkinGO locations at Italian airports.
+        </p>
+       </div>
+       <div class="item hist-2013">
+        <div class="title">
+         Opening of the first ParkinGO Cruise franchise
+        </div>
+        <p>
+         Not just airports. ParkinGO also becomes a network of port carparks thanks to the opening of the Civitavecchia and Venice port offices, guaranteeing a service much appreciated by cruise ship passengers. Today there are nine ParkinGO Cruise facilities.
+        </p>
+       </div>
+       <div class="item hist-2014">
+        <div class="title">
+         From simple carparks to a mobility platform
+        </div>
+        <p>
+         ParkinGO transforms and evolves with the integration of
+        </p>
+        <ul class="logos">
+         <li>
+          <img alt="" src="images/logo-scanner.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/logo-green-power.svg"/>
+         </li>
+        </ul>
+        <p>
+         Its aim: to become a mobility platform offering 360-degree services across the automotive and airport world.
+        </p>
+       </div>
+       <div class="item hist-2015">
+        <div class="title">
+         The FastParking brand is acquired
+        </div>
+        <p>
+         The second Italian airport parking network is acquired, allowing new synergies to be created within ParkinGO and expanding its range of services by targeting different customer targets.
+        </p>
+        <ul class="logos">
+         <li>
+          <img alt="" src="images/logo-fast.svg"/>
+         </li>
+        </ul>
+       </div>
+       <div class="item hist-2016">
+        <div class="title">
+         Expansion in Europe begins
+        </div>
+        <p>
+         The franchising project meets with an excellent response also in Europe. In addition to Italy where ParkinGO has, for years, been an industry leader in airport carparks, we now address the needs of travellers from Spain, Switzerland, Germany, France, Belgium, Austria, Portugal, Czech Republic and Slovakia. Today there are 80 ParkinGO location at European airports and ports.
+        </p>
+        <ul class="flags">
+         <li>
+          <img alt="" src="images/flags/flag_it.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/flags/flag_es.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/flags/flag_ch.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/flags/flag_de.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/flags/flag_fr.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/flags/flag_be.svg"/>
+         </li>
+         <li>
+          <img alt="" src="images/flags/flag_au.svg"/>
+         </li>
+        </ul>
+       </div>
+       <div class="item hist-2017">
+        <div class="title">
+         GetMyCar, P2P car sharing
+        </div>
+        <p>
+         Launch of the GetMyCar project, peer-to-peer car sharing. The mission is to revolutionize the world of mobility starting from the concept of use and possession of cars. Like Airbnb for apartments, GetMyCar offers users a platform to share owners' unused cars with others who need a car to drive and own, only one when it’s needed.
+        </p>
+        <ul class="logos">
+         <li>
+          <img alt="" src="images/logo-getmycar.svg"/>
+         </li>
+        </ul>
+       </div>
+       <div class="item hist-2018">
+        <div class="title">
+         GOToken and Blockchain
+        </div>
+        <p>
+         GOToken is born, the first cryptocurrency to spend on real services: those of the ParkinGO world. It is introduced into its business processes to ensure transparency across all 2.5 million customer transactions every year.
+        </p>
+       </div>
+       <div class="item hist-2019">
+        <div class="title">
+         LeaseGO
+        </div>
+        <p>
+         Lease GO is ParkinGO long-term car rental. With Lease GO the company becomes a real mobility hub.
+        </p>
+        <p>
+         <a href="https://leasego.rent/" target="_blank" title="Lease GO website">
+          leasego.rent
+         </a>
+        </p>
+       </div>
+      </div>
+      <div class="history-nav">
+       <div class="item">
+        <div class="date">
+         1995
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-GO.svg"/>
+        </div>
+        <div class="text">
+         Our first location at Milano Malpensa
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2001
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2001_.svg"/>
+        </div>
+        <div class="text">
+         Opening of new ParkinGO locations, and the idea of a network is born
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2006
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2006_.svg"/>
+        </div>
+        <div class="text">
+         The franchising program begins
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2013
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2013_.svg"/>
+        </div>
+        <div class="text">
+         Opening of the first ParkinGO Cruise franchise
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2014
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2014.svg"/>
+        </div>
+        <div class="text">
+         From simple carparks to a mobility platform
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2015
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2015_.svg"/>
+        </div>
+        <div class="text">
+         The FastParking brand is acquired
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2016
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2016.svg"/>
+        </div>
+        <div class="text">
+         Expansion in Europe begins
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2017
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2017.svg"/>
+        </div>
+        <div class="text">
+         GetMyCar, P2P car sharing
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2018
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-2018_.svg"/>
+        </div>
+        <div class="text">
+         GOToken and Blockchain
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         2019
+        </div>
+        <div class="dot">
+         <img alt="" src="images/history/dot-lease-go.svg"/>
+        </div>
+        <div class="text">
+         Lease GO
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="now">
+    <div class="wrapper">
+     <h1 class="section-title" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      NOW
+     </h1>
+     <p class="intro" data-aos="zoom-in" data-aos-delay="450" data-aos-offset="200">
+      Today ParkinGO is a renowned business and the market leader for the airport carparking sector.
+     </p>
+     <ul class="blocks">
+      <!-- <img src="images/now.svg" alt=""> -->
+      <li data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+       <div class="image-wrapper">
+        <img alt="" src="images/now/clients.svg"/>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="400" data-aos-offset="200">
+       <div class="image-wrapper">
+        <img alt="" src="images/now/sites.svg"/>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="500" data-aos-offset="200">
+       <div class="image-wrapper">
+        <img alt="" src="images/now/multinationals.svg"/>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="600" data-aos-offset="200">
+       <div class="image-wrapper">
+        <img alt="" src="images/now/travel-agencies.svg"/>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="700" data-aos-offset="200">
+       <div class="image-wrapper">
+        <img alt="" src="images/now/tour-operators.svg"/>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="800" data-aos-offset="200">
+       <div class="image-wrapper">
+        <img alt="" src="images/now/companies.svg"/>
+       </div>
+      </li>
+     </ul>
+     <div class="cta">
+      <a data-aos="zoom-in" data-aos-delay="450" data-aos-offset="200" href="https://www.parkingo.com/en/" target="_blank">
+       <img alt="" src="images/parkingo.svg"/>
+       <span>
+        Book now
+       </span>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section id="next">
+    <div class="crypto-texture">
+    </div>
+    <div class="wrapper">
+     <h1 class="section-title" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      NEXT
+     </h1>
+     <p class="intro" data-aos="zoom-in" data-aos-delay="350" data-aos-offset="200">
+      ParkinGO launches its token sale, implements Blockchain within its company processes and continues its international expansion.
+     </p>
+     <h3 class="article-title" data-aos="zoom-in" data-aos-delay="450" data-aos-offset="200">
+      ROADMAP
+     </h3>
+     <div class="timeline" data-aos="zoom-in" data-aos-delay="450" data-aos-offset="200">
+      <div class="timeline-slider">
+       <div class="item done">
+        <div class="date">
+         Q2 2018
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         ICO event
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q3 2018
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         Token fully usable after 30 days from ICO
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q4 2018
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         ParkinGO expansion in Europe
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q1 2019
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         GO Car Rental, parking and car rental everywhere in Europe.
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q2 2019
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         First flagships store in Madrid
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q3 2019
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         ParkinGO STO, a new security token
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q4 2019
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         First review on GOT Net Blockchain
+        </div>
+       </div>
+       <div class="item">
+        <div class="date">
+         Q1 2020
+        </div>
+        <div class="dot">
+        </div>
+        <div class="text">
+         ParkinGO celebrates the 100 facilities milestone
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="utility-token">
+    <div class="wrapper">
+     <h1 class="section-title" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      Advantages of GOToken
+     </h1>
+     <p class="intro" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="200">
+      GOT is a utility token that allows you to access to exclusive advantages of the ParkinGO network:
+     </p>
+     <p style="text-align: center;">
+     </p>
+     <article data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      <div class="services-list">
+       <div class="item">
+        <div class="item-wrapper">
+         <div class="image">
+          <img alt="" src="images/utility-token/utility-exclusive.svg"/>
+         </div>
+         <div class="title">
+          Best price guaranteed
+         </div>
+         <div class="text">
+          Paying with GOToken always guarantees you the best price.
+         </div>
+        </div>
+       </div>
+       <!-- 
+			<div class="item">
+                            <div class="item-wrapper">
+                                <div class="image"><img src="images/utility-token/utility-gadget.svg" alt=""></div>
+                                <div class="title">
+                                    Gadget
+                                </div>
+                                <div class="text">
+                                    Tanti gadget per te se prenoti con GOToken!.
+                                </div>
+                            </div>
+                        </div>
+			-->
+       <div class="item">
+        <div class="item-wrapper">
+         <div class="image">
+          <img alt="" src="images/utility-token/utility-priority.svg"/>
+         </div>
+         <div class="title">
+          Exclusive services
+         </div>
+         <div class="text">
+          Paying in GOToken gives you access to many exclusive services and gadgets that await you at check-in.
+         </div>
+        </div>
+       </div>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section id="details">
+    <div class="crypto-texture">
+    </div>
+    <!-- <div id="particles-details" class="particles-wrapper"></div> -->
+    <div class="wrapper">
+     <h1 class="section-title" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      LAST NEWS
+     </h1>
+     <ul class="cards-list">
+      <li class="distribution" data-aos="fade-right" data-aos-delay="200" data-aos-offset="200">
+       <div class="title">
+        GOT Net
+       </div>
+       <div class="chart">
+        <img alt="" src="images/Bitcoin.svg"/>
+       </div>
+       <p>
+        ParkinGO Blockchain. With GOT Net customers' feedback can't be manipulated.
+       </p>
+      </li>
+      <li class="distribution" data-aos="fade-right" data-aos-delay="200" data-aos-offset="200">
+       <div class="title">
+        New Mobility
+       </div>
+       <div class="chart">
+        <img alt="" src="images/NewMobility.svg"/>
+       </div>
+       <p>
+        The automotive world is costantly evolving. To face this challange ParkinGO creates new services that fits travellers' needs.
+       </p>
+      </li>
+      <li class="distribution" data-aos="fade-right" data-aos-delay="200" data-aos-offset="200">
+       <div class="title">
+        Energy &amp; sustainability
+       </div>
+       <div class="chart">
+        <img alt="" src="images/Green.svg"/>
+       </div>
+       <p>
+       </p>
+       <p>
+        Every ParkinGO has a E-charging station for all customers.
+        <br/>
+        Next Step: Full-electric shuttle buses to cut CO2 emission.
+       </p>
+      </li>
+     </ul>
+    </div>
+   </section>
+   <section id="team">
+    <div class="wrapper">
+     <h1 class="section-title" data-aos="zoom-in" data-aos-delay="300" data-aos-offset="200">
+      THE TEAM
+     </h1>
+     <p class="intro" data-aos="zoom-in" data-aos-delay="350" data-aos-offset="200">
+      "ParkinGO has to date the aim of creating value for itself and others!"
+      <br/>
+      <i>
+       Giuliano Rovelli
+      </i>
+     </p>
+     <ul class="team-list">
+      <li data-aos="zoom-in" data-aos-delay="150" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/giuliano-rovelli.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Giuliano Rovelli
+        </div>
+        <div class="title">
+         Founder &amp; CEO
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/giuliano-rovelli-a1980a5/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="200" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/davide-rovelli.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Davide Rovelli
+        </div>
+        <div class="title">
+         CEO
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/davide-rovelli/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <!--
+                        <li data-aos="zoom-in" data-aos-offset="200" data-aos-delay="250">
+                            <div class="picture">
+                                <img src="/images/team/filippo-rivanera.jpeg" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="name">Filippo Rivanera</div>
+                                <div class="title">Managing director</div>
+                                <ul class="links">
+                                    <li><a href="https://www.linkedin.com/in/filippo-rivanera-1060561/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        -->
+      <li data-aos="zoom-in" data-aos-delay="200" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/alfonso-vidal.jpg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Alfonso Vidal
+        </div>
+        <div class="title">
+         COO
+        </div>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="150" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/silvio-cavallo.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Silvio Cavallo
+        </div>
+        <div class="title">
+         CMO
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/silvio-cavallo-2818a06/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="150" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/gemma-voces-pons.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Gemma Voces Pons
+        </div>
+        <div class="title">
+         Affiliation Manager
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/gemma-voces-pons-528b6a33/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="150" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/ilaria-costa.jpg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Ilaria Costa
+        </div>
+        <div class="title">
+         Customer Care Manager
+        </div>
+        <ul class="links">
+         <!-- <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li> -->
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/valeria-luini.jpg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Valeria Luini
+        </div>
+        <div class="title">
+         Visual Designer
+        </div>
+        <!-- <ul class="links">
+                                    <li><a href="https://www.linkedin.com/in/valeria-luini-6b32a510/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                </ul> -->
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/fabrizio-perra.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Fabrizio Perra
+        </div>
+        <div class="title">
+         Content Manager
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/fabrizioperra1/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="150" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/tommy-tognella.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Tommy Tognella
+        </div>
+        <div class="title">
+         CTO
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/tommy-tognella-b8246a5a/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="200" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/eleonora-altana.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Eleonora Altana
+        </div>
+        <div class="title">
+         Blockchain developer
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/eleonora-altana-8565609/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/alessandro-piola.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Alessandro Piola
+        </div>
+        <div class="title">
+         Blockchain developer
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/alessandro-piola/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="150" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/giulia-sapio.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Giulia Sapio
+        </div>
+        <div class="title">
+         Visual Designer
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/giulia-sapio-52164936/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/stefano-pierobon.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Stefano Pierobon
+        </div>
+        <div class="title">
+         Mobile developer
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/stefano-pierobon/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/fortunato-fatiga.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Fortunato Fatiga
+        </div>
+        <div class="title">
+         Front-end developer
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/fortunato-fatiga/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/marco-lucchetti.jpeg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Marco Lucchetti
+        </div>
+        <div class="title">
+         Advisor
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/marco-lucchetti-a0418868/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li data-aos="zoom-in" data-aos-delay="250" data-aos-offset="200">
+       <div class="picture">
+        <img alt="" src="/images/team/mohammad-ramadani.jpg"/>
+       </div>
+       <div class="text">
+        <div class="name">
+         Mohammad Ramadani
+        </div>
+        <div class="title">
+         Advisor
+        </div>
+        <ul class="links">
+         <li>
+          <a href="https://www.linkedin.com/in/moramadani/" target="_blank">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+     </ul>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="wrapper">
+    <div class="company">
+     <div class="name">
+      ParkinGO International SA
+     </div>
+     <div class="address">
+      Via G Motta, 6830 Chiasso
+     </div>
+    </div>
+    <ul class="footer-menu">
+     <li>
+      <a href="rookies">
+       Rookies
+      </a>
+     </li>
+     <li>
+      <a href="privacy">
+       Privacy policy
+      </a>
+     </li>
+     <li>
+      <a href="terms">
+       Terms &amp; conditions
+      </a>
+     </li>
+     <!--<li><a href="faqs">FAQ</a></li>-->
+    </ul>
+   </div>
+  </footer>
+  <div class="copyright">
+   <div class="wrapper">
+    © ParkinGO International SA. All Rights reserved.
+   </div>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-116824821-1" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116824821-1');
+  </script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/js/jquery-ui.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/bower_components/aos/dist/aos.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/bower_components/jquery.countdown/dist/jquery.countdown.min.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/bower_components/slick-carousel/slick/slick.min.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/js/particles.min.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/js/select2/select2.min.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/js/jquery.fancybox.min.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script src="/js/script.js" type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+  </script>
+  <script type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+   $(document).ready(function() {
+
+            // COOKIE ALERT
+
+            function createCookie(name,value,days) {
+            	if (days) {
+            		var date = new Date();
+            		date.setTime(date.getTime()+(days*24*60*60*1000));
+            		var expires = "; expires="+date.toGMTString();
+            	}
+            	else var expires = "";
+            	document.cookie = name+"="+value+expires+"; path=/";
+            }
+
+            function readCookie(name) {
+            	var nameEQ = name + "=";
+            	var ca = document.cookie.split(';');
+            	for(var i=0;i < ca.length;i++) {
+            		var c = ca[i];
+            		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            	}
+            	return null;
+            }
+
+            function openAlert() {
+                // $("#hidden_link").fancybox().trigger('click');
+            }
+
+            // setTimeout(openAlert, 1000);
+
+
+            if (readCookie("hasVisitedBefore") == null){
+                setTimeout(openAlert, 1000);
+            }
+            createCookie("hasVisitedBefore", "true");
+
+            // END COOKIE ALERT
+
+
+
+            function formatState (state) {
+                if (!state.id) { return state.text; }
+
+                var values = state.element.value.split("|");
+                var $state = $(
+                  '<span class="language-option"><img src="/images/flags/' + values[0].toLowerCase() + '.svg" class="img-flag" />' + state.text + '</span>'
+                );
+                return $state;
+            };
+            $('.languages-choise').select2({
+                    templateResult: formatState,
+                    templateSelection: formatState,
+                    minimumResultsForSearch: Infinity
+                })
+                .on("change", function(e) {
+                    var link = $(this).val().split("|")[1];
+                    window.location.href = link;
+                }
+            );
+
+            $('.custom-select').select2();
+            $('.no-search').select2({
+                minimumResultsForSearch: Infinity
+            });
+
+            var delay = (function () {
+                var timer = 0;
+                return function (callback, ms) {
+                    clearTimeout(timer);
+                    timer = setTimeout(callback, ms);
+                };
+            })();
+
+                        
+        });
+
+        $('#check_coupon').click(function(){
+            var coupon=$('#invitation-code').val();
+            
+            if(coupon.length>4 && coupon.length<13 ){
+            $.ajax({
+                  type: 'GET', 
+                  url: '/info_ajax.php?op=getdiscount',
+                  data:'coupon_code='+coupon,
+                      
+                  success: function(data) {
+
+                        if(data.status=='OK') {
+                            $('#discount').text(data.discount);
+                            $('#got_rate').text(data.rate);
+                            
+                        } else {
+                            $('#got_rate').text('740');
+                            $('#discount').text('5');
+                            alert('INVALID CODE');
+                        }
+
+                       
+
+                  }
+                });
+        }
+        else{
+            $('#got_rate').text('740');
+            $('#discount').text('5');
+        }
+
+    });
+  </script>
+  <script type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+   $( function() {
+        $( document ).tooltip({
+            show: { duration: 100 },
+            hide: { duration: 100 },
+            position: {
+                my: "center bottom-20",
+                at: "center top",
+                using: function( position, feedback ) {
+                  $( this ).css( position );
+                  $( "<div>" )
+                    .addClass( "arrow" )
+                    .addClass( feedback.vertical )
+                    .addClass( feedback.horizontal )
+                    .appendTo( this );
+                }
+            }
+        });
+      } );
+  </script>
+  <script type="1f1f5e74cfc99a65d0b9cf26-text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"67b7321a72","applicationID":"303483737","transactionName":"NQNSN0ICCBBUB0ALCgxJZRFZTAMNGg1aBgAaSEALQA==","queueTime":0,"applicationTime":1143,"atts":"GURRQQoYGx4=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+  <script data-cf-settings="1f1f5e74cfc99a65d0b9cf26-|49" defer="" src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js">
+  </script>
+ </body>
+</html>
