@@ -2,14 +2,79 @@ from zss import simple_distance, Node
 from bs4 import BeautifulSoup
 from lxml import html
 from lxml import etree
+import apted
+import config
 import lxml
 import bs4
 import re
 import os
 import json
+import datetime
 
 
-class DomTreeSimilarity(object):
+class TreeNode(object):
+    def __init__(self, name, children=None):
+        self.name = name
+        self.children = children or list()
+
+    @staticmethod
+    def get_children(node):
+        return node.children
+
+    @staticmethod
+    def get_name(node):
+        return node.name
+
+    def addkid(self, node, before=False):
+        if before:  self.children.insert(0, node)
+        else:   self.children.append(node)
+        return self
+
+
+class DomTreeSimilarityApted(object):
+    def __init__(self, html_file1, html_file2):
+        self.tree1_count = 0
+        self.tree2_count = 0
+        self.html_file1 = html_file1
+        self.html_file2 = html_file2
+
+    def construct_dom_tree(self, tree_node, parent_node, soup, flag):
+        parent_node.addkid(tree_node)
+        for child_soup in soup.children:
+            if not isinstance(child_soup, bs4.element.Tag):
+                continue
+            if child_soup.name == 'script' or child_soup.name == 'meta' or child_soup.name == 'link':
+                continue
+            child_node = TreeNode(child_soup.name)
+            if flag:
+                self.tree1_count += 1
+            else:
+                self.tree2_count += 1
+            self.construct_dom_tree(child_node, tree_node, child_soup, flag)
+        return tree_node
+
+    def run(self):
+        with open('ICO_Sanitized_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
+            unparsed_html_1 = f.read()
+        with open('ICO_Sanitized_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
+            unparsed_html_2 = f.read()
+        root = TreeNode('root')
+        soup_1 = BeautifulSoup(unparsed_html_1, 'lxml')
+        soup_2 = BeautifulSoup(unparsed_html_2, 'lxml')
+        for content in soup_1.contents:
+            if isinstance(content, bs4.element.Tag):
+                soup_1 = content
+        for content in soup_2.contents:
+            if isinstance(content, bs4.element.Tag):
+                soup_2 = content
+        dom_tree_1 = self.construct_dom_tree(TreeNode(soup_1.name), root, soup_1, True)
+        dom_tree_2 = self.construct_dom_tree(TreeNode(soup_2.name), root, soup_2, False)
+        tree_distance = apted.APTED(dom_tree_1, dom_tree_2)
+        dom_tree_similarity = 1 - abs(tree_distance.compute_edit_distance()/(self.tree1_count+self.tree2_count))
+        return dom_tree_similarity
+
+
+class DomTreeSimilarityZss(object):
     def __init__(self, html_file1, html_file2):
         self.tree1_count = 0
         self.tree2_count = 0
@@ -32,9 +97,9 @@ class DomTreeSimilarity(object):
         return tree_node
 
     def run(self):
-        with open('ICO_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
+        with open('ICO_Sanitized_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
             unparsed_html_1 = f.read()
-        with open('ICO_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
+        with open('ICO_Sanitized_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
             unparsed_html_2 = f.read()
         root = Node('root')
         soup_1 = BeautifulSoup(unparsed_html_1, 'lxml')
@@ -82,8 +147,8 @@ class LongestCommonTagSubsequence(object):
         return res[-1][-1]
 
     def run(self):
-        etree_1 = html.parse('ICO_Htmls/' + self.html_file1)
-        etree_2 = html.parse('ICO_Htmls/' + self.html_file2)
+        etree_1 = html.parse('ICO_Sanitized_Htmls/' + self.html_file1)
+        etree_2 = html.parse('ICO_Sanitized_Htmls/' + self.html_file2)
         self.tag_sequence_1 = self.construct_tag_sequence(etree_1)
         self.tag_sequence_2 = self.construct_tag_sequence(etree_2)
         lcts = self.compute_lcts()
@@ -97,13 +162,23 @@ class HtmlStructuralSimilarity(object):
         self.html_file2 = html_file2
 
     def get_html_structure_similarity(self):
-        dom_tree_similarity_instance = DomTreeSimilarity(self.html_file1, self.html_file2)
+        if config.quick_mode:
+            dom_tree_similarity_instance = DomTreeSimilarityApted(self.html_file1, self.html_file2)
+        else:
+            dom_tree_similarity_instance = DomTreeSimilarityZss(self.html_file1, self.html_file2)
         lcts_similarity_instance = LongestCommonTagSubsequence(self.html_file1, self.html_file2)
+        #starttime = datetime.datetime.now()
         dom_tree_similarity = dom_tree_similarity_instance.run()
+        #endtime = datetime.datetime.now()
+        #print('tree edit distance runtime:'+ str(endtime - starttime))
         #print('dom similarity:' + str(dom_tree_similarity))
+
+        #starttime = datetime.datetime.now()
         lcts_similarity = lcts_similarity_instance.run()
+        #endtime = datetime.datetime.now()
+        #print('lcts runtime:' + str(endtime - starttime))
         #print('lcts similarity:' + str(lcts_similarity))
-        return max(dom_tree_similarity, lcts_similarity) * 100
+        return float((dom_tree_similarity + lcts_similarity)/2) * 100
 
 
 class CssSimilarity(object):
@@ -135,9 +210,9 @@ class CssSimilarity(object):
         return float(intersection / denominator)
 
     def run(self):
-        with open('ICO_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
+        with open('ICO_Sanitized_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
             unparsed_html_1 = f.read()
-        with open('ICO_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
+        with open('ICO_Sanitized_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
             unparsed_html_2 = f.read()
         etree1 = etree.HTML(unparsed_html_1)
         etree2 = etree.HTML(unparsed_html_2)
@@ -177,9 +252,9 @@ class JsSimilarity(object):
         return float(intersection / denominator) * 100
 
     def run(self):
-        with open('ICO_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
+        with open('ICO_Sanitized_Htmls/' + self.html_file1, 'r', encoding='utf-8') as f:
             unparsed_html_1 = f.read()
-        with open('ICO_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
+        with open('ICO_Sanitized_Htmls/' + self.html_file2, 'r', encoding='utf-8') as f:
             unparsed_html_2 = f.read()
         etree1 = etree.HTML(unparsed_html_1)
         etree2 = etree.HTML(unparsed_html_2)

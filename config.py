@@ -50,3 +50,4 @@ color_map = [
     'gold',
     'goldenrod',
 ]
+quick_mode = True

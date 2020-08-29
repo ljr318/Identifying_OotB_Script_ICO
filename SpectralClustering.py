@@ -1,6 +1,6 @@
 import json
 import matplotlib.pyplot as plt
-from sklearn.cluster import SpectralClustering
+from sklearn.cluster import SpectralClustering as SC
 import matplotlib as mpl
 from sklearn import metrics
 from sklearn.preprocessing import StandardScaler
@@ -14,9 +14,9 @@ from scipy.sparse.csgraph import laplacian as csgraph_laplacian
 
 
 class SpectralClustering(object):
-    def __init__(self):
+    def __init__(self, similarity_matrix):
         self.n_clusters = None
-        self.similarity_matrix = None
+        self.similarity_matrix = similarity_matrix
         self.sc = None
 
     # modified from sklearn _spectrual_embedding
@@ -46,7 +46,7 @@ class SpectralClustering(object):
 
     # modified from sklearn _spectrual_embedding
     def laplacian_embedding(self, similarity_matrix, *, n_components=8, eigen_tol=0.0, norm_laplacian=True, drop_first=True):
-        n_nodes = similarity_matrix.shape[0]
+        #n_nodes = similarity_matrix.shape[0]
         if drop_first:
             n_components = n_components + 1
 
@@ -54,10 +54,9 @@ class SpectralClustering(object):
                                           return_diag=True)
         laplacian = self._set_diag(laplacian, 1, norm_laplacian)
         laplacian *= -1
-        v0 = random.uniform(-1, 1, laplacian.shape[0])
         _, diffusion_map = eigsh(
             laplacian, k=n_components, sigma=1.0, which='LM',
-            tol=eigen_tol, v0=v0)
+            tol=eigen_tol)
         embedding = diffusion_map.T[n_components::-1]
         if norm_laplacian:
             embedding = embedding / dd
@@ -76,7 +75,7 @@ class SpectralClustering(object):
         max_score = -999
         max_n = -1
         for n in range(2, 150):
-            sc = SpectralClustering(n_clusters=n, affinity='precomputed', assign_labels='discretize')
+            sc = SC(n_clusters=n, affinity='precomputed', assign_labels='discretize')
             sc.fit(self.similarity_matrix)
             n_cluster.append(n)
             silhouette_coefficient = metrics.silhouette_score(distance_matrix, sc.labels_, metric='precomputed')
@@ -89,7 +88,7 @@ class SpectralClustering(object):
         plt.show()
 
     def clustering_visualization(self):
-        vectors = self.laplacian_embedding(self.similarity_matrix)
+        vectors = self.laplacian_embedding(np.array(self.similarity_matrix))
         X = StandardScaler().fit_transform(vectors)
         pca = PCA(n_components=2)
         principalComponents = pca.fit_transform(X)
@@ -111,10 +110,44 @@ class SpectralClustering(object):
         plt.show()
 
     def start_clustering(self):
-        with open('similarity_matrix.json', 'r') as f:
-            self.similarity_matrix = json.load(f)
-        self.sc = SpectralClustering(n_clusters=self.n_clusters, affinity='precomputed', assign_labels='discretize')
+        self.determine_cluster_num()
+        self.sc = SC(n_clusters=self.n_clusters, affinity='precomputed', assign_labels='discretize')
         self.sc.fit(self.similarity_matrix)
+
+    @staticmethod
+    def remove_outliers():
+        with open('similarity_matrix.json', 'r') as f:
+            data = json.load(f)
+        rows = len(data)
+        cols = len(data[0])
+        count = 0
+        ls = []
+        for i in range(rows):
+            flag = False
+            for j in range(cols):
+                if data[i][j] > 50.0 and i != j:
+                    flag = True
+                    break
+            if flag:
+                ls.append(i)
+                count = count + 1
+        new_similarity_matrix = [[0 for col in range(count)] for row in range(count)]
+        for i in range(count):
+            new_similarity_matrix[i][i] = 100
+            for j in range(i + 1, count):
+                new_similarity_matrix[i][j] = data[ls[i]][ls[j]]
+        data_str = json.dumps(new_similarity_matrix)
+        with open('similarity_matrix_for_clustering.json', 'w') as f:
+            f.write(data_str)
+
+
+if __name__ == '__main__':
+    with open('similarity_matrix_for_clustering.json', 'r') as f:
+        similarity_matrix = json.load(f)
+    spectral_clustering = SpectralClustering(similarity_matrix)
+    spectral_clustering.start_clustering()
+    spectral_clustering.clustering_visualization()
+    spectral_clustering.cluster_size_visualization()
 
 
 
